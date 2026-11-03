@@ -260,7 +260,8 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
 class CorrectedMachineGuiProofTests(unittest.TestCase):
     MACHINES = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226, 32000, 0),
-        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 216, 210, 4000, 0),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228, 4000, 0),
+        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256, 0, 32000),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
         "small_freezer": ("SMALL_FREEZER", 3, 209, 235, 0, 16000),
         "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238, 3000, 0),
@@ -307,7 +308,8 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 "energy": energy_capacity, "energy_capacity": energy_capacity,
                 "progress": 25 if machine == "small_freezer" else 0,
                 "freezer_progress_ticks": 45 if machine == "small_freezer" else 0,
-                "language": "fr_fr", "captured_states": ["empty", "mid", "full-hover"],
+                "language": "fr_fr", "captured_states": (["empty", "mid", "full-hover", "input-occupied", "output-occupied"]
+                    if machine == "small_milking_machine" else ["empty", "mid", "full-hover"]),
                 "machine_slots": slots,
             })
             states = ("empty", "mid", "full-hover")
@@ -326,6 +328,11 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 capture["capture_mode"] = "gui_panel"
                 capture["panel_cursor_outside"] = True
                 capture["panel_tooltips_suppressed"] = True
+                if machine == "small_milking_machine":
+                    capture["machine_slot_items"] = [
+                        {"container_index": 0, "item_id": "minecraft:air", "count": 0, "empty": True},
+                        {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
+                    ]
                 capture_width, capture_height = panel_width, panel_height
                 if state == "full-hover":
                     capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
@@ -344,6 +351,46 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                     capture["tooltip_height"] = self.window_height
                     capture["tooltip_sha256"] = hashlib.sha256(tooltip.read_bytes()).hexdigest()
                 self.proof["screenshots"].append(capture)
+            if machine == "small_milking_machine":
+                occupied_states = {
+                    "input-occupied": [
+                        {"container_index": 0, "item_id": "minecraft:bucket", "count": 3, "empty": False},
+                        {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
+                    ],
+                    "output-occupied": [
+                        {"container_index": 0, "item_id": "minecraft:bucket", "count": 3, "empty": False},
+                        {"container_index": 1, "item_id": "minecraft:milk_bucket", "count": 1, "empty": False},
+                    ],
+                }
+                for state, machine_slot_items in occupied_states.items():
+                    name = f"small_milking_machine-{state}.png"
+                    capture = {"name": name, "state": state, "kind": kind,
+                               "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
+                               "fluid_amount": 0, "energy": 0, "progress": 0,
+                               "machine_slot_items": machine_slot_items,
+                               "capture_mode": "gui_panel", "panel_cursor_outside": True,
+                               "panel_tooltips_suppressed": True,
+                               "width": panel_width, "height": panel_height}
+                    image = self.image_dir / name
+                    image.write_bytes(self._png(panel_width, panel_height))
+                    capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
+                    self.proof["screenshots"].append(capture)
+                self.proof["cases"][-1]["slot_item_transfers"] = {
+                    "player_to_machine_input": {
+                        "source_menu_index": 29, "source_player_inventory_index": 0,
+                        "destination_container_index": 0, "item_id": "minecraft:bucket",
+                        "source_count_before": 3, "moved_count": 3, "source_count_after": 0,
+                        "destination_item_id": "minecraft:bucket", "destination_count_after": 3,
+                        "quick_move_succeeded": True,
+                    },
+                    "machine_output_to_player": {
+                        "source_menu_index": 1, "source_container_index": 1,
+                        "destination_player_inventory_index": 8, "destination_menu_index": 37,
+                        "item_id": "minecraft:milk_bucket", "source_count_before": 1,
+                        "moved_count": 1, "source_count_after": 0,
+                        "destination_inventory_count_after": 1, "quick_move_succeeded": True,
+                    },
+                }
             if machine == "small_freezer":
                 name = "small_freezer-near-end.png"
                 capture = {"name": name, "state": "near-end", "kind": kind,
@@ -429,6 +476,35 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         proof = copy.deepcopy(self.proof)
         near_end = next(item for item in proof["screenshots"] if item["name"] == "small_freezer-near-end.png")
         near_end["freezer_progress_ticks"] = 0
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_incorrect_milking_items_or_quick_move_counts(self):
+        proof = copy.deepcopy(self.proof)
+        empty = next(item for item in proof["screenshots"]
+                     if item["name"] == "small_milking_machine-empty.png")
+        empty["machine_slot_items"][0].update(item_id="minecraft:bucket", count=1, empty=False)
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        occupied = next(item for item in proof["screenshots"]
+                        if item["name"] == "small_milking_machine-input-occupied.png")
+        occupied["machine_slot_items"][0]["count"] = 2
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        occupied = next(item for item in proof["screenshots"]
+                        if item["name"] == "small_milking_machine-output-occupied.png")
+        occupied["machine_slot_items"][1]["item_id"] = "minecraft:bucket"
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        case = next(item for item in proof["cases"] if item["machine_id"] == "small_milking_machine")
+        case["slot_item_transfers"]["player_to_machine_input"]["moved_count"] = 2
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        case = next(item for item in proof["cases"] if item["machine_id"] == "small_milking_machine")
+        case["slot_item_transfers"]["machine_output_to_player"]["destination_menu_index"] = 36
         with self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_rejects_wrong_locale_or_missing_freezer_progress(self):

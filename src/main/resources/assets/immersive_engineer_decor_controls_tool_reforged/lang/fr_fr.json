@@ -1029,7 +1029,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory": "Inventaire",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output": "Sortie basse",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.tank.tooltip": "%1$s : %2$s mB / %3$s mB",
-"gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Collecte",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Collecte",
   "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.amount": "%1$s / %2$s mB",
   "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.input": "Seau vide",
   "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.output": "Seau rempli",
@@ -1085,5 +1085,11 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.inventory": "Inventaire",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.tank": "Lait stocké : %1$s",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.bucket": "Entrée de seau",
-  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Sortie de lait"
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Sortie de lait",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.animal_not_synchronized": "Identité de l’animal non synchronisée. Portrait et nom indisponibles.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.energy_cycle_unavailable": "Données FE et progression d’extraction indisponibles. Indicateurs neutres.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.fluid_unavailable": "Réservoir de fluide non implémenté. Aucun niveau ni bonus simulé.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.power_unavailable": "Décoration neutre, pas de commande marche/arrêt.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.static_scene": "Illustration fixe de casse. Ce n’est pas le bloc ciblé.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.work_details": "Travail : %s/%s ticks ; %s. %s : %s"
 }

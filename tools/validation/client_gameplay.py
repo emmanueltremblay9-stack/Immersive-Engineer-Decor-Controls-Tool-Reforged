@@ -299,10 +299,11 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
 def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                          directory: Path, window_width: int, window_height: int,
                                          language: str, logs: str) -> dict:
-    """Fail closed unless six live screens and the Tree Cutter badge-only panel were captured."""
+    """Fail closed unless seven live screens and the Tree Cutter badge-only panel were captured."""
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
-        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 216, 210),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228),
+        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212),
         "small_freezer": ("SMALL_FREEZER", 3, 209, 235),
         "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238),
@@ -325,7 +326,7 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
 
     cases = proof.get("cases")
     if not isinstance(cases, list) or len(cases) != len(expected):
-        raise SmokeFailure("Corrected-machine GUI proof does not cover all six registered screens")
+        raise SmokeFailure("Corrected-machine GUI proof does not cover all seven registered screens")
     by_id = {}
     for case in cases:
         if not isinstance(case, dict) or case.get("machine_id") not in expected or case["machine_id"] in by_id:
@@ -336,12 +337,16 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
 
     capture_names = {f"{machine}-{state}.png" for machine in expected
                      for state in ("empty", "mid", "full-hover")}
+    capture_names.update({
+        "small_milking_machine-input-occupied.png",
+        "small_milking_machine-output-occupied.png",
+    })
     capture_names.add("small_freezer-near-end.png")
     capture_names.add("small_tree_cutter-badge-only.png")
     tooltip_names = {f"{machine}-full-hover-window.png" for machine in expected}
     captures = proof.get("screenshots")
     if not isinstance(captures, list) or len(captures) != len(capture_names):
-        raise SmokeFailure("Corrected-machine GUI proof requires 20 panel captures and six separate hover captures")
+        raise SmokeFailure("Corrected-machine GUI proof requires 25 panel captures and seven separate hover captures")
     if {capture.get("name") for capture in captures if isinstance(capture, dict)} != capture_names:
         raise SmokeFailure("Corrected-machine GUI screenshot names are missing, duplicated, or unexpected")
     image_dir = directory / "corrected-machine-gui-screenshots"
@@ -361,7 +366,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 or case.get("visible_machine_slots") != slots or case.get("total_slots") != slots + 36
                 or case.get("panel_width") != panel_width or case.get("panel_height") != panel_height
                 or case.get("gui_height") != window_height or case.get("geometry_matches_layout") is not True
-                or case.get("captured_states") != ["empty", "mid", "full-hover"]):
+                or case.get("captured_states") != (["empty", "mid", "full-hover", "input-occupied", "output-occupied"]
+                    if machine == "small_milking_machine" else ["empty", "mid", "full-hover"])):
             raise SmokeFailure(f"Live menu, panel or layout geometry is incorrect for {machine}")
         slot_proofs = case.get("machine_slots")
         if not isinstance(slot_proofs, list) or len(slot_proofs) != slots:
@@ -377,7 +383,7 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 raise SmokeFailure(f"Live slot click/hover geometry differs from its layout for {machine}")
         expected_meter_capacity = (32000 if machine == "fluid_barrel" else 4000 if machine in {
             "small_milking_machine", "passive_fluid_accumulator"} else 3000 if machine == "small_fluid_funnel" else 0)
-        expected_energy_capacity = 64000 if machine == "small_solar_panel" else 16000 if machine == "small_freezer" else 0
+        expected_energy_capacity = 64000 if machine == "small_solar_panel" else 16000 if machine == "small_freezer" else 32000 if machine == "small_block_breaker" else 0
         for state in ("empty", "mid", "full-hover"):
             name = f"{machine}-{state}.png"
             capture = captures_by_name[name]
@@ -417,6 +423,10 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             elif any(key in capture for key in ("tooltip_name", "tooltip_capture_mode", "tooltip_sha256")):
                 raise SmokeFailure(f"Unexpected tooltip screenshot metadata for panel-only state: {name}")
             stage = "full" if state == "full-hover" else state
+            if machine == "small_milking_machine" and capture.get("machine_slot_items") != [
+                    {"container_index": 0, "item_id": "minecraft:air", "count": 0, "empty": True},
+                    {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True}]:
+                raise SmokeFailure(f"Native Milking {stage} frame does not prove both machine slots are actually empty")
             if expected_meter_capacity:
                 expected_amount = 0 if stage == "empty" else expected_meter_capacity // 2 if stage == "mid" else expected_meter_capacity
                 if capture.get("fluid_amount") != expected_amount:
@@ -434,6 +444,68 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 or type(hover.get("slot_index")) is not int):
             raise SmokeFailure(f"Native corrected-machine hover capture lacks hitbox evidence: {machine}")
 
+        if machine == "small_milking_machine":
+            occupied_states = {
+                "input-occupied": [
+                    {"container_index": 0, "item_id": "minecraft:bucket", "count": 3, "empty": False},
+                    {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
+                ],
+                "output-occupied": [
+                    {"container_index": 0, "item_id": "minecraft:bucket", "count": 3, "empty": False},
+                    {"container_index": 1, "item_id": "minecraft:milk_bucket", "count": 1, "empty": False},
+                ],
+            }
+            for state, expected_items in occupied_states.items():
+                name = f"small_milking_machine-{state}.png"
+                capture = captures_by_name[name]
+                image = image_dir / name
+                data = image.read_bytes()
+                if (len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR"):
+                    raise SmokeFailure(f"Native Milking occupied-slot screenshot is absent or invalid: {name}")
+                dimensions = struct.unpack(">II", data[16:24])
+                if (dimensions != (panel_width, panel_height) or capture.get("state") != state
+                        or capture.get("capture_mode") != "gui_panel"
+                        or capture.get("panel_cursor_outside") is not True
+                        or capture.get("panel_tooltips_suppressed") is not True
+                        or capture.get("sha256") != hashlib.sha256(data).hexdigest()
+                        or (capture.get("width"), capture.get("height"), capture.get("kind"),
+                            capture.get("screen_identity"), capture.get("menu_id")) != (
+                            panel_width, panel_height, kind, case.get("screen_identity"), case.get("client_menu_id"))
+                        or capture.get("fluid_amount") != 0
+                        or capture.get("machine_slot_items") != expected_items
+                        or any(key in capture for key in ("tooltip_name", "tooltip_capture_mode", "tooltip_sha256", "hover"))):
+                    raise SmokeFailure(f"Native Milking occupied-slot frame is not a clean, live, item-backed panel: {name}")
+
+            transfers = case.get("slot_item_transfers")
+            input_transfer = transfers.get("player_to_machine_input") if isinstance(transfers, dict) else None
+            if (not isinstance(input_transfer, dict)
+                    or input_transfer.get("quick_move_succeeded") is not True
+                    or input_transfer.get("source_menu_index") != slots + 27
+                    or input_transfer.get("source_player_inventory_index") != 0
+                    or input_transfer.get("destination_container_index") != 0
+                    or input_transfer.get("item_id") != "minecraft:bucket"
+                    or input_transfer.get("destination_item_id") != "minecraft:bucket"
+                    or any(type(input_transfer.get(key)) is not int or input_transfer[key] != value for key, value in (
+                        ("source_count_before", 3), ("moved_count", 3), ("source_count_after", 0),
+                        ("destination_count_after", 3)))):
+                raise SmokeFailure("Native Milking proof lacks a real three-bucket player-to-input quick-move")
+            output_transfer = transfers.get("machine_output_to_player") if isinstance(transfers, dict) else None
+            if (not isinstance(output_transfer, dict)
+                    or output_transfer.get("quick_move_succeeded") is not True
+                    or output_transfer.get("source_menu_index") != 1
+                    or output_transfer.get("source_container_index") != 1
+                    or output_transfer.get("item_id") != "minecraft:milk_bucket"
+                    or any(type(output_transfer.get(key)) is not int or output_transfer[key] != value for key, value in (
+                        ("source_count_before", 1), ("moved_count", 1), ("source_count_after", 0),
+                        ("destination_inventory_count_after", 1)))
+                    or type(output_transfer.get("destination_player_inventory_index")) is not int
+                    or not 0 <= output_transfer["destination_player_inventory_index"] < 36
+                    or type(output_transfer.get("destination_menu_index")) is not int):
+                raise SmokeFailure("Native Milking proof lacks a real milk-bucket output quick-move to player inventory")
+            inventory_index = output_transfer["destination_player_inventory_index"]
+            expected_menu_index = slots + 27 + inventory_index if inventory_index < 9 else slots + inventory_index - 9
+            if output_transfer["destination_menu_index"] != expected_menu_index:
+                raise SmokeFailure("Native Milking output transfer destination does not match the live player slot")
     near_end = captures_by_name["small_freezer-near-end.png"]
     near_end_image = image_dir / "small_freezer-near-end.png"
     near_end_data = near_end_image.read_bytes()
@@ -494,7 +566,7 @@ def main() -> int:
     parser.add_argument("--smelter-window-height", type=int, choices=(260, 720), default=720)
     parser.add_argument("--smelter-pr-head-sha", default=os.environ.get("IEDCTR_PR_HEAD_SHA", ""))
     parser.add_argument("--corrected-machine-gui-only", action="store_true",
-                        help="Capture all six corrected MachineScreen menus in an isolated native client")
+                        help="Capture all seven corrected MachineScreen menus in an isolated native client")
     parser.add_argument("--machine-gui-language", choices=("en_us", "fr_fr"), default="en_us")
     parser.add_argument("--machine-gui-window-height", type=int, choices=(260, 720), default=720)
     parser.add_argument("--machine-gui-pr-head-sha", default=os.environ.get("IEDCTR_PR_HEAD_SHA", ""))

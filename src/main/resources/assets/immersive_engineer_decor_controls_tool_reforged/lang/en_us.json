@@ -1029,7 +1029,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory": "Inventory",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output": "Bottom outlet",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.tank.tooltip": "%1$s - %2$s mB / %3$s mB",
-"gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Milk",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Milk",
   "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.amount": "%1$s / %2$s mB",
   "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.input": "Empty bucket",
   "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.output": "Filled bucket",
@@ -1085,5 +1085,11 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.inventory": "Inventory",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.tank": "Stored milk: %1$s",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.bucket": "Bucket input",
-  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Milk output"
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Milk output",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.animal_not_synchronized": "Animal identity is not synchronized. Portrait and name are unavailable.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.energy_cycle_unavailable": "FE and extraction-progress data are unavailable. Indicators remain neutral.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.fluid_unavailable": "Fluid storage is not implemented. No level or bonus is simulated.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.power_unavailable": "Neutral decoration, not an on/off control.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.static_scene": "Static breaking illustration. This is not the targeted block.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.work_details": "Work: %s/%s ticks; %s. %s: %s"
 }

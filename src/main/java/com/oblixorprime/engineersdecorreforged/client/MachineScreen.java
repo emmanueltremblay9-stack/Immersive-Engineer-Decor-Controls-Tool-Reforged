@@ -121,8 +121,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       } else if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
-            this.drawSmallMilkingMachineTexture(graphics, texture, x, y);
-            this.drawSmallMilkingMachineWidgets(graphics, texture, x, y);
+            RedesignedMachineArtwork.milking(graphics, (MachineMenu)this.menu, x, y);
+            return;
+         }
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+            RedesignedMachineArtwork.breaker(graphics, (MachineMenu)this.menu, x, y);
             return;
          }
          this.drawOriginalTextureBackdrop(graphics, x, y);
@@ -448,58 +451,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void drawBlockBreakerLabels(GuiGraphics graphics) {
-      MachineMenu menu = (MachineMenu)this.menu;
-      String targetName = menu.blockBreakerTargetName();
-      boolean hasTarget = blockBreakerHasTarget(targetName);
-      float hardness = menu.blockBreakerHardness();
-      String displayedTargetName = hasTarget ? targetName : blockBreakerText("target.none").getString();
-      String hardnessKey = blockBreakerHardnessKey(hardness, hasTarget);
-      Component hardnessText = hardnessKey.equals("hardness.value")
-         ? blockBreakerText(hardnessKey, this.formatBlockBreakerHardness(hardness))
-         : blockBreakerText(hardnessKey);
-      boolean redstonePowered = menu.blockBreakerRedstonePowered();
-      int progress = Mth.clamp(menu.progress(), 0, 100);
-      int state = menu.blockBreakerStatus();
-      int estimatedCost = blockBreakerEstimatedCost(hardness, hasTarget,
-         !menu.blockBreakerTargetStack().isEmpty(), menu.blockBreakerEnergyCostPerBlock());
-      boolean hasEstimatedCost = estimatedCost >= 0;
-
-      this.drawTinyCenteredString(graphics,
+      this.drawCompactMachineTitle(graphics,
          Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker").getString(),
-         105, 7, 144, -1646126);
-      this.drawTinyString(graphics, blockBreakerText("target.heading").getString(), 16, 25, 77, -1646126, false);
-      this.drawTinyString(graphics, blockBreakerText("output.heading").getString(), 109, 25, 42, -1646126, false);
-      this.drawTinyString(graphics, displayedTargetName, 48, 39, 53, -1646126, false);
-      this.drawTinyString(graphics, blockBreakerText("target.front_face").getString(), 48, 51, 53, -3949142, false);
-      this.drawTinyString(graphics, hardnessText.getString(), 48, 62, 53,
-         hardness < 0.0F ? 0xFFFF7777 : -3949142, false);
-      this.drawTinyString(graphics,
-         blockBreakerText("work.ticks", Math.max(0, menu.field(1)), Math.max(0, menu.field(3))).getString(),
-         15, 76, 82, -1646126, false);
-      this.drawTinyString(graphics, blockBreakerText("progress.percent", progress).getString(), 81, 98, 25, -1646126, false);
-      this.drawTinyString(graphics,
-         (hasEstimatedCost
-            ? blockBreakerText("cost.per_block", estimatedCost)
-            : blockBreakerText("cost.unavailable")).getString(),
-         16, 114, 86, -3949142, false);
-
-      this.drawTinyString(graphics, blockBreakerText("behavior.heading").getString(), 106, 65, 89, -1646126, false);
-      this.drawTinyString(graphics,
-         blockBreakerText("redstone.signal", blockBreakerText(redstonePowered ? "signal.high" : "signal.low")).getString(),
-         106, 78, 89, redstonePowered ? 0xFFFF7777 : 0xFF9BCB83, false);
-      this.drawTinyString(graphics, blockBreakerText("redstone.rule").getString(), 106, 88, 89, -3949142, false);
-      this.drawTinyString(graphics, blockBreakerText("energy.stored", menu.energyStored(), menu.energyCapacity()).getString(),
-         106, 98, 89, -1646126, false);
-      this.drawTinyString(graphics, blockBreakerText("input.bottom").getString(), 106, 108, 89, -3949142, false);
-      this.drawTinyString(graphics,
-         blockBreakerText("status.label", blockBreakerText(blockBreakerStatusLabelKey(state))).getString(),
-         106, 116, 89, -1646126, false);
-      this.drawTinyString(graphics, blockBreakerText(blockBreakerStatusDetailKey(state)).getString(),
-         106, 123, 89, -3949142, false);
-      this.drawTinyString(graphics, blockBreakerText("output.rear_only").getString(), 153, 43, 43, -3949142, false);
-      this.drawTinyString(graphics, blockBreakerText("legacy.pending", menu.blockBreakerPendingItems()).getString(),
-         153, 54, 43, -3949142, false);
-      this.drawTinyString(graphics, blockBreakerText("inventory").getString(), 15, 135, 45, -1646126, false);
+         128, 13, 155, TEXT);
    }
 
    static String blockBreakerStatusLabelKey(int state) {
@@ -565,57 +519,39 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private Component blockBreakerTooltip(int mouseX, int mouseY) {
       MachineMenu menu = (MachineMenu)this.menu;
-      if (menu.kind() != MachineKind.SMALL_BLOCK_BREAKER) {
-         return null;
-      }
-
+      if (menu.kind() != MachineKind.SMALL_BLOCK_BREAKER) return null;
       String targetName = menu.blockBreakerTargetName();
       boolean hasTarget = blockBreakerHasTarget(targetName);
       float hardness = menu.blockBreakerHardness();
       String hardnessKey = blockBreakerHardnessKey(hardness, hasTarget);
-      int estimatedCost = blockBreakerEstimatedCost(hardness, hasTarget,
+      Component hardnessText = hardnessKey.equals("hardness.value")
+         ? blockBreakerText(hardnessKey, this.formatBlockBreakerHardness(hardness))
+         : blockBreakerText(hardnessKey);
+      int cost = blockBreakerEstimatedCost(hardness, hasTarget,
          !menu.blockBreakerTargetStack().isEmpty(), menu.blockBreakerEnergyCostPerBlock());
-      boolean hasEstimatedCost = estimatedCost >= 0;
-
-      if (this.isHovering(22, 46, 16, 16, mouseX, mouseY) || this.isHovering(48, 38, 53, 12, mouseX, mouseY)) {
-         return hasTarget ? blockBreakerText("tooltip.target", targetName) : blockBreakerText("target.none");
-      }
-      if (this.isHovering(48, 50, 53, 11, mouseX, mouseY)) {
-         return blockBreakerText("tooltip.front_face");
-      }
-      if (this.isHovering(48, 61, 53, 11, mouseX, mouseY)) {
-         return switch (hardnessKey) {
-            case "hardness.value" -> blockBreakerText("tooltip.hardness",
-               blockBreakerText(hardnessKey, this.formatBlockBreakerHardness(hardness)));
-            case "hardness.unbreakable" -> blockBreakerText("tooltip.unbreakable");
-            default -> blockBreakerText("tooltip.hardness_unavailable");
-         };
-      }
-      if (this.isHovering(16, 113, 86, 12, mouseX, mouseY)) {
-         return hasEstimatedCost
-            ? blockBreakerText("tooltip.cost", estimatedCost)
-            : blockBreakerText("tooltip.cost_unavailable");
-      }
-      if (this.isHovering(153, 42, 43, 11, mouseX, mouseY)) {
-         return blockBreakerText("tooltip.rear_output");
-      }
-      if (this.isHovering(153, 53, 43, 11, mouseX, mouseY)) {
-         return blockBreakerText("tooltip.legacy_pending", menu.blockBreakerPendingItems());
-      }
-      if (this.isHovering(106, 78, 89, 20, mouseX, mouseY)) {
-         return blockBreakerText("tooltip.redstone");
-      }
-      if (this.isHovering(106, 98, 89, 10, mouseX, mouseY)) {
-         return blockBreakerText("tooltip.energy", menu.energyStored(), menu.energyCapacity());
-      }
-      if (this.isHovering(106, 108, 89, 8, mouseX, mouseY)) {
-         return blockBreakerText("tooltip.input");
-      }
-      if (this.isHovering(106, 116, 89, 15, mouseX, mouseY)) {
-         return blockBreakerText("tooltip.status",
+      if (this.isHovering(191, 49, 46, 12, mouseX, mouseY))
+         return blockBreakerText("tooltip.energy", menu.energyStored(), menu.energyCapacity()).copy()
+            .append("\n").append(blockBreakerText("tooltip.input"));
+      if (this.isHovering(191, 71, 46, 12, mouseX, mouseY))
+         return blockBreakerText("tooltip.fluid_unavailable");
+      if (this.isHovering(34, 106, 22, 23, mouseX, mouseY))
+         return blockBreakerText("tooltip.power_unavailable").copy().append("\n")
+            .append(blockBreakerText("redstone.signal", blockBreakerText(menu.blockBreakerRedstonePowered() ? "signal.high" : "signal.low")))
+            .append("\n").append(blockBreakerText("tooltip.redstone"));
+      if (this.isHovering(193, 88, 41, 47, mouseX, mouseY))
+         return blockBreakerText("tooltip.rear_output").copy().append("\n")
+            .append(blockBreakerText("tooltip.legacy_pending", menu.blockBreakerPendingItems()));
+      if (this.isHovering(26, 51, 39, 45, mouseX, mouseY))
+         return blockBreakerText("tooltip.target", hasTarget ? targetName : blockBreakerText("target.none").getString()).copy().append("\n")
+            .append(blockBreakerText("tooltip.hardness", hardnessText))
+            .append("\n").append(blockBreakerText("tooltip.front_face"));
+      if (this.isHovering(100, 85, 40, 41, mouseX, mouseY))
+         return blockBreakerText("tooltip.static_scene");
+      if (this.isHovering(65, 132, 132, 18, mouseX, mouseY))
+         return blockBreakerText("tooltip.work_details", Math.max(0, menu.field(1)), Math.max(0, menu.field(3)),
+            cost >= 0 ? blockBreakerText("cost.per_block", cost) : blockBreakerText("cost.unavailable"),
             blockBreakerText(blockBreakerStatusLabelKey(menu.blockBreakerStatus())),
             blockBreakerText(blockBreakerStatusDetailKey(menu.blockBreakerStatus())));
-      }
       return null;
    }
 
@@ -1161,23 +1097,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawSmallMilkingMachineLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
-      String title = Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_milking_machine").getString();
-      this.drawCompactMachineTitle(graphics, title, 110, 11, 96, TEXT);
-       String collectionLabel = smallMilkingText("label.collection.line1").getString()
-          + " " + smallMilkingText("label.collection.line2").getString();
-       this.drawScaledCenteredString(graphics, collectionLabel, 59, 80, 66, TEXT, 0.82F);
-      if (!this.isFrenchArtworkLocale()) {
-         this.drawScaledCenteredString(graphics, smallMilkingText("label.tank").getString(), 177, 42, 58, TEXT, 0.82F);
-      }
-       this.drawScaledCenteredString(
-          graphics,
-          formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()).replace(" / ", "/"),
-          177, 51, 60, TEXT, 0.82F
-       );
-      if (!this.isFrenchArtworkLocale()) {
-         this.drawScaledCenteredString(graphics, smallMilkingText("label.output").getString(), 179, 86, 41, TEXT, 0.82F);
-         this.drawScaledCenteredString(graphics, smallMilkingText("label.inventory").getString(), 63, 129, 68, TEXT, 0.82F);
-      }
+      // The header is reserved for the actual selected animal. That identity is not
+      // synchronized yet, so keep it blank instead of presenting a fictitious cow.
+      this.drawScaledCenteredString(graphics,
+         formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()),
+         178, 76, 64, TEXT, 0.82F);
    }
 
    private void maskAccumulatorLabel(
@@ -1246,13 +1170,19 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private Component smallMilkingMachineTooltip(int mouseX, int mouseY) {
-      if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_MILKING_MACHINE
-            || !(this.isHovering(101, 47, 27, 58, mouseX, mouseY) || this.isHovering(145, 39, 64, 26, mouseX, mouseY))) {
-         return null;
+      if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_MILKING_MACHINE) return null;
+      if (this.isHovering(102, 47, 26, 55, mouseX, mouseY)
+         || this.isHovering(146, 74, 64, 12, mouseX, mouseY)) {
+         MachineMenu menu = (MachineMenu)this.menu;
+         return smallMilkingText("tooltip.tank",
+            formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()));
       }
-      MachineMenu menu = (MachineMenu)this.menu;
-      String amount = formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale());
-      return smallMilkingText("tooltip.tank", amount);
+      if (this.isHovering(24, 5, 185, 20, mouseX, mouseY)
+         || this.isHovering(27, 34, 47, 41, mouseX, mouseY))
+         return smallMilkingText("tooltip.animal_not_synchronized");
+      if (this.isHovering(160, 41, 47, 32, mouseX, mouseY))
+         return smallMilkingText("tooltip.energy_cycle_unavailable");
+      return null;
    }
 
    private Locale smallMilkingLocale() {

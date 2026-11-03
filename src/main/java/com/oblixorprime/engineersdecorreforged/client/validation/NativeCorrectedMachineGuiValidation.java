@@ -22,7 +22,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GameType;
@@ -36,13 +39,14 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.BufferUtils;
 
-/** Native integrated-client captures for six corrected GUIs and the Tree Cutter badge only. */
+/** Native integrated-client captures for seven MachineScreen GUIs and the Tree Cutter badge only. */
 final class NativeCorrectedMachineGuiValidation {
    private static final String SUITE = "native-corrected-machine-gui-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0);
    private static final List<Spec> SPECS = List.of(
       new Spec(MachineKind.FLUID_BARREL, "fluid_barrel", ModBlocks.FLUID_BARREL.get(), Fluids.WATER),
       new Spec(MachineKind.SMALL_MILKING_MACHINE, "small_milking_machine", ModBlocks.SMALL_MILKING_MACHINE.get(), null),
+      new Spec(MachineKind.SMALL_BLOCK_BREAKER, "small_block_breaker", ModBlocks.SMALL_BLOCK_BREAKER.get(), null),
       new Spec(MachineKind.SMALL_SOLAR_PANEL, "small_solar_panel", ModBlocks.SMALL_SOLAR_PANEL.get(), null),
       new Spec(MachineKind.SMALL_FREEZER, "small_freezer", ModBlocks.SMALL_FREEZER.get(), null),
       new Spec(MachineKind.SMALL_FLUID_FUNNEL, "small_fluid_funnel", ModBlocks.SMALL_FLUID_FUNNEL.get(), Fluids.WATER),
@@ -55,6 +59,8 @@ final class NativeCorrectedMachineGuiValidation {
 
    private enum Stage {
       WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_HOVER,
+      WAIT_MILKING_INPUT, WAIT_MILKING_INPUT_CAPTURE, WAIT_MILKING_OUTPUT,
+      WAIT_MILKING_OUTPUT_CAPTURE, WAIT_MILKING_TRANSFER,
       WAIT_BADGE_SETUP, WAIT_BADGE_MENU, WAIT_BADGE_CAPTURE, DONE
    }
 
@@ -72,6 +78,9 @@ final class NativeCorrectedMachineGuiValidation {
    private static String executedSourceSha;
    private static String pullRequestHeadSha;
    private static String language;
+   private static JsonObject milkingCaseProof;
+   private static JsonObject milkingInputTransfer;
+   private static JsonObject milkingOutputTransfer;
    private static final JsonArray CAPTURES = new JsonArray();
    private static final JsonArray CASES = new JsonArray();
 
@@ -98,6 +107,9 @@ final class NativeCorrectedMachineGuiValidation {
       serverMachine = null;
       serverMenuId = -1;
       serverMenuIdentity = "";
+      milkingCaseProof = null;
+      milkingInputTransfer = null;
+      milkingOutputTransfer = null;
       scheduleMachine(mc, 0);
       stage = Stage.WAIT_SETUP;
    }
@@ -213,7 +225,100 @@ final class NativeCorrectedMachineGuiValidation {
             JsonObject panelCapture = CAPTURES.get(CAPTURES.size() - 1).getAsJsonObject();
             captureHoverWindow(mc, panelCapture, hover);
             JsonObject result = caseProof(mc, screen, menu, SPECS.get(specIndex));
+            if (menu.kind() == MachineKind.SMALL_MILKING_MACHINE) {
+               milkingCaseProof = result;
+               scheduleMilkingInput(mc);
+               stage = Stage.WAIT_MILKING_INPUT;
+               ticks = 0;
+               return false;
+            }
             CASES.add(result);
+            specIndex++;
+            if (specIndex >= SPECS.size()) {
+               scheduleMachine(mc, TREE_CUTTER_BADGE_SPEC);
+               stage = Stage.WAIT_BADGE_SETUP;
+               ticks = 0;
+               return false;
+            }
+            scheduleMachine(mc, specIndex);
+            stage = Stage.WAIT_SETUP;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_MILKING_INPUT -> {
+            if (++ticks > 300) throw new IllegalStateException("Milking input quick-move did not synchronize");
+            if (!pending.isDone()) return false;
+            pending.join();
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != MachineKind.SMALL_MILKING_MACHINE || menu.containerId != serverMenuId) return false;
+            if (!milkingInputVisible(menu, mc.player.getInventory()) || ticks < 6) return false;
+            screen.setSuppressTooltipsForPanelCapture(true);
+            moveCursorOutsidePanel(mc);
+            stage = Stage.WAIT_MILKING_INPUT_CAPTURE;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_MILKING_INPUT_CAPTURE -> {
+            if (++ticks < 3) return false;
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != MachineKind.SMALL_MILKING_MACHINE || menu.containerId != serverMenuId
+               || !milkingInputVisible(menu, mc.player.getInventory())) {
+               throw new IllegalStateException("Milking input ItemStack changed before its native capture");
+            }
+            capture(mc, screen, menu, SPECS.get(specIndex), "input-occupied");
+            scheduleMilkingOutput(mc);
+            stage = Stage.WAIT_MILKING_OUTPUT;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_MILKING_OUTPUT -> {
+            if (++ticks > 300) throw new IllegalStateException("Milking output ItemStack did not synchronize");
+            if (!pending.isDone()) return false;
+            pending.join();
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != MachineKind.SMALL_MILKING_MACHINE || menu.containerId != serverMenuId) return false;
+            if (!milkingOutputVisible(menu, mc.player.getInventory()) || ticks < 6) return false;
+            stage = Stage.WAIT_MILKING_OUTPUT_CAPTURE;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_MILKING_OUTPUT_CAPTURE -> {
+            if (++ticks < 3) return false;
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != MachineKind.SMALL_MILKING_MACHINE || menu.containerId != serverMenuId
+               || !milkingOutputVisible(menu, mc.player.getInventory())) {
+               throw new IllegalStateException("Milking output ItemStack changed before its native capture");
+            }
+            capture(mc, screen, menu, SPECS.get(specIndex), "output-occupied");
+            scheduleMilkingOutputTransfer(mc);
+            stage = Stage.WAIT_MILKING_TRANSFER;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_MILKING_TRANSFER -> {
+            if (++ticks > 300) throw new IllegalStateException("Milking output quick-move did not synchronize");
+            if (!pending.isDone()) return false;
+            pending.join();
+            if (!(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != MachineKind.SMALL_MILKING_MACHINE || menu.containerId != serverMenuId) return false;
+            if (!milkingTransferVisible(menu, mc.player.getInventory()) || ticks < 6) return false;
+            require(milkingCaseProof != null && milkingInputTransfer != null && milkingOutputTransfer != null,
+               "Milking real-item quick-move proof is incomplete");
+            JsonArray capturedStates = milkingCaseProof.getAsJsonArray("captured_states");
+            capturedStates.add("input-occupied");
+            capturedStates.add("output-occupied");
+            JsonObject itemTransfers = new JsonObject();
+            itemTransfers.add("player_to_machine_input", milkingInputTransfer.deepCopy());
+            itemTransfers.add("machine_output_to_player", milkingOutputTransfer.deepCopy());
+            milkingCaseProof.add("slot_item_transfers", itemTransfers);
+            CASES.add(milkingCaseProof);
+            milkingCaseProof = null;
+            milkingInputTransfer = null;
+            milkingOutputTransfer = null;
             specIndex++;
             if (specIndex >= SPECS.size()) {
                scheduleMachine(mc, TREE_CUTTER_BADGE_SPEC);
@@ -340,6 +445,102 @@ final class NativeCorrectedMachineGuiValidation {
       });
    }
 
+   private static void scheduleMilkingInput(Minecraft mc) {
+      UUID playerId = mc.player.getUUID();
+      var server = mc.getSingleplayerServer();
+      pending = server.submit(() -> {
+         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
+         require(player != null && serverMachine != null, "Milking input fixture lost its live machine");
+         require(player.containerMenu instanceof MachineMenu, "Milking input fixture lost its live menu");
+         MachineMenu menu = (MachineMenu)player.containerMenu;
+         require(menu.kind() == MachineKind.SMALL_MILKING_MACHINE && menu.visibleMachineSlots() == 2,
+            "Milking input fixture opened the wrong menu");
+         setState(serverMachine, SPECS.get(specIndex), 0);
+         require(serverMachine.getItem(0).isEmpty() && serverMachine.getItem(1).isEmpty(),
+            "Milking input fixture started with a nonempty machine slot");
+         player.getInventory().setItem(0, new ItemStack(Items.BUCKET, 3));
+         int sourceMenuIndex = menu.visibleMachineSlots() + 27;
+         require(menu.getSlot(sourceMenuIndex).getSlotIndex() == 0
+            && menu.getSlot(sourceMenuIndex).getItem().is(Items.BUCKET)
+            && menu.getSlot(sourceMenuIndex).getItem().getCount() == 3,
+            "Milking fixture bucket stack is not in hotbar slot zero");
+         ItemStack moved = menu.quickMoveStack(player, sourceMenuIndex);
+         ItemStack input = serverMachine.getItem(0);
+         require(moved.is(Items.BUCKET) && moved.getCount() == 3
+            && input.is(Items.BUCKET) && input.getCount() == 3
+            && player.getInventory().getItem(0).isEmpty() && serverMachine.getItem(1).isEmpty(),
+            "Milking bucket quick-move did not place all three real items in the input slot");
+         milkingInputTransfer = new JsonObject();
+         milkingInputTransfer.addProperty("source_menu_index", sourceMenuIndex);
+         milkingInputTransfer.addProperty("source_player_inventory_index", 0);
+         milkingInputTransfer.addProperty("destination_container_index", 0);
+         milkingInputTransfer.addProperty("item_id", itemId(moved));
+         milkingInputTransfer.addProperty("source_count_before", 3);
+         milkingInputTransfer.addProperty("moved_count", moved.getCount());
+         milkingInputTransfer.addProperty("source_count_after", player.getInventory().getItem(0).getCount());
+         milkingInputTransfer.addProperty("destination_item_id", itemId(input));
+         milkingInputTransfer.addProperty("destination_count_after", input.getCount());
+         milkingInputTransfer.addProperty("quick_move_succeeded", true);
+         serverMachine.setChanged();
+         menu.broadcastChanges();
+      });
+   }
+
+   private static void scheduleMilkingOutput(Minecraft mc) {
+      UUID playerId = mc.player.getUUID();
+      var server = mc.getSingleplayerServer();
+      pending = server.submit(() -> {
+         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
+         require(player != null && serverMachine != null, "Milking output fixture lost its live machine");
+         require(player.containerMenu instanceof MachineMenu, "Milking output fixture lost its live menu");
+         MachineMenu menu = (MachineMenu)player.containerMenu;
+         require(menu.kind() == MachineKind.SMALL_MILKING_MACHINE
+            && serverMachine.getItem(0).is(Items.BUCKET) && serverMachine.getItem(0).getCount() == 3
+            && serverMachine.getItem(1).isEmpty(), "Milking output fixture changed its input slot");
+         serverMachine.setItem(1, new ItemStack(Items.MILK_BUCKET));
+         serverMachine.setChanged();
+         menu.broadcastChanges();
+      });
+   }
+
+   private static void scheduleMilkingOutputTransfer(Minecraft mc) {
+      UUID playerId = mc.player.getUUID();
+      var server = mc.getSingleplayerServer();
+      pending = server.submit(() -> {
+         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
+         require(player != null && serverMachine != null, "Milking output transfer lost its live machine");
+         require(player.containerMenu instanceof MachineMenu, "Milking output transfer lost its live menu");
+         MachineMenu menu = (MachineMenu)player.containerMenu;
+         require(menu.kind() == MachineKind.SMALL_MILKING_MACHINE
+            && serverMachine.getItem(0).is(Items.BUCKET) && serverMachine.getItem(0).getCount() == 3
+            && serverMachine.getItem(1).is(Items.MILK_BUCKET) && serverMachine.getItem(1).getCount() == 1
+            && countInventoryItem(player.getInventory(), Items.MILK_BUCKET) == 0,
+            "Milking output transfer fixture did not start with one real milk bucket");
+         ItemStack moved = menu.quickMoveStack(player, 1);
+         int inventorySlot = findInventorySlot(player.getInventory(), Items.MILK_BUCKET);
+         int menuSlot = findMenuItemSlot(menu, Items.MILK_BUCKET);
+         require(moved.is(Items.MILK_BUCKET) && moved.getCount() == 1
+            && serverMachine.getItem(1).isEmpty()
+            && countInventoryItem(player.getInventory(), Items.MILK_BUCKET) == 1
+            && inventorySlot >= 0 && menuSlot >= menu.visibleMachineSlots(),
+            "Milking milk-bucket quick-move did not transfer the real output stack to player inventory");
+         milkingOutputTransfer = new JsonObject();
+         milkingOutputTransfer.addProperty("source_menu_index", 1);
+         milkingOutputTransfer.addProperty("source_container_index", 1);
+         milkingOutputTransfer.addProperty("destination_player_inventory_index", inventorySlot);
+         milkingOutputTransfer.addProperty("destination_menu_index", menuSlot);
+         milkingOutputTransfer.addProperty("item_id", itemId(moved));
+         milkingOutputTransfer.addProperty("source_count_before", 1);
+         milkingOutputTransfer.addProperty("moved_count", moved.getCount());
+         milkingOutputTransfer.addProperty("source_count_after", serverMachine.getItem(1).getCount());
+         milkingOutputTransfer.addProperty("destination_inventory_count_after",
+            countInventoryItem(player.getInventory(), Items.MILK_BUCKET));
+         milkingOutputTransfer.addProperty("quick_move_succeeded", true);
+         serverMachine.setChanged();
+         menu.broadcastChanges();
+      });
+   }
+
    private static void setState(MachineBlockEntity machine, Spec spec, int state) {
       int fraction = switch (state) { case 0 -> 0; case 1 -> 1; case 2 -> 2; default -> throw new IllegalArgumentException("Unknown GUI state"); };
       if (spec.fluid() != null || spec.kind() == MachineKind.SMALL_MILKING_MACHINE) {
@@ -354,6 +555,8 @@ final class NativeCorrectedMachineGuiValidation {
       } else if (spec.kind() == MachineKind.SMALL_SOLAR_PANEL) {
          int amount = fraction * 64000 / 2;
          machine.dataAccessForTests().set(3, amount / 100);
+      } else if (spec.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         machine.dataAccessForTests().set(10, fraction * 32000 / 2);
       } else if (spec.kind() == MachineKind.SMALL_FREEZER) {
          int amount = fraction * 16000 / 2;
          machine.dataAccessForTests().set(3, amount);
@@ -374,6 +577,64 @@ final class NativeCorrectedMachineGuiValidation {
          ? menu.fluidAmount() : menu.energyStored();
       if (spec.kind() == MachineKind.SMALL_FREEZER && state == 1) return visible > 0 && menu.freezerProgressTicks() >= 30;
       return visible == expected;
+   }
+
+   private static boolean milkingInputVisible(MachineMenu menu, Inventory inventory) {
+      return menu.getSlot(0).getItem().is(Items.BUCKET) && menu.getSlot(0).getItem().getCount() == 3
+         && menu.getSlot(1).getItem().isEmpty() && countInventoryItem(inventory, Items.BUCKET) == 0;
+   }
+
+   private static boolean milkingOutputVisible(MachineMenu menu, Inventory inventory) {
+      return menu.getSlot(0).getItem().is(Items.BUCKET) && menu.getSlot(0).getItem().getCount() == 3
+         && countInventoryItem(inventory, Items.BUCKET) == 0
+         && menu.getSlot(1).getItem().is(Items.MILK_BUCKET) && menu.getSlot(1).getItem().getCount() == 1
+         && countInventoryItem(inventory, Items.MILK_BUCKET) == 0;
+   }
+
+   private static boolean milkingTransferVisible(MachineMenu menu, Inventory inventory) {
+      return menu.getSlot(0).getItem().is(Items.BUCKET) && menu.getSlot(0).getItem().getCount() == 3
+         && menu.getSlot(1).getItem().isEmpty() && countInventoryItem(inventory, Items.MILK_BUCKET) == 1;
+   }
+
+   private static int countInventoryItem(Inventory inventory, Item item) {
+      int count = 0;
+      for (int index = 0; index < inventory.getContainerSize(); index++) {
+         ItemStack stack = inventory.getItem(index);
+         if (stack.is(item)) count += stack.getCount();
+      }
+      return count;
+   }
+
+   private static int findInventorySlot(Inventory inventory, Item item) {
+      for (int index = 0; index < inventory.getContainerSize(); index++) {
+         if (inventory.getItem(index).is(item)) return index;
+      }
+      return -1;
+   }
+
+   private static int findMenuItemSlot(MachineMenu menu, Item item) {
+      for (int index = menu.visibleMachineSlots(); index < menu.slots.size(); index++) {
+         if (menu.getSlot(index).getItem().is(item)) return index;
+      }
+      return -1;
+   }
+
+   private static String itemId(ItemStack stack) {
+      return BuiltInRegistries.ITEM.getKey(stack.isEmpty() ? Items.AIR : stack.getItem()).toString();
+   }
+
+   private static JsonArray machineSlotItems(MachineMenu menu) {
+      JsonArray result = new JsonArray();
+      for (int index = 0; index < menu.visibleMachineSlots(); index++) {
+         ItemStack stack = menu.getSlot(index).getItem();
+         JsonObject proof = new JsonObject();
+         proof.addProperty("container_index", menu.getSlot(index).getSlotIndex());
+         proof.addProperty("item_id", itemId(stack));
+         proof.addProperty("count", stack.getCount());
+         proof.addProperty("empty", stack.isEmpty());
+         result.add(proof);
+      }
+      return result;
    }
 
    private static void verifyMenuGeometry(MachineScreen screen, MachineMenu menu, Spec spec) {
@@ -479,6 +740,9 @@ final class NativeCorrectedMachineGuiValidation {
       if (menu.kind() == MachineKind.SMALL_FREEZER) {
          capture.addProperty("freezer_progress_ticks", menu.freezerProgressTicks());
       }
+      if (menu.kind() == MachineKind.SMALL_MILKING_MACHINE) {
+         capture.add("machine_slot_items", machineSlotItems(menu));
+      }
       CAPTURES.add(capture);
       return capture;
    }
@@ -552,8 +816,10 @@ final class NativeCorrectedMachineGuiValidation {
 
    private static void writeProof(Minecraft mc, String runNonce, JsonObject treeCutterBadgeCapture) throws Exception {
       require(nonce.equals(runNonce) && CASES.size() == SPECS.size()
-         && CAPTURES.size() == SPECS.size() * STATES.length + 2
+         && CAPTURES.size() == SPECS.size() * STATES.length + 4
          && hasCapture("small_freezer-near-end.png")
+         && hasCapture("small_milking_machine-input-occupied.png")
+         && hasCapture("small_milking_machine-output-occupied.png")
          && hasCapture("small_tree_cutter-badge-only.png"),
          "Corrected GUI capture matrix is incomplete");
       String selectedLanguage = mc.getLanguageManager().getSelected();

@@ -84,17 +84,20 @@ public record MachineLayout(
 
    public int playerSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Player inventory column out of range");
-      return this.playerInventoryX + column * this.playerColumnSpacing;
+      return "block_breaker_rp_v3/background".equals(this.textureName)
+         ? BlockBreakerRedesignLayout.playerSlotX(column) : this.playerInventoryX + column * this.playerColumnSpacing;
    }
 
    public int playerSlotY(int row) {
       if (row < 0 || row >= 3) throw new IllegalArgumentException("Player inventory row out of range");
-      return this.playerInventoryY + row * this.playerRowSpacing;
+      return "block_breaker_rp_v3/background".equals(this.textureName)
+         ? BlockBreakerRedesignLayout.rowY(row) : this.playerInventoryY + row * this.playerRowSpacing;
    }
 
    public int hotbarSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Hotbar column out of range");
-      return this.hotbarX + column * this.hotbarColumnSpacing;
+      return "block_breaker_rp_v3/background".equals(this.textureName)
+         ? BlockBreakerRedesignLayout.hotbarX(column) : this.hotbarX + column * this.hotbarColumnSpacing;
    }
 
    public boolean isOutputSlot(int containerIndex) {
@@ -143,17 +146,12 @@ public record MachineLayout(
 
    private static MachineLayout blockBreaker() {
       return new MachineLayout(
-         209,
-         235,
-         23,
-         144,
-         23,
-         202,
-         List.of(new MachineLayout.MachineSlot(0, 118, 38, "Collected output")),
-         List.of(),
-         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
-         "block_breaker_v081/background"
-      );
+         BlockBreakerRedesignLayout.IMAGE_WIDTH, BlockBreakerRedesignLayout.IMAGE_HEIGHT,
+         BlockBreakerRedesignLayout.playerSlotX(0), BlockBreakerRedesignLayout.rowY(0),
+         BlockBreakerRedesignLayout.hotbarX(0), BlockBreakerRedesignLayout.hotbarY(),
+         List.of(new MachineLayout.MachineSlot(0, BlockBreakerRedesignLayout.OUTPUT_X,
+            BlockBreakerRedesignLayout.OUTPUT_Y, "Collected output")),
+         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "block_breaker_rp_v3/background");
    }
 
    /** Two physical item slots; old Heat index 1 stays in NBT but is never shown as fuel. */
@@ -352,23 +350,16 @@ public record MachineLayout(
 
    private static MachineLayout smallMilkingMachine() {
       return new MachineLayout(
-         216,
-         210,
-         27,
-         136,
-         27,
-         184,
-         List.of(
-            new MachineLayout.MachineSlot(0, 46, 101, "Bucket input", false),
-            new MachineLayout.MachineSlot(1, 162, 101, "Milk output", true)
-         ),
-         List.of(),
-         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
-         "small_milking_machine_gui",
-         18,
-         16,
-         18
-      );
+         MilkingRedesignLayout.WIDTH, MilkingRedesignLayout.HEIGHT,
+         MilkingRedesignLayout.PLAYER_X, MilkingRedesignLayout.PLAYER_Y,
+         MilkingRedesignLayout.PLAYER_X, MilkingRedesignLayout.HOTBAR_Y,
+         List.of(new MachineLayout.MachineSlot(0, MilkingRedesignLayout.INPUT_SLOT.x(),
+                    MilkingRedesignLayout.INPUT_SLOT.y(), "Bucket input", false),
+                 new MachineLayout.MachineSlot(1, MilkingRedesignLayout.OUTPUT_SLOT.x(),
+                    MilkingRedesignLayout.OUTPUT_SLOT.y(), "Milk output", true)),
+         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "milking_redesign_v1/background",
+         MilkingRedesignLayout.SLOT_SPACING, MilkingRedesignLayout.SLOT_SPACING,
+         MilkingRedesignLayout.SLOT_SPACING);
    }
 
 
