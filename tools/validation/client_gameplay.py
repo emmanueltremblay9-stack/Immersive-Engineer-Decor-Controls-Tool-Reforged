@@ -445,6 +445,19 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             raise SmokeFailure(f"Native corrected-machine hover capture lacks hitbox evidence: {machine}")
 
         if machine == "small_milking_machine":
+            tank_hashes = set()
+            for state in ("empty", "mid", "full-hover"):
+                tank = captures_by_name[f"{machine}-{state}.png"].get("tank_pixels")
+                if (not isinstance(tank, dict)
+                        or any(type(tank.get(key)) is not int or tank[key] != value for key, value in (
+                            ("x", 104), ("y", 49), ("width", 22), ("height", 51)))
+                        or tank.get("encoding") != "rgba8-row-major"
+                        or not isinstance(tank.get("sha256"), str)
+                        or re.fullmatch(r"[0-9a-f]{64}", tank["sha256"]) is None):
+                    raise SmokeFailure(f"Native Milking {state} capture lacks the exact tank pixel-region hash")
+                tank_hashes.add(tank["sha256"])
+            if len(tank_hashes) != 3:
+                raise SmokeFailure("Native Milking empty/mid/full tank pixels must be three distinct renderings")
             occupied_states = {
                 "input-occupied": [
                     {"container_index": 0, "item_id": "minecraft:bucket", "count": 3, "empty": False},

@@ -329,6 +329,12 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 capture["panel_cursor_outside"] = True
                 capture["panel_tooltips_suppressed"] = True
                 if machine == "small_milking_machine":
+                    capture["tank_pixels"] = {
+                        "x": 104, "y": 49, "width": 22, "height": 51,
+                        "encoding": "rgba8-row-major",
+                        # Synthetic metadata exercises the gate; not a native render claim.
+                        "sha256": hashlib.sha256(state.encode()).hexdigest(),
+                    }
                     capture["machine_slot_items"] = [
                         {"container_index": 0, "item_id": "minecraft:air", "count": 0, "empty": True},
                         {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
@@ -477,6 +483,27 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         near_end = next(item for item in proof["screenshots"] if item["name"] == "small_freezer-near-end.png")
         near_end["freezer_progress_ticks"] = 0
         with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_missing_malformed_or_duplicate_milking_tank_pixels(self):
+        name = "small_milking_machine-mid.png"
+        for mutation in ("missing", "hash", "roi", "encoding", "duplicate"):
+            with self.subTest(mutation=mutation):
+                proof = copy.deepcopy(self.proof)
+                capture = next(item for item in proof["screenshots"] if item["name"] == name)
+                if mutation == "missing":
+                    del capture["tank_pixels"]
+                elif mutation == "hash":
+                    capture["tank_pixels"]["sha256"] = "not-a-hash"
+                elif mutation == "roi":
+                    capture["tank_pixels"]["x"] = 146  # Amount label is not tank evidence.
+                elif mutation == "encoding":
+                    capture["tank_pixels"]["encoding"] = "png-file"
+                else:
+                    full = next(item for item in proof["screenshots"]
+                                if item["name"] == "small_milking_machine-full-hover.png")
+                    capture["tank_pixels"]["sha256"] = full["tank_pixels"]["sha256"]
+                with self.assertRaises(SmokeFailure):
+                    self.check(proof)
 
     def test_rejects_incorrect_milking_items_or_quick_move_counts(self):
         proof = copy.deepcopy(self.proof)

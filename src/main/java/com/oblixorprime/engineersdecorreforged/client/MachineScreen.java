@@ -1099,9 +1099,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineMenu menu = (MachineMenu)this.menu;
       // The header is reserved for the actual selected animal. That identity is not
       // synchronized yet, so keep it blank instead of presenting a fictitious cow.
-      this.drawScaledCenteredString(graphics,
-         formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()),
-         178, 76, 64, TEXT, 0.82F);
+      // Use two full-pixel lines: shrinking the complete ratio makes individual
+      // Minecraft font strokes disappear in the 260-pixel stress-test window.
+      String amount = formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale());
+      String[] parts = amount.split("/", 2);
+      this.drawScaledCenteredString(graphics, parts[0].trim() + " mB", 178, 75, 64, TEXT, 1.0F);
+      if (parts.length == 2) this.drawScaledCenteredString(graphics, "/ " + parts[1].trim(), 178, 84, 64, TEXT, 1.0F);
    }
 
    private void maskAccumulatorLabel(

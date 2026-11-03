@@ -707,6 +707,7 @@ final class NativeCorrectedMachineGuiValidation {
       Files.createDirectories(screenshots);
       Path output = screenshots.resolve(name);
       require(!Files.exists(output), "Refusing to overwrite a corrected GUI capture");
+      JsonObject tankPixels = null;
       try (NativeImage full = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
          require(cropX >= 0 && cropY >= 0 && cropX + cropWidth <= full.getWidth()
             && cropY + cropHeight <= full.getHeight(), "GUI-only screenshot crop exceeds the live framebuffer");
@@ -715,6 +716,9 @@ final class NativeCorrectedMachineGuiValidation {
                for (int px = 0; px < cropWidth; px++) {
                   crop.setPixelRGBA(px, py, full.getPixelRGBA(cropX + px, cropY + py));
                }
+            }
+            if (spec.kind() == MachineKind.SMALL_MILKING_MACHINE) {
+               tankPixels = milkingTankPixels(crop, scaleX, scaleY);
             }
             crop.writeToFile(output);
          }
@@ -742,9 +746,51 @@ final class NativeCorrectedMachineGuiValidation {
       }
       if (menu.kind() == MachineKind.SMALL_MILKING_MACHINE) {
          capture.add("machine_slot_items", machineSlotItems(menu));
+         capture.add("tank_pixels", tankPixels);
       }
       CAPTURES.add(capture);
       return capture;
+   }
+
+   /** Hash framebuffer pixels, not the fluid data or the amount label outside the tank. */
+   private static JsonObject milkingTankPixels(NativeImage image, double scaleX, double scaleY) throws Exception {
+      int x = (int)Math.round(104 * scaleX);
+      int y = (int)Math.round(49 * scaleY);
+      int width = (int)Math.round(126 * scaleX) - x;
+      int height = (int)Math.round(100 * scaleY) - y;
+      require(width > 0 && height > 0 && x + width <= image.getWidth() && y + height <= image.getHeight(),
+         "Milking tank pixel region exceeds its native capture");
+      MessageDigest digest = MessageDigest.getInstance("SHA-256");
+      for (int py = y; py < y + height; py++) {
+         for (int px = x; px < x + width; px++) {
+            int pixel = image.getPixelRGBA(px, py);
+            // NativeImage's ABGR integer, serialized low byte first: R, G, B, A.
+            for (int shift = 0; shift < 32; shift += 8) digest.update((byte)(pixel >>> shift));
+         }
+      }
+      JsonObject result = new JsonObject();
+      result.addProperty("x", x);
+      result.addProperty("y", y);
+      result.addProperty("width", width);
+      result.addProperty("height", height);
+      result.addProperty("encoding", "rgba8-row-major");
+      result.addProperty("sha256", HexFormat.of().formatHex(digest.digest()));
+      return result;
+   }
+
+   private static void verifyMilkingTankPixelStates() {
+      java.util.Set<String> hashes = new java.util.HashSet<>();
+      for (String state : List.of("empty", "mid", "full-hover")) {
+         String name = "small_milking_machine-" + state + ".png";
+         JsonObject found = null;
+         for (int index = 0; index < CAPTURES.size(); index++) {
+            JsonObject candidate = CAPTURES.get(index).getAsJsonObject();
+            if (name.equals(candidate.get("name").getAsString())) found = candidate;
+         }
+         require(found != null && found.has("tank_pixels"), "Missing Milking native tank pixels for " + state);
+         String hash = found.getAsJsonObject("tank_pixels").get("sha256").getAsString();
+         require(hashes.add(hash), "Milking empty/mid/full tank pixels must be three distinct native renderings");
+      }
    }
 
    private static void captureHoverWindow(Minecraft mc, JsonObject panelCapture, JsonObject hover) throws Exception {
@@ -822,6 +868,7 @@ final class NativeCorrectedMachineGuiValidation {
          && hasCapture("small_milking_machine-output-occupied.png")
          && hasCapture("small_tree_cutter-badge-only.png"),
          "Corrected GUI capture matrix is incomplete");
+      verifyMilkingTankPixelStates();
       String selectedLanguage = mc.getLanguageManager().getSelected();
       require(language.equals(selectedLanguage), "Minecraft did not load the requested GUI language");
       JsonObject proof = new JsonObject();

@@ -27,10 +27,10 @@ final class RedesignedMachineArtwork {
             479, 228, 296, 802);
          graphics.disableScissor();
       }
-      graphics.enableScissor(x + 102, y + 47, x + 128, y + 102);
-      part(graphics, "milking_redesign_v1/glass", x + 102, y + 47, 26, 55,
-         432, 217, 387, 832);
-      graphics.disableScissor();
+      // The supplied glass layer has opaque blue/black artifacts and hides the live
+      // milk at every level. Keep its source file intact, but do not render it until
+      // a corrected transparent layer is available. The background already frames
+      // the tank and the milk stays clipped inside that existing frame.
       // FE, extraction cycle and selected animal are not synchronized for Milking.
       // Leave those areas neutral. Do not claim a detected animal or paint fake energy.
    }
