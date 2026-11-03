@@ -16,13 +16,22 @@ public class MachinePlayerSlotHitboxTest {
    }
 
    @Test
-   public void sixteenPixelRowsMeetAtEdgesAndDoNotShareAnyHoverPixel() {
-      for (MachineKind kind : List.of(MachineKind.SMALL_MILKING_MACHINE, MachineKind.SMALL_SOLAR_PANEL)) {
+   public void solarSixteenPixelRowsMeetAtEdgesAndDoNotShareAnyHoverPixel() {
+      for (MachineKind kind : List.of(MachineKind.SMALL_SOLAR_PANEL)) {
          MachineLayout layout = MachineLayout.forKind(kind);
          assertEquals(layout.playerSlotY(0) + 16, layout.playerSlotY(1));
          assertEquals(layout.playerSlotY(1) + 16, layout.playerSlotY(2));
          assertEquals(layout.playerSlotY(2) + 16, layout.hotbarY());
       }
+   }
+
+   @Test
+   public void redesignedMilkingRowsKeepTheArtworkGapsBetweenSixteenPixelHitboxes() {
+      MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_MILKING_MACHINE);
+      assertEquals(layout.playerSlotY(0) + 20, layout.playerSlotY(1));
+      assertEquals(layout.playerSlotY(1) + 20, layout.playerSlotY(2));
+      assertEquals(layout.playerSlotY(2) + 23, layout.hotbarY());
+      assertNoHitboxOverlap(layout);
    }
 
    private static void assertNoHitboxOverlap(MachineLayout layout) {
