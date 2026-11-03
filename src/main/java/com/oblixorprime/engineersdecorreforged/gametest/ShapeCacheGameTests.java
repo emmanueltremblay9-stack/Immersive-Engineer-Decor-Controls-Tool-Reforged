@@ -31,6 +31,80 @@ public final class ShapeCacheGameTests {
       h.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 1200)
+   public static void catwalk_shapes_share_geometry_across_fluid_and_payment_states(GameTestHelper h) {
+      verifyCatwalkGeometryCache(h, ModBlocks.STEEL_CATWALK.get(), false);
+      verifyCatwalkGeometryCache(h, ModBlocks.STEEL_RAILING.get(), true);
+      h.succeed();
+   }
+
+   private static void verifyCatwalkGeometryCache(GameTestHelper h, Block block, boolean railingOnly) {
+      var states = block.getStateDefinition().getPossibleStates();
+      h.assertValueEqual(states.size(), 7680, "all catwalk fluid, rail and payment states are exercised");
+      var outlines = new VoxelShape[16];
+      var collisions = new VoxelShape[16];
+      var pos = h.absolutePos(new BlockPos(2, 2, 2));
+      var context = CollisionContext.empty();
+      for (BlockState state : states) {
+         int sides = (state.getValue(NORTH) ? 1 : 0) | (state.getValue(EAST) ? 2 : 0)
+            | (state.getValue(SOUTH) ? 4 : 0) | (state.getValue(WEST) ? 8 : 0);
+         int geometry = railingOnly && sides == 0 ? 1 : sides;
+         var outline = state.getShape(h.getLevel(), pos, context);
+         var collision = state.getCollisionShape(h.getLevel(), pos, context);
+         if (outlines[geometry] == null) {
+            outlines[geometry] = outline;
+            collisions[geometry] = collision;
+            VoxelShape legacyOutline = legacyCatwalkOutline(state, railingOnly);
+            VoxelShape legacyCollision = legacyCatwalkCollision(state, railingOnly);
+            h.assertTrue(!Shapes.joinIsNotEmpty(outline, legacyOutline, BooleanOp.NOT_SAME),
+               "outline matches frozen pre-cache geometry: " + geometry);
+            h.assertTrue(!Shapes.joinIsNotEmpty(collision, legacyCollision, BooleanOp.NOT_SAME),
+               "collision matches frozen pre-cache geometry and fence height: " + geometry);
+         } else {
+            h.assertTrue(outlines[geometry] == outline, "outline shares one instance per rail-side geometry: " + geometry);
+            h.assertTrue(collisions[geometry] == collision, "collision shares one instance per rail-side geometry: " + geometry);
+         }
+         h.assertTrue(outline == state.getShape(h.getLevel(), pos, context), "repeated outline query reuses catwalk cache");
+         h.assertTrue(collision == state.getCollisionShape(h.getLevel(), pos, context), "repeated collision query reuses catwalk cache");
+      }
+      int expectedGeometries = railingOnly ? 15 : 16;
+      int actualGeometries = 0;
+      for (int geometry = 0; geometry < outlines.length; geometry++) {
+         if (outlines[geometry] != null) actualGeometries++;
+      }
+      h.assertValueEqual(actualGeometries, expectedGeometries, "each valid rail-side geometry is present");
+   }
+
+   /** Independent copy of the original per-state shape builders, kept as the geometry oracle. */
+   private static VoxelShape legacyCatwalkOutline(BlockState state, boolean railingOnly) {
+      boolean north = state.getValue(NORTH);
+      boolean east = state.getValue(EAST);
+      boolean south = state.getValue(SOUTH);
+      boolean west = state.getValue(WEST);
+      boolean any = north || east || south || west;
+      VoxelShape shape = railingOnly ? Shapes.empty() : Block.box(0, 0, 0, 16, 3, 16);
+      if (north || railingOnly && !any) shape = Shapes.or(shape, Block.box(0, 3, 0, 16, 16, 2));
+      if (east) shape = Shapes.or(shape, Block.box(14, 3, 0, 16, 16, 16));
+      if (south) shape = Shapes.or(shape, Block.box(0, 3, 14, 16, 16, 16));
+      if (west) shape = Shapes.or(shape, Block.box(0, 3, 0, 2, 16, 16));
+      return shape;
+   }
+
+   private static VoxelShape legacyCatwalkCollision(BlockState state, boolean railingOnly) {
+      boolean north = state.getValue(NORTH);
+      boolean east = state.getValue(EAST);
+      boolean south = state.getValue(SOUTH);
+      boolean west = state.getValue(WEST);
+      boolean legacyNorth = railingOnly && !(north || east || south || west);
+      double top = railingOnly ? 24.0 : 27.0;
+      VoxelShape shape = railingOnly ? Shapes.empty() : Block.box(0, 0, 0, 16, 3, 16);
+      if (legacyNorth || north) shape = Shapes.or(shape, Block.box(0, 3, 0, 16, top, 2));
+      if (east) shape = Shapes.or(shape, Block.box(14, 3, 0, 16, top, 16));
+      if (south) shape = Shapes.or(shape, Block.box(0, 3, 14, 16, top, 16));
+      if (west) shape = Shapes.or(shape, Block.box(0, 3, 0, 2, top, 16));
+      return shape;
+   }
+
    private static void verify(GameTestHelper h, Block block, boolean stairs, int count) {
       var properties = new java.util.HashSet<>(block.getStateDefinition().getProperties());
       var expectedProperties = stairs

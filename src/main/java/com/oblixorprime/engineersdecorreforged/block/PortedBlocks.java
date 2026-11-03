@@ -112,6 +112,11 @@ public final class PortedBlocks {
    private static final VoxelShape EAST_RAIL_SHAPE = Block.box(14.0, 3.0, 0.0, 16.0, 16.0, 16.0);
    private static final VoxelShape SOUTH_RAIL_SHAPE = Block.box(0.0, 3.0, 14.0, 16.0, 16.0, 16.0);
    private static final VoxelShape WEST_RAIL_SHAPE = Block.box(0.0, 3.0, 0.0, 2.0, 16.0, 16.0);
+
+   // Fluid and payment properties multiply states, but catwalk geometry depends only on four rail sides.
+   private static final VoxelShape[][] CATWALK_OUTLINES = { catwalkShapes(false), catwalkShapes(true) };
+   private static final VoxelShape[] RAILING_OUTLINES = railingShapes();
+   private static final VoxelShape[][] RAILING_COLLISIONS = railingCollisionShapes();
    private static final VoxelShape TABLE_SHAPE = Shapes.or(
       Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 16.0),
       new VoxelShape[]{
@@ -248,47 +253,46 @@ public final class PortedBlocks {
       };
    }
 
+   private static int catwalkSideMask(BlockState state) {
+      return (state.getValue(NORTH) ? 1 : 0) | (state.getValue(EAST) ? 2 : 0)
+         | (state.getValue(SOUTH) ? 4 : 0) | (state.getValue(WEST) ? 8 : 0);
+   }
+
+   private static VoxelShape[] catwalkShapes(boolean includeFloor) {
+      VoxelShape[] shapes = new VoxelShape[16];
+      for (int sides = 0; sides < shapes.length; sides++) {
+         VoxelShape shape = includeFloor ? CATWALK_FLOOR_SHAPE : Shapes.empty();
+         if ((sides & 1) != 0) shape = Shapes.or(shape, NORTH_RAIL_SHAPE);
+         if ((sides & 2) != 0) shape = Shapes.or(shape, EAST_RAIL_SHAPE);
+         if ((sides & 4) != 0) shape = Shapes.or(shape, SOUTH_RAIL_SHAPE);
+         if ((sides & 8) != 0) shape = Shapes.or(shape, WEST_RAIL_SHAPE);
+         shapes[sides] = shape;
+      }
+      return shapes;
+   }
+
    private static VoxelShape catwalkShape(BlockState state, boolean includeFloor) {
-      VoxelShape shape = includeFloor ? CATWALK_FLOOR_SHAPE : Shapes.empty();
-      if ((Boolean)state.getValue(NORTH)) {
-         shape = Shapes.or(shape, NORTH_RAIL_SHAPE);
-      }
+      return CATWALK_OUTLINES[includeFloor ? 1 : 0][catwalkSideMask(state)];
+   }
 
-      if ((Boolean)state.getValue(EAST)) {
-         shape = Shapes.or(shape, EAST_RAIL_SHAPE);
+   private static VoxelShape[] railingShapes() {
+      VoxelShape[] shapes = new VoxelShape[16];
+      for (int sides = 1; sides < shapes.length; sides++) {
+         VoxelShape shape = Shapes.empty();
+         if ((sides & 1) != 0) shape = Shapes.or(shape, NORTH_RAIL_SHAPE);
+         if ((sides & 2) != 0) shape = Shapes.or(shape, EAST_RAIL_SHAPE);
+         if ((sides & 4) != 0) shape = Shapes.or(shape, SOUTH_RAIL_SHAPE);
+         if ((sides & 8) != 0) shape = Shapes.or(shape, WEST_RAIL_SHAPE);
+         shapes[sides] = shape;
       }
-
-      if ((Boolean)state.getValue(SOUTH)) {
-         shape = Shapes.or(shape, SOUTH_RAIL_SHAPE);
-      }
-
-      if ((Boolean)state.getValue(WEST)) {
-         shape = Shapes.or(shape, WEST_RAIL_SHAPE);
-      }
-
-      return shape;
+      // An all-false legacy railing state falls back to its north rail.
+      shapes[0] = shapes[1];
+      return shapes;
    }
 
    private static VoxelShape railingShape(BlockState state) {
-      VoxelShape shape = Shapes.empty();
-      boolean any = (Boolean)state.getValue(NORTH) || (Boolean)state.getValue(EAST) || (Boolean)state.getValue(SOUTH) || (Boolean)state.getValue(WEST);
-      if (!any || (Boolean)state.getValue(NORTH)) {
-         shape = Shapes.or(shape, NORTH_RAIL_SHAPE);
-      }
-
-      if ((Boolean)state.getValue(EAST)) {
-         shape = Shapes.or(shape, EAST_RAIL_SHAPE);
-      }
-
-      if ((Boolean)state.getValue(SOUTH)) {
-         shape = Shapes.or(shape, SOUTH_RAIL_SHAPE);
-      }
-
-      if ((Boolean)state.getValue(WEST)) {
-         shape = Shapes.or(shape, WEST_RAIL_SHAPE);
-      }
-
-      return shape;
+      int sides = catwalkSideMask(state);
+      return RAILING_OUTLINES[sides == 0 ? 1 : sides];
    }
 
    public enum PartKind { BASE, RAILING, INSET_LIGHT, BULB_LIGHT, SUPPORT_LIGHT }
@@ -392,23 +396,33 @@ public final class PortedBlocks {
       return selected;
    }
 
+   private static VoxelShape[][] railingCollisionShapes() {
+      VoxelShape[][] shapes = new VoxelShape[2][16];
+      for (int includeFloor = 0; includeFloor < 2; includeFloor++) {
+         double top = includeFloor == 1 ? 27.0 : 24.0;
+         for (int sides = 1; sides < 16; sides++) {
+            VoxelShape shape = includeFloor == 1 ? CATWALK_FLOOR_SHAPE : Shapes.empty();
+            if ((sides & 1) != 0) shape = Shapes.or(shape, Block.box(0, 3, 0, 16, top, 2));
+            if ((sides & 2) != 0) shape = Shapes.or(shape, Block.box(14, 3, 0, 16, top, 16));
+            if ((sides & 4) != 0) shape = Shapes.or(shape, Block.box(0, 3, 14, 16, top, 16));
+            if ((sides & 8) != 0) shape = Shapes.or(shape, Block.box(0, 3, 0, 2, top, 16));
+            shapes[includeFloor][sides] = shape;
+         }
+         VoxelShape noRails = includeFloor == 1 ? CATWALK_FLOOR_SHAPE : Shapes.empty();
+         if (includeFloor == 0) {
+            noRails = Shapes.or(noRails, Block.box(0, 3, 0, 16, top, 2));
+            shapes[includeFloor][0] = noRails;
+         } else {
+            shapes[includeFloor][0] = noRails;
+         }
+      }
+      return shapes;
+   }
+
    private static VoxelShape railingCollision(BlockState state, boolean includeFloor) {
-      VoxelShape shape = includeFloor ? CATWALK_FLOOR_SHAPE : Shapes.empty();
-      double top = includeFloor ? 27.0 : 24.0; // Fence-height protection above each walking surface.
-      boolean legacyNorth = !includeFloor && CatwalkBlock.sideCount(state) == 0;
-      if (legacyNorth || state.getValue(NORTH)) {
-         shape = Shapes.or(shape, Block.box(0, 3, 0, 16, top, 2));
-      }
-      if (state.getValue(EAST)) {
-         shape = Shapes.or(shape, Block.box(14, 3, 0, 16, top, 16));
-      }
-      if (state.getValue(SOUTH)) {
-         shape = Shapes.or(shape, Block.box(0, 3, 14, 16, top, 16));
-      }
-      if (state.getValue(WEST)) {
-         shape = Shapes.or(shape, Block.box(0, 3, 0, 2, top, 16));
-      }
-      return shape;
+      int sides = catwalkSideMask(state);
+      if (!includeFloor && sides == 0) sides = 1; // Preserve the legacy north-rail fallback.
+      return RAILING_COLLISIONS[includeFloor ? 1 : 0][sides];
    }
 
    private static VoxelShape catwalkStairShape(Direction facing) {
