@@ -78,7 +78,7 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
       new MachineGuiGameTests.MachineEntry(
-         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_v081/background"
+         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_rp_v3/background"
       ),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
@@ -91,7 +91,7 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FLUID_FUNNEL, MachineKind.SMALL_FLUID_FUNNEL, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.PASSIVE_FLUID_ACCUMULATOR, MachineKind.PASSIVE_FLUID_ACCUMULATOR, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL, 1, null),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MILKING_MACHINE, MachineKind.SMALL_MILKING_MACHINE, 2, null),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MILKING_MACHINE, MachineKind.SMALL_MILKING_MACHINE, 2, "milking_redesign_v1/background"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER, 10, null)
    );
 
@@ -206,8 +206,8 @@ public final class MachineGuiGameTests {
             );
          }
          if (entry.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
-            helper.assertValueEqual(209, menu.layout().imageWidth(), "Block Breaker should use the approved v0.8 logical width");
-            helper.assertValueEqual(235, menu.layout().imageHeight(), "Block Breaker should use the approved v0.8 logical height");
+            helper.assertValueEqual(256, menu.layout().imageWidth(), "Block Breaker should use the v3 logical width");
+            helper.assertValueEqual(256, menu.layout().imageHeight(), "Block Breaker should use the v3 logical height");
             helper.assertValueEqual(0, menu.layout().machineSlots().get(0).containerIndex(), "single visible output should use vanilla slot index 0");
             helper.assertTrue(
                menu.layout().machineSlots().get(0).role().toLowerCase(java.util.Locale.ROOT).contains("output"),
