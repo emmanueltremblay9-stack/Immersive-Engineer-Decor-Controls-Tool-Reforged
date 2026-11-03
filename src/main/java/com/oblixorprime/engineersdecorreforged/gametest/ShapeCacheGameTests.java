@@ -31,6 +31,44 @@ public final class ShapeCacheGameTests {
       h.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 1200)
+   public static void catwalk_shapes_share_geometry_across_fluid_and_payment_states(GameTestHelper h) {
+      verifyCatwalkGeometryCache(h, ModBlocks.STEEL_CATWALK.get(), false);
+      verifyCatwalkGeometryCache(h, ModBlocks.STEEL_RAILING.get(), true);
+      h.succeed();
+   }
+
+   private static void verifyCatwalkGeometryCache(GameTestHelper h, Block block, boolean railingOnly) {
+      var states = block.getStateDefinition().getPossibleStates();
+      h.assertValueEqual(states.size(), 7680, "all catwalk fluid, rail and payment states are exercised");
+      var outlines = new VoxelShape[16];
+      var collisions = new VoxelShape[16];
+      var pos = h.absolutePos(new BlockPos(2, 2, 2));
+      var context = CollisionContext.empty();
+      for (BlockState state : states) {
+         int sides = (state.getValue(NORTH) ? 1 : 0) | (state.getValue(EAST) ? 2 : 0)
+            | (state.getValue(SOUTH) ? 4 : 0) | (state.getValue(WEST) ? 8 : 0);
+         int geometry = railingOnly && sides == 0 ? 1 : sides;
+         var outline = state.getShape(h.getLevel(), pos, context);
+         var collision = state.getCollisionShape(h.getLevel(), pos, context);
+         if (outlines[geometry] == null) {
+            outlines[geometry] = outline;
+            collisions[geometry] = collision;
+         } else {
+            h.assertTrue(outlines[geometry] == outline, "outline shares one instance per rail-side geometry: " + geometry);
+            h.assertTrue(collisions[geometry] == collision, "collision shares one instance per rail-side geometry: " + geometry);
+         }
+         h.assertTrue(outline == state.getShape(h.getLevel(), pos, context), "repeated outline query reuses catwalk cache");
+         h.assertTrue(collision == state.getCollisionShape(h.getLevel(), pos, context), "repeated collision query reuses catwalk cache");
+      }
+      int expectedGeometries = railingOnly ? 15 : 16;
+      int actualGeometries = 0;
+      for (int geometry = 0; geometry < outlines.length; geometry++) {
+         if (outlines[geometry] != null) actualGeometries++;
+      }
+      h.assertValueEqual(actualGeometries, expectedGeometries, "each valid rail-side geometry is present");
+   }
+
    private static void verify(GameTestHelper h, Block block, boolean stairs, int count) {
       var properties = new java.util.HashSet<>(block.getStateDefinition().getProperties());
       var expectedProperties = stairs
