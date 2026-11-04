@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import blusunrize.immersiveengineering.common.register.IEItems;
 import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
@@ -235,7 +236,7 @@ public final class DoubleTLightGameTests {
          h.assertTrue(level.getBlockState(pos).is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&!SupportLights.attached(level.getBlockState(pos)),"support remains unlit");
          h.assertValueEqual(drops(h,pos,lamp),1,"one paid original lamp returned");
          p.gameMode.destroyBlock(pos);h.assertTrue(level.getBlockState(pos).is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),"stale completion cannot turn partial removal into beam removal");
-         h.assertValueEqual(drops(h,pos,lamp),1,"stale completion cannot refund twice");h.assertValueEqual(drops(h,pos,ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),0,"no beam duplication");
+         h.assertValueEqual(drops(h,pos,lamp),1,"stale completion cannot refund twice");h.assertValueEqual(drops(h,pos,ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()),0,"no beam duplication");
       }
       h.succeed();
    }
@@ -252,7 +253,7 @@ public final class DoubleTLightGameTests {
          h.assertTrue(part!=null&&part.kind()==PortedBlocks.PartKind.BASE,"clear native ray deliberately selects structural metal");
          p.gameMode.handleBlockBreakAction(pos,ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,Direction.NORTH,level.getMaxBuildHeight(),0);p.gameMode.destroyBlock(pos);
          h.assertTrue(level.getBlockState(pos).isAir(),"whole support removed normally");
-         h.assertValueEqual(drops(h,pos,ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),1,"one support item");
+         h.assertValueEqual(drops(h,pos,ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()),1,"one support item");
          h.assertValueEqual(drops(h,pos,lamp),creative?0:1,"only one genuinely paid lamp is returned");
       }
       h.succeed();
@@ -277,9 +278,12 @@ public final class DoubleTLightGameTests {
       var level=h.getLevel();var pos=h.absolutePos(P);var p=player(h,pos);
       for(boolean across:List.of(false,true))for(Block lamp:lamps()){
          clear(h,pos);level.setBlock(pos,wall(across),Block.UPDATE_ALL);p.setYRot(0);p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(lamp));use(p,front(pos));
-         var be=SupportLights.entity(level,pos);var before=be.attachment();var state=level.getBlockState(pos).rotate(net.minecraft.world.level.block.Rotation.CLOCKWISE_90);level.setBlock(pos,state,Block.UPDATE_ALL);
-         var changed=be.attachment();h.assertValueEqual(changed.offset,new Vec3(-before.offset.z,before.offset.y,before.offset.x),"rigid translation rotates with the support");
-         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.WEST,"original lamp orientation rotates with the wall frame");
+         var be=SupportLights.entity(level,pos);var before=be.attachment();var hammer=IEItems.Tools.HAMMER.get();var hammerStack=new ItemStack(hammer);p.setItemInHand(InteractionHand.MAIN_HAND,hammerStack);
+         var result=hammer.onItemUseFirst(hammerStack,new UseOnContext(p,InteractionHand.MAIN_HAND,front(pos)));
+         h.assertTrue(result.consumesAction(),"registered IE Engineer's Hammer rotates the attached support");
+         var state=level.getBlockState(pos);var changed=be.attachment();
+         h.assertValueEqual(changed.offset,new Vec3(before.offset.z,before.offset.y,-before.offset.x),"rigid translation rotates counterclockwise with the support");
+         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.EAST,"original lamp orientation rotates counterclockwise with the wall frame");
          var copy=new DoubleTLightBlockEntity(pos,state);copy.loadWithComponents(be.saveWithoutMetadata(level.registryAccess()),level.registryAccess());
          h.assertValueEqual(copy.attachment().offset,changed.offset,"rotated saved pose frame resolves after reload");h.assertTrue(copy.attachment().lamp==changed.lamp,"rotated light identity/facing restores");
          h.assertFalse(Shapes.joinIsNotEmpty(state.getCollisionShape(level,pos),changed.shape(),BooleanOp.AND),"native rotation introduces no beam overlap");

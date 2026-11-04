@@ -1,6 +1,8 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import blusunrize.immersiveengineering.common.register.IEItems;
 import com.mojang.authlib.GameProfile;
+import com.mojang.serialization.JsonOps;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
@@ -16,12 +18,14 @@ import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
@@ -115,26 +119,34 @@ public final class VerticalDoubleTGameTests {
       h.assertValueEqual(ray.getBlockPos(),pos,"horizontal flange can be selected before wall");
       player.gameMode.handleBlockBreakAction(pos,ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,ray.getDirection(),level.getMaxBuildHeight(),0);
       h.assertTrue(player.gameMode.destroyBlock(pos),"native survival mining succeeds");h.assertTrue(level.getBlockState(pos.south()).is(Blocks.BRICKS),"supporting wall untouched");
-      int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();
+      int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();
       h.assertValueEqual(count,1,"one unchanged beam item, no connector drop or duplication");h.succeed();
    }
 
    @GameTest(template="empty")
-   public static void wall_double_t_native_horizontal_edge_and_vertical_centre(GameTestHelper h) {
+   public static void both_support_items_force_upright_wall_mount_at_all_click_regions(GameTestHelper h) {
       var level=h.getLevel();var pos=h.absolutePos(CENTER);var player=player(h,pos);
-      double[][] clicks={{.1,.5,1},{.9,.5,1},{.5,.1,0},{.5,.9,0},{.1,.2,1},{.2,.1,0},{.1,.1,0},{.5,.5,0},{.6,.5,0},{.25,.5,0}};
-      for(Direction face:Direction.Plane.HORIZONTAL)for(InteractionHand hand:InteractionHand.values())for(double[] click:clicks) {
-         clear(h,pos);var wall=pos.relative(face.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
-         var centre=Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(face.getNormal()).scale(.5));
-         var point=face.getAxis()==Direction.Axis.Z?centre.add(click[0]-.5,click[1]-.5,0):centre.add(0,click[1]-.5,click[0]-.5);
-         var stack=new ItemStack(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get(),2);player.setItemInHand(hand,stack);
-         h.assertTrue(stack.useOn(new net.minecraft.world.item.context.UseOnContext(player,hand,new BlockHitResult(point,face,wall,false))).consumesAction(),"native item placement succeeds");
-         var state=level.getBlockState(pos);var box=state.getShape(level,pos).bounds();
-         double length=face.getAxis()==Direction.Axis.Z?box.getXsize():box.getZsize();
-         h.assertValueEqual(length,click[2]==1?1.:6./16,"left/right outer quarter chooses horizontal; nearest edge at corners; centre/ties vertical");
-         h.assertValueEqual(box.getYsize(),click[2]==1?6./16:1.,"only rigid in-wall rotation, no new length");
-         h.assertValueEqual(stack.getCount(),1,"one item consumed");h.assertTrue(level.getBlockState(wall).is(Blocks.BRICKS),"clicked wall preserved");
-      }
+      double[][] clicks={{.1,.5},{.9,.5},{.5,.1},{.5,.9},{.1,.2},{.2,.1},{.1,.1},{.5,.5},{.6,.5},{.25,.5}};
+      for(var supportBlock:List.of(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT,ModBlocks.STEEL_DOUBLE_T_SUPPORT))
+         for(Direction face:Direction.Plane.HORIZONTAL)for(InteractionHand hand:InteractionHand.values())for(double[] click:clicks) {
+            clear(h,pos);var wall=pos.relative(face.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+            var centre=Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(face.getNormal()).scale(.5));
+            var point=face.getAxis()==Direction.Axis.Z?centre.add(click[0]-.5,click[1]-.5,0):centre.add(0,click[1]-.5,click[0]-.5);
+            var stack=new ItemStack(supportBlock.get(),2);player.setItemInHand(hand,stack);
+            var result=stack.useOn(new UseOnContext(player,hand,new BlockHitResult(point,face,wall,false)));
+            var state=level.getBlockState(pos);
+            h.assertTrue(result.consumesAction()&&state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),"both registered item paths place the vertical wall block");
+            h.assertValueEqual(state.getValue(VerticalDoubleTSupportBlock.FACING),face,"wall-facing normal follows the clicked wall");
+            h.assertFalse(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),"all wall regions select the upright mount, including edges and corners");
+            var collision=state.getCollisionShape(level,pos);var box=collision.bounds();
+            double wallWidth=face.getAxis()==Direction.Axis.Z?box.getXsize():box.getZsize();
+            h.assertValueEqual(wallWidth,6./16,"physical profile remains narrow in the wall plane at every click point");
+            h.assertValueEqual(box.getYsize(),1.,"physical profile remains vertical at every click point");
+            double wallContact=switch(face){case NORTH->box.maxZ;case EAST->box.minX;case SOUTH->box.minZ;default->box.maxX;};
+            h.assertValueEqual(wallContact,face==Direction.NORTH||face==Direction.WEST?1.:0.,"collision flange physically reaches the clicked wall plane");
+            h.assertValueEqual(stack.getCount(),1,"one legacy or canonical item consumed");
+            h.assertTrue(level.getBlockState(wall).is(Blocks.BRICKS),"clicked wall remains in place");
+         }
       h.succeed();
    }
 
@@ -147,6 +159,7 @@ public final class VerticalDoubleTGameTests {
          h.assertTrue(stack.useOn(new net.minecraft.world.item.context.UseOnContext(player,hand,hit(pos,face))).consumesAction(),"normal item path succeeds on clicked wall");
          var state=level.getBlockState(pos);h.assertTrue(state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),"places in adjacent target cell");
          h.assertValueEqual(state.getValue(VerticalDoubleTSupportBlock.FACING),face,"clicked wall normal, independent of player look");
+         h.assertFalse(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),"legacy item still places upright on walls");
          h.assertValueEqual(stack.getCount(),1,"one item consumed, no duplicate");
          h.assertTrue(level.getBlockState(pos.relative(face.getOpposite())).is(Blocks.BRICKS),"wall not replaced");
       }
@@ -181,6 +194,7 @@ public final class VerticalDoubleTGameTests {
          var state=level.getBlockState(pos);
          h.assertTrue(result.consumesAction()&&state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),"existing horizontal steel item chooses the wall profile on a wall face");
          h.assertValueEqual(state.getValue(VerticalDoubleTSupportBlock.FACING),face,"wall profile faces the clicked wall normal");
+         h.assertFalse(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),"common-item wall placement is always upright");
          h.assertValueEqual(stack.getCount(),1,"wall placement consumes one existing common item");
       }
       for(Direction face:List.of(Direction.UP,Direction.DOWN))for(Direction look:Direction.Plane.HORIZONTAL) {
@@ -257,7 +271,7 @@ public final class VerticalDoubleTGameTests {
       var hit=level.clip(new ClipContext(eye,eye.add(direction.scale(p.blockInteractionRange())),ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,p));
       h.assertValueEqual(hit.getBlockPos(),pos,"actual server eye ray selects beam before wall; eye="+eye+" direction="+direction+" shape="+level.getBlockState(pos).getShape(level,pos).bounds());p.gameMode.handleBlockBreakAction(pos,ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,hit.getDirection(),level.getMaxBuildHeight(),0);
       h.assertTrue(p.gameMode.destroyBlock(pos),"native survival removal succeeds");h.assertTrue(level.getBlockState(pos.south()).is(Blocks.BRICKS),"wall survives");
-      int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();h.assertValueEqual(count,1,"exactly one beam item");h.succeed();
+      int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();h.assertValueEqual(count,1,"exactly one canonical support item");h.succeed();
    }
    @GameTest(template="empty")
    public static void wall_double_t_single_mirrors_match_physical_shapes_for_asymmetric_arms(GameTestHelper h){
@@ -293,5 +307,58 @@ public final class VerticalDoubleTGameTests {
       }
       h.succeed();
    }
+   @GameTest(template="empty")
+   public static void legacy_item_inventory_recipe_drop_and_pick_block_share_the_canonical_support(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);clear(h,pos);
+      var legacyBlock=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get();
+      var legacyItem=legacyBlock.asItem();var canonicalItem=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().asItem();
+      var legacyId=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"vertical_steel_double_t_support");
+      h.assertValueEqual(BuiltInRegistries.ITEM.getKey(legacyItem),legacyId,"legacy item registry ID remains loadable");
+      var lookup=level.registryAccess().createSerializationContext(JsonOps.INSTANCE);
+      var oldInventoryStack=new ItemStack(legacyItem,3);
+      var saved=ItemStack.CODEC.encodeStart(lookup,oldInventoryStack).getOrThrow();
+      var restored=ItemStack.CODEC.parse(lookup,saved).getOrThrow();
+      h.assertTrue(restored.is(legacyItem),"old inventory item ID survives stack save and reload");
+      h.assertValueEqual(restored.getCount(),3,"legacy inventory count survives stack save and reload");
+      var recipeId=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"steel_double_t_support");
+      var recipe=level.getRecipeManager().byKey(recipeId).orElseThrow();
+      var result=recipe.value().getResultItem(level.registryAccess());
+      h.assertTrue(result.is(canonicalItem),"the one support recipe crafts the canonical item");
+      h.assertValueEqual(result.getCount(),6,"existing recipe yield stays unchanged");
+      h.assertTrue(level.getRecipeManager().byKey(ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"vertical_steel_double_t_support")).isEmpty(),"no one-to-one conversion recipe is introduced");
+      var state=legacyBlock.defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,Direction.NORTH);
+      level.setBlock(pos,state,Block.UPDATE_ALL);state=level.getBlockState(pos);
+      var drops=Block.getDrops(state,level,pos,null);
+      h.assertValueEqual(drops.size(),1,"legacy placed block has one base drop");
+      h.assertTrue(drops.get(0).is(canonicalItem),"legacy block mining recovers the canonical item");
+      var clone=legacyBlock.getCloneItemStack(level,pos,state);
+      h.assertTrue(clone.is(canonicalItem),"pick-block on a legacy placed block gives the canonical item");
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
+   public static void engineers_hammer_rotates_wall_support_and_preserves_old_mount_and_fluid(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);var player=player(h,pos);
+      var fluid=Fluids.WATER.getSource(false);
+      var hammer=IEItems.Tools.HAMMER.get();
+      for(boolean oldHorizontalMount:List.of(false,true)) {
+         clear(h,pos);
+         var dry=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState()
+            .setValue(VerticalDoubleTSupportBlock.FACING,Direction.NORTH)
+            .setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,oldHorizontalMount);
+         level.setBlock(pos,NativeFluidloggedBlock.placement(dry,fluid),Block.UPDATE_ALL);
+         var stack=new ItemStack(hammer);player.setItemInHand(InteractionHand.MAIN_HAND,stack);
+         var context=new UseOnContext(player,InteractionHand.MAIN_HAND,
+            new BlockHitResult(Vec3.atCenterOf(pos),Direction.UP,pos,false));
+         var result=hammer.onItemUseFirst(stack,context);
+         h.assertTrue(result.consumesAction(),"registered IE Engineer's Hammer rotates the wall support");
+         var rotated=level.getBlockState(pos);
+         h.assertValueEqual(rotated.getValue(VerticalDoubleTSupportBlock.FACING),Direction.NORTH.getCounterClockWise(),"existing hammer counterclockwise rotation remains");
+         h.assertValueEqual(rotated.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),oldHorizontalMount,"old mount orientation is not rewritten by hammer rotation");
+         h.assertValueEqual(level.getFluidState(pos),fluid,"hammer rotation preserves the support's fluid");
+      }
+      h.succeed();
+   }
+
 
 }

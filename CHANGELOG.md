@@ -7,11 +7,13 @@ All notable reconstruction, repair, and validation changes for this project are 
 ### Changed
 - Let the existing `steel_double_t_support` item choose the registered vertical wall block on a wall click and retain the horizontal steel support on floor/ceiling clicks, oriented by the player's horizontal direction.
 - Connect upright wall supports to directly touching horizontal steel and ceiling treated-wood beam profiles in either placement order, without adding blockstate properties or changing their registry IDs.
-- Keep `vertical_steel_double_t_support` as the legacy wall-only item/block ID; existing recipes, saved block states, lamp ownership, fluids, drops and hammer rotations remain in place.
+- Keep vertical_steel_double_t_support registered and usable by old inventories while hiding it from the creative tab and ordinary JEI item list; vertical blocks now drop and pick as the canonical steel_double_t_support item, with no conversion recipe or save migration.
+- Keep lamp ownership, fluids, old block states and hammer rotation behavior intact while forcing all new wall-face placements upright, including edge clicks.
 
 ### Regression coverage
 - Check four wall rotations, both connector directions and placement orders, physical face contact, removal updates, and brick/air/diagonal/out-of-plane negatives.
-- Check common-item wall versus floor/ceiling placement and lamp-first payment/identity preservation; retain the aligned ceiling join regression.
+- Check old legacy item-stack serialization, the single canonical recipe, canonical mining and pick-block results, all wall click regions for both items, floor/ceiling placement, and the registered IE hammer rotation path.
+- Retain lamp-first payment/identity, fluid and saved-state coverage, and the aligned ceiling join regression.
 
 ## [1.1.66-reconstructed] - Candidate release notes (not yet published)
 

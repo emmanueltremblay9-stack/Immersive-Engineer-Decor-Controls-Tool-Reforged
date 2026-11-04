@@ -1,10 +1,13 @@
 package com.oblixorprime.engineersdecorreforged.block;
 
+import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -76,10 +79,12 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    @Override public BlockState getStateForPlacement(BlockPlaceContext context) {
       Direction face=context.getClickedFace();
       if(!face.getAxis().isHorizontal())return null;
-      var hit=context.getClickLocation();var pos=context.getClickedPos();
-      double horizontal=face.getAxis()==Direction.Axis.Z?hit.x-pos.getX():hit.z-pos.getZ();
-      var state=defaultBlockState().setValue(FACING,face).setValue(WALL_HORIZONTAL,horizontalAt(horizontal,hit.y-pos.getY()));
+      var pos=context.getClickedPos();
+      var state=defaultBlockState().setValue(FACING,face).setValue(WALL_HORIZONTAL,false);
       return NativeFluidloggedBlock.placement(connected(state,context.getLevel(),pos),context);
+   }
+   @Override public ItemStack getCloneItemStack(LevelReader level,BlockPos pos,BlockState state) {
+      return new ItemStack(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get());
    }
    private static Direction positive(BlockState state) {
       // In-wall clockwise rotation maps the former right arm to the lower arm.
