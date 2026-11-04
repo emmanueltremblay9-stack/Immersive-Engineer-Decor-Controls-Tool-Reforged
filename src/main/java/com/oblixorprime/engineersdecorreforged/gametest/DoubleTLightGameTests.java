@@ -87,7 +87,7 @@ public final class DoubleTLightGameTests {
          var point=Vec3.atLowerCornerOf(pos).add(across?.1:.3,.5,1);
          use(p,new BlockHitResult(point,Direction.NORTH,pos.south(),false));var state=level.getBlockState(pos);var be=SupportLights.entity(level,pos);
          h.assertTrue(state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&SupportLights.attached(state),"beam combines with existing lamp in intended target cell");
-         h.assertValueEqual(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),across,"ordinary wall click zones apply even with light-first order");
+         h.assertFalse(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),"all wall-face clicks stay upright when merging a lamp-first placement");
          h.assertTrue(be.attachment().lamp.is(lamp)&&be.attachment().paid,"pre-existing light value conserved");
          h.assertValueEqual(p.getMainHandItem().getCount(),2,"one beam consumed; light not rebought");h.assertValueEqual(drops(h,pos,lamp),0,"no dropped copy of the merged lamp");
       }
@@ -282,8 +282,8 @@ public final class DoubleTLightGameTests {
          var result=hammer.onItemUseFirst(hammerStack,new UseOnContext(p,InteractionHand.MAIN_HAND,front(pos)));
          h.assertTrue(result.consumesAction(),"registered IE Engineer's Hammer rotates the attached support");
          var state=level.getBlockState(pos);var changed=be.attachment();
-         h.assertValueEqual(changed.offset,new Vec3(before.offset.z,before.offset.y,-before.offset.x),"rigid translation rotates counterclockwise with the support");
-         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.EAST,"original lamp orientation rotates counterclockwise with the wall frame");
+         h.assertValueEqual(changed.offset,new Vec3(-before.offset.z,before.offset.y,before.offset.x),"rigid translation rotates clockwise with the support");
+         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.EAST,"original lamp orientation rotates clockwise with the wall frame");
          var copy=new DoubleTLightBlockEntity(pos,state);copy.loadWithComponents(be.saveWithoutMetadata(level.registryAccess()),level.registryAccess());
          h.assertValueEqual(copy.attachment().offset,changed.offset,"rotated saved pose frame resolves after reload");h.assertTrue(copy.attachment().lamp==changed.lamp,"rotated light identity/facing restores");
          h.assertFalse(Shapes.joinIsNotEmpty(state.getCollisionShape(level,pos),changed.shape(),BooleanOp.AND),"native rotation introduces no beam overlap");

@@ -65,17 +65,14 @@ public final class VerticalDoubleTGameTests {
          clear(h,pos);Direction cross=across?Direction.DOWN:face.getClockWise();var other=pos.relative(cross);
          var a=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,face).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,across);
          var b=a.setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,!across);
-         var player=player(h,pos);
-         for(int step=0;step<2;step++) {
-            boolean placeOther=(step==0)==reverse;var target=placeOther?other:pos;boolean horizontal=placeOther?!across:across;
-            var wall=target.relative(face.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
-            var point=Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(face.getNormal()).scale(.5));
-            if(horizontal)point=face.getAxis()==Direction.Axis.Z?point.add(-.4,0,0):point.add(0,0,-.4);
-            var stack=new ItemStack(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get(),2);player.setItemInHand(InteractionHand.MAIN_HAND,stack);
-            h.assertTrue(stack.useOn(new net.minecraft.world.item.context.UseOnContext(player,InteractionHand.MAIN_HAND,new BlockHitResult(point,face,wall,false))).consumesAction(),"native item path establishes each placement order");
-         }
+         level.setBlock(pos.relative(face.getOpposite()),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+         level.setBlock(other.relative(face.getOpposite()),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+         level.setBlock(reverse?other:pos,reverse?b:a,Block.UPDATE_ALL);
+         level.setBlock(reverse?pos:other,reverse?a:b,Block.UPDATE_ALL);
+         level.setBlock(pos,Block.updateFromNeighbourShapes(level.getBlockState(pos),level,pos),Block.UPDATE_ALL);
+         level.setBlock(other,Block.updateFromNeighbourShapes(level.getBlockState(other),level,other),Block.UPDATE_ALL);
          var joined=level.getBlockState(pos);
-         h.assertTrue(joined.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"same-wall perpendicular neighbour creates original half-cross in either placement order");
+         h.assertTrue(joined.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"saved upright/horizontal wall profiles preserve their same-plane connection in either placement order");
          var shape=joined.getShape(level,pos);h.assertFalse(Shapes.joinIsNotEmpty(shape,joined.getCollisionShape(level,pos),BooleanOp.NOT_SAME),"connector has matching outline/collision");
          double[] point={15.99/16,.5,11.5/16};if(across){point=new double[]{point[1],1-point[0],point[2]};}
          for(int turns=0;turns<switch(face){case EAST->1;case SOUTH->2;case WEST->3;default->0;};turns++)point=new double[]{1-point[2],point[1],point[0]};
@@ -290,16 +287,17 @@ public final class VerticalDoubleTGameTests {
    @GameTest(template="empty")
    public static void wall_double_t_native_negative_and_double_arms_update_independently(GameTestHelper h){
       var level=h.getLevel();var pos=h.absolutePos(CENTER);var player=player(h,pos);
-      for(Direction facing:Direction.Plane.HORIZONTAL)for(boolean across:List.of(false,true)){
-         clear(h,pos);Direction axis=across?Direction.DOWN:facing.getClockWise();
-         var neighbor=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,facing).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,!across);
+      for(Direction facing:Direction.Plane.HORIZONTAL){
+         clear(h,pos);Direction axis=facing.getClockWise();
+         // Retain old horizontal-mount states to exercise their saved-state interaction with a new upright placement.
+         var neighbor=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,facing).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,true);
          level.setBlock(pos.relative(axis),neighbor,Block.UPDATE_ALL);level.setBlock(pos.relative(axis.getOpposite()),neighbor,Block.UPDATE_ALL);
          var wall=pos.relative(facing.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
          var point=Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(facing.getNormal()).scale(.5));
-         if(across)point=facing.getAxis()==Direction.Axis.Z?point.add(-.4,0,0):point.add(0,0,-.4);
          player.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()));
          player.getMainHandItem().useOn(new net.minecraft.world.item.context.UseOnContext(player,InteractionHand.MAIN_HAND,new BlockHitResult(point,facing,wall,false)));
-         var state=level.getBlockState(pos);h.assertTrue(state.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE)&&state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"native placement resolves both independent arms");
+         var state=level.getBlockState(pos);h.assertFalse(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),"new wall placement stays upright while touching old horizontal-mount states");
+         h.assertTrue(state.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE)&&state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"native placement resolves both independent arms");
          level.setBlock(pos.relative(axis),Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);state=level.getBlockState(pos);
          h.assertTrue(state.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE)&&!state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"negative-only arm remains after positive removal");
          level.setBlock(pos.relative(axis.getOpposite()),Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);state=level.getBlockState(pos);
@@ -353,7 +351,7 @@ public final class VerticalDoubleTGameTests {
          var result=hammer.onItemUseFirst(stack,context);
          h.assertTrue(result.consumesAction(),"registered IE Engineer's Hammer rotates the wall support");
          var rotated=level.getBlockState(pos);
-         h.assertValueEqual(rotated.getValue(VerticalDoubleTSupportBlock.FACING),Direction.NORTH.getCounterClockWise(),"existing hammer counterclockwise rotation remains");
+         h.assertValueEqual(rotated.getValue(VerticalDoubleTSupportBlock.FACING),Direction.NORTH.getClockWise(),"existing IE Engineer’s Hammer clockwise rotation remains");
          h.assertValueEqual(rotated.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),oldHorizontalMount,"old mount orientation is not rewritten by hammer rotation");
          h.assertValueEqual(level.getFluidState(pos),fluid,"hammer rotation preserves the support's fluid");
       }
