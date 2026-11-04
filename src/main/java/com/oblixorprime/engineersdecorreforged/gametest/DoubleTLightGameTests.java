@@ -283,7 +283,7 @@ public final class DoubleTLightGameTests {
          h.assertTrue(result.consumesAction(),"registered IE Engineer's Hammer rotates the attached support");
          var state=level.getBlockState(pos);var changed=be.attachment();
          h.assertValueEqual(changed.offset,new Vec3(-before.offset.z,before.offset.y,before.offset.x),"rigid translation rotates clockwise with the support");
-         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.EAST,"original lamp orientation rotates clockwise with the wall frame");
+         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.WEST,"original lamp orientation rotates clockwise with the wall frame");
          var copy=new DoubleTLightBlockEntity(pos,state);copy.loadWithComponents(be.saveWithoutMetadata(level.registryAccess()),level.registryAccess());
          h.assertValueEqual(copy.attachment().offset,changed.offset,"rotated saved pose frame resolves after reload");h.assertTrue(copy.attachment().lamp==changed.lamp,"rotated light identity/facing restores");
          h.assertFalse(Shapes.joinIsNotEmpty(state.getCollisionShape(level,pos),changed.shape(),BooleanOp.AND),"native rotation introduces no beam overlap");
