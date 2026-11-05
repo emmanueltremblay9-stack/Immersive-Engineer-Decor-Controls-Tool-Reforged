@@ -99,7 +99,8 @@ public final class SupportLights {
       return false;
    }
    static List<ItemStack> drops(BlockState state,LootParams.Builder params,List<ItemStack> original){
-      if(!attached(state)||original.stream().noneMatch(s->s.is(state.getBlock().asItem())))return original;
+      if(!attached(state)||original.stream().noneMatch(s->s.is(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().asItem())
+         ||s.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().asItem())))return original;
       var be=params.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
       var lamp=be instanceof DoubleTLightBlockEntity entity?entity.attachment():null;
       if(lamp==null||!lamp.paid)return original;
