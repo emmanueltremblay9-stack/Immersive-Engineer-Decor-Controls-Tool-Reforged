@@ -43,7 +43,7 @@ public final class MusliBarPressBaseSeedGameTests {
             helper.assertTrue(MusliBarPressReserve.isSeedAdmissible(seed), "approved base seed remains admissible");
             State supplied = supplied();
             var plan = MusliBarPressReserve.planInsert(supplied, seed).orElseThrow();
-            helper.assertTrue(plan.updated().seeds().is(item), "exact base identity preserved");
+            helper.assertValueEqual(1, plan.updated().seeds(), "each approved base seed converts to a generic unit");
             helper.assertTrue(MusliBarPressReserve.hasAdmissibleIngredients(plan.updated()), "base ingredients remain eligible");
             helper.assertValueEqual(1, seed.getCount(), "pure plan does not consume offered seed");
          }
@@ -55,7 +55,7 @@ public final class MusliBarPressBaseSeedGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void replacement_tag_extends_base_and_revoked_stock_remains_withdrawable(GameTestHelper helper) {
+   public static void replacement_tag_extends_base_and_converted_units_survive_revocation(GameTestHelper helper) {
       Registry<Item> registry = BuiltInRegistries.ITEM;
       Map<TagKey<Item>, List<Holder<Item>>> original = snapshotTags(registry);
       var lookup = helper.getLevel().registryAccess();
@@ -73,14 +73,11 @@ public final class MusliBarPressBaseSeedGameTests {
          State revoked = MusliBarPressReserve.read(stored, lookup).orElseThrow();
          helper.assertTrue(revoked.sameContents(state), "tag removal cannot change stored stock");
          helper.assertTrue(saved.equals(stored.save(lookup)), "revocation preserves original serialized bytes");
-         helper.assertTrue(!MusliBarPressReserve.hasAdmissibleIngredients(revoked), "revoked extension cannot authorize pressing");
+         helper.assertTrue(MusliBarPressReserve.hasAdmissibleIngredients(revoked), "conversion keeps generic ingredients eligible after revocation");
          helper.assertTrue(MusliBarPressReserve.planInsert(revoked, extension).isEmpty(), "revoked extension cannot be topped up");
-         var withdrawal = MusliBarPressReserve.planWithdraw(revoked, Compartment.SEEDS, 2).orElseThrow();
-         helper.assertValueEqual(2, withdrawal.count(), "revoked stock remains withdrawable");
-         helper.assertValueEqual(2, withdrawal.updated().seeds().getCount(), "withdrawal conserves remainder");
-         ItemStack remainder = MusliBarPressReserve.stage(stored, lookup, revoked, withdrawal.updated()).orElseThrow();
-         State reloaded = MusliBarPressReserve.read(ItemStack.parse(lookup, remainder.save(lookup)).orElseThrow(), lookup).orElseThrow();
-         helper.assertTrue(!MusliBarPressReserve.hasAdmissibleIngredients(reloaded), "serialization cannot restore revoked eligibility");
+         helper.assertTrue(MusliBarPressReserve.planWithdraw(revoked, Compartment.SEEDS, 2).isEmpty(), "converted stock is not withdrawable");
+         State reloaded = MusliBarPressReserve.read(ItemStack.parse(lookup, stored.save(lookup)).orElseThrow(), lookup).orElseThrow();
+         helper.assertTrue(MusliBarPressReserve.hasAdmissibleIngredients(reloaded), "serialization preserves generic ingredient eligibility");
 
          registry.bindTags(withSeeds(original, List.of(Items.TORCH.builtInRegistryHolder())));
          helper.assertTrue(MusliBarPressReserve.hasAdmissibleIngredients(reloaded), "readmission uses live tag without reinsertion");

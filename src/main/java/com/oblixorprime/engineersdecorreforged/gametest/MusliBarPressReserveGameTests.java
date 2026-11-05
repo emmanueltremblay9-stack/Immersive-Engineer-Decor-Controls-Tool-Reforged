@@ -29,34 +29,39 @@ public final class MusliBarPressReserveGameTests {
       helper.assertTrue(initial.sameContents(State.EMPTY), "legacy press starts with empty internal reserve");
       Plan bread = MusliBarPressReserve.planInsert(initial, new ItemStack(Items.BREAD, 11)).orElseThrow();
       helper.assertValueEqual(8, bread.count(), "bread reserve accepts exactly its eight free spaces");
-      helper.assertValueEqual(8, bread.updated().bread().getCount(), "bread compartment reaches 8");
-      helper.assertValueEqual(0, initial.bread().getCount(), "simulation never changes the original snapshot");
+      helper.assertValueEqual(Compartment.CEREAL, bread.compartment(), "bread routes to cereal gauge");
+      helper.assertTrue(!MusliBarPressReserve.hasAdmissibleIngredients(bread.updated()), "partial gauges cannot supply all ingredients");
+      helper.assertValueEqual(8, bread.updated().cereal(), "bread compartment reaches 8");
+      helper.assertValueEqual(0, initial.cereal(), "simulation never changes the original snapshot");
       State six = MusliBarPressReserve.planInsert(initial, new ItemStack(Items.BREAD, 6)).orElseThrow().updated();
       ItemStack offeredFive = new ItemStack(Items.BREAD, 5);
       Plan topUp = MusliBarPressReserve.planInsert(six, offeredFive).orElseThrow();
       helper.assertValueEqual(2, topUp.count(), "insertion accepts only remaining capacity");
       helper.assertValueEqual(5, offeredFive.getCount(), "offered stack is not consumed by simulation");
-      helper.assertValueEqual(6, six.bread().getCount(), "previous contents remain unchanged");
+      helper.assertValueEqual(6, six.cereal(), "previous contents remain unchanged");
       helper.assertTrue(MusliBarPressReserve.planInsert(bread.updated(), new ItemStack(Items.BREAD)).isEmpty(), "ninth bread refused");
       Plan apple = MusliBarPressReserve.planInsert(bread.updated(), new ItemStack(Items.APPLE, 9)).orElseThrow();
-      helper.assertValueEqual(8, apple.updated().apple().getCount(), "apple compartment has independent capacity");
-      helper.assertValueEqual(8, apple.updated().bread().getCount(), "apple insertion preserves bread reserve");
+      helper.assertValueEqual(8, apple.updated().fruit(), "apple compartment has independent capacity");
+      helper.assertValueEqual(Compartment.FRUIT, apple.compartment(), "apple routes to fruit gauge");
+      helper.assertTrue(!MusliBarPressReserve.hasAdmissibleIngredients(apple.updated()), "missing seeds cannot supply all ingredients");
+      helper.assertValueEqual(8, apple.updated().cereal(), "apple insertion preserves bread reserve");
       helper.succeed();
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void reserve_single_seed_variety_and_release_at_zero(GameTestHelper helper) {
-      Plan wheat = MusliBarPressReserve.planInsert(State.EMPTY, new ItemStack(Items.WHEAT_SEEDS, 8)).orElseThrow();
-      helper.assertTrue(
-         MusliBarPressReserve.planInsert(wheat.updated(), new ItemStack(Items.MELON_SEEDS, 1)).isEmpty(),
-         "different seed variant cannot mix with an occupied seed reserve"
-      );
-      Plan withdraw = MusliBarPressReserve.planWithdraw(wheat.updated(), Compartment.SEEDS, 8).orElseThrow();
-      helper.assertValueEqual(8, withdraw.count(), "all eight wheat seeds are offered to destination simulation");
-      helper.assertTrue(withdraw.updated().seeds().isEmpty(), "at zero, seed variety is released");
-      Plan melon = MusliBarPressReserve.planInsert(withdraw.updated(), new ItemStack(Items.MELON_SEEDS, 3)).orElseThrow();
-      helper.assertTrue(melon.updated().seeds().is(Items.MELON_SEEDS), "new seed variety accepted after emptying");
-      helper.assertValueEqual(3, melon.updated().seeds().getCount(), "seed quantity preserved");
+   public static void reserve_mixed_seed_varieties_and_components_pool(GameTestHelper helper) {
+      State wheat = MusliBarPressReserve.planInsert(State.EMPTY, new ItemStack(Items.WHEAT_SEEDS, 3)).orElseThrow().updated();
+      ItemStack melon = new ItemStack(Items.MELON_SEEDS, 2);
+      melon.set(DataComponents.CUSTOM_NAME, Component.literal("Named batch"));
+      Plan mixed = MusliBarPressReserve.planInsert(wheat, melon).orElseThrow();
+      helper.assertValueEqual(Compartment.SEEDS, mixed.compartment(), "mixed varieties enter seed gauge");
+      helper.assertValueEqual(5, mixed.updated().seeds(), "different varieties and components pool");
+      Plan full = MusliBarPressReserve.planInsert(mixed.updated(), new ItemStack(Items.PUMPKIN_SEEDS, 5)).orElseThrow();
+      helper.assertValueEqual(3, full.count(), "mixed batches share remaining gauge capacity");
+      helper.assertValueEqual(8, full.updated().contents(Compartment.SEEDS), "seed gauge caps at eight");
+      helper.assertTrue(MusliBarPressReserve.planInsert(full.updated(), melon).isEmpty(), "full generic seed gauge refuses all admitted variants");
+      helper.assertValueEqual(3, wheat.seeds(), "previous snapshot stays immutable");
+      helper.assertValueEqual(2, melon.getCount(), "offered source is unchanged");
       helper.succeed();
    }
 
@@ -82,7 +87,13 @@ public final class MusliBarPressReserveGameTests {
       ItemStack roundTrip = ItemStack.parse(lookup, staged.save(lookup)).orElseThrow();
       State restored = MusliBarPressReserve.read(roundTrip, lookup).orElseThrow();
       helper.assertTrue(restored.sameContents(seeds.updated()), "full saved ingredient contents round trip");
-      helper.assertValueEqual(Component.literal("Tagged Bread"), restored.bread().get(DataComponents.CUSTOM_NAME), "ingredient component survives serialization");
+      CompoundTag payload = customData(staged).getCompound("iedctr_musli_reserve_v2");
+      helper.assertTrue(payload.getAllKeys().equals(java.util.Set.of("version", "cereal", "fruit", "seeds")), "serialization contains only generic counters and version");
+      helper.assertValueEqual(2, payload.getInt("version"), "new encoding is version two");
+      helper.assertValueEqual(6, payload.getInt("cereal"), "bread converts to cereal units");
+      helper.assertValueEqual(5, payload.getInt("fruit"), "apple converts to fruit units");
+      helper.assertValueEqual(4, payload.getInt("seeds"), "seeds convert to generic units");
+      helper.assertTrue(!customData(staged).contains("iedctr_musli_reserve_v1"), "new encoding stores no legacy identity");
       helper.assertValueEqual(3, roundTrip.getDamageValue(), "damage survives save and load");
       helper.assertValueEqual("keep-this-unchanged", customData(roundTrip).getString("another_mod_key"), "unrelated saved NBT survives");
       helper.succeed();
@@ -131,45 +142,32 @@ public final class MusliBarPressReserveGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void reserve_snapshots_are_independent_and_component_exact(GameTestHelper helper) {
+   public static void reserve_snapshots_are_independent_generic_counts(GameTestHelper helper) {
       ItemStack firstPress = press();
       ItemStack secondPress = press();
       ItemStack offered = new ItemStack(Items.BREAD, 4);
       Plan plan = MusliBarPressReserve.planInsert(State.EMPTY, offered).orElseThrow();
       offered.shrink(4);
-      ItemStack leakedCopy = plan.updated().bread();
-      leakedCopy.shrink(2);
-      helper.assertValueEqual(4, plan.updated().bread().getCount(), "snapshot cannot be mutated through external reference");
+      helper.assertValueEqual(4, plan.updated().cereal(), "snapshot cannot be mutated through external reference");
       ItemStack staged = MusliBarPressReserve.stage(firstPress, registries(helper), State.EMPTY, plan.updated()).orElseThrow();
-      helper.assertValueEqual(4, MusliBarPressReserve.read(staged, registries(helper)).orElseThrow().bread().getCount(), "first staged reserve changed");
+      helper.assertValueEqual(4, MusliBarPressReserve.read(staged, registries(helper)).orElseThrow().cereal(), "first staged reserve changed");
       helper.assertTrue(MusliBarPressReserve.read(secondPress, registries(helper)).orElseThrow().sameContents(State.EMPTY), "second press unaffected");
       helper.assertTrue(MusliBarPressReserve.read(firstPress, registries(helper)).orElseThrow().sameContents(State.EMPTY), "first actual press unaffected by staging");
       helper.succeed();
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void reserve_partial_transfers_conserve_exact_components(GameTestHelper helper) {
-      ItemStack offered = new ItemStack(Items.WHEAT_SEEDS, 11);
-      offered.set(DataComponents.CUSTOM_NAME, Component.literal("Seed batch"));
-      Plan insertion = MusliBarPressReserve.planInsert(State.EMPTY, offered).orElseThrow();
-      helper.assertValueEqual(8, insertion.count(), "seed capacity is eight");
-      helper.assertValueEqual(11, offered.getCount(), "planning does not consume offered items");
-      helper.assertTrue(MusliBarPressReserve.planInsert(insertion.updated(), offered).isEmpty(), "full seeds refuse overflow");
-      helper.assertTrue(MusliBarPressReserve.planWithdraw(insertion.updated(), Compartment.SEEDS, 0).isEmpty(), "no destination space moves nothing");
-      helper.assertTrue(MusliBarPressReserve.planWithdraw(insertion.updated(), Compartment.SEEDS, -1).isEmpty(), "negative space refused");
-      Plan partial = MusliBarPressReserve.planWithdraw(insertion.updated(), Compartment.SEEDS, 3).orElseThrow();
-      helper.assertValueEqual(3, partial.count(), "withdrawal respects destination limit");
-      helper.assertValueEqual(8, partial.count() + partial.updated().seeds().getCount(), "partial withdrawal conserves stock");
-      helper.assertTrue(ItemStack.isSameItemSameComponents(offered, partial.moved()), "withdrawal preserves exact variant");
-      ItemStack movedCopy = partial.moved();
-      movedCopy.setCount(64);
-      movedCopy.set(DataComponents.CUSTOM_NAME, Component.literal("Changed externally"));
-      helper.assertValueEqual(3, partial.count(), "moved stack exposure is detached");
-      helper.assertTrue(ItemStack.isSameItemSameComponents(offered, partial.moved()), "moved components remain detached");
-      helper.assertTrue(MusliBarPressReserve.planInsert(partial.updated(), new ItemStack(Items.WHEAT_SEEDS)).isEmpty(), "different components cannot merge");
-      Plan end = MusliBarPressReserve.planWithdraw(partial.updated(), Compartment.SEEDS, Integer.MAX_VALUE).orElseThrow();
-      helper.assertValueEqual(8, partial.count() + end.count(), "complete withdrawal neither duplicates nor loses items");
-      helper.assertTrue(end.updated().sameContents(State.EMPTY), "empty withdrawal releases variant");
+   public static void reserve_conversion_is_irreversible_in_every_compartment(GameTestHelper helper) {
+      State state = MusliBarPressReserve.planInsert(State.EMPTY, new ItemStack(Items.BREAD, 8)).orElseThrow().updated();
+      state = MusliBarPressReserve.planInsert(state, new ItemStack(Items.APPLE, 8)).orElseThrow().updated();
+      state = MusliBarPressReserve.planInsert(state, new ItemStack(Items.WHEAT_SEEDS, 8)).orElseThrow().updated();
+      for (Compartment compartment : Compartment.values()) {
+         for (int destinationCapacity : new int[]{-1, 0, 1, 3, 8, Integer.MAX_VALUE}) {
+            helper.assertTrue(MusliBarPressReserve.planWithdraw(state, compartment, destinationCapacity).isEmpty(), "converted units never reconstruct source items");
+            helper.assertValueEqual(8, state.contents(compartment), "withdrawal attempt cannot change gauge");
+         }
+      }
+      helper.assertTrue(MusliBarPressReserve.planWithdraw(null, null, 1).isEmpty(), "invalid withdrawal also fails closed");
       helper.succeed();
    }
 
