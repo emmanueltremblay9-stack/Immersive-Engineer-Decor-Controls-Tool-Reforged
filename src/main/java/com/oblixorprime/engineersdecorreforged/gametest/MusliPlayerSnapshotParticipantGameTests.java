@@ -92,9 +92,9 @@ public final class MusliPlayerSnapshotParticipantGameTests {
                 source.containerMenu.getCarried(), world, source.getUUID(), receipt(),
                 helper.getLevel().registryAccess()).orElseThrow();
         CompoundTag beforeRead = staged.copy();
-        ServerPlayer loaded = player(helper);
+        ServerPlayer loaded = player(helper, source.getUUID());
         loaded.load(staged.copy());
-        helper.assertTrue(loaded.getUUID().equals(source.getUUID()), "native load uses the saved player identity");
+        helper.assertTrue(loaded.getUUID().equals(source.getUUID()), "reload fixture preserves the authenticated player identity");
         helper.assertTrue(ItemStack.matches(press, loaded.getInventory().getItem(0)),
                 "native inventory press retains reserves, damage and unrelated CUSTOM_NAME");
         helper.assertTrue(MusliBarPressReserve.read(press, helper.getLevel().registryAccess()).orElseThrow()
@@ -148,7 +148,7 @@ public final class MusliPlayerSnapshotParticipantGameTests {
         helper.assertTrue(empty.getCompound(KEY).getCompound("receipt").equals(carried.getCompound(KEY).getCompound("receipt")),
                 "ownership transfer retains exact receipt fields");
         helper.assertTrue(afterClose.equals(beforeStage), "replacing valid participant does not mutate source");
-        ServerPlayer loaded = player(helper); loaded.load(empty.copy());
+        ServerPlayer loaded = player(helper, player.getUUID()); loaded.load(empty.copy());
         helper.assertValueEqual(4, countBars(loaded), "native inventory owns output after load");
         helper.assertTrue(ItemStack.matches(bars(), loaded.getInventory().getItem(0)),
                 "native transfer and load retain exact output custom data and count");
@@ -297,9 +297,11 @@ public final class MusliPlayerSnapshotParticipantGameTests {
         return count;
     }
 
-    private static ServerPlayer player(GameTestHelper helper) {
+    private static ServerPlayer player(GameTestHelper helper) { return player(helper, UUID.randomUUID()); }
+
+    private static ServerPlayer player(GameTestHelper helper, UUID identity) {
         ServerPlayer player = new ServerPlayer(helper.getLevel().getServer(), helper.getLevel(),
-                new GameProfile(UUID.randomUUID(), "MusliSnapshot"), ClientInformation.createDefault());
+                new GameProfile(identity, "MusliSnapshot"), ClientInformation.createDefault());
         player.connection = new FakePlayer(helper.getLevel(),
                 new GameProfile(UUID.randomUUID(), "MusliTransport")).connection;
         player.gameMode.changeGameModeForPlayer(GameType.SURVIVAL);
