@@ -2,15 +2,14 @@
 
 ## Scope
 
-TOOLS-113/115, 129/130 and 333-338: one bread, apple and admissible seed
+TOOLS-113/115, 129/130 and 333-338: one generic cereal, fruit and seed unit
 produce four bars and use one durability point. Evaluate current approved 0-64
-durability, refuse without a complete output capacity of four, and clear the seed
-type only when the successful batch leaves zero seeds. The original tool at zero
+durability, refuse without a complete output capacity of four, with no seed identity or live tag check after conversion. The original tool at zero
 remains present; no destruction operation is supplied.
 
 This computes quantities only. A verified output-room number must already include
 complete destination compatibility, stack limits and authorization. The actual
-source/destination snapshots, anti-ABA tracking, seed tags, ownership, durability
+source/destination snapshots, anti-ABA tracking, ownership, durability
 identity, journal and atomic commit are external requirements. Legacy durability
 128 is not silently migrated. There is no output ItemStack creation or live use hook.
 
@@ -38,3 +37,10 @@ cases during the existing Gradle test task. Local execution is not evidence of
 Minecraft integration; existing exact-head CI must compile and run JUnit,
 GameTests, build and client/renderer regressions. No engine PASS is predeclared.
 Root AGENTS.md applies. No merge, release or installation is included.
+
+## Generic-reserve update
+
+The batch input/output records now use cereal/fruit/seeds counters. Removed
+seedAdmissible and clearSeedType: converted units retain no original item type.
+Only the cursor planner and arithmetic tests call this helper in this repository.
+No live tool registration or existing item interaction is changed.

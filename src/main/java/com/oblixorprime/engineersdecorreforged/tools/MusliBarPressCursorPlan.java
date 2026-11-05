@@ -72,7 +72,7 @@ public final class MusliBarPressCursorPlan {
       // The batch helper is arithmetic only. Generic units have already passed
       // admission at absorption; subsequent tag revocation cannot revoke those units.
       var batch = MusleePressBatchPlan.evaluate(new MusleePressBatchPlan.Input(
-         current.cereal(), current.fruit(), current.seeds(), true, verifiedRemainingDurability, room));
+         current.cereal(), current.fruit(), current.seeds(), verifiedRemainingDurability, room));
       if (batch.isEmpty()) return Optional.empty();
       State reserveAfter = MusliBarPressReserve.consumeBatch(current).orElseThrow();
       ItemStack cursorAfter = cursor.isEmpty() ? output : cursor.copyWithCount(cursor.getCount() + BARS_PER_BATCH);
