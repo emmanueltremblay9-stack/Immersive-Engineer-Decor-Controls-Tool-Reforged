@@ -144,6 +144,12 @@ public final class MusliBarPressReserve {
       return Optional.of(new Plan(current.with(kind, current.contents(kind) + amount), kind, amount));
    }
 
+   /** Pure one-batch consumption; output capacity and durability are caller prerequisites. */
+   public static Optional<State> consumeBatch(State current) {
+      if (!hasAdmissibleIngredients(current)) return Optional.empty();
+      return Optional.of(new State(current.cereal - 1, current.fruit - 1, current.seeds - 1));
+   }
+
    /** Conversion is irreversible: there is no ingredient extraction plan. */
    public static Optional<Plan> planWithdraw(State current, Compartment compartment, int possibleToReceive) {
       return Optional.empty();
