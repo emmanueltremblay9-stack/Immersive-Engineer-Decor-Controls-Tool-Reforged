@@ -33,7 +33,10 @@ public final class DoubleTSupportItem extends BlockItem {
       return super.place(merged);
    }
    @Override protected BlockState getPlacementState(BlockPlaceContext context){
-      if(!(context instanceof MergedContext merged))return placementState(context);
+      if(!(context instanceof MergedContext merged)){
+         var state=placementState(context);
+         return state!=null&&canPlace(context,state)?state:null;
+      }
       return merged.canPlace()&&canPlace(context,merged.state)?merged.state:null;
    }
    private BlockState placementState(BlockPlaceContext context){

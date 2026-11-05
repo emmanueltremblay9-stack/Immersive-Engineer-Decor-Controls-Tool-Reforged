@@ -20,6 +20,8 @@ import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -29,6 +31,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
@@ -37,7 +40,9 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
@@ -56,6 +61,67 @@ public final class VerticalDoubleTGameTests {
    }
    private static BlockHitResult hit(BlockPos pos,Direction face) {
       var wall=pos.relative(face.getOpposite());return new BlockHitResult(Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(face.getNormal()).scale(.5)),face,wall,false);
+   }
+   private static BlockState selectedSupportState(Block support,BlockPlaceContext context) {
+      if(support==ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()&&context.getClickedFace().getAxis().isHorizontal())
+         return ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().getStateForPlacement(context);
+      return support.getStateForPlacement(context);
+   }
+   private static boolean profileIntersects(VoxelShape shape,AABB worldBounds,BlockPos pos) {
+      var local=worldBounds.move(-pos.getX(),-pos.getY(),-pos.getZ());
+      return shape.toAabbs().stream().anyMatch(box->box.intersects(local));
+   }
+   private static Zombie collisionMob(GameTestHelper h,BlockPos pos,BlockState candidate,boolean inProfile) {
+      var level=h.getLevel();var shape=candidate.getCollisionShape(level,pos);
+      for(int x=1;x<10;x++)for(int y=0;y<9;y++)for(int z=1;z<10;z++) {
+         var mob=EntityType.ZOMBIE.create(level);if(mob==null)continue;
+         mob.setBaby(true);mob.setNoAi(true);
+         mob.setPos(pos.getX()+x/10.,pos.getY()+y/10.,pos.getZ()+z/10.);
+         boolean overlaps=profileIntersects(shape,mob.getBoundingBox(),pos);
+         if(overlaps==inProfile&&mob.getBoundingBox().intersects(new AABB(pos))&&level.noCollision(mob))return mob;
+         mob.discard();
+      }
+      throw new AssertionError("Could not position a baby zombie "+(inProfile?"inside":"outside")+" the selected support profile");
+   }
+   private static void supportPlacementEntityCase(GameTestHelper h,FakePlayer player,BlockPos pos,Block support,Direction face,Direction look,boolean blocked) {
+      var level=h.getLevel();clear(h,pos);
+      var supportPos=pos.relative(face.getOpposite());
+      var fixture=face.getAxis().isHorizontal()?Blocks.BRICKS.defaultBlockState():Blocks.STONE.defaultBlockState();
+      level.setBlock(supportPos,fixture,Block.UPDATE_ALL);
+      player.setYRot(look.toYRot());
+      var stack=new ItemStack(support.asItem(),2);player.setItemInHand(InteractionHand.MAIN_HAND,stack);
+      var hit=hit(pos,face);
+      var context=new BlockPlaceContext(level,player,InteractionHand.MAIN_HAND,stack,hit);
+      var candidate=selectedSupportState(support,context);
+      if(candidate==null)throw new AssertionError("Expected a selectable support state for "+support+" on "+face);
+      var mob=collisionMob(h,pos,candidate,blocked);
+      h.assertValueEqual(profileIntersects(candidate.getCollisionShape(level,pos),mob.getBoundingBox(),pos),blocked,
+         "fixture entity is "+(blocked?"inside":"outside")+" the actual selected collision profile");
+      h.assertTrue(level.noCollision(mob),"entity fixture has no pre-existing block or entity collision");
+      h.assertTrue(level.addFreshEntity(mob),"entity fixture enters world collision checks");
+      try {
+         boolean unobstructed=level.isUnobstructed(candidate,pos,CollisionContext.of(player));
+         h.assertValueEqual(unobstructed,!blocked,"selected state collision check sees the profile entity");
+         var before=level.getBlockState(pos);
+         var result=stack.useOn(new UseOnContext(player,InteractionHand.MAIN_HAND,hit));
+         if(blocked) {
+            h.assertFalse(result.consumesAction(),"profile obstruction rejects ordinary placement");
+            h.assertValueEqual(stack.getCount(),2,"rejected placement consumes no item");
+            h.assertValueEqual(level.getBlockState(pos),before,"rejected placement leaves target unchanged");
+            h.assertValueEqual(level.getBlockState(supportPos),fixture,"rejected placement leaves its supporting block unchanged");
+            for(Direction neighbor:Direction.values()) {
+               var expected=neighbor==face.getOpposite()?fixture:Blocks.AIR.defaultBlockState();
+               h.assertValueEqual(level.getBlockState(pos.relative(neighbor)),expected,"rejected placement leaves all adjacent world states unchanged");
+            }
+         } else {
+            h.assertTrue(result.consumesAction(),"placement succeeds when the entity is outside the collision profile");
+            h.assertValueEqual(stack.getCount(),1,"successful placement consumes exactly one item");
+            h.assertTrue(level.getBlockState(pos).is(candidate.getBlock()),"successful placement uses the selected orientation's block");
+            h.assertTrue(level.noCollision(mob),"placed support remains clear of the outside-profile entity");
+         }
+      } finally {
+         mob.discard();
+      }
    }
 
    @GameTest(template="empty")
@@ -205,6 +271,23 @@ public final class VerticalDoubleTGameTests {
          h.assertValueEqual(state.getValue(PortedBlocks.EASTWEST),expected.getAxis()==Direction.Axis.X,"ceiling/floor profile follows the player's horizontal placement direction");
          h.assertValueEqual(stack.getCount(),1,"horizontal placement consumes one existing common item");
       }
+      h.succeed();
+   }
+
+   @GameTest(template="empty",timeoutTicks=80)
+   public static void support_items_reject_entities_inside_selected_collision_profiles(GameTestHelper h) {
+      var pos=h.absolutePos(CENTER);var player=player(h,pos);
+      // Both registered items use the same real upright profile on all four wall directions.
+      for(Direction face:Direction.Plane.HORIZONTAL)
+         for(Block support:List.<Block>of(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get(),ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()))
+            for(boolean blocked:List.of(true,false))
+               supportPlacementEntityCase(h,player,pos,support,face,Direction.SOUTH,blocked);
+      // The canonical item also places the horizontal profile from floor and ceiling faces;
+      // exercise both horizontal axes so each actual collision orientation is covered.
+      for(Direction face:List.of(Direction.UP,Direction.DOWN))
+         for(Direction look:Direction.Plane.HORIZONTAL)
+            for(boolean blocked:List.of(true,false))
+               supportPlacementEntityCase(h,player,pos,ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(),face,look,blocked);
       h.succeed();
    }
 
