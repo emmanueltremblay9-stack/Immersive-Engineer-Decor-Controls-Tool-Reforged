@@ -54,7 +54,7 @@ public final class ContentRegressionGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
-   public static void every_registered_item_is_routed_to_the_main_creative_tab(GameTestHelper helper) {
+   public static void every_registered_item_has_explicit_main_tab_visibility(GameTestHelper helper) {
       Set<Item> registeredItems = new HashSet<>();
       BuiltInRegistries.ITEM.entrySet().stream()
          .filter(entry -> entry.getKey().location().getNamespace().equals(EngineersDecorReforged.MOD_ID))
@@ -66,11 +66,13 @@ public final class ContentRegressionGameTests {
       helper.assertTrue(
          registeredItems.equals(distinctOrderedItems), "every current-namespace item should have exactly one creative-tab route"
       );
-      ModItems.ORDERED_ITEMS.forEach(
-         item -> helper.assertTrue(
-            EngineersDecorReforged.shouldShowInCreativeTab(item), "default configuration should show creative item " + item.getId()
-         )
-      );
+      ModItems.ORDERED_ITEMS.forEach(item -> {
+         boolean legacyVerticalSupport = item.getId().getPath().equals("vertical_steel_double_t_support");
+         helper.assertValueEqual(
+            EngineersDecorReforged.shouldShowInCreativeTab(item), !legacyVerticalSupport,
+            "only the canonical support item should be in the default creative list: " + item.getId()
+         );
+      });
       helper.assertTrue(EngineersDecorReforged.MAIN_TAB.get() != null, "main creative tab should be registered");
       helper.succeed();
    }
