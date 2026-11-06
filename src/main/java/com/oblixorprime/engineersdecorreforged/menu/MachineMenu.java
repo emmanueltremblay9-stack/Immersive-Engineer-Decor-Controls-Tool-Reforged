@@ -6,6 +6,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
+import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
 import java.util.Locale;
@@ -38,6 +39,9 @@ import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class MachineMenu extends AbstractContainerMenu {
+   /** DEVELOPMENT/VALIDATION only. Consulted by the client factory, never server gameplay. */
+   public static final String DEV_FREEZER_REFERENCE_PROPERTY = "iedctr.dev.freezerV5ExactReference";
+   public static final String DEV_FREEZER_LIVE_ENERGY_PROPERTY = "iedctr.dev.freezerV5LiveEnergy";
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
    public static final int SMALL_MINERAL_SMELTER_V05_DATA_COUNT = 17;
@@ -91,6 +95,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int[] SMELTER_PLAYER_SLOT_X = {27, 48, 68, 88, 109, 129, 150, 170, 191};
    private final Player menuPlayer;
    private boolean smelterOutputDrawerOpen;
+   private final boolean freezerReferencePresentation;
    private final MachineKind kind;
    private final MachineLayout layout;
    private final int visibleMachineSlots;
@@ -108,15 +113,27 @@ public class MachineMenu extends AbstractContainerMenu {
 
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
       return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
-         new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT));
+         new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
+         kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)
+            || Boolean.getBoolean(DEV_FREEZER_LIVE_ENERGY_PROPERTY)));
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {
+      this(kind, id, inventory, container, data, false);
+   }
+
+   private MachineMenu(MachineKind kind, int id, Inventory inventory, Container container,
+                       ContainerData data, boolean freezerReferenceRequested) {
       super((MenuType)resolveMenuType(kind), id);
       checkContainerSize(container, 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
       this.menuPlayer = inventory.player;
+      // Geometry is client presentation only. Both sides retain exactly the same 39 slots,
+      // order, container indices, transfer ranges and data fields. A server JVM flag does
+      // not change authoritative menus, and no client-only Minecraft classes are loaded here.
+      this.freezerReferencePresentation = freezerReferenceRequested
+         && kind == MachineKind.SMALL_FREEZER && inventory.player.level().isClientSide;
       this.layout = MachineLayout.forKind(kind);
       this.visibleMachineSlots = this.layout.machineSlots().size();
       this.container = container;
@@ -136,21 +153,39 @@ public class MachineMenu extends AbstractContainerMenu {
       container.startOpen(inventory.player);
 
       for (MachineLayout.MachineSlot slot : this.layout.machineSlots()) {
-         this.addSlot(this.createMachineSlot(slot));
+         MachineLayout.MachineSlot presentationSlot = slot;
+         if (this.freezerReferencePresentation && slot.containerIndex() != 1) {
+            var anchor = FreezerReferenceGeometry.anchor(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(
+               slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         }
+         this.addSlot(this.createMachineSlot(presentationSlot));
       }
 
       for (int row = 0; row < 3; row++) {
          for (int column = 0; column < 9; column++) {
             int x = kind == MachineKind.SMALL_MINERAL_SMELTER
                ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerSlotX(column);
-            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, this.layout.playerSlotY(row)));
+            int y = this.layout.playerSlotY(row);
+            if (this.freezerReferencePresentation) {
+               var anchor = FreezerReferenceGeometry.anchor(3 + row * 9 + column);
+               x = anchor.x();
+               y = anchor.y();
+            }
+            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, y));
          }
       }
 
       for (int column = 0; column < 9; column++) {
          int x = kind == MachineKind.SMALL_MINERAL_SMELTER
             ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarSlotX(column);
-         this.addSlot(new Slot(inventory, column, x, this.layout.hotbarY()));
+         int y = this.layout.hotbarY();
+         if (this.freezerReferencePresentation) {
+            var anchor = FreezerReferenceGeometry.anchor(30 + column);
+            x = anchor.x();
+            y = anchor.y();
+         }
+         this.addSlot(new Slot(inventory, column, x, y));
       }
 
       this.addDataSlots(data);
@@ -162,6 +197,10 @@ public class MachineMenu extends AbstractContainerMenu {
          throw new IllegalStateException("No machine menu registered for kind: " + kind);
       }
       return menuType.get();
+   }
+
+   public boolean freezerReferencePresentation() {
+      return this.freezerReferencePresentation;
    }
 
    public MachineKind kind() {
@@ -449,6 +488,16 @@ public class MachineMenu extends AbstractContainerMenu {
             ? new MachineMenu.MetalCraftingResultSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
             : new MachineMenu.MetalCraftingInputSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
 
+      }
+      if (this.kind == MachineKind.SMALL_FREEZER && slot.containerIndex() == 1) {
+         return new MachineMenu.ValidatedMachineSlot(this.container, 1, slot.x(), slot.y(), true) {
+            @Override
+            public boolean isActive() {
+               // Hide the historical reserved opening only in the opt-in presentation.
+               // Its backing contents and ordinary QUICK_MOVE recovery remain intact.
+               return !MachineMenu.this.freezerReferencePresentation;
+            }
+         };
       }
       if (this.kind == MachineKind.SMALL_MINERAL_SMELTER && slot.containerIndex() == 2) {
          return new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y()) {

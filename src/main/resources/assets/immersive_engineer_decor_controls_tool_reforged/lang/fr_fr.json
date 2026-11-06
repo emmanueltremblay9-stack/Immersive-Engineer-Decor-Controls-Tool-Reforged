@@ -1091,5 +1091,10 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.fluid_unavailable": "Réservoir de fluide non implémenté. Aucun niveau ni bonus simulé.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.power_unavailable": "Décoration neutre, pas de commande marche/arrêt.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.static_scene": "Illustration fixe de casse. Ce n’est pas le bloc ciblé.",
-  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.work_details": "Travail : %s/%s ticks ; %s. %s : %s"
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.work_details": "Travail : %s/%s ticks ; %s. %s : %s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover": "Récupérer les objets réservés",
+  "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help": "Récupérer l’ancien emplacement 1 dans votre inventaire. Ctrl+Maj+R. Inventaire plein : les objets restent stockés.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.live_energy_cells": "Énergie réelle : %s / %s segments (arrondi inférieur).",
+  "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_frost": "GIVRE STATIQUE : aucune couche de chambre dégivrée n’est disponible.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_art": "IMAGE DE RÉFÉRENCE STATIQUE : le givre et l’énergie ne sont pas actualisés."
 }

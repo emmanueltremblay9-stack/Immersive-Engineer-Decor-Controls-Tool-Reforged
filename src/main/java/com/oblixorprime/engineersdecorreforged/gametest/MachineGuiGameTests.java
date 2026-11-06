@@ -37,6 +37,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.item.Item;
@@ -78,7 +79,7 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
       new MachineGuiGameTests.MachineEntry(
-         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_rp_v3/background"
+         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_rp_v5/background"
       ),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
@@ -206,8 +207,8 @@ public final class MachineGuiGameTests {
             );
          }
          if (entry.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
-            helper.assertValueEqual(256, menu.layout().imageWidth(), "Block Breaker should use the v3 logical width");
-            helper.assertValueEqual(256, menu.layout().imageHeight(), "Block Breaker should use the v3 logical height");
+            helper.assertValueEqual(256, menu.layout().imageWidth(), "Block Breaker should use the v5 logical width");
+            helper.assertValueEqual(256, menu.layout().imageHeight(), "Block Breaker should use the v5 logical height");
             helper.assertValueEqual(0, menu.layout().machineSlots().get(0).containerIndex(), "single visible output should use vanilla slot index 0");
             helper.assertTrue(
                menu.layout().machineSlots().get(0).role().toLowerCase(java.util.Locale.ROOT).contains("output"),
@@ -1331,6 +1332,61 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the batch resumes after output space is freed");
       helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
       helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_freezer_reference_flag_preserves_server_slots_and_reserved_recovery(GameTestHelper helper) {
+      String previous = System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY);
+      System.setProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY, "true");
+      try {
+         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+         MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+         ItemStack reserved = new ItemStack(Items.DIRT, 5);
+         reserved.set(DataComponents.CUSTOM_NAME, net.minecraft.network.chat.Component.literal("Legacy reserved items"));
+         machine.setItem(0, new ItemStack(Items.ICE));
+         machine.setItem(1, reserved);
+         machine.setItem(2, new ItemStack(Items.PACKED_ICE));
+         CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+         machine.setItem(1, ItemStack.EMPTY);
+         machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+
+         MachineMenu menu = new MachineMenu(
+            MachineKind.SMALL_FREEZER, 1, player.getInventory(), machine, machine.dataAccessForTests());
+         helper.assertTrue(!menu.freezerReferencePresentation(), "client development flag must not change server presentation");
+         helper.assertValueEqual(39, menu.slots.size(), "both presentations preserve all 39 protocol slots");
+         helper.assertValueEqual(3, menu.visibleMachineSlots(), "quickMove machine range stays 0..2");
+         for (int index = 0; index < 3; index++) {
+            helper.assertValueEqual(index, menu.getSlot(index).getSlotIndex(), "machine container indices stay unchanged");
+         }
+         for (int index = 3; index < 30; index++) {
+            helper.assertValueEqual(index + 6, menu.getSlot(index).getSlotIndex(), "inventory slot order stays unchanged");
+         }
+         for (int index = 30; index < 39; index++) {
+            helper.assertValueEqual(index - 30, menu.getSlot(index).getSlotIndex(), "hotbar slot order stays unchanged");
+         }
+         helper.assertValueEqual(30, menu.getSlot(0).x, "server retains legacy layout x");
+         helper.assertValueEqual(66, menu.getSlot(0).y, "server retains legacy layout y");
+         helper.assertTrue(menu.getSlot(1).isActive(), "server retains ordinary reserved slot access");
+         helper.assertTrue(!menu.getSlot(1).mayPlace(new ItemStack(Items.DIRT)), "reserved insertion remains disabled");
+         helper.assertTrue(!menu.getSlot(2).mayPlace(new ItemStack(Items.ICE)), "output insertion remains disabled");
+         helper.assertTrue(ItemStack.isSameItemSameComponents(reserved, machine.getItem(1)), "saved reserved NBT/components survive");
+
+         for (int index = 0; index < 36; index++) player.getInventory().setItem(index, new ItemStack(Items.STONE, 64));
+         menu.clicked(1, 0, ClickType.QUICK_MOVE, player);
+         helper.assertValueEqual(5, machine.getItem(1).getCount(), "full inventory does not lose reserved items");
+         player.getInventory().setItem(0, ItemStack.EMPTY);
+         menu.clicked(1, 0, ClickType.QUICK_MOVE, player);
+         helper.assertTrue(machine.getItem(1).isEmpty(), "normal QUICK_MOVE packet path recovers reserved contents");
+         helper.assertValueEqual(5, player.getInventory().getItem(0).getCount(), "all reserved items reach player inventory");
+         helper.assertTrue(ItemStack.isSameItemSameComponents(reserved, player.getInventory().getItem(0)), "recovery retains item components");
+         helper.assertTrue(machine.getItem(0).is(Items.ICE), "recovery leaves input untouched");
+         helper.assertTrue(machine.getItem(2).is(Items.PACKED_ICE), "recovery leaves output untouched");
+         menu.removed(player);
+         helper.succeed();
+      } finally {
+         if (previous == null) System.clearProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY);
+         else System.setProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY, previous);
+      }
    }
 
    @GameTest(template = "empty", timeoutTicks = 100)
