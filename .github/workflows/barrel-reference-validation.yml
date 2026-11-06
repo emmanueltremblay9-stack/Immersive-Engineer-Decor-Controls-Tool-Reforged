@@ -1,0 +1,72 @@
+name: Barrel V5 reference experiment
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout exact selected commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Verify exact retained PNG, geometry and screen-space clip
+        run: |
+          bash tools/validation/check_barrel_reference.sh
+          python tools/validation/check_barrel_reference_wiring.py
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Compile, run JUnit and existing GameTests, build JAR
+        shell: bash
+        run: |
+          bash ./gradlew compileJava processResources test runGameTestServer jar --stacktrace
+          git rev-parse HEAD > build/tested-source-sha.txt
+          find build/libs -maxdepth 1 -name '*.jar' -exec sha256sum {} + > build/tested-jar-sha256.txt
+      - name: Check native display prerequisites
+        run: command -v Xvfb && command -v xvfb-run && command -v xauth
+      - name: Test native evidence validator
+        run: python -m unittest discover -s tools/validation -p 'test_barrel_reference_native.py' -v
+      - name: Show source cleanliness before native execution
+        run: git status --porcelain --untracked-files=all
+      - name: Capture Barrel V5 English native interactions
+        run: python tools/validation/barrel_reference_native.py --language en_us --height 720 --prepare-timeout 900 --timeout 900
+      - name: Capture Barrel V5 French small-window interactions
+        run: python tools/validation/barrel_reference_native.py --language fr_fr --height 260 --prepare-timeout 900 --timeout 900
+      - name: State evidence boundaries
+        if: always()
+        shell: bash
+        run: |
+          echo "Tested checkout: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Native runs are bounded interaction checks, not full visual acceptance. No release is published.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Required native checklist: docs/testing/barrel-reference-v5/README.md' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain validation reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: barrel-reference-experiment-reports
+          path: |
+            build/tested-source-sha.txt
+            build/tested-jar-sha256.txt
+            build/reports/tests/
+            build/test-results/
+            build/barrel-reference-native-*/run/client-barrel-reference-result.json
+            build/barrel-reference-native-*/run/barrel-reference-screenshots/*.png
+            build/barrel-reference-native-*/prepare.log
+            build/barrel-reference-native-*/client.log
+            build/barrel-reference-native-*/*.observed.log
+          retention-days: 14

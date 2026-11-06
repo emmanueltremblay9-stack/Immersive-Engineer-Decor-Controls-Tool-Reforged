@@ -1,5 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.menu;
 
+import com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceGeometry;
+
 import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockBreakerDataSync;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
@@ -89,6 +91,9 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int PLAYER_INVENTORY_END = 54;
    private static final int HOTBAR_END = 63;
    private static final int[] SMELTER_PLAYER_SLOT_X = {27, 48, 68, 88, 109, 129, 150, 170, 191};
+   public static final String DEV_BARREL_REFERENCE_PROPERTY = "iedctr.dev.barrelV5Reference";
+   private final boolean barrelReferencePresentation;
+   public boolean barrelReferencePresentation() { return barrelReferencePresentation; }
    private final Player menuPlayer;
    private boolean smelterOutputDrawerOpen;
    private final MachineKind kind;
@@ -108,11 +113,19 @@ public class MachineMenu extends AbstractContainerMenu {
 
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
       return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
-         new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT));
+         new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
+         kind == MachineKind.FLUID_BARREL && Boolean.getBoolean(DEV_BARREL_REFERENCE_PROPERTY));
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {
+      this(kind, id, inventory, container, data, false);
+   }
+
+   private MachineMenu(MachineKind kind, int id, Inventory inventory, Container container,
+                       ContainerData data, boolean barrelReferenceRequested) {
       super((MenuType)resolveMenuType(kind), id);
+      this.barrelReferencePresentation = barrelReferenceRequested
+         && kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide;
       checkContainerSize(container, 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
@@ -136,21 +149,36 @@ public class MachineMenu extends AbstractContainerMenu {
       container.startOpen(inventory.player);
 
       for (MachineLayout.MachineSlot slot : this.layout.machineSlots()) {
-         this.addSlot(this.createMachineSlot(slot));
+         MachineLayout.MachineSlot presentationSlot = slot;
+         if (barrelReferencePresentation) {
+            var anchor = BarrelReferenceGeometry.anchor(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         }
+         this.addSlot(this.createMachineSlot(presentationSlot));
       }
 
       for (int row = 0; row < 3; row++) {
          for (int column = 0; column < 9; column++) {
             int x = kind == MachineKind.SMALL_MINERAL_SMELTER
                ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerSlotX(column);
-            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, this.layout.playerSlotY(row)));
+            int y = this.layout.playerSlotY(row);
+            if (barrelReferencePresentation) {
+               var anchor = BarrelReferenceGeometry.anchor(2 + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
+            }
+            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, y));
          }
       }
 
       for (int column = 0; column < 9; column++) {
          int x = kind == MachineKind.SMALL_MINERAL_SMELTER
             ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarSlotX(column);
-         this.addSlot(new Slot(inventory, column, x, this.layout.hotbarY()));
+         int y = this.layout.hotbarY();
+         if (barrelReferencePresentation) {
+            var anchor = BarrelReferenceGeometry.anchor(29 + column);
+            x = anchor.x(); y = anchor.y();
+         }
+         this.addSlot(new Slot(inventory, column, x, y));
       }
 
       this.addDataSlots(data);
