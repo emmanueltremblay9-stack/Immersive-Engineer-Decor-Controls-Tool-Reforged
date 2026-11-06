@@ -1,9 +1,9 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public final class FreezerReferenceLiveStateTest {
-   @Test void preservesModeIsolationAndRawFE() { FreezerReferenceLiveStateChecks.checkModesAndEnergy(); }
-   @Test void preservesAuthoritativeProgressAndStaticFrostGate() { FreezerReferenceLiveStateChecks.checkFrostSnapshots(); }
-   @Test void boundsSourcePatchesToConservativeWell() { FreezerReferenceLiveStateChecks.checkPatchGeometry(); }
+   @Test public void preservesModeIsolationAndRawFE() { FreezerReferenceLiveStateChecks.checkModesAndEnergy(); }
+   @Test public void preservesAuthoritativeProgressAndStaticFrostGate() { FreezerReferenceLiveStateChecks.checkFrostSnapshots(); }
+   @Test public void boundsSourcePatchesToConservativeWell() { FreezerReferenceLiveStateChecks.checkPatchGeometry(); }
 }
