@@ -1,0 +1,140 @@
+name: Solar V2 reference experiment
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout exact selected commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Verify retained artwork and dependency-free geometry
+        run: |
+          bash tools/validation/check_solar_v2_reference.sh
+          python tools/validation/check_solar_v2_reference_wiring.py
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Compile, run JUnit and existing GameTests, build JAR
+        shell: bash
+        run: |
+          bash ./gradlew compileJava processResources test runGameTestServer jar --stacktrace
+          git rev-parse HEAD > build/tested-source-sha.txt
+          find build/libs -maxdepth 1 -name '*.jar' -exec sha256sum {} + > build/tested-jar-sha256.txt
+      - name: Test native evidence validator
+        run: python -m unittest discover -s tools/validation -p 'test_solar_v2_reference_native.py' -v
+      - name: State evidence boundaries
+        if: always()
+        shell: bash
+        run: |
+          echo "Tested checkout: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Native runs are bounded interaction checks, not full visual acceptance. No release is published.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Required native checklist: docs/testing/solar-v2-reference/README.md' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain validation reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: solar-v2-reference-experiment-reports
+          path: |
+            build/tested-source-sha.txt
+            build/tested-jar-sha256.txt
+            build/reports/tests/
+            build/test-results/
+          retention-days: 14
+
+  validate-native-scale:
+    needs: validate-experiment
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: en-1280x720-scale1
+            language: en_us
+            width: 1280
+            height: 720
+            gui_scale: 1
+          - profile: fr-1280x260-scale1
+            language: fr_fr
+            width: 1280
+            height: 260
+            gui_scale: 1
+          - profile: en-1920x1080-scale1
+            language: en_us
+            width: 1920
+            height: 1080
+            gui_scale: 1
+          - profile: en-1920x1080-scale2
+            language: en_us
+            width: 1920
+            height: 1080
+            gui_scale: 2
+          - profile: en-1920x1080-scale3
+            language: en_us
+            width: 1920
+            height: 1080
+            gui_scale: 3
+    steps:
+      - name: Checkout exact selected commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Check native display prerequisites
+        run: command -v Xvfb && command -v xvfb-run && command -v xauth
+      - name: Record exact source identity
+        run: |
+          mkdir -p build
+          git rev-parse HEAD > build/tested-source-sha.txt
+          git status --porcelain --untracked-files=all
+      - name: Capture native interactions at requested GUI scale
+        run: >-
+          python tools/validation/solar_v2_reference_native.py
+          --language ${{ matrix.language }} --width ${{ matrix.width }} --height ${{ matrix.height }}
+          --gui-scale ${{ matrix.gui_scale }} --prepare-timeout 900 --timeout 900
+      - name: State native evidence boundaries
+        if: always()
+        run: |
+          echo "Tested checkout: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Requested profile: ${{ matrix.profile }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Proof must match requested and actual GUI scale, GUI dimensions and native framebuffer crop. Bounded screen-handler input only, not physical pointer or full visual acceptance.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain native reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: solar-v2-reference-native-${{ matrix.profile }}
+          path: |
+            build/tested-source-sha.txt
+            build/solar-v2-reference-native-*/run/client-solar-v2-reference-result.json
+            build/solar-v2-reference-native-*/run/solar-v2-reference-screenshots/*.png
+            build/solar-v2-reference-native-*/prepare.log
+            build/solar-v2-reference-native-*/client.log
+            build/solar-v2-reference-native-*/*.observed.log
+          retention-days: 14

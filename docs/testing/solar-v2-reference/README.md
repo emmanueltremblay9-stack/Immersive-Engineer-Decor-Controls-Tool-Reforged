@@ -1,0 +1,128 @@
+# Small Solar Panel V2 opt-in presentation
+
+Stack base: PR166 remote commit `9ddbd4af5b06d4ed915c42c758d9f3840844b80e`, tree
+`9bcb0cb64c53937ada0b8cad1e2a8bad704e575a`. This candidate adds a separate default-OFF
+presentation. It neither replaces the production Solar screen nor changes the retained
+Barrel experiment. Publication, full visual acceptance, merge and release are separate.
+
+## Source and geometry
+
+The retained source was inspected visually and copied byte-for-byte from the
+[immutable Small Solar Panel V2 artwork](https://github.com/emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-DEV/blob/0c166b34fb19cdf4a54373ff5e9c4770a854be12/candidates/iedctr/retained-concepts/2026-11-04/small-solar-panel-v2.png).
+It is 1254 by 1254 pixels, SHA-256
+`d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796`.
+Only that PNG, canonical public provenance and measured coordinates are included. The
+partial authoring kit is not a runtime dependency and is not included in this candidate.
+
+The 418 by 418 logical canvas maps the source exactly 1:3. One uniform transform fits
+the complete canvas within up to six GUI pixels of margin without stretching or
+upscaling. All 37 vanilla 16 by 16 item origins are centered inside conservative source
+interiors documented in `geometry-manifest.json`. Index 0 is the existing Cell;
+1 through 27 remain player inventory slots 9 through 35; 28 through 36 remain hotbar
+slots 0 through 8. Decorative apertures do not enlarge vanilla slot targets. Hover
+padding is clipped to measured interiors; complete items remain inside those interiors.
+
+Click, release, drag, movement and scroll positions use the same inverse transform.
+Drag pixel deltas are also inverted; wheel values are not. Fractional hover positions
+are retained even though Minecraft's render method accepts integer mouse coordinates.
+Tooltips render after restoring the normal screen pose. The retained blank plaque is
+left blank and no label backgrounds or masking panels are added. The existing localized
+FE tooltip and Cell role are retained rather than inventing new machine states.
+
+## Live FE and preserved behavior
+
+Enable only on the client with `-Diedctr.dev.solarV2Reference=true`.
+`MachineMenu.client` captures this independent property when constructing the client
+projection. The public server constructor explicitly disables it, including when the
+integrated server shares that JVM. Default clients continue using the unmodified
+`MachineScreen.SmallSolarPanelScreen`. Barrel's independent flag and projection are
+unchanged.
+
+The native source meter's measured safe interior is `[146,588,997,625)` in source
+coordinates. The dynamic overlay rounds inward to `[49,196,332,208)` on the logical
+canvas, leaving the frame untouched. Fill is horizontal, floored and clamped from
+actual synchronized energy/capacity. Only the existing legacy FE orange and highlight
+colors are reused. There is no dark-backing redraw, recoloring, baked example charge,
+new illustrated fill, sunlight state, panel motion or fabricated machine data. At zero
+FE nothing is drawn over the source. Less than one logical pixel can remain visually
+empty; the tooltip still reports the synchronized FE value.
+
+Screen-space scissor bounds are transformed and rounded inward before Minecraft's
+window GUI scale is applied. Scissor state is restored in a finally block. Real slot
+rules, chargeable items, transfers, server slot order, 64,000 FE capacity, comparator
+behavior and 100 FE display granularity are unchanged. `preserved-baseline-sha256.json`
+freezes the existing production screen, layout, entity, energy sync, old artwork and
+all retained Barrel files. The source guard also hashes the entire downstream menu
+implementation, including synchronization, transfer and validation logic.
+
+## Local checks and limits
+
+Executed successfully during candidate preparation:
+
+- Java 21 dependency-free checks: all 37 unique indices, item containment, disjoint
+  hover targets, boundaries, ten viewport shapes, inverse absolute/delta transforms,
+  negative-pointer flooring, invalid input rejection, empty/half/full/subpixel FE,
+  clamped overflow-safe arithmetic and monotonic fill.
+- Exact PNG SHA-256, dimensions, manifest mappings, source/input routing, legacy
+  fallback, client-only flags, unchanged downstream menu and preserved files.
+- Existing Barrel dependency-free geometry and source guards, unchanged.
+- Java syntax parsing for all 318 sources. Parsing alone is not mapped type checking.
+- All 166 Python validation unit tests, including 25 independent Solar native-evidence
+  validator tests, pass. These synthetic tests are not native Minecraft execution.
+- Workflow YAML parses with all five native profiles, Python compilation and whitespace
+  checks pass.
+
+Commands from repository root:
+
+    bash tools/validation/check_solar_v2_reference.sh
+    python tools/validation/check_solar_v2_reference_wiring.py
+    bash tools/validation/check_barrel_reference.sh
+    python tools/validation/check_barrel_reference_wiring.py
+    java tools/validation/ParseBarrelSources.java
+    python -m unittest discover -s tools/validation -p 'test_solar_v2_reference_native.py' -v
+
+Full mapped compilation and native execution were not available in the preparation
+workspace: the complete Gradle distribution/dependency cache is absent, wrapper network
+download is unavailable and Xvfb is absent. No native screenshots or passing Minecraft
+result are claimed from that workspace. The new workflow must pass on the exact
+published candidate commit before its runtime evidence can be accepted.
+
+## Isolated native gate
+
+`.github/workflows/solar-v2-reference-validation.yml` checks out the exact PR head (not
+a synthetic merge commit), runs source checks, mapped compile, JUnit, existing GameTests
+and JAR build, then runs an independent nonce-owned native fixture at these profiles:
+
+- English, 1280 by 720, GUI scale 1.
+- French, 1280 by 260, GUI scale 1.
+- English, 1920 by 1080, GUI scales 1, 2 and 3.
+
+The runner refuses a dirty candidate, stale captures, existing saves, mismatched source
+SHA/art/locale, fallback GUI scale, incorrect framebuffer dimensions or geometry,
+missing routes, crashes and timeouts. It rechecks clean source identity after execution.
+It retains JSON proof, PNGs, crop hashes and logs with the tested source identity;
+the compile job separately records the built JAR SHA-256.
+
+The native fixture opens a real synchronized Solar menu in a new integrated world. It
+uses the existing `immersiveengineering:capacitor_lv` item and its actual NeoForge
+energy capability, places it via screen click/release handlers into the Cell, and
+observes real server FE movement with FE/item conservation. An opaque roof prevents
+solar generation during that controlled test. All 37 slots are picked up and placed
+through the normal screen handlers and vanilla packets with server observation. FE
+snapshots at zero, half and full are controlled fixture states, not claims about new
+production mechanics. It captures the meter and checks surrounding canvas pixels,
+closes the screen, verifies server close, then reopens and checks state/geometry.
+
+The Python validator independently decodes PNG pixels, matches the cropped meter to
+the full screenshot, verifies the expected horizontal FE colors and verifies that the
+retained canvas outside the allowed FE/item regions is unchanged across charge states.
+Synthetic PNG fixtures test the validator; they are explicitly not native proof.
+
+## Remaining visual/interaction acceptance
+
+Even green bounded native checks do not claim physical mouse input, resource reload,
+all tooltip edge positions, drag splitting, shift/right/double-click combinations,
+hotbar keys, resizing while carrying items, full-inventory failures, or final visual
+acceptance. Those remain separate broader acceptance checks. Default-OFF operation
+must remain unchanged regardless of the native fixture's result. No merge or release
+is performed by this workflow.
