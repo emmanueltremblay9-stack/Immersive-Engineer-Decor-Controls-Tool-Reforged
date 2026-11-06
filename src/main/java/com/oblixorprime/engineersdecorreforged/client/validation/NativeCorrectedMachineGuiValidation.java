@@ -550,7 +550,8 @@ final class NativeCorrectedMachineGuiValidation {
          var handler = machine.fluidHandler(Direction.UP);
          require(handler != null && handler.getTanks() > 0, "Fixture has no fluid tank for " + spec.kind());
          handler.drain(Integer.MAX_VALUE, FluidAction.EXECUTE);
-         Fluid fluid = spec.fluid() != null ? spec.fluid() : milkFluid();
+         Fluid fluid = spec.kind() == MachineKind.FLUID_BARREL ? barrelFixtureFluid()
+            : spec.fluid() != null ? spec.fluid() : milkFluid();
          int capacity = handler.getTankCapacity(0);
          int amount = fraction == 0 ? 0 : fraction == 1 ? capacity / 2 : capacity;
          if (amount > 0) require(handler.fill(new FluidStack(fluid, amount), FluidAction.EXECUTE) == amount,
@@ -572,6 +573,15 @@ final class NativeCorrectedMachineGuiValidation {
       return NeoForgeMod.MILK.value();
    }
 
+   private static Fluid barrelFixtureFluid() {
+      return switch (System.getProperty("iedctr.barrelFixtureFluid", "water")) {
+         case "water" -> Fluids.WATER;
+         case "lava" -> Fluids.LAVA;
+         case "milk" -> milkFluid();
+         default -> throw new IllegalArgumentException("Unknown Barrel fixture fluid");
+      };
+   }
+
    private static boolean stateIsVisible(MachineMenu menu, Spec spec, int state) {
       int expected = state == 0 ? 0 : state == 1 ? (spec.fluid() != null || spec.kind() == MachineKind.SMALL_MILKING_MACHINE
          ? menu.fluidCapacity() / 2 : menu.energyCapacity() / 2) : (spec.fluid() != null || spec.kind() == MachineKind.SMALL_MILKING_MACHINE
@@ -579,7 +589,8 @@ final class NativeCorrectedMachineGuiValidation {
       int visible = spec.fluid() != null || spec.kind() == MachineKind.SMALL_MILKING_MACHINE
          ? menu.fluidAmount() : menu.energyStored();
       if (spec.kind() == MachineKind.SMALL_FREEZER && state == 1) return visible > 0 && menu.freezerProgressTicks() >= 30;
-      return visible == expected;
+      return visible == expected && (spec.kind() != MachineKind.FLUID_BARREL
+         || menu.storedFluid() == (state == 0 ? Fluids.EMPTY : barrelFixtureFluid()));
    }
 
    private static boolean milkingInputVisible(MachineMenu menu, Inventory inventory) {
@@ -796,14 +807,14 @@ final class NativeCorrectedMachineGuiValidation {
          require(menu.storedFluid() == Fluids.EMPTY && colors.size() == 1 && colors.contains(0xFF282014),
             "Empty Barrel fluid interior is not the untextured dark backing");
       } else {
-         require(menu.storedFluid() == Fluids.WATER, "Barrel fixture has not synchronized its water identity");
+         require(menu.storedFluid() == barrelFixtureFluid(), "Barrel fixture has not synchronized its requested fluid identity");
          var stack = new FluidStack(menu.storedFluid(), menu.fluidAmount());
          var properties = IClientFluidTypeExtensions.of(stack.getFluid());
          var still = properties.getStillTexture(stack);
-         require(still != null, "Barrel water extension has no still texture");
+         require(still != null, "Barrel fluid extension has no still texture");
          var sprite = mc.getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(still);
          require(sprite != null && sprite.contents().name().equals(still), "Barrel still sprite is not in the block atlas");
-         require(colors.size() > 1, "Barrel water interior is a flat fill instead of the native fluid sprite");
+         require(colors.size() > 1, "Barrel fluid interior is a flat fill instead of the native fluid sprite");
          result.addProperty("still_texture", still.toString());
          result.addProperty("tint_argb", String.format(Locale.ROOT, "%08x", properties.getTintColor(stack)));
       }
@@ -939,6 +950,7 @@ final class NativeCorrectedMachineGuiValidation {
       proof.addProperty("pull_request_head_sha", pullRequestHeadSha);
       proof.addProperty("language", language);
       proof.addProperty("selected_language", selectedLanguage);
+      proof.addProperty("barrel_fixture_fluid", BuiltInRegistries.FLUID.getKey(barrelFixtureFluid()).toString());
       proof.addProperty("window_width", mc.getWindow().getWidth());
       proof.addProperty("window_height", mc.getWindow().getHeight());
       proof.addProperty("screenshot_method", "Native Minecraft panel crops with cursor outside, separate full-window hover captures, and a Tree Cutter badge-only crop");
@@ -963,3 +975,4 @@ final class NativeCorrectedMachineGuiValidation {
 
    private record Spec(MachineKind kind, String id, Block block, Fluid fluid) {}
 }
+

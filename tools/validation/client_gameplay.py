@@ -298,8 +298,14 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
 
 def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                          directory: Path, window_width: int, window_height: int,
-                                         language: str, logs: str) -> dict:
+                                         language: str, logs: str, barrel_fluid: str = "water") -> dict:
     """Fail closed unless seven live screens and the Tree Cutter badge-only panel were captured."""
+    fluids = {"water": ("minecraft:water", "minecraft:block/water_still"),
+              "lava": ("minecraft:lava", "minecraft:block/lava_still"),
+              "milk": ("minecraft:milk", "neoforge:block/milk_still")}
+    if barrel_fluid not in fluids or proof.get("barrel_fixture_fluid") != fluids[barrel_fluid][0]:
+        raise SmokeFailure("Barrel proof does not identify the requested fixture fluid")
+    expected_fluid, expected_still = fluids[barrel_fluid]
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
         "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228),
@@ -438,16 +444,16 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                             or any(type(sample.get(key)) is not int or sample[key] != value for key, value in (
                                 ("x", 99), ("y", top), ("width", 16), ("height", 107 - top)))
                             or type(sample.get("distinct_rgba_colors")) is not int
-                            or sample.get("fluid_id") != ("minecraft:empty" if stage == "empty" else "minecraft:water")):
+                            or sample.get("fluid_id") != ("minecraft:empty" if stage == "empty" else expected_fluid)):
                         raise SmokeFailure(f"Native Barrel {stage} frame lacks the exact fluid-only pixel sample")
                     if stage == "empty":
                         if sample["distinct_rgba_colors"] != 1:
                             raise SmokeFailure("Native empty Barrel must show only its dark backing")
                     elif (sample["distinct_rgba_colors"] <= 1
-                            or sample.get("still_texture") != "minecraft:block/water_still"
+                            or sample.get("still_texture") != expected_still
                             or not isinstance(sample.get("tint_argb"), str)
                             or re.fullmatch(r"[0-9a-f]{8}", sample["tint_argb"]) is None):
-                        raise SmokeFailure("Native Barrel water lacks textured fluid pixels or block-atlas/tint evidence")
+                        raise SmokeFailure("Native Barrel fluid lacks textured fluid pixels or block-atlas/tint evidence")
             elif expected_energy_capacity:
                 energy = capture.get("energy")
                 if (stage == "empty" and energy != 0) or (stage == "full" and energy != expected_energy_capacity):
@@ -600,7 +606,11 @@ def main() -> int:
     parser.add_argument("--machine-gui-language", choices=("en_us", "fr_fr"), default="en_us")
     parser.add_argument("--machine-gui-window-height", type=int, choices=(260, 720), default=720)
     parser.add_argument("--machine-gui-pr-head-sha", default=os.environ.get("IEDCTR_PR_HEAD_SHA", ""))
+    parser.add_argument("--barrel-fluid", choices=("water", "lava", "milk"), default="water",
+                        help="Fluid for the isolated corrected-machine Barrel fixture, never gameplay")
     args = parser.parse_args()
+    if args.barrel_fluid != "water" and not args.corrected_machine_gui_only:
+        parser.error("--barrel-fluid requires --corrected-machine-gui-only")
     if args.lava_surface_only and (not args.renderer_profile or args.flow_distance_only):
         parser.error("Lava surface requires one renderer profile and its own session")
     if args.flow_distance_only and not args.renderer_profile:
@@ -677,6 +687,7 @@ gradle.projectsEvaluated {
         systemProperty 'iedctr.smelterLanguage', System.getenv('IEDCTR_SMELTER_LANGUAGE')
         systemProperty 'iedctr.correctedMachineGuiOnly', System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY')
         systemProperty 'iedctr.machineGuiLanguage', System.getenv('IEDCTR_MACHINE_GUI_LANGUAGE')
+        systemProperty 'iedctr.barrelFixtureFluid', System.getenv('IEDCTR_BARREL_FIXTURE_FLUID')
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         systemProperty 'iedctr.pullRequestHeadSha', System.getenv('IEDCTR_PR_HEAD_SHA')
         programArgument '--width'
@@ -696,6 +707,7 @@ gradle.projectsEvaluated {
                IEDCTR_SMELTER_LANGUAGE=args.smelter_language if args.smelter_gui_only else '',
                IEDCTR_CORRECTED_MACHINE_GUI_ONLY=str(args.corrected_machine_gui_only).lower(),
                IEDCTR_MACHINE_GUI_LANGUAGE=args.machine_gui_language if args.corrected_machine_gui_only else '',
+               IEDCTR_BARREL_FIXTURE_FLUID=args.barrel_fluid,
                IEDCTR_EXECUTED_SOURCE_SHA=executed_source_sha,
                IEDCTR_PR_HEAD_SHA=args.smelter_pr_head_sha if args.smelter_gui_only else args.machine_gui_pr_head_sha if args.corrected_machine_gui_only else '',
                IEDCTR_SCREEN_WIDTH=str(window_width), IEDCTR_SCREEN_HEIGHT=str(window_height))
@@ -746,7 +758,7 @@ gradle.projectsEvaluated {
                     or main_proof.get("status") != "passed" or main_proof.get("actual_integrated_world") is not True):
                 raise SmokeFailure("The isolated corrected-machine client did not complete successfully")
             validate_corrected_machine_gui_proof(proof, nonce, executed_source_sha, args.machine_gui_pr_head_sha,
-                                                  game, window_width, window_height, args.machine_gui_language, logs)
+                                                  game, window_width, window_height, args.machine_gui_language, logs, args.barrel_fluid)
             print(json.dumps(proof, indent=2), flush=True)
             return 0
         from fluid_extensions import validate_extensions
@@ -801,3 +813,4 @@ gradle.projectsEvaluated {
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
