@@ -77,3 +77,20 @@ for locale in ('en_us', 'fr_fr'):
     lang = json.loads((r / f'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/{locale}.json').read_text())
     assert 'gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.energy_tooltip' in lang
 print('PASS: exact retained PNG/manifest, uniform mapping, empty-art preservation, live FE colours, bounded screen-space scissor, backgroundless labels')
+
+# Regression: client SimpleContainer.mayPlace is permissive. Cell acceptance must
+# be checked on the authoritative integrated-server menu before the screen click.
+native = (j / 'client/validation/NativeSolarV2ReferenceValidation.java').read_text()
+cell_ready = native.split('case CELL_READY -> {', 1)[1].split('case CELL_PICKED -> {', 1)[0]
+assert 'if(!serverMatches(mc,p->{' in cell_ready
+server_contract = cell_ready.split('if(!serverMatches(mc,p->{', 1)[1].split('}))return;', 1)[0]
+assert 'p.containerMenu instanceof MachineMenu' in server_contract
+assert 'var serverMenu=(MachineMenu)p.containerMenu;' in server_contract
+assert 'serverMenu.kind()==MachineKind.SMALL_SOLAR_PANEL' in server_contract
+assert 'serverMenu.containerId==serverMenuId' in server_contract
+assert 'serverMenu.slots.size()==37' in server_contract
+assert 'require(!p.containerMenu.getSlot(0).mayPlace(new ItemStack(Items.STONE))' in server_contract
+assert 'require(p.containerMenu.getSlot(0).mayPlace(new ItemStack(cellItem()))' in server_contract
+assert 'menu.getSlot(0).mayPlace' not in native
+assert cell_ready.index('}))return;') < cell_ready.index('click(screen,28)')
+print('PASS: native Cell acceptance is fail-closed on the authoritative server menu before handler-driven input')

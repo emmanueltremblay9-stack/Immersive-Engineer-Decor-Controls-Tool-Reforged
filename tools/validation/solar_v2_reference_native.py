@@ -69,14 +69,20 @@ def png(path: Path, width: int, height: int, expected_hash: str) -> None:
 def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
                    logs: str, exit_code: int | None, timed_out: bool,
                    width: int, height: int, language: str, gui_scale: int = 1) -> dict:
+    if not isinstance(proof, dict):
+        raise SmokeFailure("Native proof must be a JSON object")
+    # Keep the fixture's concrete failure visible even when its exception also
+    # triggers the generic fatal-log/exit checks. This never relaxes acceptance.
+    error = proof.get("error")
+    detail = ("; reported failure: " + " ".join(error.split())[:1000]
+              if proof.get("status") == "failed" and isinstance(error, str) and error.strip() else "")
     if timed_out or exit_code != 0 or FATAL_PATTERN.search(logs):
-        raise SmokeFailure("Native client did not finish cleanly")
+        raise SmokeFailure("Native client did not finish cleanly" + detail)
     if list(game.glob("crash-reports/*")) or list(game.parent.rglob("hs_err_pid*.log")):
         raise SmokeFailure("Native client wrote a crash report")
     viewport, scale, (tx, ty, tw, th) = expected_geometry(width, height, gui_scale)
     validate_viewport(proof, viewport)
     if (proof.get("suite") != SUITE or proof.get("nonce") != nonce
-            or proof.get("status") != "passed_bounded_smoke"
             or proof.get("executed_source_sha") != source_sha
             or not re.fullmatch(r"[a-f0-9]{40}", source_sha)
             or proof.get("source_art_sha256") != ART_SHA
@@ -85,6 +91,10 @@ def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
             or type(proof.get("menu_slot_count")) is not int or proof["menu_slot_count"] != 37
             or language not in ("en_us", "fr_fr") or proof.get("selected_language") != language):
         raise SmokeFailure("Solar V2 proof identity, locale, bounded scope or slot contract differs")
+    if proof.get("status") != "passed_bounded_smoke":
+        raise SmokeFailure("Native fixture did not pass" + detail)
+    if "error" in proof:
+        raise SmokeFailure("Passing native proof must not contain a fixture error")
     if (proof.get("cell_item")!="immersiveengineering:capacitor_lv"
             or any(type(proof.get(k)) is not int for k in ("cell_initial_buffer_fe","cell_initial_item_fe","cell_charged_fe","cell_remaining_buffer_fe"))
             or proof["cell_initial_buffer_fe"]!=1000 or proof["cell_initial_item_fe"]!=0

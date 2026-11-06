@@ -70,7 +70,7 @@ class NativeSolarV2ProofTest(unittest.TestCase):
     def validate(self,proof=None,**kwargs):
         opts=dict(logs=self.logs,exit_code=0,timed_out=False,width=self.width,height=self.height,
                   language=self.proof['selected_language'],gui_scale=self.gui_scale);opts.update(kwargs)
-        return validate_proof(proof or self.proof,self.nonce,self.sha,self.game,**opts)
+        return validate_proof(self.proof if proof is None else proof,self.nonce,self.sha,self.game,**opts)
 
     def test_complete_bounded_en720(self):self.validate()
     def test_complete_bounded_fr260(self):
@@ -191,6 +191,39 @@ class NativeSolarV2ProofTest(unittest.TestCase):
         p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name']
         data=bytearray(path.read_bytes());data[-1]^=1;path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
         with self.assertRaises(SmokeFailure):self.validate(p)
+    def test_failed_fixture_surfaces_reported_error(self):
+        p=copy.deepcopy(self.proof);p['status']='failed'
+        p['error']='java.lang.IllegalStateException: Cell acceptance contract differs'
+        p['slot_routes']=[];p['captures']=[];p['cases']=[]
+        with self.assertRaisesRegex(SmokeFailure,'Native fixture did not pass; reported failure: .*Cell acceptance contract differs'):
+            self.validate(p)
+    def test_unclean_failed_fixture_keeps_reported_error(self):
+        p=copy.deepcopy(self.proof);p['status']='failed';p['error']='Authoritative server Cell rejected capacitor'
+        for kwargs in (dict(exit_code=1),dict(timed_out=True),dict(logs='FATAL java.lang.IllegalStateException: Cell contract differs')):
+            with self.subTest(kwargs=kwargs):
+                with self.assertRaisesRegex(SmokeFailure,'Native client did not finish cleanly; reported failure: Authoritative server Cell rejected capacitor'):
+                    self.validate(p,**kwargs)
+    def test_failed_fixture_diagnostic_is_bounded_single_line(self):
+        p=copy.deepcopy(self.proof);p['status']='failed';p['error']='Bad contract\n\t'+'x'*2000
+        with self.assertRaises(SmokeFailure) as result:self.validate(p)
+        message=str(result.exception)
+        self.assertNotIn('\n',message);self.assertNotIn('\t',message)
+        self.assertTrue(message.startswith('Native fixture did not pass; reported failure: Bad contract '))
+        self.assertLessEqual(len(message),len('Native fixture did not pass; reported failure: ')+1000)
+    def test_failed_fixture_without_error_still_rejects(self):
+        for error in (None,42,{},'',False):
+            with self.subTest(error=error):
+                p=copy.deepcopy(self.proof);p['status']='failed';p['error']=error
+                with self.assertRaisesRegex(SmokeFailure,'Native fixture did not pass'):self.validate(p)
+    def test_error_cannot_be_attached_to_passing_proof(self):
+        for error in ('Cell acceptance contract differs',None,''):
+            with self.subTest(error=error):
+                p=copy.deepcopy(self.proof);p['error']=error
+                with self.assertRaisesRegex(SmokeFailure,'Passing native proof must not contain a fixture error'):self.validate(p)
+    def test_non_object_proof_rejected(self):
+        for proof in ([],['status'],False,'passed'):
+            with self.subTest(proof=proof):
+                with self.assertRaisesRegex(SmokeFailure,'Native proof must be a JSON object'):self.validate(proof)
     def test_unclean_finish(self):
         for kwargs in [dict(exit_code=1),dict(timed_out=True),dict(logs='no marker')]:
             with self.assertRaises(SmokeFailure):self.validate(**kwargs)

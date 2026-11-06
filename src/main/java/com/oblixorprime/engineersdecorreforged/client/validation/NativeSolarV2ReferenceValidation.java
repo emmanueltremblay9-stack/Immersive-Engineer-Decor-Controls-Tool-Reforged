@@ -98,7 +98,20 @@ public final class NativeSolarV2ReferenceValidation {
             case SETUP -> { verifyGeometry(screen,menu); prepareCell(mc); }
             case CELL_READY -> {
                if(ticks<8 || !matches(menu.getSlot(28).getItem(),cellItem())) return;
-               require(!menu.getSlot(0).mayPlace(new ItemStack(Items.STONE)) && menu.getSlot(0).mayPlace(new ItemStack(cellItem())),"Cell acceptance contract differs");
+               // The client mirror uses SimpleContainer; only the server's machine-backed
+               // slots authoritatively decide acceptance. Fail closed before either click.
+               if(!serverMatches(mc,p->{
+                  require(p.containerMenu instanceof MachineMenu,"Cell acceptance: server menu is "+p.containerMenu.getClass().getName());
+                  var serverMenu=(MachineMenu)p.containerMenu;
+                  require(serverMenu.kind()==MachineKind.SMALL_SOLAR_PANEL && serverMenu.containerId==serverMenuId
+                     && serverMenu.slots.size()==37,"Cell acceptance: wrong server menu identity (kind="+serverMenu.kind()
+                     +", id="+serverMenu.containerId+", expectedId="+serverMenuId+", slots="+serverMenu.slots.size()+")");
+                  require(!p.containerMenu.getSlot(0).mayPlace(new ItemStack(Items.STONE)),
+                     "Cell acceptance: authoritative server Cell slot accepted minecraft:stone");
+                  require(p.containerMenu.getSlot(0).mayPlace(new ItemStack(cellItem())),
+                     "Cell acceptance: authoritative server Cell slot rejected immersiveengineering:capacitor_lv");
+                  return true;
+               }))return;
                click(screen,28);enter(Stage.CELL_PICKED);
             }
             case CELL_PICKED -> {
