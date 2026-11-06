@@ -224,6 +224,12 @@ public final class NativeSolarV2ReferenceValidation {
       verifyViewport(Minecraft.getInstance());
       require(menu.solarV2ReferencePresentation() && menu.kind()==MachineKind.SMALL_SOLAR_PANEL && menu.slots.size()==37 && menu.visibleMachineSlots()==1,"Wrong native menu");
       var v=screen.validationViewTransform();
+      int expectedLeft=(int)Math.floor(v.screenX(0)),expectedTop=(int)Math.floor(v.screenY(0));
+      int expectedWidth=(int)Math.ceil(v.screenX(SolarV2ReferenceGeometry.CANVAS_WIDTH))-expectedLeft;
+      int expectedHeight=(int)Math.ceil(v.screenY(SolarV2ReferenceGeometry.CANVAS_HEIGHT))-expectedTop;
+      require(screen.getGuiLeft()==expectedLeft && screen.getGuiTop()==expectedTop
+         && screen.getXSize()==expectedWidth && screen.getYSize()==expectedHeight,
+         "Public presentation bounds differ from the transformed Solar canvas");
       for(var a:SolarV2ReferenceGeometry.SLOT_ANCHORS) {
          var s=menu.getSlot(a.menuIndex());int index=a.menuIndex()<1?a.menuIndex():a.menuIndex()<28?a.menuIndex()+8:a.menuIndex()-28;
          require(Math.abs(v.localX(v.screenX(a.x()+8))-(a.x()+8))<0.00001
@@ -256,6 +262,9 @@ public final class NativeSolarV2ReferenceValidation {
       Path folder=directory.resolve("solar-v2-reference-screenshots");Files.createDirectories(folder);
       Path file=folder.resolve(label+".png");require(!Files.exists(file),"Stale capture");
       JsonObject c=new JsonObject();var v=((SolarV2ReferenceScreen)mc.screen).validationViewTransform();
+      var screen=(SolarV2ReferenceScreen)mc.screen;
+      c.addProperty("presentation_gui_left",screen.getGuiLeft());c.addProperty("presentation_gui_top",screen.getGuiTop());
+      c.addProperty("presentation_gui_width",screen.getXSize());c.addProperty("presentation_gui_height",screen.getYSize());
       addViewport(c,mc);double guiScale=mc.getWindow().getGuiScale();
       try(var frame=Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
          frame.writeToFile(file);c.addProperty("width",frame.getWidth());c.addProperty("height",frame.getHeight());

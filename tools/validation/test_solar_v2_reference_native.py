@@ -8,7 +8,7 @@ import unittest
 import zlib
 
 from solar_v2_reference_native import (ART_SHA, CASES, CAPTURES, SCREEN_CLASS, SUITE,
-                                    SmokeFailure, expected_geometry, validate_proof, image_evidence, decode_png)
+                                    SmokeFailure, expected_geometry, expected_presentation_bounds, validate_proof, image_evidence, decode_png)
 
 
 def png_bytes(w,h,seed):
@@ -60,7 +60,7 @@ class NativeSolarV2ProofTest(unittest.TestCase):
             tn=name[:-4]+'-energy.png';tank=png_rows(tw,th,[row[tx*4:(tx+tw)*4] for row in rows[ty:ty+th]]);(self.folder/tn).write_bytes(tank)
             ring=image_evidence(self.folder/name,self.folder/tn,width,height,gui_scale)
             self.proof['captures'].append({'name':name,'sha256':hashlib.sha256(data).hexdigest(),
-                **viewport,'width':width,'height':height,'view_scale':scale,'menu_id':1,'screen_class':SCREEN_CLASS,
+                **viewport,**expected_presentation_bounds(width,height,gui_scale),'width':width,'height':height,'view_scale':scale,'menu_id':1,'screen_class':SCREEN_CLASS,
                 'capacity':64000,'amount':64000*fraction//2,'comparator':math.ceil(fraction*7.5),'sync_granularity_fe':100,'energy_name':tn,'energy_width':tw,'energy_height':th,
                 'energy_x':tx,'energy_y':ty,
                 'energy_sha256':hashlib.sha256(tank).hexdigest(),'frame_exterior_sha256':ring})
@@ -85,6 +85,44 @@ class NativeSolarV2ProofTest(unittest.TestCase):
                   (1920,1080,3,(561,510,705,27))]
         for w,h,s,crop in profiles:
             self.assertEqual(expected_geometry(w,h,s)[2],crop)
+    def test_public_presentation_bounds_fixed_profiles(self):
+        profiles=[(1280,720,1,(431,151,418,418)),(1280,260,1,(516,6,248,248)),
+                  (1920,1080,1,(751,331,418,418)),(1920,1080,2,(271,61,418,418)),
+                  (1920,1080,3,(146,6,348,348))]
+        for w,h,scale,bounds in profiles:
+            with self.subTest(width=w,height=h,scale=scale):
+                actual=expected_presentation_bounds(w,h,scale)
+                self.assertEqual(tuple(actual.values()),bounds)
+    def test_old_untransformed_public_bounds_rejected(self):
+        self.set_captures(1080,1920,3)
+        p=copy.deepcopy(self.proof)
+        for capture in p['captures']:
+            capture.update(presentation_gui_left=0,presentation_gui_top=0,
+                           presentation_gui_width=418,presentation_gui_height=418)
+        with self.assertRaisesRegex(SmokeFailure,'Public presentation bounds differ'):
+            self.validate(p)
+    def test_jei_overlap_pixel_rejected_with_self_consistent_metadata(self):
+        self.set_captures(1080,1920,3)
+        p=copy.deepcopy(self.proof)
+        capture=next(c for c in p['captures'] if c['name']=='full.png')
+        path=self.folder/capture['name'];w,h,pixels=decode_png(path)
+        changed=bytearray(pixels)
+        changed[(802*w+1476)*4]^=1  # Actual old JEI overlap, outside FE and slot masks.
+        data=png_rows(w,h,[bytes(changed[y*w*4:(y+1)*w*4]) for y in range(h)])
+        path.write_bytes(data);capture['sha256']=hashlib.sha256(data).hexdigest()
+        capture['frame_exterior_sha256']=image_evidence(path,self.folder/capture['energy_name'],w,h,3)
+        with self.assertRaisesRegex(SmokeFailure,'FE energy states changed surrounding artwork pixels'):
+            self.validate(p)
+    def test_public_bounds_metadata_fail_closed(self):
+        self.set_captures(1080,1920,3)
+        for key,expected in expected_presentation_bounds(1920,1080,3).items():
+            for value in (None,True,float(expected),expected+1):
+                with self.subTest(key=key,value=value):
+                    p=copy.deepcopy(self.proof)
+                    if value is None:del p['captures'][0][key]
+                    else:p['captures'][0][key]=value
+                    with self.assertRaisesRegex(SmokeFailure,'Public presentation bounds differ'):
+                        self.validate(p)
     def test_odd_framebuffer_scale_3(self):
         self.set_captures(1081,1921,3);self.validate()
     def test_impossible_or_invalid_viewport(self):

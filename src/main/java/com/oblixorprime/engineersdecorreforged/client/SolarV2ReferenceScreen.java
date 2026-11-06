@@ -32,6 +32,20 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
       view = SolarV2ReferenceGeometry.fit(width, height);
    }
 
+   // NeoForge exposes these bounds to JEI and other screen-space consumers.
+   // Internal fields stay on the 418px logical canvas for vanilla slot input/rendering.
+   @Override
+   public int getGuiLeft() { return view.guiLeft(); }
+
+   @Override
+   public int getGuiTop() { return view.guiTop(); }
+
+   @Override
+   public int getXSize() { return view.guiWidth(); }
+
+   @Override
+   public int getYSize() { return view.guiHeight(); }
+
    @Override
    public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
       renderBg(graphics, partialTick, mouseX, mouseY);

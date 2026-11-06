@@ -23,6 +23,13 @@ assert s.index('graphics.pose().popPose()') < s.index('renderTooltip(graphics, m
 assert 'mouseX = renderLocalMouseX' in s and 'mouseY = renderLocalMouseY' in s
 assert 'SolarV2ReferenceState.fillWidth(menu.energyStored(), menu.energyCapacity())' in s
 assert 'menu.energyStored(), menu.energyCapacity(), menu.energyDisplayGranularity()' in s
+# External integrations see transformed screen bounds; vanilla internals stay local.
+for method, geometry_method in (('getGuiLeft', 'guiLeft'), ('getGuiTop', 'guiTop'),
+                                ('getXSize', 'guiWidth'), ('getYSize', 'guiHeight')):
+    assert f'public int {method}() {{ return view.{geometry_method}(); }}' in s
+assert 'leftPos = 0; topPos = 0;' in s
+assert 'imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;' in s
+assert 'imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;' in s
 assert 'Component.literal(menu.layout().machineSlots().getFirst().role())' in s
 assert 'this(kind, id, inventory, container, data, false)' in m
 assert 'this(kind, id, inventory, container, data, barrelReferenceRequested, false)' in m

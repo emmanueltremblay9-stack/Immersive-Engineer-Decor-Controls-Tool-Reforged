@@ -37,6 +37,10 @@ public final class SolarV2ReferenceChecks {
          var v = SolarV2ReferenceGeometry.fit(viewport[0], viewport[1]);
          check(v.originX() >= -0.0001 && v.originY() >= -0.0001, "positive origins");
          check(v.screenX(418) <= viewport[0]+0.0001 && v.screenY(418) <= viewport[1]+0.0001, "uniform fit");
+         check(v.guiLeft() <= v.screenX(0) && v.guiTop() <= v.screenY(0), "external bounds enclose top/left");
+         check(v.guiLeft()+v.guiWidth() >= v.screenX(418)
+            && v.guiTop()+v.guiHeight() >= v.screenY(418), "external bounds enclose bottom/right");
+         check(v.guiWidth()>0 && v.guiHeight()>0, "positive external extent");
          for (var a : SolarV2ReferenceGeometry.SLOT_ANCHORS) {
             check(Math.abs(v.localX(v.screenX(a.x()+8))-(a.x()+8))<0.0001, "pointer x roundtrip");
             check(Math.abs(v.localY(v.screenY(a.y()+8))-(a.y()+8))<0.0001, "pointer y roundtrip");
@@ -48,6 +52,16 @@ public final class SolarV2ReferenceChecks {
          }
          check(Math.abs(v.localDelta(v.screenDelta(17.3))-17.3)<0.0001, "drag delta roundtrip");
          check(v.renderPointerX(v.screenX(-0.1)) == -1 && v.renderPointerY(v.screenY(-0.1)) == -1,"negative pointer flooring");
+      }
+      // Requested native profiles plus the odd framebuffer regression. Bounds are
+      // GUI pixels, not framebuffer pixels and not the unscaled internal 418px canvas.
+      for (int[] profile : new int[][]{{1280,720,1,431,151,418,418}, {1280,260,1,516,6,248,248},
+            {1920,1080,1,751,331,418,418}, {1920,1080,2,271,61,418,418},
+            {1920,1080,3,146,6,348,348}, {1921,1081,3,146,6,349,349}}) {
+         var v=SolarV2ReferenceGeometry.fit((int)Math.ceil(profile[0]/(double)profile[2]),
+            (int)Math.ceil(profile[1]/(double)profile[2]));
+         check(v.guiLeft()==profile[3] && v.guiTop()==profile[4]
+            && v.guiWidth()==profile[5] && v.guiHeight()==profile[6], "external bounds match native profile");
       }
       for (int[] invalid : new int[][]{{0,100},{100,0},{-1,10}}) {
          try { SolarV2ReferenceGeometry.fit(invalid[0],invalid[1]); throw new AssertionError("Invalid viewport accepted"); }
@@ -73,6 +87,6 @@ public final class SolarV2ReferenceChecks {
          int fill=SolarV2ReferenceState.fillWidth(i,64000);
          check(fill>=previous && fill<=283,"monotonic bounded fill"); previous=fill;
       }
-      System.out.println("PASS: 37-slot mapping, measured bounds, ten viewport transforms, hover, drag, empty/half/full and FE arithmetic");
+      System.out.println("PASS: 37-slot mapping, measured bounds, ten viewport transforms, six external-bound profiles, hover, drag, empty/half/full and FE arithmetic");
    }
 }

@@ -48,6 +48,19 @@ def expected_geometry(width: int, height: int, gui_scale: int) -> tuple[dict, fl
     return viewport, scale, (x0, y0, x1 - x0, y1 - y0)
 
 
+def expected_presentation_bounds(width: int, height: int, gui_scale: int) -> dict:
+    """Public container bounds cover the transformed canvas, rounded outwards in GUI pixels."""
+    viewport, scale, _ = expected_geometry(width, height, gui_scale)
+    def f32(value: float) -> float:
+        return struct.unpack(">f", struct.pack(">f", value))[0]
+    ox = f32((viewport["gui_width"] - 418 * scale) / 2)
+    oy = f32((viewport["gui_height"] - 418 * scale) / 2)
+    left, top = math.floor(ox), math.floor(oy)
+    return dict(presentation_gui_left=left, presentation_gui_top=top,
+                presentation_gui_width=math.ceil(ox + 418 * scale) - left,
+                presentation_gui_height=math.ceil(oy + 418 * scale) - top)
+
+
 def validate_viewport(proof: dict, expected: dict) -> None:
     for key, value in expected.items():
         actual = proof.get(key)
@@ -115,6 +128,9 @@ def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
         if not isinstance(capture, dict):
             raise SmokeFailure("Invalid capture object")
         validate_viewport(capture, viewport)
+        for key, expected in expected_presentation_bounds(width, height, gui_scale).items():
+            if type(capture.get(key)) is not int or capture[key] != expected:
+                raise SmokeFailure(f"Public presentation bounds differ: {key}")
         name = capture.get("name")
         if name not in CAPTURES or name in seen:
             raise SmokeFailure("Duplicate, unexpected or unsafe capture name")

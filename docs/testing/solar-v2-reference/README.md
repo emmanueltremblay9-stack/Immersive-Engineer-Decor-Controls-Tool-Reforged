@@ -126,3 +126,36 @@ hotbar keys, resizing while carrying items, full-inventory failures, or final vi
 acceptance. Those remain separate broader acceptance checks. Default-OFF operation
 must remain unchanged regardless of the native fixture's result. No merge or release
 is performed by this workflow.
+
+## Scale 3 external-bounds regression
+
+Exact source `b48879737f741eef594383a4ff18b9df095301bf` compiled and passed the native
+interaction sequence, but its 1920 by 1080 GUI-scale-3 evidence correctly failed the
+cross-state artwork check. JEI's item sidebar overlapped the right edge: 37 exterior
+pixels changed from empty to half and 33 from empty to full, all within inclusive
+framebuffer bounds x=1476..1480, y=802..827. The changes were an animated crimson JEI
+entry over the retained canvas, not energy escaping the FE scissor. Independently
+recomputed PNG digests matched the native digests.
+
+The screen's inherited NeoForge public bounds reported its internal, unscaled
+`0,0,418,418` canvas instead of the rendered GUI-space rectangle. JEI reads those four
+public accessors through its NeoForge ScreenHelper. The fix reports outward-rounded
+transformed bounds from `getGuiLeft`, `getGuiTop`, `getXSize` and `getYSize`, while
+keeping vanilla's internal slot/render fields and inverse input on the logical canvas.
+At GUI scale 3 the correct rectangle is `146,6,348,348` in GUI coordinates. The native
+fixture now records/asserts these public bounds, independently checked by Python.
+
+This correction covers JEI sidebar placement, not complete JEI slot-input integration.
+JEI recipe/use/bookmark targeting can derive ingredient rectangles from public origins
+plus the still-local slot coordinates. Those scaled-slot interactions are not qualified
+by the bounded native screen-handler tests and remain a separate acceptance task.
+
+JEI remains enabled. No source pixels, FE clipping, exterior masks or cross-state
+pixel requirements are relaxed. Corrected native screenshots must be obtained from
+the new exact candidate head; the earlier failure is not reclassified as a pass.
+
+Primary API references:
+
+- [NeoForge 1.21.1 AbstractContainerScreen accessors](https://github.com/NeoForged/NeoForge/blob/1.21.1/patches/net/minecraft/client/gui/screens/inventory/AbstractContainerScreen.java.patch)
+- [JEI 1.21.1 container GUI properties](https://github.com/mezz/JustEnoughItems/blob/1.21.1/Common/src/main/java/mezz/jei/common/gui/GuiProperties.java)
+- [JEI NeoForge ScreenHelper](https://github.com/mezz/JustEnoughItems/blob/1.21.1/NeoForge/src/main/java/mezz/jei/neoforge/platform/ScreenHelper.java)
