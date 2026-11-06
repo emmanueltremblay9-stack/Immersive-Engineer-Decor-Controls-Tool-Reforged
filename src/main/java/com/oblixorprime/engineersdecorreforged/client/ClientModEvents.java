@@ -2,8 +2,10 @@ package com.oblixorprime.engineersdecorreforged.client;
 
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModMenus;
+import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.LabeledCrateLabelClientBridge;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
@@ -43,7 +45,7 @@ public final class ClientModEvents {
       event.register((MenuType)ModMenus.SMALL_LAB_FURNACE.get(), MachineScreen.SmallLabFurnaceScreen::new);
       event.register((MenuType)ModMenus.SMALL_ELECTRICAL_FURNACE.get(), MachineScreen.SmallElectricalFurnaceScreen::new);
       event.register((MenuType)ModMenus.SMALL_MINERAL_SMELTER.get(), SmallMineralSmelterHybridScreen::new);
-      event.register(ModMenus.SMALL_FREEZER.get(), (menu, inventory, title) ->
+      event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.SMALL_FREEZER.get(), (menu, inventory, title) ->
          menu.freezerReferencePresentation()
             ? new FreezerReferenceScreen(menu, inventory, title)
             : new MachineScreen.SmallFreezerScreen(menu, inventory, title));
