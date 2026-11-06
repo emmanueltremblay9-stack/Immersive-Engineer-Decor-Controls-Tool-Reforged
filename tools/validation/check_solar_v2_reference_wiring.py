@@ -42,11 +42,33 @@ assert 'SolarV2ReferenceGeometry.anchor(1 + row * 9 + column)' in m
 assert 'SolarV2ReferenceGeometry.anchor(28 + column)' in m
 # All downstream menu data/transfer/validation logic remains byte-identical to PR151/PR166.
 assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1)[1].encode()).hexdigest() == '48406a039c8b1ab4e78c9cd8ac4d3bb76408838dfee1696047d915f27cdbe88a'
-# Existing Barrel code, harness, art, workflow, production Solar art/screen/layout/entity are frozen.
-preserved = json.loads((d / 'preserved-baseline-sha256.json').read_text())
+# Preserve the historical Solar baseline. Only this explicitly reviewed Barrel
+# follow-up may replace listed hashes; artwork, renderer, mechanics and workflow stay frozen.
+preserved_path = d / 'preserved-baseline-sha256.json'
+preserved = json.loads(preserved_path.read_text())
+followup_path = r / 'docs/testing/barrel-reference-v5/reload-bounds-followup-sha256.json'
+assert hashlib.sha256(followup_path.read_bytes()).hexdigest() == '417e632432d0acfb84ecfee43cf6db0c35f6485e1334ed887647aa6e2a140fe6'
+followup = json.loads(followup_path.read_text())
+assert followup['baseline_manifest_sha256'] == hashlib.sha256(preserved_path.read_bytes()).hexdigest()
+allowed_followup_paths = {
+    'docs/testing/barrel-reference-v5/README.md',
+    'src/main/java/com/oblixorprime/engineersdecorreforged/client/BarrelReferenceScreen.java',
+    'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java',
+    'src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometry.java',
+    'src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceChecks.java',
+    'tools/validation/barrel_reference_native.py',
+    'tools/validation/check_barrel_reference_wiring.py',
+    'tools/validation/test_barrel_reference_native.py',
+}
+assert set(followup['files']) == allowed_followup_paths
 for path, expected in preserved['files'].items():
+    if path in allowed_followup_paths:
+        change = followup['files'][path]
+        assert set(change) == {'before_sha256', 'after_sha256'}
+        assert change['before_sha256'] == expected and change['after_sha256'] != expected, path
+        expected = change['after_sha256']
     assert hashlib.sha256((r / path).read_bytes()).hexdigest() == expected, path
-print('PASS: independent client-only default-OFF gate, 37 index routes, inverse pointer paths, legacy and Barrel preservation')
+print('PASS: independent default-OFF gates, Solar routing and legacy preservation; exact authorized Barrel reload/bounds follow-up')
 
 art = r / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png'
 source_hash = hashlib.sha256(art.read_bytes()).hexdigest()

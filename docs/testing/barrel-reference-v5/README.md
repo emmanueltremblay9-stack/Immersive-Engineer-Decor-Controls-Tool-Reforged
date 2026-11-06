@@ -179,3 +179,50 @@ plus 1921x1081 scale 3 to exercise ceil-rounded GUI dimensions. Synthetic PNGs a
 not Minecraft screenshots. Production rendering, artwork and slot handling remain
 unchanged by this validation-only extension. Physical OS pointer input, the other
 gestures and the other native checklist items above remain separate acceptance work.
+
+## Actual resource reload and public presentation bounds follow-up
+
+This follow-up extends the scale-qualified fixture without altering machine mechanics,
+retained artwork, the fluid renderer, or either presentation's default-OFF flag.
+`BarrelReferenceScreen` now exposes outward-rounded screen-space container bounds to
+external overlays, using the same pattern as Solar V2. Its internal render/input canvas
+remains at (0,0), size 379x461. Left/top use floor and right/bottom use ceil, so fractional
+centering can make public dimensions one GUI pixel larger than the logical canvas.
+All four public getters are checked during native routing and recorded in every capture.
+This does not qualify JEI recipe transfer, slot overlays, or JEI mouse actions.
+
+The `native-barrel-reference-v2` proof requires one real
+`Minecraft.reloadResourcePacks()` call after the baseline seven fluid captures. The
+client polls its future without blocking, propagates failures, waits for the loading
+overlay to disappear, and waits at least twelve additional overlay-free ticks. Before
+any fixture mutation, it verifies identical client/server world, player and menu object
+identities, the same Barrel entity and screen, unchanged full registered `minecraft:milk`
+state and capacity, empty menu/carried stacks and the complete player inventory, and
+unchanged screen geometry/viewport. Both sides' pre/post state snapshots are retained.
+The preserved full-milk framebuffer and tank crop are captured immediately afterward.
+
+Only after those assertions and that capture does fixture preparation explicitly drain
+the real fluid handler. This prevents the next slot-0 empty bucket from legitimately
+consuming 1000 mB and being mistaken for reload loss. The drain amount and synchronized
+empty state must be confirmed. All 38 server-confirmed click routes and all seven fluid
+captures then run again, with separate post-reload evidence, followed by close/reopen.
+The five existing native profile jobs and timeouts remain unchanged.
+
+The validator now decodes PNG pixels, validates chunk CRCs and filter reconstruction,
+checks that each tank crop is exactly the recorded framebuffer region, and independently
+recomputes the ring digest from each full screenshot. The ring must remain identical
+across all fifteen captures. Empty/half/full and different-fluid crop distinctions are
+checked independently before and after reload. Fluid image hashes may change across
+reload because animated sprites can restart at a different frame; equality is not
+required. This remains a bounded ring check, not full-artwork visual acceptance.
+
+Solar's original `preserved-baseline-sha256.json` stays unchanged as historical evidence.
+`reload-bounds-followup-sha256.json` records exact old/new hashes for only the eight
+intentionally changed Barrel source, validation and documentation files. Solar's guard
+pins that follow-up manifest and its exact path allowlist; all other original hashes,
+including artwork, renderer, mechanics and the native workflow, remain mandatory.
+
+Local dependency-free, synthetic and syntax checks are not native reload execution.
+The updated exact commit still needs its complete cloud compile/tests and all five
+native profile runs before reload success can be claimed. Pack overrides, physical
+pointer input and complex gestures remain outside this follow-up's acceptance scope.
