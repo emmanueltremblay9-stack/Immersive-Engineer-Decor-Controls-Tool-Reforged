@@ -25,7 +25,7 @@ public final class MusleeIngressQueueIntegrationCases {
         final MusleeCommandQueue queue = new MusleeCommandQueue(UUID.randomUUID(), clock);
         byte[] wire(int index) {
             return MusleeCommandProtocol.encode(ingress.sessionId(),
-                    new MusleeCommandProtocol.Command(action(index), MusleeCommandProtocol.Type.INSERT, 0));
+                    new MusleeCommandProtocol.Command(action(index), MusleeCommandProtocol.Type.ABSORB));
         }
         Attempt submit(byte[] packet, BooleanSupplier authority, long bytes) {
             synchronized (queue) { // Explicit stand-in for the future common authoritative lock.
@@ -50,6 +50,7 @@ public final class MusleeIngressQueueIntegrationCases {
         fullQueueDoesNotReenableRecognizedId();
         budgetFailureDoesNotReenableRecognizedId();
         malformedInputCannotReserveMemory();
+        legacyWithdrawalCannotReserveMemory();
         expiryDoesNotEraseDeduplication();
         saturationClosurePreservesEngagedWork();
         boundedCleanupDoesNotReadmitRejectedAction();
@@ -86,7 +87,7 @@ public final class MusleeIngressQueueIntegrationCases {
     }
     private static void malformedInputCannotReserveMemory() {
         Fixture f = new Fixture(); byte[] oversized = new byte[8193];
-        byte[] version = f.wire(1); version[1] = 2;
+        byte[] version = f.wire(1); version[1] = 1;
         byte[] session = f.wire(1); session[2] ^= 1;
         byte[] uuid = f.wire(1); uuid[24] = 0;
         for (byte[] bad : new byte[][]{null, new byte[17], oversized, version, session, uuid}) {
@@ -98,6 +99,20 @@ public final class MusleeIngressQueueIntegrationCases {
         check(result.recognized.status() == MALFORMED_COMMAND && result.admitted == null, "recognized malformed type not admitted");
         check(f.ingress.recognizedCount() == 1 && f.queue.waitingCount() == 0 && f.queue.reservedBytes() == 0, "history not FIFO allocation");
         f.duplicate(1);
+    }
+    private static void legacyWithdrawalCannotReserveMemory() {
+        for (int payloadBytes : new int[] {0, 1}) {
+            Fixture f = new Fixture();
+            byte[] bytes = java.util.Arrays.copyOf(f.wire(1), 37 + payloadBytes);
+            bytes[34] = 2; bytes[36] = (byte) payloadBytes;
+            if (payloadBytes != 0) bytes[37] = 1;
+            Attempt result = f.submit(bytes, () -> true, 123);
+            check(result.recognized.status() == MALFORMED_COMMAND && result.admitted == null,
+                    "legacy withdrawal never reaches queue admission");
+            check(f.ingress.recognizedCount() == 1 && f.queue.waitingCount() == 0 && f.queue.reservedBytes() == 0,
+                    "withdrawal keeps replay fence without a capture lease");
+            f.duplicate(1);
+        }
     }
     private static void expiryDoesNotEraseDeduplication() {
         Fixture f = new Fixture(); Ticket expired = f.add(1, 43);
@@ -127,7 +142,7 @@ public final class MusleeIngressQueueIntegrationCases {
         Attempt closed = f.submit(f.wire(5000), () -> true, 1);
         check(closed.recognized.status() == CLOSED && closed.admitted == null && f.ingress.recognizedCount() == 0, "closed session remains terminal");
         MusleeSessionIngress manual = MusleeSessionIngress.open();
-        var packet = MusleeCommandProtocol.encode(manual.sessionId(), new MusleeCommandProtocol.Command(action(5001), MusleeCommandProtocol.Type.INSERT, 0));
+        var packet = MusleeCommandProtocol.encode(manual.sessionId(), new MusleeCommandProtocol.Command(action(5001), MusleeCommandProtocol.Type.ABSORB));
         var recognized = manual.receive(packet, () -> true);
         Ticket next = f.queue.admit(recognized.command().orElseThrow().actionId(), manual.sessionId(), true, 5).ticket;
         check(next != null && f.queue.runScheduled(2, RETAIN).engaged == null, "new manual session cannot overtake active work");
@@ -171,6 +186,6 @@ public final class MusleeIngressQueueIntegrationCases {
         check(f.queue.runScheduled(2, RETAIN).engaged == fresh, "restored access requires fresh interaction");
     }
     public static void main(String[] args) {
-        run(); System.out.println("PASS ingress/FIFO composition: 8 scenarios, exact expiry, saturation at 4096, independent UUID/lease lifetimes");
+        run(); System.out.println("PASS ingress/FIFO composition: 9 scenarios, exact expiry, saturation at 4096, independent UUID/lease lifetimes");
     }
 }
