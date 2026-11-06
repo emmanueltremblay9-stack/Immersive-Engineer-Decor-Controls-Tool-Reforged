@@ -37,16 +37,8 @@ jobs:
           bash ./gradlew compileJava processResources test runGameTestServer jar --stacktrace
           git rev-parse HEAD > build/tested-source-sha.txt
           find build/libs -maxdepth 1 -name '*.jar' -exec sha256sum {} + > build/tested-jar-sha256.txt
-      - name: Check native display prerequisites
-        run: command -v Xvfb && command -v xvfb-run && command -v xauth
       - name: Test native evidence validator
         run: python -m unittest discover -s tools/validation -p 'test_barrel_reference_native.py' -v
-      - name: Show source cleanliness before native execution
-        run: git status --porcelain --untracked-files=all
-      - name: Capture Barrel V5 English native interactions
-        run: python tools/validation/barrel_reference_native.py --language en_us --height 720 --prepare-timeout 900 --timeout 900
-      - name: Capture Barrel V5 French small-window interactions
-        run: python tools/validation/barrel_reference_native.py --language fr_fr --height 260 --prepare-timeout 900 --timeout 900
       - name: State evidence boundaries
         if: always()
         shell: bash
@@ -64,6 +56,82 @@ jobs:
             build/tested-jar-sha256.txt
             build/reports/tests/
             build/test-results/
+          retention-days: 14
+
+  validate-native-scale:
+    needs: validate-experiment
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: en-1280x720-scale1
+            language: en_us
+            width: 1280
+            height: 720
+            gui_scale: 1
+          - profile: fr-1280x260-scale1
+            language: fr_fr
+            width: 1280
+            height: 260
+            gui_scale: 1
+          - profile: en-1920x1080-scale1
+            language: en_us
+            width: 1920
+            height: 1080
+            gui_scale: 1
+          - profile: en-1920x1080-scale2
+            language: en_us
+            width: 1920
+            height: 1080
+            gui_scale: 2
+          - profile: en-1920x1080-scale3
+            language: en_us
+            width: 1920
+            height: 1080
+            gui_scale: 3
+    steps:
+      - name: Checkout exact selected commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Check native display prerequisites
+        run: command -v Xvfb && command -v xvfb-run && command -v xauth
+      - name: Record exact source identity
+        run: |
+          mkdir -p build
+          git rev-parse HEAD > build/tested-source-sha.txt
+          git status --porcelain --untracked-files=all
+      - name: Capture native interactions at requested GUI scale
+        run: >-
+          python tools/validation/barrel_reference_native.py
+          --language ${{ matrix.language }} --width ${{ matrix.width }} --height ${{ matrix.height }}
+          --gui-scale ${{ matrix.gui_scale }} --prepare-timeout 900 --timeout 900
+      - name: State native evidence boundaries
+        if: always()
+        run: |
+          echo "Tested checkout: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Requested profile: ${{ matrix.profile }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Proof must match requested and actual GUI scale, GUI dimensions and native framebuffer crop. Bounded screen-handler input only, not physical pointer or full visual acceptance.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain native reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: barrel-reference-native-${{ matrix.profile }}
+          path: |
+            build/tested-source-sha.txt
             build/barrel-reference-native-*/run/client-barrel-reference-result.json
             build/barrel-reference-native-*/run/barrel-reference-screenshots/*.png
             build/barrel-reference-native-*/prepare.log

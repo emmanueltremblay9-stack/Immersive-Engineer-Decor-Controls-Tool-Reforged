@@ -25,6 +25,36 @@ CAPTURES = {"empty.png": 0, **{f"{fluid}-{state}.png": fraction for fluid in ("w
                              for state, fraction in (("half", 1), ("full", 2))}}
 
 
+def expected_geometry(width: int, height: int, gui_scale: int) -> tuple[dict, float, tuple[int, int, int, int]]:
+    if (type(width) is not int or type(height) is not int or width < 320 or height < 240
+            or type(gui_scale) is not int or gui_scale not in (1, 2, 3)
+            or width // gui_scale < 320 or height // gui_scale < 240):
+        raise SmokeFailure("Requested viewport cannot support the explicit GUI scale")
+    gw, gh = math.ceil(width / gui_scale), math.ceil(height / gui_scale)
+    viewport = dict(requested_gui_scale=gui_scale, actual_gui_scale=gui_scale,
+                    gui_width=gw, gui_height=gh, framebuffer_width=width, framebuffer_height=height)
+    # Match Java's float fit/origin rounding, including its nextDown guard.
+    def f32(value: float) -> float:
+        return struct.unpack(">f", struct.pack(">f", value))[0]
+    scale = f32(min(1, (gw - 12) / 379, (gh - 12) / 461))
+    if scale * 379 > gw - 12 or scale * 461 > gh - 12:
+        bits = struct.unpack(">I", struct.pack(">f", scale))[0]
+        scale = struct.unpack(">f", struct.pack(">I", bits - 1))[0]
+    ox, oy = f32((gw - 379 * scale) / 2), f32((gh - 461 * scale) / 2)
+    # GuiGraphics scales the integer GUI scissor, not its pre-rounded bounds.
+    x0, y0 = math.ceil(ox + 170 * scale) * gui_scale, math.ceil(oy + 115 * scale) * gui_scale
+    x1, y1 = math.floor(ox + 211 * scale) * gui_scale, math.floor(oy + 193 * scale) * gui_scale
+    return viewport, scale, (x0, y0, x1 - x0, y1 - y0)
+
+
+def validate_viewport(proof: dict, expected: dict) -> None:
+    for key, value in expected.items():
+        actual = proof.get(key)
+        valid_type = type(actual) in (int, float) if key == "actual_gui_scale" else type(actual) is int
+        if not valid_type or actual != value:
+            raise SmokeFailure(f"Requested/actual GUI scale or viewport differs: {key}")
+
+
 def png(path: Path, width: int, height: int, expected_hash: str) -> None:
     if not path.is_file() or path.is_symlink():
         raise SmokeFailure("Missing native PNG or unsafe symlink")
@@ -37,11 +67,13 @@ def png(path: Path, width: int, height: int, expected_hash: str) -> None:
 
 def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
                    logs: str, exit_code: int | None, timed_out: bool,
-                   width: int, height: int, language: str) -> dict:
+                   width: int, height: int, language: str, gui_scale: int = 1) -> dict:
     if timed_out or exit_code != 0 or FATAL_PATTERN.search(logs):
         raise SmokeFailure("Native client did not finish cleanly")
     if list(game.glob("crash-reports/*")) or list(game.parent.rglob("hs_err_pid*.log")):
         raise SmokeFailure("Native client wrote a crash report")
+    viewport, scale, (tx, ty, tw, th) = expected_geometry(width, height, gui_scale)
+    validate_viewport(proof, viewport)
     if (proof.get("suite") != SUITE or proof.get("nonce") != nonce
             or proof.get("status") != "passed_bounded_smoke"
             or proof.get("executed_source_sha") != source_sha
@@ -62,13 +94,10 @@ def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
     if not isinstance(captures, list) or len(captures) != len(CAPTURES):
         raise SmokeFailure("Incomplete native capture matrix")
     seen, menu_ids, hashes, ring_hashes, capacities = set(), set(), {}, set(), set()
-    scale = min(1, (width - 12) / 379, (height - 12) / 461)
-    ox, oy = (width - 379 * scale) / 2, (height - 461 * scale) / 2
-    tw = math.floor(ox + 211 * scale) - math.ceil(ox + 170 * scale)
-    th = math.floor(oy + 193 * scale) - math.ceil(oy + 115 * scale)
     for capture in captures:
         if not isinstance(capture, dict):
             raise SmokeFailure("Invalid capture object")
+        validate_viewport(capture, viewport)
         name = capture.get("name")
         if name not in CAPTURES or name in seen:
             raise SmokeFailure("Duplicate, unexpected or unsafe capture name")
@@ -89,6 +118,8 @@ def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
         png(folder / name, width, height, capture.get("sha256"))
         tank_name = name[:-4] + "-tank.png"
         if (capture.get("tank_name") != tank_name
+                or type(capture.get("tank_x")) is not int or capture["tank_x"] != tx
+                or type(capture.get("tank_y")) is not int or capture["tank_y"] != ty
                 or type(capture.get("tank_width")) is not int or capture["tank_width"] != tw
                 or type(capture.get("tank_height")) is not int or capture["tank_height"] != th):
             raise SmokeFailure("Tank crop geometry differs")
@@ -118,12 +149,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--language", choices=("en_us", "fr_fr"), default="en_us")
-    parser.add_argument("--height", type=int, choices=(260, 720), default=720)
+    parser.add_argument("--width", type=int, default=1280)
+    parser.add_argument("--height", type=int, default=720)
+    parser.add_argument("--gui-scale", type=int, choices=(1, 2, 3), default=1)
     parser.add_argument("--prepare-timeout", type=int, default=600)
     parser.add_argument("--timeout", type=int, default=600)
     args = parser.parse_args()
     if sys.platform != "linux" or min(args.prepare_timeout, args.timeout) <= 0:
         parser.error("Requires Linux and positive bounded timeouts")
+    try:
+        expected_geometry(args.width, args.height, args.gui_scale)
+    except SmokeFailure as error:
+        parser.error(str(error))
     project = args.project.resolve()
     # No uncommitted candidate may borrow the passing status of its base commit.
     clean = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], cwd=project,
@@ -148,7 +185,7 @@ def main() -> int:
     (game / ".iedctr-client-gameplay-nonce").write_text(nonce, encoding="utf-8")
     (game / "options.txt").write_text(
         "onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n"
-        "maxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:1\n"
+        f"maxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:{args.gui_scale}\n"
         f"lang:{args.language}\n", encoding="utf-8")
     init = evidence / "barrel.init.gradle"
     init.write_text("""gradle.projectsEvaluated {
@@ -160,25 +197,29 @@ def main() -> int:
         systemProperty 'iedctr.barrelReferenceNative', 'true'
         systemProperty 'iedctr.dev.barrelV5Reference', 'true'
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
+        systemProperty 'iedctr.requestedGuiScale', System.getenv('IEDCTR_GUI_SCALE')
+        systemProperty 'iedctr.requestedWidth', System.getenv('IEDCTR_SCREEN_WIDTH')
+        systemProperty 'iedctr.requestedHeight', System.getenv('IEDCTR_SCREEN_HEIGHT')
         programArgument '--width'
-        programArgument '1280'
+        programArgument System.getenv('IEDCTR_SCREEN_WIDTH')
         programArgument '--height'
         programArgument System.getenv('IEDCTR_SCREEN_HEIGHT')
     }
 }
 """, encoding="utf-8")
     env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
-               IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_HEIGHT=str(args.height),
+               IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_WIDTH=str(args.width),
+               IEDCTR_SCREEN_HEIGHT=str(args.height), IEDCTR_GUI_SCALE=str(args.gui_scale),
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
     gradle = ["bash", str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
-    print(f"Barrel isolated native evidence: {evidence}", flush=True)
+    print(f"Barrel isolated native evidence: {evidence} ({args.width}x{args.height}, GUI scale {args.gui_scale}, {args.language})", flush=True)
     try:
         code, expired = run_bounded(gradle + ["prepareClientRun"], project, env,
                                     evidence / "prepare.log", args.prepare_timeout)
         if expired or code != 0:
             raise SmokeFailure(f"Barrel client preparation failed (exit={code}, timeout={expired})")
         log = evidence / "client.log"
-        code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 1280x{args.height}x24"]
+        code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24"]
                                     + gradle + ["runClient"], project, env, log, args.timeout)
         proof = json.loads((game / "client-barrel-reference-result.json").read_text())
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
@@ -192,7 +233,8 @@ def main() -> int:
                                    capture_output=True, text=True).stdout.strip()
         if final_status or final_sha != source_sha:
             raise SmokeFailure("Candidate changed during native execution; source identity is not exact")
-        validate_proof(proof, nonce, source_sha, game, logs, code, expired, 1280, args.height, args.language)
+        validate_proof(proof, nonce, source_sha, game, logs, code, expired,
+                       args.width, args.height, args.language, args.gui_scale)
         print("PASS bounded native Barrel smoke. Full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError) as error:

@@ -151,3 +151,31 @@ resizing while carrying, drag split, shift-click, double-click, right-click, hot
 keys, output insertion rejection, full-inventory handling, resource reload/pack override,
 tooltip screenshots, and default-OFF legacy regression. Existing general tests may cover
 some mechanics but cannot establish the V5 presentation for these interactions.
+
+## GUI-scale evidence extension
+
+The native workflow now preserves EN 1280x720 scale 1 and FR 1280x260 scale 1,
+then adds independent EN 1920x1080 jobs at explicit GUI scales 1, 2 and 3.
+Each job executes the same bounded 38-slot pickup/return routes and seven fluid
+captures; it does not add other gestures or broaden visual acceptance claims.
+These new profiles require a new native run on the exact updated commit. Earlier
+scale-1 runtime evidence cannot establish scale-2/3 success.
+
+The runner accepts `--width`, `--height` and `--gui-scale` (1/2/3). It rejects sizes
+that Minecraft cannot run at the requested scale instead of accepting a fallback.
+Both the overall proof and every capture record requested/actual GUI scale, scaled
+GUI dimensions and framebuffer dimensions. The validator rejects missing or changed
+values, including scale-1 fallback. Viewport fit uses scaled GUI dimensions and
+matches the Java float/nextDown rounding. Capture bounds round in GUI coordinates
+before multiplying by the actual window GUI scale, matching the renderer's scissor;
+they do not use a framebuffer-width/scaled-width ratio. The tank's framebuffer
+position, dimensions, PNG size and hash are all checked. At 1920x1080 the expected
+full-aperture crops are 40x77, 80x154 and 90x174 native pixels for scales 1/2/3.
+The surrounding ring uses framebuffer coordinates with a two-native-pixel exclusion
+band and is compared only within one profile, not between different GUI scales.
+
+Dependency-free Java checks and synthetic Python fixtures cover all five profiles,
+plus 1921x1081 scale 3 to exercise ceil-rounded GUI dimensions. Synthetic PNGs are
+not Minecraft screenshots. Production rendering, artwork and slot handling remain
+unchanged by this validation-only extension. Physical OS pointer input, the other
+gestures and the other native checklist items above remain separate acceptance work.

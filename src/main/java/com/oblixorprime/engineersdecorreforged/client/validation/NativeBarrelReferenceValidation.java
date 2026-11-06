@@ -137,6 +137,7 @@ public final class NativeBarrelReferenceValidation {
       directory=mc.gameDirectory.toPath().toRealPath();
       require(directory.equals(Path.of(System.getProperty("iedctr.clientGameplayDirectory","")).toRealPath()) && Files.readString(directory.resolve(".iedctr-client-gameplay-nonce")).equals(nonce),"Isolation marker mismatch");
       require(mc.level==null && mc.getSingleplayerServer()==null && !Files.exists(directory.resolve("barrel-reference-screenshots")),"Refusing existing world/captures");
+      verifyViewport(mc);
       if(Files.exists(directory.resolve("saves"))) try(var entries=Files.list(directory.resolve("saves"))) { require(entries.findAny().isEmpty(),"Existing saves forbidden"); }
       String name="iedctr-barrel-v5-"+nonce;
       mc.options.pauseOnLostFocus=false;
@@ -176,6 +177,7 @@ public final class NativeBarrelReferenceValidation {
       screen.mouseReleased(v.screenX(a.x()+8),v.screenY(a.y()+8),0);
    }
    private static void verifyGeometry(BarrelReferenceScreen screen,MachineMenu menu) {
+      verifyViewport(Minecraft.getInstance());
       require(menu.barrelReferencePresentation() && menu.kind()==MachineKind.FLUID_BARREL && menu.slots.size()==38 && menu.visibleMachineSlots()==2,"Wrong native menu");
       var v=screen.validationViewTransform();
       for(var a:BarrelReferenceGeometry.SLOT_ANCHORS) {
@@ -186,29 +188,52 @@ public final class NativeBarrelReferenceValidation {
          require(!screen.validationSlotHoveredAt(a.menuIndex(),v.screenX(a.x()+8),v.screenY(a.hoverTop()-.01)) && !screen.validationSlotHoveredAt(a.menuIndex(),v.screenX(a.x()+8),v.screenY(a.hoverBottom()+.01)),"Vertical boundary escaped");
       }
    }
+   private static void verifyViewport(Minecraft mc) {
+      int requested=Integer.getInteger("iedctr.requestedGuiScale",0);
+      var window=mc.getWindow();double actual=window.getGuiScale();
+      require(requested>=1 && requested<=3 && mc.options.guiScale().get()==requested && actual==requested,
+         "Requested GUI scale was not applied");
+      require(window.getWidth()==Integer.getInteger("iedctr.requestedWidth",0)
+         && window.getHeight()==Integer.getInteger("iedctr.requestedHeight",0),"Requested framebuffer size was not applied");
+      require(window.getGuiScaledWidth()==(int)Math.ceil(window.getWidth()/actual)
+         && window.getGuiScaledHeight()==(int)Math.ceil(window.getHeight()/actual),"Scaled GUI dimensions differ");
+   }
+   private static void addViewport(JsonObject proof,Minecraft mc) {
+      var window=mc.getWindow();
+      proof.addProperty("requested_gui_scale",Integer.getInteger("iedctr.requestedGuiScale",0));
+      proof.addProperty("actual_gui_scale",window.getGuiScale());
+      proof.addProperty("gui_width",window.getGuiScaledWidth());proof.addProperty("gui_height",window.getGuiScaledHeight());
+      proof.addProperty("framebuffer_width",window.getWidth());proof.addProperty("framebuffer_height",window.getHeight());
+   }
    private static void capture(Minecraft mc,MachineMenu menu) throws Exception {
       String label=captureIndex==0?"empty":new String[]{"water","lava","milk"}[(captureIndex-1)/2]+(captureIndex%2==1?"-half":"-full");
       Path folder=directory.resolve("barrel-reference-screenshots");Files.createDirectories(folder);
       Path file=folder.resolve(label+".png");require(!Files.exists(file),"Stale capture");
       JsonObject c=new JsonObject();var v=((BarrelReferenceScreen)mc.screen).validationViewTransform();
+      addViewport(c,mc);double guiScale=mc.getWindow().getGuiScale();
       try(var frame=Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
          frame.writeToFile(file);c.addProperty("width",frame.getWidth());c.addProperty("height",frame.getHeight());
-         require(mc.getWindow().getGuiScaledWidth()==frame.getWidth() && mc.getWindow().getGuiScaledHeight()==frame.getHeight(),"Fixture requires GUI scale 1");
-         int x0=(int)Math.ceil(v.screenX(170)),y0=(int)Math.ceil(v.screenY(115));
-         int x1=(int)Math.floor(v.screenX(211)),y1=(int)Math.floor(v.screenY(193));
+         require(mc.getWindow().getWidth()==frame.getWidth() && mc.getWindow().getHeight()==frame.getHeight(),"Framebuffer capture size differs");
+         // The renderer rounds its scissor in GUI coordinates before Minecraft
+         // multiplies by the window GUI scale. Preserve that order for the crop.
+         int x0=(int)(Math.ceil(v.screenX(170))*guiScale),y0=(int)(Math.ceil(v.screenY(115))*guiScale);
+         int x1=(int)(Math.floor(v.screenX(211))*guiScale),y1=(int)(Math.floor(v.screenY(193))*guiScale);
+         require(x0>=0 && y0>=0 && x1<=frame.getWidth() && y1<=frame.getHeight() && x1>x0 && y1>y0,"Invalid native tank bounds");
          Path cropFile=folder.resolve(label+"-tank.png");
          try(var crop=new NativeImage(x1-x0,y1-y0,false)) {
             for(int y=y0;y<y1;y++)for(int x=x0;x<x1;x++)crop.setPixelRGBA(x-x0,y-y0,frame.getPixelRGBA(x,y));
             crop.writeToFile(cropFile);
          }
          c.addProperty("tank_name",cropFile.getFileName().toString());c.addProperty("tank_sha256",hash(cropFile));
+         c.addProperty("tank_x",x0);c.addProperty("tank_y",y0);
          c.addProperty("tank_width",x1-x0);c.addProperty("tank_height",y1-y0);
          // Hash a ring around the glass in native pixels, excluding all fluid pixels
-         // plus a two-screen-pixel safety band for raster boundary rounding.
+         // plus a two-framebuffer-pixel safety band for raster boundary rounding.
          var digest=MessageDigest.getInstance("SHA-256");
-         for(int y=(int)Math.ceil(v.screenY(106));y<(int)Math.floor(v.screenY(201));y++)
-            for(int x=(int)Math.ceil(v.screenX(160));x<(int)Math.floor(v.screenX(220));x++) {
-               if(x>=Math.floor(v.screenX(170))-2 && x<=Math.ceil(v.screenX(211))+2 && y>=Math.floor(v.screenY(115))-2 && y<=Math.ceil(v.screenY(193))+2)continue;
+         for(int y=(int)Math.ceil(v.screenY(106)*guiScale);y<(int)Math.floor(v.screenY(201)*guiScale);y++)
+            for(int x=(int)Math.ceil(v.screenX(160)*guiScale);x<(int)Math.floor(v.screenX(220)*guiScale);x++) {
+               if(x>=Math.floor(v.screenX(170)*guiScale)-2 && x<=Math.ceil(v.screenX(211)*guiScale)+2
+                  && y>=Math.floor(v.screenY(115)*guiScale)-2 && y<=Math.ceil(v.screenY(193)*guiScale)+2)continue;
                int pixel=frame.getPixelRGBA(x,y);for(int b=0;b<4;b++)digest.update((byte)(pixel>>>(8*b)));
             }
          c.addProperty("frame_ring_sha256",HexFormat.of().formatHex(digest.digest()));
@@ -229,6 +254,7 @@ public final class NativeBarrelReferenceValidation {
             var p=new JsonObject();p.addProperty("suite",SUITE);p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
             p.addProperty("nonce",nonce);p.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));
             p.addProperty("selected_language",mc.getLanguageManager().getSelected());p.addProperty("source_art_sha256",BarrelReferenceGeometry.SOURCE_SHA256);
+            addViewport(p,mc);
             p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);p.addProperty("native_visual_acceptance",false);p.addProperty("menu_slot_count",38);
             p.addProperty("input_method","Screen.mouseClicked/mouseReleased with vanilla packets and server observation; no OS mouse input");
             p.add("slot_routes",ROUTES);p.add("captures",CAPTURES);p.add("cases",CASES);
