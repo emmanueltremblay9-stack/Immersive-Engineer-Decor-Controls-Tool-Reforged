@@ -1,6 +1,5 @@
 package com.oblixorprime.engineersdecorreforged.client;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -9,10 +8,9 @@ import org.junit.Test;
 
 public class MachineScreenFluidBarrelMilkIdTest {
    @Test
-   public void recognizesMinecraftMilkFluidIdFromNeoForgeRegistrationAndUsesCreamTint() {
+   public void recognizesMinecraftMilkFluidIdFromNeoForgeRegistrationForItsLabel() {
       ResourceLocation milk = ResourceLocation.fromNamespaceAndPath("minecraft", "milk");
       assertTrue(MachineScreen.isMilkFluidId(milk));
-      assertEquals(0xFFE6E1D5, MachineScreen.fluidBarrelMilkTint(milk));
    }
 
    @Test
@@ -20,6 +18,7 @@ public class MachineScreenFluidBarrelMilkIdTest {
       ResourceLocation water = ResourceLocation.fromNamespaceAndPath("minecraft", "water");
 
       assertFalse(MachineScreen.isMilkFluidId(water));
-      assertEquals(0xFF7FAFC2, MachineScreen.fluidBarrelMilkTint(water));
+      assertFalse(MachineScreen.isMilkFluidId(null));
+      assertFalse(MachineScreen.isMilkFluidId(ResourceLocation.fromNamespaceAndPath("example", "milk")));
    }
 }

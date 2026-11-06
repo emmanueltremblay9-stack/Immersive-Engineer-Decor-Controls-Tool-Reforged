@@ -14,6 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.util.HexFormat;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
@@ -28,12 +29,14 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import org.lwjgl.glfw.GLFW;
@@ -701,6 +704,12 @@ final class NativeCorrectedMachineGuiValidation {
       double scaleY = mc.getWindow().getHeight() / (double)guiHeight;
       int cropX = (int)Math.round((guiWidth - layout.imageWidth()) / 2.0 * scaleX);
       int cropY = (int)Math.round((guiHeight - layout.imageHeight()) / 2.0 * scaleY);
+      if (spec.kind() == MachineKind.FLUID_BARREL) {
+         // The screen uses integer division for leftPos/topPos. Rounding a half-pixel
+         // origin would shift this odd-width panel and put glass inside the fluid ROI.
+         cropX = barrelCaptureOrigin(guiWidth, layout.imageWidth(), scaleX);
+         cropY = barrelCaptureOrigin(guiHeight, layout.imageHeight(), scaleY);
+      }
       int cropWidth = (int)Math.round(layout.imageWidth() * scaleX);
       int cropHeight = (int)Math.round(layout.imageHeight() * scaleY);
       String name = spec.id() + "-" + state + ".png";
@@ -708,6 +717,7 @@ final class NativeCorrectedMachineGuiValidation {
       Path output = screenshots.resolve(name);
       require(!Files.exists(output), "Refusing to overwrite a corrected GUI capture");
       JsonObject tankPixels = null;
+      JsonObject barrelFluidPixels = null;
       try (NativeImage full = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
          require(cropX >= 0 && cropY >= 0 && cropX + cropWidth <= full.getWidth()
             && cropY + cropHeight <= full.getHeight(), "GUI-only screenshot crop exceeds the live framebuffer");
@@ -719,6 +729,9 @@ final class NativeCorrectedMachineGuiValidation {
             }
             if (spec.kind() == MachineKind.SMALL_MILKING_MACHINE) {
                tankPixels = milkingTankPixels(crop, scaleX, scaleY);
+            }
+            if (spec.kind() == MachineKind.FLUID_BARREL) {
+               barrelFluidPixels = barrelFluidPixels(mc, menu, crop, scaleX, scaleY);
             }
             crop.writeToFile(output);
          }
@@ -739,6 +752,7 @@ final class NativeCorrectedMachineGuiValidation {
       capture.addProperty("menu_id", menu.containerId);
       capture.addProperty("server_menu_id", serverMenuId);
       capture.addProperty("fluid_amount", menu.fluidAmount());
+      if (spec.kind() == MachineKind.FLUID_BARREL) capture.add("barrel_fluid_pixels", barrelFluidPixels);
       capture.addProperty("energy", menu.energyStored());
       capture.addProperty("progress", menu.progress());
       if (menu.kind() == MachineKind.SMALL_FREEZER) {
@@ -750,6 +764,50 @@ final class NativeCorrectedMachineGuiValidation {
       }
       CAPTURES.add(capture);
       return capture;
+   }
+
+   private static int barrelCaptureOrigin(int guiSize, int panelSize, double scale) {
+      return (int)Math.round(((guiSize - panelSize) / 2) * scale);
+   }
+
+   /** Sample only the fluid, excluding glass highlights, edges, meniscus and amount labels. */
+   private static JsonObject barrelFluidPixels(Minecraft mc, MachineMenu menu, NativeImage image,
+                                               double scaleX, double scaleY) {
+      int fill = Math.clamp((long)menu.fluidAmount() * 70 / Math.max(1, menu.fluidCapacity()), 0, 70);
+      int top = fill == 0 ? 38 : 108 - fill;
+      int x = (int)Math.round(99 * scaleX);
+      int y = (int)Math.round(top * scaleY);
+      int right = (int)Math.round(115 * scaleX);
+      int bottom = (int)Math.round(107 * scaleY);
+      require(x >= 0 && y >= 0 && right <= image.getWidth() && bottom <= image.getHeight()
+         && right > x && bottom > y, "Barrel fluid sample exceeds its native panel");
+      var colors = new HashSet<Integer>();
+      for (int py = y; py < bottom; py++) {
+         for (int px = x; px < right; px++) colors.add(image.getPixelRGBA(px, py));
+      }
+      JsonObject result = new JsonObject();
+      result.addProperty("x", x);
+      result.addProperty("y", y);
+      result.addProperty("width", right - x);
+      result.addProperty("height", bottom - y);
+      result.addProperty("distinct_rgba_colors", colors.size());
+      result.addProperty("fluid_id", BuiltInRegistries.FLUID.getKey(menu.storedFluid()).toString());
+      if (fill == 0) {
+         require(menu.storedFluid() == Fluids.EMPTY && colors.size() == 1 && colors.contains(0xFF282014),
+            "Empty Barrel fluid interior is not the untextured dark backing");
+      } else {
+         require(menu.storedFluid() == Fluids.WATER, "Barrel fixture has not synchronized its water identity");
+         var stack = new FluidStack(menu.storedFluid(), menu.fluidAmount());
+         var properties = IClientFluidTypeExtensions.of(stack.getFluid());
+         var still = properties.getStillTexture(stack);
+         require(still != null, "Barrel water extension has no still texture");
+         var sprite = mc.getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(still);
+         require(sprite != null && sprite.contents().name().equals(still), "Barrel still sprite is not in the block atlas");
+         require(colors.size() > 1, "Barrel water interior is a flat fill instead of the native fluid sprite");
+         result.addProperty("still_texture", still.toString());
+         result.addProperty("tint_argb", String.format(Locale.ROOT, "%08x", properties.getTintColor(stack)));
+      }
+      return result;
    }
 
    /** Hash framebuffer pixels, not the fluid data or the amount label outside the tank. */

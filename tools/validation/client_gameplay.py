@@ -431,6 +431,23 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 expected_amount = 0 if stage == "empty" else expected_meter_capacity // 2 if stage == "mid" else expected_meter_capacity
                 if capture.get("fluid_amount") != expected_amount:
                     raise SmokeFailure(f"Native fluid gauge did not show {stage} state: {machine}")
+                if machine == "fluid_barrel":
+                    sample = capture.get("barrel_fluid_pixels")
+                    top = 73 if stage == "mid" else 38
+                    if (not isinstance(sample, dict)
+                            or any(type(sample.get(key)) is not int or sample[key] != value for key, value in (
+                                ("x", 99), ("y", top), ("width", 16), ("height", 107 - top)))
+                            or type(sample.get("distinct_rgba_colors")) is not int
+                            or sample.get("fluid_id") != ("minecraft:empty" if stage == "empty" else "minecraft:water")):
+                        raise SmokeFailure(f"Native Barrel {stage} frame lacks the exact fluid-only pixel sample")
+                    if stage == "empty":
+                        if sample["distinct_rgba_colors"] != 1:
+                            raise SmokeFailure("Native empty Barrel must show only its dark backing")
+                    elif (sample["distinct_rgba_colors"] <= 1
+                            or sample.get("still_texture") != "minecraft:block/water_still"
+                            or not isinstance(sample.get("tint_argb"), str)
+                            or re.fullmatch(r"[0-9a-f]{8}", sample["tint_argb"]) is None):
+                        raise SmokeFailure("Native Barrel water lacks textured fluid pixels or block-atlas/tint evidence")
             elif expected_energy_capacity:
                 energy = capture.get("energy")
                 if (stage == "empty" and energy != 0) or (stage == "full" and energy != expected_energy_capacity):

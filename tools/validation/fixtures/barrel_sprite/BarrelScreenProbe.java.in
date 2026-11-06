@@ -1,0 +1,28 @@
+package com.oblixorprime.engineersdecorreforged.client;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.fluids.FluidStack;
+
+final class BarrelScreenProbe {
+   record MachineMenu(Fluid storedFluid, int fluidAmount, int fluidCapacity) {}
+   private MachineMenu menu;
+   private final int imageWidth=201, imageHeight=226;
+   private boolean isFrenchArtworkLocale() { return true; }
+   private void drawTexturePatch(Object... args) {}
+   private void drawRepeatedTexturePatch(Object... args) {}
+   private void drawMachineSlotInteriorsFromArtwork(Object... args) {}
+   // Allows the exact old method to compile for the red/green negative control.
+   private int fluidBarrelTint(Fluid fluid) { return 0xFF3F76E4; }
+   void draw(GuiGraphics graphics,Fluid fluid,int amount,int capacity,int x,int y) {
+      menu=new MachineMenu(fluid,amount,capacity);
+      drawFluidBarrelWidgets(graphics,new ResourceLocation("barrel-art"),x,y);
+   }
+   static int captureOrigin(int guiSize,int panelSize,double scale) {
+      return barrelCaptureOrigin(guiSize,panelSize,scale);
+   }
+   /* NATIVE_CAPTURE_METHOD */
+   /* PRODUCTION_METHOD */
+}

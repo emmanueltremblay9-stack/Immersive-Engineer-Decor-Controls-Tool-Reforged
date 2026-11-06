@@ -328,6 +328,17 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 capture["capture_mode"] = "gui_panel"
                 capture["panel_cursor_outside"] = True
                 capture["panel_tooltips_suppressed"] = True
+                if machine == "fluid_barrel":
+                    top = 73 if state == "mid" else 38
+                    capture["barrel_fluid_pixels"] = {
+                        "x": 99, "y": top, "width": 16, "height": 107 - top,
+                        # Synthetic gate metadata, not a claim of native rendered pixels.
+                        "distinct_rgba_colors": 1 if state == "empty" else 8,
+                        "fluid_id": "minecraft:empty" if state == "empty" else "minecraft:water",
+                    }
+                    if state != "empty":
+                        capture["barrel_fluid_pixels"].update(
+                            still_texture="minecraft:block/water_still", tint_argb="ff3f76e4")
                 if machine == "small_milking_machine":
                     capture["tank_pixels"] = {
                         "x": 104, "y": 49, "width": 22, "height": 51,
@@ -533,6 +544,24 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         case = next(item for item in proof["cases"] if item["machine_id"] == "small_milking_machine")
         case["slot_item_transfers"]["machine_output_to_player"]["destination_menu_index"] = 36
         with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_flat_or_missing_barrel_sprite_evidence(self):
+        for state in ("empty", "mid", "full-hover"):
+            for mutation in ("missing", "roi", "color_count", "fluid_id", "texture", "tint"):
+                if state == "empty" and mutation in ("texture", "tint"):
+                    continue
+                with self.subTest(state=state, mutation=mutation):
+                    proof = copy.deepcopy(self.proof)
+                    capture = next(item for item in proof["screenshots"]
+                                   if item["name"] == f"fluid_barrel-{state}.png")
+                    sample = capture["barrel_fluid_pixels"]
+                    if mutation == "missing": del capture["barrel_fluid_pixels"]
+                    elif mutation == "roi": sample["x"] = 95  # Glass highlight cannot prove textured fluid.
+                    elif mutation == "color_count": sample["distinct_rgba_colors"] = 2 if state == "empty" else 1
+                    elif mutation == "fluid_id": sample["fluid_id"] = "minecraft:lava"
+                    elif mutation == "texture": sample["still_texture"] = "minecraft:missingno"
+                    elif mutation == "tint": sample["tint_argb"] = "3f76e4"  # Missing alpha channel.
+                    with self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_rejects_wrong_locale_or_missing_freezer_progress(self):
         bad_locale = copy.deepcopy(self.proof)

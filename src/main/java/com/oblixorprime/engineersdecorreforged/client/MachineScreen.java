@@ -22,6 +22,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu> {
    private static final int FRAME = -14934755;
@@ -1961,8 +1962,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       int fill = Mth.clamp((int)((long)menu.fluidAmount() * (tankHeight - 4) / capacity), 0, tankHeight - 4);
       if (fill > 0 && menu.storedFluid() != Fluids.EMPTY) {
          int fluidTop = tankY + tankHeight - 2 - fill;
-         graphics.fill(tankX + 2, fluidTop, tankX + tankWidth - 2, tankY + tankHeight - 2, this.fluidBarrelTint(menu.storedFluid()));
-         graphics.fill(tankX + 3, fluidTop, tankX + tankWidth - 3, fluidTop + 1, 0x99FFFFFF);
+         if (FluidBarrelSpriteRenderer.draw(graphics, new FluidStack(menu.storedFluid(), menu.fluidAmount()),
+            tankX + 2, fluidTop, tankWidth - 4, fill)) {
+            graphics.fill(tankX + 3, fluidTop, tankX + tankWidth - 3, fluidTop + 1, 0x99FFFFFF);
+         }
       }
       graphics.fill(tankX + 1, tankY + 2, tankX + 2, tankY + tankHeight - 2, 0xFF77858B);
       graphics.fill(tankX + tankWidth - 2, tankY + 2, tankX + tankWidth - 1, tankY + tankHeight - 2, 0xFF526067);
@@ -2020,25 +2023,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
-   private int fluidBarrelTint(Fluid fluid) {
-      if (fluid == Fluids.WATER) {
-         return 0xFF3F76E4;
-      } else if (fluid == Fluids.LAVA) {
-         return 0xFFF06A28;
-      } else {
-         ResourceLocation id = BuiltInRegistries.FLUID.getKey(fluid);
-         return fluidBarrelMilkTint(id);
-      }
-   }
-
    static boolean isMilkFluidId(ResourceLocation id) {
       return id != null
          && id.getNamespace().equals("minecraft")
          && id.getPath().equals("milk");
-   }
-
-   static int fluidBarrelMilkTint(ResourceLocation id) {
-      return isMilkFluidId(id) ? 0xFFE6E1D5 : 0xFF7FAFC2;
    }
 
    private void drawSolarCells(GuiGraphics graphics, int x, int y) {
