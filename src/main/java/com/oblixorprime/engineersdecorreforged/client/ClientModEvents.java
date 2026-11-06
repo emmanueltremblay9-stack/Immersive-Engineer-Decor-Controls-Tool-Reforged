@@ -50,7 +50,8 @@ public final class ClientModEvents {
          ? new BarrelReferenceScreen(menu, inventory, title) : new MachineScreen.FluidBarrelScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_FLUID_FUNNEL.get(), MachineScreen.SmallFluidFunnelScreen::new);
       event.register((MenuType)ModMenus.PASSIVE_FLUID_ACCUMULATOR.get(), MachineScreen.PassiveFluidAccumulatorScreen::new);
-      event.register((MenuType)ModMenus.SMALL_SOLAR_PANEL.get(), MachineScreen.SmallSolarPanelScreen::new);
+      event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.SMALL_SOLAR_PANEL.get(), (menu, inventory, title) -> menu.solarV2ReferencePresentation()
+         ? new SolarV2ReferenceScreen(menu, inventory, title) : new MachineScreen.SmallSolarPanelScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_MILKING_MACHINE.get(), MachineScreen.SmallMilkingMachineScreen::new);
       event.register((MenuType)ModMenus.SMALL_TREE_CUTTER.get(), MachineScreen.SmallTreeCutterScreen::new);
    }
