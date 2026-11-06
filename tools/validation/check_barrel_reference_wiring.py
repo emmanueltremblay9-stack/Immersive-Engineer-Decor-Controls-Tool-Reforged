@@ -17,6 +17,13 @@ assert 'view.localY(mouseY), scrollX, scrollY)' in s
 assert s.index('graphics.pose().popPose()') < s.index('renderTooltip(graphics, mouseX, mouseY)')
 assert 'mouseX = renderLocalMouseX' in s and 'mouseY = renderLocalMouseY' in s
 assert 'FluidBarrelSpriteRenderer.draw' in s
+# Public bounds are in GUI screen pixels; vanilla rendering/input retain local coordinates.
+for method, geometry_method in (('getGuiLeft', 'guiLeft'), ('getGuiTop', 'guiTop'),
+                                ('getXSize', 'guiWidth'), ('getYSize', 'guiHeight')):
+    assert f'public int {method}() {{ return view.{geometry_method}(); }}' in s
+assert 'leftPos = 0; topPos = 0;' in s
+assert 'imageWidth = BarrelReferenceGeometry.CANVAS_WIDTH;' in s
+assert 'imageHeight = BarrelReferenceGeometry.CANVAS_HEIGHT;' in s
 assert 'this(kind, id, inventory, container, data, false)' in m
 assert 'kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide' in m
 assert 'Boolean.getBoolean(DEV_BARREL_REFERENCE_PROPERTY)' in m
@@ -24,7 +31,7 @@ assert 'new MachineScreen.FluidBarrelScreen(menu, inventory, title)' in c
 # Everything after resolveMenuType, including transfer rules and synchronized fluid data,
 # is byte-identical to the exact PR151 baseline.
 assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType',1)[1].encode()).hexdigest() == '48406a039c8b1ab4e78c9cd8ac4d3bb76408838dfee1696047d915f27cdbe88a'
-print('PASS: event routing, legacy fallback, client-only opt-in, unchanged transfer/data/validation code')
+print('PASS: event routing, external screen bounds, local canvas, legacy fallback, client-only opt-in, unchanged transfer/data/validation code')
 
 g=(j/'utility/BarrelReferenceGeometry.java').read_text()
 source_width=int(re.search(r'SOURCE_WIDTH = (\d+)',g)[1])
