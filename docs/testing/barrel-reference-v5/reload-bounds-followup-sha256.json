@@ -12,7 +12,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java": {
       "before_sha256": "7b8a581a62297252cbda57ad1ee77cf461a9ed10c3c7e6a577c12589c599bed3",
-      "after_sha256": "63632aba74b8548412b977ac077e48a82c0bdb50886f7d0e307f0070f74090bf"
+      "after_sha256": "e34048a432f9d3af20872d224d6a0e22e51960051dfee7c5855c869d112d5dd1"
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometry.java": {
       "before_sha256": "ca1faa0a2dbc994808bf5fad3a174e652274b29bacd463740fe155b68fdc0dfe",

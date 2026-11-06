@@ -47,7 +47,7 @@ assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1
 preserved_path = d / 'preserved-baseline-sha256.json'
 preserved = json.loads(preserved_path.read_text())
 followup_path = r / 'docs/testing/barrel-reference-v5/reload-bounds-followup-sha256.json'
-assert hashlib.sha256(followup_path.read_bytes()).hexdigest() == '417e632432d0acfb84ecfee43cf6db0c35f6485e1334ed887647aa6e2a140fe6'
+assert hashlib.sha256(followup_path.read_bytes()).hexdigest() == '97cf2df916113fa6e17389e0c3cf44d232270f93509500b74cf5ac19cd447b59'
 followup = json.loads(followup_path.read_text())
 assert followup['baseline_manifest_sha256'] == hashlib.sha256(preserved_path.read_bytes()).hexdigest()
 allowed_followup_paths = {
