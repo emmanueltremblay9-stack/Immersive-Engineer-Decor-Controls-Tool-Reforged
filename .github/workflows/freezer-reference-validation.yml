@@ -32,12 +32,13 @@ jobs:
       - name: Compile and run JUnit plus dedicated GameTests
         shell: bash
         run: |
-          chmod +x ./gradlew
-          ./gradlew compileJava processResources test runGameTestServer --stacktrace
+          bash ./gradlew compileJava processResources test runGameTestServer --stacktrace
       - name: Check native display prerequisites
         run: command -v Xvfb && command -v xvfb-run && command -v xauth
       - name: Test native evidence validator
         run: python -m unittest discover -s tools/validation -p 'test_freezer_reference_native.py' -v
+      - name: Show source cleanliness before native execution
+        run: git status --porcelain --untracked-files=all
       - name: Capture Freezer English native interactions
         run: python tools/validation/freezer_reference_native.py --language en_us --height 720 --prepare-timeout 900 --timeout 900
       - name: Capture Freezer French small-window interactions
