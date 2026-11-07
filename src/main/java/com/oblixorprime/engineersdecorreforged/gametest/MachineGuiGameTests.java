@@ -1335,6 +1335,56 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 100)
+   public static void reference_flags_preserve_both_authoritative_menu_layouts(GameTestHelper helper) {
+      String[] properties = {
+         MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY,
+         MachineMenu.DEV_FREEZER_LIVE_ENERGY_PROPERTY,
+         MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY
+      };
+      String[] previous = java.util.Arrays.stream(properties).map(System::getProperty).toArray(String[]::new);
+      try {
+         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+         // All eight flag combinations include both Freezer modes plus Placer at once.
+         for (int flags = 0; flags < 8; flags++) {
+            for (int i = 0; i < properties.length; i++) {
+               System.setProperty(properties[i], Boolean.toString((flags & (1 << i)) != 0));
+            }
+            for (MachineKind kind : List.of(MachineKind.SMALL_FREEZER, MachineKind.FACTORY_PLACER)) {
+               MachineMenu authoritative = new MachineMenu(kind, 1, player.getInventory(),
+                  new SimpleContainer(27), new SimpleContainerData(MachineMenu.DATA_COUNT));
+               MachineMenu fromClientFactory = MachineMenu.client(2, player.getInventory(), kind);
+               for (MachineMenu menu : List.of(authoritative, fromClientFactory)) {
+                  helper.assertTrue(!menu.freezerReferencePresentation(), "server world must not enable Freezer presentation");
+                  helper.assertTrue(!menu.factoryPlacerV2ReferencePresentation(), "server world must not enable Placer presentation");
+                  MachineLayout layout = MachineLayout.forKind(kind);
+                  int machineSlots = layout.machineSlots().size();
+                  helper.assertValueEqual(machineSlots + 36, menu.slots.size(), "protocol slot count is unchanged");
+                  for (int i = 0; i < machineSlots; i++) {
+                     MachineLayout.MachineSlot expected = layout.machineSlots().get(i);
+                     helper.assertValueEqual(expected.containerIndex(), menu.getSlot(i).getSlotIndex(), "machine backing index is unchanged");
+                     helper.assertValueEqual(expected.x(), menu.getSlot(i).x, "server machine x remains legacy");
+                     helper.assertValueEqual(expected.y(), menu.getSlot(i).y, "server machine y remains legacy");
+                  }
+                  for (int i = 0; i < 36; i++) {
+                     var slot = menu.getSlot(machineSlots + i);
+                     helper.assertValueEqual(i < 27 ? i + 9 : i - 27, slot.getSlotIndex(), "player backing index is unchanged");
+                     helper.assertValueEqual(i < 27 ? layout.playerSlotX(i % 9) : layout.hotbarSlotX(i % 9), slot.x, "server player x remains legacy");
+                     helper.assertValueEqual(i < 27 ? layout.playerSlotY(i / 9) : layout.hotbarY(), slot.y, "server player y remains legacy");
+                  }
+                  menu.removed(player);
+               }
+            }
+         }
+         helper.succeed();
+      } finally {
+         for (int i = 0; i < properties.length; i++) {
+            if (previous[i] == null) System.clearProperty(properties[i]);
+            else System.setProperty(properties[i], previous[i]);
+         }
+      }
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
    public static void small_freezer_reference_flag_preserves_server_slots_and_reserved_recovery(GameTestHelper helper) {
       String previous = System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY);
       System.setProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY, "true");

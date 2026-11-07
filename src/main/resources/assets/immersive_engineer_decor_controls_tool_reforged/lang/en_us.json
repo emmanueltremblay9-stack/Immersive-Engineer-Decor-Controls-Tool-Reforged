@@ -1096,5 +1096,17 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help": "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.",
   "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.live_energy_cells": "Live energy: %s / %s segments (rounded down).",
   "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_frost": "STATIC FROST ART: no clean chamber layer is available.",
-  "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_art": "STATIC REFERENCE ART: frost and energy are not live."
+  "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_art": "STATIC REFERENCE ART: frost and energy are not live.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.slot_tooltip": "Block slot %s. Active slot: %s.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.row_tooltip": "Start at row %s. Active row: %s; active slot: %s. Placement continues through all 18 slots.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.manual_tooltip": "Request one placement attempt. Signal or manual flash: %s.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.signal_on": "on",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.signal_off": "off",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.redstone_tooltip": "Redstone mode: %s. Click to cycle.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.redstone_0": "requires power",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.redstone_1": "requires no power",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.redstone_2": "ignores power",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.trigger_tooltip": "Trigger setting: %s. Click to toggle. Ignore-power mode runs automatically.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.continuous": "continuous",
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge": "signal change"
 }
