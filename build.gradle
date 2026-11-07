@@ -15,6 +15,15 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 def tfcMilkingRuntime = providers.gradleProperty('include_tfc_milking_runtime').map { it.toBoolean() }.getOrElse(false)
 def tfcCrossoverRuntime = providers.gradleProperty('include_tfc_crossover_runtime').map { it.toBoolean() }.getOrElse(false)
+// Dedicated native GUI proof code is not part of main or any distributed JAR.
+def factoryPlacerNativeValidation = providers.gradleProperty('include_factory_placer_native_validation').map { it.toBoolean() }.getOrElse(false)
+if (factoryPlacerNativeValidation) {
+    sourceSets.create('factoryPlacerNativeValidation') {
+        java.srcDir('src/factoryPlacerNativeValidation/java')
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
 if (tfcCrossoverRuntime && !tfcMilkingRuntime) throw new GradleException('Crossover test profile requires include_tfc_milking_runtime=true')
 configurations { tfcMilkingApi; tfcMilkingCrossover }
 if (tfcMilkingRuntime) sourceSets.main.java.srcDir('src/tfcGameTest/java')
@@ -65,6 +74,7 @@ neoForge {
     mods {
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            if (factoryPlacerNativeValidation) sourceSet(sourceSets.factoryPlacerNativeValidation)
         }
     }
 }
