@@ -29,6 +29,14 @@ if (factoryPlacerNativeValidation) {
                 files(factoryPlacerRuntimeJar)
     }
 }
+def fluidGestureNativeValidation = providers.gradleProperty('include_fluid_gesture_native_validation').map { it.toBoolean() }.getOrElse(false)
+if (fluidGestureNativeValidation) {
+    sourceSets.create('fluidGestureNativeValidation') {
+        java.srcDir('src/fluidGestureNativeValidation/java')
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
 if (tfcCrossoverRuntime && !tfcMilkingRuntime) throw new GradleException('Crossover test profile requires include_tfc_milking_runtime=true')
 configurations { tfcMilkingApi; tfcMilkingCrossover }
 if (tfcMilkingRuntime) sourceSets.main.java.srcDir('src/tfcGameTest/java')
@@ -79,6 +87,7 @@ neoForge {
     mods {
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            if (fluidGestureNativeValidation) sourceSet(sourceSets.fluidGestureNativeValidation)
         }
     }
 }
@@ -536,3 +545,5 @@ idea {
 }
 
 apply from: 'gradle/validate-tracker-models.gradle'
+
+apply from: 'gradle/fluid-packaged-validation.gradle'
