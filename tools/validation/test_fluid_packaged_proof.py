@@ -47,8 +47,14 @@ class PackagedProofTests(unittest.TestCase):
                 state = dict(state=[0,0,1,0,0,0,amount], total=1, menu_id=i+1)
                 row.update(client=state, server=copy.deepcopy(state))
                 self.proof['tank_captures'].append(row)
-        for row in self.proof['hovers']:
+        for index, row in enumerate(self.proof['hovers']):
             row['recipe_toast_absent'] = True
+            row.update(capture_render_id=index+1, capture_screen_id=index//6+1)
+            row['tooltip_geometry'] = dict(render_id=index+1, screen_id=index//6+1,
+                menu_id=row['menu_id'], machine=row['machine'], role=row['role'],
+                pointer_x=row['actual_x'], pointer_y=row['actual_y'], gui_width=1280, gui_height=720,
+                text_x=100, text_y=100, text_width=100, text_height=20,
+                frame_margin=4, frame_left=96, frame_top=96, frame_right=204, frame_bottom=124)
 
     def check(self, proof=None, report=None):
         return validate_packaged(self.proof if proof is None else proof, self.report if report is None else report,
@@ -162,6 +168,9 @@ class PackagedProofTests(unittest.TestCase):
         for width, height, scale in [(800,600,2), (960,810,3), (961,811,3)]:
             proof = copy.deepcopy(self.proof)
             gw, gh = (width+scale-1)//scale, (height+scale-1)//scale
+            for row in proof['hovers']:
+                row.update(gui_width=gw, gui_height=gh)
+                row['tooltip_geometry'].update(gui_width=gw, gui_height=gh)
             for row in proof['tank_captures']:
                 x, y = (gw-256)//2+8, (gh-256)//2+8
                 row.update(width=width, height=height, gui_width=gw, gui_height=gh, gui_scale=scale,
@@ -180,6 +189,69 @@ class PackagedProofTests(unittest.TestCase):
         self.proof['packaged_runtime']['jar_sha256'] = digest
         with self.assertRaises(SmokeFailure):
             self.check()
+
+    def test_reject_missing_and_invalid_tooltip_geometry(self):
+        for value in (None, {}, [], True):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'] = value
+            with self.subTest(value=value), self.assertRaises(SmokeFailure): self.check(proof)
+        original = self.proof['hovers'][0]['tooltip_geometry']
+        for field, value in original.items():
+            if type(value) not in (int, float): continue
+            for invalid in (None, True, '1', float('nan'), float('inf')):
+                proof = copy.deepcopy(self.proof)
+                proof['hovers'][0]['tooltip_geometry'][field] = invalid
+                with self.subTest(field=field, invalid=invalid), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_reject_stale_tooltip_evidence(self):
+        changes = [('render_id', 99), ('screen_id', 99), ('menu_id', 99), ('role', 'tank'),
+                   ('machine', 'accumulator'), ('pointer_x', 0), ('pointer_y', 0),
+                   ('gui_width', 1), ('gui_height', 1), ('text_width', 0), ('text_height', 0),
+                   ('frame_margin', 3), ('frame_right', 203)]
+        for field, value in changes:
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'][field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.check(proof)
+        for field in ('capture_render_id', 'capture_screen_id'):
+            for value in (None, True, 0, 99):
+                proof = copy.deepcopy(self.proof)
+                proof['hovers'][0][field] = value
+                with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure): self.check(proof)
+        for index, field, value in ((1, 'render_id', 1), (1, 'screen_id', 3), (6, 'screen_id', 1)):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][index]['tooltip_geometry'][field] = value
+            proof['hovers'][index]['capture_'+field] = value
+            with self.subTest(index=index, field=field), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_full_frame_bounds_all_roles_and_edges(self):
+        # Text fits in each case, but the native four-pixel frame does not.
+        for index in range(12):
+            for x, y in ((3,100), (1177,100), (100,3), (100,697)):
+                proof = copy.deepcopy(self.proof)
+                g = proof['hovers'][index]['tooltip_geometry']
+                g.update(text_x=x, text_y=y, frame_left=x-4, frame_top=y-4,
+                         frame_right=x+104, frame_bottom=y+24)
+                with self.subTest(index=index, x=x, y=y), self.assertRaisesRegex(SmokeFailure, 'Tooltip frame clipped'):
+                    self.check(proof)
+        for x, y in ((4,4), (1176,696)):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'].update(text_x=x, text_y=y, frame_left=x-4,
+                frame_top=y-4, frame_right=x+104, frame_bottom=y+24)
+            self.check(proof)
+
+    def test_capture_is_bound_to_post_render(self):
+        source = (ROOT/'src/fluidPackagedValidation/java/com/oblixorprime/iedctrtest/fluid/NativeFluidGestureValidation.java').read_text()
+        post = source.split('void afterRender(', 1)[1].split('void tick(', 1)[0]
+        tick = source.split('void tick(', 1)[1]
+        self.assertIn('capture(mc,screen,"hover-"+hoverIndex)', post)
+        self.assertNotIn('capture(mc,screen,"hover-"+hoverIndex)', tick)
+        for token in ('event.getScreen()!=renderedScreen', 'event.getScreen()!=mc.screen',
+                      'tooltipEventsInFrame!=1', '"capture_render_id",renderId', '"capture_screen_id",screenId',
+                      '"Tooltip frame clipped: "'):
+            self.assertIn(token, post)
+        self.assertIn('component.getWidth(event.getFont())', source)
+        self.assertIn('height+=component.getHeight()', source)
+        self.assertIn('event.getComponents().size()==1?-2:0', source)
 
     def test_runner_workflow_contract(self):
         runner = (ROOT/'tools/validation/fluid_packaged_native.py').read_text()

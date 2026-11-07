@@ -6,6 +6,16 @@ PR171's original implementation (`4e95ac450768d868c1af3ba0fe362314e85a6fd3`) is 
 
 The adapter has been reconstructed after a replaced execution environment. Historical hashes, test runs and native results from a different checkout do not qualify this candidate. Local Python proof/contract tests and static review are separate from mapped compilation and native execution. At preparation time, no mapped build, native client, CI workflow, publication, merge to main, or release has been run for this reconstructed adapter. The first CI results must be inspected on the exact committed candidate.
 
+## Full-frame tooltip regression gate
+
+Packaged run [42404640476](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/42404640476) passed on `290ec8954a2c0d0339c8df95ab687233710d8411`, but subsequent review of all 252 captures found one visual blocker: the French Funnel header at 800×600 / GUI scale 2 touched the viewport edge and lost its right frame. Text was complete. A green interaction run alone did not establish visual acceptance.
+
+The native background extends four logical pixels beyond its content on every side: three pixels of padding and a one-pixel outer strip, as shown in the [NeoForge 1.21.1 TooltipRenderUtil patch](https://raw.githubusercontent.com/NeoForged/NeoForge/1.21.1/patches/net/minecraft/client/gui/screens/inventory/tooltip/TooltipRenderUtil.java.patch). The fluid-only positioner keeps native placement when that whole frame fits, otherwise clamps the origin horizontally and vertically. It preserves translations, artwork, hover regions and the Accumulator collection's existing 240px wrap cap. Other machines and ordinary occupied-slot item rendering keep their existing routes.
+
+All 12 hover captures now require actual `RenderTooltipEvent.Color` dimensions confirmed in the matching `ScreenEvent.Render.Post`. The capture is made after flushing that same frame. Records bind the render/screen/menu/role/pointer identity and independently recompute painted bounds `[x-4,x+width+4)` and `[y-4,y+height+4)` in Python. Text-only bounds, a missing outer strip, vertical overflow and stale geometry fail. The positioner itself is included in exact-JAR class provenance.
+
+The updated presentation and frame gate still need mapped compilation and the same six packaged runs on their new exact commit, followed by screenshot review. Historical 290ec895 evidence lacks the new geometry and cannot qualify this fix.
+
 ## One six-profile workflow, one ordinary artifact
 
 The existing `fluid-gestures-native.yml` workflow now uses the packaged driver, replacing its six source-runtime executions rather than adding six more. An ordinary-artifact build job produces the production JAR without test flags, hashes it, binds it to the candidate source SHA, and uploads it. All six matrix jobs download and verify the same JAR and manifest. Each job also rebuilds the clean source locally and requires byte equality with the shared artifact before launching.

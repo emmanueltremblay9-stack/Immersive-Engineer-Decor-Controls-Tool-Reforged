@@ -45,7 +45,8 @@ public final class PackagedRuntimeProof {
                 || e.getName().contains("NativeFluidGestureValidation")), "Harness leaked into normal JAR");
             for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, MachineScreen.class,
                     MachineScreen.SmallFluidFunnelScreen.class, MachineScreen.PassiveFluidAccumulatorScreen.class, MachineMenu.class, FluidMachineRedesignLayout.class, MachineBlockEntity.class,
-                    Class.forName("com.oblixorprime.engineersdecorreforged.client.RetainedFluidMachineArtwork")}) {
+                    Class.forName("com.oblixorprime.engineersdecorreforged.client.RetainedFluidMachineArtwork"),
+                    Class.forName("com.oblixorprime.engineersdecorreforged.client.FluidTooltipPositioner")}) {
                 String entry = type.getName().replace('.', '/') + ".class";
                 var url = type.getResource('/' + entry);
                 var source = type.getProtectionDomain().getCodeSource();

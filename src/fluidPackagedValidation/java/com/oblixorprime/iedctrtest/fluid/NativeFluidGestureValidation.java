@@ -76,19 +76,78 @@ public final class NativeFluidGestureValidation {
    private static final JsonArray HOVERS = new JsonArray(), GESTURES = new JsonArray(), SEEDS = new JsonArray(), CONTRACTS = new JsonArray();
    private static NativeLibrary x11, xtest;
    private static Pointer display;
-   private static boolean isolated, complete, pressed, shifted, observedPress, observedShift, tooltipInFrame;
+   private static boolean isolated, complete, pressed, shifted, observedPress, observedShift, hoverCaptureReady;
    private static int targetX, targetY, tooltipStart, targetSlot;
 
-   @SubscribeEvent public static void beforeRender(ScreenEvent.Render.Pre event) {tooltipInFrame=false;}
+   private static final String[] HOVER_ROLES = {"header","tank","empty_input","empty_output","structure","occupied_input"};
+   private static long renderId, screenId;
+   private static net.minecraft.client.gui.screens.Screen renderedScreen, observedScreen;
+   private static JsonObject tooltipGeometry;
+   private static int tooltipEventsInFrame, renderedPointerX, renderedPointerY;
+
+   @SubscribeEvent public static void beforeRender(ScreenEvent.Render.Pre event) {
+      renderId++; tooltipGeometry=null; tooltipEventsInFrame=0;
+      renderedScreen=event.getScreen();renderedPointerX=event.getMouseX();renderedPointerY=event.getMouseY();
+      if(observedScreen!=renderedScreen) { observedScreen=renderedScreen; screenId++; }
+   }
    @SubscribeEvent public static void tooltip(RenderTooltipEvent.Color event) {
-      // Color is on the tooltip rendering path after the cancellable Pre event.
-      if (isolated && stage==Stage.HOVER && Minecraft.getInstance().screen instanceof MachineScreen screen
-         && atTarget(Minecraft.getInstance(),screen)) tooltipInFrame=true;
+      Minecraft mc=Minecraft.getInstance();
+      // Only the current Pre -> Color -> Post sequence may supply capture evidence.
+      if(!isolated || stage!=Stage.HOVER || renderedScreen!=mc.screen
+         || !(mc.screen instanceof MachineScreen screen) || screen.getMenu().containerId!=menuId
+         || !atTarget(mc,screen)
+         || renderedPointerX!=(int)(mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth())
+         || renderedPointerY!=(int)(mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight())) return;
+      tooltipEventsInFrame++;
+      int width=0,height=event.getComponents().size()==1?-2:0;
+      for(var component:event.getComponents()) {
+         width=Math.max(width,component.getWidth(event.getFont()));height+=component.getHeight();
+      }
+      var g=new JsonObject();
+      g.addProperty("render_id",renderId);g.addProperty("screen_id",screenId);
+      g.addProperty("menu_id",screen.getMenu().containerId);
+      g.addProperty("machine",machineIndex==0?"funnel":"accumulator");g.addProperty("role",HOVER_ROLES[hoverIndex]);
+      g.addProperty("pointer_x",mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth());
+      g.addProperty("pointer_y",mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight());
+      g.addProperty("text_x",event.getX());g.addProperty("text_y",event.getY());
+      g.addProperty("text_width",width);g.addProperty("text_height",height);
+      g.addProperty("frame_margin",4);g.addProperty("frame_left",event.getX()-4);g.addProperty("frame_top",event.getY()-4);
+      g.addProperty("frame_right",event.getX()+width+4);g.addProperty("frame_bottom",event.getY()+height+4);
+      g.addProperty("gui_width",screen.width);g.addProperty("gui_height",screen.height);
+      tooltipGeometry=g;
    }
    @SubscribeEvent public static void afterRender(ScreenEvent.Render.Post event) {
-      if(tooltipInFrame && isolated && stage==Stage.HOVER && event.getScreen()==Minecraft.getInstance().screen
-         && event.getScreen() instanceof MachineScreen screen && atTarget(Minecraft.getInstance(),screen)) tooltipFrames++;
-      tooltipInFrame=false;
+      Minecraft mc=Minecraft.getInstance();
+      try {
+         if(tooltipGeometry==null || tooltipEventsInFrame!=1 || !isolated || stage!=Stage.HOVER
+            || event.getScreen()!=renderedScreen || event.getScreen()!=mc.screen
+            || !(event.getScreen() instanceof MachineScreen screen) || screen.getMenu().containerId!=menuId
+            || !atTarget(mc,screen) || event.getMouseX()!=renderedPointerX || event.getMouseY()!=renderedPointerY) return;
+         tooltipFrames++;
+         if(!hoverCaptureReady || recipeToastVisible(mc)) return;
+         var g=tooltipGeometry;
+         require(g.get("render_id").getAsLong()==renderId && g.get("screen_id").getAsLong()==screenId
+            && g.get("role").getAsString().equals(HOVER_ROLES[hoverIndex])
+            && g.get("pointer_x").getAsDouble()==mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth()
+            && g.get("pointer_y").getAsDouble()==mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight(),"Stale tooltip geometry");
+         require(g.get("text_width").getAsInt()>0 && g.get("text_height").getAsInt()>0
+            && g.get("frame_left").getAsInt()>=0 && g.get("frame_top").getAsInt()>=0
+            && g.get("frame_right").getAsInt()<=screen.width && g.get("frame_bottom").getAsInt()<=screen.height,
+            "Tooltip frame clipped: "+g);
+         int[] state=hoverIndex==5?new int[]{1,0,0,0,0,0,0}:new int[]{0,0,1,0,0,0,0};
+         require(expected(snapshot(screen.getMenu()),state) && expected(serverSnapshot,state),"Hover state changed after arming");
+         event.getGuiGraphics().flush();
+         // Read the framebuffer immediately after this exact screen render, never from a later client tick.
+         JsonObject h=capture(mc,screen,"hover-"+hoverIndex);
+         h.addProperty("role",HOVER_ROLES[hoverIndex]);h.addProperty("capture_render_id",renderId);h.addProperty("capture_screen_id",screenId);
+         h.add("tooltip_geometry",g.deepCopy());h.addProperty("tooltip_render_events",tooltipFrames-tooltipStart);
+         h.addProperty("tooltip_event_class","RenderTooltipEvent.Color+ScreenEvent.Render.Post");
+         h.add("client",snapshot(screen.getMenu()));h.add("server",serverSnapshot.deepCopy());HOVERS.add(h);
+         if(++hoverIndex<5) { hoverTarget(screen,screen.getMenu()); enter(Stage.HOVER); }
+         else if(hoverIndex==6) { actionIndex=2; startAction(screen,screen.getMenu()); }
+         else { actionIndex=0; startAction(screen,screen.getMenu()); }
+      } catch(Throwable error) {finish(mc,error);}
+      finally {tooltipGeometry=null;renderedScreen=null;}
    }
    @SubscribeEvent public static void tick(ClientTickEvent.Post event) {
       if (!Boolean.getBoolean("iedctr.fluidPackagedNative") || complete) return;
@@ -162,14 +221,11 @@ public final class NativeFluidGestureValidation {
                hoverIndex=0;hoverTarget(screen,menu);enter(Stage.HOVER);
             }
             case HOVER -> {
+               hoverCaptureReady=false;
                if(!atTarget(mc,screen)) { move(mc,screen); return; }
                if(ticks<120 || recipeToastVisible(mc) || tooltipFrames<=tooltipStart
                   || !agrees(mc,menu,hoverIndex==5?new int[]{1,0,0,0,0,0,0}:new int[]{0,0,1,0,0,0,0})) return;
-               JsonObject h=capture(mc,screen,"hover-"+hoverIndex); h.addProperty("role",new String[]{"header","tank","empty_input","empty_output","structure","occupied_input"}[hoverIndex]);
-               h.addProperty("tooltip_render_events",tooltipFrames-tooltipStart);h.addProperty("tooltip_event_class","RenderTooltipEvent.Color+ScreenEvent.Render.Post"); h.add("client",snapshot(menu));h.add("server",serverSnapshot.deepCopy());HOVERS.add(h);
-               if(++hoverIndex<5) { hoverTarget(screen,menu); enter(Stage.HOVER); }
-               else if(hoverIndex==6) { actionIndex=2; startAction(screen,menu); }
-               else { actionIndex=0; startAction(screen,menu); }
+               hoverCaptureReady=true;
             }
             case MOVE -> {
                if(!atTarget(mc,screen)) { move(mc,screen); return; }
@@ -348,7 +404,7 @@ public final class NativeFluidGestureValidation {
       o.addProperty("xtest_motion_count",moveCount);o.addProperty("recipe_toast_absent",!recipeToastVisible(mc));return o;
    }
    private static boolean recipeToastVisible(Minecraft mc){return mc.getToasts().getToast(net.minecraft.client.gui.components.toasts.RecipeToast.class,net.minecraft.client.gui.components.toasts.Toast.NO_TOKEN)!=null;}
-   private static void enter(Stage next){stage=next;ticks=0;inspection=null;}
+   private static void enter(Stage next){stage=next;ticks=0;inspection=null;hoverCaptureReady=false;}
    private static void finish(Minecraft mc,Throwable error){
       complete=true;
       try {if(display!=null){try{rightButton(false);button(false);}finally{try{key(false);}finally{x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}}}

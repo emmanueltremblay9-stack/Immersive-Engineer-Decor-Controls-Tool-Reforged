@@ -13,12 +13,58 @@ PREFIX = 'com.oblixorprime.engineersdecorreforged.'
 CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.MachineScreen',
     'client.MachineScreen$SmallFluidFunnelScreen', 'client.MachineScreen$PassiveFluidAccumulatorScreen',
     'menu.MachineMenu', 'utility.FluidMachineRedesignLayout', 'utility.MachineBlockEntity',
-    'client.RetainedFluidMachineArtwork')]
+    'client.RetainedFluidMachineArtwork', 'client.FluidTooltipPositioner')]
 TEXTURES = {
     'textures/gui/small_fluid_funnel_v1/background.png': 'c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64',
     'textures/gui/passive_fluid_accumulator_v1/background.png': 'da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872',
 }
 
+
+
+def validate_tooltip_geometry(proof, gui_width, gui_height):
+    hovers = proof.get('hovers')
+    require(type(hovers) is list and len(hovers) == 12, 'Incomplete tooltip geometry matrix')
+    previous_frame = 0
+    screen_ids = {}
+    roles = ('header', 'tank', 'empty_input', 'empty_output', 'structure', 'occupied_input')
+    for index, row in enumerate(hovers):
+        require(type(row) is dict, 'Malformed tooltip capture')
+        geometry = row.get('tooltip_geometry')
+        require(type(geometry) is dict, 'Missing tooltip geometry')
+        integer_fields = ('render_id', 'screen_id', 'menu_id', 'text_x', 'text_y', 'text_width',
+                          'text_height', 'frame_margin', 'frame_left', 'frame_top', 'frame_right',
+                          'frame_bottom', 'gui_width', 'gui_height')
+        require(all(type(geometry.get(k)) is int for k in integer_fields), 'Invalid tooltip geometry integer')
+        require(all(type(geometry.get(k)) in (int, float) and math.isfinite(geometry[k])
+                    for k in ('pointer_x', 'pointer_y')), 'Invalid tooltip geometry pointer')
+        require(type(row.get('capture_render_id')) is int and type(row.get('capture_screen_id')) is int
+                and row['capture_render_id'] == geometry['render_id'] > previous_frame
+                and row['capture_screen_id'] == geometry['screen_id'] > 0, 'Stale tooltip frame/screen')
+        previous_frame = geometry['render_id']
+        machine = ('funnel', 'accumulator')[index//6]
+        role = roles[index%6]
+        menu = proof['slot_contracts'][index//6]['menu_id']
+        require(row.get('machine') == geometry.get('machine') == machine
+                and row.get('role') == geometry.get('role') == role
+                and type(row.get('menu_id')) is int and row['menu_id'] == geometry['menu_id'] == menu,
+                'Stale tooltip menu/role')
+        screen_ids.setdefault(machine, geometry['screen_id'])
+        require(screen_ids[machine] == geometry['screen_id']
+                and (index < 6 or geometry['screen_id'] > screen_ids['funnel']), 'Stale tooltip screen identity')
+        require(geometry['gui_width'] == row.get('gui_width') == gui_width
+                and geometry['gui_height'] == row.get('gui_height') == gui_height, 'Wrong tooltip viewport')
+        for axis in ('x', 'y'):
+            actual, target = row.get('actual_'+axis), row.get('target_'+axis)
+            require(type(actual) in (int, float) and math.isfinite(actual) and type(target) is int
+                    and geometry['pointer_'+axis] == actual and abs(actual-target) < 1,
+                    'Stale tooltip pointer')
+        x, y, width, height = (geometry[k] for k in ('text_x', 'text_y', 'text_width', 'text_height'))
+        require(width > 0 and height > 0 and geometry['frame_margin'] == 4, 'Invalid tooltip extent/margin')
+        expected = dict(frame_left=x-4, frame_top=y-4, frame_right=x+width+4, frame_bottom=y+height+4)
+        require(all(geometry[k] == v for k, v in expected.items()), 'Inconsistent tooltip frame geometry')
+        require(0 <= expected['frame_left'] < expected['frame_right'] <= gui_width
+                and 0 <= expected['frame_top'] < expected['frame_bottom'] <= gui_height,
+                'Tooltip frame clipped')
 
 def validate_packaged(proof, report, width, height, scale):
     require(type(proof) is dict and type(report) is dict, 'Missing packaged report')
@@ -67,6 +113,7 @@ def validate_packaged(proof, report, width, height, scale):
             'Incomplete opening/tank matrix')
     names = set()
     gw, gh = math.ceil(width/scale), math.ceil(height/scale)
+    validate_tooltip_geometry(proof, gw, gh)
     for i, machine in enumerate(('funnel', 'accumulator')):
         opening, menu = opens[i], proof['slot_contracts'][i]['menu_id']
         require(type(opening) is dict and opening.get('machine') == machine

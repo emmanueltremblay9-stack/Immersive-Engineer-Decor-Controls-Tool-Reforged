@@ -1347,7 +1347,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         Component funnelTooltip = this.smallFluidFunnelTooltip(mouseX, mouseY);
         if (funnelTooltip != null) {
-            graphics.renderTooltip(this.font, funnelTooltip, mouseX, mouseY);
+            this.renderFluidArtworkTooltip(graphics, funnelTooltip, mouseX, mouseY);
             return;
         }
         Component accumulatorTooltip = this.passiveFluidAccumulatorTooltip(mouseX, mouseY);
@@ -1355,9 +1355,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             if (this.isFluidArtworkHovered(FluidMachineRedesignLayout.ACCUMULATOR_COLLECTION, mouseX, mouseY)) {
                 // Keep the full translated explanation near the panel, using native font wrapping.
                 int wrapWidth = Math.max(1, Math.min(240, this.width - 24));
-                graphics.renderTooltip(this.font, this.font.split(accumulatorTooltip, wrapWidth), mouseX, mouseY);
+                graphics.renderTooltip(this.font, this.font.split(accumulatorTooltip, wrapWidth),
+                    FluidTooltipPositioner.INSTANCE, mouseX, mouseY);
             } else {
-                graphics.renderTooltip(this.font, accumulatorTooltip, mouseX, mouseY);
+                this.renderFluidArtworkTooltip(graphics, accumulatorTooltip, mouseX, mouseY);
             }
             return;
         }
@@ -1391,11 +1392,23 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       } else if (this.hoveredSlot == null || !this.hoveredSlot.hasItem()) {
          for (MachineLayout.MachineSlot slot : ((MachineMenu)this.menu).layout().machineSlots()) {
             if (this.isHovering(slot.x(), slot.y(), 16, 16, mouseX, mouseY)) {
-               graphics.renderTooltip(this.font, this.slotTooltip(slot), mouseX, mouseY);
+               MachineKind kind = ((MachineMenu)this.menu).kind();
+               if (kind == MachineKind.SMALL_FLUID_FUNNEL || kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+                  this.renderFluidArtworkTooltip(graphics, this.slotTooltip(slot), mouseX, mouseY);
+               } else {
+                  graphics.renderTooltip(this.font, this.slotTooltip(slot), mouseX, mouseY);
+               }
                return;
             }
          }
       }
+   }
+
+   private void renderFluidArtworkTooltip(GuiGraphics graphics, Component tooltip, int mouseX, int mouseY) {
+      int innerWidth = Math.max(1, this.width - 8);
+      var lines = this.font.width(tooltip) > innerWidth
+         ? this.font.split(tooltip, innerWidth) : java.util.List.of(tooltip.getVisualOrderText());
+      graphics.renderTooltip(this.font, lines, FluidTooltipPositioner.INSTANCE, mouseX, mouseY);
    }
 
    private Component solarPanelEnergyTooltip(int mouseX, int mouseY) {
