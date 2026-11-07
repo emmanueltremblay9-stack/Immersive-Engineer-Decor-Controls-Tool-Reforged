@@ -34,6 +34,7 @@ import net.minecraft.world.level.levelgen.presets.WorldPresets;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import org.lwjgl.glfw.GLFW;
@@ -48,6 +49,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.neoforged.neoforge.client.event.RenderFrameEvent;
 import net.minecraft.core.Direction;
 
 /** Isolated opt-in X11 gestures. Never included in the distributed mod JAR. */
@@ -80,20 +82,32 @@ public final class NativeFluidGestureValidation {
    private static int targetX, targetY, tooltipStart, targetSlot;
 
    private static final String[] HOVER_ROLES = {"header","tank","empty_input","empty_output","structure","occupied_input"};
-   private static long renderId, screenId;
+   private static long renderId, screenId, outerFrameId;
+   private static boolean outerFrameOpen;
+   private static JsonObject pendingHoverGeometry;
+   private static MachineScreen pendingHoverScreen;
+   private static MachineMenu pendingHoverMenu;
+
+   private static void clearPendingHover() {
+      pendingHoverGeometry=null;pendingHoverScreen=null;pendingHoverMenu=null;
+   }
+   @SubscribeEvent(priority=EventPriority.HIGHEST)
+   public static void beforeFrame(RenderFrameEvent.Pre event) {
+      outerFrameId++;outerFrameOpen=true;clearPendingHover();tooltipGeometry=null;renderedScreen=null;
+   }
    private static net.minecraft.client.gui.screens.Screen renderedScreen, observedScreen;
    private static JsonObject tooltipGeometry;
    private static int tooltipEventsInFrame, renderedPointerX, renderedPointerY;
 
    @SubscribeEvent public static void beforeRender(ScreenEvent.Render.Pre event) {
-      renderId++; tooltipGeometry=null; tooltipEventsInFrame=0;
+      clearPendingHover();renderId++; tooltipGeometry=null; tooltipEventsInFrame=0;
       renderedScreen=event.getScreen();renderedPointerX=event.getMouseX();renderedPointerY=event.getMouseY();
       if(observedScreen!=renderedScreen) { observedScreen=renderedScreen; screenId++; }
    }
    @SubscribeEvent public static void tooltip(RenderTooltipEvent.Color event) {
       Minecraft mc=Minecraft.getInstance();
       // Only the current Pre -> Color -> Post sequence may supply capture evidence.
-      if(!isolated || stage!=Stage.HOVER || renderedScreen!=mc.screen
+      if(!outerFrameOpen || !isolated || stage!=Stage.HOVER || renderedScreen!=mc.screen
          || !(mc.screen instanceof MachineScreen screen) || screen.getMenu().containerId!=menuId
          || !atTarget(mc,screen)
          || renderedPointerX!=(int)(mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth())
@@ -104,7 +118,7 @@ public final class NativeFluidGestureValidation {
          width=Math.max(width,component.getWidth(event.getFont()));height+=component.getHeight();
       }
       var g=new JsonObject();
-      g.addProperty("render_id",renderId);g.addProperty("screen_id",screenId);
+      g.addProperty("outer_frame_id",outerFrameId);g.addProperty("render_id",renderId);g.addProperty("screen_id",screenId);
       g.addProperty("menu_id",screen.getMenu().containerId);
       g.addProperty("machine",machineIndex==0?"funnel":"accumulator");g.addProperty("role",HOVER_ROLES[hoverIndex]);
       g.addProperty("pointer_x",mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth());
@@ -119,7 +133,7 @@ public final class NativeFluidGestureValidation {
    @SubscribeEvent public static void afterRender(ScreenEvent.Render.Post event) {
       Minecraft mc=Minecraft.getInstance();
       try {
-         if(tooltipGeometry==null || tooltipEventsInFrame!=1 || !isolated || stage!=Stage.HOVER
+         if(!outerFrameOpen || tooltipGeometry==null || tooltipEventsInFrame!=1 || !isolated || stage!=Stage.HOVER
             || event.getScreen()!=renderedScreen || event.getScreen()!=mc.screen
             || !(event.getScreen() instanceof MachineScreen screen) || screen.getMenu().containerId!=menuId
             || !atTarget(mc,screen) || event.getMouseX()!=renderedPointerX || event.getMouseY()!=renderedPointerY) return;
@@ -134,11 +148,41 @@ public final class NativeFluidGestureValidation {
             && g.get("frame_left").getAsInt()>=0 && g.get("frame_top").getAsInt()>=0
             && g.get("frame_right").getAsInt()<=screen.width && g.get("frame_bottom").getAsInt()<=screen.height,
             "Tooltip frame clipped: "+g);
+         g.addProperty("screen_post_outer_frame_id",outerFrameId);
+         pendingHoverGeometry=g.deepCopy();pendingHoverScreen=screen;pendingHoverMenu=screen.getMenu();
+      } catch(Throwable error) {clearPendingHover();finish(mc,error);}
+      finally {tooltipGeometry=null;renderedScreen=null;}
+   }
+   // NeoForge 21.1.230 fires this after GameRenderer.render returns, including JEI's Screen.Post draw.
+   // This does not include Minecraft's later debug profiler pie or arbitrary later post-frame mod draws.
+   @SubscribeEvent(priority=EventPriority.LOWEST)
+   public static void afterFrame(RenderFrameEvent.Post event) {
+      Minecraft mc=Minecraft.getInstance();
+      try {
+         if(pendingHoverGeometry==null) return;
+         var g=pendingHoverGeometry;var screen=pendingHoverScreen;
+         require(outerFrameOpen && g.get("outer_frame_id").getAsLong()==outerFrameId
+            && g.get("screen_post_outer_frame_id").getAsLong()==outerFrameId
+            && g.get("render_id").getAsLong()==renderId,"Stale outer frame");
+         require(!complete && isolated && stage==Stage.HOVER && hoverCaptureReady
+            && screen==mc.screen && screen==observedScreen && g.get("screen_id").getAsLong()==screenId
+            && screen.getMenu()==pendingHoverMenu && mc.player!=null && mc.player.containerMenu==pendingHoverMenu
+            && pendingHoverMenu.containerId==menuId && g.get("menu_id").getAsInt()==menuId
+            && g.get("role").getAsString().equals(HOVER_ROLES[hoverIndex])
+            && g.get("machine").getAsString().equals(machineIndex==0?"funnel":"accumulator"),"Hover identity changed after Screen.Post");
+         require(atTarget(mc,screen)
+            && g.get("pointer_x").getAsDouble()==mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth()
+            && g.get("pointer_y").getAsDouble()==mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight()
+            && g.get("gui_width").getAsInt()==screen.width && g.get("gui_height").getAsInt()==screen.height,
+            "Hover pointer/viewport changed after Screen.Post");
+         require(mc.getOverlay()==null && !recipeToastVisible(mc) && !mc.getDebugOverlay().showProfilerChart(),
+            "Capture overlay/profiler state changed");
          int[] state=hoverIndex==5?new int[]{1,0,0,0,0,0,0}:new int[]{0,0,1,0,0,0,0};
-         require(expected(snapshot(screen.getMenu()),state) && expected(serverSnapshot,state),"Hover state changed after arming");
-         event.getGuiGraphics().flush();
-         // Read the framebuffer immediately after this exact screen render, never from a later client tick.
+         require(expected(snapshot(pendingHoverMenu),state) && expected(serverSnapshot,state),"Hover state changed after arming");
+         // The screen-render geometry is retained; screenshot and state advance wait for this renderer-end event.
          JsonObject h=capture(mc,screen,"hover-"+hoverIndex);
+         h.addProperty("capture_phase","RenderFrameEvent.Post:LOWEST");h.addProperty("capture_outer_frame_id",outerFrameId);
+         h.addProperty("profiler_chart_disabled",true);
          h.addProperty("role",HOVER_ROLES[hoverIndex]);h.addProperty("capture_render_id",renderId);h.addProperty("capture_screen_id",screenId);
          h.add("tooltip_geometry",g.deepCopy());h.addProperty("tooltip_render_events",tooltipFrames-tooltipStart);
          h.addProperty("tooltip_event_class","RenderTooltipEvent.Color+ScreenEvent.Render.Post");
@@ -147,7 +191,7 @@ public final class NativeFluidGestureValidation {
          else if(hoverIndex==6) { actionIndex=2; startAction(screen,screen.getMenu()); }
          else { actionIndex=0; startAction(screen,screen.getMenu()); }
       } catch(Throwable error) {finish(mc,error);}
-      finally {tooltipGeometry=null;renderedScreen=null;}
+      finally {clearPendingHover();tooltipGeometry=null;renderedScreen=null;outerFrameOpen=false;}
    }
    @SubscribeEvent public static void tick(ClientTickEvent.Post event) {
       if (!Boolean.getBoolean("iedctr.fluidPackagedNative") || complete) return;
@@ -287,6 +331,7 @@ public final class NativeFluidGestureValidation {
       int requestedScale=Integer.getInteger("iedctr.requestedGuiScale",0);
       require(requestedScale>=1 && requestedScale<=3 && mc.getWindow().getGuiScale()==requestedScale,"Requested GUI scale was clamped or changed");
       require(mc.getWindow().getGuiScaledWidth()>=320 && mc.getWindow().getGuiScaledHeight()>=256,"Machine frame does not fit logical viewport");
+      require(!mc.getDebugOverlay().showProfilerChart(),"Debug profiler must be disabled for renderer-end capture");
       packaged=PackagedRuntimeProof.verify(mc);
       isolated=true; mc.options.pauseOnLostFocus=false;
       x11=NativeLibrary.getInstance("X11");xtest=NativeLibrary.getInstance("Xtst");

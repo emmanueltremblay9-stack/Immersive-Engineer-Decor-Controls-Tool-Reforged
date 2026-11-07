@@ -49,8 +49,9 @@ class PackagedProofTests(unittest.TestCase):
                 self.proof['tank_captures'].append(row)
         for index, row in enumerate(self.proof['hovers']):
             row['recipe_toast_absent'] = True
-            row.update(capture_render_id=index+1, capture_screen_id=index//6+1)
-            row['tooltip_geometry'] = dict(render_id=index+1, screen_id=index//6+1,
+            row.update(capture_render_id=index+1, capture_screen_id=index//6+1,
+                capture_outer_frame_id=100+index, capture_phase='RenderFrameEvent.Post:LOWEST', profiler_chart_disabled=True)
+            row['tooltip_geometry'] = dict(outer_frame_id=100+index, screen_post_outer_frame_id=100+index, render_id=index+1, screen_id=index//6+1,
                 menu_id=row['menu_id'], machine=row['machine'], role=row['role'],
                 pointer_x=row['actual_x'], pointer_y=row['actual_y'], gui_width=1280, gui_height=720,
                 text_x=100, text_y=100, text_width=100, text_height=20,
@@ -204,7 +205,7 @@ class PackagedProofTests(unittest.TestCase):
                 with self.subTest(field=field, invalid=invalid), self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_reject_stale_tooltip_evidence(self):
-        changes = [('render_id', 99), ('screen_id', 99), ('menu_id', 99), ('role', 'tank'),
+        changes = [('outer_frame_id', 99), ('screen_post_outer_frame_id', 99), ('render_id', 99), ('screen_id', 99), ('menu_id', 99), ('role', 'tank'),
                    ('machine', 'accumulator'), ('pointer_x', 0), ('pointer_y', 0),
                    ('gui_width', 1), ('gui_height', 1), ('text_width', 0), ('text_height', 0),
                    ('frame_margin', 3), ('frame_right', 203)]
@@ -212,8 +213,8 @@ class PackagedProofTests(unittest.TestCase):
             proof = copy.deepcopy(self.proof)
             proof['hovers'][0]['tooltip_geometry'][field] = value
             with self.subTest(field=field), self.assertRaises(SmokeFailure): self.check(proof)
-        for field in ('capture_render_id', 'capture_screen_id'):
-            for value in (None, True, 0, 99):
+        for field in ('capture_render_id', 'capture_screen_id', 'capture_outer_frame_id', 'capture_phase', 'profiler_chart_disabled'):
+            for value in ((None, False, 0, 1) if field == 'profiler_chart_disabled' else (None, True, 0, 99)):
                 proof = copy.deepcopy(self.proof)
                 proof['hovers'][0][field] = value
                 with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure): self.check(proof)
@@ -239,16 +240,54 @@ class PackagedProofTests(unittest.TestCase):
                 frame_top=y-4, frame_right=x+104, frame_bottom=y+24)
             self.check(proof)
 
-    def test_capture_is_bound_to_post_render(self):
+    def test_reject_missing_renderer_end_evidence(self):
+        for field in ('capture_outer_frame_id', 'capture_phase', 'profiler_chart_disabled'):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0].pop(field)
+            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.check(proof)
+        for field in ('outer_frame_id', 'screen_post_outer_frame_id'):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'].pop(field)
+            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_reject_frame_post_changes_and_early_capture(self):
+        for field, value in (('menu_id', 99), ('capture_screen_id', 99), ('actual_x', 0), ('actual_y', 0),
+                             ('role', 'tank'), ('capture_phase', 'ScreenEvent.Render.Post'),
+                             ('capture_phase', 'ClientTickEvent.Post'), ('profiler_chart_disabled', False)):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure): self.check(proof)
+        proof = copy.deepcopy(self.proof)
+        row = proof['hovers'][1]
+        row['capture_outer_frame_id'] = 100
+        row['tooltip_geometry'].update(outer_frame_id=100, screen_post_outer_frame_id=100)
+        with self.assertRaisesRegex(SmokeFailure, 'Stale outer frame'): self.check(proof)
+
+    def test_capture_is_bound_to_renderer_end(self):
         source = (ROOT/'src/fluidPackagedValidation/java/com/oblixorprime/iedctrtest/fluid/NativeFluidGestureValidation.java').read_text()
-        post = source.split('void afterRender(', 1)[1].split('void tick(', 1)[0]
+        pre = source.split('void beforeFrame(', 1)[1].split('@SubscribeEvent', 1)[0]
+        screen_post = source.split('void afterRender(', 1)[1].split('void afterFrame(', 1)[0]
+        frame_post = source.split('void afterFrame(', 1)[1].split('void tick(', 1)[0]
         tick = source.split('void tick(', 1)[1]
-        self.assertIn('capture(mc,screen,"hover-"+hoverIndex)', post)
+        self.assertIn('outerFrameId++', pre)
+        self.assertIn('clearPendingHover()', pre)
+        self.assertIn('pendingHoverGeometry=g.deepCopy()', screen_post)
+        self.assertNotIn('capture(mc,screen,', screen_post)
+        self.assertNotIn('++hoverIndex', screen_post)
+        self.assertIn('capture(mc,screen,"hover-"+hoverIndex)', frame_post)
         self.assertNotIn('capture(mc,screen,"hover-"+hoverIndex)', tick)
+        self.assertIn('@SubscribeEvent(priority=EventPriority.LOWEST)\n   public static void afterFrame(RenderFrameEvent.Post event)', source)
         for token in ('event.getScreen()!=renderedScreen', 'event.getScreen()!=mc.screen',
-                      'tooltipEventsInFrame!=1', '"capture_render_id",renderId', '"capture_screen_id",screenId',
-                      '"Tooltip frame clipped: "'):
-            self.assertIn(token, post)
+                      'tooltipEventsInFrame!=1', '"Tooltip frame clipped: "'):
+            self.assertIn(token, screen_post)
+        for token in ('screen==mc.screen', 'screen.getMenu()==pendingHoverMenu',
+                      'mc.player.containerMenu==pendingHoverMenu', '"outer_frame_id").getAsLong()==outerFrameId',
+                      '"screen_post_outer_frame_id").getAsLong()==outerFrameId',
+                      '"pointer_x").getAsDouble()==mc.mouseHandler.xpos()',
+                      '"pointer_y").getAsDouble()==mc.mouseHandler.ypos()',
+                      '!mc.getDebugOverlay().showProfilerChart()', 'finally {clearPendingHover()',
+                      '"capture_phase","RenderFrameEvent.Post:LOWEST"'):
+            self.assertIn(token, frame_post)
         self.assertIn('component.getWidth(event.getFont())', source)
         self.assertIn('height+=component.getHeight()', source)
         self.assertIn('event.getComponents().size()==1?-2:0', source)

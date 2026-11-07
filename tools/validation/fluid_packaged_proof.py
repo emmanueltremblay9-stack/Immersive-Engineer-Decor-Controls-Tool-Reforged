@@ -24,14 +24,14 @@ TEXTURES = {
 def validate_tooltip_geometry(proof, gui_width, gui_height):
     hovers = proof.get('hovers')
     require(type(hovers) is list and len(hovers) == 12, 'Incomplete tooltip geometry matrix')
-    previous_frame = 0
+    previous_frame = previous_outer_frame = 0
     screen_ids = {}
     roles = ('header', 'tank', 'empty_input', 'empty_output', 'structure', 'occupied_input')
     for index, row in enumerate(hovers):
         require(type(row) is dict, 'Malformed tooltip capture')
         geometry = row.get('tooltip_geometry')
         require(type(geometry) is dict, 'Missing tooltip geometry')
-        integer_fields = ('render_id', 'screen_id', 'menu_id', 'text_x', 'text_y', 'text_width',
+        integer_fields = ('outer_frame_id', 'screen_post_outer_frame_id', 'render_id', 'screen_id', 'menu_id', 'text_x', 'text_y', 'text_width',
                           'text_height', 'frame_margin', 'frame_left', 'frame_top', 'frame_right',
                           'frame_bottom', 'gui_width', 'gui_height')
         require(all(type(geometry.get(k)) is int for k in integer_fields), 'Invalid tooltip geometry integer')
@@ -40,6 +40,12 @@ def validate_tooltip_geometry(proof, gui_width, gui_height):
         require(type(row.get('capture_render_id')) is int and type(row.get('capture_screen_id')) is int
                 and row['capture_render_id'] == geometry['render_id'] > previous_frame
                 and row['capture_screen_id'] == geometry['screen_id'] > 0, 'Stale tooltip frame/screen')
+        require(type(row.get('capture_outer_frame_id')) is int
+                and row['capture_outer_frame_id'] == geometry['screen_post_outer_frame_id']
+                == geometry['outer_frame_id'] > previous_outer_frame, 'Stale outer frame')
+        require(row.get('capture_phase') == 'RenderFrameEvent.Post:LOWEST'
+                and row.get('profiler_chart_disabled') is True, 'Early capture or unsupported profiler')
+        previous_outer_frame = row['capture_outer_frame_id']
         previous_frame = geometry['render_id']
         machine = ('funnel', 'accumulator')[index//6]
         role = roles[index%6]
