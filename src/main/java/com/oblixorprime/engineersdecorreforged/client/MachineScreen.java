@@ -195,7 +195,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
-         this.drawSmallMilkingMachineLabels(graphics);
+         // Keep the supplied artwork text-free. Machine information is available
+         // through bounded, localized hover tooltips; vanilla slot counts remain.
+         return;
       } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          this.drawBlockBreakerLabels(graphics);
        } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL) {
@@ -1107,24 +1109,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(tankX + 4, tankY + 3, tankX + 5, tankY + 14, 0xFF728083);
    }
 
-   private void drawSmallMilkingMachineLabels(GuiGraphics graphics) {
-      MachineMenu menu = (MachineMenu)this.menu;
-      MilkingState state = menu.milkingState();
-      Entity selected = this.selectedMilkingAnimal();
-      Component name = selected == null ? smallMilkingText(state.animalId() == null
-         ? "label.no_animal" : "label.animal_unavailable") : selected.getDisplayName();
-      this.drawMilkingLine(graphics, name.getString(), 114, 6, 180);
-      if (state.animalId() != null) this.drawMilkingLine(graphics,
-         "#" + state.animalId().toString().substring(0, 8), 114, 16, 180);
-      this.drawMilkingLine(graphics, smallMilkingText(milkingStatusKey(state)).getString(), 114, 115, 180);
-      // Use two full-pixel lines: shrinking the complete ratio makes individual
-      // Minecraft font strokes disappear in the 260-pixel stress-test window.
-      String amount = formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale());
-      String[] parts = amount.split("/", 2);
-      this.drawScaledCenteredString(graphics, parts[0].trim() + " mB", 178, 72, 64, TEXT, 1.0F);
-      if (parts.length == 2) this.drawScaledCenteredString(graphics, "/ " + parts[1].trim(), 178, 80, 64, TEXT, 1.0F);
-   }
-
    private void maskAccumulatorLabel(
       GuiGraphics graphics, ResourceLocation texture, int x0, int y0, String text,
       int centerX, int y, int maxWidth, int minimumWidth, int patchSourceX, int patchSourceWidth
@@ -1231,13 +1215,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       if (state.source() == MilkingState.VANILLA) return "label.vanilla";
       if (state.source() == MilkingState.TFC && state.state() == MilkingState.READY) return "label.ready";
       return "label.unavailable";
-   }
-
-   private void drawMilkingLine(GuiGraphics graphics, String text, int center, int y, int maxWidth) {
-      // Full pixel text, ellipsized instead of shrinking strokes in a small window.
-      String shown = this.font.width(text) <= maxWidth ? text
-         : this.font.plainSubstrByWidth(text, maxWidth - this.font.width("…")) + "…";
-      graphics.drawString(this.font, shown, center - this.font.width(shown) / 2, y, TEXT, false);
    }
 
    private Component milkingIdentityTooltip() {

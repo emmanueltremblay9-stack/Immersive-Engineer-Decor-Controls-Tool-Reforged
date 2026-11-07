@@ -3,6 +3,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from check_milking_qualification import check_textless_milking_labels, SmokeFailure
 
 ROOT=Path(__file__).resolve().parents[2]
 STUBS={
@@ -49,6 +50,33 @@ public class MilkingRendererProbe {
 
 
 class MilkingRendererTest(unittest.TestCase):
+    def test_active_screen_has_no_permanent_milking_text(self):
+        screen=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java').read_text()
+        check_textless_milking_labels(screen)
+
+    def test_permanent_text_or_mask_regressions_are_rejected(self):
+        path=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
+        screen=path.read_text()
+        start=screen.index('protected void renderLabels(')
+        end=screen.index('private void drawSmallFreezerTexture(',start)
+        before,labels,after=screen[:start],screen[start:end],screen[end:]
+        for replacement in ('', 'drawSmallMilkingMachineLabels(graphics);',
+                            'graphics.drawString(font, "Cow", 0, 0, 0); return;',
+                            'graphics.fill(0, 0, 228, 24, 0xff000000); return;'):
+            with self.subTest(replacement=replacement):
+                mutated=before+labels.replace('return;',replacement,1)+after
+                with self.assertRaisesRegex(SmokeFailure,'permanent text or masks'):
+                    check_textless_milking_labels(mutated)
+
+    def test_drawing_before_milking_early_return_is_rejected(self):
+        path=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
+        screen=path.read_text()
+        start=screen.index('protected void renderLabels(')
+        brace=screen.index('{',start)+1
+        mutated=screen[:brace]+' graphics.drawString(font, "Cow", 0, 0, 0); '+screen[brace:]
+        with self.assertRaisesRegex(SmokeFailure,'permanent text or masks'):
+            check_textless_milking_labels(mutated)
+
     def test_actual_active_renderer_recorded_calls(self):
         with tempfile.TemporaryDirectory(prefix='milking-renderer-') as tmp:
             root=Path(tmp);sources=[]

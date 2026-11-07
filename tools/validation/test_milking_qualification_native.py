@@ -317,10 +317,19 @@ class MilkingEvidenceTest(unittest.TestCase):
         self.alter_image(2,pixel)
         with self.assertRaisesRegex(SmokeFailure,'exterior artwork'):self.validate()
 
-    def test_known_amount_label_change_allowed(self):
-        def pixel(p,w,h):
-            i=((self.g['presentation_gui_top']+73)*w+self.g['presentation_gui_left']+150)*4;p[i]^=1;return p
-        self.alter_image(2,pixel);self.validate()
+    def test_former_machine_text_regions_are_not_exempt_at_any_scale(self):
+        # All former name, UUID, status, amount and capacity bands now remain art.
+        for profile in ('en-1280x720-scale1','en-1920x1080-scale2','en-1920x1080-scale3'):
+            for x,y in ((114,6),(114,16),(114,115),(150,73),(150,81)):
+                with self.subTest(profile=profile,x=x,y=y):
+                    self.profile(profile)
+                    def pixel(p,w,h):
+                        i=(((self.g['presentation_gui_top']+y)*self.scale)*w
+                           +(self.g['presentation_gui_left']+x)*self.scale)*4
+                        p[i]^=1
+                        return p
+                    self.alter_image(2,pixel)
+                    with self.assertRaisesRegex(SmokeFailure,'exterior artwork'):self.validate()
 
     def test_outside_label_margin_not_exempt(self):
         def pixel(p,w,h):

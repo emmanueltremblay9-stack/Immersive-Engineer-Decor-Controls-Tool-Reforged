@@ -185,14 +185,12 @@ def image_evidence(frame: Path, crop: Path, geometry: dict) -> tuple[bytes, byte
     scale = g['requested_gui_scale']; left=g['presentation_gui_left']*scale; top=g['presentation_gui_top']*scale
     # Full opaque artwork panel, not just a small ring. No hover exclusion is
     # needed: fixture disables tooltips and moves the cursor outside the panel.
-    # Only live tank and actual two amount-label lines (x146..209,y72..88) vary.
+    # Only the live tank varies. Machine labels/readouts are tooltip-only.
     exterior=bytearray()
     for ly in range(228*scale):
         ranges = [(0,228*scale)]
         if 49*scale <= ly < 100*scale:
             ranges = [(0,104*scale),(126*scale,228*scale)]
-        if 72*scale <= ly < 89*scale:
-            ranges = [(0,104*scale),(126*scale,146*scale),(210*scale,228*scale)]
         for start,end in ranges:
             exterior.extend(pixels[((top+ly)*w+left+start)*4:((top+ly)*w+left+end)*4])
     return tank, bytes(exterior)

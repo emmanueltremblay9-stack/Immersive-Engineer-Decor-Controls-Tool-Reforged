@@ -1,9 +1,9 @@
 {
   "baseline_commit": "c114a0c0432d050eadf1eacb7d218c15b5b82148",
-  "purpose": "Current native-recovery production snapshot, retaining the pre-recovery baseline. Not native qualification evidence.",
+  "purpose": "Current tooltip-only Milking display snapshot, retaining the pre-recovery baseline and qualified renderer history. Not native qualification evidence.",
   "sha256": {
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "dc2797b6e33f503dd684d75101a50403a06691c30a2a254976a88b963c70ee78",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "ef12e8e68a1412f98f38dd7311da5307f56b8a0e179bd0c23f35fa06ce6ba4d0",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "8a28bbd3462b626e72817fe0d1b638fd4ef3a789d2c17d08271c13e90ba65199",
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
     "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "18a7660b8fafd1bbd50e3c43228678609b56dd5bd54310fa91718ecc57a2d327",
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "9ebb5d5a53d667e8e9af8a670162640af83e6f26dfc1acd743445f5f9380dd1f",
@@ -39,5 +39,13 @@
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png"
+  ],
+  "renderer_history": [
+    {
+      "commit": "750731efa1899230cea896e20d137d325bd34f21",
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java",
+      "sha256": "ef12e8e68a1412f98f38dd7311da5307f56b8a0e179bd0c23f35fa06ce6ba4d0",
+      "description": "Qualified recovery display before removal of permanent machine text."
+    }
   ]
 }

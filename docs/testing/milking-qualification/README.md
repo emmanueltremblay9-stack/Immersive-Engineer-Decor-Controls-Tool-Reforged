@@ -4,8 +4,10 @@ PR169 now continues the user's request for individual cow recovery. This is no
 longer a test-only patch. The screen/menu/animal adapter and server projection
 intentionally evolve; the original qualification remains a regression suite.
 `production-pins.json` retains baseline hashes and pins the current production
-snapshot separately. Layout, slot geometry, client registration and all three
-source textures remain byte-for-byte unchanged. The active background is `milking_redesign_v1/background.png`
+snapshot separately, including the last qualified renderer at `750731ef` before
+permanent machine text was removed. Layout, slot geometry, client registration
+and all three source textures remain byte-for-byte unchanged. The active
+background is `milking_redesign_v1/background.png`
 (`871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b`),
 with milk layer `f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5`.
 The supplied glass stays disabled. There is no assembled Milking reference PNG in
@@ -33,10 +35,16 @@ this qualification. Older Industrial Milk Tank art/toolkit is not an input.
 - The menu appends 18 words after its unchanged 16 common fields. Unsigned-short
   reconstruction preserves UUIDs, full IDs, long native remaining time and
   durations above 32767. Clients never choose a nearby animal or interpolate time.
-- Portrait/name rendering requires both entity ID and UUID. An unavailable
-  client entity keeps a short UUID label instead of another cow. Recovery tooltips
-  use TFC calendar ticks, not seconds. Redstone, storage and retry waits remain
-  separate. FE, cream and extraction animations are not invented.
+- Portrait and tooltip identity require both entity ID and UUID. Permanent
+  machine text is not drawn: the header, status band and amount/capacity area
+  retain their original artwork. Hovering the header or portrait shows the name
+  and full UUID. An unavailable client entity shows the localized unavailable
+  description and the same full server UUID instead of another cow.
+- Tank amount/capacity, machine state and native recovery remain available through
+  bounded localized hover tooltips. Recovery uses TFC calendar ticks, not seconds.
+  Redstone, storage and retry waits remain separate. FE, cream and extraction
+  animations are not invented. Vanilla inventory stack counts and item tooltips
+  remain unchanged. No opaque text masks or source PNG edits are used.
 
 TFC/Crossover GameTests qualify the backend separately. The five GUI profiles
 below contain no cows, so they qualify slots/tank/no-animal presentation, not
@@ -83,7 +91,8 @@ a TFC portrait or recovery tooltip in a rendered client.
   A pinned-source alpha/compositing regression covers this boundary at scales 1/2/3.
   Encoded PNG hashes alone never establish state
   differences. All opaque exterior panel pixels must stay equal across states,
-  except the tank and the actual amount-label region `(146,72)-(210,89)`.
+  except the tank. The former amount-label region `(146,72)-(210,89)` is no
+  longer exempt; the original artwork must stay unchanged there too.
   Tooltips are disabled and the pointer is outside the panel for captures; there
   is no arbitrary hover mask or broad exterior-art exclusion.
 
@@ -115,18 +124,24 @@ The renderer test compiles the **actual active** `RedesignedMachineArtwork` and
 `MilkingRedesignLayout` against recording doubles and checks 14 amount/capacity
 cases, exact UVs, draw order, bottom-up scissor, cleanup, and absence of glass or
 invented state. This is not a mapped Minecraft compile, GPU execution, or native
-visual evidence. Syntax parsing likewise does not check mapped API types.
+visual evidence. A separate source-routing guard requires Milking's label pass
+to return without text or mask drawing and rejects regressions in that branch.
+Syntax parsing likewise does not check mapped API types.
 
 The Python fixtures are explicitly synthetic and test evidence rejection. They
 must never be presented as screenshots or proof of Minecraft gameplay. They cover
 all five profiles, 38 routes, server/client conservation, missing or malformed
 proof, stale/wrong identities, numeric bool aliases, duplicate/unsafe capture
 paths, symlinks, corrupted PNGs, different encodings of identical pixels,
-top-down fill, wrong crop, and changes outside the allowed live label region.
+top-down fill, wrong crop, and changes anywhere outside the tank, including all
+former text bands at scales 1/2/3.
 
-## Native execution, pending
+## Native execution of the text-free display, pending
 
-No native run or mapped compilation has yet been performed for this candidate.
+The previous `750731efa1899230cea896e20d137d325bd34f21` candidate was qualified
+before this display-only change. That result does not qualify the changed
+renderer. No native run or mapped compilation has yet been performed for this
+text-free candidate.
 The current local preparation environment lacks `Xvfb`/`xvfb-run` and a prepared
 mapped Gradle runtime. Cloud qualification is prepared in
 `.github/workflows/milking-qualification-validation.yml`; it is not evidence of a
@@ -201,7 +216,9 @@ bucket, removes that verified output, then requires exactly 1000 mB plain milk
 120 normal world ticks later with no earlier production. This is machine
 cadence, not animal recovery. The fixture pauses the machine only after that
 second product, then captures the native portrait and actual hovered identity
-tooltip with synchronized entity ID, UUID, and custom name. Both baby variants
+tooltip with synchronized entity ID, UUID, and custom name. Identity is tooltip-only;
+the header remains unlettered. The fixture's client/server source identity checks
+remain mandatory and do not depend on permanently visible labels. Both baby variants
 are observed for at least 240 ticks and must retain the input bucket, produce
 no milk, and have no selected source or live portrait.
 

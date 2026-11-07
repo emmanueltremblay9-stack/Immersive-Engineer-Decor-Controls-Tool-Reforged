@@ -9,6 +9,19 @@ from client_mixin_smoke import SmokeFailure
 ROOT=Path(__file__).resolve().parents[2]
 
 
+def check_textless_milking_labels(screen):
+    labels = screen.split('protected void renderLabels(', 1)[1].split('private void drawSmallFreezerTexture(', 1)[0]
+    labels = re.sub(r'/\*.*?\*/|//[^\n]*', '', labels, flags=re.S)
+    body = labels.split('{', 1)[1]
+    match = re.match(r'\s*MachineLayout\s+layout\s*=\s*\(\(MachineMenu\)this\.menu\)\.layout\(\);\s*'
+                     r'if\s*\(\(\(MachineMenu\)this\.menu\)\.kind\(\)\s*==\s*'
+                     r'MachineKind\.SMALL_MILKING_MACHINE\)\s*\{([^{}]*)\}', body)
+    if match is None or match.group(1).strip() != 'return;':
+        raise SmokeFailure('Milking labels must return without drawing permanent text or masks')
+    if 'drawSmallMilkingMachineLabels(' in screen or 'drawMilkingLine(' in screen:
+        raise SmokeFailure('Obsolete permanent Milking text helper remains')
+
+
 def check_preservation(root=ROOT):
     pins=json.loads((root/'docs/testing/milking-qualification/production-pins.json').read_text())
     for name in pins.get('preserved_paths', []):
@@ -20,6 +33,7 @@ def check_preservation(root=ROOT):
             raise SmokeFailure('Production preservation failed: '+name)
     j=root/'src/main/java/com/oblixorprime/engineersdecorreforged'
     screen=(j/'client/MachineScreen.java').read_text()
+    check_textless_milking_labels(screen)
     renderer=(j/'client/RedesignedMachineArtwork.java').read_text()
     body=renderer.split('static void milking(',1)[1].split('static void breaker(',1)[0]
     active=screen.split('protected void renderBg(',1)[1].split('public boolean mouseClicked(',1)[0]
