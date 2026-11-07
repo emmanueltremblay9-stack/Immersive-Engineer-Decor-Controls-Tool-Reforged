@@ -56,11 +56,11 @@ public final class NativeFluidGestureValidation {
    private enum Stage { BOOT, WORLD, SETUP, HOVER, MOVE, PRESS, RELEASE, ACK, SEED, DONE }
    private static Stage stage = Stage.BOOT;
    private static final BlockPos POS = new BlockPos(0,80,0);
-   private static final String SUITE = "native-fluid-gestures-v1";
-   private static final String[] ACTIONS = {"pickup", "insert", "pickup_input", "return", "shift_insert", "shift_return", "process_insert", "output_pickup", "output_return"};
+   private static final String SUITE = "native-fluid-gestures-v2";
+   private static final String[] ACTIONS = {"pickup", "insert", "pickup_input", "return", "shift_insert", "shift_return", "process_insert", "output_pickup", "output_return", "invalid_pickup", "invalid_insert_attempt", "invalid_return"};
    // [input empty buckets, output water buckets, player empty buckets, player water buckets, carried empty, carried water, tank mB]
    private static final int[][] STATES = {{0,0,0,0,1,0,0},{1,0,0,0,0,0,0},{0,0,0,0,1,0,0},{0,0,1,0,0,0,0},
-      {1,0,0,0,0,0,0},{0,0,1,0,0,0,0},{0,1,0,0,0,0,0},{0,0,0,0,0,1,0},{0,0,0,1,0,0,0}};
+      {1,0,0,0,0,0,0},{0,0,1,0,0,0,0},{0,1,0,0,0,0,0},{0,0,0,0,0,1,0},{0,0,0,1,0,0,0},{0,0,0,0,0,1,0},{0,0,0,0,0,1,0},{0,0,0,1,0,0,0}};
    private static int ticks, machineIndex, hoverIndex, actionIndex, menuId, tooltipFrames, moveCount, buttonEvents, keyEvents;
    private static long deadline;
    private static Path directory;
@@ -151,6 +151,7 @@ public final class NativeFluidGestureValidation {
                if(ticks<8 || GLFW.glfwGetMouseButton(mc.getWindow().getWindow(),GLFW.GLFW_MOUSE_BUTTON_LEFT)!=GLFW.GLFW_RELEASE
                   || GLFW.glfwGetKey(mc.getWindow().getWindow(),GLFW.GLFW_KEY_LEFT_SHIFT)!=GLFW.GLFW_RELEASE
                   || !agrees(mc,menu,STATES[actionIndex])) return;
+               // Unchanged state after invalid_insert_attempt does not prove receipt of a server click packet.
                JsonObject g=capture(mc,screen,ACTIONS[actionIndex]); g.addProperty("action",ACTIONS[actionIndex]);g.addProperty("menu_slot",targetSlot);
                g.add("client",snapshot(menu)); g.add("server",serverSnapshot.deepCopy());
                g.addProperty("native_press_observed",observedPress);g.addProperty("native_release_observed",GLFW.glfwGetMouseButton(mc.getWindow().getWindow(),GLFW.GLFW_MOUSE_BUTTON_LEFT)==GLFW.GLFW_RELEASE);
@@ -183,7 +184,9 @@ public final class NativeFluidGestureValidation {
          && Files.readString(directory.resolve(".iedctr-fluid-xvfb")).equals(nonce+"\n"+nativeDisplay),"Runner-owned display/nonce mismatch");
       require(mc.level==null && mc.getSingleplayerServer()==null && !Files.exists(directory.resolve("fluid-gesture-screenshots")),"Existing world/evidence forbidden");
       if(Files.exists(directory.resolve("saves"))) try(var entries=Files.list(directory.resolve("saves"))) {require(entries.findAny().isEmpty(),"Existing saves forbidden");}
-      require(mc.getWindow().getGuiScale()==1.0,"Fixture requires GUI scale 1");
+      int requestedScale=Integer.getInteger("iedctr.requestedGuiScale",0);
+      require(requestedScale>=1 && requestedScale<=3 && mc.getWindow().getGuiScale()==requestedScale,"Requested GUI scale was clamped or changed");
+      require(mc.getWindow().getGuiScaledWidth()>=320 && mc.getWindow().getGuiScaledHeight()>=256,"Machine frame does not fit logical viewport");
       isolated=true; mc.options.pauseOnLostFocus=false;
       x11=NativeLibrary.getInstance("X11");xtest=NativeLibrary.getInstance("Xtst");
       display=x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null}); require(display!=null,"X11 unavailable");
@@ -233,7 +236,7 @@ public final class NativeFluidGestureValidation {
    }
    private static void startAction(MachineScreen screen,MachineMenu menu) {
       observedPress=false;observedShift=false;
-      int slot=switch(actionIndex) {case 0,3,8->2;case 1,2,5->0;case 7->1;default->findPlayerBucket(menu);};
+      int slot=switch(actionIndex) {case 0,3,8,9,11->2;case 1,2,5,10->0;case 7->1;default->findPlayerBucket(menu);};
       targetSlot=slot;targetX=screen.getGuiLeft()+menu.getSlot(slot).x+8;targetY=screen.getGuiTop()+menu.getSlot(slot).y+8;
       move(Minecraft.getInstance(),screen);enter(Stage.MOVE);
    }
@@ -280,6 +283,9 @@ public final class NativeFluidGestureValidation {
       var o=new JsonObject();o.addProperty("machine",machineIndex==0?"funnel":"accumulator");o.addProperty("name",file);o.addProperty("menu_id",menuId);
       o.addProperty("screen_class",screen.getClass().getName());
       o.addProperty("sha256",HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(path))));
+      o.addProperty("gui_scale",mc.getWindow().getGuiScale());o.addProperty("gui_width",screen.width);o.addProperty("gui_height",screen.height);
+      o.addProperty("window_width",mc.getWindow().getScreenWidth());o.addProperty("window_height",mc.getWindow().getScreenHeight());
+      o.addProperty("raw_mouse_x",mc.mouseHandler.xpos());o.addProperty("raw_mouse_y",mc.mouseHandler.ypos());
       o.addProperty("width",mc.getWindow().getWidth());o.addProperty("height",mc.getWindow().getHeight());
       o.addProperty("target_x",targetX);o.addProperty("target_y",targetY);o.addProperty("actual_x",mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth());o.addProperty("actual_y",mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight());
       o.addProperty("xtest_motion_count",moveCount);return o;
@@ -290,6 +296,7 @@ public final class NativeFluidGestureValidation {
       try {if(display!=null){try{button(false);}finally{try{key(false);}finally{x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}}}
          if(directory!=null){var proof=new JsonObject();proof.addProperty("suite",SUITE);proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha",""));
             proof.addProperty("status",error==null?"passed_bounded_native":"failed");proof.addProperty("input_backend","XTEST");proof.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null && mc.player!=null && mc.player.connection.getConnection().isMemoryConnection());
+            proof.addProperty("invalid_input_evidence","native-attempt-and-state-conservation-only");
             proof.addProperty("selected_language",mc.getLanguageManager().getSelected());proof.addProperty("cleanup_released",!pressed&&!shifted);proof.add("hovers",HOVERS);proof.add("gestures",GESTURES);proof.add("process_seeds",SEEDS);proof.add("slot_contracts",CONTRACTS);
             if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("client-fluid-gestures-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof));}
          if(error==null)System.out.println("IEDCTR_FLUID_GESTURES PASSED nonce="+nonce);else error.printStackTrace();

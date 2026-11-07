@@ -20,6 +20,10 @@ jobs:
       fail-fast: false
       matrix:
         language: [en_us, fr_fr]
+        viewport:
+          - {width: 1280, height: 720, scale: 1}
+          - {width: 800, height: 600, scale: 2}
+          - {width: 960, height: 810, scale: 3}
     steps:
       - name: Checkout exact candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -52,12 +56,12 @@ jobs:
                   assert not any('NativeFluidGestureValidation' in n for n in archive.namelist()), jar
           PYCODE
       - name: Run exact-source native input qualification
-        run: python tools/validation/fluid_gestures_native.py --language ${{ matrix.language }} --width 1280 --height 720 --gui-scale 1 --timeout 600
+        run: python tools/validation/fluid_gestures_native.py --language ${{ matrix.language }} --width ${{ matrix.viewport.width }} --height ${{ matrix.viewport.height }} --gui-scale ${{ matrix.viewport.scale }} --timeout 600
       - name: Retain native evidence including failures
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: fluid-native-gestures-${{ matrix.language }}
+          name: fluid-native-gestures-${{ matrix.language }}-${{ matrix.viewport.width }}x${{ matrix.viewport.height }}-s${{ matrix.viewport.scale }}
           path: |
             build/fluid-gestures-native-*/
             build/reports/tests/

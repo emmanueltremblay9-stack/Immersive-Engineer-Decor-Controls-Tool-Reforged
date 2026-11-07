@@ -15,7 +15,7 @@ SHA='b'*40
 
 def valid():
     p=dict(suite=SUITE,nonce=NONCE,executed_source_sha=SHA,status='passed_bounded_native',
-           actual_integrated_world=True,input_backend='XTEST',cleanup_released=True,selected_language='en_us',
+           actual_integrated_world=True,input_backend='XTEST',invalid_input_evidence='native-attempt-and-state-conservation-only',cleanup_released=True,selected_language='en_us',
            hovers=[],gestures=[],process_seeds=[],slot_contracts=[])
     for i,machine in enumerate(['funnel','accumulator']):
         p['slot_contracts'].append(dict(machine=machine,menu_id=i+1,
@@ -26,7 +26,7 @@ def valid():
         seed=dict(state=[0,0,1,0,0,0,1000],total=1,menu_id=i+1)
         p['process_seeds'].append(dict(client=seed,server=copy.deepcopy(seed)))
         def row(name,x,y):
-            return dict(machine=machine,name=machine+'-'+name+'.png',sha256='c'*64,width=1280,height=720,
+            return dict(machine=machine,name=machine+'-'+name+'.png',sha256='c'*64,width=1280,height=720,gui_scale=1,gui_width=1280,gui_height=720,window_width=1280,window_height=720,raw_mouse_x=x+512.0,raw_mouse_y=y+232.0,
                         target_x=x+512,target_y=y+232,actual_x=x+512.0,actual_y=y+232.0,xtest_motion_count=1,menu_id=i+1,
                         screen_class='com.oblixorprime.engineersdecorreforged.client.MachineScreen$'+('SmallFluidFunnelScreen' if i==0 else 'PassiveFluidAccumulatorScreen'))
         for j,role in enumerate(ROLES):
@@ -34,20 +34,48 @@ def valid():
                  (208,78) if i==0 else (208,108),(126,123) if i==0 else (128,35),(48,78) if i==0 else (48,108)][j]
             r=row('hover-'+str(j),x,y);r.update(role=role,tooltip_render_events=5,tooltip_event_class="RenderTooltipEvent.Color+ScreenEvent.Render.Post");state=dict(state=[1,0,0,0,0,0,0] if j==5 else [0,0,1,0,0,0,0],total=1,menu_id=i+1);r.update(client=state,server=copy.deepcopy(state));p['hovers'].append(r)
         for j,action in enumerate(ACTIONS):
-            slot=[2,0,0,2,2,0,37,1,2][j]
+            slot=[2,0,0,2,2,0,37,1,2,2,0,2][j]
             x,y=(48 if slot==0 else 208,78 if i==0 else 108) if slot<2 else (52,146) if slot==2 else (204,214)
             r=row(action,x,y)
             state=dict(state=copy.deepcopy(STATES[j]),total=1,menu_id=i+1)
             r.update(native_press_observed=True,native_release_observed=True,native_shift_observed=j in (4,5,6),action=action,menu_slot=slot,client=state,server=copy.deepcopy(state),released=True,
-                     button_events=(i*9+j+1)*2,key_events=i*6+(0 if j<4 else 2 if j==4 else 4 if j==5 else 6))
+                     button_events=(i*len(ACTIONS)+j+1)*2,key_events=i*6+(0 if j<4 else 2 if j==4 else 4 if j==5 else 6))
             p['gestures'].append(r)
     return p
 
 class ProofTests(unittest.TestCase):
     def check(self,p): return validate_evidence(p,NONCE,SHA,1280,720,'en_us')
     def test_complete_proof(self): self.check(valid())
+    def test_post_attempt_state_requires_independent_conservation_oracle(self):
+        for state in ([0,0,0,1,0,0,0],[0,0,0,0,0,0,0],[1,0,0,0,0,0,0]):
+            p=valid()
+            for side in ('client','server'):
+                p['gestures'][10][side]['state']=list(state)
+            with self.assertRaises(SmokeFailure):self.check(p)
+
+    def test_scaled_viewports(self):
+        for width,height,scale in [(800,600,2),(960,810,3),(961,811,3)]:
+            with self.subTest(width=width,height=height,scale=scale):
+                p=valid();gw=(width+scale-1)//scale;gh=(height+scale-1)//scale
+                for row in p['hovers']+p['gestures']:
+                    row.update(width=width,height=height,gui_scale=scale,gui_width=gw,gui_height=gh,window_width=width,window_height=height)
+                    row['target_x']+=(gw-256)//2-512;row['actual_x']=float(row['target_x'])
+                    row['target_y']+=(gh-256)//2-232;row['actual_y']=float(row['target_y'])
+                    row['raw_mouse_x']=row['actual_x']*width/gw;row['raw_mouse_y']=row['actual_y']*height/gh
+                validate_evidence(p,NONCE,SHA,width,height,'en_us',scale)
+                for field,value in [('gui_scale',1),('gui_width',width),('gui_height',height),('actual_x',width/2),('window_width',width+1),('raw_mouse_x',0)]:
+                    altered=copy.deepcopy(p);altered['hovers'][0][field]=value
+                    with self.assertRaises(SmokeFailure):validate_evidence(altered,NONCE,SHA,width,height,'en_us',scale)
+
     def test_reject_mutations(self):
         mutations=[
+            lambda p:p.pop('invalid_input_evidence'),
+            lambda p:p.update(invalid_input_evidence='verified-server-rejection'),
+            lambda p:p['gestures'][10]['client']['state'].__setitem__(5,0),
+            lambda p:p['gestures'][10]['server']['state'].__setitem__(5,0),
+            lambda p:p['gestures'][10].update(menu_slot=1),
+            lambda p:p['hovers'][0].pop('gui_scale'),
+            lambda p:p['hovers'][0].update(gui_width=True),
             lambda p:p.pop('slot_contracts'),lambda p:p['slot_contracts'].pop(),
             lambda p:p['slot_contracts'][0].update(menu_id=999),
             lambda p:p['slot_contracts'][0].update(machine='accumulator'),

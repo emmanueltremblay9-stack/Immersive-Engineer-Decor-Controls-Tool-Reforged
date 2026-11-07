@@ -15,8 +15,15 @@ python tools/validation/fluid_gestures_native.py --language en_us
 python tools/validation/fluid_gestures_native.py --language fr_fr
 ```
 
-CI: `.github/workflows/fluid-gestures-native.yml`. The bounded profile is 1280x720,
-GUI scale 1, fresh nonce-owned flat world, exact checked-out SHA. A marker created
+CI: `.github/workflows/fluid-gestures-native.yml`. The bounded matrix crosses EN/FR
+with 1280x720 scale 1 (1280x720 logical), 800x600 scale 2 (400x300 logical),
+and 960x810 scale 3 (320x270 logical). Each job has a 35-minute limit and unique
+locale/resolution/scale artifact name. Each run uses a fresh nonce-owned flat world
+and exact checked-out SHA. The actual GUI scale must equal the requested scale;
+clamping fails qualification. Every capture records framebuffer, native window and
+logical GUI dimensions separately, plus raw and scaled Minecraft mouse coordinates.
+The validator independently computes the logical dimensions (ceiling division),
+centered target coordinates and raw-to-logical mapping; mismatched geometry fails. A marker created
 exclusively inside the newly launched xvfb-run binds the exact DISPLAY to the nonce
 and is verified by the Java fixture before any native input. The runner checks
 clean source before and after execution, bounded prepare/client processes, no crash
@@ -51,7 +58,17 @@ server/client agreement. Held keys/buttons are released on success and failure.
 Sequence: player bucket pickup → input placement → input pickup → player return;
 Shift-click player → input → player; seed exactly 1000mB water while input is empty,
 then native Shift insertion of an empty bucket, ordinary processing ticks, native
-output pickup and player return. Input-only cases have no fluid, no neighboring
+output pickup and player return; pick up that same produced water bucket, click the
+input slot, await matching server/client snapshots with the water bucket still
+carried, then return it to the player slot. This is an **invalid-input attempt with
+state conservation**, not proof of server rejection or client prediction correction.
+The pre/post state for `invalid_insert_attempt` is identical: a swallowed click
+could also satisfy those snapshots. GLFW pressed/released observations prove native
+button delivery, not receipt of the corresponding container-click packet. The
+fixture has no action-correlated server packet acknowledgement. The proof explicitly
+records `invalid_input_evidence: native-attempt-and-state-conservation-only`, and the
+validator requires this scope marker. Authoritative `mayPlace`/backing inventory
+rejection is checked separately as the slot contract, not as executed packet evidence. Input-only cases have no fluid, no neighboring
 fluid and clear frozen weather. No redstone pause or production mechanic changes.
 
 Every server-confirmed state transition checks server and client menu identity, both machine
@@ -60,8 +77,12 @@ bucket/container, and absence of server-side dropped items. The processing seed 
 recorded separately and is not an output-stack injection. Seeding is isolated
 fixture setup, not evidence of a user gesture.
 
-The six hover captures and nine gesture captures per machine are **bounded native
-interaction evidence**, not full visual acceptance or coverage at other scales.
+The six hover captures and twelve gesture captures per machine are **bounded native
+interaction evidence** (36 captures per job, 216 for all six profiles), not full visual
+acceptance. Server receipt/rejection of the invalid-input attempt, drag/quick-craft,
+slot-boundary/frame hit tests, other scales and resizing
+remain unqualified. The v2 evidence contract requires the added native attempt sequence
+and explicit geometry; older v1 results cannot qualify this extension.
 A syntactically valid fixture or passing Python mutation tests do not prove mapped
 compilation or native execution. Those claims require successful exact-source CI
 and inspection of its captures. No merge or release is performed by this workflow.

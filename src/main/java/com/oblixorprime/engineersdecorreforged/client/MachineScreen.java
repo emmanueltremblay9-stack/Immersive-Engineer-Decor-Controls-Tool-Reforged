@@ -1352,7 +1352,13 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
         }
         Component accumulatorTooltip = this.passiveFluidAccumulatorTooltip(mouseX, mouseY);
         if (accumulatorTooltip != null) {
-            graphics.renderTooltip(this.font, accumulatorTooltip, mouseX, mouseY);
+            if (this.isFluidArtworkHovered(FluidMachineRedesignLayout.ACCUMULATOR_COLLECTION, mouseX, mouseY)) {
+                // Keep the full translated explanation near the panel, using native font wrapping.
+                int wrapWidth = Math.max(1, Math.min(240, this.width - 24));
+                graphics.renderTooltip(this.font, this.font.split(accumulatorTooltip, wrapWidth), mouseX, mouseY);
+            } else {
+                graphics.renderTooltip(this.font, accumulatorTooltip, mouseX, mouseY);
+            }
             return;
         }
 
