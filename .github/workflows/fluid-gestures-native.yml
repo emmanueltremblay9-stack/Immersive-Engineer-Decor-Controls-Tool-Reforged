@@ -1,0 +1,65 @@
+name: Funnel and Accumulator native gestures
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'build.gradle'
+      - 'tools/validation/*fluid*'
+      - '.github/workflows/fluid-gestures-native.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-gestures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [en_us, fr_fr]
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Install isolated native input dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libx11-6 libxtst6 libgl1-mesa-dri
+      - name: Test proof rejection and default packaging
+        run: |
+          python -m unittest discover -s tools/validation -p 'test_fluid_gestures_native.py' -v
+          bash ./gradlew test jar --stacktrace
+          python - <<'PYCODE'
+          from pathlib import Path
+          from zipfile import ZipFile
+          jars = list(Path('build/libs').glob('*.jar'))
+          assert jars, 'No default JAR was produced'
+          for jar in jars:
+              with ZipFile(jar) as archive:
+                  assert not any('NativeFluidGestureValidation' in n for n in archive.namelist()), jar
+          PYCODE
+      - name: Run exact-source native input qualification
+        run: python tools/validation/fluid_gestures_native.py --language ${{ matrix.language }} --width 1280 --height 720 --gui-scale 1 --timeout 600
+      - name: Retain native evidence including failures
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: fluid-native-gestures-${{ matrix.language }}
+          path: |
+            build/fluid-gestures-native-*/
+            build/reports/tests/
+            build/test-results/
+          retention-days: 14
