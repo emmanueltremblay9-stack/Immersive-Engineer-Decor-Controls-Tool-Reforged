@@ -53,19 +53,19 @@ jobs:
         run: |
           set -euo pipefail
           bash ./gradlew compileJava processResources -Pinclude_tfc_milking_runtime=true --stacktrace 2>&1 | tee build/tfc-recovery/compile.log
+      - name: Run isolated red and brown Mooshroom proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/validation/mooshroom_milking_native.py --profile fr-1280x720-scale2 --prepare-timeout 900 --timeout 900 2>&1 | tee build/tfc-recovery/mooshroom-native-runner.log
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          test -z "$(git status --porcelain --untracked-files=all)"
       - name: Run isolated native cow GUI proof
         shell: bash
         run: |
           set -euo pipefail
           command -v Xvfb && command -v xvfb-run && command -v xauth
           python tools/validation/tfc_milking_recovery_native.py --profile fr-1280x720-scale2 --prepare-timeout 900 --timeout 900 2>&1 | tee build/tfc-recovery/native-runner.log
-          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
-          test -z "$(git status --porcelain --untracked-files=all)"
-      - name: Run isolated red and brown Mooshroom proof
-        shell: bash
-        run: |
-          set -euo pipefail
-          python tools/validation/mooshroom_milking_native.py --profile fr-1280x720-scale2 --prepare-timeout 900 --timeout 900 2>&1 | tee build/tfc-recovery/mooshroom-native-runner.log
           test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
           test -z "$(git status --porcelain --untracked-files=all)"
       - name: State evidence boundaries

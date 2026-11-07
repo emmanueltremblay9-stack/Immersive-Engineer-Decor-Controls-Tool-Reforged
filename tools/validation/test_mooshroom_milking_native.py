@@ -30,6 +30,7 @@ class MooshroomEvidenceTest(unittest.TestCase):
             if baby:s.update(baby_rejected=True,server_selected_entity_id=0,client_selected_entity_id=0,server_selected_uuid=None,client_selected_uuid=None)
             hx=g['presentation_gui_left']+(50 if hover else -40);hy=g['presentation_gui_top']+45
             s.update(tooltip_hovered=hover,hover_x=hx,hover_y=hy,native_input=dict(glfw_focused=True,glfw_visible=True,
+                input_backend='XTEST',xtest_motion_count=32,window_origin_x=0,window_origin_y=0,requested_global_x=hx*2,requested_global_y=hy*2,
                 glfw_cursor_mode=212993,glfw_cursor_x=hx*2,glfw_cursor_y=hy*2,minecraft_cursor_x=hx*2,minecraft_cursor_y=hy*2,
                 window_width=1280,window_height=720,settled_hover_ticks=8,target_gui_x_min=hx,target_gui_x_max_exclusive=hx+2,target_gui_y=hy))
             pixels=bytearray(bytes(range(256))*(1280*720*4//256));pixels[0]=i
@@ -63,6 +64,14 @@ class MooshroomEvidenceTest(unittest.TestCase):
         with self.assertRaises(SmokeFailure):self.validate()
     def test_reject_wrong_explicit_target(self):
         self.reject_changes(self.p['captures'][0]['native_input'],dict(target_gui_x_min=320,target_gui_x_max_exclusive=322,target_gui_y=180))
+    def test_reject_wrong_native_backend(self):
+        self.reject_changes(self.p['captures'][0]['native_input'],dict(input_backend='GLFW_WARP',xtest_motion_count=0,
+            window_origin_x=20,window_origin_y=20,requested_global_x=640,requested_global_y=360))
+    def test_accept_translated_native_window(self):
+        for c in self.p['captures']:
+            n=c['native_input'];n['window_origin_x']=20;n['window_origin_y']=30
+            n['requested_global_x']+=20;n['requested_global_y']+=30
+        self.validate()
     def test_synthetic_valid(self):self.validate()
     def test_reject_wrong_run(self):
         self.reject_changes(self.p,dict(nonce='c'*32,executed_source_sha='c'*40,tfc_version='4.2.11',native_tick_production=False,

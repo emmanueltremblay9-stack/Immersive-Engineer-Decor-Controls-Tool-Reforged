@@ -1,6 +1,9 @@
 package com.oblixorprime.engineersdecorreforged.client.validation;
 
 import com.google.gson.*;
+import com.sun.jna.NativeLibrary;
+import com.sun.jna.NativeLong;
+import com.sun.jna.Pointer;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
@@ -48,6 +51,9 @@ public final class NativeMooshroomMilkingValidation {
    private static Path directory;
    private static String nonce,tfcVersion,stableKey="";
    private static UUID playerId;
+   private static NativeLibrary x11,xtest;
+   private static Pointer xDisplay;
+   private static int xTestMoves,lastGlobalX,lastGlobalY;
    private static long deadline,startedTick,firstTick;
    private static int ticks,serverMenuId,stableObservations,hoverTicks,scenario;
    private static volatile boolean complete,monitoring,scenarioDone;
@@ -233,11 +239,26 @@ public final class NativeMooshroomMilkingValidation {
       }
       // Alternate within the same hitbox so an earlier ignored warp is retried
       // as a real native movement rather than a no-op to an unchanged position.
-      // Stay well inside the native client area: edge warps under Xvfb can
-      // move GLFW's cursor while leaving Minecraft's last delivered position stale.
+      // Use explicit interior targets, validated against both native and
+      // Minecraft coordinates after normal event delivery.
       double x=screen.getGuiLeft()+(tooltip?50:-40)+(ticks%2);
       double y=screen.getGuiTop()+45;
-      GLFW.glfwSetCursorPos(window,x*mc.getWindow().getScreenWidth()/screen.width,y*mc.getWindow().getScreenHeight()/screen.height);
+      // GLFW warps can update its queried position without delivering motion to
+      // Minecraft under Xvfb. XTest instead puts native MotionNotify events onto
+      // X11's normal input path. Minecraft's callbacks are never invoked here.
+      if(xDisplay==null){
+         require(isolatedDirectoryValidated,"Native input requires isolated fixture");
+         x11=NativeLibrary.getInstance("X11");xtest=NativeLibrary.getInstance("Xtst");
+         xDisplay=x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null});
+         require(xDisplay!=null,"Cannot open fixture X11 display");
+      }
+      int[] originX={0},originY={0};GLFW.glfwGetWindowPos(window,originX,originY);
+      lastGlobalX=originX[0]+(int)Math.round(x*mc.getWindow().getScreenWidth()/screen.width);
+      lastGlobalY=originY[0]+(int)Math.round(y*mc.getWindow().getScreenHeight()/screen.height);
+      require(lastGlobalX>=0 && lastGlobalY>=0,"Native target outside X11 screen");
+      require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{xDisplay,-1,lastGlobalX,lastGlobalY,new NativeLong(0)})!=0,
+         "XTest native motion rejected");
+      x11.getFunction("XFlush").invokeInt(new Object[]{xDisplay});xTestMoves++;
    }
    private static boolean actualIdentityHover(Minecraft mc,MachineScreen screen){
       double x=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth();
@@ -256,7 +277,11 @@ public final class NativeMooshroomMilkingValidation {
    }
    private static JsonObject inputDiagnostic(Minecraft mc){
       long window=mc.getWindow().getWindow();double[] x={0},y={0};GLFW.glfwGetCursorPos(window,x,y);
-      var o=new JsonObject();o.addProperty("glfw_focused",GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE);
+      int[] originX={0},originY={0};GLFW.glfwGetWindowPos(window,originX,originY);
+      var o=new JsonObject();o.addProperty("input_backend","XTEST");o.addProperty("xtest_motion_count",xTestMoves);
+      o.addProperty("window_origin_x",originX[0]);o.addProperty("window_origin_y",originY[0]);
+      o.addProperty("requested_global_x",lastGlobalX);o.addProperty("requested_global_y",lastGlobalY);
+      o.addProperty("glfw_focused",GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE);
       o.addProperty("glfw_visible",GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_VISIBLE)==GLFW.GLFW_TRUE);
       o.addProperty("glfw_cursor_mode",GLFW.glfwGetInputMode(window,GLFW.GLFW_CURSOR));
       o.addProperty("glfw_cursor_x",x[0]);o.addProperty("glfw_cursor_y",y[0]);
@@ -298,6 +323,11 @@ public final class NativeMooshroomMilkingValidation {
    private static ServerPlayer player(Minecraft mc){var p=mc.getSingleplayerServer().getPlayerList().getPlayer(playerId);require(p!=null,"Player vanished");return p;}
    private static void finish(Minecraft mc,Throwable error){
       complete=true;monitoring=false;
+      if(xDisplay!=null){
+         try{x11.getFunction("XCloseDisplay").invokeInt(new Object[]{xDisplay});}
+         catch(Throwable closeError){if(error==null)error=closeError;}
+         xDisplay=null;
+      }
       if(!isolatedDirectoryValidated){EngineersDecorReforged.LOGGER.error("IEDCTR_MOOSHROOM_MILKING rejected before isolation validation",error);return;}
       try{
          var p=new JsonObject();p.addProperty("suite",SUITE);p.addProperty("status",error==null?"passed_bounded_smoke":"failed");

@@ -60,6 +60,10 @@ def validate_hover(c,geometry,width,height,expected):
     require(hitbox(x,y)==expected,'Cursor hover disagrees with capture')
     for key,value in dict(glfw_focused=True,glfw_visible=True,glfw_cursor_mode=212993,
             window_width=width,window_height=height).items():exact(native,key,value)
+    exact(native,'input_backend','XTEST')
+    integer(native,'xtest_motion_count',8)
+    origin_x=integer(native,'window_origin_x');origin_y=integer(native,'window_origin_y')
+    global_x=integer(native,'requested_global_x',0);global_y=integer(native,'requested_global_y',0)
     require(integer(native,'settled_hover_ticks',8)<6000,'Invalid capture input settling')
     target_x=left+(50 if expected else -40);target_y=top+45
     exact(native,'target_gui_x_min',target_x)
@@ -67,6 +71,9 @@ def validate_hover(c,geometry,width,height,expected):
     exact(native,'target_gui_y',target_y)
     def target(px,py):return target_x<=px<target_x+2 and py==target_y
     require(target(x,y),'Capture cursor is not at the explicit interior target')
+    require(target(int((global_x-origin_x)*geometry['gui_width']/width),
+                   int((global_y-origin_y)*geometry['gui_height']/height)),
+            'Native global target does not account for window origin')
     for prefix in ('glfw','minecraft'):
         coordinates=[]
         for axis,extent,gui_extent in (('x',width,geometry['gui_width']),('y',height,geometry['gui_height'])):
