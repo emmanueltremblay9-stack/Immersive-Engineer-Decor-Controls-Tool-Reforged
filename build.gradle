@@ -15,6 +15,20 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 def tfcMilkingRuntime = providers.gradleProperty('include_tfc_milking_runtime').map { it.toBoolean() }.getOrElse(false)
 def tfcCrossoverRuntime = providers.gradleProperty('include_tfc_crossover_runtime').map { it.toBoolean() }.getOrElse(false)
+// Dedicated native GUI proof code is not part of main or any distributed JAR.
+def factoryPlacerNativeValidation = providers.gradleProperty('include_factory_placer_native_validation').map { it.toBoolean() }.getOrElse(false)
+def factoryPlacerRuntimeJar = providers.gradleProperty('factory_placer_runtime_jar').map { file(it) }
+        .orElse(tasks.named('jar', Jar).flatMap { it.archiveFile }.map { it.asFile })
+if (factoryPlacerNativeValidation) {
+    sourceSets.create('factoryPlacerNativeValidation') {
+        java.srcDir('src/factoryPlacerNativeValidation/java')
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        // Production classes/resources must be discovered from the exact normal JAR.
+        runtimeClasspath = output + configurations.getByName(runtimeClasspathConfigurationName) +
+                (sourceSets.main.runtimeClasspath - sourceSets.main.output) +
+                files(factoryPlacerRuntimeJar)
+    }
+}
 if (tfcCrossoverRuntime && !tfcMilkingRuntime) throw new GradleException('Crossover test profile requires include_tfc_milking_runtime=true')
 configurations { tfcMilkingApi; tfcMilkingCrossover }
 if (tfcMilkingRuntime) sourceSets.main.java.srcDir('src/tfcGameTest/java')
@@ -66,6 +80,80 @@ neoForge {
         "${mod_id}" {
             sourceSet(sourceSets.main)
         }
+    }
+}
+
+
+// Opt-in, separate test mod; ordinary runs and the distributed JAR stay unchanged.
+if (factoryPlacerNativeValidation) {
+    def harness = sourceSets.factoryPlacerNativeValidation
+    neoForge.mods.create('iedctr_factory_placer_validation') { sourceSet(harness) }
+    neoForge.runs.configureEach { loadedMods = [neoForge.mods.getByName(project.mod_id)] }
+    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient'].each { runName ->
+        neoForge.runs.create(runName) {
+            client()
+            sourceSet = harness
+            loadedMods = [neoForge.mods.getByName('iedctr_factory_placer_validation')]
+            disableIdeRun()
+            taskBefore(tasks.named('jar'))
+            taskBefore(tasks.named('factoryPlacerNativeValidationClasses'))
+            // The verifier is registered below; no source-output fallback is permitted.
+            if (runName == 'factoryPlacerPackagedDefaultClient') {
+                systemProperty 'iedctr.factoryPlacerPackagedDefaultNative', 'true'
+            }
+        }
+    }
+    def verifyPackagedRuntime = tasks.register('verifyFactoryPlacerPackagedRuntime') {
+        group = 'verification'
+        dependsOn(tasks.named('jar'), tasks.named('factoryPlacerNativeValidationClasses'))
+        doLast {
+            def jarFile = factoryPlacerRuntimeJar.get().canonicalFile
+            def normalJar = tasks.named('jar', Jar).get().archiveFile.get().asFile.canonicalFile
+            def sha256 = { file -> java.security.MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
+            if (sha256(jarFile) != sha256(normalJar)) {
+                throw new GradleException('Supplied runtime JAR differs from the normal JAR built from this exact source checkout')
+            }
+            def classpath = harness.runtimeClasspath.files.collect { it.canonicalFile }
+            def mainOutputs = sourceSets.main.output.files.collect { it.canonicalFile }
+            if (!classpath.contains(jarFile) || classpath.any { mainOutputs.contains(it) }) {
+                throw new GradleException('Packaged validation requires the exact JAR and forbids main output on runtime classpath')
+            }
+            def harnessPackages = [] as Set
+            harness.output.classesDirs.asFileTree.matching { include '**/*.class' }.files.each {
+                def root = harness.output.classesDirs.files.find { dir -> it.toPath().startsWith(dir.toPath()) }
+                def relative = root.toPath().relativize(it.toPath()).toString().replace('\\', '/')
+                harnessPackages.add(relative.contains('/') ? relative.substring(0, relative.lastIndexOf('/')) : '')
+            }
+            new java.util.zip.ZipFile(jarFile).withCloseable { zip ->
+                zip.entries().each { entry ->
+                    if (entry.name.startsWith('com/oblixorprime/iedctrtest/') || entry.name.contains('NativeFactoryPlacerV2ReferenceValidation')) {
+                        throw new GradleException('Validation fixture leaked into production JAR')
+                    }
+                    if (entry.name.endsWith('.class') && entry.name.contains('/') &&
+                            harnessPackages.contains(entry.name.substring(0, entry.name.lastIndexOf('/')))) {
+                        throw new GradleException('Harness and production JAR contain a split package')
+                    }
+                }
+            }
+            ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient'].each { name ->
+                def run = neoForge.runs.getByName(name)
+                if (run.sourceSet.get() != harness || run.loadedMods.get()*.name != ['iedctr_factory_placer_validation']) {
+                    throw new GradleException('Packaged validation must load only the separate harness development mod')
+                }
+            }
+            def report = layout.buildDirectory.file('reports/factory-placer-packaged-runtime.json').get().asFile
+            report.parentFile.mkdirs()
+            report.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson([
+                    jar_path: jarFile.path,
+                    jar_sha256: java.security.MessageDigest.getInstance('SHA-256').digest(jarFile.bytes).encodeHex().toString(),
+                    runtime_classpath: classpath*.path, forbidden_main_outputs: mainOutputs*.path,
+                    harness_outputs: harness.output.files.collect { it.canonicalPath },
+                    loaded_development_mods: ['iedctr_factory_placer_validation'],
+                    fixture_free_jar: true, split_packages: false]))
+        }
+    }
+    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient'].each { name ->
+        neoForge.runs.getByName(name).taskBefore(verifyPackagedRuntime)
     }
 }
 

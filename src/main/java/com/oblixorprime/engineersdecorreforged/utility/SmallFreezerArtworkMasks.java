@@ -7,9 +7,13 @@ public final class SmallFreezerArtworkMasks {
    private static final int SOURCE_CROP_WIDTH = 422;
    private static final int SOURCE_CROP_HEIGHT = 443;
 
-   // Bounds include each illustrative item area in the native 422 x 443 crop; right/bottom are exclusive.
-   private static final SourceBounds INPUT_BUCKET = new SourceBounds(54, 116, 106, 166);
-   private static final SourceBounds OUTPUT_ICE = new SourceBounds(320, 114, 378, 170);
+   // Bounds cover the printed examples, leaving their integrated metal bezels visible; right/bottom are exclusive.
+   private static final SourceBounds INPUT_BUCKET = new SourceBounds(58, 120, 98, 164);
+   private static final SourceBounds OUTPUT_ICE = new SourceBounds(331, 122, 369, 164);
+   private static final SourceBounds PROGRESS_BAR = new SourceBounds(125, 197, 301, 218);
+   // The live mask follows the baked frame itself. The old bounds ran below and
+   // into the numeric readout, leaving the sample orange fill visible above it.
+   private static final SourceBounds ENERGY_BAR = new SourceBounds(121, 224, 272, 253);
 
    private SmallFreezerArtworkMasks() {
    }
@@ -25,30 +29,34 @@ public final class SmallFreezerArtworkMasks {
       );
    }
 
-   /**
-    * Returns machine slot frames touched by an artwork mask. The screen must redraw these frames
-    * after filling the masks so illustrative pixels do not cut through live slot borders.
-    */
-   public static List<MachineLayout.MachineSlot> slotsIntersectingMasks(
-      MachineLayout layout, int destinationWidth, int destinationHeight
-   ) {
-      List<MaskRegion> masks = regions(destinationWidth, destinationHeight);
-      return layout.machineSlots().stream()
-         .filter(slot -> masks.stream().anyMatch(mask ->
-            overlaps(
-               mask.x(), mask.y(), mask.right(), mask.bottom(),
-               slot.x() - 1, slot.y() - 1, slot.x() + 17, slot.y() + 17
-            )
-         ))
-         .toList();
+   public static MaskRegion progressBar(int destinationWidth, int destinationHeight) {
+      return project(PROGRESS_BAR, destinationWidth, destinationHeight);
    }
 
-   private static boolean overlaps(int leftA, int topA, int rightA, int bottomA,
-                                   int leftB, int topB, int rightB, int bottomB) {
-      return leftA < rightB && rightA > leftB && topA < bottomB && bottomA > topB;
+   public static MaskRegion energyBar(int destinationWidth, int destinationHeight) {
+      return project(ENERGY_BAR, destinationWidth, destinationHeight);
+   }
+
+   /** Centers the live item hitbox on the PNG's existing machine-slot frame. */
+   public static SlotOrigin slotOriginForFrame(
+      int sourceLeft, int sourceTop, int sourceRight, int sourceBottom, int destinationWidth, int destinationHeight
+   ) {
+      if (sourceLeft < 0 || sourceTop < 0 || sourceRight <= sourceLeft || sourceBottom <= sourceTop
+         || sourceRight > SOURCE_CROP_WIDTH || sourceBottom > SOURCE_CROP_HEIGHT
+         || destinationWidth <= 0 || destinationHeight <= 0) {
+         throw new IllegalArgumentException("Invalid Freezer frame or destination bounds");
+      }
+      int centerX = (int)Math.round((sourceLeft + sourceRight) * (double)destinationWidth
+         / (2.0D * SOURCE_CROP_WIDTH));
+      int centerY = (int)Math.round((sourceTop + sourceBottom) * (double)destinationHeight
+         / (2.0D * SOURCE_CROP_HEIGHT));
+      return new SlotOrigin(centerX - 8, centerY - 8);
    }
 
    private static MaskRegion project(SourceBounds bounds, int destinationWidth, int destinationHeight) {
+      if (destinationWidth <= 0 || destinationHeight <= 0) {
+         throw new IllegalArgumentException("Mask destination dimensions must be positive");
+      }
       int left = floorScale(bounds.left(), destinationWidth, SOURCE_CROP_WIDTH);
       int top = floorScale(bounds.top(), destinationHeight, SOURCE_CROP_HEIGHT);
       int right = ceilScale(bounds.right(), destinationWidth, SOURCE_CROP_WIDTH);
@@ -65,6 +73,9 @@ public final class SmallFreezerArtworkMasks {
    }
 
    private record SourceBounds(int left, int top, int right, int bottom) {
+   }
+
+   public record SlotOrigin(int x, int y) {
    }
 
    public record MaskRegion(int x, int y, int width, int height) {

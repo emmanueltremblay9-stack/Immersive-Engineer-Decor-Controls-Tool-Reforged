@@ -2,8 +2,10 @@ package com.oblixorprime.engineersdecorreforged.client;
 
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModMenus;
+import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.LabeledCrateLabelClientBridge;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
@@ -37,7 +39,10 @@ public final class ClientModEvents {
       event.register((MenuType)ModMenus.LABELED_CRATE.get(), LabeledCrateScreen::new);
       event.register((MenuType)ModMenus.FACTORY_HOPPER.get(), MachineScreen.FactoryHopperScreen::new);
       event.register((MenuType)ModMenus.FACTORY_DROPPER.get(), MachineScreen.FactoryDropperScreen::new);
-      event.register((MenuType)ModMenus.FACTORY_PLACER.get(), MachineScreen.FactoryPlacerScreen::new);
+      event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.FACTORY_PLACER.get(), (menu, inventory, title) ->
+         menu.factoryPlacerV2ReferencePresentation()
+            ? new FactoryPlacerV2ReferenceScreen(menu, inventory, title)
+            : new MachineScreen.FactoryPlacerScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_BLOCK_BREAKER.get(), MachineScreen.SmallBlockBreakerScreen::new);
       event.register((MenuType)ModMenus.SMALL_WASTE_INCINERATOR.get(), MachineScreen.SmallWasteIncineratorScreen::new);
       event.register((MenuType)ModMenus.SMALL_LAB_FURNACE.get(), MachineScreen.SmallLabFurnaceScreen::new);

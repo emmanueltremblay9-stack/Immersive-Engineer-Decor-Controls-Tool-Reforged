@@ -1519,10 +1519,12 @@ class OperationalRoutingTests(unittest.TestCase):
                 "build/client-gameplay-*/run/client-tracker-render-result.json",
                 "build/client-gameplay-*/run/lava-surface-screenshots/*.png",
             ],
-            "native-small-mineral-smelter-gui": [
+            "native-corrected-machine-gui": [
                 "build/client-gameplay-*/run/client-gameplay-result.json",
                 "build/client-gameplay-*/run/client-smelter-gui-result.json",
                 "build/client-gameplay-*/run/smelter-gui-screenshots/*.png",
+                "build/client-gameplay-*/run/client-corrected-machine-gui-result.json",
+                "build/client-gameplay-*/run/corrected-machine-gui-screenshots/*.png",
             ],
         }
         uploads = build.split("uses: actions/upload-artifact@")[1:]

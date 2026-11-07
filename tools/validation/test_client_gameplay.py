@@ -1,10 +1,14 @@
 """Evidence-gate regressions, separate from the actual native gameplay run."""
 
 import copy
+import hashlib
 from pathlib import Path
+import struct
 import unittest
+import zlib
 
-from client_gameplay import EXPECTED_CASES, SUITE, validate_proof, validate_smelter_gui_proof
+from client_gameplay import (EXPECTED_CASES, SUITE, validate_corrected_machine_gui_proof,
+                             validate_proof, validate_smelter_gui_proof)
 from client_mixin_smoke import SmokeFailure
 
 
@@ -153,7 +157,13 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             },
             "screenshots": [],
         }
-        for name in ("screen-closed.png", "drawer-open.png"):
+        for name, progress, energy, status in (
+            ("progress-empty.png", 0, 0, 3),
+            ("progress-mid.png", 50, 0, 3),
+            ("progress-full.png", 90, 0, 3),
+            ("screen-closed.png", 52, 11984, 1),
+            ("drawer-open.png", 52, 11984, 1),
+        ):
             data = (bytes((137, 80, 78, 71, 13, 10, 26, 10)) + bytes((0, 0, 0, 13)) + b"IHDR"
                     + struct.pack(">II", self.window_width, self.window_height)
                     + bytes((8, 6, 0, 0, 0)) + bytes(4) + bytes(1100))
@@ -161,6 +171,7 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             self.proof["screenshots"].append({
                 "name": name, "sha256": hashlib.sha256(data).hexdigest(),
                 "width": self.window_width, "height": self.window_height,
+                "batch_progress": progress, "energy": energy, "status": status,
             })
         self.logs = f"IEDCTR_SMELTER_GUI PASSED nonce={self.nonce}"
 
@@ -175,7 +186,7 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
         args.update(overrides)
         return validate_smelter_gui_proof(**args)
 
-    def test_accepts_current_native_proof_and_two_fresh_captures(self):
+    def test_accepts_native_progress_states_and_two_fresh_drawer_views(self):
         self.assertEqual(self.check(), self.proof)
 
     def test_rejects_wrong_nonce_or_source_or_pr_head(self):
@@ -198,6 +209,13 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
     def test_rejects_empty_live_state(self):
         proof = copy.deepcopy(self.proof)
         proof["live_state"]["batch_progress"] = 0
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+
+    def test_rejects_progress_frame_with_wrong_server_state(self):
+        proof = copy.deepcopy(self.proof)
+        full = next(item for item in proof["screenshots"] if item["name"] == "progress-full.png")
+        full["batch_progress"] = 0
         with self.assertRaises(SmokeFailure):
             self.check(proof)
 
@@ -237,6 +255,332 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             self.check(proof)
         with self.assertRaises(SmokeFailure):
             self.check(logs="")
+
+
+class CorrectedMachineGuiProofTests(unittest.TestCase):
+    MACHINES = {
+        "fluid_barrel": ("FLUID_BARREL", 2, 201, 226, 32000, 0),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228, 4000, 0),
+        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256, 0, 32000),
+        "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
+        "small_freezer": ("SMALL_FREEZER", 3, 209, 235, 0, 16000),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238, 3000, 0),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238, 4000, 0),
+    }
+
+    def setUp(self):
+        import tempfile
+        self.temp = tempfile.TemporaryDirectory()
+        self.directory = Path(self.temp.name)
+        self.image_dir = self.directory / "corrected-machine-gui-screenshots"
+        self.image_dir.mkdir()
+        self.nonce = "a" * 32
+        self.source_sha = "b" * 40
+        self.pr_head_sha = "c" * 40
+        self.window_width = 1280
+        self.window_height = 260
+        self.proof = {
+            "suite": "native-corrected-machine-gui-v1", "nonce": self.nonce, "status": "passed",
+            "actual_integrated_world": True, "executed_source_sha": self.source_sha,
+            "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
+            "window_width": self.window_width, "window_height": self.window_height,
+            "screenshot_method": "Native Minecraft panel crops with cursor outside, separate full-window hover captures, and a Tree Cutter badge-only crop",
+            "cases": [], "screenshots": [],
+        }
+        for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
+            screen_identity = f"com.oblixorprime.engineersdecorreforged.client.MachineScreen${machine.title().replace('_', '')}Screen"
+            menu_identity = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+            slots = []
+            for index in range(slot_count):
+                insertion_allowed = not (machine == "small_freezer" and index == 1)
+                slots.append({"container_index": index, "x": 20 + index * 18, "y": 30,
+                              "layout_x": 20 + index * 18, "layout_y": 30,
+                              "active": True, "center_hit_test": True,
+                              "insertion_allowed": insertion_allowed})
+            self.proof["cases"].append({
+                "machine_id": machine, "machine_kind": kind, "screen_identity": screen_identity,
+                "client_menu_identity": menu_identity, "server_menu_identity": menu_identity,
+                "client_menu_id": 2, "server_menu_id": 2, "menu_context_matches": True,
+                "visible_machine_slots": slot_count, "total_slots": slot_count + 36,
+                "panel_width": panel_width, "panel_height": panel_height, "gui_width": 1280,
+                "gui_height": self.window_height, "geometry_matches_layout": True,
+                "fluid_amount": fluid_capacity, "fluid_capacity": fluid_capacity,
+                "energy": energy_capacity, "energy_capacity": energy_capacity,
+                "progress": 25 if machine == "small_freezer" else 0,
+                "freezer_progress_ticks": 45 if machine == "small_freezer" else 0,
+                "language": "fr_fr", "captured_states": (["empty", "mid", "full-hover", "input-occupied", "output-occupied"]
+                    if machine == "small_milking_machine" else ["empty", "mid", "full-hover"]),
+                "machine_slots": slots,
+            })
+            states = ("empty", "mid", "full-hover")
+            for state in states:
+                name = f"{machine}-{state}.png"
+                if fluid_capacity:
+                    fluid_amount = 0 if state == "empty" else fluid_capacity // 2 if state == "mid" else fluid_capacity
+                    energy = 0
+                else:
+                    energy = 0 if state == "empty" else energy_capacity // 2 if state == "mid" else energy_capacity
+                    fluid_amount = 0
+                capture = {"name": name, "state": state, "kind": kind,
+                           "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
+                           "fluid_amount": fluid_amount, "energy": energy,
+                           "progress": 25 if machine == "small_freezer" and state == "mid" else 0}
+                capture["capture_mode"] = "gui_panel"
+                capture["panel_cursor_outside"] = True
+                capture["panel_tooltips_suppressed"] = True
+                if machine == "fluid_barrel":
+                    top = 73 if state == "mid" else 38
+                    capture["barrel_fluid_pixels"] = {
+                        "x": 99, "y": top, "width": 16, "height": 107 - top,
+                        # Synthetic gate metadata, not a claim of native rendered pixels.
+                        "distinct_rgba_colors": 1 if state == "empty" else 8,
+                        "fluid_id": "minecraft:empty" if state == "empty" else "minecraft:water",
+                    }
+                    if state != "empty":
+                        capture["barrel_fluid_pixels"].update(
+                            still_texture="minecraft:block/water_still", tint_argb="ff3f76e4")
+                if machine == "small_milking_machine":
+                    capture["tank_pixels"] = {
+                        "x": 104, "y": 49, "width": 22, "height": 51,
+                        "encoding": "rgba8-row-major",
+                        # Synthetic metadata exercises the gate; not a native render claim.
+                        "sha256": hashlib.sha256(state.encode()).hexdigest(),
+                    }
+                    capture["machine_slot_items"] = [
+                        {"container_index": 0, "item_id": "minecraft:air", "count": 0, "empty": True},
+                        {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
+                    ]
+                capture_width, capture_height = panel_width, panel_height
+                if state == "full-hover":
+                    capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
+                image = self.image_dir / name
+                image.write_bytes(self._png(capture_width, capture_height))
+                capture["width"] = capture_width
+                capture["height"] = capture_height
+                capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
+                if state == "full-hover":
+                    tooltip_name = f"{machine}-full-hover-window.png"
+                    tooltip = self.image_dir / tooltip_name
+                    tooltip.write_bytes(self._png(self.window_width, self.window_height))
+                    capture["tooltip_name"] = tooltip_name
+                    capture["tooltip_capture_mode"] = "full_window_tooltip"
+                    capture["tooltip_width"] = self.window_width
+                    capture["tooltip_height"] = self.window_height
+                    capture["tooltip_sha256"] = hashlib.sha256(tooltip.read_bytes()).hexdigest()
+                self.proof["screenshots"].append(capture)
+            if machine == "small_milking_machine":
+                occupied_states = {
+                    "input-occupied": [
+                        {"container_index": 0, "item_id": "minecraft:bucket", "count": 3, "empty": False},
+                        {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
+                    ],
+                    "output-occupied": [
+                        {"container_index": 0, "item_id": "minecraft:bucket", "count": 3, "empty": False},
+                        {"container_index": 1, "item_id": "minecraft:milk_bucket", "count": 1, "empty": False},
+                    ],
+                }
+                for state, machine_slot_items in occupied_states.items():
+                    name = f"small_milking_machine-{state}.png"
+                    capture = {"name": name, "state": state, "kind": kind,
+                               "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
+                               "fluid_amount": 0, "energy": 0, "progress": 0,
+                               "machine_slot_items": machine_slot_items,
+                               "capture_mode": "gui_panel", "panel_cursor_outside": True,
+                               "panel_tooltips_suppressed": True,
+                               "width": panel_width, "height": panel_height}
+                    image = self.image_dir / name
+                    image.write_bytes(self._png(panel_width, panel_height))
+                    capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
+                    self.proof["screenshots"].append(capture)
+                self.proof["cases"][-1]["slot_item_transfers"] = {
+                    "player_to_machine_input": {
+                        "source_menu_index": 29, "source_player_inventory_index": 0,
+                        "destination_container_index": 0, "item_id": "minecraft:bucket",
+                        "source_count_before": 3, "moved_count": 3, "source_count_after": 0,
+                        "destination_item_id": "minecraft:bucket", "destination_count_after": 3,
+                        "quick_move_succeeded": True,
+                    },
+                    "machine_output_to_player": {
+                        "source_menu_index": 1, "source_container_index": 1,
+                        "destination_player_inventory_index": 8, "destination_menu_index": 37,
+                        "item_id": "minecraft:milk_bucket", "source_count_before": 1,
+                        "moved_count": 1, "source_count_after": 0,
+                        "destination_inventory_count_after": 1, "quick_move_succeeded": True,
+                    },
+                }
+            if machine == "small_freezer":
+                name = "small_freezer-near-end.png"
+                capture = {"name": name, "state": "near-end", "kind": kind,
+                           "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
+                           "fluid_amount": 0, "energy": 8, "progress": 0,
+                           "freezer_progress_ticks": 178,
+                           "capture_mode": "gui_panel", "panel_cursor_outside": True,
+                           "panel_tooltips_suppressed": True,
+                           "width": panel_width, "height": panel_height}
+                image = self.image_dir / name
+                image.write_bytes(self._png(panel_width, panel_height))
+                capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
+                self.proof["screenshots"].append(capture)
+        tree_name = "small_tree_cutter-badge-only.png"
+        tree_capture = {
+            "machine_id": "small_tree_cutter", "name": tree_name, "state": "badge-only",
+            "kind": "SMALL_TREE_CUTTER",
+            "screen_identity": "com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallTreeCutterScreen",
+            "menu_id": 3, "server_menu_id": 3, "fluid_amount": 0, "energy": 0, "progress": 0,
+            "capture_mode": "gui_panel", "panel_cursor_outside": True,
+            "panel_tooltips_suppressed": True, "width": 228, "height": 212,
+        }
+        tree_image = self.image_dir / tree_name
+        tree_image.write_bytes(self._png(228, 212))
+        tree_capture["sha256"] = hashlib.sha256(tree_image.read_bytes()).hexdigest()
+        self.proof["screenshots"].append(tree_capture)
+        self.proof["tree_cutter_badge_only_capture"] = copy.deepcopy(tree_capture)
+        self.logs = f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={self.nonce}"
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    @staticmethod
+    def _png(width, height):
+        def chunk(kind, payload):
+            return struct.pack(">I", len(payload)) + kind + payload + struct.pack(">I", zlib.crc32(kind + payload) & 0xFFFFFFFF)
+        header = struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)
+        pixels = (b"\x00" + b"\x20\x30\x40\xff" * width) * height
+        image_data = zlib.compress(pixels, 1)
+        return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", header)
+                + chunk(b"tEXt", b"fixture\x00" + b"x" * 1200)
+                + chunk(b"IDAT", image_data) + chunk(b"IEND", b""))
+
+    def check(self, proof=None, **overrides):
+        args = dict(proof=self.proof if proof is None else proof, nonce=self.nonce,
+                    executed_sha=self.source_sha, pr_head_sha=self.pr_head_sha,
+                    directory=self.directory, window_width=self.window_width,
+                    window_height=self.window_height, language="fr_fr", logs=self.logs)
+        args.update(overrides)
+        return validate_corrected_machine_gui_proof(**args)
+
+    def test_accepts_six_live_menus_and_tree_cutter_badge_only_capture(self):
+        self.assertEqual(self.check(), self.proof)
+
+    def test_rejects_missing_capture_bad_hash_or_wrong_live_slot_geometry(self):
+        missing = copy.deepcopy(self.proof)
+        missing["screenshots"].pop()
+        with self.assertRaises(SmokeFailure): self.check(missing)
+        bad_hash = copy.deepcopy(self.proof)
+        bad_hash["screenshots"][0]["sha256"] = "0" * 64
+        with self.assertRaises(SmokeFailure): self.check(bad_hash)
+        bad_slot = copy.deepcopy(self.proof)
+        bad_slot["cases"][1]["machine_slots"][0]["x"] += 1
+        with self.assertRaises(SmokeFailure): self.check(bad_slot)
+
+    def test_rejects_panel_capture_with_cursor_over_the_gui(self):
+        proof = copy.deepcopy(self.proof)
+        proof["screenshots"][0]["panel_cursor_outside"] = False
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_panel_capture_with_tooltips_visible(self):
+        proof = copy.deepcopy(self.proof)
+        proof["screenshots"][0]["panel_tooltips_suppressed"] = False
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_missing_tree_cutter_badge_capture(self):
+        proof = copy.deepcopy(self.proof)
+        proof["screenshots"] = [capture for capture in proof["screenshots"]
+                                if capture["name"] != "small_tree_cutter-badge-only.png"]
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_freezer_frame_that_did_not_capture_near_completion(self):
+        proof = copy.deepcopy(self.proof)
+        near_end = next(item for item in proof["screenshots"] if item["name"] == "small_freezer-near-end.png")
+        near_end["freezer_progress_ticks"] = 0
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_missing_malformed_or_duplicate_milking_tank_pixels(self):
+        name = "small_milking_machine-mid.png"
+        for mutation in ("missing", "hash", "roi", "encoding", "duplicate"):
+            with self.subTest(mutation=mutation):
+                proof = copy.deepcopy(self.proof)
+                capture = next(item for item in proof["screenshots"] if item["name"] == name)
+                if mutation == "missing":
+                    del capture["tank_pixels"]
+                elif mutation == "hash":
+                    capture["tank_pixels"]["sha256"] = "not-a-hash"
+                elif mutation == "roi":
+                    capture["tank_pixels"]["x"] = 146  # Amount label is not tank evidence.
+                elif mutation == "encoding":
+                    capture["tank_pixels"]["encoding"] = "png-file"
+                else:
+                    full = next(item for item in proof["screenshots"]
+                                if item["name"] == "small_milking_machine-full-hover.png")
+                    capture["tank_pixels"]["sha256"] = full["tank_pixels"]["sha256"]
+                with self.assertRaises(SmokeFailure):
+                    self.check(proof)
+
+    def test_rejects_incorrect_milking_items_or_quick_move_counts(self):
+        proof = copy.deepcopy(self.proof)
+        empty = next(item for item in proof["screenshots"]
+                     if item["name"] == "small_milking_machine-empty.png")
+        empty["machine_slot_items"][0].update(item_id="minecraft:bucket", count=1, empty=False)
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        occupied = next(item for item in proof["screenshots"]
+                        if item["name"] == "small_milking_machine-input-occupied.png")
+        occupied["machine_slot_items"][0]["count"] = 2
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        occupied = next(item for item in proof["screenshots"]
+                        if item["name"] == "small_milking_machine-output-occupied.png")
+        occupied["machine_slot_items"][1]["item_id"] = "minecraft:bucket"
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        case = next(item for item in proof["cases"] if item["machine_id"] == "small_milking_machine")
+        case["slot_item_transfers"]["player_to_machine_input"]["moved_count"] = 2
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+        proof = copy.deepcopy(self.proof)
+        case = next(item for item in proof["cases"] if item["machine_id"] == "small_milking_machine")
+        case["slot_item_transfers"]["machine_output_to_player"]["destination_menu_index"] = 36
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_flat_or_missing_barrel_sprite_evidence(self):
+        for state in ("empty", "mid", "full-hover"):
+            for mutation in ("missing", "roi", "color_count", "fluid_id", "texture", "tint"):
+                if state == "empty" and mutation in ("texture", "tint"):
+                    continue
+                with self.subTest(state=state, mutation=mutation):
+                    proof = copy.deepcopy(self.proof)
+                    capture = next(item for item in proof["screenshots"]
+                                   if item["name"] == f"fluid_barrel-{state}.png")
+                    sample = capture["barrel_fluid_pixels"]
+                    if mutation == "missing": del capture["barrel_fluid_pixels"]
+                    elif mutation == "roi": sample["x"] = 95  # Glass highlight cannot prove textured fluid.
+                    elif mutation == "color_count": sample["distinct_rgba_colors"] = 2 if state == "empty" else 1
+                    elif mutation == "fluid_id": sample["fluid_id"] = "minecraft:lava"
+                    elif mutation == "texture": sample["still_texture"] = "minecraft:missingno"
+                    elif mutation == "tint": sample["tint_argb"] = "3f76e4"  # Missing alpha channel.
+                    with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_wrong_locale_or_missing_freezer_progress(self):
+        bad_locale = copy.deepcopy(self.proof)
+        bad_locale["selected_language"] = "en_us"
+        with self.assertRaises(SmokeFailure): self.check(bad_locale)
+        freezer = next(case for case in self.proof["cases"] if case["machine_id"] == "small_freezer")
+        freezer_mid = next(image for image in self.proof["screenshots"] if image["name"] == "small_freezer-mid.png")
+        freezer_mid["progress"] = 0
+        with self.assertRaises(SmokeFailure): self.check()
+
+    def test_rejects_missing_or_mismatched_full_window_tooltip_capture(self):
+        proof = copy.deepcopy(self.proof)
+        hovered = next(item for item in proof["screenshots"] if item["name"] == "fluid_barrel-full-hover.png")
+        tooltip = self.image_dir / hovered["tooltip_name"]
+        tooltip.unlink()
+        with self.assertRaises(SmokeFailure): self.check(proof)
+        tooltip.write_bytes(self._png(self.window_width, self.window_height))
+        hovered["tooltip_sha256"] = "0" * 64
+        with self.assertRaises(SmokeFailure): self.check(proof)
 
 
 if __name__ == "__main__":
