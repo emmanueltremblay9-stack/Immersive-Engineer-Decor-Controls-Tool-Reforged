@@ -43,6 +43,8 @@ public class MachineMenu extends AbstractContainerMenu {
    /** DEVELOPMENT/VALIDATION only. Consulted by the client factory, never server gameplay. */
    public static final String DEV_FREEZER_REFERENCE_PROPERTY = "iedctr.dev.freezerV5ExactReference";
    public static final String DEV_FREEZER_LIVE_ENERGY_PROPERTY = "iedctr.dev.freezerV5LiveEnergy";
+   // Historical property name retained for compatibility and flag-absent validation only.
+   // It no longer selects the Factory Placer presentation: ordinary clients use V2.
    public static final String DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY = "iedctr.dev.factoryPlacerV2Reference";
    private final boolean factoryPlacerV2ReferencePresentation;
    public static final int MACHINE_SLOT_COUNT = 27;
@@ -119,7 +121,7 @@ public class MachineMenu extends AbstractContainerMenu {
          new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
          kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)
             || Boolean.getBoolean(DEV_FREEZER_LIVE_ENERGY_PROPERTY)),
-         kind == MachineKind.FACTORY_PLACER && Boolean.getBoolean(DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY));
+         kind == MachineKind.FACTORY_PLACER);
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {

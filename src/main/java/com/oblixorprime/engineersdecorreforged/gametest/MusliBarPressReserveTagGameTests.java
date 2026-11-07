@@ -70,26 +70,22 @@ public final class MusliBarPressReserveTagGameTests {
          State readable = MusliBarPressReserve.read(stored, lookup).orElseThrow();
          helper.assertTrue(readable.sameContents(insert.updated()), "revoked stock remains readable with exact contents");
          helper.assertTrue(savedBeforeRevocation.equals(stored.save(lookup)), "tag revocation does not rewrite stored press data");
-         helper.assertTrue(!MusliBarPressReserve.hasAdmissibleIngredients(readable), "revoked stock is not eligible for future pressing");
+         helper.assertTrue(MusliBarPressReserve.hasAdmissibleIngredients(readable), "already converted units remain eligible after tag revocation");
          helper.assertTrue(MusliBarPressReserve.planInsert(readable, offered.copyWithCount(1)).isEmpty(), "cannot top up revoked stock");
          helper.assertTrue(MusliBarPressReserve.planInsert(State.EMPTY, offered.copyWithCount(1)).isEmpty(), "cannot insert revoked extension into an empty reserve");
 
-         Plan withdraw = MusliBarPressReserve.planWithdraw(readable, Compartment.SEEDS, 2).orElseThrow();
-         helper.assertValueEqual(4, withdraw.count() + withdraw.updated().seeds().getCount(), "withdrawal under revocation conserves all four items");
-         helper.assertTrue(ItemStack.isSameItemSameComponents(offered, withdraw.moved()), "withdrawal preserves revoked item's exact components");
-         ItemStack remainderPress = MusliBarPressReserve.stage(stored, lookup, readable, withdraw.updated()).orElseThrow();
-         ItemStack reloadedPress = ItemStack.parse(lookup, remainderPress.save(lookup)).orElseThrow();
+         helper.assertTrue(MusliBarPressReserve.planWithdraw(readable, Compartment.SEEDS, 2).isEmpty(), "revoked source cannot be reconstructed from generic units");
+         ItemStack reloadedPress = ItemStack.parse(lookup, stored.save(lookup)).orElseThrow();
          State remainder = MusliBarPressReserve.read(reloadedPress, lookup).orElseThrow();
-         helper.assertTrue(remainder.sameContents(withdraw.updated()), "revoked remainder survives full ItemStack serialization");
-         helper.assertTrue(!MusliBarPressReserve.hasAdmissibleIngredients(remainder), "serialization cannot restore revoked eligibility");
+         helper.assertTrue(remainder.sameContents(readable), "converted units survive full ItemStack serialization");
+         helper.assertTrue(MusliBarPressReserve.hasAdmissibleIngredients(remainder), "serialization preserves converted eligibility");
+         Plan baseTopUp = MusliBarPressReserve.planInsert(remainder, new ItemStack(Items.WHEAT_SEEDS)).orElseThrow();
+         helper.assertValueEqual(5, baseTopUp.updated().seeds(), "different base seed pools into converted extension units");
 
          registry.bindTags(allowed);
-         helper.assertTrue(MusliBarPressReserve.hasAdmissibleIngredients(remainder), "reallow makes existing stock eligible without rewriting it");
-         Plan topUp = MusliBarPressReserve.planInsert(remainder, offered.copyWithCount(1)).orElseThrow();
-         helper.assertValueEqual(3, topUp.updated().seeds().getCount(), "same exact extension can be inserted after reallow");
-         Plan finalWithdrawal = MusliBarPressReserve.planWithdraw(topUp.updated(), Compartment.SEEDS, 8).orElseThrow();
-         helper.assertValueEqual(5, withdraw.count() + finalWithdrawal.count(), "four initial items plus one new insertion are conserved");
-         helper.assertTrue(finalWithdrawal.updated().seeds().isEmpty(), "withdrawal to zero releases seed identity");
+         Plan topUp = MusliBarPressReserve.planInsert(baseTopUp.updated(), offered.copyWithCount(1)).orElseThrow();
+         helper.assertValueEqual(6, topUp.updated().seeds(), "extension can convert again after readmission");
+         helper.assertTrue(MusliBarPressReserve.planWithdraw(topUp.updated(), Compartment.SEEDS, 8).isEmpty(), "readmission cannot enable withdrawal");
          helper.assertValueEqual(4, offered.getCount(), "pure plans never consume the offered source stack");
          helper.assertTrue(MusliBarPressReserve.read(source, lookup).orElseThrow().sameContents(State.EMPTY), "staging never changes the actual original press");
       } finally {

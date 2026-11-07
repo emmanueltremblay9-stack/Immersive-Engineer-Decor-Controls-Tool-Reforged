@@ -11,7 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-/** Default-off retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */
+/** Normal Factory Placer client presentation using retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */
 public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.";
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
@@ -22,7 +22,7 @@ public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScree
 
    public FactoryPlacerV2ReferenceScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
-      if (!menu.factoryPlacerV2ReferencePresentation()) throw new IllegalArgumentException("Factory Placer V2 requires explicit client opt-in");
+      if (!menu.factoryPlacerV2ReferencePresentation()) throw new IllegalArgumentException("Factory Placer V2 requires the client-side Factory Placer presentation");
       imageWidth = FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH;
       imageHeight = FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT;
    }
@@ -112,7 +112,25 @@ public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScree
          graphics.pose().popPose();
       }
       var selected = FactoryPlacerV2ReferenceGeometry.anchor(FactoryPlacerV2ReferenceState.selectedSlot(menu.field(2)));
-      graphics.renderOutline(selected.x() - 1, selected.y() - 1, 18, 18, FactoryPlacerV2ReferenceState.SELECTED_COLOR);
+      double guiScale = minecraft.getWindow().getGuiScale();
+      if (view.scale() * guiScale >= 1.0D) {
+         graphics.renderOutline(selected.x() - 1, selected.y() - 1, 18, 18, FactoryPlacerV2ReferenceState.SELECTED_COLOR);
+      } else {
+         for (var edge : FactoryPlacerV2ReferenceGeometry.selectionEdges(view, guiScale, selected.menuIndex())) {
+            // Keep the existing canvas pose and item pass. Only this state overlay is
+            // quantized to physical pixels; its strips lie outside the item footprint.
+            double x = view.localX(edge.left() / guiScale), y = view.localY(edge.top() / guiScale);
+            double right = view.localX(edge.right() / guiScale), bottom = view.localY(edge.bottom() / guiScale);
+            graphics.pose().pushPose();
+            try {
+               graphics.pose().translate(x, y, 0);
+               graphics.pose().scale((float)(right - x), (float)(bottom - y), 1.0F);
+               graphics.fill(0, 0, 1, 1, FactoryPlacerV2ReferenceState.SELECTED_COLOR);
+            } finally {
+               graphics.pose().popPose();
+            }
+         }
+      }
       fill(graphics, FactoryPlacerV2ReferenceGeometry.rowIndicator(FactoryPlacerV2ReferenceState.selectedRow(menu.field(2))),
          FactoryPlacerV2ReferenceState.SELECTED_COLOR);
       fill(graphics, FactoryPlacerV2ReferenceGeometry.SIGNAL_INDICATOR,
