@@ -73,6 +73,27 @@ public final class FactoryPlacerV2ReferenceChecks {
          check(FactoryPlacerV2ReferenceState.selectedSlot(i) == i, "cursor preserved");
          check(FactoryPlacerV2ReferenceState.selectedRow(i) == i / 6, "row derived from cursor");
       }
+      // Physical-pixel coverage, distinct from the continuous hitbox/containment checks above.
+      for (int[] profile : new int[][] {{1280,260,1},{1280,720,1},{400,300,2},{640,360,3},{320,270,3},{320,240,1}}) {
+         var v = FactoryPlacerV2ReferenceGeometry.fit(profile[0], profile[1]);
+         verifySelectionRaster(v, profile[2]);
+      }
+      // Rounding boundaries and high-DPI transitions must not depend on a fortunate origin.
+      for (float scale : new float[] {.1F, .56621003F, .9999F, 1F}) {
+         for (float origin : new float[] {0F, .1F, .4999F, .5F, .9999F}) {
+            for (int guiScale = 1; guiScale <= 3; guiScale++) {
+               verifySelectionRaster(new FactoryPlacerV2ReferenceGeometry.ViewTransform(scale, origin, origin), guiScale);
+            }
+         }
+      }
+      for (double invalid : new double[] {0, -1, Double.NaN, Double.POSITIVE_INFINITY}) {
+         try { FactoryPlacerV2ReferenceGeometry.selectionEdges(FactoryPlacerV2ReferenceGeometry.fit(1280,260), invalid, 0); throw new AssertionError("Invalid raster scale accepted"); }
+         catch (IllegalArgumentException expected) { }
+      }
+      for (int invalid : new int[] {-1,18,53}) {
+         try { FactoryPlacerV2ReferenceGeometry.selectionEdges(FactoryPlacerV2ReferenceGeometry.fit(1280,260), 1, invalid); throw new AssertionError("Non-machine selection accepted"); }
+         catch (IllegalArgumentException expected) { }
+      }
       check(FactoryPlacerV2ReferenceState.selectedSlot(-1) == 0, "negative cursor defensive bound");
       check(FactoryPlacerV2ReferenceState.selectedSlot(99) == 17, "large cursor defensive bound");
       for (var control : FactoryPlacerV2ReferenceGeometry.Control.values()) {
@@ -113,6 +134,41 @@ public final class FactoryPlacerV2ReferenceChecks {
          check(FactoryPlacerV2ReferenceState.redstoneMode(logic) == ((logic & 4) != 0 ? 2 : logic & 1), "truthful three-state inversion");
       }
       check(!FactoryPlacerV2ReferenceState.signalActive(0) && FactoryPlacerV2ReferenceState.signalActive(1), "signal field projection");
-      System.out.println("PASS: 54 measured slots, selection containment, ten viewport transforms, hover/drag, controls and native state/action parity");
+      System.out.println("PASS: 54 measured slots, selection containment and four-sided framebuffer coverage, ten viewport transforms, hover/drag, controls and native state/action parity");
    }
+   private static void verifySelectionRaster(FactoryPlacerV2ReferenceGeometry.ViewTransform v, double guiScale) {
+      for (int slot = 0; slot < 18; slot++) {
+         var a = FactoryPlacerV2ReferenceGeometry.anchor(slot);
+         var edges = FactoryPlacerV2ReferenceGeometry.selectionEdges(v, guiScale, slot);
+         check(edges.size() == 4, "four selection edges");
+         double itemLeft = v.screenX(a.x()) * guiScale, itemTop = v.screenY(a.y()) * guiScale;
+         double itemRight = v.screenX(a.x() + 16) * guiScale, itemBottom = v.screenY(a.y() + 16) * guiScale;
+         for (int side = 0; side < 4; side++) {
+            var edge = edges.get(side);
+            check(edge.right() > edge.left() && edge.bottom() > edge.top(), "positive selection strip");
+            long columns = (long)Math.ceil(edge.right() - .5) - (long)Math.ceil(edge.left() - .5);
+            long rows = (long)Math.ceil(edge.bottom() - .5) - (long)Math.ceil(edge.top() - .5);
+            check(columns > 0 && rows > 0, "each selection side rasterizes independently");
+            check(edge.right() <= itemLeft || edge.left() >= itemRight || edge.bottom() <= itemTop || edge.top() >= itemBottom,
+               "selection never overlaps unchanged item footprint");
+            if (v.scale() * guiScale < 1) {
+               check(edge.left() == Math.floor(edge.left()) && edge.right() == Math.floor(edge.right())
+                  && edge.top() == Math.floor(edge.top()) && edge.bottom() == Math.floor(edge.bottom()), "quantized physical pixel boundaries");
+               check(side % 2 == 0 ? edge.bottom() - edge.top() == 1 : edge.right() - edge.left() == 1, "one physical pixel thickness");
+               check(edge.left() >= itemLeft - 2 && edge.right() <= itemRight + 2
+                  && edge.top() >= itemTop - 2 && edge.bottom() <= itemBottom + 2, "bounded outward overlay rounding");
+            } else {
+               int[][] original = {{a.x()-1,a.y()-1,a.x()+17,a.y()}, {a.x()+16,a.y(),a.x()+17,a.y()+16},
+                  {a.x()-1,a.y()+16,a.x()+17,a.y()+17}, {a.x()-1,a.y(),a.x(),a.y()+16}};
+               int[] r = original[side];
+               check(edge.left() == v.screenX(r[0])*guiScale && edge.top() == v.screenY(r[1])*guiScale
+                  && edge.right() == v.screenX(r[2])*guiScale && edge.bottom() == v.screenY(r[3])*guiScale, "non-subpixel outline stays byte-for-byte geometric equivalent");
+            }
+         }
+         var top = edges.get(0); var right = edges.get(1); var bottom = edges.get(2); var left = edges.get(3);
+         check(top.left() == left.left() && top.right() == right.right() && bottom.left() == left.left() && bottom.right() == right.right()
+            && top.bottom() == left.top() && top.bottom() == right.top() && bottom.top() == left.bottom() && bottom.top() == right.bottom(), "continuous four-sided ring");
+      }
+   }
+
 }

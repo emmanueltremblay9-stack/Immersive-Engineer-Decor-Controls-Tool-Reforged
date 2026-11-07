@@ -15,7 +15,7 @@ public final class MusleeProtocolBoundaryCases {
     private static final UUID ACTION=UUID.fromString("10213243-5465-4768-899a-abbccddeef00");
     private static void check(boolean ok) { if(!ok) throw new AssertionError("protocol boundary contract"); }
     private static byte[] packet(MusleeSessionIngress ingress) {
-        return encode(ingress.sessionId(),new Command(ACTION,Type.INSERT,1));
+        return encode(ingress.sessionId(),new Command(ACTION,Type.ABSORB));
     }
     public static void run() throws Exception {
         MusleeSessionIngress versions=MusleeSessionIngress.open();
@@ -23,27 +23,36 @@ public final class MusleeProtocolBoundaryCases {
         for(int v=0;v<=65535;v++) {
             byte[] bytes=packet(versions); bytes[0]=(byte)(v>>>8); bytes[1]=(byte)v;
             var result=versions.receive(bytes,()->{authorityCalls.incrementAndGet();return true;});
-            check(result.status()==(v==1?RECOGNIZED:MALFORMED_ENVELOPE));
-            check(versions.recognizedCount()==(v>=1?1:0));
+            check(result.status()==(v==VERSION?RECOGNIZED:MALFORMED_ENVELOPE));
+            check(versions.recognizedCount()==(v>=VERSION?1:0));
         }
         check(authorityCalls.get()==1);
         for(int length=0;length<=8193;length++) {
             MusleeSessionIngress s=MusleeSessionIngress.open(); byte[] bytes=Arrays.copyOf(packet(s),length);
             byte[] original=bytes.clone(); var result=s.receive(bytes,()->true);
-            var expected=length<18||length>8192?MALFORMED_ENVELOPE:length<34?INVALID_ACTION_ID:length==38?RECOGNIZED:MALFORMED_COMMAND;
+            var expected=length<18||length>8192?MALFORMED_ENVELOPE:length<34?INVALID_ACTION_ID:length==HEADER_BYTES?RECOGNIZED:MALFORMED_COMMAND;
             check(result.status()==expected && Arrays.equals(bytes,original));
             check(s.recognizedCount()==(length>=34&&length<=8192?1:0));
         }
         for(int type=0;type<256;type++) {
             MusleeSessionIngress s=MusleeSessionIngress.open(); byte[] bytes=packet(s); bytes[34]=(byte)type;
-            check(s.receive(bytes,()->true).status()==(type==1||type==2?RECOGNIZED:MALFORMED_COMMAND));
+            check(s.receive(bytes,()->true).status()==(type==1||type==3?RECOGNIZED:MALFORMED_COMMAND));
             check(s.receive(bytes,()->true).status()==DUPLICATE && s.recognizedCount()==1);
         }
-        for(int type=1;type<=2;type++) for(int arg=0;arg<256;arg++) {
-            MusleeSessionIngress s=MusleeSessionIngress.open(); byte[] bytes=packet(s);
-            bytes[34]=(byte)type; bytes[37]=(byte)arg;
-            boolean valid=type==1?arg<=35:arg>=1&&arg<=3;
-            check(s.receive(bytes,()->true).status()==(valid?RECOGNIZED:MALFORMED_COMMAND));
+        for(int type=1;type<=3;type++) for(int arg=0;arg<256;arg++) {
+            MusleeSessionIngress s=MusleeSessionIngress.open(); byte[] bytes=Arrays.copyOf(packet(s),38);
+            bytes[34]=(byte)type; bytes[36]=1; bytes[37]=(byte)arg;
+            check(s.receive(bytes,()->true).status()==MALFORMED_COMMAND);
+            check(s.receive(packet(s),()->true).status()==DUPLICATE);
+        }
+        for(int parameterLength=0;parameterLength<=65535;parameterLength++) {
+            for(Type type:Type.values()) {
+                MusleeSessionIngress s=MusleeSessionIngress.open();
+                byte[] bytes=encode(s.sessionId(),new Command(ACTION,type));
+                bytes[35]=(byte)(parameterLength>>>8); bytes[36]=(byte)parameterLength;
+                check(s.receive(bytes,()->true).status()==(parameterLength==0?RECOGNIZED:MALFORMED_COMMAND));
+                check(s.receive(bytes,()->true).status()==DUPLICATE);
+            }
         }
         for(int v=0;v<16;v++) {
             MusleeSessionIngress s=MusleeSessionIngress.open(); byte[] bytes=packet(s);

@@ -1,31 +1,49 @@
 # Block Breaker text-free nameplate
 
-This isolated follow-up starts from PR 151 head `c86999a03de3a4224abf37f2148c8dfe6d8aa925`.
-It removes the only permanent text drawn by the Block Breaker screen: its title.
-The localized machine name remains available by hovering the existing nameplate.
+PR 170 removes the permanent Block Breaker title and retains localized identity
+on nameplate hover. Its branch is reconciled with main `1eccac0a39665ffdfcdfe80c264be2bd6455921f`,
+including Factory Placer V2 as the normal client screen. Production changes remain
+limited to the title draw and hover region. Both retained v3 images are unchanged.
 
-No artwork is replaced or covered. Both retained v3 PNGs are hash-pinned by the
-regression test. Slot geometry, native stack counts, target selection, work timing,
-FE state, packets and every existing target/status/energy tooltip are unchanged.
-The central scene is still static artwork and the fluid/power controls remain
-unavailable; their existing explanatory tooltips remain intact.
+## Independent native qualification
 
-Run `python -m unittest discover -s tools/validation -p 'test_block_breaker_text_free.py' -v`.
-The test compiles the exact production label and tooltip methods with recording
-Minecraft-facing doubles. It checks absence of permanent title drawing, modeled
-one-pixel-padded nameplate edges, three screen origins, cross-machine isolation and preserved
-tooltip content. Negative controls restore the title or remove its hover and must
-fail. The hover helper is a model, not the exact upstream implementation; real
-input bounds still require native qualification. This is not a mapped Minecraft
-compile, actual native input or gameplay.
+Run `python tools/validation/block_breaker_packaged_native.py --language en_us`
+and `python tools/validation/block_breaker_packaged_native.py --language fr_fr --height 260`
+from a clean committed checkout. The new exact-head workflow runs both profiles.
+The default runtime JAR is built first without test inclusion. The driver lives
+in a separate development test mod, with main output excluded from the runtime
+classpath. Loaded class/resource origins, normal JAR hash and both active v3
+artwork hashes are checked. No production reference/render selector is set.
+`iedctr.blockBreakerPackagedNative` activates only this isolated test driver.
 
-Local result: all 149 Python validation tests passed, including the four new
-checks and both negative controls. Java syntax parsing passed for 312 source
-files, and `git diff --check` passed. Gradle mapped compilation and JUnit could
-not start: the wrapper distribution is absent and its download reports
-`Network is unreachable`. No full-build success is inferred from syntax parsing.
+The driver creates a nonce-owned survival world on its own Xvfb display. It seeds
+a machine and dirt target, then uses a physical XTest right-click on a verified
+in-reach block raycast. It never constructs a screen or calls server openMenu.
+Native title, FE, unavailable fluid/power, target, static-scene and work tooltips
+are observed through actual native render events after XTest pointer motion.
+The title translation is checked in English and French. The normal, hover,
+worked and returned-item screenshots remain available for visual comparison
+against the retained v3 artwork, including the unlettered nameplate.
 
-Fresh mapped compilation and native EN 720px / FR 260px screenshots are required
-from the existing PR Build workflow. Older captures do not qualify this change.
-Physical pointer input, custom packs, resize/reload, complex gestures and visual
-acceptance are not established by these offline checks. No merge or release.
+The gameplay setup admits exactly 240FE through the underside capability. Real
+server ticks must break the dirt target, debit that energy and retain one dirt
+in the visible output without a world drop. Physical XTest output pickup and placement into a verified empty player-inventory
+slot must receive matching independent server acknowledgements. The output rejects
+insertion. Final conservation requires an empty machine/cursor, exactly one player
+dirt and no world drops, verified on both sides and serialized in the proof. The neutral artwork
+controls are not invented commands; their explanatory tooltips remain present.
+
+## Results and boundaries
+
+Local independent text-free and evidence-validator tests pass, including negative
+controls for restoring the title or removing hover. Native evidence guards reject
+wrong identities, missing captures, unlocalized title, clipped tooltip and missing
+server acknowledgements. Local Gradle cannot download its absent distribution
+because the network is unavailable. Mapped compilation and actual native runs
+must therefore pass fresh exact-head CI before any qualification claim.
+
+No Freezer fixture is modified or reused. This is a bounded normal-JAR test in a
+NeoForge development launcher, not a separately installed consumer launcher or
+full-modpack test. Resize/reload, all complex inventory gestures, owner visual
+acceptance and release are not established by this bounded suite. No merge or
+release is authorized by the test result alone.

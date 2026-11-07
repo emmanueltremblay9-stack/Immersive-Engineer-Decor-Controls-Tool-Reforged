@@ -39,6 +39,8 @@ import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class MachineMenu extends AbstractContainerMenu {
+   // Historical property name retained for compatibility and flag-absent validation only.
+   // It no longer selects the Factory Placer presentation: ordinary clients use V2.
    public static final String DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY = "iedctr.dev.factoryPlacerV2Reference";
    private final boolean factoryPlacerV2ReferencePresentation;
    public static final int MACHINE_SLOT_COUNT = 27;
@@ -112,7 +114,7 @@ public class MachineMenu extends AbstractContainerMenu {
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
       return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
          new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
-         kind == MachineKind.FACTORY_PLACER && Boolean.getBoolean(DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY));
+         kind == MachineKind.FACTORY_PLACER);
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {

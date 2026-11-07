@@ -6,11 +6,13 @@ artifacts and native captures must be reviewed before making that claim.
 
 ## Isolation and build boundaries
 
-The fixture lives in `src/factoryPlacerNativeValidation/java`, outside `main`.
-Only `-Pinclude_factory_placer_native_validation=true` adds its source set to the
-development mod. It is not included in the normal JAR, even when this source set
-is enabled. The presentation itself is independently default-off under
-`iedctr.dev.factoryPlacerV2Reference`.
+The fixture lives in `src/factoryPlacerNativeValidation/java`, outside `main`,
+in the distinct `com.oblixorprime.iedctrtest.factoryplacer` package. Only
+`-Pinclude_factory_placer_native_validation=true` configures its separate test mod.
+It is not included in the normal JAR, even when this source set is enabled.
+The presentation itself is the normal client GUI. Both the full matrix and the
+default-logic smoke require `iedctr.dev.factoryPlacerV2Reference` to be absent;
+only the separate test harness uses an enable flag.
 
 The Python runner refuses a dirty checkout, records the full executed commit,
 verifies the retained artwork's SHA-256, and checks the checkout again after the
@@ -30,13 +32,24 @@ python tools/validation/factory_placer_v2_reference_native.py \
   --prepare-timeout 900 --timeout 900
 ```
 
-The dedicated workflow also covers French at 1280x260 scale1 and English at
-1920x1080 scales1,2,3. The framebuffer, selected language, requested GUI scale,
+The dedicated workflow also covers French at 1280x260 scale1, English at
+1920x1080 scales1,2,3, and French/Canadian French at 1920x1080 scale3.
+An eighth profile runs `--presentation default` with unchanged backend defaults.
+All eight profiles omit the former V2 development presentation property.
+The framebuffer, selected language, requested GUI scale,
 actual GUI scale, scaled GUI dimensions and transformed public bounds must agree.
-The existing default-off build, JUnit tests and GameTests run separately first.
-The native client uses Gradle's development source classpath, not the packaged
-JAR. CI retains the separately built normal JAR, its hash and class-entry list
-for independent fixture-exclusion checks; this is not packaged-JAR native proof.
+The ordinary build, JUnit tests and GameTests run separately first.
+CI builds one normal JAR and supplies that same artifact to every profile using
+`--runtime-jar`. The dedicated `factoryPlacerPackagedClient` and
+`factoryPlacerPackagedDefaultClient` runs put this artifact on their runtime
+classpath and load only the separate harness as a development mod. Main output
+directories are forbidden. A rebuilt exact-source JAR must have the same SHA-256.
+`verifyFactoryPlacerPackagedRuntime` records the classpath, forbidden main outputs,
+harness output and artifact hash and rejects split packages or fixture leakage.
+Runtime evidence independently verifies the loaded production mod file, six class
+origins/resource hashes, separate module identity and active retained texture pack.
+This is a packaged JAR in NeoForge's development launcher, not proof of a separately
+installed user's launcher or a release installation.
 
 ## What a passing native result establishes
 
@@ -77,14 +90,14 @@ SHA-256 and exterior-artwork digest. The validator decodes PNGs, checks chunk CR
 links crop pixels to the full frame, checks the genuine status paint, verifies
 retained-art pixel correspondence, and requires unchanged surrounding artwork.
 Selected-slot outline pixels are checked for the captured selections0,1,6,12
-in all five profiles. A strict pixel-center rule avoids inventing coverage for
+in the base profiles. A strict pixel-center rule avoids inventing coverage for
 subpixel edges; it does not establish outline visibility for every possible slot.
 The approved source image itself must remain byte-identical.
 
-This is screen-handler event validation through vanilla packets, **not physical
-OS pointer validation**. GLFW only parks the cursor outside the panel. The suite
-does not claim drag splitting, shift-click, double-click collection, outside-slot
-carried drops, tooltip hover/physical cursor testing, or general visual approval.
+The base cases use screen-handler events through vanilla packets, **not physical
+OS pointer clicks**. The original cases do not establish advanced inventory
+gestures, native tooltip hover or general visual approval. The extension below
+qualifies additional cases separately, without expanding the old base claims.
 Settled captures check the dark signal lamp pixels. Manual-trigger flashes are
 verified as synchronized on/off state cycles; the lit lamp pixels are not captured.
 The world screenshot is a native frame accompanying observed client/server block
@@ -93,3 +106,66 @@ Human review of the actual captures remains required. No merge or release occurs
 
 The Python tests use deliberately synthetic test pixels to test the evidence
 validator. They are never runtime screenshots or accepted native evidence.
+
+## Extended packaged qualification
+
+The original eight base GUI captures and conservation records are retained.
+After those cases, the extension seeds 24 stone once, alongside the unchanged
+nine hidden gold-block sentinels (45 items), then performs:
+
+- Left drag splitting across three slots and right drag distribution across three.
+- Shift-click with an actual XTest modifier observed through GLFW.
+- Double-click collection and return of all 24 visible stone.
+- All six controls with right/middle buttons and while carrying items. These are
+  independent unchanged-state server observations, not proof of rejected-packet receipt.
+- An outside carried-stack drop, conserving 69 items including the real world drop.
+
+Every intermediate step records authoritative menu/slot/carried/drop counts,
+unchanged logic/cursor and hidden sentinel conservation. Mouse presses/drags
+still use real screen handlers with vanilla packets; they are not OS pointer clicks.
+The isolated Xvfb display is nonce-marked by the runner before native XTest input.
+
+Eight physical-hover captures cover the blank header, empty slot and all controls.
+The native tooltip render event records actual rendered text sequences, wrapped
+line widths, final bounds and framebuffer hash. The verifier compares the full
+localized text to the checked-in language file and rejects clipping or truncation.
+It does not claim OCR or owner acceptance of the visual design.
+
+Thirty-six further captures observe every server-seeded selected slot, first
+empty and then with one stone in every visible machine slot. These are rendering
+cases, not new user selection gestures. Actual client and server item observations
+must match each case. Every occupied item interior must also differ visibly
+from the matching empty native screenshot (at least 10% of its pixel centers),
+so metadata alone cannot pass invisible items. The physical pointer is parked outside the GUI so a previous
+tooltip cannot obscure the selected row. All four outline edges are independently
+checked against native pixels, including occupied slots. Zero-pixel edges or
+missing gold pixels fail qualification; the full matrix is retained on failure.
+
+At one or more physical pixels per canvas unit, the original logical outline is
+unchanged. Below that scale, the full 16×16 item footprint is rounded outward to
+integer framebuffer bounds; a one-physical-pixel ring is drawn immediately outside
+it. This leaves item size and input geometry untouched. In a severely downscaled
+view the overlay can extend slightly beyond the former fractional cavity bounds.
+The source artwork is never rewritten to make room for it.
+
+The flag-absent packaged profile opens the V2 screen and preserves default
+logic 6 and cursor 0. With an obstructed target it verifies a server-confirmed
+pickup/return without drops, then retains a native frame. This proves the current
+backend defaults have not changed while the new presentation is normally available.
+
+All new checks must succeed on the exact pushed commit before being reported as
+passed. The integration changes the normal client presentation only. No merge,
+release, user saved-world change or mechanical change is performed by these profiles.
+
+## Native regression that motivated the pixel-safe outline
+
+Run `42383295394`, exact source `e0192fc1c42da48c975d5d7f672fe6d0e175dd4c`,
+passed the packaged compile/GameTests (744 required) and the normal, flag-absent
+profile using JAR SHA-256
+`4363cdb8a0433753494ed2feb599d3e4ee7c486ed115fe71d5cdbc18d94fba20`.
+The short French 1280×260 profile reached all gestures and tooltip captures but
+failed strict selection qualification: some edges had no raster coverage, and
+slot 4 had none on all four sides. This is a real production rendering defect.
+The French scale-3 third-row failures were separately caused by a stale physical
+pointer leaving a tooltip over the capture, a harness defect. These results do
+not qualify the corrected commit; rerun all profiles on its exact head.

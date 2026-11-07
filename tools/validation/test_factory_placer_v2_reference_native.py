@@ -56,9 +56,9 @@ class NativePlacerProofTest(unittest.TestCase):
                     for x in range(math.floor(sx(l)),math.ceil(sx(r))):pixels[(y*width+x)*4:(y*width+x+1)*4]=color
             x,y=SLOT_ORIGINS[selected]
             # Rasterize exact border coverage at pixel centers, not expanded edges.
-            for l,t,r,b in [(x-1,y-1,x+17,y),(x-1,y+16,x+17,y+17),(x-1,y,x,y+16),(x+16,y,x+17,y+16)]:
-                for py in range(math.ceil(sy(t)-.5),math.ceil(sy(b)-.5)):
-                    for px in range(math.ceil(sx(l)-.5),math.ceil(sx(r)-.5)):
+            for l,t,r,b in selection_rects(width,height,scale,selected):
+                for py in range(math.ceil(t-.5),math.ceil(b-.5)):
+                    for px in range(math.ceil(l-.5),math.ceil(r-.5)):
                         pixels[(py*width+px)*4:(py*width+px+1)*4]=ROW_ACTIVE
             paint(INDICATORS[3],bytes((104,25,21,255)))
             paint(INDICATORS[selected//6],ROW_ACTIVE)
@@ -240,10 +240,8 @@ class NativePlacerProofTest(unittest.TestCase):
 
     def test_outline_samples_exist_for_all_captured_slots_in_five_profiles(self):
         for w,h,s in [(1280,720,1),(1280,260,1),(1920,1080,1),(1920,1080,2),(1920,1080,3)]:
-            for slot in {selected for _,selected in CAPTURES.values()}:
-                with self.subTest(w=w,h=h,s=s,slot=slot):self.assertTrue(outline_samples(w,h,s,slot))
-        # Slot4 is not a captured selection. Do not invent a sample at low scale.
-        self.assertEqual(outline_samples(1280,260,1,4),[])
+            for slot in range(18):
+                with self.subTest(w=w,h=h,s=s,slot=slot):self.assertEqual(len(outline_samples(w,h,s,slot)),4)
 
     def test_permanent_slot_zero_outline_rejected(self):
         p=copy.deepcopy(self.proof)

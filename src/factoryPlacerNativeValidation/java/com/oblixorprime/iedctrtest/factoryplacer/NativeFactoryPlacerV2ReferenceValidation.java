@@ -1,4 +1,4 @@
-package com.oblixorprime.engineersdecorreforged.client.validation;
+package com.oblixorprime.iedctrtest.factoryplacer;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -15,6 +15,13 @@ import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceG
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
+import com.sun.jna.NativeLibrary;
+import com.sun.jna.NativeLong;
+import com.sun.jna.Pointer;
+import java.util.Arrays;
+import net.minecraft.util.FormattedCharSequence;
+import net.neoforged.neoforge.client.event.RenderTooltipEvent;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
@@ -48,14 +55,14 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 import org.lwjgl.glfw.GLFW;
 
 /** Opt-in test source set only. All mutation is confined to a fresh nonce-owned world. */
-@EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = "iedctr_factory_placer_validation", value = Dist.CLIENT)
 public final class NativeFactoryPlacerV2ReferenceValidation {
    private static final String SUITE = "native-factory-placer-v2-reference-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0), TARGET = POS.south();
    private static final Rect CONTROL_CROP = new Rect(240, 55, 125, 120);
    private enum Stage { BOOT, WORLD, SETUP, SLOT_READY, PICKED, RETURNED, NORMAL, CONTROL,
       MANUAL_LIT, MANUAL_DARK, PLACE_READY, PLACE_WAIT, PLACED_CAPTURE, CLOSE, WORLD_CAPTURE,
-      REOPEN, RELOAD_WAIT, RELOAD_CAPTURE, DONE }
+      REOPEN, RELOAD_WAIT, RELOAD_CAPTURE, ADVANCED_SETUP, ADVANCED, TOOLTIPS, SELECTIONS, DONE }
    private record ControlStep(Control control, int logic, int selected, String capture) {}
    private static final ControlStep[] STEPS = {
       new ControlStep(Control.ROW_MIDDLE, 0, 6, "row-middle"), new ControlStep(Control.ROW_BOTTOM, 0, 12, "row-bottom"),
@@ -80,7 +87,19 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
    private static CompletableFuture<Boolean> inspection;
    private static final JsonArray ROUTES = new JsonArray(), CAPTURES = new JsonArray(), CASES = new JsonArray(), CONTROLS = new JsonArray();
    private static JsonArray hiddenBefore, hiddenAfter;
-   private static JsonObject placement, worldCapture;
+   private static JsonObject placement, worldCapture, packagedRuntime;
+   private static final JsonArray ADVANCED = new JsonArray(), TOOLTIPS = new JsonArray(), SELECTIONS = new JsonArray(), OCCUPIED_SELECTIONS = new JsonArray();
+   private static final String[] GESTURE_NAMES = {"drag_left_split", "drag_right_split", "shift_click", "double_click_collect",
+      "right_control_noop", "middle_control_noop", "held_control_noop", "outside_carried_drop"};
+   private static int gestureIndex, gestureStep, hoverIndex, selectionIndex, tooltipFrames;
+   private static int pointerX, pointerY;
+   private static boolean actionSent, shiftDown, tooltipInFrame, occupiedSelection;
+   private static NativeLibrary x11, xtest;
+   private static Pointer display;
+   private static JsonObject gesture, observedServer, tooltipObservation, renderedTooltip, selectionServer;
+   private static CompletableFuture<JsonObject> snapshotFuture;
+   private static final int[] expectedSlots = new int[54];
+   private static int expectedCarried, expectedDrops;
    private NativeFactoryPlacerV2ReferenceValidation() {}
 
    @SubscribeEvent
@@ -215,16 +234,300 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
                if (ticks < 15 || !clientState(menu, 0, 1) || !stone(menu.getSlot(0).getItem(), 1)
                   || !serverMatches(mc, p -> { if (!preservedAfterPlacement(p)) return false; hiddenAfter = hiddenSnapshot(); return true; })) return;
                verifyGeometry(screen, menu); capture(mc, menu, "reloaded");
-               CASES.add("resource_reload_preserves_inventory_and_state"); CASES.add("hidden_9_saved_slots_preserved"); enter(Stage.DONE);
+               CASES.add("resource_reload_preserves_inventory_and_state"); CASES.add("hidden_9_saved_slots_preserved");
+               initNativeInput(mc);
+               pending = mc.getSingleplayerServer().submit(() -> {
+                  var p = player(mc); require(p.containerMenu.getCarried().isEmpty(), "Cannot seed over carried items");
+                  clearVisible(p); machine.dataAccessForTests().set(0, 0); machine.dataAccessForTests().set(2, 0);
+                  p.containerMenu.getSlot(0).set(new ItemStack(Items.STONE, 12));
+                  p.containerMenu.getSlot(1).set(new ItemStack(Items.STONE, 4));
+                  p.containerMenu.getSlot(18).set(new ItemStack(Items.STONE, 8)); p.containerMenu.broadcastChanges();
+               });
+               expectedSlots[0] = 12; expectedSlots[1] = 4; expectedSlots[18] = 8; enter(Stage.ADVANCED_SETUP);
             }
+            case ADVANCED_SETUP -> {
+               if (ticks < 10 || !advancedAgrees(mc, menu)) return;
+               startGesture(); enter(Stage.ADVANCED);
+            }
+            case ADVANCED -> advancedTick(mc, screen, menu);
+            case TOOLTIPS -> tooltipTick(mc, screen, menu);
+            case SELECTIONS -> selectionTick(mc, screen, menu);
             case DONE -> finish(mc, null);
             default -> throw new IllegalStateException("Unexpected stage " + stage);
          }
       } catch (Throwable error) { finish(mc, error); }
    }
 
+   private static void initNativeInput(Minecraft mc) throws Exception {
+      String nativeDisplay = System.getenv("DISPLAY");
+      require(nativeDisplay != null && nativeDisplay.matches(":\\d+(\\.\\d+)?")
+         && Files.readString(directory.resolve(".iedctr-placer-xvfb")).equals(nonce + "\n" + nativeDisplay), "Native input requires runner-owned Xvfb");
+      x11 = NativeLibrary.getInstance("X11"); xtest = NativeLibrary.getInstance("Xtst");
+      display = x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null}); require(display != null, "X11 unavailable");
+      GLFW.glfwFocusWindow(mc.getWindow().getWindow());
+   }
+   private static void nativeShift(boolean down) {
+      int code = x11.getFunction("XKeysymToKeycode").invokeInt(new Object[]{display, new NativeLong(0xffe1)});
+      require(code > 0 && xtest.getFunction("XTestFakeKeyEvent").invokeInt(new Object[]{display, code, down ? 1 : 0, new NativeLong(0)}) != 0, "Native Shift failed");
+      shiftDown = down; x11.getFunction("XFlush").invokeInt(new Object[]{display});
+   }
+   private static int dropItems(ServerPlayer p) {
+      int n = 0; for (var entity : p.serverLevel().getEntitiesOfClass(ItemEntity.class, new AABB(POS).inflate(12))) n += entity.getItem().getCount(); return n;
+   }
+   private static JsonObject serverSnapshot(ServerPlayer p) {
+      require(p.containerMenu instanceof MachineMenu && p.containerMenu.containerId == serverMenuId, "Authoritative menu changed");
+      var o = new JsonObject(); o.addProperty("menu_id", p.containerMenu.containerId);
+      o.addProperty("logic", machine.dataAccessForTests().get(0)); o.addProperty("selected_slot", machine.dataAccessForTests().get(2));
+      o.addProperty("signal", machine.dataAccessForTests().get(1)); o.addProperty("carried_count", p.containerMenu.getCarried().getCount());
+      var slots = new JsonObject(); for (int i = 0; i < 54; i++) slots.addProperty(Integer.toString(i), p.containerMenu.getSlot(i).getItem().getCount());
+      o.add("slot_counts", slots); o.addProperty("world_drop_items", dropItems(p)); o.addProperty("item_total", total(p) + dropItems(p));
+      o.addProperty("hidden_sentinels_intact", sentinelsIntact()); return o;
+   }
+   private static boolean advancedAgrees(Minecraft mc, MachineMenu menu) {
+      if (menu.getCarried().getCount() != expectedCarried || !clientState(menu, 0, 0)) return false;
+      for (int i = 0; i < 54; i++) if (menu.getSlot(i).getItem().getCount() != expectedSlots[i]
+         || (expectedSlots[i] > 0 && !menu.getSlot(i).getItem().is(Items.STONE))) return false;
+      if (snapshotFuture == null) { snapshotFuture = mc.getSingleplayerServer().submit(() -> serverSnapshot(player(mc))); return false; }
+      if (!snapshotFuture.isDone()) return false;
+      observedServer = snapshotFuture.join(); snapshotFuture = null;
+      if (observedServer.get("carried_count").getAsInt() != expectedCarried || observedServer.get("world_drop_items").getAsInt() != expectedDrops
+         || observedServer.get("item_total").getAsInt() != 69 || !observedServer.get("hidden_sentinels_intact").getAsBoolean()
+         || observedServer.get("logic").getAsInt() != 0 || observedServer.get("signal").getAsInt() != 0 || observedServer.get("selected_slot").getAsInt() != 0) return false;
+      for (int i = 0; i < 54; i++) if (observedServer.getAsJsonObject("slot_counts").get(Integer.toString(i)).getAsInt() != expectedSlots[i]) return false;
+      return true;
+   }
+   private static void startGesture() {
+      gesture = new JsonObject(); gesture.addProperty("case", GESTURE_NAMES[gestureIndex]);
+      gesture.addProperty("input_method", gestureIndex == 2 ? "Screen.mouseClicked/mouseReleased; physical XTest Shift observed through GLFW" : "Screen.mouseClicked/mouseDragged/mouseReleased; vanilla packets, not physical pointer clicks");
+      gesture.add("before", observedServer.deepCopy()); gesture.add("steps", new JsonArray()); gesture.add("control_observations", new JsonArray()); gestureStep = 0; actionSent = false;
+   }
+   private static void advancedTick(Minecraft mc, FactoryPlacerV2ReferenceScreen screen, MachineMenu menu) {
+      if (!actionSent) {
+         // Avoid accidental PICKUP_ALL between unrelated cases. The explicit double-click below is same-frame.
+         if (ticks < 8) return;
+         if (gestureIndex == 2) {
+            if (!shiftDown) { nativeShift(true); return; }
+            if (GLFW.glfwGetKey(mc.getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT) != GLFW.GLFW_PRESS) return;
+            gesture.addProperty("native_shift_observed", true);
+         }
+         performAdvanced(screen); actionSent = true; ticks = 0; snapshotFuture = null; return;
+      }
+      if (gestureIndex == 2 && shiftDown) nativeShift(false);
+      if (ticks < 4 || !advancedAgrees(mc, menu)) return;
+      if (gestureIndex == 2 && GLFW.glfwGetKey(mc.getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT) != GLFW.GLFW_RELEASE) return;
+      var step = observedServer.deepCopy(); step.addProperty("step", gestureStep); step.addProperty("server_ack", true);
+      if (gestureIndex == 4 || gestureIndex == 5 || (gestureIndex == 6 && gestureStep >= 1 && gestureStep <= 6)) {
+         step.addProperty("control", Control.values()[gestureIndex == 6 ? gestureStep - 1 : gestureStep].name());
+         var observation = step.deepCopy(); observation.addProperty("server_observed_unchanged", true);
+         observation.addProperty("causal_packet_receipt_proven", false); gesture.getAsJsonArray("control_observations").add(observation);
+      }
+      gesture.getAsJsonArray("steps").add(step);
+      int count = switch (gestureIndex) { case 0 -> 2; case 1 -> 3; case 2 -> 1; case 3 -> 2; case 4, 5 -> 6; case 6 -> 8; default -> 2; };
+      if (++gestureStep < count) { actionSent = false; ticks = 0; return; }
+      gesture.add("after", observedServer.deepCopy()); gesture.addProperty("server_confirmed", true); gesture.addProperty("server_ack", true);
+      gesture.addProperty("ack_scope", gestureIndex >= 4 && gestureIndex <= 6 ? "independent authoritative unchanged-state observation; does not prove receipt of a rejected packet" : "independent authoritative inventory transition");
+      gesture.addProperty("item_total_before", 69); gesture.addProperty("item_total_after", observedServer.get("item_total").getAsInt());
+      gesture.addProperty("world_drop_items", expectedDrops); gesture.addProperty("carried_count", expectedCarried); gesture.add("slot_counts", observedServer.get("slot_counts").deepCopy());
+      ADVANCED.add(gesture);
+      if (++gestureIndex < GESTURE_NAMES.length) { startGesture(); ticks = 0; return; }
+      // All 24 stone are now an actual world drop; no carried stack is discarded or synthetic gesture success seeded.
+      hoverIndex = 0; enter(Stage.TOOLTIPS); hoverTarget(mc, screen);
+   }
+   private static void performAdvanced(FactoryPlacerV2ReferenceScreen screen) {
+      switch (gestureIndex) {
+         case 0 -> {
+            if (gestureStep == 0) { clickSlot(screen, 0); expectedSlots[0] = 0; expectedCarried = 12; }
+            else { dragSlots(screen, 0, 3, 4, 5); expectedSlots[3] = expectedSlots[4] = expectedSlots[5] = 4; expectedCarried = 0; }
+         }
+         case 1 -> {
+            if (gestureStep == 0) { clickSlot(screen, 18); expectedSlots[18] = 0; expectedCarried = 8; }
+            else if (gestureStep == 1) { dragSlots(screen, 1, 6, 7, 8); expectedSlots[6] = expectedSlots[7] = expectedSlots[8] = 1; expectedCarried = 5; }
+            else { clickSlot(screen, 18); expectedSlots[18] = 5; expectedCarried = 0; }
+         }
+         case 2 -> { clickSlot(screen, 18); expectedSlots[18] = 0; expectedSlots[0] = 5; }
+         case 3 -> {
+            if (gestureStep == 0) { clickSlot(screen, 3); clickSlot(screen, 3); Arrays.fill(expectedSlots, 0); expectedCarried = 24; }
+            else { clickSlot(screen, 18); expectedSlots[18] = 24; expectedCarried = 0; }
+         }
+         case 4, 5 -> controlClick(screen, Control.values()[gestureStep], gestureIndex == 4 ? 1 : 2);
+         case 6 -> {
+            if (gestureStep == 0) { clickSlot(screen, 18); expectedSlots[18] = 0; expectedCarried = 24; }
+            else if (gestureStep <= 6) controlClick(screen, Control.values()[gestureStep - 1], 0);
+            else { clickSlot(screen, 18); expectedSlots[18] = 24; expectedCarried = 0; }
+         }
+         case 7 -> {
+            if (gestureStep == 0) { clickSlot(screen, 18); expectedSlots[18] = 0; expectedCarried = 24; }
+            else { click(screen, -10, -10); expectedCarried = 0; expectedDrops = 24; }
+         }
+         default -> throw new IllegalStateException("Unexpected gesture");
+      }
+   }
+   private static void controlClick(FactoryPlacerV2ReferenceScreen screen, Control control, int button) {
+      var r = FactoryPlacerV2ReferenceGeometry.controlRect(control); var v = screen.validationViewTransform();
+      double x = v.screenX(r.x() + r.width() / 2.0), y = v.screenY(r.y() + r.height() / 2.0);
+      screen.mouseClicked(x, y, button); screen.mouseReleased(x, y, button);
+   }
+   private static void dragSlots(FactoryPlacerV2ReferenceScreen screen, int button, int... slots) {
+      var v = screen.validationViewTransform(); var first = FactoryPlacerV2ReferenceGeometry.anchor(slots[0]);
+      double previousX = v.screenX(first.x() + 8), previousY = v.screenY(first.y() + 8);
+      screen.mouseClicked(previousX, previousY, button);
+      for (int slot : slots) {
+         var a = FactoryPlacerV2ReferenceGeometry.anchor(slot); double x = v.screenX(a.x() + 8), y = v.screenY(a.y() + 8);
+         screen.mouseDragged(x, y, button, x - previousX, y - previousY); previousX = x; previousY = y;
+      }
+      screen.mouseReleased(previousX, previousY, button);
+   }
+   private static void hoverTarget(Minecraft mc, FactoryPlacerV2ReferenceScreen screen) {
+      Rect r = hoverIndex == 0 ? FactoryPlacerV2ReferenceGeometry.HEADER : hoverIndex == 1
+         ? new Rect(FactoryPlacerV2ReferenceGeometry.anchor(0).x(), FactoryPlacerV2ReferenceGeometry.anchor(0).y(), 16, 16)
+         : FactoryPlacerV2ReferenceGeometry.controlRect(Control.values()[hoverIndex - 2]);
+      var v = screen.validationViewTransform(); pointerX = (int)Math.round(v.screenX(r.x() + r.width() / 2.0)); pointerY = (int)Math.round(v.screenY(r.y() + r.height() / 2.0));
+      renderedTooltip = null; tooltipObservation = null; tooltipFrames = 0; moveNativePointer(mc, screen);
+   }
+   private static void moveNativePointer(Minecraft mc, FactoryPlacerV2ReferenceScreen screen) {
+      long window = mc.getWindow().getWindow();
+      if (GLFW.glfwGetWindowAttrib(window, GLFW.GLFW_FOCUSED) != GLFW.GLFW_TRUE) { GLFW.glfwFocusWindow(window); return; }
+      int[] x = {0}, y = {0}; GLFW.glfwGetWindowPos(window, x, y);
+      int targetX = x[0] + (int)Math.round(pointerX * mc.getWindow().getScreenWidth() / (double)screen.width);
+      int targetY = y[0] + (int)Math.round(pointerY * mc.getWindow().getScreenHeight() / (double)screen.height);
+      require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display, -1, targetX, targetY, new NativeLong(0)}) != 0, "Native pointer move failed");
+      x11.getFunction("XFlush").invokeInt(new Object[]{display});
+   }
+   private static boolean atTooltipTarget(Minecraft mc, FactoryPlacerV2ReferenceScreen screen) {
+      return Math.abs(mc.mouseHandler.xpos() * screen.width / mc.getWindow().getScreenWidth() - pointerX) < 1
+         && Math.abs(mc.mouseHandler.ypos() * screen.height / mc.getWindow().getScreenHeight() - pointerY) < 1
+         && GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(), GLFW.GLFW_FOCUSED) == GLFW.GLFW_TRUE;
+   }
+   @SubscribeEvent public static void beforeRender(ScreenEvent.Render.Pre event) { tooltipInFrame = false; }
+   @SubscribeEvent public static void observeTooltip(RenderTooltipEvent.Color event) {
+      var mc = Minecraft.getInstance();
+      if (complete || stage != Stage.TOOLTIPS || !(mc.screen instanceof FactoryPlacerV2ReferenceScreen screen) || !atTooltipTarget(mc, screen)) return;
+      try {
+         var record = new JsonObject(); var lines = new JsonArray(); var widths = new JsonArray(); var text = new StringBuilder();
+         int width = 0, height = event.getComponents().size() == 1 ? -2 : 0;
+         for (var component : event.getComponents()) {
+            // Observe the actual native text component, not a separately reconstructed translation.
+            FormattedCharSequence sequence = null;
+            for (var field : component.getClass().getDeclaredFields()) if (FormattedCharSequence.class.isAssignableFrom(field.getType())) {
+               field.setAccessible(true); sequence = (FormattedCharSequence)field.get(component); break;
+            }
+            require(sequence != null, "Tooltip is not an observable native text component");
+            var line = new StringBuilder(); sequence.accept((index, style, codepoint) -> { line.appendCodePoint(codepoint); return true; });
+            lines.add(line.toString()); if (!text.isEmpty()) text.append('\n'); text.append(line);
+            int measured = component.getWidth(event.getFont()); widths.add(measured); width = Math.max(width, measured); height += component.getHeight();
+         }
+         record.addProperty("text", text.toString()); record.add("lines", lines); record.add("line_widths", widths);
+         record.addProperty("tooltip_x", event.getX()); record.addProperty("tooltip_y", event.getY()); record.addProperty("tooltip_width", width); record.addProperty("tooltip_height", height);
+         record.addProperty("in_bounds", event.getX() - 4 >= 0 && event.getY() - 4 >= 0 && event.getX() + width + 4 <= screen.width && event.getY() + height + 4 <= screen.height);
+         tooltipObservation = record; tooltipInFrame = true;
+      } catch (Throwable error) { finish(mc, error); }
+   }
+   @SubscribeEvent public static void afterRender(ScreenEvent.Render.Post event) {
+      if (tooltipInFrame && stage == Stage.TOOLTIPS && event.getScreen() == Minecraft.getInstance().screen) {
+         renderedTooltip = tooltipObservation.deepCopy(); tooltipFrames++;
+      }
+      tooltipInFrame = false;
+   }
+   private static void tooltipTick(Minecraft mc, FactoryPlacerV2ReferenceScreen screen, MachineMenu menu) throws Exception {
+      if (!atTooltipTarget(mc, screen)) { moveNativePointer(mc, screen); return; }
+      if (ticks < 12 || tooltipFrames < 3 || renderedTooltip == null || !menu.getCarried().isEmpty()) return;
+      var record = renderedTooltip.deepCopy();
+      record.addProperty("target", hoverIndex == 0 ? "HEADER" : hoverIndex == 1 ? "SLOT_0" : Control.values()[hoverIndex - 2].name());
+      record.addProperty("selected_language", mc.getLanguageManager().getSelected()); record.addProperty("pointer_x", pointerX); record.addProperty("pointer_y", pointerY);
+      record.addProperty("tooltip_render_events", tooltipFrames); record.addProperty("tooltip_event_class", "RenderTooltipEvent.Color+ScreenEvent.Render.Post");
+      record.addProperty("input_method", "physical XTest pointer through GLFW/Minecraft, native tooltip render event");
+      record.addProperty("text_source", "actual ClientTextTooltip FormattedCharSequence; newline separates rendered wrapped lines");
+      saveExtraFrame(mc, "tooltip-" + hoverIndex, record); TOOLTIPS.add(record);
+      if (++hoverIndex < 8) { ticks = 0; hoverTarget(mc, screen); return; }
+      pointerX = screen.width - 2; pointerY = screen.height - 2; moveNativePointer(mc, screen);
+      selectionIndex = 0; seedSelection(mc); enter(Stage.SELECTIONS);
+   }
+   private static void seedSelection(Minecraft mc) {
+      final int selected = selectionIndex;
+      final boolean seedOccupied = occupiedSelection && selected == 0;
+      pending = mc.getSingleplayerServer().submit(() -> {
+         if (seedOccupied) {
+            require(player(mc).containerMenu.getCarried().isEmpty(), "Occupied rendering seed cannot discard carried items");
+            for (int slot = 0; slot < 18; slot++) {
+               require(machine.getItem(slot).isEmpty(), "Occupied rendering seed requires empty machine slots");
+               machine.setItem(slot, new ItemStack(Items.STONE));
+            }
+         }
+         machine.dataAccessForTests().set(2, selected); player(mc).containerMenu.broadcastChanges();
+      });
+   }
+   private static JsonObject selectionInventory(MachineMenu menu) {
+      var record = new JsonObject(); var selected = menu.getSlot(selectionIndex).getItem();
+      record.addProperty("selected_item", net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(selected.getItem()).toString());
+      record.addProperty("selected_item_count", selected.getCount());
+      int total = 0; for (int slot = 0; slot < 18; slot++) total += menu.getSlot(slot).getItem().getCount();
+      record.addProperty("visible_item_total", total); return record;
+   }
+   private static void selectionTick(Minecraft mc, FactoryPlacerV2ReferenceScreen screen, MachineMenu menu) throws Exception {
+      if (!atTooltipTarget(mc, screen)) { moveNativePointer(mc, screen); ticks = 0; return; }
+      var view = screen.validationViewTransform();
+      require(view.localX(pointerX) >= FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH
+         || view.localY(pointerY) >= FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT, "Selection pointer must remain outside GUI");
+      for (int slot = 0; slot < 18; slot++) if (occupiedSelection ? !stone(menu.getSlot(slot).getItem(), 1) : !menu.getSlot(slot).getItem().isEmpty()) return;
+      if (ticks < 12 || menu.field(2) != selectionIndex || !serverMatches(mc, p -> {
+         if (machine.dataAccessForTests().get(2) != selectionIndex || !sentinelsIntact()) return false;
+         for (int slot = 0; slot < 18; slot++) if (occupiedSelection ? !stone(machine.getItem(slot), 1) : !machine.getItem(slot).isEmpty()) return false;
+         selectionServer = selectionInventory((MachineMenu)p.containerMenu);
+         return true;
+      })) return;
+      var record = selectionInventory(menu); require(record.equals(selectionServer), "Selection inventory client/server mismatch");
+      record.add("server_inventory", selectionServer.deepCopy()); record.addProperty("selected_slot", selectionIndex); record.addProperty("server_confirmed", true);
+      record.addProperty("occupied", occupiedSelection);
+      record.addProperty("pointer_x", mc.mouseHandler.xpos() * screen.width / mc.getWindow().getScreenWidth());
+      record.addProperty("pointer_y", mc.mouseHandler.ypos() * screen.height / mc.getWindow().getScreenHeight());
+      record.addProperty("pointer_outside_gui", true); record.addProperty("pointer_input_method", "physical XTest pointer through GLFW/Minecraft, parked outside canvas");
+      record.addProperty("state_source", "server-seeded selection render case; not a user selection gesture");
+      var v = screen.validationViewTransform(); double scale = mc.getWindow().getGuiScale();
+      var edges = new JsonObject(); var missing = new JsonArray();
+      var strips = FactoryPlacerV2ReferenceGeometry.selectionEdges(v, scale, selectionIndex);
+      String[] names = {"top", "right", "bottom", "left"};
+      try (var frame = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+         for (int edge = 0; edge < strips.size(); edge++) {
+            var r = strips.get(edge); double x0 = r.left(), y0 = r.top(), x1 = r.right(), y1 = r.bottom();
+            int expected = 0, matched = 0; var missingPixels = new JsonArray();
+            for (int y = (int)Math.ceil(y0 - .5); y < Math.ceil(y1 - .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {
+               expected++; int rgb = frame.getPixelRGBA(x, y) & 0xffffff;
+               int argb = com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceState.SELECTED_COLOR;
+               int abgr = ((argb & 255) << 16) | (argb & 0xff00) | ((argb >>> 16) & 255);
+               if (rgb == abgr) matched++; else { var pixel = new JsonArray(); pixel.add(x); pixel.add(y); missingPixels.add(pixel); }
+            }
+            var e = new JsonObject(); e.addProperty("expected_pixels", expected); e.addProperty("matched_pixels", matched); e.add("missing_pixels", missingPixels);
+            e.addProperty("x0", x0); e.addProperty("y0", y0); e.addProperty("x1", x1); e.addProperty("y1", y1); edges.add(names[edge], e);
+            if (expected == 0 || matched != expected) missing.add(names[edge]);
+         }
+         saveExtraFrame(mc, (occupiedSelection ? "selection-occupied-" : "selection-") + selectionIndex, record, frame);
+      }
+      record.add("edges", edges); record.add("missing_edges", missing); record.addProperty("full_outline_visible", missing.isEmpty());
+      record.addProperty("raster_criterion", "four half-open framebuffer edge strips; subpixel outline quantized outside 16x16 item footprint; zero-pixel edges fail");
+      record.addProperty("outline_quantized", v.scale() * scale < 1.0D);
+      (occupiedSelection ? OCCUPIED_SELECTIONS : SELECTIONS).add(record);
+      if (++selectionIndex < 18) { seedSelection(mc); enter(Stage.SELECTIONS); }
+      else if (!occupiedSelection) { occupiedSelection = true; selectionIndex = 0; seedSelection(mc); enter(Stage.SELECTIONS); }
+      else enter(Stage.DONE);
+   }
+   private static void saveExtraFrame(Minecraft mc, String label, JsonObject record) throws Exception {
+      try (var frame = Screenshot.takeScreenshot(mc.getMainRenderTarget())) { saveExtraFrame(mc, label, record, frame); }
+   }
+   private static void saveExtraFrame(Minecraft mc, String label, JsonObject record, NativeImage frame) throws Exception {
+      Path file = directory.resolve("factory-placer-v2-reference-screenshots").resolve(label + ".png"); require(!Files.exists(file), "Stale additional capture");
+      frame.writeToFile(file); addViewport(record, mc); record.addProperty("name", file.getFileName().toString()); record.addProperty("sha256", hash(file));
+      record.addProperty("width", frame.getWidth()); record.addProperty("height", frame.getHeight());
+      if (mc.screen instanceof FactoryPlacerV2ReferenceScreen screen) {
+         var v = screen.validationViewTransform(); record.addProperty("view_scale", v.scale());
+         record.addProperty("view_origin_x", v.originX()); record.addProperty("view_origin_y", v.originY());
+         record.addProperty("menu_id", screen.getMenu().containerId);
+      }
+   }
+
    private static void boot(Minecraft mc) throws Exception {
-      require(!Boolean.getBoolean("iedctr.clientGameplay") && Boolean.getBoolean("iedctr.dev.factoryPlacerV2Reference"), "Dedicated fixture only; V2 must be enabled");
+      require(!Boolean.getBoolean("iedctr.clientGameplay")
+         && System.getProperty(MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY) == null,
+         "Dedicated fixture only; ordinary V2 presentation must work with the historical dev property absent");
       nonce = System.getProperty("iedctr.clientGameplayNonce", "");
       require(nonce.matches("[a-f0-9]{32}") && System.getProperty("iedctr.executedSourceSha", "").matches("[a-f0-9]{40}"), "Missing nonce or exact revision");
       directory = mc.gameDirectory.toPath().toRealPath();
@@ -232,6 +535,7 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
          && Files.readString(directory.resolve(".iedctr-client-gameplay-nonce")).equals(nonce), "Isolation marker mismatch");
       require(mc.level == null && mc.getSingleplayerServer() == null && !Files.exists(directory.resolve("factory-placer-v2-reference-screenshots")), "Refusing existing world/captures");
       verifyViewport(mc);
+      packagedRuntime = PackagedRuntimeProof.verify(mc);
       if (Files.exists(directory.resolve("saves"))) try (var entries = Files.list(directory.resolve("saves"))) { require(entries.findAny().isEmpty(), "Existing saves forbidden"); }
       String name = "iedctr-factory-placer-v2-" + nonce;
       mc.options.pauseOnLostFocus = false; enter(Stage.WORLD);
@@ -268,7 +572,7 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
    }
    private static void clearVisible(ServerPlayer p) {
       p.getInventory().clearContent(); for (int i = 0; i < 18; i++) machine.setItem(i, ItemStack.EMPTY);
-      p.containerMenu.setCarried(ItemStack.EMPTY); require(sentinelsIntact(), "Hidden saved slots changed");
+      require(p.containerMenu.getCarried().isEmpty(), "Refusing to discard carried items"); require(sentinelsIntact(), "Hidden saved slots changed");
    }
    private static boolean stone(ItemStack stack, int count) { return stack.is(Items.STONE) && stack.getCount() == count; }
    private static int total(ServerPlayer p) {
@@ -389,17 +693,22 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
    }
    private static void finish(Minecraft mc, Throwable error) {
       complete = true;
+      if (display != null && shiftDown) nativeShift(false);
+      if (display != null) { x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display}); display = null; }
       try {
          if (directory != null) {
-            var p = new JsonObject(); p.addProperty("suite", SUITE); p.addProperty("status", error == null ? "passed_bounded_smoke" : "failed");
+            var p = new JsonObject(); p.addProperty("suite", SUITE); p.addProperty("qualification_suite", "native-factory-placer-delivery-v1"); p.addProperty("status", error == null ? "passed_bounded_smoke" : "failed");
+            p.add("packaged_runtime", packagedRuntime);
+            p.addProperty("v2_property_absent", System.getProperty(MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY) == null);
             p.addProperty("nonce", nonce); p.addProperty("executed_source_sha", System.getProperty("iedctr.executedSourceSha"));
             p.addProperty("selected_language", mc.getLanguageManager().getSelected()); p.addProperty("source_art_sha256", FactoryPlacerV2ReferenceGeometry.SOURCE_SHA256); addViewport(p, mc);
             p.addProperty("actual_integrated_world", mc.getSingleplayerServer() != null); p.addProperty("native_visual_acceptance", false);
             p.addProperty("menu_slot_count", 54); p.addProperty("machine_saved_slot_count", 27); p.addProperty("machine_visible_slot_count", 18);
-            p.addProperty("input_method", "Screen.mouseClicked/mouseReleased with vanilla packets and independent server observation; GLFW cursor parking only, not physical OS input");
+            p.addProperty("input_method", "Base routes: Screen.mouseClicked/mouseReleased with vanilla packets and independent server observation, not physical OS clicks. Additional cases disclose XTest modifier/hover separately.");
             p.addProperty("route_pickup_server_acks", pickupAcks); p.addProperty("route_return_server_acks", returnAcks); p.addProperty("manual_trigger_server_acks", manualAcks);
             p.addProperty("initial_item_total", initialTotal); p.addProperty("final_item_total", finalTotal);
             p.add("hidden_slot_sentinels_before", hiddenBefore); p.add("hidden_slot_sentinels_after", hiddenAfter);
+            p.add("advanced_gestures", ADVANCED); p.add("tooltip_captures", TOOLTIPS); p.add("selection_captures", SELECTIONS); p.add("occupied_selection_captures", OCCUPIED_SELECTIONS);
             p.add("slot_routes", ROUTES); p.add("control_routes", CONTROLS); p.add("captures", CAPTURES); p.add("cases", CASES); p.add("placement", placement); p.add("world_capture", worldCapture);
             if (error != null) p.addProperty("error", error.toString());
             Files.writeString(directory.resolve("client-factory-placer-v2-reference-result.json"), new GsonBuilder().setPrettyPrinting().create().toJson(p) + "\n");
