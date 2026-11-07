@@ -60,7 +60,13 @@ def validate_hover(c,geometry,width,height,expected):
     require(hitbox(x,y)==expected,'Cursor hover disagrees with capture')
     for key,value in dict(glfw_focused=True,glfw_visible=True,glfw_cursor_mode=212993,
             window_width=width,window_height=height).items():exact(native,key,value)
-    if expected:require(integer(native,'settled_hover_ticks',8)<6000,'Invalid hover settling')
+    require(integer(native,'settled_hover_ticks',8)<6000,'Invalid capture input settling')
+    target_x=left+(50 if expected else -40);target_y=top+45
+    exact(native,'target_gui_x_min',target_x)
+    exact(native,'target_gui_x_max_exclusive',target_x+2)
+    exact(native,'target_gui_y',target_y)
+    def target(px,py):return target_x<=px<target_x+2 and py==target_y
+    require(target(x,y),'Capture cursor is not at the explicit interior target')
     for prefix in ('glfw','minecraft'):
         coordinates=[]
         for axis,extent,gui_extent in (('x',width,geometry['gui_width']),('y',height,geometry['gui_height'])):
@@ -68,6 +74,7 @@ def validate_hover(c,geometry,width,height,expected):
             require(type(coordinate) in (int,float) and math.isfinite(coordinate) and 0<=coordinate<extent,'Invalid native cursor coordinate')
             coordinates.append(int(coordinate*gui_extent/extent))
         require(hitbox(*coordinates)==expected,'Native cursor does not match requested hover')
+        require(target(*coordinates),'Native cursor missed explicit interior target')
         if prefix=='minecraft':require(coordinates==[x,y],'Hover differs from actual Minecraft cursor')
 
 

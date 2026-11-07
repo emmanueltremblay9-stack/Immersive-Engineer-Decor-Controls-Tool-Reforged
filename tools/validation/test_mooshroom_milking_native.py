@@ -28,10 +28,10 @@ class MooshroomEvidenceTest(unittest.TestCase):
                 portrait_y=(g['presentation_gui_top']+34)*2,portrait_width=94,portrait_height=82,menu_id=entity,server_menu_id=entity,screen_class=SCREEN_CLASS,**geometry)
             s.update(server_selected_entity_id=entity,client_selected_entity_id=entity,server_selected_uuid=uid,client_selected_uuid=uid)
             if baby:s.update(baby_rejected=True,server_selected_entity_id=0,client_selected_entity_id=0,server_selected_uuid=None,client_selected_uuid=None)
-            hx=g['presentation_gui_left']+50 if hover else 638;hy=g['presentation_gui_top']+45 if hover else 358
+            hx=g['presentation_gui_left']+(50 if hover else -40);hy=g['presentation_gui_top']+45
             s.update(tooltip_hovered=hover,hover_x=hx,hover_y=hy,native_input=dict(glfw_focused=True,glfw_visible=True,
                 glfw_cursor_mode=212993,glfw_cursor_x=hx*2,glfw_cursor_y=hy*2,minecraft_cursor_x=hx*2,minecraft_cursor_y=hy*2,
-                window_width=1280,window_height=720,settled_hover_ticks=8 if hover else 0))
+                window_width=1280,window_height=720,settled_hover_ticks=8,target_gui_x_min=hx,target_gui_x_max_exclusive=hx+2,target_gui_y=hy))
             pixels=bytearray(bytes(range(256))*(1280*720*4//256));pixels[0]=i
             pixels[(s['portrait_y']*1280+s['portrait_x'])*4]=entity
             crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],94,82)
@@ -49,6 +49,20 @@ class MooshroomEvidenceTest(unittest.TestCase):
                 old=obj[k];obj[k]=v
                 with self.assertRaises(SmokeFailure):self.validate()
                 obj[k]=old
+    def test_reject_centered_nonhover_cursor(self):
+        c=self.p['captures'][0];c.update(hover_x=320,hover_y=180)
+        c['native_input'].update(glfw_cursor_x=640,glfw_cursor_y=360,minecraft_cursor_x=640,minecraft_cursor_y=360)
+        with self.assertRaises(SmokeFailure):self.validate()
+    def test_reject_previous_edge_target(self):
+        c=self.p['captures'][0];c.update(hover_x=638,hover_y=358)
+        c['native_input'].update(glfw_cursor_x=1276,glfw_cursor_y=716,minecraft_cursor_x=1276,minecraft_cursor_y=716,
+            target_gui_x_min=638,target_gui_x_max_exclusive=640,target_gui_y=358)
+        with self.assertRaises(SmokeFailure):self.validate()
+    def test_reject_unsettled_nonhover_input(self):
+        self.p['captures'][0]['native_input']['settled_hover_ticks']=7
+        with self.assertRaises(SmokeFailure):self.validate()
+    def test_reject_wrong_explicit_target(self):
+        self.reject_changes(self.p['captures'][0]['native_input'],dict(target_gui_x_min=320,target_gui_x_max_exclusive=322,target_gui_y=180))
     def test_synthetic_valid(self):self.validate()
     def test_reject_wrong_run(self):
         self.reject_changes(self.p,dict(nonce='c'*32,executed_source_sha='c'*40,tfc_version='4.2.11',native_tick_production=False,

@@ -233,8 +233,10 @@ public final class NativeMooshroomMilkingValidation {
       }
       // Alternate within the same hitbox so an earlier ignored warp is retried
       // as a real native movement rather than a no-op to an unchanged position.
-      double x=tooltip?screen.getGuiLeft()+50+(ticks%2):screen.width-2-(ticks%2);
-      double y=tooltip?screen.getGuiTop()+45:screen.height-2;
+      // Stay well inside the native client area: edge warps under Xvfb can
+      // move GLFW's cursor while leaving Minecraft's last delivered position stale.
+      double x=screen.getGuiLeft()+(tooltip?50:-40)+(ticks%2);
+      double y=screen.getGuiTop()+45;
       GLFW.glfwSetCursorPos(window,x*mc.getWindow().getScreenWidth()/screen.width,y*mc.getWindow().getScreenHeight()/screen.height);
    }
    private static boolean actualIdentityHover(Minecraft mc,MachineScreen screen){
@@ -249,7 +251,8 @@ public final class NativeMooshroomMilkingValidation {
       double y=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
       return GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE
          && GLFW.glfwGetInputMode(mc.getWindow().getWindow(),GLFW.GLFW_CURSOR)==GLFW.GLFW_CURSOR_NORMAL
-         && x>=screen.width-4 && x<screen.width && y>=screen.height-4 && y<screen.height;
+         && x>=screen.getGuiLeft()-40 && x<screen.getGuiLeft()-38
+         && y>=screen.getGuiTop()+45 && y<screen.getGuiTop()+46;
    }
    private static JsonObject inputDiagnostic(Minecraft mc){
       long window=mc.getWindow().getWindow();double[] x={0},y={0};GLFW.glfwGetCursorPos(window,x,y);
@@ -259,6 +262,11 @@ public final class NativeMooshroomMilkingValidation {
       o.addProperty("glfw_cursor_x",x[0]);o.addProperty("glfw_cursor_y",y[0]);
       o.addProperty("minecraft_cursor_x",mc.mouseHandler.xpos());o.addProperty("minecraft_cursor_y",mc.mouseHandler.ypos());
       o.addProperty("window_width",mc.getWindow().getScreenWidth());o.addProperty("window_height",mc.getWindow().getScreenHeight());
+      if(mc.screen instanceof MachineScreen screen){
+         o.addProperty("target_gui_x_min",screen.getGuiLeft()+(stage==Stage.TOOLTIP?50:-40));
+         o.addProperty("target_gui_x_max_exclusive",screen.getGuiLeft()+(stage==Stage.TOOLTIP?52:-38));
+         o.addProperty("target_gui_y",screen.getGuiTop()+45);
+      }
       o.addProperty("settled_hover_ticks",hoverTicks);return o;
    }
    private static void capture(Minecraft mc,MachineMenu menu,JsonObject state,String phase,boolean tooltip)throws Exception{
