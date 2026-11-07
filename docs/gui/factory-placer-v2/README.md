@@ -1,12 +1,14 @@
 # Factory Placer grey-steel V2 retained-reference presentation
 
-This is a default-OFF, client-only presentation of the existing Factory Placer. It does not replace the legacy screen by default and changes no machine gameplay, saved inventory, protocol, or server action.
+This is the normal client presentation of the existing Factory Placer. It changes no machine gameplay, saved inventory, protocol, or server action.
 
-## Enable and fall back
+## Normal client path
 
-Pass the JVM property `-Diedctr.dev.factoryPlacerV2Reference=true` to the development client. Only `MachineMenu.client` reads it, only for `FACTORY_PLACER`, and only on a client level. Public/server menu constructors always retain legacy coordinates. With the property absent or false, `ClientModEvents` registers the existing `MachineScreen.FactoryPlacerScreen` behavior. The choice is fixed when each menu opens; reopening applies a changed property.
+Opening a Factory Placer through the ordinary client menu selects the retained V2 screen and all 54 existing menu indices. No JVM property, resource-pack toggle or server setting is needed. Public/server menu constructors retain their original coordinates and behavior; only client presentation coordinates change.
 
-The dedicated native qualification profile and its instructions are documented separately by the native fixture. This property does not enable a release, add a config migration, or require any server setting.
+The former `iedctr.dev.factoryPlacerV2Reference` property no longer selects the GUI. Native qualification explicitly requires it to be absent, both in the full interaction matrix and in the separate default-logic 6/cursor 0 smoke. The harness itself is test-only and remains excluded from the normal JAR.
+
+This integration does not publish a release or migrate saved worlds. Exact-head qualification results must be reviewed separately before declaring the candidate ready.
 
 ## Exact retained source
 
@@ -58,9 +60,10 @@ Local Java 21 pure checks and syntax parsing can run without a Minecraft launch.
 
 The packaged qualification profile uses the normal production JAR with a separate
 test-only harness mod, rather than loading production classes from source output.
-It checks the unchanged flag-absent legacy path separately from opt-in V2. The
+It verifies the ordinary V2 path without a development property, including a
+separate default-logic profile alongside the full interaction matrix. The
 extended V2 suite covers advanced vanilla gestures, native EN/FR/fr_ca tooltips,
 and all 18 selection outlines in empty and occupied states. Its fail-closed verifier rejects invisible edges
 in a small viewport rather than counting absent raster coverage as success.
 These are validation requirements, not a statement that the newest commit passed.
-V2 remains development opt-in; merging tests does not activate or publish it.
+V2 is the ordinary client screen; no release is published by these tests.

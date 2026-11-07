@@ -419,7 +419,6 @@ def main() -> int:
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         if (System.getenv('IEDCTR_PACKAGED_PRESENTATION') == 'v2') {
             systemProperty 'iedctr.factoryPlacerV2ReferenceNative', 'true'
-            systemProperty 'iedctr.dev.factoryPlacerV2Reference', 'true'
         }
         systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_MOD_JAR')
         systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_MOD_JAR_SHA256')

@@ -525,7 +525,9 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
    }
 
    private static void boot(Minecraft mc) throws Exception {
-      require(!Boolean.getBoolean("iedctr.clientGameplay") && Boolean.getBoolean("iedctr.dev.factoryPlacerV2Reference"), "Dedicated fixture only; V2 must be enabled");
+      require(!Boolean.getBoolean("iedctr.clientGameplay")
+         && System.getProperty(MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY) == null,
+         "Dedicated fixture only; ordinary V2 presentation must work with the historical dev property absent");
       nonce = System.getProperty("iedctr.clientGameplayNonce", "");
       require(nonce.matches("[a-f0-9]{32}") && System.getProperty("iedctr.executedSourceSha", "").matches("[a-f0-9]{40}"), "Missing nonce or exact revision");
       directory = mc.gameDirectory.toPath().toRealPath();
@@ -697,6 +699,7 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
          if (directory != null) {
             var p = new JsonObject(); p.addProperty("suite", SUITE); p.addProperty("qualification_suite", "native-factory-placer-delivery-v1"); p.addProperty("status", error == null ? "passed_bounded_smoke" : "failed");
             p.add("packaged_runtime", packagedRuntime);
+            p.addProperty("v2_property_absent", System.getProperty(MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY) == null);
             p.addProperty("nonce", nonce); p.addProperty("executed_source_sha", System.getProperty("iedctr.executedSourceSha"));
             p.addProperty("selected_language", mc.getLanguageManager().getSelected()); p.addProperty("source_art_sha256", FactoryPlacerV2ReferenceGeometry.SOURCE_SHA256); addViewport(p, mc);
             p.addProperty("actual_integrated_world", mc.getSingleplayerServer() != null); p.addProperty("native_visual_acceptance", false);

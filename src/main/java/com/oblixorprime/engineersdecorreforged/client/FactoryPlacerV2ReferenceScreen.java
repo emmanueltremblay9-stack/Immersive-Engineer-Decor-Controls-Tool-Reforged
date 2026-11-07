@@ -11,7 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-/** Default-off retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */
+/** Normal Factory Placer client presentation using retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */
 public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.";
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
@@ -22,7 +22,7 @@ public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScree
 
    public FactoryPlacerV2ReferenceScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
-      if (!menu.factoryPlacerV2ReferencePresentation()) throw new IllegalArgumentException("Factory Placer V2 requires explicit client opt-in");
+      if (!menu.factoryPlacerV2ReferencePresentation()) throw new IllegalArgumentException("Factory Placer V2 requires the client-side Factory Placer presentation");
       imageWidth = FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH;
       imageHeight = FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT;
    }

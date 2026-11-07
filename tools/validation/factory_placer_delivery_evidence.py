@@ -255,6 +255,7 @@ def validate_delivery_proof(proof, nonce, source_sha, game, logs, exit_code, tim
                    width, height, language, gui_scale,
                    source_path=Path(project) / ('src/main/resources/' + ART_ENTRY))
     require(proof.get('qualification_suite') == QUALIFICATION_SUITE, 'Packaged delivery suite identity missing')
+    require(proof.get('v2_property_absent') is True, 'Full qualification must use normal V2 without the development property')
     validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)
     validate_gestures(proof)
     validate_tooltips(proof, game, project, width, height, language, gui_scale)
@@ -320,8 +321,9 @@ def validate_default_proof(proof, nonce, source_sha, game, logs, exit_code, time
             and proof.get('status') == 'passed_bounded_smoke' and 'error' not in proof,
             'Packaged default proof identity differs')
     expected = dict(v2_property_absent=True, actual_integrated_world=True, native_visual_acceptance=False,
-                    screen_class='com.oblixorprime.engineersdecorreforged.client.MachineScreen$FactoryPlacerScreen',
+                    screen_class='com.oblixorprime.engineersdecorreforged.client.FactoryPlacerV2ReferenceScreen',
                     menu_slot_count=54, machine_saved_slot_count=27, machine_visible_slot_count=18,
+                    client_v2_presentation=True, server_v2_presentation=False,
                     default_logic=6, default_selected_slot=0, pickup_server_acks=1, return_server_acks=1,
                     initial_item_total=1, final_item_total=1, world_drop_count=0,
                     width=width, height=height, selected_language=language)

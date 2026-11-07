@@ -5,6 +5,7 @@ import math
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import Mock, patch
 import zipfile
 
 import factory_placer_delivery_evidence as delivery
@@ -295,6 +296,46 @@ class PackagedIdentityTest(unittest.TestCase):
     def test_class_origin_matrix_must_be_complete(self):
         self.identity['class_origins'].pop()
         with self.assertRaises(SmokeFailure): self.validate()
+
+    def default_proof(self):
+        nonce='d'*32;sha='e'*40
+        data=png_rows(1280,720,[bytes((10,10,10,255))*1280]*720)
+        (self.root/'factory-placer-packaged-default.png').write_bytes(data)
+        proof=dict(suite='native-factory-placer-packaged-default-v1',nonce=nonce,executed_source_sha=sha,
+            status='passed_bounded_smoke',v2_property_absent=True,actual_integrated_world=True,native_visual_acceptance=False,
+            screen_class='com.oblixorprime.engineersdecorreforged.client.FactoryPlacerV2ReferenceScreen',
+            menu_slot_count=54,machine_saved_slot_count=27,machine_visible_slot_count=18,
+            client_v2_presentation=True,server_v2_presentation=False,default_logic=6,default_selected_slot=0,
+            pickup_server_acks=1,return_server_acks=1,initial_item_total=1,final_item_total=1,world_drop_count=0,
+            width=1280,height=720,selected_language='en_us',packaged_runtime=self.identity,
+            capture='factory-placer-packaged-default.png',capture_sha256=hashlib.sha256(data).hexdigest())
+        return proof
+
+    def validate_default(self,proof):
+        return delivery.validate_default_proof(proof,proof['nonce'],proof['executed_source_sha'],self.root,
+            'IEDCTR_FACTORY_PLACER_PACKAGED_DEFAULT PASSED nonce='+proof['nonce'],0,False,1280,720,'en_us',self.jar,self.classpath)
+
+    def test_default_v2_preserves_server_and_machine_defaults(self):
+        self.validate_default(self.default_proof())
+
+    def test_default_cannot_pass_legacy_screen_dev_property_or_changed_server_defaults(self):
+        for field,value in dict(screen_class='com.oblixorprime.engineersdecorreforged.client.MachineScreen$FactoryPlacerScreen',
+                                v2_property_absent=False,client_v2_presentation=False,server_v2_presentation=True,
+                                default_logic=0,default_selected_slot=1).items():
+            proof=self.default_proof();proof[field]=value
+            with self.subTest(field=field),self.assertRaises(SmokeFailure):self.validate_default(proof)
+
+    def test_full_matrix_also_requires_no_development_presentation_property(self):
+        # Isolate the entry-point gate; subordinate validators have their own tests.
+        with patch.multiple(delivery,validate_proof=Mock(),validate_packaged_runtime=Mock(),
+                            validate_gestures=Mock(),validate_tooltips=Mock(),validate_selections=Mock()):
+            for value in (None,False,1,True):
+                proof=dict(qualification_suite=delivery.QUALIFICATION_SUITE,v2_property_absent=value)
+                args=(proof,'n','s',self.root,'',0,False,1280,720,'en_us',1,self.root,self.jar,self.classpath)
+                if value is True:delivery.validate_delivery_proof(*args)
+                else:
+                    with self.subTest(value=value),self.assertRaisesRegex(SmokeFailure,'development property'):
+                        delivery.validate_delivery_proof(*args)
 
     def test_fixture_in_normal_jar_rejected_even_when_hash_matches(self):
         with zipfile.ZipFile(self.jar, 'a') as archive:

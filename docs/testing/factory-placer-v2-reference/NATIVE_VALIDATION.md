@@ -10,8 +10,9 @@ The fixture lives in `src/factoryPlacerNativeValidation/java`, outside `main`,
 in the distinct `com.oblixorprime.iedctrtest.factoryplacer` package. Only
 `-Pinclude_factory_placer_native_validation=true` configures its separate test mod.
 It is not included in the normal JAR, even when this source set is enabled.
-The presentation itself is independently default-off under
-`iedctr.dev.factoryPlacerV2Reference`.
+The presentation itself is the normal client GUI. Both the full matrix and the
+default-logic smoke require `iedctr.dev.factoryPlacerV2Reference` to be absent;
+only the separate test harness uses an enable flag.
 
 The Python runner refuses a dirty checkout, records the full executed commit,
 verifies the retained artwork's SHA-256, and checks the checkout again after the
@@ -33,10 +34,11 @@ python tools/validation/factory_placer_v2_reference_native.py \
 
 The dedicated workflow also covers French at 1280x260 scale1, English at
 1920x1080 scales1,2,3, and French/Canadian French at 1920x1080 scale3.
-An eighth profile runs `--presentation default` without the V2 property.
+An eighth profile runs `--presentation default` with unchanged backend defaults.
+All eight profiles omit the former V2 development presentation property.
 The framebuffer, selected language, requested GUI scale,
 actual GUI scale, scaled GUI dimensions and transformed public bounds must agree.
-The existing default-off build, JUnit tests and GameTests run separately first.
+The ordinary build, JUnit tests and GameTests run separately first.
 CI builds one normal JAR and supplies that same artifact to every profile using
 `--runtime-jar`. The dedicated `factoryPlacerPackagedClient` and
 `factoryPlacerPackagedDefaultClient` runs put this artifact on their runtime
@@ -146,14 +148,14 @@ it. This leaves item size and input geometry untouched. In a severely downscaled
 view the overlay can extend slightly beyond the former fractional cavity bounds.
 The source artwork is never rewritten to make room for it.
 
-The flag-absent packaged profile opens the legacy screen and preserves default
+The flag-absent packaged profile opens the V2 screen and preserves default
 logic 6 and cursor 0. With an obstructed target it verifies a server-confirmed
 pickup/return without drops, then retains a native frame. This proves the current
-default has not silently changed. It does not make V2 normally available.
+backend defaults have not changed while the new presentation is normally available.
 
 All new checks must succeed on the exact pushed commit before being reported as
-passed. No activation, merge, release, saved-world change or mechanical change is
-performed by these validation profiles.
+passed. The integration changes the normal client presentation only. No merge,
+release, user saved-world change or mechanical change is performed by these profiles.
 
 ## Native regression that motivated the pixel-safe outline
 

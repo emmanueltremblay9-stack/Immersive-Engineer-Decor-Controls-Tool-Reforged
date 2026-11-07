@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
-import com.oblixorprime.engineersdecorreforged.client.MachineScreen;
+import com.oblixorprime.engineersdecorreforged.client.FactoryPlacerV2ReferenceScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
@@ -64,7 +64,7 @@ public final class PackagedDefaultScreenValidation {
             if (deadline == 0) deadline = System.nanoTime() + 900_000_000_000L;
             require(System.nanoTime() < deadline && ++ticks < 1800, "Default packaged smoke timeout at " + stage);
             require(System.getProperty(MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY) == null,
-                "Default smoke requires the V2 opt-in property to be absent, not false");
+                "Ordinary-client smoke requires the historical V2 property to be absent, not false");
             require(!Boolean.getBoolean("iedctr.factoryPlacerV2ReferenceNative") && !Boolean.getBoolean("iedctr.clientGameplay"),
                 "Conflicting fixture enabled");
             if (stage == Stage.BOOT) {
@@ -80,12 +80,12 @@ public final class PackagedDefaultScreenValidation {
             require(mc.level != null && mc.player != null && mc.getSingleplayerServer() != null, "World disconnected");
             if (pending != null) { if (!pending.isDone()) return; pending.join(); pending = null; }
             if (mc.getOverlay() != null) return;
-            if (!(mc.screen instanceof MachineScreen.FactoryPlacerScreen)) {
+            if (!(mc.screen instanceof FactoryPlacerV2ReferenceScreen)) {
                 require(mc.screen == null, "Unexpected default screen: " + mc.screen.getClass().getName()); return;
             }
             require(mc.player.containerMenu instanceof MachineMenu, "Default menu type differs");
             var menu = (MachineMenu) mc.player.containerMenu;
-            require(!menu.factoryPlacerV2ReferencePresentation() && menu.slots.size() == 54 && menu.visibleMachineSlots() == 18,
+            require(menu.factoryPlacerV2ReferencePresentation() && menu.slots.size() == 54 && menu.visibleMachineSlots() == 18,
                 "Default menu projection changed");
             if (menu.containerId != menuId) return;
             if (stage == Stage.OPEN) {
@@ -146,7 +146,7 @@ public final class PackagedDefaultScreenValidation {
         menuId = p.containerMenu.containerId;
     }
     private static boolean defaults(ServerPlayer p) {
-        if (!(p.containerMenu instanceof MachineMenu menu) || menu.field(0) != 6 || menu.field(2) != 0) return false;
+        if (!(p.containerMenu instanceof MachineMenu menu) || menu.factoryPlacerV2ReferencePresentation() || menu.field(0) != 6 || menu.field(2) != 0) return false;
         for (int i = 1; i < 27; i++) if (!machine.getItem(i).isEmpty()) return false;
         return p.getInventory().isEmpty() && p.serverLevel().getBlockState(POS.south()).is(Blocks.BEDROCK)
             && p.serverLevel().getEntitiesOfClass(ItemEntity.class, new AABB(POS).inflate(12)).isEmpty();
@@ -174,6 +174,8 @@ public final class PackagedDefaultScreenValidation {
                 proof.addProperty("actual_integrated_world", mc.getSingleplayerServer() != null);
                 proof.addProperty("native_visual_acceptance", false);
                 proof.addProperty("screen_class", mc.screen == null ? "none" : mc.screen.getClass().getName());
+                proof.addProperty("client_v2_presentation", mc.player != null && mc.player.containerMenu instanceof MachineMenu menu && menu.factoryPlacerV2ReferencePresentation());
+                proof.addProperty("server_v2_presentation", false);
                 proof.addProperty("menu_slot_count", 54); proof.addProperty("machine_saved_slot_count", 27); proof.addProperty("machine_visible_slot_count", 18);
                 proof.addProperty("world_drop_count", 0);
                 proof.addProperty("default_logic", 6); proof.addProperty("default_selected_slot", 0);

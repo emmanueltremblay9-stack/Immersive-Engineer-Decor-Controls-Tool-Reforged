@@ -65,7 +65,7 @@ jobs:
         shell: bash
         run: |
           echo "Tested checkout: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
-          echo 'Native runs use the same normal JAR with a separate test harness. The ordinary GUI remains legacy; V2 is opt-in. No release or owner visual acceptance is claimed.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Native runs use the same normal JAR with a separate test harness. V2 is the normal client GUI; every profile runs without the former development presentation property. No release or owner visual acceptance is claimed.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Required native checklist: docs/testing/factory-placer-v2-reference/NATIVE_VALIDATION.md' >> "$GITHUB_STEP_SUMMARY"
       - name: Retain validation reports
         if: always()

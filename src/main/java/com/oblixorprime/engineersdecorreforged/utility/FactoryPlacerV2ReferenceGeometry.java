@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Dependency-free geometry for the opt-in retained-reference Factory Placer V2 experiment.
+ * Dependency-free geometry for the retained-reference Factory Placer V2 client presentation.
  * Source coordinates describe the unmodified 1199-by-1312 V2 reference, not the
  * legacy Placer texture. This class changes no inventory or machine semantics.
  */
@@ -174,7 +174,7 @@ public final class FactoryPlacerV2ReferenceGeometry {
    /**
     * Integer item origin plus its measured continuous source interior.
     * Hover bounds intersect vanilla's [x-1,x+17) by [y-1,y+17) envelope with
-    * that interior. This opt-in hitbox adjustment is separate from item drawing:
+    * that interior. This presentation hitbox adjustment is separate from item drawing:
     * conservative V2 interiors bound padding on all four player inventory rows.
     */
    public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {
