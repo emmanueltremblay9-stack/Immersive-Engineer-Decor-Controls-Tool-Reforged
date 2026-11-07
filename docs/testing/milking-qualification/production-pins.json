@@ -1,0 +1,51 @@
+{
+  "baseline_commit": "c114a0c0432d050eadf1eacb7d218c15b5b82148",
+  "purpose": "Current tooltip-only Milking display snapshot, retaining the pre-recovery baseline and qualified renderer history. Not native qualification evidence.",
+  "sha256": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "dc2797b6e33f503dd684d75101a50403a06691c30a2a254976a88b963c70ee78",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "8a28bbd3462b626e72817fe0d1b638fd4ef3a789d2c17d08271c13e90ba65199",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "18a7660b8fafd1bbd50e3c43228678609b56dd5bd54310fa91718ecc57a2d327",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "9ebb5d5a53d667e8e9af8a670162640af83e6f26dfc1acd743445f5f9380dd1f",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "7f9c20a8d272aae2477930bbddb3aa5e65d19ad03e47c2bacfb0c2c5884c4bdb",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MilkingRedesignLayout.java": "b28353f19cda7ed82cb1d3da469e5b7b33085f43a8ee62495b66eaf07e29832f",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": "9e421b78c77fce8278149841829dcddf98492b677c94a898c6fa713981814193",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": "d2d5e8783661fa7bb94978ee0427408dace96b5d473897afd5d790e4179edaff",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png": "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png": "0688ffa93b80ee59aa9ac35fa1316c885c6413f72b80a8af7a3c67284306eec4",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png": "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MilkingState.java": "68d1e633dfca42f49e95bf621e7fab68cc8166b7189b14ba676e72c282865e3c",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/compat/TfcMilkingAdapter.java": "5ab45385a0bc2f62b8f46c0dc93542ff718117f06d23742c2b51fc483a31c614",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/compat/TfcMilkingCompat.java": "21a763d5380c0e9dc1e77207374e2480cf3cec6cea58076b24020211a50e2657"
+  },
+  "baseline_sha256": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "dc2797b6e33f503dd684d75101a50403a06691c30a2a254976a88b963c70ee78",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "5e1e69aa8055f839ef7b56c12416b1007f532644c1adf5e91f4d6f6e52c71e02",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "c808d334266a9ca4bddcd89c32aa0a37190f4c3c29e518ce36d3016e2f3dc317",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "f7d9c420954f59c6944cdc409cc304b6bc83bceb58b9562c975065930e483509",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "ae734540bb4dd6747d4456ce440e85a94760a11beb38c0dfea566e7d92d58cb1",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "7f9c20a8d272aae2477930bbddb3aa5e65d19ad03e47c2bacfb0c2c5884c4bdb",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MilkingRedesignLayout.java": "b28353f19cda7ed82cb1d3da469e5b7b33085f43a8ee62495b66eaf07e29832f",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": "f3abc205e8e0d2f18f3855044737dace34333253abdb6945fee726c655cd9e3a",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": "698df847febbbc300f5c9f1d3f96d9e8a7d38466c8144a45dca73662589db868",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png": "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png": "0688ffa93b80ee59aa9ac35fa1316c885c6413f72b80a8af7a3c67284306eec4",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png": "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5"
+  },
+  "preserved_paths": [
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MilkingRedesignLayout.java",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png"
+  ],
+  "renderer_history": [
+    {
+      "commit": "750731efa1899230cea896e20d137d325bd34f21",
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java",
+      "sha256": "ef12e8e68a1412f98f38dd7311da5307f56b8a0e179bd0c23f35fa06ce6ba4d0",
+      "description": "Qualified recovery display before removal of permanent machine text."
+    }
+  ]
+}

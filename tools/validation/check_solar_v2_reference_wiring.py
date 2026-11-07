@@ -61,12 +61,23 @@ allowed_followup_paths = {
     'tools/validation/test_barrel_reference_native.py',
 }
 assert set(followup['files']) == allowed_followup_paths
+# The native Milking recovery request evolves only these two shared production
+# files from the Solar baseline. Their exact new snapshot is pinned separately;
+# no Solar/Barrel renderer, artwork, geometry or fluid/energy helper is exempted.
+milking = json.loads((r / 'docs/testing/milking-qualification/production-pins.json').read_text())
+milking_shared_paths = {
+    'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java',
+    'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java',
+}
 for path, expected in preserved['files'].items():
     if path in allowed_followup_paths:
         change = followup['files'][path]
         assert set(change) == {'before_sha256', 'after_sha256'}
         assert change['before_sha256'] == expected and change['after_sha256'] != expected, path
         expected = change['after_sha256']
+    if path in milking_shared_paths:
+        assert milking['baseline_sha256'][path] == expected, path
+        expected = milking['sha256'][path]
     assert hashlib.sha256((r / path).read_bytes()).hexdigest() == expected, path
 print('PASS: independent default-OFF gates, Solar routing and legacy preservation; exact authorized Barrel reload/bounds follow-up')
 

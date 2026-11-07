@@ -31,8 +31,8 @@ final class RedesignedMachineArtwork {
       // milk at every level. Keep its source file intact, but do not render it until
       // a corrected transparent layer is available. The background already frames
       // the tank and the milk stays clipped inside that existing frame.
-      // FE, extraction cycle and selected animal are not synchronized for Milking.
-      // Leave those areas neutral. Do not claim a detected animal or paint fake energy.
+      // FE and extraction animation remain neutral. Native animal recovery is
+      // presented separately by MachineScreen, never as fabricated extraction progress.
    }
 
    static void breaker(GuiGraphics graphics, MachineMenu menu, int x, int y) {

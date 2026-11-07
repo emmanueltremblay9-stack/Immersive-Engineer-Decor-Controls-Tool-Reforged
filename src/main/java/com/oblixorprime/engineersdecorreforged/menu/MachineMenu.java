@@ -11,6 +11,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
+import com.oblixorprime.engineersdecorreforged.utility.MilkingState;
 import java.util.Locale;
 import java.util.function.IntFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -105,6 +106,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private final int visibleMachineSlots;
    private final Container container;
    private final ContainerData data;
+   private final ContainerData milkingData;
    private final boolean smelterV05Projection;
    private final ContainerLevelAccess menuAccess;
    private final Block expectedMenuBlock;
@@ -206,6 +208,16 @@ public class MachineMenu extends AbstractContainerMenu {
       }
 
       this.addDataSlots(data);
+      this.milkingData = kind == MachineKind.SMALL_MILKING_MACHINE
+         && container instanceof MachineBlockEntity machine && machine.getLevel() != null
+         && !machine.getLevel().isClientSide
+            ? machine.milkingDataAccessForTests() : new SimpleContainerData(MilkingState.FIELD_COUNT);
+      if (kind == MachineKind.SMALL_MILKING_MACHINE) this.addDataSlots(this.milkingData);
+   }
+
+   public MilkingState milkingState() {
+      return this.kind == MachineKind.SMALL_MILKING_MACHINE
+         ? MilkingState.decode(this.milkingData::get) : MilkingState.empty();
    }
 
    private static MenuType<?> resolveMenuType(MachineKind kind) {
