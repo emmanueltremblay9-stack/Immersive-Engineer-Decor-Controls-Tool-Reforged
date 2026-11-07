@@ -16,8 +16,13 @@ SHA='b'*40
 def valid():
     p=dict(suite=SUITE,nonce=NONCE,executed_source_sha=SHA,status='passed_bounded_native',
            actual_integrated_world=True,input_backend='XTEST',cleanup_released=True,selected_language='en_us',
-           hovers=[],gestures=[],process_seeds=[])
+           hovers=[],gestures=[],process_seeds=[],slot_contracts=[])
     for i,machine in enumerate(['funnel','accumulator']):
+        p['slot_contracts'].append(dict(machine=machine,menu_id=i+1,
+            server_menu_class='com.oblixorprime.engineersdecorreforged.menu.MachineMenu',
+            server_accepts_empty_bucket=True,server_rejects_water_bucket=True,backing_accepts_empty_bucket=True,
+            backing_rejects_water_bucket=True,server_output_rejects_insertion=True,
+            client_accepts_empty_bucket=True,client_output_rejects_insertion=True))
         seed=dict(state=[0,0,1,0,0,0,1000],total=1,menu_id=i+1)
         p['process_seeds'].append(dict(client=seed,server=copy.deepcopy(seed)))
         def row(name,x,y):
@@ -43,6 +48,16 @@ class ProofTests(unittest.TestCase):
     def test_complete_proof(self): self.check(valid())
     def test_reject_mutations(self):
         mutations=[
+            lambda p:p.pop('slot_contracts'),lambda p:p['slot_contracts'].pop(),
+            lambda p:p['slot_contracts'][0].update(menu_id=999),
+            lambda p:p['slot_contracts'][0].update(machine='accumulator'),
+            lambda p:p['slot_contracts'][0].update(server_menu_class='SimpleContainer'),
+            *[lambda p,key=key:p['slot_contracts'][0].pop(key) for key in
+              ('server_accepts_empty_bucket','server_rejects_water_bucket','backing_accepts_empty_bucket',
+               'backing_rejects_water_bucket','server_output_rejects_insertion','client_accepts_empty_bucket','client_output_rejects_insertion')],
+            *[lambda p,key=key:p['slot_contracts'][0].update({key:False}) for key in
+              ('server_accepts_empty_bucket','server_rejects_water_bucket','backing_accepts_empty_bucket',
+               'backing_rejects_water_bucket','server_output_rejects_insertion','client_accepts_empty_bucket','client_output_rejects_insertion')],
             lambda p:p.update(status='passed'),lambda p:p.update(executed_source_sha='d'*40),
             lambda p:p.update(nonce='e'*32),lambda p:p.update(input_backend='GLFW_WARP'),
             lambda p:p.update(cleanup_released=False),lambda p:p.update(actual_integrated_world=False),
@@ -80,6 +95,16 @@ class ProofTests(unittest.TestCase):
             self.assertEqual(subprocess.run(command,env=env,capture_output=True).returncode,0)
             self.assertEqual((Path(directory)/'.iedctr-fluid-xvfb').read_text(),NONCE+'\n:171')
             self.assertNotEqual(subprocess.run(command,env=env,capture_output=True).returncode,0)
+
+    def test_failed_proof_reports_sanitized_fixture_error(self):
+        p=valid();p.update(status='failed',error='Input contract changed\n\x00'+('x'*2000))
+        for code in (0,1):
+            with self.subTest(code=code), self.assertRaises(SmokeFailure) as failure:
+                validate_proof(p,NONCE,SHA,Path('/unused'),'BUILD FAILED' if code else '',code,False,1280,720,'en_us')
+            message=str(failure.exception)
+            self.assertIn('Input contract changed',message)
+            self.assertNotIn('\n',message);self.assertNotIn('\x00',message)
+            self.assertLess(len(message),1100)
 
     def test_run_and_png_boundaries(self):
         def chunk(kind,data):

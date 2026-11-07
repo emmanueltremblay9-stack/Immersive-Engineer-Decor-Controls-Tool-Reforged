@@ -49,9 +49,17 @@ def validate_evidence(proof, nonce, source_sha, width, height, language):
     for seed in seeds:
         require(type(seed) is dict and type(seed.get('client')) is dict and strict_equal(seed.get('client'),seed.get('server'))
                 and strict_equal(seed['client'].get('state'),[0,0,1,0,0,0,1000]) and type(seed['client'].get('total')) is int and seed['client']['total'] == 1, 'Unproven water seed')
+    contracts = proof.get('slot_contracts')
+    require(type(contracts) is list and len(contracts) == 2, 'Missing authoritative slot contracts')
     names = set()
     menu_ids = set()
     for i, machine in enumerate(['funnel','accumulator']):
+        contract = contracts[i]
+        require(type(contract) is dict and contract.get('machine') == machine
+                and contract.get('server_menu_class') == 'com.oblixorprime.engineersdecorreforged.menu.MachineMenu', 'Wrong authoritative contract identity')
+        for key in ('server_accepts_empty_bucket','server_rejects_water_bucket','backing_accepts_empty_bucket',
+                    'backing_rejects_water_bucket','server_output_rejects_insertion','client_accepts_empty_bucket','client_output_rejects_insertion'):
+            require(contract.get(key) is True, 'Unproven slot contract: '+key)
         menu_id = None
         for j, row in enumerate(g[i*9:i*9+9]):
             require(type(row) is dict and row.get('action') == ACTIONS[j] and row.get('machine') == machine, 'Wrong gesture order')
@@ -78,6 +86,7 @@ def validate_evidence(proof, nonce, source_sha, width, height, language):
             elif slot < 29: x,y = [44,63,82,101,120,139,158,177,196][(slot-2)%9], [138,156,175][(slot-2)//9]
             else: x,y = [44,63,82,101,120,139,158,177,196][slot-29],206
             require((row.get('target_x'),row.get('target_y')) == ((width-256)//2+x+8,(height-256)//2+y+8), 'Wrong gesture coordinates')
+        require(type(contract.get('menu_id')) is int and contract['menu_id'] == menu_id, 'Cross-menu slot contract')
         require(menu_id not in menu_ids, 'Machine menu identities were reused')
         menu_ids.add(menu_id)
         for j, row in enumerate(h[i*6:i*6+6]):
@@ -107,7 +116,11 @@ def validate_evidence(proof, nonce, source_sha, width, height, language):
 
 
 def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width,height,language):
-    require(not timed_out and type(exit_code) is int and exit_code == 0 and not FATAL_PATTERN.search(logs), 'Client failed or timed out')
+    error = proof.get('error') if isinstance(proof, dict) and proof.get('status') == 'failed' else None
+    sanitized = ' '.join(''.join(c if c.isprintable() else ' ' for c in error).split())[:1000] if isinstance(error, str) else ''
+    detail = '; reported fixture failure: '+sanitized if sanitized else ''
+    require(not timed_out and type(exit_code) is int and exit_code == 0 and not FATAL_PATTERN.search(logs), 'Client failed or timed out'+detail)
+    require(isinstance(proof, dict) and proof.get('status') == 'passed_bounded_native', 'Native fixture did not pass'+detail)
     require(not list(game.glob('crash-reports/*')) and not list(game.parent.rglob('hs_err_pid*.log')), 'Crash report present')
     validate_evidence(proof,nonce,source_sha,width,height,language)
     folder = game/'fluid-gesture-screenshots'

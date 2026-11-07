@@ -25,6 +25,13 @@ Artifacts are retained under `build/fluid-gestures-native-*/`, including failure
 
 ## Evidence contract
 
+The input filter is checked on the authoritative server `MachineMenu` and its
+`MachineBlockEntity` backing inventory: empty buckets accepted, water buckets
+rejected. The client menu has a provisional `SimpleContainer`, so it is checked
+only for valid empty-bucket insertion and noninsertable output. Per-machine slot
+contract evidence is bound to the same menu ID as its gestures. This qualification
+does not change the client projection or production server filtering.
+
 For **each** machine, require header, tank, empty input/output roles, structural
 outlet/cap and occupied input tooltip observations. Actual `mc.mouseHandler`
 coordinates must match the independently validated GUI target, with a tooltip

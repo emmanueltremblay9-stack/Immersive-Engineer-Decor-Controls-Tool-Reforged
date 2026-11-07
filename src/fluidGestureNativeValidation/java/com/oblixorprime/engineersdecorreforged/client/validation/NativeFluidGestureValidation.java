@@ -70,7 +70,7 @@ public final class NativeFluidGestureValidation {
    private static CompletableFuture<?> pending;
    private static CompletableFuture<JsonObject> inspection;
    private static JsonObject serverSnapshot;
-   private static final JsonArray HOVERS = new JsonArray(), GESTURES = new JsonArray(), SEEDS = new JsonArray();
+   private static final JsonArray HOVERS = new JsonArray(), GESTURES = new JsonArray(), SEEDS = new JsonArray(), CONTRACTS = new JsonArray();
    private static NativeLibrary x11, xtest;
    private static Pointer display;
    private static boolean isolated, complete, pressed, shifted, observedPress, observedShift, tooltipInFrame;
@@ -108,7 +108,13 @@ public final class NativeFluidGestureValidation {
             case SETUP -> {
                if(ticks<15 || !agrees(mc,menu,new int[]{0,0,1,0,0,0,0})) return;
                require(menu.visibleMachineSlots()==2 && menu.slots.size()==38,"Wrong slot projection");
-               require(menu.getSlot(0).mayPlace(new ItemStack(Items.BUCKET)) && !menu.getSlot(0).mayPlace(new ItemStack(Items.WATER_BUCKET)),"Input contract changed");
+               boolean clientAcceptsEmpty=menu.getSlot(0).mayPlace(new ItemStack(Items.BUCKET));
+               boolean clientOutputRejects=!menu.getSlot(1).mayPlace(new ItemStack(Items.BUCKET));
+               require(clientAcceptsEmpty && clientOutputRejects,"Client slot projection changed");
+               var contract=CONTRACTS.get(machineIndex).getAsJsonObject();
+               require(contract.get("menu_id").getAsInt()==menu.containerId,"Contract menu context changed");
+               contract.addProperty("client_accepts_empty_bucket",clientAcceptsEmpty);
+               contract.addProperty("client_output_rejects_insertion",clientOutputRejects);
                hoverIndex=0; hoverTarget(screen,menu); enter(Stage.HOVER);
             }
             case HOVER -> {
@@ -196,6 +202,23 @@ public final class NativeFluidGestureValidation {
          machine=(MachineBlockEntity)level.getBlockEntity(POS);machine.clearContent();
          machine.fluidHandler(Direction.UP).drain(Integer.MAX_VALUE,FluidAction.EXECUTE);
          p.getInventory().clearContent();p.getInventory().setItem(9,new ItemStack(Items.BUCKET));p.openMenu(machine);menuId=p.containerMenu.containerId;
+         require(p.containerMenu instanceof MachineMenu,"Missing authoritative machine menu");
+         var serverMenu=(MachineMenu)p.containerMenu;
+         boolean serverAcceptsEmpty=serverMenu.getSlot(0).mayPlace(new ItemStack(Items.BUCKET));
+         boolean serverRejectsFilled=!serverMenu.getSlot(0).mayPlace(new ItemStack(Items.WATER_BUCKET));
+         boolean backingAcceptsEmpty=machine.canPlaceItem(serverMenu.getSlot(0).getSlotIndex(),new ItemStack(Items.BUCKET));
+         boolean backingRejectsFilled=!machine.canPlaceItem(serverMenu.getSlot(0).getSlotIndex(),new ItemStack(Items.WATER_BUCKET));
+         boolean serverOutputRejects=!serverMenu.getSlot(1).mayPlace(new ItemStack(Items.BUCKET));
+         require(serverAcceptsEmpty && serverRejectsFilled && backingAcceptsEmpty && backingRejectsFilled && serverOutputRejects,
+            "Authoritative input/output contract changed");
+         var contract=new JsonObject();contract.addProperty("machine",machineIndex==0?"funnel":"accumulator");
+         contract.addProperty("menu_id",serverMenu.containerId);
+         contract.addProperty("server_menu_class",serverMenu.getClass().getName());
+         contract.addProperty("server_accepts_empty_bucket",serverAcceptsEmpty);
+         contract.addProperty("server_rejects_water_bucket",serverRejectsFilled);
+         contract.addProperty("backing_accepts_empty_bucket",backingAcceptsEmpty);
+         contract.addProperty("backing_rejects_water_bucket",backingRejectsFilled);
+         contract.addProperty("server_output_rejects_insertion",serverOutputRejects);CONTRACTS.add(contract);
       });enter(Stage.SETUP);
    }
    private static void hoverTarget(MachineScreen screen,MachineMenu menu) {
@@ -267,7 +290,7 @@ public final class NativeFluidGestureValidation {
       try {if(display!=null){try{button(false);}finally{try{key(false);}finally{x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}}}
          if(directory!=null){var proof=new JsonObject();proof.addProperty("suite",SUITE);proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha",""));
             proof.addProperty("status",error==null?"passed_bounded_native":"failed");proof.addProperty("input_backend","XTEST");proof.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null && mc.player!=null && mc.player.connection.getConnection().isMemoryConnection());
-            proof.addProperty("selected_language",mc.getLanguageManager().getSelected());proof.addProperty("cleanup_released",!pressed&&!shifted);proof.add("hovers",HOVERS);proof.add("gestures",GESTURES);proof.add("process_seeds",SEEDS);
+            proof.addProperty("selected_language",mc.getLanguageManager().getSelected());proof.addProperty("cleanup_released",!pressed&&!shifted);proof.add("hovers",HOVERS);proof.add("gestures",GESTURES);proof.add("process_seeds",SEEDS);proof.add("slot_contracts",CONTRACTS);
             if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("client-fluid-gestures-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof));}
          if(error==null)System.out.println("IEDCTR_FLUID_GESTURES PASSED nonce="+nonce);else error.printStackTrace();
       }catch(Throwable failure){failure.printStackTrace();}finally{mc.stop();}
