@@ -1,58 +1,81 @@
-# Text-free Funnel and Accumulator
+# Retained Funnel and Accumulator V1 integration
 
-This follow-up is stacked on PR170 head
-`90b9b5d800bdc90695d169b0da00763323d0f6f5`, tree
-`37e5cd7aabf5c22e07d41224cef04345267460b8`.
+## Critical review and correction
 
-## Presentation scope
+The first text-only pass cleaned the legacy gray panels, but it did not integrate
+the orange/metal V1 concepts retained in [GUI DEV PR5](https://github.com/emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-DEV/pull/5).
+Green tests of that old canvas did not establish visual fidelity to the newer
+references. The largest defects were the wrong artwork and proportions, the
+legacy mask patches, a baked blue stream despite an empty Funnel, and static
+rain/water artwork on Accumulator. Both retained originals are already text-free
+and state-neutral, so those repairs and false-state cues are now absent.
 
-The Small Fluid Funnel and Passive Fluid Accumulator no longer draw permanent
-titles, bucket captions, fluid names/amounts or inventory captions. Their source
-PNGs are unchanged. Existing texture patches continue to cover baked examples;
-the Funnel's four bucket/outlet/inventory patches now apply in French as well.
-Accumulator mask calculations and source samples remain unchanged.
+The originals are copied byte-for-byte from source commit
+`0c166b34fb19cdf4a54373ff5e9c4770a854be12`, directory
+`candidates/iedctr/retained-concepts/2026-11-04/`:
 
-Names are available on nameplate hover. Funnel fluid identity and exact tank
-amount/capacity remain on tank hover, also available over the former readout.
-The lower outlet now has a hover label. Accumulator collection instructions are
-available over the visible rain-cloud icon and former collection caption; its
-water amount/capacity also remain accessible over the tank and former readout.
-Existing empty-slot role tooltips and ordinary occupied-item tooltips remain.
+- `small-fluid-funnel-v1.png`: SHA-256 `c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64`.
+- `passive-fluid-accumulator-v1.png`: SHA-256 `da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872`.
 
-No slot/layout, menu, network, gauge calculation, fluid collection, bucket transfer
-or machine-mechanic change is included. Static decorative fluid streams/rain are
-still artwork, not newly qualified operational indicators. Other GUI branches
-retain their separate changes and qualification.
+They are flattened concepts, not a new layered kit. No image pixels were edited.
+Historical source files and their provenance remain in the repository.
 
-## Offline regression checks
+## Runtime mapping
+
+Both whole 1254-square originals map to a 256-square GUI without aspect distortion.
+The separately fitted inventory columns are `[44,63,82,101,120,139,158,177,196]`,
+rows `[138,156,175]`, and hotbar row `206`. Every real item stays 16-square.
+The two large machine frames contain ordinary 16-square slots: Funnel `(40,70)`
+and `(200,70)`, Accumulator `(40,100)` and `(200,100)`. Their full decorative
+faces are not new click targets. Container indices, input/output roles,
+27+9 inventory and all menu/backend behavior remain unchanged.
+
+The exact renderer paints only synchronized stored-fluid height, bottom-up and
+clamped to the existing capacity, inside bevel-clipped glass. Translucency keeps
+the original reflections visible. Water/lava/milk/generic Funnel codes retain
+their existing meaning; generic fluid is not mislabelled as water. Accumulator
+continues to contain only its existing water. There is no simulated incoming
+stream, rain, activity, energy or production animation. Orange pipes and hotbar
+end lights remain decoration, not operating-state indicators.
+
+Identity is available on the header plate, storage on the visible glass,
+Accumulator collection instructions on the top cap, and Funnel outlet
+information on the lower outlet. Empty-slot role tooltips and occupied-item
+hover remain unchanged. No permanent title or amount is drawn.
+
+## Offline verification
 
 Run `python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_*.py' -v`.
-The new fixture compiles the exact production renderer and tooltip methods with
-recording Minecraft-facing doubles and the actual accumulator gauge helper.
-It checks both artwork-locale branches, empty/half/full/overflow amounts including
-the Accumulator's actual 4000 mB capacity, all five
-Funnel fluid codes, three screen origins, every integer point of the previous
-modeled tank hover areas, and every modeled padded machine-slot point.
-Negative controls restore permanent text, omit a French caption patch, or remove
-the outlet hover; each must fail. Both original PNG hashes and required EN/FR
-translation keys are checked. Existing Block Breaker regression tests remain.
+All 157 tests pass. The eight fluid tests compile the exact renderer and screen
+hover/label methods with recording doubles plus the actual pure geometry helper.
+They cover empty/half/full/overflow/negative values, invalid capacity, all five
+Funnel fluid codes, three origins, exact blit/source geometry, glass clipping,
+transparent fill, and machine-slot tooltip separation. Negative controls restore
+text, remove outlet hover, make water opaque or shift an item into a metal rim;
+each is rejected.
 
-Local checks passed: all 155 Python validation tests, syntax parsing of 312 Java
-sources, and `git diff --check`. The two gauge blocks, accumulator mask helper and
-slot-tooltip method were also compared byte-for-byte with the parent source and
-are unchanged. These local results do not replace mapped compilation.
+The Java fixture decodes both original PNGs and examines every source pixel under
+all 38 mapped item rectangles per GUI, including hotbar and machine slots. Those
+footprints must remain opaque dark interiors rather than metal. Original hashes
+and EN/FR tooltip keys are checked. Geometry/layout JUnit tests additionally
+cover all slot positions, no overlap, invalid indices, bounded fill, and roles.
 
-The doubles do not decode textures, resolve Minecraft fonts or establish native
-input behavior. Patch coverage and slot restoration are recorded calls, not GPU
-pixel proof. The one-pixel hover padding is explicitly a model.
+Syntax parsing passes for 315 Java sources, and diff checks pass. This is not
+mapped compilation. The local workspace lacks Gradle's distribution and cannot
+download it; mapped compilation, JUnit and native evidence must come from CI.
 
-## Native qualification gate
+## Native qualification and remaining criticism
 
-Fresh mapped compilation, JUnit, GameTests, and native English 1280x720/French
-1280x260 screenshots are required from the existing PR workflows. Check that all
-captions are gone while the live tank states, slot alignment and artwork remain.
-Prior screenshots with text do not qualify this source. New nameplate, outlet,
-cloud and readout hover targets are not captured by the existing native fixture.
-Physical pointer input, custom packs, reload, complex gestures, full reporter
-modpack gameplay and owner visual acceptance remain outside this bounded check.
-No merge or release.
+Fresh exact-commit Minecraft EN 1280x720 and FR 1280x260 captures are required;
+legacy-gray captures do not qualify this integration. Check empty/partial/full
+levels, all slot alignments, frame/glass preservation and small-window fit. The
+256-square canvas fits the existing 260-pixel-high stress window at GUI scale 1;
+smaller logical viewports remain a limitation, not a new adaptive-scaling claim.
+
+The retained concepts are visually busy and the machine-slot frames are larger
+than the item hitboxes. Keep those tradeoffs visible during review rather than
+inventing enlarged controls. New title/cap/outlet/tank targets are tested in
+isolation; the existing native fixture does not establish all those pointer
+paths. Physical pointer/drag/shift-click interactions, other fluid types in the
+new glass, resource packs/reload, full reporter-modpack play and owner visual
+acceptance remain unqualified until specifically exercised. No merge or release.

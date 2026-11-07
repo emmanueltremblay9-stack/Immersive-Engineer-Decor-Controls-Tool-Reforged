@@ -1,5 +1,7 @@
 # Small Fluid Funnel GUI reference and integration proof
 
+Historical legacy-art provenance. The active renderer now uses the retained orange V1 concept; see [current integration and qualification](../../testing/fluid-gui-text-free.md).
+
 ## Source and Toolkit reproduction
 
 - Owner-supplied canonical PNG: small fluid funnel.png, 941×1672 RGBA, SHA-256 6ec267533396619f4c64657354a5597659a3a83259686d86e76c5247f0c3c08f.
