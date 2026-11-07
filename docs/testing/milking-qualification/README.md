@@ -1,14 +1,46 @@
-# Existing Small Milking Machine qualification
+# Small Milking Machine recovery and qualification
 
-This is a **test-only cloud qualification candidate, execution pending**, not a new GUI integration.
-The existing `MachineScreen.SmallMilkingMachineScreen`, menu, entity, layout,
-active artwork renderer, English/French strings, and current three source textures
-remain byte-for-byte unchanged. `production-pins.json` records their baseline SHA-256
-values. The active background is `milking_redesign_v1/background.png`
+PR169 now continues the user's request for individual cow recovery. This is no
+longer a test-only patch. The screen/menu/animal adapter and server projection
+intentionally evolve; the original qualification remains a regression suite.
+`production-pins.json` retains baseline hashes and pins the current production
+snapshot separately. Layout, slot geometry, client registration and all three
+source textures remain byte-for-byte unchanged. The active background is `milking_redesign_v1/background.png`
 (`871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b`),
 with milk layer `f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5`.
 The supplied glass stays disabled. There is no assembled Milking reference PNG in
 this qualification. Older Industrial Milk Tank art/toolkit is not an input.
+
+## Native recovery contract
+
+- TFC 4.2.12 selects a real server animal: ready cows first, otherwise the next
+  eligible cow to recover, otherwise a temporarily refused or ineligible cow.
+  Ties use entity IDs. UUID, entity ID, readiness, `getProductsCooldown()` and
+  current configured production duration are projected read-only. No machine
+  save copies or decrements the animal's cooldown.
+- Native readiness is checked every server tick. A ready TFC cow can produce
+  immediately, including on the exact expiry boundary outside the old 120-tick
+  phase. Rejected transactions have a separate per-animal 120-tick retry throttle.
+  Native recovery/departure clears that animal's refusal. A different ready cow
+  does not inherit it. This cache retains at most 64 rejections, evicting the
+  oldest if necessary; at most one native attempt occurs per machine tick.
+- The attempted UUID is revalidated through existing protection/product hooks
+  and complete-storage commit. Cooldown/wear update only after accepted storage.
+  The post-event projection rereads that same cow.
+- Existing vanilla-first priority and its 120-tick production check remain.
+  Vanilla Java cows have no native recovery: no fictitious duration is added.
+  Other mods' modifications to vanilla `Cow` remain outside this pinned TFC API.
+- The menu appends 18 words after its unchanged 16 common fields. Unsigned-short
+  reconstruction preserves UUIDs, full IDs, long native remaining time and
+  durations above 32767. Clients never choose a nearby animal or interpolate time.
+- Portrait/name rendering requires both entity ID and UUID. An unavailable
+  client entity keeps a short UUID label instead of another cow. Recovery tooltips
+  use TFC calendar ticks, not seconds. Redstone, storage and retry waits remain
+  separate. FE, cream and extraction animations are not invented.
+
+TFC/Crossover GameTests qualify the backend separately. The five GUI profiles
+below contain no cows, so they qualify slots/tank/no-animal presentation, not
+a TFC portrait or recovery tooltip in a rendered client.
 
 ## Implemented scope
 
@@ -16,8 +48,8 @@ this qualification. Older Industrial Milk Tank art/toolkit is not an input.
   nonce-owned, integrated flat world. It refuses existing saves, wrong source or
   nonce, concurrent legacy/Barrel harnesses, wrong locale, and wrong viewport.
   Pre-isolation refusal only logs and disables this fixture; it cannot write a
-  result or stop an existing client. No ordinary gameplay activation or production
-  menu/screen behavior is changed.
+  result or stop an existing client. The fixture has no ordinary gameplay
+  activation; the recovery implementation separately changes production behavior.
 - All 38 production menu slot coordinates and backing inventory indices are checked.
   Every source slot is exercised through `Screen.mouseClicked/mouseReleased` and
   vanilla client packets, followed by independent integrated-server observations.
@@ -150,8 +182,8 @@ are inspected.
 
 Resource reload, close/reopen, shift-click, complex gestures, physical OS input,
 full JEI actions, and full visual acceptance are deferred. They are named in the
-proof, not silently represented by the route/capture cases. No synchronized animal
-name/selection, FE, extraction cycle, or cream state exists here; this fixture
-neither adds nor invents those gameplay features. The fixture does not qualify
-cow production, multiplayer networking, persistence across world saves, or a
-release artifact.
+proof, not silently represented by the route/capture cases. The GUI fixture does
+not qualify the synchronized animal portrait/recovery presentation, multiplayer
+networking, persistence across world saves, or a release artifact. Native TFC
+production and projection are covered by separate server GameTests. FE, extraction
+animations and cream remain unsupported.

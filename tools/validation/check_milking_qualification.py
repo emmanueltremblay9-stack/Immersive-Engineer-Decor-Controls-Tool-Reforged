@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline byte/active-source preservation guard. Not mapped/native execution."""
+"""Offline production-snapshot/artwork preservation guard. Not native execution."""
 import hashlib
 import json
 from pathlib import Path
@@ -11,6 +11,9 @@ ROOT=Path(__file__).resolve().parents[2]
 
 def check_preservation(root=ROOT):
     pins=json.loads((root/'docs/testing/milking-qualification/production-pins.json').read_text())
+    for name in pins.get('preserved_paths', []):
+        if pins['sha256'].get(name) != pins['baseline_sha256'].get(name):
+            raise SmokeFailure('Baseline artwork/layout preservation failed: '+name)
     for name,expected in pins['sha256'].items():
         path=root/name
         if path.is_symlink() or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
@@ -46,4 +49,4 @@ def check_preservation(root=ROOT):
 
 
 if __name__=='__main__':
-    print(f'PASS {check_preservation()} byte-identical production files and active renderer routing. Native compile/execution not claimed.')
+    print(f'PASS {check_preservation()} pinned production files, preserved baseline artwork/layout and active renderer routing. Native compile/execution not claimed.')
