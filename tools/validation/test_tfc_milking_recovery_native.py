@@ -31,7 +31,11 @@ class NativeRecoveryEvidenceTest(unittest.TestCase):
             crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],94,82)
             for name,data,key in [(s['name'],png(1280,720,pixels),'sha256'),(s['portrait_name'],png(94,82,crop),'portrait_sha256')]:
                 (folder/name).write_bytes(data);s[key]=hashlib.sha256(data).hexdigest()
-            if phase=='recovering-tooltip':s.update(tooltip_hovered=True,hover_x=g['presentation_gui_left']+30,hover_y=g['presentation_gui_top']+118)
+            if phase=='recovering-tooltip':
+                hx=g['presentation_gui_left']+180;hy=g['presentation_gui_top']+63
+                s.update(tooltip_hovered=True,hover_x=hx,hover_y=hy,native_input=dict(glfw_focused=True,glfw_visible=True,
+                    glfw_cursor_mode=212993,glfw_cursor_x=hx*2,glfw_cursor_y=hy*2,minecraft_cursor_x=hx*2,minecraft_cursor_y=hy*2,
+                    window_width=1280,window_height=720,settled_hover_ticks=8))
             self.p['captures'].append(s)
         self.p['no_repeat']=dict(first=snap(1000,1,520,540),later=snap(1000,1,520,620))
 
@@ -63,6 +67,31 @@ class NativeRecoveryEvidenceTest(unittest.TestCase):
         with self.assertRaises(SmokeFailure):self.validate()
     def test_reject_wrong_hover(self):
         self.p['captures'][2]['hover_x']=0
+        with self.assertRaises(SmokeFailure):self.validate()
+    def test_reject_missing_native_input(self):
+        del self.p['captures'][2]['native_input']
+        with self.assertRaises(SmokeFailure):self.validate()
+    def test_reject_invalid_native_input(self):
+        native=self.p['captures'][2]['native_input']
+        for key,value in dict(glfw_focused=False,glfw_visible=False,glfw_cursor_mode=212995,
+                minecraft_cursor_x=640,minecraft_cursor_y=360,glfw_cursor_x=640,glfw_cursor_y=360,
+                settled_hover_ticks=7,window_width=640,window_height=360).items():
+            with self.subTest(key=key):
+                old=native[key];native[key]=value
+                with self.assertRaises(SmokeFailure):self.validate()
+                native[key]=old
+        for key in ('glfw_cursor_x','glfw_cursor_y','minecraft_cursor_x','minecraft_cursor_y'):
+            for value in (float('nan'),float('inf'),-1,True,None,'800'):
+                with self.subTest(key=key,value=value):
+                    old=native[key];native[key]=value
+                    with self.assertRaises(SmokeFailure):self.validate()
+                    native[key]=old
+    def test_reject_self_consistent_centered_cursor(self):
+        c=self.p['captures'][2];c.update(hover_x=320,hover_y=180)
+        c['native_input'].update(glfw_cursor_x=640,glfw_cursor_y=360,minecraft_cursor_x=640,minecraft_cursor_y=360)
+        with self.assertRaises(SmokeFailure):self.validate()
+    def test_reject_mismatched_hover_conversion(self):
+        self.p['captures'][2]['hover_x']+=1
         with self.assertRaises(SmokeFailure):self.validate()
     def test_reject_missing_capture_bytes(self):
         (self.game/'tfc-milking-recovery-screenshots/ready.png').unlink()

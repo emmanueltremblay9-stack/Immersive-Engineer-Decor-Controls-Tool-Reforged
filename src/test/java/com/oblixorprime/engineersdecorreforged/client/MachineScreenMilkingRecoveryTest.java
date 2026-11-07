@@ -13,6 +13,21 @@ public class MachineScreenMilkingRecoveryTest {
          Long.MAX_VALUE, Integer.MAX_VALUE, flags);
    }
 
+   @Test public void tooltipWidthIsBoundedToTheScaledViewport() {
+      assertEquals(240, MachineScreen.milkingTooltipWidth(640));
+      assertEquals(240, MachineScreen.milkingTooltipWidth(256));
+      assertEquals(224, MachineScreen.milkingTooltipWidth(240));
+      assertEquals(64, MachineScreen.milkingTooltipWidth(80));
+   }
+
+   @Test public void tooltipWidthStaysPositiveInTinyOrUninitializedViewports() {
+      assertEquals(1, MachineScreen.milkingTooltipWidth(17));
+      assertEquals(1, MachineScreen.milkingTooltipWidth(16));
+      assertEquals(1, MachineScreen.milkingTooltipWidth(0));
+      assertEquals(1, MachineScreen.milkingTooltipWidth(Integer.MIN_VALUE));
+      assertEquals(240, MachineScreen.milkingTooltipWidth(Integer.MAX_VALUE));
+   }
+
    @Test public void identityRequiresBothFullEntityIdAndUuid() {
       MilkingState state = observation(MilkingState.TFC, MilkingState.RECOVERING, 0);
       assertTrue(MachineScreen.milkingIdentityMatches(state, Integer.MAX_VALUE, ANIMAL));

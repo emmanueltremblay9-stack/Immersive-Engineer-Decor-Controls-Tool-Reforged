@@ -1248,6 +1248,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          ? smallMilkingText("label.animal_unavailable") : selected.getDisplayName(), state.animalId().toString());
    }
 
+   static int milkingTooltipWidth(int viewportWidth) {
+      // Leave space for the native tooltip border and screen-edge padding.
+      return Math.max(1, Math.min(240, Math.max(0, viewportWidth) - 16));
+   }
+
    private Component milkingRecoveryTooltip() {
       MilkingState state = this.menu.milkingState();
       var text = smallMilkingText(milkingStatusKey(state)).copy();
@@ -1523,7 +1528,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
       Component milkingTooltip = this.smallMilkingMachineTooltip(mouseX, mouseY);
       if (milkingTooltip != null) {
-         graphics.renderTooltip(this.font, milkingTooltip, mouseX, mouseY);
+         // Font.split preserves component styles and interprets explicit newlines.
+         graphics.renderTooltip(this.font,
+            this.font.split(milkingTooltip, milkingTooltipWidth(this.width)), mouseX, mouseY);
          return;
       }
 

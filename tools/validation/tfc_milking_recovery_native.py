@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -94,7 +95,25 @@ def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width=12
     require(first['produced_tick']==hover['produced_tick'] and second['produced_tick']-first['produced_tick']>=400,'No native expiry and second production')
     exact(hover,'tooltip_hovered',True)
     x=integer(hover,'hover_x');y=integer(hover,'hover_y');left=geometry['presentation_gui_left'];top=geometry['presentation_gui_top']
-    require((left+24<=x<left+209 and top+112<=y<top+124) or (left+160<=x<left+207 and top+56<=y<top+73),'Cursor outside recovery tooltip')
+    def recovery_hitbox(px,py):
+        # The fixture deliberately targets this upper recovery region. The
+        # alternate lower tooltip region contains the viewport center and must
+        # not authenticate a cursor that never moved from vanilla's recenter.
+        return left+160<=px<left+207 and top+56<=py<top+73
+    require(recovery_hitbox(x,y),'Cursor outside targeted recovery tooltip')
+    native=hover.get('native_input');require(isinstance(native,dict),'Missing native input evidence')
+    for key,value in dict(glfw_focused=True,glfw_visible=True,glfw_cursor_mode=212993,
+                           window_width=width,window_height=height).items():exact(native,key,value)
+    require(integer(native,'settled_hover_ticks',8)<6000,'Invalid hover settling interval')
+    for prefix in ('glfw','minecraft'):
+        coordinates=[]
+        for axis,extent,gui_extent in (('x',width,geometry['gui_width']),('y',height,geometry['gui_height'])):
+            coordinate=native.get(prefix+'_cursor_'+axis)
+            require(type(coordinate) in (int,float) and math.isfinite(coordinate) and 0<=coordinate<extent,
+                    'Invalid native cursor coordinate')
+            coordinates.append(int(coordinate*gui_extent/extent))
+        require(recovery_hitbox(*coordinates),'Native cursor outside targeted recovery tooltip')
+        if prefix=='minecraft':require(coordinates==[x,y],'Recorded hover differs from actual Minecraft cursor')
     require(images['recovering']!=images['recovering-tooltip'],'Missing rendered tooltip difference')
     repeat=proof.get('no_repeat');require(isinstance(repeat,dict),'Missing no-repeat observation')
     a,b=repeat.get('first'),repeat.get('later')

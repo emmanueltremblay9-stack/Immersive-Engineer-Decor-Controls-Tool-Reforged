@@ -52,7 +52,7 @@ public final class NativeTfcMilkingRecoveryValidation {
    private static String nonce;
    private static UUID playerId;
    private static long deadline;
-   private static int ticks,serverMenuId,stableObservations;
+   private static int ticks,serverMenuId,stableObservations,hoverTicks;
    private static String stableKey="";
    private static boolean complete,isolatedDirectoryValidated,configRestored;
    private static MachineBlockEntity machine;
@@ -103,6 +103,15 @@ public final class NativeTfcMilkingRecoveryValidation {
          if(stage==Stage.RESTORE){finish(mc,null);return;}
          if(!(mc.screen instanceof MachineScreen.SmallMilkingMachineScreen screen) || !(mc.player.containerMenu instanceof MachineMenu menu) || menu.containerId!=serverMenuId)return;
          if(stage==Stage.READY)cursor(mc,screen,false);
+         if(stage==Stage.TOOLTIP){
+            // glfwSetCursorPos is ignored by an unfocused X11 window. Ask the
+            // native window for focus, then allow normal event polling to deliver
+            // repeated real movements. Never assign MouseHandler coordinates or
+            // invoke its callbacks directly.
+            cursor(mc,screen,true);
+            hoverTicks=actualRecoveryHover(mc,screen)?hoverTicks+1:0;
+            require(ticks<120 || hoverTicks>=8,"Native tooltip input did not settle: "+inputDiagnostic(mc));
+         }
          if(ticks<12)return;
          JsonObject state=observe(mc,menu);if(state==null)return;
          String key=state.get("server_uuid").getAsString()+":"+number(state,"amount")+":"+number(state,"client_state_code");
@@ -123,7 +132,7 @@ public final class NativeTfcMilkingRecoveryValidation {
                cursor(mc,screen,true);enter(Stage.TOOLTIP);
             }
             case TOOLTIP -> {
-               if(number(state,"calendar_tick")-number(first,"calendar_tick")<80)return;
+               if(number(state,"calendar_tick")-number(first,"calendar_tick")<80 || hoverTicks<8)return;
                require(number(state,"amount")==1000 && number(state,"uses")==1 && number(state,"produced_tick")==number(first,"produced_tick") && number(state,"remaining_ticks")>0,"Unexpected replay before native expiry");
                NO_REPEAT.add("later",state.deepCopy());capture(mc,menu,state,"recovering-tooltip",true);
                cursor(mc,screen,false);enter(Stage.SECOND);
@@ -209,8 +218,33 @@ public final class NativeTfcMilkingRecoveryValidation {
       o.addProperty("client_state_code",s.state());o.addProperty("client_state",s.state()==MilkingState.READY?"READY":"RECOVERING");return o;
    }
    private static void cursor(Minecraft mc,MachineScreen screen,boolean tooltip){
-      double x=tooltip?screen.getGuiLeft()+180:screen.width-2,y=tooltip?screen.getGuiTop()+63:screen.height-2;
-      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),x*mc.getWindow().getScreenWidth()/screen.width,y*mc.getWindow().getScreenHeight()/screen.height);
+      long window=mc.getWindow().getWindow();
+      if(GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){
+         GLFW.glfwFocusWindow(window);
+         return; // Focus and cursor callbacks are consumed by the normal render loop.
+      }
+      // Alternate within the same hitbox so an earlier ignored warp is retried
+      // as a real native movement rather than a no-op to an unchanged position.
+      double x=tooltip?screen.getGuiLeft()+180+(ticks%2):screen.width-2;
+      double y=tooltip?screen.getGuiTop()+63:screen.height-2;
+      GLFW.glfwSetCursorPos(window,x*mc.getWindow().getScreenWidth()/screen.width,y*mc.getWindow().getScreenHeight()/screen.height);
+   }
+   private static boolean actualRecoveryHover(Minecraft mc,MachineScreen screen){
+      double x=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth();
+      double y=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
+      return GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE
+         && GLFW.glfwGetInputMode(mc.getWindow().getWindow(),GLFW.GLFW_CURSOR)==GLFW.GLFW_CURSOR_NORMAL
+         && x>=screen.getGuiLeft()+160 && x<screen.getGuiLeft()+207 && y>=screen.getGuiTop()+56 && y<screen.getGuiTop()+73;
+   }
+   private static JsonObject inputDiagnostic(Minecraft mc){
+      long window=mc.getWindow().getWindow();double[] x={0},y={0};GLFW.glfwGetCursorPos(window,x,y);
+      var o=new JsonObject();o.addProperty("glfw_focused",GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE);
+      o.addProperty("glfw_visible",GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_VISIBLE)==GLFW.GLFW_TRUE);
+      o.addProperty("glfw_cursor_mode",GLFW.glfwGetInputMode(window,GLFW.GLFW_CURSOR));
+      o.addProperty("glfw_cursor_x",x[0]);o.addProperty("glfw_cursor_y",y[0]);
+      o.addProperty("minecraft_cursor_x",mc.mouseHandler.xpos());o.addProperty("minecraft_cursor_y",mc.mouseHandler.ypos());
+      o.addProperty("window_width",mc.getWindow().getScreenWidth());o.addProperty("window_height",mc.getWindow().getScreenHeight());
+      o.addProperty("settled_hover_ticks",hoverTicks);return o;
    }
    private static void capture(Minecraft mc,MachineMenu menu,JsonObject state,String phase,boolean tooltip)throws Exception{
       verifyViewport(mc);require(mc.getOverlay()==null,"Loading overlay");var screen=(MachineScreen)mc.screen;
@@ -220,7 +254,8 @@ public final class NativeTfcMilkingRecoveryValidation {
       o.addProperty("screen_class",screen.getClass().getName());o.addProperty("tooltip_hovered",tooltip);
       int hoverX=(int)(mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth());
       int hoverY=(int)(mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight());
-      if(tooltip)require(hoverX>=screen.getGuiLeft()+160 && hoverX<screen.getGuiLeft()+207 && hoverY>=screen.getGuiTop()+56 && hoverY<screen.getGuiTop()+73,"Actual cursor is outside native recovery tooltip");
+      if(tooltip)require(actualRecoveryHover(mc,screen) && hoverTicks>=8,"Actual cursor is outside native recovery tooltip: "+inputDiagnostic(mc));
+      o.add("native_input",inputDiagnostic(mc));
       o.addProperty("hover_x",hoverX);o.addProperty("hover_y",hoverY);o.addProperty("settled_observations",stableObservations);
       require(menu.slots.stream().allMatch(s->s.getItem().isEmpty()) && menu.getCarried().isEmpty(),"Fixture inventory changed");
       int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+27)*scale,y=(screen.getGuiTop()+34)*scale,w=47*scale,h=41*scale;
@@ -234,7 +269,7 @@ public final class NativeTfcMilkingRecoveryValidation {
    }
    private static long number(JsonObject o,String key){return o.get(key).getAsLong();}
    private static String hash(Path file)throws Exception{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file)));}
-   private static void enter(Stage next){stage=next;ticks=0;inspection=null;stableObservations=0;stableKey="";}
+   private static void enter(Stage next){stage=next;ticks=0;inspection=null;stableObservations=0;stableKey="";hoverTicks=0;}
    private static ServerPlayer player(Minecraft mc){var p=mc.getSingleplayerServer().getPlayerList().getPlayer(playerId);require(p!=null,"Player vanished");return p;}
    private static void finish(Minecraft mc,Throwable error){
       complete=true;
@@ -252,7 +287,7 @@ public final class NativeTfcMilkingRecoveryValidation {
          p.addProperty("source_milk_sha256","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
          addViewport(p,mc);p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);p.addProperty("native_visual_acceptance",false);
          p.addProperty("tfc_version",tfcVersion);p.addProperty("native_tick_production",true);p.addProperty("produced_tick_mutated_after_setup",false);p.addProperty("config_restored",configRestored);
-         p.addProperty("screen_class",MachineScreen.SmallMilkingMachineScreen.class.getName());p.add("captures",CAPTURES);p.add("no_repeat",NO_REPEAT);
+         p.addProperty("screen_class",MachineScreen.SmallMilkingMachineScreen.class.getName());p.add("captures",CAPTURES);p.add("no_repeat",NO_REPEAT);p.add("last_native_input",inputDiagnostic(mc));
          if(error!=null)p.addProperty("error",error.toString());
          Files.writeString(directory.resolve("client-tfc-milking-recovery-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(p)+"\n");
       }catch(Exception writeError){EngineersDecorReforged.LOGGER.error("TFC recovery proof write failed",writeError);}

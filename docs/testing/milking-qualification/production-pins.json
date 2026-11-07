@@ -3,7 +3,7 @@
   "purpose": "Current native-recovery production snapshot, retaining the pre-recovery baseline. Not native qualification evidence.",
   "sha256": {
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "dc2797b6e33f503dd684d75101a50403a06691c30a2a254976a88b963c70ee78",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "da3b3fd21d93d30ce590b5307df74baf1087eb67115f48afc06b8bbcc0f64371",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "ef12e8e68a1412f98f38dd7311da5307f56b8a0e179bd0c23f35fa06ce6ba4d0",
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
     "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "18a7660b8fafd1bbd50e3c43228678609b56dd5bd54310fa91718ecc57a2d327",
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "9ebb5d5a53d667e8e9af8a670162640af83e6f26dfc1acd743445f5f9380dd1f",
