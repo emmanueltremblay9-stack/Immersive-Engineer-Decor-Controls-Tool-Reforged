@@ -1,5 +1,7 @@
 # Funnel / Accumulator native gestures
 
+Current acceptance uses the [packaged/default adapter](PACKAGED_DEFAULT_ADAPTER.md) and one six-profile workflow against the ordinary JAR. Source-runtime results below are historical and do not qualify the new packaged candidate.
+
 This opt-in qualification does not modify production rendering, layouts or mechanics.
 The helper lives in `src/fluidGestureNativeValidation`, enabled only with
 `-Pinclude_fluid_gesture_native_validation=true`; default JARs must exclude it.
