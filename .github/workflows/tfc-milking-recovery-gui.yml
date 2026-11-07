@@ -47,6 +47,7 @@ jobs:
         run: |
           set -euo pipefail
           python -m unittest discover -s tools/validation -p test_tfc_milking_recovery_native.py -v 2>&1 | tee build/tfc-recovery/validator-tests.log
+          python -m unittest discover -s tools/validation -p test_mooshroom_milking_native.py -v 2>&1 | tee build/tfc-recovery/mooshroom-validator-tests.log
       - name: Compile real TFC dependency profile
         shell: bash
         run: |
@@ -60,6 +61,13 @@ jobs:
           python tools/validation/tfc_milking_recovery_native.py --profile fr-1280x720-scale2 --prepare-timeout 900 --timeout 900 2>&1 | tee build/tfc-recovery/native-runner.log
           test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
           test -z "$(git status --porcelain --untracked-files=all)"
+      - name: Run isolated red and brown Mooshroom proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/validation/mooshroom_milking_native.py --profile fr-1280x720-scale2 --prepare-timeout 900 --timeout 900 2>&1 | tee build/tfc-recovery/mooshroom-native-runner.log
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          test -z "$(git status --porcelain --untracked-files=all)"
       - name: State evidence boundaries
         if: always()
         shell: bash
@@ -67,6 +75,7 @@ jobs:
           echo "Exact source requested: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
           echo 'Native client uses the real TFC 4.2.12 dependency, an isolated fixture, and normal server ticks.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Acceptance requires named client/server source identity, ready/recovering/tooltip/post-expiry captures, native cooldown progression, no-repeat observation, and a second production after expiry.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'The additional isolated Mooshroom proof runs minecraft:mooshroom RED/BROWN adults and babies with TFC loaded. It tests milk buckets, 1000 mB milk, 120 machine ticks, baby rejection, native portraits and identity tooltips; no vanilla animal cooldown or cream/stew feature is added.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Synthetic validator tests are not gameplay evidence. Native screenshots still require owner visual review; no visual acceptance, merge, release or deployment is claimed.' >> "$GITHUB_STEP_SUMMARY"
       - name: Retain exact-head screenshots, source and runtime logs
         if: always()
@@ -75,6 +84,12 @@ jobs:
           name: tfc-recovery-gui-${{ github.event.pull_request.head.sha || github.sha }}
           path: |
             build/tfc-recovery/
+            build/mooshroom-milking-native-*/run/client-mooshroom-milking-result.json
+            build/mooshroom-milking-native-*/run/mooshroom-milking-screenshots/*.png
+            build/mooshroom-milking-native-*/*.log
+            build/mooshroom-milking-native-*/run/logs/
+            build/mooshroom-milking-native-*/run/crash-reports/
+            build/mooshroom-milking-native-*/**/hs_err_pid*.log
             build/tfc-milking-recovery-native-*/run/client-tfc-milking-recovery-result.json
             build/tfc-milking-recovery-native-*/run/tfc-milking-recovery-screenshots/*.png
             build/tfc-milking-recovery-native-*/*.log

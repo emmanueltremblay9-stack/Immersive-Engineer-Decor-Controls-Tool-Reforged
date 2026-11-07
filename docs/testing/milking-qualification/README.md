@@ -187,3 +187,33 @@ not qualify the synchronized animal portrait/recovery presentation, multiplayer
 networking, persistence across world saves, or a release artifact. Native TFC
 production and projection are covered by separate server GameTests. FE, extraction
 animations and cream remain unsupported.
+
+
+## Targeted vanilla Mooshroom native proof
+
+`tools/validation/mooshroom_milking_native.py` adds one isolated client run to
+the existing TFC recovery GUI workflow, using TFC 4.2.12 loaded but the real
+`minecraft:mooshroom` entity and its vanilla `Cow` subclass path. It changes no
+gameplay, recipe, animal cooldown, cream, or stew behavior.
+
+For each RED and BROWN adult, a server post-tick observer checks a real milk
+bucket, removes that verified output, then requires exactly 1000 mB plain milk
+120 normal world ticks later with no earlier production. This is machine
+cadence, not animal recovery. The fixture pauses the machine only after that
+second product, then captures the native portrait and actual hovered identity
+tooltip with synchronized entity ID, UUID, and custom name. Both baby variants
+are observed for at least 240 ticks and must retain the input bucket, produce
+no milk, and have no selected source or live portrait.
+
+Six full screenshots and exact portrait crops are retained with their hashes,
+source SHA, nonce, viewport, runtime version, native cursor coordinates, and
+server/client state. Red and brown adult portrait crops must differ. Screenshot
+validation is bounded evidence and does not replace owner visual acceptance.
+Synthetic validator tests are not evidence that the native fixture ran.
+
+Run the targeted validator tests with:
+
+```sh
+python -m unittest discover -s tools/validation -p test_mooshroom_milking_native.py -v
+python tools/validation/mooshroom_milking_native.py --profile fr-1280x720-scale2
+```
