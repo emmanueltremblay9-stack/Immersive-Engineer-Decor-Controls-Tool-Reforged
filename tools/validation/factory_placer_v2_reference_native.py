@@ -236,20 +236,26 @@ def validate_control_pixels(images,width,height,gui_scale,source):
         for i,x in enumerate((334,350)):
             require(sample(name,(x,171,x+10,173))==(ACTIVE if i==bool(logic&2) else INACTIVE),'Trigger pixels differ from observed state')
 
-def outline_samples(width,height,gui_scale,slot):
-    """Sample pixel centers strictly inside the four one-logical-pixel edges.
+def selection_rects(width,height,gui_scale,slot):
+    """Independent framebuffer contract for the production selection overlay.
 
-    A .01-framebuffer-pixel inset avoids ambiguous coverage at exact boundaries.
-    Thin downscaled edges without a safely interior pixel are omitted, never
-    replaced by a nearby pixel or a relaxed color comparison.
+    Keep the legacy outline at >=1 physical pixel thickness. Below that,
+    quantize a one-pixel ring outside the complete transformed item footprint.
     """
     sx,sy=transform(width,height,gui_scale)
+    _,view_scale,_=expected_geometry(width,height,gui_scale)
     x,y=SLOT_ORIGINS[slot]
-    edges=[(x-1,y-1,x+17,y),(x-1,y+16,x+17,y+17),
-           (x-1,y,x,y+16),(x+16,y,x+17,y+16)]
+    if view_scale*gui_scale<1:
+        l,t,r,b=math.floor(sx(x)),math.floor(sy(y)),math.ceil(sx(x+16)),math.ceil(sy(y+16))
+        return ((l-1,t-1,r+1,t),(r,t,r+1,b),(l-1,b,r+1,b+1),(l-1,t,l,b))
+    return tuple((sx(l),sy(t),sx(r),sy(b)) for l,t,r,b in
+                 ((x-1,y-1,x+17,y),(x+16,y,x+17,y+16),(x-1,y+16,x+17,y+17),(x-1,y,x,y+16)))
+
+
+def outline_samples(width,height,gui_scale,slot):
+    """Four safely interior samples from the documented framebuffer strips."""
     samples=[]
-    for l,t,r,b in edges:
-        left,top,right,bottom=sx(l),sy(t),sx(r),sy(b)
+    for left,top,right,bottom in selection_rects(width,height,gui_scale,slot):
         xs=range(math.ceil(left+.01-.5),math.floor(right-.01-.5)+1)
         ys=range(math.ceil(top+.01-.5),math.floor(bottom-.01-.5)+1)
         if xs and ys:samples.append((xs[len(xs)//2],ys[len(ys)//2]))

@@ -88,15 +88,15 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
    private static final JsonArray ROUTES = new JsonArray(), CAPTURES = new JsonArray(), CASES = new JsonArray(), CONTROLS = new JsonArray();
    private static JsonArray hiddenBefore, hiddenAfter;
    private static JsonObject placement, worldCapture, packagedRuntime;
-   private static final JsonArray ADVANCED = new JsonArray(), TOOLTIPS = new JsonArray(), SELECTIONS = new JsonArray();
+   private static final JsonArray ADVANCED = new JsonArray(), TOOLTIPS = new JsonArray(), SELECTIONS = new JsonArray(), OCCUPIED_SELECTIONS = new JsonArray();
    private static final String[] GESTURE_NAMES = {"drag_left_split", "drag_right_split", "shift_click", "double_click_collect",
       "right_control_noop", "middle_control_noop", "held_control_noop", "outside_carried_drop"};
    private static int gestureIndex, gestureStep, hoverIndex, selectionIndex, tooltipFrames;
    private static int pointerX, pointerY;
-   private static boolean actionSent, shiftDown, tooltipInFrame;
+   private static boolean actionSent, shiftDown, tooltipInFrame, occupiedSelection;
    private static NativeLibrary x11, xtest;
    private static Pointer display;
-   private static JsonObject gesture, observedServer, tooltipObservation, renderedTooltip;
+   private static JsonObject gesture, observedServer, tooltipObservation, renderedTooltip, selectionServer;
    private static CompletableFuture<JsonObject> snapshotFuture;
    private static final int[] expectedSlots = new int[54];
    private static int expectedCarried, expectedDrops;
@@ -439,24 +439,56 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
       record.addProperty("text_source", "actual ClientTextTooltip FormattedCharSequence; newline separates rendered wrapped lines");
       saveExtraFrame(mc, "tooltip-" + hoverIndex, record); TOOLTIPS.add(record);
       if (++hoverIndex < 8) { ticks = 0; hoverTarget(mc, screen); return; }
-      parkCursor(mc); selectionIndex = 0; seedSelection(mc); enter(Stage.SELECTIONS);
+      pointerX = screen.width - 2; pointerY = screen.height - 2; moveNativePointer(mc, screen);
+      selectionIndex = 0; seedSelection(mc); enter(Stage.SELECTIONS);
    }
    private static void seedSelection(Minecraft mc) {
       final int selected = selectionIndex;
-      pending = mc.getSingleplayerServer().submit(() -> { machine.dataAccessForTests().set(2, selected); player(mc).containerMenu.broadcastChanges(); });
+      final boolean seedOccupied = occupiedSelection && selected == 0;
+      pending = mc.getSingleplayerServer().submit(() -> {
+         if (seedOccupied) {
+            require(player(mc).containerMenu.getCarried().isEmpty(), "Occupied rendering seed cannot discard carried items");
+            for (int slot = 0; slot < 18; slot++) {
+               require(machine.getItem(slot).isEmpty(), "Occupied rendering seed requires empty machine slots");
+               machine.setItem(slot, new ItemStack(Items.STONE));
+            }
+         }
+         machine.dataAccessForTests().set(2, selected); player(mc).containerMenu.broadcastChanges();
+      });
+   }
+   private static JsonObject selectionInventory(MachineMenu menu) {
+      var record = new JsonObject(); var selected = menu.getSlot(selectionIndex).getItem();
+      record.addProperty("selected_item", net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(selected.getItem()).toString());
+      record.addProperty("selected_item_count", selected.getCount());
+      int total = 0; for (int slot = 0; slot < 18; slot++) total += menu.getSlot(slot).getItem().getCount();
+      record.addProperty("visible_item_total", total); return record;
    }
    private static void selectionTick(Minecraft mc, FactoryPlacerV2ReferenceScreen screen, MachineMenu menu) throws Exception {
-      if (ticks < 12 || menu.field(2) != selectionIndex || !serverMatches(mc, p -> machine.dataAccessForTests().get(2) == selectionIndex && sentinelsIntact())) return;
-      var record = new JsonObject(); record.addProperty("selected_slot", selectionIndex); record.addProperty("server_confirmed", true);
+      if (!atTooltipTarget(mc, screen)) { moveNativePointer(mc, screen); ticks = 0; return; }
+      var view = screen.validationViewTransform();
+      require(view.localX(pointerX) >= FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH
+         || view.localY(pointerY) >= FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT, "Selection pointer must remain outside GUI");
+      for (int slot = 0; slot < 18; slot++) if (occupiedSelection ? !stone(menu.getSlot(slot).getItem(), 1) : !menu.getSlot(slot).getItem().isEmpty()) return;
+      if (ticks < 12 || menu.field(2) != selectionIndex || !serverMatches(mc, p -> {
+         if (machine.dataAccessForTests().get(2) != selectionIndex || !sentinelsIntact()) return false;
+         for (int slot = 0; slot < 18; slot++) if (occupiedSelection ? !stone(machine.getItem(slot), 1) : !machine.getItem(slot).isEmpty()) return false;
+         selectionServer = selectionInventory((MachineMenu)p.containerMenu);
+         return true;
+      })) return;
+      var record = selectionInventory(menu); require(record.equals(selectionServer), "Selection inventory client/server mismatch");
+      record.add("server_inventory", selectionServer.deepCopy()); record.addProperty("selected_slot", selectionIndex); record.addProperty("server_confirmed", true);
+      record.addProperty("occupied", occupiedSelection);
+      record.addProperty("pointer_x", mc.mouseHandler.xpos() * screen.width / mc.getWindow().getScreenWidth());
+      record.addProperty("pointer_y", mc.mouseHandler.ypos() * screen.height / mc.getWindow().getScreenHeight());
+      record.addProperty("pointer_outside_gui", true); record.addProperty("pointer_input_method", "physical XTest pointer through GLFW/Minecraft, parked outside canvas");
       record.addProperty("state_source", "server-seeded selection render case; not a user selection gesture");
-      var a = FactoryPlacerV2ReferenceGeometry.anchor(selectionIndex); var v = screen.validationViewTransform(); double scale = mc.getWindow().getGuiScale();
+      var v = screen.validationViewTransform(); double scale = mc.getWindow().getGuiScale();
       var edges = new JsonObject(); var missing = new JsonArray();
-      Rect[] strips = {new Rect(a.x() - 1, a.y() - 1, 18, 1), new Rect(a.x() + 16, a.y(), 1, 16), new Rect(a.x() - 1, a.y() + 16, 18, 1), new Rect(a.x() - 1, a.y(), 1, 16)};
+      var strips = FactoryPlacerV2ReferenceGeometry.selectionEdges(v, scale, selectionIndex);
       String[] names = {"top", "right", "bottom", "left"};
       try (var frame = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
-         for (int edge = 0; edge < strips.length; edge++) {
-            Rect r = strips[edge]; double x0 = v.screenX(r.x()) * scale, y0 = v.screenY(r.y()) * scale;
-            double x1 = v.screenX(r.x() + r.width()) * scale, y1 = v.screenY(r.y() + r.height()) * scale;
+         for (int edge = 0; edge < strips.size(); edge++) {
+            var r = strips.get(edge); double x0 = r.left(), y0 = r.top(), x1 = r.right(), y1 = r.bottom();
             int expected = 0, matched = 0; var missingPixels = new JsonArray();
             for (int y = (int)Math.ceil(y0 - .5); y < Math.ceil(y1 - .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {
                expected++; int rgb = frame.getPixelRGBA(x, y) & 0xffffff;
@@ -468,11 +500,14 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
             e.addProperty("x0", x0); e.addProperty("y0", y0); e.addProperty("x1", x1); e.addProperty("y1", y1); edges.add(names[edge], e);
             if (expected == 0 || matched != expected) missing.add(names[edge]);
          }
-         saveExtraFrame(mc, "selection-" + selectionIndex, record, frame);
+         saveExtraFrame(mc, (occupiedSelection ? "selection-occupied-" : "selection-") + selectionIndex, record, frame);
       }
       record.add("edges", edges); record.add("missing_edges", missing); record.addProperty("full_outline_visible", missing.isEmpty());
-      record.addProperty("raster_criterion", "pixel centers inside four transformed one-logical-pixel outline strips; zero-pixel edges fail"); SELECTIONS.add(record);
+      record.addProperty("raster_criterion", "four half-open framebuffer edge strips; subpixel outline quantized outside 16x16 item footprint; zero-pixel edges fail");
+      record.addProperty("outline_quantized", v.scale() * scale < 1.0D);
+      (occupiedSelection ? OCCUPIED_SELECTIONS : SELECTIONS).add(record);
       if (++selectionIndex < 18) { seedSelection(mc); enter(Stage.SELECTIONS); }
+      else if (!occupiedSelection) { occupiedSelection = true; selectionIndex = 0; seedSelection(mc); enter(Stage.SELECTIONS); }
       else enter(Stage.DONE);
    }
    private static void saveExtraFrame(Minecraft mc, String label, JsonObject record) throws Exception {
@@ -670,7 +705,7 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
             p.addProperty("route_pickup_server_acks", pickupAcks); p.addProperty("route_return_server_acks", returnAcks); p.addProperty("manual_trigger_server_acks", manualAcks);
             p.addProperty("initial_item_total", initialTotal); p.addProperty("final_item_total", finalTotal);
             p.add("hidden_slot_sentinels_before", hiddenBefore); p.add("hidden_slot_sentinels_after", hiddenAfter);
-            p.add("advanced_gestures", ADVANCED); p.add("tooltip_captures", TOOLTIPS); p.add("selection_captures", SELECTIONS);
+            p.add("advanced_gestures", ADVANCED); p.add("tooltip_captures", TOOLTIPS); p.add("selection_captures", SELECTIONS); p.add("occupied_selection_captures", OCCUPIED_SELECTIONS);
             p.add("slot_routes", ROUTES); p.add("control_routes", CONTROLS); p.add("captures", CAPTURES); p.add("cases", CASES); p.add("placement", placement); p.add("world_capture", worldCapture);
             if (error != null) p.addProperty("error", error.toString());
             Files.writeString(directory.resolve("client-factory-placer-v2-reference-result.json"), new GsonBuilder().setPrettyPrinting().create().toJson(p) + "\n");

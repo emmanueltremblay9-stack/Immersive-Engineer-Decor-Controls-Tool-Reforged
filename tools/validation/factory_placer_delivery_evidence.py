@@ -11,7 +11,7 @@ from urllib.parse import urlsplit
 
 from factory_placer_v2_reference_native import (
     ART_SHA, ROW_ACTIVE, SLOT_ORIGINS, decode_png, expected_geometry,
-    png, require, strict_equal, transform, validate_proof, validate_viewport,
+    png, require, selection_rects, strict_equal, transform, validate_proof, validate_viewport,
 )
 from client_mixin_smoke import FATAL_PATTERN
 
@@ -182,46 +182,70 @@ def validate_tooltips(proof, game, project, width, height, language, gui_scale):
 
 
 def selection_edges(width, height, scale, selected):
-    sx, sy = transform(width, height, scale)
-    x, y = SLOT_ORIGINS[selected]
-    strips = ((x - 1, y - 1, x + 17, y), (x + 16, y, x + 17, y + 16),
-              (x - 1, y + 16, x + 17, y + 17), (x - 1, y, x, y + 16))
-    return {name: [(px, py) for py in range(math.ceil(sy(top) - .5), math.ceil(sy(bottom) - .5))
-                   for px in range(math.ceil(sx(left) - .5), math.ceil(sx(right) - .5))]
-            for name, (left, top, right, bottom) in zip(('top', 'right', 'bottom', 'left'), strips)}
+    return {name: [(px, py) for py in range(math.ceil(top - .5), math.ceil(bottom - .5))
+                   for px in range(math.ceil(left - .5), math.ceil(right - .5))]
+            for name, (left, top, right, bottom) in zip(('top', 'right', 'bottom', 'left'),
+                selection_rects(width, height, scale, selected))}
 
 
 def validate_selections(proof, game, width, height, gui_scale):
-    records = proof.get('selection_captures')
-    require(type(records) is list and len(records) == 18, 'Incomplete selection visibility matrix')
     viewport, _, _ = expected_geometry(width, height, gui_scale)
     failures = []
-    for selected, record in enumerate(records):
-        require(type(record) is dict and type(record.get('selected_slot')) is int
-                and record['selected_slot'] == selected and record.get('server_confirmed') is True
-                and record.get('state_source') == 'server-seeded selection render case; not a user selection gesture',
-                'Selection state provenance differs')
-        validate_viewport(record, viewport)
-        name = f'selection-{selected}.png'
-        require(record.get('name') == name, 'Unsafe selection capture name')
-        path = Path(game) / 'factory-placer-v2-reference-screenshots' / name
-        png(path, width, height, record.get('sha256'))
-        _, _, pixels = decode_png(path)
-        expected = selection_edges(width, height, gui_scale, selected)
-        require(type(record.get('edges')) is dict and set(record['edges']) == set(expected), 'Selection edge reports missing')
-        missing = []
-        for name, coordinates in expected.items():
-            unmatched = [[x, y] for x, y in coordinates if pixels[(y * width + x) * 4:(y * width + x + 1) * 4] != ROW_ACTIVE]
-            edge = record['edges'][name]
-            require(type(edge) is dict and strict_equal(edge.get('expected_pixels'), len(coordinates))
-                    and strict_equal(edge.get('matched_pixels'), len(coordinates) - len(unmatched))
-                    and strict_equal(edge.get('missing_pixels'), unmatched), 'Selection pixel report differs from native PNG')
-            if not coordinates or unmatched:
-                missing.append(name)
-        require(strict_equal(record.get('missing_edges'), missing)
-                and record.get('full_outline_visible') is (not missing), 'Selection visibility report contradicts pixels')
-        if missing:
-            failures.append(f'{selected}: {",".join(missing)}')
+    for key, occupied, prefix in (('selection_captures', False, 'selection'),
+                                  ('occupied_selection_captures', True, 'selection-occupied')):
+        records = proof.get(key)
+        require(type(records) is list and len(records) == 18, 'Incomplete selection visibility matrix: ' + key)
+        for selected, record in enumerate(records):
+            require(type(record) is dict and type(record.get('selected_slot')) is int
+                    and record['selected_slot'] == selected and record.get('server_confirmed') is True
+                    and record.get('state_source') == 'server-seeded selection render case; not a user selection gesture',
+                    'Selection state provenance differs')
+            for field, value in dict(occupied=occupied, selected_item='minecraft:stone' if occupied else 'minecraft:air',
+                                     selected_item_count=1 if occupied else 0, visible_item_total=18 if occupied else 0).items():
+                require(strict_equal(record.get(field), value), 'Selection item occupancy differs: ' + field)
+            inventory = {field: record[field] for field in ('selected_item', 'selected_item_count', 'visible_item_total')}
+            require(strict_equal(record.get('server_inventory'), inventory), 'Selection client/server occupancy evidence differs')
+            validate_viewport(record, viewport)
+            px, py = record.get('pointer_x'), record.get('pointer_y')
+            sx, sy = transform(width, height, gui_scale)
+            _, view_scale, _ = expected_geometry(width, height, gui_scale)
+            require(all(type(value) in (int, float) and math.isfinite(value) for value in (px, py))
+                    and 0 <= px < viewport['gui_width'] and 0 <= py < viewport['gui_height']
+                    and not (sx(0) <= px * gui_scale < sx(400) and sy(0) <= py * gui_scale < sy(438))
+                    and record.get('pointer_outside_gui') is True
+                    and 'physical XTest pointer' in record.get('pointer_input_method', ''), 'Selection pointer can obscure GUI')
+            require(record.get('outline_quantized') is (view_scale * gui_scale < 1), 'Selection raster mode differs')
+            name = f'{prefix}-{selected}.png'
+            require(record.get('name') == name, 'Unsafe selection capture name')
+            path = Path(game) / 'factory-placer-v2-reference-screenshots' / name
+            png(path, width, height, record.get('sha256'))
+            _, _, pixels = decode_png(path)
+            expected = selection_edges(width, height, gui_scale, selected)
+            require(type(record.get('edges')) is dict and set(record['edges']) == set(expected), 'Selection edge reports missing')
+            missing = []
+            for name, coordinates in expected.items():
+                unmatched = [[x, y] for x, y in coordinates if pixels[(y * width + x) * 4:(y * width + x + 1) * 4] != ROW_ACTIVE]
+                edge = record['edges'][name]
+                require(type(edge) is dict and strict_equal(edge.get('expected_pixels'), len(coordinates))
+                        and strict_equal(edge.get('matched_pixels'), len(coordinates) - len(unmatched))
+                        and strict_equal(edge.get('missing_pixels'), unmatched), 'Selection pixel report differs from native PNG')
+                if not coordinates or unmatched:
+                    missing.append(name)
+            require(strict_equal(record.get('missing_edges'), missing)
+                    and record.get('full_outline_visible') is (not missing), 'Selection visibility report contradicts pixels')
+            if missing:
+                failures.append(f'{prefix}-{selected}: {",".join(missing)}')
+            if occupied:
+                _, _, empty_pixels = decode_png(Path(game) / 'factory-placer-v2-reference-screenshots' / f'selection-{selected}.png')
+                sx, sy = transform(width, height, gui_scale)
+                for slot, (x, y) in enumerate(SLOT_ORIGINS[:18]):
+                    points = [(px, py) for py in range(math.ceil(sy(y) - .5), math.ceil(sy(y + 16) - .5))
+                              for px in range(math.ceil(sx(x) - .5), math.ceil(sx(x + 16) - .5))]
+                    changed = sum(pixels[(py * width + px) * 4:(py * width + px + 1) * 4]
+                                  != empty_pixels[(py * width + px) * 4:(py * width + px + 1) * 4]
+                                  for px, py in points)
+                    require(points and changed >= max(1, math.ceil(len(points) / 10)),
+                            f'Occupied item not visibly distinct from empty slot: selected={selected}, slot={slot}')
     require(not failures, 'Native selection outline incomplete: ' + '; '.join(failures))
 
 

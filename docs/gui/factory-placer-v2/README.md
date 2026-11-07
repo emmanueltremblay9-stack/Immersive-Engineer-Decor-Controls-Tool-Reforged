@@ -48,7 +48,7 @@ The three retained row buttons send **action 22**, values 0/1/2. This sets the s
 
 Controls accept left presses with an empty carried stack. Right/middle presses, carrying, drag/release and non-control clicks are passed to vanilla and never synthesize control actions. There is no optimistic local state mutation: the markers change only when server fields synchronize. No energy gauge, placement animation, success indicator, sound, or new action effect is invented.
 
-The source's decorative levers remain unchanged. Small live markers below their tracks show the actual modes: the three-position redstone marker is power / no power / ignore power from left to right; the two-position trigger marker is signal-change / continuous. A small inner red-button marker reflects field 1. A gold row marker and a gold in-interior slot border reflect field 2. These are confined to measured flat/dark regions, not frame bevels. Unselected row-marker regions are untouched source art. EN and French (France/Canada) localized tooltips describe state and actions; the header plaque has no painted text. New control, empty-slot and header tooltips use native font splitting, bounded to `max(1, min(240, viewportWidth - 16))` screen pixels, including French text on small or high-GUI-scale views. Existing vanilla item tooltips are untouched.
+The source's decorative levers remain unchanged. Small live markers below their tracks show the actual modes: the three-position redstone marker is power / no power / ignore power from left to right; the two-position trigger marker is signal-change / continuous. A small inner red-button marker reflects field 1. A gold row marker and a gold slot border reflect field 2. The normal-size border is confined to the measured interior. At subpixel canvas scales, a one-physical-pixel ring is aligned outside the unchanged item footprint so all four sides remain visible; that small overlay can extend beyond the former fractional cavity bounds. Source artwork, item size and hitboxes are unchanged. Unselected row-marker regions are untouched source art. EN and French (France/Canada) localized tooltips describe state and actions; the header plaque has no painted text. New control, empty-slot and header tooltips use native font splitting, bounded to `max(1, min(240, viewportWidth - 16))` screen pixels, including French text on small or high-GUI-scale views. Existing vanilla item tooltips are untouched.
 
 ## Verification and limits
 
@@ -60,7 +60,7 @@ The packaged qualification profile uses the normal production JAR with a separat
 test-only harness mod, rather than loading production classes from source output.
 It checks the unchanged flag-absent legacy path separately from opt-in V2. The
 extended V2 suite covers advanced vanilla gestures, native EN/FR/fr_ca tooltips,
-and all 18 selection outlines. Its fail-closed verifier rejects invisible edges
+and all 18 selection outlines in empty and occupied states. Its fail-closed verifier rejects invisible edges
 in a small viewport rather than counting absent raster coverage as success.
 These are validation requirements, not a statement that the newest commit passed.
 V2 remains development opt-in; merging tests does not activate or publish it.

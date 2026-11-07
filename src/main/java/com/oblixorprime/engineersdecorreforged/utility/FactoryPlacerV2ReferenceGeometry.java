@@ -100,6 +100,41 @@ public final class FactoryPlacerV2ReferenceGeometry {
       return (int)Math.max(1L, Math.min(240L, (long)viewportWidth - 16L));
    }
 
+   /**
+    * Selection-only raster geometry in framebuffer pixels, ordered top/right/bottom/left.
+    * At subpixel canvas scale, reserve one complete pixel outside the unchanged 16x16
+    * item footprint. Outward rounding can extend this overlay beyond the old fractional
+    * 18x18 border; it never changes the artwork, item transform or input geometry.
+    * At >=1 physical pixel per canvas unit, preserve the original outline exactly.
+    */
+   public static List<PixelRect> selectionEdges(ViewTransform view, double guiScale, int slot) {
+      if (!Double.isFinite(guiScale) || guiScale <= 0 || slot < 0 || slot >= 18) {
+         throw new IllegalArgumentException("Selection requires a positive GUI scale and machine slot");
+      }
+      var a = anchor(slot);
+      if (view.scale() * guiScale < 1.0D) {
+         double left = Math.floor(view.screenX(a.x()) * guiScale);
+         double top = Math.floor(view.screenY(a.y()) * guiScale);
+         double right = Math.ceil(view.screenX(a.x() + ITEM_SIZE) * guiScale);
+         double bottom = Math.ceil(view.screenY(a.y() + ITEM_SIZE) * guiScale);
+         return List.of(new PixelRect(left - 1, top - 1, right + 1, top),
+            new PixelRect(right, top, right + 1, bottom),
+            new PixelRect(left - 1, bottom, right + 1, bottom + 1),
+            new PixelRect(left - 1, top, left, bottom));
+      }
+      return List.of(pixelRect(view, guiScale, a.x() - 1, a.y() - 1, 18, 1),
+         pixelRect(view, guiScale, a.x() + 16, a.y(), 1, 16),
+         pixelRect(view, guiScale, a.x() - 1, a.y() + 16, 18, 1),
+         pixelRect(view, guiScale, a.x() - 1, a.y(), 1, 16));
+   }
+
+   private static PixelRect pixelRect(ViewTransform view, double guiScale, int x, int y, int width, int height) {
+      return new PixelRect(view.screenX(x) * guiScale, view.screenY(y) * guiScale,
+         view.screenX(x + width) * guiScale, view.screenY(y + height) * guiScale);
+   }
+
+   public record PixelRect(double left, double top, double right, double bottom) {}
+
    public enum Control { ROW_TOP, ROW_MIDDLE, ROW_BOTTOM, MANUAL_TRIGGER, INVERSION, TRIGGER_MODE }
 
    public static Rect controlRect(Control control) {

@@ -129,10 +129,22 @@ line widths, final bounds and framebuffer hash. The verifier compares the full
 localized text to the checked-in language file and rejects clipping or truncation.
 It does not claim OCR or owner acceptance of the visual design.
 
-Eighteen further captures observe each server-seeded selected slot. These are
-rendering cases, not new user selection gestures. All four outline edges are
-independently checked against native pixels. Zero-pixel edges or missing gold
-pixels fail qualification; the full diagnostic matrix is retained on failure.
+Thirty-six further captures observe every server-seeded selected slot, first
+empty and then with one stone in every visible machine slot. These are rendering
+cases, not new user selection gestures. Actual client and server item observations
+must match each case. Every occupied item interior must also differ visibly
+from the matching empty native screenshot (at least 10% of its pixel centers),
+so metadata alone cannot pass invisible items. The physical pointer is parked outside the GUI so a previous
+tooltip cannot obscure the selected row. All four outline edges are independently
+checked against native pixels, including occupied slots. Zero-pixel edges or
+missing gold pixels fail qualification; the full matrix is retained on failure.
+
+At one or more physical pixels per canvas unit, the original logical outline is
+unchanged. Below that scale, the full 16×16 item footprint is rounded outward to
+integer framebuffer bounds; a one-physical-pixel ring is drawn immediately outside
+it. This leaves item size and input geometry untouched. In a severely downscaled
+view the overlay can extend slightly beyond the former fractional cavity bounds.
+The source artwork is never rewritten to make room for it.
 
 The flag-absent packaged profile opens the legacy screen and preserves default
 logic 6 and cursor 0. With an obstructed target it verifies a server-confirmed
@@ -142,3 +154,16 @@ default has not silently changed. It does not make V2 normally available.
 All new checks must succeed on the exact pushed commit before being reported as
 passed. No activation, merge, release, saved-world change or mechanical change is
 performed by these validation profiles.
+
+## Native regression that motivated the pixel-safe outline
+
+Run `42383295394`, exact source `e0192fc1c42da48c975d5d7f672fe6d0e175dd4c`,
+passed the packaged compile/GameTests (744 required) and the normal, flag-absent
+profile using JAR SHA-256
+`4363cdb8a0433753494ed2feb599d3e4ee7c486ed115fe71d5cdbc18d94fba20`.
+The short French 1280×260 profile reached all gestures and tooltip captures but
+failed strict selection qualification: some edges had no raster coverage, and
+slot 4 had none on all four sides. This is a real production rendering defect.
+The French scale-3 third-row failures were separately caused by a stale physical
+pointer leaving a tooltip over the capture, a harness defect. These results do
+not qualify the corrected commit; rerun all profiles on its exact head.

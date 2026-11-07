@@ -1,6 +1,7 @@
 """Synthetic negative controls for packaged evidence; no native game claims."""
 import copy
 import hashlib
+import math
 from pathlib import Path
 import tempfile
 import unittest
@@ -8,7 +9,8 @@ import zipfile
 
 import factory_placer_delivery_evidence as delivery
 from client_mixin_smoke import SmokeFailure
-from factory_placer_v2_reference_native import DEFAULT_SOURCE, ART_SHA
+from factory_placer_v2_reference_native import DEFAULT_SOURCE, ART_SHA, ROW_ACTIVE, SLOT_ORIGINS, transform, expected_geometry
+from test_factory_placer_v2_reference_native import png_rows
 
 
 def snapshot(counts, carried=0, dropped=0):
@@ -100,10 +102,31 @@ class AdvancedEvidenceTest(unittest.TestCase):
             self.assertEqual(set(edges), {'top', 'right', 'bottom', 'left'})
             self.assertTrue(all(edges.values()))
 
-    def test_short_viewport_missing_edges_not_invented(self):
-        missing = [(slot, name) for slot in range(18)
-                   for name, values in delivery.selection_edges(1280, 260, 1, slot).items() if not values]
-        self.assertTrue(missing, 'Current one-logical-pixel geometry has documented subpixel gaps')
+    def test_short_viewport_all_edges_outside_unchanged_item_footprint(self):
+        sx, sy = transform(1280, 260, 1)
+        for slot in range(18):
+            x, y = SLOT_ORIGINS[slot]
+            edges = delivery.selection_edges(1280, 260, 1, slot)
+            for name, points in edges.items():
+                with self.subTest(slot=slot, edge=name):
+                    self.assertTrue(points)
+                    self.assertTrue(all(not (sx(x) <= px + .5 < sx(x + 16)
+                        and sy(y) <= py + .5 < sy(y + 16)) for px, py in points))
+                    if name in ('top', 'bottom'):
+                        self.assertEqual(len(set(py for _, py in points)), 1)
+                    else:
+                        self.assertEqual(len(set(px for px, _ in points)), 1)
+
+    def test_large_viewports_keep_original_outline_contract(self):
+        for w, h, scale in ((1280,720,1),(1920,1080,1),(1920,1080,2),(1920,1080,3)):
+            sx, sy = transform(w,h,scale)
+            for slot in range(18):
+                x,y=SLOT_ORIGINS[slot]
+                strips=((x-1,y-1,x+17,y),(x+16,y,x+17,y+16),(x-1,y+16,x+17,y+17),(x-1,y,x,y+16))
+                expected={name:[(px,py) for py in range(math.ceil(sy(t)-.5),math.ceil(sy(b)-.5))
+                          for px in range(math.ceil(sx(l)-.5),math.ceil(sx(r)-.5))]
+                          for name,(l,t,r,b) in zip(('top','right','bottom','left'),strips)}
+                self.assertEqual(delivery.selection_edges(w,h,scale,slot),expected)
 
     def test_translated_tooltip_expectations(self):
         project = Path(__file__).resolve().parents[2]
@@ -114,6 +137,93 @@ class AdvancedEvidenceTest(unittest.TestCase):
             self.assertIn('18', texts['ROW_BOTTOM'])
         self.assertNotEqual(delivery.expected_tooltip_texts(project, 'en_us')['HEADER'],
                             delivery.expected_tooltip_texts(project, 'fr_ca')['HEADER'])
+
+
+class SelectionEvidenceTest(unittest.TestCase):
+    """Synthetic screenshots validate rejections, never certify actual Minecraft rendering."""
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
+        self.game=Path(self.tmp.name); self.folder=self.game/'factory-placer-v2-reference-screenshots'
+        self.folder.mkdir(); self.width,self.height,self.scale=1280,260,1
+        self.proof={}; viewport,_,_=expected_geometry(self.width,self.height,self.scale)
+        for key,occupied,prefix in (('selection_captures',False,'selection'),('occupied_selection_captures',True,'selection-occupied')):
+            records=[]; self.proof[key]=records
+            for selected in range(18):
+                pixels=bytearray(bytes((0,0,0,255))*self.width*self.height)
+                edges=delivery.selection_edges(self.width,self.height,self.scale,selected)
+                for coordinates in edges.values():
+                    for x,y in coordinates:pixels[(y*self.width+x)*4:(y*self.width+x+1)*4]=ROW_ACTIVE
+                if occupied:
+                    # Explicit synthetic item interiors, not Minecraft asset rendering.
+                    sx,sy=transform(self.width,self.height,self.scale)
+                    for x,y in SLOT_ORIGINS[:18]:
+                        for py in range(math.ceil(sy(y)-.5),math.ceil(sy(y+16)-.5)):
+                            for px in range(math.ceil(sx(x)-.5),math.ceil(sx(x+16)-.5)):
+                                pixels[(py*self.width+px)*4:(py*self.width+px+1)*4]=bytes((120,120,120,255))
+                record=dict(selected_slot=selected,server_confirmed=True,occupied=occupied,
+                    selected_item='minecraft:stone' if occupied else 'minecraft:air',
+                    selected_item_count=1 if occupied else 0,visible_item_total=18 if occupied else 0,
+                    state_source='server-seeded selection render case; not a user selection gesture',
+                    name=f'{prefix}-{selected}.png',full_outline_visible=True,missing_edges=[],
+                    edges={name:dict(expected_pixels=len(coords),matched_pixels=len(coords),missing_pixels=[])
+                           for name,coords in edges.items()},**viewport)
+                record['server_inventory']={field:record[field] for field in ('selected_item','selected_item_count','visible_item_total')}
+                record.update(pointer_x=viewport['gui_width']-2,pointer_y=viewport['gui_height']-2,
+                    pointer_outside_gui=True,pointer_input_method='physical XTest pointer through GLFW/Minecraft, parked outside canvas',
+                    outline_quantized=True)
+                self.write(record,pixels);records.append(record)
+
+    def write(self,record,pixels):
+        data=png_rows(self.width,self.height,[pixels[y*self.width*4:(y+1)*self.width*4] for y in range(self.height)])
+        (self.folder/record['name']).write_bytes(data);record['sha256']=hashlib.sha256(data).hexdigest()
+
+    def validate(self):
+        delivery.validate_selections(self.proof,self.game,self.width,self.height,self.scale)
+
+    def test_empty_and_occupied_all18_four_edges(self):self.validate()
+
+    def test_missing_occupied_matrix(self):
+        self.proof.pop('occupied_selection_captures')
+        with self.assertRaisesRegex(SmokeFailure,'Incomplete selection'):self.validate()
+
+    def test_occupancy_evidence_cannot_be_invented(self):
+        for field,value in dict(occupied=1,selected_item='minecraft:air',selected_item_count=0,visible_item_total=17).items():
+            record=self.proof['occupied_selection_captures'][0];old=record[field];record[field]=value
+            with self.subTest(field=field),self.assertRaisesRegex(SmokeFailure,'occupancy'):self.validate()
+            record[field]=old
+
+    def test_each_erased_edge_rejected_even_with_matching_pixel_report(self):
+        record=self.proof['selection_captures'][4];original=copy.deepcopy(record)
+        path=self.folder/record['name'];_,_,original_pixels=delivery.decode_png(path)
+        for name,coordinates in delivery.selection_edges(self.width,self.height,self.scale,4).items():
+            record.clear();record.update(copy.deepcopy(original));pixels=bytearray(original_pixels)
+            for x,y in coordinates:pixels[(y*self.width+x)*4:(y*self.width+x+1)*4]=bytes((0,0,0,255))
+            record['edges'][name].update(matched_pixels=0,missing_pixels=[list(p) for p in coordinates])
+            record.update(full_outline_visible=False,missing_edges=[name]);self.write(record,pixels)
+            with self.subTest(edge=name),self.assertRaisesRegex(SmokeFailure,'Native selection outline incomplete'):self.validate()
+
+    def test_server_occupancy_and_parked_pointer_are_required(self):
+        for field,value in dict(server_inventory={},pointer_x=640,pointer_y=float('nan'),pointer_outside_gui=1,
+                                pointer_input_method='virtual screen handler',outline_quantized=False).items():
+            record=self.proof['selection_captures'][0];old=record[field];record[field]=value
+            if field=='pointer_x':old_y=record['pointer_y'];record['pointer_y']=130
+            with self.subTest(field=field),self.assertRaises(SmokeFailure):self.validate()
+            record[field]=old
+            if field=='pointer_x':record['pointer_y']=old_y
+
+    def test_occupied_claim_with_identical_empty_image_rejected(self):
+        record=self.proof['occupied_selection_captures'][0]
+        _,_,empty=delivery.decode_png(self.folder/'selection-0.png');self.write(record,empty)
+        with self.assertRaisesRegex(SmokeFailure,'Occupied item not visibly distinct'):self.validate()
+
+    def test_reverted_subpixel_renderer_rejected(self):
+        record=self.proof['selection_captures'][4]
+        # Old native geometry has no rasterizable sides for slot4 at this viewport.
+        pixels=bytearray(bytes((0,0,0,255))*self.width*self.height)
+        for name,coordinates in delivery.selection_edges(self.width,self.height,self.scale,4).items():
+            record['edges'][name].update(matched_pixels=0,missing_pixels=[list(p) for p in coordinates])
+        record.update(full_outline_visible=False,missing_edges=['top','right','bottom','left']);self.write(record,pixels)
+        with self.assertRaisesRegex(SmokeFailure,'Native selection outline incomplete'):self.validate()
 
 
 class PackagedIdentityTest(unittest.TestCase):

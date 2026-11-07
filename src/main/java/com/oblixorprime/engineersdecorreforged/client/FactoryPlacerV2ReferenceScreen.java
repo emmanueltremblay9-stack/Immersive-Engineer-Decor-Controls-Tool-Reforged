@@ -112,7 +112,25 @@ public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScree
          graphics.pose().popPose();
       }
       var selected = FactoryPlacerV2ReferenceGeometry.anchor(FactoryPlacerV2ReferenceState.selectedSlot(menu.field(2)));
-      graphics.renderOutline(selected.x() - 1, selected.y() - 1, 18, 18, FactoryPlacerV2ReferenceState.SELECTED_COLOR);
+      double guiScale = minecraft.getWindow().getGuiScale();
+      if (view.scale() * guiScale >= 1.0D) {
+         graphics.renderOutline(selected.x() - 1, selected.y() - 1, 18, 18, FactoryPlacerV2ReferenceState.SELECTED_COLOR);
+      } else {
+         for (var edge : FactoryPlacerV2ReferenceGeometry.selectionEdges(view, guiScale, selected.menuIndex())) {
+            // Keep the existing canvas pose and item pass. Only this state overlay is
+            // quantized to physical pixels; its strips lie outside the item footprint.
+            double x = view.localX(edge.left() / guiScale), y = view.localY(edge.top() / guiScale);
+            double right = view.localX(edge.right() / guiScale), bottom = view.localY(edge.bottom() / guiScale);
+            graphics.pose().pushPose();
+            try {
+               graphics.pose().translate(x, y, 0);
+               graphics.pose().scale((float)(right - x), (float)(bottom - y), 1.0F);
+               graphics.fill(0, 0, 1, 1, FactoryPlacerV2ReferenceState.SELECTED_COLOR);
+            } finally {
+               graphics.pose().popPose();
+            }
+         }
+      }
       fill(graphics, FactoryPlacerV2ReferenceGeometry.rowIndicator(FactoryPlacerV2ReferenceState.selectedRow(menu.field(2))),
          FactoryPlacerV2ReferenceState.SELECTED_COLOR);
       fill(graphics, FactoryPlacerV2ReferenceGeometry.SIGNAL_INDICATOR,
