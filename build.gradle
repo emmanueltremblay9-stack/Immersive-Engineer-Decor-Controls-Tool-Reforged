@@ -24,6 +24,14 @@ if (factoryPlacerNativeValidation) {
         runtimeClasspath += sourceSets.main.runtimeClasspath
     }
 }
+def fluidGestureNativeValidation = providers.gradleProperty('include_fluid_gesture_native_validation').map { it.toBoolean() }.getOrElse(false)
+if (fluidGestureNativeValidation) {
+    sourceSets.create('fluidGestureNativeValidation') {
+        java.srcDir('src/fluidGestureNativeValidation/java')
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
 if (tfcCrossoverRuntime && !tfcMilkingRuntime) throw new GradleException('Crossover test profile requires include_tfc_milking_runtime=true')
 configurations { tfcMilkingApi; tfcMilkingCrossover }
 if (tfcMilkingRuntime) sourceSets.main.java.srcDir('src/tfcGameTest/java')
@@ -75,6 +83,7 @@ neoForge {
         "${mod_id}" {
             sourceSet(sourceSets.main)
             if (factoryPlacerNativeValidation) sourceSet(sourceSets.factoryPlacerNativeValidation)
+            if (fluidGestureNativeValidation) sourceSet(sourceSets.fluidGestureNativeValidation)
         }
     }
 }

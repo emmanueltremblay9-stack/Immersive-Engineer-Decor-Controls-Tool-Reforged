@@ -6,7 +6,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
-import com.oblixorprime.engineersdecorreforged.utility.PassiveFluidAccumulatorGauge;
+import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFreezerArtworkMasks;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -129,40 +129,23 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             RedesignedMachineArtwork.breaker(graphics, (MachineMenu)this.menu, x, y);
             return;
          }
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL
+            || ((MachineMenu)this.menu).kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+            RetainedFluidMachineArtwork.render(graphics, (MachineMenu)this.menu, x, y);
+            return;
+         }
          this.drawOriginalTextureBackdrop(graphics, x, y);
             MachineKind kind = ((MachineMenu)this.menu).kind();
             if (kind == MachineKind.SMALL_FREEZER) {
                 this.drawSmallFreezerTexture(graphics, texture, x, y);
             } else if (usesExplicitTextureDimensions(kind)) {
                 graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-            } else if (kind == MachineKind.SMALL_FLUID_FUNNEL
-                    || kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
-                GuiTextureBlit geometry = kind == MachineKind.SMALL_FLUID_FUNNEL
-                    ? GuiTextureBlit.stretchFullTexture(this.imageWidth, this.imageHeight, 385, 439)
-                    : new GuiTextureBlit(this.imageWidth, this.imageHeight, 278, 616, 385, 439, 941, 1672);
-                graphics.blit(
-                    texture,
-                    x,
-                    y,
-                    geometry.destinationWidth(),
-                    geometry.destinationHeight(),
-                    (float)geometry.sourceX(),
-                    (float)geometry.sourceY(),
-                    geometry.sourceWidth(),
-                    geometry.sourceHeight(),
-                    geometry.textureWidth(),
-                    geometry.textureHeight()
-                );
             } else {
                 graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
             }
             this.drawOriginalWidgets(graphics, texture, x, y);
             if (kind == MachineKind.SMALL_BLOCK_BREAKER) {
                 this.drawBlockBreakerTarget(graphics, x, y);
-            } else if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
-                this.drawSmallFluidFunnelBackgroundOverlays(graphics, texture, x, y);
-            } else if (kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
-               this.drawPassiveFluidAccumulatorBackgroundOverlays(graphics, texture, x, y);
             } else if (kind == MachineKind.FLUID_BARREL) {
                 this.drawFluidBarrelWidgets(graphics, texture, x, y);
          }
@@ -899,78 +882,23 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x + 1, y + 1, x + 2, y + 2, -7697016);
    }
 
-   private void drawPassiveFluidAccumulatorBackgroundOverlays(
-      GuiGraphics graphics, ResourceLocation texture, int x0, int y0
-   ) {
-      MachineMenu menu = (MachineMenu)this.menu;
-      String prefix = "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.";
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 12, y0 + 4, 33, 20,
-          318, 754, 22, 14, 941, 1672, (float)this.imageWidth / 385.0F);
-       this.drawTexturePatch(graphics, texture, x0 + 55, y0 + 5, 143, 17,
-          318, 754, 80, 14, 941, 1672);
-      // Mask baked French rows at their printed PNG positions with clean panel texture, then draw live labels.
-      this.maskAccumulatorLabel(graphics, texture, x0, y0,
-         Component.translatable(prefix + "collection").getString(), 40, 66, 60, 48, 304, 94);
-      this.maskAccumulatorLabel(graphics, texture, x0, y0,
-         Component.translatable(prefix + "bucket.input").getString(), 38, 86, 53, 36, 304, 94);
-      this.maskAccumulatorLabel(graphics, texture, x0, y0,
-         Component.translatable(prefix + "bucket.output").getString(), 157, 86, 59, 43, 529, 90);
-      this.maskAccumulatorLabel(graphics, texture, x0, y0,
-         Component.translatable(prefix + "water").getString(), 146, 47, 63, 15, 529, 90);
-      this.maskAccumulatorLabel(graphics, texture, x0, y0,
-         Component.translatable(prefix + "amount", menu.fluidAmount(), menu.fluidCapacity()).getString(), 167, 57, 67, 56, 529, 90);
-      this.drawTexturePatch(graphics, texture, x0 + 20, y0 + 141, 48, 9, 416, 876, 88, 18, 941, 1672);
-
-      this.drawMachineSlotInteriorsFromArtwork(graphics, texture, x0, y0,
-         278, 616, 385, 439, 941, 1672, this.imageWidth, this.imageHeight);
-
-      int tankLeft = x0 + 80;
-      int tankTop = y0 + 63;
-      int tankRight = x0 + 122;
-      int tankBottom = y0 + 114;
-      graphics.fill(tankLeft, tankTop, tankRight, tankBottom, 0xFF13212B);
-
-      int availableHeight = tankBottom - tankTop - 2;
-      int fill = PassiveFluidAccumulatorGauge.filledHeight(menu.fluidAmount(), menu.fluidCapacity(), availableHeight);
-      if (fill > 0) {
-         int fluidTop = tankBottom - 1 - fill;
-         graphics.fill(tankLeft + 1, fluidTop, tankRight - 1, tankBottom - 1, 0xFF218CCB);
-         graphics.fill(tankLeft + 2, fluidTop, tankRight - 2, fluidTop + 1, 0xFF65C7EF);
-      }
-
-   }
-
    private void drawPassiveFluidAccumulatorLabels(GuiGraphics graphics) {
-      MachineMenu menu = (MachineMenu)this.menu;
-      String prefix = "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.";
-      this.drawCompactMachineTitle(graphics,
-         Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator").getString(),
-         124, 8, 143, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "collection").getString(), 40, 66, 60, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.input").getString(), 38, 86, 53, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.output").getString(), 157, 86, 59, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "water").getString(), 146, 47, 63, TEXT);
-      this.drawTinyCenteredString(
-         graphics,
-         Component.translatable(prefix + "amount", menu.fluidAmount(), menu.fluidCapacity()).getString(),
-         167,
-         57,
-         67,
-         TEXT
-      );
-      this.drawTinyString(graphics, Component.translatable(prefix + "inventory").getString(), 21, 143, 58, TEXT, false);
+      // Keep the faceplate text-free; identity, collection and storage details are hover-only.
    }
 
    private Component passiveFluidAccumulatorTooltip(double mouseX, double mouseY) {
       if (((MachineMenu)this.menu).kind() != MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
          return null;
       }
-      if (this.isHovering(14, 68, 60, 15, mouseX, mouseY)) {
+      if (this.isFluidArtworkHovered(FluidMachineRedesignLayout.HEADER, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator");
+      }
+      if (this.isFluidArtworkHovered(FluidMachineRedesignLayout.ACCUMULATOR_COLLECTION, mouseX, mouseY)) {
          return Component.translatable(
             "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.collection.tooltip"
          );
       }
-      if (!this.isHovering(78, 61, 46, 54, mouseX, mouseY)) {
+      if (!this.isFluidArtworkHovered(FluidMachineRedesignLayout.ACCUMULATOR_TANK, mouseX, mouseY)) {
          return null;
       }
 
@@ -1106,18 +1034,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       String[] parts = amount.split("/", 2);
       this.drawScaledCenteredString(graphics, parts[0].trim() + " mB", 178, 72, 64, TEXT, 1.0F);
       if (parts.length == 2) this.drawScaledCenteredString(graphics, "/ " + parts[1].trim(), 178, 80, 64, TEXT, 1.0F);
-   }
-
-   private void maskAccumulatorLabel(
-      GuiGraphics graphics, ResourceLocation texture, int x0, int y0, String text,
-      int centerX, int y, int maxWidth, int minimumWidth, int patchSourceX, int patchSourceWidth
-   ) {
-      int textWidth = Math.max(this.tinyTextWidth(text, maxWidth), Math.min(maxWidth, minimumWidth));
-      if (textWidth <= 0) return;
-      int left = centerX - textWidth / 2 - 1;
-      int width = centerX + (textWidth + 1) / 2 + 1 - left;
-      this.drawTexturePatch(graphics, texture, x0 + left, y0 + y - 1, width, 9,
-         patchSourceX, 754, patchSourceWidth, 18, 941, 1672);
    }
 
    private void drawTexturePatch(
@@ -1436,7 +1352,13 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
         }
         Component accumulatorTooltip = this.passiveFluidAccumulatorTooltip(mouseX, mouseY);
         if (accumulatorTooltip != null) {
-            graphics.renderTooltip(this.font, accumulatorTooltip, mouseX, mouseY);
+            if (this.isFluidArtworkHovered(FluidMachineRedesignLayout.ACCUMULATOR_COLLECTION, mouseX, mouseY)) {
+                // Keep the full translated explanation near the panel, using native font wrapping.
+                int wrapWidth = Math.max(1, Math.min(240, this.width - 24));
+                graphics.renderTooltip(this.font, this.font.split(accumulatorTooltip, wrapWidth), mouseX, mouseY);
+            } else {
+                graphics.renderTooltip(this.font, accumulatorTooltip, mouseX, mouseY);
+            }
             return;
         }
 
@@ -1798,103 +1720,23 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x + 2, y + 2, x + width - 2, y + 6, 1442840575);
    }
 
-   private void drawSmallFluidFunnelBackgroundOverlays(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
-      MachineMenu menu = (MachineMenu)this.menu;
-      this.drawTexturePatch(graphics, texture, x0 + 17, y0 + 4, 34, 20,
-          308, 18, 22, 14, 385, 439);
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 64, y0 + 6, 104, 16,
-          308, 18, 22, 14, 385, 439, 1.0F);
-
-      this.drawMachineSlotInteriorsFromArtwork(graphics, texture, x0, y0,
-         0, 0, 385, 439, 385, 439, this.imageWidth, this.imageHeight);
-
-      boolean frenchArtwork = this.isFrenchArtworkLocale();
-      // The baked fluid name is a fixed example; replace it in every locale. Fixed French
-      // bucket/outlet captions remain as authored in fr_fr and are patched only for other locales.
-      if (!frenchArtwork) {
-          this.drawRepeatedTexturePatch(graphics, texture, x0 + 20, y0 + 64, 46, 12,
-             100, 110, 18, 18, 385, 439, 1.0F);
-          this.drawRepeatedTexturePatch(graphics, texture, x0 + 142, y0 + 64, 48, 12,
-             100, 110, 18, 18, 385, 439, 1.0F);
-          this.drawRepeatedTexturePatch(graphics, texture, x0 + 121, y0 + 125, 65, 13,
-             100, 110, 18, 18, 385, 439, 1.0F);
-       this.drawTexturePatch(graphics, texture, x0 + 22, y0 + 141, 61, 10,
-          140, 262, 50, 14, 385, 439);
-      }
-       // The former source rectangle covered the baked down-arrow, which leaked into the
-       // dynamic fluid-name row. Use clean wall texture from below the input-bucket frame.
-       this.drawTexturePatch(graphics, texture, x0 + 78, y0 + 77, 53, 17,
-          80, 215, 28, 24, 385, 439);
-      // The static numeric sample sits above the trough lip; clear its full ink bounds.
-       this.drawTexturePatch(graphics, texture, x0 + 71, y0 + 92, 68, 13,
-          80, 215, 28, 24, 385, 439);
-
-      int tankLeft = x0 + 79;
-      int tankTop = y0 + 105;
-      int tankRight = x0 + 132;
-      int tankBottom = y0 + 119;
-      graphics.fill(tankLeft, tankTop, tankRight, tankBottom, 0xFF142028);
-
-      int capacity = Math.max(1, menu.fluidCapacity());
-      int fill = Mth.clamp((int)((long)Math.max(0, menu.fluidAmount()) * (tankBottom - tankTop - 2) / capacity), 0, tankBottom - tankTop - 2);
-      int fluidCode = menu.smallFluidFunnelFluidCode();
-      if (fill > 0 && fluidCode > 0) {
-         int fluidTop = tankBottom - 1 - fill;
-         graphics.fill(tankLeft + 1, fluidTop, tankRight - 1, tankBottom - 1, this.smallFluidFunnelFluidColor(fluidCode));
-         graphics.fill(tankLeft + 2, fluidTop, tankRight - 2, fluidTop + 1, 0x99FFFFFF);
-      }
+   private void drawSmallFluidFunnelLabels(GuiGraphics graphics) {
+      // Keep the faceplate text-free; fluid details and slot roles remain available on hover.
    }
 
-   private void drawSmallFluidFunnelLabels(GuiGraphics graphics) {
-      MachineMenu menu = (MachineMenu)this.menu;
-      this.drawCompactMachineTitle(
-         graphics,
-          Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel").getString(),
-          116, 10, 104, TEXT
-      );
-      if (!this.isFrenchArtworkLocale()) {
-         this.drawScaledCenteredString(
-            graphics,
-            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input").getString(),
-            43, 66, 45, TEXT, 0.82F
-         );
-         this.drawScaledCenteredString(
-            graphics,
-            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output").getString(),
-            165, 66, 48, TEXT, 0.82F
-         );
-      }
-      this.drawScaledCenteredString(
-         graphics,
-         this.smallFluidFunnelFluidName(menu.smallFluidFunnelFluidCode()).getString(),
-         105, 82, 78, TEXT, 0.82F
-      );
-      this.drawScaledCenteredString(
-         graphics,
-         Component.translatable(
-            "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.amount",
-            menu.fluidAmount(), menu.fluidCapacity()
-         ).getString(),
-         105, 93, 78, TEXT, 0.82F
-      );
-      if (!this.isFrenchArtworkLocale()) {
-         this.drawScaledCenteredString(
-            graphics,
-            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output").getString(),
-            154, 126, 65, TEXT, 0.82F
-         );
-         this.drawScaledCenteredString(
-            graphics,
-            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory").getString(),
-            57, 143, 60, TEXT, 0.82F
-         );
-      }
+   private boolean isFluidArtworkHovered(FluidMachineRedesignLayout.Rect area, double mouseX, double mouseY) {
+      return this.isHovering(area.x(), area.y(), area.width(), area.height(), mouseX, mouseY);
    }
 
    private Component smallFluidFunnelTooltip(double mouseX, double mouseY) {
-      if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_FLUID_FUNNEL || !this.isHovering(78, 104, 55, 17, mouseX, mouseY)) {
-         return null;
+      if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_FLUID_FUNNEL) return null;
+      if (this.isFluidArtworkHovered(FluidMachineRedesignLayout.HEADER, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel");
       }
+      if (this.isFluidArtworkHovered(FluidMachineRedesignLayout.FUNNEL_OUTLET, mouseX, mouseY)) {
+         return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output");
+      }
+      if (!this.isFluidArtworkHovered(FluidMachineRedesignLayout.FUNNEL_TANK, mouseX, mouseY)) return null;
 
       MachineMenu menu = (MachineMenu)this.menu;
       return Component.translatable(
@@ -1915,17 +1757,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       };
       return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid." + state);
    }
-
-   private int smallFluidFunnelFluidColor(int code) {
-      return switch (code) {
-         case 1 -> 0xFF3F76E4;
-         case 2 -> 0xFFF06A28;
-         case 3 -> 0xFFE6E1D5;
-         case 4 -> 0xFF8296A0;
-         default -> 0xFF142028;
-      };
-   }
-
 
    private void drawFluidBarrelWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
