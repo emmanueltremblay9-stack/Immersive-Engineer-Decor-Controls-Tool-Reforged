@@ -56,7 +56,7 @@ def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width,he
     require(proof.get('suite')==SUITE and proof.get('nonce')==nonce
         and proof.get('executed_source_sha')==source_sha and re.fullmatch(r'[a-f0-9]{40}',source_sha)
         and proof.get('source_art_sha256')==ART_SHA and proof.get('actual_integrated_world') is True
-        and proof.get('native_visual_acceptance') is False and language in ('en_us','fr_fr')
+        and proof.get('native_visual_acceptance') is False and language in ('en_us','fr_fr','fr_ca')
         and proof.get('selected_language')==language,'Proof identity, locale or bounded scope differs')
     require(proof.get('status')=='passed_bounded_smoke','Native fixture did not pass'+detail)
     require('error' not in proof,'Passing native proof must not contain a fixture error')
@@ -360,7 +360,10 @@ def decode_png(path: Path) -> tuple[int, int, bytes]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
-    parser.add_argument("--language", choices=("en_us", "fr_fr"), default="en_us")
+    parser.add_argument("--language", choices=("en_us", "fr_fr", "fr_ca"), default="en_us")
+    parser.add_argument("--presentation", choices=("v2", "default"), default="v2")
+    parser.add_argument("--runtime-jar", type=Path,
+                        help="Optional shared normal JAR; Gradle requires equality with the exact-source build")
     parser.add_argument("--width", type=int, default=1280)
     parser.add_argument("--height", type=int, default=720)
     parser.add_argument("--gui-scale", type=int, choices=(1, 2, 3), default=1)
@@ -399,15 +402,21 @@ def main() -> int:
         "onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n"
         f"maxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:{args.gui_scale}\n"
         f"lang:{args.language}\n", encoding="utf-8")
+    run_name = 'factoryPlacerPackagedClient' if args.presentation == 'v2' else 'factoryPlacerPackagedDefaultClient'
+    task_suffix = run_name[0].upper() + run_name[1:]
     init = evidence / "factory_placer.init.gradle"
     init.write_text("""gradle.projectsEvaluated {
-    rootProject.extensions.getByName('neoForge').runs.named('client') {
+    rootProject.extensions.getByName('neoForge').runs.named(System.getenv('IEDCTR_PACKAGED_RUN')) {
         gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
         systemProperty 'iedctr.clientGameplay', 'false'
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
-        systemProperty 'iedctr.factoryPlacerV2ReferenceNative', 'true'
-        systemProperty 'iedctr.dev.factoryPlacerV2Reference', 'true'
+        if (System.getenv('IEDCTR_PACKAGED_PRESENTATION') == 'v2') {
+            systemProperty 'iedctr.factoryPlacerV2ReferenceNative', 'true'
+            systemProperty 'iedctr.dev.factoryPlacerV2Reference', 'true'
+        }
+        systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_MOD_JAR')
+        systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_MOD_JAR_SHA256')
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         systemProperty 'iedctr.requestedGuiScale', System.getenv('IEDCTR_GUI_SCALE')
         systemProperty 'iedctr.requestedWidth', System.getenv('IEDCTR_SCREEN_WIDTH')
@@ -422,18 +431,55 @@ def main() -> int:
     env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
                IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_WIDTH=str(args.width),
                IEDCTR_SCREEN_HEIGHT=str(args.height), IEDCTR_GUI_SCALE=str(args.gui_scale),
+               IEDCTR_PACKAGED_RUN=run_name, IEDCTR_PACKAGED_PRESENTATION=args.presentation,
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
-    gradle = ["bash", str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace", "-Pinclude_factory_placer_native_validation=true"]
+    base_gradle = ["bash", str(project / "gradlew"), "--no-daemon", "--stacktrace", "-Pinclude_factory_placer_native_validation=true"]
+    if args.runtime_jar is not None:
+        supplied = args.runtime_jar.resolve()
+        if not supplied.is_file() or supplied.suffix != '.jar':
+            parser.error('Supplied normal JAR does not exist')
+        base_gradle.append('-Pfactory_placer_runtime_jar=' + str(supplied))
+    gradle = base_gradle + ["--init-script", str(init)]
+    # The marker is created inside this new xvfb-run session, never against a user's DISPLAY.
+    display_guard = evidence / 'owned_display.py'
+    display_guard.write_text('''import os, pathlib, re, sys
+display = os.environ.get('DISPLAY', '')
+assert re.fullmatch(r':\\d+(\\.\\d+)?', display), 'Expected isolated local Xvfb display'
+game = pathlib.Path(os.environ['IEDCTR_GAMEPLAY_DIR']).resolve()
+nonce = os.environ['IEDCTR_GAMEPLAY_NONCE']
+assert re.fullmatch(r'[a-f0-9]{32}', nonce)
+assert (game / '.iedctr-client-gameplay-nonce').read_text() == nonce
+marker = game / '.iedctr-placer-xvfb'
+assert not marker.exists()
+marker.write_text(nonce + '\\n' + display)
+os.execvpe(sys.argv[1], sys.argv[1:], os.environ)
+''', encoding='utf-8')
     print(f"Factory Placer V2 isolated native evidence: {evidence} ({args.width}x{args.height}, GUI scale {args.gui_scale}, {args.language})", flush=True)
     try:
-        code, expired = run_bounded(gradle + ["prepareClientRun"], project, env,
+        code, expired = run_bounded(base_gradle + ['verifyFactoryPlacerPackagedRuntime'], project, env,
+                                    evidence / 'package.log', args.prepare_timeout)
+        require(not expired and code == 0, 'Exact-source packaged runtime preparation failed')
+        classpath_path = project / 'build/reports/factory-placer-packaged-runtime.json'
+        classpath_report = json.loads(classpath_path.read_text())
+        jar = Path(classpath_report['jar_path'])
+        require(jar.is_file() and jar.suffix == '.jar' and not jar.is_symlink(), 'Missing packaged runtime JAR')
+        require(args.runtime_jar is None or jar.resolve() == args.runtime_jar.resolve(), 'Runtime did not select shared JAR')
+        jar_sha = hashlib.sha256(jar.read_bytes()).hexdigest()
+        require(jar_sha == classpath_report['jar_sha256'], 'Packaged runtime report SHA differs')
+        (evidence / 'packaged-runtime-classpath.json').write_text(json.dumps(classpath_report, indent=2) + '\n')
+        (evidence / 'runtime-jar-sha256.txt').write_text(jar_sha + '\n')
+        env['IEDCTR_EXPECTED_MOD_JAR'] = str(jar.resolve())
+        env['IEDCTR_EXPECTED_MOD_JAR_SHA256'] = jar_sha
+        code, expired = run_bounded(gradle + ['prepare' + task_suffix + 'Run'], project, env,
                                     evidence / "prepare.log", args.prepare_timeout)
         if expired or code != 0:
             raise SmokeFailure(f"Factory Placer V2 client preparation failed (exit={code}, timeout={expired})")
         log = evidence / "client.log"
-        code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24"]
-                                    + gradle + ["runClient"], project, env, log, args.timeout)
-        proof = json.loads((game / "client-factory-placer-v2-reference-result.json").read_text())
+        code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24",
+                                    sys.executable, str(display_guard)]
+                                    + gradle + ['run' + task_suffix], project, env, log, args.timeout)
+        result_name = 'client-factory-placer-v2-reference-result.json' if args.presentation == 'v2' else 'client-factory-placer-packaged-default-result.json'
+        proof = json.loads((game / result_name).read_text())
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):
             runtime = game / "logs" / name
@@ -445,9 +491,15 @@ def main() -> int:
                                    capture_output=True, text=True).stdout.strip()
         if final_status or final_sha != source_sha:
             raise SmokeFailure("Candidate changed during native execution; source identity is not exact")
-        validate_proof(proof, nonce, source_sha, game, logs, code, expired,
-                       args.width, args.height, args.language, args.gui_scale, source_path=art)
-        print("PASS bounded native Factory Placer V2 smoke. Full visual/input acceptance is not claimed.")
+        require(hashlib.sha256(jar.read_bytes()).hexdigest() == jar_sha, 'Runtime JAR changed during execution')
+        from factory_placer_delivery_evidence import validate_delivery_proof, validate_default_proof
+        if args.presentation == 'v2':
+            validate_delivery_proof(proof, nonce, source_sha, game, logs, code, expired,
+                                    args.width, args.height, args.language, args.gui_scale, project, jar, classpath_report)
+        else:
+            validate_default_proof(proof, nonce, source_sha, game, logs, code, expired,
+                                   args.width, args.height, args.language, jar, classpath_report)
+        print('PASS exact-JAR Factory Placer ' + args.presentation + ' qualification. No release or owner visual acceptance is claimed.')
         return 0
     except (SmokeFailure, OSError, ValueError) as error:
         print(f"FAIL: {error}", file=sys.stderr)

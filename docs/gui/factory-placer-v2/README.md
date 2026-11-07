@@ -55,3 +55,12 @@ The source's decorative levers remain unchanged. Small live markers below their 
 `FactoryPlacerV2ReferenceChecks` is dependency-free and checks all 54 indices, complete item/selection containment, non-overlap, hover boundaries, ten viewport transforms, drag round trips, public screen-space bounds, invalid inputs, all control regions, empty/held/right/middle input routing and native logic/action parity. `FactoryPlacerV2ReferenceGeometryTest` runs those checks under JUnit and verifies the packaged PNG's hash, dimensions and byte length.
 
 Local Java 21 pure checks and syntax parsing can run without a Minecraft launch. They do not prove mapped Minecraft APIs, native rendering, packets, persistence, or gameplay. Those require the exact-commit build and native qualification profile; do not label this presentation game-verified from pure tests alone.
+
+The packaged qualification profile uses the normal production JAR with a separate
+test-only harness mod, rather than loading production classes from source output.
+It checks the unchanged flag-absent legacy path separately from opt-in V2. The
+extended V2 suite covers advanced vanilla gestures, native EN/FR/fr_ca tooltips,
+and all 18 selection outlines. Its fail-closed verifier rejects invisible edges
+in a small viewport rather than counting absent raster coverage as success.
+These are validation requirements, not a statement that the newest commit passed.
+V2 remains development opt-in; merging tests does not activate or publish it.
