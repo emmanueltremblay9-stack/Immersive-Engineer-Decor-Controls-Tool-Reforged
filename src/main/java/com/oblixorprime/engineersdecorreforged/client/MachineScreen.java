@@ -452,9 +452,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void drawBlockBreakerLabels(GuiGraphics graphics) {
-      this.drawScaledCenteredString(graphics,
-         Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker").getString(),
-         128, 13, 155, 0xFF24180F, 1.0F);
+      // Keep the retained nameplate unlettered. Identity remains available on hover.
    }
 
    static String blockBreakerStatusLabelKey(int state) {
@@ -521,6 +519,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private Component blockBreakerTooltip(int mouseX, int mouseY) {
       MachineMenu menu = (MachineMenu)this.menu;
       if (menu.kind() != MachineKind.SMALL_BLOCK_BREAKER) return null;
+      if (this.isHovering(42, 6, 172, 18, mouseX, mouseY))
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker");
       String targetName = menu.blockBreakerTargetName();
       boolean hasTarget = blockBreakerHasTarget(targetName);
       float hardness = menu.blockBreakerHardness();
