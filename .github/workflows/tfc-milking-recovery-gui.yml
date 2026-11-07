@@ -1,0 +1,85 @@
+name: Real TFC cow recovery GUI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  native-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Record exact clean candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/tfc-recovery
+          git rev-parse HEAD | tee build/tfc-recovery/tested-source-sha.txt
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Test rejection of invalid native evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tools/validation -p test_tfc_milking_recovery_native.py -v 2>&1 | tee build/tfc-recovery/validator-tests.log
+      - name: Compile real TFC dependency profile
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash ./gradlew compileJava processResources -Pinclude_tfc_milking_runtime=true --stacktrace 2>&1 | tee build/tfc-recovery/compile.log
+      - name: Run isolated native cow GUI proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          command -v Xvfb && command -v xvfb-run && command -v xauth
+          python tools/validation/tfc_milking_recovery_native.py --profile fr-1280x720-scale2 --prepare-timeout 900 --timeout 900 2>&1 | tee build/tfc-recovery/native-runner.log
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - name: State evidence boundaries
+        if: always()
+        shell: bash
+        run: |
+          echo "Exact source requested: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Native client uses the real TFC 4.2.12 dependency, an isolated fixture, and normal server ticks.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Acceptance requires named client/server source identity, ready/recovering/tooltip/post-expiry captures, native cooldown progression, no-repeat observation, and a second production after expiry.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Synthetic validator tests are not gameplay evidence. Native screenshots still require owner visual review; no visual acceptance, merge, release or deployment is claimed.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain exact-head screenshots, source and runtime logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: tfc-recovery-gui-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            build/tfc-recovery/
+            build/tfc-milking-recovery-native-*/run/client-tfc-milking-recovery-result.json
+            build/tfc-milking-recovery-native-*/run/tfc-milking-recovery-screenshots/*.png
+            build/tfc-milking-recovery-native-*/*.log
+            build/tfc-milking-recovery-native-*/run/logs/
+            build/tfc-milking-recovery-native-*/run/crash-reports/
+            build/tfc-milking-recovery-native-*/**/hs_err_pid*.log
+          retention-days: 14
+          if-no-files-found: error
