@@ -1,3 +1,7 @@
+## Reused reload and JEI qualification work
+
+The narrow Barrel-only changes from PR168 commits `ef95bb07` and `1eb693a0` are reapplied here onto the reconciled main baseline. This avoids importing the unrelated Solar branch. Public screen bounds now describe the transformed canvas to JEI, while native slot input keeps local coordinates. The existing resource-reload fixture and pixel decoder tests are preserved, including completed-reload state before any fixture drain and all 38 routes before and after reload. These need new CI on this combined tree; the old PR168 results are not a pass of this candidate.
+
 ## Main reconciliation, 8 November 2026
 
 Merged main `fdf26aadc45580b7ca4211a32323125f3c276d5b` into the existing V5 branch without rewriting history. The only text conflict was MachineMenu construction and slot projection. Barrel and Factory Placer now have separate, mutually exclusive presentation inputs. Factory Placer retains its ordinary client route; Barrel retains its existing default-OFF experiment pending full delivery qualification. Public server constructors disable both, and the client factory also rejects presentation on server worlds.

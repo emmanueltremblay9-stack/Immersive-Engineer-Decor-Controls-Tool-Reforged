@@ -161,6 +161,24 @@ public final class BarrelReferenceGeometry {
          return this.originY + localY * this.scale;
       }
 
+      /** Public container bounds for screen-space consumers such as JEI. */
+      public int guiLeft() {
+         return (int)Math.floor(this.screenX(0));
+      }
+
+      public int guiTop() {
+         return (int)Math.floor(this.screenY(0));
+      }
+
+      /** Round outwards so an external overlay cannot cover a fractional edge. */
+      public int guiWidth() {
+         return (int)Math.ceil(this.screenX(CANVAS_WIDTH)) - this.guiLeft();
+      }
+
+      public int guiHeight() {
+         return (int)Math.ceil(this.screenY(CANVAS_HEIGHT)) - this.guiTop();
+      }
+
       public double localDelta(double screenDelta) {
          return screenDelta / this.scale;
       }

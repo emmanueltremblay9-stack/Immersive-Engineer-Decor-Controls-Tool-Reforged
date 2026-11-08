@@ -17,6 +17,13 @@ assert 'view.localY(mouseY), scrollX, scrollY)' in s
 assert s.index('graphics.pose().popPose()') < s.index('renderTooltip(graphics, mouseX, mouseY)')
 assert 'mouseX = renderLocalMouseX' in s and 'mouseY = renderLocalMouseY' in s
 assert 'FluidBarrelSpriteRenderer.draw' in s
+# Public bounds are in GUI screen pixels; vanilla rendering/input retain local coordinates.
+for method, geometry_method in (('getGuiLeft', 'guiLeft'), ('getGuiTop', 'guiTop'),
+                                ('getXSize', 'guiWidth'), ('getYSize', 'guiHeight')):
+    assert f'public int {method}() {{ return view.{geometry_method}(); }}' in s
+assert 'leftPos = 0; topPos = 0;' in s
+assert 'imageWidth = BarrelReferenceGeometry.CANVAS_WIDTH;' in s
+assert 'imageHeight = BarrelReferenceGeometry.CANVAS_HEIGHT;' in s
 assert 'this(kind, id, inventory, container, data, false, false)' in m
 assert 'kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide' in m
 assert 'Boolean.getBoolean(DEV_BARREL_REFERENCE_PROPERTY)' in m
