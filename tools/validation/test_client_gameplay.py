@@ -280,7 +280,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         self.window_width = 1280
         self.window_height = 260
         self.proof = {
-            "suite": "native-corrected-machine-gui-v1", "nonce": self.nonce, "status": "passed",
+            "suite": "native-corrected-machine-gui-v1", "barrel_fixture_fluid": "minecraft:water", "nonce": self.nonce, "status": "passed",
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
             "window_width": self.window_width, "window_height": self.window_height,
@@ -459,6 +459,27 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         args.update(overrides)
         return validate_corrected_machine_gui_proof(**args)
 
+    def test_lava_and_milk_require_matching_native_identity_and_texture(self):
+        for fluid, texture in (("lava", "minecraft:block/lava_still"), ("milk", "neoforge:block/milk_still")):
+            proof = copy.deepcopy(self.proof)
+            proof["barrel_fixture_fluid"] = "minecraft:" + fluid
+            for capture in proof["screenshots"]:
+                if capture["name"] in ("fluid_barrel-mid.png", "fluid_barrel-full-hover.png"):
+                    capture["barrel_fluid_pixels"].update(fluid_id="minecraft:" + fluid, still_texture=texture)
+            self.check(proof, barrel_fluid=fluid)
+            with self.assertRaises(SmokeFailure): self.check(proof)
+            for state in ("mid", "full-hover"):
+                for field, value in (("fluid_id", "minecraft:water"), ("still_texture", "minecraft:block/water_still")):
+                    bad = copy.deepcopy(proof)
+                    next(c for c in bad["screenshots"] if c["name"] == f"fluid_barrel-{state}.png")["barrel_fluid_pixels"][field] = value
+                    with self.assertRaises(SmokeFailure): self.check(bad, barrel_fluid=fluid)
+
+    def test_missing_or_unsupported_barrel_fixture_fluid_fails(self):
+        proof = copy.deepcopy(self.proof)
+        del proof["barrel_fixture_fluid"]
+        with self.assertRaises(SmokeFailure): self.check(proof)
+        with self.assertRaises(SmokeFailure): self.check(barrel_fluid="oil")
+
     def test_accepts_six_live_menus_and_tree_cutter_badge_only_capture(self):
         self.assertEqual(self.check(), self.proof)
 
@@ -585,3 +606,4 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
