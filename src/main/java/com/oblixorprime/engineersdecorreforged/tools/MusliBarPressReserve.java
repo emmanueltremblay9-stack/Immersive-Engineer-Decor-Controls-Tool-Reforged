@@ -13,198 +13,168 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CustomData;
 
 /**
- * Immutable ingredient-reserve snapshots and pure staging for a Muslee Bar Press.
- *
- * This layer does NOT transfer player inventory, commit a transaction, open a GUI,
- * enqueue work or implement pressing. A caller may commit a staged stack only in
- * its separately validated, atomic, server-authoritative transaction.
+ * Pure staging for three irreversible ingredient reserves. Accepted items become
+ * units, never stored ItemStacks. This helper does not commit inventory changes,
+ * activate a GUI or bypass the transaction/capture admission gates.
  */
 public final class MusliBarPressReserve {
    public static final int CAPACITY_PER_COMPARTMENT = 8;
-   private static final String KEY = "iedctr_musli_reserve_v1";
-   private static final String VERSION = "version";
-   private static final String BREAD = "bread";
-   private static final String APPLE = "apple";
-   private static final String SEEDS = "seeds";
-   private static final Set<String> ALLOWED_KEYS = Set.of(VERSION, BREAD, APPLE, SEEDS);
+   private static final String LEGACY_KEY = "iedctr_musli_reserve_v1";
+   private static final String KEY = "iedctr_musli_reserve_v2";
+   private static final Set<String> KEYS = Set.of("version", "cereal", "fruit", "seeds");
+   private static final Set<String> LEGACY_KEYS = Set.of("version", "bread", "apple", "seeds");
    private static final ResourceLocation BASE_HEMP_SEED = ResourceLocation.fromNamespaceAndPath("immersiveengineering", "seed");
 
-   public enum Compartment { BREAD, APPLE, SEEDS }
+   public enum Compartment { CEREAL, FRUIT, SEEDS }
 
-   /** ItemStacks are always defensively copied on input and output. */
+   /** Counts only: neither ingredient identity nor components survive conversion. */
    public static final class State {
-      public static final State EMPTY = new State(ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY);
-      private final ItemStack bread;
-      private final ItemStack apple;
-      private final ItemStack seeds;
+      public static final State EMPTY = new State(0, 0, 0);
+      private final int cereal;
+      private final int fruit;
+      private final int seeds;
 
-      private State(ItemStack bread, ItemStack apple, ItemStack seeds) {
-         this.bread = bread.copy();
-         this.apple = apple.copy();
-         this.seeds = seeds.copy();
+      private State(int cereal, int fruit, int seeds) {
+         this.cereal = cereal;
+         this.fruit = fruit;
+         this.seeds = seeds;
       }
 
-      public ItemStack bread() { return bread.copy(); }
-      public ItemStack apple() { return apple.copy(); }
-      public ItemStack seeds() { return seeds.copy(); }
-
-      public ItemStack contents(Compartment compartment) {
+      public int cereal() { return cereal; }
+      public int fruit() { return fruit; }
+      public int seeds() { return seeds; }
+      public int contents(Compartment compartment) {
          return switch (compartment) {
-            case BREAD -> bread();
-            case APPLE -> apple();
-            case SEEDS -> seeds();
+            case CEREAL -> cereal;
+            case FRUIT -> fruit;
+            case SEEDS -> seeds;
          };
       }
-
       public boolean sameContents(State other) {
-         return other != null && ItemStack.matches(bread, other.bread)
-            && ItemStack.matches(apple, other.apple)
-            && ItemStack.matches(seeds, other.seeds);
+         return other != null && cereal == other.cereal && fruit == other.fruit && seeds == other.seeds;
       }
-
-      private boolean isValid() {
-         return validStack(bread, Compartment.BREAD)
-            && validStack(apple, Compartment.APPLE)
-            && validStack(seeds, Compartment.SEEDS);
-      }
-
-      private State with(Compartment compartment, ItemStack next) {
+      private boolean isValid() { return validCount(cereal) && validCount(fruit) && validCount(seeds); }
+      private State with(Compartment compartment, int count) {
          return switch (compartment) {
-            case BREAD -> new State(next, apple, seeds);
-            case APPLE -> new State(bread, next, seeds);
-            case SEEDS -> new State(bread, apple, next);
+            case CEREAL -> new State(count, fruit, seeds);
+            case FRUIT -> new State(cereal, count, seeds);
+            case SEEDS -> new State(cereal, fruit, count);
          };
       }
    }
 
-   /** Pure operation plan. The moved stack and resulting snapshot are detached. */
+   /** The caller must validate the source and atomically consume count items. */
    public static final class Plan {
       private final State updated;
-      private final ItemStack moved;
-
-      private Plan(State updated, ItemStack moved) {
+      private final Compartment compartment;
+      private final int count;
+      private Plan(State updated, Compartment compartment, int count) {
          this.updated = updated;
-         this.moved = moved.copy();
+         this.compartment = compartment;
+         this.count = count;
       }
-
       public State updated() { return updated; }
-      public ItemStack moved() { return moved.copy(); }
-      public int count() { return moved.getCount(); }
+      public Compartment compartment() { return compartment; }
+      public int count() { return count; }
    }
 
    private MusliBarPressReserve() {}
 
-   /**
-    * Read a complete reserve snapshot; malformed data return Optional.empty().
-    * A press without our key has the unmodified, empty legacy reserve state.
-    */
+   /** Reads without mutation; strict legacy decoding prevents silent data loss. */
    public static Optional<State> read(ItemStack press, HolderLookup.Provider registries) {
-      if (!isPress(press) || registries == null) {
-         return Optional.empty();
-      }
+      if (!isPress(press) || registries == null) return Optional.empty();
       CompoundTag root = customData(press);
-      if (!root.contains(KEY)) {
-         return Optional.of(State.EMPTY);
-      }
-      if (!root.contains(KEY, Tag.TAG_COMPOUND)) {
-         return Optional.empty();
-      }
-      CompoundTag payload = root.getCompound(KEY);
-      if (!payload.contains(VERSION, Tag.TAG_INT) || payload.getInt(VERSION) != 1
-         || !ALLOWED_KEYS.containsAll(payload.getAllKeys())) {
-         return Optional.empty();
-      }
+      if (root.contains(KEY) && root.contains(LEGACY_KEY)) return Optional.empty();
+      if (!root.contains(KEY) && !root.contains(LEGACY_KEY)) return Optional.of(State.EMPTY);
       try {
-         Optional<ItemStack> bread = parseSlot(payload, BREAD, registries);
-         Optional<ItemStack> apple = parseSlot(payload, APPLE, registries);
-         Optional<ItemStack> seeds = parseSlot(payload, SEEDS, registries);
-         if (bread.isEmpty() || apple.isEmpty() || seeds.isEmpty()) {
-            return Optional.empty();
+         if (root.contains(LEGACY_KEY)) return readLegacy(root, registries);
+         if (!root.contains(KEY, Tag.TAG_COMPOUND)) return Optional.empty();
+         CompoundTag payload = root.getCompound(KEY);
+         if (!payload.getAllKeys().equals(KEYS)) return Optional.empty();
+         for (String field : KEYS) {
+            if (!payload.contains(field, Tag.TAG_INT)) return Optional.empty();
          }
-         State result = new State(bread.get(), apple.get(), seeds.get());
-         return result.isValid() ? Optional.of(result) : Optional.empty();
+         if (payload.getInt("version") != 2) return Optional.empty();
+         State state = new State(payload.getInt("cereal"), payload.getInt("fruit"), payload.getInt("seeds"));
+         return state.isValid() ? Optional.of(state) : Optional.empty();
       } catch (RuntimeException invalid) {
-         // Fail closed; never modify or normalize an ambiguous stored payload.
          return Optional.empty();
       }
    }
 
-   /** Pure admission simulation. A different seed variety or incompatible component set fails. */
+   /**
+    * A previously accepted legacy extension remains convertible after tag removal.
+    * Identity/components are decoded exactly before deriving counts, and source
+    * data is never rewritten by reading. Ambiguous legacy data stays recoverable.
+    */
+   private static Optional<State> readLegacy(CompoundTag root, HolderLookup.Provider registries) {
+      if (!root.contains(LEGACY_KEY, Tag.TAG_COMPOUND)) return Optional.empty();
+      CompoundTag payload = root.getCompound(LEGACY_KEY);
+      if (!payload.contains("version", Tag.TAG_INT) || payload.getInt("version") != 1
+         || !LEGACY_KEYS.containsAll(payload.getAllKeys())) return Optional.empty();
+      Optional<ItemStack> bread = parseLegacySlot(payload, "bread", registries);
+      Optional<ItemStack> apple = parseLegacySlot(payload, "apple", registries);
+      Optional<ItemStack> seeds = parseLegacySlot(payload, "seeds", registries);
+      if (bread.isEmpty() || apple.isEmpty() || seeds.isEmpty()) return Optional.empty();
+      if ((!bread.get().isEmpty() && !bread.get().is(Items.BREAD))
+         || (!apple.get().isEmpty() && !apple.get().is(Items.APPLE))) return Optional.empty();
+      return Optional.of(new State(bread.get().getCount(), apple.get().getCount(), seeds.get().getCount()));
+   }
+
+   private static Optional<ItemStack> parseLegacySlot(CompoundTag payload, String key, HolderLookup.Provider registries) {
+      if (!payload.contains(key)) return Optional.of(ItemStack.EMPTY);
+      if (!payload.contains(key, Tag.TAG_COMPOUND)) return Optional.empty();
+      CompoundTag saved = payload.getCompound(key);
+      Optional<ItemStack> parsed = ItemStack.parse(registries, saved);
+      if (parsed.isEmpty() || parsed.get().isEmpty()) return Optional.empty();
+      ItemStack stack = parsed.get();
+      if (!validCount(stack.getCount()) || stack.getCount() > stack.getMaxStackSize()
+         || !saved.equals(stack.save(registries))) return Optional.empty();
+      return parsed;
+   }
+
+   /** Live admission is checked only for new inputs; all admitted variants pool. */
    public static Optional<Plan> planInsert(State current, ItemStack offered) {
       if (current == null || !current.isValid() || offered == null || offered.isEmpty()
-         || offered.getMaxStackSize() < 1 || offered.getCount() > offered.getMaxStackSize()) {
-         return Optional.empty();
-      }
+         || offered.getMaxStackSize() < 1 || offered.getCount() > offered.getMaxStackSize()) return Optional.empty();
       Compartment kind = classify(offered);
-      if (kind == null || !validStack(offered.copyWithCount(1), kind)) {
-         return Optional.empty();
-      }
-      ItemStack existing = current.contents(kind);
-      if (!existing.isEmpty() && !ItemStack.isSameItemSameComponents(existing, offered)) {
-         return Optional.empty();
-      }
-      // Component overrides may lower a normally stackable ingredient's native maximum.
-      int effectiveCapacity = Math.min(CAPACITY_PER_COMPARTMENT, offered.getMaxStackSize());
-      int amount = Math.min(offered.getCount(), effectiveCapacity - existing.getCount());
-      if (amount <= 0) {
-         return Optional.empty();
-      }
-      ItemStack newContents = offered.copyWithCount(existing.getCount() + amount);
-      State updated = current.with(kind, newContents);
-      return updated.isValid() ? Optional.of(new Plan(updated, offered.copyWithCount(amount))) : Optional.empty();
+      if (kind == null) return Optional.empty();
+      int amount = Math.min(offered.getCount(), CAPACITY_PER_COMPARTMENT - current.contents(kind));
+      if (amount <= 0) return Optional.empty();
+      return Optional.of(new Plan(current.with(kind, current.contents(kind) + amount), kind, amount));
    }
 
-   /** Pure withdrawal simulation; caller must independently validate destination capacity. */
+   /** Pure one-batch consumption; output capacity and durability are caller prerequisites. */
+   public static Optional<State> consumeBatch(State current) {
+      if (!hasAdmissibleIngredients(current)) return Optional.empty();
+      return Optional.of(new State(current.cereal - 1, current.fruit - 1, current.seeds - 1));
+   }
+
+   /** Conversion is irreversible: there is no ingredient extraction plan. */
    public static Optional<Plan> planWithdraw(State current, Compartment compartment, int possibleToReceive) {
-      if (current == null || !current.isValid() || compartment == null || possibleToReceive <= 0) {
-         return Optional.empty();
-      }
-      ItemStack existing = current.contents(compartment);
-      if (existing.isEmpty()) {
-         return Optional.empty();
-      }
-      int amount = Math.min(existing.getCount(), possibleToReceive);
-      ItemStack remainder = existing.getCount() == amount
-         ? ItemStack.EMPTY : existing.copyWithCount(existing.getCount() - amount);
-      State updated = current.with(compartment, remainder);
-      return updated.isValid() ? Optional.of(new Plan(updated, existing.copyWithCount(amount))) : Optional.empty();
+      return Optional.empty();
    }
 
    /**
-    * Stage a new, detached press ItemStack, never mutating the actual source.
-    * This is NOT a transaction commit, anti-ABA fence, admission check or permission to replace an inventory slot.
+    * Detached staging only, not a transaction, source revalidation or anti-ABA fence.
+    * A real change converts validated legacy data once; a no-op preserves its bytes.
     */
    public static Optional<ItemStack> stage(ItemStack press, HolderLookup.Provider registries, State expected, State desired) {
-      if (expected == null || desired == null || !expected.isValid() || !desired.isValid()) {
-         return Optional.empty();
-      }
+      if (expected == null || desired == null || !expected.isValid() || !desired.isValid()) return Optional.empty();
       Optional<State> actual = read(press, registries);
-      if (actual.isEmpty() || !actual.get().sameContents(expected)) {
-         return Optional.empty();
-      }
-      if (actual.get().sameContents(desired)) {
-         // A logical no-op must not rewrite an existing representation.
-         return Optional.of(press.copy());
-      }
+      if (actual.isEmpty() || !actual.get().sameContents(expected)) return Optional.empty();
+      if (actual.get().sameContents(desired)) return Optional.of(press.copy());
       try {
          ItemStack staged = press.copy();
          CompoundTag root = customData(staged);
-         if (desired.sameContents(State.EMPTY)) {
-            root.remove(KEY);
-         } else {
-            CompoundTag payload = new CompoundTag();
-            payload.putInt(VERSION, 1);
-            writeSlot(payload, BREAD, desired.bread, registries);
-            writeSlot(payload, APPLE, desired.apple, registries);
-            writeSlot(payload, SEEDS, desired.seeds, registries);
-            root.put(KEY, payload);
-         }
-         if (root.isEmpty()) {
-            staged.remove(DataComponents.CUSTOM_DATA);
-         } else {
-            staged.set(DataComponents.CUSTOM_DATA, CustomData.of(root));
-         }
-         // Explicit round-trip check: reject any non-representable staged state.
+         root.remove(LEGACY_KEY);
+         CompoundTag payload = new CompoundTag();
+         payload.putInt("version", 2);
+         payload.putInt("cereal", desired.cereal);
+         payload.putInt("fruit", desired.fruit);
+         payload.putInt("seeds", desired.seeds);
+         root.put(KEY, payload);
+         staged.set(DataComponents.CUSTOM_DATA, CustomData.of(root));
          Optional<State> verified = read(staged, registries);
          return verified.isPresent() && verified.get().sameContents(desired) ? Optional.of(staged) : Optional.empty();
       } catch (RuntimeException invalid) {
@@ -212,56 +182,12 @@ public final class MusliBarPressReserve {
       }
    }
 
-   private static Optional<ItemStack> parseSlot(CompoundTag payload, String key, HolderLookup.Provider registries) {
-      if (!payload.contains(key)) {
-         return Optional.of(ItemStack.EMPTY);
-      }
-      if (!payload.contains(key, Tag.TAG_COMPOUND)) {
-         return Optional.empty();
-      }
-      CompoundTag saved = payload.getCompound(key);
-      Optional<ItemStack> parsed = ItemStack.parse(registries, saved);
-      if (parsed.isEmpty() || parsed.get().isEmpty()) {
-         return Optional.empty();
-      }
-      Tag reserialized = parsed.get().save(registries);
-      // Reject data the codec would silently drop or normalize.
-      return saved.equals(reserialized) ? Optional.of(parsed.get().copy()) : Optional.empty();
-   }
-
-   private static void writeSlot(CompoundTag payload, String key, ItemStack stack, HolderLookup.Provider registries) {
-      if (!stack.isEmpty()) {
-         Tag encoded = stack.save(registries);
-         if (!(encoded instanceof CompoundTag compound)) {
-            throw new IllegalStateException("Expected a compound for Muslee Bar Press reserve item");
-         }
-         payload.put(key, compound.copy());
-      }
-   }
-
+   private static boolean validCount(int count) { return count >= 0 && count <= CAPACITY_PER_COMPARTMENT; }
    private static boolean isPress(ItemStack stack) {
       return stack != null && !stack.isEmpty() && stack.getCount() == 1 && stack.getItem() instanceof MusliBarPressItem;
    }
 
-   private static boolean validStack(ItemStack stack, Compartment compartment) {
-      if (stack.isEmpty()) {
-         return true;
-      }
-      if (stack.getCount() < 1 || stack.getMaxStackSize() < 1
-         || stack.getCount() > Math.min(CAPACITY_PER_COMPARTMENT, stack.getMaxStackSize())) {
-         return false;
-      }
-      return switch (compartment) {
-         case BREAD -> stack.is(Items.BREAD);
-         case APPLE -> stack.is(Items.APPLE);
-         // Persistence cannot depend on today's tag membership: TOOLS-194
-         // requires revoked extensions to remain readable and withdrawable.
-         // The codec proves identity/components; admission is checked separately.
-         case SEEDS -> true;
-      };
-   }
-
-   /** Current admission is the five approved base seeds plus live tag extensions. */
+   /** The original five seeds plus live extensions; no expansion of ingredient sets. */
    public static boolean isSeedAdmissible(ItemStack ingredient) {
       if (ingredient == null || ingredient.isEmpty()) {
          return false;
@@ -277,25 +203,15 @@ public final class MusliBarPressReserve {
          || ingredient.is(MusliBarPressItem.ACCEPTED_SEEDS);
    }
 
-   /**
-    * Ingredient eligibility only, not permission to press. Future integration must
-    * revalidate the live tags and its complete transaction immediately before use.
-    */
+   /** Converted stock is generic and independent of subsequent tag changes. */
    public static boolean hasAdmissibleIngredients(State current) {
-      return current != null && current.isValid() && !current.bread.isEmpty()
-         && !current.apple.isEmpty() && isSeedAdmissible(current.seeds);
+      return current != null && current.isValid() && current.cereal > 0 && current.fruit > 0 && current.seeds > 0;
    }
 
    private static Compartment classify(ItemStack ingredient) {
-      if (ingredient.is(Items.BREAD)) {
-         return Compartment.BREAD;
-      }
-      if (ingredient.is(Items.APPLE)) {
-         return Compartment.APPLE;
-      }
-      if (isSeedAdmissible(ingredient)) {
-         return Compartment.SEEDS;
-      }
+      if (ingredient.is(Items.BREAD)) return Compartment.CEREAL;
+      if (ingredient.is(Items.APPLE)) return Compartment.FRUIT;
+      if (isSeedAdmissible(ingredient)) return Compartment.SEEDS;
       return null;
    }
 

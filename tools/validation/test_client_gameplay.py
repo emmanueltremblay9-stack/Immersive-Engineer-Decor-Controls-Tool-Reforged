@@ -264,8 +264,8 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256, 0, 32000),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
         "small_freezer": ("SMALL_FREEZER", 3, 209, 235, 0, 16000),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238, 3000, 0),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238, 4000, 0),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256, 3000, 0),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256, 4000, 0),
     }
 
     def setUp(self):

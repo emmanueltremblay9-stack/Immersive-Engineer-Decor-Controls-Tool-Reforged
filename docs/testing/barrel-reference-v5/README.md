@@ -1,3 +1,13 @@
+## Main reconciliation, 8 November 2026
+
+Merged main `fdf26aadc45580b7ca4211a32323125f3c276d5b` into the existing V5 branch without rewriting history. The only text conflict was MachineMenu construction and slot projection. Barrel and Factory Placer now have separate, mutually exclusive presentation inputs. Factory Placer retains its ordinary client route; Barrel retains its existing default-OFF experiment pending full delivery qualification. Public server constructors disable both, and the client factory also rejects presentation on server worlds.
+
+The new server GameTest covers both machine kinds, both construction paths and all four combinations of historical properties. Existing V5 and packaged/default Placer CI provide separate client coverage. New exact-commit CI is required after this reconciliation. The unchanged downstream menu/data/transfer body is pinned against main, including its existing Factory Placer accessor. Original V5 artwork and all merged main artwork remain byte-identical.
+
+Local 287 Python tests, geometry/resource/source guards and Java syntax parsing passed before the added server test. Local mapped compilation is blocked before compilation by the uncached Gradle distribution and unavailable network access to services.gradle.org. No new native pass, normal V5 path, resource reload, final visual acceptance, merge or release is claimed here.
+
+Historical qualification and design records follow.
+
 # Barrel V5 opt-in presentation candidate
 
 Production base: PR151 commit `8718a0896bc7330fb4dde5e272a4fdf078db0804`.

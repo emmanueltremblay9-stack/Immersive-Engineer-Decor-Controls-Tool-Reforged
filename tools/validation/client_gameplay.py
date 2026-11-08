@@ -312,8 +312,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212),
         "small_freezer": ("SMALL_FREEZER", 3, 209, 235),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256),
     }
     if (proof.get("suite") != "native-corrected-machine-gui-v1" or proof.get("nonce") != nonce
             or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):

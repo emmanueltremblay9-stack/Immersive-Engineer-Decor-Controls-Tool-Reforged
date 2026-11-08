@@ -1,0 +1,137 @@
+import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import javax.imageio.ImageIO;
+import java.io.File;
+
+/** Exact renderer and tooltip methods with recording doubles, not native gameplay. */
+public final class FluidTextProbe {
+   private final MachineMenu menu = new MachineMenu();
+   private int leftPos, topPos;
+   private enum MachineKind { SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, OTHER }
+   private static final class MachineMenu {
+      MachineKind kind = MachineKind.SMALL_FLUID_FUNNEL;
+      int amount = 1500, capacity = 3000, code = 1;
+      MachineKind kind() { return kind; }
+      int fluidAmount() { return amount; }
+      int fluidCapacity() { return capacity; }
+      int smallFluidFunnelFluidCode() { return code; }
+   }
+   private record Component(String text) {
+      static Component translatable(String key, Object... args) { return new Component(key + Arrays.toString(args)); }
+   }
+   private record ResourceLocation(String value) {
+      static ResourceLocation fromNamespaceAndPath(String namespace, String path) { return new ResourceLocation(namespace + ":" + path); }
+   }
+   private record Fill(int left, int top, int right, int bottom, int color) {}
+   private record Blit(String path, int x, int y, int width, int height, float u, float v, int sw, int sh, int tw, int th) {}
+   private static final class GuiGraphics {
+      final List<Fill> fills = new ArrayList<>();
+      final List<Blit> blits = new ArrayList<>();
+      void fill(int x, int y, int right, int bottom, int color) { fills.add(new Fill(x, y, right, bottom, color)); }
+      void blit(ResourceLocation texture, int x, int y, int w, int h, float u, float v, int sw, int sh, int tw, int th) {
+         blits.add(new Blit(texture.value, x, y, w, h, u, v, sw, sh, tw, th));
+      }
+   }
+   private boolean isHovering(int x, int y, int width, int height, double mx, double my) {
+      // Explicit vanilla-style one-pixel padding model, not native pointer input.
+      return mx >= leftPos + x - 1 && mx < leftPos + x + width + 1
+         && my >= topPos + y - 1 && my < topPos + y + height + 1;
+   }
+   private void drawTinyString(Object... args) { throw new AssertionError("Permanent label drawn"); }
+
+   /* PRODUCTION_METHODS */
+   /* PRODUCTION_RENDERER */
+
+   private Component at(int x, int y) {
+      return menu.kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR
+         ? passiveFluidAccumulatorTooltip(leftPos + x, topPos + y)
+         : smallFluidFunnelTooltip(leftPos + x, topPos + y);
+   }
+   private static void check(boolean condition, String reason) { if (!condition) throw new AssertionError(reason); }
+   private static void contains(Component value, String expected, String reason) {
+      check(value != null && value.text.contains(expected), reason + ": " + value);
+   }
+   private static void sourcePixels(String filename, boolean accumulator) throws Exception {
+      var image = ImageIO.read(new File(filename));
+      check(image.getWidth() == 1254 && image.getHeight() == 1254, "Original square dimensions");
+      List<FluidMachineRedesignLayout.Rect> items = new ArrayList<>();
+      for (int column=0; column<9; column++) {
+         for (int row=0; row<3; row++) items.add(new FluidMachineRedesignLayout.Rect(
+            FluidMachineRedesignLayout.playerSlotX(column), FluidMachineRedesignLayout.playerSlotY(row), 16, 16));
+         items.add(new FluidMachineRedesignLayout.Rect(FluidMachineRedesignLayout.playerSlotX(column), FluidMachineRedesignLayout.HOTBAR_Y, 16, 16));
+      }
+      items.add(accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_INPUT : FluidMachineRedesignLayout.FUNNEL_INPUT);
+      items.add(accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_OUTPUT : FluidMachineRedesignLayout.FUNNEL_OUTPUT);
+      for (var item : items) {
+         int x0 = (item.x()*1254+255)/256, x1=(item.right()*1254+255)/256;
+         int y0 = (item.y()*1254+255)/256, y1=(item.bottom()*1254+255)/256;
+         for (int y=y0; y<y1; y++) for (int x=x0; x<x1; x++) {
+            int rgba=image.getRGB(x,y);
+            check((rgba >>> 24)==255 && (rgba>>16&255)<96 && (rgba>>8&255)<96 && (rgba&255)<96,
+               "Item footprint intersects source metal or outside: "+item+" at "+x+","+y);
+         }
+      }
+   }
+   public static void main(String[] args) throws Exception {
+      FluidTextProbe s = new FluidTextProbe();
+      s.drawSmallFluidFunnelLabels(new GuiGraphics());
+      s.drawPassiveFluidAccumulatorLabels(new GuiGraphics());
+      for (boolean accumulator : new boolean[] {false, true}) {
+         s.menu.kind = accumulator ? MachineKind.PASSIVE_FLUID_ACCUMULATOR : MachineKind.SMALL_FLUID_FUNNEL;
+         var tank = accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_TANK : FluidMachineRedesignLayout.FUNNEL_TANK;
+         for (int capacity : new int[] {0, -1, accumulator ? 4000 : 3000}) {
+            s.menu.capacity=capacity;
+            for (int amount : new int[] {-1,0,1,capacity/2,capacity,Integer.MAX_VALUE}) {
+               s.menu.amount=amount;
+               for (int code=0; code<=4; code++) {
+                  s.menu.code=code;
+                  for (int[] origin : new int[][] {{0,0},{512,220},{-20,-30}}) {
+                     GuiGraphics g=new GuiGraphics();
+                     RetainedFluidMachineArtwork.render(g,s.menu,origin[0],origin[1]);
+                     String name=accumulator ? "passive_fluid_accumulator_v1/background" : "small_fluid_funnel_v1/background";
+                     check(g.blits.equals(List.of(new Blit("immersive_engineer_decor_controls_tool_reforged:textures/gui/"+name+".png",
+                        origin[0],origin[1],256,256,0,0,1254,1254,1254,1254))), "Whole retained artwork, no legacy masks");
+                     int height=FluidMachineRedesignLayout.fillHeight(amount,capacity,tank.height());
+                     if (!accumulator && code==0) height=0;
+                     check(g.fills.size()==(height==0 ? 0 : height+1), "Exact bounded fill rows plus surface");
+                     if (height>0) {
+                        check(g.fills.get(0).top==origin[1]+tank.bottom()-height, "Bottom-anchored proportional level");
+                        for (Fill f:g.fills) {
+                           int row=f.top-origin[1]-tank.y();
+                           int inset=FluidMachineRedesignLayout.glassInset(tank,row);
+                           check(f.left>=origin[0]+tank.x()+inset && f.right<=origin[0]+tank.right()-inset
+                              && f.bottom==f.top+1 && row>=tank.height()-height && row<tank.height(), "Fluid stays inside bevelled glass");
+                           check((f.color>>>24)>0 && (f.color>>>24)<255, "Original glass must remain visible");
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      s.menu.amount=1500; s.menu.capacity=3000; s.menu.code=1;
+      for (int[] origin : new int[][] {{0,0},{512,220},{-20,-30}}) {
+         s.leftPos=origin[0]; s.topPos=origin[1];
+         for (boolean accumulator:new boolean[] {false,true}) {
+            s.menu.kind=accumulator ? MachineKind.PASSIVE_FLUID_ACCUMULATOR : MachineKind.SMALL_FLUID_FUNNEL;
+            contains(s.at(128,14),accumulator ? "passive_fluid_accumulator" : "small_fluid_funnel","Header identity");
+            var tank=accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_TANK : FluidMachineRedesignLayout.FUNNEL_TANK;
+            for (int y=tank.y(); y<tank.bottom(); y++) for (int x=tank.x(); x<tank.right(); x++)
+               contains(s.at(x,y),"1500, 3000","Exact tank values on the visible tank");
+            if (accumulator) contains(s.at(128,35),"collection.tooltip","Collection explanation on cap");
+            else contains(s.at(126,123),"small_fluid_funnel.output","Outlet hover");
+            for (var item:List.of(accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_INPUT : FluidMachineRedesignLayout.FUNNEL_INPUT,
+                                  accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_OUTPUT : FluidMachineRedesignLayout.FUNNEL_OUTPUT))
+               for (int y=item.y()-1; y<item.bottom()+1; y++) for (int x=item.x()-1; x<item.right()+1; x++)
+                  check(s.at(x,y)==null,"Machine tooltip steals item slot");
+         }
+         s.menu.kind=MachineKind.OTHER;
+         check(s.smallFluidFunnelTooltip(s.leftPos+128,s.topPos+102)==null,"Funnel kind guard");
+         check(s.passiveFluidAccumulatorTooltip(s.leftPos+128,s.topPos+79)==null,"Accumulator kind guard");
+      }
+      if (args.length==2) { sourcePixels(args[0],false); sourcePixels(args[1],true); }
+      System.out.println("Fluid retained-art checks passed");
+   }
+}

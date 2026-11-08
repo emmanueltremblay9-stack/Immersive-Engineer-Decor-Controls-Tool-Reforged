@@ -9,6 +9,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
 import java.util.Locale;
 import java.util.function.IntFunction;
@@ -40,6 +41,10 @@ import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class MachineMenu extends AbstractContainerMenu {
+   // Historical property name retained for compatibility and flag-absent validation only.
+   // It no longer selects the Factory Placer presentation: ordinary clients use V2.
+   public static final String DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY = "iedctr.dev.factoryPlacerV2Reference";
+   private final boolean factoryPlacerV2ReferencePresentation;
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
    public static final int SMALL_MINERAL_SMELTER_V05_DATA_COUNT = 17;
@@ -114,18 +119,21 @@ public class MachineMenu extends AbstractContainerMenu {
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
       return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
          new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
-         kind == MachineKind.FLUID_BARREL && Boolean.getBoolean(DEV_BARREL_REFERENCE_PROPERTY));
+         kind == MachineKind.FLUID_BARREL && Boolean.getBoolean(DEV_BARREL_REFERENCE_PROPERTY),
+         kind == MachineKind.FACTORY_PLACER);
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {
-      this(kind, id, inventory, container, data, false);
+      this(kind, id, inventory, container, data, false, false);
    }
 
-   private MachineMenu(MachineKind kind, int id, Inventory inventory, Container container,
-                       ContainerData data, boolean barrelReferenceRequested) {
+   private MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data,
+                       boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested) {
       super((MenuType)resolveMenuType(kind), id);
       this.barrelReferencePresentation = barrelReferenceRequested
          && kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide;
+      this.factoryPlacerV2ReferencePresentation = factoryPlacerV2ReferenceRequested
+         && kind == MachineKind.FACTORY_PLACER && inventory.player.level().isClientSide;
       checkContainerSize(container, 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
@@ -153,6 +161,9 @@ public class MachineMenu extends AbstractContainerMenu {
          if (barrelReferencePresentation) {
             var anchor = BarrelReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         } else if (factoryPlacerV2ReferencePresentation) {
+            var anchor = FactoryPlacerV2ReferenceGeometry.anchor(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
          }
          this.addSlot(this.createMachineSlot(presentationSlot));
       }
@@ -165,6 +176,9 @@ public class MachineMenu extends AbstractContainerMenu {
             if (barrelReferencePresentation) {
                var anchor = BarrelReferenceGeometry.anchor(2 + row * 9 + column);
                x = anchor.x(); y = anchor.y();
+            } else if (factoryPlacerV2ReferencePresentation) {
+               var anchor = FactoryPlacerV2ReferenceGeometry.anchor(18 + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
             }
             this.addSlot(new Slot(inventory, column + row * 9 + 9, x, y));
          }
@@ -176,6 +190,9 @@ public class MachineMenu extends AbstractContainerMenu {
          int y = this.layout.hotbarY();
          if (barrelReferencePresentation) {
             var anchor = BarrelReferenceGeometry.anchor(29 + column);
+            x = anchor.x(); y = anchor.y();
+         } else if (factoryPlacerV2ReferencePresentation) {
+            var anchor = FactoryPlacerV2ReferenceGeometry.anchor(45 + column);
             x = anchor.x(); y = anchor.y();
          }
          this.addSlot(new Slot(inventory, column, x, y));
@@ -191,6 +208,8 @@ public class MachineMenu extends AbstractContainerMenu {
       }
       return menuType.get();
    }
+
+   public boolean factoryPlacerV2ReferencePresentation() { return this.factoryPlacerV2ReferencePresentation; }
 
    public MachineKind kind() {
       return this.kind;
