@@ -9,6 +9,12 @@ ROOT = Path(__file__).resolve().parents[2]
 MENU = ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java'
 
 class RoutingTests(unittest.TestCase):
+    def test_reload_qualification_uses_default_without_selector(self):
+        runner = (ROOT / 'tools/validation/barrel_reference_native.py').read_text()
+        native = (ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java').read_text()
+        self.assertNotIn("systemProperty 'iedctr.dev.barrelV5Reference'", runner)
+        self.assertIn('System.getProperty(MachineMenu.DEV_BARREL_REFERENCE_PROPERTY) == null', native)
+
     def test_production_selection_matrix(self):
         source = MENU.read_text()
         factory = re.search(r'public static MachineMenu client\(.*?\n   }', source, re.S)[0]
@@ -41,7 +47,7 @@ public class SelectionProbe {
        else System.setProperty(DEV_BARREL_REFERENCE_PROPERTY, property);
        for (MachineKind kind : MachineKind.values()) {
          var actual = factory(kind);
-         boolean barrel = side && kind == MachineKind.FLUID_BARREL && property.equals("true");
+         boolean barrel = side && kind == MachineKind.FLUID_BARREL && !property.equals("false");
          boolean placer = side && kind == MachineKind.FACTORY_PLACER;
          if(actual.barrelReferencePresentation != barrel || actual.factoryPlacerV2ReferencePresentation != placer)
            throw new AssertionError(kind+" "+property+" "+side);

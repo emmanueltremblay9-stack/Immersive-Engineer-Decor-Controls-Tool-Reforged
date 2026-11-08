@@ -26,12 +26,12 @@ assert 'imageWidth = BarrelReferenceGeometry.CANVAS_WIDTH;' in s
 assert 'imageHeight = BarrelReferenceGeometry.CANVAS_HEIGHT;' in s
 assert 'this(kind, id, inventory, container, data, false, false)' in m
 assert 'kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide' in m
-assert 'Boolean.getBoolean(DEV_BARREL_REFERENCE_PROPERTY)' in m
+assert 'Boolean.parseBoolean(System.getProperty(DEV_BARREL_REFERENCE_PROPERTY, "true"))' in m
 assert 'new MachineScreen.FluidBarrelScreen(menu, inventory, title)' in c
 # Everything after resolveMenuType, including transfer rules and synchronized fluid data,
 # is byte-identical to the main fdf26aad baseline.
 assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType',1)[1].encode()).hexdigest() == 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
-print('PASS: event routing, legacy fallback, client-only opt-in, unchanged transfer/data/validation code')
+print('PASS: event routing, legacy fallback, client-only V5 default, unchanged transfer/data/validation code')
 
 g=(j/'utility/BarrelReferenceGeometry.java').read_text()
 source_width=int(re.search(r'SOURCE_WIDTH = (\d+)',g)[1])

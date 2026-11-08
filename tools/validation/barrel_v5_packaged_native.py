@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact ordinary-JAR, opt-in V5 Barrel native qualification."""
+"""Exact ordinary-JAR, default V5 Barrel native qualification."""
 import argparse
 import hashlib
 import json
@@ -60,12 +60,11 @@ def main() -> int:
         f"lang:{args.language}\n", encoding="utf-8")
     init = evidence / "barrel_v5_packaged.init.gradle"
     init.write_text("""gradle.projectsEvaluated {
-    rootProject.extensions.getByName('neoForge').runs.named('barrelV5PackagedOptInClient') {
+    rootProject.extensions.getByName('neoForge').runs.named('barrelV5PackagedDefaultClient') {
         gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.barrelV5PackagedNative', 'true'
-        systemProperty 'iedctr.dev.barrelV5Reference', 'true'
         if (System.getenv('IEDCTR_EXPECTED_JAR')) {
             systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_JAR')
             systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_JAR_SHA256')
@@ -94,7 +93,7 @@ def main() -> int:
         gradle += ["-Pbarrel_runtime_jar="+str(supplied)]
     print(f"Packaged Barrel isolated native evidence: {evidence} ({args.width}x{args.height}, GUI scale 1, {args.language})", flush=True)
     try:
-        code, expired = run_bounded(gradle + ["prepareBarrelV5PackagedOptInClientRun", "verifyBarrelV5PackagedRuntime"], project, env,
+        code, expired = run_bounded(gradle + ["prepareBarrelV5PackagedDefaultClientRun", "verifyBarrelV5PackagedRuntime"], project, env,
                                     evidence / "prepare.log", args.prepare_timeout)
         if expired or code != 0:
             raise SmokeFailure(f"Barrel packaged client preparation failed (exit={code}, timeout={expired})")
@@ -111,7 +110,7 @@ def main() -> int:
         env.update(IEDCTR_EXPECTED_JAR=str(jar), IEDCTR_EXPECTED_JAR_SHA256=jar_hash)
         log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24"]
-                                    + [sys.executable, "-c", XVFB_BIND.replace(".iedctr-fluid-xvfb", ".iedctr-barrel-v5-xvfb")] + gradle + ["runBarrelV5PackagedOptInClient"], project, env, log, args.timeout)
+                                    + [sys.executable, "-c", XVFB_BIND.replace(".iedctr-fluid-xvfb", ".iedctr-barrel-v5-xvfb")] + gradle + ["runBarrelV5PackagedDefaultClient"], project, env, log, args.timeout)
         proof = json.loads((game / "client-barrel-v5-packaged-result.json").read_text())
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):
@@ -127,7 +126,7 @@ def main() -> int:
         validate_proof(proof, nonce, source_sha, game, logs, code, expired,
                        args.width, args.height, args.language, args.barrel_fluid, report)
         require(hashlib.sha256(jar.read_bytes()).hexdigest() == jar_hash, "Production JAR changed during execution")
-        print("PASS bounded packaged V5 opt-in Barrel injected-state display proof. Natural collection and full visual acceptance are not claimed.")
+        print("PASS bounded packaged V5 default Barrel injected-state display proof. Natural collection and full visual acceptance are not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError, KeyError, TypeError, zipfile.BadZipFile) as error:
         print(f"FAIL: {error}", file=sys.stderr)

@@ -96,6 +96,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int PLAYER_INVENTORY_END = 54;
    private static final int HOTBAR_END = 63;
    private static final int[] SMELTER_PLAYER_SLOT_X = {27, 48, 68, 88, 109, 129, 150, 170, 191};
+   // V5 is the normal client presentation; explicit false retains the diagnostic legacy path.
    public static final String DEV_BARREL_REFERENCE_PROPERTY = "iedctr.dev.barrelV5Reference";
    private final boolean barrelReferencePresentation;
    public boolean barrelReferencePresentation() { return barrelReferencePresentation; }
@@ -119,7 +120,7 @@ public class MachineMenu extends AbstractContainerMenu {
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
       return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
          new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
-         kind == MachineKind.FLUID_BARREL && Boolean.getBoolean(DEV_BARREL_REFERENCE_PROPERTY),
+         kind == MachineKind.FLUID_BARREL && Boolean.parseBoolean(System.getProperty(DEV_BARREL_REFERENCE_PROPERTY, "true")),
          kind == MachineKind.FACTORY_PLACER);
    }
 

@@ -1,4 +1,4 @@
-name: Barrel V5 supplemental opt-in packaged qualification
+name: Barrel V5 supplemental default-path packaged qualification
 
 on:
   pull_request:
@@ -83,7 +83,7 @@ jobs:
             build/test-results/
           retention-days: 14
 
-  native-packaged-v5-opt-in:
+  native-packaged-v5-default:
     needs: ordinary-artifact
     runs-on: ubuntu-latest
     timeout-minutes: 40
@@ -131,7 +131,7 @@ jobs:
           assert (target/'normal.jar.sha256').read_text() == digest+'  normal.jar\n', 'Shared SHA file differs'
           assert not subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all'], text=True).strip(), 'Downloaded artifact changed source checkout'
           PYCODE
-      - name: Qualify exact ordinary JAR with opt-in V5 and physical native input
+      - name: Qualify exact ordinary JAR with default V5 and physical native input
         run: >-
           python tools/validation/barrel_v5_packaged_native.py
           --runtime-jar "${{ github.workspace }}/build/barrel-v5-qualified-artifact/normal.jar"

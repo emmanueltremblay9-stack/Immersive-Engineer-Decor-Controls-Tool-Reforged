@@ -4,7 +4,7 @@ def barrelRuntimeJar = providers.gradleProperty('barrel_runtime_jar').map { file
         .orElse(tasks.named('jar', Jar).flatMap { it.archiveFile }.map { it.asFile })
 if (barrelV5PackagedValidation) {
     if (providers.gradleProperty('include_barrel_packaged_validation').map { it.toBoolean() }.getOrElse(false))
-        throw new GradleException('V5 opt-in and legacy Barrel packaged validation must run separately')
+        throw new GradleException('V5 default and legacy Barrel packaged validation must run separately')
     if (providers.gradleProperty('include_factory_placer_native_validation').map { it.toBoolean() }.getOrElse(false))
         throw new GradleException('Run Factory/Breaker and barrel packaged validation separately')
     if (providers.gradleProperty('include_fluid_gesture_native_validation').map { it.toBoolean() }.getOrElse(false))
@@ -19,12 +19,12 @@ if (barrelV5PackagedValidation) {
     }
     tasks.named('compileBarrelV5PackagedValidationJava').configure { dependsOn(tasks.named('jar')) }
 }
-// Opt-in, separate test mod; ordinary runs and the distributed JAR stay unchanged.
+// Explicitly enabled separate test mod; no presentation selector is set.
 if (barrelV5PackagedValidation) {
     def harness = sourceSets.barrelV5PackagedValidation
     neoForge.mods.create('iedctr_barrel_v5_validation') { sourceSet(harness) }
     neoForge.runs.configureEach { loadedMods = [neoForge.mods.getByName(project.mod_id)] }
-    ['barrelV5PackagedOptInClient'].each { runName ->
+    ['barrelV5PackagedDefaultClient'].each { runName ->
         neoForge.runs.create(runName) {
             client()
             sourceSet = harness
@@ -33,9 +33,8 @@ if (barrelV5PackagedValidation) {
             taskBefore(tasks.named('jar'))
             taskBefore(tasks.named('barrelV5PackagedValidationClasses'))
             // The verifier is registered below; no source-output fallback is permitted.
-            if (runName == 'barrelV5PackagedOptInClient') {
+            if (runName == 'barrelV5PackagedDefaultClient') {
                 systemProperty 'iedctr.barrelV5PackagedNative', 'true'
-                systemProperty 'iedctr.dev.barrelV5Reference', 'true'
             }
         }
     }
@@ -73,7 +72,7 @@ if (barrelV5PackagedValidation) {
                     }
                 }
             }
-            ['barrelV5PackagedOptInClient'].each { name ->
+            ['barrelV5PackagedDefaultClient'].each { name ->
                 def run = neoForge.runs.getByName(name)
                 if (run.sourceSet.get() != harness || run.loadedMods.get()*.name != ['iedctr_barrel_v5_validation']) {
                     throw new GradleException('Packaged validation must load only the separate harness development mod')
@@ -90,7 +89,7 @@ if (barrelV5PackagedValidation) {
                     fixture_free_jar: true, split_packages: false]))
         }
     }
-    ['barrelV5PackagedOptInClient'].each { name ->
+    ['barrelV5PackagedDefaultClient'].each { name ->
         neoForge.runs.getByName(name).taskBefore(verifyPackagedRuntime)
     }
 }

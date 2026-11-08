@@ -30,7 +30,7 @@ class RuntimeTests(unittest.TestCase):
             split_packages=False, loaded_development_mods=[HARNESS],
             runtime_classpath=[str(jar), '/isolated/harness'], forbidden_main_outputs=['/main/classes', '/main/resources'])
         self.proof = dict(packaged_runtime=dict(jar_path=str(jar), jar_sha256=digest,
-            fixture_free_jar=True, separate_harness_module=True, other_production_selectors_absent=True, opt_in_selector="iedctr.dev.barrelV5Reference=true",
+            fixture_free_jar=True, separate_harness_module=True, production_selectors_absent=True, production_selectors=[],
             harness_mod_id=HARNESS, harness_mod_path='/isolated/harness', mod_root_uri=root,
             class_origins=[{'class': n, 'resource_uri': root+n.replace('.', '/')+'.class',
                 'code_source_uri': root, 'sha256': hashlib.sha256(n.encode()).hexdigest()} for n in CLASSES],
@@ -43,8 +43,8 @@ class RuntimeTests(unittest.TestCase):
         self.check()
 
 
-    def test_opt_in_and_hover_bounds_are_mandatory(self):
-        for field,value in [('opt_in_selector',None),('opt_in_selector','iedctr.dev.barrelV5Reference=false'),('other_production_selectors_absent',False)]:
+    def test_selector_absence_is_mandatory(self):
+        for field,value in [('production_selectors',None),('production_selectors',['iedctr.dev.barrelV5Reference=true']),('opt_in_selector',None),('opt_in_selector','iedctr.dev.barrelV5Reference=false'),('production_selectors_absent',False)]:
             p=copy.deepcopy(self.proof);p['packaged_runtime'][field]=value
             with self.subTest(field=field,value=value),self.assertRaises(SmokeFailure):self.check(p)
 
@@ -55,7 +55,7 @@ class RuntimeTests(unittest.TestCase):
 
     def test_reject_runtime_corruption(self):
         mutations = [lambda p: p.pop('packaged_runtime'),
-            lambda p: p['packaged_runtime'].update(other_production_selectors_absent=False),
+            lambda p: p['packaged_runtime'].update(production_selectors_absent=False),
             lambda p: p['packaged_runtime'].update(separate_harness_module=False),
             lambda p: p['packaged_runtime'].update(jar_sha256='0'*64),
             lambda p: p['packaged_runtime'].update(harness_mod_id=MOD),
@@ -105,8 +105,8 @@ from barrel_v5_packaged_proof import FLUID_IDS, STILL_TEXTURES, STATES, PREFIX, 
 def valid_evidence(fluid='water', language='en_us', height=720):
     width=1280
     scale,ox,oy,left,top,iw,ih=screen_geometry(width,height)
-    proof=dict(suite='barrel-v5-packaged-native-v1', nonce='a'*32, executed_source_sha='b'*40,
-        status='passed_bounded_native', runtime_mode='v5-opt-in', selected_fluid=fluid, selected_language=language,
+    proof=dict(suite='barrel-v5-packaged-native-v2', nonce='a'*32, executed_source_sha='b'*40,
+        status='passed_bounded_native', runtime_mode='v5-default', selected_fluid=fluid, selected_language=language,
         actual_integrated_world=True, input_backend='XTEST', cleanup_released=True,
         rendered_sprite_identity_verified=False, natural_collection_verified=False, visual_acceptance=False,
         opening=dict(method='XTEST_RMB_BLOCK_HIT', hit_block='0,80,0', native_right_press_observed=True,
@@ -168,6 +168,11 @@ class BarrelEvidenceTests(unittest.TestCase):
             for field,value in [('view_scale',float('nan')),('view_origin_x',float('inf')),('view_origin_y',True),('slot_hover_bounds',[]),('hover_probe_method','physical')]:
                 p=valid_evidence(language=language,height=height);p['captures'][0]['geometry'][field]=value
                 with self.subTest(field=field,height=height),self.assertRaises(SmokeFailure):self.check(p,language=language,height=height)
+
+    def test_old_opt_in_evidence_cannot_qualify_default(self):
+        for field,value in [('suite','barrel-v5-packaged-native-v1'),('runtime_mode','v5-opt-in')]:
+            p=valid_evidence();p[field]=value
+            with self.subTest(field=field),self.assertRaises(SmokeFailure):self.check(p)
 
     def test_six_profiles(self):
         for fluid in FLUID_IDS:

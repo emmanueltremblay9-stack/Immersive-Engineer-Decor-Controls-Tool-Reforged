@@ -21,9 +21,10 @@ public final class BarrelPlacerPresentationGameTests {
         String placerKey = MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY;
         String oldBarrel = System.getProperty(barrelKey), oldPlacer = System.getProperty(placerKey);
         try {
-            for (boolean barrel : new boolean[] {false, true}) {
+            for (String barrel : new String[] {"absent", "false", "true"}) {
                 for (boolean placer : new boolean[] {false, true}) {
-                    System.setProperty(barrelKey, Boolean.toString(barrel));
+                    if (barrel.equals("absent")) System.clearProperty(barrelKey);
+                    else System.setProperty(barrelKey, barrel);
                     System.setProperty(placerKey, Boolean.toString(placer));
                     for (var kind : new MachineKind[] {MachineKind.FLUID_BARREL, MachineKind.FACTORY_PLACER}) {
                         var authoritative = new MachineMenu(kind, 41, player.getInventory(),

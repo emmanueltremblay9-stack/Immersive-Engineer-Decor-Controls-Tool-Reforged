@@ -1,10 +1,16 @@
-# Barrel V5 opt-in packaged qualification
+# Barrel V5 default packaged qualification
 
-This supplemental gate does not activate V5 for normal users and does not replace
-legacy Barrel, Factory/Breaker, Funnel/Accumulator, or cumulative GUI gates.
-It runs the ordinary production JAR with exactly one presentation opt-in:
-`iedctr.dev.barrelV5Reference=true`. The driver is a separate test mod,
-`iedctr_barrel_v5_validation`, outside `src/main` and the production JAR.
+This supplemental gate qualifies the default V5 presentation from the ordinary
+production JAR without any presentation-selection property. It does not replace
+Factory/Breaker, Funnel/Accumulator or cumulative GUI gates. The driver is a
+separate explicitly enabled test mod, `iedctr_barrel_v5_validation`, outside
+`src/main` and the production JAR. All `iedctr.dev.*` properties, including the
+historical V5 opt-in property even when false, and competing native fixture
+selectors are rejected.
+
+The evidence schema is `barrel-v5-packaged-native-v2` with runtime mode
+`v5-default`, an empty production-selector list and mandatory selector-absence
+attestation. Earlier opt-in evidence cannot satisfy this default-path gate.
 
 ## Running
 

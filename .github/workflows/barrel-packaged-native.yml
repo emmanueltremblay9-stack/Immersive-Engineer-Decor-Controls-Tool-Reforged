@@ -1,4 +1,4 @@
-name: Barrel supplemental packaged qualification
+name: Barrel legacy packaged diagnostic
 
 on:
   pull_request:
@@ -84,6 +84,7 @@ jobs:
           retention-days: 14
 
   native-packaged-default:
+    name: Native packaged legacy diagnostic
     needs: ordinary-artifact
     runs-on: ubuntu-latest
     timeout-minutes: 40
@@ -131,7 +132,7 @@ jobs:
           assert (target/'normal.jar.sha256').read_text() == digest+'  normal.jar\n', 'Shared SHA file differs'
           assert not subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all'], text=True).strip(), 'Downloaded artifact changed source checkout'
           PYCODE
-      - name: Qualify exact ordinary JAR with physical native input
+      - name: Diagnose legacy Barrel in exact ordinary JAR with physical native input
         run: >-
           python tools/validation/barrel_packaged_native.py
           --runtime-jar "${{ github.workspace }}/build/barrel-qualified-artifact/normal.jar"

@@ -38,10 +38,10 @@ def validate_runtime(proof, report):
     cp_paths, main_paths = {Path(p).resolve() for p in cp}, {Path(p).resolve() for p in outputs}
     require(jar in cp_paths and not cp_paths.intersection(main_paths), 'Source-output runtime or missing JAR')
     require(runtime.get('harness_mod_id') == HARNESS and runtime.get('fixture_free_jar') is True
-            and runtime.get('separate_harness_module') is True and runtime.get('other_production_selectors_absent') is True
-            and runtime.get('opt_in_selector') == 'iedctr.dev.barrelV5Reference=true'
+            and runtime.get('separate_harness_module') is True and runtime.get('production_selectors_absent') is True
+            and runtime.get('production_selectors') == [] and 'opt_in_selector' not in runtime
             and type(runtime.get('harness_mod_path')) is str
-            and Path(runtime['harness_mod_path']).resolve() != jar, 'Not an independent opt-in V5 test mod')
+            and Path(runtime['harness_mod_path']).resolve() != jar, 'Not an independent default V5 test mod')
     root = runtime.get('mod_root_uri')
     require(type(root) is str and root and root.endswith('/'), 'Missing authoritative mod root')
     root_identity, jar_identity = uri_identity(root), uri_identity(jar.as_uri())
@@ -132,14 +132,14 @@ def number(obj, key, expected):
 
 
 def validate_evidence(proof, nonce, source_sha, width, height, language, fluid):
-    require(type(proof) is dict and proof.get('suite') == 'barrel-v5-packaged-native-v1'
+    require(type(proof) is dict and proof.get('suite') == 'barrel-v5-packaged-native-v2'
             and re.fullmatch('[a-f0-9]{32}', nonce) and proof.get('nonce') == nonce
             and re.fullmatch('[a-f0-9]{40}', source_sha) and proof.get('executed_source_sha') == source_sha,
             'Wrong run/source identity')
     require(fluid in FLUID_IDS and width == 1280 and (language, height) in (('en_us', 720), ('fr_fr', 260)),
             'Unsupported Barrel profile')
     require(proof.get('selected_fluid') == fluid and proof.get('selected_language') == language
-            and proof.get('runtime_mode') == 'v5-opt-in'
+            and proof.get('runtime_mode') == 'v5-default'
             and proof.get('status') == 'passed_bounded_native' and 'error' not in proof
             and proof.get('actual_integrated_world') is True and proof.get('input_backend') == 'XTEST'
             and proof.get('cleanup_released') is True

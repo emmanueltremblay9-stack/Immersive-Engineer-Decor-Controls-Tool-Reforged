@@ -5,7 +5,7 @@ license="MIT"
 [[mods]]
 modId="iedctr_barrel_v5_validation"
 version="1.0"
-displayName="IEDCTR Barrel V5 opt-in isolated validation harness"
+displayName="IEDCTR Barrel V5 default isolated validation harness"
 
 [[dependencies.iedctr_barrel_v5_validation]]
 modId="immersive_engineer_decor_controls_tool_reforged"

@@ -1,3 +1,26 @@
+# Current default-path integration candidate
+
+V5 is now the normal client Barrel presentation when no system property is set.
+The historical `iedctr.dev.barrelV5Reference=false` override remains only for explicit
+legacy regression diagnostics. The client screen and menu projection are selected
+together; public server constructors and server worlds retain authoritative slot
+coordinates. Factory Placer and every other screen route are unchanged.
+
+The source-runtime/reload suite now uses the normal default with no selector. The
+separate ordinary-JAR suite also rejects every presentation selector and verifies
+the default path. The older legacy Barrel suite explicitly selects false and is
+not evidence of default-path delivery. See
+[packaged qualification](../../validation/barrel-v5-packaged-qualification.md) for
+the exact bounds, physical input coverage and remaining acceptance limitations.
+New exact-commit CI is required for this activation; the successful opt-in runs on
+304b13cd are a prior checkpoint, not validation of this change. No merge or release.
+
+## Historical checkpoints
+
+The records below describe their respective earlier commits, including the original
+default-OFF experiment. They are retained as history and do not override the current
+default-path behavior above.
+
 ## Reused reload and JEI qualification work
 
 The narrow Barrel-only changes from PR168 commits `ef95bb07` and `1eb693a0` are reapplied here onto the reconciled main baseline. This avoids importing the unrelated Solar branch. Public screen bounds now describe the transformed canvas to JEI, while native slot input keeps local coordinates. The existing resource-reload fixture and pixel decoder tests are preserved, including completed-reload state before any fixture drain and all 38 routes before and after reload. These need new CI on this combined tree; the old PR168 results are not a pass of this candidate.

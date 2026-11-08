@@ -22,9 +22,7 @@ import net.neoforged.fml.ModList;
 public final class PackagedRuntimeProof {
     private PackagedRuntimeProof() {}
     public static JsonObject verify(Minecraft mc) throws Exception {
-        require("true".equals(System.getProperty("iedctr.dev.barrelV5Reference")), "Explicit V5 opt-in required");
         for (String key : System.getProperties().stringPropertyNames()) {
-            if (key.equals("iedctr.dev.barrelV5Reference")) continue;
             require(!key.startsWith("iedctr.") || !key.endsWith("Native") || key.equals("iedctr.barrelV5PackagedNative"),
                 "Other native validation selector must be absent: " + key);
             require(!key.startsWith("iedctr.dev.") && !key.equals("iedctr.fluidGestureNative") && !key.equals("iedctr.barrelPackagedNative") && !key.equals("iedctr.barrelReferenceNative")
@@ -101,8 +99,8 @@ public final class PackagedRuntimeProof {
             // Historical opt-in production validation classes may exist. This flag only excludes the separate harness namespace.
             proof.addProperty("fixture_free_jar", true);
             proof.addProperty("fixture_free_scope", "Separate com/oblixorprime/iedctrtest harness excluded; historical main validation classes may exist but their activation selectors are absent"); proof.addProperty("separate_harness_module", true);
-            proof.add("active_textures",textures);proof.addProperty("other_production_selectors_absent",true);
-            proof.addProperty("opt_in_selector","iedctr.dev.barrelV5Reference=true");
+            proof.add("active_textures",textures);proof.addProperty("production_selectors_absent",true);
+            proof.add("production_selectors",new JsonArray());
             proof.add("class_origins", origins);
             return proof;
         }

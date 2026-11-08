@@ -53,16 +53,28 @@ class BarrelDriverGuards(unittest.TestCase):
                       '-Pbarrel_runtime_jar=', 'Supplied artifact changed during preparation'):
             self.assertIn(token,runner)
         self.assertNotIn("systemProperty 'iedctr.clientGameplay'",runner)
-        self.assertIn('prepareBarrelV5PackagedOptInClientRun',runner)
-        self.assertIn('runBarrelV5PackagedOptInClient',runner)
-        self.assertIn("runs.named('barrelV5PackagedOptInClient')",runner)
-        self.assertNotIn('DefaultClient',runner)
-        self.assertIn("['barrelV5PackagedOptInClient']",gradle)
-        self.assertIn("systemProperty 'iedctr.dev.barrelV5Reference', 'true'",runner)
-        self.assertIn("systemProperty 'iedctr.dev.barrelV5Reference', 'true'",gradle)
+        self.assertIn('prepareBarrelV5PackagedDefaultClientRun',runner)
+        self.assertIn('runBarrelV5PackagedDefaultClient',runner)
+        self.assertIn("runs.named('barrelV5PackagedDefaultClient')",runner)
+        self.assertNotIn('OptInClient',runner)
+        self.assertIn("['barrelV5PackagedDefaultClient']",gradle)
+        self.assertNotIn("systemProperty 'iedctr.dev.",runner)
+        self.assertNotIn("systemProperty 'iedctr.dev.",gradle)
         cumulative=(ROOT/'.github/workflows/barrel-fluid-validation.yml').read_text()
         self.assertIn('--corrected-machine-gui-only',cumulative)
         self.assertIn('test_client_gameplay.py',cumulative)
+
+    def test_no_selector_exception_or_old_proof_schema(self):
+        source=(BASE/'PackagedRuntimeProof.java').read_text()
+        selector_scan=source.split('for (String key : System.getProperties().stringPropertyNames())',1)[1].split('String expectedHash',1)[0]
+        self.assertNotIn('continue;',selector_scan)
+        self.assertIn('require(!key.startsWith("iedctr.dev.")',selector_scan)
+        self.assertIn('!key.endsWith("Native") || key.equals("iedctr.barrelV5PackagedNative")',selector_scan)
+        self.assertIn('proof.add("production_selectors",new JsonArray())',source)
+        driver=(BASE/'NativeBarrelValidation.java').read_text()
+        self.assertIn('"barrel-v5-packaged-native-v2"',driver)
+        self.assertIn('"runtime_mode","v5-default"',driver)
+        self.assertNotIn('"v5-opt-in"',driver)
 
     def test_runtime_provenance_and_legacy_selectors(self):
         source=(BASE/'PackagedRuntimeProof.java').read_text()

@@ -33,6 +33,7 @@ if (barrelPackagedValidation) {
             // The verifier is registered below; no source-output fallback is permitted.
             if (runName == 'barrelPackagedDefaultClient') {
                 systemProperty 'iedctr.barrelPackagedNative', 'true'
+                systemProperty 'iedctr.dev.barrelV5Reference', 'false'
             }
         }
     }
