@@ -697,6 +697,12 @@ public final class NativeClientMiningValidation {
 
    private static void finish(Minecraft mc, Throwable error) {
       complete = true;
+      try {
+         NativeCorrectedMachineGuiValidation.restoreFreezerSnapshot(mc);
+      } catch (Exception cleanupError) {
+         if (error == null) error = cleanupError;
+         else error.addSuppressed(cleanupError);
+      }
       mc.options.keyAttack.setDown(false);
       if (originalAttackContext != null) mc.options.keyAttack.setKeyConflictContext(originalAttackContext);
       try {
