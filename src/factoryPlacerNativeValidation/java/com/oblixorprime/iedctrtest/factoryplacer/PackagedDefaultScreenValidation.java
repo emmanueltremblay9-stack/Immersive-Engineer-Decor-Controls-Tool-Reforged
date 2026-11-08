@@ -80,9 +80,10 @@ public final class PackagedDefaultScreenValidation {
             require(mc.level != null && mc.player != null && mc.getSingleplayerServer() != null, "World disconnected");
             if (pending != null) { if (!pending.isDone()) return; pending.join(); pending = null; }
             if (mc.getOverlay() != null) return;
-            if (!(mc.screen instanceof FactoryPlacerV2ReferenceScreen)) {
-                require(mc.screen == null, "Unexpected default screen: " + mc.screen.getClass().getName()); return;
-            }
+            // The server task can finish before the client receives the open-screen packet.
+            if (mc.screen == null) return;
+            require(mc.screen instanceof FactoryPlacerV2ReferenceScreen,
+                "Unexpected default screen: " + mc.screen.getClass().getName());
             require(mc.player.containerMenu instanceof MachineMenu, "Default menu type differs");
             var menu = (MachineMenu) mc.player.containerMenu;
             require(menu.factoryPlacerV2ReferencePresentation() && menu.slots.size() == 54 && menu.visibleMachineSlots() == 18,
