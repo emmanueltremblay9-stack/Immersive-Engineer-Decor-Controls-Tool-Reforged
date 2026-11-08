@@ -1,0 +1,96 @@
+// Separate barrel harness. Ordinary Factory/Breaker packaging is untouched.
+def barrelV5PackagedValidation = providers.gradleProperty('include_barrel_v5_packaged_validation').map { it.toBoolean() }.getOrElse(false)
+def barrelRuntimeJar = providers.gradleProperty('barrel_runtime_jar').map { file(it) }
+        .orElse(tasks.named('jar', Jar).flatMap { it.archiveFile }.map { it.asFile })
+if (barrelV5PackagedValidation) {
+    if (providers.gradleProperty('include_barrel_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('V5 opt-in and legacy Barrel packaged validation must run separately')
+    if (providers.gradleProperty('include_factory_placer_native_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Factory/Breaker and barrel packaged validation separately')
+    if (providers.gradleProperty('include_fluid_gesture_native_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Legacy source-runtime barrel fixture cannot accompany packaged validation')
+    if (providers.gradleProperty('include_fluid_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Barrel and Funnel/Accumulator packaged validation separately')
+    sourceSets.create('barrelV5PackagedValidation') {
+        java.srcDir('src/barrelV5PackagedValidation/java')
+        compileClasspath += files(barrelRuntimeJar) + sourceSets.main.compileClasspath
+        runtimeClasspath = output + configurations.getByName(runtimeClasspathConfigurationName) +
+                (sourceSets.main.runtimeClasspath - sourceSets.main.output) + files(barrelRuntimeJar)
+    }
+    tasks.named('compileBarrelV5PackagedValidationJava').configure { dependsOn(tasks.named('jar')) }
+}
+// Opt-in, separate test mod; ordinary runs and the distributed JAR stay unchanged.
+if (barrelV5PackagedValidation) {
+    def harness = sourceSets.barrelV5PackagedValidation
+    neoForge.mods.create('iedctr_barrel_v5_validation') { sourceSet(harness) }
+    neoForge.runs.configureEach { loadedMods = [neoForge.mods.getByName(project.mod_id)] }
+    ['barrelV5PackagedOptInClient'].each { runName ->
+        neoForge.runs.create(runName) {
+            client()
+            sourceSet = harness
+            loadedMods = [neoForge.mods.getByName('iedctr_barrel_v5_validation')]
+            disableIdeRun()
+            taskBefore(tasks.named('jar'))
+            taskBefore(tasks.named('barrelV5PackagedValidationClasses'))
+            // The verifier is registered below; no source-output fallback is permitted.
+            if (runName == 'barrelV5PackagedOptInClient') {
+                systemProperty 'iedctr.barrelV5PackagedNative', 'true'
+                systemProperty 'iedctr.dev.barrelV5Reference', 'true'
+            }
+        }
+    }
+    def verifyPackagedRuntime = tasks.register('verifyBarrelV5PackagedRuntime') {
+        group = 'verification'
+        dependsOn(tasks.named('jar'), tasks.named('barrelV5PackagedValidationClasses'))
+        doLast {
+            def jarFile = barrelRuntimeJar.get().canonicalFile
+            def normalJar = tasks.named('jar', Jar).get().archiveFile.get().asFile.canonicalFile
+            def sha256 = { file -> java.security.MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
+            if (sha256(jarFile) != sha256(normalJar)) {
+                throw new GradleException('Supplied runtime JAR differs from the normal JAR built from this exact source checkout')
+            }
+            def classpath = harness.runtimeClasspath.files.collect { it.canonicalFile }
+            def mainOutputs = sourceSets.main.output.files.collect { it.canonicalFile }
+            if (!classpath.contains(jarFile) || classpath.any { mainOutputs.contains(it) }) {
+                throw new GradleException('Packaged validation requires the exact JAR and forbids main output on runtime classpath')
+            }
+            def harnessPackages = [] as Set
+            harness.output.classesDirs.asFileTree.matching { include '**/*.class' }.files.each {
+                def root = harness.output.classesDirs.files.find { dir -> it.toPath().startsWith(dir.toPath()) }
+                def relative = root.toPath().relativize(it.toPath()).toString().replace('\\', '/')
+                harnessPackages.add(relative.contains('/') ? relative.substring(0, relative.lastIndexOf('/')) : '')
+            }
+            new java.util.zip.ZipFile(jarFile).withCloseable { zip ->
+                def entryNames = [] as Set
+                zip.entries().each { entry ->
+                    if (!entryNames.add(entry.name)) throw new GradleException('Duplicate entries in normal JAR')
+                    if (entry.name.startsWith('com/oblixorprime/iedctrtest/') || entry.name.contains('NativeBarrelV5PackagedValidation')) {
+                        throw new GradleException('Validation fixture leaked into production JAR')
+                    }
+                    if (entry.name.endsWith('.class') && entry.name.contains('/') &&
+                            harnessPackages.contains(entry.name.substring(0, entry.name.lastIndexOf('/')))) {
+                        throw new GradleException('Harness and production JAR contain a split package')
+                    }
+                }
+            }
+            ['barrelV5PackagedOptInClient'].each { name ->
+                def run = neoForge.runs.getByName(name)
+                if (run.sourceSet.get() != harness || run.loadedMods.get()*.name != ['iedctr_barrel_v5_validation']) {
+                    throw new GradleException('Packaged validation must load only the separate harness development mod')
+                }
+            }
+            def report = layout.buildDirectory.file('reports/barrel-v5-packaged-runtime.json').get().asFile
+            report.parentFile.mkdirs()
+            report.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson([
+                    jar_path: jarFile.path,
+                    jar_sha256: java.security.MessageDigest.getInstance('SHA-256').digest(jarFile.bytes).encodeHex().toString(),
+                    runtime_classpath: classpath*.path, forbidden_main_outputs: mainOutputs*.path,
+                    harness_outputs: harness.output.files.collect { it.canonicalPath },
+                    loaded_development_mods: ['iedctr_barrel_v5_validation'],
+                    fixture_free_jar: true, split_packages: false]))
+        }
+    }
+    ['barrelV5PackagedOptInClient'].each { name ->
+        neoForge.runs.getByName(name).taskBefore(verifyPackagedRuntime)
+    }
+}
