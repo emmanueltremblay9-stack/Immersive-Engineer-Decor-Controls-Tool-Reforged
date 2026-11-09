@@ -2,6 +2,18 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## Unreleased - Small Water Freezer pipe and bucket automation
+
+### Fixed
+- Expose a water-only, 2,000 mB tank on every Freezer face so Immersive Engineering fluid pipes can connect. An empty input slot and 1,000 mB of water produce one Ice block using the existing 180-tick, 1,440-FE cycle.
+- Allow automation to recover the empty bucket left in the input slot. Vanilla hoppers now follow the same output-only extraction rules as item capabilities, with this empty-bucket exception, rather than removing unprocessed inputs or legacy reserved-slot contents.
+- Keep item recipes, direct hand-bucket use, slot indices, comparator behavior and saved item progress unchanged. Persist fluid work separately and reset it when its water batch is removed or its source changes.
+- Synchronize the fluid recipe preview and status through an unused existing menu field, without changing presentation selectors or slot/data counts.
+
+### Regression coverage
+- Add 13 dedicated GameTests for fluid capability contracts, conservation, exact energy/timing, source switching, interruption, reload, real hopper bucket recycling, menu status, legacy behavior and real IE pipe transfer on all six faces.
+- See `docs/testing/freezer-fluid-automation.md` for the scope, upstream references and manual client qualification checklist. Added tests are not evidence of a completed in-game client check.
+
 ## Unreleased - orientation-aware steel Double-T support connections
 
 ### Changed
