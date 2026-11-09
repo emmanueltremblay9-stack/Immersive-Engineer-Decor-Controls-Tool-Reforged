@@ -20,6 +20,15 @@ The workflow checks out the exact pull-request head, runs JUnit/GameTests, and r
 
 French at 260 framebuffer pixels cannot use actual GUI scale 2 or 3 without violating Minecraft's minimum GUI viewport. The runner rejects silently clamped scales instead of claiming them.
 
+## Separation from the legacy corrected GUI suite
+
+The corrected-machine GUI suite now covers only its seven registered MachineScreen
+GUIs, with 24 panel crops and seven separate hover captures. Its obsolete Tree
+Cutter badge-only check has been removed because the default Tree Cutter uses the
+V3 screen. Schema version 2 explicitly records this exclusion and the independent
+Tree workflow. A passing corrected-machine proof does not qualify Tree Cutter V3:
+the dedicated exact-head matrix above remains required.
+
 ## What this fixture measures
 
 - An isolated nonce-owned fresh survival flat world and physical XTest right-click on the verified machine block raycast open the **normal registered Tree Cutter screen**. It never constructs the production screen directly.
