@@ -54,7 +54,7 @@ public final class ClientModEvents {
       event.register((MenuType)ModMenus.PASSIVE_FLUID_ACCUMULATOR.get(), MachineScreen.PassiveFluidAccumulatorScreen::new);
       event.register((MenuType)ModMenus.SMALL_SOLAR_PANEL.get(), MachineScreen.SmallSolarPanelScreen::new);
       event.register((MenuType)ModMenus.SMALL_MILKING_MACHINE.get(), MachineScreen.SmallMilkingMachineScreen::new);
-      event.register((MenuType)ModMenus.SMALL_TREE_CUTTER.get(), MachineScreen.SmallTreeCutterScreen::new);
+      event.register((MenuType)ModMenus.SMALL_TREE_CUTTER.get(), TreeCutterV3ReferenceScreen::new);
    }
 
    @SubscribeEvent

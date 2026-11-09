@@ -1103,5 +1103,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.redstone_2": "ignores power",
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.trigger_tooltip": "Trigger setting: %s. Click to toggle. Ignore-power mode runs automatically.",
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.continuous": "continuous",
-  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge": "signal change"
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge": "signal change",
+  "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.output": "Output: cut logs",
+  "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy": "Energy: %s / %s FE"
 }

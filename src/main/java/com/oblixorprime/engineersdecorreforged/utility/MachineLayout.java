@@ -439,16 +439,7 @@ public record MachineLayout(
          33,
          188,
          List.of(
-            new MachineLayout.MachineSlot(0, 122, 42, "Drops"),
-            new MachineLayout.MachineSlot(1, 144, 42, "Drops"),
-            new MachineLayout.MachineSlot(2, 166, 42, "Drops"),
-            new MachineLayout.MachineSlot(3, 122, 64, "Drops"),
-            new MachineLayout.MachineSlot(4, 144, 64, "Drops"),
-            new MachineLayout.MachineSlot(5, 166, 64, "Drops"),
-            new MachineLayout.MachineSlot(6, 122, 86, "Drops"),
-            new MachineLayout.MachineSlot(7, 144, 86, "Drops"),
-            new MachineLayout.MachineSlot(8, 166, 86, "Drops"),
-            new MachineLayout.MachineSlot(9, 188, 86, "I/O")
+            new MachineLayout.MachineSlot(0, 122, 42, "Output", true)
          ),
          List.of(
             new MachineLayout.Panel("tree-collection-mask", 116, 39, 100, 69),
