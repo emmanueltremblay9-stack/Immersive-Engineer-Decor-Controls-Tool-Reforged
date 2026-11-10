@@ -17,7 +17,7 @@ import tempfile
 import zlib
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
-SUITE = "native-solar-v2-reference-v1"
+SUITE = "native-solar-v2-reference-v2"
 ART_SHA = "d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796"
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.SolarV2ReferenceScreen"
 CASES = {"all_37_pickup_return_server_confirmed", "native_empty_half_full_fe",
@@ -79,6 +79,73 @@ def png(path: Path, width: int, height: int, expected_hash: str) -> None:
         raise SmokeFailure("Native PNG hash/dimensions differ from evidence")
 
 
+
+OWNED_DISPLAY_SCRIPT = r"""import os,pathlib,re,sys
+assert re.fullmatch(r':\d+(\.\d+)?',os.environ.get('DISPLAY',''))
+game=pathlib.Path(os.environ['IEDCTR_GAMEPLAY_DIR'])
+nonce=os.environ['IEDCTR_GAMEPLAY_NONCE']
+assert (game/'.iedctr-client-gameplay-nonce').read_text()==nonce
+marker=game/'.iedctr-solar-xvfb'
+assert not marker.exists()
+marker.write_text(nonce+'\n'+os.environ['DISPLAY'])
+os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
+"""
+
+INPUT_METHOD = "XTest physical slot clicks; observed GLFW cursor and server inventory transitions"
+
+
+def expected_inputs(width, height, gui_scale):
+    viewport, scale, _ = expected_geometry(width, height, gui_scale)
+    # Same float origins used by the geometry, before integer public bounds.
+    f32 = lambda n: struct.unpack(">f", struct.pack(">f", n))[0]
+    ox = f32((viewport['gui_width'] - 418 * scale) / 2)
+    oy = f32((viewport['gui_height'] - 418 * scale) / 2)
+    manifest = json.loads((Path(__file__).resolve().parents[2] /
+                          'docs/testing/solar-v2-reference/geometry-manifest.json').read_text())
+    targets = [('CELL_READY', 28), ('CELL_PICKED', 0)]
+    for i in range(37):
+        targets += [('SLOT_READY', i), ('PICKED', 29 if i == 28 else 28)]
+    result = []
+    for stage, slot in targets:
+        x, y = manifest['slots'][slot]['canvas_item_origin']
+        result.append(dict(stage=stage, target_slot=slot, target_gui_x=ox+(x+8)*scale,
+                           target_gui_y=oy+(y+8)*scale))
+    return result
+
+
+def validate_physical_inputs(proof, width, height, gui_scale):
+    inputs = proof.get('physical_inputs')
+    expected = expected_inputs(width, height, gui_scale)
+    if (proof.get('input_method') != INPUT_METHOD or type(proof.get('physical_slot_clicks')) is not int
+            or proof['physical_slot_clicks'] != 76 or not isinstance(inputs, list) or len(inputs) != 76):
+        raise SmokeFailure('Missing physical input evidence')
+    ids = set()
+    for actual, target in zip(inputs, expected):
+        if (not isinstance(actual, dict) or type(actual.get('target_slot')) is not int
+                or actual.get('target_slot') != target['target_slot'] or actual.get('stage') != target['stage']
+                or type(actual.get('menu_id')) is not int or actual['menu_id'] <= 0):
+            raise SmokeFailure('Physical input route or menu differs')
+        ids.add(actual['menu_id'])
+        for axis in ('x', 'y'):
+            requested, observed = actual.get('target_gui_'+axis), actual.get('observed_gui_'+axis)
+            if (any(type(v) not in (int, float) or not math.isfinite(v) for v in (requested, observed))
+                    or abs(requested-target['target_gui_'+axis]) > .0001 or abs(observed-requested) > 1):
+                raise SmokeFailure('Physical input cursor coordinates differ')
+    if len(ids) != 1:
+        raise SmokeFailure('Physical input menu identity differs')
+
+    routes = proof.get('server_routes')
+    if not isinstance(routes, list) or len(routes) != 37:
+        raise SmokeFailure('Missing server inventory transitions')
+    for i, route in enumerate(routes):
+        expected_route = dict(source_slot=i, destination_slot=29 if i == 28 else 28,
+                              menu_id=next(iter(ids)), picked_source_count=0, picked_carried_count=1,
+                              picked_total=1, returned_source_count=0, returned_destination_count=1,
+                              returned_carried_count=0, returned_total=1)
+        if not isinstance(route, dict) or any(type(route.get(k)) is not int or route[k] != v for k,v in expected_route.items()):
+            raise SmokeFailure('Server inventory transition differs')
+
+
 def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
                    logs: str, exit_code: int | None, timed_out: bool,
                    width: int, height: int, language: str, gui_scale: int = 1) -> dict:
@@ -117,6 +184,7 @@ def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
     routes = proof.get("slot_routes")
     if not isinstance(routes, list) or any(type(i) is not int for i in routes) or routes != list(range(37)):
         raise SmokeFailure("All 37 real slot routes must pass exactly once in order")
+    validate_physical_inputs(proof, width, height, gui_scale)
     cases = proof.get("cases")
     if not isinstance(cases, list) or any(not isinstance(c, str) for c in cases) or len(cases) != len(CASES) or set(cases) != CASES:
         raise SmokeFailure("Missing or duplicate native cases")
@@ -127,6 +195,9 @@ def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
     for capture in captures:
         if not isinstance(capture, dict):
             raise SmokeFailure("Invalid capture object")
+        if (type(capture.get("parked_render_frames")) is not int or capture["parked_render_frames"] < 2
+                or capture.get("pointer_parked") is not True):
+            raise SmokeFailure("Capture lacks completed clean parked renders")
         validate_viewport(capture, viewport)
         for key, expected in expected_presentation_bounds(width, height, gui_scale).items():
             if type(capture.get(key)) is not int or capture[key] != expected:
@@ -143,6 +214,7 @@ def validate_proof(proof: dict, nonce: str, source_sha: str, game: Path,
                 or type(capture.get("sync_granularity_fe")) is not int or capture["sync_granularity_fe"]!=100
                 or capture.get("screen_class") != SCREEN_CLASS
                 or type(capture.get("menu_id")) is not int or capture["menu_id"] <= 0
+                or capture["menu_id"] != proof["physical_inputs"][0]["menu_id"]
                 or type(capture.get("view_scale")) not in (int, float)
                 or not math.isfinite(capture["view_scale"])
                 or abs(capture["view_scale"] - scale) > .00001
@@ -314,6 +386,8 @@ def main() -> int:
     }
 }
 """, encoding="utf-8")
+    guard = evidence / "owned_display.py"
+    guard.write_text(OWNED_DISPLAY_SCRIPT, encoding="utf-8")
     env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
                IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_WIDTH=str(args.width),
                IEDCTR_SCREEN_HEIGHT=str(args.height), IEDCTR_GUI_SCALE=str(args.gui_scale),
@@ -327,7 +401,7 @@ def main() -> int:
             raise SmokeFailure(f"Solar V2 client preparation failed (exit={code}, timeout={expired})")
         log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24"]
-                                    + gradle + ["runClient"], project, env, log, args.timeout)
+                                    + [sys.executable, str(guard)] + gradle + ["runClient"], project, env, log, args.timeout)
         proof = json.loads((game / "client-solar-v2-reference-result.json").read_text())
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):

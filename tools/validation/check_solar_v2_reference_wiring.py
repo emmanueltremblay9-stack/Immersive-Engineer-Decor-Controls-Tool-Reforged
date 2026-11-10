@@ -100,4 +100,12 @@ assert 'require(!p.containerMenu.getSlot(0).mayPlace(new ItemStack(Items.STONE))
 assert 'require(p.containerMenu.getSlot(0).mayPlace(new ItemStack(cellItem()))' in server_contract
 assert 'menu.getSlot(0).mayPlace' not in native
 assert cell_ready.index('}))return;') < cell_ready.index('click(screen,28)')
-print('PASS: native Cell acceptance is fail-closed on the authoritative server menu before handler-driven input')
+print('PASS: native Cell acceptance is fail-closed on the authoritative server menu before physical input')
+
+assert 'screen.mouseClicked(' not in native and 'screen.mouseReleased(' not in native
+assert 'glfwSetCursorPos' not in native
+for required in ('XTestFakeMotionEvent', 'XTestFakeButtonEvent', 'mc.mouseHandler.xpos()',
+                 'mc.mouseHandler.ypos()', 'ScreenEvent.Render.Post', 'parkedFrames<2',
+                 'pointerParked(mc)', 'SERVER_ROUTES.add(serverRoute)', '.iedctr-solar-xvfb'):
+    assert required in native, required
+print('PASS: physical XTest input, observed pointer, server transitions and completed parked render gates')

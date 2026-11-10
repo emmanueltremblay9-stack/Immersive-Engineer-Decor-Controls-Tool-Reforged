@@ -113,10 +113,10 @@ the compile job separately records the built JAR SHA-256.
 
 The native fixture opens a real synchronized Solar menu in a new integrated world. It
 uses the existing `immersiveengineering:capacitor_lv` item and its actual NeoForge
-energy capability, places it via screen click/release handlers into the Cell, and
+energy capability, places it via XTest physical click/release events into the Cell, and
 observes real server FE movement with FE/item conservation. An opaque roof prevents
 solar generation during that controlled test. All 37 slots are picked up and placed
-through the normal screen handlers and vanilla packets with server observation. FE
+through the physical GLFW input path and vanilla packets with server observation. FE
 snapshots at zero, half and full are controlled fixture states, not claims about new
 production mechanics. It captures the meter and checks surrounding canvas pixels,
 closes the screen, verifies server close, then reopens and checks state/geometry.
@@ -156,7 +156,7 @@ fixture now records/asserts these public bounds, independently checked by Python
 This correction covers JEI sidebar placement, not complete JEI slot-input integration.
 JEI recipe/use/bookmark targeting can derive ingredient rectangles from public origins
 plus the still-local slot coordinates. Those scaled-slot interactions are not qualified
-by the bounded native screen-handler tests and remain a separate acceptance task.
+by the bounded native slot-click tests and remain a separate acceptance task.
 
 JEI remains enabled. No source pixels, FE clipping, exterior masks or cross-state
 pixel requirements are relaxed. Corrected native screenshots must be obtained from
@@ -167,3 +167,29 @@ Primary API references:
 - [NeoForge 1.21.1 AbstractContainerScreen accessors](https://github.com/NeoForged/NeoForge/blob/1.21.1/patches/net/minecraft/client/gui/screens/inventory/AbstractContainerScreen.java.patch)
 - [JEI 1.21.1 container GUI properties](https://github.com/mezz/JustEnoughItems/blob/1.21.1/Common/src/main/java/mezz/jei/common/gui/GuiProperties.java)
 - [JEI NeoForge ScreenHelper](https://github.com/mezz/JustEnoughItems/blob/1.21.1/NeoForge/src/main/java/mezz/jei/neoforge/platform/ScreenHelper.java)
+
+
+## Physical input qualification candidate, 2026-11-10
+
+Proof suite v2 replaces direct screen-handler clicks with XTest physical motion and
+button events, restricted to the runner's nonce-owned Xvfb display. All 37 source
+slots and their inventory destinations use the real GLFW/Minecraft input path;
+the real Cell charging setup uses the same path. The proof requires exactly 76
+clicks, their ordered stages/targets, observed GLFW coordinates within one GUI pixel
+of independently recomputed centers, and the same menu identity throughout.
+Clicks are separated by at least 350 ms to exclude double-click collection.
+
+Each of the 37 routes also records server-observed source, carried, destination and
+total inventory counts for pickup and return. Existing real Cell capability/FE,
+server acceptance, item conservation and geometry checks remain mandatory.
+Screenshots wait for an observed physically parked pointer and at least two completed
+screen renders at the requested FE state. Missing, stale, non-finite, wrong-menu or
+handler-only evidence fails closed. No PNG, FE crop, mask, public-bounds or exterior
+pixel criterion is relaxed.
+
+Opening, closing and reopening remain programmatic. Drag, shift-click, keyboard,
+JEI recipe/use/bookmark input, tooltip coverage and resource reload are not qualified
+by this bounded test. Solar remains default OFF; no other screen or mechanics change.
+This candidate still requires fresh five-profile CI/native results on its exact head;
+prior handler-only results do not qualify v2. Local Python and standalone guards do
+not constitute a Minecraft runtime pass.
