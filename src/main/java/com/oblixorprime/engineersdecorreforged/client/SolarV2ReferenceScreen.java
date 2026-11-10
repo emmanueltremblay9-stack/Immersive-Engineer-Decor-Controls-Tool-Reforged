@@ -9,7 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-/** Default-off retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */
+/** Default client retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */
 public final class SolarV2ReferenceScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.";
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
@@ -20,7 +20,7 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
 
    public SolarV2ReferenceScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
-      if (!menu.solarV2ReferencePresentation()) throw new IllegalArgumentException("Solar V2 requires explicit client opt-in");
+      if (!menu.solarV2ReferencePresentation()) throw new IllegalArgumentException("Solar V2 requires the client presentation");
       imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;
       imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;
    }

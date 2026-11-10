@@ -281,6 +281,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         self.window_height = 260
         self.proof = {
             "barrel_legacy_selector": "iedctr.dev.barrelV5Reference=false", "barrel_qualification": "legacy-diagnostic-only",
+            "solar_legacy_selector": "iedctr.dev.solarV2Reference=false", "solar_qualification": "legacy-diagnostic-only",
             "suite": "native-corrected-machine-gui-v1", "barrel_fixture_fluid": "minecraft:water", "nonce": self.nonce, "status": "passed",
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
@@ -464,12 +465,21 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         for field, values in {
             "barrel_legacy_selector": [None, "iedctr.dev.barrelV5Reference=true", "false"],
             "barrel_qualification": [None, "default", "packaged-default"],
+            "solar_legacy_selector": [None, "iedctr.dev.solarV2Reference=true", "false", "iedctr.dev.solarV2Reference=FALSE"],
+            "solar_qualification": [None, "default", "packaged-default"],
         }.items():
             for value in values:
                 bad = copy.deepcopy(self.proof)
                 bad[field] = value
                 with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure):
                     self.check(bad)
+
+    def test_requires_solar_legacy_proof_fields(self):
+        for field in ("solar_legacy_selector", "solar_qualification"):
+            bad = copy.deepcopy(self.proof)
+            del bad[field]
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(bad)
 
     def test_lava_and_milk_require_matching_native_identity_and_texture(self):
         for fluid, texture in (("lava", "minecraft:block/lava_still"), ("milk", "neoforge:block/milk_still")):

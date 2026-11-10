@@ -1,4 +1,4 @@
-package com.oblixorprime.engineersdecorreforged.client.validation;
+package com.oblixorprime.iedctrtest.solar;
 
 import com.google.gson.*;
 import com.sun.jna.NativeLibrary;
@@ -38,9 +38,9 @@ import org.lwjgl.glfw.GLFW;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 
 /** Dedicated fresh-world opt-in; never enables or edits the other gameplay harness. */
-@EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = SolarValidationMod.MOD_ID, value = Dist.CLIENT)
 public final class NativeSolarV2ReferenceValidation {
-   private static final String SUITE = "native-solar-v2-reference-v2";
+   private static final String SUITE = "native-solar-v2-reference-v3";
    private static final BlockPos POS = new BlockPos(0,80,0);
    private enum Stage { BOOT, WORLD, SETUP, CELL_READY, CELL_PICKED, CELL_CHARGING, SLOT_READY, PICKED, RETURNED, CAPTURE, CLOSE, REOPEN, DONE }
    private static Stage stage = Stage.BOOT;
@@ -54,7 +54,7 @@ public final class NativeSolarV2ReferenceValidation {
    private static NativeLibrary x11, xtest;
    private static Pointer display;
    private static final JsonArray INPUTS = new JsonArray(), SERVER_ROUTES = new JsonArray();
-   private static JsonObject serverRoute;
+   private static JsonObject serverRoute, packagedRuntime;
    private static int chargedCellFe, remainingBufferFe;
    private static MachineBlockEntity machine;
    private static CompletableFuture<?> pending;
@@ -65,7 +65,7 @@ public final class NativeSolarV2ReferenceValidation {
 
    @SubscribeEvent
    public static void tick(ClientTickEvent.Post event) {
-      if (!Boolean.getBoolean("iedctr.solarV2ReferenceNative") || complete) return;
+      if (!Boolean.getBoolean("iedctr.solarPackagedNative") || complete) return;
       Minecraft mc = Minecraft.getInstance();
       try {
          if (deadline == 0) deadline = System.nanoTime() + 900_000_000_000L;
@@ -181,13 +181,14 @@ public final class NativeSolarV2ReferenceValidation {
                require(menu.energyStored()==menu.energyCapacity(),"Reopen lost energy state");
                CASES.add("reopen_preserves_energy_and_geometry");enter(Stage.DONE);
             }
-            case DONE -> finish(mc,null);
+            case DONE -> { packagedRuntime=PackagedRuntimeProof.verify(mc);finish(mc,null); }
             default -> throw new IllegalStateException("Unexpected stage "+stage);
          }
       } catch(Throwable error) { finish(mc,error); }
    }
    private static void boot(Minecraft mc) throws Exception {
-      require(!Boolean.getBoolean("iedctr.clientGameplay") && Boolean.getBoolean(MachineMenu.DEV_SOLAR_V2_REFERENCE_PROPERTY),"Dedicated fixture only; V2 must be enabled");
+      require(System.getProperty(MachineMenu.DEV_SOLAR_V2_REFERENCE_PROPERTY)==null,"Default presentation must be tested without a selector");
+      packagedRuntime=PackagedRuntimeProof.verify(mc);
       nonce=System.getProperty("iedctr.clientGameplayNonce","");
       require(nonce.matches("[a-f0-9]{32}") && System.getProperty("iedctr.executedSourceSha","").matches("[a-f0-9]{40}"),"Missing nonce or exact revision");
       directory=mc.gameDirectory.toPath().toRealPath();
@@ -282,7 +283,7 @@ public final class NativeSolarV2ReferenceValidation {
             && Math.abs(mc.mouseHandler.ypos()-(mc.getWindow().getScreenHeight()-2))<=1;
     }
     @SubscribeEvent public static void afterRender(ScreenEvent.Render.Post event){
-        if(!Boolean.getBoolean("iedctr.solarV2ReferenceNative") || complete)return;
+        if(!Boolean.getBoolean("iedctr.solarPackagedNative") || complete)return;
         var mc=Minecraft.getInstance();
         if(stage==Stage.CAPTURE && event.getScreen()==mc.screen
             && mc.screen instanceof SolarV2ReferenceScreen && pointerParked(mc) && mc.getOverlay()==null
@@ -392,7 +393,7 @@ public final class NativeSolarV2ReferenceValidation {
             addViewport(p,mc);
             p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);p.addProperty("native_visual_acceptance",false);p.addProperty("menu_slot_count",37);
             p.addProperty("input_method","XTest physical slot clicks; observed GLFW cursor and server inventory transitions");
-            p.add("server_routes",SERVER_ROUTES);p.add("physical_inputs",INPUTS);p.addProperty("physical_slot_clicks",INPUTS.size());
+            p.add("packaged_runtime",packagedRuntime);p.add("server_routes",SERVER_ROUTES);p.add("physical_inputs",INPUTS);p.addProperty("physical_slot_clicks",INPUTS.size());
             p.addProperty("cell_item","immersiveengineering:capacitor_lv");
             p.addProperty("cell_initial_buffer_fe",1000);p.addProperty("cell_initial_item_fe",0);
             p.addProperty("cell_charged_fe",chargedCellFe);p.addProperty("cell_remaining_buffer_fe",remainingBufferFe);

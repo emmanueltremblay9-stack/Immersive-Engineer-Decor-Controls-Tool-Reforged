@@ -1,3 +1,33 @@
+# Solar V2 ordinary-JAR default candidate
+
+Current candidate changes the normal client presentation to retained Solar V2 when
+`iedctr.dev.solarV2Reference` is absent or true. Explicit false is retained solely
+as a legacy diagnostic fallback. Server slot coordinates, mechanics, FE behavior,
+art bytes and other machines are unchanged. This is not a merge or release.
+
+The native fixture has moved out of main sources into the separate
+`iedctr_solar_validation` test mod. The five native profiles now launch the ordinary
+production JAR, with no presentation selector and no main source output on the runtime
+classpath. Gradle rejects duplicate archive entries, fixture leakage, split packages,
+wrong development-mod registration and a supplied artifact differing from the normal
+JAR. Runtime proof verifies the actual loaded JAR/hash, authoritative class origins,
+class bytes, separate harness module and active retained artwork pack/hash at boot and
+completion. Suite v3 retains the strict physical-input and pixel checks from v2.
+Each profile archives the actual tested JAR and its identity report for independent
+rehashing, rather than only retaining a reported digest.
+
+The cumulative corrected-machine GUI checks explicitly force only Solar and Barrel
+legacy fallbacks and label them diagnostic-only. They do not qualify the default
+Solar path. Normal-path qualification requires this candidate's fresh exact-head CI,
+including all five profiles. Historical successful opt-in/source-runtime results below
+do not substitute for that requirement. Opening/closing are still programmatic;
+complex gestures, JEI targeting, resource reload and full visual acceptance are not
+claimed. Other branches and their qualification history are untouched.
+
+The sections below preserve the historical opt-in development record. Statements
+about default OFF or source-runtime scope describe those earlier revisions, not the
+current candidate.
+
 ## Branch reconciliation, 2026-11-10
 
 Reconciled Solar head `898a0307d755b28af671036a3f2786a14343b1a9` with its current Barrel base `15593b28a6853ba36775ebb419b8465a5e2f3240`, without rewriting history. MachineMenu uses independent Barrel, Factory Placer, and Solar requests: Barrel and Placer retain their base defaults, Solar stays opt-in, and server-side construction rejects all three presentations. Original Solar artwork and downstream menu mechanics are unchanged.

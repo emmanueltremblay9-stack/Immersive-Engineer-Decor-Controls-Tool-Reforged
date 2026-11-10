@@ -34,7 +34,7 @@ assert 'Component.literal(menu.layout().machineSlots().getFirst().role())' in s
 assert 'this(kind, id, inventory, container, data, false, false, false)' in m
 assert 'boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide' in m
-assert 'kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.getBoolean(DEV_SOLAR_V2_REFERENCE_PROPERTY)' in m
+assert 'kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.parseBoolean(System.getProperty(DEV_SOLAR_V2_REFERENCE_PROPERTY, "true"))' in m
 assert 'DEV_SOLAR_V2_REFERENCE_PROPERTY = "iedctr.dev.solarV2Reference"' in m
 assert '? new SolarV2ReferenceScreen(menu, inventory, title) : new MachineScreen.SmallSolarPanelScreen(menu, inventory, title)' in c
 assert 'SolarV2ReferenceGeometry.anchor(slot.containerIndex())' in m
@@ -46,7 +46,7 @@ assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1
 preserved = json.loads((d / 'preserved-baseline-sha256.json').read_text())
 for path, expected in preserved['files'].items():
     assert hashlib.sha256((r / path).read_bytes()).hexdigest() == expected, path
-print('PASS: independent client-only default-OFF gate, 37 index routes, inverse pointer paths, legacy and Barrel preservation')
+print('PASS: independent client-only default client presentation with explicit false fallback, 37 index routes, inverse pointer paths, legacy and Barrel preservation')
 
 art = r / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png'
 source_hash = hashlib.sha256(art.read_bytes()).hexdigest()
@@ -87,7 +87,7 @@ print('PASS: exact retained PNG/manifest, uniform mapping, empty-art preservatio
 
 # Regression: client SimpleContainer.mayPlace is permissive. Cell acceptance must
 # be checked on the authoritative integrated-server menu before the screen click.
-native = (j / 'client/validation/NativeSolarV2ReferenceValidation.java').read_text()
+native = (r / 'src/solarPackagedValidation/java/com/oblixorprime/iedctrtest/solar/NativeSolarV2ReferenceValidation.java').read_text()
 cell_ready = native.split('case CELL_READY -> {', 1)[1].split('case CELL_PICKED -> {', 1)[0]
 assert 'if(!serverMatches(mc,p->{' in cell_ready
 server_contract = cell_ready.split('if(!serverMatches(mc,p->{', 1)[1].split('}))return;', 1)[0]

@@ -68,6 +68,18 @@ class BarrelDriverGuards(unittest.TestCase):
         runner = (ROOT/'tools/validation/client_gameplay.py').read_text()
         self.assertIn("if (System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY') == 'true') {\n            systemProperty 'iedctr.dev.barrelV5Reference', 'false'", runner)
 
+    def test_corrected_gui_solar_legacy_selector_is_scoped_and_observed(self):
+        runner = (ROOT/'tools/validation/client_gameplay.py').read_text()
+        selector = "systemProperty 'iedctr.dev.solarV2Reference', 'false'"
+        self.assertEqual(1, runner.count(selector))
+        self.assertIn("if (System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY') == 'true') {\n"
+                      "            systemProperty 'iedctr.dev.barrelV5Reference', 'false'\n"
+                      "            " + selector + "\n        }", runner)
+        source = (ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeCorrectedMachineGuiValidation.java').read_text()
+        self.assertEqual(2, source.count('require("false".equals(System.getProperty("iedctr.dev.solarV2Reference"))'))
+        self.assertIn('proof.addProperty("solar_legacy_selector", "iedctr.dev.solarV2Reference=" + System.getProperty("iedctr.dev.solarV2Reference"))', source)
+        self.assertIn('proof.addProperty("solar_qualification", "legacy-diagnostic-only")', source)
+
     def test_runtime_provenance_and_legacy_selectors(self):
         source=(BASE/'PackagedRuntimeProof.java').read_text()
         for token in ('url.toURI().equals(mod.findResource(entry).toUri())',

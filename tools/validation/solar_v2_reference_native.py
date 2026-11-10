@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded native Solar V2 validation in a fresh nonce-owned integrated world."""
+"""Ordinary-JAR default Solar V2 qualification in a fresh nonce-owned integrated world."""
 from __future__ import annotations
 import argparse
 import hashlib
@@ -17,7 +17,7 @@ import tempfile
 import zlib
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
-SUITE = "native-solar-v2-reference-v2"
+SUITE = "native-solar-v2-reference-v3"
 ART_SHA = "d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796"
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.SolarV2ReferenceScreen"
 CASES = {"all_37_pickup_return_server_confirmed", "native_empty_half_full_fe",
@@ -368,13 +368,15 @@ def main() -> int:
         f"lang:{args.language}\n", encoding="utf-8")
     init = evidence / "solar.init.gradle"
     init.write_text("""gradle.projectsEvaluated {
-    rootProject.extensions.getByName('neoForge').runs.named('client') {
+    rootProject.extensions.getByName('neoForge').runs.named('solarPackagedDefaultClient') {
         gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
-        systemProperty 'iedctr.clientGameplay', 'false'
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
-        systemProperty 'iedctr.solarV2ReferenceNative', 'true'
-        systemProperty 'iedctr.dev.solarV2Reference', 'true'
+        systemProperty 'iedctr.solarPackagedNative', 'true'
+        if (System.getenv('IEDCTR_EXPECTED_JAR')) {
+            systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_JAR')
+            systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_JAR_SHA256')
+        }
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         systemProperty 'iedctr.requestedGuiScale', System.getenv('IEDCTR_GUI_SCALE')
         systemProperty 'iedctr.requestedWidth', System.getenv('IEDCTR_SCREEN_WIDTH')
@@ -392,16 +394,27 @@ def main() -> int:
                IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_WIDTH=str(args.width),
                IEDCTR_SCREEN_HEIGHT=str(args.height), IEDCTR_GUI_SCALE=str(args.gui_scale),
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
-    gradle = ["bash", str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
+    gradle = ["bash", str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace", "-Pinclude_solar_packaged_validation=true"]
     print(f"Solar V2 isolated native evidence: {evidence} ({args.width}x{args.height}, GUI scale {args.gui_scale}, {args.language})", flush=True)
     try:
-        code, expired = run_bounded(gradle + ["prepareClientRun"], project, env,
+        code, expired = run_bounded(gradle + ["prepareSolarPackagedDefaultClientRun", "verifySolarPackagedRuntime"], project, env,
                                     evidence / "prepare.log", args.prepare_timeout)
         if expired or code != 0:
             raise SmokeFailure(f"Solar V2 client preparation failed (exit={code}, timeout={expired})")
+        report = json.loads((project/'build/reports/solar-packaged-runtime.json').read_text())
+        jar = Path(report['jar_path']).resolve(strict=True)
+        jar_hash = hashlib.sha256(jar.read_bytes()).hexdigest()
+        if jar_hash != report['jar_sha256']:
+            raise SmokeFailure('Prepared production JAR changed')
+        (evidence/'packaged-runtime.json').write_text(json.dumps(report, indent=2))
+        (evidence/'artifact-identity.json').write_text(json.dumps(dict(
+            executed_source_sha=source_sha, nonce=nonce, jar_path=str(jar), jar_sha256=jar_hash), indent=2))
+        # Archive the actual tested ordinary JAR, not just its reported digest.
+        shutil.copyfile(jar, evidence/'tested-production.jar')
+        env.update(IEDCTR_EXPECTED_JAR=str(jar), IEDCTR_EXPECTED_JAR_SHA256=jar_hash)
         log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24"]
-                                    + [sys.executable, str(guard)] + gradle + ["runClient"], project, env, log, args.timeout)
+                                    + [sys.executable, str(guard)] + gradle + ["runSolarPackagedDefaultClient"], project, env, log, args.timeout)
         proof = json.loads((game / "client-solar-v2-reference-result.json").read_text())
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):
@@ -416,9 +429,13 @@ def main() -> int:
             raise SmokeFailure("Candidate changed during native execution; source identity is not exact")
         validate_proof(proof, nonce, source_sha, game, logs, code, expired,
                        args.width, args.height, args.language, args.gui_scale)
-        print("PASS bounded native Solar V2 smoke. Full visual/input acceptance is not claimed.")
+        from solar_packaged_proof import validate_runtime
+        validate_runtime(proof, report)
+        if hashlib.sha256(jar.read_bytes()).hexdigest() != jar_hash:
+            raise SmokeFailure('Production JAR changed during execution')
+        print("PASS bounded ordinary-JAR default Solar V2 proof. Full visual/input acceptance is not claimed.")
         return 0
-    except (SmokeFailure, OSError, ValueError) as error:
+    except (SmokeFailure, OSError, ValueError, KeyError, TypeError) as error:
         print(f"FAIL: {error}", file=sys.stderr)
         return 1
 

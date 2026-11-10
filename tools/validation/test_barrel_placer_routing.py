@@ -59,7 +59,7 @@ public class SelectionProbe {
          var actual = factory(kind);
          boolean barrel = side && kind == MachineKind.FLUID_BARREL && !property.equals("false");
          boolean placer = side && kind == MachineKind.FACTORY_PLACER;
-         if(actual.barrelReferencePresentation != barrel || actual.factoryPlacerV2ReferencePresentation != placer || actual.solarV2ReferencePresentation != (side && kind == MachineKind.SMALL_SOLAR_PANEL && solar.equals("true")))
+         if(actual.barrelReferencePresentation != barrel || actual.factoryPlacerV2ReferencePresentation != placer || actual.solarV2ReferencePresentation != (side && kind == MachineKind.SMALL_SOLAR_PANEL && !solar.equals("false")))
            throw new AssertionError(kind+" "+property+" "+side);
          var serverConstructor = new SelectionProbe(kind,new Inventory(),false,false,false);
          if(serverConstructor.barrelReferencePresentation || serverConstructor.factoryPlacerV2ReferencePresentation || serverConstructor.solarV2ReferencePresentation)
