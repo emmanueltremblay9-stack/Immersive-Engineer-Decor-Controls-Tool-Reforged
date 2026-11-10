@@ -61,7 +61,7 @@ public final class TreeCutterPackagedValidation {
     private static boolean complete;
     private static int ticks,index,opened,oldMenu,pickups,returns,outputAttemptsPreserved;
     private static long deadline,lastClick;
-    private static int physicalSlotClicks;
+    private static int physicalSlotClicks,parkedFrames;
     private static UUID playerId;
     private static MachineBlockEntity machine;
     private static CompletableFuture<?> pending;
@@ -138,7 +138,7 @@ public final class TreeCutterPackagedValidation {
                     park(mc);enter(Stage.CAPTURE);
                 }
                 case CAPTURE -> {
-                    if(ticks<5 || !matches(mc,TreeCutterPackagedValidation::finalState))return;
+                    if(ticks<5 || parkedFrames<2 || !pointerParked(mc) || !matches(mc,TreeCutterPackagedValidation::finalState))return;
                     capture(mc,screen,"transferred");oldMenu=menu.containerId;mc.player.closeContainer();enter(Stage.CLOSE);
                 }
                 case REOPEN -> {
@@ -252,7 +252,23 @@ public final class TreeCutterPackagedValidation {
         require(xtest.getFunction("XTestFakeButtonEvent").invokeInt(new Object[]{display,button,0,new NativeLong(0)})!=0,"Physical release failed");
         x11.getFunction("XFlush").invokeInt(new Object[]{display});
     }
-    private static void park(Minecraft mc){GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),mc.getWindow().getScreenWidth()-2,mc.getWindow().getScreenHeight()-2);}
+    private static void park(Minecraft mc){
+        int[] x={0},y={0};GLFW.glfwGetWindowPos(mc.getWindow().getWindow(),x,y);
+        require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display,-1,
+            x[0]+mc.getWindow().getScreenWidth()-2,y[0]+mc.getWindow().getScreenHeight()-2,new NativeLong(0)})!=0,"Physical parking failed");
+        x11.getFunction("XFlush").invokeInt(new Object[]{display});
+    }
+    private static boolean pointerParked(Minecraft mc){
+        return Math.abs(mc.mouseHandler.xpos()-(mc.getWindow().getScreenWidth()-2))<=1
+            && Math.abs(mc.mouseHandler.ypos()-(mc.getWindow().getScreenHeight()-2))<=1;
+    }
+    @SubscribeEvent public static void afterRender(ScreenEvent.Render.Post event){
+        if(!Boolean.getBoolean("iedctr.treeCutterPackagedNative") || complete)return;
+        var mc=Minecraft.getInstance();
+        if(stage==Stage.CAPTURE && event.getScreen()==mc.screen
+            && mc.screen instanceof TreeCutterV3ReferenceScreen && pointerParked(mc))parkedFrames++;
+        else parkedFrames=0;
+    }
     private static void capture(Minecraft mc,TreeCutterV3ReferenceScreen screen,String name)throws Exception{
         var v=screen.validationViewTransform();double scale=mc.getWindow().getGuiScale();
         // Crop strictly INSIDE the GUI rectangle. Never write a full framebuffer/world/HUD to disk.
