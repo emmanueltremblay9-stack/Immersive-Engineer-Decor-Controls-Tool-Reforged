@@ -22,7 +22,7 @@ public final class MusliBarPressReserveHardeningGameTests {
    private MusliBarPressReserveHardeningGameTests() {}
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void custom_stack_limit_below_eight_caps_reserve(GameTestHelper helper) {
+   public static void custom_stack_limit_does_not_cap_converted_gauge(GameTestHelper helper) {
       ItemStack firstOffer = new ItemStack(Items.BREAD, 2);
       firstOffer.set(DataComponents.MAX_STACK_SIZE, 3);
       Plan first = MusliBarPressReserve.planInsert(State.EMPTY, firstOffer).orElseThrow();
@@ -30,16 +30,17 @@ public final class MusliBarPressReserveHardeningGameTests {
       ItemStack secondOffer = new ItemStack(Items.BREAD, 3);
       secondOffer.set(DataComponents.MAX_STACK_SIZE, 3);
       Plan second = MusliBarPressReserve.planInsert(first.updated(), secondOffer).orElseThrow();
-      helper.assertValueEqual(1, second.count(), "only remaining native slot capacity accepted");
-      helper.assertValueEqual(3, second.updated().bread().getCount(), "native stack cap respected");
+      helper.assertValueEqual(3, second.count(), "whole valid source converts independently of its native slot cap");
+      helper.assertValueEqual(5, second.updated().cereal(), "converted gauge exceeds source native stack cap");
       helper.assertValueEqual(3, secondOffer.getCount(), "pure plan cannot mutate offered source");
-      helper.assertTrue(MusliBarPressReserve.planInsert(second.updated(), secondOffer).isEmpty(), "native maximum prevents further addition");
+      Plan third = MusliBarPressReserve.planInsert(second.updated(), secondOffer).orElseThrow();
+      helper.assertValueEqual(8, third.updated().cereal(), "valid small stacks can fill the eight-unit gauge");
+      helper.assertTrue(MusliBarPressReserve.planInsert(third.updated(), secondOffer).isEmpty(), "gauge maximum prevents further conversion");
       HolderLookup.Provider lookup = helper.getLevel().registryAccess();
       ItemStack press = new ItemStack(EngineerToolsModule.MUSLI_BAR_PRESS.get());
       ItemStack staged = MusliBarPressReserve.stage(press, lookup, State.EMPTY, second.updated()).orElseThrow();
-      ItemStack reloaded = MusliBarPressReserve.read(staged, lookup).orElseThrow().bread();
-      helper.assertValueEqual(3, reloaded.getMaxStackSize(), "persisted custom maximum survives round-trip");
-      helper.assertValueEqual(3, reloaded.getCount(), "persisted count matches actual cap");
+      State reloaded = MusliBarPressReserve.read(staged, lookup).orElseThrow();
+      helper.assertValueEqual(5, reloaded.cereal(), "persisted gauge is not restricted by converted item component");
       helper.succeed();
    }
 
@@ -50,7 +51,7 @@ public final class MusliBarPressReserveHardeningGameTests {
       helper.assertTrue(MusliBarPressReserve.planInsert(State.EMPTY, malformedOffer).isEmpty(), "oversize offered item rejected");
       helper.assertValueEqual(4, malformedOffer.getCount(), "rejection does not shrink source stack");
       Plan ordinary = MusliBarPressReserve.planInsert(State.EMPTY, new ItemStack(Items.APPLE, 8)).orElseThrow();
-      helper.assertValueEqual(8, ordinary.updated().apple().getCount(), "ordinary item capacity 8 unchanged");
+      helper.assertValueEqual(8, ordinary.updated().fruit(), "ordinary item capacity 8 unchanged");
       helper.succeed();
    }
 
@@ -73,7 +74,7 @@ public final class MusliBarPressReserveHardeningGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void vanilla_custom_data_snapshot_detached_for_supported_components(GameTestHelper helper) {
+   public static void converted_snapshot_discards_source_components_and_is_detached(GameTestHelper helper) {
       CompoundTag initial = new CompoundTag();
       initial.putString("marker", "original");
       ItemStack source = new ItemStack(Items.BREAD, 2);
@@ -82,10 +83,11 @@ public final class MusliBarPressReserveHardeningGameTests {
       CompoundTag changed = new CompoundTag();
       changed.putString("marker", "changed");
       source.set(DataComponents.CUSTOM_DATA, CustomData.of(changed));
-      ItemStack exposed = planned.updated().bread();
-      helper.assertValueEqual("original", exposed.get(DataComponents.CUSTOM_DATA).copyTag().getString("marker"), "snapshot isolated from source component replacement");
-      exposed.set(DataComponents.CUSTOM_DATA, CustomData.of(changed));
-      helper.assertValueEqual("original", planned.updated().bread().get(DataComponents.CUSTOM_DATA).copyTag().getString("marker"), "snapshot isolated from returned stack replacement");
+      helper.assertValueEqual(2, planned.updated().cereal(), "count snapshot isolated from source component replacement");
+      source.setCount(5);
+      helper.assertValueEqual(2, planned.updated().cereal(), "count snapshot isolated from source count replacement");
+      Plan pooled = MusliBarPressReserve.planInsert(planned.updated(), source).orElseThrow();
+      helper.assertValueEqual(7, pooled.updated().cereal(), "different custom data converts into the same generic gauge");
       helper.succeed();
    }
 }

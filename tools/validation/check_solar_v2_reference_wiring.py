@@ -31,8 +31,8 @@ assert 'leftPos = 0; topPos = 0;' in s
 assert 'imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;' in s
 assert 'imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;' in s
 assert 'Component.literal(menu.layout().machineSlots().getFirst().role())' in s
-assert 'this(kind, id, inventory, container, data, false)' in m
-assert 'this(kind, id, inventory, container, data, barrelReferenceRequested, false)' in m
+assert 'this(kind, id, inventory, container, data, false, false, false)' in m
+assert 'boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.getBoolean(DEV_SOLAR_V2_REFERENCE_PROPERTY)' in m
 assert 'DEV_SOLAR_V2_REFERENCE_PROPERTY = "iedctr.dev.solarV2Reference"' in m
@@ -40,8 +40,8 @@ assert '? new SolarV2ReferenceScreen(menu, inventory, title) : new MachineScreen
 assert 'SolarV2ReferenceGeometry.anchor(slot.containerIndex())' in m
 assert 'SolarV2ReferenceGeometry.anchor(1 + row * 9 + column)' in m
 assert 'SolarV2ReferenceGeometry.anchor(28 + column)' in m
-# All downstream menu data/transfer/validation logic remains byte-identical to PR151/PR166.
-assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1)[1].encode()).hexdigest() == '48406a039c8b1ab4e78c9cd8ac4d3bb76408838dfee1696047d915f27cdbe88a'
+# All downstream menu data/transfer/validation logic is byte-identical to reconciled PR166 parent 15593b28.
+assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1)[1].encode()).hexdigest() == 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
 # Existing Barrel code, harness, art, workflow, production Solar art/screen/layout/entity are frozen.
 preserved = json.loads((d / 'preserved-baseline-sha256.json').read_text())
 for path, expected in preserved['files'].items():

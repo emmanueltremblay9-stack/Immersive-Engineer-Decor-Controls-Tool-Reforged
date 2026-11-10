@@ -264,8 +264,8 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256, 0, 32000),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
         "small_freezer": ("SMALL_FREEZER", 3, 209, 235, 0, 16000),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238, 3000, 0),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238, 4000, 0),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256, 3000, 0),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256, 4000, 0),
     }
 
     def setUp(self):
@@ -280,6 +280,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         self.window_width = 1280
         self.window_height = 260
         self.proof = {
+            "barrel_legacy_selector": "iedctr.dev.barrelV5Reference=false", "barrel_qualification": "legacy-diagnostic-only",
             "suite": "native-corrected-machine-gui-v1", "barrel_fixture_fluid": "minecraft:water", "nonce": self.nonce, "status": "passed",
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
@@ -458,6 +459,17 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                     window_height=self.window_height, language="fr_fr", logs=self.logs)
         args.update(overrides)
         return validate_corrected_machine_gui_proof(**args)
+
+    def test_requires_explicit_legacy_diagnostic_not_default_qualification(self):
+        for field, values in {
+            "barrel_legacy_selector": [None, "iedctr.dev.barrelV5Reference=true", "false"],
+            "barrel_qualification": [None, "default", "packaged-default"],
+        }.items():
+            for value in values:
+                bad = copy.deepcopy(self.proof)
+                bad[field] = value
+                with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure):
+                    self.check(bad)
 
     def test_lava_and_milk_require_matching_native_identity_and_texture(self):
         for fluid, texture in (("lava", "minecraft:block/lava_still"), ("milk", "neoforge:block/milk_still")):

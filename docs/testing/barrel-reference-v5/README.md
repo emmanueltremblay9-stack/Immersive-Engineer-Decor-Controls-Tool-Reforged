@@ -1,3 +1,40 @@
+# Current default-path integration candidate
+
+V5 is now the normal client Barrel presentation when no system property is set.
+The historical `iedctr.dev.barrelV5Reference=false` override remains only for explicit
+legacy regression diagnostics. The client screen and menu projection are selected
+together; public server constructors and server worlds retain authoritative slot
+coordinates. Factory Placer and every other screen route are unchanged.
+
+The source-runtime/reload suite now uses the normal default with no selector. The
+separate ordinary-JAR suite also rejects every presentation selector and verifies
+the default path. The older legacy Barrel suite explicitly selects false and is
+not evidence of default-path delivery. See
+[packaged qualification](../../validation/barrel-v5-packaged-qualification.md) for
+the exact bounds, physical input coverage and remaining acceptance limitations.
+New exact-commit CI is required for this activation; the successful opt-in runs on
+304b13cd are a prior checkpoint, not validation of this change. No merge or release.
+
+## Historical checkpoints
+
+The records below describe their respective earlier commits, including the original
+default-OFF experiment. They are retained as history and do not override the current
+default-path behavior above.
+
+## Reused reload and JEI qualification work
+
+The narrow Barrel-only changes from PR168 commits `ef95bb07` and `1eb693a0` are reapplied here onto the reconciled main baseline. This avoids importing the unrelated Solar branch. Public screen bounds now describe the transformed canvas to JEI, while native slot input keeps local coordinates. The existing resource-reload fixture and pixel decoder tests are preserved, including completed-reload state before any fixture drain and all 38 routes before and after reload. These need new CI on this combined tree; the old PR168 results are not a pass of this candidate.
+
+## Main reconciliation, 8 November 2026
+
+Merged main `fdf26aadc45580b7ca4211a32323125f3c276d5b` into the existing V5 branch without rewriting history. The only text conflict was MachineMenu construction and slot projection. Barrel and Factory Placer now have separate, mutually exclusive presentation inputs. Factory Placer retains its ordinary client route; Barrel retains its existing default-OFF experiment pending full delivery qualification. Public server constructors disable both, and the client factory also rejects presentation on server worlds.
+
+The new server GameTest covers both machine kinds, both construction paths and all four combinations of historical properties. Existing V5 and packaged/default Placer CI provide separate client coverage. New exact-commit CI is required after this reconciliation. The unchanged downstream menu/data/transfer body is pinned against main, including its existing Factory Placer accessor. Original V5 artwork and all merged main artwork remain byte-identical.
+
+Local 287 Python tests, geometry/resource/source guards and Java syntax parsing passed before the added server test. Local mapped compilation is blocked before compilation by the uncached Gradle distribution and unavailable network access to services.gradle.org. No new native pass, normal V5 path, resource reload, final visual acceptance, merge or release is claimed here.
+
+Historical qualification and design records follow.
+
 # Barrel V5 opt-in presentation candidate
 
 Production base: PR151 commit `8718a0896bc7330fb4dde5e272a4fdf078db0804`.

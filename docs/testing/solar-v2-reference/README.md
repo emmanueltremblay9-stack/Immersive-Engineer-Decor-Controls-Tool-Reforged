@@ -1,3 +1,11 @@
+## Branch reconciliation, 2026-11-10
+
+Reconciled Solar head `898a0307d755b28af671036a3f2786a14343b1a9` with its current Barrel base `15593b28a6853ba36775ebb419b8465a5e2f3240`, without rewriting history. MachineMenu uses independent Barrel, Factory Placer, and Solar requests: Barrel and Placer retain their base defaults, Solar stays opt-in, and server-side construction rejects all three presentations. Original Solar artwork and downstream menu mechanics are unchanged.
+
+The preservation manifest now names the exact integrated Barrel parent; each listed file was checked byte-for-byte against that parent before updating its digest. Geometry, slot protocol and pixel acceptance criteria are unchanged. The production-expression routing matrix now covers all three flags across client/server and absent/false/true properties.
+
+Local validation: all 375 Python validation tests pass, including the executable routing matrix; Solar and Barrel geometry/art checks, Solar wiring guard and whitespace checks pass. An initial routing-test parser failure was corrected by removing exactly one constructor-closing parenthesis rather than all trailing parentheses. Local Gradle compilation did not start: distribution 9.2.1 was unavailable and the download failed with network unreachable. Exact new-head CI and native evidence remain required; historical results below are not new-head qualification. No PR merge or release.
+
 # Small Solar Panel V2 opt-in presentation
 
 Stack base: PR166 remote commit `9ddbd4af5b06d4ed915c42c758d9f3840844b80e`, tree

@@ -7,6 +7,22 @@ public final class BarrelReferenceChecks {
    private static void check(boolean value, String message) {
       if (!value) throw new AssertionError(message);
    }
+
+   private static void checkExternalBounds(BarrelReferenceGeometry.ViewTransform v) {
+      double left = v.screenX(0), top = v.screenY(0);
+      double right = v.screenX(BarrelReferenceGeometry.CANVAS_WIDTH);
+      double bottom = v.screenY(BarrelReferenceGeometry.CANVAS_HEIGHT);
+      check(v.guiLeft() == Math.floor(left) && v.guiTop() == Math.floor(top), "external bounds floor top/left");
+      check(v.guiLeft()+v.guiWidth() == Math.ceil(right)
+         && v.guiTop()+v.guiHeight() == Math.ceil(bottom), "external bounds ceil bottom/right");
+      check(left-v.guiLeft() >= 0 && left-v.guiLeft() < 1
+         && top-v.guiTop() >= 0 && top-v.guiTop() < 1, "minimal outward top/left padding");
+      check(v.guiLeft()+v.guiWidth()-right >= 0 && v.guiLeft()+v.guiWidth()-right < 1
+         && v.guiTop()+v.guiHeight()-bottom >= 0 && v.guiTop()+v.guiHeight()-bottom < 1,
+         "minimal outward bottom/right padding");
+      check(v.guiWidth() > 0 && v.guiHeight() > 0, "positive external extent");
+   }
+
    public static void main(String[] args) {
       check(BarrelReferenceGeometry.SOURCE_WIDTH == 1137 && BarrelReferenceGeometry.SOURCE_HEIGHT == 1383, "retained source dimensions");
       check(BarrelReferenceGeometry.SOURCE_WIDTH == 3 * BarrelReferenceGeometry.CANVAS_WIDTH
@@ -29,16 +45,42 @@ public final class BarrelReferenceChecks {
          }
       }
       for (int i=0;i<38;i++) check(indices.contains(i), "protocol index present");
-      for (int[] viewport : new int[][]{{1920,1080},{960,540},{640,360},{480,270},{320,240},{300,600},{1,1},{1,1000},{1000,1}}) {
+      for (int[] viewport : new int[][]{{1920,1080},{960,540},{640,360},{641,361},{1280,260},{480,270},{320,240},{300,600},{1,1},{1,1000},{1000,1}}) {
          var v = BarrelReferenceGeometry.fit(viewport[0], viewport[1]);
          check(v.originX() >= -0.0001 && v.originY() >= -0.0001, "positive origins");
          check(v.screenX(379) <= viewport[0]+0.0001 && v.screenY(461) <= viewport[1]+0.0001, "uniform fit");
+         checkExternalBounds(v);
          for (var a : BarrelReferenceGeometry.SLOT_ANCHORS) {
             check(Math.abs(v.localX(v.screenX(a.x()+8))-(a.x()+8))<0.0001, "pointer x roundtrip");
             check(Math.abs(v.localY(v.screenY(a.y()+8))-(a.y()+8))<0.0001, "pointer y roundtrip");
+            check(!a.containsHover(v.localX(v.screenX(a.hoverLeft()-0.001)),a.y()+8), "fractional left outside");
+            check(!a.containsHover(v.localX(v.screenX(a.hoverRight()+0.001)),a.y()+8), "fractional right outside");
+            check(!a.containsHover(a.x()+8,v.localY(v.screenY(a.hoverTop()-0.001))), "fractional top outside");
+            check(!a.containsHover(a.x()+8,v.localY(v.screenY(a.hoverBottom()+0.001))), "fractional bottom outside");
          }
          check(Math.abs(v.localDelta(v.screenDelta(17.3))-17.3)<0.0001, "drag delta roundtrip");
-         check(v.renderPointerX(v.screenX(-0.1)) == -1, "negative pointer flooring");
+         check(v.renderPointerX(v.screenX(-0.1)) == -1 && v.renderPointerY(v.screenY(-0.1)) == -1,
+            "negative pointer flooring");
+      }
+      // Fractions on both axes, including negative origins, reject truncation or
+      // rounding only the scaled extent instead of enclosing the transformed edges.
+      for (float[] profile : new float[][]{{1,0.5F,0.5F,0,0,380,462},
+         {0.5F,2.25F,-3.75F,2,-4,190,231}, {0.25F,-0.25F,0.25F,-1,0,96,116}}) {
+         var v = new BarrelReferenceGeometry.ViewTransform(profile[0],profile[1],profile[2]);
+         checkExternalBounds(v);
+         check(v.guiLeft()==profile[3] && v.guiTop()==profile[4]
+            && v.guiWidth()==profile[5] && v.guiHeight()==profile[6], "fractional external bounds");
+      }
+      // GUI pixels, not framebuffer pixels or the unscaled internal 379x461 canvas.
+      // Even viewports center this odd-sized canvas on half-pixels at unit scale.
+      for (int[] profile : new int[][]{{1280,720,1,450,129,380,462}, {1280,260,1,538,6,204,248},
+         {1920,1080,1,770,309,380,462}, {1920,1080,2,290,39,380,462},
+         {1920,1080,3,176,6,288,348}, {1921,1081,3,177,6,287,349}}) {
+         var v=BarrelReferenceGeometry.fit((int)Math.ceil(profile[0]/(double)profile[2]),
+            (int)Math.ceil(profile[1]/(double)profile[2]));
+         checkExternalBounds(v);
+         check(v.guiLeft()==profile[3] && v.guiTop()==profile[4]
+            && v.guiWidth()==profile[5] && v.guiHeight()==profile[6], "external bounds match native profile");
       }
       // These fixed framebuffer bounds also appear in the Python evidence tests.
       // Round GUI scissor coordinates first, then apply the actual window scale.
@@ -63,6 +105,6 @@ public final class BarrelReferenceChecks {
          int fill=BarrelReferenceState.fillHeight(i,16000);
          check(fill>=previous && fill<=78,"monotonic bounded fill"); previous=fill;
       }
-      System.out.println("PASS: 38-slot mapping, bounds, nine viewport transforms, six framebuffer crops, hover, drag and fluid state checks");
+      System.out.println("PASS: 38-slot mapping, eleven viewport transforms, three fractional and six native external-bound profiles, six framebuffer crops, hover, drag and fluid state checks");
    }
 }
