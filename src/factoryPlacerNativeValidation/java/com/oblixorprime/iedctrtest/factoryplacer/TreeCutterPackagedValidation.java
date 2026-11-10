@@ -52,15 +52,16 @@ import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 import org.lwjgl.glfw.GLFW;
 
-/** Opt-in isolated synthetic inventory qualification; not a tree-felling or physical-slot-input claim. */
+/** Opt-in isolated synthetic inventory qualification; not a tree-felling, drag or keyboard-input claim. */
 @EventBusSubscriber(modid = FactoryPlacerValidationMod.MOD_ID, value = Dist.CLIENT)
 public final class TreeCutterPackagedValidation {
     private static final BlockPos POS = new BlockPos(0,80,0);
-    private enum Stage { BOOT, WORLD, INTERACT, OPEN, SEEDED, PICKED, REJECTED, RETURNED, CLOSE, REOPEN, RELOAD }
+    private enum Stage { BOOT, WORLD, INTERACT, OPEN, SEEDED, PICKED, REJECTED, RETURNED, CAPTURE, CLOSE, REOPEN, RELOAD }
     private static Stage stage=Stage.BOOT;
     private static boolean complete;
     private static int ticks,index,opened,oldMenu,pickups,returns,outputAttemptsPreserved;
     private static long deadline,lastClick;
+    private static int physicalSlotClicks;
     private static UUID playerId;
     private static MachineBlockEntity machine;
     private static CompletableFuture<?> pending;
@@ -112,21 +113,21 @@ public final class TreeCutterPackagedValidation {
                 }
                 case SEEDED -> {
                     if(ticks<10 || !log(menu.getSlot(index).getItem()) || !menu.getCarried().isEmpty() || !matches(mc,p->total(p)==1))return;
-                    click(screen,index);enter(Stage.PICKED);
+                    if(!click(screen,index))return;enter(Stage.PICKED);
                 }
                 case PICKED -> {
                     if(ticks<8 || System.nanoTime()-lastClick<350_000_000L || !menu.getSlot(index).getItem().isEmpty() || !log(menu.getCarried())
                         || !matches(mc,p->p.containerMenu.getSlot(index).getItem().isEmpty() && log(p.containerMenu.getCarried()) && total(p)==1))return;
-                    pickups++;
-                    // Invoke the production screen handler, not just mayPlace introspection.
+                    // Exercise the physical input path, not direct screen-handler calls.
                     // Unchanged post-attempt state does NOT prove the server processed a click packet.
-                    click(screen,0);enter(Stage.REJECTED);
+                    if(!click(screen,0))return;pickups++;enter(Stage.REJECTED);
                 }
                 case REJECTED -> {
                     if(ticks<8 || System.nanoTime()-lastClick<350_000_000L || !menu.getSlot(0).getItem().isEmpty() || !log(menu.getCarried())
                         || !matches(mc,p->machine.isEmpty() && log(p.containerMenu.getCarried()) && total(p)==1 && !p.containerMenu.getSlot(0).mayPlace(p.containerMenu.getCarried())))return;
                     // This state was also true before the attempt: record preservation, never a packet acknowledgement.
-                    outputAttemptsPreserved++;click(screen,index==0?1:index);enter(Stage.RETURNED);
+                    if(!click(screen,index==0?1:index))return;
+                    outputAttemptsPreserved++;enter(Stage.RETURNED);
                 }
                 case RETURNED -> {
                     int destination=index==0?1:index;
@@ -134,6 +135,10 @@ public final class TreeCutterPackagedValidation {
                         || !matches(mc,p->machine.isEmpty() && p.containerMenu.getCarried().isEmpty() && log(p.containerMenu.getSlot(destination).getItem()) && total(p)==1))return;
                     returns++;routes.add(index);
                     if(++index<37){seed(mc);return;}
+                    park(mc);enter(Stage.CAPTURE);
+                }
+                case CAPTURE -> {
+                    if(ticks<5 || !matches(mc,TreeCutterPackagedValidation::finalState))return;
                     capture(mc,screen,"transferred");oldMenu=menu.containerId;mc.player.closeContainer();enter(Stage.CLOSE);
                 }
                 case REOPEN -> {
@@ -222,11 +227,25 @@ public final class TreeCutterPackagedValidation {
                 && !screen.validationSlotHoveredAt(a.menuIndex(),x,v.screenY(a.hoverBottom()+.01)),"Target boundary escape");
         }
     }
-    private static void click(TreeCutterV3ReferenceScreen screen,int target){
+    /** Move through X11, wait for GLFW's observed cursor, then send one physical click. */
+    private static boolean click(TreeCutterV3ReferenceScreen screen,int target){
+        var mc=Minecraft.getInstance();long window=mc.getWindow().getWindow();
+        if(GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){
+            GLFW.glfwFocusWindow(window);return false;
+        }
         var a=TreeCutterV3ReferenceGeometry.anchor(target);var v=screen.validationViewTransform();
         double x=v.screenX(a.x()+8),y=v.screenY(a.y()+8);
-        require(screen.mouseClicked(x,y,0),"Screen did not handle slot click");
-        screen.mouseReleased(x,y,0);lastClick=System.nanoTime();
+        double observedX=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth();
+        double observedY=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
+        if(Math.abs(observedX-x)>1 || Math.abs(observedY-y)>1){
+            int[] wx={0},wy={0};GLFW.glfwGetWindowPos(window,wx,wy);
+            int px=wx[0]+(int)Math.round(x*mc.getWindow().getScreenWidth()/screen.width);
+            int py=wy[0]+(int)Math.round(y*mc.getWindow().getScreenHeight()/screen.height);
+            require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display,-1,px,py,new NativeLong(0)})!=0,"Physical slot motion failed");
+            x11.getFunction("XFlush").invokeInt(new Object[]{display});return false;
+        }
+        require(screen.validationSlotHoveredAt(target,observedX,observedY),"Physical cursor misses transformed slot");
+        nativeClick(1);physicalSlotClicks++;lastClick=System.nanoTime();return true;
     }
     private static void nativeClick(int button){
         require(xtest.getFunction("XTestFakeButtonEvent").invokeInt(new Object[]{display,button,1,new NativeLong(0)})!=0,"Physical press failed");
@@ -252,14 +271,15 @@ public final class TreeCutterPackagedValidation {
     private static void finish(Minecraft mc,Throwable error){
         complete=true;if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}
         try{if(directory!=null){
-            var p=new JsonObject();p.addProperty("suite","native-tree-cutter-v3-v1");p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
+            var p=new JsonObject();p.addProperty("suite","native-tree-cutter-v3-v2");p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
             p.addProperty("nonce",nonce);p.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));p.add("packaged_runtime",packaged);
             p.addProperty("selected_language",mc.getLanguageManager().getSelected());p.addProperty("width",mc.getWindow().getWidth());p.addProperty("height",mc.getWindow().getHeight());
             p.addProperty("gui_scale",mc.getWindow().getGuiScale());p.addProperty("menu_slot_count",37);p.addProperty("native_visual_acceptance",false);
             p.addProperty("opened_via_native_block_interaction",opened);p.addProperty("pickup_server_acks",pickups);p.addProperty("return_server_acks",returns);p.addProperty("rejected_output_attempts_state_preserved",outputAttemptsPreserved);
             p.addProperty("output_packet_processing_observed",false);
+            p.addProperty("physical_slot_clicks",physicalSlotClicks);
             p.addProperty("final_item_total",error==null?1:-1);p.addProperty("resource_reload_confirmed",error==null && stage==Stage.RELOAD);
-            p.addProperty("input_method","XTest physical block opening; transformed screen-handler slot clicks, not physical slot clicks");
+            p.addProperty("input_method","XTest physical block opening and slot clicks; observed GLFW cursor and server inventory transitions");
             p.addProperty("setup","Fresh nonce-owned world. Independently seeded one oak log per route. No tree-felling, disk reload, migration or tooltip qualification claimed.");
             p.add("slot_routes",routes);p.add("captures",captures);if(error!=null)p.addProperty("error",error.toString());
             Files.writeString(directory.resolve("tree-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(p)+"\n");

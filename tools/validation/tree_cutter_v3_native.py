@@ -85,12 +85,12 @@ def validate_pixels(path,width,height,scale,source):
 def validate(proof,nonce,sha,jar,jar_sha,game,width,height,language,scale,source_path=ART_PATH):
     require(type(proof) is dict and 'error' not in proof,'Invalid or failed native proof')
     require('rejected_insertion_server_acks' not in proof,'Unsupported output packet acknowledgement claim')
-    expected=dict(suite='native-tree-cutter-v3-v1',status='passed_bounded_smoke',nonce=nonce,
+    expected=dict(suite='native-tree-cutter-v3-v2',status='passed_bounded_smoke',nonce=nonce,
         executed_source_sha=sha,selected_language=language,width=width,height=height,
         menu_slot_count=37,native_visual_acceptance=False,opened_via_native_block_interaction=1,
         pickup_server_acks=37,return_server_acks=37,rejected_output_attempts_state_preserved=37,
-        final_item_total=1,resource_reload_confirmed=True,output_packet_processing_observed=False,
-        input_method='XTest physical block opening; transformed screen-handler slot clicks, not physical slot clicks')
+        final_item_total=1,resource_reload_confirmed=True,output_packet_processing_observed=False,physical_slot_clicks=111,
+        input_method='XTest physical block opening and slot clicks; observed GLFW cursor and server inventory transitions')
     for key,value in expected.items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
     require(type(proof.get('gui_scale')) in (float,int) and proof['gui_scale']==scale,'GUI scale differs')

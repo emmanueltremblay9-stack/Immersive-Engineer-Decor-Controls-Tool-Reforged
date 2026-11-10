@@ -17,11 +17,11 @@ class TreeEvidenceTests(unittest.TestCase):
         classes=[SCREEN,'com.oblixorprime.engineersdecorreforged.EngineersDecorReforged',
             'com.oblixorprime.engineersdecorreforged.utility.TreeCutterV3ReferenceGeometry',
             'com.oblixorprime.engineersdecorreforged.menu.MachineMenu','com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity']
-        self.proof=dict(suite='native-tree-cutter-v3-v1',status='passed_bounded_smoke',nonce=self.nonce,
+        self.proof=dict(suite='native-tree-cutter-v3-v2',status='passed_bounded_smoke',nonce=self.nonce,
             executed_source_sha=self.sha,selected_language='en_us',menu_slot_count=37,native_visual_acceptance=False,
             opened_via_native_block_interaction=1,pickup_server_acks=37,return_server_acks=37,rejected_output_attempts_state_preserved=37,
-            final_item_total=1,resource_reload_confirmed=True,output_packet_processing_observed=False,slot_routes=list(range(37)),
-            input_method='XTest physical block opening; transformed screen-handler slot clicks, not physical slot clicks',
+            final_item_total=1,resource_reload_confirmed=True,output_packet_processing_observed=False,physical_slot_clicks=111,slot_routes=list(range(37)),
+            input_method='XTest physical block opening and slot clicks; observed GLFW cursor and server inventory transitions',
             packaged_runtime=dict(jar_path=str(self.jar),jar_sha256=self.jar_sha,fixture_free_jar=True,separate_harness_module=True,
                 active_texture_sha256=ART_SHA,active_texture_pack='mod/immersive_engineer_decor_controls_tool_reforged',
                 class_origins=[dict(**{'class':c},resource_uri='union:/synthetic/'+c,code_source_uri='union:/synthetic/',sha256='d'*64) for c in classes]))
@@ -61,7 +61,7 @@ class TreeEvidenceTests(unittest.TestCase):
     def test_identity_types_and_ack_rejection(self):
         for key,value in [('nonce','stale'),('executed_source_sha','e'*40),('status','passed'),('width',True),
             ('gui_scale',True),('menu_slot_count',True),('native_visual_acceptance',True),('final_item_total',0),
-            ('pickup_server_acks',36),('return_server_acks',True),('rejected_output_attempts_state_preserved',36),
+            ('physical_slot_clicks',110),('physical_slot_clicks',True),('suite','native-tree-cutter-v3-v1'),('pickup_server_acks',36),('return_server_acks',True),('rejected_output_attempts_state_preserved',36),
             ('output_packet_processing_observed',True),('resource_reload_confirmed',1),('input_method','physical clicks'),('opened_via_native_block_interaction',0)]:
             p=copy.deepcopy(self.proof);p[key]=value
             with self.subTest(key=key),self.assertRaises(SmokeFailure):self.validate(p)
