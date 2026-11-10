@@ -2,6 +2,7 @@
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -14,6 +15,11 @@ class RoutingTests(unittest.TestCase):
         native = (ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java').read_text()
         self.assertNotIn("systemProperty 'iedctr.dev.barrelV5Reference'", runner)
         self.assertIn('System.getProperty(MachineMenu.DEV_BARREL_REFERENCE_PROPERTY) == null', native)
+
+    def test_integrated_wiring_guards(self):
+        for name in ('check_barrel_reference_wiring.py', 'check_solar_v2_reference_wiring.py'):
+            result = subprocess.run([sys.executable, str(ROOT / 'tools/validation' / name)], capture_output=True, text=True)
+            self.assertEqual(0, result.returncode, result.stdout + result.stderr)
 
     def test_production_selection_matrix(self):
         source = MENU.read_text()
