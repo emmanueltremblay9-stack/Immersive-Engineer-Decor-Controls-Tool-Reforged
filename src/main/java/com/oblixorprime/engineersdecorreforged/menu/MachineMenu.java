@@ -1,5 +1,8 @@
 package com.oblixorprime.engineersdecorreforged.menu;
 
+import com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.SolarV2ReferenceGeometry;
+
 import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockBreakerDataSync;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
@@ -8,6 +11,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.TreeCutterV3ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
 import java.util.Locale;
 import java.util.function.IntFunction;
@@ -43,6 +47,7 @@ public class MachineMenu extends AbstractContainerMenu {
    // It no longer selects the Factory Placer presentation: ordinary clients use V2.
    public static final String DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY = "iedctr.dev.factoryPlacerV2Reference";
    private final boolean factoryPlacerV2ReferencePresentation;
+   private final boolean treeCutterV3ReferencePresentation;
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
    public static final int SMALL_MINERAL_SMELTER_V05_DATA_COUNT = 17;
@@ -94,6 +99,13 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int PLAYER_INVENTORY_END = 54;
    private static final int HOTBAR_END = 63;
    private static final int[] SMELTER_PLAYER_SLOT_X = {27, 48, 68, 88, 109, 129, 150, 170, 191};
+   // V5 is the normal client presentation; explicit false retains the diagnostic legacy path.
+   public static final String DEV_BARREL_REFERENCE_PROPERTY = "iedctr.dev.barrelV5Reference";
+   public static final String DEV_SOLAR_V2_REFERENCE_PROPERTY = "iedctr.dev.solarV2Reference";
+   private final boolean solarV2ReferencePresentation;
+   public boolean solarV2ReferencePresentation() { return solarV2ReferencePresentation; }
+   private final boolean barrelReferencePresentation;
+   public boolean barrelReferencePresentation() { return barrelReferencePresentation; }
    private final Player menuPlayer;
    private boolean smelterOutputDrawerOpen;
    private final MachineKind kind;
@@ -114,18 +126,26 @@ public class MachineMenu extends AbstractContainerMenu {
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
       return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
          new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
-         kind == MachineKind.FACTORY_PLACER);
+         kind == MachineKind.FLUID_BARREL && Boolean.parseBoolean(System.getProperty(DEV_BARREL_REFERENCE_PROPERTY, "true")),
+         kind == MachineKind.FACTORY_PLACER,
+         kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.parseBoolean(System.getProperty(DEV_SOLAR_V2_REFERENCE_PROPERTY, "true")));
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {
-      this(kind, id, inventory, container, data, false);
+      this(kind, id, inventory, container, data, false, false, false);
    }
 
    private MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data,
-                       boolean factoryPlacerV2ReferenceRequested) {
+                       boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,
+                       boolean solarV2ReferenceRequested) {
       super((MenuType)resolveMenuType(kind), id);
+      this.solarV2ReferencePresentation = solarV2ReferenceRequested
+         && kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide;
+      this.barrelReferencePresentation = barrelReferenceRequested
+         && kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide;
       this.factoryPlacerV2ReferencePresentation = factoryPlacerV2ReferenceRequested
          && kind == MachineKind.FACTORY_PLACER && inventory.player.level().isClientSide;
+      this.treeCutterV3ReferencePresentation = kind == MachineKind.SMALL_TREE_CUTTER && inventory.player.level().isClientSide;
       checkContainerSize(container, 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
@@ -150,8 +170,19 @@ public class MachineMenu extends AbstractContainerMenu {
 
       for (MachineLayout.MachineSlot slot : this.layout.machineSlots()) {
          MachineLayout.MachineSlot presentationSlot = slot;
-         if (factoryPlacerV2ReferencePresentation) {
+         if (barrelReferencePresentation) {
+            var anchor = BarrelReferenceGeometry.anchor(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         } else if (factoryPlacerV2ReferencePresentation) {
             var anchor = FactoryPlacerV2ReferenceGeometry.anchor(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         }
+         if (treeCutterV3ReferencePresentation) {
+            var anchor = TreeCutterV3ReferenceGeometry.anchor(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         }
+         if (solarV2ReferencePresentation) {
+            var anchor = SolarV2ReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
          }
          this.addSlot(this.createMachineSlot(presentationSlot));
@@ -162,8 +193,19 @@ public class MachineMenu extends AbstractContainerMenu {
             int x = kind == MachineKind.SMALL_MINERAL_SMELTER
                ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerSlotX(column);
             int y = this.layout.playerSlotY(row);
-            if (factoryPlacerV2ReferencePresentation) {
+            if (barrelReferencePresentation) {
+               var anchor = BarrelReferenceGeometry.anchor(2 + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
+            } else if (factoryPlacerV2ReferencePresentation) {
                var anchor = FactoryPlacerV2ReferenceGeometry.anchor(18 + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
+            }
+            if (treeCutterV3ReferencePresentation) {
+               var anchor = TreeCutterV3ReferenceGeometry.anchor(1 + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
+            }
+            if (solarV2ReferencePresentation) {
+               var anchor = SolarV2ReferenceGeometry.anchor(1 + row * 9 + column);
                x = anchor.x(); y = anchor.y();
             }
             this.addSlot(new Slot(inventory, column + row * 9 + 9, x, y));
@@ -174,8 +216,19 @@ public class MachineMenu extends AbstractContainerMenu {
          int x = kind == MachineKind.SMALL_MINERAL_SMELTER
             ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarSlotX(column);
          int y = this.layout.hotbarY();
-         if (factoryPlacerV2ReferencePresentation) {
+         if (barrelReferencePresentation) {
+            var anchor = BarrelReferenceGeometry.anchor(29 + column);
+            x = anchor.x(); y = anchor.y();
+         } else if (factoryPlacerV2ReferencePresentation) {
             var anchor = FactoryPlacerV2ReferenceGeometry.anchor(45 + column);
+            x = anchor.x(); y = anchor.y();
+         }
+         if (treeCutterV3ReferencePresentation) {
+            var anchor = TreeCutterV3ReferenceGeometry.anchor(28 + column);
+            x = anchor.x(); y = anchor.y();
+         }
+         if (solarV2ReferencePresentation) {
+            var anchor = SolarV2ReferenceGeometry.anchor(28 + column);
             x = anchor.x(); y = anchor.y();
          }
          this.addSlot(new Slot(inventory, column, x, y));
@@ -191,6 +244,8 @@ public class MachineMenu extends AbstractContainerMenu {
       }
       return menuType.get();
    }
+
+   public boolean treeCutterV3ReferencePresentation() { return this.treeCutterV3ReferencePresentation; }
 
    public boolean factoryPlacerV2ReferencePresentation() { return this.factoryPlacerV2ReferencePresentation; }
 

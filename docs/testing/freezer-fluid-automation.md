@@ -43,3 +43,43 @@ On a disposable world with the candidate JAR and pinned IE dependency:
 5. Compare direct hand-bucket behavior, Ice/Packed Ice item recipes, comparator, reserved-slot manual recovery and existing saves against the baseline.
 
 Record the tested commit, JAR SHA-256, Minecraft/NeoForge/IE versions and actual observations. Do not claim this client checklist passed solely because server GameTests passed.
+
+
+## Reconciliation with Tree, Barrel and Solar on 2026-11-11
+
+PR172 source `9bfd466766ac66af759600ea74ff5e039daba3d5` is reconciled with main
+`509913bd891e7a7bfd7dfa589a3b1fa1008e0397`. The only production conflicts were
+`canTakeItemThroughFace` and `canTakeItem` in `MachineBlockEntity`. Both retain
+Tree Cutter's `slot == 0` and Freezer's `canAutomationExtract(slot)` checks.
+Their machine kinds are disjoint. No other production behavior was redesigned.
+
+The Solar preservation manifest retains its original `files` map and entire
+`tree_cutter_integration` record unchanged. A separate
+`freezer_fluid_automation_integration` layer records the two source commits,
+their original file hashes, and the exact combined MachineBlockEntity and
+MachineMenu identities. The checker independently pins these identities and
+requires precisely those two paths. Rehashing a mutated manifest cannot admit
+changed source. The combined MachineBlockEntity SHA-256 is
+`9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63`.
+
+The original menu suffix hash remains unchanged. Only the exact Tree accessor
+and complete, canonical fluid-aware `freezerPreviewStack` method are normalized,
+the latter back to its exact historical implementation. Missing, changed,
+duplicated or reverted preview methods, unrelated suffix edits, loss or widening
+of either extraction branch, altered provenance and extra/missing integration
+paths are mutation-tested. Barrel and Solar wiring guards remain enabled.
+
+This integration requires fresh mapped compilation, JUnit (including Freezer
+layout/gauge and Tree geometry), all 13 Freezer and nine Tree regression
+GameTests in normal and Lithium CI, existing client gates, packaging and the
+required aggregate. Record the new candidate/checkout/tree identities and JAR
+hash from those runs. Earlier green runs, the old 768-test result and historical
+JAR hashes do not qualify this candidate. Local Python and standalone geometry
+checks are not a substitute for the mapped build or gameplay evidence.
+
+The powered IE pump, conveyor bucket recycling, ordinary fluid-fed GUI states,
+and natural chunk unload/reload checklist above remains **unqualified**.
+Reconciliation and block-entity replacement tests do not prove those behaviors.
+Any substantial new automation for that checklist needs a separate, scoped
+Markdown implementation mandate. No merge, release, installation or user-server
+qualification is included in this reconciliation.
