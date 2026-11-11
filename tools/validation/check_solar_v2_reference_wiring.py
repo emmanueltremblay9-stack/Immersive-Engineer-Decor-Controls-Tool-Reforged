@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import struct
+from tree_integration_preservation import assert_menu_tail_preserved, assert_solar_baseline_preserved
 
 r = Path(__file__).resolve().parents[2]
 j = r / 'src/main/java/com/oblixorprime/engineersdecorreforged'
@@ -40,9 +41,9 @@ assert '? new SolarV2ReferenceScreen(menu, inventory, title) : new MachineScreen
 assert 'SolarV2ReferenceGeometry.anchor(slot.containerIndex())' in m
 assert 'SolarV2ReferenceGeometry.anchor(1 + row * 9 + column)' in m
 assert 'SolarV2ReferenceGeometry.anchor(28 + column)' in m
-# All downstream menu data/transfer/validation logic is byte-identical to reconciled PR166 parent 15593b28.
-assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1)[1].encode()).hexdigest() == 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
-# Existing Barrel code, harness, art, workflow, production Solar art/screen/layout/entity are frozen.
+# PR173 adds only an exact presentation accessor to the pinned downstream menu code.
+assert_menu_tail_preserved(m)
+# Keep historical pins, with exact documented Tree integration identities only.
 preserved = json.loads((d / 'preserved-baseline-sha256.json').read_text())
 # Milking evolves only these shared production files; retain the exact reconciled
 # Solar baseline and all remaining source/art pins without broad exemptions.
@@ -55,8 +56,8 @@ milking_shared_paths = {
 for path, expected in preserved['files'].items():
     if path in milking_shared_paths:
         assert milking['reconciliation_baseline_sha256'][path] == expected, path
-        expected = milking['sha256'][path]
-    assert hashlib.sha256((r / path).read_bytes()).hexdigest() == expected, path
+milking_current_hashes = {path: milking['sha256'][path] for path in milking_shared_paths}
+assert_solar_baseline_preserved(r, preserved, milking_current_hashes)
 print('PASS: independent client-only default client presentation with explicit false fallback, 37 index routes, inverse pointer paths, legacy and Barrel preservation')
 
 art = r / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png'

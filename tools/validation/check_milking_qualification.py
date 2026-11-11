@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 from client_mixin_smoke import SmokeFailure
+from tree_integration_preservation import MAIN_COMMIT, MILKING_UPSTREAM_INTEGRATED_FILES, TREE_COMMIT
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -24,8 +25,24 @@ def check_textless_milking_labels(screen):
 
 def check_preservation(root=ROOT):
     pins=json.loads((root/'docs/testing/milking-qualification/production-pins.json').read_text())
+    baseline=pins.get('reconciliation_baseline_sha256',pins['baseline_sha256'])
+    tree=pins.get('tree_cutter_integration',{})
+    tree_files=set(MILKING_UPSTREAM_INTEGRATED_FILES).intersection(pins.get('preserved_paths', []))
+    declared_tree_files=tree.get('files',{})
+    if tree_files:
+        if tree.get('main_commit') != MAIN_COMMIT or tree.get('tree_commit') != TREE_COMMIT or set(declared_tree_files) != tree_files:
+            raise SmokeFailure('Tree integration provenance changed')
+        for name in tree_files:
+            record=declared_tree_files[name]
+            if (record.get('baseline_sha256') != baseline.get(name)
+                    or record.get('integrated_sha256') != MILKING_UPSTREAM_INTEGRATED_FILES[name]
+                    or not record.get('reason','').strip()):
+                raise SmokeFailure('Tree-integrated layout pin changed: '+name)
+    elif declared_tree_files:
+        raise SmokeFailure('Unexpected Tree preservation override')
     for name in pins.get('preserved_paths', []):
-        if pins['sha256'].get(name) != pins.get('reconciliation_baseline_sha256', pins['baseline_sha256']).get(name):
+        expected=declared_tree_files[name]['integrated_sha256'] if name in declared_tree_files else baseline.get(name)
+        if pins['sha256'].get(name) != expected:
             raise SmokeFailure('Baseline artwork/layout preservation failed: '+name)
     for name,expected in pins['sha256'].items():
         path=root/name

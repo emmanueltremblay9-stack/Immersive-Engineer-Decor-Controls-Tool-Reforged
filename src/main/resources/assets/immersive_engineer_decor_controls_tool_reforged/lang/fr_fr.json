@@ -1117,5 +1117,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.redstone_2": "ignore le signal",
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.trigger_tooltip": "Déclenchement : %s. Cliquer pour changer. Le mode sans signal fonctionne automatiquement.",
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.continuous": "continu",
-  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge": "changement de signal"
+  "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge": "changement de signal",
+  "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.output": "Sortie : bûches coupées",
+  "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy": "Énergie : %s / %s FE"
 }

@@ -1,16 +1,16 @@
 {
   "baseline_commit": "c114a0c0432d050eadf1eacb7d218c15b5b82148",
-  "purpose": "Current tooltip-only Milking display snapshot, retaining the pre-recovery baseline and qualified renderer history. Not native qualification evidence.",
+  "purpose": "Current tooltip-only Milking display snapshot, retaining the pre-recovery baseline and qualified renderer history. Includes the exact upstream Tree V3 layout integration. Not native qualification evidence.",
   "sha256": {
-    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "1681a939ef6c86c7b57aef663d6da962d665fca951dac64f8a8f886b0564b12e",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "3f32ffeccd725fe8d54b95f5a54ae11acb8a31bfb124172bee60bbf420977723",
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "2b0f8cc8bfeac9f421b6948833e4d88b7c993c5c633b6f26feebc6f96f2a0e6f",
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "bcb9fd9330a70af93bd2962263ab4ce4b1d06131290dfb51d32517a84beeb6ca",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "9ebb5d5a53d667e8e9af8a670162640af83e6f26dfc1acd743445f5f9380dd1f",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "00ddffefc7169e1289f68c328516e4cbf7e7807b5e8365355110ff93d4993e15",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "0be659f78a3176707ea292e46a382df180ea220fa2039f6bf4ccbfd839785606",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "b3733c48d66419efeb818a2992ff67144642ddf36a08652c0394e8d45e78efd9",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "6e56fb8b448c1b19c65cdb3663aeb34ccbdc7ba88f778dc2e5ee79ba8577642b",
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MilkingRedesignLayout.java": "b28353f19cda7ed82cb1d3da469e5b7b33085f43a8ee62495b66eaf07e29832f",
-    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": "97d2268ab3140d2fa817a754e05bff0233b3da75a159d9a651ea781ec00c7079",
-    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": "1c0bc96c143c3d6a3dee9c521a49c62fa992ce62f88cd963c1bdbd2d61d9a4c8",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": "b6ca6454118504f44a918a2b248fff649ee35ff7f2352389302f0d51a366c500",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": "f415594130353f155a9fd9a9c26e40cacbf3dc618a07d1dfa8f1d73609881763",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png": "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png": "0688ffa93b80ee59aa9ac35fa1316c885c6413f72b80a8af7a3c67284306eec4",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png": "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5",
@@ -31,6 +31,22 @@
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png": "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png": "0688ffa93b80ee59aa9ac35fa1316c885c6413f72b80a8af7a3c67284306eec4",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png": "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5"
+  },
+  "tree_cutter_integration": {
+    "main_commit": "890958ff300e9a88dde2a77fc6c145d19c0f98f9",
+    "tree_commit": "96ac07aac200e10e9936b0ae4ae99f9053fae11c",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": {
+        "baseline_sha256": "1681a939ef6c86c7b57aef663d6da962d665fca951dac64f8a8f886b0564b12e",
+        "integrated_sha256": "3f32ffeccd725fe8d54b95f5a54ae11acb8a31bfb124172bee60bbf420977723",
+        "reason": "Exact upstream Tree V3 client screen registration from the integrated source."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": {
+        "baseline_sha256": "00ddffefc7169e1289f68c328516e4cbf7e7807b5e8365355110ff93d4993e15",
+        "integrated_sha256": "6e56fb8b448c1b19c65cdb3663aeb34ccbdc7ba88f778dc2e5ee79ba8577642b",
+        "reason": "Exact upstream Tree V3 single-output layout; the remaining machine layouts stay at the Milking reconciliation baseline."
+      }
+    }
   },
   "preserved_paths": [
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java",

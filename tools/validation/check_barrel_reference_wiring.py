@@ -4,6 +4,7 @@ import hashlib
 import json
 import struct
 import re
+from tree_integration_preservation import assert_menu_tail_preserved
 r=Path(__file__).resolve().parents[2]
 j=r/'src/main/java/com/oblixorprime/engineersdecorreforged'
 s=(j/'client/BarrelReferenceScreen.java').read_text()
@@ -28,9 +29,9 @@ assert 'this(kind, id, inventory, container, data, false, false, false)' in m
 assert 'kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide' in m
 assert 'Boolean.parseBoolean(System.getProperty(DEV_BARREL_REFERENCE_PROPERTY, "true"))' in m
 assert 'new MachineScreen.FluidBarrelScreen(menu, inventory, title)' in c
-# Everything after resolveMenuType, including transfer rules and synchronized fluid data,
-# is byte-identical to the main fdf26aad baseline.
-assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType',1)[1].encode()).hexdigest() == 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
+# Only PR173's exact Tree presentation accessor is new after resolveMenuType.
+# Every other byte, including transfer rules and synchronized fluid data, stays pinned.
+assert_menu_tail_preserved(m)
 print('PASS: event routing, legacy fallback, client-only V5 default, unchanged transfer/data/validation code')
 
 g=(j/'utility/BarrelReferenceGeometry.java').read_text()

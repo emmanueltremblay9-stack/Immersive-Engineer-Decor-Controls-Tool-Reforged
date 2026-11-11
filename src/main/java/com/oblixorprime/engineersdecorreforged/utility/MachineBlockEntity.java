@@ -201,6 +201,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    public static final int LABEL_MAX_LINE_LENGTH = 24;
    public static final int LABEL_MAX_UTF16_UNITS = LABEL_MAX_LINE_LENGTH * 2;
    private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
+   // New entities are already single-output. Only explicitly unversioned saved inventories migrate.
+   private int treeInventoryVersion = 1;
    private int tickCounter;
    private int fifoTimer;
    private int machineSlotCursor;
@@ -1091,6 +1093,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          return this.isBlockBreakerRearSide(side) ? new int[]{0} : new int[0];
       }
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return new int[]{0};
       // Keep the preexisting unsided Container slot visibility for other machine types.
       return this.slotsUpTo(this.items.size());
    }
@@ -1103,6 +1106,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    @Override
    public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) {
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;
         if (this.kind() == MachineKind.LABELED_CRATE) {
             return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
         }
@@ -1115,6 +1119,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    @Override
    public boolean canTakeItem(Container destination, int slot, ItemStack stack) {
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;
         if (this.kind() == MachineKind.LABELED_CRATE) {
             return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
         }
@@ -1887,6 +1892,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.kind() == MachineKind.LABELED_CRATE ? LabeledCrateMenu.CRATE_SLOT_COUNT : SLOT_COUNT, ItemStack.EMPTY
       );
       ContainerHelper.loadAllItems(tag, this.items, registries);
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) {
+         this.treeInventoryVersion = !tag.contains("TreeInventoryVersion") ? 0
+            : tag.contains("TreeInventoryVersion", Tag.TAG_INT) ? tag.getInt("TreeInventoryVersion") : -1;
+      }
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          this.items.set(10, ItemStack.EMPTY);
       }
@@ -2006,6 +2015,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected void saveAdditional(CompoundTag tag, Provider registries) {
       super.saveAdditional(tag, registries);
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) {
+         // Do not mark old contents migrated if saved before their first server tick.
+         if (this.treeInventoryVersion == 0) tag.remove("TreeInventoryVersion");
+         else tag.putInt("TreeInventoryVersion", this.treeInventoryVersion);
+      }
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          ItemStack result = (ItemStack)this.items.get(10);
          this.items.set(10, ItemStack.EMPTY);
@@ -2492,7 +2506,66 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
+   /** Drain-only compatibility storage: never admit newly harvested or inserted items here.
+    * Keep every old position in the existing save format, including the formerly hidden 10-26.
+    * Moving only server-side, on ticks, keeps capability simulations and menu reads inert.
+    */
+   private boolean drainTreeCutterLegacyItems() {
+      ItemStack output = this.items.get(0);
+      boolean changed = false;
+      boolean pending = false;
+      for (int slot = 1; slot < this.items.size(); slot++) {
+         ItemStack legacy = this.items.get(slot);
+         if (legacy.isEmpty()) continue;
+         int move = output.isEmpty()
+            ? Math.min(legacy.getCount(), Math.min(legacy.getMaxStackSize(), this.getMaxStackSize(legacy)))
+            : ItemStack.isSameItemSameComponents(output, legacy)
+               ? Math.min(legacy.getCount(), Math.max(0, Math.min(output.getMaxStackSize(), this.getMaxStackSize(output)) - output.getCount()))
+               : 0;
+         if (move > 0) {
+            if (output.isEmpty()) {
+               output = legacy.copyWithCount(move);
+               this.items.set(0, output);
+            } else {
+               output.grow(move);
+            }
+            legacy.shrink(move);
+            if (legacy.isEmpty()) this.items.set(slot, ItemStack.EMPTY);
+            changed = true;
+         }
+         pending |= !legacy.isEmpty();
+      }
+      if (changed) {
+         this.setChanged();
+         this.updateComparator();
+      }
+      return pending;
+   }
+
+   private void migrateTreeCutterInventory() {
+      if (this.treeInventoryVersion != 0) return;
+      // Authorized legacy-log discard is deliberately narrow: preserve modded/customized items.
+      // Tags are consulted on the server tick, after registry/tag loading, not during NBT decode.
+      for (int slot = 0; slot < this.items.size(); slot++) {
+         ItemStack stack = this.items.get(slot);
+         if (!stack.isEmpty() && stack.is(net.minecraft.tags.ItemTags.LOGS)
+               && "minecraft".equals(BuiltInRegistries.ITEM.getKey(stack.getItem()).getNamespace())
+               && stack.getComponentsPatch().isEmpty()) {
+            this.items.set(slot, ItemStack.EMPTY);
+         }
+      }
+      this.treeInventoryVersion = 1;
+      this.setChanged();
+      this.updateComparator();
+   }
+
    private void tickTreeCutter(boolean powered) {
+      this.migrateTreeCutterInventory();
+      // Recovery remains available while paused. Do not let new production starve old contents.
+      if (this.drainTreeCutterLegacyItems()) {
+         this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+         return;
+      }
       if (this.level != null && powered) {
          this.setBooleanProperty(MachineBlocks.ACTIVE, false);
       } else if (this.level != null && this.cooldown <= 0 && this.tickCounter % 40 == 0) {
