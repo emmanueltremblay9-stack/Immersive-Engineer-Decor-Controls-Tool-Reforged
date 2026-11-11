@@ -2,6 +2,6 @@ Old Industrial Wood Door
 Aged shop timber
 <&recipe>This wooden door can open by hand and can share a manual click with a matching neighboring door.<br>
 <br>
-Usage: Place two doors of this type side by side at the same height, facing the same direction, with opposite hinges. With neither door powered, right-click either using an empty main hand to open or close both.<br>
+Usage: Place two doors of this type side by side at the same height, facing the same direction, with opposite hinges on the outer edges of the opening. With neither door powered, right-click either using an empty main hand to open or close both.<br>
 <br>
 The linked click respects interaction permissions. It does not add shared redstone control: powered doors keep their normal independent behavior.

@@ -222,3 +222,11 @@ of each to the end. It reproduced the pre-existing Mesh Gate title overflowing b
 navigation and page heading. The manual-only title/category heading now use `Portail
 grillagé en acier`; the item's registered translated name is unchanged. The body
 pagination was intact. JUnit now contains ten targeted resource tests.
+
+Final native recheck on the independent package for `b734977f` (SHA-256
+`d56c727f804697fe5c26b88705d5b84c29e5a418e6eee572d8605260b2de4659`)
+confirmed the compact French gate label and heading fit. All four French Funnel
+pages were read to the final paragraph without clipping. The isolated client was
+saved and closed. A separate source review then tightened the wood-door pairing
+instruction: opposite hinges must be on the outer edges of the opening, as enforced
+by `SynchronizedAccessways.partner`; opposite inward hinges do not pair.

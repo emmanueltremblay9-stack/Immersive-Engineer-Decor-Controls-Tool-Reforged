@@ -104,6 +104,6 @@ Vieille porte en bois industrielle
 Vieux bois d'atelier
 <&old_industrial_wood_door>Cette porte en bois s'ouvre à la main et peut partager un clic manuel avec une porte voisine assortie.<br>
 <br>
-Utilisation : posez deux portes de ce type côte à côte, à la même hauteur, dans la même direction et avec des charnières opposées. Sans redstone sur les portes, faites un clic droit sur l'une avec la main principale vide pour commander les deux.<br>
+Utilisation : posez deux portes de ce type côte à côte, à la même hauteur, dans la même direction et avec des charnières opposées sur les bords extérieurs de l’ouverture. Sans redstone sur les portes, faites un clic droit sur l'une avec la main principale vide pour commander les deux.<br>
 <br>
 Le clic partagé respecte les permissions d'interaction. Il ne propage pas la redstone : les portes alimentées conservent leur fonctionnement indépendant habituel.

@@ -146,6 +146,7 @@ public class EngineerManualContentTest {
         assertTrue(Files.readString(ROOT.resolve("en_us/steel_catwalk.txt")).contains("four independently"));
         assertTrue(Files.readString(ROOT.resolve("en_us/metal_sliding_door.txt")).contains("holds both open"));
         assertTrue(Files.readString(ROOT.resolve("en_us/old_industrial_wood_door.txt")).contains("does not add shared redstone"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/old_industrial_wood_door.txt")).contains("outer edges of the opening"));
         assertTrue(Files.readString(ROOT.resolve("en_us/steel_mesh_fence_gate.txt")).contains("without redstone activation"));
         assertTrue(Files.readString(ROOT.resolve("en_us/iron_hatch.txt")).contains("directly below"));
         assertTrue(Files.readString(ROOT.resolve("en_us/tracker.txt")).contains("in the air"));
