@@ -20,7 +20,9 @@ import net.neoforged.fml.ModList;
 public final class PackagedRuntimeProof {
     private PackagedRuntimeProof() {}
     public static JsonObject verify(Minecraft mc) throws Exception {
+        require("false".equals(System.getProperty("iedctr.dev.barrelV5Reference")), "Explicit legacy diagnostic selector required");
         for (String key : System.getProperties().stringPropertyNames()) {
+            if (key.equals("iedctr.dev.barrelV5Reference")) continue;
             require(!key.startsWith("iedctr.dev.") && !key.equals("iedctr.fluidGestureNative")
                 && !key.equals("iedctr.factoryPlacerV2ReferenceNative") && !key.equals("iedctr.fluidPackagedNative")
                 && !key.equals("iedctr.clientGameplay") && !key.equals("iedctr.smelterGuiOnly")
@@ -95,7 +97,9 @@ public final class PackagedRuntimeProof {
             // Historical opt-in production validation classes may exist. This flag only excludes the separate harness namespace.
             proof.addProperty("fixture_free_jar", true);
             proof.addProperty("fixture_free_scope", "Separate com/oblixorprime/iedctrtest harness excluded; historical main validation classes may exist but their activation selectors are absent"); proof.addProperty("separate_harness_module", true);
-            proof.add("active_textures",textures);proof.addProperty("production_selectors_absent",true);
+            proof.add("active_textures",textures);proof.addProperty("other_production_selectors_absent",true);
+            proof.addProperty("legacy_selector","iedctr.dev.barrelV5Reference=false");
+            proof.addProperty("qualification","legacy-diagnostic-only");
             proof.add("class_origins", origins);
             return proof;
         }

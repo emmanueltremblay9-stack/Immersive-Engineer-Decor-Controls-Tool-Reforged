@@ -15,6 +15,13 @@ final class FluidBarrelSpriteRenderer {
    private FluidBarrelSpriteRenderer() {}
 
    static boolean draw(GuiGraphics graphics, FluidStack fluid, int x, int y, int width, int height) {
+      return draw(graphics, fluid, x, y, width, height, x, y, x + width, y + height);
+   }
+
+   /** Coordinates for blits stay local; scissor bounds must be real GUI screen coordinates. */
+   static boolean draw(GuiGraphics graphics, FluidStack fluid, int x, int y, int width, int height,
+                       int clipLeft, int clipTop, int clipRight, int clipBottom) {
+      if (clipRight <= clipLeft || clipBottom <= clipTop) return false;
       if (fluid.isEmpty() || width <= 0 || height <= 0) return false;
       IClientFluidTypeExtensions properties = IClientFluidTypeExtensions.of(fluid.getFluid());
       ResourceLocation still = properties.getStillTexture(fluid);
@@ -31,7 +38,7 @@ final class FluidBarrelSpriteRenderer {
       // GuiGraphics scopes its scissor stack and flushes at the clipping boundaries.
       // Whole 16px sprites are bottom-anchored; scissoring crops the top/right UVs
       // instead of squeezing an entire sprite into a short final row or column.
-      graphics.enableScissor(x, y, x + width, y + height);
+      graphics.enableScissor(clipLeft, clipTop, clipRight, clipBottom);
       try {
          for (int tileX = x; tileX < x + width; tileX += TILE_SIZE) {
             for (int tileY = y + height - TILE_SIZE; tileY > y - TILE_SIZE; tileY -= TILE_SIZE) {

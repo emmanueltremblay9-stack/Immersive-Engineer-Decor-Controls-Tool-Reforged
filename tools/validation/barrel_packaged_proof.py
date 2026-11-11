@@ -37,7 +37,9 @@ def validate_runtime(proof, report):
     cp_paths, main_paths = {Path(p).resolve() for p in cp}, {Path(p).resolve() for p in outputs}
     require(jar in cp_paths and not cp_paths.intersection(main_paths), 'Source-output runtime or missing JAR')
     require(runtime.get('harness_mod_id') == HARNESS and runtime.get('fixture_free_jar') is True
-            and runtime.get('separate_harness_module') is True and runtime.get('production_selectors_absent') is True
+            and runtime.get('separate_harness_module') is True and runtime.get('other_production_selectors_absent') is True
+            and runtime.get('legacy_selector') == 'iedctr.dev.barrelV5Reference=false'
+            and runtime.get('qualification') == 'legacy-diagnostic-only'
             and type(runtime.get('harness_mod_path')) is str
             and Path(runtime['harness_mod_path']).resolve() != jar, 'Not an independent default-path test mod')
     root = runtime.get('mod_root_uri')

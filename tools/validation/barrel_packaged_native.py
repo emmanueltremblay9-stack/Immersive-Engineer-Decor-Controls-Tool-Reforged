@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact ordinary-JAR, default-path Barrel native qualification."""
+"""Exact ordinary-JAR Barrel legacy diagnostic; not default V5 qualification."""
 import argparse
 import hashlib
 import json
@@ -65,6 +65,7 @@ def main() -> int:
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.barrelPackagedNative', 'true'
+        systemProperty 'iedctr.dev.barrelV5Reference', 'false'
         if (System.getenv('IEDCTR_EXPECTED_JAR')) {
             systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_JAR')
             systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_JAR_SHA256')

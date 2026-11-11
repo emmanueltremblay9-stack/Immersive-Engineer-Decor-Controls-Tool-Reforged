@@ -37,12 +37,14 @@ public class MachineLayoutBlockBreakerTest {
    }
 
    @Test
-   public void blockBreakerLayoutDoesNotChangeTreeCutterSlots() {
+   public void bothHarvestersExposeOnlyOneOutput() {
       MachineLayout breaker = MachineLayout.forKind(MachineKind.SMALL_BLOCK_BREAKER);
       MachineLayout treeCutter = MachineLayout.forKind(MachineKind.SMALL_TREE_CUTTER);
 
       assertEquals(1, breaker.machineSlots().size());
-      assertEquals(10, treeCutter.machineSlots().size());
-      assertFalse(treeCutter.machineSlots().stream().anyMatch(slot -> slot.role().toLowerCase().contains("output")));
+      assertEquals(1, treeCutter.machineSlots().size());
+      assertTrue(treeCutter.isOutputSlot(0));
+      assertTrue(treeCutter.allowsAutomationExtraction(0));
+      assertFalse(treeCutter.allowsAutomationExtraction(1));
    }
 }

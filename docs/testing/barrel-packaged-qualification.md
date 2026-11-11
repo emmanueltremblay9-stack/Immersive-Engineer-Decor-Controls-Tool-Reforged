@@ -1,8 +1,9 @@
-# Supplemental Barrel packaged qualification
+# Supplemental Barrel legacy packaged diagnostic
 
 This independent test complements `barrel-fluid-validation.yml`. That original
 six-run cumulative GUI matrix, its Freezer checks, and its evidence gate remain
-unchanged. Passing the supplemental Barrel job does not override a failure in
+retained, with the Barrel legacy selector explicitly set to false. Passing the
+supplemental Barrel job does not override a failure in
 that cumulative matrix, and does not qualify Freezer, Placer, Solar or Milking.
 
 ## Artifact and runtime
@@ -18,8 +19,11 @@ by this work; their activation properties must be absent.
 
 Runtime evidence binds class resource bytes, code-source URI and module to that
 JAR. It also checks the actual active Barrel artwork against the archive and the
-retained 201x226 texture hash. No legacy production layout selector is enabled.
-V5 artwork is not activated or qualified.
+retained 201x226 texture hash. The exact selector
+`iedctr.dev.barrelV5Reference=false` is required and recorded as
+`legacy-diagnostic-only`; every other production selector remains forbidden.
+V5 artwork and the normal default presentation are not qualified by this job.
+The separate V5 packaged job must qualify the default with no selector present.
 
 ## Bounded cases and limitations
 
