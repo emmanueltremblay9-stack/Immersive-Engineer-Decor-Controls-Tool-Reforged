@@ -19,12 +19,10 @@ Open the screen to inspect the stored fluid and its amount. Empty the current fl
 <np>
 Fluid Funnel
 Fluid line hardware
-<&small_fluid_funnel>The Small Fluid Funnel is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
-<br>
-Usage: Put it below the fluid collection point and route its stored contents into tanks or lower pipework.<br>
-<br>
-With no water or lava source directly above it, the funnel also collects rainfall through its open top: 50 mB every 80 ticks in rain, or 100 mB during a thunderstorm. At 20 ticks per second, this fills one bucket in 80 or 40 seconds respectively. Roofs, dry biomes, and snow-only precipitation prevent rain collection. Weather adds only water to an empty or water-filled tank; it never mixes with lava or milk. Source collection takes priority, and the existing downward transfer still applies.<br>
-<np>
+<&small_fluid_funnel>Place the open top beneath moving fluid connected to a source within 16 fluid-to-fluid steps. The path cannot cross dry blocks or closed faces. A source directly above the funnel is not a valid moving-fluid inlet.<br>
+The funnel works every 40 ticks. Four successful work steps remove one real source and credit 1,000 mB to the tank; earlier progress is not stored fluid and cannot be extracted. Without a reachable source, flowing fluid gives no drainage output. A changed or lost source resets that work. Leave room for the complete bucket before collection.<br>
+The tank holds 3,000 mB of one compatible fluid at a time. It sends up to 250 mB downward every 40 ticks, limited by the receiver. Verified source adapters include ordinary water, lava and IE creosote; unsupported fluid sources may be refused. Draining a supported fluidlogged decoration removes its fluid, not the decorative block.<br>
+When source collection is not progressing, exposed rainfall can add 50 mB of water every 80 ticks, or 100 mB during thunder. Roofs and unsuitable precipitation prevent this; water does not mix with a different tank fluid.<br><np>
 Fluid Pipe Check Valve
 Fluid line hardware
 <&straight_pipe_valve>The Check Valve passes fluid in one direction only. It is always enabled and needs no redstone signal. Each transfer call is limited to at most 1000 mB.<br>

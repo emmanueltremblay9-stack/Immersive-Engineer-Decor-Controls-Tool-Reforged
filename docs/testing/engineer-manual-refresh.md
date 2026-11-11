@@ -63,3 +63,18 @@ No native manual-page screenshots or full 120-language review are claimed here.
    coverage list, and extend category-parity checks as locales are updated.
 5. Run resource checks, affected tests and exact-head CI. Keep the PR draft until review;
    no merge, tag, release or production installation is authorized by this document.
+
+## Second pass: older integrated behavior
+
+The broader history pass found two additional stale descriptions predating the latest
+crate edit. EN/FR Funnel now documents #112 connected-source drainage (16 connected
+edges, four unpaid work quanta before an actual source is removed, 3,000 mB capacity,
+output cadence and separate weather collection). Door Sensor now describes its
+actual `SensorKind.PLAYER` behavior and #101 support-relative placement, instead of
+the old erroneous scheduled-pulse boilerplate. Both category copies are synchronized.
+
+The new JUnit class was compiled with Java 21 and run directly using already present
+JUnit 4.13.2/Hamcrest artifacts: four tests pass. This is the actual committed resource
+test class, not a stub or substitute assertion implementation. The complete Gradle
+suite remains separate from this focused test run; the earlier Maven resolution
+failure does not mean these focused tests are still unexecuted.

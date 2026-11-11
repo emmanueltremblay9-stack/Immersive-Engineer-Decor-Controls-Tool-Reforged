@@ -14,12 +14,8 @@ Remarque : revient à son état initial après la durée prévue de l'impulsion.
 <np>
 Capteur de porte
 Commande redstone
-<&door_sensor_switch>Un interrupteur momentané émet une impulsion nette de redstone à puissance maximale.<br>
-<br>
-Utilisation : déclenchez des machines, déverrouillez des portes, activez des alarmes ou des circuits à action unique.<br>
-<br>
-Remarque : revient à son état initial après la durée prévue de l'impulsion.
-<np>
+<&door_sensor_switch>Ce capteur détecte automatiquement les joueurs proches ; ce n'est pas un bouton à impulsion temporisée. Sa zone de détection correspond au volume du bloc étendu de quatre blocs dans chaque direction. Les autres types d'entités ne déclenchent pas ce capteur de joueurs.<br>
+Posez-le contre un mur, un sol ou un plafond : la plaque et son contour restent contre le support cliqué. Il vérifie la présence après la pose, puis toutes les 40 ticks ; la détection n'est donc pas instantanée. Utiliser le capteur demande une mise à jour immédiate. La sortie redstone suit la présence des joueurs plutôt qu'une impulsion de durée fixe.<br><np>
 Bouton d'ascenseur
 Commande redstone
 <&elevator_button>Une commande compacte offre un point de commutation redstone clairement identifiable dans une usine.<br>

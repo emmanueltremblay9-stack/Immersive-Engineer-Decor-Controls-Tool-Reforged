@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class EngineerManualContentTest {
     private static final Path ROOT = Path.of("src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/manual");
     private static final String[] MACHINES = {"small_freezer", "small_tree_cutter", "small_solar_panel",
-            "fluid_barrel", "small_block_breaker", "small_mineral_smelter", "small_milking_machine"};
+            "fluid_barrel", "small_block_breaker", "small_mineral_smelter", "small_milking_machine", "small_fluid_funnel"};
 
     @Test
     public void updatedEntriesAndCategoryCopiesAgree() throws Exception {
@@ -18,7 +18,7 @@ public class EngineerManualContentTest {
                 String individual = Files.readString(ROOT.resolve(lang).resolve(machine + ".txt"));
                 assertEquals(machine, 1, individual.split("<&recipe>", -1).length - 1);
                 String body = individual.substring(individual.indexOf("<&recipe>") + "<&recipe>".length()).trim();
-                String category = machine.equals("fluid_barrel") ? "storage_transport" : "workshop_machines";
+                String category = (machine.equals("fluid_barrel") || machine.equals("small_fluid_funnel")) ? "storage_transport" : "workshop_machines";
                 String combined = Files.readString(ROOT.resolve(lang).resolve(category + ".txt"));
                 String anchor = "<&" + machine + ">";
                 assertEquals(machine, 1, combined.split(java.util.regex.Pattern.quote(anchor), -1).length - 1);
@@ -66,4 +66,15 @@ public class EngineerManualContentTest {
         assertTrue(solar.contains("every 20 ticks"));
         assertTrue(solar.contains("not 256 FE per tick"));
     }
+    @Test
+    public void funnelAndDoorSensorDoNotPromiseObsoleteBehavior() throws Exception {
+        String funnel = Files.readString(ROOT.resolve("en_us/small_fluid_funnel.txt"));
+        for (String term : new String[]{"16 fluid-to-fluid steps", "Four successful", "not stored fluid", "3,000 mB", "not a valid"})
+            assertTrue(term, funnel.contains(term));
+        String sensor = Files.readString(ROOT.resolve("en_us/door_sensor_switch.txt"));
+        assertTrue(sensor.contains("detects nearby players"));
+        assertTrue(sensor.contains("every 40 ticks"));
+        assertFalse(sensor.contains("Resets after its scheduled pulse"));
+    }
+
 }
