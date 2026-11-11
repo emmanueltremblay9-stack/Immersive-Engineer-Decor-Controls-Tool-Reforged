@@ -77,4 +77,15 @@ public class EngineerManualContentTest {
         assertFalse(sensor.contains("Resets after its scheduled pulse"));
     }
 
+    @Test
+    public void campfireRequirementAndCompactFrenchCategoryRemainDocumented() throws Exception {
+        String bag = Files.readString(ROOT.resolve("en_us/sleeping_bag.txt"));
+        for (String term : new String[]{"lit vanilla campfire", "eight neighboring", "diagonals count", "400-tick"})
+            assertTrue(term, bag.contains(term));
+        String language = Files.readString(ROOT.resolve("../lang/fr_fr.json"));
+        assertFalse(language.contains("Équipements pour fluides et énergie"));
+        for (String namespace : new String[]{"immersiveengineering", "immersive_engineer_decor_controls_tool_reforged"})
+            assertTrue(language.contains("\"manual." + namespace + ".edr_fluid_power_utilities\": \"Fluides et énergie\""));
+    }
+
 }

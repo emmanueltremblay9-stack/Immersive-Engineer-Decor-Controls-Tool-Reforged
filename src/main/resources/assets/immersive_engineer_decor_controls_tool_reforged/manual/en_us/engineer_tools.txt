@@ -46,12 +46,8 @@ Keep one available before testing high places, exposed wiring, or hostile mine r
 <np>
 Sleeping Bag
 Portable rest kit
-<&sleeping_bag>The Sleeping Bag is a weatherproof rest kit for field work far from a bed.<br>
-<br>
-Usage: Use it at night in the Overworld to rest until morning. It does not set or move your spawn point.<br>
-<br>
-The bag refuses daytime use, unsafe surroundings with nearby monsters, and dimensions that are not suitable for a safe field rest. Each successful rest wears the bag.
-<np>
+<&sleeping_bag>Stand beside a lit vanilla campfire before using the Sleeping Bag at night in the Overworld. The fire must occupy one of the eight neighboring horizontal blocks at your feet's height; diagonals count. A fire directly under your feet, two blocks away, above or below you, unlit, or a soul campfire does not qualify.<br>
+A successful rest advances time to morning without changing your spawn point. Nearby monsters prevent rest. Successful use applies a 400-tick cooldown and wears the bag outside Creative mode.<br><np>
 Material Storage Box
 Construction supply box
 <&material_box>The Material Storage Box carries a large reserve of one plain, unmodified stackable construction material.<br>

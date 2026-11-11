@@ -1,7 +1,7 @@
 # Engineer's Manual integrated-feature audit
 
 Baseline: `main` at `b9fc2b44d41eab7cb0513775b27ac7c231aa6e20` (1.1.67-reconstructed).
-This is a documentation-only draft, not a release or proof of native visual acceptance.
+This is a documentation/resource-only draft, not a release or complete visual acceptance.
 
 ## Scope and evidence
 
@@ -50,7 +50,7 @@ Before calling the manual complete, open the individual and category pages in th
 ordinary packaged client with Immersive Engineering, in English and French. Check
 pagination/overflow, recipe widgets, item shortcuts, links, font accents and relevant
 GUI scales. Longer explanations may need explicit page splits after native inspection.
-No native manual-page screenshots or full 120-language review are claimed here.
+The bounded native review below covers selected pages only, not full 120-language review.
 
 ## Follow-up mandate
 
@@ -78,3 +78,39 @@ JUnit 4.13.2/Hamcrest artifacts: four tests pass. This is the actual committed r
 test class, not a stub or substitute assertion implementation. The complete Gradle
 suite remains separate from this focused test run; the earlier Maven resolution
 failure does not mean these focused tests are still unexecuted.
+
+## Third pass: campfire requirement and native pagination
+
+Sleeping Bag EN/FR now documents the integrated #66 campfire prerequisite, verified
+against `SleepingBagItem`: a lit vanilla campfire in one of eight horizontal neighbor
+cells at foot height (diagonals count), not a soul campfire. Both category copies
+were synchronized. The fifth focused test guards this requirement and the compact
+French category labels.
+
+Native review used an isolated disposable client/world, existing Java/NeoForge/IE
+libraries and independently built JARs, not a release installation or CI artifact.
+At GUI scale 2 with a 1180-by-812 client window:
+
+- Freezer EN/FR: all three pages each inspected, recipe widget and final text visible.
+- Tree Cutter EN/FR: all three pages each inspected, including complete migration text.
+- French Fluid & Power navigation and category title: a pre-existing overflow was
+  reproduced, then corrected by shortening two labels to `Fluides et énergie`.
+  Both resulting screens fit inside the manual in the second native run.
+- Updated Sleeping Bag FR: both pages inspected; campfire restrictions, spawn-point
+  behavior, cooldown and wear text are visible. The recipe widget is present.
+
+Baseline native JAR (resources at PR commit `0049535b`): SHA-256
+`5bd56525c74d6d024ecf051a50d84e8ddecaa6722a3c0cab635e9448204e4cf7`.
+Revised native JAR (Sleeping Bag and French label corrections): SHA-256
+`7d59295f668e148143c9916a45ec7d17bbeee18311034d8761f075fea81b2011`.
+Native captures and separate logs were retained for both runs. No resource-pack
+substitution was used. Both clients were shut down normally after review.
+
+Focused JUnit: **5/5 pass** using existing JUnit 4.13.2/Hamcrest artifacts and Java 21.
+Offline Gradle `validateManualResources jar`: **PASS**, 223 source pages and 424
+crafting widgets. The previous PR head's 67 successful CI checks do not certify a
+subsequent commit; exact-head CI must be checked after this update.
+
+Remaining: every other entry's code-to-text audit, additional GUI scales, category
+page pagination, item shortcuts/links, Sleeping Bag EN native rendering, and all
+118 other locales. This review is deliberately not an exhaustive completion claim.
