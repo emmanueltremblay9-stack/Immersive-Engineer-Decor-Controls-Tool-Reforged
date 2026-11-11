@@ -178,3 +178,19 @@ help strings outside these manual pages can still contradict the corrected manua
 these are tracked as follow-up rather than silently changing all translations.
 
 The Block Breaker page also identifies its rear-only automated output face.
+
+
+### Additional native review
+
+The independently packaged JAR for `ef084163` (SHA-256
+`a35b50cc8f1f1456955c6d227fa04dc6ec55ca947b09331320d91482291e5974`)
+was checked in the same isolated French client at GUI scale 2. All six Overview
+pages and all three revised Labeled Crate pages were read through to their final
+text. The crate recipe widget rendered, its IE material link opened, and back
+navigation returned to the crate. This does not certify every updated page.
+
+That review reproduced another pre-existing navigation overflow: the French
+straight-valve entry title extended past the book edge in Storage and Transport.
+Only its manual title and matching category heading are shortened to `Clapet
+anti-retour`; the registered item's translated name is unchanged. A focused
+regression checks the shortened title. The valve mechanics/body are unchanged.

@@ -132,4 +132,10 @@ public class EngineerManualContentTest {
         assertTrue(Files.readString(ROOT.resolve("en_us/small_electrical_furnace.txt")).contains("operate with smelting set to OFF"));
     }
 
+    @Test
+    public void frenchValveNavigationUsesTheCompactManualTitle() throws Exception {
+        assertEquals("Clapet anti-retour", Files.readAllLines(ROOT.resolve("fr_fr/straight_pipe_valve.txt")).get(0));
+        assertFalse(Files.readString(ROOT.resolve("fr_fr/storage_transport.txt")).contains("Clapet anti-retour de tuyau de fluide"));
+    }
+
 }
