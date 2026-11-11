@@ -56,6 +56,18 @@ class BarrelDriverGuards(unittest.TestCase):
         self.assertIn('--corrected-machine-gui-only',cumulative)
         self.assertIn('test_client_gameplay.py',cumulative)
 
+    def test_exact_legacy_selector_is_isolated_and_observed(self):
+        for path in ('tools/validation/barrel_packaged_native.py', 'gradle/barrel-packaged-validation.gradle'):
+            source = (ROOT/path).read_text()
+            self.assertIn("systemProperty 'iedctr.dev.barrelV5Reference', 'false'", source)
+        source = (BASE/'PackagedRuntimeProof.java').read_text()
+        self.assertIn('require("false".equals(System.getProperty("iedctr.dev.barrelV5Reference"))', source)
+        self.assertIn('if (key.equals("iedctr.dev.barrelV5Reference")) continue;', source)
+        self.assertIn('"legacy-diagnostic-only"', source)
+        self.assertIn('"other_production_selectors_absent"', source)
+        runner = (ROOT/'tools/validation/client_gameplay.py').read_text()
+        self.assertIn("if (System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY') == 'true') {\n            systemProperty 'iedctr.dev.barrelV5Reference', 'false'", runner)
+
     def test_runtime_provenance_and_legacy_selectors(self):
         source=(BASE/'PackagedRuntimeProof.java').read_text()
         for token in ('url.toURI().equals(mod.findResource(entry).toUri())',

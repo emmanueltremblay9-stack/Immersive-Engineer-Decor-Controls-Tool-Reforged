@@ -318,6 +318,9 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if (proof.get("suite") != "native-corrected-machine-gui-v1" or proof.get("nonce") != nonce
             or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
         raise SmokeFailure("Missing matching successful native corrected-machine GUI proof")
+    if (proof.get("barrel_legacy_selector") != "iedctr.dev.barrelV5Reference=false"
+            or proof.get("barrel_qualification") != "legacy-diagnostic-only"):
+        raise SmokeFailure("Corrected GUI Barrel evidence must identify the explicit legacy diagnostic")
     if not re.fullmatch(r"[0-9a-f]{40}", executed_sha) or proof.get("executed_source_sha") != executed_sha:
         raise SmokeFailure("Corrected-machine GUI proof does not identify the exact executed source revision")
     if not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha) or proof.get("pull_request_head_sha") != pr_head_sha:
@@ -686,6 +689,10 @@ gradle.projectsEvaluated {
         systemProperty 'iedctr.smelterGuiOnly', System.getenv('IEDCTR_SMELTER_GUI_ONLY')
         systemProperty 'iedctr.smelterLanguage', System.getenv('IEDCTR_SMELTER_LANGUAGE')
         systemProperty 'iedctr.correctedMachineGuiOnly', System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY')
+        // Cumulative historical geometry diagnostic, never a default V5 qualification.
+        if (System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY') == 'true') {
+            systemProperty 'iedctr.dev.barrelV5Reference', 'false'
+        }
         systemProperty 'iedctr.machineGuiLanguage', System.getenv('IEDCTR_MACHINE_GUI_LANGUAGE')
         systemProperty 'iedctr.barrelFixtureFluid', System.getenv('IEDCTR_BARREL_FIXTURE_FLUID')
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
