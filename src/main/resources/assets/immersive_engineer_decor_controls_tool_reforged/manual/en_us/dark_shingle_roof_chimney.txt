@@ -1,7 +1,7 @@
 Dark Shingle Roof
 Weathered roof fitting
-<&recipe>The Dark Shingle Roof Chimney. Dark Shingle Roof Chimney builds dark, practical roof lines for workshops and industrial sheds.<br>
+<&recipe>This chimney emits adjustable decorative smoke without fuel.<br>
 <br>
-Usage: Use the pieces together to make believable roof profiles.<br>
-
-
+Usage: Right-click to cycle the intensity from 0 to 15; 0 switches smoke off. A new unpowered chimney starts at 5. A change in incoming redstone strength sets the intensity to that signal, including 0 when power is removed.<br>
+<br>
+Hold another chimney to build upward instead of adjusting the smoke. In a contiguous stack of chimney heads, only the top head emits smoke.

@@ -138,4 +138,20 @@ public class EngineerManualContentTest {
         assertFalse(Files.readString(ROOT.resolve("fr_fr/storage_transport.txt")).contains("Clapet anti-retour de tuyau de fluide"));
     }
 
+    @Test
+    public void remainingAccessAndFluidContractsAreExplicit() throws Exception {
+        assertTrue(Files.readString(ROOT.resolve("fr_fr/steel_mesh_fence_gate.txt")).startsWith("Portail grillagé en acier\n"));
+        String chimney = Files.readString(ROOT.resolve("en_us/dark_shingle_roof_chimney.txt"));
+        for (String term : new String[]{"0 to 15", "starts at 5", "only the top head"}) assertTrue(term, chimney.contains(term));
+        assertTrue(Files.readString(ROOT.resolve("en_us/steel_catwalk.txt")).contains("four independently"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/metal_sliding_door.txt")).contains("holds both open"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/old_industrial_wood_door.txt")).contains("does not add shared redstone"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/steel_mesh_fence_gate.txt")).contains("without redstone activation"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/iron_hatch.txt")).contains("directly below"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/tracker.txt")).contains("in the air"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/small_freezer.txt")).contains("not refunded"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/fluid_barrel.txt")).contains("250 mB downward every 40 ticks"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/small_milking_machine.txt")).contains("transfers continue"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/small_mineral_smelter.txt")).contains("Redstone pauses heating"));
+    }
 }

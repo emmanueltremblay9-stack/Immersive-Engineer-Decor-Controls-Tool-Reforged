@@ -24,7 +24,7 @@ Tracker
 Stored position marker
 <&tracker>The Tracker stores a block position directly in the item.<br>
 <br>
-Usage: Click a block to save its dimension and coordinates. The tooltip shows the stored position. Sneak-use the Tracker to clear the target.<br>
+Usage: Click a block to save its dimension and coordinates. The tooltip shows the stored position. Sneak-use the Tracker in the air to clear the target; using it on a block saves that block instead.<br>
 <br>
 Use it to mark machines, tunnel branches, remote controls, or unfinished construction sites before returning with tools and materials.
 <np>

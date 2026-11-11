@@ -194,3 +194,31 @@ straight-valve entry title extended past the book edge in Storage and Transport.
 Only its manual title and matching category heading are shortened to `Clapet
 anti-retour`; the registered item's translated name is unchanged. A focused
 regression checks the shortened title. The valve mechanics/body are unchanged.
+
+## Remaining access and decor pass
+
+A further source review adds existing operation instructions to eleven EN/FR entries:
+chimney intensity and stack behavior (`ChimneyBlock`, `ChimneyTrunkBlock`), independent
+catwalk/railing sides and selective mining (`PortedBlocks`, native railing GameTests),
+paired sliding-door versus manual-only wood-door/gate behavior (`SynchronizedAccessways`),
+and aligned open hatch/ladder climbing. Tracker clearing now explicitly requires use
+in the air; using it on a block instead stores that block even while sneaking.
+These are largely omitted instructions, not eleven broken implementations.
+
+Four fluid-machine clarifications cover existing behavior: Freezer interruption resets
+paid progress without refunding FE; upright Barrel automatic downward output; Milking
+bucket ports and transfers while production is redstone-paused; and the Smelter's
+mineral-to-lava-to-Obsidian path with heating-only redstone inhibition. Evidence is in
+`MachineBlockEntity` and the existing Freezer/FluidRouting GameTests. No unmerged
+Milking behavior is included.
+
+The unchanged Funnel EN text was additionally read through all four native pages at
+GUI scale 2 on `e54736e9`, including its final rain paragraph. Its pagination was intact.
+New access/decor text still requires its own bounded native review; this pass does not
+certify every page, language or GUI scale. Non-EN/FR locales remain unchanged.
+
+Native inspection of the new French Sliding Door and Mesh Gate text read both pages
+of each to the end. It reproduced the pre-existing Mesh Gate title overflowing both
+navigation and page heading. The manual-only title/category heading now use `Portail
+grillagé en acier`; the item's registered translated name is unchanged. The body
+pagination was intact. JUnit now contains ten targeted resource tests.

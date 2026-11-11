@@ -80,12 +80,13 @@ Mineral Smelter
 Compact processing unit
 <&small_mineral_smelter>Choose Lava, Magma or Obsidian mode in the screen. Accepted mineral blocks, such as stone or cobblestone, heat into 1,000 mB lava in Lava mode, or one Magma Block in Magma mode. Obsidian mode cools a 1,000 mB lava batch into one Obsidian without consuming water. Changing modes during a batch queues the next mode.<br>
 Feed items and lava from above, extract items and lava below, and supply FE at the rear. The tank holds 4,000 mB of lava. During Obsidian cooling the committed 1,000 mB is reserved; only surplus lava can be drained. The old extra slot is not a fuel slot. Avoid touching the machine while hot.<br>
+In Obsidian mode, an existing 1,000 mB lava batch in the tank is cooled first. Without that amount, a valid mineral input can be heated into lava and then cooled into Obsidian in the same batch. Redstone pauses heating; committed cooling and downward output can continue without FE.<br>
 <np>
 Water Freezer
 Compact processing unit
 <&small_freezer>Supply FE and plain water through pipes on any face. The tank holds 2,000 mB. With the input empty, 1,000 mB makes one Ice in 180 ticks at 8 FE per tick (1,440 FE total). A partial batch waits without using energy.<br>
 An occupied input takes priority over tank water. Water Bucket, Ice and Packed Ice retain their item recipes; remove invalid input or the returned empty bucket before using tank water. Automation can recover empty input buckets and finished output, but cannot extract an unprocessed water bucket.<br>
-A redstone signal, missing energy or blocked output interrupts the cycle. The comparator reports freezing phase, not tank fullness. Right-clicking with a water bucket is a separate immediate operation costing 1,440 FE; tank input does not automatically upgrade Ice to Packed Ice or Blue Ice.<br>
+Redstone, missing power or a blocked output resets the cycle to zero. The input and tank water remain unconsumed, but FE already spent is not refunded. The 1,440 FE cost assumes an uninterrupted 180-tick cycle. The comparator reports freezing phase, not tank fullness. Right-clicking with a water bucket is a separate immediate operation costing 1,440 FE; tank input does not automatically upgrade Ice to Packed Ice or Blue Ice.<br>
 <np>
 Passive Fluid
 Fluid line hardware
@@ -106,6 +107,7 @@ Milking Machine
 Shop-floor utility
 <&small_milking_machine>Face the machine toward nearby adult cows. Without a redstone signal, it checks for milk every 120 ticks. A real empty bucket in the input can become a milk bucket in the output; otherwise milk goes into the 4,000 mB tank when there is room. Arrange removal of filled buckets or milk fluid.<br>
 With TerraFirmaCraft installed, its cow adapter respects native readiness, familiarity, sex, age and cooldown checks. Only compatible plain milk that fits is accepted; this does not make every animal milkable. This page describes the integrated behavior, not an experimental replacement interface.<br>
+Compatible adjacent inventories behind or below can supply empty buckets and receive milk buckets automatically. Empty-bucket intake tries the rear first; filled-bucket output tries below first. The machine also pushes milk fluid downward. These transfers continue while redstone pauses milk production.<br>
 <np>
 Tree Cutter
 Shop-floor utility

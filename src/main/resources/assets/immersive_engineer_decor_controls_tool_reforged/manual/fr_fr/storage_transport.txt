@@ -15,6 +15,7 @@ Baril de fluide
 Équipement de réseau de fluides
 <&fluid_barrel>Le tonneau stocke jusqu'à 32 000 mB d'eau, de lave ou de lait, un seul type de fluide à la fois. Utilisez des seaux pour les transferts manuels. Branchez les tuyaux au-dessus ou en dessous : les faces horizontales n'offrent pas de connexion de fluide.<br>
 Ouvrez l'interface pour consulter le fluide et sa quantité. Videz le fluide présent avant de changer de type ; le tonneau stocke les fluides sans les convertir.<br>
+Posez le baril sur la face supérieure de son support pour l'orienter vers le haut. Dans cette position, il envoie automatiquement jusqu'à 250 mB vers le bas tous les 40 ticks, selon ce que le récepteur accepte. Les autres orientations ne déclenchent pas cet envoi automatique ; les transferts externes par les ports du dessus et du dessous restent possibles.<br>
 <np>
 Entonnoir à fluides
 Équipement de réseau de fluides

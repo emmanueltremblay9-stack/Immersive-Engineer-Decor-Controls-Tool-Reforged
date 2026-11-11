@@ -80,12 +80,13 @@ Fourneau de fusion de minéraux
 Unité de traitement compacte
 <&small_mineral_smelter>Choisissez le mode Lave, Magma ou Obsidienne dans l'interface. Un bloc minéral accepté, comme la pierre ou les pierres, produit 1 000 mB de lave en mode Lave, ou un bloc de magma en mode Magma. Le mode Obsidienne refroidit un lot de 1 000 mB de lave en une obsidienne sans consommer d'eau. Un changement de mode pendant un lot s'applique au lot suivant.<br>
 Insérez les objets et la lave par dessus, extrayez-les par dessous et fournissez les FE à l'arrière. Le réservoir contient 4 000 mB de lave. Pendant le refroidissement de l'obsidienne, les 1 000 mB engagés sont réservés ; seul l'excédent peut être retiré. L'ancien emplacement supplémentaire n'est pas un emplacement de combustible. Évitez le contact avec la machine chaude.<br>
+En mode Obsidienne, un lot de 1 000 mB de lave déjà présent dans le réservoir est refroidi en priorité. À défaut, un bloc minéral accepté peut être chauffé en lave, puis refroidi en obsidienne au cours du même lot. La redstone suspend la chauffe ; le refroidissement engagé et la sortie vers le bas peuvent continuer sans FE.<br>
 <np>
 Congélateur à eau
 Unité de traitement compacte
 <&small_freezer>Fournissez des FE et de l'eau ordinaire par tuyau sur n'importe quelle face. Le réservoir contient 2 000 mB. Si l'entrée est vide, 1 000 mB donnent un bloc de glace en 180 ticks à 8 FE par tick (1 440 FE au total). Une quantité insuffisante attend sans consommer d'énergie.<br>
 Un objet dans l'entrée a priorité sur l'eau du réservoir. Le seau d'eau, la glace et la glace compactée conservent leurs recettes ; retirez les objets invalides et le seau vide rendu avant d'utiliser le réservoir. L'automatisation récupère les seaux vides et le résultat, sans extraire un seau d'eau non traité.<br>
-Un signal redstone, le manque d'énergie ou une sortie bloquée interrompent le cycle. Le comparateur indique la phase de congélation, pas le remplissage. Le clic droit avec un seau d'eau reste une opération immédiate distincte à 1 440 FE ; le réservoir ne transforme pas automatiquement la glace en glace compactée ou bleue.<br>
+Un signal redstone, le manque d'énergie ou une sortie bloquée remettent le cycle à zéro. L'objet d'entrée et l'eau du réservoir ne sont pas consommés, mais les FE déjà dépensés ne sont pas remboursés. Le coût de 1 440 FE suppose un cycle de 180 ticks sans interruption. Le comparateur indique la phase de congélation, pas le remplissage. Le clic droit avec un seau d'eau reste une opération immédiate distincte à 1 440 FE ; le réservoir ne transforme pas automatiquement la glace en glace compactée ou bleue.<br>
 <np>
 Fluide passif
 Équipement de réseau de fluides
@@ -106,6 +107,7 @@ Machine à traire
 Équipement d'atelier
 <&small_milking_machine>Orientez la machine vers des vaches adultes proches. Sans signal redstone, elle cherche à produire du lait toutes les 120 ticks. Un véritable seau vide dans l'entrée peut devenir un seau de lait dans la sortie ; sinon, le lait rejoint le réservoir de 4 000 mB s'il reste de la place. Prévoyez l'extraction des seaux remplis ou du lait liquide.<br>
 Avec TerraFirmaCraft installé, l'adaptateur de ses vaches respecte les conditions natives de disponibilité, familiarité, sexe, âge et délai. Seul du lait ordinaire compatible pouvant être stocké est accepté ; tous les animaux ne deviennent pas pour autant trayables. Cette page décrit le comportement intégré, pas une interface expérimentale de remplacement.<br>
+Les inventaires compatibles placés derrière ou dessous peuvent fournir les seaux vides et recevoir automatiquement les seaux de lait. L'entrée des seaux vides essaie d'abord l'arrière ; la sortie des seaux remplis essaie d'abord le dessous. La machine envoie aussi du lait liquide vers le bas. Ces transferts continuent quand la redstone suspend la production de lait.<br>
 <np>
 Coupe-arbre
 Équipement d'atelier

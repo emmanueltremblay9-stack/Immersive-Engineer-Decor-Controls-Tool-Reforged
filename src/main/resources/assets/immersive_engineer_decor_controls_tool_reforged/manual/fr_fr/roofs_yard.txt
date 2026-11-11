@@ -24,9 +24,11 @@ Utilisation : combinez ces pièces pour créer des profils de toiture crédibles
 <np>
 Tronc de cheminée de toit
 Élément de toiture patinée
-<&dark_shingle_roof_chimneytrunk>Le tronc de cheminée de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<&dark_shingle_roof_chimneytrunk>Cette pièce de toiture offre un rebord surélevé pour la cheminée de toit séparée.<br>
 <br>
-Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+Utilisation : visez le rebord en tenant une tête de cheminée pour la poser au-dessus. Consultez la page de la cheminée pour régler la fumée ; le tronc sert de pièce de toiture.<br>
+<br>
+Les nouvelles pièces restent droites et non inversées, sans devenir des angles de toit. Les anciennes pièces en angle gardent leur état ; remplacez-les si vous voulez retrouver le raccord de cheminée visible.
 <np>
 Conduit de câble de toit
 Élément de toiture patinée
@@ -38,9 +40,11 @@ Les nouvelles poses gardent le conduit droit et à l’endroit. Les conduits dro
 <np>
 Toit en bardeaux foncés
 Élément de toiture patinée
-<&dark_shingle_roof_chimney>La cheminée de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<&dark_shingle_roof_chimney>Cette cheminée émet une fumée décorative réglable sans combustible.<br>
 <br>
-Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+Utilisation : faites un clic droit pour parcourir les intensités de 0 à 15 ; 0 arrête la fumée. Une nouvelle cheminée sans redstone démarre à 5. Un changement du signal reçu règle l'intensité sur ce signal, y compris 0 lorsque le courant est retiré.<br>
+<br>
+Tenez une autre cheminée pour prolonger la pile au lieu de régler la fumée. Dans une pile continue de têtes de cheminée, seule la tête supérieure émet de la fumée.
 <np>
 Bloc de toit en bardeaux foncés
 Élément de toiture patinée
@@ -98,6 +102,8 @@ Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordu
 <np>
 Vieille porte en bois industrielle
 Vieux bois d'atelier
-<&old_industrial_wood_door>Ce bloc apporte un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<&old_industrial_wood_door>Cette porte en bois s'ouvre à la main et peut partager un clic manuel avec une porte voisine assortie.<br>
 <br>
-Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>
+Utilisation : posez deux portes de ce type côte à côte, à la même hauteur, dans la même direction et avec des charnières opposées. Sans redstone sur les portes, faites un clic droit sur l'une avec la main principale vide pour commander les deux.<br>
+<br>
+Le clic partagé respecte les permissions d'interaction. Il ne propage pas la redstone : les portes alimentées conservent leur fonctionnement indépendant habituel.

@@ -2,3 +2,4 @@ Fluid Barrel
 Fluid line hardware
 <&recipe>The barrel stores up to 32,000 mB of water, lava or milk, one fluid type at a time. Use buckets for manual transfer. Connect fluid pipes above or below: horizontal faces do not expose a fluid connection.<br>
 Open the screen to inspect the stored fluid and its amount. Empty the current fluid before changing types; the barrel is storage, not a fluid converter.<br>
+Place the barrel on the top face of its support so it faces upward. In that orientation it automatically sends up to 250 mB downward every 40 ticks, limited by the receiver. Other orientations do not perform this automatic push; external transfer through the top and bottom ports remains available.<br>
