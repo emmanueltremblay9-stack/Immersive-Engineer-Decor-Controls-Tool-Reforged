@@ -95,6 +95,10 @@ final class NativeCorrectedMachineGuiValidation {
    static void begin(Minecraft mc, Path directory, String runNonce) {
       require(mc.getSingleplayerServer() != null && mc.player != null,
          "Corrected GUI fixture requires an integrated player");
+      require("false".equals(System.getProperty("iedctr.dev.barrelV5Reference")),
+         "Corrected GUI Barrel coverage requires explicit legacy diagnostic selection");
+      require("false".equals(System.getProperty("iedctr.dev.solarV2Reference")),
+         "Corrected GUI Solar coverage requires explicit legacy diagnostic selection");
       gameDirectory = directory;
       nonce = runNonce;
       executedSourceSha = System.getProperty("iedctr.executedSourceSha", "");
@@ -978,6 +982,12 @@ final class NativeCorrectedMachineGuiValidation {
       String selectedLanguage = mc.getLanguageManager().getSelected();
       require(language.equals(selectedLanguage), "Minecraft did not load the requested GUI language");
       JsonObject proof = new JsonObject();
+      require("false".equals(System.getProperty("iedctr.dev.barrelV5Reference")), "Legacy selector changed during run");
+      proof.addProperty("barrel_legacy_selector", "iedctr.dev.barrelV5Reference=" + System.getProperty("iedctr.dev.barrelV5Reference"));
+      proof.addProperty("barrel_qualification", "legacy-diagnostic-only");
+      require("false".equals(System.getProperty("iedctr.dev.solarV2Reference")), "Solar legacy selector changed during run");
+      proof.addProperty("solar_legacy_selector", "iedctr.dev.solarV2Reference=" + System.getProperty("iedctr.dev.solarV2Reference"));
+      proof.addProperty("solar_qualification", "legacy-diagnostic-only");
       proof.addProperty("suite", SUITE);
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", "passed");

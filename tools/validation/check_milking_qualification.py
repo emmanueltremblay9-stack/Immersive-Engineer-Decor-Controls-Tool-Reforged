@@ -25,7 +25,7 @@ def check_textless_milking_labels(screen):
 def check_preservation(root=ROOT):
     pins=json.loads((root/'docs/testing/milking-qualification/production-pins.json').read_text())
     for name in pins.get('preserved_paths', []):
-        if pins['sha256'].get(name) != pins['baseline_sha256'].get(name):
+        if pins['sha256'].get(name) != pins.get('reconciliation_baseline_sha256', pins['baseline_sha256']).get(name):
             raise SmokeFailure('Baseline artwork/layout preservation failed: '+name)
     for name,expected in pins['sha256'].items():
         path=root/name

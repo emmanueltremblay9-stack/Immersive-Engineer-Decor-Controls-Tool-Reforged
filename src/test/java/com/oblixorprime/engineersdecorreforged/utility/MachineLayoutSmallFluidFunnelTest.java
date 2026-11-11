@@ -1,66 +1,63 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class MachineLayoutSmallFluidFunnelTest {
    @Test
-   public void funnelUsesTheReferenceScaledCanvasAndExistingSlots() {
+   public void retainedCanvasPreservesBucketRolesAndIndices() {
       MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_FLUID_FUNNEL);
-      assertEquals(209, layout.imageWidth());
-      assertEquals(238, layout.imageHeight());
-      assertEquals(26, layout.playerInventoryX());
-      assertEquals(151, layout.playerInventoryY());
-      assertEquals(26, layout.hotbarX());
-      assertEquals(208, layout.hotbarY());
+      assertEquals(256, layout.imageWidth());
+      assertEquals(256, layout.imageHeight());
+      assertEquals(44, layout.playerInventoryX());
+      assertEquals(138, layout.playerInventoryY());
+      assertEquals(44, layout.hotbarX());
+      assertEquals(206, layout.hotbarY());
       assertEquals(2, layout.machineSlots().size());
-      assertEquals(0, layout.machineSlots().get(0).containerIndex());
-      assertEquals(33, layout.machineSlots().get(0).x());
-      assertEquals(85, layout.machineSlots().get(0).y());
-      assertEquals(1, layout.machineSlots().get(1).containerIndex());
-      assertEquals("Filled", layout.machineSlots().get(1).role());
-      assertEquals(155, layout.machineSlots().get(1).x());
-      assertEquals(85, layout.machineSlots().get(1).y());
+      MachineLayout.MachineSlot input = layout.machineSlots().get(0);
+      MachineLayout.MachineSlot output = layout.machineSlots().get(1);
+      assertEquals(0, input.containerIndex());
+      assertEquals("Empty bucket", input.role());
+      assertFalse(input.output());
+      assertEquals(40, input.x());
+      assertEquals(70, input.y());
+      assertEquals(1, output.containerIndex());
+      assertEquals("Filled", output.role());
+      assertTrue(output.output());
+      assertEquals(200, output.x());
+      assertEquals(70, output.y());
+      assertFalse(layout.isOutputSlot(0));
+      assertTrue(layout.isOutputSlot(1));
+      assertFalse(layout.allowsAutomationExtraction(0));
+      assertTrue(layout.allowsAutomationExtraction(1));
+      assertTrue(layout.panels().isEmpty());
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
-      assertEquals("small_fluid_funnel", layout.textureName());
+      assertEquals("small_fluid_funnel_v1/background", layout.textureName());
    }
 
    @Test
-   public void bucketArtworkMasksClearOnlyTheLiveItemInteriors() {
+   public void retainedBlitUsesTheEntireSquareImageWithoutDistortion() {
       MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_FLUID_FUNNEL);
-      MachineLayout.MachineSlot inputSlot = layout.machineSlots().get(0);
-      MachineLayout.MachineSlot outputSlot = layout.machineSlots().get(1);
-      SmallFluidFunnelArtworkMask inputMask = SmallFluidFunnelArtworkMask.sampleBucketMasks().get(0);
-      SmallFluidFunnelArtworkMask outputMask = SmallFluidFunnelArtworkMask.sampleBucketMasks().get(1);
-
-      assertEquals(inputSlot.x() + 1, inputMask.left());
-      assertEquals(inputSlot.y() + 1, inputMask.top());
-      assertEquals(inputSlot.x() + 17, inputMask.right());
-      assertEquals(inputSlot.y() + 17, inputMask.bottom());
-      assertEquals(outputSlot.x() + 1, outputMask.left());
-      assertEquals(outputSlot.y() + 1, outputMask.top());
-      assertEquals(outputSlot.x() + 17, outputMask.right());
-      assertEquals(outputSlot.y() + 17, outputMask.bottom());
-   }
-
-   @Test
-   public void funnelBlitMapsWholeNativeTextureToLogicalCanvas() {
-      MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_FLUID_FUNNEL);
-      GuiTextureBlit geometry = GuiTextureBlit.stretchFullTexture(layout.imageWidth(), layout.imageHeight(), 385, 439);
-
-      assertEquals(209, geometry.destinationWidth());
-      assertEquals(238, geometry.destinationHeight());
-      assertEquals(0, geometry.sourceX());
-      assertEquals(0, geometry.sourceY());
-      assertEquals(385, geometry.sourceWidth());
-      assertEquals(439, geometry.sourceHeight());
-      assertEquals(385, geometry.textureWidth());
-      assertEquals(439, geometry.textureHeight());
+      GuiTextureBlit blit = GuiTextureBlit.stretchFullTexture(
+         layout.imageWidth(), layout.imageHeight(),
+         FluidMachineRedesignLayout.SOURCE_SIZE, FluidMachineRedesignLayout.SOURCE_SIZE);
+      assertEquals(256, blit.destinationWidth());
+      assertEquals(256, blit.destinationHeight());
+      assertEquals(0, blit.sourceX());
+      assertEquals(0, blit.sourceY());
+      assertEquals(1254, blit.sourceWidth());
+      assertEquals(1254, blit.sourceHeight());
+      assertEquals(1254, blit.textureWidth());
+      assertEquals(1254, blit.textureHeight());
+      assertEquals(blit.sourceWidth() * blit.destinationHeight(),
+         blit.sourceHeight() * blit.destinationWidth());
    }
 
    @Test(expected = IllegalArgumentException.class)
-   public void textureBlitRejectsSourceRegionLargerThanTexture() {
-      new GuiTextureBlit(209, 238, 0, 0, 385, 439, 384, 439);
+   public void retainedBlitRejectsSourceRegionOutsideTexture() {
+      new GuiTextureBlit(256, 256, 1, 0, 1254, 1254, 1254, 1254);
    }
+
 }

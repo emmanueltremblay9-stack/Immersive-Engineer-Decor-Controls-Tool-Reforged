@@ -5,13 +5,35 @@ longer a test-only patch. The screen/menu/animal adapter and server projection
 intentionally evolve; the original qualification remains a regression suite.
 `production-pins.json` retains baseline hashes and pins the current production
 snapshot separately, including the last qualified renderer at `750731ef` before
-permanent machine text was removed. Layout, slot geometry, client registration
-and all three source textures remain byte-for-byte unchanged. The active
+permanent machine text was removed. Layout, slot geometry and all three source
+textures remain byte-for-byte unchanged. Client registration remains unchanged
+relative to the reconciled Solar parent described below. The active
 background is `milking_redesign_v1/background.png`
 (`871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b`),
 with milk layer `f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5`.
 The supplied glass stays disabled. There is no assembled Milking reference PNG in
 this qualification. Older Industrial Milk Tank art/toolkit is not an input.
+
+## Reconciliation with the current Solar parent
+
+Merged Solar parent `e8999e7cdd7e3a5d68d42b05ca3b0d6ecc9ac8d0` while retaining
+the existing PR168/PR169 ancestry. Barrel reload/bounds work was already reused
+by PR166, so its obsolete default-OFF documentation and exception manifest are
+not reintroduced. Solar and Barrel keep their ordinary client defaults, explicit
+legacy diagnostics and packaged fixture isolation; Factory Placer stays independent.
+
+The Milking animal/cooldown mechanics, artwork renderer and Freezer snapshot hold
+are unchanged. Shared screen conflicts retain the text-free Milking return and
+upstream fluid GUI cleanup; both Milking and Placer translations survive. The
+shared tooltip dispatcher recording test now extracts the actual Milking width
+helper and checks its existing wrapping without weakening fluid negative controls.
+
+`production-pins.json` retains the historical `baseline_sha256` and records
+`reconciliation_baseline_sha256` from the exact Solar parent, alongside the current
+production hashes. Only the two shared production files evolved by Milking replace
+Solar preservation pins; all other Solar/Barrel source, artwork and guards remain
+checked. Offline tests and Java syntax checks are not mapped compilation or native
+execution. This combined commit requires its own CI and native qualification.
 
 ## Native recovery contract
 

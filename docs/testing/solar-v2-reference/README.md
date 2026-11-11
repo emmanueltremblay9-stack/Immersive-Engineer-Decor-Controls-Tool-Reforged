@@ -1,3 +1,41 @@
+# Solar V2 ordinary-JAR default candidate
+
+Current candidate changes the normal client presentation to retained Solar V2 when
+`iedctr.dev.solarV2Reference` is absent or true. Explicit false is retained solely
+as a legacy diagnostic fallback. Server slot coordinates, mechanics, FE behavior,
+art bytes and other machines are unchanged. This is not a merge or release.
+
+The native fixture has moved out of main sources into the separate
+`iedctr_solar_validation` test mod. The five native profiles now launch the ordinary
+production JAR, with no presentation selector and no main source output on the runtime
+classpath. Gradle rejects duplicate archive entries, fixture leakage, split packages,
+wrong development-mod registration and a supplied artifact differing from the normal
+JAR. Runtime proof verifies the actual loaded JAR/hash, authoritative class origins,
+class bytes, separate harness module and active retained artwork pack/hash at boot and
+completion. Suite v3 retains the strict physical-input and pixel checks from v2.
+Each profile archives the actual tested JAR and its identity report for independent
+rehashing, rather than only retaining a reported digest.
+
+The cumulative corrected-machine GUI checks explicitly force only Solar and Barrel
+legacy fallbacks and label them diagnostic-only. They do not qualify the default
+Solar path. Normal-path qualification requires this candidate's fresh exact-head CI,
+including all five profiles. Historical successful opt-in/source-runtime results below
+do not substitute for that requirement. Opening/closing are still programmatic;
+complex gestures, JEI targeting, resource reload and full visual acceptance are not
+claimed. Other branches and their qualification history are untouched.
+
+The sections below preserve the historical opt-in development record. Statements
+about default OFF or source-runtime scope describe those earlier revisions, not the
+current candidate.
+
+## Branch reconciliation, 2026-11-10
+
+Reconciled Solar head `898a0307d755b28af671036a3f2786a14343b1a9` with its current Barrel base `15593b28a6853ba36775ebb419b8465a5e2f3240`, without rewriting history. MachineMenu uses independent Barrel, Factory Placer, and Solar requests: Barrel and Placer retain their base defaults, Solar stays opt-in, and server-side construction rejects all three presentations. Original Solar artwork and downstream menu mechanics are unchanged.
+
+The preservation manifest now names the exact integrated Barrel parent; each listed file was checked byte-for-byte against that parent before updating its digest. Geometry, slot protocol and pixel acceptance criteria are unchanged. The production-expression routing matrix now covers all three flags across client/server and absent/false/true properties.
+
+Local validation: all 375 Python validation tests pass, including the executable routing matrix; Solar and Barrel geometry/art checks, Solar wiring guard and whitespace checks pass. An initial routing-test parser failure was corrected by removing exactly one constructor-closing parenthesis rather than all trailing parentheses. Local Gradle compilation did not start: distribution 9.2.1 was unavailable and the download failed with network unreachable. Exact new-head CI and native evidence remain required; historical results below are not new-head qualification. No PR merge or release.
+
 # Small Solar Panel V2 opt-in presentation
 
 Stack base: PR166 remote commit `9ddbd4af5b06d4ed915c42c758d9f3840844b80e`, tree
@@ -105,10 +143,10 @@ the compile job separately records the built JAR SHA-256.
 
 The native fixture opens a real synchronized Solar menu in a new integrated world. It
 uses the existing `immersiveengineering:capacitor_lv` item and its actual NeoForge
-energy capability, places it via screen click/release handlers into the Cell, and
+energy capability, places it via XTest physical click/release events into the Cell, and
 observes real server FE movement with FE/item conservation. An opaque roof prevents
 solar generation during that controlled test. All 37 slots are picked up and placed
-through the normal screen handlers and vanilla packets with server observation. FE
+through the physical GLFW input path and vanilla packets with server observation. FE
 snapshots at zero, half and full are controlled fixture states, not claims about new
 production mechanics. It captures the meter and checks surrounding canvas pixels,
 closes the screen, verifies server close, then reopens and checks state/geometry.
@@ -148,7 +186,7 @@ fixture now records/asserts these public bounds, independently checked by Python
 This correction covers JEI sidebar placement, not complete JEI slot-input integration.
 JEI recipe/use/bookmark targeting can derive ingredient rectangles from public origins
 plus the still-local slot coordinates. Those scaled-slot interactions are not qualified
-by the bounded native screen-handler tests and remain a separate acceptance task.
+by the bounded native slot-click tests and remain a separate acceptance task.
 
 JEI remains enabled. No source pixels, FE clipping, exterior masks or cross-state
 pixel requirements are relaxed. Corrected native screenshots must be obtained from
@@ -159,3 +197,29 @@ Primary API references:
 - [NeoForge 1.21.1 AbstractContainerScreen accessors](https://github.com/NeoForged/NeoForge/blob/1.21.1/patches/net/minecraft/client/gui/screens/inventory/AbstractContainerScreen.java.patch)
 - [JEI 1.21.1 container GUI properties](https://github.com/mezz/JustEnoughItems/blob/1.21.1/Common/src/main/java/mezz/jei/common/gui/GuiProperties.java)
 - [JEI NeoForge ScreenHelper](https://github.com/mezz/JustEnoughItems/blob/1.21.1/NeoForge/src/main/java/mezz/jei/neoforge/platform/ScreenHelper.java)
+
+
+## Physical input qualification candidate, 2026-11-10
+
+Proof suite v2 replaces direct screen-handler clicks with XTest physical motion and
+button events, restricted to the runner's nonce-owned Xvfb display. All 37 source
+slots and their inventory destinations use the real GLFW/Minecraft input path;
+the real Cell charging setup uses the same path. The proof requires exactly 76
+clicks, their ordered stages/targets, observed GLFW coordinates within one GUI pixel
+of independently recomputed centers, and the same menu identity throughout.
+Clicks are separated by at least 350 ms to exclude double-click collection.
+
+Each of the 37 routes also records server-observed source, carried, destination and
+total inventory counts for pickup and return. Existing real Cell capability/FE,
+server acceptance, item conservation and geometry checks remain mandatory.
+Screenshots wait for an observed physically parked pointer and at least two completed
+screen renders at the requested FE state. Missing, stale, non-finite, wrong-menu or
+handler-only evidence fails closed. No PNG, FE crop, mask, public-bounds or exterior
+pixel criterion is relaxed.
+
+Opening, closing and reopening remain programmatic. Drag, shift-click, keyboard,
+JEI recipe/use/bookmark input, tooltip coverage and resource reload are not qualified
+by this bounded test. Solar remains default OFF; no other screen or mechanics change.
+This candidate still requires fresh five-profile CI/native results on its exact head;
+prior handler-only results do not qualify v2. Local Python and standalone guards do
+not constitute a Minecraft runtime pass.

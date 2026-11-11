@@ -1,3 +1,40 @@
+# Current default-path integration candidate
+
+V5 is now the normal client Barrel presentation when no system property is set.
+The historical `iedctr.dev.barrelV5Reference=false` override remains only for explicit
+legacy regression diagnostics. The client screen and menu projection are selected
+together; public server constructors and server worlds retain authoritative slot
+coordinates. Factory Placer and every other screen route are unchanged.
+
+The source-runtime/reload suite now uses the normal default with no selector. The
+separate ordinary-JAR suite also rejects every presentation selector and verifies
+the default path. The older legacy Barrel suite explicitly selects false and is
+not evidence of default-path delivery. See
+[packaged qualification](../../validation/barrel-v5-packaged-qualification.md) for
+the exact bounds, physical input coverage and remaining acceptance limitations.
+New exact-commit CI is required for this activation; the successful opt-in runs on
+304b13cd are a prior checkpoint, not validation of this change. No merge or release.
+
+## Historical checkpoints
+
+The records below describe their respective earlier commits, including the original
+default-OFF experiment. They are retained as history and do not override the current
+default-path behavior above.
+
+## Reused reload and JEI qualification work
+
+The narrow Barrel-only changes from PR168 commits `ef95bb07` and `1eb693a0` are reapplied here onto the reconciled main baseline. This avoids importing the unrelated Solar branch. Public screen bounds now describe the transformed canvas to JEI, while native slot input keeps local coordinates. The existing resource-reload fixture and pixel decoder tests are preserved, including completed-reload state before any fixture drain and all 38 routes before and after reload. These need new CI on this combined tree; the old PR168 results are not a pass of this candidate.
+
+## Main reconciliation, 8 November 2026
+
+Merged main `fdf26aadc45580b7ca4211a32323125f3c276d5b` into the existing V5 branch without rewriting history. The only text conflict was MachineMenu construction and slot projection. Barrel and Factory Placer now have separate, mutually exclusive presentation inputs. Factory Placer retains its ordinary client route; Barrel retains its existing default-OFF experiment pending full delivery qualification. Public server constructors disable both, and the client factory also rejects presentation on server worlds.
+
+The new server GameTest covers both machine kinds, both construction paths and all four combinations of historical properties. Existing V5 and packaged/default Placer CI provide separate client coverage. New exact-commit CI is required after this reconciliation. The unchanged downstream menu/data/transfer body is pinned against main, including its existing Factory Placer accessor. Original V5 artwork and all merged main artwork remain byte-identical.
+
+Local 287 Python tests, geometry/resource/source guards and Java syntax parsing passed before the added server test. Local mapped compilation is blocked before compilation by the uncached Gradle distribution and unavailable network access to services.gradle.org. No new native pass, normal V5 path, resource reload, final visual acceptance, merge or release is claimed here.
+
+Historical qualification and design records follow.
+
 # Barrel V5 opt-in presentation candidate
 
 Production base: PR151 commit `8718a0896bc7330fb4dde5e272a4fdf078db0804`.
@@ -179,50 +216,3 @@ plus 1921x1081 scale 3 to exercise ceil-rounded GUI dimensions. Synthetic PNGs a
 not Minecraft screenshots. Production rendering, artwork and slot handling remain
 unchanged by this validation-only extension. Physical OS pointer input, the other
 gestures and the other native checklist items above remain separate acceptance work.
-
-## Actual resource reload and public presentation bounds follow-up
-
-This follow-up extends the scale-qualified fixture without altering machine mechanics,
-retained artwork, the fluid renderer, or either presentation's default-OFF flag.
-`BarrelReferenceScreen` now exposes outward-rounded screen-space container bounds to
-external overlays, using the same pattern as Solar V2. Its internal render/input canvas
-remains at (0,0), size 379x461. Left/top use floor and right/bottom use ceil, so fractional
-centering can make public dimensions one GUI pixel larger than the logical canvas.
-All four public getters are checked during native routing and recorded in every capture.
-This does not qualify JEI recipe transfer, slot overlays, or JEI mouse actions.
-
-The `native-barrel-reference-v2` proof requires one real
-`Minecraft.reloadResourcePacks()` call after the baseline seven fluid captures. The
-client polls its future without blocking, propagates failures, waits for the loading
-overlay to disappear, and waits at least twelve additional overlay-free ticks. Before
-any fixture mutation, it verifies identical client/server world, player and menu object
-identities, the same Barrel entity and screen, unchanged full registered `minecraft:milk`
-state and capacity, empty menu/carried stacks and the complete player inventory, and
-unchanged screen geometry/viewport. Both sides' pre/post state snapshots are retained.
-The preserved full-milk framebuffer and tank crop are captured immediately afterward.
-
-Only after those assertions and that capture does fixture preparation explicitly drain
-the real fluid handler. This prevents the next slot-0 empty bucket from legitimately
-consuming 1000 mB and being mistaken for reload loss. The drain amount and synchronized
-empty state must be confirmed. All 38 server-confirmed click routes and all seven fluid
-captures then run again, with separate post-reload evidence, followed by close/reopen.
-The five existing native profile jobs and timeouts remain unchanged.
-
-The validator now decodes PNG pixels, validates chunk CRCs and filter reconstruction,
-checks that each tank crop is exactly the recorded framebuffer region, and independently
-recomputes the ring digest from each full screenshot. The ring must remain identical
-across all fifteen captures. Empty/half/full and different-fluid crop distinctions are
-checked independently before and after reload. Fluid image hashes may change across
-reload because animated sprites can restart at a different frame; equality is not
-required. This remains a bounded ring check, not full-artwork visual acceptance.
-
-Solar's original `preserved-baseline-sha256.json` stays unchanged as historical evidence.
-`reload-bounds-followup-sha256.json` records exact old/new hashes for only the eight
-intentionally changed Barrel source, validation and documentation files. Solar's guard
-pins that follow-up manifest and its exact path allowlist; all other original hashes,
-including artwork, renderer, mechanics and the native workflow, remain mandatory.
-
-Local dependency-free, synthetic and syntax checks are not native reload execution.
-The updated exact commit still needs its complete cloud compile/tests and all five
-native profile runs before reload success can be claimed. Pack overrides, physical
-pointer input and complex gestures remain outside this follow-up's acceptance scope.

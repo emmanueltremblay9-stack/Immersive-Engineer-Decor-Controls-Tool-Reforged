@@ -31,55 +31,33 @@ assert 'leftPos = 0; topPos = 0;' in s
 assert 'imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;' in s
 assert 'imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;' in s
 assert 'Component.literal(menu.layout().machineSlots().getFirst().role())' in s
-assert 'this(kind, id, inventory, container, data, false)' in m
-assert 'this(kind, id, inventory, container, data, barrelReferenceRequested, false)' in m
+assert 'this(kind, id, inventory, container, data, false, false, false)' in m
+assert 'boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide' in m
-assert 'kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.getBoolean(DEV_SOLAR_V2_REFERENCE_PROPERTY)' in m
+assert 'kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.parseBoolean(System.getProperty(DEV_SOLAR_V2_REFERENCE_PROPERTY, "true"))' in m
 assert 'DEV_SOLAR_V2_REFERENCE_PROPERTY = "iedctr.dev.solarV2Reference"' in m
 assert '? new SolarV2ReferenceScreen(menu, inventory, title) : new MachineScreen.SmallSolarPanelScreen(menu, inventory, title)' in c
 assert 'SolarV2ReferenceGeometry.anchor(slot.containerIndex())' in m
 assert 'SolarV2ReferenceGeometry.anchor(1 + row * 9 + column)' in m
 assert 'SolarV2ReferenceGeometry.anchor(28 + column)' in m
-# All downstream menu data/transfer/validation logic remains byte-identical to PR151/PR166.
-assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1)[1].encode()).hexdigest() == '48406a039c8b1ab4e78c9cd8ac4d3bb76408838dfee1696047d915f27cdbe88a'
-# Preserve the historical Solar baseline. Only this explicitly reviewed Barrel
-# follow-up may replace listed hashes; artwork, renderer, mechanics and workflow stay frozen.
-preserved_path = d / 'preserved-baseline-sha256.json'
-preserved = json.loads(preserved_path.read_text())
-followup_path = r / 'docs/testing/barrel-reference-v5/reload-bounds-followup-sha256.json'
-assert hashlib.sha256(followup_path.read_bytes()).hexdigest() == '97cf2df916113fa6e17389e0c3cf44d232270f93509500b74cf5ac19cd447b59'
-followup = json.loads(followup_path.read_text())
-assert followup['baseline_manifest_sha256'] == hashlib.sha256(preserved_path.read_bytes()).hexdigest()
-allowed_followup_paths = {
-    'docs/testing/barrel-reference-v5/README.md',
-    'src/main/java/com/oblixorprime/engineersdecorreforged/client/BarrelReferenceScreen.java',
-    'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java',
-    'src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometry.java',
-    'src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceChecks.java',
-    'tools/validation/barrel_reference_native.py',
-    'tools/validation/check_barrel_reference_wiring.py',
-    'tools/validation/test_barrel_reference_native.py',
-}
-assert set(followup['files']) == allowed_followup_paths
-# The native Milking recovery request evolves only these two shared production
-# files from the Solar baseline. Their exact new snapshot is pinned separately;
-# no Solar/Barrel renderer, artwork, geometry or fluid/energy helper is exempted.
+# All downstream menu data/transfer/validation logic is byte-identical to reconciled PR166 parent 15593b28.
+assert hashlib.sha256(m.split('   private static MenuType<?> resolveMenuType', 1)[1].encode()).hexdigest() == 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
+# Existing Barrel code, harness, art, workflow, production Solar art/screen/layout/entity are frozen.
+preserved = json.loads((d / 'preserved-baseline-sha256.json').read_text())
+# Milking evolves only these shared production files; retain the exact reconciled
+# Solar baseline and all remaining source/art pins without broad exemptions.
 milking = json.loads((r / 'docs/testing/milking-qualification/production-pins.json').read_text())
+assert milking['reconciliation_commit'] == 'e8999e7cdd7e3a5d68d42b05ca3b0d6ecc9ac8d0'
 milking_shared_paths = {
     'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java',
     'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java',
 }
 for path, expected in preserved['files'].items():
-    if path in allowed_followup_paths:
-        change = followup['files'][path]
-        assert set(change) == {'before_sha256', 'after_sha256'}
-        assert change['before_sha256'] == expected and change['after_sha256'] != expected, path
-        expected = change['after_sha256']
     if path in milking_shared_paths:
-        assert milking['baseline_sha256'][path] == expected, path
+        assert milking['reconciliation_baseline_sha256'][path] == expected, path
         expected = milking['sha256'][path]
     assert hashlib.sha256((r / path).read_bytes()).hexdigest() == expected, path
-print('PASS: independent default-OFF gates, Solar routing and legacy preservation; exact authorized Barrel reload/bounds follow-up')
+print('PASS: independent client-only default client presentation with explicit false fallback, 37 index routes, inverse pointer paths, legacy and Barrel preservation')
 
 art = r / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png'
 source_hash = hashlib.sha256(art.read_bytes()).hexdigest()
@@ -120,7 +98,7 @@ print('PASS: exact retained PNG/manifest, uniform mapping, empty-art preservatio
 
 # Regression: client SimpleContainer.mayPlace is permissive. Cell acceptance must
 # be checked on the authoritative integrated-server menu before the screen click.
-native = (j / 'client/validation/NativeSolarV2ReferenceValidation.java').read_text()
+native = (r / 'src/solarPackagedValidation/java/com/oblixorprime/iedctrtest/solar/NativeSolarV2ReferenceValidation.java').read_text()
 cell_ready = native.split('case CELL_READY -> {', 1)[1].split('case CELL_PICKED -> {', 1)[0]
 assert 'if(!serverMatches(mc,p->{' in cell_ready
 server_contract = cell_ready.split('if(!serverMatches(mc,p->{', 1)[1].split('}))return;', 1)[0]
@@ -133,4 +111,12 @@ assert 'require(!p.containerMenu.getSlot(0).mayPlace(new ItemStack(Items.STONE))
 assert 'require(p.containerMenu.getSlot(0).mayPlace(new ItemStack(cellItem()))' in server_contract
 assert 'menu.getSlot(0).mayPlace' not in native
 assert cell_ready.index('}))return;') < cell_ready.index('click(screen,28)')
-print('PASS: native Cell acceptance is fail-closed on the authoritative server menu before handler-driven input')
+print('PASS: native Cell acceptance is fail-closed on the authoritative server menu before physical input')
+
+assert 'screen.mouseClicked(' not in native and 'screen.mouseReleased(' not in native
+assert 'glfwSetCursorPos' not in native
+for required in ('XTestFakeMotionEvent', 'XTestFakeButtonEvent', 'mc.mouseHandler.xpos()',
+                 'mc.mouseHandler.ypos()', 'ScreenEvent.Render.Post', 'parkedFrames<2',
+                 'pointerParked(mc)', 'SERVER_ROUTES.add(serverRoute)', '.iedctr-solar-xvfb'):
+    assert required in native, required
+print('PASS: physical XTest input, observed pointer, server transitions and completed parked render gates')

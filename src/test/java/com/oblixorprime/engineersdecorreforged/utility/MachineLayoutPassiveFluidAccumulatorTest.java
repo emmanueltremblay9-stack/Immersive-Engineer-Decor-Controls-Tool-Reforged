@@ -7,50 +7,57 @@ import org.junit.Test;
 
 public class MachineLayoutPassiveFluidAccumulatorTest {
    @Test
-   public void accumulatorUsesReferenceCanvasAndPreservesBucketSlotIndices() {
+   public void retainedCanvasPreservesBucketRolesAndIndices() {
       MachineLayout layout = MachineLayout.forKind(MachineKind.PASSIVE_FLUID_ACCUMULATOR);
-
-      assertEquals(209, layout.imageWidth());
-      assertEquals(238, layout.imageHeight());
-      assertEquals(24, layout.playerInventoryX());
-      assertEquals(150, layout.playerInventoryY());
-      assertEquals(24, layout.hotbarX());
-      assertEquals(205, layout.hotbarY());
-      assertEquals(layout.playerInventoryX(), layout.hotbarX());
-      assertEquals(185, layout.playerInventoryX() + 8 * 18 + 17);
-      assertEquals(223, layout.hotbarY() + 18);
+      assertEquals(256, layout.imageWidth());
+      assertEquals(256, layout.imageHeight());
+      assertEquals(44, layout.playerInventoryX());
+      assertEquals(138, layout.playerInventoryY());
+      assertEquals(44, layout.hotbarX());
+      assertEquals(206, layout.hotbarY());
       assertEquals(2, layout.machineSlots().size());
-      assertEquals(0, layout.machineSlots().get(0).containerIndex());
-      assertFalse(layout.machineSlots().get(0).output());
-      assertEquals(30, layout.machineSlots().get(0).x());
-      assertEquals(106, layout.machineSlots().get(0).y());
-      assertEquals(1, layout.machineSlots().get(1).containerIndex());
-      assertTrue(layout.machineSlots().get(1).output());
-      assertEquals(149, layout.machineSlots().get(1).x());
-      assertEquals(106, layout.machineSlots().get(1).y());
-      assertEquals("Filled", layout.machineSlots().get(1).role());
+      MachineLayout.MachineSlot input = layout.machineSlots().get(0);
+      MachineLayout.MachineSlot output = layout.machineSlots().get(1);
+      assertEquals(0, input.containerIndex());
+      assertEquals("Empty bucket", input.role());
+      assertFalse(input.output());
+      assertEquals(40, input.x());
+      assertEquals(100, input.y());
+      assertEquals(1, output.containerIndex());
+      assertEquals("Filled", output.role());
+      assertTrue(output.output());
+      assertEquals(200, output.x());
+      assertEquals(100, output.y());
+      assertFalse(layout.isOutputSlot(0));
+      assertTrue(layout.isOutputSlot(1));
+      assertFalse(layout.allowsAutomationExtraction(0));
+      assertTrue(layout.allowsAutomationExtraction(1));
+      assertTrue(layout.panels().isEmpty());
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
-      assertEquals("passive_fluid_accumulator", layout.textureName());
+      assertEquals("passive_fluid_accumulator_v1/background", layout.textureName());
    }
 
    @Test
-   public void accumulatorCropMapsFullNativeRegionToLogicalCanvas() {
+   public void retainedBlitUsesTheEntireSquareImageWithoutDistortion() {
       MachineLayout layout = MachineLayout.forKind(MachineKind.PASSIVE_FLUID_ACCUMULATOR);
-      GuiTextureBlit blit = new GuiTextureBlit(layout.imageWidth(), layout.imageHeight(), 278, 616, 385, 439, 941, 1672);
-
-      assertEquals(209, blit.destinationWidth());
-      assertEquals(238, blit.destinationHeight());
-      assertEquals(278, blit.sourceX());
-      assertEquals(616, blit.sourceY());
-      assertEquals(385, blit.sourceWidth());
-      assertEquals(439, blit.sourceHeight());
-      assertEquals(941, blit.textureWidth());
-      assertEquals(1672, blit.textureHeight());
+      GuiTextureBlit blit = GuiTextureBlit.stretchFullTexture(
+         layout.imageWidth(), layout.imageHeight(),
+         FluidMachineRedesignLayout.SOURCE_SIZE, FluidMachineRedesignLayout.SOURCE_SIZE);
+      assertEquals(256, blit.destinationWidth());
+      assertEquals(256, blit.destinationHeight());
+      assertEquals(0, blit.sourceX());
+      assertEquals(0, blit.sourceY());
+      assertEquals(1254, blit.sourceWidth());
+      assertEquals(1254, blit.sourceHeight());
+      assertEquals(1254, blit.textureWidth());
+      assertEquals(1254, blit.textureHeight());
+      assertEquals(blit.sourceWidth() * blit.destinationHeight(),
+         blit.sourceHeight() * blit.destinationWidth());
    }
 
    @Test(expected = IllegalArgumentException.class)
-   public void accumulatorTextureGeometryRejectsCropOutsideSourceImage() {
-      new GuiTextureBlit(209, 238, 278, 616, 385, 439, 662, 1672);
+   public void retainedBlitRejectsSourceRegionOutsideTexture() {
+      new GuiTextureBlit(256, 256, 1, 0, 1254, 1254, 1254, 1254);
    }
 
    @Test

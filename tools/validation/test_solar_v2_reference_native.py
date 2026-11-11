@@ -1,6 +1,9 @@
 import copy
 import hashlib
 import math
+import os
+import subprocess
+import sys
 from pathlib import Path
 import struct
 import tempfile
@@ -8,7 +11,7 @@ import unittest
 import zlib
 
 from solar_v2_reference_native import (ART_SHA, CASES, CAPTURES, SCREEN_CLASS, SUITE,
-                                    SmokeFailure, expected_geometry, expected_presentation_bounds, validate_proof, image_evidence, decode_png)
+                                    SmokeFailure, OWNED_DISPLAY_SCRIPT, INPUT_METHOD, expected_inputs, expected_geometry, expected_presentation_bounds, validate_proof, image_evidence, decode_png)
 
 
 def png_bytes(w,h,seed):
@@ -35,10 +38,16 @@ class NativeSolarV2ProofTest(unittest.TestCase):
                     'selected_language':'en_us','menu_slot_count':37,'slot_routes':list(range(37)),
                     'cases':sorted(CASES),'captures':[], 'cell_item':'immersiveengineering:capacitor_lv',
                     'cell_initial_buffer_fe':1000,'cell_initial_item_fe':0,'cell_charged_fe':256,'cell_remaining_buffer_fe':744}
+        self.proof['input_method']=INPUT_METHOD;self.proof['physical_slot_clicks']=76
+        self.proof['server_routes']=[dict(source_slot=i,destination_slot=29 if i==28 else 28,menu_id=1,
+            picked_source_count=0,picked_carried_count=1,picked_total=1,returned_source_count=0,
+            returned_destination_count=1,returned_carried_count=0,returned_total=1) for i in range(37)]
         self.set_captures(720)
 
     def set_captures(self,height,width=1280,gui_scale=1):
         self.width=width;self.height=height;self.gui_scale=gui_scale;self.proof['captures']=[]
+        self.proof['physical_inputs']=[dict(e,observed_gui_x=e['target_gui_x'],observed_gui_y=e['target_gui_y'],menu_id=1)
+                                       for e in expected_inputs(width,height,gui_scale)]
         key=(width,height,gui_scale)
         if key in self.CACHE:
             metadata,files=self.CACHE[key]
@@ -59,7 +68,7 @@ class NativeSolarV2ProofTest(unittest.TestCase):
             data=png_rows(width,height,rows);(self.folder/name).write_bytes(data)
             tn=name[:-4]+'-energy.png';tank=png_rows(tw,th,[row[tx*4:(tx+tw)*4] for row in rows[ty:ty+th]]);(self.folder/tn).write_bytes(tank)
             ring=image_evidence(self.folder/name,self.folder/tn,width,height,gui_scale)
-            self.proof['captures'].append({'name':name,'sha256':hashlib.sha256(data).hexdigest(),
+            self.proof['captures'].append({'parked_render_frames':2,'pointer_parked':True,'name':name,'sha256':hashlib.sha256(data).hexdigest(),
                 **viewport,**expected_presentation_bounds(width,height,gui_scale),'width':width,'height':height,'view_scale':scale,'menu_id':1,'screen_class':SCREEN_CLASS,
                 'capacity':64000,'amount':64000*fraction//2,'comparator':math.ceil(fraction*7.5),'sync_granularity_fe':100,'energy_name':tn,'energy_width':tw,'energy_height':th,
                 'energy_x':tx,'energy_y':ty,
@@ -71,6 +80,46 @@ class NativeSolarV2ProofTest(unittest.TestCase):
         opts=dict(logs=self.logs,exit_code=0,timed_out=False,width=self.width,height=self.height,
                   language=self.proof['selected_language'],gui_scale=self.gui_scale);opts.update(kwargs)
         return validate_proof(self.proof if proof is None else proof,self.nonce,self.sha,self.game,**opts)
+
+    def test_physical_evidence_fail_closed(self):
+        for key,value in [('input_method','Screen.mouseClicked'),('physical_slot_clicks',True),
+                          ('physical_slot_clicks',74),('physical_inputs',[]),('server_routes',[])]:
+            p=copy.deepcopy(self.proof);p[key]=value
+            with self.subTest(key=key),self.assertRaises(SmokeFailure):self.validate(p)
+        for section in ('physical_inputs','server_routes'):
+            p=copy.deepcopy(self.proof);del p[section]
+            with self.assertRaises(SmokeFailure):self.validate(p)
+            for key in self.proof[section][0]:
+                for value in (None,True,'wrong',float('nan'),-123):
+                    p=copy.deepcopy(self.proof);p[section][0][key]=value
+                    with self.subTest(section=section,key=key,value=value),self.assertRaises(SmokeFailure):self.validate(p)
+        p=copy.deepcopy(self.proof);p['physical_inputs'][2]=p['physical_inputs'][3]
+        with self.assertRaises(SmokeFailure):self.validate(p)
+        p=copy.deepcopy(self.proof);p['physical_inputs'][0]['observed_gui_x']+=2
+        with self.assertRaises(SmokeFailure):self.validate(p)
+    def test_clean_render_evidence_required(self):
+        for key,value in [('parked_render_frames',0),('parked_render_frames',1),('parked_render_frames',True),
+                          ('parked_render_frames',2.0),('pointer_parked',False),('pointer_parked',1)]:
+            p=copy.deepcopy(self.proof);p['captures'][0][key]=value
+            with self.subTest(key=key,value=value),self.assertRaises(SmokeFailure):self.validate(p)
+
+    def test_owned_display_marker(self):
+        guard=Path(self.tmp.name)/'guard.py';guard.write_text(OWNED_DISPLAY_SCRIPT)
+        marker=self.game/'.iedctr-client-gameplay-nonce';marker.write_text(self.nonce)
+        env=dict(os.environ,DISPLAY=':777',IEDCTR_GAMEPLAY_DIR=str(self.game),IEDCTR_GAMEPLAY_NONCE=self.nonce)
+        command=[sys.executable,str(guard),sys.executable,'-c','pass']
+        result=subprocess.run(command,env=env,capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((self.game/'.iedctr-solar-xvfb').read_text(),self.nonce+'\n:777')
+        self.assertNotEqual(subprocess.run(command,env=env,capture_output=True).returncode,0)
+    def test_owned_display_rejects_invalid_display_or_nonce(self):
+        guard=Path(self.tmp.name)/'guard.py';guard.write_text(OWNED_DISPLAY_SCRIPT)
+        (self.game/'.iedctr-client-gameplay-nonce').write_text(self.nonce)
+        for display,nonce in [('remote:0',self.nonce),('',self.nonce),(':777','stale')]:
+            env=dict(os.environ,DISPLAY=display,IEDCTR_GAMEPLAY_DIR=str(self.game),IEDCTR_GAMEPLAY_NONCE=nonce)
+            result=subprocess.run([sys.executable,str(guard),sys.executable,'-c','pass'],env=env,capture_output=True)
+            self.assertNotEqual(result.returncode,0)
+            self.assertFalse((self.game/'.iedctr-solar-xvfb').exists())
 
     def test_complete_bounded_en720(self):self.validate()
     def test_complete_bounded_fr260(self):

@@ -1,0 +1,15 @@
+{
+  "sourceRepository": "emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-DEV",
+  "sourcePullRequest": 7,
+  "sourceHead": "e4a5f6c76710cd1d801c054a669016a48aca3fa4",
+  "sourceDirectory": "candidates/iedctr/factory-placer/grey-steel-v2/",
+  "sourceFilename": "factory-placer-grey-steel-v2-concept.png",
+  "sourceGitBlob": "5649702960955531ff692b51d906ab0b5486bd59",
+  "sha256": "ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b",
+  "width": 1199,
+  "height": 1312,
+  "bytes": 1991965,
+  "runtimeAsset": "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png",
+  "transformation": "none; byte-exact PNG, uniformly scaled only at render time",
+  "defaultEnabled": false
+}

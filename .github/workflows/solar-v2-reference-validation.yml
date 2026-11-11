@@ -1,4 +1,4 @@
-name: Solar V2 reference experiment
+name: Solar V2 ordinary-JAR default qualification
 
 on:
   pull_request:
@@ -38,7 +38,7 @@ jobs:
           git rev-parse HEAD > build/tested-source-sha.txt
           find build/libs -maxdepth 1 -name '*.jar' -exec sha256sum {} + > build/tested-jar-sha256.txt
       - name: Test native evidence validator
-        run: python -m unittest discover -s tools/validation -p 'test_solar_v2_reference_native.py' -v
+        run: python -m unittest discover -s tools/validation -p 'test_solar*.py' -v
       - name: State evidence boundaries
         if: always()
         shell: bash
@@ -114,7 +114,7 @@ jobs:
           mkdir -p build
           git rev-parse HEAD > build/tested-source-sha.txt
           git status --porcelain --untracked-files=all
-      - name: Capture native interactions at requested GUI scale
+      - name: Qualify ordinary-JAR default at requested GUI scale
         run: >-
           python tools/validation/solar_v2_reference_native.py
           --language ${{ matrix.language }} --width ${{ matrix.width }} --height ${{ matrix.height }}
@@ -124,7 +124,7 @@ jobs:
         run: |
           echo "Tested checkout: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
           echo 'Requested profile: ${{ matrix.profile }}' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Proof must match requested and actual GUI scale, GUI dimensions and native framebuffer crop. Bounded screen-handler input only, not physical pointer or full visual acceptance.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Proof must match requested and actual GUI scale, GUI dimensions and native framebuffer crop. Ordinary-JAR default presentation, 76 physical clicks and 37 server routes; not exhaustive input or visual acceptance.' >> "$GITHUB_STEP_SUMMARY"
       - name: Retain native reports
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -134,6 +134,9 @@ jobs:
             build/tested-source-sha.txt
             build/solar-v2-reference-native-*/run/client-solar-v2-reference-result.json
             build/solar-v2-reference-native-*/run/solar-v2-reference-screenshots/*.png
+            build/solar-v2-reference-native-*/packaged-runtime.json
+            build/solar-v2-reference-native-*/artifact-identity.json
+            build/solar-v2-reference-native-*/tested-production.jar
             build/solar-v2-reference-native-*/prepare.log
             build/solar-v2-reference-native-*/client.log
             build/solar-v2-reference-native-*/*.observed.log

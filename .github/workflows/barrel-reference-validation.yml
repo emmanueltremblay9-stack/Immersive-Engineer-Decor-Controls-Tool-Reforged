@@ -1,4 +1,4 @@
-name: Barrel V5 reference experiment
+name: Barrel V5 default and reload qualification
 
 on:
   pull_request:

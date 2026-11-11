@@ -342,7 +342,6 @@ def main() -> int:
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.barrelReferenceNative', 'true'
-        systemProperty 'iedctr.dev.barrelV5Reference', 'true'
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         systemProperty 'iedctr.requestedGuiScale', System.getenv('IEDCTR_GUI_SCALE')
         systemProperty 'iedctr.requestedWidth', System.getenv('IEDCTR_SCREEN_WIDTH')

@@ -1,6 +1,9 @@
-package com.oblixorprime.engineersdecorreforged.client.validation;
+package com.oblixorprime.iedctrtest.solar;
 
 import com.google.gson.*;
+import com.sun.jna.NativeLibrary;
+import com.sun.jna.NativeLong;
+import com.sun.jna.Pointer;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
@@ -32,20 +35,26 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import org.lwjgl.glfw.GLFW;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 
 /** Dedicated fresh-world opt-in; never enables or edits the other gameplay harness. */
-@EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = SolarValidationMod.MOD_ID, value = Dist.CLIENT)
 public final class NativeSolarV2ReferenceValidation {
-   private static final String SUITE = "native-solar-v2-reference-v1";
+   private static final String SUITE = "native-solar-v2-reference-v3";
    private static final BlockPos POS = new BlockPos(0,80,0);
    private enum Stage { BOOT, WORLD, SETUP, CELL_READY, CELL_PICKED, CELL_CHARGING, SLOT_READY, PICKED, RETURNED, CAPTURE, CLOSE, REOPEN, DONE }
    private static Stage stage = Stage.BOOT;
    private static Path directory;
    private static String nonce;
    private static UUID playerId;
-   private static long deadline;
+   private static long deadline, lastClick;
    private static int ticks, slotIndex, captureIndex, serverMenuId, oldMenuId;
    private static boolean complete;
+   private static int parkedFrames;
+   private static NativeLibrary x11, xtest;
+   private static Pointer display;
+   private static final JsonArray INPUTS = new JsonArray(), SERVER_ROUTES = new JsonArray();
+   private static JsonObject serverRoute, packagedRuntime;
    private static int chargedCellFe, remainingBufferFe;
    private static MachineBlockEntity machine;
    private static CompletableFuture<?> pending;
@@ -56,7 +65,7 @@ public final class NativeSolarV2ReferenceValidation {
 
    @SubscribeEvent
    public static void tick(ClientTickEvent.Post event) {
-      if (!Boolean.getBoolean("iedctr.solarV2ReferenceNative") || complete) return;
+      if (!Boolean.getBoolean("iedctr.solarPackagedNative") || complete) return;
       Minecraft mc = Minecraft.getInstance();
       try {
          if (deadline == 0) deadline = System.nanoTime() + 900_000_000_000L;
@@ -112,11 +121,11 @@ public final class NativeSolarV2ReferenceValidation {
                      "Cell acceptance: authoritative server Cell slot rejected immersiveengineering:capacitor_lv");
                   return true;
                }))return;
-               click(screen,28);enter(Stage.CELL_PICKED);
+               if(!click(screen,28))return;enter(Stage.CELL_PICKED);
             }
             case CELL_PICKED -> {
                if(!matches(menu.getCarried(),cellItem()) || !serverMatches(mc,p->matches(p.containerMenu.getCarried(),cellItem()))) return;
-               click(screen,0);enter(Stage.CELL_CHARGING);
+               if(!click(screen,0))return;enter(Stage.CELL_CHARGING);
             }
             case CELL_CHARGING -> {
                if(!menu.getCarried().isEmpty() || !matches(menu.getSlot(0).getItem(),cellItem()))return;
@@ -130,23 +139,36 @@ public final class NativeSolarV2ReferenceValidation {
             }
             case SLOT_READY -> {
                if(ticks<8 || !matches(menu.getSlot(slotIndex).getItem(),fixtureItem()) || !menu.getCarried().isEmpty()) return;
-               verifyGeometry(screen,menu); click(screen,slotIndex); enter(Stage.PICKED);
+               verifyGeometry(screen,menu); if(!click(screen,slotIndex))return; enter(Stage.PICKED);
             }
             case PICKED -> {
                if(!menu.getSlot(slotIndex).getItem().isEmpty() || !matches(menu.getCarried(),fixtureItem())
-                  || !serverMatches(mc,p->p.containerMenu.getSlot(slotIndex).getItem().isEmpty() && matches(p.containerMenu.getCarried(),fixtureItem()))) return;
-               click(screen,destination());enter(Stage.RETURNED);
+                  || !serverMatches(mc,p->{
+                     if(!p.containerMenu.getSlot(slotIndex).getItem().isEmpty() || !matches(p.containerMenu.getCarried(),fixtureItem()) || total(p)!=1)return false;
+                     serverRoute=new JsonObject();serverRoute.addProperty("source_slot",slotIndex);
+                     serverRoute.addProperty("destination_slot",destination());serverRoute.addProperty("menu_id",p.containerMenu.containerId);
+                     serverRoute.addProperty("picked_source_count",p.containerMenu.getSlot(slotIndex).getItem().getCount());
+                     serverRoute.addProperty("picked_carried_count",p.containerMenu.getCarried().getCount());
+                     serverRoute.addProperty("picked_total",total(p));return true;
+                  })) return;
+               if(!click(screen,destination()))return;enter(Stage.RETURNED);
             }
             case RETURNED -> {
                if(!menu.getCarried().isEmpty() || !matches(menu.getSlot(destination()).getItem(),fixtureItem())
-                  || !serverMatches(mc,p->p.containerMenu.getCarried().isEmpty() && matches(p.containerMenu.getSlot(destination()).getItem(),fixtureItem()) && total(p)==1)) return;
-               ROUTES.add(slotIndex);
+                  || !serverMatches(mc,p->{
+                     if(!p.containerMenu.getCarried().isEmpty() || !matches(p.containerMenu.getSlot(destination()).getItem(),fixtureItem()) || total(p)!=1)return false;
+                     serverRoute.addProperty("returned_source_count",p.containerMenu.getSlot(slotIndex).getItem().getCount());
+                     serverRoute.addProperty("returned_destination_count",p.containerMenu.getSlot(destination()).getItem().getCount());
+                     serverRoute.addProperty("returned_carried_count",p.containerMenu.getCarried().getCount());
+                     serverRoute.addProperty("returned_total",total(p));return true;
+                  })) return;
+               ROUTES.add(slotIndex);SERVER_ROUTES.add(serverRoute);
                if(++slotIndex<37) prepareSlot(mc);
                else { CASES.add("all_37_pickup_return_server_confirmed"); prepareEnergy(mc); }
             }
             case CAPTURE -> {
                int amount=menu.energyCapacity()*captureIndex/2;
-               if(menu.energyStored()!=amount || ticks<12) return;
+               if(menu.energyStored()!=amount || ticks<12 || parkedFrames<2 || !pointerParked(mc)) return;
                if(!serverMatches(mc,p->machine.energyStorage(null).getEnergyStored()==amount && machine.comparatorOutput()==(int)Math.ceil(captureIndex*7.5)))return;
                require(menu.energyDisplayGranularity()==100 && menu.comparatorOutput()==(int)Math.ceil(captureIndex*7.5),"FE synchronization/comparator differs");
                verifyGeometry(screen,menu);capture(mc,menu);
@@ -159,19 +181,23 @@ public final class NativeSolarV2ReferenceValidation {
                require(menu.energyStored()==menu.energyCapacity(),"Reopen lost energy state");
                CASES.add("reopen_preserves_energy_and_geometry");enter(Stage.DONE);
             }
-            case DONE -> finish(mc,null);
+            case DONE -> { packagedRuntime=PackagedRuntimeProof.verify(mc);finish(mc,null); }
             default -> throw new IllegalStateException("Unexpected stage "+stage);
          }
       } catch(Throwable error) { finish(mc,error); }
    }
    private static void boot(Minecraft mc) throws Exception {
-      require(!Boolean.getBoolean("iedctr.clientGameplay") && Boolean.getBoolean(MachineMenu.DEV_SOLAR_V2_REFERENCE_PROPERTY),"Dedicated fixture only; V2 must be enabled");
+      require(System.getProperty(MachineMenu.DEV_SOLAR_V2_REFERENCE_PROPERTY)==null,"Default presentation must be tested without a selector");
+      packagedRuntime=PackagedRuntimeProof.verify(mc);
       nonce=System.getProperty("iedctr.clientGameplayNonce","");
       require(nonce.matches("[a-f0-9]{32}") && System.getProperty("iedctr.executedSourceSha","").matches("[a-f0-9]{40}"),"Missing nonce or exact revision");
       directory=mc.gameDirectory.toPath().toRealPath();
       require(directory.equals(Path.of(System.getProperty("iedctr.clientGameplayDirectory","")).toRealPath()) && Files.readString(directory.resolve(".iedctr-client-gameplay-nonce")).equals(nonce),"Isolation marker mismatch");
       require(mc.level==null && mc.getSingleplayerServer()==null && !Files.exists(directory.resolve("solar-v2-reference-screenshots")),"Refusing existing world/captures");
       verifyViewport(mc);
+      require(Files.readString(directory.resolve(".iedctr-solar-xvfb")).equals(nonce+"\n"+System.getenv("DISPLAY")),"Display is not nonce-owned Xvfb");
+      x11=NativeLibrary.getInstance("X11");xtest=NativeLibrary.getInstance("Xtst");
+      display=x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null});require(display!=null,"X11 unavailable");
       if(Files.exists(directory.resolve("saves"))) try(var entries=Files.list(directory.resolve("saves"))) { require(entries.findAny().isEmpty(),"Existing saves forbidden"); }
       String name="iedctr-solar-v2-"+nonce;
       mc.options.pauseOnLostFocus=false;
@@ -212,14 +238,59 @@ public final class NativeSolarV2ReferenceValidation {
          machine.dataAccessForTests().set(3,320*captureIndex);
          machine.setChanged();p.containerMenu.broadcastChanges();
       });
-      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),mc.getWindow().getScreenWidth()-2,mc.getWindow().getScreenHeight()-2);
+      park(mc);parkedFrames=0;
       enter(Stage.CAPTURE);
    }
-   private static void click(SolarV2ReferenceScreen screen,int index) {
-      var a=SolarV2ReferenceGeometry.anchor(index);var v=screen.validationViewTransform();
-      screen.mouseClicked(v.screenX(a.x()+8),v.screenY(a.y()+8),0);
-      screen.mouseReleased(v.screenX(a.x()+8),v.screenY(a.y()+8),0);
-   }
+    /** Move through X11, wait for GLFW's observed cursor, then send one physical click. */
+    private static boolean click(SolarV2ReferenceScreen screen,int target){
+        if(System.nanoTime()-lastClick<350_000_000L)return false; // Exclude vanilla double-click collection.
+        var mc=Minecraft.getInstance();long window=mc.getWindow().getWindow();
+        if(GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){
+            GLFW.glfwFocusWindow(window);return false;
+        }
+        var a=SolarV2ReferenceGeometry.anchor(target);var v=screen.validationViewTransform();
+        double x=v.screenX(a.x()+8),y=v.screenY(a.y()+8);
+        double observedX=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth();
+        double observedY=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
+        if(Math.abs(observedX-x)>1 || Math.abs(observedY-y)>1){
+            int[] wx={0},wy={0};GLFW.glfwGetWindowPos(window,wx,wy);
+            int px=wx[0]+(int)Math.round(x*mc.getWindow().getScreenWidth()/screen.width);
+            int py=wy[0]+(int)Math.round(y*mc.getWindow().getScreenHeight()/screen.height);
+            require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display,-1,px,py,new NativeLong(0)})!=0,"Physical slot motion failed");
+            x11.getFunction("XFlush").invokeInt(new Object[]{display});return false;
+        }
+        require(screen.validationSlotHoveredAt(target,observedX,observedY),"Physical cursor misses transformed slot");
+        JsonObject input=new JsonObject();
+        input.addProperty("target_slot",target);input.addProperty("stage",stage.name());
+        input.addProperty("target_gui_x",x);input.addProperty("target_gui_y",y);
+        input.addProperty("observed_gui_x",observedX);input.addProperty("observed_gui_y",observedY);
+        input.addProperty("menu_id",mc.player.containerMenu.containerId);
+        nativeClick(1);lastClick=System.nanoTime();INPUTS.add(input);return true;
+    }
+    private static void nativeClick(int button){
+        require(xtest.getFunction("XTestFakeButtonEvent").invokeInt(new Object[]{display,button,1,new NativeLong(0)})!=0,"Physical press failed");
+        require(xtest.getFunction("XTestFakeButtonEvent").invokeInt(new Object[]{display,button,0,new NativeLong(0)})!=0,"Physical release failed");
+        x11.getFunction("XFlush").invokeInt(new Object[]{display});
+    }
+    private static void park(Minecraft mc){
+        int[] x={0},y={0};GLFW.glfwGetWindowPos(mc.getWindow().getWindow(),x,y);
+        require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display,-1,
+            x[0]+mc.getWindow().getScreenWidth()-2,y[0]+mc.getWindow().getScreenHeight()-2,new NativeLong(0)})!=0,"Physical parking failed");
+        x11.getFunction("XFlush").invokeInt(new Object[]{display});
+    }
+    private static boolean pointerParked(Minecraft mc){
+        return Math.abs(mc.mouseHandler.xpos()-(mc.getWindow().getScreenWidth()-2))<=1
+            && Math.abs(mc.mouseHandler.ypos()-(mc.getWindow().getScreenHeight()-2))<=1;
+    }
+    @SubscribeEvent public static void afterRender(ScreenEvent.Render.Post event){
+        if(!Boolean.getBoolean("iedctr.solarPackagedNative") || complete)return;
+        var mc=Minecraft.getInstance();
+        if(stage==Stage.CAPTURE && event.getScreen()==mc.screen
+            && mc.screen instanceof SolarV2ReferenceScreen && pointerParked(mc) && mc.getOverlay()==null
+            && pending==null && mc.player!=null && mc.player.containerMenu instanceof MachineMenu menu
+            && menu.containerId==serverMenuId && menu.energyStored()==menu.energyCapacity()*captureIndex/2)parkedFrames++;
+        else parkedFrames=0;
+    }
    private static void verifyGeometry(SolarV2ReferenceScreen screen,MachineMenu menu) {
       verifyViewport(Minecraft.getInstance());
       require(menu.solarV2ReferencePresentation() && menu.kind()==MachineKind.SMALL_SOLAR_PANEL && menu.slots.size()==37 && menu.visibleMachineSlots()==1,"Wrong native menu");
@@ -265,6 +336,7 @@ public final class NativeSolarV2ReferenceValidation {
       var screen=(SolarV2ReferenceScreen)mc.screen;
       c.addProperty("presentation_gui_left",screen.getGuiLeft());c.addProperty("presentation_gui_top",screen.getGuiTop());
       c.addProperty("presentation_gui_width",screen.getXSize());c.addProperty("presentation_gui_height",screen.getYSize());
+      c.addProperty("parked_render_frames",parkedFrames);c.addProperty("pointer_parked",pointerParked(mc));
       addViewport(c,mc);double guiScale=mc.getWindow().getGuiScale();
       try(var frame=Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
          frame.writeToFile(file);c.addProperty("width",frame.getWidth());c.addProperty("height",frame.getHeight());
@@ -320,7 +392,8 @@ public final class NativeSolarV2ReferenceValidation {
             p.addProperty("selected_language",mc.getLanguageManager().getSelected());p.addProperty("source_art_sha256",SolarV2ReferenceGeometry.SOURCE_SHA256);
             addViewport(p,mc);
             p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);p.addProperty("native_visual_acceptance",false);p.addProperty("menu_slot_count",37);
-            p.addProperty("input_method","Screen.mouseClicked/mouseReleased with vanilla packets and server observation; GLFW cursor parking only, no physical pointer, resource reload or complex gesture coverage");
+            p.addProperty("input_method","XTest physical slot clicks; observed GLFW cursor and server inventory transitions");
+            p.add("packaged_runtime",packagedRuntime);p.add("server_routes",SERVER_ROUTES);p.add("physical_inputs",INPUTS);p.addProperty("physical_slot_clicks",INPUTS.size());
             p.addProperty("cell_item","immersiveengineering:capacitor_lv");
             p.addProperty("cell_initial_buffer_fe",1000);p.addProperty("cell_initial_item_fe",0);
             p.addProperty("cell_charged_fe",chargedCellFe);p.addProperty("cell_remaining_buffer_fe",remainingBufferFe);
@@ -331,6 +404,7 @@ public final class NativeSolarV2ReferenceValidation {
       }catch(Exception writeError){EngineersDecorReforged.LOGGER.error("Solar V2 proof write failed",writeError);}
       if(error==null)EngineersDecorReforged.LOGGER.info("IEDCTR_SOLAR_V2_REFERENCE PASSED nonce={}",nonce);
       else EngineersDecorReforged.LOGGER.error("IEDCTR_SOLAR_V2_REFERENCE FAILED at "+stage,error);
+      if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}
       mc.stop();
    }
    private static void require(boolean b,String message){if(!b)throw new IllegalStateException(message);}

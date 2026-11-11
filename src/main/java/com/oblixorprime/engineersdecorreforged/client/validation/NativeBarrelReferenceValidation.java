@@ -210,7 +210,7 @@ public final class NativeBarrelReferenceValidation {
       } catch(Throwable error) { finish(mc,error); }
    }
    private static void boot(Minecraft mc) throws Exception {
-      require(!Boolean.getBoolean("iedctr.clientGameplay") && Boolean.getBoolean(MachineMenu.DEV_BARREL_REFERENCE_PROPERTY),"Dedicated fixture only; V5 must be enabled");
+      require(!Boolean.getBoolean("iedctr.clientGameplay") && System.getProperty(MachineMenu.DEV_BARREL_REFERENCE_PROPERTY) == null,"Dedicated fixture only; V5 must use its normal default");
       nonce=System.getProperty("iedctr.clientGameplayNonce","");
       require(nonce.matches("[a-f0-9]{32}") && System.getProperty("iedctr.executedSourceSha","").matches("[a-f0-9]{40}"),"Missing nonce or exact revision");
       directory=mc.gameDirectory.toPath().toRealPath();
