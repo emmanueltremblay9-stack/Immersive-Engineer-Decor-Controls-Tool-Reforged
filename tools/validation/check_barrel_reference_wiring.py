@@ -24,7 +24,7 @@ for method, geometry_method in (('getGuiLeft', 'guiLeft'), ('getGuiTop', 'guiTop
 assert 'leftPos = 0; topPos = 0;' in s
 assert 'imageWidth = BarrelReferenceGeometry.CANVAS_WIDTH;' in s
 assert 'imageHeight = BarrelReferenceGeometry.CANVAS_HEIGHT;' in s
-assert 'this(kind, id, inventory, container, data, false, false)' in m
+assert 'this(kind, id, inventory, container, data, false, false, false)' in m
 assert 'kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide' in m
 assert 'Boolean.parseBoolean(System.getProperty(DEV_BARREL_REFERENCE_PROPERTY, "true"))' in m
 assert 'new MachineScreen.FluidBarrelScreen(menu, inventory, title)' in c
