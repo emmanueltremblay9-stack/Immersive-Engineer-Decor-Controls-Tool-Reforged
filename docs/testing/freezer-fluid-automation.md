@@ -1,0 +1,104 @@
+# Small Water Freezer fluid and bucket automation
+
+## Problem and scope
+
+On baseline `fdf26aadc45580b7ca4211a32323125f3c276d5b`, the Freezer exposes item and energy capabilities but no fluid capability. IE pipes therefore cannot connect. The water-bucket item recipe leaves an empty bucket in input slot 0, while item capability extraction permits only output slot 2.
+
+This patch repairs those two automation paths. It does not import Freezer V5 or Barrel V5 presentation work, change their defaults, change recipes/dependencies, increment a version, or authorize a release.
+
+## Contract and rationale
+
+- Accept plain vanilla water through all six faces and unsided capability access. Capacity is 2,000 mB, matching the original Engineer's Decor Freezer. Reject other fluids and component-bearing fluid stacks rather than silently losing their data.
+- When input slot 0 is empty, a complete 1,000 mB water batch may freeze into one Ice in output slot 2. Water is consumed only on completion; each cycle retains the current 180 ticks at 8 FE/tick. Partial water waits without energy use. Two full batches yield two ordinary Ice blocks.
+- An occupied slot 0 retains priority. Water Bucket, Ice and Packed Ice keep their current recipes; invalid input and the empty-bucket remainder block the fluid recipe until removed. Tank water is not also charged for item recipes. Slot 1 remains reserved for recovery of legacy contents.
+- Automation may extract output slot 2 and only an empty bucket from slot 0, on every face. Both item capability and vanilla container paths follow this rule, so a recycling hopper cannot remove an unprocessed water bucket. This intentionally narrows previously unrestricted vanilla extraction of Freezer input/reserved slots; manual GUI recovery remains available.
+- Redstone HIGH, insufficient FE and blocked output retain the current reset behavior. Switching between item and tank sources starts a fresh paid cycle. Draining an active fluid batch below 1,000 mB invalidates its work immediately, even if refilled before another server tick. Simulated transfers do not mutate state.
+- The additive `FreezerFluidProcess` save marker identifies tank-funded progress. Older saves without it retain valid item progress. Fluid amount/type are capacity- and type-checked on load. There is no registry, slot-index or blockstate migration.
+- Existing menu field 2 carries the bounded tank amount; field count remains 16 and slot count 39. Preview/status use the same source selection as the server. No new presentation controls, artwork or protocol length are introduced.
+- Direct hand use of a water bucket still spends 1,440 FE immediately, returns the player's empty bucket and inserts Ice independently of the tank. The comparator still indicates freezing phase, not tank fullness.
+- The original mod's automatic Ice/Packed Ice/Blue Ice phase progression is not imported: it would change the current reconstructed mod's explicit item recipes. This is fluid-input restoration, not a recipe redesign.
+
+## Source references
+
+- [Original Engineer's Decor Freezer, pinned 1.19 source](https://github.com/wilechaote/EngineersDecor/blob/a561e61e35ce0367088356967e1ea4cad5c1f27d/src/main/java/wile/engineersdecor/blocks/EdFreezer.java): 2,000 mB water tank and fluid capability independent of face.
+- [IE pipe, pinned 12.4.2-194 source](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/java/blusunrize/immersiveengineering/common/blocks/metal/FluidPipeBlockEntity.java): neighboring fluid capability with a nonzero tank count determines connection availability.
+- [Baseline machine implementation](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/blob/fdf26aadc45580b7ca4211a32323125f3c276d5b/src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java).
+
+## Automated qualification
+
+`FreezerFluidAutomationGameTests` contains 13 tests using registered public capabilities and real server ticks. Coverage includes every side, capacity/partial/overflow handling, rejected fluids/components, defensive stack copies, both drain APIs, simulation, exact resource costs, interruptions, source changes, saved-state normalization, legacy item progress and contents, real hopper bucket/ice recovery, unchanged direct use and menu fields.
+
+The IE integration test places the actual registered IE pipe, checks its connection bit, transfers water through its real fluid handler on each face, saves/replaces/reloads the Freezer, finishes the paid cycle, extracts Ice and verifies that the pipe can route to the replacement block entity. This is not a natural chunk-unload test, a physical pump test, or a conveyor motion test.
+
+Run the normal Java/unit/dedicated GameTest suite and existing regression validators. Qualify the exact branch commit, not only the PR merge ref. At authoring time the local Gradle wrapper could not download its distribution due to network unavailability; syntax-only inspection is not compilation and CI results must be reported separately.
+
+## Remaining manual client checklist
+
+On a disposable world with the candidate JAR and pinned IE dependency:
+
+1. Connect a powered IE fluid pump and pipe to each Freezer face. Confirm the pipe's visible connection, water delivery and Ice production with FE supplied.
+2. Use the normal GUI to verify the Ice preview, progress, insufficient-energy, redstone and output-blocked states while filling by pipe. Check the existing presentation without opt-in flags.
+3. Feed Water Buckets with an IE conveyor. Recover empty buckets and Ice with configured extraction; verify full buckets are not removed before processing and repeat multiple cycles.
+4. Save/quit/reload and naturally unload/reload the chunk mid-cycle. Confirm stored water, paid progress, pipe reconnection and one-time consumption/output.
+5. Compare direct hand-bucket behavior, Ice/Packed Ice item recipes, comparator, reserved-slot manual recovery and existing saves against the baseline.
+
+Record the tested commit, JAR SHA-256, Minecraft/NeoForge/IE versions and actual observations. Do not claim this client checklist passed solely because server GameTests passed.
+
+
+## Reconciliation with Tree, Barrel and Solar on 2026-11-11
+
+PR172 source `9bfd466766ac66af759600ea74ff5e039daba3d5` is reconciled with main
+`509913bd891e7a7bfd7dfa589a3b1fa1008e0397`. The only production conflicts were
+`canTakeItemThroughFace` and `canTakeItem` in `MachineBlockEntity`. Both retain
+Tree Cutter's `slot == 0` and Freezer's `canAutomationExtract(slot)` checks.
+Their machine kinds are disjoint. No other production behavior was redesigned.
+
+The Solar preservation manifest retains its original `files` map and entire
+`tree_cutter_integration` record unchanged. A separate
+`freezer_fluid_automation_integration` layer records the two source commits,
+their original file hashes, and the exact combined MachineBlockEntity and
+MachineMenu identities. The checker independently pins these identities and
+requires precisely those two paths. Rehashing a mutated manifest cannot admit
+changed source. The combined MachineBlockEntity SHA-256 is
+`9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63`.
+
+The original menu suffix hash remains unchanged. Only the exact Tree accessor
+and complete, canonical fluid-aware `freezerPreviewStack` method are normalized,
+the latter back to its exact historical implementation. Missing, changed,
+duplicated or reverted preview methods, unrelated suffix edits, loss or widening
+of either extraction branch, altered provenance and extra/missing integration
+paths are mutation-tested. Barrel and Solar wiring guards remain enabled.
+
+This integration requires fresh mapped compilation, JUnit (including Freezer
+layout/gauge and Tree geometry), all 13 Freezer and nine Tree regression
+GameTests in normal and Lithium CI, existing client gates, packaging and the
+required aggregate. Record the new candidate/checkout/tree identities and JAR
+hash from those runs. Earlier green runs, the old 768-test result and historical
+JAR hashes do not qualify this candidate. Local Python and standalone geometry
+checks are not a substitute for the mapped build or gameplay evidence.
+
+The powered IE pump, conveyor bucket recycling, ordinary fluid-fed GUI states,
+and natural chunk unload/reload checklist above remains **unqualified**.
+Reconciliation and block-entity replacement tests do not prove those behaviors.
+Any substantial new automation for that checklist needs a separate, scoped
+Markdown implementation mandate. No merge, release, installation or user-server
+qualification is included in this reconciliation.
+
+### Isolated Factory Placer qualification follow-up
+
+The first reconciled candidate `044b2b365dc57eded4a46720d09d2121ef1849b7`
+passed its Freezer/Tree GameTests, but a separate existing Factory Placer
+packaged-default smoke failed at menu opening. Its error-message expression
+called `mc.screen.getClass()` while the client screen was still null after the
+server had opened the menu. Source and JAR identities matched; the proof's
+`failed` status correctly made the evidence validator reject it.
+
+The isolated validation harness now returns while the client screen is null,
+then still rejects every non-null unexpected screen. Its existing deadline,
+tick limit, server-menu checks and evidence gates are unchanged. An executable
+Java excerpt regression exercises delayed null-to-ready transition, wrong
+screen rejection, and both timeout limits; the original code is a negative
+control that must reproduce the null dereference. This is a pre-existing test
+harness fix, not a change to Freezer or Factory Placer production behavior.
+Fresh CI must qualify the follow-up commit; the first candidate's successful
+checks do not replace final-source qualification.

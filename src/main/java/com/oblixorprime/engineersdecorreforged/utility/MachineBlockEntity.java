@@ -169,6 +169,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
     private static final TagKey<Item> MINERAL_INPUT_TAG = TagKey.create(Registries.ITEM,
         ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", "mineral_smelter_inputs"));
     public static final int FREEZER_PROCESS_TICKS = 180;
+   public static final int FREEZER_WATER_CAPACITY = 2000;
     public static final int FREEZER_STATUS_IDLE = 0;
     public static final int FREEZER_STATUS_READY = 1;
     public static final int FREEZER_STATUS_PROCESSING = 2;
@@ -202,6 +203,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int burnTicks;
    private int fuelBurnTime;
    private int fluidAmount;
+   private boolean freezerFluidProcess;
    private int energy;
    private int blockBreakerStatus;
    private int blockBreakerHardnessBits;
@@ -458,12 +460,13 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          return tank == 0
             && MachineBlockEntity.this.canHandleFluids(kind)
             && !stack.isEmpty()
+            && (kind != MachineKind.SMALL_FREEZER || FluidStack.isSameFluidSameComponents(stack, new FluidStack(Fluids.WATER, 1)))
             && MachineBlockEntity.this.canStoreFluidType(kind, MachineBlockEntity.this.typeForFluid(stack.getFluid()));
       }
 
       public int fill(FluidStack resource, FluidAction action) {
          MachineKind kind = MachineBlockEntity.this.kind();
-         if (MachineBlockEntity.this.canHandleFluids(kind) && !resource.isEmpty()) {
+         if (this.isFluidValid(0, resource)) {
             String type = MachineBlockEntity.this.typeForFluid(resource.getFluid());
             if (MachineBlockEntity.this.canStoreFluidType(kind, type)
                && (MachineBlockEntity.this.fluidType.isEmpty() || MachineBlockEntity.this.fluidType.equals(type))) {
@@ -488,7 +491,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
 
       public FluidStack drain(FluidStack resource, FluidAction action) {
-         if (!resource.isEmpty() && MachineBlockEntity.this.canHandleFluids(MachineBlockEntity.this.kind()) && MachineBlockEntity.this.fluidAmount > 0) {
+         if (!resource.isEmpty() && MachineBlockEntity.this.canHandleFluids(MachineBlockEntity.this.kind()) && MachineBlockEntity.this.fluidAmount > 0
+               && (MachineBlockEntity.this.kind() != MachineKind.SMALL_FREEZER || this.isFluidValid(0, resource))) {
             Fluid storedFluid = MachineBlockEntity.this.fluidForType(MachineBlockEntity.this.fluidType);
             return storedFluid != Fluids.EMPTY && resource.is(storedFluid) ? this.drain(resource.getAmount(), action) : FluidStack.EMPTY;
          } else {
@@ -511,6 +515,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                if (MachineBlockEntity.this.fluidAmount <= 0) {
                   MachineBlockEntity.this.fluidAmount = 0;
                   MachineBlockEntity.this.fluidType = "";
+               }
+               // Losing the active batch invalidates its work even if a pipe refills before the next tick.
+               if (kind == MachineKind.SMALL_FREEZER && MachineBlockEntity.this.freezerFluidProcess
+                     && MachineBlockEntity.this.fluidAmount < BUCKET_AMOUNT) {
+                  MachineBlockEntity.this.stopFreezerProcess();
                }
 
                MachineBlockEntity.this.syncFluidLevel(MachineBlockEntity.this.propertyForFluidLevel(), MachineBlockEntity.this.capacityFor(kind));
@@ -1093,6 +1102,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    @Override
    public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) {
       if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;
+      if (this.kind() == MachineKind.SMALL_FREEZER) return this.canAutomationExtract(slot);
         if (this.kind() == MachineKind.LABELED_CRATE) {
             return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
         }
@@ -1106,6 +1116,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    @Override
    public boolean canTakeItem(Container destination, int slot, ItemStack stack) {
       if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;
+      if (this.kind() == MachineKind.SMALL_FREEZER) return this.canAutomationExtract(slot);
         if (this.kind() == MachineKind.LABELED_CRATE) {
             return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
         }
@@ -1572,6 +1583,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield kind.ordinal();
                case 1:
                   yield this.progress;
+               case 2:
+                  yield this.fluidAmount;
                case 3:
                   yield this.energy;
                case 4:
@@ -1835,6 +1848,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   case 1:
                      this.progress = Mth.clamp(value, 0, FREEZER_PROCESS_TICKS);
                      return;
+                  case 2:
+                     this.fluidAmount = Mth.clamp(value, 0, FREEZER_WATER_CAPACITY);
+                     this.fluidType = this.fluidAmount > 0 ? "water" : "";
+                     return;
                   case 3:
                      this.energy = Mth.clamp(value, 0, this.energyCapacity(kind));
                      return;
@@ -1899,6 +1916,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.fluidAmount = tag.getInt("FluidAmount");
       this.energy = tag.getInt("Energy");
       this.fluidType = tag.getString("FluidType");
+      this.freezerFluidProcess = this.kind() == MachineKind.SMALL_FREEZER && tag.getBoolean("FreezerFluidProcess");
       if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
          this.unreadableFunnelFluid = null;
          this.funnelCaptureProgress = 0;
@@ -2024,6 +2042,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       tag.putInt("FifoTimer", this.fifoTimer);
       tag.putInt("MachineSlotCursor", this.machineSlotCursor);
       tag.putInt("Progress", this.progress);
+      if (this.kind() == MachineKind.SMALL_FREEZER) tag.putBoolean("FreezerFluidProcess", this.freezerFluidProcess);
       tag.putInt("ProcessTimeNeeded", this.processTimeNeeded);
       tag.putInt("Cooldown", this.cooldown);
       tag.putInt("BurnTicks", this.burnTicks);
@@ -2963,26 +2982,35 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (powered) {
          this.stopFreezerProcess();
       } else {
+         // Item recipes retain priority; fluid work never consumes or overwrites an occupied input slot.
+         boolean fluidInput = this.freezerFluidInputReady();
          int slot = this.firstFreezableSlot();
-         if (slot < 0) {
+         if (slot < 0 && !fluidInput) {
             this.stopFreezerProcess();
          } else {
-            ItemStack result = this.freezerResult((ItemStack)this.items.get(slot));
+            if (this.progress > 0 && this.freezerFluidProcess != fluidInput) this.stopFreezerProcess();
+            ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult((ItemStack)this.items.get(slot));
             if (!result.isEmpty() && this.canInsertIntoSlots(result, 2)) {
                if (this.energy < 8) {
                   this.stopFreezerProcess();
                } else {
+                  this.freezerFluidProcess = fluidInput;
                   this.energy -= 8;
                   this.setChanged();
                   this.progress++;
                   this.setIntProperty(MachineBlocks.PHASE_0_4, Math.min(4, this.progress / 45));
                   if (this.progress >= FREEZER_PROCESS_TICKS) {
-                     ItemStack input = (ItemStack)this.items.get(slot);
-                     if (input.is(Items.WATER_BUCKET)) {
-                        input.shrink(1);
-                        this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);
+                     if (fluidInput) {
+                        this.fluidAmount -= BUCKET_AMOUNT;
+                        if (this.fluidAmount == 0) this.fluidType = "";
                      } else {
-                        input.shrink(1);
+                        ItemStack input = (ItemStack)this.items.get(slot);
+                        if (input.is(Items.WATER_BUCKET)) {
+                           input.shrink(1);
+                           this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);
+                        } else {
+                           input.shrink(1);
+                        }
                      }
 
                      this.insertIntoSlots(result, 2);
@@ -2997,8 +3025,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void stopFreezerProcess() {
-      boolean changed = this.progress != 0 || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;
+      boolean changed = this.progress != 0 || this.freezerFluidProcess || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;
       this.progress = 0;
+      this.freezerFluidProcess = false;
       this.setIntProperty(MachineBlocks.PHASE_0_4, 0);
       if (changed) {
          this.setChanged();
@@ -3572,7 +3601,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private boolean canHandleFluids(MachineKind kind) {
-      return kind != null && kind.isFluidContainer();
+      // Keep bucket-hand interaction and comparator semantics separate from pipe capability support.
+      return kind != null && (kind.isFluidContainer() || kind == MachineKind.SMALL_FREEZER);
    }
 
    private boolean canStoreFluidType(MachineKind kind, String type) {
@@ -3582,7 +3612,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
       return switch (kind) {
          case SMALL_MINERAL_SMELTER -> type.equals("lava");
-         case PASSIVE_FLUID_ACCUMULATOR -> type.equals("water");
+         case PASSIVE_FLUID_ACCUMULATOR, SMALL_FREEZER -> type.equals("water");
          case SMALL_MILKING_MACHINE -> type.equals("milk");
          case FLUID_BARREL, SMALL_FLUID_FUNNEL -> type.equals("water") || type.equals("lava") || type.equals("milk");
          default -> false;
@@ -3614,6 +3644,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private int capacityFor(MachineKind kind) {
+      if (kind == MachineKind.SMALL_FREEZER) return FREEZER_WATER_CAPACITY;
       if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
          return 3000;
       } else {
@@ -4593,6 +4624,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.fluidAmount = 0;
          this.fluidType = "";
       }
+      if (kind == MachineKind.SMALL_FREEZER && this.freezerFluidProcess
+            && (this.progress == 0 || !this.freezerFluidInputReady())) {
+         this.stopFreezerProcess();
+      }
    }
 
    private static int validSavedProgress(int value, int completeAt) {
@@ -4636,6 +4671,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (kind == null || !this.validAutomationSlot(slot)) {
          return false;
       }
+      if (kind == MachineKind.SMALL_FREEZER && slot == 0 && this.items.get(0).is(Items.BUCKET)) return true;
 
       return MachineLayout.forKind(kind).allowsAutomationExtraction(slot);
    }
@@ -4670,16 +4706,21 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return !this.freezerResult((ItemStack)this.items.get(0)).isEmpty() ? 0 : -1;
    }
 
+   private boolean freezerFluidInputReady() {
+      return this.items.get(0).isEmpty() && "water".equals(this.fluidType) && this.fluidAmount >= BUCKET_AMOUNT;
+   }
+
    private int freezerStatusSyncValue() {
       int status;
       if (this.previousPowered) {
          status = FREEZER_STATUS_REDSTONE_PAUSED;
       } else {
          ItemStack input = (ItemStack)this.items.get(0);
-         if (input.isEmpty()) {
+         boolean fluidInput = this.freezerFluidInputReady();
+         if (input.isEmpty() && !fluidInput) {
             status = FREEZER_STATUS_IDLE;
          } else {
-            ItemStack result = this.freezerResult(input);
+            ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult(input);
             if (result.isEmpty()) {
                status = FREEZER_STATUS_INVALID_INPUT;
             } else if (!this.canInsertIntoSlots(result, 2)) {
