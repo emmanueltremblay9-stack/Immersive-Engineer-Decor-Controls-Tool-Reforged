@@ -137,140 +137,140 @@ Utilisation : déclenchez des machines, déverrouillez des portes, activez des a
 Remarque : revient à son état initial après la durée prévue de l'impulsion.
 <np>
 Plaque de contact en verre
-Impulsion de pression
-<&glass_contact_mat>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&glass_contact_mat>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Contact de porte en verre
-Impulsion de pression
-<&glass_door_contact_mat>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&glass_door_contact_mat>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Tapis de contact
-Impulsion de pression
-<&industrial_contact_mat>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&industrial_contact_mat>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Tapis de contact de porte
-Impulsion de pression
-<&industrial_door_contact_mat>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&industrial_door_contact_mat>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Détecteur de chute
-Détection de signal
-<&industrial_fallthrough_detector>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&industrial_fallthrough_detector>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Bouton de pied
-Commande redstone
-<&industrial_foot_button>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&industrial_foot_button>Le bouton au pied fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : fixez-le sur une face solide, sur le trajet des entités. Leur contact l'active et il reste actif tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : il vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Trappe industrielle sensible aux chocs
-Impulsion de pression
-<&industrial_high_sensitive_trapdoor>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&industrial_high_sensitive_trapdoor>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Tapis de contact sensible aux chocs
-Impulsion de pression
-<&industrial_shock_sensitive_contact_mat>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&industrial_shock_sensitive_contact_mat>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Trappe activée par les chocs
-Impulsion de pression
-<&industrial_shock_sensitive_trapdoor>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&industrial_shock_sensitive_trapdoor>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Plante énergétique rouge
-Impulsion de pression
-<&red_power_plant>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&red_power_plant>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Plaque de pression rustique
-Impulsion de pression
-<&rustic_contact_plate>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&rustic_contact_plate>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Plaque de pression de porte rustique
-Impulsion de pression
-<&rustic_door_contact_plate>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&rustic_door_contact_plate>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Détecteur de chute rustique
-Détection de signal
-<&rustic_fallthrough_detector>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&rustic_fallthrough_detector>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Trappe rustique sensible aux chocs
-Impulsion de pression
-<&rustic_high_sensitive_trapdoor>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&rustic_high_sensitive_trapdoor>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Plaque rustique sensible aux chocs
-Impulsion de pression
-<&rustic_shock_sensitive_plate>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&rustic_shock_sensitive_plate>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Trappe rustique sensible aux chocs
-Impulsion de pression
-<&rustic_shock_sensitive_trapdoor>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&rustic_shock_sensitive_trapdoor>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Plante énergétique jaune
-Impulsion de pression
-<&yellow_power_plant>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&yellow_power_plant>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
 <np>
 Horloge de minuterie en verre
 Signal diurne
@@ -290,19 +290,19 @@ Remarque : surveille une petite zone autour du bloc.
 <np>
 Minuterie d'intervalle en verre
 Impulsion temporisée
-<&glass_interval_timer>Une minuterie compacte fournit une impulsion de redstone programmée.<br>
+<&glass_interval_timer>Cette minuterie produit une seule impulsion redstone à puissance maximale lorsqu'on clique dessus.<br>
 <br>
-Utilisation : commandez un petit mécanisme de manière périodique ou différée.<br>
+Utilisation : faites un clic droit pour déclencher immédiatement un mécanisme. La sortie s'arrête après 40 ticks de jeu, soit environ deux secondes à vitesse normale.<br>
 <br>
-Remarque : utilise des impulsions de redstone programmées.
+Remarque : elle ne se répète pas automatiquement ; elle sert à déclencher manuellement un signal temporisé.
 <np>
 Détecteur linéaire en verre
 Détection de signal
-<&glass_linear_entity_detector>Un détecteur d'entité surveille les mouvements proches sans plaque visible au sol.<br>
+<&glass_linear_entity_detector>Ce détecteur surveille un couloir étroit devant sa face de détection.<br>
 <br>
-Utilisation : reliez-le aux portes, lampes, alarmes ou verrouillages de sécurité des machines.<br>
+Utilisation : orientez-le le long du passage à surveiller, puis reliez sa sortie aux portes, lampes, alarmes ou verrouillages de sécurité des machines.<br>
 <br>
-Remarque : surveille une petite zone autour du bloc.
+Remarque : il détecte les entités dans ce couloir avant, plutôt que de surveiller les environs de tous les côtés.
 <np>
 Détecteur de bloc
 Détection de signal
@@ -330,11 +330,11 @@ Remarque : surveille une petite zone autour du bloc.
 <np>
 Minuterie d'intervalle
 Impulsion temporisée
-<&industrial_interval_timer>Une minuterie compacte fournit une impulsion de redstone programmée.<br>
+<&industrial_interval_timer>Cette minuterie produit une seule impulsion redstone à puissance maximale lorsqu'on clique dessus.<br>
 <br>
-Utilisation : commandez un petit mécanisme de manière périodique ou différée.<br>
+Utilisation : faites un clic droit pour déclencher immédiatement un mécanisme. La sortie s'arrête après 40 ticks de jeu, soit environ deux secondes à vitesse normale.<br>
 <br>
-Remarque : utilise des impulsions de redstone programmées.
+Remarque : elle ne se répète pas automatiquement ; elle sert à déclencher manuellement un signal temporisé.
 <np>
 Capteur de lumière
 Détection de signal
@@ -354,11 +354,11 @@ Remarque : nécessite un orage et un accès au ciel.
 <np>
 Détecteur linéaire d'entité
 Détection de signal
-<&industrial_linear_entity_detector>Un détecteur d'entité surveille les mouvements proches sans plaque visible au sol.<br>
+<&industrial_linear_entity_detector>Ce détecteur surveille un couloir étroit devant sa face de détection.<br>
 <br>
-Utilisation : reliez-le aux portes, lampes, alarmes ou verrouillages de sécurité des machines.<br>
+Utilisation : orientez-le le long du passage à surveiller, puis reliez sa sortie aux portes, lampes, alarmes ou verrouillages de sécurité des machines.<br>
 <br>
-Remarque : surveille une petite zone autour du bloc.
+Remarque : il détecte les entités dans ce couloir avant, plutôt que de surveiller les environs de tous les côtés.
 <np>
 Capteur de pluie
 Détection de signal
@@ -410,59 +410,59 @@ Remarque : change d'état en présence d'un signal de redstone à proximité.
 <np>
 Jauge à barre en verre
 Jauge de signal
-<&glass_vertical_bar_gauge>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<&glass_vertical_bar_gauge>Cette jauge affiche le signal fourni par le bloc qui la porte.<br>
 <br>
-Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+Utilisation : fixez-la au bloc dont vous voulez lire le signal. Elle suit sa redstone directe ou indirecte et sa sortie de comparateur.<br>
 <br>
-Remarque : lit la puissance redstone proche de 0 à 15.
+Remarque : affiche une puissance de 0 à 15. Une source à côté de la jauge ne suffit pas si elle n'alimente pas son bloc porteur.
 <np>
 Jauge analogique
 Jauge de signal
-<&industrial_analog_angular_gauge>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<&industrial_analog_angular_gauge>Cette jauge affiche le signal fourni par le bloc qui la porte.<br>
 <br>
-Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+Utilisation : fixez-la au bloc dont vous voulez lire le signal. Elle suit sa redstone directe ou indirecte et sa sortie de comparateur.<br>
 <br>
-Remarque : lit la puissance redstone proche de 0 à 15.
+Remarque : affiche une puissance de 0 à 15. Une source à côté de la jauge ne suffit pas si elle n'alimente pas son bloc porteur.
 <np>
 Jauge voltmètre
 Jauge de signal
-<&industrial_analog_horizontal_gauge>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<&industrial_analog_horizontal_gauge>Cette jauge affiche le signal fourni par le bloc qui la porte.<br>
 <br>
-Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+Utilisation : fixez-la au bloc dont vous voulez lire le signal. Elle suit sa redstone directe ou indirecte et sa sortie de comparateur.<br>
 <br>
-Remarque : lit la puissance redstone proche de 0 à 15.
+Remarque : affiche une puissance de 0 à 15. Une source à côté de la jauge ne suffit pas si elle n'alimente pas son bloc porteur.
 <np>
 Jauge numérique
 Puissance du signal lisible
-<&industrial_small_digital_gauge>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<&industrial_small_digital_gauge>Cette jauge affiche le signal fourni par le bloc qui la porte.<br>
 <br>
-Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+Utilisation : fixez-la au bloc dont vous voulez lire le signal. Elle suit sa redstone directe ou indirecte et sa sortie de comparateur.<br>
 <br>
-Remarque : lit la puissance redstone proche de 0 à 15.
+Remarque : affiche une puissance de 0 à 15. Une source à côté de la jauge ne suffit pas si elle n'alimente pas son bloc porteur.
 <np>
 Jauge en tube de verre
 Jauge de signal
-<&industrial_tube_gauge>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<&industrial_tube_gauge>Cette jauge affiche le signal fourni par le bloc qui la porte.<br>
 <br>
-Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+Utilisation : fixez-la au bloc dont vous voulez lire le signal. Elle suit sa redstone directe ou indirecte et sa sortie de comparateur.<br>
 <br>
-Remarque : lit la puissance redstone proche de 0 à 15.
+Remarque : affiche une puissance de 0 à 15. Une source à côté de la jauge ne suffit pas si elle n'alimente pas son bloc porteur.
 <np>
 Jauge à barre analogique
 Jauge de signal
-<&industrial_vertical_bar_gauge>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<&industrial_vertical_bar_gauge>Cette jauge affiche le signal fourni par le bloc qui la porte.<br>
 <br>
-Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+Utilisation : fixez-la au bloc dont vous voulez lire le signal. Elle suit sa redstone directe ou indirecte et sa sortie de comparateur.<br>
 <br>
-Remarque : lit la puissance redstone proche de 0 à 15.
+Remarque : affiche une puissance de 0 à 15. Une source à côté de la jauge ne suffit pas si elle n'alimente pas son bloc porteur.
 <np>
 Lampe d'alarme
 Retour d'état du signal
-<&industrial_alarm_lamp>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_alarm_lamp>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 Sirène d'alarme
 Retour d'état du signal
@@ -474,83 +474,83 @@ Remarque : la sirène se réactive chaque seconde tant que le signal auquel elle
 <np>
 LED clignotante
 Retour d'état du signal
-<&industrial_blinking_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_blinking_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED verte clignotante
 Retour d'état du signal
-<&industrial_green_blinking_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_green_blinking_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED verte
 Retour d'état du signal
-<&industrial_green_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_green_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED rouge
 Retour d'état du signal
-<&industrial_red_blinking_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_red_blinking_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED rouge
 Retour d'état du signal
-<&industrial_red_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_red_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED blanche clignotante
 Retour d'état du signal
-<&industrial_white_blinking_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_white_blinking_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED blanche
 Retour d'état du signal
-<&industrial_white_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_white_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED jaune clignotante
 Retour d'état du signal
-<&industrial_yellow_blinking_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_yellow_blinking_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 LED jaune
 Retour d'état du signal
-<&industrial_yellow_led>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&industrial_yellow_led>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 Sémaphore rustique
 Retour d'état du signal
-<&rustic_semaphore>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&rustic_semaphore>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.
 <np>
 Commutateur de comparateur
 Signal du bloc porteur
@@ -562,11 +562,11 @@ Remarque : convertit les niveaux de stockage ou les câblages cachés en command
 <np>
 Gradateur
 Signal variable
-<&industrial_dimmer>Une commande rotative règle la puissance redstone depuis un panneau compact.<br>
+<&industrial_dimmer>Le gradateur règle la puissance redstone selon le point cliqué sur son panneau.<br>
 <br>
-Utilisation : faites un clic droit pour augmenter la sortie par paliers ; après la puissance maximale, elle revient à zéro.<br>
+Utilisation : sur un mur, cliquez plus haut pour augmenter la puissance ou plus bas pour la réduire. Au sol ou au plafond, la position du clic sur l'axe nord-sud règle la puissance.<br>
 <br>
-Remarque : fournit une puissance de 0 à 15.
+Remarque : chaque clic sélectionne directement la sortie ; les clics répétés ne font pas défiler les valeurs.
 <np>
 Bouton ESTOP
 Commande redstone
@@ -642,11 +642,11 @@ Remarque : émet un signal de redstone à puissance maximale tant qu'il est acti
 <np>
 Interrupteur
 Commande redstone
-<&industrialswitch>Une commande compacte offre un point de commutation redstone clairement identifiable dans une usine.<br>
+<&industrialswitch>L'interrupteur industriel est une armoire de commande haute de deux blocs.<br>
 <br>
-Utilisation : faites un clic droit pour activer ou désactiver une sortie à puissance maximale destinée aux circuits voisins.<br>
+Utilisation : laissez libre la case au-dessus de l'emplacement de pose. Un clic droit sur l'une des moitiés commande les deux ensemble ; chacune émet une redstone à puissance maximale de tous les côtés lorsqu'elle est active.<br>
 <br>
-Remarque : émet un signal de redstone à puissance maximale tant qu'il est activé.
+Remarque : casser une moitié retire l'armoire. Les anciennes armoires sauvegardées conservent leur disposition.
 <np>
 Interrupteur de lumière
 Commande redstone

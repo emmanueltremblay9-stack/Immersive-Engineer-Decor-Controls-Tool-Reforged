@@ -29,6 +29,10 @@ Compact work light
 <&iron_inset_light>This block provides compact industrial lighting for corridors, catwalks, and work bays.<br>
 <br>
 Usage: Mount it on ceilings, walls, or edges where the room needs clear work lighting.<br>
+<br>
+To light a plain Raised Steel Catwalk, use an Inset Light on its underside. Installing it costs one light in Survival. Use another Inset Light on the underside to remove the installed light; a paid light is returned outside Creative mode. Supported or framed variants do not accept a new light through this gesture.<br>
+You can instead aim directly at the inset lamp from below and mine it with a suitable tool, leaving the deck in place. Aim away from the lamp to mine the deck. Normal permissions and loot rules apply, and legacy or Creative-installed lights do not create paid refunds. Adding a pole after installation preserves the lamp; removing it reveals the current pole support again.<br>
+Inset Lights can also attach to a compatible internal face of a Double-T support. See Steel Double T Support for fitting and separate-removal rules.<br>
 <np>
 Sign "Generic Caution
 Hazard marker

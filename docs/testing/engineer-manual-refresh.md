@@ -114,3 +114,67 @@ subsequent commit; exact-head CI must be checked after this update.
 Remaining: every other entry's code-to-text audit, additional GUI scales, category
 page pagination, item shortcuts/links, Sleeping Bag EN native rendering, and all
 118 other locales. This review is deliberately not an exhaustive completion claim.
+
+## Fourth pass: access, fluids, tools and controls
+
+Main was fetched again and remains `b9fc2b44`. This pass extends the source audit
+beyond recent machine PRs. These new pages have static/resource verification only;
+the native screenshots above still cover only their explicitly named earlier pages.
+
+- Catwalk stairs: endpoint attachment and continuous flight placement from
+  `CatwalkStairsPlacement`; separate raised stair and contextual V from
+  `RaisedCatwalkStairsBlock`/`RaisedCatwalkBlock`. No invented raised-stair recipe.
+- Double-T lights: four compatible lamp identities, fit restrictions, one attachment,
+  separate mining and paid ownership from `SupportLights` and `DoubleTSupportItem`.
+  Current steel wall placement remains upright; older wall-click-zone documentation
+  was not copied over the newer implementation. The separate wood beam retains its
+  own click zones and has no crafting recipe.
+- Inset Light: existing raised-catwalk underside installation/removal and separate
+  mining from `RaisedCatwalkBlock`, including the plain-variant admission limit.
+- Overview: exterior fluid cells, source/current distinction, machine tank separation,
+  lava hazards and the bounded vanilla/IE extension from `NativeFluidCells`,
+  `NativeFluidloggedBlock`, `ExternalFluidAdapter` and `MachineBlocks`.
+- Tools/controls: 43 entries corrected as listed below. Recipe anchors remain intact; contact subtitles now say occupancy rather than
+  pulse. All matching EN/FR category copies are synchronized.
+
+| Entries | Demonstrated contract | Source |
+| --- | --- | --- |
+| Mind Squeezer | Reusable, no wear; health/XP/lapis costs | ChargedLapisSqueezerItem; EngineerToolsGameTests |
+| Dimmer | Click position selects output, not an incrementing cycle | ControlsBlockTypes.dimmerPowerFromHit |
+| Two interval timers | Manual, non-repeating 40-tick pulse | ControlsModule; PulseBlock |
+| Two linear detectors | Forward corridor, not omnidirectional | SensorBlock entity scan |
+| Industrial Switch | Two-block cabinet, synchronized halves | IndustrialSwitchBlock |
+| Six gauges, eleven indicators | Read supporting block power/comparator | readAttachedSignal; ControlRedstoneGameTests |
+| Seventeen contacts | Stay active while occupied, 12-tick rescan | ContactBlock |
+| Iron/gold grit FR | Match integrated hammer outputs already documented EN | CrushingHammerItem |
+
+Counterexamples were deliberately preserved: ordinary entity detectors scan around
+themselves; sensitive glass reads nearby power; the siren already describes its
+support correctly. The Foot Button is not floor-only like the other contact variants.
+Muslee reserve/cursor/protocol helpers are not a live menu: no future GUI is promised.
+
+### Machine and storage continuation
+
+Nine entries were compared with `MachineBlockEntity`, `MachineLayout` and current
+menus/screens: crate, hopper, placer, dropper, lab furnace, electric furnace,
+incinerator, metal crafting table and passive accumulator. Corrections include:
+
+- Crate FR: restored 54-slot storage, real display item, sneak-label gesture and
+  component-aware transfer shortcut. Both languages explain nested-storage exclusions.
+- Hopper FR: missing direction and redstone behavior restored; both languages
+  distinguish loose-item range from inventory adjacency and item count from stacks.
+- Placer: 18-slot rotation, actual ignored-redstone default and the conditional
+  failed-placement ejection risk (manual or allowed signal change, not every retry).
+- Dropper: actual filter stacks/components/quantities and separate filter/redstone gates.
+- Furnaces: optional lab heater still requires furnace fuel; electrical speed costs,
+  optional hopper feeder and OFF not disabling its feeder transfers.
+- Incinerator: irreversible disposal starts before a full queue; FE accelerates it,
+  redstone does not stop it. Metal table: single occupied material grid slot for plates.
+- Accumulator FR: missing rain/thunder collection restored from the verified source.
+
+Valve limits/direction and dining bonuses were checked without rewriting their
+already correct individual text. The runtime code remains unchanged. Existing GUI
+help strings outside these manual pages can still contradict the corrected manual;
+these are tracked as follow-up rather than silently changing all translations.
+
+The Block Breaker page also identifies its rear-only automated output face.

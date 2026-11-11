@@ -88,4 +88,48 @@ public class EngineerManualContentTest {
             assertTrue(language.contains("\"manual." + namespace + ".edr_fluid_power_utilities\": \"Fluides et énergie\""));
     }
 
+    @Test
+    public void historicalControlsDescribeTheirLiveBehavior() throws Exception {
+        for (String lang : new String[]{"en_us", "fr_fr"}) {
+            String timer = Files.readString(ROOT.resolve(lang + "/industrial_interval_timer.txt"));
+            assertTrue(timer.contains("40"));
+            String contact = Files.readString(ROOT.resolve(lang + "/industrial_foot_button.txt"));
+            assertTrue(contact.contains("12"));
+        }
+        assertTrue(Files.readString(ROOT.resolve("en_us/charged_lapis_squeezer.txt")).contains("does not wear down"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/industrial_dimmer.txt")).contains("do not cycle"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/industrialswitch.txt")).contains("two-block-tall"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/glass_linear_entity_detector.txt")).contains("forward corridor"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/industrial_tube_gauge.txt")).contains("supporting block"));
+    }
+
+    @Test
+    public void accessAndFluidGuidancePreservesIntegrationBoundaries() throws Exception {
+        String stairs = Files.readString(ROOT.resolve("en_us/steel_catwalk_stairs.txt"));
+        assertTrue(stairs.contains("high end"));
+        assertTrue(stairs.contains("no crafting recipe"));
+        String beam = Files.readString(ROOT.resolve("en_us/steel_double_t_support.txt"));
+        assertTrue(beam.contains("A second attachment is rejected"));
+        assertTrue(beam.contains("Treated Wood Beam"));
+        String fluids = Files.readString(ROOT.resolve("en_us/overview.txt"));
+        assertTrue(fluids.contains("not a machine tank"));
+        assertTrue(fluids.contains("Milk is not"));
+        assertTrue(fluids.contains("Lava remains hazardous"));
+    }
+
+    @Test
+    public void storageAndMachineRisksStayDocumentedInBothLanguages() throws Exception {
+        for (String lang : new String[]{"en_us", "fr_fr"}) {
+            assertTrue(Files.readString(ROOT.resolve(lang + "/labeled_crate.txt")).contains("54"));
+            assertTrue(Files.readString(ROOT.resolve(lang + "/factory_hopper.txt")).contains("1-32"));
+            assertTrue(Files.readString(ROOT.resolve(lang + "/factory_placer.txt")).contains("18"));
+            assertTrue(Files.readString(ROOT.resolve(lang + "/small_lab_furnace.txt")).contains("8 FE"));
+            assertTrue(Files.readString(ROOT.resolve(lang + "/small_electrical_furnace.txt")).contains("64 FE"));
+            assertTrue(Files.readString(ROOT.resolve(lang + "/passive_fluid_accumulator.txt")).contains("200 mB"));
+        }
+        assertTrue(Files.readString(ROOT.resolve("en_us/factory_placer.txt")).contains("several items in one cycle"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/small_waste_incinerator.txt")).contains("cannot be recovered"));
+        assertTrue(Files.readString(ROOT.resolve("en_us/small_electrical_furnace.txt")).contains("operate with smelting set to OFF"));
+    }
+
 }

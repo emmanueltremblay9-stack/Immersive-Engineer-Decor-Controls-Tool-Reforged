@@ -1,5 +1,5 @@
 Fourneau électrique
 Unité de traitement compacte
-<&recipe>Le fourneau électrique assure de petits travaux de cuisson alimentés en FE dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : fournissez des FE et un ingrédient de cuisson valide.<br>
+<&recipe>Fournissez des FE et un ingrédient accepté par la cuisson ordinaire au four. Le four stocke 32 000 FE et possède une entrée et une sortie actives, deux tampons d'entrée, deux tampons de sortie et un emplacement auxiliaire. Les tampons avancent par piles tous les 20 ticks.<br>
+Choisissez OFF, I, II ou III dans l'interface. OFF suspend la cuisson. I, II et III consomment respectivement 16, 32 et 64 FE par tick actif et avancent la recette de 3, 4 et 6 ticks de cuisson. Le manque d'énergie ou une sortie bloquée arrête la progression. La redstone ne met pas ce four en pause.<br>
+Placez un entonnoir vanilla dans l'emplacement auxiliaire pour activer les transferts entre inventaires adjacents compatibles. Tous les 20 ticks, il prélève les ingrédients à l'arrière et envoie les résultats vers l'avant, jusqu'à 64 objets dans chaque sens. Chaque prélèvement ou envoi réussi coûte 4 FE, en plus de la cuisson. Les objets non cuisinables restent dans l'inventaire source. Ces transferts peuvent continuer avec la cuisson sur OFF.<br>

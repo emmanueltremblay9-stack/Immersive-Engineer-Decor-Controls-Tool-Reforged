@@ -27,56 +27,54 @@ Simply sitting grants no food, healing or timed status effect. There is no waiti
 <np>
 Metal Crafting Table
 Plate workstation
-<&metal_crafting_table>The Metal Crafting Table is a reinforced shop station with a hammer slot, a full 3x3 crafting grid, and a clear output slot.<br>
-<br>
-Usage: Use the grid like a normal crafting table. To form IE plates, place an Engineer's Hammer in the tool slot and put the plate material in the grid, then take the formed plate from the output.<br>
-<br>
-Steel decorations use steel plates. Insert an Immersive Engineering hammer, hammer steel ingots into steel plates, then use plates to craft poles, catwalks, windows, doors, railings, and other steel decorations.<br>
+<&metal_crafting_table>The Metal Crafting Table has a hammer slot, a full 3x3 crafting grid and an output slot. Use the grid for ordinary crafting recipes.<br>
+To form IE plates, place an Engineer's Hammer in the dedicated tool slot and the plate material in exactly one grid slot. Leave the other eight grid slots empty; the material slot may hold a stack. Taking one plate consumes one material and one point of hammer durability. Merely previewing the result consumes neither.<br>
+Steel decorations use steel plates. Hammer steel ingots into plates, then use them to craft poles, catwalks, windows, doors, railings and other steel decorations.<br>
 <np>
 Factory Hopper
 Shop-floor utility
-<&factory_hopper>This block moves item stacks through a tighter industrial casing.<br>
-<br>
-Usage: Face it toward the inventory line, then set range, stack count, timing, and redstone mode in its screen.<br>
-The output follows the narrow end; inventory input is on the opposite face. Vanilla inventories and NeoForge item handlers are supported, respecting the contacted inventory face.<br>
-<br>
-The default is inverted and continuous: transfer while unpowered. Normal mode enables transfer while powered; ignored mode repeats regardless of the signal. Continuous repeats after the insertion delay. Pulse runs once on a rising edge in normal mode or a falling edge in inverted mode, only when the delay has expired. Edges during the delay are not queued. Ignored mode overrides the pulse toggle.<br>
-Hover over the redstone controls to see their current state. Click the signal indicator to run one manual cycle; this bypasses redstone and shortens the remaining delay. The stack count limits both extraction and insertion per cycle.<br>
+<&factory_hopper>The Factory Hopper has 18 storage slots. Its narrow end is the output; inventory input is on the opposite face. Adjacent vanilla inventories and NeoForge item handlers are supported, respecting the contacted inventory face.<br>
+Set the collection range, item count and insertion delay in the screen. Range changes the collection area for loose item entities, not the distance to an inventory. The count setting limits extraction and insertion to 1-32 items each per transfer cycle; it does not limit loose-item collection.<br>
+The default is inverted and continuous: transfer while unpowered. Normal mode enables transfer while powered; ignored mode repeats regardless of the signal. Continuous repeats after the insertion delay. Pulse uses a rising signal change in normal mode or a falling one in inverted mode. Changes sampled before the delay expires are not queued. Ignored mode overrides the pulse toggle.<br>
+Hover over the redstone controls to see their current state. Click the signal indicator to request one manual cycle; this bypasses redstone and shortens the remaining delay. No FE supply is needed.<br>
 <np>
 Factory Dropper
 Shop-floor utility
-<&factory_dropper>This block releases stored items from an aimed face.<br>
-<br>
-Usage: Aim the front toward the release point, load its internal slots, and tune force, angle, delay, filter logic, and redstone mode in its screen.<br>
+<&factory_dropper>The Factory Dropper ejects item entities from its working face. Load the 12 stock slots, then adjust launch speed, aim, unfiltered batch size and delay. Unfiltered batches contain 1-32 items from one eligible stack, selected in rotation. No FE is required.<br>
+The three lower filter slots hold real example stacks. Each filter matches both the item and its components, and its stack size is the required quantity. Matching quantities are taken from the 12 stock slots; the filter examples remain in place. Repeated filters require enough stock for their combined quantities.<br>
+Filter AND waits until every defined filter is satisfied. Filter OR accepts satisfied filters individually. A filtered drop ejects each satisfied filter's specified quantity, rather than the unfiltered batch size. Items matching a defined filter are excluded from the unfiltered rotation.<br>
+Combine filter readiness with the external redstone trigger using AND or OR. Ignored redstone supplies a permanent external trigger. Pulse responds to a rising signal change; continuous repeats while powered, subject to the delay. Clicking the signal indicator simulates an external trigger and still follows the filter logic and delay.<br>
 <np>
 Factory Block Placer
 Shop-floor utility
-<&factory_placer>This block installs blocks from its internal stock when activated.<br>
-<br>
-Usage: Point the working face at the target space and load placeable stacks.<br>
+<&factory_placer>Point the working face toward the adjacent target space and fill the 18 stock slots with placeable blocks or supported crop seeds. The target must be replaceable and the placement must be valid. Crop planting needs farmland below the target. No FE is required.<br>
+The screen offers normal, inverted and ignored redstone modes, continuous or signal-change triggering, and a manual placement control. New placers ignore redstone and run automatically. Normal mode requires power; inverted mode requires no power. Ignored mode runs automatically even with the signal-change option selected.<br>
+Select a stock row to choose where the next search begins. Placement continues through all 18 slots; the row selector does not restrict the inventory. A successful placement consumes one item and advances to the following slot.<br>
+Warning: an unsuccessful attempt triggered manually or by an allowed signal change can eject one item from each eligible slot tried. It can therefore eject several items in one cycle. Ordinary continuous retries without a manual trigger or signal change retain the stock. Keep a collection area in front when testing controls.<br>
 <np>
 Block Breaker
 Shop-floor utility
 <&small_block_breaker>Point the working face at the block to remove and supply FE from below. The buffer holds 32,000 FE and accepts at most 256 FE per tick. Each block costs 160 FE plus 160 FE times its hardness (rounded); even zero-hardness blocks cost energy.<br>
 Take collected drops from the output slot or extract them automatically. The machine waits if it cannot store the drops or lacks energy. A redstone signal stops work; unbreakable blocks remain intact.<br>
+<br>
+Automated item extraction is available only at the rear, opposite the working face.<br>
 <np>
 Waste Incinerator
 Compact processing unit
-<&small_waste_incinerator>The Waste Incinerator destroys unwanted items in a compact workshop footprint.<br>
-<br>
-Usage: Feed only unwanted items into its queue.<br>
+<&small_waste_incinerator>Feed only items you intend to destroy. The 16-slot queue advances toward its final slot and consumes one item there per work step, even before the queue is full. Destroyed items produce no result and cannot be recovered.<br>
+It works without fuel or FE, with one work step every 30 ticks. With at least 8 FE available, work steps occur every 10 ticks and a successful destruction consumes 8 FE. Redstone neither enables this speed boost nor pauses the machine. Control the incoming item supply to prevent accidental disposal.<br>
 <np>
 Laboratory Furnace
 Compact processing unit
-<&small_lab_furnace>The Laboratory Furnace handles compact solid-fuel smelting jobs in a small workshop footprint.<br>
-<br>
-Usage: Use solid fuel for compact smelting batches.<br>
+<&small_lab_furnace>Use ordinary furnace-smelting ingredients with valid furnace fuel. The screen separates the active input, fuel and output, with two buffer slots for each. Every 20 ticks, each buffer connection advances up to one item. Keep room for the finished result.<br>
+The furnace works without FE. For an optional speed boost, put an Immersive Engineering External Heater item in either auxiliary slot and supply FE to the furnace. It spends 8 FE per active boosted tick and advances twice as fast as its unboosted operation. Fuel is still required; two heater items do not stack the boost.<br>
+Redstone does not pause this furnace. Stop supplying ingredients or fuel when you want it to stop processing.<br>
 <np>
 Electrical Furnace
 Compact processing unit
-<&small_electrical_furnace>The Electrical Furnace handles compact FE-powered smelting jobs in a small workshop footprint.<br>
-<br>
-Usage: Supply FE and valid smelting input.<br>
+<&small_electrical_furnace>Supply FE and an ordinary furnace-smelting ingredient. The furnace stores 32,000 FE and has active input/output slots, two input buffers, two output buffers and an auxiliary slot. Buffers advance stacks every 20 ticks.<br>
+Choose OFF, I, II or III in the screen. OFF pauses smelting. I, II and III consume 16, 32 and 64 FE per active tick and advance the recipe by 3, 4 and 6 cooking ticks respectively. Missing power or a blocked output stops progress. Redstone does not pause this furnace.<br>
+Place a vanilla Hopper item in the auxiliary slot to enable automatic feeding between adjacent compatible inventories. It pulls smeltable items from behind and pushes results forward every 20 ticks, up to 64 items each way. Each successful pull or push costs 4 FE in addition to smelting. Non-smeltable input is left in the source inventory. These feeder transfers can still operate with smelting set to OFF.<br>
 <np>
 Mineral Smelter
 Compact processing unit

@@ -52,7 +52,12 @@ Steel Double T Support
 Structural frame part
 <&steel_double_t_support>Use the Steel Double T Support item on a wall to place an upright wall support. Floor or ceiling clicks place the horizontal support, oriented by your horizontal facing. Wall supports connect to directly touching horizontal steel supports and ceiling treated-wood beams in either placement order.<br>
 The older vertical-support item remains usable in saved inventories, but is hidden from the creative tab and normal JEI list. Picking or breaking its placed block returns the canonical Steel Double T Support item.<br>
-An Iron Bulb can mount flush beneath a free center of a horizontal support. A mounted bulb and a steel pole connector cannot occupy that same center; conflicting placement is rejected without spending the item. The bulb can be mined separately, or returned with the beam under normal tool and loot rules.<br><np>
+An Iron Bulb can mount flush beneath a free center of a horizontal support. A mounted bulb and a steel pole connector cannot occupy that same center; conflicting placement is rejected without spending the item. The bulb can be mined separately, or returned with the beam under normal tool and loot rules.<br>
+<br>
+Double-T supports also accept one compatible Iron Bulb Light, Ceiling Edge Light, Inset Floor Edge Light or Inset Light on an internal structural face where the lamp fits without overlap. Aim at the actual metal mounting face; not every face or lamp orientation fits. You may place the support first or place it around an existing compatible lamp. A second attachment is rejected.<br>
+Aim at the attached lamp to mine it separately, leaving the support. A lamp paid for in Survival can be returned once through normal tool and loot rules; Creative additions do not grant a paid refund. Mining the whole support returns its paid lamp with it under those same rules.<br>
+<br>
+The separate Treated Wood Beam is available in the creative catalogue without a crafting recipe. On a wall, click nearer a side edge for a horizontal beam or nearer the top/bottom for an upright beam; center and equal-distance clicks choose upright. Floor and ceiling clicks place a horizontal beam. A vertical treated-wood pole directly below a ceiling beam forms a matching connection without consuming the pole. This wood beam is not the steel support's lamp attachment system.<br><np>
 Steel Floor Grating
 Service access fitting
 <&steel_floor_grating>This block forms readable service routes around machinery.<br>
@@ -73,6 +78,9 @@ Usage: Place it as maintenance access around machines, upper floors, and service
 <br>
 Hold Steel Railing and right-click the left or right side of the stairs to install or remove that side in place. Installing a side costs one railing in Survival; removing a purchased side returns it.<br>
 Mine the aimed railing to remove only that side. Mine the step itself to remove the stairs and their remaining purchased railings.<br>
+<br>
+Click an open edge of a Steel Catwalk, Raised Steel Catwalk or Steel Floor Grating to attach the stair's high end; the flight descends away from the platform. A bottom-mounted catwalk places the stair one cell lower, while raised catwalks and grating place it at the same cell height. Click the low or high end of a stair to extend the flight one cell down or up. The selected edge or endpoint, not your look direction, chooses the connection.<br>
+The separate Raised Steel Catwalk Stair uses the same placement and railing rules. With a matching wood, thin-steel or thick-steel pole or pole head below, it displays a matching V support. An upward-facing Treated Wood Pole Support also qualifies. The pole remains a separate block with its own collision and drops; the V is not an extra mined item. This variant currently has no crafting recipe and is available in the creative catalogue or through commands.<br>
 <np>
 Raised Steel Catwalk
 Service access fitting

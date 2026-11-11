@@ -27,52 +27,54 @@ Rester assis seul n’apporte ni nourriture, ni soin, ni effet temporaire. Il n�
 <np>
 Établi de métallurgie
 Poste de fabrication de plaques
-<&metal_crafting_table>Établi métallique avec un emplacement réservé au marteau, une grille de fabrication 3x3 et une sortie.<br>
-<br>
-Utilisation : employez la grille comme une table de fabrication ordinaire. Pour produire des plaques IE, placez un marteau d'ingénieur dans l'emplacement d'outil et le matériau dans la grille, puis prenez la plaque formée dans la sortie.<br>
-<br>
-Les décors en acier utilisent des plaques d'acier. Insérez un marteau d'Immersive Engineering, martelez les lingots d'acier en plaques, puis utilisez-les pour fabriquer poteaux, passerelles, fenêtres, portes, garde-corps et autres décors en acier.<br>
+<&metal_crafting_table>L'établi de métallurgie possède un emplacement réservé au marteau, une grille de fabrication 3x3 et une sortie. La grille permet les recettes de fabrication ordinaires.<br>
+Pour produire des plaques IE, placez un marteau d'ingénieur dans l'emplacement d'outil et le matériau dans un seul emplacement de la grille. Laissez les huit autres emplacements vides ; celui du matériau peut contenir une pile. Prendre une plaque consomme un matériau et un point de durabilité du marteau. L'aperçu du résultat ne consomme rien.<br>
+Les décors en acier utilisent des plaques d'acier. Martelez les lingots en plaques, puis utilisez-les pour fabriquer poteaux, passerelles, fenêtres, portes, garde-corps et autres décors en acier.<br>
 <np>
 Entonnoir d'usine
 Équipement d'atelier
-<&factory_hopper>Ce bloc transfère les piles d'objets dans un boîtier industriel compact.<br>
-<br>
-Utilisation : orientez-le vers la ligne d'inventaires, puis réglez la portée, le nombre d'objets, la temporisation et le mode redstone dans son interface.<br>
+<&factory_hopper>L'entonnoir d'usine possède 18 emplacements de stockage. Son extrémité étroite est la sortie ; l'entrée depuis un inventaire se trouve sur la face opposée. Les inventaires vanilla adjacents et les gestionnaires d'objets NeoForge sont pris en charge, dans le respect de la face raccordée.<br>
+Réglez la portée de collecte, le nombre d'objets et le délai d'insertion dans l'interface. La portée agrandit la zone de collecte des objets au sol, pas la distance jusqu'à un inventaire. Le réglage du nombre limite séparément l'extraction et l'insertion à 1-32 objets par cycle de transfert ; il ne limite pas la collecte au sol.<br>
+Par défaut, le mode est inversé et continu : le transfert fonctionne sans signal. Le mode normal l'autorise avec un signal ; le mode ignoré répète indépendamment du signal. En continu, le cycle reprend après le délai. En impulsion, un changement montant déclenche en mode normal, et un changement descendant en mode inversé. Les changements examinés avant la fin du délai ne sont pas mis en attente. Le mode ignoré prend le dessus sur l'option impulsion.<br>
+Survolez les commandes redstone pour lire leur état. Cliquez sur le témoin de signal pour demander un cycle manuel : il contourne la condition redstone et raccourcit le délai restant. Aucune alimentation FE n'est nécessaire.<br>
 <np>
 Largueur d'usine
 Équipement d'atelier
-<&factory_dropper>Ce bloc éjecte les objets stockés depuis une face orientable.<br>
-<br>
-Utilisation : visez le point de largage avec sa face avant, remplissez ses emplacements internes et réglez la force, l'angle, le délai, la logique des filtres et le mode redstone dans son interface.<br>
+<&factory_dropper>Le largueur d'usine éjecte des objets depuis sa face de travail. Chargez les 12 emplacements de réserve, puis réglez la vitesse, la direction, la quantité sans filtre et le délai. Sans déclenchement par filtre, il prélève 1-32 objets dans une même pile admissible, en parcourant les emplacements à tour de rôle. Aucune alimentation FE n'est nécessaire.<br>
+Les trois emplacements inférieurs contiennent de véritables piles exemples. Chaque filtre compare l'objet et ses composants ; la taille de sa pile indique la quantité requise. Les objets éjectés proviennent des 12 emplacements de réserve. Les exemples restent en place. Des filtres identiques exigent assez de réserve pour leurs quantités cumulées.<br>
+Le mode ET des filtres attend que tous les filtres définis soient satisfaits. Le mode OU accepte les filtres satisfaits individuellement. Un largage filtré éjecte la quantité indiquée par chaque filtre satisfait, plutôt que la quantité sans filtre. Les objets correspondant à un filtre défini sont exclus du parcours sans filtre.<br>
+Combinez les filtres avec le déclenchement redstone externe par ET ou OU. Ignorer la redstone fournit un déclenchement externe permanent. Le mode impulsion répond à un changement montant ; le mode continu répète avec un signal, selon le délai. Cliquer sur le témoin simule un déclenchement externe qui respecte encore la logique des filtres et le délai.<br>
 <np>
 Placeur de bloc d'usine
 Équipement d'atelier
-<&factory_placer>Ce bloc place les blocs de sa réserve interne lorsqu'il est activé.<br>
-<br>
-Utilisation : dirigez sa face de travail vers l'espace ciblé et chargez des piles de blocs pouvant être placés.<br>
+<&factory_placer>Dirigez la face de travail vers l'espace adjacent à remplir et chargez les 18 emplacements avec des blocs pouvant être placés ou des graines prises en charge. La cible doit être remplaçable et le placement valide. Les cultures nécessitent une terre labourée sous la cible. Aucune alimentation FE n'est nécessaire.<br>
+L'interface propose les modes redstone normal, inversé et ignoré, le fonctionnement continu ou sur changement de signal, et une commande manuelle. Un placeur neuf ignore la redstone et fonctionne automatiquement. Le mode normal exige un signal ; l'inversé exige son absence. Le mode ignoré reste automatique même si l'option sur changement de signal est sélectionnée.<br>
+Sélectionnez une rangée pour choisir le début de la prochaine recherche. La pose continue ensuite sur les 18 emplacements ; ce choix ne limite pas l'inventaire à une rangée. Une pose réussie consomme un objet et passe à l'emplacement suivant.<br>
+Attention : un essai infructueux déclenché manuellement ou par un changement de signal autorisé peut éjecter un objet de chaque emplacement admissible essayé. Plusieurs objets peuvent donc sortir pendant un seul cycle. Les essais continus ordinaires sans commande manuelle ni changement de signal conservent la réserve. Prévoyez une zone de récupération devant la machine pendant les essais.<br>
 <np>
 Brise-bloc
 Équipement d'atelier
 <&small_block_breaker>Dirigez la face de travail vers le bloc à retirer et fournissez les FE par dessous. La réserve contient 32 000 FE et accepte au maximum 256 FE par tick. Un bloc coûte 160 FE plus 160 FE multipliés par sa dureté (arrondi) ; même un bloc de dureté nulle coûte de l'énergie.<br>
 Prenez les objets dans l'emplacement de sortie ou extrayez-les automatiquement. La machine attend si elle manque de place ou d'énergie. Un signal redstone arrête le travail ; les blocs incassables restent intacts.<br>
+<br>
+L'extraction automatisée des objets est disponible uniquement à l'arrière, à l'opposé de la face de travail.<br>
 <np>
 Incinérateur de déchets
 Unité de traitement compacte
-<&small_waste_incinerator>L'incinérateur de déchets détruit les objets indésirables dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : n'envoyez dans sa file que des objets à détruire.<br>
+<&small_waste_incinerator>N'insérez que des objets à détruire. La file de 16 emplacements avance vers le dernier emplacement, où un objet est consommé par étape de travail, même si la file n'est pas pleine. Un objet détruit ne donne aucun résultat et ne peut pas être récupéré.<br>
+La machine fonctionne sans combustible ni FE, avec une étape tous les 30 ticks. Avec au moins 8 FE disponibles, les étapes ont lieu tous les 10 ticks et chaque destruction réussie consomme 8 FE. La redstone n'active pas cette accélération et ne met pas la machine en pause. Contrôlez l'arrivée des objets pour éviter une destruction accidentelle.<br>
 <np>
 Fourneau de laboratoire
 Unité de traitement compacte
-<&small_lab_furnace>Le fourneau de laboratoire assure de petits travaux de cuisson au combustible solide dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : employez du combustible solide pour de petits lots de cuisson.<br>
+<&small_lab_furnace>Utilisez des ingrédients acceptés par la cuisson ordinaire au four avec un combustible de four valide. L'interface sépare l'entrée active, le combustible et la sortie, chacun avec deux emplacements tampons. Tous les 20 ticks, chaque liaison entre ces emplacements avance au maximum un objet. Gardez de la place pour le résultat.<br>
+Le four fonctionne sans FE. Pour accélérer la cuisson, placez un réchauffeur externe d'Immersive Engineering dans l'un des emplacements auxiliaires et alimentez le four en FE. Il consomme 8 FE par tick de cuisson accélérée et avance deux fois plus vite que sans ce bonus. Le combustible reste indispensable ; deux réchauffeurs ne cumulent pas le bonus.<br>
+La redstone ne met pas ce four en pause. Arrêtez l'apport d'ingrédients ou de combustible pour interrompre la production.<br>
 <np>
 Fourneau électrique
 Unité de traitement compacte
-<&small_electrical_furnace>Le fourneau électrique assure de petits travaux de cuisson alimentés en FE dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : fournissez des FE et un ingrédient de cuisson valide.<br>
+<&small_electrical_furnace>Fournissez des FE et un ingrédient accepté par la cuisson ordinaire au four. Le four stocke 32 000 FE et possède une entrée et une sortie actives, deux tampons d'entrée, deux tampons de sortie et un emplacement auxiliaire. Les tampons avancent par piles tous les 20 ticks.<br>
+Choisissez OFF, I, II ou III dans l'interface. OFF suspend la cuisson. I, II et III consomment respectivement 16, 32 et 64 FE par tick actif et avancent la recette de 3, 4 et 6 ticks de cuisson. Le manque d'énergie ou une sortie bloquée arrête la progression. La redstone ne met pas ce four en pause.<br>
+Placez un entonnoir vanilla dans l'emplacement auxiliaire pour activer les transferts entre inventaires adjacents compatibles. Tous les 20 ticks, il prélève les ingrédients à l'arrière et envoie les résultats vers l'avant, jusqu'à 64 objets dans chaque sens. Chaque prélèvement ou envoi réussi coûte 4 FE, en plus de la cuisson. Les objets non cuisinables restent dans l'inventaire source. Ces transferts peuvent continuer avec la cuisson sur OFF.<br>
 <np>
 Fourneau de fusion de minéraux
 Unité de traitement compacte
@@ -87,7 +89,9 @@ Un signal redstone, le manque d'énergie ou une sortie bloquée interrompent le 
 <np>
 Fluide passif
 Équipement de réseau de fluides
-<&passive_fluid_accumulator>L'accumulateur de fluide passif collecte 250 mB d'eau tous les 80 ticks lorsqu'au moins un de ses six blocs voisins contient une source d'eau. Son réservoir contient 4000 mB et ne consomme aucune énergie. La collecte conserve la source voisine ; l'eau qui coule et l'eau contenue dans le bloc de l'accumulateur ne comptent pas.<br>
+<&passive_fluid_accumulator>L'accumulateur de fluide passif collecte 250 mB d'eau tous les 80 ticks lorsqu'au moins un de ses six blocs voisins contient une source d'eau. Son réservoir contient 4 000 mB et ne consomme aucune énergie. La collecte conserve la source voisine ; l'eau qui coule et l'eau contenue dans le bloc de l'accumulateur ne comptent pas.<br>
+<br>
+Sans source d'eau adjacente, il récupère aussi les précipitations par son dessus ouvert : 100 mB tous les 80 ticks sous la pluie, ou 200 mB pendant un orage. À 20 ticks par seconde, cela remplit un seau en 40 ou 20 secondes. Un toit, un biome sec ou des précipitations neigeuses empêchent cette collecte. Pluie et source ne s'ajoutent pas : la source voisine est prioritaire.<br>
 <br>
 Placez-le directement dans une source d'eau pour conserver cette eau dans le bloc. L'utilisation normale d'un seau remplit ou vide le réservoir interne. Accroupissez-vous en utilisant un seau d'eau ou un seau vide pour ajouter ou retirer l'eau autour du bloc. Ces deux réserves d'eau sont indépendantes.<br>
 <br>

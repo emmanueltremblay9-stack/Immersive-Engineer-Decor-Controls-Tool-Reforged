@@ -2,3 +2,5 @@ Block Breaker
 Shop-floor utility
 <&recipe>Point the working face at the block to remove and supply FE from below. The buffer holds 32,000 FE and accepts at most 256 FE per tick. Each block costs 160 FE plus 160 FE times its hardness (rounded); even zero-hardness blocks cost energy.<br>
 Take collected drops from the output slot or extract them automatically. The machine waits if it cannot store the drops or lacks energy. A redstone signal stops work; unbreakable blocks remain intact.<br>
+<br>
+Automated item extraction is available only at the rear, opposite the working face.<br>

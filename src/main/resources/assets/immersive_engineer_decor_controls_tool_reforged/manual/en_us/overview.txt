@@ -3,4 +3,12 @@ Factory fittings and controls
 Engineer's Decor gathers industrial building parts, workshop utilities, and control hardware for practical factory builds.<br>
 <br>
 Open the sections in this category for recipes, visuals, lore, and usage notes for each fitted block or item.
-
+<np>
+Fluids inside building parts
+Supported IEDCTR building parts can share their world cell with a fluid. This is an exterior world-fluid cell, not a machine tank or an automatic pipe connection. A source bucket can fill an eligible empty cell; an empty bucket recovers a source, not a flowing current. Water, lava and IE creosote, ethanol, biodiesel and plant oil are supported examples. Milk is not a placeable world fluid here.<br>
+Partial building parts can admit passing currents without turning them into extra sources. Removing the supply lets those currents recede. Solid shapes still block movement and flow where their geometry requires; storing fluid does not hollow out a full block. Lava remains hazardous, including around wood.<br>
+On machines, normal bucket use targets the machine's own fluid handling; sneak-use a bucket to target its exterior cell. Consult the machine's page for its accepted tank fluids and ports. The two stores are independent.<br>
+<np>
+Selected vanilla and IE parts
+Fluid sharing also covers qualified vanilla stairs, single slabs, fences, walls, panes, iron bars, ladders and trapdoors. The IE extension covers its three treated-wood stair and slab styles, clinker-brick wall, treated and framed-treated trapdoors, and steel trapdoor. It does not include every modded subclass or IE building part.<br>
+Double slabs, full cubes, fence gates, multipart doors and external block-entity machines are not admitted by this extension. Drain a wet single slab, or wait for its current to recede, before merging it into a double slab. A different fluid cannot overwrite an occupied external cell. Arbitrary third-party fluid reactions and modpack compatibility are not guaranteed.<br>

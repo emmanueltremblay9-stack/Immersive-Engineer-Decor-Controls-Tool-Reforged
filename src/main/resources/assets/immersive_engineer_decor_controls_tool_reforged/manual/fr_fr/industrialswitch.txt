@@ -1,7 +1,7 @@
 Interrupteur
 Commande redstone
-<&recipe>Une commande compacte offre un point de commutation redstone clairement identifiable dans une usine.<br>
+<&recipe>L'interrupteur industriel est une armoire de commande haute de deux blocs.<br>
 <br>
-Utilisation : faites un clic droit pour activer ou désactiver une sortie à puissance maximale destinée aux circuits voisins.<br>
+Utilisation : laissez libre la case au-dessus de l'emplacement de pose. Un clic droit sur l'une des moitiés commande les deux ensemble ; chacune émet une redstone à puissance maximale de tous les côtés lorsqu'elle est active.<br>
 <br>
-Remarque : émet un signal de redstone à puissance maximale tant qu'il est activé.
+Remarque : casser une moitié retire l'armoire. Les anciennes armoires sauvegardées conservent leur disposition.

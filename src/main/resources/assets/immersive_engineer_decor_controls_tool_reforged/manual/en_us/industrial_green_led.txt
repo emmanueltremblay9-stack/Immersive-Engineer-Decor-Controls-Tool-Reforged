@@ -1,9 +1,7 @@
 Green LED
 Signal feedback
-<&recipe>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&recipe>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
-
-
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
