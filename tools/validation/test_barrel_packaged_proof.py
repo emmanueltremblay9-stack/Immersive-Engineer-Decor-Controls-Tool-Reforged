@@ -28,7 +28,7 @@ class RuntimeTests(unittest.TestCase):
             split_packages=False, loaded_development_mods=[HARNESS],
             runtime_classpath=[str(jar), '/isolated/harness'], forbidden_main_outputs=['/main/classes', '/main/resources'])
         self.proof = dict(packaged_runtime=dict(jar_path=str(jar), jar_sha256=digest,
-            fixture_free_jar=True, separate_harness_module=True, production_selectors_absent=True,
+            fixture_free_jar=True, separate_harness_module=True, other_production_selectors_absent=True, legacy_selector="iedctr.dev.barrelV5Reference=false", qualification="legacy-diagnostic-only",
             harness_mod_id=HARNESS, harness_mod_path='/isolated/harness', mod_root_uri=root,
             class_origins=[{'class': n, 'resource_uri': root+n.replace('.', '/')+'.class',
                 'code_source_uri': root, 'sha256': hashlib.sha256(n.encode()).hexdigest()} for n in CLASSES],
@@ -45,9 +45,21 @@ class RuntimeTests(unittest.TestCase):
             row['code_source_uri'] = 'file:'+self.report['jar_path']
         self.check()
 
+    def test_requires_exact_legacy_selector_and_diagnostic_scope(self):
+        for field, values in {
+            "legacy_selector": [None, "iedctr.dev.barrelV5Reference=true", "false", "iedctr.dev.barrelV5Reference=FALSE"],
+            "qualification": [None, "default", "packaged-default"],
+            "other_production_selectors_absent": [None, False],
+        }.items():
+            for value in values:
+                bad = copy.deepcopy(self.proof)
+                bad['packaged_runtime'][field] = value
+                with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure):
+                    self.check(bad)
+
     def test_reject_runtime_corruption(self):
         mutations = [lambda p: p.pop('packaged_runtime'),
-            lambda p: p['packaged_runtime'].update(production_selectors_absent=False),
+            lambda p: p['packaged_runtime'].update(other_production_selectors_absent=False),
             lambda p: p['packaged_runtime'].update(separate_harness_module=False),
             lambda p: p['packaged_runtime'].update(jar_sha256='0'*64),
             lambda p: p['packaged_runtime'].update(harness_mod_id=MOD),

@@ -1,4 +1,4 @@
-name: Barrel native fluid matrix
+name: Barrel legacy native fluid matrix
 
 on:
   pull_request:

@@ -552,3 +552,7 @@ apply from: 'gradle/validate-tracker-models.gradle'
 apply from: 'gradle/fluid-packaged-validation.gradle'
 
 apply from: 'gradle/barrel-packaged-validation.gradle'
+
+apply from: 'gradle/barrel-v5-packaged-validation.gradle'
+
+apply from: 'gradle/solar-packaged-validation.gradle'

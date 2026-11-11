@@ -283,6 +283,8 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
             "schema_version": 2,
             "coverage_scope": "seven-machine-screens-excluding-tree-cutter",
             "tree_cutter_qualification": "independent:tree-cutter-v3-native.yml",
+            "barrel_legacy_selector": "iedctr.dev.barrelV5Reference=false", "barrel_qualification": "legacy-diagnostic-only",
+            "solar_legacy_selector": "iedctr.dev.solarV2Reference=false", "solar_qualification": "legacy-diagnostic-only",
             "suite": "native-corrected-machine-gui-v1", "barrel_fixture_fluid": "minecraft:water", "nonce": self.nonce, "status": "passed",
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
@@ -447,6 +449,26 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                     window_height=self.window_height, language="fr_fr", logs=self.logs)
         args.update(overrides)
         return validate_corrected_machine_gui_proof(**args)
+
+    def test_requires_explicit_legacy_diagnostic_not_default_qualification(self):
+        for field, values in {
+            "barrel_legacy_selector": [None, "iedctr.dev.barrelV5Reference=true", "false"],
+            "barrel_qualification": [None, "default", "packaged-default"],
+            "solar_legacy_selector": [None, "iedctr.dev.solarV2Reference=true", "false", "iedctr.dev.solarV2Reference=FALSE"],
+            "solar_qualification": [None, "default", "packaged-default"],
+        }.items():
+            for value in values:
+                bad = copy.deepcopy(self.proof)
+                bad[field] = value
+                with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure):
+                    self.check(bad)
+
+    def test_requires_solar_legacy_proof_fields(self):
+        for field in ("solar_legacy_selector", "solar_qualification"):
+            bad = copy.deepcopy(self.proof)
+            del bad[field]
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(bad)
 
     def test_lava_and_milk_require_matching_native_identity_and_texture(self):
         for fluid, texture in (("lava", "minecraft:block/lava_still"), ("milk", "neoforge:block/milk_still")):

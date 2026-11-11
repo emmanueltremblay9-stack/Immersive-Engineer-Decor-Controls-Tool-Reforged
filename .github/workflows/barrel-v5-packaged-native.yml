@@ -1,0 +1,153 @@
+name: Barrel V5 supplemental default-path packaged qualification
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'build.gradle'
+      - 'gradle/**'
+      - 'gradle.properties'
+      - 'tools/validation/*barrel*'
+      - '.github/workflows/barrel-v5-packaged-native.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+
+jobs:
+  ordinary-artifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Test packaged proof rejection and retained GUI contracts
+        run: |
+          python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_barrel*.py' -v
+      - name: Build and identify ordinary production artifact
+        run: |
+          bash ./gradlew test jar --stacktrace
+          python - <<'PYCODE'
+          import hashlib, json, shutil, subprocess
+          from pathlib import Path
+          from zipfile import ZipFile
+          properties = dict(line.split('=', 1) for line in Path('gradle.properties').read_text().splitlines()
+                            if '=' in line and not line.lstrip().startswith('#'))
+          jar = Path('build/libs') / (properties['mod_id'].strip()+'-'+properties['mod_version'].strip()+'.jar')
+          assert jar.is_file(), 'Missing exact ordinary production JAR'
+          with ZipFile(jar) as archive:
+              assert 'META-INF/neoforge.mods.toml' in archive.namelist(), 'Missing production mod metadata'
+              assert not any(n.startswith('com/oblixorprime/iedctrtest/') or 'NativeBarrelV5PackagedValidation' in n
+                             for n in archive.namelist()), 'Test driver leaked into production JAR'
+          assert not subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all'], text=True).strip(), 'Checkout changed during build'
+          source = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          target = Path('build/barrel-v5-qualified-artifact')
+          target.mkdir()
+          artifact = target/'normal.jar'
+          shutil.copyfile(jar, artifact)
+          digest = hashlib.sha256(artifact.read_bytes()).hexdigest()
+          (target/'normal.jar.sha256').write_text(digest+'  normal.jar\n')
+          (target/'identity.json').write_text(json.dumps(dict(source_sha=source, sha256=digest,
+              original_jar=str(jar), artifact='normal.jar'), indent=2)+'\n')
+          PYCODE
+      - name: Share one exact ordinary artifact with all profiles
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: barrel-v5-production-jar-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/barrel-v5-qualified-artifact/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Retain build results including failures
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: barrel-v5-production-build-results
+          path: |
+            build/reports/tests/
+            build/test-results/
+          retention-days: 14
+
+  native-packaged-v5-default:
+    needs: ordinary-artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        fluid: [water, lava, milk]
+        locale:
+          - {language: en_us, height: 720}
+          - {language: fr_fr, height: 260}
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Install isolated native input dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libx11-6 libxtst6 libgl1-mesa-dri
+      - name: Download the shared ordinary artifact
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: barrel-v5-production-jar-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/barrel-v5-qualified-artifact/
+      - name: Verify shared artifact source and bytes
+        run: |
+          python - <<'PYCODE'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          target = Path('build/barrel-v5-qualified-artifact')
+          identity = json.loads((target/'identity.json').read_text())
+          source = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          digest = hashlib.sha256((target/'normal.jar').read_bytes()).hexdigest()
+          assert identity['source_sha'] == source, 'Shared artifact source differs from candidate'
+          assert identity['artifact'] == 'normal.jar' and identity['sha256'] == digest, 'Shared artifact digest differs'
+          assert (target/'normal.jar.sha256').read_text() == digest+'  normal.jar\n', 'Shared SHA file differs'
+          assert not subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all'], text=True).strip(), 'Downloaded artifact changed source checkout'
+          PYCODE
+      - name: Qualify exact ordinary JAR with default V5 and physical native input
+        run: >-
+          python tools/validation/barrel_v5_packaged_native.py
+          --runtime-jar "${{ github.workspace }}/build/barrel-v5-qualified-artifact/normal.jar"
+          --language ${{ matrix.locale.language }} --height ${{ matrix.locale.height }}
+          --barrel-fluid ${{ matrix.fluid }} --timeout 600
+      - name: Retain packaged artifact and evidence including failures
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: barrel-v5-packaged-${{ matrix.fluid }}-${{ matrix.locale.language }}-${{ matrix.locale.height }}
+          path: |
+            build/barrel-v5-packaged-native-*/
+            build/barrel-v5-qualified-artifact/identity.json
+            build/barrel-v5-qualified-artifact/normal.jar.sha256
+            build/reports/barrel-v5-packaged-runtime.json
+            build/reports/tests/
+            build/test-results/
+          if-no-files-found: error
+          retention-days: 14
