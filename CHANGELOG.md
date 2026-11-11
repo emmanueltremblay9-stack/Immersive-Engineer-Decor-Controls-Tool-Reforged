@@ -2,6 +2,13 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.67-reconstructed] - Unreleased version preparation
+
+### Changed
+- Advance the Gradle and NeoForge version together because `1.1.66-reconstructed` is already public on CurseForge as file 9402055. This metadata-only preparation adds no runtime behavior, assets, recipes, dependencies, save changes or publication manifest.
+- Add regression checks for the ordinary JAR filename, NeoForge version and both manifest version fields. Previous candidate artifacts and qualification records retain their original identities.
+- A separately approved merge still needs successful CI on its exact new main commit, a newly built and hashed ordinary JAR, and qualification bound to those bytes. Earlier CI and gameplay evidence are not proof for the new versioned artifact.
+
 ## Unreleased - Small Water Freezer pipe and bucket automation
 
 ### Fixed

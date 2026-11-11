@@ -535,6 +535,15 @@ tasks.named('jar', Jar).configure {
     }
 }
 
+// Check the ordinary distributable, not only the source metadata or classes directory.
+tasks.named('test').configure {
+    dependsOn tasks.named('jar')
+    inputs.file(tasks.named('jar', Jar).flatMap { it.archiveFile })
+    systemProperty 'iedctr.runtimeJar', tasks.named('jar', Jar).flatMap { it.archiveFile }.get().asFile.absolutePath
+    systemProperty 'iedctr.expectedModId', mod_id
+    systemProperty 'iedctr.expectedModVersion', mod_version
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     options.release = 21
