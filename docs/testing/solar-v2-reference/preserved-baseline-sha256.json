@@ -28,5 +28,27 @@
   },
   "intentional_test_only_updates": {
     "tools/validation/check_barrel_reference_wiring.py": "The public constructor now explicitly disables all three presentations; only the asserted argument count changed. Production and pixel guards remain unchanged."
+  },
+  "tree_cutter_integration": {
+    "main_commit": "890958ff300e9a88dde2a77fc6c145d19c0f98f9",
+    "tree_commit": "96ac07aac200e10e9936b0ae4ae99f9053fae11c",
+    "scope": "Historical files pins above are retained. Only these exact reviewed integration identities replace them for this combined source tree; no gameplay qualification is implied.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "baseline_sha256": "ae734540bb4dd6747d4456ce440e85a94760a11beb38c0dfea566e7d92d58cb1",
+        "integrated_sha256": "34e971011cfeacd68695fe756fd6c4f0dd67b1a65d82d5af6ef5adb1e45fafa7",
+        "reason": "Exact PR173 source: versioned single-output Tree migration and drain-only recovery; other machine mechanics unchanged."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": {
+        "baseline_sha256": "00ddffefc7169e1289f68c328516e4cbf7e7807b5e8365355110ff93d4993e15",
+        "integrated_sha256": "6e56fb8b448c1b19c65cdb3663aeb34ccbdc7ba88f778dc2e5ee79ba8577642b",
+        "reason": "Exact PR173 source: one output for Tree Cutter; all other machine layouts unchanged."
+      },
+      "tools/validation/check_barrel_reference_wiring.py": {
+        "baseline_sha256": "ca232b09a876d380a8ed359efcfdb94acf8a7e095065650a1fbf6508fa0507b1",
+        "integrated_sha256": "89128c598d2e698f4f670b0551b8f918661fca3b836100890873853ec76bc7c3",
+        "reason": "Test-only integration: permit exactly the Tree presentation accessor while retaining the original downstream menu hash."
+      }
+    }
   }
 }

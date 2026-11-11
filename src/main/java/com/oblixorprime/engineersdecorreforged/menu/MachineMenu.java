@@ -11,6 +11,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.TreeCutterV3ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
 import java.util.Locale;
 import java.util.function.IntFunction;
@@ -46,6 +47,7 @@ public class MachineMenu extends AbstractContainerMenu {
    // It no longer selects the Factory Placer presentation: ordinary clients use V2.
    public static final String DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY = "iedctr.dev.factoryPlacerV2Reference";
    private final boolean factoryPlacerV2ReferencePresentation;
+   private final boolean treeCutterV3ReferencePresentation;
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
    public static final int SMALL_MINERAL_SMELTER_V05_DATA_COUNT = 17;
@@ -143,6 +145,7 @@ public class MachineMenu extends AbstractContainerMenu {
          && kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide;
       this.factoryPlacerV2ReferencePresentation = factoryPlacerV2ReferenceRequested
          && kind == MachineKind.FACTORY_PLACER && inventory.player.level().isClientSide;
+      this.treeCutterV3ReferencePresentation = kind == MachineKind.SMALL_TREE_CUTTER && inventory.player.level().isClientSide;
       checkContainerSize(container, 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
@@ -174,6 +177,10 @@ public class MachineMenu extends AbstractContainerMenu {
             var anchor = FactoryPlacerV2ReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
          }
+         if (treeCutterV3ReferencePresentation) {
+            var anchor = TreeCutterV3ReferenceGeometry.anchor(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         }
          if (solarV2ReferencePresentation) {
             var anchor = SolarV2ReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
@@ -191,6 +198,10 @@ public class MachineMenu extends AbstractContainerMenu {
                x = anchor.x(); y = anchor.y();
             } else if (factoryPlacerV2ReferencePresentation) {
                var anchor = FactoryPlacerV2ReferenceGeometry.anchor(18 + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
+            }
+            if (treeCutterV3ReferencePresentation) {
+               var anchor = TreeCutterV3ReferenceGeometry.anchor(1 + row * 9 + column);
                x = anchor.x(); y = anchor.y();
             }
             if (solarV2ReferencePresentation) {
@@ -212,6 +223,10 @@ public class MachineMenu extends AbstractContainerMenu {
             var anchor = FactoryPlacerV2ReferenceGeometry.anchor(45 + column);
             x = anchor.x(); y = anchor.y();
          }
+         if (treeCutterV3ReferencePresentation) {
+            var anchor = TreeCutterV3ReferenceGeometry.anchor(28 + column);
+            x = anchor.x(); y = anchor.y();
+         }
          if (solarV2ReferencePresentation) {
             var anchor = SolarV2ReferenceGeometry.anchor(28 + column);
             x = anchor.x(); y = anchor.y();
@@ -229,6 +244,8 @@ public class MachineMenu extends AbstractContainerMenu {
       }
       return menuType.get();
    }
+
+   public boolean treeCutterV3ReferencePresentation() { return this.treeCutterV3ReferencePresentation; }
 
    public boolean factoryPlacerV2ReferencePresentation() { return this.factoryPlacerV2ReferencePresentation; }
 
