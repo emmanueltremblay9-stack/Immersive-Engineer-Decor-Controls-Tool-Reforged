@@ -14,9 +14,9 @@ Usage: Rotate and place it as visible bracing for beams, poles, and platform edg
 <np>
 Thick Pole Head
 Structural frame part
-<&thick_steel_pole_head>The Straight Thick Steel Pole Head/Foot Thick Steel Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<&thick_steel_pole_head>Place this end piece against a solid surface for a pole foot. Place it against a pole to turn the end plate outward as a head.<br>
 <br>
-Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+The clicked face determines its direction, including floors, ceilings, and horizontal connections. Camera pitch alone does not choose the end.<br>
 <np>
 Thin Steel Pole
 Structural frame part
@@ -26,9 +26,9 @@ Usage: Rotate and place it as visible bracing for beams, poles, and platform edg
 <np>
 Thin Pole Head
 Structural frame part
-<&thin_steel_pole_head>The Straight Thin Steel Pole head/foot Thin Steel Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<&thin_steel_pole_head>Place this end piece against a solid surface for a pole foot. Place it against a pole to turn the end plate outward as a head.<br>
 <br>
-Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+The clicked face determines its direction, including floors, ceilings, and horizontal connections. Camera pitch alone does not choose the end.<br>
 <np>
 Treated Wood Pole
 Structural frame part
@@ -38,9 +38,9 @@ Usage: Rotate and place it as visible bracing for beams, poles, and platform edg
 <np>
 Treated Pole Head
 Structural frame part
-<&treated_wood_pole_head>The Straight Treated Wood Pole Head/Foot Treated Wood Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<&treated_wood_pole_head>Place this end piece against a solid surface for a pole foot. Place it against a pole to turn the end plate outward as a head.<br>
 <br>
-Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+The clicked face determines its direction, including floors, ceilings, and horizontal connections. Camera pitch alone does not choose the end.<br>
 <np>
 Treated Pole Support
 Structural frame part
@@ -50,10 +50,9 @@ Usage: Rotate and place it as visible bracing for beams, poles, and platform edg
 <np>
 Steel Double T Support
 Structural frame part
-<&steel_double_t_support>This block supplies visible structure for machine halls and access frames.<br>
-<br>
-Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
-<np>
+<&steel_double_t_support>Use the Steel Double T Support item on a wall to place an upright wall support. Floor or ceiling clicks place the horizontal support, oriented by your horizontal facing. Wall supports connect to directly touching horizontal steel supports and ceiling treated-wood beams in either placement order.<br>
+The older vertical-support item remains usable in saved inventories, but is hidden from the creative tab and normal JEI list. Picking or breaking its placed block returns the canonical Steel Double T Support item.<br>
+An Iron Bulb can mount flush beneath a free center of a horizontal support. A mounted bulb and a steel pole connector cannot occupy that same center; conflicting placement is rejected without spending the item. The bulb can be mined separately, or returned with the beam under normal tool and loot rules.<br><np>
 Steel Floor Grating
 Service access fitting
 <&steel_floor_grating>This block forms readable service routes around machinery.<br>
@@ -71,12 +70,21 @@ Service access fitting
 <&steel_catwalk_stairs>This block forms readable service routes around machinery.<br>
 <br>
 Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<br>
+Hold Steel Railing and right-click the left or right side of the stairs to install or remove that side in place. Installing a side costs one railing in Survival; removing a purchased side returns it.<br>
+Mine the aimed railing to remove only that side. Mine the step itself to remove the stairs and their remaining purchased railings.<br>
 <np>
 Raised Steel Catwalk
 Service access fitting
-<&steel_catwalk_ta>This block forms readable service routes around machinery.<br>
+<&steel_catwalk_ta>The raised catwalk sits at the top of its block space. It connects down to thick or thin steel poles, straight treated-wood poles, and their heads. Changing or removing the pole updates the connection. Each connection includes the matching complete pole head, with its plate and braces beneath the deck. No separate pole-head item is needed.<br>
 <br>
-Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+Click the top of a sturdy block to place the frame variant. Other placements use the plain deck unless a compatible pole is directly below.<br>
+<br>
+Holding another raised catwalk, click its top or underside to extend the route in the direction you face. The new piece stays at the same height.<br>
+<br>
+Click the underside of a plain deck with an Iron Inset Light to install it. Click again while holding an inset light to remove it. A light installed in survival consumes one item and returns it when removed or when the catwalk is mined. Older automatically selected light variants and creative additions do not refund a light item.<br>
+<br>
+You can also aim directly at the inset lamp from below and mine it normally to remove only the lamp. The deck, pole and railings stay in place. Survival refunds require a suitable harvesting tool; creative and unpaid lamps give no item. Aim at the deck itself to mine the whole catwalk.<br>
 <np>
 Steel Railing
 Service access fitting
@@ -112,7 +120,7 @@ Steel Framed Window
 Protected sightline
 <&steel_framed_window>This block keeps sightlines open while still matching reinforced factory construction.<br>
 <br>
-Usage: Place it in a 1-block wall opening where players should see machinery through a protected barrier.<br>
+Usage: Use it where players should see machinery through a protected barrier.<br>
 <np>
 Metal Sliding Door
 Industrial access point

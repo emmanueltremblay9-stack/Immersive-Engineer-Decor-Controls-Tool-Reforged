@@ -6,37 +6,57 @@ Use these pages when laying out stockrooms, pipe runs, service tanks, and contro
 <np>
 Labeled Crate
 Editable stock label
-<&labeled_crate>This labeled crate is built for clear stockroom sorting. Its front plate can be edited like a small workshop sign.<br>
+<&labeled_crate>This storage crate restores the original 9 by 6 inventory and front-mounted content hint. The hint slot holds one item and is hidden from hoppers and other automation.<br>
 <br>
-Usage: Right-click the label plate to edit the crate label. Right-click the rest of the crate to open storage for fittings, parts, and maintenance supplies.<br>
+Usage: Right-click the crate to open storage. Shift-right-click the front plate to edit any preserved stock label. Shift-click moves items; Ctrl+Shift-click moves matching item stacks with the same components.<br>
+<br>
+Recipe: RPR / PCP / RPR. R = Immersive Engineering Steel Rod, P = Immersive Engineering Steel Plate, C = standard treated-wood crate. Contents, name, and enchantments transfer when upgrading a supported crate.<br>
 <np>
 Fluid Barrel
 Fluid line hardware
-<&fluid_barrel>This fitting is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
-<br>
-Usage: Place it where pipes or buckets can reach the tank face.<br>
+<&fluid_barrel>The barrel stores up to 32,000 mB of water, lava or milk, one fluid type at a time. Use buckets for manual transfer. Connect fluid pipes above or below: horizontal faces do not expose a fluid connection.<br>
+Open the screen to inspect the stored fluid and its amount. Empty the current fluid before changing types; the barrel is storage, not a fluid converter.<br>
 <np>
 Fluid Funnel
 Fluid line hardware
 <&small_fluid_funnel>The Small Fluid Funnel is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
 <br>
 Usage: Put it below the fluid collection point and route its stored contents into tanks or lower pipework.<br>
+<br>
+With no water or lava source directly above it, the funnel also collects rainfall through its open top: 50 mB every 80 ticks in rain, or 100 mB during a thunderstorm. At 20 ticks per second, this fills one bucket in 80 or 40 seconds respectively. Roofs, dry biomes, and snow-only precipitation prevent rain collection. Weather adds only water to an empty or water-filled tank; it never mixes with lava or milk. Source collection takes priority, and the existing downward transfer still applies.<br>
 <np>
 Fluid Pipe Check Valve
 Fluid line hardware
-<&straight_pipe_valve>Fluid Check Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<&straight_pipe_valve>The Check Valve passes fluid in one direction only. It is always enabled and needs no redstone signal. Each transfer call is limited to at most 1000 mB.<br>
 <br>
-Usage: Align the valve with the intended flow direction.<br>
+Example: a source offers 1500 mB toward an empty tank; the valve can forward at most 1000 mB in that call. If the destination accepts only 200 mB, only 200 mB pass. Fluid offered from the outlet is rejected.<br>
+<br>
+Connections: only the two ports along the valve axis carry fluid. The facing side (FACING) is the outlet; the opposite side is the inlet. Connect an actively pushing source to the inlet and an IE pipe leading to a destination that can accept the fluid to the outlet.<br>
+<br>
+The valve does not pump or store fluid. Its limit applies to each transfer call, not to a guaranteed amount per tick. Actual flow depends on the source, pipes and available destination capacity.<br>
+<br>
+Placement: the clicked face determines the outlet; sneaking reverses it. To rotate an already placed horizontal valve, use the Use action with the Engineer's Hammer. The mouse button depends on your controls.<br>
 <np>
 Redstone Fluid Valve
 Fluid line hardware
-<&straight_pipe_valve_redstone>The Redstone Fluid Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<&straight_pipe_valve_redstone>This valve opens or closes according to its redstone signal. Signal 0 closes it. Signals 1 through 15 open it with the same limit of 1000 mB per call. A stronger signal does not increase that limit.<br>
 <br>
-Usage: Align the valve with the intended flow direction.<br>
+Example: a lever switched off blocks the flow; switched on, it permits up to 1000 mB per call if the destination accepts it. Use this valve as an on/off switch. Apply the redstone control on a side other than the two fluid ports.<br>
+<br>
+Connections: only the two ports along the valve axis carry fluid. The facing side (FACING) is the outlet; the opposite side is the inlet. Connect an actively pushing source to the inlet and an IE pipe leading to a destination that can accept the fluid to the outlet.<br>
+<br>
+The valve does not pump or store fluid. Its limit applies to each transfer call, not to a guaranteed amount per tick. Actual flow depends on the source, pipes and available destination capacity.<br>
+<br>
+Placement: the clicked face determines the outlet; sneaking reverses it. To rotate an already placed horizontal valve, use the Use action with the Engineer's Hammer. The mouse button depends on your controls.<br>
 <np>
 Analog Fluid Valve
 Fluid line hardware
-<&straight_pipe_valve_redstone_analog>The Analog Fluid Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<&straight_pipe_valve_redstone_analog>This valve sets each call's limit from the redstone strength. Signal 0 closes it. Signals 1 through 14 allow 66 times the signal in mB per call. Signal 15 allows 1000 mB per call.<br>
 <br>
-Usage: Align the valve with the intended flow direction.<br>
-
+Examples: signal 1 = 66 mB; signal 7 = 462 mB; signal 14 = 924 mB; signal 15 = at most 1000 mB per call. A destination accepting less further reduces the actual volume. Apply redstone control on a side other than the two fluid ports.<br>
+<br>
+Connections: only the two ports along the valve axis carry fluid. The facing side (FACING) is the outlet; the opposite side is the inlet. Connect an actively pushing source to the inlet and an IE pipe leading to a destination that can accept the fluid to the outlet.<br>
+<br>
+The valve does not pump or store fluid. Its limit applies to each transfer call, not to a guaranteed amount per tick. Actual flow depends on the source, pipes and available destination capacity.<br>
+<br>
+Placement: the clicked face determines the outlet; sneaking reverses it. To rotate an already placed horizontal valve, use the Use action with the Engineer's Hammer. The mouse button depends on your controls.<br>

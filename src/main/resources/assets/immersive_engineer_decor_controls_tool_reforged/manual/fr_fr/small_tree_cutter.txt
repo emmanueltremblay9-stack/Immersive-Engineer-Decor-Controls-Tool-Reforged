@@ -1,5 +1,5 @@
 Coupe-arbre
 Équipement d'atelier
-<&recipe>Le petit coupe-arbre est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
-<br>
-Utilisation : dirigez-le vers des arbres adultes et ramassez séparément les objets lâchés.<br>
+<&recipe>Dirigez la face de travail vers le bas d'une colonne verticale de bûches. Le coupe-arbre examine jusqu'à 18 bûches consécutives vers le haut ; il n'abat pas les branches et ne traite pas les feuilles. Un signal redstone suspend la coupe. Cette version ne consomme pas de FE.<br>
+Récupérez les bûches dans l'unique emplacement de sortie, à la main ou par extraction automatisée. Il n'y a pas d'entrée de production. Si tous les objets d'un bloc ne tiennent pas, le bloc reste intact. Les anciens objets conservés passent par cette même sortie avant la reprise de la coupe, même pendant une pause redstone.<br>
+Attention lors d'une mise à jour : au premier tick serveur, un ancien inventaire sans version perd les bûches vanilla ordinaires non modifiées de ses emplacements sauvegardés. Les bûches de mods, objets personnalisés et autres contenus sont conservés pour récupération. Sauvegardez les anciens mondes avant la mise à jour.<br>

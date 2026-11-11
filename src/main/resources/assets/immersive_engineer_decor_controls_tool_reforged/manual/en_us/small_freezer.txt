@@ -1,6 +1,5 @@
 Water Freezer
 Compact processing unit
-<&recipe>The Water Freezer handles compact chilling work for powered fluid setups.<br>
-<br>
-Usage: Supply water and power for staged ice production.<br>
-
+<&recipe>Supply FE and plain water through pipes on any face. The tank holds 2,000 mB. With the input empty, 1,000 mB makes one Ice in 180 ticks at 8 FE per tick (1,440 FE total). A partial batch waits without using energy.<br>
+An occupied input takes priority over tank water. Water Bucket, Ice and Packed Ice retain their item recipes; remove invalid input or the returned empty bucket before using tank water. Automation can recover empty input buckets and finished output, but cannot extract an unprocessed water bucket.<br>
+A redstone signal, missing energy or blocked output interrupts the cycle. The comparator reports freezing phase, not tank fullness. Right-clicking with a water bucket is a separate immediate operation costing 1,440 FE; tank input does not automatically upgrade Ice to Packed Ice or Blue Ice.<br>

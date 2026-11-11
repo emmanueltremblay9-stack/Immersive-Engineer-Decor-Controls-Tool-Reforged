@@ -1,6 +1,4 @@
 Fluid Barrel
 Fluid line hardware
-<&recipe>This fitting is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
-<br>
-Usage: Place it where pipes or buckets can reach the tank face.<br>
-
+<&recipe>The barrel stores up to 32,000 mB of water, lava or milk, one fluid type at a time. Use buckets for manual transfer. Connect fluid pipes above or below: horizontal faces do not expose a fluid connection.<br>
+Open the screen to inspect the stored fluid and its amount. Empty the current fluid before changing types; the barrel is storage, not a fluid converter.<br>

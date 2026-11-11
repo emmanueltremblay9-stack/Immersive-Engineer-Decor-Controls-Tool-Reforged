@@ -6,9 +6,11 @@ Ces outils servent loin d'un atelier entièrement équipé : balisez votre route
 <np>
 Outil REDIA
 Polyvalence recouverte de diamant
-<&redia_tool>L'outil REDIA est un outil de terrain durable pour les petits travaux du sol. Utilisez-le sur une terre appropriée pour la labourer.<br>
+<&redia_tool>L'outil REDIA est un outil multifonction durable de qualité diamant pour travailler sur les chantiers temporaires, dans les ateliers et aux entrées des mines.<br>
 <br>
-Utilisez-le contre une face stable en portant des torches pour poser une torche de votre inventaire sans user REDIA. Le travail du sol, la tonte, les actions de hache et l'abattage des arbres consomment de la durabilité.
+Utilisation : employez-le en portant des torches pour poser une torche de votre inventaire sans user REDIA. Utilisez-le accroupi pour tailler les plantes ou transformer le sol entre terre, terre labourée, terre stérile et chemin de terre. L'action de hache d'origine s'applique depuis la face inférieure. Cassez des bûches en vous accroupissant pour abattre les blocs d'arbre reliés.<br>
+<br>
+Réparez-le avec des diamants. Dépasser la réparation complète de l'outil REDIA rétablit sa progression d'origine vers Efficacité et Fortune.
 <np>
 Marteau de concassage de minerais
 Outil de concassage manuel
@@ -28,9 +30,11 @@ Utilisez-le pour repérer des machines, bifurcations de tunnels, commandes dista
 <np>
 Charbon d'Ariane
 Balisage des mines
-<&ariadne_coal>Le charbon d'Ariane place rapidement des flèches noires sur les parois stables des mines. Utilisez-le sur une face solide pour indiquer le prochain virage, une sortie ou une bifurcation ; le point cliqué permet de choisir huit directions, diagonales comprises.<br>
+<&ariadne_coal>Le charbon d'Ariane permet de baliser rapidement les puits, les galeries et les chantiers souterrains temporaires.<br>
 <br>
-Le charbon d'Ariane est un outil de balisage réutilisable offrant 100 utilisations. Chaque placement réussi consomme un point de durabilité. Les faces incompatibles sont refusées sans user l'objet.
+Utilisation : cliquez sur la face stable d'un bloc pour placer une flèche noire sur ce bord. La balise tient compte du point cliqué et propose huit directions, diagonales comprises, pour indiquer les virages, sorties, culs-de-sac et voies de ravitaillement sans transporter de panneaux séparés.<br>
+<br>
+Le charbon d'Ariane est un outil de balisage réutilisable offrant 100 utilisations. Chaque placement réussi consomme un point de durabilité ; les faces incompatibles sont refusées sans user l'objet.
 <np>
 Auto-injecteur stimulant
 Injecteur d'urgence
@@ -80,15 +84,19 @@ Utilisation : mangez-la sur le terrain pendant la pose de commandes, tuyaux, pla
 <np>
 Presse-esprit
 Condensateur d'expérience
-<&charged_lapis_squeezer>Le presse-esprit transforme un lapis-lazuli et un niveau d'expérience de votre inventaire en lapis chargé.<br>
+<&charged_lapis_squeezer>Le presse-esprit transforme le lapis et l'expérience en lapis chargé.<br>
 <br>
-Chaque transformation réussie blesse, épuise et aveugle brièvement l'utilisateur. L'appareil refuse de fonctionner sans lapis, sans XP ou si l'utilisateur est trop proche de la mort.
+Utilisation : gardez du lapis-lazuli et au moins un niveau d'expérience, puis utilisez l'outil. Une extraction réussie consomme un niveau et un lapis, blesse l'utilisateur, use le presse-esprit et produit un lapis chargé.<br>
+<br>
+Il refuse de fonctionner si vous manquez de lapis ou d'XP, ou si vous êtes trop proche de la mort.
 <np>
 Lapis chargé
 Expérience stockée
-<&charged_lapis>Le lapis chargé stocke un niveau d'expérience. Consommez-le pour récupérer ce niveau, supprimer les effets actifs et restaurer un peu de santé.<br>
+<&charged_lapis>Le lapis chargé stocke un niveau d'expérience obtenu avec le presse-esprit.<br>
 <br>
-Fabriquez d'abord un presse-esprit ; utilisez-le avec du lapis et de l'XP disponibles pour produire du lapis chargé.
+Utilisation : consommez-le pour récupérer un niveau, supprimer les effets actifs et restaurer un peu de santé.<br>
+<br>
+L'affichage de recette présente le presse-esprit, car le lapis chargé s'obtient en utilisant cet outil avec du lapis et de l'XP disponibles.
 <np>
 Fragments grossiers de fer
 Matériau d'outil d'ingénieur utilisé par l'ensemble de recettes reconstitué.

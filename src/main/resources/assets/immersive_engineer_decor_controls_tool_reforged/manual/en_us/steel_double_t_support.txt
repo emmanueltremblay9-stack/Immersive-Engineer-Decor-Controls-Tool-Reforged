@@ -1,7 +1,5 @@
 Steel Double T Support
 Structural frame part
-<&recipe>This block supplies visible structure for machine halls and access frames.<br>
-<br>
-Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
-<br>
-An Iron Bulb can mount flush beneath a free center. A mounted bulb and a steel pole connector cannot occupy the same center; placement of the conflicting part is rejected without spending its item. The bulb can be mined separately, or returned with the beam under normal tool and loot rules.<br>
+<&recipe>Use the Steel Double T Support item on a wall to place an upright wall support. Floor or ceiling clicks place the horizontal support, oriented by your horizontal facing. Wall supports connect to directly touching horizontal steel supports and ceiling treated-wood beams in either placement order.<br>
+The older vertical-support item remains usable in saved inventories, but is hidden from the creative tab and normal JEI list. Picking or breaking its placed block returns the canonical Steel Double T Support item.<br>
+An Iron Bulb can mount flush beneath a free center of a horizontal support. A mounted bulb and a steel pole connector cannot occupy that same center; conflicting placement is rejected without spending the item. The bulb can be mined separately, or returned with the beam under normal tool and loot rules.<br>

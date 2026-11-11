@@ -27,9 +27,11 @@ Rester assis seul n’apporte ni nourriture, ni soin, ni effet temporaire. Il n�
 <np>
 Établi de métallurgie
 Poste de fabrication de plaques
-<&metal_crafting_table>L'établi de métallurgie est un poste renforcé avec un emplacement de marteau, une grille de fabrication 3x3 et un emplacement de sortie distinct.<br>
+<&metal_crafting_table>Établi métallique avec un emplacement réservé au marteau, une grille de fabrication 3x3 et une sortie.<br>
 <br>
-Utilisation : employez la grille pour la fabrication ordinaire. Pour les plaques IE, placez un marteau d'ingénieur dans l'emplacement d'outil et le matériau de la plaque dans la grille, puis prenez le résultat. Les décors en acier utilisent des plaques d'acier pour les poteaux, passerelles, fenêtres, portes, garde-corps et autres pièces en acier.<br>
+Utilisation : employez la grille comme une table de fabrication ordinaire. Pour produire des plaques IE, placez un marteau d'ingénieur dans l'emplacement d'outil et le matériau dans la grille, puis prenez la plaque formée dans la sortie.<br>
+<br>
+Les décors en acier utilisent des plaques d'acier. Insérez un marteau d'Immersive Engineering, martelez les lingots d'acier en plaques, puis utilisez-les pour fabriquer poteaux, passerelles, fenêtres, portes, garde-corps et autres décors en acier.<br>
 <np>
 Entonnoir d'usine
 Équipement d'atelier
@@ -51,9 +53,8 @@ Utilisation : dirigez sa face de travail vers l'espace ciblé et chargez des pil
 <np>
 Brise-bloc
 Équipement d'atelier
-<&small_block_breaker>Le petit brise-bloc est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
-<br>
-Utilisation : dirigez la face de travail vers le bloc à retirer.<br>
+<&small_block_breaker>Dirigez la face de travail vers le bloc à retirer et fournissez les FE par dessous. La réserve contient 32 000 FE et accepte au maximum 256 FE par tick. Un bloc coûte 160 FE plus 160 FE multipliés par sa dureté (arrondi) ; même un bloc de dureté nulle coûte de l'énergie.<br>
+Prenez les objets dans l'emplacement de sortie ou extrayez-les automatiquement. La machine attend si elle manque de place ou d'énergie. Un signal redstone arrête le travail ; les blocs incassables restent intacts.<br>
 <np>
 Incinérateur de déchets
 Unité de traitement compacte
@@ -75,36 +76,35 @@ Utilisation : fournissez des FE et un ingrédient de cuisson valide.<br>
 <np>
 Fourneau de fusion de minéraux
 Unité de traitement compacte
-<&small_mineral_smelter>Le fourneau de fusion de minéraux traite les minéraux à haute température dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : fournissez des blocs minéraux et de l'énergie pour les opérations de fusion à haute température.<br>
+<&small_mineral_smelter>Choisissez le mode Lave, Magma ou Obsidienne dans l'interface. Un bloc minéral accepté, comme la pierre ou les pierres, produit 1 000 mB de lave en mode Lave, ou un bloc de magma en mode Magma. Le mode Obsidienne refroidit un lot de 1 000 mB de lave en une obsidienne sans consommer d'eau. Un changement de mode pendant un lot s'applique au lot suivant.<br>
+Insérez les objets et la lave par dessus, extrayez-les par dessous et fournissez les FE à l'arrière. Le réservoir contient 4 000 mB de lave. Pendant le refroidissement de l'obsidienne, les 1 000 mB engagés sont réservés ; seul l'excédent peut être retiré. L'ancien emplacement supplémentaire n'est pas un emplacement de combustible. Évitez le contact avec la machine chaude.<br>
 <np>
 Congélateur à eau
 Unité de traitement compacte
-<&small_freezer>Le congélateur à eau réalise des travaux de refroidissement compacts dans les installations de fluides alimentées en énergie.<br>
-<br>
-Utilisation : fournissez de l'eau et de l'énergie pour produire progressivement de la glace.<br>
+<&small_freezer>Fournissez des FE et de l'eau ordinaire par tuyau sur n'importe quelle face. Le réservoir contient 2 000 mB. Si l'entrée est vide, 1 000 mB donnent un bloc de glace en 180 ticks à 8 FE par tick (1 440 FE au total). Une quantité insuffisante attend sans consommer d'énergie.<br>
+Un objet dans l'entrée a priorité sur l'eau du réservoir. Le seau d'eau, la glace et la glace compactée conservent leurs recettes ; retirez les objets invalides et le seau vide rendu avant d'utiliser le réservoir. L'automatisation récupère les seaux vides et le résultat, sans extraire un seau d'eau non traité.<br>
+Un signal redstone, le manque d'énergie ou une sortie bloquée interrompent le cycle. Le comparateur indique la phase de congélation, pas le remplissage. Le clic droit avec un seau d'eau reste une opération immédiate distincte à 1 440 FE ; le réservoir ne transforme pas automatiquement la glace en glace compactée ou bleue.<br>
 <np>
 Fluide passif
 Équipement de réseau de fluides
-<&passive_fluid_accumulator>L'accumulateur de fluide passif est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<&passive_fluid_accumulator>L'accumulateur de fluide passif collecte 250 mB d'eau tous les 80 ticks lorsqu'au moins un de ses six blocs voisins contient une source d'eau. Son réservoir contient 4000 mB et ne consomme aucune énergie. La collecte conserve la source voisine ; l'eau qui coule et l'eau contenue dans le bloc de l'accumulateur ne comptent pas.<br>
 <br>
-Utilisation : placez-le contre des sources d'eau adaptées et laissez de la place pour extraire le fluide.<br>
+Placez-le directement dans une source d'eau pour conserver cette eau dans le bloc. L'utilisation normale d'un seau remplit ou vide le réservoir interne. Accroupissez-vous en utilisant un seau d'eau ou un seau vide pour ajouter ou retirer l'eau autour du bloc. Ces deux réserves d'eau sont indépendantes.<br>
+<br>
+Utilisez des conduites pour extraire l'eau stockée, ou placez des seaux vides dans l'emplacement d'entrée et récupérez les seaux remplis dans l'emplacement de sortie.<br>
 <np>
 Panneau solaire
 Équipement d'atelier
-<&small_solar_panel>Le petit panneau solaire est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
-<br>
-Utilisation : exposez-le à ciel ouvert et reliez des équipements peu gourmands.<br>
+<&small_solar_panel>Placez le panneau avec une vue dégagée vers le ciel dans une dimension éclairée par le ciel. De jour, il produit 32 FE toutes les 20 ticks, ou 16 FE si la pluie atteint le panneau. La nuit ou un ciel obstrué arrêtent la production. Sa réserve contient 64 000 FE.<br>
+Insérez un objet acceptant les FE dans l'emplacement de recharge. Toutes les 20 ticks, le panneau recharge d'abord cet objet, puis envoie le budget de transfert restant aux récepteurs dessous ou sur les côtés. Le budget actif partagé est de 256 FE par mise à jour, et non par tick.<br>
 <np>
 Machine à traire
 Équipement d'atelier
-<&small_milking_machine>La petite machine à traire est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
-<br>
-Utilisation : placez-la près des vaches et prévoyez l'extraction des récipients de lait ou du fluide.<br>
+<&small_milking_machine>Orientez la machine vers des vaches adultes proches. Sans signal redstone, elle cherche à produire du lait toutes les 120 ticks. Un véritable seau vide dans l'entrée peut devenir un seau de lait dans la sortie ; sinon, le lait rejoint le réservoir de 4 000 mB s'il reste de la place. Prévoyez l'extraction des seaux remplis ou du lait liquide.<br>
+Avec TerraFirmaCraft installé, l'adaptateur de ses vaches respecte les conditions natives de disponibilité, familiarité, sexe, âge et délai. Seul du lait ordinaire compatible pouvant être stocké est accepté ; tous les animaux ne deviennent pas pour autant trayables. Cette page décrit le comportement intégré, pas une interface expérimentale de remplacement.<br>
 <np>
 Coupe-arbre
 Équipement d'atelier
-<&small_tree_cutter>Le petit coupe-arbre est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
-<br>
-Utilisation : dirigez-le vers des arbres adultes et ramassez séparément les objets lâchés.<br>
+<&small_tree_cutter>Dirigez la face de travail vers le bas d'une colonne verticale de bûches. Le coupe-arbre examine jusqu'à 18 bûches consécutives vers le haut ; il n'abat pas les branches et ne traite pas les feuilles. Un signal redstone suspend la coupe. Cette version ne consomme pas de FE.<br>
+Récupérez les bûches dans l'unique emplacement de sortie, à la main ou par extraction automatisée. Il n'y a pas d'entrée de production. Si tous les objets d'un bloc ne tiennent pas, le bloc reste intact. Les anciens objets conservés passent par cette même sortie avant la reprise de la coupe, même pendant une pause redstone.<br>
+Attention lors d'une mise à jour : au premier tick serveur, un ancien inventaire sans version perd les bûches vanilla ordinaires non modifiées de ses emplacements sauvegardés. Les bûches de mods, objets personnalisés et autres contenus sont conservés pour récupération. Sauvegardez les anciens mondes avant la mise à jour.<br>

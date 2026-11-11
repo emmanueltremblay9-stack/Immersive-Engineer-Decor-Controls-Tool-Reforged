@@ -1,5 +1,5 @@
 Congélateur à eau
 Unité de traitement compacte
-<&recipe>Le congélateur à eau réalise des travaux de refroidissement compacts dans les installations de fluides alimentées en énergie.<br>
-<br>
-Utilisation : fournissez de l'eau et de l'énergie pour produire progressivement de la glace.<br>
+<&recipe>Fournissez des FE et de l'eau ordinaire par tuyau sur n'importe quelle face. Le réservoir contient 2 000 mB. Si l'entrée est vide, 1 000 mB donnent un bloc de glace en 180 ticks à 8 FE par tick (1 440 FE au total). Une quantité insuffisante attend sans consommer d'énergie.<br>
+Un objet dans l'entrée a priorité sur l'eau du réservoir. Le seau d'eau, la glace et la glace compactée conservent leurs recettes ; retirez les objets invalides et le seau vide rendu avant d'utiliser le réservoir. L'automatisation récupère les seaux vides et le résultat, sans extraire un seau d'eau non traité.<br>
+Un signal redstone, le manque d'énergie ou une sortie bloquée interrompent le cycle. Le comparateur indique la phase de congélation, pas le remplissage. Le clic droit avec un seau d'eau reste une opération immédiate distincte à 1 440 FE ; le réservoir ne transforme pas automatiquement la glace en glace compactée ou bleue.<br>

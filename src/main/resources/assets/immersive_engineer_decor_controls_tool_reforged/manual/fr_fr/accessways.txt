@@ -50,10 +50,9 @@ Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, 
 <np>
 Support en acier double T
 Élément d'ossature
-<&steel_double_t_support>Ce bloc forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
-<br>
-Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
-<np>
+<&steel_double_t_support>Utilisez l'objet Support en acier double T sur un mur pour placer un support mural vertical. Un clic au sol ou au plafond place le support horizontal, orienté selon votre direction horizontale. Les supports muraux se raccordent aux supports horizontaux en acier et aux poutres de plafond en bois traité en contact direct, quel que soit l'ordre de pose.<br>
+L'ancien objet de support vertical reste utilisable dans les inventaires sauvegardés, mais il est masqué dans l'onglet créatif et la liste JEI normale. Le prélèvement ou le minage du bloc posé rend l'objet canonique Support en acier double T.<br>
+Une ampoule en fer peut se fixer sous le centre libre d'un support horizontal. Une ampoule et un raccord de poteau en acier ne peuvent pas occuper ce même centre ; une pose incompatible est refusée sans consommer l'objet. L'ampoule peut être minée séparément ou rendue avec la poutre selon les règles normales d'outils et de butin.<br><np>
 Caillebotis en acier
 Élément de voie de service
 <&steel_floor_grating>Ce bloc délimite clairement les voies de service autour des machines.<br>
@@ -71,12 +70,21 @@ Escaliers de passerelle en acier
 <&steel_catwalk_stairs>Ce bloc délimite clairement les voies de service autour des machines.<br>
 <br>
 Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<br>
+Tenez une rambarde en acier et faites un clic droit sur le côté gauche ou droit de l’escalier pour ajouter ou retirer ce côté sur place. En Survie, la pose consomme une rambarde ; le retrait d’un côté ajouté la restitue.<br>
+Minez la rambarde visée pour retirer uniquement ce côté. Minez la marche pour retirer l’escalier et ses rambardes ajoutées restantes.<br>
 <np>
 Passerelle en acier surélevée
 Élément de voie de service
-<&steel_catwalk_ta>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&steel_catwalk_ta>Cette passerelle occupe le haut de son bloc. Elle se raccorde aux poteaux en acier fins ou épais, aux poteaux droits en bois traité et à leurs têtes placés juste en dessous. Le raccord s'adapte au changement ou au retrait du poteau. Chaque raccord intègre la tête complète du poteau correspondant, avec sa platine et ses renforts sous le plateau. Aucun objet de tête de poteau supplémentaire n'est nécessaire.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Cliquez sur le dessus d'un bloc solide pour obtenir la variante avec cadre. Les autres placements utilisent le plateau simple, sauf si un poteau compatible se trouve juste en dessous.<br>
+<br>
+En tenant une autre passerelle surélevée, cliquez sur le dessus ou le dessous pour prolonger la passerelle dans la direction regardée, à la même hauteur.<br>
+<br>
+Cliquez sous un plateau simple avec une lampe encastrée en fer pour l'installer. Cliquez à nouveau en tenant une telle lampe pour la retirer. En survie, l'installation consomme un objet, rendu au retrait ou au minage de la passerelle. Les anciennes variantes lumineuses choisies automatiquement et les ajouts en créatif ne rendent pas de lampe.<br>
+<br>
+Vous pouvez aussi viser directement la lampe par dessous et la miner normalement pour ne retirer que la lampe. Le plateau, le poteau et les garde-corps restent en place. En survie, le remboursement exige un outil de récolte adapté ; les lampes gratuites et le retrait en créatif ne donnent aucun objet. Visez le plateau lui-même pour miner toute la passerelle.<br>
 <np>
 Garde-corps en acier
 Élément de voie de service
@@ -112,7 +120,7 @@ Fenêtre encadrée en acier
 Vue protégée
 <&steel_framed_window>Ce bloc préserve la visibilité tout en s'intégrant à une construction industrielle renforcée.<br>
 <br>
-Utilisation : placez-le dans une ouverture murale d'un bloc pour observer les machines à travers une barrière protectrice.<br>
+Utilisation : placez-le pour observer les machines à travers une barrière protectrice.<br>
 <np>
 Porte coulissante en métal
 Point d'accès industriel

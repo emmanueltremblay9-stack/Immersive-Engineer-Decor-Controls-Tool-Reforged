@@ -1,5 +1,4 @@
 Baril de fluide
 Équipement de réseau de fluides
-<&recipe>Cet élément compact de réseau de fluides convient aux petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
-<br>
-Utilisation : placez-le pour que les tuyaux ou les seaux puissent atteindre la face du réservoir.<br>
+<&recipe>Le tonneau stocke jusqu'à 32 000 mB d'eau, de lave ou de lait, un seul type de fluide à la fois. Utilisez des seaux pour les transferts manuels. Branchez les tuyaux au-dessus ou en dessous : les faces horizontales n'offrent pas de connexion de fluide.<br>
+Ouvrez l'interface pour consulter le fluide et sa quantité. Videz le fluide présent avant de changer de type ; le tonneau stocke les fluides sans les convertir.<br>

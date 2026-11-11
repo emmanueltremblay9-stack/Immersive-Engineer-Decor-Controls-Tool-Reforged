@@ -12,9 +12,8 @@ Utilisation : faites un clic droit sur la plaque pour modifier l'étiquette. Fai
 <np>
 Baril de fluide
 Équipement de réseau de fluides
-<&fluid_barrel>Cet élément compact de réseau de fluides convient aux petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
-<br>
-Utilisation : placez-le pour que les tuyaux ou les seaux puissent atteindre la face du réservoir.<br>
+<&fluid_barrel>Le tonneau stocke jusqu'à 32 000 mB d'eau, de lave ou de lait, un seul type de fluide à la fois. Utilisez des seaux pour les transferts manuels. Branchez les tuyaux au-dessus ou en dessous : les faces horizontales n'offrent pas de connexion de fluide.<br>
+Ouvrez l'interface pour consulter le fluide et sa quantité. Videz le fluide présent avant de changer de type ; le tonneau stocke les fluides sans les convertir.<br>
 <np>
 Entonnoir à fluides
 Équipement de réseau de fluides
@@ -24,18 +23,36 @@ Utilisation : placez-le sous le point de collecte de fluide et dirigez son conte
 <np>
 Clapet anti-retour de tuyau de fluide
 Équipement de réseau de fluides
-<&straight_pipe_valve>Le clapet anti-retour de tuyau de fluide est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<&straight_pipe_valve>Le clapet anti-retour laisse passer le fluide dans un seul sens. Il reste toujours ouvert et n'a pas besoin de redstone. Il limite chaque appel à 1000 mB au maximum.<br>
 <br>
-Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+Exemple : une source propose 1500 mB vers un réservoir vide ; le clapet peut en transmettre au plus 1000 mB dans cet appel. Si la destination n'en accepte que 200 mB, seuls 200 mB passent. Un transfert présenté par la sortie est refusé.<br>
+<br>
+Raccordement : seuls les deux ports dans l'axe de la vanne transportent le fluide. La face orientée (FACING) est la sortie ; la face opposée est l'entrée. Reliez une source qui pousse le fluide à l'entrée et une conduite IE menant à une destination capable de l'accepter à la sortie.<br>
+<br>
+La vanne ne pompe pas et ne stocke aucun fluide. La limite s'applique à chaque appel de transfert : ce n'est pas un débit garanti par tick. Le volume réel dépend de la source, des tuyaux et de la place disponible à destination.<br>
+<br>
+Placement : la face cliquée détermine la sortie ; s'accroupir inverse ce sens. Pour tourner une vanne horizontale déjà posée, utilisez l'action Utiliser avec l'Engineer's Hammer. Le bouton dépend de vos commandes.<br>
 <np>
 Vanne de fluide redstone
 Équipement de réseau de fluides
-<&straight_pipe_valve_redstone>La vanne de fluide contrôlée par redstone est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<&straight_pipe_valve_redstone>Cette vanne ouvre ou ferme le passage selon le signal redstone reçu. Signal 0 : fermée. Signaux 1 à 15 : ouverte, avec la même limite de 1000 mB par appel. Augmenter le signal ne change pas cette limite.<br>
 <br>
-Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+Exemple : un levier éteint bloque le passage ; allumé, il autorise jusqu'à 1000 mB par appel si la destination les accepte. Cette vanne convient à un simple interrupteur. Raccordez la commande redstone sur un côté distinct des deux ports de fluide.<br>
+<br>
+Raccordement : seuls les deux ports dans l'axe de la vanne transportent le fluide. La face orientée (FACING) est la sortie ; la face opposée est l'entrée. Reliez une source qui pousse le fluide à l'entrée et une conduite IE menant à une destination capable de l'accepter à la sortie.<br>
+<br>
+La vanne ne pompe pas et ne stocke aucun fluide. La limite s'applique à chaque appel de transfert : ce n'est pas un débit garanti par tick. Le volume réel dépend de la source, des tuyaux et de la place disponible à destination.<br>
+<br>
+Placement : la face cliquée détermine la sortie ; s'accroupir inverse ce sens. Pour tourner une vanne horizontale déjà posée, utilisez l'action Utiliser avec l'Engineer's Hammer. Le bouton dépend de vos commandes.<br>
 <np>
 Vanne de fluide analogique
 Équipement de réseau de fluides
-<&straight_pipe_valve_redstone_analog>La vanne de fluide à redstone analogique est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<&straight_pipe_valve_redstone_analog>Cette vanne règle la limite de chaque appel selon la puissance redstone. Signal 0 : fermée. Signaux 1 à 14 : 66 fois le signal en mB par appel. Signal 15 : 1000 mB par appel.<br>
 <br>
-Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+Exemples : signal 1 = 66 mB ; signal 7 = 462 mB ; signal 14 = 924 mB ; signal 15 = 1000 mB au maximum par appel. Une destination qui accepte moins réduit encore le volume transmis. Raccordez la commande sur un côté distinct des deux ports de fluide.<br>
+<br>
+Raccordement : seuls les deux ports dans l'axe de la vanne transportent le fluide. La face orientée (FACING) est la sortie ; la face opposée est l'entrée. Reliez une source qui pousse le fluide à l'entrée et une conduite IE menant à une destination capable de l'accepter à la sortie.<br>
+<br>
+La vanne ne pompe pas et ne stocke aucun fluide. La limite s'applique à chaque appel de transfert : ce n'est pas un débit garanti par tick. Le volume réel dépend de la source, des tuyaux et de la place disponible à destination.<br>
+<br>
+Placement : la face cliquée détermine la sortie ; s'accroupir inverse ce sens. Pour tourner une vanne horizontale déjà posée, utilisez l'action Utiliser avec l'Engineer's Hammer. Le bouton dépend de vos commandes.<br>

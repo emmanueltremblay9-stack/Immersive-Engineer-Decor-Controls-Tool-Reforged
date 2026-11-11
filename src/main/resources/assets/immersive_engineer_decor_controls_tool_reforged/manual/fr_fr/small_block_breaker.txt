@@ -1,5 +1,4 @@
 Brise-bloc
 Équipement d'atelier
-<&recipe>Le petit brise-bloc est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
-<br>
-Utilisation : dirigez la face de travail vers le bloc à retirer.<br>
+<&recipe>Dirigez la face de travail vers le bloc à retirer et fournissez les FE par dessous. La réserve contient 32 000 FE et accepte au maximum 256 FE par tick. Un bloc coûte 160 FE plus 160 FE multipliés par sa dureté (arrondi) ; même un bloc de dureté nulle coûte de l'énergie.<br>
+Prenez les objets dans l'emplacement de sortie ou extrayez-les automatiquement. La machine attend si elle manque de place ou d'énergie. Un signal redstone arrête le travail ; les blocs incassables restent intacts.<br>
