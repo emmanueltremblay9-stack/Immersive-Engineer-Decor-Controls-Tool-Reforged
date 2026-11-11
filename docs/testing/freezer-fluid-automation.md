@@ -83,3 +83,22 @@ Reconciliation and block-entity replacement tests do not prove those behaviors.
 Any substantial new automation for that checklist needs a separate, scoped
 Markdown implementation mandate. No merge, release, installation or user-server
 qualification is included in this reconciliation.
+
+### Isolated Factory Placer qualification follow-up
+
+The first reconciled candidate `044b2b365dc57eded4a46720d09d2121ef1849b7`
+passed its Freezer/Tree GameTests, but a separate existing Factory Placer
+packaged-default smoke failed at menu opening. Its error-message expression
+called `mc.screen.getClass()` while the client screen was still null after the
+server had opened the menu. Source and JAR identities matched; the proof's
+`failed` status correctly made the evidence validator reject it.
+
+The isolated validation harness now returns while the client screen is null,
+then still rejects every non-null unexpected screen. Its existing deadline,
+tick limit, server-menu checks and evidence gates are unchanged. An executable
+Java excerpt regression exercises delayed null-to-ready transition, wrong
+screen rejection, and both timeout limits; the original code is a negative
+control that must reproduce the null dereference. This is a pre-existing test
+harness fix, not a change to Freezer or Factory Placer production behavior.
+Fresh CI must qualify the follow-up commit; the first candidate's successful
+checks do not replace final-source qualification.
