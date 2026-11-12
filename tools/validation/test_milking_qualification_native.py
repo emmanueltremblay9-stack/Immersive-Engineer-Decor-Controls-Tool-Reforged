@@ -259,6 +259,25 @@ class MilkingEvidenceTest(unittest.TestCase):
     def test_wrong_screen_class_per_capture_fails(self):
         self.reject_mutations(['captures',1,'screen_class'],['com.example.ReplacementScreen',SCREEN_CLASS+'Fake'])
 
+    def test_manual_integration_rejects_rewritten_history_or_provenance(self):
+        from tree_integration_preservation import assert_milking_integration_preserved, MANUAL_LANGUAGE_PATH
+        root=Path(__file__).resolve().parents[2]
+        pins=json.loads((root/'docs/testing/milking-qualification/production-pins.json').read_text())
+        assert_milking_integration_preserved(root,pins)
+        for field in ('main_commit','previous_sha256','integrated_sha256','changed_keys'):
+            changed=copy.deepcopy(pins)
+            changed['manual_integration'][field]='tampered'
+            with self.subTest(field=field), self.assertRaises(AssertionError):
+                assert_milking_integration_preserved(root,changed)
+        changed=copy.deepcopy(pins)
+        changed['baseline_sha256'][MANUAL_LANGUAGE_PATH]='0'*64
+        with self.assertRaisesRegex(AssertionError,'Historical'):
+            assert_milking_integration_preserved(root,changed)
+        changed=copy.deepcopy(pins)
+        changed['sha256'][MANUAL_LANGUAGE_PATH]='0'*64
+        with self.assertRaisesRegex(AssertionError,'pin'):
+            assert_milking_integration_preserved(root,changed)
+
     def test_preservation_guard_rejects_changed_production_bytes(self):
         import shutil
         root=Path(__file__).resolve().parents[2]

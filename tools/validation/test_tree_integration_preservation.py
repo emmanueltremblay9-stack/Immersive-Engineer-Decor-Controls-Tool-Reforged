@@ -9,7 +9,7 @@ from unittest.mock import patch
 from tree_integration_preservation import (
     BARREL_GUARD, COMBINED_FILES, COMBINED_LAYER, FREEZER_FILES, FREEZER_PREVIEW,
     HISTORICAL_FREEZER_PREVIEW, INTEGRATION_FILES, MACHINE_ENTITY, MACHINE_MENU,
-    MILKING_FILES, TREE_ACCESSOR, TREE_FILES, assert_milking_integration_preserved,
+    MILKING_FILES, MANUAL_LANGUAGE_PATH, TREE_ACCESSOR, TREE_FILES, assert_milking_integration_preserved,
     assert_menu_tail_preserved, assert_solar_baseline_preserved,
 )
 
@@ -25,6 +25,7 @@ class IntegratedPreservationTests(unittest.TestCase):
         cls.manifest = json.loads((ROOT / 'docs/testing/solar-v2-reference/preserved-baseline-sha256.json').read_text())
         cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES)}
         cls.pins = json.loads((ROOT / 'docs/testing/milking-qualification/production-pins.json').read_text())
+        cls.manual_language_bytes = (ROOT / MANUAL_LANGUAGE_PATH).read_bytes()
         cls.milking_hashes = {name: cls.pins['sha256'][name] for name in MILKING_FILES}
 
     def check_files(self, manifest=None, files=None, milking_current_hashes=None):
@@ -37,7 +38,8 @@ class IntegratedPreservationTests(unittest.TestCase):
             )
 
     def check_milking(self, pins=None, files=None):
-        contents = self.files if files is None else files
+        contents = dict(self.files if files is None else files)
+        contents.setdefault(MANUAL_LANGUAGE_PATH, self.manual_language_bytes)
         with patch.object(Path, 'read_bytes', lambda path: contents[path.relative_to(ROOT).as_posix()]):
             assert_milking_integration_preserved(ROOT, self.pins if pins is None else pins)
 
@@ -109,7 +111,7 @@ class IntegratedPreservationTests(unittest.TestCase):
                     del pins[key]
                 else:
                     pins[key] = 'changed'
-                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking'):
+                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance'):
                     self.check_milking(pins)
 
     def test_freezer_historical_scope_and_reasons_are_preserved(self):

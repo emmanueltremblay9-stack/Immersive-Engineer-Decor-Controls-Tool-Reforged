@@ -1,4 +1,4 @@
-Clapet anti-retour de tuyau de fluide
+Clapet anti-retour
 Passage unidirectionnel permanent
 <&recipe>Le clapet anti-retour laisse passer le fluide dans un seul sens. Il reste toujours ouvert et n'a pas besoin de redstone. Il limite chaque appel à 1000 mB au maximum.<br>
 <br>

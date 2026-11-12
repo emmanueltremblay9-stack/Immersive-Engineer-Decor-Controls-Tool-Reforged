@@ -81,6 +81,10 @@ MILKING_CURRENT_HASHES = {
     MACHINE_ENTITY: COMBINED_FILES[MACHINE_ENTITY]['integrated_sha256'],
 }
 COMBINED_RECORD_SHA256 = '0c3b5b944b410bbdf51fc1217c4ee38d8873b8a1e5d197bc7ef9c95622dfa01b'
+MANUAL_RECORD_SHA256 = '75042ba4e5dae1de9c8ec5a768918d0ef36e1acb4848ebdcd02858317a5bcf41'
+MANUAL_LANGUAGE_PATH = 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json'
+MANUAL_PREVIOUS_SHA256 = 'f415594130353f155a9fd9a9c26e40cacbf3dc618a07d1dfa8f1d73609881763'
+MANUAL_INTEGRATED_SHA256 = '5f737152b4a5e1c372b28c21324fa3287c2896bf7a594146abc1e0541d8e482b'
 MILKING_HISTORY_SHA256 = '98738d898787992b47a95c442899641d11b2ac0c8453294c6383c7c01f26c7f1'
 FREEZER_HISTORY_SHA256 = 'c2575fe1829e86641cb2b21af54bbbf301cdccab789aaa78ca6f624124bec1c4'
 
@@ -100,10 +104,16 @@ def assert_combined_integration_preserved(root, manifest):
 
 def assert_milking_integration_preserved(root, pins):
     assert_combined_integration_preserved(root, pins)
-    # Reconstruct only the two previous current pins. Every other field, baseline,
-    # renderer history, Tree provenance and unaffected current pin stays exact.
-    history = {key: value for key, value in pins.items() if key != COMBINED_LAYER}
+    # Reconstruct the two previous Java pins and the explicitly pinned manual
+    # language integration. Baselines, renderer history, Tree provenance and
+    # unaffected current pins stay exact.
+    history = {key: value for key, value in pins.items() if key not in (COMBINED_LAYER, 'manual_integration')}
     history['sha256'] = dict(pins['sha256'])
+    if 'manual_integration' in pins:
+        assert record_sha256(pins['manual_integration']) == MANUAL_RECORD_SHA256, 'Manual integration provenance changed'
+        assert pins['sha256'].get(MANUAL_LANGUAGE_PATH) == MANUAL_INTEGRATED_SHA256, 'Manual integration pin changed'
+        assert hashlib.sha256((root / MANUAL_LANGUAGE_PATH).read_bytes()).hexdigest() == MANUAL_INTEGRATED_SHA256, 'Manual integration bytes changed'
+        history['sha256'][MANUAL_LANGUAGE_PATH] = MANUAL_PREVIOUS_SHA256
     for path, record in COMBINED_FILES.items():
         assert pins['sha256'].get(path) == record['integrated_sha256'], path
         history['sha256'][path] = record['milking_sha256']

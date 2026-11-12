@@ -10,7 +10,7 @@
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "6e56fb8b448c1b19c65cdb3663aeb34ccbdc7ba88f778dc2e5ee79ba8577642b",
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MilkingRedesignLayout.java": "b28353f19cda7ed82cb1d3da469e5b7b33085f43a8ee62495b66eaf07e29832f",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": "b6ca6454118504f44a918a2b248fff649ee35ff7f2352389302f0d51a366c500",
-    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": "f415594130353f155a9fd9a9c26e40cacbf3dc618a07d1dfa8f1d73609881763",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": "5f737152b4a5e1c372b28c21324fa3287c2896bf7a594146abc1e0541d8e482b",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png": "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png": "0688ffa93b80ee59aa9ac35fa1316c885c6413f72b80a8af7a3c67284306eec4",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png": "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5",
@@ -98,5 +98,17 @@
         "reason": "Combine the bounded read-only Milking projection with the exact Freezer fluid-aware preview; retain the historical menu tail and exact Tree accessor normalization."
       }
     }
+  },
+  "manual_integration": {
+    "main_commit": "4ededde369b7cd233d04f38b09ce65c0225fadaf",
+    "previous_integration_commit": "38cecf4ca08cd8af47246d45fe032eecb5de341a",
+    "path": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json",
+    "previous_sha256": "f415594130353f155a9fd9a9c26e40cacbf3dc618a07d1dfa8f1d73609881763",
+    "integrated_sha256": "5f737152b4a5e1c372b28c21324fa3287c2896bf7a594146abc1e0541d8e482b",
+    "changed_keys": [
+      "manual.immersive_engineer_decor_controls_tool_reforged.edr_fluid_power_utilities",
+      "manual.immersiveengineering.edr_fluid_power_utilities"
+    ],
+    "reason": "PR178 upstream French manual category shortening only; all Milking translations and runtime/artwork remain unchanged. Historical baseline hashes retained."
   }
 }

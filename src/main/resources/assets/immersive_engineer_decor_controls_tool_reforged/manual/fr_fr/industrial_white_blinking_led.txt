@@ -1,7 +1,7 @@
 LED blanche clignotante
 Retour d'état du signal
-<&recipe>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<&recipe>Cet indicateur montre si le bloc qui le porte fournit un signal.<br>
 <br>
-Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+Utilisation : fixez-le à une face solide et alimentez le bloc porteur pour surveiller des portes, machines, alarmes ou panneaux.<br>
 <br>
-Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.
+Remarque : il suit la redstone ou la sortie de comparateur du bloc porteur et se rafraîchit chaque seconde. Une source proche qui n'atteint pas ce bloc ne l'active pas.

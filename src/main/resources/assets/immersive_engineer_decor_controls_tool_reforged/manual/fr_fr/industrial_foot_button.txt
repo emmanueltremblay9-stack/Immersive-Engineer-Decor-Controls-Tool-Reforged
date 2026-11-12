@@ -1,7 +1,7 @@
 Bouton de pied
-Commande redstone
-<&recipe>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&recipe>Le bouton au pied fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : fixez-le sur une face solide, sur le trajet des entités. Leur contact l'active et il reste actif tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : il vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.
