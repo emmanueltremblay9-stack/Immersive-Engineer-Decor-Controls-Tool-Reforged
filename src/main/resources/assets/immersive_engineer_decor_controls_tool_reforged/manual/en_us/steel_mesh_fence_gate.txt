@@ -1,7 +1,7 @@
 Steel Mesh Fence Gate
 Service access fitting
-<&recipe>This block forms readable service routes around machinery.<br>
+<&recipe>This manually operated gate can be one or two blocks tall.<br>
 <br>
-Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
-
-
+Usage: Place a second segment directly above the first to make a tall gate. Right-click either segment to open or close both. Breaking either segment removes the whole tall gate.<br>
+<br>
+Two matching gates beside each other, aligned in the same plane and of equal height, can open together with an empty-main-hand click. A row of three is not a linked pair. These gates remain manually controlled, without redstone activation.

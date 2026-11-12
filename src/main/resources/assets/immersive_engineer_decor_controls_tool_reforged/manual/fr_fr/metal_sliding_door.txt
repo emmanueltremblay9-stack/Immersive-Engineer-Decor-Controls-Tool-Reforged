@@ -1,5 +1,7 @@
 Porte coulissante en métal
 Point d'accès industriel
-<&recipe>Ce bloc offre un accès robuste aux locaux techniques, puits, toitures et enceintes de machines.<br>
+<&recipe>La porte coulissante en métal s'ouvre manuellement ou par redstone et peut former une paire.<br>
 <br>
-Utilisation : installez-le lorsqu'une ouverture de maintenance contrôlée est nécessaire.<br>
+Utilisation : posez deux portes côte à côte, à la même hauteur et dans la même direction. Un clic droit sur l'une d'elles, en haut ou en bas, ouvre ou ferme la paire. Une troisième porte voisine ne rejoint pas cette paire.<br>
+<br>
+Un signal reçu par l'une des portes maintient les deux ouvertes. Elles se ferment au retrait du signal ; un clic ne peut pas fermer une paire alimentée.

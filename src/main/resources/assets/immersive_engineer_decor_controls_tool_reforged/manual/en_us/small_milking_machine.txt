@@ -1,6 +1,5 @@
 Milking Machine
 Shop-floor utility
-<&recipe>The Small Milking Machine is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
-<br>
-Usage: Place it near cows and provide a way to remove milk containers or fluid.<br>
-
+<&recipe>Face the machine toward nearby adult cows. Without a redstone signal, it checks for milk every 120 ticks. A real empty bucket in the input can become a milk bucket in the output; otherwise milk goes into the 4,000 mB tank when there is room. Arrange removal of filled buckets or milk fluid.<br>
+With TerraFirmaCraft installed, its cow adapter respects native readiness, familiarity, sex, age and cooldown checks. Only compatible plain milk that fits is accepted; this does not make every animal milkable. This page describes the integrated behavior, not an experimental replacement interface.<br>
+Compatible adjacent inventories behind or below can supply empty buckets and receive milk buckets automatically. Empty-bucket intake tries the rear first; filled-bucket output tries below first. The machine also pushes milk fluid downward. These transfers continue while redstone pauses milk production.<br>

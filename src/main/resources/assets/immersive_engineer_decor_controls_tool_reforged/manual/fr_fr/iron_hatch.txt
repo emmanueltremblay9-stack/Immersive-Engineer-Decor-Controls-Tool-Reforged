@@ -1,5 +1,7 @@
 Trappe en fer
 Point d'accès industriel
-<&recipe>Ce bloc offre un accès robuste aux locaux techniques, puits, toitures et enceintes de machines.<br>
+<&recipe>La trappe en fer s'ouvre par clic droit ou redstone. La redstone la maintient ouverte jusqu'au retrait du signal.<br>
 <br>
-Utilisation : installez-le lorsqu'une ouverture de maintenance contrôlée est nécessaire.<br>
+Utilisation : pour une sortie grimpable, placez une échelle directement dessous et alignez son bord d'appui avec le battant de la trappe ouverte. Les échelles vanilla, à échelons métalliques et à marches métalliques échelonnées peuvent prolonger la montée par cette ouverture alignée.<br>
+<br>
+Une trappe fermée ou une échelle placée d'un autre côté ne permet pas cette liaison grimpable.

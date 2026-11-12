@@ -1,5 +1,7 @@
 Garde-corps en acier
 Élément de voie de service
-<&recipe>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&recipe>Une barrière en acier peut réunir jusqu'à quatre côtés distincts dans une seule case.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : le bord cliqué choisit le premier côté. Tenez une autre barrière en acier et faites un clic droit sur le bord voulu pour ajouter ou retirer ce côté. Chaque ajout en Survie consomme une barrière ; les ajouts payés peuvent être rendus au retrait.<br>
+<br>
+Visez et minez un côté pour retirer uniquement celui-ci. Retirer le dernier côté supprime le bloc. Les ajouts en Créatif ne créent pas de remboursement supplémentaire ; les règles normales d'outil et de butin s'appliquent.
