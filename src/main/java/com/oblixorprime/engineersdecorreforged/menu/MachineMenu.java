@@ -379,9 +379,11 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public ItemStack freezerPreviewStack() {
-      return this.kind == MachineKind.SMALL_FREEZER && this.visibleMachineSlots > 0
-         ? MachineBlockEntity.freezerResultForDisplay(((Slot)this.slots.get(0)).getItem())
-         : ItemStack.EMPTY;
+      if (this.kind != MachineKind.SMALL_FREEZER || this.visibleMachineSlots == 0) return ItemStack.EMPTY;
+      ItemStack input = ((Slot)this.slots.get(0)).getItem();
+      // Field 2 was unused for the Freezer; preserve the existing 16-field/39-slot menu protocol.
+      return input.isEmpty() && this.data.get(2) >= 1000
+         ? new ItemStack(Items.ICE) : MachineBlockEntity.freezerResultForDisplay(input);
    }
 
    public int energyDisplayGranularity() {

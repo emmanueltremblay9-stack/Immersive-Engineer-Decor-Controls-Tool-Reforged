@@ -5,8 +5,8 @@
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "3f32ffeccd725fe8d54b95f5a54ae11acb8a31bfb124172bee60bbf420977723",
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "2b0f8cc8bfeac9f421b6948833e4d88b7c993c5c633b6f26feebc6f96f2a0e6f",
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "0be659f78a3176707ea292e46a382df180ea220fa2039f6bf4ccbfd839785606",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "b3733c48d66419efeb818a2992ff67144642ddf36a08652c0394e8d45e78efd9",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "a8a3d691e191bf4dc5a9725e7c9e4e9b0e19b8647a5a6c1408e2f2a92dcc9fdd",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "24266c03ec35e12517d8b8f86d1ef53bf1a3e9d266666d38e645045155999128",
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "6e56fb8b448c1b19c65cdb3663aeb34ccbdc7ba88f778dc2e5ee79ba8577642b",
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MilkingRedesignLayout.java": "b28353f19cda7ed82cb1d3da469e5b7b33085f43a8ee62495b66eaf07e29832f",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": "b6ca6454118504f44a918a2b248fff649ee35ff7f2352389302f0d51a366c500",
@@ -78,5 +78,25 @@
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png": "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/glass.png": "0688ffa93b80ee59aa9ac35fa1316c885c6413f72b80a8af7a3c67284306eec4",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/milk.png": "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5"
+  },
+  "milking_freezer_integration": {
+    "main_commit": "b9fc2b44d41eab7cb0513775b27ac7c231aa6e20",
+    "milking_commit": "03d044358c37487d803c816f7c6890d0e99092d7",
+    "merge_base": "509913bd891e7a7bfd7dfa589a3b1fa1008e0397",
+    "scope": "Exact automatic Java merge of PR169 with main after PR172 and PR177. Preserve historical Solar, Tree, Freezer and Milking records and version 1.1.67. Source preservation only, not mapped compilation, packaged-input or gameplay qualification.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "main_sha256": "9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63",
+        "milking_sha256": "b3733c48d66419efeb818a2992ff67144642ddf36a08652c0394e8d45e78efd9",
+        "integrated_sha256": "24266c03ec35e12517d8b8f86d1ef53bf1a3e9d266666d38e645045155999128",
+        "reason": "Combine native per-animal Milking recovery and transaction checks with Freezer fluid processing and empty-bucket automation, retaining Tree single-output extraction."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+        "main_sha256": "903cc15bbce612d9b5c7f150426fdce52858d63769eca9f7cdc16d6b43fb1ae2",
+        "milking_sha256": "0be659f78a3176707ea292e46a382df180ea220fa2039f6bf4ccbfd839785606",
+        "integrated_sha256": "a8a3d691e191bf4dc5a9725e7c9e4e9b0e19b8647a5a6c1408e2f2a92dcc9fdd",
+        "reason": "Combine the bounded read-only Milking projection with the exact Freezer fluid-aware preview; retain the historical menu tail and exact Tree accessor normalization."
+      }
+    }
   }
 }

@@ -5,7 +5,10 @@ import json
 from pathlib import Path
 import re
 from client_mixin_smoke import SmokeFailure
-from tree_integration_preservation import MAIN_COMMIT, MILKING_UPSTREAM_INTEGRATED_FILES, TREE_COMMIT
+from tree_integration_preservation import (
+    MAIN_COMMIT, MILKING_UPSTREAM_INTEGRATED_FILES, TREE_COMMIT,
+    assert_milking_integration_preserved,
+)
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -25,6 +28,10 @@ def check_textless_milking_labels(screen):
 
 def check_preservation(root=ROOT):
     pins=json.loads((root/'docs/testing/milking-qualification/production-pins.json').read_text())
+    try:
+        assert_milking_integration_preserved(root, pins)
+    except AssertionError as error:
+        raise SmokeFailure('Milking/Freezer preservation failed: '+str(error)) from error
     baseline=pins.get('reconciliation_baseline_sha256',pins['baseline_sha256'])
     tree=pins.get('tree_cutter_integration',{})
     tree_files=set(MILKING_UPSTREAM_INTEGRATED_FILES).intersection(pins.get('preserved_paths', []))
