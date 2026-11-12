@@ -65,10 +65,25 @@ The required-profile GameTest fails if the lubricant registry entry is absent,
 so dependency-conditional tests cannot silently stand in for an IP run.
 The ordinary Build still tests the no-IP configuration separately.
 
-The native packaged workflow tests the normal empty-tank GUI and its new
-tooltips. It does not establish a filled lubricant gauge, real pipe transfer,
-protected-break cancellation after prechecks, or the full duration matrix.
-Those remain explicit qualification gaps. The source preservation checks admit
+The native packaged workflow retains the normal empty-tank profiles and adds
+separate `--lubricant` profiles in English and French. The added fixture seeds
+1,000 mB through the registered right-side capability before work. It checks the
+actual IP file loaded, menu/server synchronization, accelerated-mode tooltips,
+the latched 20-tick duration and 990 mB after success, together with the existing
+XTest interactions and item conservation. This setup is not a pump or pipe test.
+
+Separate server GameTests cover real IE pipes in four orientations, ten actual
+block cycles (five hardnesses, both modes), and synthetic odd-duration menu
+previews. They use synchronous server ticks, not a real-time benchmark. Fresh
+CI must validate these additions before their results are claimed.
+
+Protected-break cancellation remains unqualified: the current destruction path
+uses `Level.destroyBlock` without a player and does not call the player-oriented
+NeoForge `CommonHooks.fireBlockBreak` hook. No cancellation listener is counted
+as evidence without an actual event. Claim-protection compatibility needs a
+separate design and regression check rather than a vacuous success.
+
+The source preservation checks admit
 only the exact new Breaker integration layer, keeping earlier Solar, Tree and
 Freezer records unchanged. FE apportionment includes an overflow regression
 test against the exact production method.

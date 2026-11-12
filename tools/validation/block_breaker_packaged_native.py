@@ -11,10 +11,14 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import urllib.request
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from factory_placer_v2_reference_native import png
 
 ART_SHA = '2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d'
+IP_URL = 'https://cursemaven.com/curse/maven/immersive-petroleum-268250/8420142/immersive-petroleum-268250-8420142.jar'
+IP_SHA = 'c1bfef3290dd8c2c68519155e395059766f5d258a52d5e08faf63eb627312e8b'
+IP_SETUP = '1000 mB injected through registered right-side capability before work; not a pump test'
 NAMES = ['normal','title','energy','fluid','power','target','scene','work','worked','returned']
 
 
@@ -23,7 +27,34 @@ def require(condition, message):
         raise SmokeFailure(message)
 
 
-def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language):
+def install_pinned_ip(game):
+    # Isolated disposable test runtime only; no global installation or credentials.
+    with urllib.request.urlopen(IP_URL, timeout=90) as response:
+        data = response.read(8 * 1024 * 1024 + 1)
+    require(hashlib.sha256(data).hexdigest() == IP_SHA, 'Downloaded IP distribution hash differs')
+    mods = game / 'mods'; mods.mkdir()
+    (mods / 'ImmersivePetroleum-1.21.1-4.5.0-39.jar').write_bytes(data)
+
+
+def validate_lubricant(proof, language):
+    expected = dict(ip_sha256=IP_SHA, fluid_id='immersivepetroleum:lubricant', setup=IP_SETUP,
+        server_initial_amount=1000, client_initial_amount=1000, capacity=4000,
+        client_fluid_id='immersivepetroleum:lubricant', client_preview_ticks=20,
+        server_final_amount=990, client_final_amount=990, accelerated_cycle_observed=True)
+    data = proof.get('lubricant_profile', {})
+    require(type(data) is dict and set(data) == set(expected) | {'client_fluid_name'}, 'Lubricant profile fields differ')
+    for key, value in expected.items():
+        require(type(data.get(key)) is type(value) and data[key] == value, 'Lubricant profile differs: ' + key)
+    name = data.get('client_fluid_name')
+    # Pinned IP4.5.0-39 en_us names lubricant 'Lubricant'; no fr_fr entry, so English fallback is expected.
+    require(type(name) is str and name == 'Lubricant', 'Pinned IP fluid name differs')
+    text = proof['captures'][3]['tooltip']['text'].replace('\n', ' ')
+    mode = 'Accelerated' if language == 'en_us' else 'Accéléré'
+    require(name in text and '1000 / 4000 mB' in text and mode in text and '20 ticks' in text,
+            'Filled accelerated fluid tooltip differs')
+
+
+def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, lubricant=False):
     expected = dict(suite='native-block-breaker-packaged-v1', status='passed', nonce=nonce,
                     executed_source_sha=sha, presentation_selector_absent=True,
                     opened_via_native_block_interaction=1, pickup_server_acks=1, return_server_acks=1,
@@ -65,9 +96,15 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language):
     require(title == ('Small Block Breaker' if language == 'en_us' else 'Petit brise-bloc'),
             'Localized title differs: ' + title)
 
+    if lubricant:
+        validate_lubricant(proof, language)
+    else:
+        require('lubricant_profile' not in proof, 'Filled profile cannot masquerade as historical empty profile')
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--lubricant', action='store_true', help='Pinned real IP, filled tank and accelerated native scenario')
     parser.add_argument('--language', choices=['en_us','fr_fr'], default='en_us')
     parser.add_argument('--width', type=int, default=1280)
     parser.add_argument('--height', type=int, default=720)
@@ -92,6 +129,8 @@ def main():
     (game/'.iedctr-client-gameplay-nonce').write_text(nonce)
     (game/'options.txt').write_text('onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n'
         'maxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:1\nlang:'+args.language+'\n')
+    if args.lubricant:
+        install_pinned_ip(game)
     init=evidence/'breaker.init.gradle'
     init.write_text("""gradle.projectsEvaluated {
  rootProject.extensions.getByName('neoForge').runs.named('blockBreakerPackagedClient') {
@@ -101,6 +140,7 @@ def main():
   systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
   systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_MOD_JAR')
   systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_MOD_JAR_SHA256')
+  systemProperty 'iedctr.blockBreakerLubricantNative', System.getenv('IEDCTR_BREAKER_LUBRICANT')
   programArgument '--width'
   programArgument System.getenv('IEDCTR_SCREEN_WIDTH')
   programArgument '--height'
@@ -120,7 +160,7 @@ marker.write_text(nonce+'\n'+os.environ['DISPLAY'])
 os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
 """)
     env=dict(os.environ,IEDCTR_GAMEPLAY_DIR=str(game),IEDCTR_GAMEPLAY_NONCE=nonce,IEDCTR_EXECUTED_SOURCE_SHA=sha,
-             IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')
+             IEDCTR_BREAKER_LUBRICANT=str(args.lubricant).lower(),IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')
     base=['bash',str(project/'gradlew'),'--no-daemon','--stacktrace']
     print('Independent native Breaker evidence: '+str(evidence),flush=True)
     try:
@@ -144,9 +184,10 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
         require(code==0 and not expired and not FATAL_PATTERN.search(logs)
                 and 'IEDCTR_BREAKER_PACKAGED PASSED nonce='+nonce in logs,'Native exit/log gate failed')
         proof=json.loads((game/'breaker-proof.json').read_text())
-        validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.language)
+        validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.language,args.lubricant)
         require(clean() and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,'Source/JAR changed during run')
-        print('PASS bounded native default Block Breaker; not owner visual acceptance or complete modpack qualification.')
+        print('PASS bounded native ' + ('lubricant-filled' if args.lubricant else 'default')
+              + ' Block Breaker; not owner visual acceptance or complete modpack qualification.')
         return 0
     except (SmokeFailure,OSError,ValueError,KeyError) as error:
         print('FAIL: '+str(error),file=sys.stderr);return 1
