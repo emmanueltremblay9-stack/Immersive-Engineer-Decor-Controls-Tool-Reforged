@@ -1,6 +1,7 @@
 """Exact PR173/PR172 integration exceptions, not broad exclusions from preservation checks."""
 import hashlib
 import json
+from breaker_integration_preservation import BREAKER_INTEGRATION, BREAKER_FILES, normalize_breaker_menu_tail
 
 
 MENU_TAIL_SHA256 = 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
@@ -61,6 +62,7 @@ def assert_menu_tail_preserved(source):
     tail = source.split(marker, 1)[1]
     assert tail.count(TREE_ACCESSOR) == 1, 'Missing or changed Tree presentation accessor'
     assert tail.count(FREEZER_PREVIEW) == 1, 'Missing or changed Freezer preview method'
+    tail = normalize_breaker_menu_tail(tail)
     normalized = tail.replace(TREE_ACCESSOR, '', 1).replace(FREEZER_PREVIEW, HISTORICAL_FREEZER_PREVIEW, 1)
     assert hashlib.sha256(normalized.encode()).hexdigest() == MENU_TAIL_SHA256, 'Menu transfer/data/validation changed'
 
@@ -84,6 +86,10 @@ def assert_solar_baseline_preserved(root, preserved):
         assert isinstance(record['reason'], str) and record['reason'].strip(), path
         assert record['integrated_sha256'] == INTEGRATION_FILES[path], path
     freezer = preserved['freezer_fluid_automation_integration']
+    assert hashlib.sha256(json.dumps(freezer, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == 'c2575fe1829e86641cb2b21af54bbbf301cdccab789aaa78ca6f624124bec1c4', 'Historical Freezer integration changed'
+    assert preserved['block_breaker_lubricant_integration'] == BREAKER_INTEGRATION, 'Breaker integration identity changed'
+    for path, record in BREAKER_FILES.items():
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == record['integrated_sha256'], path
     assert freezer['main_commit'] == FREEZER_MAIN_COMMIT
     assert freezer['freezer_commit'] == FREEZER_COMMIT
     freezer_overrides = freezer['files']
@@ -93,10 +99,13 @@ def assert_solar_baseline_preserved(root, preserved):
         for key, expected in expected_record.items():
             assert record[key] == expected, (path, key)
         assert isinstance(record['reason'], str) and record['reason'].strip(), path
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == expected_record['integrated_sha256'], path
+        expected = BREAKER_FILES[path]['integrated_sha256'] if path in BREAKER_FILES else expected_record['integrated_sha256']
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == expected, path
     for path, expected in files.items():
         if path in overrides:
             expected = overrides[path]['integrated_sha256']
         if path in FREEZER_FILES:
             expected = FREEZER_FILES[path]['integrated_sha256']
+        if path in BREAKER_FILES:
+            expected = BREAKER_FILES[path]['integrated_sha256']
         assert hashlib.sha256((root / path).read_bytes()).hexdigest() == expected, path

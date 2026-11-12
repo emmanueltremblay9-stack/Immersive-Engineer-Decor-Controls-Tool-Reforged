@@ -130,7 +130,12 @@ public final class BlockBreakerPackagedValidation {
                 String actual = observed.get("text").getAsString().replace('\n', ' ');
                 String expected = hoverIndex == 0 ? Component.translatable(TITLE).getString() : switch (hoverIndex) {
                     case 1 -> Component.translatable(PREFIX + "tooltip.input").getString();
-                    case 2 -> Component.translatable(PREFIX + "tooltip.fluid_unavailable").getString();
+                    case 2 -> String.join(" ",
+                        Component.translatable(PREFIX + "tooltip.lubricant", Component.translatable(PREFIX + "fluid_name"), 0, 4000).getString(),
+                        Component.translatable(PREFIX + "tooltip.lubricant_mode",
+                            Component.translatable(PREFIX + "mode.normal"), Component.translatable(PREFIX + "cycle.next"), 30).getString(),
+                        Component.translatable(PREFIX + "tooltip.lubricant_use", 10).getString(),
+                        Component.translatable(PREFIX + "tooltip.lubricant_fe", 240).getString());
                     case 3 -> Component.translatable(PREFIX + "tooltip.power_unavailable").getString();
                     case 4 -> Component.translatable(PREFIX + "tooltip.front_face").getString();
                     case 5 -> Component.translatable(PREFIX + "tooltip.static_scene").getString();

@@ -6,6 +6,7 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 
+from breaker_integration_preservation import BREAKER_FILES, BREAKER_MENU_ADDITIONS
 from tree_integration_preservation import (
     BARREL_GUARD, FREEZER_FILES, FREEZER_PREVIEW, HISTORICAL_FREEZER_PREVIEW,
     INTEGRATION_FILES, MACHINE_ENTITY, TREE_ACCESSOR, TREE_FILES,
@@ -22,7 +23,7 @@ class IntegratedPreservationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.menu = MENU.read_text()
         cls.manifest = json.loads((ROOT / 'docs/testing/solar-v2-reference/preserved-baseline-sha256.json').read_text())
-        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES)}
+        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(BREAKER_FILES)}
 
     def check_files(self, manifest=None, files=None):
         contents = self.files if files is None else files
@@ -159,6 +160,67 @@ class IntegratedPreservationTests(unittest.TestCase):
         manifest['tree_cutter_integration']['scope'] = 'Overwritten integration history'
         with self.assertRaisesRegex(AssertionError, 'Historical Tree integration changed'):
             self.check_files(manifest=manifest)
+
+
+
+    def test_each_breaker_menu_addition_is_exactly_once(self):
+        for addition in BREAKER_MENU_ADDITIONS:
+            for replacement in ('', addition + '// mutation\n', addition * 2):
+                with self.subTest(addition=addition[:60], replacement=replacement[:60]), self.assertRaises(AssertionError):
+                    assert_menu_tail_preserved(self.menu.replace(addition, replacement, 1))
+
+    def test_breaker_layer_path_set_is_exact(self):
+        for path in (*BREAKER_FILES, 'src/unrelated.java'):
+            manifest = copy.deepcopy(self.manifest)
+            overrides = manifest['block_breaker_lubricant_integration']['files']
+            if path in overrides:
+                del overrides[path]
+            else:
+                overrides[path] = {'integrated_sha256': '0' * 64}
+            with self.subTest(path=path), self.assertRaises(AssertionError):
+                self.check_files(manifest=manifest)
+
+    def test_breaker_metadata_and_pins_cannot_be_reassigned(self):
+        for key in ('main_commit', 'source_patch_sha256', 'scope'):
+            manifest = copy.deepcopy(self.manifest)
+            manifest['block_breaker_lubricant_integration'][key] = 'changed'
+            with self.subTest(key=key), self.assertRaises(AssertionError):
+                self.check_files(manifest=manifest)
+        for path in BREAKER_FILES:
+            for key in ('main_sha256', 'integrated_sha256'):
+                manifest = copy.deepcopy(self.manifest)
+                manifest['block_breaker_lubricant_integration']['files'][path][key] = '0' * 64
+                with self.subTest(path=path, key=key), self.assertRaises(AssertionError):
+                    self.check_files(manifest=manifest)
+
+    def test_rehash_cannot_admit_changed_breaker_files(self):
+        for path in BREAKER_FILES:
+            changed = dict(self.files)
+            changed[path] += b'\nmutation'
+            manifest = copy.deepcopy(self.manifest)
+            manifest['block_breaker_lubricant_integration']['files'][path]['integrated_sha256'] = hashlib.sha256(changed[path]).hexdigest()
+            with self.subTest(path=path), self.assertRaises(AssertionError):
+                self.check_files(manifest=manifest, files=changed)
+
+    def test_freezer_history_cannot_be_rewritten(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest['freezer_fluid_automation_integration']['scope'] = 'Overwritten integration history'
+        with self.assertRaisesRegex(AssertionError, 'Historical Freezer integration changed'):
+            self.check_files(manifest=manifest)
+
+    def test_entire_breaker_layer_is_required(self):
+        manifest = copy.deepcopy(self.manifest)
+        del manifest['block_breaker_lubricant_integration']
+        with self.assertRaises((AssertionError, KeyError)):
+            self.check_files(manifest=manifest)
+
+    def test_breaker_menu_constant_mutation_is_rejected_by_full_file_pin(self):
+        path = 'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java'
+        changed = dict(self.files)
+        changed[path] = changed[path].replace(b'BLOCK_BREAKER_FLUID_PRESENT = 1;', b'BLOCK_BREAKER_FLUID_PRESENT = 8;')
+        self.assertNotEqual(changed[path], self.files[path])
+        with self.assertRaises(AssertionError):
+            self.check_files(files=changed)
 
 
 if __name__ == '__main__':

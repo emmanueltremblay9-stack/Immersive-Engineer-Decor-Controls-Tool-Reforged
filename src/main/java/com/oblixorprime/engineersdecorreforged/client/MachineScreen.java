@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
+import com.oblixorprime.engineersdecorreforged.utility.BlockBreakerRedesignLayout;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFreezerArtworkMasks;
@@ -516,8 +517,21 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       if (this.isHovering(191, 49, 46, 12, mouseX, mouseY))
          return blockBreakerText("tooltip.energy", menu.energyStored(), menu.energyCapacity()).copy()
             .append("\n").append(blockBreakerText("tooltip.input"));
-      if (this.isHovering(191, 71, 46, 12, mouseX, mouseY))
-         return blockBreakerText("tooltip.fluid_unavailable");
+      var fluidRegion = BlockBreakerRedesignLayout.FLUID;
+      if (this.isHovering(fluidRegion.x(), fluidRegion.y(), fluidRegion.width(), fluidRegion.height(), mouseX, mouseY)) {
+         boolean accelerated = menu.blockBreakerCycleActive()
+            ? menu.blockBreakerAccelerated() : menu.fluidAmount() >= MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS;
+         Component mode = blockBreakerText(accelerated ? "mode.accelerated" : "mode.normal");
+         Component state = blockBreakerText(menu.blockBreakerCycleActive() ? "cycle.active" : "cycle.next");
+         int duration = menu.blockBreakerDurationTicks();
+         Component costText = cost >= 0 ? blockBreakerText("tooltip.lubricant_fe", cost)
+            : blockBreakerText("tooltip.lubricant_fe_unavailable");
+         Component tooltip = blockBreakerText("tooltip.lubricant", menu.blockBreakerFluidName(), menu.fluidAmount(), menu.fluidCapacity()).copy()
+            .append("\n").append(blockBreakerText("tooltip.lubricant_mode", mode, state, duration))
+            .append("\n").append(blockBreakerText("tooltip.lubricant_use", MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS))
+            .append("\n").append(costText);
+         return tooltip;
+      }
       if (this.isHovering(34, 106, 22, 23, mouseX, mouseY))
          return blockBreakerText("tooltip.power_unavailable").copy().append("\n")
             .append(blockBreakerText("redstone.signal", blockBreakerText(menu.blockBreakerRedstonePowered() ? "signal.high" : "signal.low")))

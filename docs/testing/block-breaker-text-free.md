@@ -19,7 +19,8 @@ artwork hashes are checked. No production reference/render selector is set.
 The driver creates a nonce-owned survival world on its own Xvfb display. It seeds
 a machine and dirt target, then uses a physical XTest right-click on a verified
 in-reach block raycast. It never constructs a screen or calls server openMenu.
-Native title, FE, unavailable fluid/power, target, static-scene and work tooltips
+Native title, FE, lubricant name/amount/capacity and normal-cycle mode/duration,
+neutral power, target, static-scene and work tooltips
 are observed through actual native render events after XTest pointer motion.
 The title translation is checked in English and French. The normal, hover,
 worked and returned-item screenshots remain available for visual comparison
@@ -35,15 +36,39 @@ controls are not invented commands; their explanatory tooltips remain present.
 
 ## Results and boundaries
 
-Local independent text-free and evidence-validator tests pass, including negative
-controls for restoring the title or removing hover. Native evidence guards reject
-wrong identities, missing captures, unlocalized title, clipped tooltip and missing
-server acknowledgements. Local Gradle cannot download its absent distribution
-because the network is unavailable. Mapped compilation and actual native runs
-must therefore pass fresh exact-head CI before any qualification claim.
+The earlier title-only version passed local independent text-free and
+evidence-validator tests, including negative controls for restoring the title or
+removing hover. The lubricant tooltip update needs fresh exact-head checks.
+Native evidence guards reject wrong identities, missing captures, unlocalized
+title, clipped tooltip and missing server acknowledgements. Local Gradle cannot
+download its absent distribution because the network is unavailable. Mapped
+compilation and actual native runs must therefore pass fresh exact-head CI before
+any qualification claim.
 
 No Freezer fixture is modified or reused. This is a bounded normal-JAR test in a
 NeoForge development launcher, not a separately installed consumer launcher or
 full-modpack test. Resize/reload, all complex inventory gestures, owner visual
 acceptance and release are not established by this bounded suite. No merge or
 release is authorized by the test result alone.
+
+## Optional lubricant integration
+
+The lubricant change adds a 4,000 mB tank, a right-side input relative to the
+front, and 10 mB consumption only after a successful break. Accelerated cycles
+retain total FE cost and use half the normal duration, rounded up, with a
+20-tick minimum. Immersive Petroleum remains optional.
+
+`Block Breaker lubricant compatibility` runs the existing GameTest server in an
+isolated directory with Immersive Petroleum 4.5.0-39 (CurseForge project 268250,
+file 8420142), obtained through its CurseMaven coordinates and pinned by SHA-256.
+The required-profile GameTest fails if the lubricant registry entry is absent,
+so dependency-conditional tests cannot silently stand in for an IP run.
+The ordinary Build still tests the no-IP configuration separately.
+
+The native packaged workflow tests the normal empty-tank GUI and its new
+tooltips. It does not establish a filled lubricant gauge, real pipe transfer,
+protected-break cancellation after prechecks, or the full duration matrix.
+Those remain explicit qualification gaps. The source preservation checks admit
+only the exact new Breaker integration layer, keeping earlier Solar, Tree and
+Freezer records unchanged. FE apportionment includes an overflow regression
+test against the exact production method.

@@ -150,6 +150,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int BLOCK_BREAKER_MAX_ENERGY_INPUT_PER_TICK = 256;
    private static final int BLOCK_BREAKER_BASE_ENERGY_COST = 160;
    private static final int BLOCK_BREAKER_ENERGY_COST_PER_HARDNESS = 160;
+   public static final int BLOCK_BREAKER_LUBRICANT_CAPACITY = 4000;
+   public static final int BLOCK_BREAKER_LUBRICANT_PER_SUCCESS = 10;
+   private static final ResourceLocation BLOCK_BREAKER_LUBRICANT_ID = ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant");
    private static final int ELECTRIC_HEAT_CAPACITY = 200;
    private static final int ELECTRIC_HEAT_INCREMENT = 20;
    private static final int ELECTRIC_ENERGY_PER_TICK = 16;
@@ -210,6 +213,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int blockBreakerPendingItemCount;
    private int blockBreakerEnergyInputTick = Integer.MIN_VALUE;
    private int blockBreakerEnergyInputThisTick;
+   private BlockState blockBreakerCycleTarget;
+   private BlockPos blockBreakerCyclePosition;
+   private boolean blockBreakerCycleAccelerated;
+   private int blockBreakerCycleEnergyCost;
+   private Tag unreadableBlockBreakerFluid;
    private String fluidType = "";
    private boolean funnelTransferLocked;
    private int funnelCaptureProgress;
@@ -234,6 +242,57 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       @Override public boolean isFluidValid(int tank, FluidStack stack) { return tank == 0 && !stack.isEmpty(); }
       @Override protected void onContentsChanged() { syncFunnelTank(); }
    };
+
+   private final FluidTank blockBreakerLubricantTank = new FluidTank(BLOCK_BREAKER_LUBRICANT_CAPACITY) {
+      @Override public boolean isFluidValid(int tank, FluidStack stack) {
+         return tank == 0 && MachineBlockEntity.isBlockBreakerLubricant(stack);
+      }
+      @Override public int fill(FluidStack stack, FluidAction action) {
+         return MachineBlockEntity.this.kind() == MachineKind.SMALL_BLOCK_BREAKER
+            && MachineBlockEntity.this.unreadableBlockBreakerFluid == null
+            && MachineBlockEntity.isBlockBreakerLubricant(stack) ? super.fill(stack, action) : 0;
+      }
+      @Override public FluidStack drain(int amount, FluidAction action) { return FluidStack.EMPTY; }
+      @Override public FluidStack drain(FluidStack stack, FluidAction action) { return FluidStack.EMPTY; }
+      @Override protected void onContentsChanged() { MachineBlockEntity.this.setChanged(); }
+   };
+
+   private static boolean isBlockBreakerLubricant(FluidStack stack) {
+      return !stack.isEmpty() && BLOCK_BREAKER_LUBRICANT_ID.equals(BuiltInRegistries.FLUID.getKey(stack.getFluid()));
+   }
+
+   private boolean isBlockBreakerLubricantSide(Direction side) {
+      if (side == null || this.kind() != MachineKind.SMALL_BLOCK_BREAKER) return false;
+      Direction right = switch (this.facing(this.getBlockState())) {
+         case NORTH -> Direction.WEST;
+         case EAST -> Direction.NORTH;
+         case SOUTH -> Direction.EAST;
+         case WEST -> Direction.SOUTH;
+         default -> null;
+      };
+      return side == right;
+   }
+
+   private IFluidHandler blockBreakerLubricantHandler(Direction side) {
+      return new IFluidHandler() {
+         private boolean active() { return MachineBlockEntity.this.isBlockBreakerLubricantSide(side); }
+         public int getTanks() { return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null ? 1 : 0; }
+         public FluidStack getFluidInTank(int tank) {
+            return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null && tank == 0
+               ? MachineBlockEntity.this.blockBreakerLubricantTank.getFluid().copy() : FluidStack.EMPTY;
+         }
+         public int getTankCapacity(int tank) { return active() && tank == 0 ? BLOCK_BREAKER_LUBRICANT_CAPACITY : 0; }
+         public boolean isFluidValid(int tank, FluidStack stack) {
+            return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null
+               && tank == 0 && MachineBlockEntity.isBlockBreakerLubricant(stack);
+         }
+         public int fill(FluidStack stack, FluidAction action) {
+            return active() ? MachineBlockEntity.this.blockBreakerLubricantTank.fill(stack, action) : 0;
+         }
+         public FluidStack drain(FluidStack stack, FluidAction action) { return FluidStack.EMPTY; }
+         public FluidStack drain(int amount, FluidAction action) { return FluidStack.EMPTY; }
+      };
+   }
 
    private void syncFunnelTank() {
       this.fluidAmount = this.funnelTank.getFluidAmount();
@@ -818,6 +877,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    public IFluidHandler fluidHandler(Direction side) {
+      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         return this.isBlockBreakerLubricantSide(side) ? this.blockBreakerLubricantHandler(side) : null;
+      }
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
          if (side == Direction.UP) return this.mineralTopFluid;
          if (side == Direction.DOWN) return this.mineralBottomFluid;
@@ -1548,10 +1610,14 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield kind.ordinal();
                case 1:
                   yield this.progress;
+               case 2:
+                  yield this.blockBreakerLubricantTank.getFluidAmount();
                case 3:
                   yield this.processTimeNeeded;
                case 4:
-                  yield this.comparatorOutput();
+                  yield (this.blockBreakerLubricantTank.getFluidAmount() <= 0 ? 0 : 1)
+                     | (this.blockBreakerCycleAccelerated ? 2 : 0)
+                     | (this.blockBreakerCycleTarget != null ? 4 : 0);
                case 5:
                   yield this.cooldown;
                case 6:
@@ -1794,6 +1860,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                }
             case SMALL_BLOCK_BREAKER:
                switch (index) {
+                  case 2:
+                  case 4:
+                     return;
                   case 1:
                      this.progress = value;
                      return;
@@ -1917,6 +1986,54 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.energy = tag.getInt("Energy");
       this.fluidType = tag.getString("FluidType");
       this.freezerFluidProcess = this.kind() == MachineKind.SMALL_FREEZER && tag.getBoolean("FreezerFluidProcess");
+      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         this.unreadableBlockBreakerFluid = null;
+         this.blockBreakerLubricantTank.setFluid(FluidStack.EMPTY);
+         if (tag.contains("BlockBreakerLubricant")) {
+            Tag raw = tag.get("BlockBreakerLubricant");
+            if (!(raw instanceof CompoundTag savedFluid)
+                  || !savedFluid.contains("id", Tag.TAG_STRING)
+                  || !savedFluid.contains("amount", Tag.TAG_INT)
+                  || !BLOCK_BREAKER_LUBRICANT_ID.toString().equals(savedFluid.getString("id"))
+                  || savedFluid.getInt("amount") <= 0
+                  || savedFluid.getInt("amount") > BLOCK_BREAKER_LUBRICANT_CAPACITY) {
+               this.unreadableBlockBreakerFluid = raw.copy();
+            } else {
+               FluidStack parsed = FluidStack.parseOptional(registries, savedFluid);
+               if (parsed.isEmpty() || !isBlockBreakerLubricant(parsed)) this.unreadableBlockBreakerFluid = savedFluid.copy();
+               else this.blockBreakerLubricantTank.setFluid(parsed);
+            }
+         }
+
+         this.blockBreakerCycleTarget = null;
+         this.blockBreakerCyclePosition = null;
+         this.blockBreakerCycleAccelerated = false;
+         this.blockBreakerCycleEnergyCost = 0;
+         if (tag.contains("BlockBreakerCycleTarget", Tag.TAG_COMPOUND)
+               && tag.contains("BlockBreakerCyclePosition", Tag.TAG_LONG)
+               && tag.contains("BlockBreakerCycleAccelerated", Tag.TAG_BYTE)
+               && tag.contains("BlockBreakerCycleEnergyCost", Tag.TAG_INT)) {
+            BlockState savedTarget = NbtUtils.readBlockState(
+               registries.lookupOrThrow(Registries.BLOCK), tag.getCompound("BlockBreakerCycleTarget")
+            );
+            int savedCost = tag.getInt("BlockBreakerCycleEnergyCost");
+            boolean savedAccelerated = tag.getBoolean("BlockBreakerCycleAccelerated");
+            if (!savedTarget.isAir() && this.progress > 0 && this.progress < this.processTimeNeeded
+                  && this.processTimeNeeded >= 20 && this.processTimeNeeded <= 200 && savedCost > 0
+                  && (!savedAccelerated || this.blockBreakerLubricantTank.getFluidAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS)) {
+               this.blockBreakerCycleTarget = savedTarget;
+               this.blockBreakerCyclePosition = BlockPos.of(tag.getLong("BlockBreakerCyclePosition"));
+               this.blockBreakerCycleAccelerated = savedAccelerated;
+               this.blockBreakerCycleEnergyCost = savedCost;
+            } else {
+               this.progress = 0;
+               this.processTimeNeeded = 0;
+            }
+         } else {
+            this.progress = 0;
+            this.processTimeNeeded = 0;
+         }
+      }
       if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
          this.unreadableFunnelFluid = null;
          this.funnelCaptureProgress = 0;
@@ -2066,6 +2183,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                savedFluid.put("Pending", pending);
             }
             tag.put("FunnelFluid", savedFluid);
+         }
+      }
+      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         if (this.unreadableBlockBreakerFluid != null) tag.put("BlockBreakerLubricant", this.unreadableBlockBreakerFluid.copy());
+         else if (this.blockBreakerLubricantTank.getFluidAmount() > 0) {
+            tag.put("BlockBreakerLubricant", this.blockBreakerLubricantTank.getFluid().save(registries));
+         }
+         if (this.blockBreakerCycleTarget != null) {
+            tag.put("BlockBreakerCycleTarget", NbtUtils.writeBlockState(this.blockBreakerCycleTarget));
+            tag.putLong("BlockBreakerCyclePosition", this.blockBreakerCyclePosition.asLong());
+            tag.putBoolean("BlockBreakerCycleAccelerated", this.blockBreakerCycleAccelerated);
+            tag.putInt("BlockBreakerCycleEnergyCost", this.blockBreakerCycleEnergyCost);
          }
       }
       tag.putBoolean("PreviousPowered", this.previousPowered);
@@ -2295,10 +2424,17 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          BlockState targetState = this.level.getBlockState(target);
          float hardness = targetState.isAir() ? 0.0F : targetState.getDestroySpeed(this.level, target);
          this.blockBreakerHardnessBits = Float.floatToIntBits(targetState.isAir() ? 0.0F : hardness);
+         if (this.blockBreakerCycleTarget != null && (!this.blockBreakerCycleTarget.equals(targetState)
+               || !target.equals(this.blockBreakerCyclePosition))) {
+            this.clearBlockBreakerCycle();
+            this.progress = 0;
+            this.processTimeNeeded = 0;
+         }
          if (powered) {
             this.blockBreakerStatus = BREAKER_STATUS_REDSTONE_STOP;
             this.progress = 0;
             this.processTimeNeeded = 0;
+            this.clearBlockBreakerCycle();
             this.setBooleanProperty(MachineBlocks.ACTIVE, false);
          } else if (this.cooldown > 0) {
             this.blockBreakerStatus = BREAKER_STATUS_COOLDOWN;
@@ -2307,30 +2443,58 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             this.blockBreakerStatus = BREAKER_STATUS_NO_TARGET;
             this.progress = 0;
             this.processTimeNeeded = 0;
+            this.clearBlockBreakerCycle();
             this.setBooleanProperty(MachineBlocks.ACTIVE, false);
          } else if (hardness < 0.0F) {
             this.blockBreakerStatus = BREAKER_STATUS_UNBREAKABLE;
             this.progress = 0;
             this.processTimeNeeded = 0;
+            this.clearBlockBreakerCycle();
             this.setBooleanProperty(MachineBlocks.ACTIVE, false);
          } else {
-            int requiredTicks = this.blockBreakerProcessTicks(targetState, target);
-            if (this.processTimeNeeded != requiredTicks) {
+            int requiredTicks = this.processTimeNeeded;
+            int energyCost;
+            if (this.blockBreakerCycleTarget == null) {
+               int normalTicks = this.blockBreakerProcessTicks(targetState, target);
+               boolean accelerated = this.blockBreakerLubricantTank.getFluidAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS;
+               requiredTicks = accelerated ? Math.max(20, (normalTicks + 1) / 2) : normalTicks;
+               int cycleCost = blockBreakerEnergyCostPerBlock(hardness);
                this.processTimeNeeded = requiredTicks;
+               if (!this.canBlockBreakerStoreDrops(target, targetState)) {
+                  this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;
+                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+                  return;
+               }
+               energyCost = this.blockBreakerEnergyCostPerTick(cycleCost, 0, requiredTicks);
+               if (energyCost <= 0 || this.energy < energyCost) {
+                  this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
+                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+                  return;
+               }
+               this.blockBreakerCycleTarget = targetState;
+               this.blockBreakerCyclePosition = target;
+               this.blockBreakerCycleAccelerated = accelerated;
+               this.blockBreakerCycleEnergyCost = cycleCost;
                this.progress = 0;
-            }
-
-            if (!this.canBlockBreakerStoreDrops(target, targetState)) {
-               this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-               return;
-            }
-
-            int energyCost = this.blockBreakerEnergyCostPerTick(hardness, this.progress, requiredTicks);
-            if (energyCost <= 0 || this.energy < energyCost) {
-               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-               return;
+            } else {
+               if (requiredTicks < 20 || requiredTicks > 200 || this.blockBreakerCycleEnergyCost <= 0) {
+                  this.clearBlockBreakerCycle();
+                  this.progress = 0;
+                  this.processTimeNeeded = 0;
+                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+                  return;
+               }
+               if (!this.canBlockBreakerStoreDrops(target, targetState)) {
+                  this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;
+                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+                  return;
+               }
+               energyCost = this.blockBreakerEnergyCostPerTick(this.blockBreakerCycleEnergyCost, this.progress, requiredTicks);
+               if (energyCost <= 0 || this.energy < energyCost) {
+                  this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
+                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+                  return;
+               }
             }
 
             this.blockBreakerStatus = BREAKER_STATUS_WORKING;
@@ -2341,8 +2505,16 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                this.setChanged();
             } else {
                if (this.destroyBlockIntoDropBuffer(target, targetState)) {
+                  if (this.blockBreakerCycleAccelerated) {
+                     FluidStack stored = this.blockBreakerLubricantTank.getFluid();
+                     if (stored.getAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS) {
+                        this.blockBreakerLubricantTank.setFluid(stored.getAmount() == BLOCK_BREAKER_LUBRICANT_PER_SUCCESS
+                           ? FluidStack.EMPTY : stored.copyWithAmount(stored.getAmount() - BLOCK_BREAKER_LUBRICANT_PER_SUCCESS));
+                     }
+                  }
                   this.progress = 0;
                   this.processTimeNeeded = 0;
+                  this.clearBlockBreakerCycle();
                   this.cooldown = 12;
                   this.fillBlockBreakerOutput();
                   this.blockBreakerPendingItemCount = this.blockBreakerPendingItemCount();
@@ -2361,6 +2533,13 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
+   private void clearBlockBreakerCycle() {
+      this.blockBreakerCycleTarget = null;
+      this.blockBreakerCyclePosition = null;
+      this.blockBreakerCycleAccelerated = false;
+      this.blockBreakerCycleEnergyCost = 0;
+   }
+
    public static int blockBreakerEnergyCostPerBlock(float hardness) {
       if (Float.isNaN(hardness) || hardness <= 0.0F) {
          return BLOCK_BREAKER_BASE_ENERGY_COST;
@@ -2374,13 +2553,16 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private int blockBreakerEnergyCostPerTick(float hardness, int elapsedTicks, int totalTicks) {
+      return this.blockBreakerEnergyCostPerTick(blockBreakerEnergyCostPerBlock(hardness), elapsedTicks, totalTicks);
+   }
+
+   private int blockBreakerEnergyCostPerTick(int totalCost, int elapsedTicks, int totalTicks) {
       if (totalTicks <= 0) {
          return 0;
       }
 
       int elapsed = Mth.clamp(elapsedTicks, 0, totalTicks - 1);
-      long totalCost = blockBreakerEnergyCostPerBlock(hardness);
-      long costBefore = totalCost * elapsed / totalTicks;
+      long costBefore = (long)totalCost * elapsed / totalTicks;
       long costAfter = totalCost * (elapsed + 1L) / totalTicks;
       return (int)(costAfter - costBefore);
    }

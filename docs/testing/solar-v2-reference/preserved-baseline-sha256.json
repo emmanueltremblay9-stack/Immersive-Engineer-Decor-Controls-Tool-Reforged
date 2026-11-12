@@ -69,5 +69,24 @@
         "reason": "Retain Tree presentation and all other menu behavior; normalize only the exact full Freezer fluid-aware preview method to the historical suffix."
       }
     }
+  },
+  "block_breaker_lubricant_integration": {
+    "main_commit": "b9fc2b44d41eab7cb0513775b27ac7c231aa6e20",
+    "source_patch_sha256": "9dde1f13b615df5ae92ee3b2229bab48e5084205c68c0d7f2a0fbcab9bb85580",
+    "scope": "Separate Block Breaker lubricant layer over main. Includes the reviewed long-arithmetic correction; historical Solar, Tree and Freezer records remain unchanged. Exact source identities, not gameplay qualification.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "main_sha256": "9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63",
+        "integrated_sha256": "1ab112cfb93c2817c68edae262aed72d9fc91008851cc433a9dc3693f11beb29"
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+        "main_sha256": "903cc15bbce612d9b5c7f150426fdce52858d63769eca9f7cdc16d6b43fb1ae2",
+        "integrated_sha256": "9b78022405e584f41da11e03999cad0b14d5563a9c2636d55441cee874488b14"
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
+        "main_sha256": "fdf3aba428feef82fea57881f1e4466963bd8f3dbfa3af8513f9443e8e314c10",
+        "integrated_sha256": "cb52445a0f4373a7fabf51d12a608c5e8620890c3aceb027895abd0df9c31884"
+      }
+    }
   }
 }

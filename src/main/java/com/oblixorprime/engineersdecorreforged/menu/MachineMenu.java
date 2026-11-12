@@ -41,6 +41,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 public class MachineMenu extends AbstractContainerMenu {
    // Historical property name retained for compatibility and flag-absent validation only.
@@ -86,6 +87,10 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int COMPACT_MACHINE_ENERGY_CAPACITY = 16000;
    private static final int DEFAULT_FLUID_CAPACITY = 4000;
    private static final int SMALL_FLUID_FUNNEL_CAPACITY = 3000;
+   private static final int BLOCK_BREAKER_FLUID_PRESENT = 1;
+   private static final int BLOCK_BREAKER_ACCELERATED = 2;
+   private static final int BLOCK_BREAKER_CYCLE_ACTIVE = 4;
+   private static final ResourceLocation BLOCK_BREAKER_LUBRICANT_ID = ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant");
    private static final int TEMPERATURE_PROCESS_TICKS = 180;
    private static final String IE_NAMESPACE = "immersiveengineering";
    private static final TagKey<Item> IE_HAMMERS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("immersiveengineering", "tools/hammers"));
@@ -287,6 +292,7 @@ public class MachineMenu extends AbstractContainerMenu {
       return switch (this.kind) {
          case SMALL_FLUID_FUNNEL -> SMALL_FLUID_FUNNEL_CAPACITY;
          case FLUID_BARREL -> 32000;
+         case SMALL_BLOCK_BREAKER -> MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_CAPACITY;
          case SMALL_MINERAL_SMELTER -> this.smelterV05Projection ? this.data.get(SMS_UI_TANK_CAPACITY) : DEFAULT_FLUID_CAPACITY;
          case PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> DEFAULT_FLUID_CAPACITY;
          default -> 0;
@@ -300,7 +306,43 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public Fluid storedFluid() {
+      if (this.kind == MachineKind.SMALL_BLOCK_BREAKER) {
+         return (this.data.get(4) & BLOCK_BREAKER_FLUID_PRESENT) != 0 && this.data.get(2) > 0
+            ? BuiltInRegistries.FLUID.get(BLOCK_BREAKER_LUBRICANT_ID) : Fluids.EMPTY;
+      }
       return decodeStoredFluid(this.kind, this.fluidAmount(), this.data.get(11), this.data.get(12), this.data.get(13));
+   }
+
+   public boolean blockBreakerAccelerated() {
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && (this.data.get(4) & BLOCK_BREAKER_ACCELERATED) != 0;
+   }
+
+   public boolean blockBreakerCycleActive() {
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && (this.data.get(4) & BLOCK_BREAKER_CYCLE_ACTIVE) != 0;
+   }
+
+   public FluidStack blockBreakerFluidStack() {
+      Fluid fluid = this.storedFluid();
+      return fluid == Fluids.EMPTY ? FluidStack.EMPTY : new FluidStack(fluid, this.fluidAmount());
+   }
+
+   public Component blockBreakerFluidName() {
+      FluidStack stack = this.blockBreakerFluidStack();
+      return stack.isEmpty()
+         ? Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.fluid_name")
+         : stack.getHoverName();
+   }
+
+   public int blockBreakerDurationTicks() {
+      if (this.kind != MachineKind.SMALL_BLOCK_BREAKER) return 0;
+      int synced = this.data.get(3);
+      if (synced > 0) return synced;
+      float hardness = this.blockBreakerHardness();
+      if (!Float.isFinite(hardness) || hardness < 0.0F || this.blockBreakerTargetStack().isEmpty()) return 0;
+      long normalTicks = 20L + Math.round(hardness * 20.0F);
+      int normal = (int)Math.max(20L, Math.min(200L, normalTicks));
+      return this.fluidAmount() >= MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS
+         ? Math.max(20, (normal + 1) / 2) : normal;
    }
 
    static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high) {
