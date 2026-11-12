@@ -32,8 +32,10 @@ their individual pages, not just the newly rewritten machines.
 
 ## Localization boundary
 
-There are 120 locale directories, including `en_us` and `fr_fr`. This draft updates
-English and French, preserving all other 118 locale directories byte-for-byte.
+There are 120 locale directories. This draft broadly updates `en_us` and `fr_fr`,
+plus the five explicitly reviewed `fr_ca` entries listed below and their category
+copies. All other 117 locale directories remain byte-for-byte unchanged. The rest
+of `fr_ca` is not claimed as reviewed.
 It does **not** claim global translation completion. Those localized files can still
 show older instructions; they are not automatically replaced by the English fallback.
 A follow-up needs translation review against this corrected source, retaining proper
@@ -230,3 +232,32 @@ pages were read to the final paragraph without clipping. The isolated client was
 saved and closed. A separate source review then tightened the wood-door pairing
 instruction: opposite hinges must be on the outer edges of the opening, as enforced
 by `SynchronizedAccessways.partner`; opposite inward hinges do not pair.
+
+
+## Localized-file risk and first Canadian French batch
+
+Inspection of the actual IE 1.21.1-12.4.2-194 dependency's
+`ManualEntry.ManualEntryBuilder` confirms selected-locale text is loaded as a whole
+file; `en_us` is used only when that file is absent. `fr_ca` does not inherit `fr_fr`.
+There is no freshness check or paragraph-level merge. Before this batch, all 120
+locales contained the same 223 text files. All 85 distinct filenames edited in EN/FR
+existed in the other 118 locales, as did 89 distinct changed category/entry pairs.
+File presence is exposure evidence, not a claim that every translation is incorrect.
+
+The first bounded `fr_ca` batch reviews exactly five individual entries against Java:
+- `small_tree_cutter`: output/recovery, vertical scope and old-save migration warning.
+- `small_freezer`: water/FE quantities, priorities, interruption loss, buckets/comparator.
+- `sleeping_bag`: adjacent lit vanilla campfire, exclusions, cooldown and wear.
+- `industrial_dimmer`: hit-position selection rather than increment/wrap cycling.
+- `door_sensor_switch`: player presence, initial 20-tick scan and subsequent 40-tick scans.
+
+Their five copies in `workshop_machines`, `engineer_tools` and `redstone_controls`
+are synchronized. Existing titles/subtitles and useful Canadian French wording are
+retained, not replaced with English. The two fluid-category language keys use the
+same compact French label already verified in `fr_fr`. A focused JUnit test checks
+this reviewed subset only. Native acceptance for this locale is separately recorded;
+other `fr_ca` entries, scales and all other 117 locales are not certified by these tests.
+
+Future translation batches must update both individual and category copies, keep a
+per-entry reviewed-source record, and distinguish content review from native rendering.
+Do not silently delete existing translations to force English fallback.

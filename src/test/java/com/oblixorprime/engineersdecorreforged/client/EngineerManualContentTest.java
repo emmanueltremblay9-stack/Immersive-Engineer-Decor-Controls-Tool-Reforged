@@ -155,4 +155,37 @@ public class EngineerManualContentTest {
         assertTrue(Files.readString(ROOT.resolve("en_us/small_milking_machine.txt")).contains("transfers continue"));
         assertTrue(Files.readString(ROOT.resolve("en_us/small_mineral_smelter.txt")).contains("Redstone pauses heating"));
     }
+    @Test
+    public void reviewedCanadianFrenchSubsetKeepsCategoryParity() throws Exception {
+        assertFalse(Files.readString(ROOT.resolve("../lang/fr_ca.json")).contains("Équipements pour fluides et énergie"));
+        String[][] reviewed = {
+            {"small_tree_cutter", "workshop_machines"},
+            {"small_freezer", "workshop_machines"},
+            {"sleeping_bag", "engineer_tools"},
+            {"industrial_dimmer", "redstone_controls"},
+            {"door_sensor_switch", "redstone_controls"}
+        };
+        for (String[] pair : reviewed) {
+            String individual = Files.readString(ROOT.resolve("fr_ca/" + pair[0] + ".txt"));
+            String category = Files.readString(ROOT.resolve("fr_ca/" + pair[1] + ".txt"));
+            String anchor = "<&" + pair[0] + ">";
+            assertEquals(pair[0], 1, individual.split("<&recipe>", -1).length - 1);
+            assertEquals(pair[0], 1, category.split(java.util.regex.Pattern.quote(anchor), -1).length - 1);
+            int start = category.indexOf(anchor) + anchor.length();
+            int end = category.indexOf("<np>", start);
+            assertEquals(pair[0], individual.substring(individual.indexOf("<&recipe>") + 9).trim(),
+                category.substring(start, end < 0 ? category.length() : end).trim());
+        }
+        String freezer = Files.readString(ROOT.resolve("fr_ca/small_freezer.txt"));
+        for (String term : new String[]{"2 000 mB", "1 000 mB", "180 ticks", "8 FE", "rembours"}) assertTrue(term, freezer.contains(term));
+        String tree = Files.readString(ROOT.resolve("fr_ca/small_tree_cutter.txt"));
+        assertFalse(tree.contains("ramassez séparément les objets lâchés"));
+        assertTrue(tree.contains("18"));
+        assertTrue(tree.contains("sans version"));
+        String bag = Files.readString(ROOT.resolve("fr_ca/sleeping_bag.txt"));
+        assertTrue(bag.contains("feu de camp"));
+        assertTrue(bag.contains("400 ticks"));
+        assertFalse(Files.readString(ROOT.resolve("fr_ca/industrial_dimmer.txt")).contains("elle revient à zéro"));
+        assertFalse(Files.readString(ROOT.resolve("fr_ca/door_sensor_switch.txt")).contains("revient à son état initial après la durée prévue"));
+    }
 }

@@ -2,6 +2,6 @@ Gradateur
 Signal variable
 <&recipe>Une commande rotative règle la puissance redstone depuis un panneau compact.<br>
 <br>
-Utilisation : faites un clic droit pour augmenter la sortie par paliers ; après la puissance maximale, elle revient à zéro.<br>
+Utilisation : faites un clic droit à l'endroit correspondant à la puissance voulue. Sur un mur, cliquez plus haut pour l'augmenter ou plus bas pour la réduire. Au sol ou au plafond, la position du clic sur l'axe nord-sud règle la puissance.<br>
 <br>
-Remarque : fournit une puissance de 0 à 15.
+Remarque : fournit une puissance de 0 à 15. Chaque clic sélectionne directement la sortie ; les clics répétés ne font pas défiler les valeurs.
