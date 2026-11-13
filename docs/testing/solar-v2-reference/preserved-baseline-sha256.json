@@ -50,5 +50,44 @@
         "reason": "Test-only integration: permit exactly the Tree presentation accessor while retaining the original downstream menu hash."
       }
     }
+  },
+  "freezer_fluid_automation_integration": {
+    "main_commit": "509913bd891e7a7bfd7dfa589a3b1fa1008e0397",
+    "freezer_commit": "9bfd466766ac66af759600ea74ff5e039daba3d5",
+    "scope": "Separate PR172 integration over current main, retaining all historical Solar and Tree records. Exact source identities only; no gameplay qualification is implied.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "main_sha256": "34e971011cfeacd68695fe756fd6c4f0dd67b1a65d82d5af6ef5adb1e45fafa7",
+        "freezer_sha256": "9ff3858f58c4b3c81aaf01760124a72aea622241a793248fb99846cc4afd692f",
+        "integrated_sha256": "9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63",
+        "reason": "Retain Tree single-output extraction and add Freezer fluid processing and empty-bucket automation; both kind-specific extraction branches are preserved."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+        "main_sha256": "f3457bbabf3a0e92874e53cdbf16739d35b4fe50050218750551251d454760ae",
+        "freezer_sha256": "720e6b2f6b439f9f29f576965cc9bcad0830dec0d085f06c46dcbd9a45dccc6f",
+        "integrated_sha256": "903cc15bbce612d9b5c7f150426fdce52858d63769eca9f7cdc16d6b43fb1ae2",
+        "reason": "Retain Tree presentation and all other menu behavior; normalize only the exact full Freezer fluid-aware preview method to the historical suffix."
+      }
+    }
+  },
+  "milking_freezer_integration": {
+    "main_commit": "b9fc2b44d41eab7cb0513775b27ac7c231aa6e20",
+    "milking_commit": "03d044358c37487d803c816f7c6890d0e99092d7",
+    "merge_base": "509913bd891e7a7bfd7dfa589a3b1fa1008e0397",
+    "scope": "Exact automatic Java merge of PR169 with main after PR172 and PR177. Preserve historical Solar, Tree, Freezer and Milking records and version 1.1.67. Source preservation only, not mapped compilation, packaged-input or gameplay qualification.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "main_sha256": "9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63",
+        "milking_sha256": "b3733c48d66419efeb818a2992ff67144642ddf36a08652c0394e8d45e78efd9",
+        "integrated_sha256": "24266c03ec35e12517d8b8f86d1ef53bf1a3e9d266666d38e645045155999128",
+        "reason": "Combine native per-animal Milking recovery and transaction checks with Freezer fluid processing and empty-bucket automation, retaining Tree single-output extraction."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+        "main_sha256": "903cc15bbce612d9b5c7f150426fdce52858d63769eca9f7cdc16d6b43fb1ae2",
+        "milking_sha256": "0be659f78a3176707ea292e46a382df180ea220fa2039f6bf4ccbfd839785606",
+        "integrated_sha256": "a8a3d691e191bf4dc5a9725e7c9e4e9b0e19b8647a5a6c1408e2f2a92dcc9fdd",
+        "reason": "Combine the bounded read-only Milking projection with the exact Freezer fluid-aware preview; retain the historical menu tail and exact Tree accessor normalization."
+      }
+    }
   }
 }

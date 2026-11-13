@@ -1,6 +1,5 @@
 Electrical Furnace
 Compact processing unit
-<&recipe>The Electrical Furnace handles compact FE-powered smelting jobs in a small workshop footprint.<br>
-<br>
-Usage: Supply FE and valid smelting input.<br>
-
+<&recipe>Supply FE and an ordinary furnace-smelting ingredient. The furnace stores 32,000 FE and has active input/output slots, two input buffers, two output buffers and an auxiliary slot. Buffers advance stacks every 20 ticks.<br>
+Choose OFF, I, II or III in the screen. OFF pauses smelting. I, II and III consume 16, 32 and 64 FE per active tick and advance the recipe by 3, 4 and 6 cooking ticks respectively. Missing power or a blocked output stops progress. Redstone does not pause this furnace.<br>
+Place a vanilla Hopper item in the auxiliary slot to enable automatic feeding between adjacent compatible inventories. It pulls smeltable items from behind and pushes results forward every 20 ticks, up to 64 items each way. Each successful pull or push costs 4 FE in addition to smelting. Non-smeltable input is left in the source inventory. These feeder transfers can still operate with smelting set to OFF.<br>

@@ -13,6 +13,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.TreeCutterV3ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
+import com.oblixorprime.engineersdecorreforged.utility.MilkingState;
 import java.util.Locale;
 import java.util.function.IntFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -113,6 +114,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private final int visibleMachineSlots;
    private final Container container;
    private final ContainerData data;
+   private final ContainerData milkingData;
    private final boolean smelterV05Projection;
    private final ContainerLevelAccess menuAccess;
    private final Block expectedMenuBlock;
@@ -235,6 +237,16 @@ public class MachineMenu extends AbstractContainerMenu {
       }
 
       this.addDataSlots(data);
+      this.milkingData = kind == MachineKind.SMALL_MILKING_MACHINE
+         && container instanceof MachineBlockEntity machine && machine.getLevel() != null
+         && !machine.getLevel().isClientSide
+            ? machine.milkingDataAccessForTests() : new SimpleContainerData(MilkingState.FIELD_COUNT);
+      if (kind == MachineKind.SMALL_MILKING_MACHINE) this.addDataSlots(this.milkingData);
+   }
+
+   public MilkingState milkingState() {
+      return this.kind == MachineKind.SMALL_MILKING_MACHINE
+         ? MilkingState.decode(this.milkingData::get) : MilkingState.empty();
    }
 
    private static MenuType<?> resolveMenuType(MachineKind kind) {
@@ -367,9 +379,11 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public ItemStack freezerPreviewStack() {
-      return this.kind == MachineKind.SMALL_FREEZER && this.visibleMachineSlots > 0
-         ? MachineBlockEntity.freezerResultForDisplay(((Slot)this.slots.get(0)).getItem())
-         : ItemStack.EMPTY;
+      if (this.kind != MachineKind.SMALL_FREEZER || this.visibleMachineSlots == 0) return ItemStack.EMPTY;
+      ItemStack input = ((Slot)this.slots.get(0)).getItem();
+      // Field 2 was unused for the Freezer; preserve the existing 16-field/39-slot menu protocol.
+      return input.isEmpty() && this.data.get(2) >= 1000
+         ? new ItemStack(Items.ICE) : MachineBlockEntity.freezerResultForDisplay(input);
    }
 
    public int energyDisplayGranularity() {

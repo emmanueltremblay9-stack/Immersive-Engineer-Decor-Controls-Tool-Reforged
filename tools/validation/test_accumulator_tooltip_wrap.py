@@ -88,6 +88,9 @@ public class TooltipProbe {
             if (mode == 1 || mode == 2) {
                 check(graphics.positioner == FluidTooltipPositioner.INSTANCE, "Fluid frame positioning");
                 check(probe.font.source == null, "Short fluid text need not rewrap");
+            } else if (mode == 4) {
+                check(graphics.wrapped && probe.font.source == probe.text && graphics.positioner == null, "Milking tooltip retains native wrapping");
+                check(probe.font.width == Math.max(1, Math.min(240, probe.width - 16)), "Milking width stays bounded");
             } else {
                 check(!graphics.wrapped && probe.font.source == null && graphics.positioner == null, "Other tooltips unchanged");
             }
@@ -108,7 +111,9 @@ def run_probe(source):
     with tempfile.TemporaryDirectory(prefix="accumulator-tooltip-") as directory:
         target = Path(directory)
         java = target / "TooltipProbe.java"
-        java.write_text(FIXTURE.replace("    /* METHOD */", source[start:end]))
+        helper_start = source.index("   static int milkingTooltipWidth(")
+        helper_end = source.index("\n   }", helper_start) + len("\n   }")
+        java.write_text(FIXTURE.replace("    /* METHOD */", source[start:end] + source[helper_start:helper_end]))
         compile_result = subprocess.run(
             ["java", "-m", "jdk.compiler/com.sun.tools.javac.Main", "-source", "21", "-target", "21",
              "-d", str(target), str(java)], capture_output=True, text=True)

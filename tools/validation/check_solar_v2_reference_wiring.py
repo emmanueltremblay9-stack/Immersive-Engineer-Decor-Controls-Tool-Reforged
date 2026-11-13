@@ -45,7 +45,19 @@ assert 'SolarV2ReferenceGeometry.anchor(28 + column)' in m
 assert_menu_tail_preserved(m)
 # Keep historical pins, with exact documented Tree integration identities only.
 preserved = json.loads((d / 'preserved-baseline-sha256.json').read_text())
-assert_solar_baseline_preserved(r, preserved)
+# Milking evolves only these shared production files; retain the exact reconciled
+# Solar baseline and all remaining source/art pins without broad exemptions.
+milking = json.loads((r / 'docs/testing/milking-qualification/production-pins.json').read_text())
+assert milking['reconciliation_commit'] == 'e8999e7cdd7e3a5d68d42b05ca3b0d6ecc9ac8d0'
+milking_shared_paths = {
+    'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java',
+    'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java',
+}
+for path, expected in preserved['files'].items():
+    if path in milking_shared_paths:
+        assert milking['reconciliation_baseline_sha256'][path] == expected, path
+milking_current_hashes = {path: milking['sha256'][path] for path in milking_shared_paths}
+assert_solar_baseline_preserved(r, preserved, milking_current_hashes)
 print('PASS: independent client-only default client presentation with explicit false fallback, 37 index routes, inverse pointer paths, legacy and Barrel preservation')
 
 art = r / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png'

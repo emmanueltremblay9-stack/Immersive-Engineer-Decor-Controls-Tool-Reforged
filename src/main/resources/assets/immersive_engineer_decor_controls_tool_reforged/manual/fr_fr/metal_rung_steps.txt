@@ -1,5 +1,7 @@
 Marches en métal échelonnées
 Élément de voie de service
-<&recipe>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&recipe>Cette échelle murale permet l'accès vertical aux installations.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : posez-la contre un mur porteur. Pour traverser une trappe en fer au-dessus, placez l'échelle directement sous la trappe et alignez son bord d'appui avec le battant ouvert.<br>
+<br>
+La trappe doit être ouverte. Une trappe fermée ou mal alignée ne prolonge pas la montée.

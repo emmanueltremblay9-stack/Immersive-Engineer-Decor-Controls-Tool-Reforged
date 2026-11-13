@@ -25,6 +25,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Record exact tested revision
+        run: git rev-parse HEAD | tee tested-sha.txt
       - name: Set up Java
         uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
         with:
@@ -48,10 +52,10 @@ jobs:
           from pathlib import Path
           import re
           log = Path("tfc-runtime.log").read_text(encoding="utf-8")
-          if not re.search(r"Running test batch 'tfc_milking:0' \(12 tests\)", log):
-              raise SystemExit("The twelve real TFC regressions did not execute.")
+          if not re.search(r"Running test batch 'tfc_milking:0' \(21 tests\)", log):
+              raise SystemExit("The twenty-one real TFC regressions did not execute.")
           passed = re.findall(r"All (\d+) required tests passed", log)
-          if not passed or int(passed[-1]) < 12:
+          if not passed or int(passed[-1]) < 21:
               raise SystemExit("No complete successful native regression evidence.")
           PY
       - name: Retain dependency and server evidence
@@ -60,6 +64,7 @@ jobs:
         with:
           name: tfc-milking-crossover-${{ matrix.crossover }}
           path: |
+            tested-sha.txt
             tfc-runtime.log
             run/logs/latest.log
             build/reports/

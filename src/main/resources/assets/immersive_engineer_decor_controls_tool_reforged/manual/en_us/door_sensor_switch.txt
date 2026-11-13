@@ -1,9 +1,4 @@
 Door sensor
 Redstone control
-<&recipe>A momentary switch gives a clean full-strength redstone pulse.<br>
-<br>
-Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
-<br>
-Notes: Resets after its scheduled pulse.
-
-
+<&recipe>This sensor detects nearby players automatically; it is not a timed push button. Its detection area is the sensor block's box expanded by four blocks in every direction. Other entity types do not trigger this player sensor.<br>
+Place it against a wall, floor or ceiling: its plate and outline remain against the clicked support. It checks after placement and then every 40 ticks, so detection is not instantaneous. Using the sensor requests an immediate update. The redstone output follows player presence rather than a fixed pulse.<br>

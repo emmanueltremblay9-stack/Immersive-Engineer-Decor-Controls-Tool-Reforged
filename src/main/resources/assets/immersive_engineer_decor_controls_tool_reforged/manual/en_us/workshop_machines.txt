@@ -27,85 +27,90 @@ Simply sitting grants no food, healing or timed status effect. There is no waiti
 <np>
 Metal Crafting Table
 Plate workstation
-<&metal_crafting_table>The Metal Crafting Table is a reinforced shop station with a hammer slot, a 3x3 crafting grid, and a clear output slot.<br>
-<br>
-Usage: Use the grid for normal crafting. For IE plates, place an Engineer's Hammer in the tool slot and put the plate material in the grid before taking the result. Steel decorations use steel plates for poles, catwalks, windows, doors, railings, and other steel parts.<br>
+<&metal_crafting_table>The Metal Crafting Table has a hammer slot, a full 3x3 crafting grid and an output slot. Use the grid for ordinary crafting recipes.<br>
+To form IE plates, place an Engineer's Hammer in the dedicated tool slot and the plate material in exactly one grid slot. Leave the other eight grid slots empty; the material slot may hold a stack. Taking one plate consumes one material and one point of hammer durability. Merely previewing the result consumes neither.<br>
+Steel decorations use steel plates. Hammer steel ingots into plates, then use them to craft poles, catwalks, windows, doors, railings and other steel decorations.<br>
 <np>
 Factory Hopper
 Shop-floor utility
-<&factory_hopper>This block moves item stacks through a tighter industrial casing.<br>
-<br>
-Usage: Face it toward the inventory line, then set range, stack count, timing, and redstone mode in its screen.<br>
+<&factory_hopper>The Factory Hopper has 18 storage slots. Its narrow end is the output; inventory input is on the opposite face. Adjacent vanilla inventories and NeoForge item handlers are supported, respecting the contacted inventory face.<br>
+Set the collection range, item count and insertion delay in the screen. Range changes the collection area for loose item entities, not the distance to an inventory. The count setting limits extraction and insertion to 1-32 items each per transfer cycle; it does not limit loose-item collection.<br>
+The default is inverted and continuous: transfer while unpowered. Normal mode enables transfer while powered; ignored mode repeats regardless of the signal. Continuous repeats after the insertion delay. Pulse uses a rising signal change in normal mode or a falling one in inverted mode. Changes sampled before the delay expires are not queued. Ignored mode overrides the pulse toggle.<br>
+Hover over the redstone controls to see their current state. Click the signal indicator to request one manual cycle; this bypasses redstone and shortens the remaining delay. No FE supply is needed.<br>
 <np>
 Factory Dropper
 Shop-floor utility
-<&factory_dropper>This block releases stored items from an aimed face.<br>
-<br>
-Usage: Aim the front toward the release point, load its internal slots, and tune force, angle, delay, filter logic, and redstone mode in its screen.<br>
+<&factory_dropper>The Factory Dropper ejects item entities from its working face. Load the 12 stock slots, then adjust launch speed, aim, unfiltered batch size and delay. Unfiltered batches contain 1-32 items from one eligible stack, selected in rotation. No FE is required.<br>
+The three lower filter slots hold real example stacks. Each filter matches both the item and its components, and its stack size is the required quantity. Matching quantities are taken from the 12 stock slots; the filter examples remain in place. Repeated filters require enough stock for their combined quantities.<br>
+Filter AND waits until every defined filter is satisfied. Filter OR accepts satisfied filters individually. A filtered drop ejects each satisfied filter's specified quantity, rather than the unfiltered batch size. Items matching a defined filter are excluded from the unfiltered rotation.<br>
+Combine filter readiness with the external redstone trigger using AND or OR. Ignored redstone supplies a permanent external trigger. Pulse responds to a rising signal change; continuous repeats while powered, subject to the delay. Clicking the signal indicator simulates an external trigger and still follows the filter logic and delay.<br>
 <np>
 Factory Block Placer
 Shop-floor utility
-<&factory_placer>This block installs blocks from its internal stock when activated.<br>
-<br>
-Usage: Point the working face at the target space and load placeable stacks.<br>
+<&factory_placer>Point the working face toward the adjacent target space and fill the 18 stock slots with placeable blocks or supported crop seeds. The target must be replaceable and the placement must be valid. Crop planting needs farmland below the target. No FE is required.<br>
+The screen offers normal, inverted and ignored redstone modes, continuous or signal-change triggering, and a manual placement control. New placers ignore redstone and run automatically. Normal mode requires power; inverted mode requires no power. Ignored mode runs automatically even with the signal-change option selected.<br>
+Select a stock row to choose where the next search begins. Placement continues through all 18 slots; the row selector does not restrict the inventory. A successful placement consumes one item and advances to the following slot.<br>
+Warning: an unsuccessful attempt triggered manually or by an allowed signal change can eject one item from each eligible slot tried. It can therefore eject several items in one cycle. Ordinary continuous retries without a manual trigger or signal change retain the stock. Keep a collection area in front when testing controls.<br>
 <np>
 Block Breaker
 Shop-floor utility
-<&small_block_breaker>The Small Block Breaker is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
+<&small_block_breaker>Point the working face at the block to remove and supply FE from below. The buffer holds 32,000 FE and accepts at most 256 FE per tick. Each block costs 160 FE plus 160 FE times its hardness (rounded); even zero-hardness blocks cost energy.<br>
+Take collected drops from the output slot or extract them automatically. The machine waits if it cannot store the drops or lacks energy. A redstone signal stops work; unbreakable blocks remain intact.<br>
 <br>
-Usage: Place the working face toward the block to remove.<br>
+Automated item extraction is available only at the rear, opposite the working face.<br>
 <np>
 Waste Incinerator
 Compact processing unit
-<&small_waste_incinerator>The Waste Incinerator destroys unwanted items in a compact workshop footprint.<br>
-<br>
-Usage: Feed only unwanted items into its queue.<br>
+<&small_waste_incinerator>Feed only items you intend to destroy. The 16-slot queue advances toward its final slot and consumes one item there per work step, even before the queue is full. Destroyed items produce no result and cannot be recovered.<br>
+It works without fuel or FE, with one work step every 30 ticks. With at least 8 FE available, work steps occur every 10 ticks and a successful destruction consumes 8 FE. Redstone neither enables this speed boost nor pauses the machine. Control the incoming item supply to prevent accidental disposal.<br>
 <np>
 Laboratory Furnace
 Compact processing unit
-<&small_lab_furnace>The Laboratory Furnace handles compact solid-fuel smelting jobs in a small workshop footprint.<br>
-<br>
-Usage: Use solid fuel for compact smelting batches.<br>
+<&small_lab_furnace>Use ordinary furnace-smelting ingredients with valid furnace fuel. The screen separates the active input, fuel and output, with two buffer slots for each. Every 20 ticks, each buffer connection advances up to one item. Keep room for the finished result.<br>
+The furnace works without FE. For an optional speed boost, put an Immersive Engineering External Heater item in either auxiliary slot and supply FE to the furnace. It spends 8 FE per active boosted tick and advances twice as fast as its unboosted operation. Fuel is still required; two heater items do not stack the boost.<br>
+Redstone does not pause this furnace. Stop supplying ingredients or fuel when you want it to stop processing.<br>
 <np>
 Electrical Furnace
 Compact processing unit
-<&small_electrical_furnace>The Electrical Furnace handles compact FE-powered smelting jobs in a small workshop footprint.<br>
-<br>
-Usage: Supply FE and valid smelting input.<br>
+<&small_electrical_furnace>Supply FE and an ordinary furnace-smelting ingredient. The furnace stores 32,000 FE and has active input/output slots, two input buffers, two output buffers and an auxiliary slot. Buffers advance stacks every 20 ticks.<br>
+Choose OFF, I, II or III in the screen. OFF pauses smelting. I, II and III consume 16, 32 and 64 FE per active tick and advance the recipe by 3, 4 and 6 cooking ticks respectively. Missing power or a blocked output stops progress. Redstone does not pause this furnace.<br>
+Place a vanilla Hopper item in the auxiliary slot to enable automatic feeding between adjacent compatible inventories. It pulls smeltable items from behind and pushes results forward every 20 ticks, up to 64 items each way. Each successful pull or push costs 4 FE in addition to smelting. Non-smeltable input is left in the source inventory. These feeder transfers can still operate with smelting set to OFF.<br>
 <np>
 Mineral Smelter
 Compact processing unit
-<&small_mineral_smelter>The Mineral Smelter handles high-heat mineral processing in a compact workshop footprint.<br>
-<br>
-Usage: Feed mineral blocks and power for high-heat melting work.<br>
+<&small_mineral_smelter>Choose Lava, Magma or Obsidian mode in the screen. Accepted mineral blocks, such as stone or cobblestone, heat into 1,000 mB lava in Lava mode, or one Magma Block in Magma mode. Obsidian mode cools a 1,000 mB lava batch into one Obsidian without consuming water. Changing modes during a batch queues the next mode.<br>
+Feed items and lava from above, extract items and lava below, and supply FE at the rear. The tank holds 4,000 mB of lava. During Obsidian cooling the committed 1,000 mB is reserved; only surplus lava can be drained. The old extra slot is not a fuel slot. Avoid touching the machine while hot.<br>
+In Obsidian mode, an existing 1,000 mB lava batch in the tank is cooled first. Without that amount, a valid mineral input can be heated into lava and then cooled into Obsidian in the same batch. Redstone pauses heating; committed cooling and downward output can continue without FE.<br>
 <np>
 Water Freezer
 Compact processing unit
-<&small_freezer>The Water Freezer handles compact chilling work for powered fluid setups.<br>
-<br>
-Usage: Supply water and power for staged ice production.<br>
+<&small_freezer>Supply FE and plain water through pipes on any face. The tank holds 2,000 mB. With the input empty, 1,000 mB makes one Ice in 180 ticks at 8 FE per tick (1,440 FE total). A partial batch waits without using energy.<br>
+An occupied input takes priority over tank water. Water Bucket, Ice and Packed Ice retain their item recipes; remove invalid input or the returned empty bucket before using tank water. Automation can recover empty input buckets and finished output, but cannot extract an unprocessed water bucket.<br>
+Redstone, missing power or a blocked output resets the cycle to zero. The input and tank water remain unconsumed, but FE already spent is not refunded. The 1,440 FE cost assumes an uninterrupted 180-tick cycle. The comparator reports freezing phase, not tank fullness. Right-clicking with a water bucket is a separate immediate operation costing 1,440 FE; tank input does not automatically upgrade Ice to Packed Ice or Blue Ice.<br>
 <np>
 Passive Fluid
 Fluid line hardware
-<&passive_fluid_accumulator>The Passive Fluid Accumulator is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<&passive_fluid_accumulator>The Passive Fluid Accumulator collects 250 mB of water every 80 ticks when at least one of its six neighboring blocks contains a water source. Its tank holds 4000 mB and needs no energy. Collection leaves the neighboring source in place; flowing water and the accumulator's own waterlogged cell do not count.<br>
 <br>
-Usage: Place it against suitable water sources and leave room for fluid removal.<br>
+Without an adjacent water source, it also collects rainfall through its open top: 100 mB every 80 ticks in rain, or 200 mB during a thunderstorm. At 20 ticks per second, this fills one bucket in 40 or 20 seconds respectively. Roofs, dry biomes, and snow-only precipitation prevent rain collection. Weather and source collection never add together; the neighboring source takes priority.<br>
+<br>
+Place it directly in source water to keep that water in the block. Normal bucket use fills or drains the internal tank. Sneak-use a water bucket or empty bucket to add or remove the block's surrounding water instead. These two water stores are independent.<br>
+<br>
+Use fluid pipes to extract stored water, or put empty buckets in the input slot and take the filled buckets from the output slot.<br>
 <np>
 Solar Panel
 Shop-floor utility
-<&small_solar_panel>The Small Solar Panel is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
-<br>
-Usage: Give it open sky and connect low-demand equipment.<br>
+<&small_solar_panel>Place the panel with unobstructed sky above it in a dimension with skylight. During daytime it generates 32 FE every 20 ticks, reduced to 16 FE when rain reaches the panel. Night or a blocked sky stops generation. Its buffer holds 64,000 FE.<br>
+Insert an item that accepts FE into the charging slot. Every 20 ticks the panel first charges that item, then sends the remaining transfer budget to receivers below or beside it. The shared active transfer budget is 256 FE per update, not 256 FE per tick.<br>
 <np>
 Milking Machine
 Shop-floor utility
-<&small_milking_machine>The Small Milking Machine is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
-<br>
-Usage: Place it near cows and provide a way to remove milk containers or fluid.<br>
+<&small_milking_machine>Face the machine toward nearby adult cows. Without a redstone signal, it checks for milk every 120 ticks. A real empty bucket in the input can become a milk bucket in the output; otherwise milk goes into the 4,000 mB tank when there is room. Arrange removal of filled buckets or milk fluid.<br>
+With TerraFirmaCraft installed, its cow adapter respects native readiness, familiarity, sex, age and cooldown checks. Only compatible plain milk that fits is accepted; this does not make every animal milkable. This page describes the integrated behavior, not an experimental replacement interface.<br>
+Compatible adjacent inventories behind or below can supply empty buckets and receive milk buckets automatically. Empty-bucket intake tries the rear first; filled-bucket output tries below first. The machine also pushes milk fluid downward. These transfers continue while redstone pauses milk production.<br>
 <np>
 Tree Cutter
 Shop-floor utility
-<&small_tree_cutter>The Small Tree Cutter is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
-<br>
-Usage: Aim it at grown trees and collect drops separately.<br>
-
+<&small_tree_cutter>Aim the working face at the bottom of a vertical log column. The cutter checks up to 18 consecutive logs upward; it does not fell branching trees or process leaves. A redstone signal pauses harvesting. This implementation does not consume FE.<br>
+Collect logs from the single output slot, manually or with extraction automation. There is no production input slot. If the complete drops of a block cannot fit, that block stays intact. Retained legacy contents drain through the same output before harvesting resumes, even while redstone-paused.<br>
+Upgrade warning: the first server tick of an unversioned old inventory discards plain, unmodified vanilla logs from its saved slots. Modded logs, customized items and other contents are retained for recovery. Back up old worlds before upgrading.<br>
