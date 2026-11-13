@@ -29,6 +29,9 @@ public final class LabeledCrateEditScreen extends Screen {
    }
 
    protected void init() {
+      // Screen reinitialization (for example a resize) must retain unsaved label text.
+      String line0 = this.firstLine == null ? this.initialLines[0] : this.firstLine.getValue();
+      String line1 = this.secondLine == null ? this.initialLines[1] : this.secondLine.getValue();
       int boxWidth = Mth.clamp(this.width - 48, 120, 180);
       int left = (this.width - boxWidth) / 2;
       int top = Mth.clamp(this.height / 2 - 58, 18, Math.max(18, this.height - 126));
@@ -38,8 +41,8 @@ public final class LabeledCrateEditScreen extends Screen {
       );
       this.firstLine.setMaxLength(MachineBlockEntity.LABEL_MAX_UTF16_UNITS);
       this.secondLine.setMaxLength(MachineBlockEntity.LABEL_MAX_UTF16_UNITS);
-      this.firstLine.setValue(this.initialLines[0]);
-      this.secondLine.setValue(this.initialLines[1]);
+      this.firstLine.setValue(line0);
+      this.secondLine.setValue(line1);
       this.addRenderableWidget(this.firstLine);
       this.addRenderableWidget(this.secondLine);
       int buttonWidth = Math.max(58, (boxWidth - 8) / 2);
@@ -55,13 +58,14 @@ public final class LabeledCrateEditScreen extends Screen {
    }
 
    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-      this.renderBackground(graphics, mouseX, mouseY, partialTick);
+      // Screen.render draws the blurred background and widgets. Draw labels afterwards
+      // so they are not blurred by a second background pass.
+      super.render(graphics, mouseX, mouseY, partialTick);
       int top = Mth.clamp(this.height / 2 - 58, 18, Math.max(18, this.height - 126));
       graphics.drawCenteredString(this.font, this.title, this.width / 2, top, 16777215);
       graphics.drawCenteredString(
          this.font, Component.translatable("screen.immersive_engineer_decor_controls_tool_reforged.labeled_crate_label.hint"), this.width / 2, top + 17, 10526880
       );
-      super.render(graphics, mouseX, mouseY, partialTick);
    }
 
    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
