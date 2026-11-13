@@ -135,7 +135,6 @@ public final class NativeManualValidation {
         Minecraft mc=Minecraft.getInstance();
         try {
             require(mc.screen==screen && screen.getCurrentPage()==entry,"Screen changed before capture");
-            var row=pageProof(mc);
             String name=(group==0?"individual":"category")+"-page-"+screen.page+".png";
             Path imagePath=directory.resolve("manual-packaged-screenshots").resolve(name);
             Files.createDirectories(imagePath.getParent());
@@ -149,7 +148,9 @@ public final class NativeManualValidation {
             shot.addProperty("width",mc.getWindow().getWidth());shot.addProperty("height",mc.getWindow().getHeight());
             shot.addProperty("entry",entry.getLocation().toString());shot.addProperty("page",screen.page);
             shot.addProperty("phase","RenderFrameEvent.Post:LOWEST");
-            row.add("capture",shot.deepCopy());PAGES.add(row);CAPTURES.add(shot);captured++;
+            CAPTURES.add(shot); // Preserve the actual rendered frame even when a bounds assertion fails.
+            var row=pageProof(mc);
+            row.add("capture",shot.deepCopy());PAGES.add(row);captured++;
             enter(Stage.ADVANCE);
         } catch(Throwable error) { finish(mc,error); }
     }
@@ -223,7 +224,9 @@ public final class NativeManualValidation {
         int bookWidth=field(ManualScreen.class,"xSize").getInt(screen),bookHeight=field(ManualScreen.class,"ySize").getInt(screen);
         double viewportW=mc.getWindow().getGuiScaledWidth(),viewportH=mc.getWindow().getGuiScaledHeight();
         require(factor>0 && left*factor>=0 && top*factor>=0
-                &&(left+bookWidth)*factor<=viewportW+1&&(top+bookHeight)*factor<=viewportH+1,"Manual frame outside viewport");
+                &&(left+bookWidth)*factor<=viewportW+1&&(top+bookHeight)*factor<=viewportH+1,"Manual frame outside viewport: left="+left+", top="+top+", book="+bookWidth+"x"+bookHeight
+                        +", factor="+factor+", viewport="+viewportW+"x"+viewportH
+                        +", screen="+screen.width+"x"+screen.height+", guiScale="+mc.getWindow().getGuiScale());
         var row=new JsonObject();row.addProperty("entry",entry.getLocation().toString());row.addProperty("page",screen.page);
         row.addProperty("start_page",startPage);row.addProperty("end_page_exclusive",endPage);
         row.add("lines",lineJson);row.add("line_widths",widths);row.addProperty("page_width",manual.pageWidth);
