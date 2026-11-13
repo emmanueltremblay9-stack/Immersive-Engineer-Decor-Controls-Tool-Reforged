@@ -39,8 +39,15 @@ public final class PackagedRuntimeProof {
         try (var zip = new ZipFile(actual.toFile())) {
             require(zip.stream().noneMatch(e -> e.getName().startsWith("com/oblixorprime/iedctrtest/")
                 || e.getName().contains("NativeFactoryPlacerV2ReferenceValidation")), "Harness leaked into normal JAR");
-            for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, FactoryPlacerV2ReferenceScreen.class,
-                    MachineScreen.FactoryPlacerScreen.class, MachineMenu.class, FactoryPlacerV2ReferenceGeometry.class, MachineBlockEntity.class}) {
+            // Preserve the historical six-class proof contract for all existing profiles.
+            var productionTypes = new java.util.ArrayList<Class<?>>(java.util.List.of(
+                EngineersDecorReforged.class, FactoryPlacerV2ReferenceScreen.class,
+                MachineScreen.FactoryPlacerScreen.class, MachineMenu.class,
+                FactoryPlacerV2ReferenceGeometry.class, MachineBlockEntity.class));
+            if (Boolean.getBoolean("iedctr.crateLabelPackagedNative")) {
+                productionTypes.add(com.oblixorprime.engineersdecorreforged.client.LabeledCrateEditScreen.class);
+            }
+            for (Class<?> type : productionTypes) {
                 String entry = type.getName().replace('.', '/') + ".class";
                 var url = type.getResource('/' + entry);
                 var source = type.getProtectionDomain().getCodeSource();
