@@ -98,7 +98,7 @@ if (factoryPlacerNativeValidation) {
     def harness = sourceSets.factoryPlacerNativeValidation
     neoForge.mods.create('iedctr_factory_placer_validation') { sourceSet(harness) }
     neoForge.runs.configureEach { loadedMods = [neoForge.mods.getByName(project.mod_id)] }
-    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient'].each { runName ->
+    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient', 'crateLabelPackagedClient'].each { runName ->
         neoForge.runs.create(runName) {
             client()
             sourceSet = harness
@@ -107,6 +107,9 @@ if (factoryPlacerNativeValidation) {
             taskBefore(tasks.named('jar'))
             taskBefore(tasks.named('factoryPlacerNativeValidationClasses'))
             // The verifier is registered below; no source-output fallback is permitted.
+            if (runName == 'crateLabelPackagedClient') {
+                systemProperty 'iedctr.crateLabelPackagedNative', 'true'
+            }
             if (runName == 'treeCutterPackagedClient') {
                 systemProperty 'iedctr.treeCutterPackagedNative', 'true'
             }
@@ -150,7 +153,7 @@ if (factoryPlacerNativeValidation) {
                     }
                 }
             }
-            ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient'].each { name ->
+            ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient', 'crateLabelPackagedClient'].each { name ->
                 def run = neoForge.runs.getByName(name)
                 if (run.sourceSet.get() != harness || run.loadedMods.get()*.name != ['iedctr_factory_placer_validation']) {
                     throw new GradleException('Packaged validation must load only the separate harness development mod')
@@ -167,7 +170,7 @@ if (factoryPlacerNativeValidation) {
                     fixture_free_jar: true, split_packages: false]))
         }
     }
-    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient'].each { name ->
+    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient', 'crateLabelPackagedClient'].each { name ->
         neoForge.runs.getByName(name).taskBefore(verifyPackagedRuntime)
     }
 }
