@@ -62,13 +62,16 @@ final class NativeCorrectedMachineGuiValidation {
    private static final String[] STATES = {"empty", "mid", "full"};
 
    private enum Stage {
-      WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_HOVER,
+      WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_FREEZER_CAPTURE, WAIT_HOVER,
       WAIT_MILKING_INPUT, WAIT_MILKING_INPUT_CAPTURE, WAIT_MILKING_OUTPUT,
       WAIT_MILKING_OUTPUT_CAPTURE, WAIT_MILKING_TRANSFER, DONE
    }
 
    private static Stage stage;
    private static CompletableFuture<?> pending;
+   // Owned by the integrated server thread; only this isolated fixture freezes ticking.
+   private static boolean freezerSnapshotHeld;
+   private static boolean freezerPreviouslyFrozen;
    private static int ticks;
    private static int specIndex;
    private static int stateIndex;
@@ -206,7 +209,23 @@ final class NativeCorrectedMachineGuiValidation {
             if (menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS - 2) return false;
             require(menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
                "Freezer fixture completed before its near-end frame could be captured");
+            stage = Stage.WAIT_FREEZER_CAPTURE;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_FREEZER_CAPTURE -> {
+            // Wait for rendered frames after the synchronized fields arrive.
+            if (++ticks < 3) return false;
+            require(mc.screen instanceof MachineScreen && mc.player.containerMenu instanceof MachineMenu,
+               "Freezer snapshot screen disappeared");
+            MachineScreen screen = (MachineScreen)mc.screen;
+            MachineMenu menu = (MachineMenu)mc.player.containerMenu;
+            require(menu.kind() == MachineKind.SMALL_FREEZER && menu.containerId == serverMenuId
+               && menu.freezerProgressTicks() >= MachineBlockEntity.FREEZER_PROCESS_TICKS - 2
+               && menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
+               "Freezer snapshot changed before capture");
             capture(mc, screen, menu, SPECS.get(specIndex), "near-end");
+            restoreFreezerSnapshot(mc);
             stateIndex++;
             scheduleState(mc, stateIndex);
             stage = Stage.WAIT_STATE;
@@ -407,11 +426,29 @@ final class NativeCorrectedMachineGuiValidation {
       pending = server.submit(() -> {
          ServerPlayer player = server.getPlayerList().getPlayer(playerId);
          require(player != null && serverMachine != null, "Freezer fixture lost its live machine");
+         require(!freezerSnapshotHeld, "Freezer snapshot already held");
+         freezerPreviouslyFrozen = server.tickRateManager().isFrozen();
+         freezerSnapshotHeld = true;
+         server.tickRateManager().setFrozen(true);
+         // 8 FE permits at most one already-admitted tick (178 -> 179). Without
+         // the freeze the following energy-starved tick resets progress to zero.
          serverMachine.dataAccessForTests().set(1, MachineBlockEntity.FREEZER_PROCESS_TICKS - 2);
          serverMachine.dataAccessForTests().set(3, 8);
          serverMachine.setChanged();
          if (player.containerMenu instanceof MachineMenu menu) menu.broadcastChanges();
       });
+   }
+
+   static void restoreFreezerSnapshot(Minecraft mc) throws Exception {
+      var server = mc.getSingleplayerServer();
+      if (server == null) return;
+      // Queue after any pending setup, and acknowledge restoration before shutdown.
+      server.submit(() -> {
+         if (freezerSnapshotHeld) {
+            server.tickRateManager().setFrozen(freezerPreviouslyFrozen);
+            freezerSnapshotHeld = false;
+         }
+      }).get(5, java.util.concurrent.TimeUnit.SECONDS);
    }
 
    private static void scheduleMilkingInput(Minecraft mc) {

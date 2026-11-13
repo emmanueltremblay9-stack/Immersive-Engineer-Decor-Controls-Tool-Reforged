@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.compat.TfcMilkingCompat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -93,6 +94,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int BUCKET_AMOUNT = 1000;
    private static final int BARREL_CAPACITY = 32000;
    private boolean milkingTransactionActive;
+   private MilkingState milkingState = MilkingState.empty();
+   // Bounded refusal cache, separate from native recovery and never persisted.
+   private final java.util.LinkedHashMap<java.util.UUID, Integer> milkingRetries = new java.util.LinkedHashMap<>();
+   private int lastMilkingAttemptId = -1;
+   private final ContainerData milkingDataAccess = new ContainerData() {
+      public int get(int index) { return MachineBlockEntity.this.milkingState.field(index); }
+      public void set(int index, int value) { } // server observation, never a client command
+      public int getCount() { return MilkingState.FIELD_COUNT; }
+   };
    private boolean labeledCrateDropHandled;
    private boolean labeledCratePlayerBreakPending;
    private ItemEnchantments labeledCrateItemEnchantments = ItemEnchantments.EMPTY;
@@ -867,6 +877,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    public ContainerData dataAccessForTests() {
       return this.dataAccess;
+   }
+
+   public ContainerData milkingDataAccessForTests() {
+      return this.milkingDataAccess;
    }
 
    public ContainerData mineralSmelterUiDataAccessForTests() {
@@ -1887,6 +1901,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected void loadAdditional(CompoundTag tag, Provider registries) {
       super.loadAdditional(tag, registries);
+      // Identity and recovery are live animal observations, never machine save state.
+      this.milkingState = MilkingState.empty();
+      this.milkingRetries.clear();
+      this.lastMilkingAttemptId = -1;
       this.items = NonNullList.withSize(
          this.kind() == MachineKind.LABELED_CRATE ? LabeledCrateMenu.CRATE_SLOT_COUNT : SLOT_COUNT, ItemStack.EMPTY
       );
@@ -3252,27 +3270,36 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void tickMilkingMachine(boolean powered) {
-      if (this.level != null) {
+      if (this.level instanceof ServerLevel serverLevel) {
          Direction direction = this.facing(this.getBlockState());
          if (this.tickCounter % 20 == 0) {
             this.tickMilkingMachineContainerIo(direction);
          }
-
          if (!powered && this.tickCounter % 120 == 0) {
             this.tickMilkingMachineContainerIo(direction);
-            ItemStack milkBucket = new ItemStack(Items.MILK_BUCKET);
-            boolean canFillBucket = ((ItemStack)this.items.get(0)).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1);
-            boolean canStoreFluid = this.canAddFluid("milk", 1000, 4000);
-            if (!canFillBucket && !this.canAddFluid("milk", 1, 4000)) {
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-               this.syncMilkingFilled();
-               return;
-            }
+         }
 
-            AABB box = new AABB(this.worldPosition.relative(direction)).inflate(2.0, 1.5, 2.0);
-            boolean produced = false;
-            if ((canFillBucket || canStoreFluid)
-                  && !this.level.getEntitiesOfClass(Cow.class, box, cow -> cow.isAlive() && !cow.isBaby()).isEmpty()) {
+         ItemStack milkBucket = new ItemStack(Items.MILK_BUCKET);
+         boolean canFillBucket = this.items.get(0).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1);
+         boolean canStoreFluid = this.canAddFluid("milk", 1000, 4000);
+         AABB box = new AABB(this.worldPosition.relative(direction)).inflate(2.0, 1.5, 2.0);
+         this.milkingRetries.replaceAll((animal, ticks) -> ticks - 1);
+         this.milkingRetries.entrySet().removeIf(entry -> entry.getValue() <= 0
+               || TfcMilkingCompat.inspect(serverLevel, box, entry.getKey()).state() != MilkingState.READY);
+         Cow vanilla = this.level.getEntitiesOfClass(Cow.class, box,
+               cow -> cow.isAlive() && !cow.isRemoved() && !cow.isBaby()).stream()
+               .min(java.util.Comparator.comparingInt(Cow::getId)).orElse(null);
+         // Preserve the existing vanilla-first transaction policy. A partial tank may
+         // still accept an event-modified TFC product, as it could before this projection.
+         MilkingState selected = vanilla != null && (canFillBucket || canStoreFluid)
+               ? new MilkingState(MilkingState.VANILLA, MilkingState.READY, vanilla.getId(), vanilla.getUUID(), 0, 0, 0)
+               : TfcMilkingCompat.select(serverLevel, box, this.milkingRetries.keySet(), this.lastMilkingAttemptId);
+         if (selected.source() == MilkingState.NONE && vanilla != null) {
+            selected = new MilkingState(MilkingState.VANILLA, MilkingState.READY, vanilla.getId(), vanilla.getUUID(), 0, 0, 0);
+         }
+         boolean produced = false;
+         if (!powered && selected.source() == MilkingState.VANILLA && this.tickCounter % 120 == 0
+               && (canFillBucket || canStoreFluid)) {
                if (canFillBucket) {
                   ((ItemStack)this.items.get(0)).shrink(1);
                   this.insertIntoSlots(milkBucket, 1);
@@ -3281,24 +3308,41 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   this.addFluid("milk", 1000, 4000);
                }
                produced = true;
-            } else if (this.level instanceof ServerLevel serverLevel) {
-               this.milkingTransactionActive = true;
-               try {
-                  produced = com.oblixorprime.engineersdecorreforged.compat.TfcMilkingCompat.tryMilk(
-                        serverLevel, this.worldPosition, box, product -> this.commitTfcMilk(serverLevel, direction, product));
-               } finally {
-                  this.milkingTransactionActive = false;
-               }
+         } else if (!powered && selected.source() == MilkingState.TFC && selected.state() == MilkingState.READY
+               && !this.milkingRetries.containsKey(selected.animalId())
+               && (canFillBucket || this.canAddFluid("milk", 1, 4000))) {
+            this.milkingTransactionActive = true;
+            this.lastMilkingAttemptId = selected.entityId();
+            try {
+               produced = TfcMilkingCompat.tryMilk(serverLevel, this.worldPosition, box, selected.animalId(),
+                     product -> this.commitTfcMilk(serverLevel, direction, product));
+            } finally {
+               this.milkingTransactionActive = false;
             }
-            this.setBooleanProperty(MachineBlocks.ACTIVE, produced);
-            this.syncMilkingFilled();
-            if (produced) {
-               this.setChanged();
-               this.updateComparator();
+            // Read the exact attempted animal again: callbacks may milk, remove, move
+            // or invalidate it. Never display the pre-transaction recovery snapshot.
+            selected = TfcMilkingCompat.inspect(serverLevel, box, selected.animalId());
+            if (!produced && selected.state() == MilkingState.READY) {
+               this.milkingRetries.put(selected.animalId(), 120);
+               // At most one native attempt per tick. Eviction may allow an older
+               // refusal to retry early in pathological herds; it never delays a
+               // new ready cow or grows unbounded machine memory.
+               if (this.milkingRetries.size() > 64) this.milkingRetries.remove(this.milkingRetries.keySet().iterator().next());
             }
-         } else {
-            this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-            this.syncMilkingFilled();
+         }
+         int flags = serverLevel.hasNeighborSignal(this.worldPosition) ? MilkingState.PAUSED : 0;
+         boolean bucketSpace = this.items.get(0).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1);
+         if (!bucketSpace && !this.canAddFluid("milk", selected.source() == MilkingState.VANILLA ? 1000 : 1, 4000))
+            flags |= MilkingState.STORAGE_BLOCKED;
+         if (selected.source() == MilkingState.TFC && this.milkingRetries.containsKey(selected.animalId())
+               && selected.state() == MilkingState.READY)
+            flags |= MilkingState.RETRY_WAIT;
+         this.milkingState = selected.withMachineFlags(flags);
+         this.setBooleanProperty(MachineBlocks.ACTIVE, produced);
+         this.syncMilkingFilled();
+         if (produced) {
+            this.setChanged();
+            this.updateComparator();
          }
       }
    }
