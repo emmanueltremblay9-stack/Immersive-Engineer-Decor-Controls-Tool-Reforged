@@ -1,7 +1,7 @@
 Jauge numérique
 Puissance du signal lisible
-<&recipe>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<&recipe>Cette jauge affiche le signal fourni par le bloc qui la porte.<br>
 <br>
-Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+Utilisation : fixez-la au bloc dont vous voulez lire le signal. Elle suit sa redstone directe ou indirecte et sa sortie de comparateur.<br>
 <br>
-Remarque : lit la puissance redstone proche de 0 à 15.
+Remarque : affiche une puissance de 0 à 15. Une source à côté de la jauge ne suffit pas si elle n'alimente pas son bloc porteur.

@@ -264,8 +264,8 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256, 0, 32000),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
         "small_freezer": ("SMALL_FREEZER", 3, 209, 235, 0, 16000),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238, 3000, 0),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238, 4000, 0),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256, 3000, 0),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256, 4000, 0),
     }
 
     def setUp(self):
@@ -280,11 +280,16 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         self.window_width = 1280
         self.window_height = 260
         self.proof = {
-            "suite": "native-corrected-machine-gui-v1", "nonce": self.nonce, "status": "passed",
+            "schema_version": 2,
+            "coverage_scope": "seven-machine-screens-excluding-tree-cutter",
+            "tree_cutter_qualification": "independent:tree-cutter-v3-native.yml",
+            "barrel_legacy_selector": "iedctr.dev.barrelV5Reference=false", "barrel_qualification": "legacy-diagnostic-only",
+            "solar_legacy_selector": "iedctr.dev.solarV2Reference=false", "solar_qualification": "legacy-diagnostic-only",
+            "suite": "native-corrected-machine-gui-v1", "barrel_fixture_fluid": "minecraft:water", "nonce": self.nonce, "status": "passed",
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
             "window_width": self.window_width, "window_height": self.window_height,
-            "screenshot_method": "Native Minecraft panel crops with cursor outside, separate full-window hover captures, and a Tree Cutter badge-only crop",
+            "screenshot_method": "Native Minecraft panel crops with cursor outside and separate full-window hover captures",
             "cases": [], "screenshots": [],
         }
         for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
@@ -421,20 +426,6 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 image.write_bytes(self._png(panel_width, panel_height))
                 capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
                 self.proof["screenshots"].append(capture)
-        tree_name = "small_tree_cutter-badge-only.png"
-        tree_capture = {
-            "machine_id": "small_tree_cutter", "name": tree_name, "state": "badge-only",
-            "kind": "SMALL_TREE_CUTTER",
-            "screen_identity": "com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallTreeCutterScreen",
-            "menu_id": 3, "server_menu_id": 3, "fluid_amount": 0, "energy": 0, "progress": 0,
-            "capture_mode": "gui_panel", "panel_cursor_outside": True,
-            "panel_tooltips_suppressed": True, "width": 228, "height": 212,
-        }
-        tree_image = self.image_dir / tree_name
-        tree_image.write_bytes(self._png(228, 212))
-        tree_capture["sha256"] = hashlib.sha256(tree_image.read_bytes()).hexdigest()
-        self.proof["screenshots"].append(tree_capture)
-        self.proof["tree_cutter_badge_only_capture"] = copy.deepcopy(tree_capture)
         self.logs = f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={self.nonce}"
 
     def tearDown(self):
@@ -459,7 +450,48 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         args.update(overrides)
         return validate_corrected_machine_gui_proof(**args)
 
-    def test_accepts_six_live_menus_and_tree_cutter_badge_only_capture(self):
+    def test_requires_explicit_legacy_diagnostic_not_default_qualification(self):
+        for field, values in {
+            "barrel_legacy_selector": [None, "iedctr.dev.barrelV5Reference=true", "false"],
+            "barrel_qualification": [None, "default", "packaged-default"],
+            "solar_legacy_selector": [None, "iedctr.dev.solarV2Reference=true", "false", "iedctr.dev.solarV2Reference=FALSE"],
+            "solar_qualification": [None, "default", "packaged-default"],
+        }.items():
+            for value in values:
+                bad = copy.deepcopy(self.proof)
+                bad[field] = value
+                with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure):
+                    self.check(bad)
+
+    def test_requires_solar_legacy_proof_fields(self):
+        for field in ("solar_legacy_selector", "solar_qualification"):
+            bad = copy.deepcopy(self.proof)
+            del bad[field]
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(bad)
+
+    def test_lava_and_milk_require_matching_native_identity_and_texture(self):
+        for fluid, texture in (("lava", "minecraft:block/lava_still"), ("milk", "neoforge:block/milk_still")):
+            proof = copy.deepcopy(self.proof)
+            proof["barrel_fixture_fluid"] = "minecraft:" + fluid
+            for capture in proof["screenshots"]:
+                if capture["name"] in ("fluid_barrel-mid.png", "fluid_barrel-full-hover.png"):
+                    capture["barrel_fluid_pixels"].update(fluid_id="minecraft:" + fluid, still_texture=texture)
+            self.check(proof, barrel_fluid=fluid)
+            with self.assertRaises(SmokeFailure): self.check(proof)
+            for state in ("mid", "full-hover"):
+                for field, value in (("fluid_id", "minecraft:water"), ("still_texture", "minecraft:block/water_still")):
+                    bad = copy.deepcopy(proof)
+                    next(c for c in bad["screenshots"] if c["name"] == f"fluid_barrel-{state}.png")["barrel_fluid_pixels"][field] = value
+                    with self.assertRaises(SmokeFailure): self.check(bad, barrel_fluid=fluid)
+
+    def test_missing_or_unsupported_barrel_fixture_fluid_fails(self):
+        proof = copy.deepcopy(self.proof)
+        del proof["barrel_fixture_fluid"]
+        with self.assertRaises(SmokeFailure): self.check(proof)
+        with self.assertRaises(SmokeFailure): self.check(barrel_fluid="oil")
+
+    def test_accepts_seven_live_menus_with_explicit_independent_tree_qualification(self):
         self.assertEqual(self.check(), self.proof)
 
     def test_rejects_missing_capture_bad_hash_or_wrong_live_slot_geometry(self):
@@ -483,11 +515,40 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         proof["screenshots"][0]["panel_tooltips_suppressed"] = False
         with self.assertRaises(SmokeFailure): self.check(proof)
 
-    def test_rejects_missing_tree_cutter_badge_capture(self):
+    def test_separation_keeps_every_machine_case_and_panel_required(self):
+        self.assertEqual(len(self.proof["cases"]), 7)
+        self.assertEqual(len(self.proof["screenshots"]), 24)
+        for machine in self.MACHINES:
+            with self.subTest(machine=machine):
+                proof = copy.deepcopy(self.proof)
+                proof["cases"] = [case for case in proof["cases"] if case["machine_id"] != machine]
+                with self.assertRaises(SmokeFailure): self.check(proof)
+        for capture in self.proof["screenshots"]:
+            with self.subTest(capture=capture["name"]):
+                proof = copy.deepcopy(self.proof)
+                proof["screenshots"] = [item for item in proof["screenshots"] if item["name"] != capture["name"]]
+                with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_missing_or_changed_coverage_scope(self):
+        for field in ("schema_version", "coverage_scope", "tree_cutter_qualification"):
+            for value in (None, "legacy-badge-only", True):
+                with self.subTest(field=field, value=value):
+                    proof = copy.deepcopy(self.proof)
+                    if value is None:
+                        del proof[field]
+                    else:
+                        proof[field] = value
+                    with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_legacy_tree_badge_claim_or_extra_capture(self):
         proof = copy.deepcopy(self.proof)
-        proof["screenshots"] = [capture for capture in proof["screenshots"]
-                                if capture["name"] != "small_tree_cutter-badge-only.png"]
+        proof["tree_cutter_badge_only_capture"] = {}
         with self.assertRaises(SmokeFailure): self.check(proof)
+        proof = copy.deepcopy(self.proof)
+        proof["screenshots"].append({"name": "small_tree_cutter-badge-only.png"})
+        with self.assertRaises(SmokeFailure): self.check(proof)
+        (self.image_dir / "small_tree_cutter-badge-only.png").write_bytes(self._png(228, 212))
+        with self.assertRaises(SmokeFailure): self.check()
 
     def test_rejects_freezer_frame_that_did_not_capture_near_completion(self):
         proof = copy.deepcopy(self.proof)
@@ -585,3 +646,4 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

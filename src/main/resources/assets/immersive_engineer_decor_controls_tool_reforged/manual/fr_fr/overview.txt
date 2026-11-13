@@ -3,3 +3,12 @@ Vue d'ensemble
 Le décor d'ingénieur réunit des pièces de construction industrielle, des équipements d'atelier et des commandes pour aménager des usines fonctionnelles.<br>
 <br>
 Ouvrez les sections de cette catégorie pour découvrir les recettes, illustrations, descriptions et conseils d'utilisation de chaque bloc ou objet.
+<np>
+Fluides dans les pièces de construction
+Les pièces IEDCTR compatibles peuvent partager leur case avec un fluide. Il s'agit d'un fluide extérieur dans le monde, pas d'un réservoir de machine ni d'un raccord automatique aux tuyaux. Un seau de source remplit une case compatible vide ; un seau vide récupère une source, pas un courant. L'eau, la lave, la créosote, l'éthanol, le biodiesel et l'huile végétale d'IE sont des exemples pris en charge. Le lait n'est pas un fluide plaçable dans le monde ici.<br>
+Les pièces partielles peuvent laisser passer des courants sans les transformer en sources supplémentaires. Retirer l'alimentation laisse ces courants se résorber. Les formes solides bloquent toujours le déplacement et l'écoulement selon leur géométrie ; contenir un fluide ne creuse pas un bloc plein. La lave reste dangereuse, notamment près du bois.<br>
+Sur une machine, l'utilisation normale du seau vise sa gestion propre des fluides ; utilisez le seau en vous accroupissant pour viser sa case extérieure. Consultez sa page pour les fluides et raccords acceptés par son réservoir. Les deux réserves sont indépendantes.<br>
+<np>
+Pièces vanilla et IE sélectionnées
+Le partage de fluide couvre aussi les escaliers, dalles simples, barrières, murets, vitres, barreaux, échelles et trappes vanilla compatibles. L'extension IE couvre ses trois styles d'escaliers et dalles en bois traité, le muret en briques de clinker, les trappes en bois traité avec ou sans cadre et la trappe en acier. Elle ne couvre pas toutes les variantes de mods ni toutes les pièces IE.<br>
+Les dalles doubles, blocs pleins, portillons, portes à plusieurs blocs et machines externes avec entité de bloc sont exclus de cette extension. Videz une dalle simple contenant du fluide, ou attendez la fin du courant, avant d'en faire une dalle double. Un autre fluide ne peut pas remplacer celui d'une case externe occupée. Les réactions arbitraires de fluides tiers et la compatibilité de tous les modpacks ne sont pas garanties.<br>

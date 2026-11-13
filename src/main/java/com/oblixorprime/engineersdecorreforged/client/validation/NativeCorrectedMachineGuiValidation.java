@@ -42,7 +42,11 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.BufferUtils;
 
-/** Native integrated-client captures for seven MachineScreen GUIs and the Tree Cutter badge only. */
+/**
+ * Native integrated-client captures for seven MachineScreen GUIs.
+ * Tree Cutter V3 is qualified independently by tree-cutter-v3-native.yml; this suite
+ * deliberately makes no claim about that screen or the superseded legacy badge.
+ */
 final class NativeCorrectedMachineGuiValidation {
    private static final String SUITE = "native-corrected-machine-gui-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0);
@@ -55,20 +59,19 @@ final class NativeCorrectedMachineGuiValidation {
       new Spec(MachineKind.SMALL_FLUID_FUNNEL, "small_fluid_funnel", ModBlocks.SMALL_FLUID_FUNNEL.get(), Fluids.WATER),
       new Spec(MachineKind.PASSIVE_FLUID_ACCUMULATOR, "passive_fluid_accumulator", ModBlocks.PASSIVE_FLUID_ACCUMULATOR.get(), Fluids.WATER)
    );
-   private static final Spec TREE_CUTTER_BADGE_SPEC = new Spec(
-      MachineKind.SMALL_TREE_CUTTER, "small_tree_cutter", ModBlocks.SMALL_TREE_CUTTER.get(), null
-   );
    private static final String[] STATES = {"empty", "mid", "full"};
 
    private enum Stage {
-      WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_HOVER,
+      WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_FREEZER_CAPTURE, WAIT_HOVER,
       WAIT_MILKING_INPUT, WAIT_MILKING_INPUT_CAPTURE, WAIT_MILKING_OUTPUT,
-      WAIT_MILKING_OUTPUT_CAPTURE, WAIT_MILKING_TRANSFER,
-      WAIT_BADGE_SETUP, WAIT_BADGE_MENU, WAIT_BADGE_CAPTURE, DONE
+      WAIT_MILKING_OUTPUT_CAPTURE, WAIT_MILKING_TRANSFER, DONE
    }
 
    private static Stage stage;
    private static CompletableFuture<?> pending;
+   // Owned by the integrated server thread; only this isolated fixture freezes ticking.
+   private static boolean freezerSnapshotHeld;
+   private static boolean freezerPreviouslyFrozen;
    private static int ticks;
    private static int specIndex;
    private static int stateIndex;
@@ -92,6 +95,10 @@ final class NativeCorrectedMachineGuiValidation {
    static void begin(Minecraft mc, Path directory, String runNonce) {
       require(mc.getSingleplayerServer() != null && mc.player != null,
          "Corrected GUI fixture requires an integrated player");
+      require("false".equals(System.getProperty("iedctr.dev.barrelV5Reference")),
+         "Corrected GUI Barrel coverage requires explicit legacy diagnostic selection");
+      require("false".equals(System.getProperty("iedctr.dev.solarV2Reference")),
+         "Corrected GUI Solar coverage requires explicit legacy diagnostic selection");
       gameDirectory = directory;
       nonce = runNonce;
       executedSourceSha = System.getProperty("iedctr.executedSourceSha", "");
@@ -202,7 +209,23 @@ final class NativeCorrectedMachineGuiValidation {
             if (menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS - 2) return false;
             require(menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
                "Freezer fixture completed before its near-end frame could be captured");
+            stage = Stage.WAIT_FREEZER_CAPTURE;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_FREEZER_CAPTURE -> {
+            // Wait for rendered frames after the synchronized fields arrive.
+            if (++ticks < 3) return false;
+            require(mc.screen instanceof MachineScreen && mc.player.containerMenu instanceof MachineMenu,
+               "Freezer snapshot screen disappeared");
+            MachineScreen screen = (MachineScreen)mc.screen;
+            MachineMenu menu = (MachineMenu)mc.player.containerMenu;
+            require(menu.kind() == MachineKind.SMALL_FREEZER && menu.containerId == serverMenuId
+               && menu.freezerProgressTicks() >= MachineBlockEntity.FREEZER_PROCESS_TICKS - 2
+               && menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
+               "Freezer snapshot changed before capture");
             capture(mc, screen, menu, SPECS.get(specIndex), "near-end");
+            restoreFreezerSnapshot(mc);
             stateIndex++;
             scheduleState(mc, stateIndex);
             stage = Stage.WAIT_STATE;
@@ -238,10 +261,9 @@ final class NativeCorrectedMachineGuiValidation {
             CASES.add(result);
             specIndex++;
             if (specIndex >= SPECS.size()) {
-               scheduleMachine(mc, TREE_CUTTER_BADGE_SPEC);
-               stage = Stage.WAIT_BADGE_SETUP;
-               ticks = 0;
-               return false;
+               writeProof(mc, runNonce);
+               stage = Stage.DONE;
+               return true;
             }
             scheduleMachine(mc, specIndex);
             stage = Stage.WAIT_SETUP;
@@ -324,50 +346,14 @@ final class NativeCorrectedMachineGuiValidation {
             milkingOutputTransfer = null;
             specIndex++;
             if (specIndex >= SPECS.size()) {
-               scheduleMachine(mc, TREE_CUTTER_BADGE_SPEC);
-               stage = Stage.WAIT_BADGE_SETUP;
-               ticks = 0;
-               return false;
+               writeProof(mc, runNonce);
+               stage = Stage.DONE;
+               return true;
             }
             scheduleMachine(mc, specIndex);
             stage = Stage.WAIT_SETUP;
             ticks = 0;
             return false;
-         }
-         case WAIT_BADGE_SETUP -> {
-            if (++ticks > 300) throw new IllegalStateException("Tree Cutter badge-only fixture did not prepare");
-            if (!pending.isDone()) return false;
-            pending.join();
-            ticks = 0;
-            stage = Stage.WAIT_BADGE_MENU;
-            return false;
-         }
-         case WAIT_BADGE_MENU -> {
-            if (++ticks > 300) throw new IllegalStateException("Tree Cutter badge-only screen did not open");
-            if (!(mc.screen instanceof MachineScreen screen)
-               || !(mc.player.containerMenu instanceof MachineMenu menu)
-               || menu.kind() != TREE_CUTTER_BADGE_SPEC.kind()
-               || menu.containerId != serverMenuId) return false;
-            if (ticks < 15) return false;
-            screen.setSuppressTooltipsForPanelCapture(true);
-            moveCursorOutsidePanel(mc);
-            stage = Stage.WAIT_BADGE_CAPTURE;
-            ticks = 0;
-            return false;
-         }
-         case WAIT_BADGE_CAPTURE -> {
-            if (++ticks < 3) return false;
-            if (!(mc.screen instanceof MachineScreen screen)
-               || !(mc.player.containerMenu instanceof MachineMenu menu)
-               || menu.kind() != TREE_CUTTER_BADGE_SPEC.kind()
-               || menu.containerId != serverMenuId) {
-               throw new IllegalStateException("Tree Cutter screen changed before its badge-only capture");
-            }
-            JsonObject badgeCapture = capture(mc, screen, menu, TREE_CUTTER_BADGE_SPEC, "badge-only");
-            badgeCapture.addProperty("machine_id", TREE_CUTTER_BADGE_SPEC.id());
-            writeProof(mc, runNonce, badgeCapture);
-            stage = Stage.DONE;
-            return true;
          }
          case DONE -> { return true; }
       }
@@ -403,9 +389,8 @@ final class NativeCorrectedMachineGuiValidation {
          if (player.openMenu(machine).isEmpty()) throw new IllegalStateException("Server refused " + spec.kind() + " menu");
          if (!(player.containerMenu instanceof MachineMenu menu)
             || menu.kind() != spec.kind() || !menu.stillValid(player)
-            || (spec != TREE_CUTTER_BADGE_SPEC
-               && (menu.visibleMachineSlots() != menu.layout().machineSlots().size()
-                  || menu.slots.size() != menu.visibleMachineSlots() + 36))) {
+            || menu.visibleMachineSlots() != menu.layout().machineSlots().size()
+            || menu.slots.size() != menu.visibleMachineSlots() + 36) {
             throw new IllegalStateException("Server opened the wrong menu or slot lattice for " + spec.kind());
          }
          serverMenuId = menu.containerId;
@@ -441,11 +426,29 @@ final class NativeCorrectedMachineGuiValidation {
       pending = server.submit(() -> {
          ServerPlayer player = server.getPlayerList().getPlayer(playerId);
          require(player != null && serverMachine != null, "Freezer fixture lost its live machine");
+         require(!freezerSnapshotHeld, "Freezer snapshot already held");
+         freezerPreviouslyFrozen = server.tickRateManager().isFrozen();
+         freezerSnapshotHeld = true;
+         server.tickRateManager().setFrozen(true);
+         // 8 FE permits at most one already-admitted tick (178 -> 179). Without
+         // the freeze the following energy-starved tick resets progress to zero.
          serverMachine.dataAccessForTests().set(1, MachineBlockEntity.FREEZER_PROCESS_TICKS - 2);
          serverMachine.dataAccessForTests().set(3, 8);
          serverMachine.setChanged();
          if (player.containerMenu instanceof MachineMenu menu) menu.broadcastChanges();
       });
+   }
+
+   static void restoreFreezerSnapshot(Minecraft mc) throws Exception {
+      var server = mc.getSingleplayerServer();
+      if (server == null) return;
+      // Queue after any pending setup, and acknowledge restoration before shutdown.
+      server.submit(() -> {
+         if (freezerSnapshotHeld) {
+            server.tickRateManager().setFrozen(freezerPreviouslyFrozen);
+            freezerSnapshotHeld = false;
+         }
+      }).get(5, java.util.concurrent.TimeUnit.SECONDS);
    }
 
    private static void scheduleMilkingInput(Minecraft mc) {
@@ -550,7 +553,8 @@ final class NativeCorrectedMachineGuiValidation {
          var handler = machine.fluidHandler(Direction.UP);
          require(handler != null && handler.getTanks() > 0, "Fixture has no fluid tank for " + spec.kind());
          handler.drain(Integer.MAX_VALUE, FluidAction.EXECUTE);
-         Fluid fluid = spec.fluid() != null ? spec.fluid() : milkFluid();
+         Fluid fluid = spec.kind() == MachineKind.FLUID_BARREL ? barrelFixtureFluid()
+            : spec.fluid() != null ? spec.fluid() : milkFluid();
          int capacity = handler.getTankCapacity(0);
          int amount = fraction == 0 ? 0 : fraction == 1 ? capacity / 2 : capacity;
          if (amount > 0) require(handler.fill(new FluidStack(fluid, amount), FluidAction.EXECUTE) == amount,
@@ -572,6 +576,15 @@ final class NativeCorrectedMachineGuiValidation {
       return NeoForgeMod.MILK.value();
    }
 
+   private static Fluid barrelFixtureFluid() {
+      return switch (System.getProperty("iedctr.barrelFixtureFluid", "water")) {
+         case "water" -> Fluids.WATER;
+         case "lava" -> Fluids.LAVA;
+         case "milk" -> milkFluid();
+         default -> throw new IllegalArgumentException("Unknown Barrel fixture fluid");
+      };
+   }
+
    private static boolean stateIsVisible(MachineMenu menu, Spec spec, int state) {
       int expected = state == 0 ? 0 : state == 1 ? (spec.fluid() != null || spec.kind() == MachineKind.SMALL_MILKING_MACHINE
          ? menu.fluidCapacity() / 2 : menu.energyCapacity() / 2) : (spec.fluid() != null || spec.kind() == MachineKind.SMALL_MILKING_MACHINE
@@ -579,7 +592,8 @@ final class NativeCorrectedMachineGuiValidation {
       int visible = spec.fluid() != null || spec.kind() == MachineKind.SMALL_MILKING_MACHINE
          ? menu.fluidAmount() : menu.energyStored();
       if (spec.kind() == MachineKind.SMALL_FREEZER && state == 1) return visible > 0 && menu.freezerProgressTicks() >= 30;
-      return visible == expected;
+      return visible == expected && (spec.kind() != MachineKind.FLUID_BARREL
+         || menu.storedFluid() == (state == 0 ? Fluids.EMPTY : barrelFixtureFluid()));
    }
 
    private static boolean milkingInputVisible(MachineMenu menu, Inventory inventory) {
@@ -796,14 +810,14 @@ final class NativeCorrectedMachineGuiValidation {
          require(menu.storedFluid() == Fluids.EMPTY && colors.size() == 1 && colors.contains(0xFF282014),
             "Empty Barrel fluid interior is not the untextured dark backing");
       } else {
-         require(menu.storedFluid() == Fluids.WATER, "Barrel fixture has not synchronized its water identity");
+         require(menu.storedFluid() == barrelFixtureFluid(), "Barrel fixture has not synchronized its requested fluid identity");
          var stack = new FluidStack(menu.storedFluid(), menu.fluidAmount());
          var properties = IClientFluidTypeExtensions.of(stack.getFluid());
          var still = properties.getStillTexture(stack);
-         require(still != null, "Barrel water extension has no still texture");
+         require(still != null, "Barrel fluid extension has no still texture");
          var sprite = mc.getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(still);
          require(sprite != null && sprite.contents().name().equals(still), "Barrel still sprite is not in the block atlas");
-         require(colors.size() > 1, "Barrel water interior is a flat fill instead of the native fluid sprite");
+         require(colors.size() > 1, "Barrel fluid interior is a flat fill instead of the native fluid sprite");
          result.addProperty("still_texture", still.toString());
          result.addProperty("tint_argb", String.format(Locale.ROOT, "%08x", properties.getTintColor(stack)));
       }
@@ -918,19 +932,27 @@ final class NativeCorrectedMachineGuiValidation {
       return result;
    }
 
-   private static void writeProof(Minecraft mc, String runNonce, JsonObject treeCutterBadgeCapture) throws Exception {
+   private static void writeProof(Minecraft mc, String runNonce) throws Exception {
       require(nonce.equals(runNonce) && CASES.size() == SPECS.size()
-         && CAPTURES.size() == SPECS.size() * STATES.length + 4
+         && CAPTURES.size() == SPECS.size() * STATES.length + 3
          && hasCapture("small_freezer-near-end.png")
          && hasCapture("small_milking_machine-input-occupied.png")
-         && hasCapture("small_milking_machine-output-occupied.png")
-         && hasCapture("small_tree_cutter-badge-only.png"),
+         && hasCapture("small_milking_machine-output-occupied.png"),
          "Corrected GUI capture matrix is incomplete");
       verifyMilkingTankPixelStates();
       String selectedLanguage = mc.getLanguageManager().getSelected();
       require(language.equals(selectedLanguage), "Minecraft did not load the requested GUI language");
       JsonObject proof = new JsonObject();
+      require("false".equals(System.getProperty("iedctr.dev.barrelV5Reference")), "Legacy selector changed during run");
+      proof.addProperty("barrel_legacy_selector", "iedctr.dev.barrelV5Reference=" + System.getProperty("iedctr.dev.barrelV5Reference"));
+      proof.addProperty("barrel_qualification", "legacy-diagnostic-only");
+      require("false".equals(System.getProperty("iedctr.dev.solarV2Reference")), "Solar legacy selector changed during run");
+      proof.addProperty("solar_legacy_selector", "iedctr.dev.solarV2Reference=" + System.getProperty("iedctr.dev.solarV2Reference"));
+      proof.addProperty("solar_qualification", "legacy-diagnostic-only");
       proof.addProperty("suite", SUITE);
+      proof.addProperty("schema_version", 2);
+      proof.addProperty("coverage_scope", "seven-machine-screens-excluding-tree-cutter");
+      proof.addProperty("tree_cutter_qualification", "independent:tree-cutter-v3-native.yml");
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", "passed");
       proof.addProperty("actual_integrated_world", mc.getSingleplayerServer() != null
@@ -939,13 +961,13 @@ final class NativeCorrectedMachineGuiValidation {
       proof.addProperty("pull_request_head_sha", pullRequestHeadSha);
       proof.addProperty("language", language);
       proof.addProperty("selected_language", selectedLanguage);
+      proof.addProperty("barrel_fixture_fluid", BuiltInRegistries.FLUID.getKey(barrelFixtureFluid()).toString());
       proof.addProperty("window_width", mc.getWindow().getWidth());
       proof.addProperty("window_height", mc.getWindow().getHeight());
-      proof.addProperty("screenshot_method", "Native Minecraft panel crops with cursor outside, separate full-window hover captures, and a Tree Cutter badge-only crop");
+      proof.addProperty("screenshot_method", "Native Minecraft panel crops with cursor outside and separate full-window hover captures");
       proof.addProperty("fixture_state_source", "Live MachineBlockEntity fluid handlers and test data synced through the registered MachineMenu");
       proof.add("cases", CASES.deepCopy());
       proof.add("screenshots", CAPTURES.deepCopy());
-      proof.add("tree_cutter_badge_only_capture", treeCutterBadgeCapture.deepCopy());
       Files.writeString(gameDirectory.resolve("client-corrected-machine-gui-result.json"),
          new GsonBuilder().setPrettyPrinting().create().toJson(proof) + "\n");
    }
@@ -963,3 +985,4 @@ final class NativeCorrectedMachineGuiValidation {
 
    private record Spec(MachineKind kind, String id, Block block, Fluid fluid) {}
 }
+

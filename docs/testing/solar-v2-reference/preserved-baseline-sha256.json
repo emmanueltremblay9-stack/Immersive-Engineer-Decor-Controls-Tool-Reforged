@@ -1,0 +1,126 @@
+{
+  "remote_baseline_commit": "15593b28a6853ba36775ebb419b8465a5e2f3240",
+  "baseline_tree": "6dc6f3185624808ce7127331bb2f62c26f102d34",
+  "files": {
+    ".github/workflows/barrel-reference-validation.yml": "05ce91e72275f701fbb75d6e8ecbe0b9b8b26592fffb72ffa9fa40ae711bb7ab",
+    "docs/testing/barrel-reference-v5/README.md": "66894a93dcea4c29d35d65c8c65503c1932df874c148a3db46967d19674bc4c9",
+    "docs/testing/barrel-reference-v5/checks.txt": "8ad77be6db89ebb912246c5eac6239dc0a756a30d6cde19035ea26a3566e50e0",
+    "docs/testing/barrel-reference-v5/geometry-manifest.json": "2239f6e6dc7cd25059603adfdef6c08de634d8df992e50d005e024fad6477c7c",
+    "docs/testing/barrel-reference-v5/validator-tests.txt": "192e965304954a6411098fb6caa13abafac8bee1a5b01b8a88ac1dba6229551f",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/BarrelReferenceScreen.java": "48b378b2301693758cf38d016671ff6b5e3721664b5cacc0b3465101ba9f7afb",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FluidBarrelSpriteRenderer.java": "53b06847d57db6f0dbccc06ffe0f94af07959d41d9c8375ffacbcdb6852312d9",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "fdf3aba428feef82fea57881f1e4466963bd8f3dbfa3af8513f9443e8e314c10",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java": "dbdfde41783d8c9d2b8e04805f445a9457ca297d9d68ef600b848ffddc23f01b",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometry.java": "9da080c8f74cee43e97dd0bc04078951fe1c4a171b9d1fcb20bbad17c2d83e7a",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceState.java": "7636a3a0c528229e7f9834cfa19c67a01b59ae016cfdf80d9ac7a9d538ee46a1",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "ae734540bb4dd6747d4456ce440e85a94760a11beb38c0dfea566e7d92d58cb1",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineEnergySync.java": "29c574f335cc59b1c83db346bfb290c278978a21473b0b20ac226215a4280928",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "00ddffefc7169e1289f68c328516e4cbf7e7807b5e8365355110ff93d4993e15",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png": "df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png.mcmeta": "8e524d8c32641acfaab97cee70179eb1d6cea39fb6b8ebd2e61d0dc28c82f5c2",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/small_solar_panel_art.png": "a7f6ba30d930f58033d2d39ea70b4450a3ec6d8432a601cf72ca5482179add6e",
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceChecks.java": "6c0ea7c2683973a37d148d857858d7f9c54dca7fb5cf70df3513218c2afae679",
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometryTest.java": "f9d7ec35e6fb0d93771645105b44bef95eda53066d8bb78b01fe9a1fdffa5a4b",
+    "tools/validation/barrel_reference_native.py": "bf7ccc006e2be862f9f98e6abdd7b89b7c2e8272612b1d0a6c9cb305c3c1eddd",
+    "tools/validation/check_barrel_reference.sh": "50eb24175a75860716e96228fdc98bd1b9119677211ca6aa9f547d6095adf72c",
+    "tools/validation/check_barrel_reference_wiring.py": "ca232b09a876d380a8ed359efcfdb94acf8a7e095065650a1fbf6508fa0507b1",
+    "tools/validation/test_barrel_reference_native.py": "21ae04a7833ec438fd17063cfea810e169d150dcb2068b22b0cd0bd6b9be5535"
+  },
+  "intentional_test_only_updates": {
+    "tools/validation/check_barrel_reference_wiring.py": "The public constructor now explicitly disables all three presentations; only the asserted argument count changed. Production and pixel guards remain unchanged."
+  },
+  "tree_cutter_integration": {
+    "main_commit": "890958ff300e9a88dde2a77fc6c145d19c0f98f9",
+    "tree_commit": "96ac07aac200e10e9936b0ae4ae99f9053fae11c",
+    "scope": "Historical files pins above are retained. Only these exact reviewed integration identities replace them for this combined source tree; no gameplay qualification is implied.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "baseline_sha256": "ae734540bb4dd6747d4456ce440e85a94760a11beb38c0dfea566e7d92d58cb1",
+        "integrated_sha256": "34e971011cfeacd68695fe756fd6c4f0dd67b1a65d82d5af6ef5adb1e45fafa7",
+        "reason": "Exact PR173 source: versioned single-output Tree migration and drain-only recovery; other machine mechanics unchanged."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": {
+        "baseline_sha256": "00ddffefc7169e1289f68c328516e4cbf7e7807b5e8365355110ff93d4993e15",
+        "integrated_sha256": "6e56fb8b448c1b19c65cdb3663aeb34ccbdc7ba88f778dc2e5ee79ba8577642b",
+        "reason": "Exact PR173 source: one output for Tree Cutter; all other machine layouts unchanged."
+      },
+      "tools/validation/check_barrel_reference_wiring.py": {
+        "baseline_sha256": "ca232b09a876d380a8ed359efcfdb94acf8a7e095065650a1fbf6508fa0507b1",
+        "integrated_sha256": "89128c598d2e698f4f670b0551b8f918661fca3b836100890873853ec76bc7c3",
+        "reason": "Test-only integration: permit exactly the Tree presentation accessor while retaining the original downstream menu hash."
+      }
+    }
+  },
+  "freezer_fluid_automation_integration": {
+    "main_commit": "509913bd891e7a7bfd7dfa589a3b1fa1008e0397",
+    "freezer_commit": "9bfd466766ac66af759600ea74ff5e039daba3d5",
+    "scope": "Separate PR172 integration over current main, retaining all historical Solar and Tree records. Exact source identities only; no gameplay qualification is implied.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "main_sha256": "34e971011cfeacd68695fe756fd6c4f0dd67b1a65d82d5af6ef5adb1e45fafa7",
+        "freezer_sha256": "9ff3858f58c4b3c81aaf01760124a72aea622241a793248fb99846cc4afd692f",
+        "integrated_sha256": "9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63",
+        "reason": "Retain Tree single-output extraction and add Freezer fluid processing and empty-bucket automation; both kind-specific extraction branches are preserved."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+        "main_sha256": "f3457bbabf3a0e92874e53cdbf16739d35b4fe50050218750551251d454760ae",
+        "freezer_sha256": "720e6b2f6b439f9f29f576965cc9bcad0830dec0d085f06c46dcbd9a45dccc6f",
+        "integrated_sha256": "903cc15bbce612d9b5c7f150426fdce52858d63769eca9f7cdc16d6b43fb1ae2",
+        "reason": "Retain Tree presentation and all other menu behavior; normalize only the exact full Freezer fluid-aware preview method to the historical suffix."
+      }
+    }
+  },
+  "milking_freezer_integration": {
+    "main_commit": "b9fc2b44d41eab7cb0513775b27ac7c231aa6e20",
+    "milking_commit": "03d044358c37487d803c816f7c6890d0e99092d7",
+    "merge_base": "509913bd891e7a7bfd7dfa589a3b1fa1008e0397",
+    "scope": "Exact automatic Java merge of PR169 with main after PR172 and PR177. Preserve historical Solar, Tree, Freezer and Milking records and version 1.1.67. Source preservation only, not mapped compilation, packaged-input or gameplay qualification.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+        "main_sha256": "9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63",
+        "milking_sha256": "b3733c48d66419efeb818a2992ff67144642ddf36a08652c0394e8d45e78efd9",
+        "integrated_sha256": "24266c03ec35e12517d8b8f86d1ef53bf1a3e9d266666d38e645045155999128",
+        "reason": "Combine native per-animal Milking recovery and transaction checks with Freezer fluid processing and empty-bucket automation, retaining Tree single-output extraction."
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+        "main_sha256": "903cc15bbce612d9b5c7f150426fdce52858d63769eca9f7cdc16d6b43fb1ae2",
+        "milking_sha256": "0be659f78a3176707ea292e46a382df180ea220fa2039f6bf4ccbfd839785606",
+        "integrated_sha256": "a8a3d691e191bf4dc5a9725e7c9e4e9b0e19b8647a5a6c1408e2f2a92dcc9fdd",
+        "reason": "Combine the bounded read-only Milking projection with the exact Freezer fluid-aware preview; retain the historical menu tail and exact Tree accessor normalization."
+      }
+    }
+  },
+  "freezer_v5_reconciliation": {
+    "main_commit": "28a70f534323511e38dcc99453d4019af9576a77",
+    "freezer_v5_commit": "f214af10595d340d37610888f23c099ec739834e",
+    "merge_base": "1eccac0a39665ffdfcdfe80c264be2bd6455921f",
+    "scope": "Exact additive reconciliation of opt-in Freezer V5 presentation with merged Barrel/Solar/Tree and Milking. Historical records remain unchanged; no production activation or native proof.",
+    "files": {
+      "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": {
+        "main_sha256": "3f32ffeccd725fe8d54b95f5a54ae11acb8a31bfb124172bee60bbf420977723",
+        "freezer_v5_sha256": "ae2230498ad5567b02e5e9873d0d9e01e24129e0956f20349798e98db28dd04b",
+        "integrated_sha256": "bf327e4fa3ff6b32afa1ec80c03c23b2c372ff8470a9181e86351cf29feba29c"
+      },
+      "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+        "main_sha256": "a8a3d691e191bf4dc5a9725e7c9e4e9b0e19b8647a5a6c1408e2f2a92dcc9fdd",
+        "freezer_v5_sha256": "1f9233a7be9d9a0a284625322a426eb2ae0eb8f39f00016ef4326a00f53193b9",
+        "integrated_sha256": "2396df69a54927bc1dc818d887ac5a417765ceb8e8e5fbff0f3ee4695d43faf0"
+      },
+      "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": {
+        "main_sha256": "b6ca6454118504f44a918a2b248fff649ee35ff7f2352389302f0d51a366c500",
+        "freezer_v5_sha256": "b1692c3d2221068955de4b07929c97ba0cc00d465bbdf0ffc3ee035b0e34e08b",
+        "integrated_sha256": "efdd1e32fa134196f629ca2c06bd2bf74a86e94a4be4f9bb2944b86d605b2c30"
+      },
+      "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": {
+        "main_sha256": "5f737152b4a5e1c372b28c21324fa3287c2896bf7a594146abc1e0541d8e482b",
+        "freezer_v5_sha256": "3094194ae387faba243ba02fef97a8180cfba3b65e43796c46ba520de6f8aecb",
+        "integrated_sha256": "4fb0a94655848377b3fe95d2ab173762e9feadc57a7da692b63f54cc47ae8734"
+      },
+      "tools/validation/check_barrel_reference_wiring.py": {
+        "main_sha256": "89128c598d2e698f4f670b0551b8f918661fca3b836100890873853ec76bc7c3",
+        "freezer_v5_sha256": null,
+        "integrated_sha256": "108015af3c2e33c3b7953a50f867b1506a85cee8d6dca0f1f15528402c45fa37"
+      }
+    }
+  }
+}

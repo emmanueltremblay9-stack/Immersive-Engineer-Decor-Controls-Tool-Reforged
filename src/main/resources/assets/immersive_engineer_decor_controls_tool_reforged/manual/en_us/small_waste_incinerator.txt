@@ -1,6 +1,4 @@
 Waste Incinerator
 Compact processing unit
-<&recipe>The Waste Incinerator destroys unwanted items in a compact workshop footprint.<br>
-<br>
-Usage: Feed only unwanted items into its queue.<br>
-
+<&recipe>Feed only items you intend to destroy. The 16-slot queue advances toward its final slot and consumes one item there per work step, even before the queue is full. Destroyed items produce no result and cannot be recovered.<br>
+It works without fuel or FE, with one work step every 30 ticks. With at least 8 FE available, work steps occur every 10 ticks and a successful destruction consumes 8 FE. Redstone neither enables this speed boost nor pauses the machine. Control the incoming item supply to prevent accidental disposal.<br>

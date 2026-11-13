@@ -1,11 +1,11 @@
 package com.oblixorprime.engineersdecorreforged.client;
 
+import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModMenus;
-import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.LabeledCrateLabelClientBridge;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
@@ -52,12 +52,14 @@ public final class ClientModEvents {
          menu.freezerReferencePresentation()
             ? new FreezerReferenceScreen(menu, inventory, title)
             : new MachineScreen.SmallFreezerScreen(menu, inventory, title));
-      event.register((MenuType)ModMenus.FLUID_BARREL.get(), MachineScreen.FluidBarrelScreen::new);
+      event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.FLUID_BARREL.get(), (menu, inventory, title) -> menu.barrelReferencePresentation()
+         ? new BarrelReferenceScreen(menu, inventory, title) : new MachineScreen.FluidBarrelScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_FLUID_FUNNEL.get(), MachineScreen.SmallFluidFunnelScreen::new);
       event.register((MenuType)ModMenus.PASSIVE_FLUID_ACCUMULATOR.get(), MachineScreen.PassiveFluidAccumulatorScreen::new);
-      event.register((MenuType)ModMenus.SMALL_SOLAR_PANEL.get(), MachineScreen.SmallSolarPanelScreen::new);
+      event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.SMALL_SOLAR_PANEL.get(), (menu, inventory, title) -> menu.solarV2ReferencePresentation()
+         ? new SolarV2ReferenceScreen(menu, inventory, title) : new MachineScreen.SmallSolarPanelScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_MILKING_MACHINE.get(), MachineScreen.SmallMilkingMachineScreen::new);
-      event.register((MenuType)ModMenus.SMALL_TREE_CUTTER.get(), MachineScreen.SmallTreeCutterScreen::new);
+      event.register((MenuType)ModMenus.SMALL_TREE_CUTTER.get(), TreeCutterV3ReferenceScreen::new);
    }
 
    @SubscribeEvent

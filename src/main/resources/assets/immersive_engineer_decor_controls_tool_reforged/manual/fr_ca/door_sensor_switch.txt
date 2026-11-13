@@ -1,7 +1,7 @@
 Capteur de porte
 Commande redstone
-<&recipe>Un interrupteur momentané émet une impulsion nette de redstone à puissance maximale.<br>
+<&recipe>Ce capteur détecte automatiquement les joueurs proches. Sa zone de détection correspond au volume du bloc étendu de quatre blocs dans chaque direction. Les autres types d'entités ne l'activent pas.<br>
 <br>
-Utilisation : déclenchez des machines, déverrouillez des portes, activez des alarmes ou des circuits à action unique.<br>
+Utilisation : commandez des portes, des alarmes ou des machines selon la présence des joueurs. Posez-le contre un mur, un sol ou un plafond ; la plaque et son contour restent contre le support cliqué. Une première vérification est prévue 20 ticks après la pose, puis tous les 40 ticks. Utiliser le capteur demande une mise à jour immédiate.<br>
 <br>
-Remarque : revient à son état initial après la durée prévue de l'impulsion.
+Remarque : la sortie redstone suit la présence des joueurs, sans impulsion de durée fixe.

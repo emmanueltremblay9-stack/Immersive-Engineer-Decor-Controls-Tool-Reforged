@@ -298,20 +298,37 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
 
 def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                          directory: Path, window_width: int, window_height: int,
-                                         language: str, logs: str) -> dict:
-    """Fail closed unless seven live screens and the Tree Cutter badge-only panel were captured."""
+                                         language: str, logs: str, barrel_fluid: str = "water") -> dict:
+    """Fail closed for seven live MachineScreens; Tree Cutter V3 requires its independent suite."""
+    fluids = {"water": ("minecraft:water", "minecraft:block/water_still"),
+              "lava": ("minecraft:lava", "minecraft:block/lava_still"),
+              "milk": ("minecraft:milk", "neoforge:block/milk_still")}
+    if barrel_fluid not in fluids or proof.get("barrel_fixture_fluid") != fluids[barrel_fluid][0]:
+        raise SmokeFailure("Barrel proof does not identify the requested fixture fluid")
+    expected_fluid, expected_still = fluids[barrel_fluid]
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
         "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228),
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212),
         "small_freezer": ("SMALL_FREEZER", 3, 209, 235),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256),
     }
     if (proof.get("suite") != "native-corrected-machine-gui-v1" or proof.get("nonce") != nonce
             or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
         raise SmokeFailure("Missing matching successful native corrected-machine GUI proof")
+    if (type(proof.get("schema_version")) is not int or proof["schema_version"] != 2
+            or proof.get("coverage_scope") != "seven-machine-screens-excluding-tree-cutter"
+            or proof.get("tree_cutter_qualification") != "independent:tree-cutter-v3-native.yml"
+            or "tree_cutter_badge_only_capture" in proof):
+        raise SmokeFailure("Corrected-machine GUI proof must explicitly exclude independent Tree Cutter V3 qualification")
+    if (proof.get("barrel_legacy_selector") != "iedctr.dev.barrelV5Reference=false"
+            or proof.get("barrel_qualification") != "legacy-diagnostic-only"):
+        raise SmokeFailure("Corrected GUI Barrel evidence must identify the explicit legacy diagnostic")
+    if (proof.get("solar_legacy_selector") != "iedctr.dev.solarV2Reference=false"
+            or proof.get("solar_qualification") != "legacy-diagnostic-only"):
+        raise SmokeFailure("Corrected GUI Solar evidence must identify the explicit legacy diagnostic")
     if not re.fullmatch(r"[0-9a-f]{40}", executed_sha) or proof.get("executed_source_sha") != executed_sha:
         raise SmokeFailure("Corrected-machine GUI proof does not identify the exact executed source revision")
     if not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha) or proof.get("pull_request_head_sha") != pr_head_sha:
@@ -321,7 +338,7 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if proof.get("selected_language") != language:
         raise SmokeFailure("Minecraft did not load the requested corrected-machine GUI locale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or proof.get("screenshot_method") != "Native Minecraft panel crops with cursor outside, separate full-window hover captures, and a Tree Cutter badge-only crop"):
+            or proof.get("screenshot_method") != "Native Minecraft panel crops with cursor outside and separate full-window hover captures"):
         raise SmokeFailure("Corrected-machine GUI proof lacks panel crops and tooltip-preserving captures")
 
     cases = proof.get("cases")
@@ -342,11 +359,10 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         "small_milking_machine-output-occupied.png",
     })
     capture_names.add("small_freezer-near-end.png")
-    capture_names.add("small_tree_cutter-badge-only.png")
     tooltip_names = {f"{machine}-full-hover-window.png" for machine in expected}
     captures = proof.get("screenshots")
     if not isinstance(captures, list) or len(captures) != len(capture_names):
-        raise SmokeFailure("Corrected-machine GUI proof requires 25 panel captures and seven separate hover captures")
+        raise SmokeFailure("Corrected-machine GUI proof requires 24 panel captures and seven separate hover captures")
     if {capture.get("name") for capture in captures if isinstance(capture, dict)} != capture_names:
         raise SmokeFailure("Corrected-machine GUI screenshot names are missing, duplicated, or unexpected")
     image_dir = directory / "corrected-machine-gui-screenshots"
@@ -438,16 +454,16 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                             or any(type(sample.get(key)) is not int or sample[key] != value for key, value in (
                                 ("x", 99), ("y", top), ("width", 16), ("height", 107 - top)))
                             or type(sample.get("distinct_rgba_colors")) is not int
-                            or sample.get("fluid_id") != ("minecraft:empty" if stage == "empty" else "minecraft:water")):
+                            or sample.get("fluid_id") != ("minecraft:empty" if stage == "empty" else expected_fluid)):
                         raise SmokeFailure(f"Native Barrel {stage} frame lacks the exact fluid-only pixel sample")
                     if stage == "empty":
                         if sample["distinct_rgba_colors"] != 1:
                             raise SmokeFailure("Native empty Barrel must show only its dark backing")
                     elif (sample["distinct_rgba_colors"] <= 1
-                            or sample.get("still_texture") != "minecraft:block/water_still"
+                            or sample.get("still_texture") != expected_still
                             or not isinstance(sample.get("tint_argb"), str)
                             or re.fullmatch(r"[0-9a-f]{8}", sample["tint_argb"]) is None):
-                        raise SmokeFailure("Native Barrel water lacks textured fluid pixels or block-atlas/tint evidence")
+                        raise SmokeFailure("Native Barrel fluid lacks textured fluid pixels or block-atlas/tint evidence")
             elif expected_energy_capacity:
                 energy = capture.get("energy")
                 if (stage == "empty" and energy != 0) or (stage == "full" and energy != expected_energy_capacity):
@@ -553,30 +569,6 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             or not 178 <= near_end["freezer_progress_ticks"] < 180):
         raise SmokeFailure("Native Freezer near-end frame does not prove progress immediately before completion")
 
-    tree_badge = proof.get("tree_cutter_badge_only_capture")
-    tree_capture = captures_by_name["small_tree_cutter-badge-only.png"]
-    tree_image = image_dir / "small_tree_cutter-badge-only.png"
-    tree_data = tree_image.read_bytes()
-    if (not isinstance(tree_badge, dict) or len(tree_data) < 1000
-            or tree_data[:8] != png_signature or tree_data[12:16] != b"IHDR"):
-        raise SmokeFailure("Tree Cutter badge-only native panel capture is absent or invalid")
-    tree_size = struct.unpack(">II", tree_data[16:24])
-    if (tree_badge.get("machine_id") != "small_tree_cutter"
-            or tree_badge.get("state") != "badge-only"
-            or tree_badge.get("capture_mode") != "gui_panel"
-            or tree_badge.get("panel_cursor_outside") is not True
-            or tree_badge.get("panel_tooltips_suppressed") is not True
-            or tree_badge.get("kind") != "SMALL_TREE_CUTTER"
-            or "MachineScreen$" not in str(tree_badge.get("screen_identity", ""))
-            or type(tree_badge.get("menu_id")) is not int
-            or tree_badge.get("menu_id") != tree_badge.get("server_menu_id")
-            or type(tree_badge.get("width")) is not int or tree_badge["width"] <= 0
-            or type(tree_badge.get("height")) is not int or tree_badge["height"] <= 0
-            or tree_size != (tree_badge["width"], tree_badge["height"])
-            or tree_badge.get("sha256") != hashlib.sha256(tree_data).hexdigest()
-            or tree_capture != tree_badge):
-        raise SmokeFailure("Tree Cutter badge-only screenshot does not match its live panel proof")
-
     if f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={nonce}" not in logs:
         raise SmokeFailure("Missing current-run corrected-machine GUI completion marker")
     return proof
@@ -600,7 +592,11 @@ def main() -> int:
     parser.add_argument("--machine-gui-language", choices=("en_us", "fr_fr"), default="en_us")
     parser.add_argument("--machine-gui-window-height", type=int, choices=(260, 720), default=720)
     parser.add_argument("--machine-gui-pr-head-sha", default=os.environ.get("IEDCTR_PR_HEAD_SHA", ""))
+    parser.add_argument("--barrel-fluid", choices=("water", "lava", "milk"), default="water",
+                        help="Fluid for the isolated corrected-machine Barrel fixture, never gameplay")
     args = parser.parse_args()
+    if args.barrel_fluid != "water" and not args.corrected_machine_gui_only:
+        parser.error("--barrel-fluid requires --corrected-machine-gui-only")
     if args.lava_surface_only and (not args.renderer_profile or args.flow_distance_only):
         parser.error("Lava surface requires one renderer profile and its own session")
     if args.flow_distance_only and not args.renderer_profile:
@@ -676,7 +672,13 @@ gradle.projectsEvaluated {
         systemProperty 'iedctr.smelterGuiOnly', System.getenv('IEDCTR_SMELTER_GUI_ONLY')
         systemProperty 'iedctr.smelterLanguage', System.getenv('IEDCTR_SMELTER_LANGUAGE')
         systemProperty 'iedctr.correctedMachineGuiOnly', System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY')
+        // Cumulative historical geometry diagnostic, never default Barrel/Solar qualification.
+        if (System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY') == 'true') {
+            systemProperty 'iedctr.dev.barrelV5Reference', 'false'
+            systemProperty 'iedctr.dev.solarV2Reference', 'false'
+        }
         systemProperty 'iedctr.machineGuiLanguage', System.getenv('IEDCTR_MACHINE_GUI_LANGUAGE')
+        systemProperty 'iedctr.barrelFixtureFluid', System.getenv('IEDCTR_BARREL_FIXTURE_FLUID')
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         systemProperty 'iedctr.pullRequestHeadSha', System.getenv('IEDCTR_PR_HEAD_SHA')
         programArgument '--width'
@@ -696,6 +698,7 @@ gradle.projectsEvaluated {
                IEDCTR_SMELTER_LANGUAGE=args.smelter_language if args.smelter_gui_only else '',
                IEDCTR_CORRECTED_MACHINE_GUI_ONLY=str(args.corrected_machine_gui_only).lower(),
                IEDCTR_MACHINE_GUI_LANGUAGE=args.machine_gui_language if args.corrected_machine_gui_only else '',
+               IEDCTR_BARREL_FIXTURE_FLUID=args.barrel_fluid,
                IEDCTR_EXECUTED_SOURCE_SHA=executed_source_sha,
                IEDCTR_PR_HEAD_SHA=args.smelter_pr_head_sha if args.smelter_gui_only else args.machine_gui_pr_head_sha if args.corrected_machine_gui_only else '',
                IEDCTR_SCREEN_WIDTH=str(window_width), IEDCTR_SCREEN_HEIGHT=str(window_height))
@@ -746,7 +749,7 @@ gradle.projectsEvaluated {
                     or main_proof.get("status") != "passed" or main_proof.get("actual_integrated_world") is not True):
                 raise SmokeFailure("The isolated corrected-machine client did not complete successfully")
             validate_corrected_machine_gui_proof(proof, nonce, executed_source_sha, args.machine_gui_pr_head_sha,
-                                                  game, window_width, window_height, args.machine_gui_language, logs)
+                                                  game, window_width, window_height, args.machine_gui_language, logs, args.barrel_fluid)
             print(json.dumps(proof, indent=2), flush=True)
             return 0
         from fluid_extensions import validate_extensions
@@ -801,3 +804,4 @@ gradle.projectsEvaluated {
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

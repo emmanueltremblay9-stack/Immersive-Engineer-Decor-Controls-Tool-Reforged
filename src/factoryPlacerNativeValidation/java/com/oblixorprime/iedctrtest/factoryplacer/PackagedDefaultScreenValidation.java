@@ -80,7 +80,7 @@ public final class PackagedDefaultScreenValidation {
             require(mc.level != null && mc.player != null && mc.getSingleplayerServer() != null, "World disconnected");
             if (pending != null) { if (!pending.isDone()) return; pending.join(); pending = null; }
             if (mc.getOverlay() != null) return;
-            // The server task can finish before the client receives the open-screen packet.
+            // The server can finish opening its menu before the client receives the screen.
             if (mc.screen == null) return;
             require(mc.screen instanceof FactoryPlacerV2ReferenceScreen,
                 "Unexpected default screen: " + mc.screen.getClass().getName());

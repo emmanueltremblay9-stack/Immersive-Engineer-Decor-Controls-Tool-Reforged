@@ -84,18 +84,21 @@ public record MachineLayout(
 
    public int playerSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Player inventory column out of range");
+      if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotX(column);
       return "block_breaker_rp_v3/background".equals(this.textureName)
          ? BlockBreakerRedesignLayout.playerSlotX(column) : this.playerInventoryX + column * this.playerColumnSpacing;
    }
 
    public int playerSlotY(int row) {
       if (row < 0 || row >= 3) throw new IllegalArgumentException("Player inventory row out of range");
+      if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotY(row);
       return "block_breaker_rp_v3/background".equals(this.textureName)
          ? BlockBreakerRedesignLayout.rowY(row) : this.playerInventoryY + row * this.playerRowSpacing;
    }
 
    public int hotbarSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Hotbar column out of range");
+      if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotX(column);
       return "block_breaker_rp_v3/background".equals(this.textureName)
          ? BlockBreakerRedesignLayout.hotbarX(column) : this.hotbarX + column * this.hotbarColumnSpacing;
    }
@@ -379,33 +382,27 @@ public record MachineLayout(
 
 
    private static MachineLayout smallFluidFunnel() {
-      return new MachineLayout(
-         209, 238, 26, 151, 26, 208,
-         List.of(
-            new MachineLayout.MachineSlot(0, 33, 85, "Empty bucket"),
-            new MachineLayout.MachineSlot(1, 155, 85, "Filled")
-         ),
-         List.of(),
-         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
-         "small_fluid_funnel"
-      );
+      return retainedFluidLayout(false);
    }
 
    private static MachineLayout passiveFluidAccumulator() {
+      return retainedFluidLayout(true);
+   }
+
+   private static MachineLayout retainedFluidLayout(boolean accumulator) {
+      var input = accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_INPUT : FluidMachineRedesignLayout.FUNNEL_INPUT;
+      var output = accumulator ? FluidMachineRedesignLayout.ACCUMULATOR_OUTPUT : FluidMachineRedesignLayout.FUNNEL_OUTPUT;
       return new MachineLayout(
-         209,
-         238,
-         24,
-         150,
-         24,
-         205,
+         FluidMachineRedesignLayout.SIZE, FluidMachineRedesignLayout.SIZE,
+         FluidMachineRedesignLayout.playerSlotX(0), FluidMachineRedesignLayout.playerSlotY(0),
+         FluidMachineRedesignLayout.playerSlotX(0), FluidMachineRedesignLayout.HOTBAR_Y,
          List.of(
-            new MachineLayout.MachineSlot(0, 30, 106, "Empty bucket", false),
-            new MachineLayout.MachineSlot(1, 149, 106, "Filled", true)
+            new MachineLayout.MachineSlot(0, input.x(), input.y(), "Empty bucket", false),
+            new MachineLayout.MachineSlot(1, output.x(), output.y(), "Filled", true)
          ),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
-         "passive_fluid_accumulator"
+         accumulator ? "passive_fluid_accumulator_v1/background" : "small_fluid_funnel_v1/background"
       );
    }
 
@@ -442,16 +439,7 @@ public record MachineLayout(
          33,
          188,
          List.of(
-            new MachineLayout.MachineSlot(0, 122, 42, "Drops"),
-            new MachineLayout.MachineSlot(1, 144, 42, "Drops"),
-            new MachineLayout.MachineSlot(2, 166, 42, "Drops"),
-            new MachineLayout.MachineSlot(3, 122, 64, "Drops"),
-            new MachineLayout.MachineSlot(4, 144, 64, "Drops"),
-            new MachineLayout.MachineSlot(5, 166, 64, "Drops"),
-            new MachineLayout.MachineSlot(6, 122, 86, "Drops"),
-            new MachineLayout.MachineSlot(7, 144, 86, "Drops"),
-            new MachineLayout.MachineSlot(8, 166, 86, "Drops"),
-            new MachineLayout.MachineSlot(9, 188, 86, "I/O")
+            new MachineLayout.MachineSlot(0, 122, 42, "Output", true)
          ),
          List.of(
             new MachineLayout.Panel("tree-collection-mask", 116, 39, 100, 69),
