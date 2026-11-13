@@ -1,9 +1,7 @@
 Glass Door Contact
-Pressure pulse
-<&recipe>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&recipe>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
-
-
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.

@@ -1,5 +1,7 @@
 Tronc de cheminée de toit
 Élément de toiture patinée
-<&recipe>Le tronc de cheminée de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<&recipe>Cette pièce de toiture offre un rebord surélevé pour la cheminée de toit séparée.<br>
 <br>
-Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+Utilisation : visez le rebord en tenant une tête de cheminée pour la poser au-dessus. Consultez la page de la cheminée pour régler la fumée ; le tronc sert de pièce de toiture.<br>
+<br>
+Les nouvelles pièces restent droites et non inversées, sans devenir des angles de toit. Les anciennes pièces en angle gardent leur état ; remplacez-les si vous voulez retrouver le raccord de cheminée visible.

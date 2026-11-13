@@ -8,6 +8,11 @@ import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFreezerArtworkMasks;
+import com.oblixorprime.engineersdecorreforged.utility.MilkingState;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import java.util.UUID;
 import java.text.NumberFormat;
 import java.util.Locale;
 import net.minecraft.client.gui.GuiGraphics;
@@ -123,6 +128,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          ResourceLocation texture = this.backgroundTexture(layout);
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
             RedesignedMachineArtwork.milking(graphics, (MachineMenu)this.menu, x, y);
+            Entity selected = this.selectedMilkingAnimal();
+            if (selected instanceof LivingEntity living) {
+               InventoryScreen.renderEntityInInventoryFollowsMouse(graphics,
+                  x + 27, y + 34, x + 74, y + 75, 19, 0.0F,
+                  x + 50.0F, y + 54.0F, living);
+            }
             return;
          }
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
@@ -167,7 +178,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
-         this.drawSmallMilkingMachineLabels(graphics);
+         // Keep the supplied artwork text-free. Machine information is available
+         // through bounded, localized hover tooltips; vanilla slot counts remain.
+         return;
       } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          this.drawBlockBreakerLabels(graphics);
        } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL) {
@@ -1024,17 +1037,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(tankX + 4, tankY + 3, tankX + 5, tankY + 14, 0xFF728083);
    }
 
-   private void drawSmallMilkingMachineLabels(GuiGraphics graphics) {
-      MachineMenu menu = (MachineMenu)this.menu;
-      // The header is reserved for the actual selected animal. That identity is not
-      // synchronized yet, so keep it blank instead of presenting a fictitious cow.
-      // Use two full-pixel lines: shrinking the complete ratio makes individual
-      // Minecraft font strokes disappear in the 260-pixel stress-test window.
-      String amount = formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale());
-      String[] parts = amount.split("/", 2);
-      this.drawScaledCenteredString(graphics, parts[0].trim() + " mB", 178, 72, 64, TEXT, 1.0F);
-      if (parts.length == 2) this.drawScaledCenteredString(graphics, "/ " + parts[1].trim(), 178, 80, 64, TEXT, 1.0F);
-   }
 
    private void drawTexturePatch(
       GuiGraphics graphics, ResourceLocation texture, int x, int y, int width, int height,
@@ -1099,10 +1101,66 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
       if (this.isHovering(24, 5, 185, 20, mouseX, mouseY)
          || this.isHovering(27, 34, 47, 41, mouseX, mouseY))
-         return smallMilkingText("tooltip.animal_not_synchronized");
-      if (this.isHovering(160, 41, 47, 32, mouseX, mouseY))
-         return smallMilkingText("tooltip.energy_cycle_unavailable");
+         return this.milkingIdentityTooltip();
+      if (this.isHovering(24, 112, 185, 12, mouseX, mouseY)
+         || this.isHovering(160, 56, 47, 17, mouseX, mouseY))
+         return this.milkingRecoveryTooltip();
+      if (this.isHovering(160, 41, 47, 14, mouseX, mouseY))
+         return smallMilkingText("tooltip.energy_unavailable");
       return null;
+   }
+
+   // The server is the only selector. Never infer an animal from proximity or type.
+   private Entity selectedMilkingAnimal() {
+      MilkingState state = this.menu.milkingState();
+      if (this.minecraft == null || this.minecraft.level == null || state.animalId() == null) return null;
+      Entity entity = this.minecraft.level.getEntity(state.entityId());
+      return entity != null && milkingIdentityMatches(state, entity.getId(), entity.getUUID()) ? entity : null;
+   }
+
+   static boolean milkingIdentityMatches(MilkingState state, int entityId, UUID animalId) {
+      return state.animalId() != null && state.entityId() == entityId && state.animalId().equals(animalId);
+   }
+
+   static String milkingStatusKey(MilkingState state) {
+      if (state.animalId() == null) return "label.no_animal";
+      if (state.source() == MilkingState.TFC && state.state() == MilkingState.RECOVERING) return "label.recovering";
+      if (state.state() == MilkingState.INELIGIBLE) return "label.ineligible";
+      if ((state.machineFlags() & MilkingState.PAUSED) != 0) return "label.paused";
+      if ((state.machineFlags() & MilkingState.STORAGE_BLOCKED) != 0) return "label.storage_blocked";
+      if ((state.machineFlags() & MilkingState.RETRY_WAIT) != 0) return "label.retry_wait";
+      if (state.source() == MilkingState.VANILLA) return "label.vanilla";
+      if (state.source() == MilkingState.TFC && state.state() == MilkingState.READY) return "label.ready";
+      return "label.unavailable";
+   }
+
+   private Component milkingIdentityTooltip() {
+      MilkingState state = this.menu.milkingState();
+      if (state.animalId() == null) return smallMilkingText("label.no_animal");
+      Entity selected = this.selectedMilkingAnimal();
+      return smallMilkingText("tooltip.animal", selected == null
+         ? smallMilkingText("label.animal_unavailable") : selected.getDisplayName(), state.animalId().toString());
+   }
+
+   static int milkingTooltipWidth(int viewportWidth) {
+      // Leave space for the native tooltip border and screen-edge padding.
+      return Math.max(1, Math.min(240, Math.max(0, viewportWidth) - 16));
+   }
+
+   private Component milkingRecoveryTooltip() {
+      MilkingState state = this.menu.milkingState();
+      var text = smallMilkingText(milkingStatusKey(state)).copy();
+      if (state.source() == MilkingState.TFC && state.animalId() != null
+         && (state.state() == MilkingState.RECOVERING || state.state() == MilkingState.READY)) {
+         text.append("\n").append(smallMilkingText("tooltip.native_ticks",
+            NumberFormat.getIntegerInstance(this.smallMilkingLocale()).format(state.remainingTicks())));
+      } else if (state.source() == MilkingState.VANILLA) {
+         text.append("\n").append(smallMilkingText("tooltip.vanilla"));
+      }
+      if ((state.machineFlags() & MilkingState.PAUSED) != 0) text.append("\n").append(smallMilkingText("label.paused"));
+      if ((state.machineFlags() & MilkingState.STORAGE_BLOCKED) != 0) text.append("\n").append(smallMilkingText("label.storage_blocked"));
+      if ((state.machineFlags() & MilkingState.RETRY_WAIT) != 0) text.append("\n").append(smallMilkingText("label.retry_wait"));
+      return text;
    }
 
    private Locale smallMilkingLocale() {
@@ -1371,7 +1429,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
       Component milkingTooltip = this.smallMilkingMachineTooltip(mouseX, mouseY);
       if (milkingTooltip != null) {
-         graphics.renderTooltip(this.font, milkingTooltip, mouseX, mouseY);
+         // Font.split preserves component styles and interprets explicit newlines.
+         graphics.renderTooltip(this.font,
+            this.font.split(milkingTooltip, milkingTooltipWidth(this.width)), mouseX, mouseY);
          return;
       }
 

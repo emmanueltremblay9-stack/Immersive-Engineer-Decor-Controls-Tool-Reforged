@@ -1,7 +1,7 @@
 Roof Chimney Trunk
 Weathered roof fitting
-<&recipe>The Dark Shingle Roof Chimney Trunk builds dark, practical roof lines for workshops and industrial sheds.<br>
+<&recipe>This roof fitting provides a raised rim for the separate Dark Shingle Roof Chimney.<br>
 <br>
-Usage: Use the pieces together to make believable roof profiles.<br>
-
-
+Usage: Aim at the rim with a chimney head to place it above the fitting. Use the head's page for smoke controls; the trunk itself is a roof fitting.<br>
+<br>
+New placements stay upright and straight instead of turning into roof corners. Existing corner-shaped fittings keep their old state; replace one if you need the visible chimney fitting.

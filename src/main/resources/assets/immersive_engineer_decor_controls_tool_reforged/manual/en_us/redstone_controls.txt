@@ -14,12 +14,8 @@ Notes: Resets after its scheduled pulse.
 <np>
 Door sensor
 Redstone control
-<&door_sensor_switch>A momentary switch gives a clean full-strength redstone pulse.<br>
-<br>
-Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
-<br>
-Notes: Resets after its scheduled pulse.
-<np>
+<&door_sensor_switch>This sensor detects nearby players automatically; it is not a timed push button. Its detection area is the sensor block's box expanded by four blocks in every direction. Other entity types do not trigger this player sensor.<br>
+Place it against a wall, floor or ceiling: its plate and outline remain against the clicked support. It checks after placement and then every 40 ticks, so detection is not instantaneous. Using the sensor requests an immediate update. The redstone output follows player presence rather than a fixed pulse.<br><np>
 Elevator Button
 Redstone control
 <&elevator_button>A compact control fitting gives factory builds a readable redstone switch point.<br>
@@ -141,140 +137,140 @@ Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<b
 Notes: Resets after its scheduled pulse.
 <np>
 Glass Contact Plate
-Pressure pulse
-<&glass_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&glass_contact_mat>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Glass Door Contact
-Pressure pulse
-<&glass_door_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&glass_door_contact_mat>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Contact Mat
-Pressure pulse
-<&industrial_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&industrial_contact_mat>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Door Contact Mat
-Pressure pulse
-<&industrial_door_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&industrial_door_contact_mat>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Fall-Through Detector
-Signal sensing
-<&industrial_fallthrough_detector>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&industrial_fallthrough_detector>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Foot Button
-Redstone control
-<&industrial_foot_button>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&industrial_foot_button>The Foot Button supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Mount it on a sturdy face where entities pass. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Industrial Shock Door
-Pressure pulse
-<&industrial_high_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&industrial_high_sensitive_trapdoor>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Shock Contact Mat
-Pressure pulse
-<&industrial_shock_sensitive_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&industrial_shock_sensitive_contact_mat>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Shock Trapdoor
-Pressure pulse
-<&industrial_shock_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&industrial_shock_sensitive_trapdoor>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Red power plant
-Pressure pulse
-<&red_power_plant>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&red_power_plant>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Rustic Pressure Plate
-Pressure pulse
-<&rustic_contact_plate>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&rustic_contact_plate>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Rustic Door Pressure
-Pressure pulse
-<&rustic_door_contact_plate>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&rustic_door_contact_plate>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Rustic Fall Detector
-Signal sensing
-<&rustic_fallthrough_detector>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&rustic_fallthrough_detector>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Rustic Shock Door
-Pressure pulse
-<&rustic_high_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&rustic_high_sensitive_trapdoor>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Rustic Shock Plate
-Pressure pulse
-<&rustic_shock_sensitive_plate>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&rustic_shock_sensitive_plate>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Rustic Shock Door
-Pressure pulse
-<&rustic_shock_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&rustic_shock_sensitive_trapdoor>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Yellow power plant
-Pressure pulse
-<&yellow_power_plant>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&yellow_power_plant>This contact control supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Place it on the top face of a supporting block along the route to monitor. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.
 <np>
 Glass Day Timer Clock
 Daylight signal
@@ -294,19 +290,19 @@ Notes: Scans a small area around the block.
 <np>
 Glass Interval Signal
 Timed pulse
-<&glass_interval_timer>A compact timer switch provides a scheduled redstone pulse.<br>
+<&glass_interval_timer>This timer produces a single full-strength redstone pulse when clicked.<br>
 <br>
-Usage: Use it where a small mechanism needs periodic or delayed control.<br>
+Usage: Right-click it to trigger a mechanism immediately. The output switches off after 40 game ticks, about two seconds at normal tick speed.<br>
 <br>
-Notes: Uses scheduled redstone pulses.
+Notes: It does not repeat automatically; use it for a manually triggered timed signal.
 <np>
 Glass Line Detector
 Signal sensing
-<&glass_linear_entity_detector>An entity detector watches nearby movement without a visible floor plate.<br>
+<&glass_linear_entity_detector>This detector watches a narrow corridor in front of its sensing face.<br>
 <br>
-Usage: Route it into doors, lamps, alarms, or machine interlocks.<br>
+Usage: Point it along the passage you want to monitor, then connect its output to doors, lamps, alarms, or machine interlocks.<br>
 <br>
-Notes: Scans a small area around the block.
+Notes: It detects entities in its forward corridor, rather than scanning the area on every side.
 <np>
 Block Detector
 Signal sensing
@@ -334,11 +330,11 @@ Notes: Scans a small area around the block.
 <np>
 Interval Timer
 Timed pulse
-<&industrial_interval_timer>A compact timer switch provides a scheduled redstone pulse.<br>
+<&industrial_interval_timer>This timer produces a single full-strength redstone pulse when clicked.<br>
 <br>
-Usage: Use it where a small mechanism needs periodic or delayed control.<br>
+Usage: Right-click it to trigger a mechanism immediately. The output switches off after 40 game ticks, about two seconds at normal tick speed.<br>
 <br>
-Notes: Uses scheduled redstone pulses.
+Notes: It does not repeat automatically; use it for a manually triggered timed signal.
 <np>
 Light Sensor
 Signal sensing
@@ -358,11 +354,11 @@ Notes: Requires thunder and sky access.
 <np>
 Line Entity Detector
 Signal sensing
-<&industrial_linear_entity_detector>An entity detector watches nearby movement without a visible floor plate.<br>
+<&industrial_linear_entity_detector>This detector watches a narrow corridor in front of its sensing face.<br>
 <br>
-Usage: Route it into doors, lamps, alarms, or machine interlocks.<br>
+Usage: Point it along the passage you want to monitor, then connect its output to doors, lamps, alarms, or machine interlocks.<br>
 <br>
-Notes: Scans a small area around the block.
+Notes: It detects entities in its forward corridor, rather than scanning the area on every side.
 <np>
 Rain Sensor
 Signal sensing
@@ -414,59 +410,59 @@ Notes: Changes state from nearby redstone power.
 <np>
 Glass Bar Gauge
 Signal gauge
-<&glass_vertical_bar_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<&glass_vertical_bar_gauge>This gauge displays the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Mount it where neighboring redstone power can be checked at a glance.<br>
+Usage: Mount it on the block whose signal you want to read. It follows that block's direct or indirect redstone power and comparator output.<br>
 <br>
-Notes: Reads nearby redstone strength from 0 to 15.
+Notes: Displays a strength from 0 to 15. A source beside the gauge is not sufficient unless it powers the supporting block.
 <np>
 Analog Gauge
 Signal gauge
-<&industrial_analog_angular_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<&industrial_analog_angular_gauge>This gauge displays the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Mount it where neighboring redstone power can be checked at a glance.<br>
+Usage: Mount it on the block whose signal you want to read. It follows that block's direct or indirect redstone power and comparator output.<br>
 <br>
-Notes: Reads nearby redstone strength from 0 to 15.
+Notes: Displays a strength from 0 to 15. A source beside the gauge is not sufficient unless it powers the supporting block.
 <np>
 Voltmeter Gauge
 Signal gauge
-<&industrial_analog_horizontal_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<&industrial_analog_horizontal_gauge>This gauge displays the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Mount it where neighboring redstone power can be checked at a glance.<br>
+Usage: Mount it on the block whose signal you want to read. It follows that block's direct or indirect redstone power and comparator output.<br>
 <br>
-Notes: Reads nearby redstone strength from 0 to 15.
+Notes: Displays a strength from 0 to 15. A source beside the gauge is not sufficient unless it powers the supporting block.
 <np>
 Digital Gauge
 Readable signal strength
-<&industrial_small_digital_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<&industrial_small_digital_gauge>This gauge displays the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Mount it where neighboring redstone power can be checked at a glance.<br>
+Usage: Mount it on the block whose signal you want to read. It follows that block's direct or indirect redstone power and comparator output.<br>
 <br>
-Notes: Reads nearby redstone strength from 0 to 15.
+Notes: Displays a strength from 0 to 15. A source beside the gauge is not sufficient unless it powers the supporting block.
 <np>
 Glass Tube Gauge
 Signal gauge
-<&industrial_tube_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<&industrial_tube_gauge>This gauge displays the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Mount it where neighboring redstone power can be checked at a glance.<br>
+Usage: Mount it on the block whose signal you want to read. It follows that block's direct or indirect redstone power and comparator output.<br>
 <br>
-Notes: Reads nearby redstone strength from 0 to 15.
+Notes: Displays a strength from 0 to 15. A source beside the gauge is not sufficient unless it powers the supporting block.
 <np>
 Analog Bar Gauge
 Signal gauge
-<&industrial_vertical_bar_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<&industrial_vertical_bar_gauge>This gauge displays the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Mount it where neighboring redstone power can be checked at a glance.<br>
+Usage: Mount it on the block whose signal you want to read. It follows that block's direct or indirect redstone power and comparator output.<br>
 <br>
-Notes: Reads nearby redstone strength from 0 to 15.
+Notes: Displays a strength from 0 to 15. A source beside the gauge is not sufficient unless it powers the supporting block.
 <np>
 Alarm Lamp
 Signal feedback
-<&industrial_alarm_lamp>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_alarm_lamp>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Alarm Siren
 Signal feedback
@@ -478,83 +474,83 @@ Notes: The siren refreshes once per second while its attached signal remains act
 <np>
 Blinking Led
 Signal feedback
-<&industrial_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_blinking_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Green Blinking LED
 Signal feedback
-<&industrial_green_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_green_blinking_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Green LED
 Signal feedback
-<&industrial_green_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_green_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Red LED
 Signal feedback
-<&industrial_red_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_red_blinking_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Red LED
 Signal feedback
-<&industrial_red_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_red_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 White Blinking LED
 Signal feedback
-<&industrial_white_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_white_blinking_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 White LED
 Signal feedback
-<&industrial_white_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_white_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Yellow Blinking LED
 Signal feedback
-<&industrial_yellow_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_yellow_blinking_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Yellow LED
 Signal feedback
-<&industrial_yellow_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_yellow_led>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Rustic Semaphore
 Signal feedback
-<&rustic_semaphore>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&rustic_semaphore>This indicator shows whether the block it is attached to supplies a signal.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power the supporting block to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: It follows the supporting block's redstone or comparator output and refreshes once per second. Nearby power that does not reach that block will not activate it.
 <np>
 Comparator Switch
 Attached signal
@@ -566,11 +562,11 @@ Notes: Use it to turn storage levels or hidden wiring into clear on/off control 
 <np>
 Dimmer
 Variable signal
-<&industrial_dimmer>A rotary control dials redstone strength from a compact panel face.<br>
+<&industrial_dimmer>The Dimmer selects redstone strength from the point clicked on its panel.<br>
 <br>
-Usage: Right-click it to step the output upward, then back to zero after full strength.<br>
+Usage: Right-click higher or lower on a wall-mounted panel to select stronger or weaker output. On a floor or ceiling, the north-south click position sets the strength instead.<br>
 <br>
-Notes: Outputs strength from 0 to 15.
+Notes: Each click selects the output directly; repeated clicks do not cycle through the values.
 <np>
 ESTOP Button
 Redstone control
@@ -646,11 +642,11 @@ Notes: Outputs full-strength redstone while switched on.
 <np>
 Switch
 Redstone control
-<&industrialswitch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<&industrialswitch>The Industrial Switch is a two-block-tall control cabinet.<br>
 <br>
-Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+Usage: Leave the block above the placement space clear. Right-click either half to switch both halves together; each half supplies full-strength redstone on every side while on.<br>
 <br>
-Notes: Outputs full-strength redstone while switched on.
+Notes: Breaking either half removes the cabinet. Existing legacy cabinets keep their saved layout.
 <np>
 Light Switch
 Redstone control

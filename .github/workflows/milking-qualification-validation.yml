@@ -1,0 +1,170 @@
+name: Existing Milking GUI qualification
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-qualification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Checkout exact pull request head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Record and verify exact clean source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/milking-qualification
+          git rev-parse HEAD | tee build/tested-source-sha.txt
+          test "$(cat build/tested-source-sha.txt)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/milking-qualification/source-status.txt
+          test ! -s build/milking-qualification/source-status.txt
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Verify production preservation and existing GUI guards
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/validation/check_milking_qualification.py | tee build/milking-qualification/preservation.log
+          bash tools/validation/check_barrel_reference.sh | tee build/milking-qualification/barrel-geometry.log
+          python tools/validation/check_barrel_reference_wiring.py | tee build/milking-qualification/barrel-wiring.log
+          bash tools/validation/check_solar_v2_reference.sh | tee build/milking-qualification/solar-geometry.log
+          python tools/validation/check_solar_v2_reference_wiring.py | tee build/milking-qualification/solar-wiring.log
+      - name: Run full Python regressions and active renderer recording checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tools/validation -p 'test_*.py' -v 2>&1 | tee build/milking-qualification/python-tests.log
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Compile, run JUnit and GameTests, build JAR
+        id: build
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash ./gradlew compileJava processResources test runGameTestServer jar --stacktrace 2>&1 | tee build/milking-qualification/gradle.log
+          find build/libs -maxdepth 1 -name '*.jar' -print0 | sort -z | xargs -0 -r sha256sum > build/tested-jar-sha256.txt
+          test -s build/tested-jar-sha256.txt
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/milking-qualification/final-source-status.txt
+          test ! -s build/milking-qualification/final-source-status.txt
+      - name: State build evidence boundary
+        if: always()
+        shell: bash
+        run: |
+          echo "Requested exact PR head: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "Compile/test/build step: ${{ steps.build.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo 'This job does not prove native gameplay. All five dependent native profiles must pass on this same head.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'The JAR hash identifies the build artifact; runClient uses the source runtime classpath, not that packaged JAR.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No merge, deployment or release is performed.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain source identity, JAR, hashes and build reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: milking-qualification-build-${{ github.event.pull_request.head.sha }}
+          path: |
+            build/tested-source-sha.txt
+            build/tested-jar-sha256.txt
+            build/libs/*.jar
+            build/milking-qualification/
+            build/reports/tests/
+            build/test-results/
+            run/logs/
+            run/crash-reports/
+          retention-days: 14
+          if-no-files-found: error
+
+  validate-native-profile:
+    needs: validate-qualification
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+    strategy:
+      fail-fast: false
+      matrix:
+        profile:
+          - en-1280x720-scale1
+          - fr-1280x260-scale1
+          - en-1920x1080-scale1
+          - en-1920x1080-scale2
+          - en-1920x1080-scale3
+    steps:
+      - name: Checkout exact pull request head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Record and verify exact clean source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/milking-qualification
+          git rev-parse HEAD | tee build/tested-source-sha.txt
+          test "$(cat build/tested-source-sha.txt)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/milking-qualification/source-status.txt
+          test ! -s build/milking-qualification/source-status.txt
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Check native display prerequisites
+        run: command -v Xvfb && command -v xvfb-run && command -v xauth
+      - name: Run exact-profile integrated-world qualification
+        id: native
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/validation/milking_qualification_native.py --profile '${{ matrix.profile }}' --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/milking-qualification/final-source-status.txt
+          test ! -s build/milking-qualification/final-source-status.txt
+      - name: State native evidence boundary
+        if: always()
+        shell: bash
+        run: |
+          echo "Requested exact PR head: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Requested profile: ${{ matrix.profile }}' >> "$GITHUB_STEP_SUMMARY"
+          echo "Native validation step: ${{ steps.native.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Acceptance requires matching source/nonce/locale/scale/framebuffer, 38 server-confirmed routes, real bucket conversion, decoded PNG crop/fill/exterior checks and clean exit.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Bounded screen-handler input only. Reload/reopen, shift-click, complex gestures, physical OS input, JEI actions and full visual acceptance remain deferred.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain exact-head native proof, screenshots and logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: milking-qualification-native-${{ matrix.profile }}-${{ github.event.pull_request.head.sha }}
+          path: |
+            build/tested-source-sha.txt
+            build/milking-qualification/
+            build/milking-qualification-native-*/run/client-milking-qualification-result.json
+            build/milking-qualification-native-*/run/milking-qualification-screenshots/*.png
+            build/milking-qualification-native-*/prepare.log
+            build/milking-qualification-native-*/client.log
+            build/milking-qualification-native-*/*.observed.log
+            build/milking-qualification-native-*/run/logs/
+            build/milking-qualification-native-*/run/crash-reports/
+            build/milking-qualification-native-*/**/hs_err_pid*.log
+          retention-days: 14
+          if-no-files-found: error

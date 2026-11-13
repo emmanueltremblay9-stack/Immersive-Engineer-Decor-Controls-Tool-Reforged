@@ -1,5 +1,6 @@
 Entonnoir d'usine
 Équipement d'atelier
-<&recipe>Ce bloc transfère les piles d'objets dans un boîtier industriel compact.<br>
-<br>
-Utilisation : orientez-le vers la ligne d'inventaires, puis réglez la portée, le nombre d'objets, la temporisation et le mode redstone dans son interface.<br>
+<&recipe>L'entonnoir d'usine possède 18 emplacements de stockage. Son extrémité étroite est la sortie ; l'entrée depuis un inventaire se trouve sur la face opposée. Les inventaires vanilla adjacents et les gestionnaires d'objets NeoForge sont pris en charge, dans le respect de la face raccordée.<br>
+Réglez la portée de collecte, le nombre d'objets et le délai d'insertion dans l'interface. La portée agrandit la zone de collecte des objets au sol, pas la distance jusqu'à un inventaire. Le réglage du nombre limite séparément l'extraction et l'insertion à 1-32 objets par cycle de transfert ; il ne limite pas la collecte au sol.<br>
+Par défaut, le mode est inversé et continu : le transfert fonctionne sans signal. Le mode normal l'autorise avec un signal ; le mode ignoré répète indépendamment du signal. En continu, le cycle reprend après le délai. En impulsion, un changement montant déclenche en mode normal, et un changement descendant en mode inversé. Les changements examinés avant la fin du délai ne sont pas mis en attente. Le mode ignoré prend le dessus sur l'option impulsion.<br>
+Survolez les commandes redstone pour lire leur état. Cliquez sur le témoin de signal pour demander un cycle manuel : il contourne la condition redstone et raccourcit le délai restant. Aucune alimentation FE n'est nécessaire.<br>
