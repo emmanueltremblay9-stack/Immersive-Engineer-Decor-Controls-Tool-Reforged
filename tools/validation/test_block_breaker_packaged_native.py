@@ -20,7 +20,7 @@ class BreakerPackagedEvidenceTests(unittest.TestCase):
                                           active_power_texture_sha256="23ff15c60420b8951117f748d0b6122e174c915f87e91466930af80fbdc12123",
                                           active_texture_pack='mod/immersive_engineer_decor_controls_tool_reforged'),
                     captures=[dict(name=n,file='breaker-'+n+'.png',sha256='d'*64,render_frames=3,
-                                   tooltip=dict(in_bounds=True,text='Small Block Breaker')) for n in subject.NAMES])
+                                   tooltip=dict(in_bounds=True,text='Small Block Breaker',line_count=4,width=240)) for n in subject.NAMES])
 
     def check(self,p):
         with patch.object(subject,'png'):
@@ -35,6 +35,20 @@ class BreakerPackagedEvidenceTests(unittest.TestCase):
             with self.subTest(key=key):
                 p=self.proof();p[key]=None
                 with self.assertRaises(subject.SmokeFailure):self.check(p)
+
+    def test_single_line_and_overwide_fluid_tooltips_are_rejected(self):
+        for key, value in [('line_count', 1), ('line_count', True), ('line_count', None),
+                           ('width', 847), ('width', 241), ('width', 0), ('width', True), ('width', None)]:
+            p = self.proof(); p['captures'][3]['tooltip'][key] = value
+            with self.subTest(key=key, value=value), self.assertRaises(subject.SmokeFailure): self.check(p)
+
+    def test_production_tooltip_uses_bounded_font_split(self):
+        import re
+        source = (Path(__file__).resolve().parents[2] / 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java').read_text()
+        pattern = r'renderTooltip\(this.font,\s*this.font.split\(blockBreakerTooltip, milkingTooltipWidth\(this.width\)\), mouseX, mouseY\)'
+        self.assertRegex(source, pattern)
+        old = re.sub(pattern, 'renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY)', source)
+        self.assertNotRegex(old, pattern)
 
     def test_final_conservation_corruption_rejected(self):
         for key in self.proof()['final_conservation']:

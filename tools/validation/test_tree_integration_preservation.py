@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 
-from joint_machine_integration_preservation import JOINT_LAYER, JOINT_FILES
+from joint_machine_integration_preservation import JOINT_LAYER, JOINT_FILES, WRAP_LAYER
 from breaker_integration_preservation import BREAKER_FILES, BREAKER_MENU_ADDITIONS
 from tree_integration_preservation import (
     BARREL_GUARD, COMBINED_FILES, COMBINED_LAYER, FREEZER_FILES, FREEZER_PREVIEW,
@@ -44,6 +44,27 @@ class IntegratedPreservationTests(unittest.TestCase):
         contents.setdefault(MANUAL_LANGUAGE_PATH, self.manual_language_bytes)
         with patch.object(Path, 'read_bytes', lambda path: contents[path.relative_to(ROOT).as_posix()]):
             assert_milking_integration_preserved(ROOT, self.pins if pins is None else pins)
+
+    def test_tooltip_wrap_layer_is_exact_and_required(self):
+        for original, check in ((self.manifest, self.check_files), (self.pins, self.check_milking)):
+            changed = copy.deepcopy(original)
+            del changed[WRAP_LAYER]
+            with self.assertRaises(AssertionError): check(changed)
+            for field in original[WRAP_LAYER]:
+                changed = copy.deepcopy(original)
+                changed[WRAP_LAYER][field] = 'changed'
+                with self.subTest(field=field), self.assertRaises(AssertionError): check(changed)
+
+    def test_tooltip_bytes_cannot_be_rehashed_into_acceptance(self):
+        for original, check in ((self.manifest, self.check_files), (self.pins, self.check_milking)):
+            changed = copy.deepcopy(original)
+            path = changed[WRAP_LAYER]['path']
+            files = dict(self.files)
+            files[path] += b'// unrelated modification'
+            digest = hashlib.sha256(files[path]).hexdigest()
+            changed[WRAP_LAYER]['current_sha256'] = digest
+            if 'sha256' in changed: changed['sha256'][path] = digest
+            with self.assertRaises(AssertionError): check(changed, files=files)
 
     def test_joint_layer_is_required_and_all_fields_are_exact(self):
         for original, check in ((self.manifest, self.check_files), (self.pins, self.check_milking)):
@@ -141,7 +162,7 @@ class IntegratedPreservationTests(unittest.TestCase):
                     self.check_milking(pins)
 
     def test_milking_history_cannot_be_rewritten_or_dropped(self):
-        for key in self.pins.keys() - {'sha256', COMBINED_LAYER}:
+        for key in self.pins.keys() - {'sha256', COMBINED_LAYER, WRAP_LAYER}:
             for drop in (False, True):
                 pins = copy.deepcopy(self.pins)
                 if drop:

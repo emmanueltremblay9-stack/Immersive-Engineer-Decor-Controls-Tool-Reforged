@@ -1456,7 +1456,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
       Component blockBreakerTooltip = this.blockBreakerTooltip(mouseX, mouseY);
       if (blockBreakerTooltip != null) {
-         graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);
+         graphics.renderTooltip(this.font,
+            this.font.split(blockBreakerTooltip, milkingTooltipWidth(this.width)), mouseX, mouseY);
          return;
       }
 

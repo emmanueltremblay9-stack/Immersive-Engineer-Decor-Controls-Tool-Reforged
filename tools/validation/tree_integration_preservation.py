@@ -2,7 +2,7 @@
 import hashlib
 import json
 from breaker_integration_preservation import BREAKER_INTEGRATION, normalize_breaker_menu_tail
-from joint_machine_integration_preservation import (JOINT_LAYER, JOINT_FILES, assert_joint_integration_preserved, integrated_hash)
+from joint_machine_integration_preservation import (JOINT_LAYER, JOINT_FILES, WRAP_LAYER, assert_joint_integration_preserved, integrated_hash)
 
 
 MENU_TAIL_SHA256 = 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
@@ -109,10 +109,10 @@ def assert_combined_integration_preserved(root, manifest):
 def assert_milking_integration_preserved(root, pins):
     assert_combined_integration_preserved(root, pins)
     # Reconstruct the exact main snapshot before applying older-history guards.
-    normalized = {key: value for key, value in pins.items() if key != JOINT_LAYER}
+    normalized = {key: value for key, value in pins.items() if key not in (JOINT_LAYER, WRAP_LAYER)}
     normalized['sha256'] = dict(pins['sha256'])
     for path, record in JOINT_FILES.items():
-        assert pins['sha256'].get(path) == record['integrated_sha256'], 'Milking current pin changed: '+path
+        assert pins['sha256'].get(path) == integrated_hash(path, record['integrated_sha256']), 'Milking current pin changed: '+path
         normalized['sha256'][path] = record['main_sha256']
     pins = normalized
     # Reconstruct the two previous Java pins and the explicitly pinned manual

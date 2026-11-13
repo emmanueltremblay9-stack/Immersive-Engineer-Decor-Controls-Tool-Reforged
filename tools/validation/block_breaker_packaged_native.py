@@ -92,6 +92,10 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, lub
         if c['name'] in NAMES[1:8]:
             require(type(c.get('render_frames')) is int and c['render_frames'] >= 3
                     and c.get('tooltip', {}).get('in_bounds') is True, 'Native tooltip evidence missing')
+    fluid_tooltip = captures[3].get('tooltip', {})
+    require(type(fluid_tooltip.get('line_count')) is int and fluid_tooltip['line_count'] >= 4
+            and type(fluid_tooltip.get('width')) is int and 0 < fluid_tooltip['width'] <= min(240, width - 16),
+            'Fluid tooltip must be multiline and width bounded')
     title = captures[1]['tooltip']['text'].replace('\n', ' ')
     require(title == ('Small Block Breaker' if language == 'en_us' else 'Petit brise-bloc'),
             'Localized title differs: ' + title)

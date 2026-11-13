@@ -3,7 +3,7 @@
   "purpose": "Current tooltip-only Milking display snapshot, retaining the pre-recovery baseline and qualified renderer history. Includes the exact upstream Tree V3 layout integration. Not native qualification evidence.",
   "sha256": {
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "3f32ffeccd725fe8d54b95f5a54ae11acb8a31bfb124172bee60bbf420977723",
-    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "2c20b39756c1dc42df8c610d7b2d755fb3d6c52f4e0e4c16a6ddedd91191b3b2",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "916b05d77a586089d7ecf814f1f9ca4afeb6da2b2fadc0a15423eed67664e78f",
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "29a3c271ab8edac6e2c032279320266b94db3a28d044576d1771edf8fe530267",
     "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "15803c81755ece86eda38308c3fb1bae5dc4a4b21e46eb188fd92a1e781ea3c3",
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": "3dfb25d8e8d818f6436983b921b2db18d2644be4b28e38ad1d3d0fae4dbe795e",
@@ -147,5 +147,12 @@
         "integrated_sha256": "d9fa4353e1436583d6d3a0786ffae9daf42ee33500c7f7c52fdf7ed2ad6a5a97"
       }
     }
+  },
+  "breaker_tooltip_wrap": {
+    "parent_commit": "51cc4352763042589e151b9fba9bbe66c6381c11",
+    "scope": "Bound native Block Breaker tooltip text with the existing viewport-aware 240px split; no text, artwork, hover or gameplay change.",
+    "path": "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java",
+    "parent_sha256": "2c20b39756c1dc42df8c610d7b2d755fb3d6c52f4e0e4c16a6ddedd91191b3b2",
+    "current_sha256": "916b05d77a586089d7ecf814f1f9ca4afeb6da2b2fadc0a15423eed67664e78f"
   }
 }

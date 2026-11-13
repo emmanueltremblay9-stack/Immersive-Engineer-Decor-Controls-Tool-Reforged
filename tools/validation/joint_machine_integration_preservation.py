@@ -26,11 +26,15 @@ JOINT_INTEGRATION = {'main_commit': '28a70f534323511e38dcc99453d4019af9576a77',
                                                                                                          'breaker_sha256': '3611fbedb5d88a1775c2737d2da4a6f96d579c62491f576e74f8b395c9f6e51f',
                                                                                                          'integrated_sha256': 'd9fa4353e1436583d6d3a0786ffae9daf42ee33500c7f7c52fdf7ed2ad6a5a97'}}}
 JOINT_FILES = JOINT_INTEGRATION['files']
+WRAP_LAYER = 'breaker_tooltip_wrap'
+WRAP_RECORD = {'parent_commit': '51cc4352763042589e151b9fba9bbe66c6381c11', 'scope': 'Bound native Block Breaker tooltip text with the existing viewport-aware 240px split; no text, artwork, hover or gameplay change.', 'path': 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java', 'parent_sha256': '2c20b39756c1dc42df8c610d7b2d755fb3d6c52f4e0e4c16a6ddedd91191b3b2', 'current_sha256': '916b05d77a586089d7ecf814f1f9ca4afeb6da2b2fadc0a15423eed67664e78f'}
 
 def assert_joint_integration_preserved(root, manifest):
     assert manifest.get(JOINT_LAYER) == JOINT_INTEGRATION, 'Historical Milking/Breaker joint integration changed'
+    assert manifest.get(WRAP_LAYER) == WRAP_RECORD, 'Tooltip wrap provenance changed'
     for path, record in JOINT_FILES.items():
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == record['integrated_sha256'], path
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == integrated_hash(path, record['integrated_sha256']), path
 
 def integrated_hash(path, previous):
+    if path == WRAP_RECORD['path']: return WRAP_RECORD['current_sha256']
     return JOINT_FILES[path]['integrated_sha256'] if path in JOINT_FILES else previous

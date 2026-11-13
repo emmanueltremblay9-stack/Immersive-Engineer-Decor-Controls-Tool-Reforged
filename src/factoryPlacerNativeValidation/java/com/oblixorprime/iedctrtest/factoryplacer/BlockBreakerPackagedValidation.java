@@ -164,6 +164,8 @@ public final class BlockBreakerPackagedValidation {
                 };
                 require(actual.contains(expected), "Actual native translated tooltip differs: " + actual + " / " + expected);
                 require(observed.get("in_bounds").getAsBoolean(), "Tooltip clipped");
+                if (hoverIndex == 2) require(observed.get("line_count").getAsInt() >= 4
+                    && observed.get("width").getAsInt() <= Math.min(240, screen.width - 16), "Fluid tooltip must wrap within viewport");
                 capture(mc, NAMES[hoverIndex], observed);
                 if (++hoverIndex < POINTS.length) { ticks = 0; setHover(mc, screen); return; }
                 pending = mc.getSingleplayerServer().submit(() -> {
@@ -353,6 +355,7 @@ public final class BlockBreakerPackagedValidation {
                 width=Math.max(width,c.getWidth(event.getFont()));height+=c.getHeight();
             }
             tooltip=new JsonObject();tooltip.addProperty("text",text.toString());
+            tooltip.addProperty("line_count",event.getComponents().size());
             tooltip.addProperty("in_bounds",event.getX()-4>=0 && event.getY()-4>=0 && event.getX()+width+4<=screen.width && event.getY()+height+4<=screen.height);
             tooltip.addProperty("x",event.getX());tooltip.addProperty("y",event.getY());tooltip.addProperty("width",width);tooltip.addProperty("height",height);tooltipInFrame=true;
         } catch(Throwable error){finish(mc,error);}
