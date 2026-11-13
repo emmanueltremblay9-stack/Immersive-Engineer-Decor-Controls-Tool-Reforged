@@ -105,8 +105,10 @@ Insert an item that accepts FE into the charging slot. Every 20 ticks the panel 
 <np>
 Milking Machine
 Shop-floor utility
-<&small_milking_machine>Face the machine toward nearby adult cows. Without a redstone signal, it checks for milk every 120 ticks. A real empty bucket in the input can become a milk bucket in the output; otherwise milk goes into the 4,000 mB tank when there is room. Arrange removal of filled buckets or milk fluid.<br>
-With TerraFirmaCraft installed, its cow adapter respects native readiness, familiarity, sex, age and cooldown checks. Only compatible plain milk that fits is accepted; this does not make every animal milkable. This page describes the integrated behavior, not an experimental replacement interface.<br>
+<&small_milking_machine>Face the machine toward nearby adult cows. Without a redstone signal, vanilla cows (including Mooshrooms) provide milk every 120 ticks when storage permits. A real empty bucket in the input becomes a milk bucket in the output; otherwise milk goes into the 4,000 mB tank when there is room. Mooshrooms produce milk here, not mushroom stew. This machine does not consume FE.<br>
+With TerraFirmaCraft installed, its cow adapter respects native readiness, familiarity, sex, age and cooldown checks. A ready TFC cow can be milked without waiting for the vanilla 120-tick cadence. Only compatible plain milk that fits is accepted; this does not make every animal milkable.<br>
+The interface shows the animal selected by the server, including its custom name when available. An animal that is no longer visible to the client is shown as unavailable rather than replaced by another nearby animal. Hover the portrait or name for its identity.<br>
+The recovery indicator tracks the selected TFC cow's native cooldown, not extraction progress. Hover it for the remaining native ticks and machine restrictions. Vanilla cows have no native cooldown; their 120-tick production cadence is separate. Redstone pauses production, blocked storage prevents collection, and a refused ready TFC cow waits before retrying. The FE indicator stays neutral.<br>
 Compatible adjacent inventories behind or below can supply empty buckets and receive milk buckets automatically. Empty-bucket intake tries the rear first; filled-bucket output tries below first. The machine also pushes milk fluid downward. These transfers continue while redstone pauses milk production.<br>
 <np>
 Tree Cutter
