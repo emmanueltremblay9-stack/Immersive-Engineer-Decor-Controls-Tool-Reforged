@@ -68,6 +68,19 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       menu.setSmelterOutputDrawerOpen(false);
    }
 
+   // Public screen-space bounds for overlays; internal slots retain logical coordinates.
+   @Override
+   public int getGuiLeft() { return (int)Math.floor(originX); }
+
+   @Override
+   public int getGuiTop() { return (int)Math.floor(originY); }
+
+   @Override
+   public int getXSize() { return (int)Math.ceil(originX + imageWidth * viewScale) - getGuiLeft(); }
+
+   @Override
+   public int getYSize() { return (int)Math.ceil(originY + imageHeight * viewScale) - getGuiTop(); }
+
    @Override
    protected void init() {
       super.init();
