@@ -1,9 +1,7 @@
 Voltmeter Gauge
 Signal gauge
-<&recipe>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<&recipe>This gauge displays the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Mount it where neighboring redstone power can be checked at a glance.<br>
+Usage: Mount it on the block whose signal you want to read. It follows that block's direct or indirect redstone power and comparator output.<br>
 <br>
-Notes: Reads nearby redstone strength from 0 to 15.
-
-
+Notes: Displays a strength from 0 to 15. A source beside the gauge is not sufficient unless it powers the supporting block.

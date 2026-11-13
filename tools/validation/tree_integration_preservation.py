@@ -1,7 +1,8 @@
-"""Exact PR173/PR172 integration exceptions, not broad exclusions from preservation checks."""
+"""Exact Tree/Freezer/Milking integration layers, never broad preservation exclusions."""
 import hashlib
 import json
-from breaker_integration_preservation import BREAKER_INTEGRATION, BREAKER_FILES, normalize_breaker_menu_tail
+from breaker_integration_preservation import BREAKER_INTEGRATION, normalize_breaker_menu_tail
+from joint_machine_integration_preservation import (JOINT_LAYER, JOINT_FILES, assert_joint_integration_preserved, integrated_hash)
 
 
 MENU_TAIL_SHA256 = 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
@@ -18,6 +19,14 @@ BARREL_GUARD = 'tools/validation/check_barrel_reference_wiring.py'
 INTEGRATION_FILES = {
     **TREE_FILES,
     BARREL_GUARD: '89128c598d2e698f4f670b0551b8f918661fca3b836100890873853ec76bc7c3',
+}
+MILKING_FILES = {
+    'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java',
+    UTILITY + 'MachineBlockEntity.java',
+}
+MILKING_UPSTREAM_INTEGRATED_FILES = {
+    'src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java': '3f32ffeccd725fe8d54b95f5a54ae11acb8a31bfb124172bee60bbf420977723',
+    UTILITY + 'MachineLayout.java': TREE_FILES[UTILITY + 'MachineLayout.java'],
 }
 
 # PR172 is a separate layer: never rewrite the historical Solar or Tree pins.
@@ -55,6 +64,73 @@ HISTORICAL_FREEZER_PREVIEW = """   public ItemStack freezerPreviewStack() {
 """
 
 
+# PR169 + PR172 is a new layer, not a rewrite of either parent snapshot.
+COMBINED_LAYER = 'milking_freezer_integration'
+COMBINED_FILES = {
+    MACHINE_ENTITY: {
+        'main_sha256': '9a6678406008a817dd544df65f259eade10cc91c37a52bdca84f6ada18e88c63',
+        'milking_sha256': 'b3733c48d66419efeb818a2992ff67144642ddf36a08652c0394e8d45e78efd9',
+        'integrated_sha256': '24266c03ec35e12517d8b8f86d1ef53bf1a3e9d266666d38e645045155999128',
+    },
+    MACHINE_MENU: {
+        'main_sha256': '903cc15bbce612d9b5c7f150426fdce52858d63769eca9f7cdc16d6b43fb1ae2',
+        'milking_sha256': '0be659f78a3176707ea292e46a382df180ea220fa2039f6bf4ccbfd839785606',
+        'integrated_sha256': 'a8a3d691e191bf4dc5a9725e7c9e4e9b0e19b8647a5a6c1408e2f2a92dcc9fdd',
+    },
+}
+MILKING_CURRENT_HASHES = {
+    'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java': '2b0f8cc8bfeac9f421b6948833e4d88b7c993c5c633b6f26feebc6f96f2a0e6f',
+    MACHINE_ENTITY: COMBINED_FILES[MACHINE_ENTITY]['integrated_sha256'],
+}
+MILKING_CURRENT_HASHES = {path: integrated_hash(path, value) for path, value in MILKING_CURRENT_HASHES.items()}
+COMBINED_RECORD_SHA256 = '0c3b5b944b410bbdf51fc1217c4ee38d8873b8a1e5d197bc7ef9c95622dfa01b'
+MANUAL_RECORD_SHA256 = '75042ba4e5dae1de9c8ec5a768918d0ef36e1acb4848ebdcd02858317a5bcf41'
+MANUAL_LANGUAGE_PATH = 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json'
+MANUAL_PREVIOUS_SHA256 = 'f415594130353f155a9fd9a9c26e40cacbf3dc618a07d1dfa8f1d73609881763'
+MANUAL_INTEGRATED_SHA256 = '5f737152b4a5e1c372b28c21324fa3287c2896bf7a594146abc1e0541d8e482b'
+MILKING_HISTORY_SHA256 = '98738d898787992b47a95c442899641d11b2ac0c8453294c6383c7c01f26c7f1'
+FREEZER_HISTORY_SHA256 = 'c2575fe1829e86641cb2b21af54bbbf301cdccab789aaa78ca6f624124bec1c4'
+
+
+def record_sha256(record):
+    return hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def assert_combined_integration_preserved(root, manifest):
+    """Pin both parent identities and current bytes independently of editable manifests."""
+    assert_joint_integration_preserved(root, manifest)
+    combined = manifest.get(COMBINED_LAYER)
+    assert record_sha256(combined) == COMBINED_RECORD_SHA256, 'Combined Milking/Freezer integration changed'
+    for path, record in COMBINED_FILES.items():
+        assert record['main_sha256'] == FREEZER_FILES[path]['integrated_sha256'], path
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == integrated_hash(path, record['integrated_sha256']), path
+
+
+def assert_milking_integration_preserved(root, pins):
+    assert_combined_integration_preserved(root, pins)
+    # Reconstruct the exact main snapshot before applying older-history guards.
+    normalized = {key: value for key, value in pins.items() if key != JOINT_LAYER}
+    normalized['sha256'] = dict(pins['sha256'])
+    for path, record in JOINT_FILES.items():
+        assert pins['sha256'].get(path) == record['integrated_sha256'], 'Milking current pin changed: '+path
+        normalized['sha256'][path] = record['main_sha256']
+    pins = normalized
+    # Reconstruct the two previous Java pins and the explicitly pinned manual
+    # language integration. Baselines, renderer history, Tree provenance and
+    # unaffected current pins stay exact.
+    history = {key: value for key, value in pins.items() if key not in (COMBINED_LAYER, 'manual_integration')}
+    history['sha256'] = dict(pins['sha256'])
+    if 'manual_integration' in pins:
+        assert record_sha256(pins['manual_integration']) == MANUAL_RECORD_SHA256, 'Manual integration provenance changed'
+        assert pins['sha256'].get(MANUAL_LANGUAGE_PATH) == MANUAL_INTEGRATED_SHA256, 'Manual integration pin changed'
+        assert hashlib.sha256((root / MANUAL_LANGUAGE_PATH).read_bytes()).hexdigest() == integrated_hash(MANUAL_LANGUAGE_PATH, MANUAL_INTEGRATED_SHA256), 'Manual integration bytes changed'
+        history['sha256'][MANUAL_LANGUAGE_PATH] = MANUAL_PREVIOUS_SHA256
+    for path, record in COMBINED_FILES.items():
+        assert pins['sha256'].get(path) == record['integrated_sha256'], path
+        history['sha256'][path] = record['milking_sha256']
+    assert record_sha256(history) == MILKING_HISTORY_SHA256, 'Historical Milking preservation changed'
+
+
 def assert_menu_tail_preserved(source):
     """Normalize only the exact Tree accessor and complete Freezer preview method."""
     marker = '   private static MenuType<?> resolveMenuType'
@@ -67,8 +143,12 @@ def assert_menu_tail_preserved(source):
     assert hashlib.sha256(normalized.encode()).hexdigest() == MENU_TAIL_SHA256, 'Menu transfer/data/validation changed'
 
 
-def assert_solar_baseline_preserved(root, preserved):
+def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None):
     """Retain historical pins and admit only exact documented integration identities."""
+    milking_current_hashes = milking_current_hashes or {}
+    assert set(milking_current_hashes) == MILKING_FILES, 'Unexpected Milking current-hash allowlist'
+    assert milking_current_hashes == MILKING_CURRENT_HASHES, 'Milking current hashes changed'
+    assert_combined_integration_preserved(root, preserved)
     assert preserved['remote_baseline_commit'] == '15593b28a6853ba36775ebb419b8465a5e2f3240'
     assert preserved['baseline_tree'] == '6dc6f3185624808ce7127331bb2f62c26f102d34'
     files = preserved['files']
@@ -85,11 +165,9 @@ def assert_solar_baseline_preserved(root, preserved):
         assert record['baseline_sha256'] == files[path], path
         assert isinstance(record['reason'], str) and record['reason'].strip(), path
         assert record['integrated_sha256'] == INTEGRATION_FILES[path], path
+    assert preserved.get('block_breaker_lubricant_integration') == BREAKER_INTEGRATION, 'Breaker integration identity changed'
     freezer = preserved['freezer_fluid_automation_integration']
-    assert hashlib.sha256(json.dumps(freezer, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == 'c2575fe1829e86641cb2b21af54bbbf301cdccab789aaa78ca6f624124bec1c4', 'Historical Freezer integration changed'
-    assert preserved['block_breaker_lubricant_integration'] == BREAKER_INTEGRATION, 'Breaker integration identity changed'
-    for path, record in BREAKER_FILES.items():
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == record['integrated_sha256'], path
+    assert record_sha256(freezer) == FREEZER_HISTORY_SHA256, 'Historical Freezer integration changed'
     assert freezer['main_commit'] == FREEZER_MAIN_COMMIT
     assert freezer['freezer_commit'] == FREEZER_COMMIT
     freezer_overrides = freezer['files']
@@ -99,13 +177,13 @@ def assert_solar_baseline_preserved(root, preserved):
         for key, expected in expected_record.items():
             assert record[key] == expected, (path, key)
         assert isinstance(record['reason'], str) and record['reason'].strip(), path
-        expected = BREAKER_FILES[path]['integrated_sha256'] if path in BREAKER_FILES else expected_record['integrated_sha256']
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == expected, path
+        # These are historical PR172 bytes. Current combined bytes were checked
+        # independently above, against the new exact integration identity.
     for path, expected in files.items():
         if path in overrides:
             expected = overrides[path]['integrated_sha256']
-        if path in FREEZER_FILES:
-            expected = FREEZER_FILES[path]['integrated_sha256']
-        if path in BREAKER_FILES:
-            expected = BREAKER_FILES[path]['integrated_sha256']
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == expected, path
+        if path in milking_current_hashes:
+            expected = milking_current_hashes[path]
+        if path in COMBINED_FILES:
+            expected = COMBINED_FILES[path]['integrated_sha256']
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == integrated_hash(path, expected), path

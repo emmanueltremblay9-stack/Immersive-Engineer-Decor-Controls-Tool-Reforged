@@ -1,7 +1,7 @@
 Iron Hatch
 Industrial access point
-<&recipe>This block provides a rugged access point for service rooms, shafts, roofs, and machine enclosures.<br>
+<&recipe>The Iron Hatch opens by right-click or redstone. Redstone keeps it open until the signal is removed.<br>
 <br>
-Usage: Install it where the build needs a controlled maintenance opening.<br>
-
-
+Usage: For a climbable exit, place a ladder directly below and align its supporting edge with the open hatch's leaf. Vanilla ladders, Metal Rung Ladders, and Staggered Metal Steps can continue through this aligned opening.<br>
+<br>
+A closed hatch or a ladder on a different side does not provide this climbing connection.

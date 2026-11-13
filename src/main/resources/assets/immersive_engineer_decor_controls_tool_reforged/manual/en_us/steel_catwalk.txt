@@ -1,7 +1,7 @@
 Steel Catwalk
 Service access fitting
-<&recipe>This block forms readable service routes around machinery.<br>
+<&recipe>The Steel Catwalk provides a walking deck with up to four independently fitted edge railings.<br>
 <br>
-Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
-
-
+Usage: Hold a Steel Railing and right-click near the edge to add or remove that side. Each addition costs one railing in Survival. Paid additions can be returned when removed; Creative additions do not create extra refunds.<br>
+<br>
+Aim at a railing and mine it to remove that side only. Mine the deck to remove the catwalk and its remaining paid railings. Normal tool and loot rules apply.
