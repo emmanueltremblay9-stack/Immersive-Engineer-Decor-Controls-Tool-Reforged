@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.client;
 
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceLiveState;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
@@ -18,8 +19,9 @@ import org.lwjgl.glfw.GLFW;
 /**
  * DEVELOPMENT/VALIDATION experiment, not the production Freezer GUI.
  * Exact snapshot mode retains the whole PNG with baked frost and energy.
- * Separate live-energy mode samples its source cells using synchronized FE. Frost
- * remains static in both modes, explicitly disclosed alongside real progress/status.
+ * Live mode samples source energy cells and draws reconstructed chamber/frost layers
+ * from the synchronized server phase. Decorative rim frost remains static. Exact
+ * snapshot mode retains all original pixels. Neither mode is the production default.
  * Vanilla still owns slot rendering, item count/durability overlays, carried stacks,
  * selection, drag splitting and packets. Only the presentation coordinate space changes.
  */
@@ -28,6 +30,13 @@ public final class FreezerReferenceScreen extends AbstractContainerScreen<Machin
    private static final String FREEZER_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.";
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
       "immersive_engineer_decor_controls_tool_reforged", "textures/gui/freezer_reference_v5/background.png");
+   private static final ResourceLocation CLEAN_CHAMBER = frostTexture("freezer_v5_chamber_clean_base.png");
+   private static final List<ResourceLocation> FROST_LAYERS = java.util.stream.IntStream.rangeClosed(0, 4)
+      .mapToObj(i -> frostTexture("freezer_v5_frost_overlay_phase" + i + ".png")).toList();
+   private static ResourceLocation frostTexture(String filename) {
+      return ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged",
+         "textures/gui/freezer_reference_v5/" + filename);
+   }
    private FreezerReferenceGeometry.ViewTransform view = FreezerReferenceGeometry.fit(314, 314);
    private final FreezerReferenceLiveState.PreviewMode previewMode;
    private Button recoveryButton;
@@ -151,8 +160,6 @@ public final class FreezerReferenceScreen extends AbstractContainerScreen<Machin
       } else {
          var frost = liveFrost();
          graphics.renderTooltip(font, List.of(
-            Component.translatableWithFallback(PREFIX + "static_frost",
-               "STATIC FROST ART: no clean chamber layer is available."),
             Component.translatable(FREEZER_PREFIX + "tooltip.progress", frost.ticks(), frost.totalTicks()),
             Component.translatable(FREEZER_PREFIX + "tooltip.phase", frost.phase()),
             Component.translatable(FREEZER_PREFIX + "tooltip.status",
@@ -164,10 +171,20 @@ public final class FreezerReferenceScreen extends AbstractContainerScreen<Machin
 
    @Override
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-      // The immutable original remains the base, including all frost and housing.
-      graphics.blit(FACEPLATE, 0, 0, imageWidth, imageHeight, 0, 0,
+      // The exact snapshot keeps the immutable reference. Only the opt-in live mode
+      // uses the specialist's aligned reconstruction; pixels outside its mask match.
+      boolean dynamicFrost = previewMode == FreezerReferenceLiveState.PreviewMode.LIVE_ENERGY;
+      graphics.blit(dynamicFrost ? CLEAN_CHAMBER : FACEPLATE, 0, 0, imageWidth, imageHeight, 0, 0,
          FreezerReferenceGeometry.SOURCE_WIDTH, FreezerReferenceGeometry.SOURCE_HEIGHT,
          FreezerReferenceGeometry.SOURCE_WIDTH, FreezerReferenceGeometry.SOURCE_HEIGHT);
+      if (dynamicFrost) {
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
+         graphics.blit(FROST_LAYERS.get(liveFrost().phase()), 0, 0, imageWidth, imageHeight,
+            0, 0, FreezerReferenceGeometry.SOURCE_WIDTH, FreezerReferenceGeometry.SOURCE_HEIGHT,
+            FreezerReferenceGeometry.SOURCE_WIDTH, FreezerReferenceGeometry.SOURCE_HEIGHT);
+         RenderSystem.disableBlend();
+      }
       var patches = FreezerReferenceLiveState.energyPatches(previewMode, liveEnergy());
       if (!patches.isEmpty()) {
          graphics.pose().pushPose();
@@ -186,7 +203,7 @@ public final class FreezerReferenceScreen extends AbstractContainerScreen<Machin
             graphics.pose().popPose();
          }
       }
-      // No frosting overlay: the original frost cannot be separated without a clean layer.
+      // No client timer or phase inference: the server alone selects the frost layer.
    }
 
    @Override

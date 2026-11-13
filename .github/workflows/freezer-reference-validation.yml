@@ -48,7 +48,7 @@ jobs:
         shell: bash
         run: |
           echo "Tested checkout: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
-          echo 'Native runs are bounded interaction checks, not full visual acceptance. Frost remains static. No release is published.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Native runs are bounded interaction checks, not full visual acceptance. Chamber frost follows server phases in opt-in live mode; decorative rim remains static. No release is published.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Required native checklist: docs/testing/freezer-reference-exact/README.md' >> "$GITHUB_STEP_SUMMARY"
       - name: Retain validation reports
         if: always()

@@ -64,7 +64,7 @@ public final class FreezerReferenceLiveStateChecks {
    public static void checkFrostSnapshots() {
       var defaults = FreezerReferenceLiveState.frost(0, 180, 0, 0, false);
       equal(0, defaults.percent(), "default zero progress");
-      check(defaults.artworkIsStatic() && !defaults.cleanChamberAssetAvailable(), "missing-layer disclosure");
+      check(!defaults.artworkIsStatic() && defaults.cleanChamberAssetAvailable(), "candidate layer availability");
       for (int status = 0; status <= 6; status++) {
          for (int phase = 0; phase <= 4; phase++) {
             var state = FreezerReferenceLiveState.frost(1, 180, phase, status, status == 3);
@@ -207,7 +207,7 @@ public final class FreezerReferenceLiveStateChecks {
          // Enlarged source crop intentionally includes preserved warm housing reflections.
          BufferedImage crop = result.getSubimage(495, 662, 305, 44);
          g.drawImage(crop, 12 + i * 330, 382, null);
-         g.drawString("Frost artwork remains STATIC", 12 + i * 330, 451);
+         g.drawString("Energy-only CPU preview; frost not rendered here", 12 + i * 330, 451);
       }
       g.setFont(new Font("Dialog", Font.PLAIN, 12));
       g.drawString("Source-derived cells; metallic reflection retained. Full proof: outside rounded energy mask = 0 changed pixels.", 12, 480);

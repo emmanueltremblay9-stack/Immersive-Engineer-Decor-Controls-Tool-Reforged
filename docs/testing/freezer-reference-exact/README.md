@@ -1,3 +1,7 @@
+# Current opt-in dynamic chamber candidate
+
+See [dynamic integration](dynamic-frost/INTEGRATION.md). Live-energy mode now also draws reconstructed chamber layers by server phase. Exact snapshot remains original and production remains unchanged. Sections below are historical static-stage evidence, not current dynamic qualification.
+
 # Freezer V5 exact-reference binding experiment
 
 LOCAL DEVELOPMENT ONLY. NOT FINISHED GUI OR FUNCTIONAL ACCEPTANCE.

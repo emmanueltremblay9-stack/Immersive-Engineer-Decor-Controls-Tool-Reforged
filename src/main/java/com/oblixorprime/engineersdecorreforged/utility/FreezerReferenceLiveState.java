@@ -6,7 +6,8 @@ import java.util.List;
 /**
  * Client presentation model only: no clock, recipe, inventory, or machine mutation.
  * Every energy patch samples the original V5 texture. No generated replacement art.
- * The frost is baked into that texture and deliberately has NO live drawing plan.
+ * Dynamic frost uses aligned specialist candidate layers in live mode.
+ * Decorative rim frost is retained; exact snapshot mode remains unchanged.
  */
 public final class FreezerReferenceLiveState {
    public static final int ENERGY_CELLS = 11;
@@ -73,8 +74,8 @@ public final class FreezerReferenceLiveState {
    public record FrostState(int ticks, int totalTicks, int phase, int status, boolean redstonePowered) {
       public double fraction() { return totalTicks == 0 ? 0.0D : (double)ticks / totalTicks; }
       public int percent() { return totalTicks == 0 ? 0 : (int)((long)ticks * 100 / totalTicks); }
-      public boolean artworkIsStatic() { return true; }
-      public boolean cleanChamberAssetAvailable() { return false; }
+      public boolean artworkIsStatic() { return false; }
+      public boolean cleanChamberAssetAvailable() { return true; }
    }
 
    public static FrostState frost(int rawTicks, int rawTotal, int rawPhase, int status, boolean redstonePowered) {
@@ -83,7 +84,7 @@ public final class FreezerReferenceLiveState {
          Math.max(0, Math.min(4, rawPhase)), status, redstonePowered);
    }
 
-   /** Intentionally empty until an independently reviewed clean chamber and frost layer exist. */
+   /** Legacy source-patch API: frost layers are dedicated textures, never source-copy patches. */
    public static List<TexturePatch> frostPatches(FrostState state) {
       if (state == null) throw new IllegalArgumentException("A synchronized state is required");
       return List.of();

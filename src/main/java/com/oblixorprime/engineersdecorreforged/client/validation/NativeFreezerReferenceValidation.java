@@ -50,6 +50,9 @@ final class NativeFreezerReferenceValidation {
    private static int ticks;
    private static int energyIndex;
    private static int stableFrames;
+   private static int previousFrostPhase;
+   private static int frostStableFrames;
+   private static final boolean[] FROST_SEEN = new boolean[4];
    private static int serverMenuId;
    private static int oldMenuId;
    private static Path directory;
@@ -59,6 +62,7 @@ final class NativeFreezerReferenceValidation {
    private static CompletableFuture<?> setup;
    private static CompletableFuture<Boolean> inspection;
    private static final JsonArray CAPTURES = new JsonArray();
+   private static final JsonArray FROST_CAPTURES = new JsonArray();
    private static final JsonArray CASES = new JsonArray();
 
    private NativeFreezerReferenceValidation() { }
@@ -77,6 +81,10 @@ final class NativeFreezerReferenceValidation {
       playerId = mc.player.getUUID();
       while (CAPTURES.size() > 0) CAPTURES.remove(CAPTURES.size() - 1);
       while (CASES.size() > 0) CASES.remove(CASES.size() - 1);
+      while (FROST_CAPTURES.size() > 0) FROST_CAPTURES.remove(FROST_CAPTURES.size() - 1);
+      java.util.Arrays.fill(FROST_SEEN, false);
+      previousFrostPhase = -1;
+      frostStableFrames = 0;
       energyIndex = 0;
       serverMenuId = -1;
       setup = mc.getSingleplayerServer().submit(() -> {
@@ -137,6 +145,11 @@ final class NativeFreezerReferenceValidation {
             if (++stableFrames < 8) return false;
             require(menu.getSlot(0).getItem().isEmpty() && menu.freezerProgressTicks() == 0, "Energy frames must not fake processing");
             capture(mc, "energy-" + expected, menu);
+            if (energyIndex == 0) {
+               require(menu.freezerPhase() == 0, "Idle phase must be server zero");
+               capture(mc, "frost-phase-0", menu);
+               FROST_SEEN[0] = true;
+            }
             if (++energyIndex < 3) {
                setup = mc.getSingleplayerServer().submit(() -> {
                   require(machine.energyStorage(null).receiveEnergy(8000, false) == 8000, "Real FE storage rejected fixture energy");
@@ -245,11 +258,24 @@ final class NativeFreezerReferenceValidation {
             enter(Stage.PROCESS);
          }
          case PROCESS -> {
+            // Natural recipe captures only phases 1..3. The server sets phase 4 at
+            // completion then resets it in the same tick: never invent a hold/frame.
+            int phase = menu.freezerPhase();
+            if (phase != previousFrostPhase) { previousFrostPhase = phase; frostStableFrames = 0; }
+            if (phase > 0 && phase < 4 && !FROST_SEEN[phase] && ++frostStableFrames >= 3) {
+               require(menu.freezerProgressTicks() >= phase * 45
+                  && menu.freezerProgressTicks() < (phase + 1) * 45, "Phase/progress disagree");
+               capture(mc, "frost-phase-" + phase, menu);
+               FROST_SEEN[phase] = true;
+            }
             if (!menu.getSlot(0).getItem().isEmpty() || !is(menu.getSlot(2).getItem(), Items.PACKED_ICE, 1)
                || menu.energyStored() != 0 || menu.freezerProgressTicks() != 0
                || !serverMatches(mc, p -> machine.getItem(0).isEmpty() && is(machine.getItem(2), Items.PACKED_ICE, 1)
                   && machine.energyStorage(null).getEnergyStored() == 0 && countDirt(p) == 5)) return false;
             casePassed("real_recipe_consumes_1440_fe");
+            for (boolean seen : FROST_SEEN) require(seen, "Natural recipe missed a frost phase capture");
+            require(menu.freezerPhase() == 0, "Completed recipe must return to server phase zero");
+            casePassed("natural_frost_phases_0_to_3_and_completion_reset");
             moveCursorAway(mc);
             enter(Stage.DONE);
          }
@@ -375,6 +401,22 @@ final class NativeFreezerReferenceValidation {
          capture.addProperty("meter_sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(meterFile))));
          capture.addProperty("meter_width", x1 - x0);
          capture.addProperty("meter_height", y1 - y0);
+         // Conservative interior glass crop only, excluding animated world and FE.
+         int fx0 = (int)Math.floor(view.screenX(460 * factor) * pixelX);
+         int fy0 = (int)Math.floor(view.screenY(390 * factor) * pixelY);
+         int fx1 = (int)Math.ceil(view.screenX(795 * factor) * pixelX);
+         int fy1 = (int)Math.ceil(view.screenY(555 * factor) * pixelY);
+         Path frostFile = folder.resolve(label + "-frost.png");
+         require(!Files.exists(frostFile), "Refusing stale frost crop");
+         try (var crop = new NativeImage(fx1 - fx0, fy1 - fy0, false)) {
+            for (int y = fy0; y < fy1; y++) for (int x = fx0; x < fx1; x++)
+               crop.setPixelRGBA(x - fx0, y - fy0, frame.getPixelRGBA(x, y));
+            crop.writeToFile(frostFile);
+         }
+         capture.addProperty("frost_name", frostFile.getFileName().toString());
+         capture.addProperty("frost_sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(frostFile))));
+         capture.addProperty("frost_width", fx1 - fx0);
+         capture.addProperty("frost_height", fy1 - fy0);
       }
       capture.addProperty("name", file.getFileName().toString());
       capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file))));
@@ -383,7 +425,9 @@ final class NativeFreezerReferenceValidation {
       capture.addProperty("menu_id", menu.containerId);
       capture.addProperty("screen_class", mc.screen.getClass().getName());
       capture.addProperty("view_scale", ((FreezerReferenceScreen)mc.screen).validationViewTransform().scale());
-      CAPTURES.add(capture);
+      capture.addProperty("phase", menu.freezerPhase());
+      capture.addProperty("progress_ticks", menu.freezerProgressTicks());
+      if (label.startsWith("frost-phase-")) FROST_CAPTURES.add(capture); else CAPTURES.add(capture);
    }
    private static void casePassed(String name) { CASES.add(name); }
    private static void writeProof(Minecraft mc) throws Exception {
@@ -395,12 +439,16 @@ final class NativeFreezerReferenceValidation {
       proof.addProperty("executed_source_sha", System.getProperty("iedctr.executedSourceSha"));
       proof.addProperty("actual_integrated_world", true);
       proof.addProperty("source_art_sha256", FreezerReferenceGeometry.SOURCE_SHA256);
-      proof.addProperty("frost_art_static", true);
+      proof.addProperty("frost_art_static", false);
+      proof.addProperty("decorative_rim_frost_static", true);
+      proof.addProperty("phase_source", "server_menu_phase_natural_recipe");
+      proof.addProperty("phase4_native_observed", false);
       proof.addProperty("menu_slot_count", current(mc).slots.size());
       proof.addProperty("native_visual_acceptance", false);
       proof.addProperty("input_method", "real Screen.mouseClicked/mouseReleased, vanilla packets, server observation; no physical OS input");
       proof.add("cases", CASES.deepCopy());
       proof.add("captures", CAPTURES.deepCopy());
+      proof.add("frost_captures", FROST_CAPTURES.deepCopy());
       Files.writeString(directory.resolve("client-freezer-reference-result.json"), new GsonBuilder().setPrettyPrinting().create().toJson(proof) + "\n");
    }
    private static void require(boolean condition, String message) {

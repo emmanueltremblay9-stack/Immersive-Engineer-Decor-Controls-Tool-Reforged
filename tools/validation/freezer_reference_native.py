@@ -29,7 +29,7 @@ CASES = {
     "pickup_from_hotbar", "right_click_places_one_input", "output_rejects_insertion",
     "return_carried_stack", "full_inventory_preserves_reserved",
     "recovery_preserves_count_and_components", "repeated_recovery_no_duplicate",
-    "close_reaches_server", "reopen_preserves_inventory_and_geometry", "real_recipe_consumes_1440_fe",
+    "close_reaches_server", "reopen_preserves_inventory_and_geometry", "real_recipe_consumes_1440_fe", "natural_frost_phases_0_to_3_and_completion_reset",
 }
 CAPTURES = {"energy-0.png": (0, 0), "energy-8000.png": (8000, 5),
             "energy-16000.png": (16000, 11), "completed-recipe.png": (0, 0)}
@@ -52,7 +52,10 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
             or proof.get("executed_source_sha") != source_sha
             or proof.get("source_art_sha256") != ART_SHA
             or proof.get("actual_integrated_world") is not True
-            or proof.get("frost_art_static") is not True
+            or proof.get("frost_art_static") is not False
+            or proof.get("decorative_rim_frost_static") is not True
+            or proof.get("phase_source") != "server_menu_phase_natural_recipe"
+            or proof.get("phase4_native_observed") is not False
             or proof.get("native_visual_acceptance") is not False
             or type(proof.get("menu_slot_count")) is not int or proof["menu_slot_count"] != 39):
         raise SmokeFailure("Freezer proof identity, bounded scope or slot contract differs")
@@ -115,6 +118,58 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
         raise SmokeFailure("Reopened Freezer did not get a new menu identity")
     if len({hashes[name] for name in CAPTURES if name.startswith("energy-")}) != 3:
         raise SmokeFailure("Native meter crops are duplicates, not live gauge changes")
+    frost_captures = proof.get("frost_captures")
+    if not isinstance(frost_captures, list) or len(frost_captures) != 4:
+        raise SmokeFailure("Missing natural frost phase captures")
+    seen_phases, frost_hashes = set(), set()
+    for capture in frost_captures + captures:
+        phase, ticks = capture.get("phase"), capture.get("progress_ticks")
+        if type(phase) is not int or type(ticks) is not int:
+            raise SmokeFailure("Invalid synchronized frost state")
+        natural = capture in frost_captures
+        if natural:
+            if phase not in range(4) or phase in seen_phases or capture.get("name") != f"frost-phase-{phase}.png":
+                raise SmokeFailure("Invalid or duplicate natural phase")
+            if not (ticks == 0 if phase == 0 else phase * 45 <= ticks < (phase + 1) * 45):
+                raise SmokeFailure("Natural phase/progress mismatch")
+            if (capture.get("width") != width or capture.get("height") != height
+                    or (phase > 0 and capture.get("energy") != 1440 - 8 * ticks)):
+                raise SmokeFailure("Natural frost capture dimensions/real FE differ")
+            seen_phases.add(phase)
+            if capture.get("screen_class") != SCREEN_CLASS or capture.get("menu_id") != (menu_ids["energy-0.png"] if phase == 0 else menu_ids["completed-recipe.png"]):
+                raise SmokeFailure("Frost capture menu identity changed")
+            frame_path = game / "freezer-reference-screenshots" / capture["name"]
+            if not frame_path.is_file() or frame_path.is_symlink():
+                raise SmokeFailure("Missing frost framebuffer")
+            data = frame_path.read_bytes()
+            if len(data) < 33 or data[:16] != b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR" or hashlib.sha256(data).hexdigest() != capture.get("sha256") or struct.unpack(">II", data[16:24]) != (width, height):
+                raise SmokeFailure("Frost framebuffer bytes/dimensions differ")
+        elif phase != 0 or ticks != 0:
+            raise SmokeFailure("Idle/completed frost must reflect server reset")
+        scale = min(1, (min(width, height) - 12) / 314)
+        if (type(capture.get("view_scale")) not in (int, float) or not math.isfinite(capture["view_scale"])
+                or abs(capture["view_scale"] - scale) > 0.00001):
+            raise SmokeFailure("Frost viewport differs")
+        ox, oy = (width - 314 * scale) / 2, (height - 314 * scale) / 2
+        fw = math.ceil(ox + 795 * 314 / 1254 * scale) - math.floor(ox + 460 * 314 / 1254 * scale)
+        fh = math.ceil(oy + 555 * 314 / 1254 * scale) - math.floor(oy + 390 * 314 / 1254 * scale)
+        name = capture["name"][:-4] + "-frost.png"
+        path = game / "freezer-reference-screenshots" / name
+        if capture.get("frost_name") != name or not path.is_file() or path.is_symlink():
+            raise SmokeFailure("Missing frost crop")
+        data = path.read_bytes()
+        if (len(data) < 33 or data[:16] != b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR"
+                or struct.unpack(">II", data[16:24]) != (fw, fh)
+                or capture.get("frost_width") != fw or capture.get("frost_height") != fh
+                or hashlib.sha256(data).hexdigest() != capture.get("frost_sha256")):
+            raise SmokeFailure("Frost crop hash or geometry differs")
+        if natural:
+            frost_hashes.add(capture["frost_sha256"])
+    if len(frost_hashes) != 4:
+        raise SmokeFailure("Natural frost crops do not show distinct phases")
+    zero_hash = next(c["frost_sha256"] for c in frost_captures if c["phase"] == 0)
+    if any(c["frost_sha256"] != zero_hash for c in captures):
+        raise SmokeFailure("Idle/completed chamber differs from phase zero")
     if f"IEDCTR_FREEZER_REFERENCE PASSED nonce={nonce}" not in logs:
         raise SmokeFailure("Missing current-run Freezer completion marker")
     return proof
@@ -201,7 +256,7 @@ def main() -> int:
         if final_status or final_sha != source_sha:
             raise SmokeFailure("Candidate changed during native execution; source identity is not exact")
         validate_proof(proof, main_proof, nonce, source_sha, game, logs, code, expired, 1280, args.height, args.language)
-        print("PASS bounded native Freezer smoke. Frost remains static; full visual/input acceptance is not claimed.")
+        print("PASS bounded native Freezer smoke. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError) as error:
         print(f"FAIL: {error}", file=sys.stderr)
