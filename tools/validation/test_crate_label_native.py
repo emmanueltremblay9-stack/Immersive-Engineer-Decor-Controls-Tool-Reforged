@@ -78,4 +78,14 @@ class CrateNativeProofTests(unittest.TestCase):
         self.assertIn('clean() and final_sha == sha and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha',source)
 
 
+    def test_labels_render_after_single_background_and_widget_pass(self):
+        root=Path(__file__).resolve().parents[2]
+        source=(root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/LabeledCrateEditScreen.java').read_text()
+        render=source.split('public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {',1)[1].split('public boolean keyPressed',1)[0]
+        self.assertEqual(render.count('super.render(graphics, mouseX, mouseY, partialTick);'),1)
+        self.assertNotIn('this.renderBackground(',render)
+        self.assertLess(render.index('super.render('),render.index('graphics.drawCenteredString('))
+        self.assertEqual(render.count('graphics.drawCenteredString('),2)
+
+
 if __name__=='__main__':unittest.main()

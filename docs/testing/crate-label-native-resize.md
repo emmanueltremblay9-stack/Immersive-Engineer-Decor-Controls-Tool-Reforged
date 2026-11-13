@@ -40,3 +40,18 @@ The runner accepts only a matching source SHA, nonce, exact normal JAR, packaged
 screen provenance, case sequence, language/dimensions, decoded screenshot, clean
 source and successful client exit. `test_crate_label_native.py` tests these proof
 guards synthetically; its success alone is not Minecraft execution evidence.
+
+## Native capture finding: labels blurred twice
+
+The first native EN/FR captures showed sharp widgets but illegible, blurred title
+and hint text. `LabeledCrateEditScreen.render` explicitly rendered the background,
+then labels, then called `Screen.render`, which renders the background again
+before rendering widgets. The [official NeoForge 1.21.1 Screen patch](https://raw.githubusercontent.com/neoforged/NeoForge/1.21.1/patches/net/minecraft/client/gui/screens/Screen.java.patch)
+shows that superclass call to `renderBackground` and its blur path.
+
+The bounded correction calls `super.render` first and draws title/hint afterwards,
+without an additional background call. Coordinates, colors, strings, artwork and
+widget layout are unchanged. A regression guard enforces one superclass render,
+no explicit background render, and labels after that pass. Fresh native captures
+must be compared independently to confirm restored legibility; the guard itself
+is not pixel-level visual evidence. No arbitrary sharpness threshold is imposed.
