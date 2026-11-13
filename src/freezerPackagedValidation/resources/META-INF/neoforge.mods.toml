@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="iedctr_freezer_validation"
+version="1.0"
+displayName="IEDCTR Freezer opt-in isolated provenance harness"
+
+[[dependencies.iedctr_freezer_validation]]
+modId="immersive_engineer_decor_controls_tool_reforged"
+type="required"
+versionRange="[0,)"
+ordering="AFTER"
+side="CLIENT"

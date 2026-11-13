@@ -25,6 +25,12 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from freezer_reference_native import validate_proof, ART_SHA
 from freezer_packaged_proof import validate_runtime
 
+def require_client_success(code, expired, log):
+    """Report the process failure before attempting to read absent evidence."""
+    if expired or type(code) is not int or code != 0:
+        raise SmokeFailure(f"Freezer packaged client failed (exit={code}, timeout={expired}); inspect {log}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
@@ -103,13 +109,16 @@ def main() -> int:
         log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 1280x{args.height}x24"]
                                     + gradle + ["runFreezerPackagedOptInClient"], project, env, log, args.timeout)
-        proof = json.loads((game / "client-freezer-reference-result.json").read_text())
-        main_proof = json.loads((game / "client-gameplay-result.json").read_text())
+        require_client_success(code, expired, log)
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):
             runtime = game / "logs" / name
             if runtime.is_file():
                 logs += "\n" + runtime.read_text(errors="replace")
+        if FATAL_PATTERN.search(logs):
+            raise SmokeFailure(f"Freezer packaged client emitted fatal errors; inspect {log}")
+        proof = json.loads((game / "client-freezer-reference-result.json").read_text())
+        main_proof = json.loads((game / "client-gameplay-result.json").read_text())
         final_status = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], cwd=project,
                                       check=True, capture_output=True, text=True).stdout.strip()
         final_sha = subprocess.run(["git", "rev-parse", "HEAD"], cwd=project, check=True,
