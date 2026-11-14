@@ -335,6 +335,8 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=600)
     parser.add_argument("--tooltip-probe", action="store_true")
     args = parser.parse_args()
+    if args.tooltip_probe and (args.width,args.height,args.gui_scale)!=(320,260,1):
+        parser.error("Tooltip probe currently qualifies only 320x260 GUI scale 1")
     if sys.platform != "linux" or min(args.prepare_timeout, args.timeout) <= 0:
         parser.error("Requires Linux and positive bounded timeouts")
     try:

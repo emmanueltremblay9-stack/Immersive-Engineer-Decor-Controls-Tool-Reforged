@@ -1,5 +1,14 @@
 name: Solar FE tooltip qualification
 on:
+  pull_request:
+    paths:
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/client/SolarV2ReferenceScreen.java'
+      - 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/**'
+      - 'src/solarPackagedValidation/**'
+      - 'tools/validation/*solar*'
+      - 'gradle/solar*'
+      - 'build.gradle'
+      - '.github/workflows/solar-fe-tooltip-qualification.yml'
   push:
     branches: [dot/qualify-solar-fe-tooltip-20261114]
 permissions:
