@@ -252,6 +252,16 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
             or screen.get("output_slot_visible_when_open") is not True):
         raise SmokeFailure("The native screen did not verify the real output-drawer interaction")
 
+    phases = ["closed", "opened", "resized_open", "restored_open", "closed_again", "reopened"]
+    states = [False, True, True, True, False, True]
+    labels = proof.get("drawer_accessible_messages")
+    words = ("Ouvrir le tiroir de sortie", "Fermer le tiroir de sortie") if language == "fr_fr" else ("Open item output drawer", "Close item output drawer")
+    expected_labels = [dict(phase=phase, open=state, message=words[int(state)]) for phase,state in zip(phases, states)]
+    if (type(labels) is not list or any(type(row) is not dict or type(row.get("open")) is not bool for row in labels)
+            or labels != expected_labels or proof.get("narration_audio_verified") is not False
+            or proof.get("drawer_input_method") != "programmatic native screen callbacks and resize; not OS input"):
+        raise SmokeFailure("Smelter drawer accessible messages missing or stale")
+
     captures = proof.get("screenshots")
     expected_names = {
         "progress-empty.png", "progress-mid.png", "progress-full.png",
