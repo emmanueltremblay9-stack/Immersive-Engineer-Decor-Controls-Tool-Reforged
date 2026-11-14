@@ -47,8 +47,8 @@ public class TooltipProbe {
         record MachineSlot(int x, int y) {}
         List<MachineSlot> machineSlots() { return List.of(); }
     }
-    enum MachineKind { SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, OTHER }
-    static final class MachineMenu { MachineLayout layout() { return new MachineLayout(); } MachineKind kind() { return MachineKind.OTHER; } }
+    enum MachineKind { SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, FACTORY_HOPPER, FACTORY_DROPPER, OTHER }
+    static final class MachineMenu { MachineKind selected = MachineKind.OTHER; MachineLayout layout() { return new MachineLayout(); } MachineKind kind() { return selected; } }
     static final class Slot { boolean hasItem() { return false; } }
     final Font font = new Font();
     final MachineMenu menu = new MachineMenu();
@@ -95,6 +95,17 @@ public class TooltipProbe {
                 check(!graphics.wrapped && probe.font.source == null && graphics.positioner == null, "Other tooltips unchanged");
             }
             check(graphics.source == probe.text && graphics.calls == 1, "Other tooltip content");
+        }
+        for (MachineKind kind : new MachineKind[]{MachineKind.FACTORY_HOPPER, MachineKind.FACTORY_DROPPER}) {
+            for (int width : new int[]{1280, 400, 320, 240, 100, 24, 1}) {
+                TooltipProbe factory = new TooltipProbe(); factory.mode = 7; factory.width = width;
+                factory.menu.selected = kind;
+                GuiGraphics draw = new GuiGraphics(); factory.renderMachineTooltip(draw, 148, 66);
+                check(draw.wrapped, "Factory controls must wrap");
+                check(factory.font.width == Math.max(1, Math.min(240, width - 16)), "Factory bounded width");
+                check(draw.source == factory.text && factory.font.source == factory.text, "Factory original styled Component retained");
+                check(draw.calls == 1 && draw.x == 148 && draw.y == 66, "Factory one pointer tooltip");
+            }
         }
         TooltipProbe probe = new TooltipProbe();
         GuiGraphics graphics = new GuiGraphics(); probe.renderMachineTooltip(graphics, 0, 0);
