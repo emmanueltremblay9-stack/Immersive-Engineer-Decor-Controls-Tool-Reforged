@@ -21,17 +21,29 @@ FILES = {'src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientMod
                                                        'integrated_sha256': '108015af3c2e33c3b7953a50f867b1506a85cee8d6dca0f1f15528402c45fa37'}}
 
 
+ACTIVATION_PATH = 'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java'
+ACTIVATION_SHA256 = '626ff2fecd86da026e16e9fee4b4a76f840508c3029f4c2fdb2809d72062713f'
+ACTIVATION_RECORD_SHA256 = '3976fe30c82a8e7c95e9074a7cfe234fed114fb9f1743d833d3fa95c97c0ac82'
+
 def assert_freezer_v5_reconciliation(root, manifest):
     record = manifest.get(LAYER)
     digest = hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     assert digest == RECORD_SHA256, 'Freezer V5 reconciliation provenance changed'
+    activation = manifest.get('freezer_v5_normal_activation')
+    assert hashlib.sha256(json.dumps(activation, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == ACTIVATION_RECORD_SHA256, 'Normal activation record changed'
     for path, hashes in FILES.items():
         assert record['files'][path] == hashes, path
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == hashes['integrated_sha256'], path
+        data = (root / path).read_bytes()
+        if path == ACTIVATION_PATH:
+            assert hashlib.sha256(data).hexdigest() == ACTIVATION_SHA256, path
+            text = data.decode()
+            assert text.count(activation['replace_to']) == 1, 'Ambiguous default projection'
+            data = text.replace(activation['replace_to'], activation['replace_from']).encode()
+        assert hashlib.sha256(data).hexdigest() == hashes['integrated_sha256'], path
 
 
 def current_hash(path, historical_hash):
     if path not in FILES:
         return historical_hash
     assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
-    return FILES[path]['integrated_sha256']
+    return ACTIVATION_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256']

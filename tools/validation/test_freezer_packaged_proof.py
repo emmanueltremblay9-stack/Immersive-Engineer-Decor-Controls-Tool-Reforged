@@ -28,7 +28,7 @@ class RuntimeTests(unittest.TestCase):
             split_packages=False, loaded_development_mods=[HARNESS],
             runtime_classpath=[str(jar), '/isolated/harness'], forbidden_main_outputs=['/main/classes', '/main/resources'])
         self.proof = dict(packaged_runtime=dict(jar_path=str(jar), jar_sha256=digest,
-            fixture_free_jar=False, separate_provenance_harness=True, separate_harness_module=True, production_selectors_absent=False, production_selectors=SELECTORS, opt_in_selector="iedctr.dev.freezerV5LiveEnergy",
+            fixture_free_jar=False, separate_provenance_harness=True, separate_harness_module=True, production_selectors_absent=False, production_selectors=SELECTORS, presentation_mode="normal-dynamic", dev_selectors_absent=True,
             harness_mod_id=HARNESS, harness_mod_path='/isolated/harness', mod_root_uri=root,
             class_origins=[{'class': n, 'resource_uri': root+n.replace('.', '/')+'.class',
                 'code_source_uri': root, 'sha256': hashlib.sha256(n.encode()).hexdigest()} for n in CLASSES],
@@ -41,10 +41,15 @@ class RuntimeTests(unittest.TestCase):
         self.check()
 
 
-    def test_explicit_optin_is_mandatory(self):
+    def test_fixture_selectors_and_no_optin_are_mandatory(self):
         for field,value in [('production_selectors',None),('production_selectors',['iedctr.dev.freezerV2Reference=true']),('opt_in_selector',None),('opt_in_selector','iedctr.dev.freezerV2Reference=false'),('production_selectors_absent',True)]:
             p=copy.deepcopy(self.proof);p['packaged_runtime'][field]=value
             with self.subTest(field=field,value=value),self.assertRaises(SmokeFailure):self.check(p)
+
+    def test_no_dev_properties_or_false_normal_claim(self):
+        for field,value in [('production_selectors',SELECTORS+['iedctr.dev.freezerV5LiveEnergy']),('presentation_mode','opt-in'),('dev_selectors_absent',False),('dev_selectors_absent',1)]:
+            p=copy.deepcopy(self.proof);p['packaged_runtime'][field]=value
+            with self.subTest(field=field),self.assertRaises(SmokeFailure):self.check(p)
 
     def test_java_equivalent_uri(self):
         for row in self.proof['packaged_runtime']['class_origins']:

@@ -17,11 +17,11 @@ import net.minecraft.world.inventory.ClickType;
 import org.lwjgl.glfw.GLFW;
 
 /**
- * DEVELOPMENT/VALIDATION experiment, not the production Freezer GUI.
+ * Normal Freezer V5 client presentation with an optional historical exact snapshot.
  * Exact snapshot mode retains the whole PNG with baked frost and energy.
  * Live mode samples source energy cells and draws reconstructed chamber/frost layers
  * from the synchronized server phase. Decorative rim frost remains static. Exact
- * snapshot mode retains all original pixels. Neither mode is the production default.
+ * snapshot mode retains all original pixels. Dynamic mode is the normal client selection.
  * Vanilla still owns slot rendering, item count/durability overlays, carried stacks,
  * selection, drag splitting and packets. Only the presentation coordinate space changes.
  */
@@ -47,7 +47,7 @@ public final class FreezerReferenceScreen extends AbstractContainerScreen<Machin
    public FreezerReferenceScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
       if (!menu.freezerReferencePresentation()) {
-         throw new IllegalArgumentException("Exact reference screen requires an opted-in client presentation");
+         throw new IllegalArgumentException("Freezer V5 screen requires a client presentation");
       }
       previewMode = FreezerReferenceLiveState.previewMode(
          Boolean.getBoolean(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY),
@@ -171,7 +171,7 @@ public final class FreezerReferenceScreen extends AbstractContainerScreen<Machin
 
    @Override
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-      // The exact snapshot keeps the immutable reference. Only the opt-in live mode
+      // The exact snapshot keeps the immutable reference. Normal dynamic mode
       // uses the specialist's aligned reconstruction; pixels outside its mask match.
       boolean dynamicFrost = previewMode == FreezerReferenceLiveState.PreviewMode.LIVE_ENERGY;
       graphics.blit(dynamicFrost ? CLEAN_CHAMBER : FACEPLATE, 0, 0, imageWidth, imageHeight, 0, 0,

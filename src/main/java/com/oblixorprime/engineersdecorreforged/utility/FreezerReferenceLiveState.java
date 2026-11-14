@@ -27,10 +27,10 @@ public final class FreezerReferenceLiveState {
 
    public enum PreviewMode { PRODUCTION, EXACT_SNAPSHOT, LIVE_ENERGY }
 
-   /** Both opt-ins default false. Explicit exact mode wins if both are requested. */
+   /** Dynamic presentation is normal. Historical liveRequested is retained for source compatibility; exact snapshot wins. */
    public static PreviewMode previewMode(boolean exactRequested, boolean liveRequested) {
       return exactRequested ? PreviewMode.EXACT_SNAPSHOT
-         : liveRequested ? PreviewMode.LIVE_ENERGY : PreviewMode.PRODUCTION;
+         : PreviewMode.LIVE_ENERGY;
    }
 
    public record Point(int x, int y) { }

@@ -112,7 +112,7 @@ class IntegratedPreservationTests(unittest.TestCase):
                     del pins[key]
                 else:
                     pins[key] = 'changed'
-                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance'):
+                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance|Normal activation record changed'):
                     self.check_milking(pins)
 
     def test_freezer_historical_scope_and_reasons_are_preserved(self):

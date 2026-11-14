@@ -25,7 +25,7 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
         self.main = {"suite": SUITE, "nonce": self.nonce, "status": "passed", "actual_integrated_world": True}
         self.proof = {"suite": SUITE, "nonce": self.nonce, "status": "passed_bounded_smoke",
                       "executed_source_sha": self.sha, "source_art_sha256": ART_SHA,
-                      "actual_integrated_world": True, "frost_art_static": False, "decorative_rim_frost_static": True, "phase_source": "server_menu_phase_natural_recipe", "phase4_native_observed": False,
+                      "actual_integrated_world": True, "presentation_mode": "normal-dynamic", "dev_selectors_absent": True, "frost_art_static": False, "decorative_rim_frost_static": True, "phase_source": "server_menu_phase_natural_recipe", "phase4_native_observed": False,
                       "native_visual_acceptance": False, "menu_slot_count": 39,
                       "selected_language": "en_us", "cases": sorted(CASES), "captures": []}
         for i, (name, (energy, cells)) in enumerate(CAPTURES.items()):

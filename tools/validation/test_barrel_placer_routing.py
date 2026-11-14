@@ -65,7 +65,7 @@ public class SelectionProbe {
        else System.setProperty(DEV_FREEZER_LIVE_ENERGY_PROPERTY, energy);
        for (MachineKind kind : MachineKind.values()) {
          var actual = factory(kind);
-         boolean frozen = side && kind == MachineKind.SMALL_FREEZER && (freezer.equals("true") || energy.equals("true"));
+         boolean frozen = side && kind == MachineKind.SMALL_FREEZER;
          if(actual.freezerReferencePresentation != frozen) throw new AssertionError("Freezer selection");
          boolean barrel = side && kind == MachineKind.FLUID_BARREL && !property.equals("false");
          boolean placer = side && kind == MachineKind.FACTORY_PLACER;

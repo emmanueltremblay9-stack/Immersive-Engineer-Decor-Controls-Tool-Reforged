@@ -76,7 +76,6 @@ def main() -> int:
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.freezerReferenceOnly', 'true'
-        systemProperty 'iedctr.dev.freezerV5LiveEnergy', 'true'
         systemProperty 'iedctr.freezerPackagedNative', 'true'
         systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_JAR')
         systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_JAR_SHA256')
@@ -133,7 +132,7 @@ def main() -> int:
         if hashlib.sha256(supplied.read_bytes()).hexdigest() != supplied_hash:
             raise SmokeFailure("Production JAR changed during execution")
         validate_proof(proof, main_proof, nonce, source_sha, game, logs, code, expired, 1280, args.height, args.language)
-        print("PASS bounded ordinary-JAR opt-in Freezer smoke; bundled fixture explicitly active, no physical OS input or default-path claim. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.")
+        print("PASS bounded ordinary-JAR normal-path Freezer smoke; bundled fixture explicitly active, no physical OS input claim. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError, KeyError, TypeError) as error:
         print(f"FAIL: {error}", file=sys.stderr)

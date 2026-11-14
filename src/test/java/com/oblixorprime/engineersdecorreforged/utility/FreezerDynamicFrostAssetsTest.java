@@ -41,6 +41,14 @@ public class FreezerDynamicFrostAssetsTest {
       }
    }
 
+   @Test public void normalModeIsDynamicAndHistoricalExactStillWins() {
+      var energy = FreezerReferenceLiveState.energy(8000, 16000);
+      assertEquals(FreezerReferenceLiveState.PreviewMode.LIVE_ENERGY, FreezerReferenceLiveState.previewMode(false, false));
+      assertFalse(FreezerReferenceLiveState.energyPatches(FreezerReferenceLiveState.previewMode(false, false), energy).isEmpty());
+      assertEquals(FreezerReferenceLiveState.PreviewMode.EXACT_SNAPSHOT, FreezerReferenceLiveState.previewMode(true, false));
+      assertTrue(FreezerReferenceLiveState.energyPatches(FreezerReferenceLiveState.previewMode(true, false), energy).isEmpty());
+   }
+
    @Test public void phaseUsesServerFactNotClientProgressOrStatus() {
       for (int phase = 0; phase <= 4; phase++) {
          var state = FreezerReferenceLiveState.frost(1, 180, phase, 0, true);

@@ -13,7 +13,7 @@ gradle = (root / 'build.gradle').read_text()
 checks = {
     'separate_default_off_client_property': "gradleProperty('dev_freezer_v5_live_energy').map { it.toBoolean() }.getOrElse(false)" in gradle,
     'new_property_in_client_run_only': gradle.index("systemProperty 'iedctr.dev.freezerV5LiveEnergy'") < gradle.index('        server {'),
-    'geometry_optin_either_property': 'Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)\n            || Boolean.getBoolean(DEV_FREEZER_LIVE_ENERGY_PROPERTY)' in menu,
+    'geometry_normal_freezer': 'kind == MachineKind.SMALL_FREEZER,\n         kind == MachineKind.FLUID_BARREL' in menu,
     'geometry_still_client_only': '&& kind == MachineKind.SMALL_FREEZER && inventory.player.level().isClientSide' in menu,
     'raw_energy_sync': 'case SMALL_FREEZER -> this.data.get(FREEZER_ENERGY_FIELD);' in menu,
     'raw_energy_field3': 'private static final int FREEZER_ENERGY_FIELD = 3;' in menu,

@@ -45,6 +45,17 @@ class DriverTests(unittest.TestCase):
             self.assertIn(needle,workflow)
         self.assertNotIn('matrix.fluid',workflow)
 
+    def test_normal_selection_without_development_properties(self):
+        runner=(ROOT/'tools/validation/freezer_packaged_native.py').read_text()
+        self.assertNotIn("systemProperty 'iedctr.dev.",runner)
+        proof=(ROOT/'src/freezerPackagedValidation/java/com/oblixorprime/iedctrtest/freezer/PackagedRuntimeProof.java').read_text()
+        self.assertIn('key.startsWith("iedctr.dev.")',proof)
+        allowed=proof.split('java.util.Set<String> allowed = ')[1].split(';')[0]
+        self.assertNotIn('iedctr.dev.',allowed)
+        menu=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java').read_text()
+        self.assertIn('kind == MachineKind.SMALL_FREEZER,',menu)
+        self.assertIn('this(kind, id, inventory, container, data, false, false, false, false);',menu)
+
     def test_no_stale_static_chamber_scope(self):
         source=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeClientMiningValidation.java').read_text()
         self.assertIn('chamber frost from server phases; static decorative rim',source)

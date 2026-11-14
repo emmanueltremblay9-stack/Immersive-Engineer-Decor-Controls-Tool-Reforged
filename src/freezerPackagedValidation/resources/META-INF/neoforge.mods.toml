@@ -5,7 +5,7 @@ license="MIT"
 [[mods]]
 modId="iedctr_freezer_validation"
 version="1.0"
-displayName="IEDCTR Freezer opt-in isolated provenance harness"
+displayName="IEDCTR Freezer normal-path isolated provenance harness"
 
 [[dependencies.iedctr_freezer_validation]]
 modId="immersive_engineer_decor_controls_tool_reforged"

@@ -122,5 +122,13 @@
         "integrated_sha256": "108015af3c2e33c3b7953a50f867b1506a85cee8d6dca0f1f15528402c45fa37"
       }
     }
+  },
+  "freezer_v5_normal_activation": {
+    "scope": "Client presentation default only; unchanged server 39-slot protocol, backing inventory and gameplay",
+    "previous_sha256": "2396df69a54927bc1dc818d887ac5a417765ceb8e8e5fbff0f3ee4695d43faf0",
+    "current_sha256": "626ff2fecd86da026e16e9fee4b4a76f840508c3029f4c2fdb2809d72062713f",
+    "path": "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java",
+    "replace_from": "kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)\n            || Boolean.getBoolean(DEV_FREEZER_LIVE_ENERGY_PROPERTY)),",
+    "replace_to": "kind == MachineKind.SMALL_FREEZER,"
   }
 }

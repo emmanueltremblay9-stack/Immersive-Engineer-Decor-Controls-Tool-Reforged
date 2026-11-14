@@ -28,14 +28,14 @@ public final class FreezerReferenceLiveStateChecks {
    }
 
    public static void checkModesAndEnergy() {
-      check(FreezerReferenceLiveState.previewMode(false, false) == PreviewMode.PRODUCTION, "default production");
+      check(FreezerReferenceLiveState.previewMode(false, false) == PreviewMode.LIVE_ENERGY, "default production");
       check(FreezerReferenceLiveState.previewMode(true, false) == PreviewMode.EXACT_SNAPSHOT, "exact independent");
       check(FreezerReferenceLiveState.previewMode(false, true) == PreviewMode.LIVE_ENERGY, "live independent");
       check(FreezerReferenceLiveState.previewMode(true, true) == PreviewMode.EXACT_SNAPSHOT, "exact wins");
       for (PreviewMode mode : List.of(PreviewMode.PRODUCTION, PreviewMode.EXACT_SNAPSHOT)) {
          for (int energy : new int[] {0, 1, 8000, 12345, 16000}) {
             check(FreezerReferenceLiveState.energyPatches(mode, FreezerReferenceLiveState.energy(energy, 16000)).isEmpty(),
-               "no patches outside opt-in live mode");
+               "no patches for legacy production enum or historical exact snapshot");
          }
       }
       equal(0, FreezerReferenceLiveState.energy(0, 16000).litCells(), "empty data");

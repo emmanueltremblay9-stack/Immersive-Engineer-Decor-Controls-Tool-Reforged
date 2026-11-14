@@ -1,4 +1,4 @@
-name: Freezer supplemental opt-in ordinary-JAR qualification
+name: Freezer normal dynamic ordinary-JAR qualification
 
 on:
   pull_request:
@@ -130,7 +130,7 @@ jobs:
           assert (target/'normal.jar.sha256').read_text() == digest+'  normal.jar\n', 'Shared SHA file differs'
           assert not subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all'], text=True).strip(), 'Downloaded artifact changed source checkout'
           PYCODE
-      - name: Qualify exact ordinary JAR with explicit opt-in and bundled native fixture
+      - name: Qualify exact ordinary JAR with normal presentation and explicit bundled native fixture
         run: >-
           python tools/validation/freezer_packaged_native.py
           --runtime-jar "${{ github.workspace }}/build/freezer-qualified-artifact/normal.jar"

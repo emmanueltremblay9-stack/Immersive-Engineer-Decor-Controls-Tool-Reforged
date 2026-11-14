@@ -52,6 +52,8 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
             or proof.get("executed_source_sha") != source_sha
             or proof.get("source_art_sha256") != ART_SHA
             or proof.get("actual_integrated_world") is not True
+            or proof.get("presentation_mode") != "normal-dynamic"
+            or proof.get("dev_selectors_absent") is not True
             or proof.get("frost_art_static") is not False
             or proof.get("decorative_rim_frost_static") is not True
             or proof.get("phase_source") != "server_menu_phase_natural_recipe"
@@ -219,8 +221,6 @@ def main() -> int:
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.freezerReferenceOnly', 'true'
-        systemProperty 'iedctr.dev.freezerV5LiveEnergy', 'true'
-        systemProperty 'iedctr.dev.freezerV5ExactReference', 'false'
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         programArgument '--width'
         programArgument '1280'

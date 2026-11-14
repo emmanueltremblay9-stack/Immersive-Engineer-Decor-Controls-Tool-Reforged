@@ -1,3 +1,5 @@
+> Current activation candidate: owner accepted the four-phase appearance and authorized preparation of normal Freezer V5 selection. Dynamic chamber/FE now select without development properties; the exact snapshot remains available with its historical explicit property. Server slot count/order, backing inventory, protocol and gameplay are unchanged. New normal-JAR evidence must pass on this commit; earlier opt-in receipts do not prove this default. Below sections retain earlier provenance where noted.
+
 # Current opt-in dynamic chamber candidate
 
 See [dynamic integration](dynamic-frost/INTEGRATION.md). Live-energy mode now also draws reconstructed chamber layers by server phase. Exact snapshot remains original and production remains unchanged. Sections below are historical static-stage evidence, not current dynamic qualification.

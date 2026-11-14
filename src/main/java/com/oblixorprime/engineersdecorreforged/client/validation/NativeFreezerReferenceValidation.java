@@ -68,8 +68,8 @@ final class NativeFreezerReferenceValidation {
    private NativeFreezerReferenceValidation() { }
 
    static void begin(Minecraft mc, Path gameDirectory, String runNonce) throws Exception {
-      require(Boolean.getBoolean(MachineMenu.DEV_FREEZER_LIVE_ENERGY_PROPERTY)
-         && !Boolean.getBoolean(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY), "Fixture requires live-energy mode only");
+      require(System.getProperty(MachineMenu.DEV_FREEZER_LIVE_ENERGY_PROPERTY) == null
+         && System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY) == null, "Fixture requires ordinary selection without dev selectors");
       require(mc.getSingleplayerServer() != null && mc.player != null
          && mc.player.connection.getConnection().isMemoryConnection(), "Only an isolated integrated server is permitted");
       require(gameDirectory.toRealPath().equals(mc.gameDirectory.toPath().toRealPath())
@@ -440,6 +440,8 @@ final class NativeFreezerReferenceValidation {
       proof.addProperty("actual_integrated_world", true);
       proof.addProperty("source_art_sha256", FreezerReferenceGeometry.SOURCE_SHA256);
       proof.addProperty("frost_art_static", false);
+      proof.addProperty("presentation_mode", "normal-dynamic");
+      proof.addProperty("dev_selectors_absent", true);
       proof.addProperty("decorative_rim_frost_static", true);
       proof.addProperty("phase_source", "server_menu_phase_natural_recipe");
       proof.addProperty("phase4_native_observed", false);

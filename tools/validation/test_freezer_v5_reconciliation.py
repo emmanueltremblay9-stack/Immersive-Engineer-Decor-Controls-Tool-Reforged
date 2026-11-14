@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import unittest
 from unittest.mock import patch
-from freezer_v5_reconciliation import FILES, LAYER, assert_freezer_v5_reconciliation, current_hash
+from freezer_v5_reconciliation import ACTIVATION_PATH, ACTIVATION_SHA256, FILES, LAYER, assert_freezer_v5_reconciliation, current_hash
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFESTS = (
@@ -28,9 +28,17 @@ class FreezerV5ReconciliationTests(unittest.TestCase):
         for manifest in self.manifests:
             self.check(manifest)
         for path, hashes in FILES.items():
-            self.assertEqual(hashes['integrated_sha256'], current_hash(path, hashes['main_sha256']))
+            self.assertEqual(ACTIVATION_SHA256 if path == ACTIVATION_PATH else hashes['integrated_sha256'], current_hash(path, hashes['main_sha256']))
             with self.assertRaises(AssertionError):
                 current_hash(path, '0' * 64)
+
+    def test_activation_record_cannot_be_missing_or_rewritten(self):
+        for original in self.manifests:
+            for key in (None, *original['freezer_v5_normal_activation']):
+                changed=copy.deepcopy(original)
+                if key is None: del changed['freezer_v5_normal_activation']
+                else: changed['freezer_v5_normal_activation'][key]='tampered'
+                with self.subTest(key=key),self.assertRaises(AssertionError):self.check(changed)
 
     def test_record_cannot_be_missing_reassigned_or_expanded(self):
         for original in self.manifests:

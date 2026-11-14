@@ -22,7 +22,7 @@ import net.neoforged.fml.ModList;
 public final class PackagedRuntimeProof {
     private PackagedRuntimeProof() {}
     public static JsonObject verify(Minecraft mc) throws Exception {
-        java.util.Set<String> allowed = java.util.Set.of("iedctr.dev.freezerV5LiveEnergy", "iedctr.clientGameplay", "iedctr.freezerReferenceOnly", "iedctr.freezerPackagedNative");
+        java.util.Set<String> allowed = java.util.Set.of("iedctr.clientGameplay", "iedctr.freezerReferenceOnly", "iedctr.freezerPackagedNative");
         for (String key : allowed) require("true".equals(System.getProperty(key)), "Required explicit selector missing: " + key);
         for (String key : System.getProperties().stringPropertyNames()) {
             if (key.startsWith("iedctr.dev.") || key.endsWith("Only") || key.endsWith("Native") || key.endsWith("Validation"))
@@ -95,10 +95,10 @@ public final class PackagedRuntimeProof {
             // Historical opt-in production validation classes may exist. This flag only excludes the separate harness namespace.
             proof.addProperty("fixture_free_jar", false);
             proof.addProperty("separate_provenance_harness", true);
-            proof.addProperty("fixture_scope", "Separate com/oblixorprime/iedctrtest harness excluded; historical bundled Freezer/world fixture explicitly enabled; no physical OS input or default-path claim"); proof.addProperty("separate_harness_module", true);
+            proof.addProperty("fixture_scope", "Separate com/oblixorprime/iedctrtest harness excluded; historical bundled Freezer/world fixture explicitly enabled; no physical OS input claim"); proof.addProperty("separate_harness_module", true);
             proof.add("active_textures",textures);proof.addProperty("production_selectors_absent",false);
             var selectors = new JsonArray(); for (String key : allowed.stream().sorted().toList()) selectors.add(key);
-            proof.add("production_selectors",selectors); proof.addProperty("opt_in_selector", "iedctr.dev.freezerV5LiveEnergy");
+            proof.add("production_selectors",selectors); proof.addProperty("presentation_mode", "normal-dynamic"); proof.addProperty("dev_selectors_absent", true);
             proof.add("class_origins", origins);
             return proof;
         }
