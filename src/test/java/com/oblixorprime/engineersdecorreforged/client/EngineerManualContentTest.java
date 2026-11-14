@@ -188,4 +188,21 @@ public class EngineerManualContentTest {
         assertFalse(Files.readString(ROOT.resolve("fr_ca/industrial_dimmer.txt")).contains("elle revient à zéro"));
         assertFalse(Files.readString(ROOT.resolve("fr_ca/door_sensor_switch.txt")).contains("revient à son état initial après la durée prévue"));
     }
+    @Test
+    public void mergedMilkingRecoveryDoesNotPromiseExtractionOrEnergy() throws Exception {
+        String en = Files.readString(ROOT.resolve("en_us/small_milking_machine.txt"));
+        String fr = Files.readString(ROOT.resolve("fr_fr/small_milking_machine.txt"));
+        for (String term : new String[]{"4,000 mB", "120 ticks", "Mooshrooms", "not mushroom stew",
+                "does not consume FE", "selected by the server", "custom name", "native cooldown, not extraction progress",
+                "no native cooldown", "without waiting", "waits before retrying", "FE indicator stays neutral"})
+            assertTrue(term, en.contains(term));
+        for (String term : new String[]{"4 000 mB", "120 ticks", "Mooshrooms", "pas de soupe de champignons",
+                "ne consomme pas de FE", "sélectionné par le serveur", "nom personnalisé",
+                "pas la progression d'extraction", "n'ont pas de délai natif", "sans attendre",
+                "attend avant une nouvelle tentative", "FE reste neutre"})
+            assertTrue(term, fr.contains(term));
+        assertFalse(en.contains("experimental replacement interface"));
+        assertFalse(fr.contains("interface expérimentale de remplacement"));
+    }
+
 }

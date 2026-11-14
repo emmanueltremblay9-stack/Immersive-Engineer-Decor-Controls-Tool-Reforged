@@ -127,7 +127,7 @@ public class StairRailingMixinConfigurationTest {
       config.getAsJsonArray("client").forEach(value -> clientMixins.add(value.getAsString()));
       assertEquals("only explicitly reviewed client hooks may load", List.of(
          "client.StairRailingPickMixin", "client.NativeFluidRegionMixin", "client.NativeFluidSectionMixin", "client.NativeFluidRendererReadsMixin", "client.EmbeddiumFluidHeightMixin",
-         "client.EmbeddiumFluidCloneMixin", "client.EmbeddiumFluidSliceMixin", "client.EmbeddiumFluidMeshMixin"), clientMixins);
+         "client.EmbeddiumFluidCloneMixin", "client.EmbeddiumFluidSliceMixin", "client.EmbeddiumFluidMeshMixin", "client.ManualViewportMixin"), clientMixins);
       assertFalse("no client classes may be listed on both distributions", config.has("mixins"));
       assertFalse("no client classes may be listed for the server", config.has("server"));
       assertEquals(1, config.getAsJsonObject("injectors").get("defaultRequire").getAsInt());
