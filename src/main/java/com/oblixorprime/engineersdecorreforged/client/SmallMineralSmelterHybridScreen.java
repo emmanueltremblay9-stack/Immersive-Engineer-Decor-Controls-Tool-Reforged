@@ -170,6 +170,7 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
    private void toggleOutputDrawer() {
       outputDrawerOpen = !outputDrawerOpen;
       menu.setSmelterOutputDrawerOpen(outputDrawerOpen);
+      outputDrawerButton.setMessage(drawerAccessibleComponent());
       updateModeButtonAvailability();
    }
 

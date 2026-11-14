@@ -155,6 +155,12 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
                 "view_scale": scale, "drawer_closed_capture": True, "drawer_open_capture": True,
                 "output_slot_hidden_when_closed": True, "output_slot_visible_when_open": True,
             },
+            "drawer_accessible_messages": [dict(phase=phase, open=state,
+                message=("Fermer le tiroir de sortie" if state else "Ouvrir le tiroir de sortie"))
+                for phase,state in zip(["closed","opened","resized_open","restored_open","closed_again","reopened"],
+                                       [False,True,True,True,False,True])],
+            "narration_audio_verified": False,
+            "drawer_input_method": "programmatic native screen callbacks and resize; not OS input",
             "screenshots": [],
         }
         for name, progress, energy, status in (
@@ -188,6 +194,19 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
 
     def test_accepts_native_progress_states_and_two_fresh_drawer_views(self):
         self.assertEqual(self.check(), self.proof)
+
+    def test_rejects_stale_or_missing_drawer_messages(self):
+        for field,value in [('drawer_accessible_messages', []), ('narration_audio_verified', True),
+                            ('drawer_input_method', 'OS input')]:
+            p=copy.deepcopy(self.proof);p[field]=value
+            with self.subTest(field=field),self.assertRaises(SmokeFailure):self.check(p)
+        p=copy.deepcopy(self.proof);p['drawer_accessible_messages'][0]['open']=0
+        with self.assertRaises(SmokeFailure):self.check(p)
+        p=copy.deepcopy(self.proof);p['drawer_accessible_messages'].reverse()
+        with self.assertRaises(SmokeFailure):self.check(p)
+        for index in range(6):
+            p=copy.deepcopy(self.proof);p['drawer_accessible_messages'][index]['message']='Stale label'
+            with self.subTest(index=index),self.assertRaises(SmokeFailure):self.check(p)
 
     def test_rejects_wrong_nonce_or_source_or_pr_head(self):
         for patch in ({"nonce": "b" * 32}, {"executed_source_sha": "3" * 40},
