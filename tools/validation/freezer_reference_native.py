@@ -130,6 +130,9 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
             raise SmokeFailure("Invalid synchronized frost state")
         natural = capture in frost_captures
         if natural:
+            if (type(capture.get("rendered_frames")) is not int or capture["rendered_frames"] < 3
+                    or capture.get("capture_event") != "ScreenEvent.Render.Post"):
+                raise SmokeFailure("Frost capture lacks coherent rendered frames")
             if phase not in range(4) or phase in seen_phases or capture.get("name") != f"frost-phase-{phase}.png":
                 raise SmokeFailure("Invalid or duplicate natural phase")
             if not (ticks == 0 if phase == 0 else phase * 45 <= ticks < (phase + 1) * 45):

@@ -63,7 +63,7 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
             return b"\x89PNG\r\n\x1a\n"+chunk(b"IHDR",struct.pack(">IIBBBBB",w,h,8,2,0,0,0))+chunk(b"IDAT",zlib.compress((b"\0"+bytes((n,0,0))*w)*h))+chunk(b"IEND",b"")
         self.proof["frost_captures"]=[]
         for phase in range(4):
-            c=copy.deepcopy(self.proof["captures"][0]);c.update(name=f"frost-phase-{phase}.png",phase=phase,progress_ticks=phase*45,menu_id=1 if phase==0 else 2,energy=0 if phase==0 else 1440-phase*45*8)
+            c=copy.deepcopy(self.proof["captures"][0]);c.update(rendered_frames=3,capture_event="ScreenEvent.Render.Post",name=f"frost-phase-{phase}.png",phase=phase,progress_ticks=phase*45,menu_id=1 if phase==0 else 2,energy=0 if phase==0 else 1440-phase*45*8)
             data=png(1280,height,phase);(self.game/'freezer-reference-screenshots'/c['name']).write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
             self.proof["frost_captures"].append(c)
         for c in self.proof["captures"]: c.update(phase=0,progress_ticks=0)
@@ -73,6 +73,14 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
             fh=math.ceil(oy+555*314/1254*scale)-math.floor(oy+390*314/1254*scale)
             data=png(fw,fh,c['phase']);name=c['name'][:-4]+'-frost.png';(self.game/'freezer-reference-screenshots'/name).write_bytes(data)
             c.update(frost_name=name,frost_width=fw,frost_height=fh,frost_sha256=hashlib.sha256(data).hexdigest())
+
+    def test_render_frame_gate_rejects_tick_only_evidence(self):
+        for field, value in (("rendered_frames", 2), ("rendered_frames", True),
+                             ("rendered_frames", None), ("capture_event", "ClientTick")):
+            proof = copy.deepcopy(self.proof)
+            proof["frost_captures"][1][field] = value
+            with self.assertRaises(SmokeFailure):
+                self.validate(proof=proof)
 
     def test_missing_or_fabricated_natural_phase_fails(self):
         for change in ('missing','phase4','progress','static','reset'):

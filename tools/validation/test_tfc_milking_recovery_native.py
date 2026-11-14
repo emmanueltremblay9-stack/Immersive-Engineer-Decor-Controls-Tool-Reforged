@@ -16,6 +16,7 @@ class NativeRecoveryEvidenceTest(unittest.TestCase):
         self.p=dict(suite=SUITE,nonce=self.nonce,executed_source_sha=self.sha,status='passed_bounded_smoke',source_background_sha256=BACKGROUND_SHA,
             source_milk_sha256=MILK_SHA,actual_integrated_world=True,native_visual_acceptance=False,requested_language='fr_fr',selected_language='fr_fr',
             screen_class=SCREEN_CLASS,tfc_version='4.2.12',config_restored=True,native_tick_production=True,produced_tick_mutated_after_setup=False,captures=[])
+        self.p.update(input_method='XTest native motion; observed Minecraft cursor and unchanged server transitions',native_motion_events=16)
         self.p.update({k:v for k,v in g.items() if not k.startswith(('tank_','presentation_'))})
         def snap(amount,uses,produced,calendar):
             r=max(0,produced+400-calendar)
@@ -41,6 +42,11 @@ class NativeRecoveryEvidenceTest(unittest.TestCase):
 
     def validate(self):return validate_proof(self.p,self.nonce,self.sha,self.game,self.logs,0,False)
     def test_synthetic_valid(self):self.validate()
+    def test_reject_missing_xtest(self):
+        for key,value in [('input_method','GLFW warp'),('native_motion_events',0),('native_motion_events',True),('native_motion_events',None)]:
+            old=self.p[key];self.p[key]=value
+            with self.assertRaises(SmokeFailure):self.validate()
+            self.p[key]=old
     def test_reject_wrong_top_level(self):
         for key,value in dict(nonce='c'*32,executed_source_sha='c'*40,tfc_version='4.2.11',config_restored=False,native_tick_production=False,
                 produced_tick_mutated_after_setup=True,native_visual_acceptance=True,source_background_sha256='c'*64).items():

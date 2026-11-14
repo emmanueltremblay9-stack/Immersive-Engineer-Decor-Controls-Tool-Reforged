@@ -60,6 +60,8 @@ def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width=12
             actual_integrated_world=True,native_visual_acceptance=False,requested_language=language,selected_language=language,
             screen_class=SCREEN_CLASS,tfc_version='4.2.12',config_restored=True,native_tick_production=True,
             produced_tick_mutated_after_setup=False).items():exact(proof,key,value)
+    exact(proof,'input_method','XTest native motion; observed Minecraft cursor and unchanged server transitions')
+    require(type(proof.get('native_motion_events')) is int and proof['native_motion_events']>0,'Missing actual XTest motion')
     require('error' not in proof,'Error in passing proof')
     geometry=expected_geometry(width,height,gui_scale)
     for key,value in geometry.items():
@@ -173,6 +175,12 @@ def main() -> int:
     }
 }
 """,encoding='utf-8')
+        bootstrap=evidence/'xvfb_bootstrap.py'
+        bootstrap.write_text("import os, pathlib, sys\n"
+            "p=pathlib.Path(os.environ['IEDCTR_GAMEPLAY_DIR']) / '.iedctr-tfc-recovery-xvfb'\n"
+            "assert not p.exists()\n"
+            "p.write_text(os.environ['IEDCTR_GAMEPLAY_NONCE'] + '\\n' + os.environ['DISPLAY'])\n"
+            "os.execvpe(sys.argv[1], sys.argv[1:], os.environ)\n")
         env=dict(os.environ,IEDCTR_GAMEPLAY_DIR=str(game),IEDCTR_GAMEPLAY_NONCE=nonce,
             IEDCTR_EXECUTED_SOURCE_SHA=source,IEDCTR_SCREEN_WIDTH=str(width),IEDCTR_SCREEN_HEIGHT=str(height),
             IEDCTR_GUI_SCALE=str(scale),IEDCTR_GUI_LANGUAGE=language,LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')
@@ -181,7 +189,7 @@ def main() -> int:
         code,expired=run_bounded(gradle+['prepareClientRun'],project,env,evidence/'prepare.log',args.prepare_timeout)
         require(not expired and code==0, f'Milking client preparation failed (exit={code}, timeout={expired})')
         log=evidence/'client.log'
-        code,expired=run_bounded(['xvfb-run','-a','-s',f'-screen 0 {width}x{height}x24']+gradle+['runClient'],
+        code,expired=run_bounded(['xvfb-run','-a','-s',f'-screen 0 {width}x{height}x24']+[sys.executable,str(bootstrap)]+gradle+['runClient'],
                                  project,env,log,args.timeout)
         proof=json.loads((game/'client-tfc-milking-recovery-result.json').read_text())
         logs=log.with_suffix('.observed.log').read_text(errors='replace')
