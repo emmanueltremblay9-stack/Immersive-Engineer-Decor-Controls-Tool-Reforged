@@ -99,6 +99,9 @@ final class NativeCorrectedMachineGuiValidation {
          "Corrected GUI Barrel coverage requires explicit legacy diagnostic selection");
       require("false".equals(System.getProperty("iedctr.dev.solarV2Reference")),
          "Corrected GUI Solar coverage requires explicit legacy diagnostic selection");
+      require("false".equals(System.getProperty(MachineMenu.DEV_FREEZER_LIVE_ENERGY_PROPERTY))
+         && System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY) == null,
+         "Corrected GUI Freezer coverage requires explicit legacy diagnostic selection and no exact snapshot");
       gameDirectory = directory;
       nonce = runNonce;
       executedSourceSha = System.getProperty("iedctr.executedSourceSha", "");
@@ -949,6 +952,10 @@ final class NativeCorrectedMachineGuiValidation {
       require("false".equals(System.getProperty("iedctr.dev.solarV2Reference")), "Solar legacy selector changed during run");
       proof.addProperty("solar_legacy_selector", "iedctr.dev.solarV2Reference=" + System.getProperty("iedctr.dev.solarV2Reference"));
       proof.addProperty("solar_qualification", "legacy-diagnostic-only");
+      require("false".equals(System.getProperty(MachineMenu.DEV_FREEZER_LIVE_ENERGY_PROPERTY))
+         && System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY) == null, "Freezer diagnostic selector changed during run");
+      proof.addProperty("freezer_legacy_selector", "iedctr.dev.freezerV5LiveEnergy=false");
+      proof.addProperty("freezer_qualification", "legacy-diagnostic-only");
       proof.addProperty("suite", SUITE);
       proof.addProperty("schema_version", 2);
       proof.addProperty("coverage_scope", "seven-machine-screens-excluding-tree-cutter");

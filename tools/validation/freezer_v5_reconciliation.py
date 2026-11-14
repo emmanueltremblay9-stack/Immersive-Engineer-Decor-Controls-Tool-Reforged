@@ -25,16 +25,25 @@ ACTIVATION_PATH = 'src/main/java/com/oblixorprime/engineersdecorreforged/menu/Ma
 ACTIVATION_SHA256 = '626ff2fecd86da026e16e9fee4b4a76f840508c3029f4c2fdb2809d72062713f'
 ACTIVATION_RECORD_SHA256 = '3976fe30c82a8e7c95e9074a7cfe234fed114fb9f1743d833d3fa95c97c0ac82'
 
+DIAGNOSTIC_SHA256 = '74f95f7e8ab5af051ae6ce9ff435070a95cc12ea199f11c775e35fd14dfeb3de'
+DIAGNOSTIC_RECORD_SHA256 = 'f9c49d5d56a2d58a9af31f13eb5531a90193ab67cd307319675cdcee1b931004'
+
 def assert_freezer_v5_reconciliation(root, manifest):
     record = manifest.get(LAYER)
     digest = hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     assert digest == RECORD_SHA256, 'Freezer V5 reconciliation provenance changed'
     activation = manifest.get('freezer_v5_normal_activation')
     assert hashlib.sha256(json.dumps(activation, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == ACTIVATION_RECORD_SHA256, 'Normal activation record changed'
+    diagnostic = manifest.get('freezer_v5_legacy_diagnostic')
+    assert hashlib.sha256(json.dumps(diagnostic, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == DIAGNOSTIC_RECORD_SHA256, 'Legacy diagnostic record changed'
     for path, hashes in FILES.items():
         assert record['files'][path] == hashes, path
         data = (root / path).read_bytes()
         if path == ACTIVATION_PATH:
+            assert hashlib.sha256(data).hexdigest() == DIAGNOSTIC_SHA256, path
+            text = data.decode()
+            assert text.count(diagnostic['replace_to']) == 1, 'Ambiguous diagnostic projection'
+            data = text.replace(diagnostic['replace_to'], diagnostic['replace_from']).encode()
             assert hashlib.sha256(data).hexdigest() == ACTIVATION_SHA256, path
             text = data.decode()
             assert text.count(activation['replace_to']) == 1, 'Ambiguous default projection'
@@ -46,4 +55,4 @@ def current_hash(path, historical_hash):
     if path not in FILES:
         return historical_hash
     assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
-    return ACTIVATION_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256']
+    return DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256']

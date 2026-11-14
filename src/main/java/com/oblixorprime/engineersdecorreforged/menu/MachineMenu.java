@@ -133,7 +133,8 @@ public class MachineMenu extends AbstractContainerMenu {
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
       return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
          new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
-         kind == MachineKind.SMALL_FREEZER,
+         kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)
+            || Boolean.parseBoolean(System.getProperty(DEV_FREEZER_LIVE_ENERGY_PROPERTY, "true"))),
          kind == MachineKind.FLUID_BARREL && Boolean.parseBoolean(System.getProperty(DEV_BARREL_REFERENCE_PROPERTY, "true")),
          kind == MachineKind.FACTORY_PLACER,
          kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.parseBoolean(System.getProperty(DEV_SOLAR_V2_REFERENCE_PROPERTY, "true")));

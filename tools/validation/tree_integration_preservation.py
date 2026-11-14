@@ -112,7 +112,7 @@ def assert_milking_integration_preserved(root, pins):
     # Reconstruct the two previous Java pins and the explicitly pinned manual
     # language integration. Baselines, renderer history, Tree provenance and
     # unaffected current pins stay exact.
-    history = {key: value for key, value in pins.items() if key not in (COMBINED_LAYER, 'manual_integration', V5_LAYER, 'freezer_v5_normal_activation')}
+    history = {key: value for key, value in pins.items() if key not in (COMBINED_LAYER, 'manual_integration', V5_LAYER, 'freezer_v5_normal_activation', 'freezer_v5_legacy_diagnostic')}
     history['sha256'] = dict(pins['sha256'])
     if 'manual_integration' in pins:
         assert record_sha256(pins['manual_integration']) == MANUAL_RECORD_SHA256, 'Manual integration provenance changed'

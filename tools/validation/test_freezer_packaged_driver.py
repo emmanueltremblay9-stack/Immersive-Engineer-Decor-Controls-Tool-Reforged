@@ -53,8 +53,16 @@ class DriverTests(unittest.TestCase):
         allowed=proof.split('java.util.Set<String> allowed = ')[1].split(';')[0]
         self.assertNotIn('iedctr.dev.',allowed)
         menu=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java').read_text()
-        self.assertIn('kind == MachineKind.SMALL_FREEZER,',menu)
+        self.assertIn('Boolean.parseBoolean(System.getProperty(DEV_FREEZER_LIVE_ENERGY_PROPERTY, "true"))',menu)
         self.assertIn('this(kind, id, inventory, container, data, false, false, false, false);',menu)
+
+    def test_shared_legacy_suite_preserves_freezer_coverage(self):
+        fixture=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeCorrectedMachineGuiValidation.java').read_text()
+        for text in ['new Spec(MachineKind.SMALL_FREEZER', '"freezer_qualification", "legacy-diagnostic-only"', 'System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY) == null', 'scheduleFreezerNearEnd(mc)']:
+            self.assertIn(text,fixture)
+        runner=(ROOT/'tools/validation/client_gameplay.py').read_text()
+        self.assertIn("systemProperty 'iedctr.dev.freezerV5LiveEnergy', 'false'",runner)
+        self.assertIn('small_freezer-near-end.png',runner)
 
     def test_no_stale_static_chamber_scope(self):
         source=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeClientMiningValidation.java').read_text()

@@ -151,5 +151,13 @@
     "path": "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java",
     "replace_from": "kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)\n            || Boolean.getBoolean(DEV_FREEZER_LIVE_ENERGY_PROPERTY)),",
     "replace_to": "kind == MachineKind.SMALL_FREEZER,"
+  },
+  "freezer_v5_legacy_diagnostic": {
+    "scope": "Explicit legacy diagnostic false override only; absent selector remains normal V5; exact snapshot priority retained",
+    "path": "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java",
+    "previous_sha256": "626ff2fecd86da026e16e9fee4b4a76f840508c3029f4c2fdb2809d72062713f",
+    "current_sha256": "74f95f7e8ab5af051ae6ce9ff435070a95cc12ea199f11c775e35fd14dfeb3de",
+    "replace_from": "kind == MachineKind.SMALL_FREEZER,",
+    "replace_to": "kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)\n            || Boolean.parseBoolean(System.getProperty(DEV_FREEZER_LIVE_ENERGY_PROPERTY, \"true\"))),"
   }
 }
