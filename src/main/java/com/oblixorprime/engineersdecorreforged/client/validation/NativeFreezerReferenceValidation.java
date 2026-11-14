@@ -50,6 +50,10 @@ public final class NativeFreezerReferenceValidation {
    private static final JsonArray FULL_HOVERS = new JsonArray();
    private static JsonObject fullOverview;
    private static int hoverIndex, hoverFrames, fullFrames;
+   private static int tooltipEvents, targetEvents, positionedEvents, matchingStackEvents, renderedEvents;
+   private static String lastTooltipStack = "none";
+   private static com.sun.jna.NativeLibrary x11, xtest;
+   private static com.sun.jna.Pointer display;
    private static boolean tooltipInFrame;
    private static double pointerX, pointerY;
    private static Stage stage;
@@ -121,7 +125,11 @@ public final class NativeFreezerReferenceValidation {
 
    static boolean tick(Minecraft mc, Path gameDirectory, String runNonce) throws Exception {
       require(directory.equals(gameDirectory) && nonce.equals(runNonce), "Fixture identity changed");
-      require(++ticks < 360, "Freezer fixture timed out at " + stage);
+      if (++ticks >= 360) {
+         if (stage == Stage.FULL_HOVERS) writeHoverDiagnostic(mc);
+         closeNativeInput();
+         throw new IllegalStateException("Freezer fixture timed out at " + stage);
+      }
       if (stage == Stage.SETUP) {
          if (!ready()) return false;
          if (!(mc.screen instanceof FreezerReferenceScreen) || current(mc) == null) return false;
@@ -219,6 +227,7 @@ public final class NativeFreezerReferenceValidation {
             if (Boolean.getBoolean("iedctr.freezerFullInventory")) {
                if (fullFrames < 3) return false;
                fullOverview = fullCapture(mc, "inventory-full");
+               initNativeInput(mc);
                hoverIndex = 3;
                enter(Stage.FULL_HOVERS);
                aim(mc, screen);
@@ -228,7 +237,7 @@ public final class NativeFreezerReferenceValidation {
             }
          }
          case FULL_HOVERS -> {
-            if (hoverFrames < 3) return false;
+            if (hoverFrames < 3) { if (ticks % 5 == 0) moveNativePointer(mc, screen); return false; }
             require(menu.getCarried().isEmpty(), "Hover changed carried stack");
             for (int i = 3; i < 39; i++) require(is(menu.getSlot(i).getItem(), Items.STONE, 64), "Hover changed inventory");
             var slot = screen.getSlotUnderMouse();
@@ -242,7 +251,7 @@ public final class NativeFreezerReferenceValidation {
             record.addProperty("pointer_x", pointerX); record.addProperty("pointer_y", pointerY);
             FULL_HOVERS.add(record);
             if (++hoverIndex < 39) { ticks = 0; aim(mc, screen); }
-            else { moveCursorAway(mc); clickRecovery(screen); enter(Stage.FULL_RECOVERY); }
+            else { closeNativeInput(); moveCursorAway(mc); clickRecovery(screen); enter(Stage.FULL_RECOVERY); }
          }
          case FULL_RECOVERY -> {
             if (ticks < 8 || !reserved(menu.getSlot(1).getItem()) || !serverMatches(mc, p -> reserved(machine.getItem(1)) && countDirt(p) == 0
@@ -399,12 +408,47 @@ public final class NativeFreezerReferenceValidation {
          require(screen.validationSlotHoveredAt(anchor.menuIndex(), view.screenX(slot.x + 8), view.screenY(slot.y + 8)), "Rendered slot center cannot be hovered");
       }
    }
+   private static void initNativeInput(Minecraft mc) throws Exception {
+      String nativeDisplay = System.getenv("DISPLAY");
+      require(nativeDisplay != null && nativeDisplay.matches(":\\d+(\\.\\d+)?")
+         && Files.readString(directory.resolve(".iedctr-freezer-xvfb")).equals(nonce + "\n" + nativeDisplay), "Native input requires runner-owned Xvfb");
+      x11 = com.sun.jna.NativeLibrary.getInstance("X11"); xtest = com.sun.jna.NativeLibrary.getInstance("Xtst");
+      display = x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null});
+      require(display != null, "X11 unavailable"); GLFW.glfwFocusWindow(mc.getWindow().getWindow());
+   }
+   private static void closeNativeInput() {
+      if (display != null) { x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display}); display = null; }
+   }
+   private static void moveNativePointer(Minecraft mc, FreezerReferenceScreen screen) {
+      long window = mc.getWindow().getWindow();
+      if (GLFW.glfwGetWindowAttrib(window, GLFW.GLFW_FOCUSED) != GLFW.GLFW_TRUE) { GLFW.glfwFocusWindow(window); return; }
+      int[] x = {0}, y = {0}; GLFW.glfwGetWindowPos(window, x, y);
+      int targetX = x[0] + (int)Math.round(pointerX * mc.getWindow().getScreenWidth() / (double)screen.width);
+      int targetY = y[0] + (int)Math.round(pointerY * mc.getWindow().getScreenHeight() / (double)screen.height);
+      require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display, -1, targetX, targetY, new com.sun.jna.NativeLong(0)}) != 0, "Native pointer move failed");
+      x11.getFunction("XFlush").invokeInt(new Object[]{display});
+   }
+   private static void writeHoverDiagnostic(Minecraft mc) throws Exception {
+      var record = new JsonObject(); record.addProperty("target_slot", hoverIndex);
+      record.addProperty("target_x", pointerX); record.addProperty("target_y", pointerY);
+      record.addProperty("mouse_x", mc.mouseHandler.xpos()); record.addProperty("mouse_y", mc.mouseHandler.ypos());
+      record.addProperty("focused", GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(), GLFW.GLFW_FOCUSED));
+      if (mc.screen instanceof FreezerReferenceScreen screen) {
+         var slot = screen.getSlotUnderMouse(); record.addProperty("actual_slot", slot == null ? -1 : slot.index);
+      }
+      record.addProperty("tooltip_events", tooltipEvents); record.addProperty("target_events", targetEvents);
+      record.addProperty("positioned_events", positionedEvents); record.addProperty("matching_stack_events", matchingStackEvents);
+      record.addProperty("rendered_events", renderedEvents); record.addProperty("stable_frames", hoverFrames);
+      record.addProperty("last_tooltip_stack", lastTooltipStack);
+      Files.writeString(directory.resolve("freezer-hover-diagnostic.json"), new GsonBuilder().setPrettyPrinting().create().toJson(record));
+   }
    private static void aim(Minecraft mc, FreezerReferenceScreen screen) {
       hoverFrames = 0; tooltipInFrame = false;
+      tooltipEvents = targetEvents = positionedEvents = matchingStackEvents = renderedEvents = 0;
+      lastTooltipStack = "none";
       var slot = current(mc).getSlot(hoverIndex); var view = screen.validationViewTransform();
       pointerX = view.screenX(slot.x + 8); pointerY = view.screenY(slot.y + 8);
-      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), pointerX * mc.getWindow().getScreenWidth() / screen.width,
-         pointerY * mc.getWindow().getScreenHeight() / screen.height);
+      moveNativePointer(mc, screen);
    }
    @net.neoforged.bus.api.SubscribeEvent
    public static void beforeFullRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Pre event) { tooltipInFrame = false; }
@@ -412,12 +456,17 @@ public final class NativeFreezerReferenceValidation {
    public static void fullTooltip(net.neoforged.neoforge.client.event.RenderTooltipEvent.Color event) {
       var mc = Minecraft.getInstance();
       if (stage != Stage.FULL_HOVERS || !(mc.screen instanceof FreezerReferenceScreen screen)) return;
+      tooltipEvents++;
+      lastTooltipStack = event.getItemStack().toString();
       var menu = current(mc);
       if (menu == null || screen.getSlotUnderMouse() != menu.getSlot(hoverIndex)) return;
+      targetEvents++;
       if (Math.abs(mc.mouseHandler.xpos() * screen.width / mc.getWindow().getScreenWidth() - pointerX) >= 1
          || Math.abs(mc.mouseHandler.ypos() * screen.height / mc.getWindow().getScreenHeight() - pointerY) >= 1) return;
+      positionedEvents++;
       // Item tooltip events must concern the actual synchronized stack, not a control tooltip.
       tooltipInFrame = is(event.getItemStack(), Items.STONE, 64) && !event.getComponents().isEmpty();
+      if (tooltipInFrame) matchingStackEvents++;
    }
    @net.neoforged.bus.api.SubscribeEvent
    public static void afterFullRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Post event) {
@@ -428,6 +477,7 @@ public final class NativeFreezerReferenceValidation {
          else fullFrames = 0;
       }
       if (stage != Stage.FULL_HOVERS) return;
+      renderedEvents++;
       if (tooltipInFrame && event.getScreen() == Minecraft.getInstance().screen) hoverFrames++;
       else hoverFrames = 0;
       tooltipInFrame = false;
@@ -529,7 +579,7 @@ public final class NativeFreezerReferenceValidation {
       if (Boolean.getBoolean("iedctr.freezerFullInventory")) {
          proof.add("full_inventory_overview", fullOverview);
          proof.add("full_inventory_hovers", FULL_HOVERS.deepCopy());
-         proof.addProperty("full_inventory_input", "GLFW cursor positioning and native tooltip/render events; not physical OS input");
+         proof.addProperty("full_inventory_input", "XTest pointer through GLFW and native tooltip/render events; fixture clicks remain programmatic");
          proof.addProperty("durability_verified", false);
       }
       proof.add("cases", CASES.deepCopy());

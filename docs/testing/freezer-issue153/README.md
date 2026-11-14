@@ -18,7 +18,7 @@ The method is publicly provided in the official NeoForge 1.21.1
 `AbstractContainerScreen.java.patch`. The real tooltip is observed through
 `RenderTooltipEvent.Color` and completed frames through `ScreenEvent.Render.Post`.
 
-This is GLFW cursor positioning, not physical OS input. Stone has no durability;
+Pointer movement uses XTest on the nonce-guarded runner-owned Xvfb, with focus/retry. Existing fixture clicks remain programmatic. Stone has no durability;
 no durability or audible narration claim is made. Screenshots still require human
 visual inspection to assess icon/count clipping; a passing mapping gate alone is
 not visual acceptance. No user world or installed Minecraft profile is used.

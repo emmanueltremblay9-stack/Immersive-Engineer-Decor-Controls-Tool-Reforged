@@ -89,6 +89,12 @@ def main() -> int:
     }
 }
 """, encoding="utf-8")
+    bootstrap = evidence / "xvfb_bootstrap.py"
+    bootstrap.write_text("import os, pathlib, sys\n"
+                         "p=pathlib.Path(os.environ['IEDCTR_GAMEPLAY_DIR']) / '.iedctr-freezer-xvfb'\n"
+                         "assert not p.exists()\n"
+                         "p.write_text(os.environ['IEDCTR_GAMEPLAY_NONCE'] + '\\n' + os.environ['DISPLAY'])\n"
+                         "os.execvpe(sys.argv[1], sys.argv[1:], os.environ)\n")
     supplied = args.runtime_jar.resolve(strict=True)
     supplied_hash = hashlib.sha256(supplied.read_bytes()).hexdigest()
     env = dict(os.environ, IEDCTR_FULL_INVENTORY=str(args.full_inventory).lower(), IEDCTR_EXPECTED_JAR=str(supplied), IEDCTR_EXPECTED_JAR_SHA256=supplied_hash, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
@@ -109,7 +115,7 @@ def main() -> int:
         shutil.copyfile(supplied, evidence/'tested-production.jar')
         log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 1280x{args.height}x24"]
-                                    + gradle + ["runFreezerPackagedOptInClient"], project, env, log, args.timeout)
+                                    + [sys.executable, str(bootstrap)] + gradle + ["runFreezerPackagedOptInClient"], project, env, log, args.timeout)
         require_client_success(code, expired, log)
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):

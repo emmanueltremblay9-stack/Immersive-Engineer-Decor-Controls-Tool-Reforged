@@ -15,7 +15,7 @@ class FullInventoryProofTest(unittest.TestCase):
             data = b'\x89PNG\r\n\x1a\n' + b'\0'*8 + struct.pack('>II', 1280, 260)
             (folder / name).write_bytes(data)
             return dict(name=name, width=1280, height=260, sha256=hashlib.sha256(data).hexdigest())
-        self.proof = dict(durability_verified=False, full_inventory_input='GLFW cursor positioning and native tooltip/render events; not physical OS input', full_inventory_overview=capture('inventory-full.png'), full_inventory_hovers=[])
+        self.proof = dict(durability_verified=False, full_inventory_input='XTest pointer through GLFW and native tooltip/render events; fixture clicks remain programmatic', full_inventory_overview=capture('inventory-full.png'), full_inventory_hovers=[])
         for i in range(3, 39):
             self.proof['full_inventory_hovers'].append(dict(capture(f'inventory-slot-{i}.png'), menu_index=i, container_index=i+6 if i<30 else i-30, count=64, item='minecraft:stone', rendered_frames=3, pointer_x=i*2, pointer_y=100))
     def test_complete(self):

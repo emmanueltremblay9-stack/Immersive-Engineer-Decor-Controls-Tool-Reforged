@@ -6,7 +6,7 @@ from client_mixin_smoke import SmokeFailure
 
 
 def validate_full_inventory(proof, game, width, height):
-    if proof.get('durability_verified') is not False or proof.get('full_inventory_input') != 'GLFW cursor positioning and native tooltip/render events; not physical OS input':
+    if proof.get('durability_verified') is not False or proof.get('full_inventory_input') != 'XTest pointer through GLFW and native tooltip/render events; fixture clicks remain programmatic':
         raise SmokeFailure('Missing or overstated full inventory boundary')
     records = proof.get('full_inventory_hovers')
     if not isinstance(records, list) or len(records) != 36:
