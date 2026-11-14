@@ -38,15 +38,23 @@ import org.lwjgl.glfw.GLFW;
  * with physical GUI coordinates and use vanilla packets. Captures are framebuffer
  * evidence, never CPU previews. A pass is a bounded smoke test, not full acceptance.
  */
-final class NativeFreezerReferenceValidation {
+@net.neoforged.fml.common.EventBusSubscriber(modid = "immersive_engineer_decor_controls_tool_reforged", value = net.neoforged.api.distmarker.Dist.CLIENT)
+public final class NativeFreezerReferenceValidation {
    private static final String SUITE = "native-freezer-reference-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0);
    private static final Component RESERVED_NAME = Component.literal("Freezer reserved recovery fixture");
    private enum Stage {
       SETUP, ENERGY, EMPTY_FOR_INPUT, PICKUP, RIGHT_INPUT, REJECT_OUTPUT, RETURN_INPUT,
-      FULL_SETUP, FULL_RECOVERY, ROOM_SETUP, RECOVER, REPEAT_RECOVERY, CLOSE, REOPEN, PROCESS, DONE
+      FULL_SETUP, RECOVERY_TOOLTIP, FULL_RECOVERY, ROOM_SETUP, RECOVER, REPEAT_RECOVERY, CLOSE, REOPEN, PROCESS, DONE
    }
    private static Stage stage;
+   private static com.sun.jna.NativeLibrary x11, xtest;
+   private static com.sun.jna.Pointer display;
+   private static double pointerX, pointerY;
+   private static JsonObject tooltipObservation;
+   private static int tooltipFrames;
+   private static boolean tooltipInFrame;
+   private static final String RECOVERY_KEY = "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help";
    private static int ticks;
    private static int energyIndex;
    private static int stableFrames;
@@ -79,6 +87,7 @@ final class NativeFreezerReferenceValidation {
       directory = gameDirectory;
       nonce = runNonce;
       playerId = mc.player.getUUID();
+      tooltipFrames = 0; tooltipObservation = null; tooltipInFrame = false;
       while (CAPTURES.size() > 0) CAPTURES.remove(CAPTURES.size() - 1);
       while (CASES.size() > 0) CASES.remove(CASES.size() - 1);
       while (FROST_CAPTURES.size() > 0) FROST_CAPTURES.remove(FROST_CAPTURES.size() - 1);
@@ -208,8 +217,30 @@ final class NativeFreezerReferenceValidation {
          case FULL_SETUP -> {
             if (ticks < 8 || !screen.validationRecoveryVisible() || !reserved(menu.getSlot(1).getItem())) return false;
             for (int i = 3; i < 39; i++) if (!is(menu.getSlot(i).getItem(), Items.STONE, 64)) return false;
-            clickRecovery(screen);
-            enter(Stage.FULL_RECOVERY);
+            if (Boolean.getBoolean("iedctr.freezerRecoveryTooltipProbe")) {
+               require(screen.width == 320 && screen.height == 260 && mc.getWindow().getGuiScale() == 1, "Recovery probe requires 320x260 GUI scale 1");
+               initNativeInput(mc);
+               var view = screen.validationViewTransform();
+               pointerX = view.screenX(157); pointerY = view.screenY(93);
+               moveNativePointer(mc, screen);
+               enter(Stage.RECOVERY_TOOLTIP);
+            } else { clickRecovery(screen); enter(Stage.FULL_RECOVERY); }
+         }
+         case RECOVERY_TOOLTIP -> {
+            require(screen.validationRecoveryVisible() && reserved(menu.getSlot(1).getItem()) && menu.getCarried().isEmpty(), "Recovery fixture changed during hover");
+            if (ticks % 5 == 1) moveNativePointer(mc, screen);
+            if (tooltipFrames < 3) return false;
+            var proof = tooltipObservation.deepCopy();
+            proof.addProperty("nonce", nonce); proof.addProperty("source_sha", System.getProperty("iedctr.executedSourceSha"));
+            proof.addProperty("frames", tooltipFrames); proof.addProperty("language", mc.getLanguageManager().getSelected());
+            proof.addProperty("expected_text", Component.translatable(RECOVERY_KEY).getString());
+            var image = directory.resolve("freezer-recovery-tooltip.png");
+            require(!Files.exists(image), "Refusing stale recovery capture");
+            try (var frame = Screenshot.takeScreenshot(mc.getMainRenderTarget())) { frame.writeToFile(image); }
+            proof.addProperty("capture_sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(image))));
+            Files.writeString(directory.resolve("freezer-recovery-tooltip.json"), new GsonBuilder().setPrettyPrinting().create().toJson(proof));
+            closeNativeInput(); moveCursorAway(mc);
+            clickRecovery(screen); enter(Stage.FULL_RECOVERY);
          }
          case FULL_RECOVERY -> {
             if (ticks < 8 || !reserved(menu.getSlot(1).getItem()) || !serverMatches(mc, p -> reserved(machine.getItem(1)) && countDirt(p) == 0
@@ -365,6 +396,53 @@ final class NativeFreezerReferenceValidation {
          require(screen.validationSlotHoveredAt(anchor.menuIndex(), view.screenX(slot.x + 8), view.screenY(slot.y + 8)), "Rendered slot center cannot be hovered");
       }
    }
+   private static void initNativeInput(Minecraft mc) throws Exception {
+      String nativeDisplay = System.getenv("DISPLAY");
+      require(nativeDisplay != null && nativeDisplay.matches(":\\d+(\\.\\d+)?")
+         && Files.readString(directory.resolve(".iedctr-freezer-xvfb")).equals(nonce + "\n" + nativeDisplay), "Native input requires runner-owned Xvfb");
+      x11 = com.sun.jna.NativeLibrary.getInstance("X11"); xtest = com.sun.jna.NativeLibrary.getInstance("Xtst");
+      display = x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null});
+      require(display != null, "X11 unavailable"); GLFW.glfwFocusWindow(mc.getWindow().getWindow());
+   }
+   private static void closeNativeInput() {
+      if (display != null) { x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display}); display = null; }
+   }
+   private static void moveNativePointer(Minecraft mc, FreezerReferenceScreen screen) {
+      long window = mc.getWindow().getWindow();
+      if (GLFW.glfwGetWindowAttrib(window, GLFW.GLFW_FOCUSED) != GLFW.GLFW_TRUE) { GLFW.glfwFocusWindow(window); return; }
+      int[] x = {0}, y = {0}; GLFW.glfwGetWindowPos(window, x, y);
+      int targetX = x[0] + (int)Math.round(pointerX * mc.getWindow().getScreenWidth() / (double)screen.width);
+      int targetY = y[0] + (int)Math.round(pointerY * mc.getWindow().getScreenHeight() / (double)screen.height);
+      require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display, -1, targetX, targetY, new com.sun.jna.NativeLong(0)}) != 0, "Native pointer move failed");
+      x11.getFunction("XFlush").invokeInt(new Object[]{display});
+   }
+    @net.neoforged.bus.api.SubscribeEvent public static void beforeTooltipRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Pre event){tooltipInFrame=false;}
+    @net.neoforged.bus.api.SubscribeEvent public static void observeRecoveryTooltip(net.neoforged.neoforge.client.event.RenderTooltipEvent.Color event){
+        if(stage!=Stage.RECOVERY_TOOLTIP)return;
+        var mc=Minecraft.getInstance();if(!(mc.screen instanceof FreezerReferenceScreen screen)||screen.getSlotUnderMouse()!=null)return;
+        var v=screen.validationViewTransform();
+        double mx=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth(),my=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
+        if (Math.abs(mx-pointerX)>1 || Math.abs(my-pointerY)>1 || !screen.validationRecoveryVisible()) return;
+        try{
+            var record=new JsonObject();var lines=new JsonArray();var styles=new JsonArray();int width=0,height=event.getComponents().size()==1?-2:0;
+            for(var component:event.getComponents()){
+                net.minecraft.util.FormattedCharSequence seq=null;
+                for(var field:component.getClass().getDeclaredFields())if(net.minecraft.util.FormattedCharSequence.class.isAssignableFrom(field.getType())){field.setAccessible(true);seq=(net.minecraft.util.FormattedCharSequence)field.get(component);break;}
+                require(seq!=null,"Unobservable native tooltip component");var text=new StringBuilder();
+                seq.accept((i,style,codepoint)->{text.appendCodePoint(codepoint);styles.add(style.toString());return true;});lines.add(text.toString());
+                width=Math.max(width,component.getWidth(event.getFont()));height+=component.getHeight();
+            }
+            record.add("lines",lines);record.add("styles",styles);record.addProperty("tooltip_width",width);record.addProperty("tooltip_height",height);
+            record.addProperty("x",event.getX());record.addProperty("y",event.getY());record.addProperty("viewport_width",screen.width);record.addProperty("viewport_height",screen.height);
+            record.addProperty("in_bounds",event.getX()-4>=0&&event.getY()-4>=0&&event.getX()+width+4<=screen.width&&event.getY()+height+4<=screen.height);
+            tooltipObservation=record;tooltipInFrame=true;
+        }catch(Throwable error){throw new IllegalStateException("Recovery tooltip observation failed",error);}
+    }
+    @net.neoforged.bus.api.SubscribeEvent public static void afterTooltipRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Post event) {
+        if (stage != Stage.RECOVERY_TOOLTIP) return;
+        var mc = Minecraft.getInstance();
+        if (tooltipInFrame && event.getScreen() == mc.screen && mc.getOverlay() == null) tooltipFrames++; else tooltipFrames = 0;
+    }
    private static void moveCursorAway(Minecraft mc) {
       GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getScreenWidth() - 2, mc.getWindow().getScreenHeight() - 2);
    }
