@@ -24,6 +24,7 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 from freezer_reference_native import validate_proof, ART_SHA
 from freezer_packaged_proof import validate_runtime
+from freezer_recovery_tooltip_proof import validate_tooltip
 
 def require_client_success(code, expired, log):
     """Report the process failure before attempting to read absent evidence."""
@@ -36,12 +37,16 @@ def main() -> int:
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--runtime-jar", type=Path, required=True)
     parser.add_argument("--language", choices=("en_us", "fr_fr"), default="en_us")
+    parser.add_argument("--width", type=int, choices=(320, 1280), default=1280)
+    parser.add_argument("--recovery-tooltip-probe", action="store_true")
     parser.add_argument("--height", type=int, choices=(260, 720), default=720)
     parser.add_argument("--prepare-timeout", type=int, default=600)
     parser.add_argument("--timeout", type=int, default=600)
     args = parser.parse_args()
     if sys.platform != "linux" or min(args.prepare_timeout, args.timeout) <= 0:
         parser.error("Requires Linux and positive bounded timeouts")
+    if args.recovery_tooltip_probe and (args.width, args.height) != (320, 260):
+        parser.error("Recovery tooltip probe requires 320x260 GUI scale 1")
     project = args.project.resolve()
     # No uncommitted candidate may borrow the passing status of its base commit.
     clean = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], cwd=project,
@@ -81,15 +86,22 @@ def main() -> int:
         systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_JAR_SHA256')
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         programArgument '--width'
-        programArgument '1280'
+        programArgument System.getenv('IEDCTR_SCREEN_WIDTH')
+        systemProperty 'iedctr.freezerRecoveryTooltipProbe', System.getenv('IEDCTR_RECOVERY_TOOLTIP')
         programArgument '--height'
         programArgument System.getenv('IEDCTR_SCREEN_HEIGHT')
     }
 }
 """, encoding="utf-8")
+    bootstrap = evidence / "xvfb_bootstrap.py"
+    bootstrap.write_text("import os, pathlib, sys\n"
+                         "p=pathlib.Path(os.environ['IEDCTR_GAMEPLAY_DIR']) / '.iedctr-freezer-xvfb'\n"
+                         "assert not p.exists()\n"
+                         "p.write_text(os.environ['IEDCTR_GAMEPLAY_NONCE'] + '\\n' + os.environ['DISPLAY'])\n"
+                         "os.execvpe(sys.argv[1], sys.argv[1:], os.environ)\n")
     supplied = args.runtime_jar.resolve(strict=True)
     supplied_hash = hashlib.sha256(supplied.read_bytes()).hexdigest()
-    env = dict(os.environ, IEDCTR_EXPECTED_JAR=str(supplied), IEDCTR_EXPECTED_JAR_SHA256=supplied_hash, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
+    env = dict(os.environ, IEDCTR_SCREEN_WIDTH=str(args.width), IEDCTR_RECOVERY_TOOLTIP=str(args.recovery_tooltip_probe).lower(), IEDCTR_EXPECTED_JAR=str(supplied), IEDCTR_EXPECTED_JAR_SHA256=supplied_hash, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
                IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_HEIGHT=str(args.height),
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
     gradle = ["bash", str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace", "-Pinclude_freezer_packaged_validation=true", "-Pfreezer_runtime_jar="+str(supplied)]
@@ -106,8 +118,8 @@ def main() -> int:
         (evidence/'artifact-identity.json').write_text(json.dumps(dict(executed_source_sha=source_sha, nonce=nonce, jar_sha256=supplied_hash), indent=2))
         shutil.copyfile(supplied, evidence/'tested-production.jar')
         log = evidence / "client.log"
-        code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 1280x{args.height}x24"]
-                                    + gradle + ["runFreezerPackagedOptInClient"], project, env, log, args.timeout)
+        code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24"]
+                                    + [sys.executable, str(bootstrap)] + gradle + ["runFreezerPackagedOptInClient"], project, env, log, args.timeout)
         require_client_success(code, expired, log)
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):
@@ -131,7 +143,9 @@ def main() -> int:
             validate_runtime(origin, report)
         if hashlib.sha256(supplied.read_bytes()).hexdigest() != supplied_hash:
             raise SmokeFailure("Production JAR changed during execution")
-        validate_proof(proof, main_proof, nonce, source_sha, game, logs, code, expired, 1280, args.height, args.language)
+        validate_proof(proof, main_proof, nonce, source_sha, game, logs, code, expired, args.width, args.height, args.language)
+        if args.recovery_tooltip_probe:
+            validate_tooltip(json.loads((game/"freezer-recovery-tooltip.json").read_text()), game, nonce, source_sha, args.language)
         print("PASS bounded ordinary-JAR normal-path Freezer smoke; bundled fixture explicitly active, no physical OS input claim. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError, KeyError, TypeError) as error:
