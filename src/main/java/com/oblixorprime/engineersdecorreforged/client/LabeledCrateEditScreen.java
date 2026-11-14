@@ -69,7 +69,8 @@ public final class LabeledCrateEditScreen extends Screen {
    }
 
    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-      if (keyCode != 257 && keyCode != 335) {
+      // Focused buttons retain vanilla Enter/keypad/Space activation semantics.
+      if (this.getFocused() instanceof Button || (keyCode != 257 && keyCode != 335)) {
          return super.keyPressed(keyCode, scanCode, modifiers);
       }
 

@@ -40,11 +40,15 @@ public final class CrateLabelValidation {
     private static final List<String> ORIGINAL = List.of("Original first", "Original second");
     private static final List<String> EDITED = List.of("Cuivre été", "Réserve Ω");
     private static final List<String> EMPTY = List.of("", "Étain Ω");
-    private enum Stage { BOOT, WORLD, OPEN, UNSAVED, CAPTURE, SAVED, CANCELLED, DONE }
+    private enum Stage { BOOT, WORLD, OPEN, UNSAVED, CAPTURE, SAVED, CANCELLED, KEYBOARD, KEYBOARD_VERIFY, DONE }
     private static Stage stage = Stage.BOOT;
     private static boolean complete;
     private static long deadline;
     private static int ticks, cancelChecks;
+    private static int keyboardCase, keyboardChecks;
+    private static List<String> keyboardExpected = EMPTY;
+    private static final String[] KEYBOARD_CASES = {"cancel_enter_keeps_server_text", "cancel_keypad_enter_keeps_server_text",
+        "done_enter_saves_server_text", "done_keypad_enter_saves_server_text", "edit_keypad_enter_saves_server_text"};
     private static UUID playerId;
     private static Path directory;
     private static String nonce;
@@ -115,7 +119,31 @@ public final class CrateLabelValidation {
                     cases.add("cancel_does_not_save_server_text");
                     screen = new LabeledCrateEditScreen(POS, List.of("New first", "New second")); mc.setScreen(screen);
                     expect(List.of("New first", "New second")); cases.add("new_screen_uses_its_own_initial_values");
-                    screen.onClose(); enter(Stage.DONE); finish(mc, null);
+                    screen.onClose(); enter(Stage.KEYBOARD);
+                }
+                case KEYBOARD -> {
+                    if (keyboardCase == KEYBOARD_CASES.length) { enter(Stage.DONE); finish(mc, null); return; }
+                    screen = new LabeledCrateEditScreen(POS, keyboardExpected); mc.setScreen(screen);
+                    var candidate = List.of("Keyboard " + keyboardCase, "Épreuve Ω " + keyboardCase);
+                    edit(candidate);
+                    var buttons = screen.children().stream().filter(Button.class::isInstance).map(Button.class::cast).toList();
+                    require(buttons.size() == 2, "Expected Done and Cancel buttons");
+                    boolean cancel = keyboardCase < 2;
+                    if (keyboardCase < 4) {
+                        var target = buttons.get(cancel ? 1 : 0);
+                        for (int tab = 0; tab < 6 && screen.getFocused() != target; tab++) screen.keyPressed(258, 0, 0);
+                        require(screen.getFocused() == target, "Tab did not focus intended button");
+                    } else require(screen.getFocused() instanceof EditBox, "Expected edit field focus");
+                    int key = keyboardCase == 0 || keyboardCase == 2 ? 257 : 335;
+                    require(screen.keyPressed(key, 0, 0), "Focused Enter was not consumed");
+                    require(mc.screen == null, "Focused Enter did not close editor");
+                    if (!cancel) keyboardExpected = candidate;
+                    keyboardChecks = 0; enter(Stage.KEYBOARD_VERIFY);
+                }
+                case KEYBOARD_VERIFY -> {
+                    if (ticks < 10 || !serverEquals(mc, keyboardExpected)) return;
+                    if (++keyboardChecks < 3) return;
+                    cases.add(KEYBOARD_CASES[keyboardCase++]); enter(Stage.KEYBOARD);
                 }
                 default -> throw new IllegalStateException("Unexpected native stage " + stage);
             }
