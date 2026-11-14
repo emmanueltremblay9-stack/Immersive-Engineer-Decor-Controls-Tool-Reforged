@@ -5,6 +5,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 import com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
@@ -38,7 +43,8 @@ import org.lwjgl.glfw.GLFW;
  * with physical GUI coordinates and use vanilla packets. Captures are framebuffer
  * evidence, never CPU previews. A pass is a bounded smoke test, not full acceptance.
  */
-final class NativeFreezerReferenceValidation {
+@EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID, value = Dist.CLIENT)
+public final class NativeFreezerReferenceValidation {
    private static final String SUITE = "native-freezer-reference-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0);
    private static final Component RESERVED_NAME = Component.literal("Freezer reserved recovery fixture");
@@ -52,6 +58,10 @@ final class NativeFreezerReferenceValidation {
    private static int stableFrames;
    private static int previousFrostPhase;
    private static int frostStableFrames;
+   private static MachineMenu renderingMenu;
+   private static int renderingPhase;
+   private static int renderingProgress;
+   private static Exception renderFailure;
    private static final boolean[] FROST_SEEN = new boolean[4];
    private static int serverMenuId;
    private static int oldMenuId;
@@ -85,6 +95,8 @@ final class NativeFreezerReferenceValidation {
       java.util.Arrays.fill(FROST_SEEN, false);
       previousFrostPhase = -1;
       frostStableFrames = 0;
+      renderingMenu = null;
+      renderFailure = null;
       energyIndex = 0;
       serverMenuId = -1;
       setup = mc.getSingleplayerServer().submit(() -> {
@@ -112,6 +124,7 @@ final class NativeFreezerReferenceValidation {
    }
 
    static boolean tick(Minecraft mc, Path gameDirectory, String runNonce) throws Exception {
+      if (renderFailure != null) throw renderFailure;
       require(directory.equals(gameDirectory) && nonce.equals(runNonce), "Fixture identity changed");
       require(++ticks < 360, "Freezer fixture timed out at " + stage);
       if (stage == Stage.SETUP) {
@@ -141,14 +154,13 @@ final class NativeFreezerReferenceValidation {
          case ENERGY -> {
             int expected = new int[]{0, 8000, 16000}[energyIndex];
             if (menu.energyStored() != expected) { stableFrames = 0; return false; }
-            // Wait for rendered frames after the synchronized state, not since submission.
-            if (++stableFrames < 8) return false;
+            // Tick settling remains separate from the actual render-frame frost gate.
+            if (++stableFrames < 8 || (energyIndex == 0 && !FROST_SEEN[0])) return false;
             require(menu.getSlot(0).getItem().isEmpty() && menu.freezerProgressTicks() == 0, "Energy frames must not fake processing");
             capture(mc, "energy-" + expected, menu);
             if (energyIndex == 0) {
                require(menu.freezerPhase() == 0, "Idle phase must be server zero");
-               capture(mc, "frost-phase-0", menu);
-               FROST_SEEN[0] = true;
+               // Phase zero was captured by the coherent Render.Post gate.
             }
             if (++energyIndex < 3) {
                setup = mc.getSingleplayerServer().submit(() -> {
@@ -260,14 +272,6 @@ final class NativeFreezerReferenceValidation {
          case PROCESS -> {
             // Natural recipe captures only phases 1..3. The server sets phase 4 at
             // completion then resets it in the same tick: never invent a hold/frame.
-            int phase = menu.freezerPhase();
-            if (phase != previousFrostPhase) { previousFrostPhase = phase; frostStableFrames = 0; }
-            if (phase > 0 && phase < 4 && !FROST_SEEN[phase] && ++frostStableFrames >= 3) {
-               require(menu.freezerProgressTicks() >= phase * 45
-                  && menu.freezerProgressTicks() < (phase + 1) * 45, "Phase/progress disagree");
-               capture(mc, "frost-phase-" + phase, menu);
-               FROST_SEEN[phase] = true;
-            }
             if (!menu.getSlot(0).getItem().isEmpty() || !is(menu.getSlot(2).getItem(), Items.PACKED_ICE, 1)
                || menu.energyStored() != 0 || menu.freezerProgressTicks() != 0
                || !serverMatches(mc, p -> machine.getItem(0).isEmpty() && is(machine.getItem(2), Items.PACKED_ICE, 1)
@@ -288,6 +292,54 @@ final class NativeFreezerReferenceValidation {
          default -> throw new IllegalStateException("Unexpected Freezer stage " + stage);
       }
       return false;
+   }
+
+   // Capture the frame that actually rendered this menu state, never a previous
+   // framebuffer sampled during a burst of catch-up client ticks.
+   @SubscribeEvent
+   public static void beforeFrostRender(ScreenEvent.Render.Pre event) {
+      renderingMenu = null;
+      Minecraft mc = Minecraft.getInstance();
+      if (directory == null || renderFailure != null || mc.getOverlay() != null
+         || (stage != Stage.PROCESS && !(stage == Stage.ENERGY && energyIndex == 0))
+         || !(event.getScreen() instanceof FreezerReferenceScreen) || event.getScreen() != mc.screen
+         || setup != null) return;
+      MachineMenu menu = current(mc);
+      if (menu == null) return;
+      renderingMenu = menu;
+      renderingPhase = menu.freezerPhase();
+      renderingProgress = menu.freezerProgressTicks();
+   }
+
+   @SubscribeEvent
+   public static void afterFrostRender(ScreenEvent.Render.Post event) {
+      Minecraft mc = Minecraft.getInstance();
+      MachineMenu menu = renderingMenu;
+      renderingMenu = null; // a Post without its matching Pre cannot count
+      if (menu == null || event.getScreen() != mc.screen || mc.getOverlay() != null
+         || current(mc) != menu || menu.freezerPhase() != renderingPhase
+         || menu.freezerProgressTicks() != renderingProgress) {
+         frostStableFrames = 0;
+         return;
+      }
+      int phase = renderingPhase;
+      boolean eligible = phase >= 0 && phase < 4
+         && (stage == Stage.PROCESS ? phase > 0
+            : stage == Stage.ENERGY && energyIndex == 0 && phase == 0 && menu.energyStored() == 0);
+      if (!eligible) { frostStableFrames = 0; return; }
+      if (phase != previousFrostPhase) { previousFrostPhase = phase; frostStableFrames = 0; }
+      if (++frostStableFrames < 3 || FROST_SEEN[phase]) return;
+      try {
+         require(phase == 0 ? renderingProgress == 0
+            : renderingProgress >= phase * 45 && renderingProgress < (phase + 1) * 45,
+            "Rendered phase/progress disagree");
+         // GuiGraphics batches draws; flush before reading the native target.
+         event.getGuiGraphics().flush();
+         capture(mc, "frost-phase-" + phase, menu);
+         FROST_SEEN[phase] = true;
+      } catch (Exception error) {
+         renderFailure = error; // existing tick failure/reporting path remains authoritative
+      }
    }
 
    private static void enter(Stage next) { stage = next; ticks = 0; stableFrames = 0; inspection = null; }
@@ -427,7 +479,11 @@ final class NativeFreezerReferenceValidation {
       capture.addProperty("view_scale", ((FreezerReferenceScreen)mc.screen).validationViewTransform().scale());
       capture.addProperty("phase", menu.freezerPhase());
       capture.addProperty("progress_ticks", menu.freezerProgressTicks());
-      if (label.startsWith("frost-phase-")) FROST_CAPTURES.add(capture); else CAPTURES.add(capture);
+      if (label.startsWith("frost-phase-")) {
+         capture.addProperty("rendered_frames", frostStableFrames);
+         capture.addProperty("capture_event", "ScreenEvent.Render.Post");
+         FROST_CAPTURES.add(capture);
+      } else CAPTURES.add(capture);
    }
    private static void casePassed(String name) { CASES.add(name); }
    private static void writeProof(Minecraft mc) throws Exception {
