@@ -1,7 +1,11 @@
 """Exact Tree/Freezer/Milking integration layers, never broad preservation exclusions."""
 import hashlib
 import json
+from freezer_v5_reconciliation import LAYER as V5_LAYER, assert_freezer_v5_reconciliation, current_hash
 
+
+V5_ACCESSOR = '   public boolean freezerReferencePresentation() {\n      return this.freezerReferencePresentation;\n   }\n'
+V5_RESERVED_SLOT = '      if (this.kind == MachineKind.SMALL_FREEZER && slot.containerIndex() == 1) {\n         return new MachineMenu.ValidatedMachineSlot(this.container, 1, slot.x(), slot.y(), true) {\n            @Override\n            public boolean isActive() {\n               // Hide the historical reserved opening only in the opt-in presentation.\n               // Its backing contents and ordinary QUICK_MOVE recovery remain intact.\n               return !MachineMenu.this.freezerReferencePresentation;\n            }\n         };\n      }\n'
 
 MENU_TAIL_SHA256 = 'f471ad91c8d8acfabc55d73a19a21807cb7cf1e41052a369bb91a50708772633'
 TREE_ACCESSOR = ('   public boolean treeCutterV3ReferencePresentation() '
@@ -95,11 +99,12 @@ def record_sha256(record):
 
 def assert_combined_integration_preserved(root, manifest):
     """Pin both parent identities and current bytes independently of editable manifests."""
+    assert_freezer_v5_reconciliation(root, manifest)
     combined = manifest.get(COMBINED_LAYER)
     assert record_sha256(combined) == COMBINED_RECORD_SHA256, 'Combined Milking/Freezer integration changed'
     for path, record in COMBINED_FILES.items():
         assert record['main_sha256'] == FREEZER_FILES[path]['integrated_sha256'], path
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == record['integrated_sha256'], path
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_hash(path, record['integrated_sha256']), path
 
 
 def assert_milking_integration_preserved(root, pins):
@@ -107,12 +112,12 @@ def assert_milking_integration_preserved(root, pins):
     # Reconstruct the two previous Java pins and the explicitly pinned manual
     # language integration. Baselines, renderer history, Tree provenance and
     # unaffected current pins stay exact.
-    history = {key: value for key, value in pins.items() if key not in (COMBINED_LAYER, 'manual_integration')}
+    history = {key: value for key, value in pins.items() if key not in (COMBINED_LAYER, 'manual_integration', V5_LAYER, 'freezer_v5_normal_activation', 'freezer_v5_legacy_diagnostic')}
     history['sha256'] = dict(pins['sha256'])
     if 'manual_integration' in pins:
         assert record_sha256(pins['manual_integration']) == MANUAL_RECORD_SHA256, 'Manual integration provenance changed'
         assert pins['sha256'].get(MANUAL_LANGUAGE_PATH) == MANUAL_INTEGRATED_SHA256, 'Manual integration pin changed'
-        assert hashlib.sha256((root / MANUAL_LANGUAGE_PATH).read_bytes()).hexdigest() == MANUAL_INTEGRATED_SHA256, 'Manual integration bytes changed'
+        assert hashlib.sha256((root / MANUAL_LANGUAGE_PATH).read_bytes()).hexdigest() == current_hash(MANUAL_LANGUAGE_PATH, MANUAL_INTEGRATED_SHA256), 'Manual integration bytes changed'
         history['sha256'][MANUAL_LANGUAGE_PATH] = MANUAL_PREVIOUS_SHA256
     for path, record in COMBINED_FILES.items():
         assert pins['sha256'].get(path) == record['integrated_sha256'], path
@@ -125,6 +130,9 @@ def assert_menu_tail_preserved(source):
     marker = '   private static MenuType<?> resolveMenuType'
     assert source.count(marker) == 1, 'Ambiguous menu preservation boundary'
     tail = source.split(marker, 1)[1]
+    assert tail.count(V5_ACCESSOR) == 1, 'Missing or changed Freezer V5 accessor'
+    assert tail.count(V5_RESERVED_SLOT) == 1, 'Missing or changed Freezer V5 reserved slot'
+    tail = tail.replace(V5_ACCESSOR, '', 1).replace(V5_RESERVED_SLOT, '', 1)
     assert tail.count(TREE_ACCESSOR) == 1, 'Missing or changed Tree presentation accessor'
     assert tail.count(FREEZER_PREVIEW) == 1, 'Missing or changed Freezer preview method'
     normalized = tail.replace(TREE_ACCESSOR, '', 1).replace(FREEZER_PREVIEW, HISTORICAL_FREEZER_PREVIEW, 1)
@@ -173,4 +181,4 @@ def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None
             expected = milking_current_hashes[path]
         if path in COMBINED_FILES:
             expected = COMBINED_FILES[path]['integrated_sha256']
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == expected, path
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_hash(path, expected), path

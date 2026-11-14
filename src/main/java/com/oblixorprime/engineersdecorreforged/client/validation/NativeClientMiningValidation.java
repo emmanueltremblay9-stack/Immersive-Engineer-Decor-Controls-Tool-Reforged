@@ -109,7 +109,7 @@ public final class NativeClientMiningValidation {
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
-      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, CATALOGUE, SUBMERGED_CATWALK, GENERIC_FLUID, WATER_DISTANCE, LAVA_SURFACE, DOOR_SENSOR, PANZER_GLASS, CATWALK_JUNCTION, SMELTER_GUI }
+      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, CATALOGUE, SUBMERGED_CATWALK, GENERIC_FLUID, WATER_DISTANCE, LAVA_SURFACE, DOOR_SENSOR, PANZER_GLASS, CATWALK_JUNCTION, SMELTER_GUI, FREEZER_REFERENCE }
 
    @SubscribeEvent
    public static void removed(RailingMining.InsetLightRemoved event) {
@@ -145,6 +145,11 @@ public final class NativeClientMiningValidation {
                require(mc.getSingleplayerServer() != null, "Fixture must use its own integrated server");
                Connection connection = mc.player.connection.getConnection();
                require(connection.isMemoryConnection(), "Fixture must never connect to a remote server");
+               if (Boolean.getBoolean("iedctr.freezerReferenceOnly")) {
+                  NativeFreezerReferenceValidation.begin(mc, evidence.getParent(), nonce);
+                  enter(Phase.FREEZER_REFERENCE);
+                  return;
+               }
                if (Boolean.getBoolean("iedctr.smelterGuiOnly")) {
                   NativeSmelterGuiValidation.begin(mc, evidence.getParent(), nonce);
                   enter(Phase.SMELTER_GUI);
@@ -211,6 +216,9 @@ public final class NativeClientMiningValidation {
          mc.player.setNoGravity(true);
          mc.player.setDeltaMovement(Vec3.ZERO);
          switch (phase) {
+            case FREEZER_REFERENCE -> {
+               if (NativeFreezerReferenceValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
+            }
             case SMELTER_GUI -> {
                boolean completed = Boolean.getBoolean("iedctr.correctedMachineGuiOnly")
                   ? NativeCorrectedMachineGuiValidation.tick(mc, evidence.getParent(), nonce)
@@ -677,14 +685,14 @@ public final class NativeClientMiningValidation {
 
    private static void write(String status, Throwable error) throws Exception {
       JsonObject proof = new JsonObject();
-      proof.addProperty("suite", Boolean.getBoolean("iedctr.correctedMachineGuiOnly") ? "native-corrected-machine-gui-v1" : Boolean.getBoolean("iedctr.smelterGuiOnly") ? "native-smelter-gui-v1" : Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "catwalk-junction-capture-session-v1" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "panzer-glass-session-v1" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "door-sensor-session-v1" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "lava-surface-session-v1" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "native-water-flow-session-v1" : SUITE);
+      proof.addProperty("suite", Boolean.getBoolean("iedctr.freezerReferenceOnly") ? "native-freezer-reference-v1" : Boolean.getBoolean("iedctr.correctedMachineGuiOnly") ? "native-corrected-machine-gui-v1" : Boolean.getBoolean("iedctr.smelterGuiOnly") ? "native-smelter-gui-v1" : Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "catwalk-junction-capture-session-v1" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "panzer-glass-session-v1" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "door-sensor-session-v1" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "lava-surface-session-v1" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "native-water-flow-session-v1" : SUITE);
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", status);
       proof.addProperty("phase", phase.name());
-      proof.addProperty("expected_cases", Boolean.getBoolean("iedctr.smelterGuiOnly") || Boolean.getBoolean("iedctr.correctedMachineGuiOnly") || Boolean.getBoolean("iedctr.catwalkJunctionOnly") || Boolean.getBoolean("iedctr.panzerGlassOnly") || Boolean.getBoolean("iedctr.doorSensorOnly") || Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? 0 : 10);
+      proof.addProperty("expected_cases", Boolean.getBoolean("iedctr.freezerReferenceOnly") || Boolean.getBoolean("iedctr.smelterGuiOnly") || Boolean.getBoolean("iedctr.correctedMachineGuiOnly") || Boolean.getBoolean("iedctr.catwalkJunctionOnly") || Boolean.getBoolean("iedctr.panzerGlassOnly") || Boolean.getBoolean("iedctr.doorSensorOnly") || Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? 0 : 10);
       proof.addProperty("actual_integrated_world", true);
       proof.addProperty("fixture_attack_context_verified", fixtureAttackContextVerified);
-      proof.addProperty("scope", Boolean.getBoolean("iedctr.correctedMachineGuiOnly") ? "Seven registered MachineScreen menus with synchronized fixture states and native captures; excludes Tree Cutter V3, which requires independent qualification" : Boolean.getBoolean("iedctr.smelterGuiOnly") ? "Real Small Mineral Smelter v0.5 menu and live integrated-server projection with native framebuffer captures" : Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "Landing/stair scene capture and packaged-model measurements only; no alignment or survival qualification" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "Isolated Panzer Glass scene captures and face visibility checks; no mining qualification" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "Isolated native Door Sensor placement and captures; no mining qualification" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "Isolated lava height and mesh diagnostic; no mining qualification" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "Natural water flow observation only; no lamp mining qualification" : "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");
+      proof.addProperty("scope", Boolean.getBoolean("iedctr.freezerReferenceOnly") ? "Bounded Freezer V5 native inventory/energy smoke; chamber frost from server phases; static decorative rim; not full visual acceptance" : Boolean.getBoolean("iedctr.correctedMachineGuiOnly") ? "Seven registered MachineScreen menus with synchronized fixture states and native captures; excludes Tree Cutter V3, which requires independent qualification" : Boolean.getBoolean("iedctr.smelterGuiOnly") ? "Real Small Mineral Smelter v0.5 menu and live integrated-server projection with native framebuffer captures" : Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "Landing/stair scene capture and packaged-model measurements only; no alignment or survival qualification" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "Isolated Panzer Glass scene captures and face visibility checks; no mining qualification" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "Isolated native Door Sensor placement and captures; no mining qualification" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "Isolated lava height and mesh diagnostic; no mining qualification" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "Natural water flow observation only; no lamp mining qualification" : "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");
       proof.add("cases", RESULTS.deepCopy());
       if (error != null) {
          proof.addProperty("error", error.toString());
@@ -710,7 +718,9 @@ public final class NativeClientMiningValidation {
       } catch (Exception writeError) {
          EngineersDecorReforged.LOGGER.error("IEDCTR_CLIENT_GAMEPLAY cannot write evidence", writeError);
       }
-      if (error == null && Boolean.getBoolean("iedctr.correctedMachineGuiOnly"))
+      if (error == null && Boolean.getBoolean("iedctr.freezerReferenceOnly"))
+         EngineersDecorReforged.LOGGER.info("IEDCTR_FREEZER_REFERENCE PASSED nonce={}", nonce);
+      else if (error == null && Boolean.getBoolean("iedctr.correctedMachineGuiOnly"))
          EngineersDecorReforged.LOGGER.info("IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={}", nonce);
       else if (error == null && Boolean.getBoolean("iedctr.smelterGuiOnly"))
    EngineersDecorReforged.LOGGER.info("IEDCTR_SMELTER_GUI PASSED nonce={}", nonce);

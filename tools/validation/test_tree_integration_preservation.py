@@ -6,6 +6,7 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 
+from freezer_v5_reconciliation import FILES as V5_FILES, LAYER as V5_LAYER
 from tree_integration_preservation import (
     BARREL_GUARD, COMBINED_FILES, COMBINED_LAYER, FREEZER_FILES, FREEZER_PREVIEW,
     HISTORICAL_FREEZER_PREVIEW, INTEGRATION_FILES, MACHINE_ENTITY, MACHINE_MENU,
@@ -23,7 +24,7 @@ class IntegratedPreservationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.menu = MENU.read_text()
         cls.manifest = json.loads((ROOT / 'docs/testing/solar-v2-reference/preserved-baseline-sha256.json').read_text())
-        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES)}
+        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(V5_FILES)}
         cls.pins = json.loads((ROOT / 'docs/testing/milking-qualification/production-pins.json').read_text())
         cls.manual_language_bytes = (ROOT / MANUAL_LANGUAGE_PATH).read_bytes()
         cls.milking_hashes = {name: cls.pins['sha256'][name] for name in MILKING_FILES}
@@ -104,14 +105,14 @@ class IntegratedPreservationTests(unittest.TestCase):
                     self.check_milking(pins)
 
     def test_milking_history_cannot_be_rewritten_or_dropped(self):
-        for key in self.pins.keys() - {'sha256', COMBINED_LAYER}:
+        for key in self.pins.keys() - {'sha256', COMBINED_LAYER, V5_LAYER}:
             for drop in (False, True):
                 pins = copy.deepcopy(self.pins)
                 if drop:
                     del pins[key]
                 else:
                     pins[key] = 'changed'
-                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance'):
+                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance|Normal activation record changed|Legacy diagnostic record changed'):
                     self.check_milking(pins)
 
     def test_freezer_historical_scope_and_reasons_are_preserved(self):

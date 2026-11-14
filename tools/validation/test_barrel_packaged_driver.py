@@ -74,7 +74,8 @@ class BarrelDriverGuards(unittest.TestCase):
         self.assertEqual(1, runner.count(selector))
         self.assertIn("if (System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY') == 'true') {\n"
                       "            systemProperty 'iedctr.dev.barrelV5Reference', 'false'\n"
-                      "            " + selector + "\n        }", runner)
+                      "            " + selector + "\n"
+                      "            systemProperty 'iedctr.dev.freezerV5LiveEnergy', 'false'\n        }", runner)
         source = (ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeCorrectedMachineGuiValidation.java').read_text()
         self.assertEqual(2, source.count('require("false".equals(System.getProperty("iedctr.dev.solarV2Reference"))'))
         self.assertIn('proof.addProperty("solar_legacy_selector", "iedctr.dev.solarV2Reference=" + System.getProperty("iedctr.dev.solarV2Reference"))', source)

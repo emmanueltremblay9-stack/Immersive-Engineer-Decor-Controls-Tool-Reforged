@@ -1,0 +1,111 @@
+{
+  "schema": "iedctr-swf-v5-organic-frost-revision",
+  "canonical_source_sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "mask_sha256_before_and_after": "625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0",
+  "mask_support_nonzero_alpha_xyxy_exclusive": [
+    432,
+    363,
+    823,
+    598
+  ],
+  "mask_construction_bbox_xyxy": [
+    438,
+    369,
+    817,
+    592
+  ],
+  "only_modified_layers": [
+    2,
+    3
+  ],
+  "phase_checks": {
+    "0": {
+      "outside_mask_rgba_difference_pixels": 0,
+      "overlay_alpha_outside_mask_nonzero": 0,
+      "hinge_rgba_difference_pixels": {
+        "left": 0,
+        "right": 0
+      },
+      "changed_rgba_pixels_vs_previous_candidate": 0,
+      "overlay_sha256_before": "eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664",
+      "overlay_sha256_after": "eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664",
+      "composite_sha256_before": "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c",
+      "composite_sha256_after": "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c"
+    },
+    "1": {
+      "outside_mask_rgba_difference_pixels": 0,
+      "overlay_alpha_outside_mask_nonzero": 0,
+      "hinge_rgba_difference_pixels": {
+        "left": 0,
+        "right": 0
+      },
+      "changed_rgba_pixels_vs_previous_candidate": 0,
+      "overlay_sha256_before": "5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b",
+      "overlay_sha256_after": "5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b",
+      "composite_sha256_before": "ec219d17d56806eaa9dbd7b10f9be2bdfff2f584695405577f370785a83eaffa",
+      "composite_sha256_after": "ec219d17d56806eaa9dbd7b10f9be2bdfff2f584695405577f370785a83eaffa"
+    },
+    "2": {
+      "outside_mask_rgba_difference_pixels": 0,
+      "overlay_alpha_outside_mask_nonzero": 0,
+      "hinge_rgba_difference_pixels": {
+        "left": 0,
+        "right": 0
+      },
+      "changed_rgba_pixels_vs_previous_candidate": 12812,
+      "overlay_sha256_before": "1ed5617ec0b1dcb207767468b12d3b7203c8c1506522ec5681b6a3390c377b02",
+      "overlay_sha256_after": "ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898",
+      "composite_sha256_before": "4dc458822c4ab7f78cccc113e2c87bcc995ffd80116b7d8d3043d0be4f6abe28",
+      "composite_sha256_after": "6ac57be6cb97dd870ca60763d232e5c3945fb05681f190aa885a25b6ddb3f28e"
+    },
+    "3": {
+      "outside_mask_rgba_difference_pixels": 0,
+      "overlay_alpha_outside_mask_nonzero": 0,
+      "hinge_rgba_difference_pixels": {
+        "left": 0,
+        "right": 0
+      },
+      "changed_rgba_pixels_vs_previous_candidate": 7138,
+      "overlay_sha256_before": "039fc2176418846820ee2583480122206857aa702f1036af7539ee4a2dab590f",
+      "overlay_sha256_after": "3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49",
+      "composite_sha256_before": "e9839ed1091b6517412d68b376b17826042ddb42edad6d125e4d388c50bdab6b",
+      "composite_sha256_after": "157803ebbccb9b7d8eb5141eb04527aceeee72aa97f565bc2de20ddaec19615b"
+    },
+    "4": {
+      "outside_mask_rgba_difference_pixels": 0,
+      "overlay_alpha_outside_mask_nonzero": 0,
+      "hinge_rgba_difference_pixels": {
+        "left": 0,
+        "right": 0
+      },
+      "changed_rgba_pixels_vs_previous_candidate": 0,
+      "overlay_sha256_before": "b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0",
+      "overlay_sha256_after": "b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0",
+      "composite_sha256_before": "c8ac90e18bf74ee78622ff34179f3689f6d432bb9117fe4b75838f9d09574f3d",
+      "composite_sha256_after": "c8ac90e18bf74ee78622ff34179f3689f6d432bb9117fe4b75838f9d09574f3d"
+    }
+  },
+  "preview_files": [
+    "freezer_v5_314px_contact_sheet.png",
+    "freezer_v5_314px_contact_sheet_nearest.png",
+    "freezer_v5_1280x260_chamber_review.png",
+    "freezer_v5_1280x260_chamber_review_nearest.png",
+    "freezer_v5_phase2_before_after_detail.png",
+    "freezer_v5_phase3_before_after_detail.png",
+    "freezer_v5_phase2_before_after_nearest.png",
+    "freezer_v5_phase3_before_after_nearest.png"
+  ],
+  "server_contract": {
+    "ticks_per_cycle": 180,
+    "phase4": "transient same tick 180 returns to phase 0",
+    "redstone_or_insufficient_FE": "server resets progression 0",
+    "render": "directly synchronized server phase only",
+    "client_time_smoothing": false,
+    "client_latching": false
+  },
+  "quality_limit": "Static edge frost outside glass preserved; authored organic fade reviewed in NN and Lanczos but no Minecraft client QA."
+}
