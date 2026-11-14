@@ -1448,7 +1448,14 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
       Component controlTooltip = this.originalControlTooltip(mouseX, mouseY);
       if (controlTooltip != null) {
-         graphics.renderTooltip(this.font, controlTooltip, mouseX, mouseY);
+         MachineKind kind = ((MachineMenu)this.menu).kind();
+         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER) {
+            // Preserve translated line breaks and styles; bound long control help to the viewport.
+            int wrapWidth = Math.max(1, Math.min(240, this.width - 16));
+            graphics.renderTooltip(this.font, this.font.split(controlTooltip, wrapWidth), mouseX, mouseY);
+         } else {
+            graphics.renderTooltip(this.font, controlTooltip, mouseX, mouseY);
+         }
       } else if (this.hoveredSlot == null || !this.hoveredSlot.hasItem()) {
          for (MachineLayout.MachineSlot slot : ((MachineMenu)this.menu).layout().machineSlots()) {
             if (this.isHovering(slot.x(), slot.y(), 16, 16, mouseX, mouseY)) {
