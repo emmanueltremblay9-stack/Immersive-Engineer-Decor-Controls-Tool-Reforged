@@ -1,0 +1,19 @@
+{
+  "status": "PASS_STATIC_SOURCE_CHECKS_ONLY_NOT_MINECRAFT_EXECUTION",
+  "checks": {
+    "mouseClicked_inverse_pointer": true,
+    "mouseReleased_inverse_pointer": true,
+    "mouseDragged_inverse_pointer": true,
+    "mouseScrolled_inverse_pointer": true,
+    "mouseMoved_inverse_pointer": true,
+    "drag_delta": true,
+    "wheel_units_unchanged": true,
+    "render_floor": true,
+    "raw_hover": true,
+    "conditional_recovery": true,
+    "reuse_MachineMenu.java": true,
+    "reuse_ClientModEvents.java": true,
+    "reuse_MachineGuiGameTests.java": true,
+    "reuse_build.gradle": true
+  }
+}

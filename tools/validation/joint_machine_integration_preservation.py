@@ -1,6 +1,7 @@
 """Exact PR179 + PR169 reconciliation; immutable parent and current identities."""
 import hashlib
 import json
+from breaker_current_main_integration import assert_record, project, integrated_current_hash
 
 JOINT_LAYER = 'breaker_milking_integration'
 JOINT_INTEGRATION = {'main_commit': '28a70f534323511e38dcc99453d4019af9576a77',
@@ -30,11 +31,19 @@ WRAP_LAYER = 'breaker_tooltip_wrap'
 WRAP_RECORD = {'parent_commit': '51cc4352763042589e151b9fba9bbe66c6381c11', 'scope': 'Bound native Block Breaker tooltip text with the existing viewport-aware 240px split; no text, artwork, hover or gameplay change.', 'path': 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java', 'parent_sha256': '2c20b39756c1dc42df8c610d7b2d755fb3d6c52f4e0e4c16a6ddedd91191b3b2', 'current_sha256': '916b05d77a586089d7ecf814f1f9ca4afeb6da2b2fadc0a15423eed67664e78f'}
 
 def assert_joint_integration_preserved(root, manifest):
+    assert_record(manifest)
     assert manifest.get(JOINT_LAYER) == JOINT_INTEGRATION, 'Historical Milking/Breaker joint integration changed'
     assert manifest.get(WRAP_LAYER) == WRAP_RECORD, 'Tooltip wrap provenance changed'
     for path, record in JOINT_FILES.items():
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == integrated_hash(path, record['integrated_sha256']), path
+        assert hashlib.sha256(project(path, (root / path).read_bytes(), 'breaker')).hexdigest() == integrated_hash(path, record['integrated_sha256']), path
 
 def integrated_hash(path, previous):
     if path == WRAP_RECORD['path']: return WRAP_RECORD['current_sha256']
     return JOINT_FILES[path]['integrated_sha256'] if path in JOINT_FILES else previous
+
+
+def current_integrated_hash(path, previous):
+    if path in JOINT_FILES:
+        return integrated_current_hash(path, integrated_hash(path, previous))
+    from freezer_v5_reconciliation import current_hash
+    return current_hash(path, previous)

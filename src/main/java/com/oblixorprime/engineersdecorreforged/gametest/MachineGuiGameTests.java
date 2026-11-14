@@ -40,6 +40,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.item.Item;
@@ -1335,6 +1336,111 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the batch resumes after output space is freed");
       helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
       helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void reference_flags_preserve_both_authoritative_menu_layouts(GameTestHelper helper) {
+      String[] properties = {
+         MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY,
+         MachineMenu.DEV_FREEZER_LIVE_ENERGY_PROPERTY,
+         MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY
+      };
+      String[] previous = java.util.Arrays.stream(properties).map(System::getProperty).toArray(String[]::new);
+      try {
+         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+         // All eight flag combinations include both Freezer modes plus Placer at once.
+         for (int flags = 0; flags < 8; flags++) {
+            for (int i = 0; i < properties.length; i++) {
+               System.setProperty(properties[i], Boolean.toString((flags & (1 << i)) != 0));
+            }
+            for (MachineKind kind : List.of(MachineKind.SMALL_FREEZER, MachineKind.FACTORY_PLACER)) {
+               MachineMenu authoritative = new MachineMenu(kind, 1, player.getInventory(),
+                  new SimpleContainer(27), new SimpleContainerData(MachineMenu.DATA_COUNT));
+               MachineMenu fromClientFactory = MachineMenu.client(2, player.getInventory(), kind);
+               for (MachineMenu menu : List.of(authoritative, fromClientFactory)) {
+                  helper.assertTrue(!menu.freezerReferencePresentation(), "server world must not enable Freezer presentation");
+                  helper.assertTrue(!menu.factoryPlacerV2ReferencePresentation(), "server world must not enable Placer presentation");
+                  MachineLayout layout = MachineLayout.forKind(kind);
+                  int machineSlots = layout.machineSlots().size();
+                  helper.assertValueEqual(machineSlots + 36, menu.slots.size(), "protocol slot count is unchanged");
+                  for (int i = 0; i < machineSlots; i++) {
+                     MachineLayout.MachineSlot expected = layout.machineSlots().get(i);
+                     helper.assertValueEqual(expected.containerIndex(), menu.getSlot(i).getSlotIndex(), "machine backing index is unchanged");
+                     helper.assertValueEqual(expected.x(), menu.getSlot(i).x, "server machine x remains legacy");
+                     helper.assertValueEqual(expected.y(), menu.getSlot(i).y, "server machine y remains legacy");
+                  }
+                  for (int i = 0; i < 36; i++) {
+                     var slot = menu.getSlot(machineSlots + i);
+                     helper.assertValueEqual(i < 27 ? i + 9 : i - 27, slot.getSlotIndex(), "player backing index is unchanged");
+                     helper.assertValueEqual(i < 27 ? layout.playerSlotX(i % 9) : layout.hotbarSlotX(i % 9), slot.x, "server player x remains legacy");
+                     helper.assertValueEqual(i < 27 ? layout.playerSlotY(i / 9) : layout.hotbarY(), slot.y, "server player y remains legacy");
+                  }
+                  menu.removed(player);
+               }
+            }
+         }
+         helper.succeed();
+      } finally {
+         for (int i = 0; i < properties.length; i++) {
+            if (previous[i] == null) System.clearProperty(properties[i]);
+            else System.setProperty(properties[i], previous[i]);
+         }
+      }
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_freezer_reference_flag_preserves_server_slots_and_reserved_recovery(GameTestHelper helper) {
+      String previous = System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY);
+      System.setProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY, "true");
+      try {
+         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+         MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+         ItemStack reserved = new ItemStack(Items.DIRT, 5);
+         reserved.set(DataComponents.CUSTOM_NAME, net.minecraft.network.chat.Component.literal("Legacy reserved items"));
+         machine.setItem(0, new ItemStack(Items.ICE));
+         machine.setItem(1, reserved);
+         machine.setItem(2, new ItemStack(Items.PACKED_ICE));
+         CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+         machine.setItem(1, ItemStack.EMPTY);
+         machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+
+         MachineMenu menu = new MachineMenu(
+            MachineKind.SMALL_FREEZER, 1, player.getInventory(), machine, machine.dataAccessForTests());
+         helper.assertTrue(!menu.freezerReferencePresentation(), "client development flag must not change server presentation");
+         helper.assertValueEqual(39, menu.slots.size(), "both presentations preserve all 39 protocol slots");
+         helper.assertValueEqual(3, menu.visibleMachineSlots(), "quickMove machine range stays 0..2");
+         for (int index = 0; index < 3; index++) {
+            helper.assertValueEqual(index, menu.getSlot(index).getSlotIndex(), "machine container indices stay unchanged");
+         }
+         for (int index = 3; index < 30; index++) {
+            helper.assertValueEqual(index + 6, menu.getSlot(index).getSlotIndex(), "inventory slot order stays unchanged");
+         }
+         for (int index = 30; index < 39; index++) {
+            helper.assertValueEqual(index - 30, menu.getSlot(index).getSlotIndex(), "hotbar slot order stays unchanged");
+         }
+         helper.assertValueEqual(30, menu.getSlot(0).x, "server retains legacy layout x");
+         helper.assertValueEqual(66, menu.getSlot(0).y, "server retains legacy layout y");
+         helper.assertTrue(menu.getSlot(1).isActive(), "server retains ordinary reserved slot access");
+         helper.assertTrue(!menu.getSlot(1).mayPlace(new ItemStack(Items.DIRT)), "reserved insertion remains disabled");
+         helper.assertTrue(!menu.getSlot(2).mayPlace(new ItemStack(Items.ICE)), "output insertion remains disabled");
+         helper.assertTrue(ItemStack.isSameItemSameComponents(reserved, machine.getItem(1)), "saved reserved NBT/components survive");
+
+         for (int index = 0; index < 36; index++) player.getInventory().setItem(index, new ItemStack(Items.STONE, 64));
+         menu.clicked(1, 0, ClickType.QUICK_MOVE, player);
+         helper.assertValueEqual(5, machine.getItem(1).getCount(), "full inventory does not lose reserved items");
+         player.getInventory().setItem(0, ItemStack.EMPTY);
+         menu.clicked(1, 0, ClickType.QUICK_MOVE, player);
+         helper.assertTrue(machine.getItem(1).isEmpty(), "normal QUICK_MOVE packet path recovers reserved contents");
+         helper.assertValueEqual(5, player.getInventory().getItem(0).getCount(), "all reserved items reach player inventory");
+         helper.assertTrue(ItemStack.isSameItemSameComponents(reserved, player.getInventory().getItem(0)), "recovery retains item components");
+         helper.assertTrue(machine.getItem(0).is(Items.ICE), "recovery leaves input untouched");
+         helper.assertTrue(machine.getItem(2).is(Items.PACKED_ICE), "recovery leaves output untouched");
+         menu.removed(player);
+         helper.succeed();
+      } finally {
+         if (previous == null) System.clearProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY);
+         else System.setProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY, previous);
+      }
    }
 
    @GameTest(template = "empty", timeoutTicks = 100)

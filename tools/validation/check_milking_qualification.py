@@ -5,6 +5,12 @@ import json
 from pathlib import Path
 import re
 from client_mixin_smoke import SmokeFailure
+from freezer_v5_reconciliation import current_hash as freezer_current_hash
+from breaker_current_main_integration import RECORD, integrated_current_hash
+
+def current_hash(path, previous):
+    return integrated_current_hash(path, previous) if path in RECORD["files"] else freezer_current_hash(path, previous)
+
 from tree_integration_preservation import (
     MAIN_COMMIT, MILKING_UPSTREAM_INTEGRATED_FILES, TREE_COMMIT,
     assert_milking_integration_preserved,
@@ -52,6 +58,7 @@ def check_preservation(root=ROOT):
         if pins['sha256'].get(name) != expected:
             raise SmokeFailure('Baseline artwork/layout preservation failed: '+name)
     for name,expected in pins['sha256'].items():
+        expected = current_hash(name, expected)
         path=root/name
         if path.is_symlink() or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
             raise SmokeFailure('Production preservation failed: '+name)

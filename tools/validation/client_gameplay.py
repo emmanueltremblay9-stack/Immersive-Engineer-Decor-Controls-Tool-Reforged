@@ -329,6 +329,9 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if (proof.get("solar_legacy_selector") != "iedctr.dev.solarV2Reference=false"
             or proof.get("solar_qualification") != "legacy-diagnostic-only"):
         raise SmokeFailure("Corrected GUI Solar evidence must identify the explicit legacy diagnostic")
+    if (proof.get("freezer_legacy_selector") != "iedctr.dev.freezerV5LiveEnergy=false"
+            or proof.get("freezer_qualification") != "legacy-diagnostic-only"):
+        raise SmokeFailure("Corrected GUI Freezer evidence must identify the explicit legacy diagnostic")
     if not re.fullmatch(r"[0-9a-f]{40}", executed_sha) or proof.get("executed_source_sha") != executed_sha:
         raise SmokeFailure("Corrected-machine GUI proof does not identify the exact executed source revision")
     if not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha) or proof.get("pull_request_head_sha") != pr_head_sha:
@@ -676,6 +679,7 @@ gradle.projectsEvaluated {
         if (System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY') == 'true') {
             systemProperty 'iedctr.dev.barrelV5Reference', 'false'
             systemProperty 'iedctr.dev.solarV2Reference', 'false'
+            systemProperty 'iedctr.dev.freezerV5LiveEnergy', 'false'
         }
         systemProperty 'iedctr.machineGuiLanguage', System.getenv('IEDCTR_MACHINE_GUI_LANGUAGE')
         systemProperty 'iedctr.barrelFixtureFluid', System.getenv('IEDCTR_BARREL_FIXTURE_FLUID')

@@ -66,6 +66,14 @@ neoForge {
     runs {
         client {
             client()
+            // Explicit development opt-in; not passed to server or GameTest runs.
+            if (providers.gradleProperty('dev_freezer_v5_exact_reference').map { it.toBoolean() }.getOrElse(false)) {
+                systemProperty 'iedctr.dev.freezerV5ExactReference', 'true'
+            }
+            // Separate opt-in. Exact reference wins when both are set; neither affects production defaults.
+            if (providers.gradleProperty('dev_freezer_v5_live_energy').map { it.toBoolean() }.getOrElse(false)) {
+                systemProperty 'iedctr.dev.freezerV5LiveEnergy', 'true'
+            }
         }
 
         server {
@@ -98,7 +106,7 @@ if (factoryPlacerNativeValidation) {
     def harness = sourceSets.factoryPlacerNativeValidation
     neoForge.mods.create('iedctr_factory_placer_validation') { sourceSet(harness) }
     neoForge.runs.configureEach { loadedMods = [neoForge.mods.getByName(project.mod_id)] }
-    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient'].each { runName ->
+    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient', 'crateLabelPackagedClient'].each { runName ->
         neoForge.runs.create(runName) {
             client()
             sourceSet = harness
@@ -107,6 +115,9 @@ if (factoryPlacerNativeValidation) {
             taskBefore(tasks.named('jar'))
             taskBefore(tasks.named('factoryPlacerNativeValidationClasses'))
             // The verifier is registered below; no source-output fallback is permitted.
+            if (runName == 'crateLabelPackagedClient') {
+                systemProperty 'iedctr.crateLabelPackagedNative', 'true'
+            }
             if (runName == 'treeCutterPackagedClient') {
                 systemProperty 'iedctr.treeCutterPackagedNative', 'true'
             }
@@ -150,7 +161,7 @@ if (factoryPlacerNativeValidation) {
                     }
                 }
             }
-            ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient'].each { name ->
+            ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient', 'crateLabelPackagedClient'].each { name ->
                 def run = neoForge.runs.getByName(name)
                 if (run.sourceSet.get() != harness || run.loadedMods.get()*.name != ['iedctr_factory_placer_validation']) {
                     throw new GradleException('Packaged validation must load only the separate harness development mod')
@@ -167,7 +178,7 @@ if (factoryPlacerNativeValidation) {
                     fixture_free_jar: true, split_packages: false]))
         }
     }
-    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient'].each { name ->
+    ['factoryPlacerPackagedClient', 'factoryPlacerPackagedDefaultClient', 'blockBreakerPackagedClient', 'treeCutterPackagedClient', 'crateLabelPackagedClient'].each { name ->
         neoForge.runs.getByName(name).taskBefore(verifyPackagedRuntime)
     }
 }
@@ -565,3 +576,5 @@ apply from: 'gradle/barrel-packaged-validation.gradle'
 apply from: 'gradle/barrel-v5-packaged-validation.gradle'
 
 apply from: 'gradle/solar-packaged-validation.gradle'
+
+apply from: 'gradle/freezer-packaged-validation.gradle'
