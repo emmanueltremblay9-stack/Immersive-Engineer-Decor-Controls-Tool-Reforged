@@ -1,6 +1,9 @@
 """Exact Tree/Freezer/Milking integration layers, never broad preservation exclusions."""
 import hashlib
 import json
+from breaker_current_main_integration import LAYER as CURRENT_LAYER, assert_record
+from breaker_integration_preservation import BREAKER_INTEGRATION, normalize_breaker_menu_tail
+from joint_machine_integration_preservation import (JOINT_LAYER, JOINT_FILES, WRAP_LAYER, assert_joint_integration_preserved, integrated_hash, current_integrated_hash)
 from freezer_v5_reconciliation import LAYER as V5_LAYER, assert_freezer_v5_reconciliation, current_hash
 
 
@@ -84,6 +87,7 @@ MILKING_CURRENT_HASHES = {
     'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java': '2b0f8cc8bfeac9f421b6948833e4d88b7c993c5c633b6f26feebc6f96f2a0e6f',
     MACHINE_ENTITY: COMBINED_FILES[MACHINE_ENTITY]['integrated_sha256'],
 }
+MILKING_CURRENT_HASHES = {path: integrated_hash(path, value) for path, value in MILKING_CURRENT_HASHES.items()}
 COMBINED_RECORD_SHA256 = '0c3b5b944b410bbdf51fc1217c4ee38d8873b8a1e5d197bc7ef9c95622dfa01b'
 MANUAL_RECORD_SHA256 = '75042ba4e5dae1de9c8ec5a768918d0ef36e1acb4848ebdcd02858317a5bcf41'
 MANUAL_LANGUAGE_PATH = 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json'
@@ -99,16 +103,25 @@ def record_sha256(record):
 
 def assert_combined_integration_preserved(root, manifest):
     """Pin both parent identities and current bytes independently of editable manifests."""
+    assert_record(manifest)
+    assert_joint_integration_preserved(root, manifest)
     assert_freezer_v5_reconciliation(root, manifest)
     combined = manifest.get(COMBINED_LAYER)
     assert record_sha256(combined) == COMBINED_RECORD_SHA256, 'Combined Milking/Freezer integration changed'
     for path, record in COMBINED_FILES.items():
         assert record['main_sha256'] == FREEZER_FILES[path]['integrated_sha256'], path
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_hash(path, record['integrated_sha256']), path
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_integrated_hash(path, record['integrated_sha256']), path
 
 
 def assert_milking_integration_preserved(root, pins):
     assert_combined_integration_preserved(root, pins)
+    # Reconstruct the exact main snapshot before applying older-history guards.
+    normalized = {key: value for key, value in pins.items() if key not in (JOINT_LAYER, WRAP_LAYER, CURRENT_LAYER)}
+    normalized['sha256'] = dict(pins['sha256'])
+    for path, record in JOINT_FILES.items():
+        assert pins['sha256'].get(path) == integrated_hash(path, record['integrated_sha256']), 'Milking current pin changed: '+path
+        normalized['sha256'][path] = record['main_sha256']
+    pins = normalized
     # Reconstruct the two previous Java pins and the explicitly pinned manual
     # language integration. Baselines, renderer history, Tree provenance and
     # unaffected current pins stay exact.
@@ -117,7 +130,7 @@ def assert_milking_integration_preserved(root, pins):
     if 'manual_integration' in pins:
         assert record_sha256(pins['manual_integration']) == MANUAL_RECORD_SHA256, 'Manual integration provenance changed'
         assert pins['sha256'].get(MANUAL_LANGUAGE_PATH) == MANUAL_INTEGRATED_SHA256, 'Manual integration pin changed'
-        assert hashlib.sha256((root / MANUAL_LANGUAGE_PATH).read_bytes()).hexdigest() == current_hash(MANUAL_LANGUAGE_PATH, MANUAL_INTEGRATED_SHA256), 'Manual integration bytes changed'
+        assert hashlib.sha256((root / MANUAL_LANGUAGE_PATH).read_bytes()).hexdigest() == current_integrated_hash(MANUAL_LANGUAGE_PATH, MANUAL_INTEGRATED_SHA256), 'Manual integration bytes changed'
         history['sha256'][MANUAL_LANGUAGE_PATH] = MANUAL_PREVIOUS_SHA256
     for path, record in COMBINED_FILES.items():
         assert pins['sha256'].get(path) == record['integrated_sha256'], path
@@ -135,6 +148,7 @@ def assert_menu_tail_preserved(source):
     tail = tail.replace(V5_ACCESSOR, '', 1).replace(V5_RESERVED_SLOT, '', 1)
     assert tail.count(TREE_ACCESSOR) == 1, 'Missing or changed Tree presentation accessor'
     assert tail.count(FREEZER_PREVIEW) == 1, 'Missing or changed Freezer preview method'
+    tail = normalize_breaker_menu_tail(tail)
     normalized = tail.replace(TREE_ACCESSOR, '', 1).replace(FREEZER_PREVIEW, HISTORICAL_FREEZER_PREVIEW, 1)
     assert hashlib.sha256(normalized.encode()).hexdigest() == MENU_TAIL_SHA256, 'Menu transfer/data/validation changed'
 
@@ -161,6 +175,7 @@ def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None
         assert record['baseline_sha256'] == files[path], path
         assert isinstance(record['reason'], str) and record['reason'].strip(), path
         assert record['integrated_sha256'] == INTEGRATION_FILES[path], path
+    assert preserved.get('block_breaker_lubricant_integration') == BREAKER_INTEGRATION, 'Breaker integration identity changed'
     freezer = preserved['freezer_fluid_automation_integration']
     assert record_sha256(freezer) == FREEZER_HISTORY_SHA256, 'Historical Freezer integration changed'
     assert freezer['main_commit'] == FREEZER_MAIN_COMMIT
@@ -181,4 +196,4 @@ def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None
             expected = milking_current_hashes[path]
         if path in COMBINED_FILES:
             expected = COMBINED_FILES[path]['integrated_sha256']
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_hash(path, expected), path
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_integrated_hash(path, expected), path

@@ -12,11 +12,25 @@ public record ResourceLocation(String namespace,String path) {
  public static ResourceLocation fromNamespaceAndPath(String n,String p){return new ResourceLocation(n,p);}
 }''',
 'com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java':'''package com.oblixorprime.engineersdecorreforged.menu;
-public record MachineMenu(int fluidAmount,int fluidCapacity) {public int energyStored(){return 0;} public int energyCapacity(){return 0;}}
+public record MachineMenu(int fluidAmount,int fluidCapacity) {
+ public int energyStored(){return 0;} public int energyCapacity(){return 0;}
+ public net.neoforged.neoforge.fluids.FluidStack blockBreakerFluidStack(){throw new AssertionError("Breaker state in Milking renderer");}
+ public int blockBreakerDurationTicks(){throw new AssertionError("Breaker duration in Milking renderer");}
+ public int field(int index){throw new AssertionError("Unexpected menu field in Milking renderer");}
+}
 ''',
 'com/oblixorprime/engineersdecorreforged/utility/BlockBreakerRedesignLayout.java':'''package com.oblixorprime.engineersdecorreforged.utility;
-public class BlockBreakerRedesignLayout {public static final int IMAGE_WIDTH=1;public static final R FE=new R();
+public class BlockBreakerRedesignLayout {public static final int IMAGE_WIDTH=1;public static final R FE=new R(), FLUID=new R(), PROGRESS=new R();
  public static class R{public int x(){return 0;}public int y(){return 0;}public int right(){return 1;}public int bottom(){return 1;}public int width(){return 1;}public int height(){return 1;}}}
+''',
+'net/neoforged/neoforge/fluids/FluidStack.java':'''package net.neoforged.neoforge.fluids;
+public class FluidStack {public boolean isEmpty(){throw new AssertionError("Breaker fluid in Milking renderer");}}
+''',
+'com/oblixorprime/engineersdecorreforged/client/FluidBarrelSpriteRenderer.java':'''package com.oblixorprime.engineersdecorreforged.client;
+import net.minecraft.client.gui.GuiGraphics;import net.neoforged.neoforge.fluids.FluidStack;
+public class FluidBarrelSpriteRenderer {
+ public static void draw(GuiGraphics g,FluidStack s,int x,int y,int w,int h,int l,int t,int r,int b){throw new AssertionError("Breaker sprite in Milking renderer");}
+}
 ''',
 'net/minecraft/client/gui/GuiGraphics.java':'''package net.minecraft.client.gui;
 import java.util.*;import net.minecraft.resources.ResourceLocation;

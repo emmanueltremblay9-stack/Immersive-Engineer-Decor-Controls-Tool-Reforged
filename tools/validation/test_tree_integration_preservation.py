@@ -6,6 +6,8 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 
+from joint_machine_integration_preservation import JOINT_LAYER, JOINT_FILES, WRAP_LAYER
+from breaker_integration_preservation import BREAKER_FILES, BREAKER_MENU_ADDITIONS
 from freezer_v5_reconciliation import FILES as V5_FILES, LAYER as V5_LAYER
 from tree_integration_preservation import (
     BARREL_GUARD, COMBINED_FILES, COMBINED_LAYER, FREEZER_FILES, FREEZER_PREVIEW,
@@ -24,7 +26,7 @@ class IntegratedPreservationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.menu = MENU.read_text()
         cls.manifest = json.loads((ROOT / 'docs/testing/solar-v2-reference/preserved-baseline-sha256.json').read_text())
-        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(V5_FILES)}
+        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(JOINT_FILES) | set(V5_FILES)}
         cls.pins = json.loads((ROOT / 'docs/testing/milking-qualification/production-pins.json').read_text())
         cls.manual_language_bytes = (ROOT / MANUAL_LANGUAGE_PATH).read_bytes()
         cls.milking_hashes = {name: cls.pins['sha256'][name] for name in MILKING_FILES}
@@ -43,6 +45,62 @@ class IntegratedPreservationTests(unittest.TestCase):
         contents.setdefault(MANUAL_LANGUAGE_PATH, self.manual_language_bytes)
         with patch.object(Path, 'read_bytes', lambda path: contents[path.relative_to(ROOT).as_posix()]):
             assert_milking_integration_preserved(ROOT, self.pins if pins is None else pins)
+
+    def test_tooltip_wrap_layer_is_exact_and_required(self):
+        for original, check in ((self.manifest, self.check_files), (self.pins, self.check_milking)):
+            changed = copy.deepcopy(original)
+            del changed[WRAP_LAYER]
+            with self.assertRaises(AssertionError): check(changed)
+            for field in original[WRAP_LAYER]:
+                changed = copy.deepcopy(original)
+                changed[WRAP_LAYER][field] = 'changed'
+                with self.subTest(field=field), self.assertRaises(AssertionError): check(changed)
+
+    def test_tooltip_bytes_cannot_be_rehashed_into_acceptance(self):
+        for original, check in ((self.manifest, self.check_files), (self.pins, self.check_milking)):
+            changed = copy.deepcopy(original)
+            path = changed[WRAP_LAYER]['path']
+            files = dict(self.files)
+            files[path] += b'// unrelated modification'
+            digest = hashlib.sha256(files[path]).hexdigest()
+            changed[WRAP_LAYER]['current_sha256'] = digest
+            if 'sha256' in changed: changed['sha256'][path] = digest
+            with self.assertRaises(AssertionError): check(changed, files=files)
+
+    def test_joint_layer_is_required_and_all_fields_are_exact(self):
+        for original, check in ((self.manifest, self.check_files), (self.pins, self.check_milking)):
+            for field in ('main_commit', 'breaker_commit', 'scope', 'files'):
+                for drop in (False, True):
+                    changed = copy.deepcopy(original)
+                    if drop: del changed[JOINT_LAYER][field]
+                    else: changed[JOINT_LAYER][field] = 'changed'
+                    with self.subTest(guard=check.__name__, field=field, drop=drop), self.assertRaises(AssertionError):
+                        check(changed)
+            changed = copy.deepcopy(original)
+            del changed[JOINT_LAYER]
+            with self.assertRaises(AssertionError): check(changed)
+            for path in (*JOINT_FILES, 'src/unrelated.java'):
+                changed = copy.deepcopy(original)
+                if path in changed[JOINT_LAYER]['files']: del changed[JOINT_LAYER]['files'][path]
+                else: changed[JOINT_LAYER]['files'][path] = {'integrated_sha256': '0'*64}
+                with self.assertRaises(AssertionError): check(changed)
+            for path in JOINT_FILES:
+                for field in ('main_sha256', 'breaker_sha256', 'integrated_sha256'):
+                    changed = copy.deepcopy(original)
+                    changed[JOINT_LAYER]['files'][path][field] = '0'*64
+                    with self.subTest(path=path, field=field), self.assertRaises(AssertionError): check(changed)
+
+    def test_joint_current_bytes_cannot_be_rehashed_into_acceptance(self):
+        for path in JOINT_FILES:
+            files = dict(self.files)
+            files[path] += b'\nmutation'
+            for original, check in ((self.manifest, self.check_files), (self.pins, self.check_milking)):
+                changed = copy.deepcopy(original)
+                current = hashlib.sha256(files[path]).hexdigest()
+                changed[JOINT_LAYER]['files'][path]['integrated_sha256'] = current
+                if 'sha256' in changed: changed['sha256'][path] = current
+                with self.subTest(path=path, guard=check.__name__), self.assertRaises(AssertionError):
+                    check(changed, files=files)
 
     def test_combined_layer_is_required_by_both_guards(self):
         self.check_milking()
@@ -105,14 +163,14 @@ class IntegratedPreservationTests(unittest.TestCase):
                     self.check_milking(pins)
 
     def test_milking_history_cannot_be_rewritten_or_dropped(self):
-        for key in self.pins.keys() - {'sha256', COMBINED_LAYER, V5_LAYER}:
+        for key in self.pins.keys() - {'sha256', COMBINED_LAYER, WRAP_LAYER}:
             for drop in (False, True):
                 pins = copy.deepcopy(self.pins)
                 if drop:
                     del pins[key]
                 else:
                     pins[key] = 'changed'
-                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance|Normal activation record changed|Legacy diagnostic record changed'):
+                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance|Normal activation record changed|Legacy diagnostic record changed|Current-main integration record changed|Freezer V5 reconciliation provenance changed'):
                     self.check_milking(pins)
 
     def test_freezer_historical_scope_and_reasons_are_preserved(self):
@@ -313,6 +371,67 @@ class IntegratedPreservationTests(unittest.TestCase):
         manifest['tree_cutter_integration']['scope'] = 'Overwritten integration history'
         with self.assertRaisesRegex(AssertionError, 'Historical Tree integration changed'):
             self.check_files(manifest=manifest)
+
+
+
+    def test_each_breaker_menu_addition_is_exactly_once(self):
+        for addition in BREAKER_MENU_ADDITIONS:
+            for replacement in ('', addition + '// mutation\n', addition * 2):
+                with self.subTest(addition=addition[:60], replacement=replacement[:60]), self.assertRaises(AssertionError):
+                    assert_menu_tail_preserved(self.menu.replace(addition, replacement, 1))
+
+    def test_breaker_layer_path_set_is_exact(self):
+        for path in (*BREAKER_FILES, 'src/unrelated.java'):
+            manifest = copy.deepcopy(self.manifest)
+            overrides = manifest['block_breaker_lubricant_integration']['files']
+            if path in overrides:
+                del overrides[path]
+            else:
+                overrides[path] = {'integrated_sha256': '0' * 64}
+            with self.subTest(path=path), self.assertRaises(AssertionError):
+                self.check_files(manifest=manifest)
+
+    def test_breaker_metadata_and_pins_cannot_be_reassigned(self):
+        for key in ('main_commit', 'source_patch_sha256', 'scope'):
+            manifest = copy.deepcopy(self.manifest)
+            manifest['block_breaker_lubricant_integration'][key] = 'changed'
+            with self.subTest(key=key), self.assertRaises(AssertionError):
+                self.check_files(manifest=manifest)
+        for path in BREAKER_FILES:
+            for key in ('main_sha256', 'integrated_sha256'):
+                manifest = copy.deepcopy(self.manifest)
+                manifest['block_breaker_lubricant_integration']['files'][path][key] = '0' * 64
+                with self.subTest(path=path, key=key), self.assertRaises(AssertionError):
+                    self.check_files(manifest=manifest)
+
+    def test_rehash_cannot_admit_changed_breaker_files(self):
+        for path in BREAKER_FILES:
+            changed = dict(self.files)
+            changed[path] += b'\nmutation'
+            manifest = copy.deepcopy(self.manifest)
+            manifest['block_breaker_lubricant_integration']['files'][path]['integrated_sha256'] = hashlib.sha256(changed[path]).hexdigest()
+            with self.subTest(path=path), self.assertRaises(AssertionError):
+                self.check_files(manifest=manifest, files=changed)
+
+    def test_freezer_history_cannot_be_rewritten(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest['freezer_fluid_automation_integration']['scope'] = 'Overwritten integration history'
+        with self.assertRaisesRegex(AssertionError, 'Historical Freezer integration changed'):
+            self.check_files(manifest=manifest)
+
+    def test_entire_breaker_layer_is_required(self):
+        manifest = copy.deepcopy(self.manifest)
+        del manifest['block_breaker_lubricant_integration']
+        with self.assertRaises((AssertionError, KeyError)):
+            self.check_files(manifest=manifest)
+
+    def test_breaker_menu_constant_mutation_is_rejected_by_full_file_pin(self):
+        path = 'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java'
+        changed = dict(self.files)
+        changed[path] = changed[path].replace(b'BLOCK_BREAKER_FLUID_PRESENT = 1;', b'BLOCK_BREAKER_FLUID_PRESENT = 8;')
+        self.assertNotEqual(changed[path], self.files[path])
+        with self.assertRaises(AssertionError):
+            self.check_files(files=changed)
 
 
 if __name__ == '__main__':

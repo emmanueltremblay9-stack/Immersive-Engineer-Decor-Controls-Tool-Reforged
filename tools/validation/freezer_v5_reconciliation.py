@@ -1,6 +1,7 @@
 """Exact additive Freezer V5 reconciliation. Historical main pins are not rewritten."""
 import hashlib
 import json
+from breaker_current_main_integration import assert_record, project
 
 LAYER = 'freezer_v5_reconciliation'
 RECORD_SHA256 = 'b4c91dcd9553c8d1af5af02846299c6dda5505622d9ed0caa956ea1e597c980b'
@@ -29,6 +30,7 @@ DIAGNOSTIC_SHA256 = '74f95f7e8ab5af051ae6ce9ff435070a95cc12ea199f11c775e35fd14df
 DIAGNOSTIC_RECORD_SHA256 = 'f9c49d5d56a2d58a9af31f13eb5531a90193ab67cd307319675cdcee1b931004'
 
 def assert_freezer_v5_reconciliation(root, manifest):
+    assert_record(manifest)
     record = manifest.get(LAYER)
     digest = hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     assert digest == RECORD_SHA256, 'Freezer V5 reconciliation provenance changed'
@@ -38,7 +40,7 @@ def assert_freezer_v5_reconciliation(root, manifest):
     assert hashlib.sha256(json.dumps(diagnostic, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == DIAGNOSTIC_RECORD_SHA256, 'Legacy diagnostic record changed'
     for path, hashes in FILES.items():
         assert record['files'][path] == hashes, path
-        data = (root / path).read_bytes()
+        data = project(path, (root / path).read_bytes(), 'main')
         if path == ACTIVATION_PATH:
             assert hashlib.sha256(data).hexdigest() == DIAGNOSTIC_SHA256, path
             text = data.decode()

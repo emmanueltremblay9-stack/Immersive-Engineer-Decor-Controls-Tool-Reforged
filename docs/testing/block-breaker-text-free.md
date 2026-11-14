@@ -19,7 +19,8 @@ artwork hashes are checked. No production reference/render selector is set.
 The driver creates a nonce-owned survival world on its own Xvfb display. It seeds
 a machine and dirt target, then uses a physical XTest right-click on a verified
 in-reach block raycast. It never constructs a screen or calls server openMenu.
-Native title, FE, unavailable fluid/power, target, static-scene and work tooltips
+Native title, FE, lubricant name/amount/capacity and normal-cycle mode/duration,
+neutral power, target, static-scene and work tooltips
 are observed through actual native render events after XTest pointer motion.
 The title translation is checked in English and French. The normal, hover,
 worked and returned-item screenshots remain available for visual comparison
@@ -35,15 +36,54 @@ controls are not invented commands; their explanatory tooltips remain present.
 
 ## Results and boundaries
 
-Local independent text-free and evidence-validator tests pass, including negative
-controls for restoring the title or removing hover. Native evidence guards reject
-wrong identities, missing captures, unlocalized title, clipped tooltip and missing
-server acknowledgements. Local Gradle cannot download its absent distribution
-because the network is unavailable. Mapped compilation and actual native runs
-must therefore pass fresh exact-head CI before any qualification claim.
+The earlier title-only version passed local independent text-free and
+evidence-validator tests, including negative controls for restoring the title or
+removing hover. The lubricant tooltip update needs fresh exact-head checks.
+Native evidence guards reject wrong identities, missing captures, unlocalized
+title, clipped tooltip and missing server acknowledgements. Local Gradle cannot
+download its absent distribution because the network is unavailable. Mapped
+compilation and actual native runs must therefore pass fresh exact-head CI before
+any qualification claim.
 
 No Freezer fixture is modified or reused. This is a bounded normal-JAR test in a
 NeoForge development launcher, not a separately installed consumer launcher or
 full-modpack test. Resize/reload, all complex inventory gestures, owner visual
 acceptance and release are not established by this bounded suite. No merge or
 release is authorized by the test result alone.
+
+## Optional lubricant integration
+
+The lubricant change adds a 4,000 mB tank, a right-side input relative to the
+front, and 10 mB consumption only after a successful break. Accelerated cycles
+retain total FE cost and use half the normal duration, rounded up, with a
+20-tick minimum. Immersive Petroleum remains optional.
+
+`Block Breaker lubricant compatibility` runs the existing GameTest server in an
+isolated directory with Immersive Petroleum 4.5.0-39 (CurseForge project 268250,
+file 8420142), obtained through its CurseMaven coordinates and pinned by SHA-256.
+The required-profile GameTest fails if the lubricant registry entry is absent,
+so dependency-conditional tests cannot silently stand in for an IP run.
+The ordinary Build still tests the no-IP configuration separately.
+
+The native packaged workflow retains the normal empty-tank profiles and adds
+separate `--lubricant` profiles in English and French. The added fixture seeds
+1,000 mB through the registered right-side capability before work. It checks the
+actual IP file loaded, menu/server synchronization, accelerated-mode tooltips,
+the latched 20-tick duration and 990 mB after success, together with the existing
+XTest interactions and item conservation. This setup is not a pump or pipe test.
+
+Separate server GameTests cover real IE pipes in four orientations, ten actual
+block cycles (five hardnesses, both modes), and synthetic odd-duration menu
+previews. They use synchronous server ticks, not a real-time benchmark. Fresh
+CI must validate these additions before their results are claimed.
+
+Protected-break cancellation remains unqualified: the current destruction path
+uses `Level.destroyBlock` without a player and does not call the player-oriented
+NeoForge `CommonHooks.fireBlockBreak` hook. No cancellation listener is counted
+as evidence without an actual event. Claim-protection compatibility needs a
+separate design and regression check rather than a vacuous success.
+
+The source preservation checks admit
+only the exact new Breaker integration layer, keeping earlier Solar, Tree and
+Freezer records unchanged. FE apportionment includes an overflow regression
+test against the exact production method.

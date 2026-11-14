@@ -19,7 +19,18 @@ public final class BreakerTextProbe {
       int blockBreakerPendingItems() { return 3; }
       int field(int index) { return index == 1 ? 12 : 40; }
       int blockBreakerStatus() { return 4; }
+      int fluidAmount() { return 0; }
+      int fluidCapacity() { return 4000; }
+      Component blockBreakerFluidName() { return Component.translatable("fluid.name"); }
+      boolean blockBreakerCycleActive() { return false; }
+      boolean blockBreakerAccelerated() { return false; }
+      int blockBreakerDurationTicks() { return 30; }
    }
+   private static final class MachineBlockEntity { static final int BLOCK_BREAKER_LUBRICANT_PER_SUCCESS = 10; }
+   private static final class BlockBreakerRedesignLayout {
+      static final Rect FLUID = new Rect(193, 73, 42, 7);
+   }
+   private record Rect(int x, int y, int width, int height) {}
    private static final class Component {
       private String text;
       private Component(String text) { this.text = text; }
@@ -70,7 +81,10 @@ public final class BreakerTextProbe {
          }
          contains(screen.at(200, 55), "tooltip.energy[12300, 32000]", "Live FE retained");
          contains(screen.at(200, 55), "tooltip.input", "FE input retained");
-         contains(screen.at(200, 75), "tooltip.fluid_unavailable", "Fluid caveat retained");
+         contains(screen.at(200, 75), "tooltip.lubricant[fluid.name[]", "Lubricant name and amount retained");
+         contains(screen.at(200, 75), "tooltip.lubricant_mode[mode.normal[], cycle.next[], 30]", "Normal next-cycle state and duration retained");
+         contains(screen.at(200, 75), "tooltip.lubricant_use[10]", "Accelerated lubricant cost retained");
+         contains(screen.at(200, 75), "tooltip.lubricant_fe[400]", "Per-block FE cost retained");
          contains(screen.at(40, 110), "signal.high", "Redstone signal retained");
          contains(screen.at(40, 110), "tooltip.power_unavailable", "Neutral power caveat retained");
          contains(screen.at(210, 110), "tooltip.legacy_pending[3]", "Output state retained");
