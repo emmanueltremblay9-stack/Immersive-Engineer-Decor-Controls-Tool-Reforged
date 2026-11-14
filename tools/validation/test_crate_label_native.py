@@ -55,7 +55,9 @@ class CrateNativeProofTests(unittest.TestCase):
         root=Path(__file__).resolve().parents[2]
         src=(root/'src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/CrateLabelValidation.java').read_text()
         for token in ['screen.resize(mc,width,height)', 'EditBox.class::isInstance', 'screen.keyPressed(257, 0, 0)',
-                      'screen.mouseClicked(', 'mc.getSingleplayerServer().submit(', 'machine.labelLines()',
+                      'screen.mouseClicked(', 'screen.keyPressed(258, 0, 0)', 'screen.getFocused() == target',
+                      'keyboardCase == 0 || keyboardCase == 2 ? 257 : 335', 'serverEquals(mc, keyboardExpected)',
+                      'mc.getSingleplayerServer().submit(', 'machine.labelLines()',
                       'Existing saves forbidden', 'packaged = PackagedRuntimeProof.verify(mc)']:
             self.assertIn(token,src)
         self.assertFalse((root/'src/main/java/com/oblixorprime/iedctrtest/factoryplacer/CrateLabelValidation.java').exists())
