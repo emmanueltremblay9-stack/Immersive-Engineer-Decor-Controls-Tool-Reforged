@@ -1,6 +1,14 @@
 name: Freezer recovery tooltip qualification
 
 on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'build.gradle'
+      - 'gradle/**'
+      - 'gradle.properties'
+      - 'tools/validation/*freezer*'
+      - '.github/workflows/freezer-recovery-tooltip-qualification.yml'
   push:
     branches: [dot/qualify-freezer-recovery-tooltip-20261114]
 
