@@ -582,3 +582,5 @@ apply from: 'gradle/solar-packaged-validation.gradle'
 
 apply from: 'gradle/manual-packaged-validation.gradle'
 apply from: 'gradle/freezer-packaged-validation.gradle'
+
+apply from: 'gradle/milking-packaged-validation.gradle'
