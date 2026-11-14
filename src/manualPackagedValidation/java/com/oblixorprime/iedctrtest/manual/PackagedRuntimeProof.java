@@ -47,7 +47,8 @@ public final class PackagedRuntimeProof {
             require(zip.stream().noneMatch(e -> e.getName().startsWith("com/oblixorprime/iedctrtest/")
                 || e.getName().contains("NativeFluidGestureValidation")), "Harness leaked into normal JAR");
             for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class,
-                    com.oblixorprime.engineersdecorreforged.client.EngineerManualShortcut.class}) {
+                    com.oblixorprime.engineersdecorreforged.client.EngineerManualShortcut.class,
+                    com.oblixorprime.engineersdecorreforged.client.ManualViewportFit.class}) {
                 String entry = type.getName().replace('.', '/') + ".class";
                 var url = type.getResource('/' + entry);
                 var source = type.getProtectionDomain().getCodeSource();

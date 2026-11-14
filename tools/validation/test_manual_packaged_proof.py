@@ -17,6 +17,7 @@ class NativeManualProofTests(unittest.TestCase):
         jar = self.game / 'normal.jar'
         names = ['manual/en_us/small_milking_machine.txt', 'manual/en_us/workshop_machines.txt', 'manual/small_milking_machine.json', 'manual/workshop_machines.json']
         with ZipFile(jar, 'w') as z:
+            z.writestr('com/oblixorprime/engineersdecorreforged/client/ManualViewportFit.class', b'fit')
             for name in names:
                 z.writestr('assets/immersive_engineer_decor_controls_tool_reforged/' + name, b'manual')
         digest = hashlib.sha256(jar.read_bytes()).hexdigest()
@@ -24,9 +25,13 @@ class NativeManualProofTests(unittest.TestCase):
         self.proof = dict(suite='native-manual-pagination-v1', status='PASS', source_sha='a'*40, nonce='b'*32,
                           language='en_us', width=1280, height=720, gui_scale=2,
                           runtime=dict(jar_sha256=digest, fixture_free_jar=True, separate_harness_module=True,
+                                       class_origins=[dict(**{'class':'com.oblixorprime.engineersdecorreforged.client.ManualViewportFit'},sha256=hashlib.sha256(b'fit').hexdigest())],
                                        active_resources=[dict(path=n, sha256=hashlib.sha256(b'manual').hexdigest()) for n in names]),
-                          groups=[], pages=[], captures=[])
+                          groups=[], pages=[], captures=[], transitions=[])
         for entry in ['small_milking_machine', 'workshop_machines']:
+            self.proof['transitions'].append(dict(entry='immersive_engineer_decor_controls_tool_reforged:'+entry,
+                other_entry='immersiveengineering:control', roundtrip=True, reopen=True, resize_reinit=True,
+                config_unchanged=True, physical_resize_restored=True, resized_width=960, resized_height=540))
             self.proof['groups'].append(dict(entry='mod:'+entry, start_page=0, end_page_exclusive=2, captured_pages=2,
                 body_complete=True, recipe_present=True, navigation_forward=1, navigation_backward=1))
             for page in range(2):
@@ -75,6 +80,18 @@ class NativeManualProofTests(unittest.TestCase):
         with self.assertRaises(SmokeFailure): self.validate()
     def test_duplicate_capture(self):
         self.proof['captures'][1]=copy.deepcopy(self.proof['captures'][0])
+        with self.assertRaises(SmokeFailure): self.validate()
+    def test_missing_transitions(self):
+        self.proof['transitions']=[]
+        with self.assertRaises(SmokeFailure): self.validate()
+    def test_config_changed(self):
+        self.proof['transitions'][0]['config_unchanged']=False
+        with self.assertRaises(SmokeFailure): self.validate()
+    def test_missing_resize(self):
+        self.proof['transitions'][0]['physical_resize_restored']=False
+        with self.assertRaises(SmokeFailure): self.validate()
+    def test_wrong_fit_class(self):
+        self.proof['runtime']['class_origins'][0]['sha256']='0'*64
         with self.assertRaises(SmokeFailure): self.validate()
 
 if __name__ == '__main__': unittest.main()

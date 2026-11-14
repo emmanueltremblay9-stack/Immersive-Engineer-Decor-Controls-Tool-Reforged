@@ -38,7 +38,7 @@ import net.neoforged.neoforge.client.event.ScreenEvent;
 /** Real IE manual pagination/rendering on an exact ordinary JAR; no OS-input claim. */
 @EventBusSubscriber(modid=ManualValidationMod.MOD_ID, value=Dist.CLIENT)
 public final class NativeManualValidation {
-    private enum Stage { BOOT, WORLD, SETUP, CAPTURE, ADVANCE, BACKWARD, NEXT, DONE }
+    private enum Stage { BOOT, WORLD, SETUP, RESIZE_SMALL, RESIZE_RESTORE, CAPTURE, ADVANCE, BACKWARD, NEXT, DONE }
     private static Stage stage=Stage.BOOT;
     private static Path directory;
     private static String nonce, expectedBody;
@@ -51,6 +51,8 @@ public final class NativeManualValidation {
     private static CompletableFuture<?> pending;
     private static JsonObject runtime;
     private static final JsonArray PAGES=new JsonArray(), CAPTURES=new JsonArray(), GROUPS=new JsonArray();
+    private static final JsonArray TRANSITIONS=new JsonArray();
+    private static int originalManualScale;
     private static final StringBuilder body=new StringBuilder();
     private NativeManualValidation() {}
 
@@ -76,11 +78,30 @@ public final class NativeManualValidation {
             if(pending!=null) { if(!pending.isDone())return; pending.join();pending=null; }
             if(mc.getOverlay()!=null)return;
             switch(stage) {
+                case RESIZE_SMALL -> {
+                    if(mc.getWindow().getWidth()!=960 || mc.getWindow().getHeight()!=540 || ticks<25)return;
+                    require(mc.screen==screen,"Resize replaced screen");
+                    verifyFrame(mc);
+                    var row=TRANSITIONS.get(0).getAsJsonObject();
+                    row.addProperty("resized_width",960);row.addProperty("resized_height",540);
+                    row.addProperty("resized_geometry",geometry(screen));
+                    org.lwjgl.glfw.GLFW.glfwSetWindowSize(mc.getWindow().getWindow(),1280,Integer.getInteger("iedctr.requestedHeight",0));
+                    enter(Stage.RESIZE_RESTORE);
+                }
+                case RESIZE_RESTORE -> {
+                    if(mc.getWindow().getWidth()!=1280 || mc.getWindow().getHeight()!=Integer.getInteger("iedctr.requestedHeight",0) || ticks<25)return;
+                    verifyFrame(mc);
+                    require(geometry(screen).equals(TRANSITIONS.get(0).getAsJsonObject().get("owned_geometry").getAsString()),"Physical resize restore changed geometry");
+                    require(manual.getGuiRescale()==originalManualScale,"Resize changed manual preference");
+                    TRANSITIONS.get(0).getAsJsonObject().addProperty("physical_resize_restored",true);
+                    enter(Stage.CAPTURE);
+                }
                 case SETUP -> {
                     if(ticks<100)return;
                     manual=ManualHelper.getManual();require(manual!=null,"IE manual missing");
                     // getGui performs IE's normal reload and recipe indexing before entry access.
                     screen=manual.getGui(false);require(screen!=null,"IE manual initialization failed");
+                    originalManualScale=manual.getGuiRescale();
                     openGroup(mc);
                 }
                 case CAPTURE -> {
@@ -91,7 +112,7 @@ public final class NativeManualValidation {
                     require(mc.screen==screen && screen.getCurrentPage()==entry,"Unexpected page transition");
                     if(screen.page+1<endPage) {
                         int previous=screen.page;
-                        require(screen.mouseScrolled(0,0,0,-1),"Native next-page handler rejected");
+                        clickPage(true);
                         require(screen.page==previous+1,"Native next-page skipped or repeated");
                         forward++;enter(Stage.CAPTURE);
                     } else {
@@ -104,7 +125,7 @@ public final class NativeManualValidation {
                     if(ticks<3)return;
                     if(screen.page>startPage) {
                         int previous=screen.page;
-                        require(screen.mouseScrolled(0,0,0,1),"Native previous-page handler rejected");
+                        clickPage(false);
                         require(screen.page==previous-1,"Native previous-page skipped or repeated");
                         backward++;ticks=0;
                     } else {
@@ -181,7 +202,7 @@ public final class NativeManualValidation {
                 new WorldOptions(0L,false,false),registries->registries.registryOrThrow(Registries.WORLD_PRESET).getHolderOrThrow(WorldPresets.FLAT).value().createWorldDimensions(),new TitleScreen());
     }
 
-    private static void openGroup(Minecraft mc) {
+    private static void openGroup(Minecraft mc)throws Exception {
         String name=group==0?"small_milking_machine":"workshop_machines";
         entry=manual.getEntry(ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,name));
         require(entry!=null,"Missing manual entry: "+name);
@@ -195,8 +216,56 @@ public final class NativeManualValidation {
         }
         require(endPage>startPage && endPage-startPage<30,"Invalid Milking page interval");
         screen.page=startPage;mc.setScreen(screen);screen.fullInit();
+        verifyTransitions(mc);
         require(recipePresent(),"Milking recipe special missing on first page");
-        captured=0;forward=0;backward=0;body.setLength(0);enter(Stage.CAPTURE);
+        captured=0;forward=0;backward=0;body.setLength(0);
+        if(group==0) {
+            org.lwjgl.glfw.GLFW.glfwSetWindowSize(mc.getWindow().getWindow(),960,540);
+            enter(Stage.RESIZE_SMALL);
+        } else enter(Stage.CAPTURE);
+    }
+
+    private static void clickPage(boolean next)throws Exception {
+        float factor=field(ManualScreen.class,"scaleFactor").getFloat(screen);
+        int left=field(ManualScreen.class,"guiLeft").getInt(screen),top=field(ManualScreen.class,"guiTop").getInt(screen);
+        require(screen.mouseClicked((left+(next?143:40))*factor,(top+184)*factor,0),"Native page click rejected");
+    }
+
+    private static String geometry(ManualScreen value)throws Exception {
+        return value.width+":"+value.height+":"+field(ManualScreen.class,"scaleFactor").getFloat(value)
+                +":"+field(ManualScreen.class,"guiLeft").getInt(value)+":"+field(ManualScreen.class,"guiTop").getInt(value);
+    }
+
+    private static void verifyFrame(Minecraft mc)throws Exception {
+        float factor=field(ManualScreen.class,"scaleFactor").getFloat(screen);
+        int left=field(ManualScreen.class,"guiLeft").getInt(screen),top=field(ManualScreen.class,"guiTop").getInt(screen);
+        int w=field(ManualScreen.class,"xSize").getInt(screen),h=field(ManualScreen.class,"ySize").getInt(screen);
+        require(factor>0 && left*factor>=0 && top*factor>=0
+                &&(left+w)*factor<=mc.getWindow().getGuiScaledWidth()+1
+                &&(top+h)*factor<=mc.getWindow().getGuiScaledHeight()+1,"Resized manual frame outside viewport");
+    }
+
+    private static void verifyTransitions(Minecraft mc)throws Exception {
+        int width=mc.getWindow().getWidth(),height=mc.getWindow().getHeight();
+        double scale=mc.getWindow().getGuiScale();int option=mc.options.guiScale().get();
+        var other=manual.getAllEntriesAndCategories().filter(n->n.isLeaf()
+                && n.getLeafData().getLocation().getNamespace().equals("immersiveengineering")).findFirst().orElseThrow();
+        // Fresh IE-owned screen is the control. No containment relaxation: only our pages are qualified.
+        var control=new ManualScreen(manual,ResourceLocation.fromNamespaceAndPath("immersiveengineering","textures/gui/manual.png"),false);
+        control.setCurrentNode(other);mc.setScreen(control);String baseline=geometry(control);
+        mc.setScreen(screen);screen.setCurrentNode(other);screen.page=0;screen.fullInit();
+        require(geometry(screen).equals(baseline),"IE page geometry changed after leaving owned entry");
+        screen.setCurrentNode(entry.getTreeNode());screen.page=startPage;screen.fullInit();String own=geometry(screen);
+        mc.setScreen(null);mc.setScreen(screen);require(geometry(screen).equals(own),"Reopen changed geometry");
+        screen.resize(mc,mc.getWindow().getGuiScaledWidth(),mc.getWindow().getGuiScaledHeight());
+        require(geometry(screen).equals(own),"Resize re-init changed geometry");
+        require(manual.getGuiRescale()==originalManualScale && mc.options.guiScale().get()==option
+                && mc.getWindow().getGuiScale()==scale && mc.getWindow().getWidth()==width && mc.getWindow().getHeight()==height,"Global scale/window changed");
+        var row=new JsonObject();row.addProperty("entry",entry.getLocation().toString());
+        row.addProperty("other_entry",other.getLeafData().getLocation().toString());
+        row.addProperty("other_geometry",baseline);row.addProperty("owned_geometry",own);
+        row.addProperty("roundtrip",true);row.addProperty("reopen",true);row.addProperty("resize_reinit",true);
+        row.addProperty("config_unchanged",true);TRANSITIONS.add(row);
     }
 
     private static boolean recipePresent() {
@@ -250,7 +319,8 @@ public final class NativeManualValidation {
                 result.addProperty("width",mc.getWindow().getWidth());result.addProperty("height",mc.getWindow().getHeight());
                 result.addProperty("gui_scale",mc.getWindow().getGuiScale());
                 result.add("runtime",runtime);result.add("pages",PAGES);result.add("captures",CAPTURES);result.add("groups",GROUPS);
-                result.addProperty("input_boundary","IE mouseScrolled handler and direct entry selection, not OS/GLFW input");
+                result.add("transitions",TRANSITIONS);
+                result.addProperty("input_boundary","IE transformed mouseClicked handler and direct entry selection; GLFW window resize; not physical OS mouse input");
                 if(error!=null)result.addProperty("error",error.toString());
                 Files.writeString(directory.resolve("client-manual-packaged-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(result));
             }

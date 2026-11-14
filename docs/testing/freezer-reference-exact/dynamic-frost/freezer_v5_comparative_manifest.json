@@ -1,0 +1,67 @@
+{
+  "name": "Small Water Freezer V5 mask correction delta",
+  "canonical_sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+  "source_rgba_difference_previous": 0,
+  "working_mask_previous_bbox": [
+    412,
+    359,
+    843,
+    592
+  ],
+  "corrected_mask_working_bbox": [
+    438,
+    369,
+    817,
+    592
+  ],
+  "previous_mask_nonzero_pixels": 99653,
+  "new_mask_nonzero_pixels": 86970,
+  "pixels_removed_from_old_mask": 13946,
+  "pixels_added_to_old_mask": 1263,
+  "inside_opening_protection": "Conservative rounded inset with soft taper and curved hinge-side notches; manual visual fit, not certified segmentation.",
+  "hinge_areas": {
+    "left": {
+      "bounds_xyxy": [
+        378,
+        432,
+        442,
+        467
+      ],
+      "mask_nonzero_pixels": 0,
+      "different_rgba_pixels": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      }
+    },
+    "right": {
+      "bounds_xyxy": [
+        811,
+        431,
+        864,
+        467
+      ],
+      "mask_nonzero_pixels": 0,
+      "different_rgba_pixels": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      }
+    }
+  },
+  "all_composites_strict_outside_mask_rgba_different_pixels": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0
+  },
+  "static_ice_outside_mask": "Preserved; ice still visible on interior glass rim in empty phase 0, needs review before acceptance.",
+  "visual_314_px": "Pass for major visual hierarchy and 5-phase differentiation; no independent approval or game-scaling proof.",
+  "visual_1280x260": "Composites distinct; no active-fill in phase 0 chamber center; fixed rim frost remains visible.",
+  "minecraft_runtime": "NOT_PERFORMED"
+}

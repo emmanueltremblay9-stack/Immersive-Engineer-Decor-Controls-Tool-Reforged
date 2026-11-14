@@ -66,6 +66,14 @@ neoForge {
     runs {
         client {
             client()
+            // Explicit development opt-in; not passed to server or GameTest runs.
+            if (providers.gradleProperty('dev_freezer_v5_exact_reference').map { it.toBoolean() }.getOrElse(false)) {
+                systemProperty 'iedctr.dev.freezerV5ExactReference', 'true'
+            }
+            // Separate opt-in. Exact reference wins when both are set; neither affects production defaults.
+            if (providers.gradleProperty('dev_freezer_v5_live_energy').map { it.toBoolean() }.getOrElse(false)) {
+                systemProperty 'iedctr.dev.freezerV5LiveEnergy', 'true'
+            }
         }
 
         server {
@@ -570,3 +578,4 @@ apply from: 'gradle/barrel-v5-packaged-validation.gradle'
 apply from: 'gradle/solar-packaged-validation.gradle'
 
 apply from: 'gradle/manual-packaged-validation.gradle'
+apply from: 'gradle/freezer-packaged-validation.gradle'

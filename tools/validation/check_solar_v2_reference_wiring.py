@@ -32,7 +32,7 @@ assert 'leftPos = 0; topPos = 0;' in s
 assert 'imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;' in s
 assert 'imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;' in s
 assert 'Component.literal(menu.layout().machineSlots().getFirst().role())' in s
-assert 'this(kind, id, inventory, container, data, false, false, false)' in m
+assert 'this(kind, id, inventory, container, data, false, false, false, false)' in m
 assert 'boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && Boolean.parseBoolean(System.getProperty(DEV_SOLAR_V2_REFERENCE_PROPERTY, "true"))' in m

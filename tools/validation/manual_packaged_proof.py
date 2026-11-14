@@ -25,6 +25,9 @@ def validate_proof(proof, nonce, source_sha, game, logs, code, expired, width, h
     require(hashlib.sha256(jar.read_bytes()).hexdigest() == report['jar_sha256'], 'JAR changed')
     with ZipFile(jar) as archive:
         require(not any(n.startswith('com/oblixorprime/iedctrtest/') for n in archive.namelist()), 'Harness leaked')
+        fit_class='com.oblixorprime.engineersdecorreforged.client.ManualViewportFit'
+        fit_origins=[r for r in runtime.get('class_origins', []) if r.get('class') == fit_class]
+        require(len(fit_origins)==1 and fit_origins[0].get('sha256') == hashlib.sha256(archive.read(fit_class.replace('.','/')+'.class')).hexdigest(), 'Viewport implementation provenance missing')
         resources = runtime['active_resources']
         expected_resources = {f'manual/{language}/{name}.txt' for name in ('small_milking_machine', 'workshop_machines')} | {f'manual/{name}.json' for name in ('small_milking_machine', 'workshop_machines')}
         require(len(resources) == 4 and {r['path'] for r in resources} == expected_resources, 'Exact four manual resources required')
@@ -32,6 +35,15 @@ def validate_proof(proof, nonce, source_sha, game, logs, code, expired, width, h
             name = 'assets/immersive_engineer_decor_controls_tool_reforged/' + resource['path']
             require(resource['sha256'] == hashlib.sha256(archive.read(name)).hexdigest(), 'Manual resource changed')
     groups = proof['groups']
+    transitions = proof.get('transitions', [])
+    require(len(transitions) == 2, 'Entry scope transitions missing')
+    for row in transitions:
+        require(row.get('entry', '').startswith('immersive_engineer_decor_controls_tool_reforged:'), 'Unowned entry qualified')
+        require(row.get('other_entry', '').startswith('immersiveengineering:'), 'IE control missing')
+        for key in ['roundtrip', 'reopen', 'resize_reinit', 'config_unchanged']:
+            require(row.get(key) is True, 'Transition failed: '+key)
+    require(transitions[0].get('physical_resize_restored') is True
+            and transitions[0].get('resized_width') == 960 and transitions[0].get('resized_height') == 540, 'Physical resize proof missing')
     require(len(groups) == 2, 'Individual and category groups required')
     require({g['entry'].split(':')[-1] for g in groups} == {'small_milking_machine', 'workshop_machines'}, 'Wrong entries')
     pages = proof['pages']
