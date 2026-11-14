@@ -1,6 +1,7 @@
 """Exact additive Freezer V5 reconciliation. Historical main pins are not rewritten."""
 import hashlib
 import json
+from factory_tooltip_integration import current_hash as factory_current_hash
 
 LAYER = 'freezer_v5_reconciliation'
 RECORD_SHA256 = 'b4c91dcd9553c8d1af5af02846299c6dda5505622d9ed0caa956ea1e597c980b'
@@ -53,6 +54,6 @@ def assert_freezer_v5_reconciliation(root, manifest):
 
 def current_hash(path, historical_hash):
     if path not in FILES:
-        return historical_hash
+        return factory_current_hash(path, historical_hash)
     assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
     return DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256']
