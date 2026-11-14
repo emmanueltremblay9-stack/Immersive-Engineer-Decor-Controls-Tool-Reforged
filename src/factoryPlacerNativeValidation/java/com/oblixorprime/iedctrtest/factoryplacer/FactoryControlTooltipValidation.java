@@ -53,7 +53,7 @@ public final class FactoryControlTooltipValidation {
     private static final String PREFIX = "block.immersive_engineer_decor_controls_tool_reforged.factory_" + (HOPPER ? "hopper" : "dropper");
     private static final int[][] POINTS = HOPPER ? new int[][]{{148,23},{148,52},{148,52},{162,52},{162,52}} : new int[][]{{135,20},{135,69},{151,69},{164,69}};
     private static final String[] NAMES = HOPPER ? new String[]{"delayindicator","inversion","inversion_changed","triggermode","triggermode_changed"} : new String[]{"velocity","filtergate","externgate","triggermode"};
-    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER }
+    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, TRIGGER_SETUP }
     private static Stage stage = Stage.BOOT;
     private static boolean complete, tooltipInFrame;
     private static int ticks, hoverIndex, tooltipFrames, pointerX, pointerY;
@@ -69,6 +69,8 @@ public final class FactoryControlTooltipValidation {
     private static NativeLibrary x11, xtest;
     private static Pointer display;
     private static int opened, awaitingLogic = -1, stateChangeAcks;
+    private static String triggerTextBefore;
+    private static int triggerSetupBefore = -1, triggerSetupAfter = -1;
     private FactoryControlTooltipValidation() {}
 
     @SubscribeEvent public static void tick(ClientTickEvent.Post event) {
@@ -117,6 +119,12 @@ public final class FactoryControlTooltipValidation {
                 if (ticks < 12) return;
                 capture(mc, "normal", null); enter(Stage.HOVER); setHover(mc, screen); return;
             }
+            if (stage == Stage.TRIGGER_SETUP) {
+                if (menu.field(2) == awaitingLogic || !matches(mc, p -> p.containerMenu instanceof MachineMenu serverMenu && serverMenu.field(2) == menu.field(2))) return;
+                require((menu.field(2) & 4) == 0, "Trigger setup must exit ignored-redstone mode");
+                triggerSetupAfter = menu.field(2); awaitingLogic = -1; stateChangeAcks++;
+                enter(Stage.HOVER); setHover(mc, screen); return;
+            }
             if (stage == Stage.HOVER) {
                 if (!atPointer(mc, screen)) { move(mc, screen); return; }
                 if (awaitingLogic != -1) {
@@ -133,6 +141,13 @@ public final class FactoryControlTooltipValidation {
                     observed.addProperty("synced_logic", logic);
                 }
                 expected = net.minecraft.ChatFormatting.stripFormatting(expected);
+                observed.addProperty("expected_text", expected);
+                if (HOPPER && hoverIndex >= 3) {
+                    require((menu.field(2) & 4) == 0, "Trigger tooltip must describe pulse or continuous, not ignored mode");
+                    String visible = observed.get("text").getAsString().replaceAll("\\s+", " ").trim();
+                    if (hoverIndex == 3) triggerTextBefore = visible;
+                    else require(triggerTextBefore != null && !triggerTextBefore.equals(visible), "Trigger click must change visible semantic text");
+                }
                 require(observed.get("gray_characters").getAsInt() > 0, "Legacy gray text style lost");
                 // Wrapping inserts line breaks, but must not lose any localized words.
                 require(observed.get("text").getAsString().replaceAll("\\s+", " ").trim().equals(expected.replaceAll("\\s+", " ").trim()), "Native tooltip text differs");
@@ -140,6 +155,11 @@ public final class FactoryControlTooltipValidation {
                 require(observed.get("width").getAsInt() <= Math.max(1, Math.min(240, screen.width - 16)), "Tooltip exceeds wrap bound");
                 require(observed.get("height").getAsInt() > 10, "Expected multiline tooltip");
                 capture(mc, NAMES[hoverIndex], observed);
+                if (HOPPER && hoverIndex == 2) {
+                    require((menu.field(2) & 4) != 0, "Expected ignored-redstone inversion example before trigger setup");
+                    triggerSetupBefore = menu.field(2); awaitingLogic = triggerSetupBefore;
+                    nativeClick(1); hoverIndex++; enter(Stage.TRIGGER_SETUP); return;
+                }
                 if (HOPPER && (hoverIndex == 1 || hoverIndex == 3)) {
                     awaitingLogic = menu.field(2); nativeClick(1);
                 }
@@ -239,11 +259,15 @@ public final class FactoryControlTooltipValidation {
         complete=true;
         if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}
         try { if(directory!=null){
-            var proof=new JsonObject();proof.addProperty("suite","native-factory-control-tooltip-v1");proof.addProperty("status",error==null?"passed":"failed");
+            var proof=new JsonObject();proof.addProperty("suite","native-factory-control-tooltip-v2");proof.addProperty("status",error==null?"passed":"failed");
             proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);
             proof.addProperty("presentation_selector_absent",System.getProperty(MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY)==null);
             proof.addProperty("opened_via_native_block_interaction",opened);
             proof.addProperty("state_change_server_acks",stateChangeAcks);
+            if (HOPPER) {
+                proof.addProperty("trigger_setup_before",triggerSetupBefore);
+                proof.addProperty("trigger_setup_after",triggerSetupAfter);
+            }
             proof.addProperty("machine", HOPPER ? "hopper" : "dropper");
             proof.addProperty("selected_language",mc.getLanguageManager().getSelected());proof.addProperty("width",mc.getWindow().getWidth());proof.addProperty("height",mc.getWindow().getHeight());
             proof.addProperty("native_visual_acceptance",false);

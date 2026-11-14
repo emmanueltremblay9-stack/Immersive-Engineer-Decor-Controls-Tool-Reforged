@@ -22,6 +22,11 @@ No change to narration or component content is introduced.
   machine and hovers actual GUI controls. No hand-constructed production screen.
   RenderTooltip events observe full localized text, gray style, line bounds;
   screenshots are real framebuffer captures with SHA256 and >=3 rendered frames.
+  Proof schema v2 retains the inversion-to-ignored example, then physically clicks
+  inversion again to leave ignored mode before testing pulse versus continuous.
+  Three server acknowledgements, changed visible state text and full expected
+  semantic text are required. Historical v1 evidence remains bounded to the
+  original run and is not reclassified as pulse/continuous coverage.
   Hopper inversion/trigger are physically clicked; changed synchronized menu
   state must match the server before capturing the changed text.
 

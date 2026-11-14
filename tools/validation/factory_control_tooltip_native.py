@@ -23,10 +23,10 @@ def require(condition, message):
 
 
 def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, machine):
-    for key,value in dict(suite='native-factory-control-tooltip-v1',status='passed',nonce=nonce,
+    for key,value in dict(suite='native-factory-control-tooltip-v2',status='passed',nonce=nonce,
         executed_source_sha=sha, width=width,height=height,selected_language=language,machine=machine,
         presentation_selector_absent=True,opened_via_native_block_interaction=1,native_visual_acceptance=False,
-        state_change_server_acks=2 if machine=='hopper' else 0).items():
+        state_change_server_acks=3 if machine=='hopper' else 0).items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
     runtime=proof.get('packaged_runtime',{})
     require(runtime.get('jar_path')==str(jar.resolve()) and runtime.get('jar_sha256')==jar_sha,'Runtime identity differs')
@@ -43,12 +43,21 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, mac
             and type(t.get('height')) is int and t['height']>10,'Tooltip bounds differ')
         require(type(t.get('gray_characters')) is int and t['gray_characters']>0,'Missing gray styled characters')
         require(type(t.get('text')) is str and len(t['text'])>20 and '\n' in t['text'],'Missing rendered multiline text')
+        require(type(t.get('expected_text')) is str and ' '.join(t['text'].split())==' '.join(t['expected_text'].split()),'Rendered semantic text differs')
         if machine=='hopper' and c['name'] in ('inversion','inversion_changed','triggermode','triggermode_changed'):
             require(type(t.get('synced_logic')) is int,'Missing actual synchronized logic state')
 
     if machine=='hopper':
         states={c['name']:c.get('tooltip',{}).get('synced_logic') for c in captures}
+        before=proof.get('trigger_setup_before'); after=proof.get('trigger_setup_after')
+        require(type(before) is int and type(after) is int and before & 4 != 0 and after & 4 == 0
+                and before == states['inversion_changed'] and after == states['triggermode'],'Trigger setup state acknowledgement differs')
+        require(states['triggermode'] & 4 == 0 and states['triggermode_changed'] & 4 == 0
+                and states['triggermode'] ^ states['triggermode_changed'] == 2,'Trigger pulse/continuous transition differs')
+        texts={c['name']:c.get('tooltip',{}).get('text','') for c in captures}
         for name in ('inversion','triggermode'):
+            require(' '.join(texts[name].split())!=' '.join(texts[name+'_changed'].split()),'Visible state text unchanged: '+name)
+
             require(states[name]!=states[name+'_changed'],'Hopper state change absent: '+name)
 
 
