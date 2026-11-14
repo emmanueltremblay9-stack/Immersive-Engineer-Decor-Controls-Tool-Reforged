@@ -39,6 +39,7 @@ def main() -> int:
     parser.add_argument("--height", type=int, choices=(260, 720), default=720)
     parser.add_argument("--prepare-timeout", type=int, default=600)
     parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument("--full-inventory", action="store_true")
     args = parser.parse_args()
     if sys.platform != "linux" or min(args.prepare_timeout, args.timeout) <= 0:
         parser.error("Requires Linux and positive bounded timeouts")
@@ -77,6 +78,7 @@ def main() -> int:
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.freezerReferenceOnly', 'true'
         systemProperty 'iedctr.freezerPackagedNative', 'true'
+        systemProperty 'iedctr.freezerFullInventory', System.getenv('IEDCTR_FULL_INVENTORY')
         systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_JAR')
         systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_JAR_SHA256')
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
@@ -89,7 +91,7 @@ def main() -> int:
 """, encoding="utf-8")
     supplied = args.runtime_jar.resolve(strict=True)
     supplied_hash = hashlib.sha256(supplied.read_bytes()).hexdigest()
-    env = dict(os.environ, IEDCTR_EXPECTED_JAR=str(supplied), IEDCTR_EXPECTED_JAR_SHA256=supplied_hash, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
+    env = dict(os.environ, IEDCTR_FULL_INVENTORY=str(args.full_inventory).lower(), IEDCTR_EXPECTED_JAR=str(supplied), IEDCTR_EXPECTED_JAR_SHA256=supplied_hash, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
                IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_HEIGHT=str(args.height),
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
     gradle = ["bash", str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace", "-Pinclude_freezer_packaged_validation=true", "-Pfreezer_runtime_jar="+str(supplied)]
@@ -132,6 +134,9 @@ def main() -> int:
         if hashlib.sha256(supplied.read_bytes()).hexdigest() != supplied_hash:
             raise SmokeFailure("Production JAR changed during execution")
         validate_proof(proof, main_proof, nonce, source_sha, game, logs, code, expired, 1280, args.height, args.language)
+        if args.full_inventory:
+            from freezer_full_inventory_proof import validate_full_inventory
+            validate_full_inventory(proof, game, 1280, args.height)
         print("PASS bounded ordinary-JAR normal-path Freezer smoke; bundled fixture explicitly active, no physical OS input claim. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError, KeyError, TypeError) as error:

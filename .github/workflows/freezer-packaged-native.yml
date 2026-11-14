@@ -1,6 +1,8 @@
 name: Freezer normal dynamic ordinary-JAR qualification
 
 on:
+  push:
+    branches: [dot/qualify-freezer-issue153-20261114]
   pull_request:
     paths:
       - 'src/**'
@@ -66,6 +68,8 @@ jobs:
           (target/'identity.json').write_text(json.dumps(dict(source_sha=source, sha256=digest,
               original_jar=str(jar), artifact='normal.jar'), indent=2)+'\n')
           PYCODE
+      - name: Verify scoped Freezer production classes and assets against historical normal JAR
+        run: python tools/validation/check_freezer_issue153_artifact.py build/freezer-qualified-artifact/normal.jar docs/testing/freezer-issue153/production-baseline.json
       - name: Share one exact ordinary artifact with all profiles
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -135,7 +139,7 @@ jobs:
           python tools/validation/freezer_packaged_native.py
           --runtime-jar "${{ github.workspace }}/build/freezer-qualified-artifact/normal.jar"
           --language ${{ matrix.locale.language }} --height ${{ matrix.locale.height }}
-          --timeout 600
+          --timeout 600 --full-inventory
       - name: Retain packaged artifact and evidence including failures
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

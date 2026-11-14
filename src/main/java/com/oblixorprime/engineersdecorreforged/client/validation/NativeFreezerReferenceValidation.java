@@ -38,14 +38,20 @@ import org.lwjgl.glfw.GLFW;
  * with physical GUI coordinates and use vanilla packets. Captures are framebuffer
  * evidence, never CPU previews. A pass is a bounded smoke test, not full acceptance.
  */
-final class NativeFreezerReferenceValidation {
+@net.neoforged.fml.common.EventBusSubscriber(modid = "immersive_engineer_decor_controls_tool_reforged", value = net.neoforged.api.distmarker.Dist.CLIENT)
+public final class NativeFreezerReferenceValidation {
    private static final String SUITE = "native-freezer-reference-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0);
    private static final Component RESERVED_NAME = Component.literal("Freezer reserved recovery fixture");
    private enum Stage {
       SETUP, ENERGY, EMPTY_FOR_INPUT, PICKUP, RIGHT_INPUT, REJECT_OUTPUT, RETURN_INPUT,
-      FULL_SETUP, FULL_RECOVERY, ROOM_SETUP, RECOVER, REPEAT_RECOVERY, CLOSE, REOPEN, PROCESS, DONE
+      FULL_SETUP, FULL_HOVERS, FULL_RECOVERY, ROOM_SETUP, RECOVER, REPEAT_RECOVERY, CLOSE, REOPEN, PROCESS, DONE
    }
+   private static final JsonArray FULL_HOVERS = new JsonArray();
+   private static JsonObject fullOverview;
+   private static int hoverIndex, hoverFrames, fullFrames;
+   private static boolean tooltipInFrame;
+   private static double pointerX, pointerY;
    private static Stage stage;
    private static int ticks;
    private static int energyIndex;
@@ -76,6 +82,8 @@ final class NativeFreezerReferenceValidation {
          && Files.readString(gameDirectory.resolve(".iedctr-client-gameplay-nonce")).equals(runNonce), "Fixture nonce/directory mismatch");
       require(System.getProperty("iedctr.executedSourceSha", "").matches("[a-f0-9]{40}"), "Exact source revision is required");
       require(!Files.exists(gameDirectory.resolve("freezer-reference-screenshots")), "Refusing stale native captures");
+      while (FULL_HOVERS.size() > 0) FULL_HOVERS.remove(FULL_HOVERS.size() - 1);
+      fullFrames = 0;
       directory = gameDirectory;
       nonce = runNonce;
       playerId = mc.player.getUUID();
@@ -208,12 +216,38 @@ final class NativeFreezerReferenceValidation {
          case FULL_SETUP -> {
             if (ticks < 8 || !screen.validationRecoveryVisible() || !reserved(menu.getSlot(1).getItem())) return false;
             for (int i = 3; i < 39; i++) if (!is(menu.getSlot(i).getItem(), Items.STONE, 64)) return false;
-            clickRecovery(screen);
-            enter(Stage.FULL_RECOVERY);
+            if (Boolean.getBoolean("iedctr.freezerFullInventory")) {
+               if (fullFrames < 3) return false;
+               fullOverview = fullCapture(mc, "inventory-full");
+               hoverIndex = 3;
+               enter(Stage.FULL_HOVERS);
+               aim(mc, screen);
+            } else {
+               clickRecovery(screen);
+               enter(Stage.FULL_RECOVERY);
+            }
+         }
+         case FULL_HOVERS -> {
+            if (hoverFrames < 3) return false;
+            require(menu.getCarried().isEmpty(), "Hover changed carried stack");
+            for (int i = 3; i < 39; i++) require(is(menu.getSlot(i).getItem(), Items.STONE, 64), "Hover changed inventory");
+            var slot = screen.getSlotUnderMouse();
+            require(slot == menu.getSlot(hoverIndex) && is(slot.getItem(), Items.STONE, 64), "Actual hovered slot differs");
+            JsonObject record = fullCapture(mc, "inventory-slot-" + hoverIndex);
+            record.addProperty("menu_index", hoverIndex);
+            record.addProperty("container_index", slot.getSlotIndex());
+            record.addProperty("count", slot.getItem().getCount());
+            record.addProperty("item", "minecraft:stone");
+            record.addProperty("rendered_frames", hoverFrames);
+            record.addProperty("pointer_x", pointerX); record.addProperty("pointer_y", pointerY);
+            FULL_HOVERS.add(record);
+            if (++hoverIndex < 39) { ticks = 0; aim(mc, screen); }
+            else { moveCursorAway(mc); clickRecovery(screen); enter(Stage.FULL_RECOVERY); }
          }
          case FULL_RECOVERY -> {
             if (ticks < 8 || !reserved(menu.getSlot(1).getItem()) || !serverMatches(mc, p -> reserved(machine.getItem(1)) && countDirt(p) == 0
-                  && p.containerMenu.getCarried().isEmpty() && droppedDirt(p) == 0)) return false;
+                  && p.containerMenu.getCarried().isEmpty() && droppedDirt(p) == 0
+                  && java.util.stream.IntStream.range(0, 36).allMatch(i -> is(p.getInventory().getItem(i), Items.STONE, 64)))) return false;
             casePassed("full_inventory_preserves_reserved");
             setup = mc.getSingleplayerServer().submit(() -> {
                player(mc).getInventory().setItem(0, ItemStack.EMPTY);
@@ -365,6 +399,50 @@ final class NativeFreezerReferenceValidation {
          require(screen.validationSlotHoveredAt(anchor.menuIndex(), view.screenX(slot.x + 8), view.screenY(slot.y + 8)), "Rendered slot center cannot be hovered");
       }
    }
+   private static void aim(Minecraft mc, FreezerReferenceScreen screen) {
+      hoverFrames = 0; tooltipInFrame = false;
+      var slot = current(mc).getSlot(hoverIndex); var view = screen.validationViewTransform();
+      pointerX = view.screenX(slot.x + 8); pointerY = view.screenY(slot.y + 8);
+      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), pointerX * mc.getWindow().getScreenWidth() / screen.width,
+         pointerY * mc.getWindow().getScreenHeight() / screen.height);
+   }
+   @net.neoforged.bus.api.SubscribeEvent
+   public static void beforeFullRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Pre event) { tooltipInFrame = false; }
+   @net.neoforged.bus.api.SubscribeEvent
+   public static void fullTooltip(net.neoforged.neoforge.client.event.RenderTooltipEvent.Color event) {
+      var mc = Minecraft.getInstance();
+      if (stage != Stage.FULL_HOVERS || !(mc.screen instanceof FreezerReferenceScreen screen)) return;
+      var menu = current(mc);
+      if (menu == null || screen.getSlotUnderMouse() != menu.getSlot(hoverIndex)) return;
+      if (Math.abs(mc.mouseHandler.xpos() * screen.width / mc.getWindow().getScreenWidth() - pointerX) >= 1
+         || Math.abs(mc.mouseHandler.ypos() * screen.height / mc.getWindow().getScreenHeight() - pointerY) >= 1) return;
+      // Item tooltip events must concern the actual synchronized stack, not a control tooltip.
+      tooltipInFrame = is(event.getItemStack(), Items.STONE, 64) && !event.getComponents().isEmpty();
+   }
+   @net.neoforged.bus.api.SubscribeEvent
+   public static void afterFullRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Post event) {
+      if (stage == Stage.FULL_SETUP) {
+         var mc = Minecraft.getInstance(); var menu = current(mc);
+         if (event.getScreen() == mc.screen && mc.screen instanceof FreezerReferenceScreen && menu != null
+            && java.util.stream.IntStream.range(3,39).allMatch(i -> is(menu.getSlot(i).getItem(), Items.STONE,64))) fullFrames++;
+         else fullFrames = 0;
+      }
+      if (stage != Stage.FULL_HOVERS) return;
+      if (tooltipInFrame && event.getScreen() == Minecraft.getInstance().screen) hoverFrames++;
+      else hoverFrames = 0;
+      tooltipInFrame = false;
+   }
+   private static JsonObject fullCapture(Minecraft mc, String name) throws Exception {
+      var folder = directory.resolve("freezer-full-inventory-screenshots"); Files.createDirectories(folder);
+      var file = folder.resolve(name + ".png"); require(!Files.exists(file), "Stale full-inventory capture");
+      var record = new JsonObject();
+      try (var image = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+         image.writeToFile(file); record.addProperty("width", image.getWidth()); record.addProperty("height", image.getHeight());
+      }
+      record.addProperty("name", file.getFileName().toString());
+      record.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file))));
+      return record;
+   }
    private static void moveCursorAway(Minecraft mc) {
       GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getScreenWidth() - 2, mc.getWindow().getScreenHeight() - 2);
    }
@@ -448,6 +526,12 @@ final class NativeFreezerReferenceValidation {
       proof.addProperty("menu_slot_count", current(mc).slots.size());
       proof.addProperty("native_visual_acceptance", false);
       proof.addProperty("input_method", "real Screen.mouseClicked/mouseReleased, vanilla packets, server observation; no physical OS input");
+      if (Boolean.getBoolean("iedctr.freezerFullInventory")) {
+         proof.add("full_inventory_overview", fullOverview);
+         proof.add("full_inventory_hovers", FULL_HOVERS.deepCopy());
+         proof.addProperty("full_inventory_input", "GLFW cursor positioning and native tooltip/render events; not physical OS input");
+         proof.addProperty("durability_verified", false);
+      }
       proof.add("cases", CASES.deepCopy());
       proof.add("captures", CAPTURES.deepCopy());
       proof.add("frost_captures", FROST_CAPTURES.deepCopy());

@@ -1,0 +1,21 @@
+{
+  "entries": {
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/background.png": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/freezer_v5_chamber_clean_base.png": "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c",
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/freezer_v5_chamber_mask_alpha.png": "625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0",
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase0.png": "eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664",
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase1.png": "5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b",
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase2.png": "ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898",
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase3.png": "3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49",
+    "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase4.png": "b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0",
+    "com/oblixorprime/engineersdecorreforged/EngineersDecorReforged.class": "a202a8bddb3f8449393ebe49a6912f6b1209d6e15c590c299f94e8185a77f13a",
+    "com/oblixorprime/engineersdecorreforged/client/FreezerReferenceScreen.class": "7fb3e9a0d35b747072b802464777da3e3aa1ef12f4dfa289eda872bd24fbb466",
+    "com/oblixorprime/engineersdecorreforged/client/validation/NativeClientMiningValidation.class": "76c15bf43abac54085e33ed01486c46b73a27201721842213063c32b80d38eea",
+    "com/oblixorprime/engineersdecorreforged/menu/MachineMenu.class": "9bf57ca040b3d7b8f673bdc8e01804c87f1ff3a60bcf0c9f11f9244f48cd26d6",
+    "com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometry.class": "7f50191805097aedad5a877016294740791f51533d57aa052eb2c0bcf8f70010",
+    "com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceLiveState.class": "f39b8b12007d6d7817b677b2f9702d9d40b8545df5eb2c32e45a65ee409476c7",
+    "com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.class": "2adf470abe03ba487e8f06f44fc34a11ae345c984865d35cf7f20d87508a0d38",
+    "com/oblixorprime/engineersdecorreforged/utility/MachineLayout.class": "1212dff0db3668288c26c1a0472fb2548d96aa057c7640a124cb1f0312a54000"
+  },
+  "jar_sha256": "efa64c3410a9b9a5d514bdd4d3c20ef73adbd87df90b26fe790477efb5f7e1f7"
+}
