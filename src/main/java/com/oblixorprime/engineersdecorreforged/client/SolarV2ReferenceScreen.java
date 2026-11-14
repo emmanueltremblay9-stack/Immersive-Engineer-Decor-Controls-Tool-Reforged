@@ -67,8 +67,10 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
       }
       renderTooltip(graphics, mouseX, mouseY);
       if (hoveredSlot == null && SolarV2ReferenceState.containsMeter(view.localX(mouseX), view.localY(mouseY))) {
-         graphics.renderTooltip(font, Component.translatable(PREFIX + "energy_tooltip",
-            menu.energyStored(), menu.energyCapacity(), menu.energyDisplayGranularity()), mouseX, mouseY);
+         Component energyTooltip = Component.translatable(PREFIX + "energy_tooltip",
+            menu.energyStored(), menu.energyCapacity(), menu.energyDisplayGranularity());
+         int wrapWidth = Math.max(1, Math.min(240, width - 16));
+         graphics.renderTooltip(font, font.split(energyTooltip, wrapWidth), mouseX, mouseY);
       } else if (hoveredSlot != null && hoveredSlot.index == 0 && !hoveredSlot.hasItem()) {
          // Preserve the existing machine role; do not imply new charging compatibility.
          graphics.renderTooltip(font, Component.literal(menu.layout().machineSlots().getFirst().role()), mouseX, mouseY);

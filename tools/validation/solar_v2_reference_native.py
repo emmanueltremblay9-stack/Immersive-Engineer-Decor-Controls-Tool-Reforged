@@ -333,7 +333,10 @@ def main() -> int:
     parser.add_argument("--gui-scale", type=int, choices=(1, 2, 3), default=1)
     parser.add_argument("--prepare-timeout", type=int, default=600)
     parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument("--tooltip-probe", action="store_true")
     args = parser.parse_args()
+    if args.tooltip_probe and (args.width,args.height,args.gui_scale)!=(320,260,1):
+        parser.error("Tooltip probe currently qualifies only 320x260 GUI scale 1")
     if sys.platform != "linux" or min(args.prepare_timeout, args.timeout) <= 0:
         parser.error("Requires Linux and positive bounded timeouts")
     try:
@@ -373,6 +376,7 @@ def main() -> int:
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.solarPackagedNative', 'true'
+        systemProperty 'iedctr.solarTooltipProbe', System.getenv('IEDCTR_SOLAR_TOOLTIP_PROBE')
         if (System.getenv('IEDCTR_EXPECTED_JAR')) {
             systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_JAR')
             systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_JAR_SHA256')
@@ -390,7 +394,7 @@ def main() -> int:
 """, encoding="utf-8")
     guard = evidence / "owned_display.py"
     guard.write_text(OWNED_DISPLAY_SCRIPT, encoding="utf-8")
-    env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
+    env = dict(os.environ, IEDCTR_SOLAR_TOOLTIP_PROBE=str(args.tooltip_probe).lower(), IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
                IEDCTR_EXECUTED_SOURCE_SHA=source_sha, IEDCTR_SCREEN_WIDTH=str(args.width),
                IEDCTR_SCREEN_HEIGHT=str(args.height), IEDCTR_GUI_SCALE=str(args.gui_scale),
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
@@ -433,6 +437,9 @@ def main() -> int:
         validate_runtime(proof, report)
         if hashlib.sha256(jar.read_bytes()).hexdigest() != jar_hash:
             raise SmokeFailure('Production JAR changed during execution')
+        if args.tooltip_probe:
+            from solar_tooltip_proof import validate_tooltip
+            validate_tooltip(json.loads((game/'solar-fe-tooltip.json').read_text()), game, nonce, source_sha, args.language)
         print("PASS bounded ordinary-JAR default Solar V2 proof. Full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError, KeyError, TypeError) as error:
