@@ -1,0 +1,6 @@
+PASS: 6 dependency-free geometry groups; 38 visible anchors; 39 menu indices with index 1 reserved.
+PASS: 38 item rectangles and 38 clipped hover rectangles contained; 703 distinct slot pairs nonoverlapping.
+PASS: exhaustive 1..640 by 1..480 viewport fit matrix plus large/portrait cases; uniform transforms, deltas, negative floor, and fractional raw-hover/render policy.
+DISCLOSED: ordinary vanilla hover padding exceeds 36 conservative V5 inventory interiors; opt-in clipping removes that spill.
+PASS: retained reference SHA256, 1254x1254 dimensions, RGB color, and no alpha.
+NOT RUN: Gradle/JUnit, Minecraft build, client rendering, inventory interactions, and exact graphical acceptance.

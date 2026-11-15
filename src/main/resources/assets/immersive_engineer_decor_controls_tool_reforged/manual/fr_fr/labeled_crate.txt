@@ -1,5 +1,6 @@
 Caisse étiquetée
 Étiquette de stock modifiable
-<&recipe>Cette caisse étiquetée facilite le tri des réserves. Sa plaque avant se modifie comme un petit panneau d'atelier.<br>
-<br>
-Utilisation : faites un clic droit sur la plaque pour modifier l'étiquette. Faites un clic droit sur le reste de la caisse pour accéder aux raccords, pièces et fournitures de maintenance stockés.<br>
+<&recipe>La caisse possède 54 emplacements de stockage en grille de 9 sur 6, plus un emplacement d'affichage en façade qui contient un véritable objet. Les entonnoirs et autres automatismes n'accèdent pas à cet emplacement d'affichage.<br>
+Clic droit pour ouvrir le stockage. Accroupissez-vous pendant le clic droit sur la plaque avant pour modifier ses deux lignes de texte, limitées à 24 caractères chacune. Maj + clic transfère une pile ; Ctrl + Maj + clic transfère les piles du même objet ayant les mêmes composants.<br>
+Les boîtes de Shulker, autres caisses étiquetées, sacs remplis et récipients pris en charge contenant déjà des objets sont refusés. Retirez-les d'une caisse standard avant de l'améliorer.<br>
+Recette : RPR / PCP / RPR. R = tige d'acier, P = plaque d'acier, C = caisse standard en bois traité d'Immersive Engineering. Le contenu compatible, le nom personnalisé et les enchantements sont conservés lors de l'amélioration.<br>

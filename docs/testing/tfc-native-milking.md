@@ -29,8 +29,11 @@ official TFC 4.2.12 release for Minecraft 1.21.1, not an inferred reporter stack
 - A guard covers the producing animal across machines and blocks same-machine
   callback recursion, including bucket I/O. Hook-produced actor inventory items
   are retained as actual world drops; the machine supplied no items to that actor.
-- The existing 4000 mB capacity, 120-tick unpowered production check, facing/range,
-  20-tick container I/O, 250 mB fluid output and vanilla bucket/tank behavior remain.
+- The existing 4000 mB capacity, facing/range, 20-tick container I/O,
+  250 mB fluid output and vanilla 120-tick bucket/tank behavior remain.
+  TFC production follows native readiness each tick instead of waiting for the
+  machine's 120-tick phase. A bounded, per-animal refusal retry cache is separate
+  from recovery and cannot delay another ready cow.
   No new persistence schema is required; existing scalar milk saves remain valid.
 
 This is a server-thread transaction, not an atomic save transaction across two
@@ -65,7 +68,7 @@ Sources:
 ## Validation
 
 The ordinary Build workflow retains the absent-TFC startup and vanilla regression
-coverage. The separate TFC workflow runs twelve real GameTests in both profiles:
+coverage. The separate TFC workflow runs the real native regression batch in both profiles:
 
 ```text
 ./gradlew runGameTestServer -Pinclude_tfc_milking_runtime=true
@@ -75,7 +78,7 @@ coverage. The separate TFC workflow runs twelve real GameTests in both profiles:
 The development profile adds `src/tfcGameTest/java`, copies the existing 110-byte
 empty structure into its dedicated template namespace, and selects the
 `immersive_engineer_decor_controls_tool_reforged_tfc` test namespace.
-The workflow also requires evidence of the twelve-test `tfc_milking` batch and
+The workflow also requires evidence of the complete `tfc_milking` batch and
 successful required tests, so discovering zero native tests cannot count as success.
 
 Cases cover native tank/cooldown, native eligibility, strict familiarity threshold,
@@ -84,8 +87,10 @@ products, capacity/power/animal changes during callbacks, two-machine recursion,
 bucket conservation, real entity and block save/reload, range/redstone/vanilla,
 and foreign actor output retention without fabricated buckets.
 
-Local common-source compilation with the official TFC API passed, followed by
-compilation of all twelve real GameTests in the NeoForge 21.1.234 profile.
+For the original adapter, local common-source compilation with the official TFC
+API passed, followed by compilation of its twelve initial GameTests in the
+NeoForge 21.1.234 profile. These historical results do not qualify the current
+recovery/identity additions; exact-head native CI is required again.
 The local server preflight was interrupted by an executor disconnection during
 resource preparation: no server log or passing test result was produced, and its
 Gradle daemon was confirmed stopped before publication. Real TFC/Crossover server

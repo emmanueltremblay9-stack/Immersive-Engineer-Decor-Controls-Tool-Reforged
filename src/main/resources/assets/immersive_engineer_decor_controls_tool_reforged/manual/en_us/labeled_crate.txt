@@ -1,7 +1,6 @@
 Labeled Crate
 54-slot storage with a content hint
-<&recipe>This storage crate restores the original 9 by 6 inventory and front-mounted content hint. The hint slot holds one item and is hidden from hoppers and other automation.<br>
-<br>
-Usage: Right-click the crate to open storage. Shift-right-click the front plate to edit any preserved stock label. Shift-click moves items; Ctrl+Shift-click moves matching item stacks with the same components.<br>
-<br>
-Recipe: RPR / PCP / RPR. R = Immersive Engineering Steel Rod, P = Immersive Engineering Steel Plate, C = standard treated-wood crate. Contents, name, and enchantments transfer when upgrading a supported crate.<br>
+<&recipe>The crate has 54 storage slots arranged in a 9 by 6 grid, plus a separate front-display slot that holds one real item. Hoppers and other automation cannot access that display slot.<br>
+Right-click to open storage. Sneak-right-click the front label plate to edit its two text lines, up to 24 characters each. Shift-click transfers a stack; Ctrl+Shift-click transfers matching stacks with the same item components.<br>
+Shulker boxes, other Labeled Crates, filled bundles and supported containers that already hold items are refused. Remove these from a standard crate before upgrading it.<br>
+Recipe: RPR / PCP / RPR. R = steel rod, P = steel plate, C = Immersive Engineering's standard treated-wood crate. Compatible contents, the custom name and enchantments are retained by the upgrade.<br>

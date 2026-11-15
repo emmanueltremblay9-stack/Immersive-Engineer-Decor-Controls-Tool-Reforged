@@ -50,10 +50,14 @@ Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, 
 <np>
 Support en acier double T
 Élément d'ossature
-<&steel_double_t_support>Ce bloc forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<&steel_double_t_support>Utilisez l'objet Support en acier double T sur un mur pour placer un support mural vertical. Un clic au sol ou au plafond place le support horizontal, orienté selon votre direction horizontale. Les supports muraux se raccordent aux supports horizontaux en acier et aux poutres de plafond en bois traité en contact direct, quel que soit l'ordre de pose.<br>
+L'ancien objet de support vertical reste utilisable dans les inventaires sauvegardés, mais il est masqué dans l'onglet créatif et la liste JEI normale. Le prélèvement ou le minage du bloc posé rend l'objet canonique Support en acier double T.<br>
+Une ampoule en fer peut se fixer sous le centre libre d'un support horizontal. Une ampoule et un raccord de poteau en acier ne peuvent pas occuper ce même centre ; une pose incompatible est refusée sans consommer l'objet. L'ampoule peut être minée séparément ou rendue avec la poutre selon les règles normales d'outils et de butin.<br>
 <br>
-Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
-<np>
+Les supports double T acceptent aussi une seule ampoule en fer, lumière de bord de plafond, lumière encastrée au sol ou lumière encastrée compatible sur une face interne de la structure, si la lampe tient sans chevauchement. Visez la face métallique de fixation ; toutes les faces et orientations ne conviennent pas. Vous pouvez poser le support d'abord ou autour d'une lampe compatible déjà posée. Une seconde lampe est refusée.<br>
+Visez la lampe fixée pour la miner séparément en laissant le support. Une lampe payée en Survie peut être rendue une seule fois selon les règles normales d'outils et de butin ; un ajout en Créatif ne donne pas ce remboursement. Le minage du support entier rend sa lampe payée selon ces mêmes règles.<br>
+<br>
+La poutre en bois traité distincte se trouve dans le catalogue créatif sans recette de fabrication. Sur un mur, cliquez plus près d'un bord latéral pour une poutre horizontale ou du bord supérieur/inférieur pour une poutre verticale ; le centre et les distances égales choisissent la verticale. Les clics au sol et au plafond placent une poutre horizontale. Un poteau vertical en bois traité directement sous une poutre de plafond crée un raccord assorti sans consommer le poteau. Cette poutre en bois n'utilise pas le système de lampes du support en acier.<br><np>
 Caillebotis en acier
 Élément de voie de service
 <&steel_floor_grating>Ce bloc délimite clairement les voies de service autour des machines.<br>
@@ -62,27 +66,43 @@ Utilisation : créez des accès de maintenance autour des machines, des étages 
 <np>
 Passerelle en acier
 Élément de voie de service
-<&steel_catwalk>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&steel_catwalk>La passerelle en acier offre un plancher avec jusqu'à quatre barrières latérales indépendantes.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : tenez une barrière en acier et faites un clic droit près du bord voulu pour ajouter ou retirer ce côté. Chaque ajout coûte une barrière en Survie. Les ajouts payés peuvent être rendus au retrait ; les ajouts en Créatif ne créent pas de remboursement supplémentaire.<br>
+<br>
+Visez et minez une barrière pour retirer uniquement ce côté. Miner le plancher retire la passerelle et ses barrières payées restantes. Les règles normales d'outil et de butin s'appliquent.
 <np>
 Escaliers de passerelle en acier
 Élément de voie de service
 <&steel_catwalk_stairs>Ce bloc délimite clairement les voies de service autour des machines.<br>
 <br>
 Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<br>
+Tenez une rambarde en acier et faites un clic droit sur le côté gauche ou droit de l’escalier pour ajouter ou retirer ce côté sur place. En Survie, la pose consomme une rambarde ; le retrait d’un côté ajouté la restitue.<br>
+Minez la rambarde visée pour retirer uniquement ce côté. Minez la marche pour retirer l’escalier et ses rambardes ajoutées restantes.<br>
+<br>
+Cliquez sur un bord libre d'une passerelle en acier, d'une passerelle en acier surélevée ou d'une grille de sol en acier pour raccorder le haut de l'escalier ; la volée descend en s'éloignant de la plateforme. Une passerelle basse place l'escalier une case plus bas, tandis qu'une passerelle surélevée ou une grille le place à la même hauteur de case. Cliquez sur l'extrémité basse ou haute d'un escalier pour prolonger la volée d'une case vers le bas ou le haut. Le bord ou l'extrémité visée choisit le raccord, pas votre direction de regard.<br>
+L'Escalier de passerelle en acier surélevée est une variante distincte qui conserve ces règles de pose et de rambardes. Un poteau ou une tête de poteau en bois traité, acier fin ou acier épais placé dessous fait apparaître un support en V assorti. Un support de poteau en bois traité orienté vers le haut convient aussi. Le poteau reste un bloc séparé avec sa collision et son butin ; le V n'est pas un objet à miner séparément. Cette variante n'a actuellement aucune recette et se trouve dans le catalogue créatif ou via les commandes.<br>
 <np>
 Passerelle en acier surélevée
 Élément de voie de service
-<&steel_catwalk_ta>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&steel_catwalk_ta>Cette passerelle occupe le haut de son bloc. Elle se raccorde aux poteaux en acier fins ou épais, aux poteaux droits en bois traité et à leurs têtes placés juste en dessous. Le raccord s'adapte au changement ou au retrait du poteau. Chaque raccord intègre la tête complète du poteau correspondant, avec sa platine et ses renforts sous le plateau. Aucun objet de tête de poteau supplémentaire n'est nécessaire.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Cliquez sur le dessus d'un bloc solide pour obtenir la variante avec cadre. Les autres placements utilisent le plateau simple, sauf si un poteau compatible se trouve juste en dessous.<br>
+<br>
+En tenant une autre passerelle surélevée, cliquez sur le dessus ou le dessous pour prolonger la passerelle dans la direction regardée, à la même hauteur.<br>
+<br>
+Cliquez sous un plateau simple avec une lampe encastrée en fer pour l'installer. Cliquez à nouveau en tenant une telle lampe pour la retirer. En survie, l'installation consomme un objet, rendu au retrait ou au minage de la passerelle. Les anciennes variantes lumineuses choisies automatiquement et les ajouts en créatif ne rendent pas de lampe.<br>
+<br>
+Vous pouvez aussi viser directement la lampe par dessous et la miner normalement pour ne retirer que la lampe. Le plateau, le poteau et les garde-corps restent en place. En survie, le remboursement exige un outil de récolte adapté ; les lampes gratuites et le retrait en créatif ne donnent aucun objet. Visez le plateau lui-même pour miner toute la passerelle.<br>
 <np>
 Garde-corps en acier
 Élément de voie de service
-<&steel_railing>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&steel_railing>Une barrière en acier peut réunir jusqu'à quatre côtés distincts dans une seule case.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : le bord cliqué choisit le premier côté. Tenez une autre barrière en acier et faites un clic droit sur le bord voulu pour ajouter ou retirer ce côté. Chaque ajout en Survie consomme une barrière ; les ajouts payés peuvent être rendus au retrait.<br>
+<br>
+Visez et minez un côté pour retirer uniquement celui-ci. Retirer le dernier côté supprime le bloc. Les ajouts en Créatif ne créent pas de remboursement supplémentaire ; les règles normales d'outil et de butin s'appliquent.
 <np>
 Clôture en maille d'acier
 Élément de voie de service
@@ -90,38 +110,48 @@ Clôture en maille d'acier
 <br>
 Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
 <np>
-Porte de clôture en maille d'acier
+Portail grillagé en acier
 Élément de voie de service
-<&steel_mesh_fence_gate>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&steel_mesh_fence_gate>Ce portail manuel peut mesurer un ou deux blocs de haut.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : posez un second segment directement au-dessus du premier pour former un grand portail. Un clic droit sur un segment commande les deux. Casser un segment retire tout le grand portail.<br>
+<br>
+Deux portails voisins assortis, dans le même plan et de même hauteur, peuvent s'ouvrir ensemble par un clic avec la main principale vide. Une rangée de trois ne forme pas une paire liée. Ces portails restent manuels, sans activation redstone.
 <np>
 Échelle à échelons en métal
 Élément de voie de service
-<&metal_rung_ladder>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&metal_rung_ladder>Cette échelle murale permet l'accès vertical aux installations.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : posez-la contre un mur porteur. Pour traverser une trappe en fer au-dessus, placez l'échelle directement sous la trappe et alignez son bord d'appui avec le battant ouvert.<br>
+<br>
+La trappe doit être ouverte. Une trappe fermée ou mal alignée ne prolonge pas la montée.
 <np>
 Marches en métal échelonnées
 Élément de voie de service
-<&metal_rung_steps>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&metal_rung_steps>Cette échelle murale permet l'accès vertical aux installations.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : posez-la contre un mur porteur. Pour traverser une trappe en fer au-dessus, placez l'échelle directement sous la trappe et alignez son bord d'appui avec le battant ouvert.<br>
+<br>
+La trappe doit être ouverte. Une trappe fermée ou mal alignée ne prolonge pas la montée.
 <np>
 Fenêtre encadrée en acier
 Vue protégée
 <&steel_framed_window>Ce bloc préserve la visibilité tout en s'intégrant à une construction industrielle renforcée.<br>
 <br>
-Utilisation : placez-le dans une ouverture murale d'un bloc pour observer les machines à travers une barrière protectrice.<br>
+Utilisation : placez-le pour observer les machines à travers une barrière protectrice.<br>
 <np>
 Porte coulissante en métal
 Point d'accès industriel
-<&metal_sliding_door>Ce bloc offre un accès robuste aux locaux techniques, puits, toitures et enceintes de machines.<br>
+<&metal_sliding_door>La porte coulissante en métal s'ouvre manuellement ou par redstone et peut former une paire.<br>
 <br>
-Utilisation : installez-le lorsqu'une ouverture de maintenance contrôlée est nécessaire.<br>
+Utilisation : posez deux portes côte à côte, à la même hauteur et dans la même direction. Un clic droit sur l'une d'elles, en haut ou en bas, ouvre ou ferme la paire. Une troisième porte voisine ne rejoint pas cette paire.<br>
+<br>
+Un signal reçu par l'une des portes maintient les deux ouvertes. Elles se ferment au retrait du signal ; un clic ne peut pas fermer une paire alimentée.
 <np>
 Trappe en fer
 Point d'accès industriel
-<&iron_hatch>Ce bloc offre un accès robuste aux locaux techniques, puits, toitures et enceintes de machines.<br>
+<&iron_hatch>La trappe en fer s'ouvre par clic droit ou redstone. La redstone la maintient ouverte jusqu'au retrait du signal.<br>
 <br>
-Utilisation : installez-le lorsqu'une ouverture de maintenance contrôlée est nécessaire.<br>
+Utilisation : pour une sortie grimpable, placez une échelle directement dessous et alignez son bord d'appui avec le battant de la trappe ouverte. Les échelles vanilla, à échelons métalliques et à marches métalliques échelonnées peuvent prolonger la montée par cette ouverture alignée.<br>
+<br>
+Une trappe fermée ou une échelle placée d'un autre côté ne permet pas cette liaison grimpable.

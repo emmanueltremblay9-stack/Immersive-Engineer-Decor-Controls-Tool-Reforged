@@ -1,9 +1,7 @@
 Foot Button
-Redstone control
-<&recipe>A contact switch sends a short signal from floor or trapdoor movement.<br>
+Occupancy signal
+<&recipe>The Foot Button supplies redstone while an entity occupies its detection area.<br>
 <br>
-Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+Usage: Mount it on a sturdy face where entities pass. Entity contact activates it, and it stays on while the area remains occupied.<br>
 <br>
-Notes: Pulses briefly after entity contact.
-
-
+Notes: It checks occupancy every 12 game ticks and switches off after the area clears.

@@ -4,6 +4,7 @@ import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
+import com.oblixorprime.engineersdecorreforged.utility.MilkingState;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
@@ -286,6 +287,259 @@ public final class TfcMilkingGameTests {
          h.assertValueEqual(amount(f), 1000, "fluid product remains exact");
       }
       h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking", timeoutTicks = 100)
+   public static void native_expiry_extracts_without_waiting_for_machine_cycle(GameTestHelper h) {
+      Fixture f = fixture(h);
+      int duration = TFCConfig.SERVER.cowConfig.produceTicks().get();
+      f.cow.setProducedTick(f.cow.calendar().getTicks() - duration + 1);
+      tick(f, 7); // Explicitly not the old 120-tick extraction boundary.
+      h.assertValueEqual(f.cow.getProductsCooldown(), 1L, "one native tick remains");
+      h.assertValueEqual(amount(f), 0, "never extract before native expiry");
+      h.assertValueEqual(projection(f.machine).state(), MilkingState.RECOVERING, "native recovery projected");
+      h.runAfterDelay(1, () -> {
+         try (f) {
+            tick(f, 1);
+            h.assertValueEqual(amount(f), 1000, "extract on the first native-ready tick");
+            h.assertValueEqual(f.cow.getUses(), 1, "exactly one source commit at expiry");
+         }
+         h.succeed();
+      });
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void external_native_milking_resets_observation_and_clears_refusal_retry(GameTestHelper h) {
+      try (Fixture f = fixture(h)) {
+         try (var listener = product(f, event -> event.setCanceled(true))) { tick(f, 1); }
+         h.assertTrue((projection(f.machine).machineFlags() & MilkingState.RETRY_WAIT) != 0, "refusal is not animal recovery");
+         f.cow.setProductsCooldown(); // Same authoritative state transition as manual/native milking.
+         tick(f, 1);
+         h.assertValueEqual(projection(f.machine).remainingTicks(), f.cow.getProductsCooldown(), "observe external cooldown immediately");
+         h.assertValueEqual(projection(f.machine).machineFlags() & MilkingState.RETRY_WAIT, 0, "recovery clears refusal delay");
+         f.cow.setProducedTick(-1_000_000_000L);
+         tick(f, 1);
+         h.assertValueEqual(amount(f), 1000, "native readiness wins over old machine refusal timer");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void two_cows_choose_next_recovery_then_ready_with_stable_ties(GameTestHelper h) {
+      try (Fixture f = fixture(h)) {
+         DairyAnimal other = newCow(h);
+         CompoundTag saved = new CompoundTag();
+         f.cow.saveWithoutId(saved);
+         other.load(saved);
+         other.setUUID(java.util.UUID.randomUUID());
+         h.assertTrue(h.getLevel().addFreshEntity(other), "second native cow");
+         try {
+            int duration = TFCConfig.SERVER.cowConfig.produceTicks().get();
+            f.cow.setProductsCooldown();
+            other.setProducedTick(other.calendar().getTicks() - duration + 7);
+            tick(f, 1);
+            h.assertValueEqual(projection(f.machine).animalId(), other.getUUID(), "earliest eligible recovery selected");
+            other.setGender(Gender.MALE);
+            tick(f, 1);
+            h.assertValueEqual(projection(f.machine).animalId(), f.cow.getUUID(), "ineligible earlier cow cannot hide eligible recovery");
+            other.setGender(Gender.FEMALE);
+            other.setProducedTick(f.cow.getProducedTick());
+            tick(f, 1);
+            DairyAnimal expected = f.cow.getId() < other.getId() ? f.cow : other;
+            h.assertValueEqual(projection(f.machine).animalId(), expected.getUUID(), "equal recovery uses stable entity-id tie break");
+            other.setProducedTick(-1_000_000_000L);
+            tick(f, 1);
+            h.assertValueEqual(amount(f), 1000, "ready cow is milked without waiting for recovering cow");
+            h.assertValueEqual(other.getUses(), 1, "only selected ready cow consumed");
+            h.assertValueEqual(f.cow.getUses(), 0, "recovering neighbor untouched");
+            h.assertValueEqual(projection(f.machine).animalId(), other.getUUID(), "post-transaction projection is the actual source");
+         } finally { other.discard(); }
+      }
+      h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void target_departure_and_machine_reload_clear_projection(GameTestHelper h) {
+      try (Fixture f = fixture(h)) {
+         f.cow.setProductsCooldown();
+         tick(f, 1);
+         h.assertValueEqual(projection(f.machine).animalId(), f.cow.getUUID(), "observe native UUID");
+         CompoundTag saved = f.machine.saveWithFullMetadata(h.getLevel().registryAccess());
+         var restored = (MachineBlockEntity)BlockEntity.loadStatic(f.pos, f.machine.getBlockState(), saved, h.getLevel().registryAccess());
+         h.assertValueEqual(projection(restored).source(), MilkingState.NONE, "observations are never persisted as authority");
+         h.assertTrue(projection(restored).animalId() == null, "reload clears previous UUID");
+         f.cow.setPos(f.pos.getX() + 10, f.pos.getY(), f.pos.getZ());
+         tick(f, 1);
+         h.assertValueEqual(projection(f.machine).source(), MilkingState.NONE, "departure clears source");
+         h.assertTrue(projection(f.machine).animalId() == null, "departure clears UUID");
+         h.assertValueEqual(projection(f.machine).remainingTicks(), 0L, "departure clears recovery");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void pause_and_full_storage_do_not_replace_native_recovery(GameTestHelper h) {
+      try (Fixture f = fixture(h)) {
+         f.cow.setProductsCooldown();
+         tank(f).fill(new FluidStack(NeoForgeMod.MILK.get(), 4000), FluidAction.EXECUTE);
+         h.getLevel().setBlock(f.pos.east(), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
+         tick(f, 1);
+         MilkingState observed = projection(f.machine);
+         h.assertValueEqual(observed.state(), MilkingState.RECOVERING, "recovery independent of machine blockers");
+         h.assertValueEqual(observed.remainingTicks(), f.cow.getProductsCooldown(), "native time remains authoritative");
+         h.assertValueEqual(observed.machineFlags(), MilkingState.PAUSED | MilkingState.STORAGE_BLOCKED, "both blockers coexist with recovery");
+         f.cow.setProducedTick(-1_000_000_000L);
+         tick(f, 1);
+         h.assertValueEqual(projection(f.machine).state(), MilkingState.READY, "native ready state visible even while blocked");
+         h.assertValueEqual(f.cow.getUses(), 0, "blocked machine never consumes source");
+         h.getLevel().setBlock(f.pos.east(), Blocks.AIR.defaultBlockState(), 3);
+         tank(f).drain(4000, FluidAction.EXECUTE);
+         tick(f, 1);
+         h.assertValueEqual(amount(f), 1000, "unblocking does not restart an extraction countdown");
+      } finally { h.getLevel().setBlock(h.absolutePos(POS).east(), Blocks.AIR.defaultBlockState(), 3); }
+      h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void changed_native_configuration_and_large_recovery_are_projected(GameTestHelper h) {
+      var supplier = TFCConfig.SERVER.cowConfig.produceTicks();
+      var configured = ((ConfigBuilder.ServerValue<?>)supplier).value();
+      h.assertTrue(configured instanceof ModConfigSpec.IntValue, "native duration configuration");
+      var duration = (ModConfigSpec.IntValue)configured;
+      int previous = duration.get();
+      try (Fixture f = fixture(h)) {
+         duration.set(100_001);
+         f.cow.setProductsCooldown();
+         tick(f, 1);
+         h.assertValueEqual(projection(f.machine).totalTicks(), 100_001, "configured duration, not a built-in constant");
+         h.assertValueEqual(projection(f.machine).remainingTicks(), f.cow.getProductsCooldown(), "remaining survives signed-short synchronization");
+         h.assertTrue(projection(f.machine).remainingTicks() > 32767, "large duration fixture");
+         duration.set(200_003);
+         tick(f, 1);
+         h.assertValueEqual(projection(f.machine).totalTicks(), 200_003, "configuration changes observed immediately");
+         h.assertValueEqual(projection(f.machine).remainingTicks(), f.cow.getProductsCooldown(), "native recovery recomputed after configuration change");
+         h.assertValueEqual(amount(f), 0, "configuration observation never produces milk");
+      } finally { duration.set(previous); }
+      h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void refused_ready_cow_does_not_starve_other_ready_cow(GameTestHelper h) {
+      try (Fixture f = fixture(h)) {
+         DairyAnimal other = copyCow(h, f.cow);
+         AtomicInteger firstEvents = new AtomicInteger(), otherEvents = new AtomicInteger();
+         try (var listener = listen(AnimalProductEvent.class, event -> {
+            if (event.getEntity() == f.cow) {
+               firstEvents.incrementAndGet();
+               event.setCanceled(true);
+            } else if (event.getEntity() == other) otherEvents.incrementAndGet();
+         })) {
+            h.assertTrue(f.cow.getId() < other.getId(), "first ready cow has the lower entity ID");
+            h.assertTrue(other.isReadyForAnimalProduct(), "second cow is natively ready");
+            tick(f, 1);
+            h.assertValueEqual(firstEvents.get(), 1, "first tick attempts lower-ID cow");
+            h.assertValueEqual(otherEvents.get(), 0, "no second transaction in the same machine tick");
+            h.assertValueEqual(amount(f), 0, "canceled transaction stores nothing");
+            h.assertValueEqual(projection(f.machine).animalId(), f.cow.getUUID(), "refusal projection identifies attempted cow");
+            h.assertTrue((projection(f.machine).machineFlags() & MilkingState.RETRY_WAIT) != 0, "first cow has refusal backoff");
+            tick(f, 1);
+            h.assertValueEqual(firstEvents.get(), 1, "deferred cow is not retried next tick");
+            h.assertValueEqual(otherEvents.get(), 1, "other ready cow attempted immediately next tick");
+            h.assertValueEqual(amount(f), 1000, "other cow supplies one complete product");
+            h.assertValueEqual(f.cow.getUses(), 0, "refused source remains untouched");
+            h.assertValueEqual(other.getUses(), 1, "only successful source is consumed");
+            h.assertValueEqual(projection(f.machine).animalId(), other.getUUID(), "success projection identifies actual attempted source");
+            h.assertValueEqual(projection(f.machine).state(), MilkingState.RECOVERING, "successful source recovery is projected");
+            h.assertValueEqual(projection(f.machine).machineFlags() & MilkingState.RETRY_WAIT, 0, "other source does not inherit refusal flag");
+         } finally { other.discard(); }
+      }
+      h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void departed_refused_cow_cannot_delay_new_ready_cow(GameTestHelper h) {
+      try (Fixture f = fixture(h)) {
+         AtomicInteger refused = new AtomicInteger();
+         try (var listener = product(f, event -> {
+            refused.incrementAndGet();
+            event.setCanceled(true);
+         })) { tick(f, 1); }
+         h.assertValueEqual(refused.get(), 1, "one canceled attempt before departure");
+         h.assertValueEqual(projection(f.machine).animalId(), f.cow.getUUID(), "old UUID is initially observed");
+         h.assertTrue((projection(f.machine).machineFlags() & MilkingState.RETRY_WAIT) != 0, "old source has active refusal backoff");
+         f.cow.discard();
+         DairyAnimal replacement = copyCow(h, f.cow);
+         AtomicInteger accepted = new AtomicInteger();
+         try (var listener = listen(AnimalProductEvent.class, event -> {
+            if (event.getEntity() == replacement) accepted.incrementAndGet();
+         })) {
+            h.assertTrue(!replacement.getUUID().equals(f.cow.getUUID()), "replacement has a distinct source UUID");
+            h.assertTrue(replacement.isReadyForAnimalProduct(), "replacement is natively ready");
+            tick(f, 1); // No empty tick between departure and replacement.
+            h.assertValueEqual(accepted.get(), 1, "new source is attempted on the very next tick");
+            h.assertValueEqual(amount(f), 1000, "departed source refusal does not delay replacement");
+            h.assertValueEqual(replacement.getUses(), 1, "exactly one replacement product committed");
+            h.assertValueEqual(projection(f.machine).animalId(), replacement.getUUID(), "projection replaces departed UUID");
+            h.assertValueEqual(projection(f.machine).machineFlags() & MilkingState.RETRY_WAIT, 0, "replacement never inherits old refusal flag");
+         } finally { replacement.discard(); }
+      }
+      h.succeed();
+   }
+
+   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   public static void ready_herd_larger_than_refusal_cache_cannot_starve_last_cow(GameTestHelper h) {
+      try (Fixture f = fixture(h)) {
+         var herd = new java.util.ArrayList<DairyAnimal>();
+         herd.add(f.cow);
+         try {
+            for (int i = 1; i < 66; i++) herd.add(copyCow(h, f.cow));
+            herd.sort(java.util.Comparator.comparingInt(DairyAnimal::getId));
+            DairyAnimal permitted = herd.getLast();
+            var attempts = new java.util.HashMap<java.util.UUID, Integer>();
+            AtomicInteger events = new AtomicInteger();
+            try (var listener = listen(AnimalProductEvent.class, event -> {
+               if (!(event.getEntity() instanceof DairyAnimal cow) || !herd.contains(cow)) return;
+               events.incrementAndGet();
+               attempts.merge(cow.getUUID(), 1, Integer::sum);
+               if (cow != permitted) event.setCanceled(true);
+            })) {
+               for (int i = 0; i < 66; i++) {
+                  int before = events.get();
+                  tick(f, 1);
+                  h.assertValueEqual(events.get() - before, 1, "exactly one native attempt per machine tick");
+                  h.assertValueEqual(projection(f.machine).animalId(), herd.get(i).getUUID(), "rotation reaches each ready source in order");
+                  h.assertValueEqual(amount(f), i == 65 ? 1000 : 0, "only last permitted cow produces");
+               }
+            }
+            h.assertValueEqual(events.get(), 66, "no replay or skipped attempt across refusal cache boundary");
+            h.assertValueEqual(attempts.size(), 66, "all distinct ready cows attempted before any repeat");
+            for (DairyAnimal cow : herd) {
+               h.assertValueEqual(attempts.get(cow.getUUID()), Integer.valueOf(1), "one attempt per source");
+               h.assertValueEqual(cow.getUses(), cow == permitted ? 1 : 0, "only permitted source consumed");
+            }
+            h.assertValueEqual(projection(f.machine).animalId(), permitted.getUUID(), "final projection matches successful source");
+            h.assertValueEqual(projection(f.machine).state(), MilkingState.RECOVERING, "final source shows native recovery");
+            h.assertValueEqual(projection(f.machine).machineFlags() & MilkingState.RETRY_WAIT, 0, "successful source has no inherited refusal");
+         } finally {
+            for (DairyAnimal cow : herd) if (cow != f.cow) cow.discard();
+         }
+      }
+      h.succeed();
+   }
+
+   private static DairyAnimal copyCow(GameTestHelper h, DairyAnimal source) {
+      CompoundTag saved = new CompoundTag();
+      source.saveWithoutId(saved);
+      DairyAnimal copy = newCow(h);
+      copy.load(saved);
+      copy.setUUID(java.util.UUID.randomUUID());
+      h.assertTrue(h.getLevel().addFreshEntity(copy), "new native cow enters the test world");
+      return copy;
+   }
+
+   private static MilkingState projection(MachineBlockEntity machine) {
+      var data = machine.milkingDataAccessForTests();
+      return MilkingState.decode(index -> (short)data.get(index));
    }
 
    private record Fixture(GameTestHelper helper, MachineBlockEntity machine, DairyAnimal cow, BlockPos pos) implements AutoCloseable {

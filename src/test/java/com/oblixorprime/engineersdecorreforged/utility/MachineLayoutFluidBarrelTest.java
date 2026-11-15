@@ -18,7 +18,11 @@ public class MachineLayoutFluidBarrelTest {
       assertEquals(202, layout.hotbarY());
       assertEquals(2, layout.machineSlots().size());
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
+      assertEquals(34, layout.machineSlots().get(0).x());
+      assertEquals(73, layout.machineSlots().get(0).y());
       assertEquals(1, layout.machineSlots().get(1).containerIndex());
+      assertEquals(158, layout.machineSlots().get(1).x());
+      assertEquals(73, layout.machineSlots().get(1).y());
       assertEquals("Filled", layout.machineSlots().get(1).role());
       assertFalse(layout.machineSlots().get(0).output());
       assertTrue(layout.machineSlots().get(1).output());

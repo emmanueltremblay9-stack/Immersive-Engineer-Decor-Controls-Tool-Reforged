@@ -2,6 +2,38 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.67-reconstructed] - Unreleased version preparation
+
+### Changed
+- Advance the Gradle and NeoForge version together because `1.1.66-reconstructed` is already public on CurseForge as file 9402055. This metadata-only preparation adds no runtime behavior, assets, recipes, dependencies, save changes or publication manifest.
+- Add regression checks for the ordinary JAR filename, NeoForge version and both manifest version fields. Previous candidate artifacts and qualification records retain their original identities.
+- A separately approved merge still needs successful CI on its exact new main commit, a newly built and hashed ordinary JAR, and qualification bound to those bytes. Earlier CI and gameplay evidence are not proof for the new versioned artifact.
+
+## Unreleased - Small Water Freezer pipe and bucket automation
+
+### Fixed
+- Expose a water-only, 2,000 mB tank on every Freezer face so Immersive Engineering fluid pipes can connect. An empty input slot and 1,000 mB of water produce one Ice block using the existing 180-tick, 1,440-FE cycle.
+- Allow automation to recover the empty bucket left in the input slot. Vanilla hoppers now follow the same output-only extraction rules as item capabilities, with this empty-bucket exception, rather than removing unprocessed inputs or legacy reserved-slot contents.
+- Keep item recipes, direct hand-bucket use, slot indices, comparator behavior and saved item progress unchanged. Persist fluid work separately and reset it when its water batch is removed or its source changes.
+- Synchronize the fluid recipe preview and status through an unused existing menu field, without changing presentation selectors or slot/data counts.
+
+### Regression coverage
+- Add 13 dedicated GameTests for fluid capability contracts, conservation, exact energy/timing, source switching, interruption, reload, real hopper bucket recycling, menu status, legacy behavior and real IE pipe transfer on all six faces.
+- See `docs/testing/freezer-fluid-automation.md` for the scope, upstream references and manual client qualification checklist. Added tests are not evidence of a completed in-game client check.
+
+## Unreleased - orientation-aware steel Double-T support connections
+
+### Changed
+- Let the existing `steel_double_t_support` item choose the registered vertical wall block on a wall click and retain the horizontal steel support on floor/ceiling clicks, oriented by the player's horizontal direction.
+- Connect upright wall supports to directly touching horizontal steel and ceiling treated-wood beam profiles in either placement order, without adding blockstate properties or changing their registry IDs.
+- Keep vertical_steel_double_t_support registered and usable by old inventories while hiding it from the creative tab and ordinary JEI item list; vertical blocks now drop and pick as the canonical steel_double_t_support item, with no conversion recipe or save migration.
+- Keep lamp ownership, fluids, old block states and hammer rotation behavior intact while forcing all new wall-face placements upright, including edge clicks.
+
+### Regression coverage
+- Check four wall rotations, both connector directions and placement orders, physical face contact, removal updates, and brick/air/diagonal/out-of-plane negatives.
+- Check old legacy item-stack serialization, the single canonical recipe, canonical mining and pick-block results, all wall click regions for both items, floor/ceiling placement, and the registered IE hammer rotation path.
+- Retain lamp-first payment/identity, fluid and saved-state coverage, and the aligned ceiling join regression.
+
 ## [1.1.66-reconstructed] - Candidate release notes (not yet published)
 
 ### Added

@@ -3,7 +3,7 @@ run-name: "IEDCTR ${{ github.ref_name }} :: exact-byte review, no publication"
 
 on:
   # The scoped release-candidate branch qualifies an explicit JSON source spec.
-  # The historical 1.1.65 branch and manual EULA-gated server path remain available.
+  # The historical 1.1.65 defaults and manual EULA-gated server path remain available.
   push:
     branches: [repair/iedctr-1.1.65-release-qualification, codex/qualify-iedctr-1.1.66]
     paths:
@@ -11,8 +11,13 @@ on:
       - 'tools/qualification/**'
   workflow_dispatch:
     inputs:
+      qualification_spec:
+        description: 'Reviewed JSON under tools/qualification/ for the exact candidate; blank preserves historical branch defaults'
+        required: false
+        type: string
+        default: ''
       run_server:
-        description: 'Also run the legacy 1.1.65 baseline packaged-server smoke (separate explicit consent required)'
+        description: 'Also run baseline packaged-server smoke on the same exact candidate (separate explicit consent required)'
         required: true
         type: boolean
         default: false
@@ -42,7 +47,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 75
     env:
-      QUALIFICATION_SPEC: ${{ github.ref == 'refs/heads/codex/qualify-iedctr-1.1.66' && 'tools/qualification/iedctr-1.1.66.json' || '' }}
+      QUALIFICATION_SPEC: ${{ inputs.qualification_spec || (github.ref == 'refs/heads/codex/qualify-iedctr-1.1.66' && 'tools/qualification/iedctr-1.1.66.json' || '') }}
     steps:
       - name: Checkout qualification tooling
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -70,8 +75,10 @@ jobs:
           import qualify_1_1_65 as qualification
           relative = sys.argv[2]
           if relative:
+              if Path(relative).is_absolute() or Path(relative).suffix != ".json":
+                  raise SystemExit("Candidate spec must be a repository-relative JSON path")
               spec_path = (tooling / relative).resolve(strict=True)
-              spec_path.relative_to(tooling)
+              spec_path.relative_to(tooling / "tools/qualification")
               identity = qualification.load_spec(spec_path)
           else:
               identity = {
@@ -139,7 +146,6 @@ jobs:
         env:
           EULA_ACKNOWLEDGMENT: ${{ inputs.eula_acknowledgment }}
         run: |
-          test -z "$QUALIFICATION_SPEC"
           test "$EULA_ACKNOWLEDGMENT" = 'I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT'
       - name: Verify exact successful main push Build before compilation
         env:
@@ -214,11 +220,18 @@ jobs:
             args+=(--spec "$GITHUB_WORKSPACE/tooling/$SPEC_RELATIVE_PATH" --jar-artifact "$QUALIFICATION_REPORTS/$EXPECTED_JAR_NAME")
           fi
           python tooling/tools/qualification/qualify_1_1_65.py "${args[@]}"
-      - name: Legacy packaged-server smoke using the inspected JAR
+      - name: Packaged-server baseline smoke using the inspected JAR
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_server }}
+        shell: bash
         env:
           EULA_ACKNOWLEDGMENT: ${{ inputs.eula_acknowledgment }}
-        run: python tooling/tools/qualification/qualify_1_1_65.py server --source-a "$GITHUB_WORKSPACE/runtime-a" --gradle-home "$RUNNER_TEMP/iedctr-gradle-a" --eula-acknowledgment "$EULA_ACKNOWLEDGMENT" --report "$QUALIFICATION_REPORTS/server.json"
+        run: |
+          set -euo pipefail
+          args=(server --source-a "$GITHUB_WORKSPACE/runtime-a" --gradle-home "$RUNNER_TEMP/iedctr-gradle-a" --eula-acknowledgment "$EULA_ACKNOWLEDGMENT" --report "$QUALIFICATION_REPORTS/server.json")
+          if [[ -n "$QUALIFICATION_SPEC" ]]; then
+            args+=(--spec "$GITHUB_WORKSPACE/tooling/$QUALIFICATION_SPEC")
+          fi
+          python tooling/tools/qualification/qualify_1_1_65.py "${args[@]}"
       - name: Persist sanitized text qualification evidence
         if: ${{ always() && env.QUALIFICATION_REPORTS != '' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

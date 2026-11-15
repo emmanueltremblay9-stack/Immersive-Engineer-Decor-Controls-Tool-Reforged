@@ -1,0 +1,19 @@
+test_capture_metadata_rejected (test_barrel_reference_native.NativeBarrelProofTest.test_capture_metadata_rejected) ... ok
+test_capture_missing_or_duplicate (test_barrel_reference_native.NativeBarrelProofTest.test_capture_missing_or_duplicate) ... ok
+test_cases_must_be_complete (test_barrel_reference_native.NativeBarrelProofTest.test_cases_must_be_complete) ... ok
+test_complete_bounded_en720 (test_barrel_reference_native.NativeBarrelProofTest.test_complete_bounded_en720) ... ok
+test_complete_bounded_fr260 (test_barrel_reference_native.NativeBarrelProofTest.test_complete_bounded_fr260) ... ok
+test_crash_report (test_barrel_reference_native.NativeBarrelProofTest.test_crash_report) ... ok
+test_duplicate_fluid_crops (test_barrel_reference_native.NativeBarrelProofTest.test_duplicate_fluid_crops) ... ok
+test_identity_and_scope_fail_closed (test_barrel_reference_native.NativeBarrelProofTest.test_identity_and_scope_fail_closed) ... ok
+test_missing_duplicate_or_bool_slot_routes (test_barrel_reference_native.NativeBarrelProofTest.test_missing_duplicate_or_bool_slot_routes) ... ok
+test_missing_native_image (test_barrel_reference_native.NativeBarrelProofTest.test_missing_native_image) ... ok
+test_symlink_image (test_barrel_reference_native.NativeBarrelProofTest.test_symlink_image) ... ok
+test_tampered_native_image (test_barrel_reference_native.NativeBarrelProofTest.test_tampered_native_image) ... ok
+test_unclean_finish (test_barrel_reference_native.NativeBarrelProofTest.test_unclean_finish) ... ok
+test_wrong_menu_or_capacity (test_barrel_reference_native.NativeBarrelProofTest.test_wrong_menu_or_capacity) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.187s
+
+OK

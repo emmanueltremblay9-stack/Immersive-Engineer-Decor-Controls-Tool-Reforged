@@ -1,0 +1,551 @@
+{
+  "source_size": [
+    1137,
+    1383
+  ],
+  "canvas_size": [
+    379,
+    461
+  ],
+  "source_sha256": "df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9",
+  "tank_source_safe_rectangle": [
+    510,
+    345,
+    123,
+    234
+  ],
+  "slots": [
+    {
+      "menu_index": 0,
+      "container_index": 0,
+      "source_interior": [
+        166,
+        451,
+        140,
+        140
+      ],
+      "canvas_item_origin": [
+        71,
+        166
+      ]
+    },
+    {
+      "menu_index": 1,
+      "container_index": 1,
+      "source_interior": [
+        838,
+        451,
+        140,
+        140
+      ],
+      "canvas_item_origin": [
+        295,
+        166
+      ]
+    },
+    {
+      "menu_index": 2,
+      "container_index": 9,
+      "source_interior": [
+        132,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        49,
+        271
+      ]
+    },
+    {
+      "menu_index": 3,
+      "container_index": 10,
+      "source_interior": [
+        232,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        82,
+        271
+      ]
+    },
+    {
+      "menu_index": 4,
+      "container_index": 11,
+      "source_interior": [
+        332,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        115,
+        271
+      ]
+    },
+    {
+      "menu_index": 5,
+      "container_index": 12,
+      "source_interior": [
+        432,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        149,
+        271
+      ]
+    },
+    {
+      "menu_index": 6,
+      "container_index": 13,
+      "source_interior": [
+        532,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        182,
+        271
+      ]
+    },
+    {
+      "menu_index": 7,
+      "container_index": 14,
+      "source_interior": [
+        632,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        215,
+        271
+      ]
+    },
+    {
+      "menu_index": 8,
+      "container_index": 15,
+      "source_interior": [
+        732,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        249,
+        271
+      ]
+    },
+    {
+      "menu_index": 9,
+      "container_index": 16,
+      "source_interior": [
+        832,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        282,
+        271
+      ]
+    },
+    {
+      "menu_index": 10,
+      "container_index": 17,
+      "source_interior": [
+        932,
+        802,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        315,
+        271
+      ]
+    },
+    {
+      "menu_index": 11,
+      "container_index": 18,
+      "source_interior": [
+        132,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        49,
+        305
+      ]
+    },
+    {
+      "menu_index": 12,
+      "container_index": 19,
+      "source_interior": [
+        232,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        82,
+        305
+      ]
+    },
+    {
+      "menu_index": 13,
+      "container_index": 20,
+      "source_interior": [
+        332,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        115,
+        305
+      ]
+    },
+    {
+      "menu_index": 14,
+      "container_index": 21,
+      "source_interior": [
+        432,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        149,
+        305
+      ]
+    },
+    {
+      "menu_index": 15,
+      "container_index": 22,
+      "source_interior": [
+        532,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        182,
+        305
+      ]
+    },
+    {
+      "menu_index": 16,
+      "container_index": 23,
+      "source_interior": [
+        632,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        215,
+        305
+      ]
+    },
+    {
+      "menu_index": 17,
+      "container_index": 24,
+      "source_interior": [
+        732,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        249,
+        305
+      ]
+    },
+    {
+      "menu_index": 18,
+      "container_index": 25,
+      "source_interior": [
+        832,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        282,
+        305
+      ]
+    },
+    {
+      "menu_index": 19,
+      "container_index": 26,
+      "source_interior": [
+        932,
+        904,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        315,
+        305
+      ]
+    },
+    {
+      "menu_index": 20,
+      "container_index": 27,
+      "source_interior": [
+        132,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        49,
+        339
+      ]
+    },
+    {
+      "menu_index": 21,
+      "container_index": 28,
+      "source_interior": [
+        232,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        82,
+        339
+      ]
+    },
+    {
+      "menu_index": 22,
+      "container_index": 29,
+      "source_interior": [
+        332,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        115,
+        339
+      ]
+    },
+    {
+      "menu_index": 23,
+      "container_index": 30,
+      "source_interior": [
+        432,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        149,
+        339
+      ]
+    },
+    {
+      "menu_index": 24,
+      "container_index": 31,
+      "source_interior": [
+        532,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        182,
+        339
+      ]
+    },
+    {
+      "menu_index": 25,
+      "container_index": 32,
+      "source_interior": [
+        632,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        215,
+        339
+      ]
+    },
+    {
+      "menu_index": 26,
+      "container_index": 33,
+      "source_interior": [
+        732,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        249,
+        339
+      ]
+    },
+    {
+      "menu_index": 27,
+      "container_index": 34,
+      "source_interior": [
+        832,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        282,
+        339
+      ]
+    },
+    {
+      "menu_index": 28,
+      "container_index": 35,
+      "source_interior": [
+        932,
+        1006,
+        76,
+        72
+      ],
+      "canvas_item_origin": [
+        315,
+        339
+      ]
+    },
+    {
+      "menu_index": 29,
+      "container_index": 0,
+      "source_interior": [
+        148,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        54,
+        387
+      ]
+    },
+    {
+      "menu_index": 30,
+      "container_index": 1,
+      "source_interior": [
+        244,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        86,
+        387
+      ]
+    },
+    {
+      "menu_index": 31,
+      "container_index": 2,
+      "source_interior": [
+        340,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        118,
+        387
+      ]
+    },
+    {
+      "menu_index": 32,
+      "container_index": 3,
+      "source_interior": [
+        436,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        150,
+        387
+      ]
+    },
+    {
+      "menu_index": 33,
+      "container_index": 4,
+      "source_interior": [
+        532,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        182,
+        387
+      ]
+    },
+    {
+      "menu_index": 34,
+      "container_index": 5,
+      "source_interior": [
+        628,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        214,
+        387
+      ]
+    },
+    {
+      "menu_index": 35,
+      "container_index": 6,
+      "source_interior": [
+        724,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        246,
+        387
+      ]
+    },
+    {
+      "menu_index": 36,
+      "container_index": 7,
+      "source_interior": [
+        820,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        278,
+        387
+      ]
+    },
+    {
+      "menu_index": 37,
+      "container_index": 8,
+      "source_interior": [
+        916,
+        1148,
+        76,
+        76
+      ],
+      "canvas_item_origin": [
+        310,
+        387
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 Steel Railing
 Service access fitting
-<&recipe>This block forms readable service routes around machinery.<br>
+<&recipe>A Steel Railing can form up to four separate edge sides within one block space.<br>
 <br>
-Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
-
-
+Usage: The clicked edge chooses the first side. Hold another Steel Railing and right-click the desired edge to add or remove that side. Survival additions consume one railing and paid additions can be returned on removal.<br>
+<br>
+Mine the aimed side to remove only it. Removing the final side clears the railing block. Creative additions do not create extra refunds; normal tool and loot rules apply.

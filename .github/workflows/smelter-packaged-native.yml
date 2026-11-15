@@ -1,0 +1,101 @@
+name: Smelter ordinary JAR qualification
+
+on:
+  push:
+    branches: [dot/smelter-packaged-20261115]
+  pull_request:
+    paths:
+      - 'src/smelterPackagedValidation/**'
+      - 'gradle/smelter-packaged-validation.gradle'
+      - 'tools/validation/*smelter*packaged*'
+      - '.github/workflows/smelter-packaged-native.yml'
+permissions:
+  contents: read
+jobs:
+  validate-native-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    strategy:
+      fail-fast: false
+      matrix:
+        profile:
+          - en-1280x720-scale1
+          - fr-1280x260-scale1
+    steps:
+      - name: Checkout exact pull request head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Record and verify exact clean source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/smelter-qualification
+          git rev-parse HEAD | tee build/tested-source-sha.txt
+          test "$(cat build/tested-source-sha.txt)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/smelter-qualification/source-status.txt
+          test ! -s build/smelter-qualification/source-status.txt
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Test unchanged gates and packaged provenance
+        run: |
+          python -m unittest discover -s tools/validation -p 'test_smelter*.py' -v
+          PYTHONPATH=tools/validation python -m unittest test_client_gameplay.NativeSmelterGuiProofTests -v
+      - name: Check native display prerequisites
+        run: command -v Xvfb && command -v xvfb-run && command -v xauth
+      - name: Run exact-profile integrated-world qualification
+        id: native
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 59c7ca294c026a4efc51889cfccb927ee80100c60a21cf320d87f0038d7297fd --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/smelter-qualification/final-source-status.txt
+          test ! -s build/smelter-qualification/final-source-status.txt
+      - name: State native evidence boundary
+        if: always()
+        shell: bash
+        run: |
+          echo "Requested exact PR head: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Requested profile: ${{ matrix.profile }}' >> "$GITHUB_STEP_SUMMARY"
+          echo "Native validation step: ${{ steps.native.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Ordinary candidate JAR hash must match 59c7ca294c026a4efc51889cfccb927ee80100c60a21cf320d87f0038d7297fd; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Acceptance requires matching source/nonce/locale/scale/framebuffer, real Smelter live-menu/state, three frozen progress states, drawer callbacks/resize/Escape/focus/accessibility and five native framebuffer captures and clean exit.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Bounded screen-handler input only. Natural smelting, inventory routes, physical OS input, audio narration, JEI actions and full visual acceptance remain deferred.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain exact-head native proof, screenshots and logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: smelter-packaged-native-${{ matrix.profile }}-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            build/libs/*.jar
+            build/reports/smelter-packaged-runtime.json
+            build/smelter-qualification-native-*/packaged-runtime.json
+            build/smelter-qualification-native-*/package.log
+            build/smelter-qualification-native-*/jar.log
+            build/tested-source-sha.txt
+            build/smelter-qualification/
+            build/smelter-qualification-native-*/run/client-smelter-gui-result.json
+            build/smelter-qualification-native-*/run/smelter-failure-diagnostic.json
+            build/smelter-qualification-native-*/run/smelter-failure.png
+            build/smelter-qualification-native-*/run/smelter-gui-screenshots/*.png
+            build/smelter-qualification-native-*/prepare.log
+            build/smelter-qualification-native-*/client.log
+            build/smelter-qualification-native-*/*.observed.log
+            build/smelter-qualification-native-*/run/logs/
+            build/smelter-qualification-native-*/run/crash-reports/
+            build/smelter-qualification-native-*/**/hs_err_pid*.log
+          retention-days: 14
+          if-no-files-found: error
