@@ -1,3 +1,4 @@
+from solar_cell_integration import project_history as solar_cell_history, current_hash as solar_cell_current_hash
 """Exact additive Freezer V5 reconciliation. Historical main pins are not rewritten."""
 import hashlib
 import json
@@ -39,7 +40,7 @@ def assert_freezer_v5_reconciliation(root, manifest):
     assert hashlib.sha256(json.dumps(diagnostic, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == DIAGNOSTIC_RECORD_SHA256, 'Legacy diagnostic record changed'
     for path, hashes in FILES.items():
         assert record['files'][path] == hashes, path
-        data = (root / path).read_bytes()
+        data = solar_cell_history(path, (root / path).read_bytes())
         if path == ACTIVATION_PATH:
             assert hashlib.sha256(data).hexdigest() == DIAGNOSTIC_SHA256, path
             text = data.decode()
@@ -56,4 +57,4 @@ def current_hash(path, historical_hash):
     if path not in FILES:
         return factory_current_hash(path, historical_hash)
     assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
-    return DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256']
+    return solar_cell_current_hash(path, DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256'])

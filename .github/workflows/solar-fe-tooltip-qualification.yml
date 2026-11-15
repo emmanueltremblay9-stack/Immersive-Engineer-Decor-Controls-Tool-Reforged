@@ -63,7 +63,7 @@ jobs:
         with:
           name: solar-v2-reference-native-${{ matrix.profile }}
           path: |
-            build/solar-v2-reference-native-*/run/solar-fe-tooltip*
+            build/solar-v2-reference-native-*/run/solar-*-tooltip*
             build/tested-source-sha.txt
             build/solar-v2-reference-native-*/run/client-solar-v2-reference-result.json
             build/solar-v2-reference-native-*/run/solar-v2-reference-screenshots/*.png

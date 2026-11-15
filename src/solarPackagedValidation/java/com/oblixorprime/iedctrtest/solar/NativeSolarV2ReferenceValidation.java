@@ -42,7 +42,7 @@ import net.neoforged.neoforge.client.event.ScreenEvent;
 public final class NativeSolarV2ReferenceValidation {
    private static final String SUITE = "native-solar-v2-reference-v3";
    private static final BlockPos POS = new BlockPos(0,80,0);
-   private enum Stage { BOOT, WORLD, SETUP, CELL_READY, CELL_PICKED, CELL_CHARGING, SLOT_READY, PICKED, RETURNED, CAPTURE, CLOSE, REOPEN, TOOLTIP, DONE }
+   private enum Stage { BOOT, WORLD, SETUP, CELL_READY, CELL_PICKED, CELL_CHARGING, SLOT_READY, PICKED, RETURNED, CAPTURE, CLOSE, REOPEN, TOOLTIP, CELL_TOOLTIP, DONE }
    private static JsonObject tooltipObservation;
    private static int tooltipFrames;
    private static boolean tooltipInFrame;
@@ -184,10 +184,12 @@ public final class NativeSolarV2ReferenceValidation {
                require(menu.energyStored()==menu.energyCapacity(),"Reopen lost energy state");
                CASES.add("reopen_preserves_energy_and_geometry");enter(Boolean.getBoolean("iedctr.solarTooltipProbe") ? Stage.TOOLTIP : Stage.DONE);
             }
-            case TOOLTIP -> {
+            case TOOLTIP, CELL_TOOLTIP -> {
+               boolean cellProbe = stage == Stage.CELL_TOOLTIP;
+               if(cellProbe) require(menu.getSlot(0).getItem().isEmpty() && menu.getCarried().isEmpty(), "Cell tooltip requires empty slot and cursor");
                var v=screen.validationViewTransform();
-               double tx=v.screenX(SolarV2ReferenceState.METER_X+SolarV2ReferenceState.METER_WIDTH/2.0);
-               double ty=v.screenY(SolarV2ReferenceState.METER_Y+SolarV2ReferenceState.METER_HEIGHT/2.0);
+               double tx=v.screenX(cellProbe ? menu.getSlot(0).x+8 : SolarV2ReferenceState.METER_X+SolarV2ReferenceState.METER_WIDTH/2.0);
+               double ty=v.screenY(cellProbe ? menu.getSlot(0).y+8 : SolarV2ReferenceState.METER_Y+SolarV2ReferenceState.METER_HEIGHT/2.0);
                if(GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){GLFW.glfwFocusWindow(mc.getWindow().getWindow());return;}
                if(Math.abs(mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth()-tx)>1 || Math.abs(mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight()-ty)>1){
                   int[] wx={0},wy={0};GLFW.glfwGetWindowPos(mc.getWindow().getWindow(),wx,wy);
@@ -198,12 +200,13 @@ public final class NativeSolarV2ReferenceValidation {
                var proof=tooltipObservation.deepCopy();
                proof.addProperty("nonce",nonce);proof.addProperty("source_sha",System.getProperty("iedctr.executedSourceSha"));
                proof.addProperty("frames",tooltipFrames);proof.addProperty("language",mc.getLanguageManager().getSelected());
-               proof.addProperty("expected_text",net.minecraft.network.chat.Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.energy_tooltip",menu.energyStored(),menu.energyCapacity(),menu.energyDisplayGranularity()).getString());
-               var image=directory.resolve("solar-fe-tooltip.png");
+               proof.addProperty("expected_text",cellProbe ? net.minecraft.network.chat.Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip").getString() : net.minecraft.network.chat.Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.energy_tooltip",menu.energyStored(),menu.energyCapacity(),menu.energyDisplayGranularity()).getString());
+               var image=directory.resolve(cellProbe ? "solar-cell-tooltip.png" : "solar-fe-tooltip.png");
                try(var frame=Screenshot.takeScreenshot(mc.getMainRenderTarget())){frame.writeToFile(image);}
                proof.addProperty("capture_sha256",HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(image))));
-               Files.writeString(directory.resolve("solar-fe-tooltip.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof));
-               enter(Stage.DONE);
+               Files.writeString(directory.resolve(cellProbe ? "solar-cell-tooltip.json" : "solar-fe-tooltip.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof));
+               tooltipFrames=0; tooltipObservation=null;
+               enter(cellProbe ? Stage.DONE : Stage.CELL_TOOLTIP);
             }
             case DONE -> { packagedRuntime=PackagedRuntimeProof.verify(mc);finish(mc,null); }
             default -> throw new IllegalStateException("Unexpected stage "+stage);
@@ -308,11 +311,14 @@ public final class NativeSolarV2ReferenceValidation {
     }
     @SubscribeEvent public static void beforeTooltipRender(ScreenEvent.Render.Pre event){tooltipInFrame=false;}
     @SubscribeEvent public static void observeEnergyTooltip(net.neoforged.neoforge.client.event.RenderTooltipEvent.Color event){
-        if(stage!=Stage.TOOLTIP || complete)return;
-        var mc=Minecraft.getInstance();if(!(mc.screen instanceof SolarV2ReferenceScreen screen)||screen.getSlotUnderMouse()!=null)return;
+        if((stage!=Stage.TOOLTIP && stage!=Stage.CELL_TOOLTIP) || complete)return;
+        var mc=Minecraft.getInstance();if(!(mc.screen instanceof SolarV2ReferenceScreen screen))return;
+        var hovered=screen.getSlotUnderMouse();
+        if(stage==Stage.CELL_TOOLTIP){if(hovered==null || hovered.index!=0 || hovered.hasItem())return;}
+        else if(hovered!=null)return;
         var v=screen.validationViewTransform();
         double mx=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth(),my=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
-        if(!SolarV2ReferenceState.containsMeter(v.localX(mx),v.localY(my)))return;
+        if(stage==Stage.TOOLTIP && !SolarV2ReferenceState.containsMeter(v.localX(mx),v.localY(my)))return;
         try{
             var record=new JsonObject();var lines=new JsonArray();var styles=new JsonArray();int width=0,height=event.getComponents().size()==1?-2:0;
             for(var component:event.getComponents()){
@@ -331,7 +337,7 @@ public final class NativeSolarV2ReferenceValidation {
     @SubscribeEvent public static void afterRender(ScreenEvent.Render.Post event){
         if(!Boolean.getBoolean("iedctr.solarPackagedNative") || complete)return;
         var mc=Minecraft.getInstance();
-        if(stage==Stage.TOOLTIP){if(tooltipInFrame&&event.getScreen()==mc.screen)tooltipFrames++;else tooltipFrames=0;}
+        if(stage==Stage.TOOLTIP || stage==Stage.CELL_TOOLTIP){if(tooltipInFrame&&event.getScreen()==mc.screen)tooltipFrames++;else tooltipFrames=0;}
         if(stage==Stage.CAPTURE && event.getScreen()==mc.screen
             && mc.screen instanceof SolarV2ReferenceScreen && pointerParked(mc) && mc.getOverlay()==null
             && pending==null && mc.player!=null && mc.player.containerMenu instanceof MachineMenu menu
