@@ -1,0 +1,70 @@
+name: CurseForge read-only access preflight
+on:
+  push:
+    branches: [dot/curseforge-readonly-preflight-20261115]
+    paths: ['.github/workflows/curseforge-readonly-preflight.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: curseforge-readonly-preflight
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: github.repository == 'emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read official API without upload or mutation
+        shell: bash
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+          opener=urllib.request.build_opener(NoRedirect())
+          report={"mode":"READ_ONLY_GET_ONLY","projectId":1555214,"uploadAttempted":False,"projectUploadPermission":"NOT_PROVEN","privateInventory":"NOT_AVAILABLE_VIA_DOCUMENTED_READ_API","defaultRelations":"NOT_VERIFIED"}
+          def get(url, token=None):
+              headers={"User-Agent":"IEDCTR-ReadOnly-Preflight/1","Accept":"application/json"}
+              if token: headers["X-Api-Token"]=token
+              try:
+                  with opener.open(urllib.request.Request(url,headers=headers,method="GET"),timeout=30) as response:
+                      body=response.read(4194305)
+                      if len(body)>4194304: return {"status":"RESPONSE_TOO_LARGE"},None
+                      try: data=json.loads(body)
+                      except (ValueError,UnicodeError): return {"http":response.status,"status":"NON_JSON"},None
+                      return {"http":response.status,"status":"JSON_RECEIVED"},data
+              except urllib.error.HTTPError as e: return {"http":e.code,"status":"HTTP_ERROR"},None
+              except Exception as e: return {"status":"REQUEST_FAILED","errorType":type(e).__name__},None
+          token=os.environ.get("CURSEFORGE_API_TOKEN","")
+          report["secretPresent"]=bool(token)
+          if token:
+              status,data=get("https://minecraft.curseforge.com/api/game/versions",token)
+              report["authenticatedGameVersions"]=status
+              if isinstance(data,list):
+                  report["gameVersionCount"]=len(data)
+                  report["minecraft1211Present"]=any(x.get("name")=="1.21.1" for x in data if isinstance(x,dict))
+                  report["tokenReadAccess"]="ACCEPTED_FOR_GAME_VERSIONS"
+              else: report["tokenReadAccess"]="NOT_VERIFIED"
+          else: report["tokenReadAccess"]="SECRET_MISSING"
+          status,data=get("https://www.curseforge.com/api/v1/mods/1555214/files?pageIndex=0&pageSize=50&sortBy=dateCreated&sortOrder=desc")
+          report["publicInventoryRequest"]=status
+          if isinstance(data,dict) and isinstance(data.get("data"),list):
+              files=data["data"]
+              report["publicCount"]=data.get("pagination",{}).get("totalCount")
+              report["publicFileIds"]=[x.get("id") for x in files]
+              report["candidate167PublicIds"]=[x.get("id") for x in files if "1.1.67" in str(x.get("fileName",""))]
+              if files: report["latestPublic"]={k:files[0].get(k) for k in ("id","fileName","dateCreated","fileLength","status")}
+          status,data=get("https://www.curseforge.com/api/v1/mods/1555214/files/9402055/dependencies")
+          report["publicRelationsRequest"]=status
+          if isinstance(data,dict) and isinstance(data.get("data"),list):
+              report["previousFilePublicRelations"]=[{k:x.get(k) for k in ("id","slug","type")} for x in data["data"]]
+          text=json.dumps(report,indent=2,sort_keys=True)
+          print(text)
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("## Read-only CurseForge preflight\n\n```json\n"+text+"\n```\n")
+          
+          PY
