@@ -13,6 +13,7 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+def tfcPackagedRuntime = providers.gradleProperty('include_tfc_packaged_validation').map { it.toBoolean() }.getOrElse(false)
 def tfcMilkingRuntime = providers.gradleProperty('include_tfc_milking_runtime').map { it.toBoolean() }.getOrElse(false)
 def tfcCrossoverRuntime = providers.gradleProperty('include_tfc_crossover_runtime').map { it.toBoolean() }.getOrElse(false)
 // Dedicated native GUI proof code is not part of main or any distributed JAR.
@@ -56,7 +57,7 @@ repositories {
 
 neoForge {
     // Official TFC 4.2.12 metadata requires >=21.1.234; default runtime stays unchanged.
-    version = tfcMilkingRuntime ? '21.1.234' : project.neo_version
+    version = (tfcMilkingRuntime || tfcPackagedRuntime) ? '21.1.234' : project.neo_version
 
     parchment {
         mappingsVersion = project.parchment_mappings_version
@@ -190,7 +191,7 @@ dependencies {
     // Official release 4.2.12, fixed Modrinth version ID, never bundled or required at runtime.
     tfcMilkingApi('maven.modrinth:JaCEZUhg:2gXJo8Ol') { transitive = false }
     compileOnly files(configurations.tfcMilkingApi)
-    if (tfcMilkingRuntime) {
+    if (tfcMilkingRuntime || tfcPackagedRuntime) {
         runtimeOnly files(configurations.tfcMilkingApi)
         runtimeOnly 'vazkii.patchouli:Patchouli:1.21.1-92-NEOFORGE'
     }
@@ -584,3 +585,5 @@ apply from: 'gradle/manual-packaged-validation.gradle'
 apply from: 'gradle/freezer-packaged-validation.gradle'
 
 apply from: 'gradle/milking-packaged-validation.gradle'
+
+apply from: 'gradle/tfc-packaged-validation.gradle'
