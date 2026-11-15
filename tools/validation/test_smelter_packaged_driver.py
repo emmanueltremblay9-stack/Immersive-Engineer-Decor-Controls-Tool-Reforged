@@ -9,6 +9,13 @@ class DriverTests(unittest.TestCase):
         old=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java').read_text()
         new=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/NativeSmelterGuiValidation.java').read_text()
         self.assertEqual(new.replace('package com.oblixorprime.iedctrtest.smelter;', 'package com.oblixorprime.engineersdecorreforged.client.validation;'),old)
+    def test_support_is_server_prepared_before_original_fixture(self):
+        text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
+        self.assertIn('new BlockPos(x, 80, z), Blocks.STONE.defaultBlockState()',text)
+        self.assertIn('x = -1; x <= 1',text);self.assertIn('z = 2; z <= 4',text)
+        self.assertLess(text.index('supportReady.join()'),text.index('NativeSmelterGuiValidation.begin'))
+        self.assertIn('smelter-failure-diagnostic.json',text)
+        self.assertIn('.get(3, TimeUnit.SECONDS)',text)
     def test_failed_isolation_never_stops_user_client(self):
         text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
         catch=text.split('} catch (Throwable error) {',1)[1]

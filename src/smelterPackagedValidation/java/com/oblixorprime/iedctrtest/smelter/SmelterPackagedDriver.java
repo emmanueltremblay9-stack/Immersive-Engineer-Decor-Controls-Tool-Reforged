@@ -5,6 +5,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.Blocks;
+import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.core.registries.Registries;
@@ -29,6 +34,7 @@ public final class SmelterPackagedDriver {
     private static String nonce;
     private static JsonObject before;
     private static boolean isolatedDirectoryValidated;
+    private static CompletableFuture<?> supportReady;
     @SubscribeEvent
     public static void tick(ClientTickEvent.Post event) {
         if (!Boolean.getBoolean("iedctr.smelterPackagedNative") || stage == 3) return;
@@ -63,6 +69,19 @@ public final class SmelterPackagedDriver {
             } else if (stage == 1) {
                 if (mc.level == null || mc.player == null || mc.gameMode == null || mc.screen != null) return;
                 require(mc.getSingleplayerServer() != null && mc.player.connection.getConnection().isMemoryConnection(), "Integrated world required");
+                // The retained fixture teleports to (.5,81,3.5); provide support before
+                // opening its distance-checked menu. Never alter production stillValid.
+                var playerId = mc.player.getUUID();
+                supportReady = mc.getSingleplayerServer().submit(() -> {
+                    var player = mc.getSingleplayerServer().getPlayerList().getPlayer(playerId);
+                    require(player != null, "Player missing while preparing fixture support");
+                    for (int x = -1; x <= 1; x++) for (int z = 2; z <= 4; z++)
+                        player.serverLevel().setBlock(new BlockPos(x, 80, z), Blocks.STONE.defaultBlockState(), 3);
+                });
+                stage = 4;
+            } else if (stage == 4) {
+                if (!supportReady.isDone()) return;
+                supportReady.join();
                 NativeSmelterGuiValidation.begin(mc, directory, nonce);
                 stage = 2;
             } else if (NativeSmelterGuiValidation.tick(mc, directory, nonce)) {
@@ -78,12 +97,55 @@ public final class SmelterPackagedDriver {
                 mc.stop();
             }
         } catch (Throwable error) {
+            if (isolatedDirectoryValidated) writeFailure(mc, error);
             stage = 3;
             error.printStackTrace();
             System.err.println("IEDCTR_SMELTER_GUI FAILED nonce=" + nonce);
             // No success marker; the Python gate rejects failure even if the client exits normally.
             if (isolatedDirectoryValidated) mc.stop();
         }
+    }
+    private static void writeFailure(Minecraft mc, Throwable error) {
+        try {
+            var report = new JsonObject();
+            report.addProperty("status", "failed");
+            report.addProperty("nonce", nonce);
+            report.addProperty("bootstrap_stage", stage);
+            report.addProperty("error", error.toString());
+            report.addProperty("screen", mc.screen == null ? "null" : mc.screen.getClass().getName());
+            if (mc.player != null) {
+                report.add("client", playerState(mc.player));
+                var id = mc.player.getUUID();
+                var server = mc.getSingleplayerServer();
+                if (server != null) try { report.add("server", server.submit(() -> {
+                    var player = server.getPlayerList().getPlayer(id);
+                    return player == null ? new JsonObject() : playerState(player);
+                }).get(3, TimeUnit.SECONDS));
+                } catch (Exception unavailable) { report.addProperty("server_observation_error", unavailable.toString()); }
+            }
+            try (var image = net.minecraft.client.Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+                var capture = directory.resolve("smelter-failure.png");
+                require(!Files.exists(capture), "Refusing to overwrite failure capture");
+                image.writeToFile(capture);
+                report.addProperty("failure_capture_sha256", PackagedRuntimeProof.hash(Files.readAllBytes(capture)));
+            } catch (Exception unavailable) { report.addProperty("capture_error", unavailable.toString()); }
+            Files.writeString(directory.resolve("smelter-failure-diagnostic.json"),
+                new GsonBuilder().setPrettyPrinting().create().toJson(report) + "\n");
+        } catch (Throwable diagnosticError) { diagnosticError.printStackTrace(); }
+    }
+    private static JsonObject playerState(net.minecraft.world.entity.player.Player player) {
+        var state = new JsonObject();
+        state.addProperty("x", player.getX()); state.addProperty("y", player.getY()); state.addProperty("z", player.getZ());
+        state.addProperty("menu", player.containerMenu.getClass().getName());
+        state.addProperty("menu_id", player.containerMenu.containerId);
+        state.addProperty("flying", player.getAbilities().flying);
+        if (player.containerMenu instanceof MachineMenu menu) {
+            state.addProperty("valid", menu.stillValid(player));
+            var data = new com.google.gson.JsonArray();
+            for (int i = 0; i < MachineMenu.SMALL_MINERAL_SMELTER_V05_DATA_COUNT; i++) data.add(menu.field(i));
+            state.add("fields", data);
+        }
+        return state;
     }
     private static void require(boolean value, String message) { if (!value) throw new IllegalStateException(message); }
 }

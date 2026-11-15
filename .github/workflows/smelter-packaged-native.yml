@@ -88,6 +88,8 @@ jobs:
             build/tested-source-sha.txt
             build/smelter-qualification/
             build/smelter-qualification-native-*/run/client-smelter-gui-result.json
+            build/smelter-qualification-native-*/run/smelter-failure-diagnostic.json
+            build/smelter-qualification-native-*/run/smelter-failure.png
             build/smelter-qualification-native-*/run/smelter-gui-screenshots/*.png
             build/smelter-qualification-native-*/prepare.log
             build/smelter-qualification-native-*/client.log
