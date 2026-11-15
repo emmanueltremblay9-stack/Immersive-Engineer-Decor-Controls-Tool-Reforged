@@ -64,3 +64,15 @@ python tools/validation/tfc_packaged_mooshroom_native.py --profile fr-1280x720-s
 
 Run from a clean committed checkout; both scripts retain fatal/crash rejection by
 composing the original validators, without weakening assertions or retrying failures.
+
+## Runtime dependency graph correction
+
+Initial packaged run `43662247467` built the normal JAR and prepared/verified the
+harness, but the client launch task graph was correctly rejected before Minecraft
+started: production build tasks were still reachable. A filtered
+`main.runtimeClasspath - main.output` collection can retain the output's build-task
+dependencies even after its files are removed. Runtime now uses main's dependency
+configuration directly, with an exact file-set comparison against the former filtered
+set in the verifier. The guard is retained and reports offending task paths and their
+immediate dependents. No task is excluded/skipped to bypass the guard. Native confirmation
+of this correction remains pending; the rejected launch is not a gameplay failure or PASS.

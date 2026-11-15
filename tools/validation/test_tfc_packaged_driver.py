@@ -17,10 +17,29 @@ class ConservationTests(unittest.TestCase):
         self.assertIn("['jar','compileJava','processResources','classes']",g)
         self.assertNotIn("taskBefore(tasks.named('jar'))",g)
         self.assertNotIn("dependsOn(tasks.named('jar')",g)
-        self.assertIn('sourceSets.main.runtimeClasspath - sourceSets.main.output',g)
+        runtime=g.split('runtimeClasspath =',1)[1].split('    }',1)[0]
+        self.assertIn('configurations.getByName(sourceSets.main.runtimeClasspathConfigurationName)',runtime)
+        self.assertNotIn('sourceSets.main.runtimeClasspath - sourceSets.main.output',runtime)
+        self.assertIn('actualDependencies != expectedDependencies',g)
+        self.assertIn('task.taskDependencies.getDependencies(task).contains(blocked)',g)
         self.assertIn("'include_tfc_milking_runtime','include_tfc_crossover_runtime'",g)
         self.assertIn('harnessPackages.contains',g)
         self.assertIn('53ff03f30cb0c8921f4a8fdb205788cba567aab515804c7d2c7a0ab2daf6f98f',g)
+    def test_dependency_edge_regressions_rejected(self):
+        text=(ROOT/'gradle/tfc-packaged-validation.gradle').read_text()
+        def check(g):
+            runtime=g.split('runtimeClasspath =',1)[1].split('    }',1)[0]
+            self.assertIn('configurations.getByName(sourceSets.main.runtimeClasspathConfigurationName)',runtime)
+            self.assertNotIn('sourceSets.main.output',runtime)
+            self.assertNotIn('sourceSets.main.runtimeClasspath - sourceSets.main.output',runtime)
+            self.assertIn('actualDependencies != expectedDependencies',g)
+            self.assertIn("['jar','compileJava','processResources','classes']",g)
+        check(text)
+        for bad in [text.replace('configurations.getByName(sourceSets.main.runtimeClasspathConfigurationName) + files(tfcRuntimeJar)', '(sourceSets.main.runtimeClasspath - sourceSets.main.output) + files(tfcRuntimeJar)'),
+                    text.replace('runtimeClasspath = output +', 'runtimeClasspath = sourceSets.main.output + output +'),
+                    text.replace('actualDependencies != expectedDependencies','false'),
+                    text.replace("['jar','compileJava','processResources','classes']",'[]')]:
+            with self.assertRaises(AssertionError):check(bad)
     def test_normal_build_precedes_compatibility_profile(self):
         for kind in ['recovery','mooshroom']:
             t=(ROOT/f'tools/validation/tfc_packaged_{kind}_native.py').read_text()

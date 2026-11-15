@@ -5,8 +5,14 @@ def tfcRuntimeJar = providers.gradleProperty('tfc_runtime_jar').map { file(it) }
 if (tfcPackagedValidation) {
     if (!tfcRuntimeJar.isPresent()) throw new GradleException('Prebuilt normal JAR is mandatory')
     gradle.taskGraph.whenReady { graph ->
-        if (graph.allTasks.any { it.project == project && it.name in ['jar','compileJava','processResources','classes'] })
-            throw new GradleException('Never rebuild production under the TFC compatibility runtime')
+        def forbidden = graph.allTasks.findAll { it.project == project && it.name in ['jar','compileJava','processResources','classes'] }
+        if (!forbidden.isEmpty()) {
+            def incoming = forbidden.collect { blocked ->
+                def owners = graph.allTasks.findAll { task -> task.taskDependencies.getDependencies(task).contains(blocked) }
+                blocked.path + ' <- ' + owners.collect { it.path }.join(', ')
+            }
+            throw new GradleException('Never rebuild production under the TFC compatibility runtime: ' + incoming.join('; '))
+        }
     }
     if (providers.gradleProperty('include_barrel_v5_packaged_validation').map { it.toBoolean() }.getOrElse(false))
         throw new GradleException('Run Tfc and Barrel V5 packaged validation separately')
@@ -27,7 +33,9 @@ if (tfcPackagedValidation) {
         java.srcDir('src/tfcPackagedValidation/java')
         compileClasspath += files(tfcRuntimeJar) + sourceSets.main.compileClasspath
         runtimeClasspath = output + configurations.getByName(runtimeClasspathConfigurationName) +
-                (sourceSets.main.runtimeClasspath - sourceSets.main.output) + files(tfcRuntimeJar)
+                // Use the dependency configuration, not a filtered SourceSet collection:
+                // subtraction removes files but can retain main.output's builtBy edges.
+                configurations.getByName(sourceSets.main.runtimeClasspathConfigurationName) + files(tfcRuntimeJar)
     }
     tasks.named('compileTfcPackagedValidationJava').configure { dependsOn(tasks.named('verifyTfcMilkingDependencies')) }
 }
@@ -57,6 +65,11 @@ if (tfcPackagedValidation) {
             }
             def classpath = harness.runtimeClasspath.files.collect { it.canonicalFile }
             def mainOutputs = sourceSets.main.output.files.collect { it.canonicalFile }
+            // Resolve for comparison only, never attach this source-output collection to a task.
+            def expectedDependencies = (sourceSets.main.runtimeClasspath - sourceSets.main.output).files.collect { it.canonicalFile } as Set
+            def actualDependencies = configurations.getByName(sourceSets.main.runtimeClasspathConfigurationName).files.collect { it.canonicalFile } as Set
+            if (actualDependencies != expectedDependencies)
+                throw new GradleException('Dependency-only runtime omitted or added main runtime files')
             if (!classpath.contains(jarFile) || classpath.any { mainOutputs.contains(it) }) {
                 throw new GradleException('Packaged validation requires the exact JAR and forbids main output on runtime classpath')
             }
