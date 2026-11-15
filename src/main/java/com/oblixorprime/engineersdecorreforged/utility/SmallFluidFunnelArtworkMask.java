@@ -5,8 +5,8 @@ import java.util.List;
 /** Logical-canvas insets covering the two sample bucket icons, separate from machine slot geometry. */
 public record SmallFluidFunnelArtworkMask(int left, int top, int right, int bottom) {
    private static final List<SmallFluidFunnelArtworkMask> SAMPLE_BUCKET_MASKS = List.of(
-      new SmallFluidFunnelArtworkMask(33, 82, 54, 104),
-      new SmallFluidFunnelArtworkMask(155, 82, 181, 104)
+      new SmallFluidFunnelArtworkMask(34, 86, 50, 102),
+      new SmallFluidFunnelArtworkMask(156, 86, 172, 102)
    );
 
    public SmallFluidFunnelArtworkMask {

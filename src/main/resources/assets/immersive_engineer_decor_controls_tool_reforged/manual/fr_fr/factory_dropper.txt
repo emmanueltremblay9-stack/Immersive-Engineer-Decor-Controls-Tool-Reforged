@@ -1,5 +1,6 @@
 Largueur d'usine
 Équipement d'atelier
-<&recipe>Ce bloc éjecte les objets stockés depuis une face orientable.<br>
-<br>
-Utilisation : visez le point de largage avec sa face avant, remplissez ses emplacements internes et réglez la force, l'angle, le délai, la logique des filtres et le mode redstone dans son interface.<br>
+<&recipe>Le largueur d'usine éjecte des objets depuis sa face de travail. Chargez les 12 emplacements de réserve, puis réglez la vitesse, la direction, la quantité sans filtre et le délai. Sans déclenchement par filtre, il prélève 1-32 objets dans une même pile admissible, en parcourant les emplacements à tour de rôle. Aucune alimentation FE n'est nécessaire.<br>
+Les trois emplacements inférieurs contiennent de véritables piles exemples. Chaque filtre compare l'objet et ses composants ; la taille de sa pile indique la quantité requise. Les objets éjectés proviennent des 12 emplacements de réserve. Les exemples restent en place. Des filtres identiques exigent assez de réserve pour leurs quantités cumulées.<br>
+Le mode ET des filtres attend que tous les filtres définis soient satisfaits. Le mode OU accepte les filtres satisfaits individuellement. Un largage filtré éjecte la quantité indiquée par chaque filtre satisfait, plutôt que la quantité sans filtre. Les objets correspondant à un filtre défini sont exclus du parcours sans filtre.<br>
+Combinez les filtres avec le déclenchement redstone externe par ET ou OU. Ignorer la redstone fournit un déclenchement externe permanent. Le mode impulsion répond à un changement montant ; le mode continu répète avec un signal, selon le délai. Cliquer sur le témoin simule un déclenchement externe qui respecte encore la logique des filtres et le délai.<br>

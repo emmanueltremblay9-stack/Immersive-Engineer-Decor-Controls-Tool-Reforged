@@ -1,0 +1,5 @@
+PASS: 38-slot mapping, bounds, nine viewport transforms, hover, drag and fluid state checks
+src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png: OK
+PASS: event routing, legacy fallback, client-only opt-in, unchanged transfer/data/validation code
+PASS: PNG dimensions, exact aspect ratio, manifest mapping, explicit screen clip and legacy renderer signature
+PASS: syntax parsing for 9 Java sources (not dependency/type checking)

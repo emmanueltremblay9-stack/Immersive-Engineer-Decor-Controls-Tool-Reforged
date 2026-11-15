@@ -1,6 +1,5 @@
 Laboratory Furnace
 Compact processing unit
-<&recipe>The Laboratory Furnace handles compact solid-fuel smelting jobs in a small workshop footprint.<br>
-<br>
-Usage: Use solid fuel for compact smelting batches.<br>
-
+<&recipe>Use ordinary furnace-smelting ingredients with valid furnace fuel. The screen separates the active input, fuel and output, with two buffer slots for each. Every 20 ticks, each buffer connection advances up to one item. Keep room for the finished result.<br>
+The furnace works without FE. For an optional speed boost, put an Immersive Engineering External Heater item in either auxiliary slot and supply FE to the furnace. It spends 8 FE per active boosted tick and advances twice as fast as its unboosted operation. Fuel is still required; two heater items do not stack the boost.<br>
+Redstone does not pause this furnace. Stop supplying ingredients or fuel when you want it to stop processing.<br>

@@ -1503,13 +1503,15 @@ public final class PortedBlocks {
          Direction leftDirection = eastWest ? Direction.NORTH : Direction.WEST;
          Direction rightDirection = eastWest ? Direction.SOUTH : Direction.EAST;
          return (BlockState)((BlockState)((BlockState)state.setValue(
-                  PortedBlocks.LEFTBEAM, this.connectsToSupport(level.getBlockState(pos.relative(leftDirection)))
+                  PortedBlocks.LEFTBEAM, this.connectsToSupport(state, level.getBlockState(pos.relative(leftDirection)), leftDirection)
                ))
-               .setValue(PortedBlocks.RIGHTBEAM, this.connectsToSupport(level.getBlockState(pos.relative(rightDirection)))))
+               .setValue(PortedBlocks.RIGHTBEAM, this.connectsToSupport(state, level.getBlockState(pos.relative(rightDirection)), rightDirection)))
             .setValue(PortedBlocks.DOWNCONNECT, this.downConnection(level.getBlockState(pos.below())));
       }
 
-      private boolean connectsToSupport(BlockState neighborState) {
+      private boolean connectsToSupport(BlockState state, BlockState neighborState, Direction direction) {
+         if (neighborState.getBlock() instanceof VerticalDoubleTSupportBlock)
+            return VerticalDoubleTSupportBlock.connectsToCeilingBeam(neighborState, state, direction.getOpposite());
          return neighborState.getBlock() instanceof PortedBlocks.SupportBlock || TreatedWoodBeamBlock.ceilingBeam(neighborState);
       }
 

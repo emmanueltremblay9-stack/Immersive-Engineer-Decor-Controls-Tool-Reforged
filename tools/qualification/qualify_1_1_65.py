@@ -270,6 +270,7 @@ def server_smoke(source: Path, gradle_home: Path, acknowledgment: str) -> dict:
     # No filesystem writes, downloads, server import or EULA file before explicit consent.
     require(acknowledgment == EULA_ACK, "Explicit Minecraft EULA and Microsoft agreement acknowledgement required")
     artifact = inspect_source(source)
+    ci = check_ci()  # Exact successful main-push Build before importing or installing a runtime.
     source = source.resolve()
     spec = importlib.util.spec_from_file_location("iedctr_legacy_smoke", source / "tools/server/qualify_packaged_server.py")
     require(spec is not None and spec.loader is not None, "Missing pinned server harness")
@@ -287,7 +288,7 @@ def server_smoke(source: Path, gradle_home: Path, acknowledgment: str) -> dict:
     runtime = source / "build/libs" / JAR_NAME
     # Reuse proven console assertions, NOT legacy check_source/check_runtime/install_server:
     # those deliberately remain pinned to historical 1.1.58.
-    with tempfile.TemporaryDirectory(prefix="iedctr-1165-", dir=os.getenv("RUNNER_TEMP")) as folder:
+    with tempfile.TemporaryDirectory(prefix="iedctr-server-", dir=os.getenv("RUNNER_TEMP")) as folder:
         root = Path(folder)
         installer, checksum = root / "neoforge-installer.jar", root / "neoforge-installer.sha256"
         q.download(q.NEOFORGE_URL, installer, 32 * 1024 * 1024)
@@ -312,9 +313,10 @@ def server_smoke(source: Path, gradle_home: Path, acknowledgment: str) -> dict:
         require(inspect_archive(destination, source) == artifact, "Server runtime changed")
     check_source(source)
     return {"status": "PACKAGED_SERVER_BASELINE_SMOKE_PASSED", "sourceCommit": SOURCE_COMMIT,
+            "sourceTree": SOURCE_TREE, "ci": ci,
             "artifact": artifact, "console": console, "immersiveEngineeringSha256": ie_hash,
             "newFeatureGameplay": "NOT_RUN", "exactJarClient": "NOT_RUN", "publicationReady": False,
-            "scope": "Startup/restart, baseline hatch/ladder/gate assertions only; not full 1.1.65 QA"}
+            "scope": "Startup/restart, baseline hatch/ladder/gate assertions only; not full candidate QA"}
 
 
 def write_report(path: Path, data: dict) -> None:
@@ -336,15 +338,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--spec", type=Path, help="Explicit source/version/Build identity JSON for a candidate")
     parser.add_argument("--jar-artifact", type=Path, help="Stage the inspected JAR bytes for reviewer inspection")
     args = parser.parse_args(argv)
-    if args.spec is not None:
-        require(args.mode != "server", "Explicit candidate specs do not enable packaged-server runs")
-        apply_spec(load_spec(args.spec))
-    require(args.jar_artifact is None or args.mode == "compare",
-            "--jar-artifact is available only for a successful two-build comparison")
     # Server consent is checked before even writing a report for an unapproved run.
     if args.mode == "server":
         require(args.eula_acknowledgment == EULA_ACK, "Explicit server consent required")
         require(args.gradle_home is not None, "Isolated Gradle home required")
+    if args.spec is not None:
+        apply_spec(load_spec(args.spec))
+    require(args.jar_artifact is None or args.mode == "compare",
+            "--jar-artifact is available only for a successful two-build comparison")
     if args.mode != "ci":
         require(args.source_a is not None, "Source A required")
     if args.mode == "compare":

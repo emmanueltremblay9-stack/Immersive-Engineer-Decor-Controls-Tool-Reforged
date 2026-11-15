@@ -34,6 +34,7 @@ final class ExternalFluidClientValidation {
    private static final JsonArray RESULTS = new JsonArray();
    private static int index, stage, wait;
    private static CompletableFuture<?> pending;
+   private static volatile String lastServerObservation = "none";
 
    private static String blockId() { return BLOCKS[(index / 6) % BLOCKS.length]; }
    private static FluidState expected() {
@@ -52,7 +53,7 @@ final class ExternalFluidClientValidation {
    }
    static boolean tick(Minecraft mc, Path directory, String nonce) throws Exception {
       if (index == PER_SYNC * 2) return true;
-      check(++wait < 400, "external sync stalled");
+      if (!(++wait < 400)) check(false, "external sync stalled " + stalledDiagnostic(mc));
       if (stage == 0) {
          if (index >= PER_SYNC) mc.level.getChunkAt(POS).removeData(NativeFluidCells.CELLS.get());
          pending = mc.getSingleplayerServer().submit(() -> {
@@ -72,6 +73,7 @@ final class ExternalFluidClientValidation {
                AttachmentSync.onChunkSent(new ChunkWatchEvent.Sent(player,chunk,level));
             }
             level.getFluidTicks().clearArea(BoundingBox.fromCorners(POS.offset(-2,-2,-2),POS.offset(2,2,2)));
+            lastServerObservation = observeServer(level, "setup-complete");
             check(level.getFluidState(POS).equals(expected()),"server fluid differs");
          });stage=1;wait=0;return false;
       }
@@ -93,6 +95,7 @@ final class ExternalFluidClientValidation {
             var level=mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID()).serverLevel();
             NativeFluidCells.set(level,POS,Fluids.EMPTY.defaultFluidState());
             level.setBlock(POS,state().setValue(BlockStateProperties.WATERLOGGED,false),3);
+            lastServerObservation = observeServer(level, "drain-submitted");
          });stage=2;wait=0;return false;
       }
       if(!mc.level.getFluidState(POS).isEmpty())return false;
@@ -109,6 +112,32 @@ final class ExternalFluidClientValidation {
          Files.writeString(path,new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");return true;
       }
       return false;
+   }
+   // Diagnostics only: this helper is called exclusively inside existing server tasks.
+   // The volatile immutable value is historical, never represented as current server state.
+   private static String observeServer(net.minecraft.server.level.ServerLevel level, String operation) {
+      try {
+         return "case=" + index + ",operation=" + operation + ",gameTime=" + level.getGameTime()
+            + ",block=" + level.getBlockState(POS) + ",fluid=" + level.getFluidState(POS)
+            + ",rawCell=" + NativeFluidCells.snapshot(level.getChunkAt(POS)).get(POS);
+      } catch (RuntimeException error) {
+         return "case=" + index + ",operation=" + operation + ",unavailable=" + error.getClass().getSimpleName();
+      }
+   }
+   private static String stalledDiagnostic(Minecraft mc) {
+      String client;
+      try {
+         client = mc.level == null ? "level-null" : "gameTime=" + mc.level.getGameTime()
+            + ",block=" + mc.level.getBlockState(POS) + ",fluid=" + mc.level.getFluidState(POS)
+            + ",rawCell=" + NativeFluidCells.snapshot(mc.level.getChunkAt(POS)).get(POS);
+      } catch (RuntimeException error) {
+         client = "unavailable=" + error.getClass().getSimpleName();
+      }
+      return "stage=" + stage + " wait=" + wait + " sync=" + (index < PER_SYNC ? "update" : "initial")
+         + " block=" + blockId() + " expectedBlock=" + (stage == 2 ? state().setValue(BlockStateProperties.WATERLOGGED,false) : state())
+         + " expectedFluid=" + (stage == 2 ? Fluids.EMPTY.defaultFluidState() : expected())
+         + " pending=" + (pending == null ? "none" : "done=" + pending.isDone() + ",exceptional=" + pending.isCompletedExceptionally())
+         + " clientObserved={" + client + "} lastServerObserved={" + lastServerObservation + "}";
    }
    private static void check(boolean condition,String text){if(!condition)throw new IllegalStateException(text+" externalCase="+index);}
 }

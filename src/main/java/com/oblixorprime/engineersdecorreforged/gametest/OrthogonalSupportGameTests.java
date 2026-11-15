@@ -119,4 +119,72 @@ public final class OrthogonalSupportGameTests {
       }
       h.succeed();
    }
+
+   @GameTest(template="empty")
+   public static void upright_wall_connects_to_touching_ceiling_steel_and_wood(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);
+      for(Direction face:Direction.Plane.HORIZONTAL) {
+         Direction arm=face.getClockWise();
+         for(Direction direction:List.of(arm,arm.getOpposite())) for(boolean wood:List.of(false,true))
+            for(boolean perpendicular:List.of(false,true)) for(boolean reverse:List.of(false,true)) {
+               clear(h,pos);
+               var wall=wall(false,false,face);
+               BlockState beam;
+               if(wood) {
+                  Direction facing=direction.getAxis()==Direction.Axis.X
+                     ?(perpendicular?Direction.NORTH:Direction.EAST)
+                     :(perpendicular?Direction.EAST:Direction.NORTH);
+                  beam=ModBlocks.TREATED_WOOD_BEAM.get().defaultBlockState()
+                     .setValue(BlockStateProperties.HORIZONTAL_FACING,facing).setValue(TreatedWoodBeamBlock.MOUNT,TreatedWoodBeamBlock.Mount.CEILING);
+               } else {
+                  boolean eastWest=(direction.getAxis()==Direction.Axis.X)!=perpendicular;
+                  beam=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(PortedBlocks.EASTWEST,eastWest);
+               }
+               var other=pos.relative(direction);pair(h,pos,wall,other,beam,reverse);
+               var joinedWall=level.getBlockState(pos);
+               boolean expectedPositive=direction==arm;
+               h.assertValueEqual(joinedWall.getValue(expectedPositive?VerticalDoubleTSupportBlock.JOIN_POSITIVE:VerticalDoubleTSupportBlock.JOIN_NEGATIVE),true,
+                  "upright steel arm recognizes a directly adjacent ceiling profile in every rotation and order");
+               var wallFace=joinedWall.getCollisionShape(level,pos).getFaceShape(direction);
+               var beamState=level.getBlockState(other);
+               var beamFace=beamState.getCollisionShape(level,other).getFaceShape(direction.getOpposite());
+               h.assertTrue(Shapes.joinIsNotEmpty(wallFace,beamFace,BooleanOp.AND),
+                  "the connector collision profiles share area at the actual cell face");
+               h.assertFalse(Shapes.joinIsNotEmpty(joinedWall.getShape(level,pos),joinedWall.getCollisionShape(level,pos),BooleanOp.NOT_SAME),
+                  "unlit wall outline and collision use the same joined profile");
+               h.assertFalse(Shapes.joinIsNotEmpty(level.getBlockState(other).getShape(level,other),level.getBlockState(other).getCollisionShape(level,other),BooleanOp.NOT_SAME),
+                  "ceiling profile outline and collision use the same connector");
+               if(!wood)h.assertValueEqual(level.getBlockState(other).getValue(SteelDoubleTBulbBlock.BULB_LIGHT),SteelDoubleTBulbBlock.Bulb.NONE,
+                  "joining does not rewrite the horizontal steel's bulb state");
+
+               level.setBlock(other,Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);
+               h.assertFalse(level.getBlockState(pos).getValue(expectedPositive?VerticalDoubleTSupportBlock.JOIN_POSITIVE:VerticalDoubleTSupportBlock.JOIN_NEGATIVE),
+                  "removing the directly adjacent beam clears its connector");
+            }
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
+   public static void upright_wall_rejects_wrong_plane_bricks_air_and_diagonal_beams(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);
+      for(Direction face:Direction.Plane.HORIZONTAL) {
+         Direction arm=face.getClockWise();
+         for(Direction direction:List.of(arm,arm.getOpposite())) {
+            clear(h,pos);var other=pos.relative(direction);
+            level.setBlock(pos,wall(false,false,face),Block.UPDATE_ALL);
+            level.setBlock(other,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+            h.assertFalse(joined(level.getBlockState(pos)),"brick is not a beam");
+            level.setBlock(other,Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);
+            h.assertFalse(joined(level.getBlockState(pos)),"air is not a beam");
+            level.setBlock(other.relative(face),ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState(),Block.UPDATE_ALL);
+            h.assertFalse(joined(level.getBlockState(pos)),"diagonal contact does not create a beam connection");
+            level.setBlock(other.relative(face),Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);
+            level.setBlock(other,ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState(),Block.UPDATE_ALL);
+            level.setBlock(pos,wall(false,false,direction),Block.UPDATE_ALL);
+            h.assertFalse(joined(level.getBlockState(pos)),"a wall support facing out of the shared plane does not connect");
+         }
+      }
+      h.succeed();
+   }
 }

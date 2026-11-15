@@ -1,3 +1,5 @@
 Fragments grossiers de fer
 Matériau d'outil d'ingénieur
-<&recipe>Peuvent être fondus en lingots<br>de fer, mais ne conviennent pas<br>au traitement avancé des matériaux.
+<&recipe>Les fragments grossiers de fer restent disponibles pour les anciens mondes qui contiennent déjà ce produit du marteau.<br>
+<br>
+Utilisation : faites-les fondre au four ou au haut fourneau pour obtenir des lingots de fer. Les recettes actuelles du marteau de concassage produisent désormais de la poudre de fer d'Immersive Engineering.

@@ -1,5 +1,4 @@
 Incinérateur de déchets
 Unité de traitement compacte
-<&recipe>L'incinérateur de déchets détruit les objets indésirables dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : n'envoyez dans sa file que des objets à détruire.<br>
+<&recipe>N'insérez que des objets à détruire. La file de 16 emplacements avance vers le dernier emplacement, où un objet est consommé par étape de travail, même si la file n'est pas pleine. Un objet détruit ne donne aucun résultat et ne peut pas être récupéré.<br>
+La machine fonctionne sans combustible ni FE, avec une étape tous les 30 ticks. Avec au moins 8 FE disponibles, les étapes ont lieu tous les 10 ticks et chaque destruction réussie consomme 8 FE. La redstone n'active pas cette accélération et ne met pas la machine en pause. Contrôlez l'arrivée des objets pour éviter une destruction accidentelle.<br>
