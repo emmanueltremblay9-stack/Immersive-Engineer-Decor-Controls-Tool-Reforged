@@ -1,3 +1,4 @@
+from hopper_fidelity_integration import current_hash as hopper_current_hash
 from solar_cell_integration import project_history as solar_cell_history, current_hash as solar_cell_current_hash
 """Exact additive Freezer V5 reconciliation. Historical main pins are not rewritten."""
 import hashlib
@@ -55,6 +56,6 @@ def assert_freezer_v5_reconciliation(root, manifest):
 
 def current_hash(path, historical_hash):
     if path not in FILES:
-        return factory_current_hash(path, historical_hash)
+        return hopper_current_hash(path, factory_current_hash(path, historical_hash))
     assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
     return solar_cell_current_hash(path, DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256'])

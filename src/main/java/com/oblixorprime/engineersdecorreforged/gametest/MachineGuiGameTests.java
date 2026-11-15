@@ -804,7 +804,7 @@ public final class MachineGuiGameTests {
       hopperSave.putInt("Cooldown", 9999);
       MachineBlockEntity loadedHighCooldown = new MachineBlockEntity(hopper.getBlockPos(), hopper.getBlockState());
       loadedHighCooldown.loadWithComponents(hopperSave, helper.getLevel().registryAccess());
-      helper.assertValueEqual(400, loadedHighCooldown.dataAccessForTests().get(4), "loaded factory hopper should clamp oversized cooldown");
+      helper.assertValueEqual(0, loadedHighCooldown.dataAccessForTests().get(4), "original hopper resets transient insertion delay on reload, including oversized legacy values");
       helper.succeed();
    }
 
@@ -3198,10 +3198,11 @@ public final class MachineGuiGameTests {
          helper.getLevel().getSignal(helper.absolutePos(comparatorPos), Direction.EAST),
          "empty factory hopper should start with no comparator signal"
       );
-      BlockPos itemPos = helper.absolutePos(TEST_POS.above());
+      BlockPos itemPos = helper.absolutePos(TEST_POS.below(2));
       ItemEntity looseItem = new ItemEntity(
          helper.getLevel(), itemPos.getX() + 0.5, itemPos.getY() + 0.5, itemPos.getZ() + 0.5, new ItemStack(Items.COBBLESTONE)
       );
+      looseItem.setOnGround(true);
       helper.getLevel().addFreshEntity(looseItem);
       tickMachine(helper, machine, 10);
       helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "factory hopper should collect the loose item into inventory");
@@ -3215,7 +3216,7 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 120)
-   public static void factory_hopper_pulse_mode_respects_redstone_before_collecting_items(GameTestHelper helper) {
+   public static void factory_hopper_pulse_mode_collects_without_a_redstone_edge(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       helper.setBlock(TEST_POS, Blocks.AIR);
       helper.setBlock(
@@ -3227,14 +3228,15 @@ public final class MachineGuiGameTests {
       MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
       MachineMenu menu = new MachineMenu(MachineKind.FACTORY_HOPPER, 7, player.getInventory(), machine, machine.dataAccessForTests());
       menu.handleAction(player, 3, 0, 0);
-      BlockPos itemPos = helper.absolutePos(TEST_POS.above());
+      BlockPos itemPos = helper.absolutePos(TEST_POS.below(2));
       ItemEntity looseItem = new ItemEntity(
          helper.getLevel(), itemPos.getX() + 0.5, itemPos.getY() + 0.5, itemPos.getZ() + 0.5, new ItemStack(Items.COBBLESTONE)
       );
+      looseItem.setOnGround(true);
       helper.getLevel().addFreshEntity(looseItem);
       tickMachine(helper, machine, 20);
-      helper.assertTrue(machine.getItem(0).isEmpty(), "factory hopper pulse mode should not collect loose items while redstone is inactive");
-      helper.assertTrue(looseItem.isAlive(), "redstone-disabled pulse hopper should leave the loose item in the world");
+      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "original pulse mode collects independently of output edges");
+      helper.assertTrue(!looseItem.isAlive(), "collected item must be removed exactly once");
       menu.handleAction(player, 5, 1, 0);
       tickMachine(helper, machine, 12);
       helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "factory hopper manual trigger should collect loose items before transfer");
@@ -3243,37 +3245,33 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 160)
-   public static void factory_hopper_pulse_mode_requires_new_redstone_edge_before_collection(GameTestHelper helper) {
+   public static void factory_hopper_pulse_mode_collects_but_requires_edge_for_output(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
-      helper.setBlock(TEST_POS, Blocks.AIR);
-      helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
-      helper.setBlock(
-         TEST_POS,
-         (BlockState)((MachineBlocks.DirectionalMachineBlock)ModBlocks.FACTORY_HOPPER.get()).defaultBlockState().setValue(MachineBlocks.FACING, Direction.UP)
-      );
-      BlockEntity blockEntity = helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
-      helper.assertTrue(blockEntity instanceof MachineBlockEntity, "factory hopper should create a machine block entity");
-      MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
-      MachineMenu menu = new MachineMenu(MachineKind.FACTORY_HOPPER, 7, player.getInventory(), machine, machine.dataAccessForTests());
-      menu.handleAction(player, 3, 0, 0);
-      tickMachine(helper, machine, 12);
-
-      BlockPos itemPos = helper.absolutePos(TEST_POS.above());
-      ItemEntity looseItem = new ItemEntity(
-         helper.getLevel(), itemPos.getX() + 0.5, itemPos.getY() + 0.5, itemPos.getZ() + 0.5, new ItemStack(Items.COBBLESTONE)
-      );
+      helper.setBlock(TEST_POS, ModBlocks.FACTORY_HOPPER.get().defaultBlockState().setValue(MachineBlocks.FACING, Direction.UP));
+      helper.setBlock(TEST_POS.above(), Blocks.BARREL);
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      Container target = (Container)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS.above()));
+      machine.handleGuiAction(player, 3, 0, 0);
+      BlockPos itemPos = helper.absolutePos(TEST_POS.below(2));
+      ItemEntity looseItem = new ItemEntity(helper.getLevel(), itemPos.getX()+0.5, itemPos.getY()+0.5,
+         itemPos.getZ()+0.5, new ItemStack(Items.COBBLESTONE, 3));
+      looseItem.setOnGround(true);
       helper.getLevel().addFreshEntity(looseItem);
       tickMachine(helper, machine, 20);
-      helper.assertTrue(machine.getItem(0).isEmpty(), "factory hopper pulse mode should ignore held redstone power without a new edge");
-      helper.assertTrue(looseItem.isAlive(), "held-power pulse hopper should leave the loose item in the world until the next edge");
-
-      helper.setBlock(TEST_POS.south(), Blocks.AIR);
-      tickMachine(helper, machine, 12);
-      helper.assertTrue(machine.getItem(0).isEmpty(), "factory hopper pulse mode should not collect on a redstone falling edge when non-inverted");
+      helper.assertValueEqual(3, machine.getItem(0).getCount(), "pulse input collects without power");
+      helper.assertTrue(target.isEmpty(), "pulse output requires its first rising edge");
       helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
       tickMachine(helper, machine, 12);
-      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "factory hopper pulse mode should collect loose items on the next rising edge");
-      helper.assertTrue(!looseItem.isAlive(), "factory hopper pulse mode should remove the collected loose item entity after a new edge");
+      helper.assertValueEqual(1, target.getItem(0).getCount(), "one item sent on rising edge");
+      tickMachine(helper, machine, 30);
+      helper.assertValueEqual(1, target.getItem(0).getCount(), "held power must not repeat output");
+      helper.setBlock(TEST_POS.south(), Blocks.AIR);
+      tickMachine(helper, machine, 12);
+      helper.assertValueEqual(1, target.getItem(0).getCount(), "normal falling edge must not output");
+      helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
+      tickMachine(helper, machine, 12);
+      helper.assertValueEqual(2, target.getItem(0).getCount(), "next rising edge sends next item");
+      helper.assertValueEqual(1, machine.getItem(0).getCount(), "items conserved");
       helper.succeed();
    }
 
