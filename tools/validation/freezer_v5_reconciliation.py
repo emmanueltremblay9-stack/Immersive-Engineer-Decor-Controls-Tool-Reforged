@@ -1,7 +1,10 @@
+from hopper_fidelity_integration import current_hash as hopper_current_hash
+from solar_cell_integration import project_history as solar_cell_history, current_hash as solar_cell_current_hash
 """Exact additive Freezer V5 reconciliation. Historical main pins are not rewritten."""
 import hashlib
 import json
-from breaker_current_main_integration import assert_record, project
+from breaker_current_main_integration import assert_record, merge_current_hash, project, project_merge_tree
+from factory_tooltip_integration import current_hash as factory_current_hash
 
 LAYER = 'freezer_v5_reconciliation'
 RECORD_SHA256 = 'b4c91dcd9553c8d1af5af02846299c6dda5505622d9ed0caa956ea1e597c980b'
@@ -40,7 +43,14 @@ def assert_freezer_v5_reconciliation(root, manifest):
     assert hashlib.sha256(json.dumps(diagnostic, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == DIAGNOSTIC_RECORD_SHA256, 'Legacy diagnostic record changed'
     for path, hashes in FILES.items():
         assert record['files'][path] == hashes, path
-        data = project(path, (root / path).read_bytes(), 'main')
+        merged = (root / path).read_bytes()
+        branch_history = project(path, merged, 'main')
+        main_history = solar_cell_history(path, project_merge_tree(path, merged, 'main'))
+        if hashes['freezer_v5_sha256'] is not None:
+            assert branch_history == main_history, 'Two-parent Freezer V5 projection diverged: ' + path
+            data = branch_history
+        else:
+            data = main_history
         if path == ACTIVATION_PATH:
             assert hashlib.sha256(data).hexdigest() == DIAGNOSTIC_SHA256, path
             text = data.decode()
@@ -55,6 +65,8 @@ def assert_freezer_v5_reconciliation(root, manifest):
 
 def current_hash(path, historical_hash):
     if path not in FILES:
-        return historical_hash
-    assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
-    return DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256']
+        parent_hash = hopper_current_hash(path, factory_current_hash(path, historical_hash))
+    else:
+        assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
+        parent_hash = solar_cell_current_hash(path, DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256'])
+    return merge_current_hash(path, parent_hash)

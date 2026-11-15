@@ -5,6 +5,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 import com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
@@ -38,20 +43,32 @@ import org.lwjgl.glfw.GLFW;
  * with physical GUI coordinates and use vanilla packets. Captures are framebuffer
  * evidence, never CPU previews. A pass is a bounded smoke test, not full acceptance.
  */
-final class NativeFreezerReferenceValidation {
+@EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID, value = Dist.CLIENT)
+public final class NativeFreezerReferenceValidation {
    private static final String SUITE = "native-freezer-reference-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0);
    private static final Component RESERVED_NAME = Component.literal("Freezer reserved recovery fixture");
    private enum Stage {
       SETUP, ENERGY, EMPTY_FOR_INPUT, PICKUP, RIGHT_INPUT, REJECT_OUTPUT, RETURN_INPUT,
-      FULL_SETUP, FULL_RECOVERY, ROOM_SETUP, RECOVER, REPEAT_RECOVERY, CLOSE, REOPEN, PROCESS, DONE
+      FULL_SETUP, RECOVERY_TOOLTIP, FULL_RECOVERY, ROOM_SETUP, RECOVER, REPEAT_RECOVERY, CLOSE, REOPEN, PROCESS, DONE
    }
    private static Stage stage;
+   private static com.sun.jna.NativeLibrary x11, xtest;
+   private static com.sun.jna.Pointer display;
+   private static double pointerX, pointerY;
+   private static JsonObject tooltipObservation;
+   private static int tooltipFrames;
+   private static boolean tooltipInFrame;
+   private static final String RECOVERY_KEY = "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help";
    private static int ticks;
    private static int energyIndex;
    private static int stableFrames;
    private static int previousFrostPhase;
    private static int frostStableFrames;
+   private static MachineMenu renderingMenu;
+   private static int renderingPhase;
+   private static int renderingProgress;
+   private static Exception renderFailure;
    private static final boolean[] FROST_SEEN = new boolean[4];
    private static int serverMenuId;
    private static int oldMenuId;
@@ -79,12 +96,15 @@ final class NativeFreezerReferenceValidation {
       directory = gameDirectory;
       nonce = runNonce;
       playerId = mc.player.getUUID();
+      tooltipFrames = 0; tooltipObservation = null; tooltipInFrame = false;
       while (CAPTURES.size() > 0) CAPTURES.remove(CAPTURES.size() - 1);
       while (CASES.size() > 0) CASES.remove(CASES.size() - 1);
       while (FROST_CAPTURES.size() > 0) FROST_CAPTURES.remove(FROST_CAPTURES.size() - 1);
       java.util.Arrays.fill(FROST_SEEN, false);
       previousFrostPhase = -1;
       frostStableFrames = 0;
+      renderingMenu = null;
+      renderFailure = null;
       energyIndex = 0;
       serverMenuId = -1;
       setup = mc.getSingleplayerServer().submit(() -> {
@@ -112,6 +132,7 @@ final class NativeFreezerReferenceValidation {
    }
 
    static boolean tick(Minecraft mc, Path gameDirectory, String runNonce) throws Exception {
+      if (renderFailure != null) throw renderFailure;
       require(directory.equals(gameDirectory) && nonce.equals(runNonce), "Fixture identity changed");
       require(++ticks < 360, "Freezer fixture timed out at " + stage);
       if (stage == Stage.SETUP) {
@@ -141,14 +162,13 @@ final class NativeFreezerReferenceValidation {
          case ENERGY -> {
             int expected = new int[]{0, 8000, 16000}[energyIndex];
             if (menu.energyStored() != expected) { stableFrames = 0; return false; }
-            // Wait for rendered frames after the synchronized state, not since submission.
-            if (++stableFrames < 8) return false;
+            // Tick settling remains separate from the actual render-frame frost gate.
+            if (++stableFrames < 8 || (energyIndex == 0 && !FROST_SEEN[0])) return false;
             require(menu.getSlot(0).getItem().isEmpty() && menu.freezerProgressTicks() == 0, "Energy frames must not fake processing");
             capture(mc, "energy-" + expected, menu);
             if (energyIndex == 0) {
                require(menu.freezerPhase() == 0, "Idle phase must be server zero");
-               capture(mc, "frost-phase-0", menu);
-               FROST_SEEN[0] = true;
+               // Phase zero was captured by the coherent Render.Post gate.
             }
             if (++energyIndex < 3) {
                setup = mc.getSingleplayerServer().submit(() -> {
@@ -208,8 +228,30 @@ final class NativeFreezerReferenceValidation {
          case FULL_SETUP -> {
             if (ticks < 8 || !screen.validationRecoveryVisible() || !reserved(menu.getSlot(1).getItem())) return false;
             for (int i = 3; i < 39; i++) if (!is(menu.getSlot(i).getItem(), Items.STONE, 64)) return false;
-            clickRecovery(screen);
-            enter(Stage.FULL_RECOVERY);
+            if (Boolean.getBoolean("iedctr.freezerRecoveryTooltipProbe")) {
+               require(screen.width == 320 && screen.height == 260 && mc.getWindow().getGuiScale() == 1, "Recovery probe requires 320x260 GUI scale 1");
+               initNativeInput(mc);
+               var view = screen.validationViewTransform();
+               pointerX = view.screenX(157); pointerY = view.screenY(93);
+               moveNativePointer(mc, screen);
+               enter(Stage.RECOVERY_TOOLTIP);
+            } else { clickRecovery(screen); enter(Stage.FULL_RECOVERY); }
+         }
+         case RECOVERY_TOOLTIP -> {
+            require(screen.validationRecoveryVisible() && reserved(menu.getSlot(1).getItem()) && menu.getCarried().isEmpty(), "Recovery fixture changed during hover");
+            if (ticks % 5 == 1) moveNativePointer(mc, screen);
+            if (tooltipFrames < 3) return false;
+            var proof = tooltipObservation.deepCopy();
+            proof.addProperty("nonce", nonce); proof.addProperty("source_sha", System.getProperty("iedctr.executedSourceSha"));
+            proof.addProperty("frames", tooltipFrames); proof.addProperty("language", mc.getLanguageManager().getSelected());
+            proof.addProperty("expected_text", Component.translatable(RECOVERY_KEY).getString());
+            var image = directory.resolve("freezer-recovery-tooltip.png");
+            require(!Files.exists(image), "Refusing stale recovery capture");
+            try (var frame = Screenshot.takeScreenshot(mc.getMainRenderTarget())) { frame.writeToFile(image); }
+            proof.addProperty("capture_sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(image))));
+            Files.writeString(directory.resolve("freezer-recovery-tooltip.json"), new GsonBuilder().setPrettyPrinting().create().toJson(proof));
+            closeNativeInput(); moveCursorAway(mc);
+            clickRecovery(screen); enter(Stage.FULL_RECOVERY);
          }
          case FULL_RECOVERY -> {
             if (ticks < 8 || !reserved(menu.getSlot(1).getItem()) || !serverMatches(mc, p -> reserved(machine.getItem(1)) && countDirt(p) == 0
@@ -260,14 +302,6 @@ final class NativeFreezerReferenceValidation {
          case PROCESS -> {
             // Natural recipe captures only phases 1..3. The server sets phase 4 at
             // completion then resets it in the same tick: never invent a hold/frame.
-            int phase = menu.freezerPhase();
-            if (phase != previousFrostPhase) { previousFrostPhase = phase; frostStableFrames = 0; }
-            if (phase > 0 && phase < 4 && !FROST_SEEN[phase] && ++frostStableFrames >= 3) {
-               require(menu.freezerProgressTicks() >= phase * 45
-                  && menu.freezerProgressTicks() < (phase + 1) * 45, "Phase/progress disagree");
-               capture(mc, "frost-phase-" + phase, menu);
-               FROST_SEEN[phase] = true;
-            }
             if (!menu.getSlot(0).getItem().isEmpty() || !is(menu.getSlot(2).getItem(), Items.PACKED_ICE, 1)
                || menu.energyStored() != 0 || menu.freezerProgressTicks() != 0
                || !serverMatches(mc, p -> machine.getItem(0).isEmpty() && is(machine.getItem(2), Items.PACKED_ICE, 1)
@@ -288,6 +322,54 @@ final class NativeFreezerReferenceValidation {
          default -> throw new IllegalStateException("Unexpected Freezer stage " + stage);
       }
       return false;
+   }
+
+   // Capture the frame that actually rendered this menu state, never a previous
+   // framebuffer sampled during a burst of catch-up client ticks.
+   @SubscribeEvent
+   public static void beforeFrostRender(ScreenEvent.Render.Pre event) {
+      renderingMenu = null;
+      Minecraft mc = Minecraft.getInstance();
+      if (directory == null || renderFailure != null || mc.getOverlay() != null
+         || (stage != Stage.PROCESS && !(stage == Stage.ENERGY && energyIndex == 0))
+         || !(event.getScreen() instanceof FreezerReferenceScreen) || event.getScreen() != mc.screen
+         || setup != null) return;
+      MachineMenu menu = current(mc);
+      if (menu == null) return;
+      renderingMenu = menu;
+      renderingPhase = menu.freezerPhase();
+      renderingProgress = menu.freezerProgressTicks();
+   }
+
+   @SubscribeEvent
+   public static void afterFrostRender(ScreenEvent.Render.Post event) {
+      Minecraft mc = Minecraft.getInstance();
+      MachineMenu menu = renderingMenu;
+      renderingMenu = null; // a Post without its matching Pre cannot count
+      if (menu == null || event.getScreen() != mc.screen || mc.getOverlay() != null
+         || current(mc) != menu || menu.freezerPhase() != renderingPhase
+         || menu.freezerProgressTicks() != renderingProgress) {
+         frostStableFrames = 0;
+         return;
+      }
+      int phase = renderingPhase;
+      boolean eligible = phase >= 0 && phase < 4
+         && (stage == Stage.PROCESS ? phase > 0
+            : stage == Stage.ENERGY && energyIndex == 0 && phase == 0 && menu.energyStored() == 0);
+      if (!eligible) { frostStableFrames = 0; return; }
+      if (phase != previousFrostPhase) { previousFrostPhase = phase; frostStableFrames = 0; }
+      if (++frostStableFrames < 3 || FROST_SEEN[phase]) return;
+      try {
+         require(phase == 0 ? renderingProgress == 0
+            : renderingProgress >= phase * 45 && renderingProgress < (phase + 1) * 45,
+            "Rendered phase/progress disagree");
+         // GuiGraphics batches draws; flush before reading the native target.
+         event.getGuiGraphics().flush();
+         capture(mc, "frost-phase-" + phase, menu);
+         FROST_SEEN[phase] = true;
+      } catch (Exception error) {
+         renderFailure = error; // existing tick failure/reporting path remains authoritative
+      }
    }
 
    private static void enter(Stage next) { stage = next; ticks = 0; stableFrames = 0; inspection = null; }
@@ -365,6 +447,53 @@ final class NativeFreezerReferenceValidation {
          require(screen.validationSlotHoveredAt(anchor.menuIndex(), view.screenX(slot.x + 8), view.screenY(slot.y + 8)), "Rendered slot center cannot be hovered");
       }
    }
+   private static void initNativeInput(Minecraft mc) throws Exception {
+      String nativeDisplay = System.getenv("DISPLAY");
+      require(nativeDisplay != null && nativeDisplay.matches(":\\d+(\\.\\d+)?")
+         && Files.readString(directory.resolve(".iedctr-freezer-xvfb")).equals(nonce + "\n" + nativeDisplay), "Native input requires runner-owned Xvfb");
+      x11 = com.sun.jna.NativeLibrary.getInstance("X11"); xtest = com.sun.jna.NativeLibrary.getInstance("Xtst");
+      display = x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null});
+      require(display != null, "X11 unavailable"); GLFW.glfwFocusWindow(mc.getWindow().getWindow());
+   }
+   private static void closeNativeInput() {
+      if (display != null) { x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display}); display = null; }
+   }
+   private static void moveNativePointer(Minecraft mc, FreezerReferenceScreen screen) {
+      long window = mc.getWindow().getWindow();
+      if (GLFW.glfwGetWindowAttrib(window, GLFW.GLFW_FOCUSED) != GLFW.GLFW_TRUE) { GLFW.glfwFocusWindow(window); return; }
+      int[] x = {0}, y = {0}; GLFW.glfwGetWindowPos(window, x, y);
+      int targetX = x[0] + (int)Math.round(pointerX * mc.getWindow().getScreenWidth() / (double)screen.width);
+      int targetY = y[0] + (int)Math.round(pointerY * mc.getWindow().getScreenHeight() / (double)screen.height);
+      require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display, -1, targetX, targetY, new com.sun.jna.NativeLong(0)}) != 0, "Native pointer move failed");
+      x11.getFunction("XFlush").invokeInt(new Object[]{display});
+   }
+    @net.neoforged.bus.api.SubscribeEvent public static void beforeTooltipRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Pre event){tooltipInFrame=false;}
+    @net.neoforged.bus.api.SubscribeEvent public static void observeRecoveryTooltip(net.neoforged.neoforge.client.event.RenderTooltipEvent.Color event){
+        if(stage!=Stage.RECOVERY_TOOLTIP)return;
+        var mc=Minecraft.getInstance();if(!(mc.screen instanceof FreezerReferenceScreen screen)||screen.getSlotUnderMouse()!=null)return;
+        var v=screen.validationViewTransform();
+        double mx=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth(),my=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
+        if (Math.abs(mx-pointerX)>1 || Math.abs(my-pointerY)>1 || !screen.validationRecoveryVisible()) return;
+        try{
+            var record=new JsonObject();var lines=new JsonArray();var styles=new JsonArray();int width=0,height=event.getComponents().size()==1?-2:0;
+            for(var component:event.getComponents()){
+                net.minecraft.util.FormattedCharSequence seq=null;
+                for(var field:component.getClass().getDeclaredFields())if(net.minecraft.util.FormattedCharSequence.class.isAssignableFrom(field.getType())){field.setAccessible(true);seq=(net.minecraft.util.FormattedCharSequence)field.get(component);break;}
+                require(seq!=null,"Unobservable native tooltip component");var text=new StringBuilder();
+                seq.accept((i,style,codepoint)->{text.appendCodePoint(codepoint);styles.add(style.toString());return true;});lines.add(text.toString());
+                width=Math.max(width,component.getWidth(event.getFont()));height+=component.getHeight();
+            }
+            record.add("lines",lines);record.add("styles",styles);record.addProperty("tooltip_width",width);record.addProperty("tooltip_height",height);
+            record.addProperty("x",event.getX());record.addProperty("y",event.getY());record.addProperty("viewport_width",screen.width);record.addProperty("viewport_height",screen.height);
+            record.addProperty("in_bounds",event.getX()-4>=0&&event.getY()-4>=0&&event.getX()+width+4<=screen.width&&event.getY()+height+4<=screen.height);
+            tooltipObservation=record;tooltipInFrame=true;
+        }catch(Throwable error){throw new IllegalStateException("Recovery tooltip observation failed",error);}
+    }
+    @net.neoforged.bus.api.SubscribeEvent public static void afterTooltipRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Post event) {
+        if (stage != Stage.RECOVERY_TOOLTIP) return;
+        var mc = Minecraft.getInstance();
+        if (tooltipInFrame && event.getScreen() == mc.screen && mc.getOverlay() == null) tooltipFrames++; else tooltipFrames = 0;
+    }
    private static void moveCursorAway(Minecraft mc) {
       GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getScreenWidth() - 2, mc.getWindow().getScreenHeight() - 2);
    }
@@ -427,7 +556,11 @@ final class NativeFreezerReferenceValidation {
       capture.addProperty("view_scale", ((FreezerReferenceScreen)mc.screen).validationViewTransform().scale());
       capture.addProperty("phase", menu.freezerPhase());
       capture.addProperty("progress_ticks", menu.freezerProgressTicks());
-      if (label.startsWith("frost-phase-")) FROST_CAPTURES.add(capture); else CAPTURES.add(capture);
+      if (label.startsWith("frost-phase-")) {
+         capture.addProperty("rendered_frames", frostStableFrames);
+         capture.addProperty("capture_event", "ScreenEvent.Render.Post");
+         FROST_CAPTURES.add(capture);
+      } else CAPTURES.add(capture);
    }
    private static void casePassed(String name) { CASES.add(name); }
    private static void writeProof(Minecraft mc) throws Exception {

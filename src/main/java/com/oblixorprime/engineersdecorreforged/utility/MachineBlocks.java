@@ -155,6 +155,74 @@ public final class MachineBlocks {
          return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(MachineBlocks.FACING, facing), context);
       }
 
+      @Override
+      public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+         if (this.kind() == MachineKind.FACTORY_HOPPER && level.getBlockEntity(pos) instanceof MachineBlockEntity machine)
+            machine.beginHopperPlayerBreak(player.getAbilities().instabuild);
+         return super.playerWillDestroy(level, pos, state, player);
+      }
+
+      @Override
+      public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+         if (this.kind() != MachineKind.FACTORY_HOPPER
+               || !(params.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof MachineBlockEntity machine))
+            return super.getDrops(state, params);
+         if (machine.hopperDropHandled()) return List.of();
+         // Pure: loot previews/repeated calls must not consume the live inventory.
+         if (params.getOptionalParameter(LootContextParams.EXPLOSION_RADIUS) != null) {
+            java.util.ArrayList<ItemStack> contents = new java.util.ArrayList<>();
+            for (int slot = 0; slot < machine.getContainerSize(); slot++)
+               if (!machine.getItem(slot).isEmpty()) contents.add(machine.getItem(slot).copy());
+            return contents;
+         }
+         ItemStack hopper = new ItemStack(this);
+         CompoundTag data = machine.portableHopperData();
+         if (!data.isEmpty()) {
+            CompoundTag custom = new CompoundTag();
+            custom.put("FactoryHopper", data);
+            hopper.set(DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(custom));
+         }
+         return List.of(hopper);
+      }
+
+      @Override
+      public void setPlacedBy(Level level, BlockPos pos, BlockState state, net.minecraft.world.entity.LivingEntity placer, ItemStack stack) {
+         super.setPlacedBy(level, pos, state, placer, stack);
+         if (!level.isClientSide && this.kind() == MachineKind.FACTORY_HOPPER
+               && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
+            CompoundTag data = stack.getOrDefault(DataComponents.CUSTOM_DATA,
+               net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
+            if (data.contains("FactoryHopper", net.minecraft.nbt.Tag.TAG_COMPOUND))
+               machine.restorePortableHopperData(data.getCompound("FactoryHopper"));
+         }
+      }
+
+      @Override
+      public boolean dropFromExplosion(Explosion explosion) {
+         return this.kind() != MachineKind.FACTORY_HOPPER && super.dropFromExplosion(explosion);
+      }
+
+      @Override
+      public void onBlockExploded(BlockState state, Level level, BlockPos pos, Explosion explosion) {
+         if (this.kind() == MachineKind.FACTORY_HOPPER && level.getBlockEntity(pos) instanceof MachineBlockEntity machine)
+            machine.explodeHopperContents();
+         super.onBlockExploded(state, level, pos, explosion);
+      }
+
+      @Override
+      protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+         super.neighborChanged(state, level, pos, block, fromPos, isMoving);
+         if (this.kind() == MachineKind.FACTORY_HOPPER && level.getBlockEntity(pos) instanceof MachineBlockEntity machine)
+            machine.hopperNeighborChanged();
+      }
+
+      @Override
+      public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float distance) {
+         super.fallOn(level, state, pos, entity, distance);
+         if (this.kind() == MachineKind.FACTORY_HOPPER && entity instanceof net.minecraft.world.entity.item.ItemEntity
+               && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) machine.hopperItemFell();
+      }
+
       protected BlockState rotate(BlockState state, Rotation rotation) {
          return (BlockState)state.setValue(MachineBlocks.FACING, rotation.rotate((Direction)state.getValue(MachineBlocks.FACING)));
       }
@@ -463,6 +531,13 @@ public final class MachineBlocks {
 
       protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
          if (!state.is(newState.getBlock()) && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
+            if (this.kind == MachineKind.FACTORY_HOPPER) {
+               boolean pending = machine.consumeHopperPlayerBreak();
+               if (!pending || !level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) machine.clearContent();
+               level.updateNeighbourForOutputSignal(pos, this);
+               super.onRemove(state, level, pos, newState, movedByPiston);
+               return;
+            }
             machine.clearMetalCraftingResultForDrop();
             boolean crateDropsAlreadyHandled = this.kind == MachineKind.LABELED_CRATE && machine.consumeLabeledCrateDropHandling();
             boolean cratePlayerBreakPending = this.kind == MachineKind.LABELED_CRATE && machine.consumeLabeledCratePlayerBreak();

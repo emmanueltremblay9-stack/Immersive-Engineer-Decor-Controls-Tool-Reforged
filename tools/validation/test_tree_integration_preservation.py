@@ -6,8 +6,10 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 
+from breaker_current_main_integration import MERGE_RECORD
 from joint_machine_integration_preservation import JOINT_LAYER, JOINT_FILES, WRAP_LAYER
 from breaker_integration_preservation import BREAKER_FILES, BREAKER_MENU_ADDITIONS
+from hopper_fidelity_integration import BLOCKS_PATH
 from freezer_v5_reconciliation import FILES as V5_FILES, LAYER as V5_LAYER
 from tree_integration_preservation import (
     BARREL_GUARD, COMBINED_FILES, COMBINED_LAYER, FREEZER_FILES, FREEZER_PREVIEW,
@@ -26,7 +28,7 @@ class IntegratedPreservationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.menu = MENU.read_text()
         cls.manifest = json.loads((ROOT / 'docs/testing/solar-v2-reference/preserved-baseline-sha256.json').read_text())
-        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(JOINT_FILES) | set(V5_FILES)}
+        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(JOINT_FILES) | set(V5_FILES) | set(MERGE_RECORD['files']) | {BLOCKS_PATH}}
         cls.pins = json.loads((ROOT / 'docs/testing/milking-qualification/production-pins.json').read_text())
         cls.manual_language_bytes = (ROOT / MANUAL_LANGUAGE_PATH).read_bytes()
         cls.milking_hashes = {name: cls.pins['sha256'][name] for name in MILKING_FILES}
@@ -170,7 +172,7 @@ class IntegratedPreservationTests(unittest.TestCase):
                     del pins[key]
                 else:
                     pins[key] = 'changed'
-                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance|Normal activation record changed|Legacy diagnostic record changed|Current-main integration record changed|Freezer V5 reconciliation provenance changed'):
+                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance|Normal activation record changed|Legacy diagnostic record changed|Current-main integration record changed|PR179 current-main merge record changed|Freezer V5 reconciliation provenance changed'):
                     self.check_milking(pins)
 
     def test_freezer_historical_scope_and_reasons_are_preserved(self):

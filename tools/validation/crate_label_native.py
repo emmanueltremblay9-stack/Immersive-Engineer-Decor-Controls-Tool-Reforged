@@ -16,7 +16,9 @@ from factory_placer_v2_reference_native import png
 
 CASES = ["both_lines_survive_repeated_resize", "empty_and_unicode_survive_resize",
          "resize_does_not_save", "enter_saves_server_authoritative_text",
-         "cancel_does_not_save_server_text", "new_screen_uses_its_own_initial_values"]
+         "cancel_does_not_save_server_text", "new_screen_uses_its_own_initial_values",
+         "cancel_enter_keeps_server_text", "cancel_keypad_enter_keeps_server_text",
+         "done_enter_saves_server_text", "done_keypad_enter_saves_server_text", "edit_keypad_enter_saves_server_text"]
 
 
 def require(condition, message):

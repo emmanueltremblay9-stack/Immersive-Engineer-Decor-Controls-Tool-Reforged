@@ -54,6 +54,7 @@ final class NativeSmelterGuiValidation {
    private static String executedSourceSha;
    private static String pullRequestHeadSha;
    private static String language;
+   private static final JsonArray DRAWER_LABELS = new JsonArray();
    private static final JsonArray CAPTURES = new JsonArray();
 
    private NativeSmelterGuiValidation() {}
@@ -73,6 +74,7 @@ final class NativeSmelterGuiValidation {
       while (CAPTURES.size() > 0) {
          CAPTURES.remove(CAPTURES.size() - 1);
       }
+      while (DRAWER_LABELS.size() > 0) DRAWER_LABELS.remove(DRAWER_LABELS.size() - 1);
       ticks = 0;
       serverMenuId = -1;
       serverMachine = null;
@@ -218,6 +220,7 @@ final class NativeSmelterGuiValidation {
          mc.options.hideGui = false;
          moveCursorOutsidePanel(mc);
          capture(mc, menu, "screen-closed.png");
+         checkDrawerMessage(screen, "closed", false);
          double scale = screen.validationViewScale();
          double guiWidth = mc.getWindow().getGuiScaledWidth();
          double guiHeight = mc.getWindow().getGuiScaledHeight();
@@ -229,6 +232,7 @@ final class NativeSmelterGuiValidation {
          screen.mouseReleased(drawerButtonX, drawerButtonY, 0);
          require(screen.validationOutputDrawerOpen() && menu.getSlot(1).isActive(),
             "The native output drawer did not reveal the real output slot");
+         checkDrawerMessage(screen, "opened", true);
          ticks = 0;
          stage = Stage.WAIT_DRAWER_RENDER;
          return false;
@@ -243,10 +247,51 @@ final class NativeSmelterGuiValidation {
             throw new IllegalStateException("Output drawer lost its real item or visible slot before capture");
          }
          capture(mc, menu, "drawer-open.png");
+         // Exercise the real screen lifecycle and callbacks, not OS input or audio narration.
+         int originalWidth = screen.width, originalHeight = screen.height;
+         screen.resize(mc, originalWidth - 1, originalHeight - 1);
+         checkDrawerMessage(screen, "resized_open", true);
+         screen.resize(mc, originalWidth, originalHeight);
+         checkDrawerMessage(screen, "restored_open", true);
+         require(screen.keyPressed(GLFW.GLFW_KEY_ESCAPE, 0, 0), "Escape drawer close callback not handled");
+         require(screen.getFocused() == drawerButton(screen), "Escape did not restore drawer button focus");
+         checkDrawerMessage(screen, "closed_again", false);
+         require(!menu.getSlot(1).isActive(), "Closed drawer output slot stayed active");
+         clickDrawer(screen);
+         checkDrawerMessage(screen, "reopened", true);
+         require(menu.getSlot(1).isActive(), "Reopened drawer output slot stayed hidden");
          writeProof(mc, screen, menu, runNonce);
          return true;
       }
       throw new IllegalStateException("Unexpected Smelter GUI fixture stage: " + stage);
+   }
+
+   private static net.minecraft.client.gui.components.Button drawerButton(SmallMineralSmelterHybridScreen screen) {
+      var matches = screen.children().stream()
+         .filter(child -> child instanceof net.minecraft.client.gui.components.Button button
+            && button.getX() == 162 && button.getY() == 35 && button.getWidth() == 54 && button.getHeight() == 8)
+         .toList();
+      require(matches.size() == 1, "Missing or ambiguous real drawer button");
+      return (net.minecraft.client.gui.components.Button)matches.getFirst();
+   }
+
+   private static void checkDrawerMessage(SmallMineralSmelterHybridScreen screen, String phase, boolean open) {
+      String key = PREFIX + (open ? "drawer.close_accessible" : "drawer.open_accessible");
+      String expected = Component.translatable(key).getString();
+      String actual = drawerButton(screen).getMessage().getString();
+      require(screen.validationOutputDrawerOpen() == open && actual.equals(expected) && !actual.equals(key),
+         "Stale/untranslated drawer accessible message at " + phase + ": " + actual);
+      JsonObject record = new JsonObject();
+      record.addProperty("phase", phase); record.addProperty("open", open);
+      record.addProperty("message", actual); DRAWER_LABELS.add(record);
+   }
+
+   private static void clickDrawer(SmallMineralSmelterHybridScreen screen) {
+      double scale = screen.validationViewScale();
+      double x = (screen.width - PANEL_WIDTH * scale) / 2.0 + 189.0 * scale;
+      double y = (screen.height - PANEL_HEIGHT * scale) / 2.0 + 39.0 * scale;
+      require(screen.mouseClicked(x, y, 0), "Programmatic native drawer click not handled");
+      screen.mouseReleased(x, y, 0);
    }
 
    private static MachineMenu currentFixtureMenu(Minecraft mc) {
@@ -351,6 +396,9 @@ final class NativeSmelterGuiValidation {
       proof.addProperty("window_width", mc.getWindow().getWidth());
       proof.addProperty("window_height", mc.getWindow().getHeight());
       proof.add("screen", geometry);
+      proof.add("drawer_accessible_messages", DRAWER_LABELS.deepCopy());
+      proof.addProperty("drawer_input_method", "programmatic native screen callbacks and resize; not OS input");
+      proof.addProperty("narration_audio_verified", false);
       proof.add("screenshots", CAPTURES.deepCopy());
       proof.addProperty("screenshot_method", "Minecraft Screenshot.takeScreenshot(getMainRenderTarget())");
 

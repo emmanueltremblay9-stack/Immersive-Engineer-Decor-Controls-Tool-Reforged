@@ -261,3 +261,31 @@ other `fr_ca` entries, scales and all other 117 locales are not certified by the
 Future translation batches must update both individual and category copies, keep a
 per-entry reviewed-source record, and distinguish content review from native rendering.
 Do not silently delete existing translations to force English fallback.
+
+## Post-merge Milking supplement (PR169)
+
+Source baseline: `28a70f534323511e38dcc99453d4019af9576a77`. The earlier
+exclusion of unmerged PR169 above is historical. This bounded supplement updates
+only the EN/FR Milking entry and its workshop category copy against the now-merged
+runtime; other entries, locales and GUI help strings are unchanged.
+
+- `MachineBlockEntity.tickMilkingMachine`: distinguish vanilla's 120-tick cadence
+  from ready TFC attempts; preserve bucket/tank and automated-transfer behavior.
+- `TfcMilkingAdapter.observe/select/tryMilk`: native readiness/cooldown and refused
+  ready-animal retries, without inventing universal animal support.
+- `MachineScreen.selectedMilkingAnimal/milkingIdentityTooltip/milkingRecoveryTooltip`
+  and `MilkingState`: server-selected identity, unavailable target handling, native
+  recovery rather than extraction progress; neutral FE indicator.
+- Vanilla `Cow` selection also includes Mooshrooms; the committed product is milk,
+  not stew. No FE debit exists in this machine's transaction path.
+
+The actual `EngineerManualContentTest` compiles with Eclipse ECJ 3.38.0 on Java 21
+and runs with JUnit 4.13.2/Hamcrest 1.3: **12/12 tests pass**. This includes the new
+EN/FR contract assertions and all existing category-copy parity checks. Dependencies
+were fetched from Maven Central; no stub assertion library was used. An independent
+read-only source review found no factual blocker. Whitespace checks pass.
+
+These are content/resource tests, not native pagination or GUI visual acceptance.
+The longer Milking pages still require native reading at relevant scales. Full
+Gradle/CI results must be attributed to the exact new commit, not earlier PR178/169.
+No runtime source, recipe, artwork, merge or publication is part of this supplement.

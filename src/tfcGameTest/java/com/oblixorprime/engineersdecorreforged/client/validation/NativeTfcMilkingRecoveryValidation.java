@@ -65,6 +65,9 @@ public final class NativeTfcMilkingRecoveryValidation {
    private static final JsonObject NO_REPEAT=new JsonObject();
    private static JsonObject first;
    private static String tfcVersion;
+   private static com.sun.jna.NativeLibrary x11, xtest;
+   private static com.sun.jna.Pointer xDisplay;
+   private static int nativeMotionEvents;
    private NativeTfcMilkingRecoveryValidation() {}
    @SubscribeEvent public static void tick(ClientTickEvent.Post event) {
       if(!Boolean.getBoolean("iedctr.tfcMilkingRecoveryNative") || complete)return;
@@ -104,10 +107,9 @@ public final class NativeTfcMilkingRecoveryValidation {
          if(!(mc.screen instanceof MachineScreen.SmallMilkingMachineScreen screen) || !(mc.player.containerMenu instanceof MachineMenu menu) || menu.containerId!=serverMenuId)return;
          if(stage==Stage.READY)cursor(mc,screen,false);
          if(stage==Stage.TOOLTIP){
-            // glfwSetCursorPos is ignored by an unfocused X11 window. Ask the
-            // native window for focus, then allow normal event polling to deliver
-            // repeated real movements. Never assign MouseHandler coordinates or
-            // invoke its callbacks directly.
+            // XTest delivers MotionNotify through the native event queue. Focus
+            // and repeated movements are still required; never assign MouseHandler
+            // coordinates or invoke callbacks directly.
             cursor(mc,screen,true);
             hoverTicks=actualRecoveryHover(mc,screen)?hoverTicks+1:0;
             require(ticks<120 || hoverTicks>=8,"Native tooltip input did not settle: "+inputDiagnostic(mc));
@@ -217,7 +219,8 @@ public final class NativeTfcMilkingRecoveryValidation {
       o.addProperty("client_amount",menu.fluidAmount());o.addProperty("client_remaining_ticks",s.remainingTicks());o.addProperty("client_total_ticks",s.totalTicks());
       o.addProperty("client_state_code",s.state());o.addProperty("client_state",s.state()==MilkingState.READY?"READY":"RECOVERING");return o;
    }
-   private static void cursor(Minecraft mc,MachineScreen screen,boolean tooltip){
+   private static void cursor(Minecraft mc,MachineScreen screen,boolean tooltip) throws Exception {
+      if(xDisplay==null)initNativeInput();
       long window=mc.getWindow().getWindow();
       if(GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){
          GLFW.glfwFocusWindow(window);
@@ -227,7 +230,26 @@ public final class NativeTfcMilkingRecoveryValidation {
       // as a real native movement rather than a no-op to an unchanged position.
       double x=tooltip?screen.getGuiLeft()+180+(ticks%2):screen.width-2;
       double y=tooltip?screen.getGuiTop()+63:screen.height-2;
-      GLFW.glfwSetCursorPos(window,x*mc.getWindow().getScreenWidth()/screen.width,y*mc.getWindow().getScreenHeight()/screen.height);
+      int[] wx={0},wy={0};GLFW.glfwGetWindowPos(window,wx,wy);
+      int px=wx[0]+(int)Math.round(x*mc.getWindow().getScreenWidth()/screen.width);
+      int py=wy[0]+(int)Math.round(y*mc.getWindow().getScreenHeight()/screen.height);
+      require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{xDisplay,-1,px,py,new com.sun.jna.NativeLong(0)})!=0,"Native XTest motion rejected");
+      x11.getFunction("XFlush").invokeInt(new Object[]{xDisplay});
+      nativeMotionEvents++;
+   }
+   private static boolean nativeInputMarkerMatches(String displayName,String marker,String runNonce) {
+      return displayName!=null && displayName.matches(":\\d+(\\.\\d+)?")
+         && runNonce!=null && runNonce.matches("[a-f0-9]{32}") && (runNonce+"\n"+displayName).equals(marker);
+   }
+   private static void initNativeInput() throws Exception {
+      require(isolatedDirectoryValidated && nativeInputMarkerMatches(System.getenv("DISPLAY"),
+         Files.readString(directory.resolve(".iedctr-tfc-recovery-xvfb")),nonce),"Native input requires runner-owned Xvfb and nonce");
+      x11=com.sun.jna.NativeLibrary.getInstance("X11");xtest=com.sun.jna.NativeLibrary.getInstance("Xtst");
+      xDisplay=x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null});
+      require(xDisplay!=null,"X11 unavailable");
+   }
+   private static void closeNativeInput() {
+      if(xDisplay!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{xDisplay});xDisplay=null;}
    }
    private static boolean actualRecoveryHover(Minecraft mc,MachineScreen screen){
       double x=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth();
@@ -273,6 +295,7 @@ public final class NativeTfcMilkingRecoveryValidation {
    private static ServerPlayer player(Minecraft mc){var p=mc.getSingleplayerServer().getPlayerList().getPlayer(playerId);require(p!=null,"Player vanished");return p;}
    private static void finish(Minecraft mc,Throwable error){
       complete=true;
+      try { closeNativeInput(); } catch(Throwable closeError) { if(error==null)error=closeError; }
       if(!isolatedDirectoryValidated){EngineersDecorReforged.LOGGER.error("IEDCTR_TFC_MILKING_RECOVERY rejected before isolation validation",error);return;}
       // Restoration is executed on the authoritative server, also on failure.
       if(duration!=null && !configRestored && mc.getSingleplayerServer()!=null){
@@ -285,6 +308,8 @@ public final class NativeTfcMilkingRecoveryValidation {
          p.addProperty("requested_language",System.getProperty("iedctr.requestedLanguage",""));p.addProperty("selected_language",mc.getLanguageManager().getSelected());
          p.addProperty("source_background_sha256","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
          p.addProperty("source_milk_sha256","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
+         p.addProperty("input_method","XTest native motion; observed Minecraft cursor and unchanged server transitions");
+         p.addProperty("native_motion_events",nativeMotionEvents);
          addViewport(p,mc);p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);p.addProperty("native_visual_acceptance",false);
          p.addProperty("tfc_version",tfcVersion);p.addProperty("native_tick_production",true);p.addProperty("produced_tick_mutated_after_setup",false);p.addProperty("config_restored",configRestored);
          p.addProperty("screen_class",MachineScreen.SmallMilkingMachineScreen.class.getName());p.add("captures",CAPTURES);p.add("no_repeat",NO_REPEAT);p.add("last_native_input",inputDiagnostic(mc));

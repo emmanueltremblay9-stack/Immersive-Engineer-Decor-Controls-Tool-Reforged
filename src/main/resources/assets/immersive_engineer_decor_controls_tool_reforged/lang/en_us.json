@@ -1133,5 +1133,6 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.continuous": "continuous",
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge": "signal change",
   "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.output": "Output: cut logs",
-  "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy": "Energy: %s / %s FE"
+  "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy": "Energy: %s / %s FE",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip": "Energy item slot: accepts items with FE energy storage. Charging depends on the item accepting energy."
 }

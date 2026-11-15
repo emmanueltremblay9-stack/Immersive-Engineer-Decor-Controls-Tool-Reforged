@@ -1,7 +1,8 @@
 """Exact Tree/Freezer/Milking integration layers, never broad preservation exclusions."""
+from hopper_fidelity_integration import PATH as HOPPER_PATH, project_history as hopper_history, BLOCKS_PATH as HOPPER_BLOCKS_PATH, project_blocks_history
 import hashlib
 import json
-from breaker_current_main_integration import LAYER as CURRENT_LAYER, assert_record
+from breaker_current_main_integration import LAYER as CURRENT_LAYER, MERGE_LAYER, MERGE_RECORD, assert_record, merge_current_hash, project_merge_tree
 from breaker_integration_preservation import BREAKER_INTEGRATION, normalize_breaker_menu_tail
 from joint_machine_integration_preservation import (JOINT_LAYER, JOINT_FILES, WRAP_LAYER, assert_joint_integration_preserved, integrated_hash, current_integrated_hash)
 from freezer_v5_reconciliation import LAYER as V5_LAYER, assert_freezer_v5_reconciliation, current_hash
@@ -104,19 +105,26 @@ def record_sha256(record):
 def assert_combined_integration_preserved(root, manifest):
     """Pin both parent identities and current bytes independently of editable manifests."""
     assert_record(manifest)
+    for path in MERGE_RECORD['files']:
+        data = (root / path).read_bytes()
+        project_merge_tree(path, data, 'main')
+        project_merge_tree(path, data, 'breaker')
     assert_joint_integration_preserved(root, manifest)
+    hopper_history(project_merge_tree(HOPPER_PATH, (root / HOPPER_PATH).read_bytes(), 'main'))
+    project_blocks_history(project_merge_tree(HOPPER_BLOCKS_PATH, (root / HOPPER_BLOCKS_PATH).read_bytes(), 'main'))
     assert_freezer_v5_reconciliation(root, manifest)
     combined = manifest.get(COMBINED_LAYER)
     assert record_sha256(combined) == COMBINED_RECORD_SHA256, 'Combined Milking/Freezer integration changed'
     for path, record in COMBINED_FILES.items():
         assert record['main_sha256'] == FREEZER_FILES[path]['integrated_sha256'], path
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_integrated_hash(path, record['integrated_sha256']), path
+        breaker_bytes = project_merge_tree(path, (root / path).read_bytes(), 'breaker')
+        assert hashlib.sha256(breaker_bytes).hexdigest() == current_integrated_hash(path, record['integrated_sha256']), path
 
 
 def assert_milking_integration_preserved(root, pins):
     assert_combined_integration_preserved(root, pins)
     # Reconstruct the exact main snapshot before applying older-history guards.
-    normalized = {key: value for key, value in pins.items() if key not in (JOINT_LAYER, WRAP_LAYER, CURRENT_LAYER)}
+    normalized = {key: value for key, value in pins.items() if key not in (JOINT_LAYER, WRAP_LAYER, CURRENT_LAYER, MERGE_LAYER)}
     normalized['sha256'] = dict(pins['sha256'])
     for path, record in JOINT_FILES.items():
         assert pins['sha256'].get(path) == integrated_hash(path, record['integrated_sha256']), 'Milking current pin changed: '+path
@@ -130,7 +138,8 @@ def assert_milking_integration_preserved(root, pins):
     if 'manual_integration' in pins:
         assert record_sha256(pins['manual_integration']) == MANUAL_RECORD_SHA256, 'Manual integration provenance changed'
         assert pins['sha256'].get(MANUAL_LANGUAGE_PATH) == MANUAL_INTEGRATED_SHA256, 'Manual integration pin changed'
-        assert hashlib.sha256((root / MANUAL_LANGUAGE_PATH).read_bytes()).hexdigest() == current_integrated_hash(MANUAL_LANGUAGE_PATH, MANUAL_INTEGRATED_SHA256), 'Manual integration bytes changed'
+        manual_main_bytes = project_merge_tree(MANUAL_LANGUAGE_PATH, (root / MANUAL_LANGUAGE_PATH).read_bytes(), 'main')
+        assert hashlib.sha256(manual_main_bytes).hexdigest() == MERGE_RECORD['files'][MANUAL_LANGUAGE_PATH]['main_sha256'], 'Manual integration bytes changed'
         history['sha256'][MANUAL_LANGUAGE_PATH] = MANUAL_PREVIOUS_SHA256
     for path, record in COMBINED_FILES.items():
         assert pins['sha256'].get(path) == record['integrated_sha256'], path
@@ -196,4 +205,6 @@ def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None
             expected = milking_current_hashes[path]
         if path in COMBINED_FILES:
             expected = COMBINED_FILES[path]['integrated_sha256']
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_integrated_hash(path, expected), path
+        expected = current_integrated_hash(path, expected)
+        expected = merge_current_hash(path, expected)
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == expected, path

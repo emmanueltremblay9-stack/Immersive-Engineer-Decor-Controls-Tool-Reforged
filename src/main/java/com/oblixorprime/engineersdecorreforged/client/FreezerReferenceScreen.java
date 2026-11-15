@@ -113,8 +113,10 @@ public final class FreezerReferenceScreen extends AbstractContainerScreen<Machin
       // Tooltips use the real screen coordinates and normal font size, outside the pose.
       renderTooltip(graphics, mouseX, mouseY);
       if (recoveryButton != null && recoveryButton.visible && recoveryButton.isHovered()) {
-         graphics.renderTooltip(font, Component.translatableWithFallback(PREFIX + "recover_help",
-            "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored."), mouseX, mouseY);
+         Component recoveryTooltip = Component.translatableWithFallback(PREFIX + "recover_help",
+            "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.");
+         int wrapWidth = Math.max(1, Math.min(240, width - 16));
+         graphics.renderTooltip(font, font.split(recoveryTooltip, wrapWidth), mouseX, mouseY);
       } else if (hoveredSlot == null && overStaticGauge(mouseX, mouseY)) {
          if (previewMode == FreezerReferenceLiveState.PreviewMode.LIVE_ENERGY) {
             renderLiveTooltip(graphics, mouseX, mouseY);

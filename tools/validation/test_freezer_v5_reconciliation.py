@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import unittest
 from unittest.mock import patch
+from breaker_current_main_integration import project_merge_tree, project
 from freezer_v5_reconciliation import ACTIVATION_PATH, DIAGNOSTIC_SHA256, FILES, LAYER, assert_freezer_v5_reconciliation, current_hash
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -28,7 +29,13 @@ class FreezerV5ReconciliationTests(unittest.TestCase):
         for manifest in self.manifests:
             self.check(manifest)
         for path, hashes in FILES.items():
-            self.assertEqual(DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else hashes['integrated_sha256'], current_hash(path, hashes['main_sha256']))
+            from solar_cell_integration import project_history
+            expected_historical = DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else hashes['integrated_sha256']
+            main_parent = project_merge_tree(path, self.bytes[path], 'main')
+            self.assertEqual(expected_historical, hashlib.sha256(project_history(path, main_parent)).hexdigest())
+            if hashes['freezer_v5_sha256'] is not None:
+                self.assertEqual(expected_historical, hashlib.sha256(project(path, self.bytes[path], 'main')).hexdigest())
+            self.assertEqual(hashlib.sha256(self.bytes[path]).hexdigest(), current_hash(path, hashes['main_sha256']))
             with self.assertRaises(AssertionError):
                 current_hash(path, '0' * 64)
 
