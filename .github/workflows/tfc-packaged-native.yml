@@ -1,0 +1,103 @@
+name: TFC and Mooshroom ordinary JAR qualification
+
+on:
+  push:
+    branches: [dot/tfc-packaged-20261115]
+  pull_request:
+    paths:
+      - 'src/tfcPackagedValidation/**'
+      - 'gradle/tfc-packaged-validation.gradle'
+      - 'tools/validation/*tfc*packaged*'
+      - '.github/workflows/tfc-packaged-native.yml'
+permissions:
+  contents: read
+jobs:
+  validate-native-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    strategy:
+      fail-fast: false
+      matrix:
+        fixture: [recovery, mooshroom]
+    steps:
+      - name: Checkout exact pull request head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Record and verify exact clean source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/tfc-packaged
+          git rev-parse HEAD | tee build/tested-source-sha.txt
+          test "$(cat build/tested-source-sha.txt)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/tfc-packaged/source-status.txt
+          test ! -s build/tfc-packaged/source-status.txt
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Test unchanged gates and packaged provenance
+        run: |
+          python -m unittest discover -s tools/validation -p 'test_tfc*.py' -v
+          python -m unittest discover -s tools/validation -p 'test_mooshroom*.py' -v
+      - name: Check native display prerequisites
+        run: command -v Xvfb && command -v xvfb-run && command -v xauth
+      - name: Run exact-profile integrated-world qualification
+        id: native
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/validation/tfc_packaged_${{ matrix.fixture }}_native.py --profile fr-1280x720-scale2 --prepare-timeout 900 --timeout 900 2>&1 | tee build/tfc-packaged/native-runner.log
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          git status --porcelain --untracked-files=all > build/tfc-packaged/final-source-status.txt
+          test ! -s build/tfc-packaged/final-source-status.txt
+      - name: State native evidence boundary
+        if: always()
+        shell: bash
+        run: |
+          echo "Requested exact PR head: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Requested profile: ${{ matrix.fixture }}' >> "$GITHUB_STEP_SUMMARY"
+          echo "Native validation step: ${{ steps.native.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Ordinary candidate JAR hash must match 53ff03f30cb0c8921f4a8fdb205788cba567aab515804c7d2c7a0ab2daf6f98f; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Acceptance requires matching source/nonce/locale/scale/framebuffer, retained TFC cooldown/production or red/brown adult/baby Mooshroom gates, native XTest hover and decoded PNG checks and clean exit.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Bounded retained compatibility fixtures, no Crossover coverage, no new gameplay and no final owner visual acceptance. Native XTest hover is retained.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain exact-head native proof, screenshots and logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: tfc-packaged-native-${{ matrix.fixture }}-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            build/tfc-packaged/
+            build/reports/tfc-packaged-runtime.json
+            build/tested-source-sha.txt
+            build/tfc-milking-recovery-native-*/*.json
+            build/tfc-milking-recovery-native-*/*.jar
+            build/tfc-milking-recovery-native-*/*.log
+            build/tfc-milking-recovery-native-*/compatibility-jars/*.jar
+            build/tfc-milking-recovery-native-*/run/*.json
+            build/tfc-milking-recovery-native-*/run/tfc-milking-recovery-screenshots/*.png
+            build/tfc-milking-recovery-native-*/run/logs/
+            build/tfc-milking-recovery-native-*/run/crash-reports/
+            build/tfc-milking-recovery-native-*/**/hs_err_pid*.log
+            build/mooshroom-milking-native-*/*.json
+            build/mooshroom-milking-native-*/*.jar
+            build/mooshroom-milking-native-*/*.log
+            build/mooshroom-milking-native-*/compatibility-jars/*.jar
+            build/mooshroom-milking-native-*/run/*.json
+            build/mooshroom-milking-native-*/run/mooshroom-milking-screenshots/*.png
+            build/mooshroom-milking-native-*/run/logs/
+            build/mooshroom-milking-native-*/run/crash-reports/
+            build/mooshroom-milking-native-*/**/hs_err_pid*.log
+          retention-days: 14
+          if-no-files-found: error
