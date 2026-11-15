@@ -69,7 +69,7 @@ jobs:
           echo "Requested exact PR head: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
           echo 'Requested profile: ${{ matrix.fixture }}' >> "$GITHUB_STEP_SUMMARY"
           echo "Native validation step: ${{ steps.native.outcome }}" >> "$GITHUB_STEP_SUMMARY"
-          echo 'Ordinary candidate JAR hash must match e35d528061626aa32d72809fd5f021ed12d55da3610a08ca5b08d68ad8014a70; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Ordinary candidate JAR hash must match 46970958a7510d22fe88c8e21ea1390adfc5ca6fcc052419c5b478854053464a; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Acceptance requires matching source/nonce/locale/scale/framebuffer, retained TFC cooldown/production or red/brown adult/baby Mooshroom gates, native XTest hover and decoded PNG checks and clean exit.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Bounded retained compatibility fixtures, no Crossover coverage, no new gameplay and no final owner visual acceptance. Native XTest hover is retained.' >> "$GITHUB_STEP_SUMMARY"
       - name: Retain exact-head native proof, screenshots and logs
