@@ -1,7 +1,7 @@
 Trappe industrielle sensible aux chocs
-Impulsion de pression
-<&recipe>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+Signal de présence
+<&recipe>Cette commande de contact fournit de la redstone lorsqu'une entité occupe sa zone de détection.<br>
 <br>
-Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+Utilisation : posez-la sur la face supérieure d'un bloc porteur, le long du passage à surveiller. Le contact d'une entité l'active et elle reste active tant que la zone est occupée.<br>
 <br>
-Remarque : émet une brève impulsion après un contact avec une entité.
+Remarque : elle vérifie la présence tous les 12 ticks de jeu et s'éteint après le départ des entités.

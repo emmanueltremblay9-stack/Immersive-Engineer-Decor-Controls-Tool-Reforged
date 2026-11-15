@@ -1,0 +1,42 @@
+{
+  "status": "LOCAL_OPT_IN_EXPERIMENT_NOT_ACCEPTED",
+  "baseline_commit": "8c8dd2f0d6dc018bd874c961e2703d85f6bd4dee",
+  "retained_reference_sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+  "executed": {
+    "pure_java_geometry": "PASS: six groups,38 anchors,703 pairs,307200 viewport sizes plus large cases",
+    "java_parser": "PASS:7 changed/new Java files; syntax only",
+    "original_runtime_png": "PASS: byte identical and0 RGBA differences",
+    "existing_official_toolkit_render": "PASS:0 RGBA differences; file encoding differs",
+    "historical_crop_identity": "PASS: original crop and toolkit crop agree; not V5 source",
+    "cpu_sampling": "PASS:4 point-sampling models; not GPU/native evidence",
+    "python_and_json_syntax": "PASS",
+    "git_diff_check": "PASS",
+    "v5_pixel_interiors": "PASS:38 conservative source rectangles, every pixel max RGB <=60",
+    "event_routing": "PASS static source checks only; not executed Minecraft event tests"
+  },
+  "unexecuted": [
+    "mapped compileJava",
+    "JUnit runner",
+    "dedicated GameTests including new reserved-recovery test",
+    "full build/JAR",
+    "CI on this patch",
+    "native Minecraft rendering and interactions",
+    "JEI/resource-pack integration",
+    "real readability/accessibility review"
+  ],
+  "blockers": {
+    "gradle": "Earlier Gradle9.2.1 download returned Network unreachable. Not retried or bypassed.",
+    "native_display": "Xvfb/xvfb-run unavailable; no native capture attempted."
+  },
+  "dynamic_layers": "STATIC REFERENCE ART only. Clean chamber/energy plates, retained state frames and server mapping remain required.",
+  "production_flag_off": "Legacy screen/layout unchanged;39 protocol slots retained on both sides.",
+  "actions_not_taken": [
+    "network fetch or download",
+    "remote Git write",
+    "PR",
+    "merge",
+    "release",
+    "PC access",
+    "Library upload"
+  ]
+}

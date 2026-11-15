@@ -1,0 +1,321 @@
+import copy
+import hashlib
+from pathlib import Path
+import tempfile
+import unittest
+import zipfile
+from fluid_gestures_native import SmokeFailure
+from fluid_packaged_proof import CLASSES, HARNESS, MOD, TEXTURES, validate_packaged
+from test_fluid_gestures_native import valid
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+class PackagedProofTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        jar = Path(self.temp.name)/'ordinary.jar'
+        with zipfile.ZipFile(jar, 'w') as archive:
+            for name in CLASSES:
+                archive.writestr(name.replace('.', '/')+'.class', name.encode())
+            for name in TEXTURES:
+                archive.write(ROOT/'src/main/resources/assets'/MOD/name, 'assets/'+MOD+'/'+name)
+        digest = hashlib.sha256(jar.read_bytes()).hexdigest()
+        root = 'union:/exact-normal-jar/'
+        self.report = dict(jar_path=str(jar), jar_sha256=digest, fixture_free_jar=True, split_packages=False,
+            loaded_development_mods=[HARNESS], runtime_classpath=[str(jar), '/isolated/harness'],
+            forbidden_main_outputs=['/main/classes', '/main/resources'])
+        self.proof = valid()
+        self.proof['packaged_runtime'] = dict(jar_path=str(jar), jar_sha256=digest, fixture_free_jar=True,
+            separate_harness_module=True, production_selectors_absent=True, harness_mod_id=HARNESS,
+            harness_mod_path='/isolated/harness', mod_root_uri=root,
+            class_origins=[{'class': n, 'resource_uri': root+n.replace('.', '/')+'.class',
+                           'code_source_uri': root, 'sha256': hashlib.sha256(n.encode()).hexdigest()} for n in CLASSES],
+            active_textures=[dict(path=n, sha256=h, pack='mod/'+MOD) for n, h in TEXTURES.items()])
+        self.proof['native_openings'], self.proof['tank_captures'] = [], []
+        for i, machine in enumerate(('funnel', 'accumulator')):
+            self.proof['native_openings'].append(dict(machine=machine, menu_id=i+1, hit_block='0,80,0',
+                method='XTEST_RMB_BLOCK_HIT', native_right_press_observed=True, native_right_release_observed=True))
+            capacity = 3000 if i == 0 else 4000
+            for j, kind in enumerate(('empty', 'half', 'full')):
+                row = copy.deepcopy(self.proof['hovers'][6*i])
+                amount = (0, capacity//2, capacity)[j]
+                row.update(name=f'{machine}-tank-{kind}.png', amount=amount, capacity=capacity, setup_seed=True,
+                    recipe_toast_absent=True, target_x=520, target_y=240, actual_x=520.0, actual_y=240.0,
+                    raw_mouse_x=520.0, raw_mouse_y=240.0)
+                state = dict(state=[0,0,1,0,0,0,amount], total=1, menu_id=i+1)
+                row.update(client=state, server=copy.deepcopy(state))
+                self.proof['tank_captures'].append(row)
+        for index, row in enumerate(self.proof['hovers']):
+            row['recipe_toast_absent'] = True
+            row.update(capture_render_id=index+1, capture_screen_id=index//6+1,
+                capture_outer_frame_id=100+index, capture_phase='RenderFrameEvent.Post:LOWEST', profiler_chart_disabled=True)
+            row['tooltip_geometry'] = dict(outer_frame_id=100+index, screen_post_outer_frame_id=100+index, render_id=index+1, screen_id=index//6+1,
+                menu_id=row['menu_id'], machine=row['machine'], role=row['role'],
+                pointer_x=row['actual_x'], pointer_y=row['actual_y'], gui_width=1280, gui_height=720,
+                text_x=100, text_y=100, text_width=100, text_height=20,
+                frame_margin=4, frame_left=96, frame_top=96, frame_right=204, frame_bottom=124)
+
+    def check(self, proof=None, report=None):
+        return validate_packaged(self.proof if proof is None else proof, self.report if report is None else report,
+                                 1280, 720, 1)
+
+    def test_complete_packaged_proof(self):
+        self.check()
+
+    def test_equivalent_java_file_uri_forms(self):
+        proof = copy.deepcopy(self.proof)
+        java_jar_uri = 'file:'+self.report['jar_path']
+        for row in proof['packaged_runtime']['class_origins']:
+            row['code_source_uri'] = java_jar_uri
+        self.check(proof)
+        proof['packaged_runtime']['mod_root_uri'] = 'file:/authoritative-mod-root/'
+        for row in proof['packaged_runtime']['class_origins']:
+            entry = row['class'].replace('.', '/')+'.class'
+            row.update(code_source_uri='file:///authoritative-mod-root/',
+                       resource_uri='file:///authoritative-mod-root/'+entry)
+        self.check(proof)
+
+    def test_reject_unsafe_or_different_origin_uris(self):
+        for field in ('code_source_uri', 'resource_uri'):
+            for alteration in ('query', 'fragment', 'different_root', 'unsupported_scheme'):
+                proof = copy.deepcopy(self.proof)
+                row = proof['packaged_runtime']['class_origins'][0]
+                uri = row[field]
+                row[field] = {'query': uri+'?source=other', 'fragment': uri+'#other',
+                              'different_root': uri.replace('exact-normal-jar', 'other-normal-jar'),
+                              'unsupported_scheme': uri.replace('union:', 'https:')}[alteration]
+                with self.subTest(field=field, alteration=alteration), self.assertRaises(SmokeFailure):
+                    self.check(proof)
+        for root in ('union:/exact-normal-jar/?source=other/', 'union:/exact-normal-jar/#other/',
+                     'https:/exact-normal-jar/'):
+            proof = copy.deepcopy(self.proof)
+            proof['packaged_runtime']['mod_root_uri'] = root
+            with self.subTest(root=root), self.assertRaises(SmokeFailure):
+                self.check(proof)
+
+    def test_reject_duplicate_archive_names_with_matching_digest(self):
+        name = CLASSES[0]
+        with zipfile.ZipFile(self.report['jar_path'], 'a') as archive:
+            with self.assertWarns(UserWarning):
+                archive.writestr(name.replace('.', '/')+'.class', name.encode())
+        digest = hashlib.sha256(Path(self.report['jar_path']).read_bytes()).hexdigest()
+        self.report['jar_sha256'] = digest
+        self.proof['packaged_runtime']['jar_sha256'] = digest
+        with self.assertRaisesRegex(SmokeFailure, 'Duplicate production archive entries'):
+            self.check()
+
+    def test_reject_runtime_mutations(self):
+        mutations = [lambda p: p.pop('packaged_runtime'),
+            lambda p: p['packaged_runtime'].update(production_selectors_absent=False),
+            lambda p: p['packaged_runtime'].update(separate_harness_module=False),
+            lambda p: p['packaged_runtime'].update(jar_sha256='0'*64),
+            lambda p: p['packaged_runtime'].update(harness_mod_id=MOD),
+            lambda p: p['packaged_runtime'].update(harness_mod_path=self.report['jar_path']),
+            lambda p: p['packaged_runtime']['class_origins'].pop(),
+            lambda p: p['packaged_runtime']['class_origins'][0].update(resource_uri='file:/main/classes/foo.class'),
+            lambda p: p['packaged_runtime']['class_origins'][0].update(code_source_uri='file:/source-output/'),
+            lambda p: p['packaged_runtime']['class_origins'][0].update(sha256='0'*64),
+            lambda p: p['packaged_runtime']['active_textures'][0].update(pack='file/override.zip'),
+            lambda p: p['packaged_runtime']['active_textures'][0].update(sha256='0'*64),
+            lambda p: p['packaged_runtime']['active_textures'].pop()]
+        for change in mutations:
+            proof = copy.deepcopy(self.proof)
+            change(proof)
+            with self.subTest(change=change), self.assertRaises(SmokeFailure):
+                self.check(proof)
+
+    def test_reject_registration_mutations(self):
+        for key, value in [('loaded_development_mods', [MOD, HARNESS]), ('split_packages', True),
+                ('fixture_free_jar', False), ('runtime_classpath', ['/main/classes', self.report['jar_path']]),
+                ('runtime_classpath', ['/main/other/../classes', self.report['jar_path']]),
+                ('forbidden_main_outputs', [])]:
+            report = copy.deepcopy(self.report)
+            report[key] = value
+            with self.subTest(key=key, value=value), self.assertRaises(SmokeFailure):
+                self.check(report=report)
+
+    def test_reject_opening_and_capture_mutations(self):
+        mutations = [lambda p: p['native_openings'].pop(),
+            lambda p: p['native_openings'][0].update(method='openMenu'),
+            lambda p: p['native_openings'][0].update(menu_id=99),
+            lambda p: p['native_openings'][0].update(hit_block='1,80,0'),
+            lambda p: p['native_openings'][0].update(native_right_press_observed=False),
+            lambda p: p['native_openings'][0].update(native_right_release_observed=False),
+            lambda p: p['tank_captures'].pop(), lambda p: p['tank_captures'][1].update(amount=1),
+            lambda p: p['tank_captures'][1].update(setup_seed=False),
+            lambda p: p['tank_captures'][1].update(capacity=True),
+            lambda p: p['tank_captures'][0].update(capacity=1),
+            lambda p: p['tank_captures'][0].update(capacity=4000),
+            lambda p: p['tank_captures'][1]['server']['state'].__setitem__(6, 2),
+            lambda p: p['tank_captures'][1].update(menu_id=90),
+            lambda p: p['tank_captures'][0].update(width=800),
+            lambda p: p['tank_captures'][0].update(gui_scale=True),
+            lambda p: p['tank_captures'][0].update(screen_class='FakeScreen'),
+            lambda p: p['tank_captures'][0].update(window_width=999),
+            lambda p: p['tank_captures'][0].update(raw_mouse_x=0),
+            lambda p: p['tank_captures'][0].update(xtest_motion_count=0),
+            lambda p: p['tank_captures'][0].update(target_y=250),
+            lambda p: p['hovers'][0].update(recipe_toast_absent=False),
+            lambda p: p['tank_captures'][0].pop('recipe_toast_absent')]
+        for change in mutations:
+            proof = copy.deepcopy(self.proof)
+            change(proof)
+            with self.subTest(change=change), self.assertRaises(SmokeFailure):
+                self.check(proof)
+
+    def test_scaled_tank_pointer_mapping(self):
+        for width, height, scale in [(800,600,2), (960,810,3), (961,811,3)]:
+            proof = copy.deepcopy(self.proof)
+            gw, gh = (width+scale-1)//scale, (height+scale-1)//scale
+            for row in proof['hovers']:
+                row.update(gui_width=gw, gui_height=gh)
+                row['tooltip_geometry'].update(gui_width=gw, gui_height=gh)
+            for row in proof['tank_captures']:
+                x, y = (gw-256)//2+8, (gh-256)//2+8
+                row.update(width=width, height=height, gui_width=gw, gui_height=gh, gui_scale=scale,
+                    window_width=width, window_height=height, target_x=x, target_y=y,
+                    actual_x=float(x), actual_y=float(y), raw_mouse_x=x*width/gw, raw_mouse_y=y*height/gh)
+            validate_packaged(proof, self.report, width, height, scale)
+            proof['tank_captures'][0]['raw_mouse_x'] = 0
+            with self.assertRaises(SmokeFailure):
+                validate_packaged(proof, self.report, width, height, scale)
+
+    def test_reject_fixture_leaked_even_with_matching_archive_hash(self):
+        with zipfile.ZipFile(self.report['jar_path'], 'a') as archive:
+            archive.writestr('com/oblixorprime/iedctrtest/fluid/Leak.class', b'leak')
+        digest = hashlib.sha256(Path(self.report['jar_path']).read_bytes()).hexdigest()
+        self.report['jar_sha256'] = digest
+        self.proof['packaged_runtime']['jar_sha256'] = digest
+        with self.assertRaises(SmokeFailure):
+            self.check()
+
+    def test_reject_missing_and_invalid_tooltip_geometry(self):
+        for value in (None, {}, [], True):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'] = value
+            with self.subTest(value=value), self.assertRaises(SmokeFailure): self.check(proof)
+        original = self.proof['hovers'][0]['tooltip_geometry']
+        for field, value in original.items():
+            if type(value) not in (int, float): continue
+            for invalid in (None, True, '1', float('nan'), float('inf')):
+                proof = copy.deepcopy(self.proof)
+                proof['hovers'][0]['tooltip_geometry'][field] = invalid
+                with self.subTest(field=field, invalid=invalid), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_reject_stale_tooltip_evidence(self):
+        changes = [('outer_frame_id', 99), ('screen_post_outer_frame_id', 99), ('render_id', 99), ('screen_id', 99), ('menu_id', 99), ('role', 'tank'),
+                   ('machine', 'accumulator'), ('pointer_x', 0), ('pointer_y', 0),
+                   ('gui_width', 1), ('gui_height', 1), ('text_width', 0), ('text_height', 0),
+                   ('frame_margin', 3), ('frame_right', 203)]
+        for field, value in changes:
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'][field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.check(proof)
+        for field in ('capture_render_id', 'capture_screen_id', 'capture_outer_frame_id', 'capture_phase', 'profiler_chart_disabled'):
+            for value in ((None, False, 0, 1) if field == 'profiler_chart_disabled' else (None, True, 0, 99)):
+                proof = copy.deepcopy(self.proof)
+                proof['hovers'][0][field] = value
+                with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure): self.check(proof)
+        for index, field, value in ((1, 'render_id', 1), (1, 'screen_id', 3), (6, 'screen_id', 1)):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][index]['tooltip_geometry'][field] = value
+            proof['hovers'][index]['capture_'+field] = value
+            with self.subTest(index=index, field=field), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_full_frame_bounds_all_roles_and_edges(self):
+        # Text fits in each case, but the native four-pixel frame does not.
+        for index in range(12):
+            for x, y in ((3,100), (1177,100), (100,3), (100,697)):
+                proof = copy.deepcopy(self.proof)
+                g = proof['hovers'][index]['tooltip_geometry']
+                g.update(text_x=x, text_y=y, frame_left=x-4, frame_top=y-4,
+                         frame_right=x+104, frame_bottom=y+24)
+                with self.subTest(index=index, x=x, y=y), self.assertRaisesRegex(SmokeFailure, 'Tooltip frame clipped'):
+                    self.check(proof)
+        for x, y in ((4,4), (1176,696)):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'].update(text_x=x, text_y=y, frame_left=x-4,
+                frame_top=y-4, frame_right=x+104, frame_bottom=y+24)
+            self.check(proof)
+
+    def test_reject_missing_renderer_end_evidence(self):
+        for field in ('capture_outer_frame_id', 'capture_phase', 'profiler_chart_disabled'):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0].pop(field)
+            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.check(proof)
+        for field in ('outer_frame_id', 'screen_post_outer_frame_id'):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0]['tooltip_geometry'].pop(field)
+            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_reject_frame_post_changes_and_early_capture(self):
+        for field, value in (('menu_id', 99), ('capture_screen_id', 99), ('actual_x', 0), ('actual_y', 0),
+                             ('role', 'tank'), ('capture_phase', 'ScreenEvent.Render.Post'),
+                             ('capture_phase', 'ClientTickEvent.Post'), ('profiler_chart_disabled', False)):
+            proof = copy.deepcopy(self.proof)
+            proof['hovers'][0][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure): self.check(proof)
+        proof = copy.deepcopy(self.proof)
+        row = proof['hovers'][1]
+        row['capture_outer_frame_id'] = 100
+        row['tooltip_geometry'].update(outer_frame_id=100, screen_post_outer_frame_id=100)
+        with self.assertRaisesRegex(SmokeFailure, 'Stale outer frame'): self.check(proof)
+
+    def test_capture_is_bound_to_renderer_end(self):
+        source = (ROOT/'src/fluidPackagedValidation/java/com/oblixorprime/iedctrtest/fluid/NativeFluidGestureValidation.java').read_text()
+        pre = source.split('void beforeFrame(', 1)[1].split('@SubscribeEvent', 1)[0]
+        screen_post = source.split('void afterRender(', 1)[1].split('void afterFrame(', 1)[0]
+        frame_post = source.split('void afterFrame(', 1)[1].split('void tick(', 1)[0]
+        tick = source.split('void tick(', 1)[1]
+        self.assertIn('outerFrameId++', pre)
+        self.assertIn('clearPendingHover()', pre)
+        self.assertIn('pendingHoverGeometry=g.deepCopy()', screen_post)
+        self.assertNotIn('capture(mc,screen,', screen_post)
+        self.assertNotIn('++hoverIndex', screen_post)
+        self.assertIn('capture(mc,screen,"hover-"+hoverIndex)', frame_post)
+        self.assertNotIn('capture(mc,screen,"hover-"+hoverIndex)', tick)
+        self.assertIn('@SubscribeEvent(priority=EventPriority.LOWEST)\n   public static void afterFrame(RenderFrameEvent.Post event)', source)
+        for token in ('event.getScreen()!=renderedScreen', 'event.getScreen()!=mc.screen',
+                      'tooltipEventsInFrame!=1', '"Tooltip frame clipped: "'):
+            self.assertIn(token, screen_post)
+        for token in ('screen==mc.screen', 'screen.getMenu()==pendingHoverMenu',
+                      'mc.player.containerMenu==pendingHoverMenu', '"outer_frame_id").getAsLong()==outerFrameId',
+                      '"screen_post_outer_frame_id").getAsLong()==outerFrameId',
+                      '"pointer_x").getAsDouble()==mc.mouseHandler.xpos()',
+                      '"pointer_y").getAsDouble()==mc.mouseHandler.ypos()',
+                      '!mc.getDebugOverlay().showProfilerChart()', 'finally {clearPendingHover()',
+                      '"capture_phase","RenderFrameEvent.Post:LOWEST"'):
+            self.assertIn(token, frame_post)
+        self.assertIn('component.getWidth(event.getFont())', source)
+        self.assertIn('height+=component.getHeight()', source)
+        self.assertIn('event.getComponents().size()==1?-2:0', source)
+
+    def test_runner_workflow_contract(self):
+        runner = (ROOT/'tools/validation/fluid_packaged_native.py').read_text()
+        workflow = (ROOT/'.github/workflows/fluid-gestures-native.yml').read_text()
+        for token in ('supplied_hash', 'Supplied artifact changed during preparation',
+                      'Production JAR changed during execution', 'validate_gestures(', 'validate_packaged(',
+                      'verifyFluidPackagedRuntime', 'runFluidPackagedDefaultClient', 'final_sha != source_sha'):
+            self.assertIn(token, runner)
+        self.assertNotIn("systemProperty 'iedctr.clientGameplay', 'false'", runner)
+        self.assertNotIn("systemProperty 'iedctr.fluidGestureNative'", runner)
+        self.assertIn('fluid_packaged_native.py', workflow)
+        self.assertIn('--runtime-jar', workflow)
+        self.assertIn('shutil.copyfile(jar, artifact)', workflow)
+        self.assertIn("source_sha=source, sha256=digest", workflow)
+        self.assertIn('language: [en_us, fr_fr]', workflow)
+        self.assertIn('needs: ordinary-artifact', workflow)
+        self.assertEqual(workflow.count('matrix:'), 1)
+        self.assertIn('actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333', workflow)
+        self.assertIn("identity['source_sha'] == source", workflow)
+        self.assertIn("identity['sha256'] == digest", workflow)
+        self.assertIn('test_accumulator_tooltip_wrap.py', workflow)
+        for dimensions in ('width: 1280, height: 720, scale: 1', 'width: 800, height: 600, scale: 2',
+                           'width: 960, height: 810, scale: 3'):
+            self.assertIn(dimensions, workflow)
+
+
+if __name__ == '__main__':
+    unittest.main()

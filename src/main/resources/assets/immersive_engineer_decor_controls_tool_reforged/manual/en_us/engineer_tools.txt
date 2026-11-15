@@ -6,9 +6,11 @@ These tools are meant for work away from a fully equipped shop: mark the route, 
 <np>
 REDIA Tool
 Diamond-covered utility
-<&redia_tool>The REDIA Tool is a durable field utility for quick ground work. Use it on workable soil to till farmland.<br>
+<&redia_tool>The REDIA Tool is a durable diamond-grade multi-tool for field work around temporary sites, workshops, and mine entrances.<br>
 <br>
-Use it against a stable face while carrying torches to place a torch marker from your inventory without wearing REDIA. Ground work, shearing, axe work, and tree felling consume durability.
+Usage: Use it while carrying torches to place one torch from your inventory without wearing REDIA. Sneak-use it to shear plants or cycle ground between dirt, farmland, coarse dirt, and dirt path. The original axe fallback applies from the bottom face. Sneak while breaking logs to fell connected tree blocks.<br>
+<br>
+Repair it with diamonds. Over-repairing a fully repaired REDIA Tool restores the original Efficiency and Fortune progression.
 <np>
 Ore Crushing Hammer
 Hand crushing tool
@@ -22,15 +24,17 @@ Tracker
 Stored position marker
 <&tracker>The Tracker stores a block position directly in the item.<br>
 <br>
-Usage: Click a block to save its dimension and coordinates. The tooltip shows the stored position. Sneak-use the Tracker to clear the target.<br>
+Usage: Click a block to save its dimension and coordinates. The tooltip shows the stored position. Sneak-use the Tracker in the air to clear the target; using it on a block saves that block instead.<br>
 <br>
 Use it to mark machines, tunnel branches, remote controls, or unfinished construction sites before returning with tools and materials.
 <np>
 Ariadne Coal
 Mine route marker
-<&ariadne_coal>Ariadne Coal places quick black arrow route markers on stable mine faces. Use it on a solid face to mark the next turn, exit, or branch point; the marker supports eight clicked-face directions, including diagonals.<br>
+<&ariadne_coal>Ariadne Coal is a quick route marker for shafts, branch mines, and temporary underground work.<br>
 <br>
-Ariadne Coal is a reusable 100-use marker tool. Each successful marker placement costs one durability. It refuses unsupported faces instead of wearing the item.
+Usage: Use it on a stable block face to place a black arrow marker on that border. The marker reads the clicked point on the face and supports eight directions, including diagonals, helping mark turns, exits, dead ends, and supply routes without carrying separate signposts.<br>
+<br>
+Ariadne Coal is a reusable 100-use marker tool. Each successful marker placement costs one durability, and unsupported faces are rejected without wearing the item.
 <np>
 Auto Stim Pack
 Emergency injector
@@ -42,12 +46,8 @@ Keep one available before testing high places, exposed wiring, or hostile mine r
 <np>
 Sleeping Bag
 Portable rest kit
-<&sleeping_bag>The Sleeping Bag is a weatherproof rest kit for field work far from a bed.<br>
-<br>
-Usage: Use it at night in the Overworld to rest until morning. It does not set or move your spawn point.<br>
-<br>
-The bag refuses daytime use, unsafe surroundings with nearby monsters, and dimensions that are not suitable for a safe field rest. Each successful rest wears the bag.
-<np>
+<&sleeping_bag>Stand beside a lit vanilla campfire before using the Sleeping Bag at night in the Overworld. The fire must occupy one of the eight neighboring horizontal blocks at your feet's height; diagonals count. A fire directly under your feet, two blocks away, above or below you, unlit, or a soul campfire does not qualify.<br>
+A successful rest advances time to morning without changing your spawn point. Nearby monsters prevent rest. Successful use applies a 400-tick cooldown and wears the bag outside Creative mode.<br><np>
 Material Storage Box
 Construction supply box
 <&material_box>The Material Storage Box carries a large reserve of one plain, unmodified stackable construction material.<br>
@@ -80,24 +80,28 @@ Usage: Eat it as field food while placing controls, pipes, platforms, or long ma
 <np>
 Mind Squeezer
 Experience condenser
-<&charged_lapis_squeezer>The Mind Squeezer converts one lapis lazuli and one experience level from your inventory into Charged Lapis.<br>
+<&charged_lapis_squeezer>The Mind Squeezer converts lapis and experience into Charged Lapis.<br>
 <br>
-The process hurts, exhausts, and briefly blinds the user on every successful conversion. It refuses to run without lapis, without XP, or when the user is too close to death.
+Usage: Carry lapis lazuli and at least one experience level, then use the tool. Each conversion consumes one lapis and one level, costs 10% of maximum health, causes exhaustion and one second of blindness, and creates one Charged Lapis.<br>
+<br>
+The tool is reusable and does not wear down. It refuses use at 10% health or less, or without lapis or XP.
 <np>
 Charged Lapis
 Stored experience
-<&charged_lapis>Charged Lapis stores one experience level. Consume it to restore the level, clear active effects, and recover a small amount of health.<br>
+<&charged_lapis>Charged Lapis stores one experience level created through the Mind Squeezer.<br>
 <br>
-Craft a Mind Squeezer first; Charged Lapis is produced by using that tool with lapis and XP available.
+Usage: Consume it to restore one level, clear active effects, and recover a small amount of health.<br>
+<br>
+The recipe widget shows the Mind Squeezer because Charged Lapis is produced by using that tool with lapis and XP available.
 <np>
 Coarse Iron Grit
 Legacy crushed iron feed
-<&iron_grit>Coarse Iron Grit is kept for existing worlds that already contain the old hammer output.<br>
+<&iron_grit>Coarse Iron Grit is retained for existing worlds that already contain the old hammer output.<br>
 <br>
-Smelt or blast legacy grit into iron ingots.
+Usage: Smelt or blast it into iron ingots. New Ore Crushing Hammer recipes now produce Immersive Engineering iron dust instead.
 <np>
 Coarse Gold Grit
 Legacy crushed gold feed
-<&gold_grit>Coarse Gold Grit is kept for existing worlds that already contain the old hammer output.<br>
+<&gold_grit>Coarse Gold Grit is retained for existing worlds that already contain the old hammer output.<br>
 <br>
-Smelt or blast legacy grit into gold ingots.
+Usage: Smelt or blast it into gold ingots. New Ore Crushing Hammer recipes now produce Immersive Engineering gold dust instead.

@@ -1,3 +1,5 @@
 Fragments grossiers d'or
 Matériau d'outil d'ingénieur
-<&recipe>Peuvent être fondus en lingots<br>d'or, mais ne conviennent pas au<br>traitement avancé des matériaux.
+<&recipe>Les fragments grossiers d'or restent disponibles pour les anciens mondes qui contiennent déjà ce produit du marteau.<br>
+<br>
+Utilisation : faites-les fondre au four ou au haut fourneau pour obtenir des lingots d'or. Les recettes actuelles du marteau de concassage produisent désormais de la poudre d'or d'Immersive Engineering.

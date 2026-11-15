@@ -1,5 +1,7 @@
 Passerelle en acier
 Élément de voie de service
-<&recipe>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&recipe>La passerelle en acier offre un plancher avec jusqu'à quatre barrières latérales indépendantes.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : tenez une barrière en acier et faites un clic droit près du bord voulu pour ajouter ou retirer ce côté. Chaque ajout coûte une barrière en Survie. Les ajouts payés peuvent être rendus au retrait ; les ajouts en Créatif ne créent pas de remboursement supplémentaire.<br>
+<br>
+Visez et minez une barrière pour retirer uniquement ce côté. Miner le plancher retire la passerelle et ses barrières payées restantes. Les règles normales d'outil et de butin s'appliquent.

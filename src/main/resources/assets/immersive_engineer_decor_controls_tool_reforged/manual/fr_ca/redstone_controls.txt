@@ -14,11 +14,11 @@ Remarque : revient à son état initial après la durée prévue de l'impulsion.
 <np>
 Capteur de porte
 Commande redstone
-<&door_sensor_switch>Un interrupteur momentané émet une impulsion nette de redstone à puissance maximale.<br>
+<&door_sensor_switch>Ce capteur détecte automatiquement les joueurs proches. Sa zone de détection correspond au volume du bloc étendu de quatre blocs dans chaque direction. Les autres types d'entités ne l'activent pas.<br>
 <br>
-Utilisation : déclenchez des machines, déverrouillez des portes, activez des alarmes ou des circuits à action unique.<br>
+Utilisation : commandez des portes, des alarmes ou des machines selon la présence des joueurs. Posez-le contre un mur, un sol ou un plafond ; la plaque et son contour restent contre le support cliqué. Une première vérification est prévue 20 ticks après la pose, puis tous les 40 ticks. Utiliser le capteur demande une mise à jour immédiate.<br>
 <br>
-Remarque : revient à son état initial après la durée prévue de l'impulsion.
+Remarque : la sortie redstone suit la présence des joueurs, sans impulsion de durée fixe.
 <np>
 Bouton d'ascenseur
 Commande redstone
@@ -568,9 +568,9 @@ Gradateur
 Signal variable
 <&industrial_dimmer>Une commande rotative règle la puissance redstone depuis un panneau compact.<br>
 <br>
-Utilisation : faites un clic droit pour augmenter la sortie par paliers ; après la puissance maximale, elle revient à zéro.<br>
+Utilisation : faites un clic droit à l'endroit correspondant à la puissance voulue. Sur un mur, cliquez plus haut pour l'augmenter ou plus bas pour la réduire. Au sol ou au plafond, la position du clic sur l'axe nord-sud règle la puissance.<br>
 <br>
-Remarque : fournit une puissance de 0 à 15.
+Remarque : fournit une puissance de 0 à 15. Chaque clic sélectionne directement la sortie ; les clics répétés ne font pas défiler les valeurs.
 <np>
 Bouton ESTOP
 Commande redstone

@@ -1,0 +1,122 @@
+{
+  "kind": "RETAINED_V5_LOCAL_LIVE_ENERGY_EXPERIMENT_NOT_RUNTIME_ACCEPTED",
+  "source": {
+    "path": "textures/gui/freezer_reference_v5/background.png",
+    "width": 1254,
+    "height": 1254,
+    "sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+    "unchanged": true
+  },
+  "mode": {
+    "live_property": "dev_freezer_v5_live_energy",
+    "live_jvm_property": "iedctr.dev.freezerV5LiveEnergy",
+    "default": false,
+    "exact_property": "dev_freezer_v5_exact_reference",
+    "both_set": "exact_snapshot_wins",
+    "server_mechanics": "unchanged"
+  },
+  "energy": {
+    "getter": "MachineMenu.energyStored()",
+    "data_field": 3,
+    "encoding": "raw FE",
+    "capacity_getter": "MachineMenu.energyCapacity()",
+    "capacity": 16000,
+    "quantization": "floor(clamp(FE,0,capacity)*11/capacity)",
+    "cells": 11,
+    "reference_lit_cells": 8,
+    "reference_state_patches": 0,
+    "cell_edges_x": [
+      507,
+      533,
+      558,
+      584,
+      609,
+      634,
+      659,
+      684,
+      713,
+      738,
+      763,
+      787
+    ],
+    "mask_polygon": [
+      [
+        511,
+        671
+      ],
+      [
+        782,
+        671
+      ],
+      [
+        786,
+        675
+      ],
+      [
+        786,
+        690
+      ],
+      [
+        782,
+        695
+      ],
+      [
+        511,
+        695
+      ],
+      [
+        507,
+        691
+      ],
+      [
+        507,
+        675
+      ]
+    ],
+    "lit_donor_xywh": [
+      634,
+      671,
+      25,
+      25
+    ],
+    "dark_donor_xywh": [
+      738,
+      671,
+      25,
+      25
+    ],
+    "original_ninth_cell_has_baked_orange_spill": true,
+    "outer_metal_reflections": "preserved"
+  },
+  "frost": {
+    "ticks_getter": "MachineMenu.freezerProgressTicks()",
+    "ticks_field": 1,
+    "total_constant": "MachineBlockEntity.FREEZER_PROCESS_TICKS",
+    "total_ticks": 180,
+    "phase_getter": "MachineMenu.freezerPhase()",
+    "phase_field": 14,
+    "status_getter": "MachineMenu.freezerStatus()",
+    "redstone_getter": "MachineMenu.freezerRedstonePowered()",
+    "packed_field": 15,
+    "tooltip_region_xywh": [
+      430,
+      370,
+      390,
+      230
+    ],
+    "region_is_not_erase_mask": true,
+    "clean_chamber_available": false,
+    "draw_patches": 0,
+    "visible_art": "STATIC_WITH_EXPLICIT_TOOLTIP_DISCLOSURE",
+    "completion_latch": false,
+    "client_clock": false
+  },
+  "transforms": {
+    "canvas": [
+      314,
+      314
+    ],
+    "method": "whole reference base; patches use one source-pixel pose scale; normal-size tooltips outside pose",
+    "gpu_verified": false
+  }
+}

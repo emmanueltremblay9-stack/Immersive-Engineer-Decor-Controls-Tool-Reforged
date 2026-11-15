@@ -1,9 +1,7 @@
 Switch
 Redstone control
-<&recipe>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<&recipe>The Industrial Switch is a two-block-tall control cabinet.<br>
 <br>
-Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+Usage: Leave the block above the placement space clear. Right-click either half to switch both halves together; each half supplies full-strength redstone on every side while on.<br>
 <br>
-Notes: Outputs full-strength redstone while switched on.
-
-
+Notes: Breaking either half removes the cabinet. Existing legacy cabinets keep their saved layout.

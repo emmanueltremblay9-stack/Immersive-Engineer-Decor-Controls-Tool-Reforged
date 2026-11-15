@@ -1,0 +1,52 @@
+name: Crate label native resize qualification
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-crate-label:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: en_us
+            height: 720
+          - language: fr_fr
+            height: 360
+    steps:
+      - name: Checkout exact candidate head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Test independent crate evidence guards
+        run: python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_crate_label*.py' -v
+      - name: Native exact-JAR screen resize and save/cancel
+        run: python tools/validation/crate_label_native.py --language ${{ matrix.language }} --height ${{ matrix.height }}
+      - name: Retain native evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: crate-label-native-${{ matrix.language }}-${{ matrix.height }}
+          path: |
+            build/crate-label-native-*/
+            build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

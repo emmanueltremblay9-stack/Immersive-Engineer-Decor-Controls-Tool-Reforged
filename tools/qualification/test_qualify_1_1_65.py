@@ -5,8 +5,9 @@ import os
 from pathlib import Path
 import struct
 import tempfile
+from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 import warnings
 import zipfile
 import qualify_1_1_65 as q
@@ -63,6 +64,33 @@ class QualificationTests(unittest.TestCase):
                 "head_branch": "main", "event": "push", "status": "completed", "conclusion": "success",
                 "path": ".github/workflows/build.yml", "name": "Build",
                 "repository": repo.copy(), "head_repository": repo.copy()}
+
+    def candidate(self):
+        """Synthetic candidate only; restore historical module defaults after each test."""
+        names = ("SOURCE_COMMIT", "SOURCE_TREE", "BUILD_RUN_ID", "BUILD_ATTEMPT",
+                 "MOD_ID", "VERSION", "JAR_NAME", "EXPECTED_SHA256", "PROPERTIES")
+        for name in names:
+            self.addCleanup(setattr, q, name, getattr(q, name))
+        candidate = {"schemaVersion": 1, "repository": q.REPOSITORY,
+                     "sourceCommit": "a" * 40, "buildRunId": 123, "buildRunAttempt": 2,
+                     "modId": q.MOD_ID, "version": "1.1.99-test", "ciReportedJarSha256": "b" * 64}
+        old_version = q.VERSION
+        q.apply_spec(candidate)
+        self.entries["META-INF/neoforge.mods.toml"] = self.metadata(version=q.VERSION).encode()
+        self.entries["META-INF/MANIFEST.MF"] = self.entries["META-INF/MANIFEST.MF"].replace(
+            old_version.encode(), q.VERSION.encode())
+        self.jar = self.root / "build/libs" / q.JAR_NAME
+        self.jar.parent.mkdir(parents=True)
+        candidate["ciReportedJarSha256"] = self.archive()
+        q.apply_spec(candidate)
+        path = self.root / "candidate.json"
+        path.write_text(json.dumps(candidate), encoding="utf-8")
+        (self.root / "gradle.properties").write_text(
+            "\n".join(f"{k}={v}" for k, v in q.PROPERTIES.items()), encoding="utf-8")
+        return path
+
+    def clean_candidate_git(self, root, *args):
+        return q.SOURCE_COMMIT if args == ("rev-parse", "HEAD") else ""
 
     def test_valid_synthetic_archive(self):
         result = self.inspect()
@@ -294,6 +322,116 @@ class QualificationTests(unittest.TestCase):
             q.main(["server", "--report", str(report)])
         self.assertFalse(report.exists())
 
+    def test_candidate_server_cli_routes_same_spec_and_acknowledgment(self):
+        spec = self.candidate()
+        report = self.root / "server.json"
+        def smoke(source, gradle_home, acknowledgment):
+            self.assertEqual((source, gradle_home, acknowledgment), (self.root, self.root, q.EULA_ACK))
+            self.assertEqual(q.SOURCE_COMMIT, "a" * 40)
+            self.assertEqual(q.VERSION, "1.1.99-test")
+            self.assertEqual(q.EXPECTED_SHA256, q.digest(self.jar))
+            return {"status": "SYNTHETIC_TEST_ONLY", "publicationReady": False}
+        with patch.object(q, "server_smoke", side_effect=smoke) as server:
+            self.assertEqual(q.main(["server", "--spec", str(spec), "--source-a", str(self.root),
+                                    "--gradle-home", str(self.root), "--eula-acknowledgment", q.EULA_ACK,
+                                    "--report", str(report)]), 0)
+        server.assert_called_once()
+        self.assertFalse(json.loads(report.read_text())["publicationReady"])
+
+    def test_candidate_server_without_consent_is_inert(self):
+        report = self.root / "unapproved/report.json"
+        with patch.object(q, "load_spec") as load, patch.object(q, "server_smoke") as server:
+            for acknowledgment in ("", "yes", q.EULA_ACK + " "):
+                with self.subTest(acknowledgment=acknowledgment), self.assertRaises(q.QualificationError):
+                    q.main(["server", "--spec", str(self.root / "absent.json"),
+                            "--eula-acknowledgment", acknowledgment, "--report", str(report)])
+            load.assert_not_called()
+            server.assert_not_called()
+        self.assertFalse(report.parent.exists())
+
+    def test_candidate_server_rejects_wrong_source_hash_and_version_before_runtime(self):
+        self.candidate()
+        for failure in ("source", "hash", "version"):
+            with self.subTest(failure=failure):
+                git = Mock(side_effect=self.clean_candidate_git)
+                if failure == "source":
+                    git.side_effect = None
+                    git.return_value = "wrong"
+                elif failure == "hash":
+                    self.jar.write_bytes(b"wrong bytes")
+                else:
+                    self.entries["META-INF/neoforge.mods.toml"] = self.metadata(version="0.0.0").encode()
+                    q.EXPECTED_SHA256 = self.archive()
+                with patch.object(q, "git", git), patch.object(q, "check_ci") as ci, \
+                     patch.object(q.importlib.util, "spec_from_file_location") as harness, \
+                     patch.object(q.tempfile, "TemporaryDirectory") as runtime:
+                    with self.assertRaises(q.QualificationError):
+                        q.server_smoke(self.root, self.root, q.EULA_ACK)
+                    ci.assert_not_called()
+                    harness.assert_not_called()
+                    runtime.assert_not_called()
+
+    def test_candidate_server_rejects_nonmatching_ci_before_runtime(self):
+        self.candidate()
+        invalid_ci = self.ci()
+        invalid_ci["head_sha"] = "c" * 40
+        with patch.object(q, "git", side_effect=self.clean_candidate_git), \
+             patch.object(q, "check_ci", side_effect=lambda: q.validate_ci(invalid_ci)), \
+             patch.object(q.importlib.util, "spec_from_file_location") as harness, \
+             patch.object(q.tempfile, "TemporaryDirectory") as runtime:
+            with self.assertRaises(q.QualificationError):
+                q.server_smoke(self.root, self.root, q.EULA_ACK)
+            harness.assert_not_called()
+            runtime.assert_not_called()
+
+    def test_candidate_server_preserves_checks_with_synthetic_runtime_only(self):
+        self.candidate()
+        import hashlib
+        installer_bytes, ie_bytes = b"synthetic installer", b"synthetic IE"
+        ie_hash = hashlib.sha256(ie_bytes).hexdigest()
+        def download(url, path, maximum):
+            if url.endswith(".sha256"):
+                path.write_text(hashlib.sha256(installer_bytes).hexdigest(), encoding="utf-8")
+            else:
+                path.write_bytes(ie_bytes if url == "synthetic-ie" else installer_bytes)
+        harness = SimpleNamespace(
+            MOD_ID=q.MOD_ID, NEOFORGE_VERSION=q.PROPERTIES["neo_version"],
+            IE_VERSION=q.PROPERTIES["immersive_engineering_version"],
+            NEOFORGE_URL="synthetic-installer", IE_URL="synthetic-ie",
+            require_ack=Mock(), resolved_ie_hash=Mock(return_value=ie_hash),
+            download=Mock(side_effect=download),
+            jar_mods=Mock(return_value=[{"modId": "immersiveengineering", "version": "12.4.2-194"}]),
+            write_configuration=Mock(), qualify=Mock(return_value={"synthetic": True}))
+        spec = SimpleNamespace(loader=Mock())
+        def install(command, *, cwd, check, timeout):
+            (cwd / "run.sh").write_text("synthetic only", encoding="utf-8")
+        with patch.object(q, "git", side_effect=self.clean_candidate_git), \
+             patch.object(q, "check_ci", side_effect=lambda: q.validate_ci(self.ci())), \
+             patch.object(q.importlib.util, "spec_from_file_location", return_value=spec), \
+             patch.object(q.importlib.util, "module_from_spec", return_value=harness), \
+             patch.object(q.subprocess, "run", side_effect=install) as process:
+            result = q.server_smoke(self.root, self.root, q.EULA_ACK)
+        self.assertEqual(result["sourceCommit"], "a" * 40)
+        self.assertEqual(result["ci"]["head_sha"], result["sourceCommit"])
+        self.assertEqual(result["artifact"]["version"], "1.1.99-test")
+        self.assertEqual(result["artifact"]["assetSha256"], q.digest(self.jar))
+        self.assertEqual(result["artifact"]["assetSize"], self.jar.stat().st_size)
+        self.assertEqual(result["newFeatureGameplay"], "NOT_RUN")
+        self.assertEqual(result["exactJarClient"], "NOT_RUN")
+        self.assertFalse(result["publicationReady"])
+        process.assert_called_once()
+        harness.write_configuration.assert_called_once()
+        self.assertEqual(harness.write_configuration.call_args.args[1], q.EULA_ACK)
+        harness.qualify.assert_called_once()
+
+    def test_historical_server_cli_still_routes_without_spec(self):
+        report = self.root / "historical.json"
+        self.assertEqual(q.VERSION, "1.1.65-reconstructed")
+        with patch.object(q, "server_smoke", return_value={"publicationReady": False}) as server:
+            self.assertEqual(q.main(["server", "--source-a", str(self.root), "--gradle-home", str(self.root),
+                                    "--eula-acknowledgment", q.EULA_ACK, "--report", str(report)]), 0)
+        server.assert_called_once_with(self.root, self.root, q.EULA_ACK)
+
     def test_reports_are_utf8_and_no_overwrite(self):
         output = self.root / "report.json"
         q.write_report(output, {"note": "vérifié", "publicationReady": False})
@@ -430,6 +568,17 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertIn("default: false", self.workflow)
         self.assertIn(q.EULA_ACK, self.workflow)
         self.assertNotIn("eula=true", self.workflow)
+
+    def test_candidate_spec_reaches_manual_server_without_weakening_gates(self):
+        self.assertIn("qualification_spec:", self.workflow)
+        self.assertIn("inputs.qualification_spec ||", self.workflow)
+        self.assertIn('spec_path.relative_to(tooling / "tools/qualification")', self.workflow)
+        self.assertNotIn('test -z "$QUALIFICATION_SPEC"', self.workflow)
+        server = self.workflow.split("- name: Packaged-server baseline smoke", 1)[1].split("- name:", 1)[0]
+        self.assertIn("github.event_name == 'workflow_dispatch' && inputs.run_server", server)
+        self.assertIn('args+=(--spec "$GITHUB_WORKSPACE/tooling/$QUALIFICATION_SPEC")', server)
+        self.assertIn('--eula-acknowledgment "$EULA_ACKNOWLEDGMENT"', server)
+        self.assertIn('python tooling/tools/qualification/qualify_1_1_65.py "${args[@]}"', server)
 
     def test_text_evidence_and_review_jar_are_scoped(self):
         self.assertIn("${{ env.QUALIFICATION_REPORTS }}/*.json", self.workflow)
