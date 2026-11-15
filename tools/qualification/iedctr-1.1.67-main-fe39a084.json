@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "repository": "emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged",
+  "sourceCommit": "fe39a0847fa0e558814c8d224ff3d305473e90d8",
+  "sourceTree": "d96892646c0326e867f5c947ba82afd96ff25a97",
+  "buildRunId": 43674029429,
+  "buildRunAttempt": 1,
+  "modId": "immersive_engineer_decor_controls_tool_reforged",
+  "version": "1.1.67-reconstructed",
+  "ciReportedJarSha256": "e35d528061626aa32d72809fd5f021ed12d55da3610a08ca5b08d68ad8014a70"
+}
