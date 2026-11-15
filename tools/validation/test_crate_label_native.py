@@ -87,7 +87,15 @@ class CrateNativeProofTests(unittest.TestCase):
         self.assertEqual(render.count('super.render(graphics, mouseX, mouseY, partialTick);'),1)
         self.assertNotIn('this.renderBackground(',render)
         self.assertLess(render.index('super.render('),render.index('graphics.drawCenteredString('))
-        self.assertEqual(render.count('graphics.drawCenteredString('),2)
+        # Title remains foreground; the hint is now an on-demand foreground tooltip.
+        self.assertEqual(render.count('graphics.drawCenteredString('),1)
+        self.assertEqual(render.count('graphics.renderTooltip('),1)
+        self.assertIn('labeled_crate_label.hint', render)
+        self.assertLess(render.index('super.render('),render.index('graphics.renderTooltip('))
+        background=source.split('public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {',1)[1].split('public void render(',1)[0]
+        self.assertEqual(background.count('super.renderBackground('),1)
+        self.assertEqual(background.count('graphics.blit(FACEPLATE'),1)
+        self.assertLess(background.index('super.renderBackground('), background.index('graphics.blit(FACEPLATE'))
 
 
 if __name__=='__main__':unittest.main()

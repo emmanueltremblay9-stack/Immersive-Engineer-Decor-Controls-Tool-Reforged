@@ -22,6 +22,7 @@ public class CrateResizeProbe {
         EditBox(Object font, int x, int y, int width, int height, Component label) {
             this.x=x; this.y=y; this.width=width; this.height=height;
         }
+        void setBordered(boolean bordered) {}
         void setMaxLength(int max) { maxLength=max; }
         void setValue(String text) { value=text.substring(0, Math.min(text.length(), maxLength)); }
         String getValue() { return value; }
@@ -35,6 +36,11 @@ public class CrateResizeProbe {
             Button build() { return new Button(action); }
         }
     }
+    static class PlaqueButton extends Button {
+        PlaqueButton(int x, int y, int w, int h, Component label, Consumer<Button> action) { super(action); }
+    }
+    int panelLeft, panelTop, panelWidth, panelHeight;
+    /* GEOMETRY */
     int width=400, height=300, saves, closes; Object font=new Object(), focus;
     final String[] initialLines; EditBox firstLine, secondLine;
     final List<Object> widgets = new ArrayList<>();
@@ -74,6 +80,10 @@ public class CrateResizeProbe {
         other.reinit(640,360); other.expect("other crate", "new stored value");
         CrateResizeProbe reopened=new CrateResizeProbe("stored A", "stored B");
         reopened.reinit(400,300); reopened.expect("stored A", "stored B");
+        ((Button)reopened.widgets.get(3)).action.accept((Button)reopened.widgets.get(3));
+        check(reopened.closes==1 && reopened.saves==0, "Cancel must close without saving");
+        ((Button)other.widgets.get(2)).action.accept((Button)other.widgets.get(2));
+        check(other.saves==1 && other.closes==0, "Done must call save");
         System.out.println("Draft text retained over reinitialization; isolated screens, lengths and no-save verified");
     }
 }
@@ -82,12 +92,23 @@ public class CrateResizeProbe {
 
 def run_probe(source):
     start = source.index('   protected void init() {')
-    end = source.index('\n   public void render(', start)
+    # Isolate the production method by braces, not by the name of a later method.
+    # A renderBackground override may legitimately appear between init and render.
+    opening = source.index('{', start)
+    depth = 1
+    end = opening + 1
+    while depth:
+        if source[end] == '{': depth += 1
+        elif source[end] == '}': depth -= 1
+        end += 1
+    geometry = '\n'.join(re.findall(r'   private int source(?:X|Y|Width|Height)\([^\n]+', source))
+    if len(geometry.splitlines()) != 4:
+        raise AssertionError('Expected four production coordinate helpers')
     entity = ENTITY.read_text(encoding='utf-8')
     constants = '\n'.join(re.findall(r'public static final int LABEL_MAX_(?:LINE_LENGTH|UTF16_UNITS) = [^;]+;', entity))
     if len(constants.splitlines()) != 2:
         raise AssertionError('Expected the two production length constants')
-    java_source = FIXTURE.replace('/* METHOD */', source[start:end]).replace('/* CONSTANTS */', constants)
+    java_source = FIXTURE.replace('/* METHOD */', source[start:end]).replace('/* CONSTANTS */', constants).replace('/* GEOMETRY */', geometry)
     with tempfile.TemporaryDirectory(prefix='crate-resize-') as directory:
         target = Path(directory)
         java = target / 'CrateResizeProbe.java'

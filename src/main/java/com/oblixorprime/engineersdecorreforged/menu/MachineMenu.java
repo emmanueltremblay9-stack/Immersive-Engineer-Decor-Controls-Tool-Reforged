@@ -131,7 +131,7 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
-      return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
+      return new MachineMenu(kind, id, inventory, new SimpleContainer(kind == MachineKind.METAL_CRAFTING_TABLE ? 29 : 27),
          new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT),
          kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)
             || Boolean.parseBoolean(System.getProperty(DEV_FREEZER_LIVE_ENERGY_PROPERTY, "true"))),
@@ -155,7 +155,7 @@ public class MachineMenu extends AbstractContainerMenu {
       this.factoryPlacerV2ReferencePresentation = factoryPlacerV2ReferenceRequested
          && kind == MachineKind.FACTORY_PLACER && inventory.player.level().isClientSide;
       this.treeCutterV3ReferencePresentation = kind == MachineKind.SMALL_TREE_CUTTER && inventory.player.level().isClientSide;
-      checkContainerSize(container, 27);
+      checkContainerSize(container, kind == MachineKind.METAL_CRAFTING_TABLE ? 29 : 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
       this.menuPlayer = inventory.player;
@@ -609,7 +609,8 @@ public class MachineMenu extends AbstractContainerMenu {
 
    private boolean movePlayerStackToMachine(Player player, ItemStack stack) {
       return switch (this.kind) {
-         case METAL_CRAFTING_TABLE -> isHammer(stack) ? this.moveToMachineContainerSlots(stack, 0) : this.moveToMachineContainerRange(stack, 1, 10);
+         case METAL_CRAFTING_TABLE -> (isHammer(stack) ? this.moveToMachineContainerSlots(stack, 0)
+            : this.moveToMachineContainerRange(stack, 1, 10)) || this.moveToMachineContainerRange(stack, 11, 29);
          case SMALL_LAB_FURNACE -> this.isSmeltable(player, stack)
             ? this.moveToMachineContainerSlots(stack, 0, 3, 4)
             : (AbstractFurnaceBlockEntity.isFuel(stack) ? this.moveToMachineContainerSlots(stack, 1, 5, 6) : this.moveToMachineContainerSlots(stack, 9, 10));

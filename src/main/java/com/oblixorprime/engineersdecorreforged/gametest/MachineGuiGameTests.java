@@ -74,16 +74,16 @@ public final class MachineGuiGameTests {
    private static final String TEMPLATE = "empty";
    private static final BlockPos TEST_POS = new BlockPos(1, 1, 1);
    private static final List<MachineGuiGameTests.MachineEntry> MACHINE_ENTRIES = List.of(
-      new MachineGuiGameTests.MachineEntry(ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE, 11, null),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE, 29, "metal_crafting_v3"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER, 18, "factory_hopper_gui"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "retained_dropper/background"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
       new MachineGuiGameTests.MachineEntry(
          ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_rp_v3/background"
       ),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "retained_furnaces/incinerator"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "small_electrical_furnace_gui"),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "retained_furnaces/electrical"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 2, "small_mineral_smelter_hybrid_v05/background"),
       new MachineGuiGameTests.MachineEntry(
          ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, "small_water_freezer/background"
@@ -200,7 +200,8 @@ public final class MachineGuiGameTests {
          );
          if (entry.textureName() != null) {
             helper.assertValueEqual(
-               MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, menu.layout().style(), entry.kind().registryName() + " should use the parent GUI texture renderer"
+               entry.kind() == MachineKind.METAL_CRAFTING_TABLE ? MachineLayout.LayoutStyle.ARTWORK_TEXTURE
+                  : MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, menu.layout().style(), entry.kind().registryName() + " should use its contracted GUI texture renderer"
             );
             helper.assertValueEqual(
                entry.textureName(), menu.layout().textureName(), entry.kind().registryName() + " should use the supplied parent GUI texture"
@@ -292,13 +293,100 @@ public final class MachineGuiGameTests {
       helper.assertTrue(menu instanceof MachineMenu, "metal crafting table should open its machine workstation menu");
       if (menu instanceof MachineMenu machineMenu) {
          helper.assertValueEqual(MachineKind.METAL_CRAFTING_TABLE, machineMenu.kind(), "metal crafting table should sync the plate workstation kind");
-         helper.assertValueEqual(11, machineMenu.visibleMachineSlots(), "metal crafting table should expose hammer, 3x3 grid, and output slots");
+         helper.assertValueEqual(29, machineMenu.visibleMachineSlots(), "metal table exposes crafting plus 18 persistent storage slots");
+         helper.assertValueEqual(65, machineMenu.slots.size(), "table includes exactly 36 player slots");
       }
 
       if (menu != null) {
          menu.removed(player);
       }
 
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_table_storage_survives_save_and_stays_out_of_recipes(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      helper.assertValueEqual(29, machine.getContainerSize(), "table backing must include final storage slot");
+      for (int slot = 11; slot < 29; slot++) {
+         helper.assertTrue(machine.canPlaceItem(slot, new ItemStack(Items.OAK_PLANKS)), "all storage slots accept ordinary items");
+         machine.setItem(slot, new ItemStack(Items.OAK_PLANKS, slot));
+      }
+      machine.refreshMetalCraftingResult();
+      helper.assertTrue(machine.getItem(10).isEmpty(), "storage must not become crafting ingredients");
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      MachineBlockEntity loaded = new MachineBlockEntity(machine.getBlockPos(), machine.getBlockState());
+      loaded.loadWithComponents(saved, helper.getLevel().registryAccess());
+      for (int slot = 11; slot < 29; slot++) {
+         helper.assertValueEqual(slot, loaded.getItem(slot).getCount(), "storage count survives NBT at slot " + slot);
+         helper.assertTrue(loaded.getItem(slot).is(Items.OAK_PLANKS), "storage identity survives NBT");
+      }
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineMenu menu = new MachineMenu(MachineKind.METAL_CRAFTING_TABLE, 81, player.getInventory(), machine, machine.dataAccessForTests());
+      helper.assertValueEqual(65, menu.slots.size(), "65 non-overlapping crafting/storage/player slots");
+      int lastStorageMenuSlot = -1;
+      for (int i = 0; i < menu.visibleMachineSlots(); i++) {
+         if (menu.slots.get(i).getSlotIndex() == 28) lastStorageMenuSlot = i;
+      }
+      helper.assertTrue(lastStorageMenuSlot >= 0, "last storage slot is reachable");
+      menu.quickMoveStack(player, lastStorageMenuSlot);
+      helper.assertTrue(machine.getItem(28).isEmpty(), "shift-click retrieves last storage stack");
+      helper.assertValueEqual(28, player.getInventory().countItem(Items.OAK_PLANKS), "shift-click conserves storage contents");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_table_loads_legacy_27_slot_inventory_without_remapping(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      // Serialize an actual old-size container, including formerly hidden indices 11–26.
+      var legacy = net.minecraft.core.NonNullList.withSize(27, ItemStack.EMPTY);
+      for (int slot = 0; slot < 27; slot++) legacy.set(slot, new ItemStack(Items.DIRT, slot + 1));
+      legacy.set(10, new ItemStack(Items.DIAMOND, 4)); // stale virtual output must never survive loading
+      net.minecraft.world.ContainerHelper.saveAllItems(saved, legacy, helper.getLevel().registryAccess());
+      MachineBlockEntity loaded = new MachineBlockEntity(machine.getBlockPos(), machine.getBlockState());
+      loaded.loadWithComponents(saved, helper.getLevel().registryAccess());
+      helper.assertValueEqual(29, loaded.getContainerSize(), "legacy inventory expands to 29 slots");
+      for (int slot = 0; slot < 27; slot++) {
+         if (slot == 10) continue;
+         helper.assertTrue(loaded.getItem(slot).is(Items.DIRT), "legacy item remains at its original index " + slot);
+         helper.assertValueEqual(slot + 1, loaded.getItem(slot).getCount(), "legacy stack count remains unchanged");
+      }
+      helper.assertTrue(loaded.getItem(10).isEmpty(), "legacy virtual output is discarded");
+      helper.assertTrue(loaded.getItem(27).isEmpty() && loaded.getItem(28).isEmpty(), "new slots start empty");
+      CompoundTag upgraded = loaded.saveWithFullMetadata(helper.getLevel().registryAccess());
+      MachineBlockEntity reloaded = new MachineBlockEntity(machine.getBlockPos(), machine.getBlockState());
+      reloaded.loadWithComponents(upgraded, helper.getLevel().registryAccess());
+      for (int slot = 0; slot < 29; slot++) {
+         helper.assertTrue(ItemStack.matches(loaded.getItem(slot), reloaded.getItem(slot)), "upgraded save remains lossless at slot " + slot);
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_table_shift_click_falls_back_to_storage_when_grid_full(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      for (int slot = 1; slot < 10; slot++) machine.setItem(slot, new ItemStack(Items.COBBLESTONE, 64));
+      // Force the fallback to prove the final new backing slot is usable, not just index 11.
+      for (int slot = 11; slot < 28; slot++) machine.setItem(slot, new ItemStack(Items.COBBLESTONE, 64));
+      machine.refreshMetalCraftingResult();
+      ItemStack previousOutput = machine.getItem(10).copy();
+      MachineMenu menu = new MachineMenu(MachineKind.METAL_CRAFTING_TABLE, 82, player.getInventory(), machine, machine.dataAccessForTests());
+      player.getInventory().setItem(9, new ItemStack(Items.DIRT, 23));
+      ItemStack moved = menu.quickMoveStack(player, menu.visibleMachineSlots());
+      helper.assertTrue(moved.is(Items.DIRT), "player stack moves through storage fallback");
+      helper.assertTrue(player.getInventory().getItem(9).isEmpty(), "source player stack is removed");
+      helper.assertTrue(machine.getItem(28).is(Items.DIRT), "last storage slot receives the stack");
+      helper.assertValueEqual(23, machine.getItem(28).getCount(), "storage fallback preserves full count");
+      for (int slot = 1; slot < 28; slot++) {
+         if (slot == 10) continue;
+         helper.assertTrue(machine.getItem(slot).is(Items.COBBLESTONE), "occupied slots remain unchanged");
+         helper.assertValueEqual(64, machine.getItem(slot).getCount(), "occupied stack counts remain unchanged");
+      }
+      helper.assertTrue(machine.getItem(0).isEmpty(), "fallback never writes hammer slot");
+      helper.assertTrue(ItemStack.matches(previousOutput, machine.getItem(10)), "fallback never overwrites the recipe preview");
+      menu.removed(player);
       helper.succeed();
    }
 

@@ -31,6 +31,7 @@ public record GuiTextureBlit(
 
    public static GuiTextureBlit forMachineArtwork(String textureName, int destinationWidth, int destinationHeight) {
       return switch (textureName) {
+         case "metal_crafting_v3" -> stretchFullTexture(destinationWidth, destinationHeight, 1142, 1378);
          case "small_solar_panel_art" -> stretchFullTexture(destinationWidth, destinationHeight, 455, 424);
          case "small_tree_cutter_art" -> stretchFullTexture(destinationWidth, destinationHeight, 446, 418);
          default -> throw new IllegalArgumentException("Unknown machine artwork texture: " + textureName);
