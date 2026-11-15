@@ -440,6 +440,8 @@ def main() -> int:
         if args.tooltip_probe:
             from solar_tooltip_proof import validate_tooltip
             validate_tooltip(json.loads((game/'solar-fe-tooltip.json').read_text()), game, nonce, source_sha, args.language)
+            lang = json.loads((project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang" / (args.language + ".json")).read_text())
+            validate_tooltip(json.loads((game/"solar-cell-tooltip.json").read_text()), game, nonce, source_sha, args.language, capture_name="solar-cell-tooltip.png", expected_text=lang["gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip"])
         print("PASS bounded ordinary-JAR default Solar V2 proof. Full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError, KeyError, TypeError) as error:

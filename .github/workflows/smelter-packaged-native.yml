@@ -60,7 +60,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 53ff03f30cb0c8921f4a8fdb205788cba567aab515804c7d2c7a0ab2daf6f98f --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log
+          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 e35d528061626aa32d72809fd5f021ed12d55da3610a08ca5b08d68ad8014a70 --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log
           test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
           git status --porcelain --untracked-files=all > build/smelter-qualification/final-source-status.txt
           test ! -s build/smelter-qualification/final-source-status.txt
@@ -71,7 +71,7 @@ jobs:
           echo "Requested exact PR head: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
           echo 'Requested profile: ${{ matrix.profile }}' >> "$GITHUB_STEP_SUMMARY"
           echo "Native validation step: ${{ steps.native.outcome }}" >> "$GITHUB_STEP_SUMMARY"
-          echo 'Ordinary candidate JAR hash must match 53ff03f30cb0c8921f4a8fdb205788cba567aab515804c7d2c7a0ab2daf6f98f; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Ordinary candidate JAR hash must match e35d528061626aa32d72809fd5f021ed12d55da3610a08ca5b08d68ad8014a70; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Acceptance requires matching source/nonce/locale/scale/framebuffer, real Smelter live-menu/state, three frozen progress states, drawer callbacks/resize/Escape/focus/accessibility and five native framebuffer captures and clean exit.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Bounded screen-handler input only. Natural smelting, inventory routes, physical OS input, audio narration, JEI actions and full visual acceptance remain deferred.' >> "$GITHUB_STEP_SUMMARY"
       - name: Retain exact-head native proof, screenshots and logs

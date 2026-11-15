@@ -31,7 +31,13 @@ for method, geometry_method in (('getGuiLeft', 'guiLeft'), ('getGuiTop', 'guiTop
 assert 'leftPos = 0; topPos = 0;' in s
 assert 'imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;' in s
 assert 'imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;' in s
-assert 'Component.literal(menu.layout().machineSlots().getFirst().role())' in s
+assert 'Component.literal(menu.layout().machineSlots().getFirst().role())' not in s
+assert 'Component.translatable(PREFIX + "cell_tooltip")' in s
+assert 'hoveredSlot.index == 0 && !hoveredSlot.hasItem()' in s
+assert 'font.split(cellTooltip, wrapWidth)' in s
+from solar_cell_integration import FILES as CELL_LOCALES, project_history
+for locale_path in CELL_LOCALES:
+    project_history(locale_path, (r / locale_path).read_bytes())
 assert 'this(kind, id, inventory, container, data, false, false, false, false)' in m
 assert 'boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide' in m

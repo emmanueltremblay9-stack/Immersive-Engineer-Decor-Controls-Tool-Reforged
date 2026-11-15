@@ -72,8 +72,10 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
          int wrapWidth = Math.max(1, Math.min(240, width - 16));
          graphics.renderTooltip(font, font.split(energyTooltip, wrapWidth), mouseX, mouseY);
       } else if (hoveredSlot != null && hoveredSlot.index == 0 && !hoveredSlot.hasItem()) {
-         // Preserve the existing machine role; do not imply new charging compatibility.
-         graphics.renderTooltip(font, Component.literal(menu.layout().machineSlots().getFirst().role()), mouseX, mouseY);
+         // Acceptance is the existing item energy-storage capability, not a list of brands.
+         Component cellTooltip = Component.translatable(PREFIX + "cell_tooltip");
+         int wrapWidth = Math.max(1, Math.min(240, width - 16));
+         graphics.renderTooltip(font, font.split(cellTooltip, wrapWidth), mouseX, mouseY);
       }
    }
 

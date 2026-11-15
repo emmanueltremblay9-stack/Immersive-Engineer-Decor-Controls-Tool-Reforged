@@ -28,7 +28,10 @@ class FreezerV5ReconciliationTests(unittest.TestCase):
         for manifest in self.manifests:
             self.check(manifest)
         for path, hashes in FILES.items():
-            self.assertEqual(DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else hashes['integrated_sha256'], current_hash(path, hashes['main_sha256']))
+            from solar_cell_integration import project_history
+            expected_historical = DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else hashes['integrated_sha256']
+            self.assertEqual(expected_historical, hashlib.sha256(project_history(path, self.bytes[path])).hexdigest())
+            self.assertEqual(hashlib.sha256(self.bytes[path]).hexdigest(), current_hash(path, hashes['main_sha256']))
             with self.assertRaises(AssertionError):
                 current_hash(path, '0' * 64)
 
