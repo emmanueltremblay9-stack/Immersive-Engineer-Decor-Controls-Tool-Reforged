@@ -6,6 +6,7 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 
+from hopper_fidelity_integration import BLOCKS_PATH
 from freezer_v5_reconciliation import FILES as V5_FILES, LAYER as V5_LAYER
 from tree_integration_preservation import (
     BARREL_GUARD, COMBINED_FILES, COMBINED_LAYER, FREEZER_FILES, FREEZER_PREVIEW,
@@ -24,7 +25,7 @@ class IntegratedPreservationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.menu = MENU.read_text()
         cls.manifest = json.loads((ROOT / 'docs/testing/solar-v2-reference/preserved-baseline-sha256.json').read_text())
-        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(V5_FILES)}
+        cls.files = {name: (ROOT / name).read_bytes() for name in set(cls.manifest['files']) | set(FREEZER_FILES) | set(V5_FILES) | {BLOCKS_PATH}}
         cls.pins = json.loads((ROOT / 'docs/testing/milking-qualification/production-pins.json').read_text())
         cls.manual_language_bytes = (ROOT / MANUAL_LANGUAGE_PATH).read_bytes()
         cls.milking_hashes = {name: cls.pins['sha256'][name] for name in MILKING_FILES}

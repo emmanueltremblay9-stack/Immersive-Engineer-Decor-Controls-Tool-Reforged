@@ -1,4 +1,5 @@
 """Exact Tree/Freezer/Milking integration layers, never broad preservation exclusions."""
+from hopper_fidelity_integration import PATH as HOPPER_PATH, project_history as hopper_history, BLOCKS_PATH as HOPPER_BLOCKS_PATH, project_blocks_history
 import hashlib
 import json
 from freezer_v5_reconciliation import LAYER as V5_LAYER, assert_freezer_v5_reconciliation, current_hash
@@ -99,6 +100,8 @@ def record_sha256(record):
 
 def assert_combined_integration_preserved(root, manifest):
     """Pin both parent identities and current bytes independently of editable manifests."""
+    hopper_history((root / HOPPER_PATH).read_bytes())
+    project_blocks_history((root / HOPPER_BLOCKS_PATH).read_bytes())
     assert_freezer_v5_reconciliation(root, manifest)
     combined = manifest.get(COMBINED_LAYER)
     assert record_sha256(combined) == COMBINED_RECORD_SHA256, 'Combined Milking/Freezer integration changed'

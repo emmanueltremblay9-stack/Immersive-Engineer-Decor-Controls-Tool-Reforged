@@ -1,0 +1,115 @@
+// Separate Tfc harness. Ordinary production packaging is untouched.
+def tfcPackagedValidation = providers.gradleProperty('include_tfc_packaged_validation').map { it.toBoolean() }.getOrElse(false)
+def tfcRuntimeJar = providers.gradleProperty('tfc_runtime_jar').map { file(it) }
+
+if (tfcPackagedValidation) {
+    if (!tfcRuntimeJar.isPresent()) throw new GradleException('Prebuilt normal JAR is mandatory')
+    gradle.taskGraph.whenReady { graph ->
+        def forbidden = graph.allTasks.findAll { it.project == project && it.name in ['jar','compileJava','processResources','classes'] }
+        if (!forbidden.isEmpty()) {
+            def incoming = forbidden.collect { blocked ->
+                def owners = graph.allTasks.findAll { task -> task.taskDependencies.getDependencies(task).contains(blocked) }
+                blocked.path + ' <- ' + owners.collect { it.path }.join(', ')
+            }
+            throw new GradleException('Never rebuild production under the TFC compatibility runtime: ' + incoming.join('; '))
+        }
+    }
+    if (providers.gradleProperty('include_barrel_v5_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Tfc and Barrel V5 packaged validation separately')
+    if (providers.gradleProperty('include_barrel_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Tfc and legacy Barrel packaged validation separately')
+    if (providers.gradleProperty('include_factory_placer_native_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Tfc and Factory/Breaker packaged validation separately')
+    if (providers.gradleProperty('include_fluid_gesture_native_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Legacy source-runtime fluid fixture cannot accompany Tfc packaged validation')
+    if (providers.gradleProperty('include_fluid_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Tfc and Funnel/Accumulator packaged validation separately')
+    ['include_solar_packaged_validation','include_freezer_packaged_validation','include_manual_packaged_validation',
+     'include_tfc_milking_runtime','include_tfc_crossover_runtime','include_milking_packaged_validation','include_smelter_packaged_validation'].each { name ->
+        if (providers.gradleProperty(name).map { it.toBoolean() }.getOrElse(false))
+            throw new GradleException('Tfc packaged validation requires an isolated profile: '+name)
+    }
+    sourceSets.create('tfcPackagedValidation') {
+        java.srcDir('src/tfcPackagedValidation/java')
+        compileClasspath += files(tfcRuntimeJar) + sourceSets.main.compileClasspath
+        runtimeClasspath = output + configurations.getByName(runtimeClasspathConfigurationName) +
+                // Use the dependency configuration, not a filtered SourceSet collection:
+                // subtraction removes files but can retain main.output's builtBy edges.
+                configurations.getByName(sourceSets.main.runtimeClasspathConfigurationName) + files(tfcRuntimeJar)
+    }
+    tasks.named('compileTfcPackagedValidationJava').configure { dependsOn(tasks.named('verifyTfcMilkingDependencies')) }
+}
+// Explicitly enabled separate test mod; no presentation selector is set.
+if (tfcPackagedValidation) {
+    def harness = sourceSets.tfcPackagedValidation
+    neoForge.mods.create('iedctr_tfc_validation') { sourceSet(harness) }
+    neoForge.runs.configureEach { loadedMods = [neoForge.mods.getByName(project.mod_id)] }
+    ['tfcPackagedDefaultClient'].each { runName ->
+        neoForge.runs.create(runName) {
+            client()
+            sourceSet = harness
+            loadedMods = [neoForge.mods.getByName('iedctr_tfc_validation')]
+            disableIdeRun()
+            taskBefore(tasks.named('tfcPackagedValidationClasses'))
+            // The verifier is registered below; no source-output fallback is permitted.
+        }
+    }
+    def verifyPackagedRuntime = tasks.register('verifyTfcPackagedRuntime') {
+        group = 'verification'
+        dependsOn(tasks.named('verifyTfcMilkingDependencies'), tasks.named('tfcPackagedValidationClasses'))
+        doLast {
+            def jarFile = tfcRuntimeJar.get().canonicalFile
+            def sha256 = { file -> java.security.MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
+            if (sha256(jarFile) != '46970958a7510d22fe88c8e21ea1390adfc5ca6fcc052419c5b478854053464a') {
+                throw new GradleException('Supplied runtime JAR differs from the normal JAR built from this exact source checkout')
+            }
+            def classpath = harness.runtimeClasspath.files.collect { it.canonicalFile }
+            def mainOutputs = sourceSets.main.output.files.collect { it.canonicalFile }
+            // Resolve for comparison only, never attach this source-output collection to a task.
+            def expectedDependencies = (sourceSets.main.runtimeClasspath - sourceSets.main.output).files.collect { it.canonicalFile } as Set
+            def actualDependencies = configurations.getByName(sourceSets.main.runtimeClasspathConfigurationName).files.collect { it.canonicalFile } as Set
+            if (actualDependencies != expectedDependencies)
+                throw new GradleException('Dependency-only runtime omitted or added main runtime files')
+            if (!classpath.contains(jarFile) || classpath.any { mainOutputs.contains(it) }) {
+                throw new GradleException('Packaged validation requires the exact JAR and forbids main output on runtime classpath')
+            }
+            def harnessPackages = [] as Set
+            harness.output.classesDirs.asFileTree.matching { include '**/*.class' }.files.each {
+                def root = harness.output.classesDirs.files.find { dir -> it.toPath().startsWith(dir.toPath()) }
+                def relative = root.toPath().relativize(it.toPath()).toString().replace('\\', '/')
+                harnessPackages.add(relative.contains('/') ? relative.substring(0, relative.lastIndexOf('/')) : '')
+            }
+            new java.util.zip.ZipFile(jarFile).withCloseable { zip ->
+                def entryNames = [] as Set
+                zip.entries().each { entry ->
+                    if (!entryNames.add(entry.name)) throw new GradleException('Duplicate entries in normal JAR')
+                    if (entry.name.startsWith('com/oblixorprime/iedctrtest/') || entry.name.contains('client/validation/NativeTfcMilkingRecoveryValidation') || entry.name.contains('client/validation/NativeMooshroomMilkingValidation')) {
+                        throw new GradleException('Validation fixture leaked into production JAR')
+                    }
+                    if (entry.name.endsWith('.class') && entry.name.contains('/') &&
+                            harnessPackages.contains(entry.name.substring(0, entry.name.lastIndexOf('/')))) {
+                        throw new GradleException('Harness and production JAR contain a split package')
+                    }
+                }
+            }
+            ['tfcPackagedDefaultClient'].each { name ->
+                def run = neoForge.runs.getByName(name)
+                if (run.sourceSet.get() != harness || run.loadedMods.get()*.name != ['iedctr_tfc_validation']) {
+                    throw new GradleException('Packaged validation must load only the separate harness development mod')
+                }
+            }
+            def report = layout.buildDirectory.file('reports/tfc-packaged-runtime.json').get().asFile
+            report.parentFile.mkdirs()
+            report.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson([
+                    jar_path: jarFile.path,
+                    jar_sha256: java.security.MessageDigest.getInstance('SHA-256').digest(jarFile.bytes).encodeHex().toString(),
+                    runtime_classpath: classpath*.path, forbidden_main_outputs: mainOutputs*.path,
+                    harness_outputs: harness.output.files.collect { it.canonicalPath },
+                    loaded_development_mods: ['iedctr_tfc_validation'],
+                    fixture_free_jar: true, split_packages: false]))
+        }
+    }
+    ['tfcPackagedDefaultClient'].each { name ->
+        neoForge.runs.getByName(name).taskBefore(verifyPackagedRuntime)
+    }
+}

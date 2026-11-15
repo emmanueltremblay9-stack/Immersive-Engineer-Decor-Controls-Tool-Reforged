@@ -285,7 +285,8 @@ class MilkingEvidenceTest(unittest.TestCase):
             dest=Path(tmp)
             manifest=root/'docs/testing/milking-qualification/production-pins.json'
             files=json.loads(manifest.read_text())['sha256']
-            for name in [str(manifest.relative_to(root)),*files]:
+            from hopper_fidelity_integration import BLOCKS_PATH
+            for name in [str(manifest.relative_to(root)),*files,BLOCKS_PATH]:
                 out=dest/name;out.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(root/name,out)
             target=dest/next(iter(files));target.write_bytes(target.read_bytes()+b'changed')
             with self.assertRaisesRegex(SmokeFailure,'preservation'):check_preservation(dest)

@@ -29,3 +29,7 @@ A green diagnostic means evidence collected and interactions acknowledged, **not
 that issue70 is reproduced or fixed. Independently inspect the OFF/ON images and logs
 before proposing any minimal IEDCTR rendering correction. No new correction, closure,
 merge, external reporter message or release is included.
+
+## Requalification after PR195
+
+The current workflow pins ordinary JAR `46970958a7510d22fe88c8e21ea1390adfc5ca6fcc052419c5b478854053464a` on main `99c089ff058fd03ec9186df1392b88be3f53d578`. The earlier `53ff` observations above are historical, not evidence for these bytes. Production, observer, isolation and fail-closed validation are unchanged. Fresh OFF/ON execution is required; no compatibility fix or release acceptance is implied.
