@@ -1,10 +1,31 @@
 import copy
+import hashlib
+import tempfile
 from pathlib import Path
 import unittest
 from unittest.mock import patch
-from modernui_native_diagnostic import validate,MODERNUI_SHA512,SmokeFailure
+from modernui_native_diagnostic import validate,MODERNUI_SHA512,SmokeFailure,bind_built_jar
 ROOT=Path(__file__).resolve().parents[2]
 class ModernUIProofTests(unittest.TestCase):
+    def test_binding_precedes_init_and_rejects_unknown_artifact(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project=Path(directory);libs=project/'build/libs';libs.mkdir(parents=True)
+            jar=libs/'normal.jar';jar.write_bytes(b'candidate');digest=hashlib.sha256(jar.read_bytes()).hexdigest()
+            env={}
+            self.assertEqual(bind_built_jar(project,digest,env),jar.resolve())
+            self.assertEqual(env,dict(IEDCTR_EXPECTED_MOD_JAR=str(jar.resolve()),IEDCTR_EXPECTED_MOD_JAR_SHA256=digest))
+            rejected={}
+            with self.assertRaises(SmokeFailure):bind_built_jar(project,'0'*64,rejected)
+            self.assertEqual(rejected,{})
+            (libs/'duplicate.jar').write_bytes(jar.read_bytes())
+            with self.assertRaises(SmokeFailure):bind_built_jar(project,digest,{})
+        driver=(ROOT/'tools/validation/modernui_native_diagnostic.py').read_text()
+        self.assertLess(driver.index("require(code==0 and not expired,'Normal JAR build failed')"),driver.index('jar=bind_built_jar('))
+        self.assertLess(driver.index('jar=bind_built_jar('),driver.index("base+=['-Pinclude_factory"))
+        self.assertLess(driver.index("base+=['-Pinclude_factory"),driver.index("base+['verifyFactoryPlacerPackagedRuntime']"))
+        self.assertIn("'-Pfactory_placer_runtime_jar='+str(jar)",driver)
+        self.assertIn("Path(report['jar_path']).resolve()==jar",driver)
+
     def proof(self,on):
         names=['editor','machine-container','vanilla-chest']
         screens=['com.oblixorprime.engineersdecorreforged.client.LabeledCrateEditScreen','com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallElectricalFurnaceScreen','net.minecraft.client.gui.screens.inventory.ContainerScreen']

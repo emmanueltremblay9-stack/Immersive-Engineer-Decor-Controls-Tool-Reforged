@@ -47,6 +47,16 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,additional):
         png(game/row['capture'],width,height,row.get('capture_sha256'))
 
 
+def bind_built_jar(project, expected_hash, env):
+    """Bind verified artifact before Gradle evaluates any diagnostic init properties."""
+    matches = [p.resolve() for p in (project/'build/libs').glob('*.jar')
+               if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == expected_hash]
+    require(len(matches) == 1, 'Expected exactly one built normal JAR matching candidate hash')
+    jar = matches[0]
+    env.update(IEDCTR_EXPECTED_MOD_JAR=str(jar), IEDCTR_EXPECTED_MOD_JAR_SHA256=expected_hash)
+    return jar
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--additional-blur',choices=['on','off'],required=True)
@@ -123,14 +133,17 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
     try:
         code,expired=run_bounded(base+['jar'],project,env,evidence/'jar.log',args.prepare_timeout)
         require(code==0 and not expired,'Normal JAR build failed')
-        base+=['-Pinclude_factory_placer_native_validation=true','--init-script',str(init)]
+        jar=bind_built_jar(project,args.expected_jar_sha256,env)
+        jar_sha=args.expected_jar_sha256
+        base+=['-Pinclude_factory_placer_native_validation=true',
+               '-Pfactory_placer_runtime_jar='+str(jar),'--init-script',str(init)]
         code,expired=run_bounded(base+['verifyFactoryPlacerPackagedRuntime'],project,env,evidence/'package.log',args.prepare_timeout)
         require(code==0 and not expired,'Separate harness/classpath validation failed')
         report=json.loads((project/'build/reports/factory-placer-packaged-runtime.json').read_text())
-        jar=Path(report['jar_path']);jar_sha=hashlib.sha256(jar.read_bytes()).hexdigest()
-        require(jar_sha==report['jar_sha256']==args.expected_jar_sha256,'Exact candidate JAR hash differs')
+        require(Path(report['jar_path']).resolve()==jar,'Verified runtime path differs from bound normal JAR')
+        require(hashlib.sha256(jar.read_bytes()).hexdigest()==report['jar_sha256']==jar_sha,
+                'Exact candidate JAR hash differs')
         (evidence/'packaged-runtime-classpath.json').write_text(json.dumps(report,indent=2))
-        env.update(IEDCTR_EXPECTED_MOD_JAR=str(jar.resolve()),IEDCTR_EXPECTED_MOD_JAR_SHA256=jar_sha)
         gradle=base
         code,expired=run_bounded(gradle+['prepareCrateLabelPackagedClientRun'],project,env,evidence/'prepare.log',args.prepare_timeout)
         require(code==0 and not expired,'Native preparation failed')
