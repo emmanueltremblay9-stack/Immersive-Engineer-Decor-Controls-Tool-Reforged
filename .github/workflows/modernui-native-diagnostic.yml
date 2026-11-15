@@ -36,7 +36,7 @@ jobs:
       - name: Validate diagnostic proof gates
         run: python -m unittest discover -s tools/validation -p 'test_modernui*.py' -v
       - name: Observe pinned ordinary JAR and official ModernUI in real client
-        run: python tools/validation/modernui_native_diagnostic.py --additional-blur '${{ matrix.additional_blur }}' --expected-jar-sha256 21a2a4691875955b5ea21b05b11efad0133cbb0b2dbb1b9eec975dd169ec21c1
+        run: python tools/validation/modernui_native_diagnostic.py --additional-blur '${{ matrix.additional_blur }}' --expected-jar-sha256 1198f2b5f21a38e42dd2cbbc1888f9f51f6924b8d637ae8f7ae6b9b227764006
       - name: Retain unaltered captures, loaded settings and logs
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
