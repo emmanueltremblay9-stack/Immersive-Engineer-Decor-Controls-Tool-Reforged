@@ -111,6 +111,9 @@ public final class EngineersDecorReforged {
 
    public static boolean shouldShowInCreativeTab(DeferredItem<? extends Item> item) {
       String name = item.getId().getPath();
+      if (name.equals("vertical_steel_double_t_support")) {
+         return false;
+      }
       if (ControlsModule.isControlContent(name)) {
          return ControlsModule.shouldShowInCreativeTab(name);
       }

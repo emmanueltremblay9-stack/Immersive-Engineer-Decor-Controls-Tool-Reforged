@@ -1,6 +1,5 @@
 Mineral Smelter
 Compact processing unit
-<&recipe>The Mineral Smelter handles high-heat mineral processing in a compact workshop footprint.<br>
-<br>
-Usage: Feed mineral blocks and power for high-heat melting work.<br>
-
+<&recipe>Choose Lava, Magma or Obsidian mode in the screen. Accepted mineral blocks, such as stone or cobblestone, heat into 1,000 mB lava in Lava mode, or one Magma Block in Magma mode. Obsidian mode cools a 1,000 mB lava batch into one Obsidian without consuming water. Changing modes during a batch queues the next mode.<br>
+Feed items and lava from above, extract items and lava below, and supply FE at the rear. The tank holds 4,000 mB of lava. During Obsidian cooling the committed 1,000 mB is reserved; only surplus lava can be drained. The old extra slot is not a fuel slot. Avoid touching the machine while hot.<br>
+In Obsidian mode, an existing 1,000 mB lava batch in the tank is cooled first. Without that amount, a valid mineral input can be heated into lava and then cooled into Obsidian in the same batch. Redstone pauses heating; committed cooling and downward output can continue without FE.<br>

@@ -1,10 +1,13 @@
 package com.oblixorprime.engineersdecorreforged.block;
 
+import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -37,8 +40,16 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    private static final VoxelShape CEILING_END=Shapes.or(
       Block.box(5,16,15,11,27,16),Block.box(9,16,12,10,27,15),
       Block.box(6,16,12,7,27,15),Block.box(5,16,11,11,27,12));
+   // A two-pixel lap bridges the existing wall half-cross into a horizontal beam's underside/side flange.
+   private static final VoxelShape[][] SIDE_JOIN_BRIDGES=new VoxelShape[4][2];
    private static final VoxelShape[][][] SHAPES=new VoxelShape[2][4][8];
    static {
+      VoxelShape positiveBridge=Block.box(10,10,10,16,12,12),negativeBridge=Block.box(0,10,10,6,12,12);
+      for(int facing=0;facing<4;facing++) {
+         SIDE_JOIN_BRIDGES[facing][0]=positiveBridge;
+         SIDE_JOIN_BRIDGES[facing][1]=negativeBridge;
+         positiveBridge=clockwise(positiveBridge);negativeBridge=clockwise(negativeBridge);
+      }
       for(int mount=0;mount<2;mount++)for(int joins=0;joins<8;joins++) {
          VoxelShape shape=NORTH;
          if((joins&1)!=0)shape=Shapes.or(shape,inWallHalfTurn(POSITIVE));
@@ -50,7 +61,8 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    }
 
    public VerticalDoubleTSupportBlock(Properties properties) {
-      super(properties.lightLevel(state->Math.max(NativeFluidloggedBlock.light(state),SupportLights.attached(state)?14:0)));
+      // The tiny ceiling-side lap depends on the directly adjacent beam type, so do not cache this shape by BlockState alone.
+      super(properties.dynamicShape().lightLevel(state->Math.max(NativeFluidloggedBlock.light(state),SupportLights.attached(state)?14:0)));
       registerDefaultState(NativeFluidloggedBlock.dry(defaultBlockState()).setValue(FACING,Direction.NORTH)
          .setValue(WALL_HORIZONTAL,false).setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false)
          .setValue(CEILING_JOIN,false).setValue(SupportLights.ATTACHED,false));
@@ -67,22 +79,33 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    @Override public BlockState getStateForPlacement(BlockPlaceContext context) {
       Direction face=context.getClickedFace();
       if(!face.getAxis().isHorizontal())return null;
-      var hit=context.getClickLocation();var pos=context.getClickedPos();
-      double horizontal=face.getAxis()==Direction.Axis.Z?hit.x-pos.getX():hit.z-pos.getZ();
-      var state=defaultBlockState().setValue(FACING,face).setValue(WALL_HORIZONTAL,horizontalAt(horizontal,hit.y-pos.getY()));
+      var pos=context.getClickedPos();
+      var state=defaultBlockState().setValue(FACING,face).setValue(WALL_HORIZONTAL,false);
       return NativeFluidloggedBlock.placement(connected(state,context.getLevel(),pos),context);
+   }
+   @Override public ItemStack getCloneItemStack(LevelReader level,BlockPos pos,BlockState state) {
+      return new ItemStack(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get());
    }
    private static Direction positive(BlockState state) {
       // In-wall clockwise rotation maps the former right arm to the lower arm.
       return state.getValue(WALL_HORIZONTAL)?Direction.DOWN:state.getValue(FACING).getClockWise();
    }
-   private static boolean compatible(BlockState state,BlockState neighbor) {
-      return TreatedWoodBeamBlock.orthogonalWall(state,neighbor);
+   /** A wall-mounted support can continue into a directly touching horizontal steel or wood beam. */
+   public static boolean connectsToCeilingBeam(BlockState wallState,BlockState ceilingState,Direction direction) {
+      if(!(wallState.getBlock() instanceof VerticalDoubleTSupportBlock)
+         ||!direction.getAxis().isHorizontal())return false;
+      Direction arm=positive(wallState);
+      if(direction!=arm&&direction!=arm.getOpposite())return false;
+      return ceilingState.getBlock() instanceof PortedBlocks.SupportBlock||TreatedWoodBeamBlock.ceilingBeam(ceilingState);
+   }
+   private static boolean compatible(BlockState state,BlockState neighbor,Direction direction) {
+      return TreatedWoodBeamBlock.orthogonalWall(state,neighbor)||connectsToCeilingBeam(state,neighbor,direction);
    }
    private static BlockState connected(BlockState state,BlockGetter level,BlockPos pos) {
       Direction direction=positive(state);
-      return state.setValue(JOIN_NEGATIVE,compatible(state,level.getBlockState(pos.relative(direction.getOpposite()))))
-         .setValue(JOIN_POSITIVE,compatible(state,level.getBlockState(pos.relative(direction))))
+      Direction negative=direction.getOpposite();
+      return state.setValue(JOIN_NEGATIVE,compatible(state,level.getBlockState(pos.relative(negative)),negative))
+         .setValue(JOIN_POSITIVE,compatible(state,level.getBlockState(pos.relative(direction)),direction))
          .setValue(CEILING_JOIN,!state.getValue(WALL_HORIZONTAL)&&alignedCeiling(state,level.getBlockState(pos.above())));
    }
    private static boolean alignedCeiling(BlockState state,BlockState above) {
@@ -108,7 +131,15 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    @Override public VoxelShape supportShape(BlockState state,BlockGetter level,BlockPos pos) {
       int facing=switch(state.getValue(FACING)){case EAST->1;case SOUTH->2;case WEST->3;default->0;};
       int joins=(state.getValue(JOIN_NEGATIVE)?1:0)|(state.getValue(JOIN_POSITIVE)?2:0)|(state.getValue(CEILING_JOIN)?4:0);
-      return SHAPES[state.getValue(WALL_HORIZONTAL)?1:0][facing][joins];
+      VoxelShape shape=SHAPES[state.getValue(WALL_HORIZONTAL)?1:0][facing][joins];
+      if(!state.getValue(WALL_HORIZONTAL)) {
+         Direction positive=positive(state),negative=positive.getOpposite();
+         if(state.getValue(JOIN_POSITIVE)&&connectsToCeilingBeam(state,level.getBlockState(pos.relative(positive)),positive))
+            shape=Shapes.or(shape,SIDE_JOIN_BRIDGES[facing][0]);
+         if(state.getValue(JOIN_NEGATIVE)&&connectsToCeilingBeam(state,level.getBlockState(pos.relative(negative)),negative))
+            shape=Shapes.or(shape,SIDE_JOIN_BRIDGES[facing][1]);
+      }
+      return shape.optimize();
    }
    @Override protected VoxelShape getCollisionShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context){return supportShape(state,level,pos);}
    @Override public boolean onDestroyedByPlayer(BlockState state,net.minecraft.world.level.Level level,BlockPos pos,net.minecraft.world.entity.player.Player player,boolean harvest,FluidState fluid){

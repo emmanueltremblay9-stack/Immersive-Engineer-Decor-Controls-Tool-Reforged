@@ -1,7 +1,7 @@
 Metal Sliding Door
 Industrial access point
-<&recipe>This block provides a rugged access point for service rooms, shafts, roofs, and machine enclosures.<br>
+<&recipe>The Metal Sliding Door opens manually or with redstone and can form a matching pair.<br>
 <br>
-Usage: Install it where the build needs a controlled maintenance opening.<br>
-
-
+Usage: Place two doors side by side at the same height and facing the same direction. Right-click either door, at either height, to open or close the pair. A third adjacent door is not added to that pair.<br>
+<br>
+Power reaching either paired door holds both open. They close when the power is removed; clicking cannot close a powered pair.

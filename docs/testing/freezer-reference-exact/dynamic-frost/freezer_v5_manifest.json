@@ -1,0 +1,392 @@
+{
+  "schema": "IEDCTR-freezer-V5-frost-artifact-candidate-v3-organic-p2p3",
+  "status": "VISUAL_CANDIDATE_NOT_GAME_VALIDATED",
+  "source": {
+    "file": "background_canonical.png",
+    "commit": "c4262afb5ef1ba579964e0199baa9c89ed65af17",
+    "sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "pixel_difference_vs_previous_observed_rgba": 0
+  },
+  "scope": {
+    "machine": "Small Water Freezer",
+    "edits": "interior of glass chamber only",
+    "rendering": "RGBA PNG full 1254x1254 canvas"
+  },
+  "geometry": {
+    "mask": "freezer_v5_chamber_mask_alpha.png",
+    "interior_inset_bbox_xyxy": [
+      438,
+      369,
+      817,
+      592
+    ],
+    "nominal_corner_radius_px": 48,
+    "feather_actual_support_xyxy": [
+      432,
+      363,
+      823,
+      598
+    ],
+    "bbox438_817_is_construction_only": true,
+    "hinge_exclusion_y": [
+      430,
+      471
+    ],
+    "left_keepout_x_lt": 449,
+    "right_keepout_x_ge": 801,
+    "tooltip_rectangle_not_used": [
+      430,
+      370,
+      390,
+      230
+    ],
+    "mask_note": "Mask construction bbox is NOT its feather support; measured nonzero support [432,363,823,598]. No mask pixels changed by organic correction.",
+    "mask_nonzero_alpha_support_xyxy_exclusive": [
+      432,
+      363,
+      823,
+      598
+    ],
+    "construction_geometry_only_xyxy": [
+      438,
+      369,
+      817,
+      592
+    ],
+    "note": "Support 432..822 inclusive in X and 363..597 inclusive Y, exclusive bounds [432,363,823,598]. Construction box is NOT alpha support."
+  },
+  "comparison_vs_v1": {
+    "original_working_mask_bbox_xyxy": [
+      412,
+      359,
+      843,
+      592
+    ],
+    "old_mask_pixels_removed_completely": 13946,
+    "new_pixels_added_outside_old_mask": 1263,
+    "defect": "old mask crossed hinge metal",
+    "correction": "new conservative inset with hinge guards and depth-textured clean chamber"
+  },
+  "composition": {
+    "base": "freezer_v5_chamber_clean_base.png",
+    "overlay_pattern": "freezer_v5_frost_overlay_phase{phase}.png",
+    "phase_range": [
+      0,
+      4
+    ],
+    "order": [
+      "base",
+      "corresponding_overlay"
+    ],
+    "source_of_state": "existing server synchronized phase; no local simulation",
+    "stoppage": "Server redstone/missing FE resets progress to 0. Render synchronized phase 0 immediately; no local delay, hold, or interpolation.",
+    "organic_revision": "Only phase2 and phase3 frost gate replaced with spatially varying smooth organic reveal; original mask and clean base unchanged.",
+    "phase4": "Transitional server phase; resets to phase 0 within tick 180. This overlay does not imply a durable natural display state."
+  },
+  "reconstruction": {
+    "new_artwork": true,
+    "description": "Clean chamber depth texture and derived frost overlays are new reconstructions. Occluded original layers were not recoverable. External static frost remains unchanged."
+  },
+  "ownership": {
+    "machine_slots_visible": [
+      0,
+      2
+    ],
+    "slot_reserved": 1,
+    "player_inventory": 27,
+    "hotbar": 9,
+    "protocol": 39,
+    "energy_segments": 11,
+    "server_cycle_ticks": 180,
+    "server_phase": [
+      0,
+      4
+    ],
+    "phase4": "transient; server resets phase to 0 within tick 180",
+    "redstone_or_missing_fe": "server resets progress to 0",
+    "status_redstone": "server-synchronized",
+    "new_mechanics": false
+  },
+  "verification": {
+    "source_sha256": "PASS",
+    "source_pixel_rgba_equal_prior": true,
+    "outside_mask_rgba": "PASS",
+    "phase_composites": [
+      {
+        "name": "freezer_v5_composite_phase0.png",
+        "outside_mask_differing_pixels": 0
+      },
+      {
+        "name": "freezer_v5_composite_phase1.png",
+        "outside_mask_differing_pixels": 0
+      },
+      {
+        "name": "freezer_v5_composite_phase2.png",
+        "outside_mask_differing_pixels": 0
+      },
+      {
+        "name": "freezer_v5_composite_phase3.png",
+        "outside_mask_differing_pixels": 0
+      },
+      {
+        "name": "freezer_v5_composite_phase4.png",
+        "outside_mask_differing_pixels": 0
+      }
+    ],
+    "hinges": {
+      "left_hinge": {
+        "hinge_guard_xyxy": [
+          378,
+          432,
+          442,
+          467
+        ],
+        "base_rgba_unchanged": true,
+        "phase4_rgba_unchanged": true
+      },
+      "right_hinge": {
+        "hinge_guard_xyxy": [
+          811,
+          431,
+          864,
+          467
+        ],
+        "base_rgba_unchanged": true,
+        "phase4_rgba_unchanged": true
+      }
+    },
+    "314px": "RENDERED_AUTHOR_REVIEW",
+    "1280x260": "RENDERED_AUTHOR_REVIEW",
+    "minecraft": "NOT_PERFORMED",
+    "independent_visual_approval": "NOT_PERFORMED",
+    "organic_phase2_phase3_static_checks": "PASS; nearest and Lanczos previews generated; visual review is author-side, no game capture.",
+    "frost_revision_checks": {
+      "0": {
+        "outside_mask_rgba_difference_pixels": 0,
+        "overlay_alpha_outside_mask_nonzero": 0,
+        "hinge_rgba_difference_pixels": {
+          "left": 0,
+          "right": 0
+        },
+        "changed_rgba_pixels_vs_previous_candidate": 0,
+        "overlay_sha256_before": "eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664",
+        "overlay_sha256_after": "eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664",
+        "composite_sha256_before": "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c",
+        "composite_sha256_after": "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c"
+      },
+      "1": {
+        "outside_mask_rgba_difference_pixels": 0,
+        "overlay_alpha_outside_mask_nonzero": 0,
+        "hinge_rgba_difference_pixels": {
+          "left": 0,
+          "right": 0
+        },
+        "changed_rgba_pixels_vs_previous_candidate": 0,
+        "overlay_sha256_before": "5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b",
+        "overlay_sha256_after": "5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b",
+        "composite_sha256_before": "ec219d17d56806eaa9dbd7b10f9be2bdfff2f584695405577f370785a83eaffa",
+        "composite_sha256_after": "ec219d17d56806eaa9dbd7b10f9be2bdfff2f584695405577f370785a83eaffa"
+      },
+      "2": {
+        "outside_mask_rgba_difference_pixels": 0,
+        "overlay_alpha_outside_mask_nonzero": 0,
+        "hinge_rgba_difference_pixels": {
+          "left": 0,
+          "right": 0
+        },
+        "changed_rgba_pixels_vs_previous_candidate": 12812,
+        "overlay_sha256_before": "1ed5617ec0b1dcb207767468b12d3b7203c8c1506522ec5681b6a3390c377b02",
+        "overlay_sha256_after": "ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898",
+        "composite_sha256_before": "4dc458822c4ab7f78cccc113e2c87bcc995ffd80116b7d8d3043d0be4f6abe28",
+        "composite_sha256_after": "6ac57be6cb97dd870ca60763d232e5c3945fb05681f190aa885a25b6ddb3f28e"
+      },
+      "3": {
+        "outside_mask_rgba_difference_pixels": 0,
+        "overlay_alpha_outside_mask_nonzero": 0,
+        "hinge_rgba_difference_pixels": {
+          "left": 0,
+          "right": 0
+        },
+        "changed_rgba_pixels_vs_previous_candidate": 7138,
+        "overlay_sha256_before": "039fc2176418846820ee2583480122206857aa702f1036af7539ee4a2dab590f",
+        "overlay_sha256_after": "3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49",
+        "composite_sha256_before": "e9839ed1091b6517412d68b376b17826042ddb42edad6d125e4d388c50bdab6b",
+        "composite_sha256_after": "157803ebbccb9b7d8eb5141eb04527aceeee72aa97f565bc2de20ddaec19615b"
+      },
+      "4": {
+        "outside_mask_rgba_difference_pixels": 0,
+        "overlay_alpha_outside_mask_nonzero": 0,
+        "hinge_rgba_difference_pixels": {
+          "left": 0,
+          "right": 0
+        },
+        "changed_rgba_pixels_vs_previous_candidate": 0,
+        "overlay_sha256_before": "b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0",
+        "overlay_sha256_after": "b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0",
+        "composite_sha256_before": "c8ac90e18bf74ee78622ff34179f3689f6d432bb9117fe4b75838f9d09574f3d",
+        "composite_sha256_after": "c8ac90e18bf74ee78622ff34179f3689f6d432bb9117fe4b75838f9d09574f3d"
+      }
+    }
+  },
+  "visual_reservations": [
+    "The edge frost existing outside the new inset remains static and may appear frosty even in phase 0.",
+    "The glass interior is a reconstructed depth texture; it is not a recovered original layer.",
+    "The inset is deliberately conservative; its exclusion around hinges produces static frost islands at the immediate inner margin."
+  ],
+  "reproduction": {
+    "command": "python reproduce.py background_canonical.png .",
+    "requirements": [
+      "Python 3",
+      "Pillow",
+      "numpy",
+      "scipy"
+    ],
+    "repeatability": "Deterministic PRNG seed 164; source hash enforced"
+  },
+  "files": [
+    {
+      "file": "README_QA.md",
+      "bytes": 2025,
+      "sha256": "e7da83da22c0e9240d5e6363a4153185e77b78d412257d0ab28068423aa68886"
+    },
+    {
+      "file": "background_canonical.png",
+      "bytes": 2769644,
+      "sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46"
+    },
+    {
+      "file": "freezer_v5_1280x260_chamber_review.png",
+      "bytes": 199802,
+      "sha256": "46a3cca52ff686e8c62cc7a5459b64a572cedb4d1fd034c7c1ddc3b43a53cb53"
+    },
+    {
+      "file": "freezer_v5_1280x260_chamber_review_nearest.png",
+      "bytes": 195902,
+      "sha256": "53e232bc09cefb0b36b84b6036de6dc1f9b2628d0d7a8c297657cc099b5f1421"
+    },
+    {
+      "file": "freezer_v5_314px_contact_sheet.png",
+      "bytes": 247996,
+      "sha256": "3af601d8d3b5c5c2c2320c1e4528c8ab82100b47539af63427e60a62f6985703"
+    },
+    {
+      "file": "freezer_v5_314px_contact_sheet_nearest.png",
+      "bytes": 254477,
+      "sha256": "3a97c978ed6ce38f7107ae96d7741c59315916818fd7c0f33b19db4d7cd3d5ff"
+    },
+    {
+      "file": "freezer_v5_chamber_clean_base.png",
+      "bytes": 2829097,
+      "sha256": "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c"
+    },
+    {
+      "file": "freezer_v5_chamber_mask_alpha.png",
+      "bytes": 8068,
+      "sha256": "625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0"
+    },
+    {
+      "file": "freezer_v5_composite_phase0.png",
+      "bytes": 2829097,
+      "sha256": "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c"
+    },
+    {
+      "file": "freezer_v5_composite_phase1.png",
+      "bytes": 2850430,
+      "sha256": "ec219d17d56806eaa9dbd7b10f9be2bdfff2f584695405577f370785a83eaffa"
+    },
+    {
+      "file": "freezer_v5_composite_phase2.png",
+      "bytes": 2888133,
+      "sha256": "6ac57be6cb97dd870ca60763d232e5c3945fb05681f190aa885a25b6ddb3f28e"
+    },
+    {
+      "file": "freezer_v5_composite_phase3.png",
+      "bytes": 2913301,
+      "sha256": "157803ebbccb9b7d8eb5141eb04527aceeee72aa97f565bc2de20ddaec19615b"
+    },
+    {
+      "file": "freezer_v5_composite_phase4.png",
+      "bytes": 2937576,
+      "sha256": "c8ac90e18bf74ee78622ff34179f3689f6d432bb9117fe4b75838f9d09574f3d"
+    },
+    {
+      "file": "freezer_v5_detail_left_hinge_3x.png",
+      "bytes": 44648,
+      "sha256": "0d654f259831be5f4d3170e5de3aef01c93f3b1b77b9b7733c6d575f329cfc77"
+    },
+    {
+      "file": "freezer_v5_detail_right_hinge_3x.png",
+      "bytes": 42637,
+      "sha256": "08db846a5df023f42e4e30e7bb98cf9ea6f4dc4e99597967658695f40f3c63ad"
+    },
+    {
+      "file": "freezer_v5_frost_overlay_phase0.png",
+      "bytes": 2257644,
+      "sha256": "eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664"
+    },
+    {
+      "file": "freezer_v5_frost_overlay_phase1.png",
+      "bytes": 2267599,
+      "sha256": "5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b"
+    },
+    {
+      "file": "freezer_v5_frost_overlay_phase2.png",
+      "bytes": 2278567,
+      "sha256": "ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898"
+    },
+    {
+      "file": "freezer_v5_frost_overlay_phase3.png",
+      "bytes": 2286818,
+      "sha256": "3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49"
+    },
+    {
+      "file": "freezer_v5_frost_overlay_phase4.png",
+      "bytes": 2296319,
+      "sha256": "b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0"
+    },
+    {
+      "file": "freezer_v5_mask_edge_proof.png",
+      "bytes": 2967957,
+      "sha256": "5177bbab8c95830ea8ed2a3c148f14850aba59c0bd61575645f916b05fc8a0bc"
+    },
+    {
+      "file": "freezer_v5_phase2_before_after_detail.png",
+      "bytes": 180519,
+      "sha256": "a4caf538814cf1fb0f7bab96f71fdbed233a51fa594e17ae0db6961545b0096d"
+    },
+    {
+      "file": "freezer_v5_phase2_before_after_nearest.png",
+      "bytes": 54990,
+      "sha256": "04d9982d55a8ea178ffb5d057e80eec2ea8dbda05e1fcc17b97c1a0bfa384b36"
+    },
+    {
+      "file": "freezer_v5_phase3_before_after_detail.png",
+      "bytes": 197426,
+      "sha256": "9a8d135b30a27fa5b95cb0871561e151de30c3220fd91a6ff8fbb54628a639c8"
+    },
+    {
+      "file": "freezer_v5_phase3_before_after_nearest.png",
+      "bytes": 58900,
+      "sha256": "421e345be79adb4ccfbd6c3069fc097c99545b38d75d6ae5a40ded9f242d489b"
+    },
+    {
+      "file": "freezer_v5_previous_candidate_mask.png",
+      "bytes": 4375,
+      "sha256": "ece7b298e873d384373d7d93123f528368b5c5a1d78b17cf9adbb85d58ff9173"
+    },
+    {
+      "file": "freezer_v5_source_observed.png",
+      "bytes": 3662382,
+      "sha256": "c8568423a2b77085dc1ee7a6d92690ed203b105127a97a5046a2b4df2e316b7a"
+    },
+    {
+      "file": "reproduce.py",
+      "bytes": 16229,
+      "sha256": "8e290f45657c14d5d9784b8a3df1ee079d370c28e2c804b35d2a3acc42afa6e3"
+    }
+  ]
+}

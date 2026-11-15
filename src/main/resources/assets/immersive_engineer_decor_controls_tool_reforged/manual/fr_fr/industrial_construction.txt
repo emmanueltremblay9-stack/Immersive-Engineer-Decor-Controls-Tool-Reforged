@@ -27,6 +27,10 @@ Lumière encastrée
 <&iron_inset_light>Ce bloc fournit un éclairage industriel compact aux couloirs, passerelles et zones de travail.<br>
 <br>
 Utilisation : fixez-le aux plafonds, aux murs ou aux bords qui nécessitent un éclairage de travail clair.<br>
+<br>
+Pour éclairer une passerelle en acier surélevée simple, utilisez une lumière encastrée sur sa face inférieure. La pose coûte une lampe en Survie. Utilisez une autre lumière encastrée sous la passerelle pour retirer la lampe posée ; une lampe payée est rendue hors du mode Créatif. Les variantes avec support ou cadre n'acceptent pas une nouvelle lampe par ce geste.<br>
+Vous pouvez aussi viser directement la lampe par-dessous et la miner avec un outil adapté en laissant la passerelle en place. Visez ailleurs pour miner la passerelle. Les règles normales de permission et de butin s'appliquent ; les lampes anciennes sans crédit ou posées en Créatif ne créent pas de remboursement. Ajouter un poteau après la pose conserve la lampe ; son retrait révèle à nouveau le support actuel.<br>
+Les lumières encastrées peuvent aussi se fixer sur une face interne compatible d'un support double T. Consultez Support en acier double T pour les règles de pose et de retrait séparé.<br>
 <np>
 Pancarte « Avertissement générique »
 Signalisation de danger

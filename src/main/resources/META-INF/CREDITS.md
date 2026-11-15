@@ -51,3 +51,9 @@ Source reference:
 - Design reference: [GUI Architect Designer DEV PR #3](https://github.com/emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-DEV/pull/3), observed source commit `42215126e1c777073644658518af1ef7840b00c9`.
 - The panel crop is `(259, 614, 422, 443)` from the source image and is mapped into the 209×235 Freezer menu. Example item art, text, values, and gauge fills are replaced with live menu data.
 - No separate artwork license was present in the accessible source material; this integration follows the project owner’s explicit request.
+
+## Retained fluid-machine V1 artwork
+
+- Funnel V1 and Passive Fluid Accumulator V1 are owner-retained concepts preserved in [GUI Architect Designer DEV PR5](https://github.com/emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-DEV/pull/5), source commit `0c166b34fb19cdf4a54373ff5e9c4770a854be12`. The runtime copies both 1254-square PNGs byte-for-byte.
+- Funnel SHA-256: `c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64`; Accumulator SHA-256: `da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872`.
+- These flattened originals replace the legacy gray runtime backgrounds, not the machine mechanics. No separate artwork license statement was supplied; this records provenance without asserting a separate license.

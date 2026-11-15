@@ -1,7 +1,7 @@
 Staggered Metal Steps
 Service access fitting
-<&recipe>This block forms readable service routes around machinery.<br>
+<&recipe>This wall-mounted ladder provides vertical service access.<br>
 <br>
-Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
-
-
+Usage: Place it against a supporting wall. To climb through an Iron Hatch above, put the ladder directly below the hatch and align the ladder's support edge with the hatch's open leaf.<br>
+<br>
+The hatch must be open. A closed or misaligned hatch does not continue the climb.

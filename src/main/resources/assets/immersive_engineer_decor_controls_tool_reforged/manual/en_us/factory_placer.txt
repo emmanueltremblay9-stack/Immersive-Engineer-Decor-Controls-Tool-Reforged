@@ -1,6 +1,6 @@
 Factory Block Placer
 Shop-floor utility
-<&recipe>This block installs blocks from its internal stock when activated.<br>
-<br>
-Usage: Point the working face at the target space and load placeable stacks.<br>
-
+<&recipe>Point the working face toward the adjacent target space and fill the 18 stock slots with placeable blocks or supported crop seeds. The target must be replaceable and the placement must be valid. Crop planting needs farmland below the target. No FE is required.<br>
+The screen offers normal, inverted and ignored redstone modes, continuous or signal-change triggering, and a manual placement control. New placers ignore redstone and run automatically. Normal mode requires power; inverted mode requires no power. Ignored mode runs automatically even with the signal-change option selected.<br>
+Select a stock row to choose where the next search begins. Placement continues through all 18 slots; the row selector does not restrict the inventory. A successful placement consumes one item and advances to the following slot.<br>
+Warning: an unsuccessful attempt triggered manually or by an allowed signal change can eject one item from each eligible slot tried. It can therefore eject several items in one cycle. Ordinary continuous retries without a manual trigger or signal change retain the stock. Keep a collection area in front when testing controls.<br>
