@@ -13,3 +13,7 @@ This changes production code/resources and therefore requires a new candidate JA
 ## Preservation reconciliation
 
 `solar_cell_integration.py` is an additive identity layer over main 630cf7ba. It pins both previous and new bytes for each locale, then removes only the exact appended entry and rechecks the previous byte hash. Existing Solar/Tree/Milking/Freezer historical manifests and hash constants remain unchanged. The Freezer preservation chain projects this layer before its existing historical checks; its current-byte lookup admits only the recorded baseline-to-current transition. Negative tests reject altered prior text, altered new keys, extra bytes and unknown baseline hashes.
+
+## Qualification after Smelter/TFC integration
+
+The integrated candidate now explicitly requires ordinary JAR SHA-256 `e35d528061626aa32d72809fd5f021ed12d55da3610a08ca5b08d68ad8014a70` in the Smelter workflow and TFC Gradle/driver checks. The same ordinary bytes are copied into the isolated NeoForge 21.1.234 TFC runtime; rebuilding production there remains forbidden. Historical Smelter/TFC documentation and `53ff` evidence are retained as history, not claimed as qualification of these new bytes. Exact-head Smelter/TFC qualification of the integrated candidate is pending CI; existing Solar/Milking `e35` evidence does not replace it.
