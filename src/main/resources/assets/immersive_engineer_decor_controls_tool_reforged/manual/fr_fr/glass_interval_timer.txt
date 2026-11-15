@@ -1,7 +1,7 @@
 Minuterie d'intervalle en verre
 Impulsion temporisée
-<&recipe>Une minuterie compacte fournit une impulsion de redstone programmée.<br>
+<&recipe>Cette minuterie produit une seule impulsion redstone à puissance maximale lorsqu'on clique dessus.<br>
 <br>
-Utilisation : commandez un petit mécanisme de manière périodique ou différée.<br>
+Utilisation : faites un clic droit pour déclencher immédiatement un mécanisme. La sortie s'arrête après 40 ticks de jeu, soit environ deux secondes à vitesse normale.<br>
 <br>
-Remarque : utilise des impulsions de redstone programmées.
+Remarque : elle ne se répète pas automatiquement ; elle sert à déclencher manuellement un signal temporisé.

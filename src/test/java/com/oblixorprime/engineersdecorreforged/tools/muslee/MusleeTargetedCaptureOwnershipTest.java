@@ -1,6 +1,10 @@
 package com.oblixorprime.engineersdecorreforged.tools.muslee;
 
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static com.oblixorprime.engineersdecorreforged.tools.muslee.MusleeCommandQueue.*;
@@ -112,5 +116,81 @@ public final class MusleeTargetedCaptureOwnershipTest {
         assertEquals(0, freshCapture.releaseCount());
         queue.complete(fresh, true, 2, REJECT);
         released(freshCapture);
+    }
+
+    /** Preserves PR88's real-buffer race; scalar ticket release counts are not sufficient. */
+    @Test(timeout = 60000)
+    public void concurrentInvalidateOrEngageReleasesConcreteCaptureExactlyOnce() throws Exception {
+        var pool = Executors.newFixedThreadPool(2);
+        try {
+            for (int round = 0; round < 128; round++) {
+                MusleeCommandQueue queue = queue();
+                MusleeItemStackCapture captured = capture();
+                Ticket ticket = add(queue, captured, 1);
+                CountDownLatch ready = new CountDownLatch(2), start = new CountDownLatch(1);
+                Future<Boolean> removal = pool.submit(() -> {
+                    ready.countDown();
+                    assertTrue("invalidation start timeout", start.await(10, TimeUnit.SECONDS));
+                    return queue.invalidateWaiting(ticket);
+                });
+                Future<Pass> engagement = pool.submit(() -> {
+                    ready.countDown();
+                    assertTrue("engagement start timeout", start.await(10, TimeUnit.SECONDS));
+                    return queue.runScheduled(1, RETAIN);
+                });
+                try {
+                    assertTrue("race workers ready timeout", ready.await(10, TimeUnit.SECONDS));
+                    start.countDown();
+                    boolean removed = removal.get(10, TimeUnit.SECONDS);
+                    Pass pass = engagement.get(10, TimeUnit.SECONDS);
+                    assertEquals(0, queue.waitingCount());
+                    assertEquals(0, queue.reservedBytes());
+                    if (removed) {
+                        assertEquals(State.INVALIDATED, ticket.state());
+                        assertNull(pass.engaged);
+                        assertNull(queue.active());
+                    } else {
+                        assertEquals(State.ENGAGED, ticket.state());
+                        assertSame(ticket, pass.engaged);
+                        assertSame(ticket, queue.active());
+                        assertEquals(Owner.TRANSACTION, ticket.owner());
+                        assertFalse(captured.isClosed());
+                        assertEquals(3, captured.encodedSize());
+                        assertEquals(0, captured.releaseCount());
+                        assertEquals(0, ticket.releaseCount());
+
+                        assertFalse(queue.invalidateWaiting(ticket));
+                        assertNull(queue.complete(ticket, false, 2, REJECT).engaged);
+                        assertSame(ticket, queue.active());
+                        assertEquals(State.ENGAGED, ticket.state());
+                        assertEquals(Owner.TRANSACTION, ticket.owner());
+                        assertFalse(captured.isClosed());
+                        assertEquals(3, captured.encodedSize());
+                        assertEquals(0, captured.releaseCount());
+                        assertEquals(0, ticket.releaseCount());
+
+                        assertNull(queue.complete(ticket, true, 2, REJECT).engaged);
+                        assertEquals(State.COMPLETED, ticket.state());
+                    }
+                    released(captured);
+                    assertEquals(Owner.RELEASED, ticket.owner());
+                    assertEquals(1, ticket.releaseCount());
+                    assertNull(queue.active());
+                    assertEquals(0, queue.waitingCount());
+                    assertEquals(0, queue.reservedBytes());
+
+                    assertFalse(queue.invalidateWaiting(ticket));
+                    assertNull(queue.complete(ticket, true, 3, REJECT).engaged);
+                    captured.close();
+                    released(captured);
+                    assertEquals(1, ticket.releaseCount());
+                } finally {
+                    start.countDown();
+                }
+            }
+        } finally {
+            pool.shutdownNow();
+            assertTrue("race workers did not stop", pool.awaitTermination(10, TimeUnit.SECONDS));
+        }
     }
 }

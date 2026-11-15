@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.compat.TfcMilkingCompat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -93,6 +94,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int BUCKET_AMOUNT = 1000;
    private static final int BARREL_CAPACITY = 32000;
    private boolean milkingTransactionActive;
+   private MilkingState milkingState = MilkingState.empty();
+   // Bounded refusal cache, separate from native recovery and never persisted.
+   private final java.util.LinkedHashMap<java.util.UUID, Integer> milkingRetries = new java.util.LinkedHashMap<>();
+   private int lastMilkingAttemptId = -1;
+   private final ContainerData milkingDataAccess = new ContainerData() {
+      public int get(int index) { return MachineBlockEntity.this.milkingState.field(index); }
+      public void set(int index, int value) { } // server observation, never a client command
+      public int getCount() { return MilkingState.FIELD_COUNT; }
+   };
    private boolean labeledCrateDropHandled;
    private boolean labeledCratePlayerBreakPending;
    private ItemEnchantments labeledCrateItemEnchantments = ItemEnchantments.EMPTY;
@@ -169,6 +179,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
     private static final TagKey<Item> MINERAL_INPUT_TAG = TagKey.create(Registries.ITEM,
         ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", "mineral_smelter_inputs"));
     public static final int FREEZER_PROCESS_TICKS = 180;
+   public static final int FREEZER_WATER_CAPACITY = 2000;
     public static final int FREEZER_STATUS_IDLE = 0;
     public static final int FREEZER_STATUS_READY = 1;
     public static final int FREEZER_STATUS_PROCESSING = 2;
@@ -191,6 +202,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    public static final int LABEL_MAX_LINE_LENGTH = 24;
    public static final int LABEL_MAX_UTF16_UNITS = LABEL_MAX_LINE_LENGTH * 2;
    private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
+   // New entities are already single-output. Only explicitly unversioned saved inventories migrate.
+   private int treeInventoryVersion = 1;
    private int tickCounter;
    private int fifoTimer;
    private int machineSlotCursor;
@@ -200,6 +213,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int burnTicks;
    private int fuelBurnTime;
    private int fluidAmount;
+   private boolean freezerFluidProcess;
    private int energy;
    private int blockBreakerStatus;
    private int blockBreakerHardnessBits;
@@ -255,6 +269,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int mineralActualFeRate;
    private boolean mineralBatchActive;
    private ItemStack mineralBatchInput = ItemStack.EMPTY;
+   // Adapted from Stefan Wilhelm, EdHopper (MIT), commit a561e61e35ce0367088356967e1ea4cad5c1f27d.
+   private boolean hopperPlayerBreakPending;
+   private boolean hopperDropHandled;
+   private int hopperTickTimer;
+   private int hopperCollectionTimer;
    private int hopperRange;
    private int hopperTransferCount = 1;
    private int hopperLogic = 3;
@@ -307,6 +326,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   existing.grow(accepted);
                }
 
+               if (MachineBlockEntity.this.kind() == MachineKind.FACTORY_HOPPER)
+                  MachineBlockEntity.this.hopperTickTimer = Math.min(MachineBlockEntity.this.hopperTickTimer, 8);
                MachineBlockEntity.this.setChanged();
                MachineBlockEntity.this.updateComparator();
             }
@@ -332,6 +353,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   MachineBlockEntity.this.items.set(slot, ItemStack.EMPTY);
                }
 
+               if (MachineBlockEntity.this.kind() == MachineKind.FACTORY_HOPPER)
+                  MachineBlockEntity.this.hopperTickTimer = Math.min(MachineBlockEntity.this.hopperTickTimer, 8);
                MachineBlockEntity.this.setChanged();
                MachineBlockEntity.this.updateComparator();
             }
@@ -456,12 +479,13 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          return tank == 0
             && MachineBlockEntity.this.canHandleFluids(kind)
             && !stack.isEmpty()
+            && (kind != MachineKind.SMALL_FREEZER || FluidStack.isSameFluidSameComponents(stack, new FluidStack(Fluids.WATER, 1)))
             && MachineBlockEntity.this.canStoreFluidType(kind, MachineBlockEntity.this.typeForFluid(stack.getFluid()));
       }
 
       public int fill(FluidStack resource, FluidAction action) {
          MachineKind kind = MachineBlockEntity.this.kind();
-         if (MachineBlockEntity.this.canHandleFluids(kind) && !resource.isEmpty()) {
+         if (this.isFluidValid(0, resource)) {
             String type = MachineBlockEntity.this.typeForFluid(resource.getFluid());
             if (MachineBlockEntity.this.canStoreFluidType(kind, type)
                && (MachineBlockEntity.this.fluidType.isEmpty() || MachineBlockEntity.this.fluidType.equals(type))) {
@@ -486,7 +510,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
 
       public FluidStack drain(FluidStack resource, FluidAction action) {
-         if (!resource.isEmpty() && MachineBlockEntity.this.canHandleFluids(MachineBlockEntity.this.kind()) && MachineBlockEntity.this.fluidAmount > 0) {
+         if (!resource.isEmpty() && MachineBlockEntity.this.canHandleFluids(MachineBlockEntity.this.kind()) && MachineBlockEntity.this.fluidAmount > 0
+               && (MachineBlockEntity.this.kind() != MachineKind.SMALL_FREEZER || this.isFluidValid(0, resource))) {
             Fluid storedFluid = MachineBlockEntity.this.fluidForType(MachineBlockEntity.this.fluidType);
             return storedFluid != Fluids.EMPTY && resource.is(storedFluid) ? this.drain(resource.getAmount(), action) : FluidStack.EMPTY;
          } else {
@@ -509,6 +534,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                if (MachineBlockEntity.this.fluidAmount <= 0) {
                   MachineBlockEntity.this.fluidAmount = 0;
                   MachineBlockEntity.this.fluidType = "";
+               }
+               // Losing the active batch invalidates its work even if a pipe refills before the next tick.
+               if (kind == MachineKind.SMALL_FREEZER && MachineBlockEntity.this.freezerFluidProcess
+                     && MachineBlockEntity.this.fluidAmount < BUCKET_AMOUNT) {
+                  MachineBlockEntity.this.stopFreezerProcess();
                }
 
                MachineBlockEntity.this.syncFluidLevel(MachineBlockEntity.this.propertyForFluidLevel(), MachineBlockEntity.this.capacityFor(kind));
@@ -858,6 +888,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return this.dataAccess;
    }
 
+   public ContainerData milkingDataAccessForTests() {
+      return this.milkingDataAccess;
+   }
+
    public ContainerData mineralSmelterUiDataAccessForTests() {
       return this.mineralSmelterUiDataAccess;
    }
@@ -884,11 +918,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          // The Funnel has no redstone input; avoid unrelated neighbour reads at chunk edges.
          boolean powered = kind != MachineKind.SMALL_FLUID_FUNNEL && level.hasNeighborSignal(pos);
          boolean powerChanged = powered != machine.previousPowered;
-         if (powerChanged) {
+         if (powerChanged && kind != MachineKind.FACTORY_HOPPER) {
             machine.redstoneUpdated = true;
          }
 
-         machine.previousPowered = powered;
+         if (kind != MachineKind.FACTORY_HOPPER) machine.previousPowered = powered;
          switch (kind) {
             case METAL_CRAFTING_TABLE:
                machine.tickMetalCraftingTable();
@@ -1000,7 +1034,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    public int comparatorOutput() {
       MachineKind kind = this.kind();
-      if (kind == MachineKind.SMALL_SOLAR_PANEL) {
+      if (kind == MachineKind.FACTORY_HOPPER) {
+         float fullness = 0;
+         boolean occupied = false;
+         for (int slot = 0; slot < 18; slot++) {
+            ItemStack stack = this.items.get(slot);
+            if (!stack.isEmpty()) {
+               fullness += (float)stack.getCount() / Math.min(this.getMaxStackSize(stack), stack.getMaxStackSize());
+               occupied = true;
+            }
+         }
+         return Mth.clamp(Mth.floor(fullness / 18 * 14) + (occupied ? 1 : 0), 0, 15);
+      } else if (kind == MachineKind.SMALL_SOLAR_PANEL) {
          return this.scaleToComparator(this.energy, 64000);
       } else if (kind == MachineKind.SMALL_MINERAL_SMELTER) {
          return this.scaleToComparator(this.propertyValue(MachineBlocks.PHASE_0_3), 3);
@@ -1031,6 +1076,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
       ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
       ItemStack removed = super.removeItem(slot, amount);
+      if (!removed.isEmpty() && this.kind() == MachineKind.FACTORY_HOPPER) this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);
       if (updateFrame) {
          this.syncLabeledCrateFrameClients(previousFrame);
       }
@@ -1061,6 +1107,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
       ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
       super.setItem(slot, stack);
+      if (this.kind() == MachineKind.FACTORY_HOPPER) this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);
       if (updateFrame) {
          this.syncLabeledCrateFrameClients(previousFrame);
       }
@@ -1077,6 +1124,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          return this.isBlockBreakerRearSide(side) ? new int[]{0} : new int[0];
       }
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return new int[]{0};
+      if (this.kind() == MachineKind.FACTORY_HOPPER) return this.slotsUpTo(18);
       // Keep the preexisting unsided Container slot visibility for other machine types.
       return this.slotsUpTo(this.items.size());
    }
@@ -1089,6 +1138,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    @Override
    public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) {
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;
+      if (this.kind() == MachineKind.SMALL_FREEZER) return this.canAutomationExtract(slot);
         if (this.kind() == MachineKind.LABELED_CRATE) {
             return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
         }
@@ -1101,6 +1152,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    @Override
    public boolean canTakeItem(Container destination, int slot, ItemStack stack) {
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;
+      if (this.kind() == MachineKind.SMALL_FREEZER) return this.canAutomationExtract(slot);
         if (this.kind() == MachineKind.LABELED_CRATE) {
             return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
         }
@@ -1275,9 +1328,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                break;
             case 5:
                if (kind == MachineKind.FACTORY_HOPPER) {
-                  this.manualTrigger = true;
+                  this.previousPowered = true;
+                  this.redstoneUpdated = true;
+                  this.hopperTickTimer = 1;
                   this.guiSignalFlashTicks = 10;
-                  this.cooldown = Math.min(this.cooldown, 1);
                }
                break;
             case 6:
@@ -1567,6 +1621,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield kind.ordinal();
                case 1:
                   yield this.progress;
+               case 2:
+                  yield this.fluidAmount;
                case 3:
                   yield this.energy;
                case 4:
@@ -1830,6 +1886,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   case 1:
                      this.progress = Mth.clamp(value, 0, FREEZER_PROCESS_TICKS);
                      return;
+                  case 2:
+                     this.fluidAmount = Mth.clamp(value, 0, FREEZER_WATER_CAPACITY);
+                     this.fluidType = this.fluidAmount > 0 ? "water" : "";
+                     return;
                   case 3:
                      this.energy = Mth.clamp(value, 0, this.energyCapacity(kind));
                      return;
@@ -1865,10 +1925,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected void loadAdditional(CompoundTag tag, Provider registries) {
       super.loadAdditional(tag, registries);
+      // Identity and recovery are live animal observations, never machine save state.
+      this.milkingState = MilkingState.empty();
+      this.milkingRetries.clear();
+      this.lastMilkingAttemptId = -1;
       this.items = NonNullList.withSize(
          this.kind() == MachineKind.LABELED_CRATE ? LabeledCrateMenu.CRATE_SLOT_COUNT : SLOT_COUNT, ItemStack.EMPTY
       );
       ContainerHelper.loadAllItems(tag, this.items, registries);
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) {
+         this.treeInventoryVersion = !tag.contains("TreeInventoryVersion") ? 0
+            : tag.contains("TreeInventoryVersion", Tag.TAG_INT) ? tag.getInt("TreeInventoryVersion") : -1;
+      }
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          this.items.set(10, ItemStack.EMPTY);
       }
@@ -1890,6 +1958,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.fluidAmount = tag.getInt("FluidAmount");
       this.energy = tag.getInt("Energy");
       this.fluidType = tag.getString("FluidType");
+      this.freezerFluidProcess = this.kind() == MachineKind.SMALL_FREEZER && tag.getBoolean("FreezerFluidProcess");
       if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
          this.unreadableFunnelFluid = null;
          this.funnelCaptureProgress = 0;
@@ -1934,6 +2003,14 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.redstoneUpdated = tag.getBoolean("RedstoneUpdated");
       this.manualTrigger = tag.getBoolean("ManualTrigger");
       this.manualRedstoneTrigger = tag.getBoolean("ManualRedstoneTrigger");
+      if (this.kind() == MachineKind.FACTORY_HOPPER) {
+         this.hopperTickTimer = 0;
+         this.hopperCollectionTimer = 0;
+         this.cooldown = 0;
+         this.redstoneUpdated = false;
+         this.manualTrigger = false;
+         this.machineSlotCursor = Math.floorMod(this.machineSlotCursor, 18);
+      }
       this.mineralCooling = tag.getBoolean("MineralCooling");
       // Legacy saves predate the hybrid; preserve input/output/FE/tank, but reset obsolete work.
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER && tag.getInt("MineralHybridVersion") == 1) {
@@ -1988,6 +2065,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected void saveAdditional(CompoundTag tag, Provider registries) {
       super.saveAdditional(tag, registries);
+      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) {
+         // Do not mark old contents migrated if saved before their first server tick.
+         if (this.treeInventoryVersion == 0) tag.remove("TreeInventoryVersion");
+         else tag.putInt("TreeInventoryVersion", this.treeInventoryVersion);
+      }
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          ItemStack result = (ItemStack)this.items.get(10);
          this.items.set(10, ItemStack.EMPTY);
@@ -2010,8 +2092,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       tag.putInt("FifoTimer", this.fifoTimer);
       tag.putInt("MachineSlotCursor", this.machineSlotCursor);
       tag.putInt("Progress", this.progress);
+      if (this.kind() == MachineKind.SMALL_FREEZER) tag.putBoolean("FreezerFluidProcess", this.freezerFluidProcess);
       tag.putInt("ProcessTimeNeeded", this.processTimeNeeded);
-      tag.putInt("Cooldown", this.cooldown);
+      if (this.kind() != MachineKind.FACTORY_HOPPER) tag.putInt("Cooldown", this.cooldown);
       tag.putInt("BurnTicks", this.burnTicks);
       tag.putInt("FuelBurnTime", this.fuelBurnTime);
       tag.putInt("FluidAmount", this.kind() == MachineKind.SMALL_FLUID_FUNNEL && this.unreadableFunnelFluid != null
@@ -2036,8 +2119,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          }
       }
       tag.putBoolean("PreviousPowered", this.previousPowered);
-      tag.putBoolean("RedstoneUpdated", this.redstoneUpdated);
-      tag.putBoolean("ManualTrigger", this.manualTrigger);
+      if (this.kind() != MachineKind.FACTORY_HOPPER) {
+         tag.putBoolean("RedstoneUpdated", this.redstoneUpdated);
+         tag.putBoolean("ManualTrigger", this.manualTrigger);
+      }
       tag.putBoolean("ManualRedstoneTrigger", this.manualRedstoneTrigger);
       tag.putBoolean("MineralCooling", this.mineralCooling);
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
@@ -2087,27 +2172,106 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return ClientboundBlockEntityDataPacket.create(this);
    }
 
+   /** ED 1.3.29 EdHopper semantics (Stefan Wilhelm, MIT); modern safe item handlers retained. */
    private void tickFactoryHopper(boolean powered) {
-      if (this.level != null && this.tickCounter % 10 == 0) {
-         boolean redstoneAllowed = this.logicAllowsTrigger(this.hopperLogic, powered);
-         boolean pulseMode = (this.hopperLogic & 6) == 0;
-         boolean manual = this.manualTrigger;
-         boolean trigger = (this.hopperLogic & 4) != 0 || manual || redstoneAllowed && (this.redstoneUpdated || !pulseMode);
-         this.manualTrigger = false;
-         this.redstoneUpdated = false;
-         Direction direction = this.facing(this.getBlockState());
-         if (trigger) {
-            this.collectNearbyItems(direction);
+      if (this.level == null || --this.hopperTickTimer > 0) return;
+      this.hopperTickTimer = 10;
+      boolean allowed = this.logicAllowsTrigger(this.hopperLogic, this.previousPowered);
+      boolean pulse = (this.hopperLogic & 6) == 0;
+      boolean trigger = (this.hopperLogic & 4) != 0 || allowed && (this.redstoneUpdated || !pulse);
+      boolean dirty = this.redstoneUpdated || this.previousPowered != powered;
+      this.redstoneUpdated = this.previousPowered != powered;
+      this.previousPowered = powered;
+      if (dirty) this.setChanged();
+      Direction output = this.facing(this.getBlockState());
+      Direction input = output == Direction.UP ? Direction.DOWN : Direction.UP;
+      if (allowed || pulse) {
+         BlockPos sourcePos = this.worldPosition.relative(input);
+         if (this.level.hasChunkAt(sourcePos)) {
+         IItemHandler source = this.level.getCapability(ItemHandler.BLOCK, sourcePos, input.getOpposite());
+         if (source != null) this.pullHopperItems(source, this.hopperTransferCount);
+         else {
+            BlockEntity neighbor = this.level.getBlockEntity(sourcePos);
+            if (neighbor instanceof Container container)
+               this.pullHopperItems(this.hopperContainerHandler(container, input.getOpposite()), this.hopperTransferCount);
+            source = this.hopperEntityInventory(sourcePos);
+            if (source != null) this.pullHopperItems(source, this.hopperTransferCount);
          }
-
-         if (this.cooldown <= 0) {
-            if (trigger) {
-               this.cooldown = 10 + this.hopperPeriod * 2;
-               this.pullItems(direction.getOpposite(), this.hopperTransferCount);
-               this.pushItems(direction, this.hopperTransferCount);
-            }
+         if (source == null && (this.hopperCollectionTimer -= 10) <= 0) {
+            this.hopperCollectionTimer = 50;
+            this.collectNearbyItems(input);
+         }
          }
       }
+      if (trigger && this.cooldown <= 0) {
+         this.cooldown = 10 + this.hopperPeriod * 2;
+         this.pushItems(output, this.hopperTransferCount);
+      }
+   }
+
+   public void hopperNeighborChanged() {
+      if (this.kind() != MachineKind.FACTORY_HOPPER || this.level == null || this.level.isClientSide) return;
+      boolean powered = this.level.hasNeighborSignal(this.worldPosition);
+      if (this.previousPowered != powered) this.redstoneUpdated = true;
+      this.previousPowered = powered;
+      this.hopperTickTimer = 1;
+      this.setChanged();
+   }
+
+   public void beginHopperPlayerBreak(boolean creative) {
+      if (this.kind() != MachineKind.FACTORY_HOPPER) return;
+      this.hopperPlayerBreakPending = !creative;
+      if (creative) { this.hopperDropHandled = true; this.clearContent(); }
+   }
+
+   public boolean consumeHopperPlayerBreak() {
+      boolean pending = this.hopperPlayerBreakPending;
+      this.hopperPlayerBreakPending = false;
+      return pending;
+   }
+
+   public boolean hopperDropHandled() { return this.hopperDropHandled; }
+
+   public void explodeHopperContents() {
+      if (this.kind() != MachineKind.FACTORY_HOPPER || this.hopperDropHandled || this.level == null) return;
+      this.hopperDropHandled = true;
+      if (this.level.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_DOBLOCKDROPS))
+         Containers.dropContents(this.level, this.worldPosition, this);
+      this.clearContent();
+   }
+
+   /** Whitelisted portable state; never carry an arbitrary block entity id or runtime work. */
+   public CompoundTag portableHopperData() {
+      CompoundTag tag = new CompoundTag();
+      if (this.kind() != MachineKind.FACTORY_HOPPER || this.isEmpty() || this.level == null) return tag;
+      ContainerHelper.saveAllItems(tag, this.items, this.level.registryAccess());
+      tag.putInt("HopperRange", this.hopperRange);
+      tag.putInt("HopperTransferCount", this.hopperTransferCount);
+      tag.putInt("HopperLogic", this.hopperLogic);
+      tag.putInt("HopperPeriod", this.hopperPeriod);
+      tag.putInt("MachineSlotCursor", Math.floorMod(this.machineSlotCursor, 18));
+      return tag;
+   }
+
+   public void restorePortableHopperData(CompoundTag tag) {
+      if (this.kind() != MachineKind.FACTORY_HOPPER || this.level == null) return;
+      NonNullList<ItemStack> imported = NonNullList.withSize(this.items.size(), ItemStack.EMPTY);
+      ContainerHelper.loadAllItems(tag, imported, this.level.registryAccess());
+      for (int slot = 0; slot < this.items.size(); slot++) this.items.set(slot, imported.get(slot));
+      this.hopperRange = Mth.clamp(tag.getInt("HopperRange"), 0, 4);
+      this.hopperTransferCount = Mth.clamp(tag.getInt("HopperTransferCount"), 1, 32);
+      this.hopperLogic = sanitizeTriggerLogic(savedIntOrDefault(tag, "HopperLogic", 3));
+      this.hopperPeriod = Mth.clamp(tag.getInt("HopperPeriod"), 0, 100);
+      this.machineSlotCursor = Math.floorMod(tag.getInt("MachineSlotCursor"), 18);
+      this.previousPowered = false;
+      this.redstoneUpdated = false;
+      this.manualTrigger = false;
+      this.hopperTickTimer = this.hopperCollectionTimer = this.cooldown = 0;
+      this.setChanged();
+   }
+
+   public void hopperItemFell() {
+      if (this.kind() == MachineKind.FACTORY_HOPPER) this.hopperCollectionTimer = 0;
    }
 
    private void tickFactoryDropper(boolean powered) {
@@ -2474,7 +2638,66 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
+   /** Drain-only compatibility storage: never admit newly harvested or inserted items here.
+    * Keep every old position in the existing save format, including the formerly hidden 10-26.
+    * Moving only server-side, on ticks, keeps capability simulations and menu reads inert.
+    */
+   private boolean drainTreeCutterLegacyItems() {
+      ItemStack output = this.items.get(0);
+      boolean changed = false;
+      boolean pending = false;
+      for (int slot = 1; slot < this.items.size(); slot++) {
+         ItemStack legacy = this.items.get(slot);
+         if (legacy.isEmpty()) continue;
+         int move = output.isEmpty()
+            ? Math.min(legacy.getCount(), Math.min(legacy.getMaxStackSize(), this.getMaxStackSize(legacy)))
+            : ItemStack.isSameItemSameComponents(output, legacy)
+               ? Math.min(legacy.getCount(), Math.max(0, Math.min(output.getMaxStackSize(), this.getMaxStackSize(output)) - output.getCount()))
+               : 0;
+         if (move > 0) {
+            if (output.isEmpty()) {
+               output = legacy.copyWithCount(move);
+               this.items.set(0, output);
+            } else {
+               output.grow(move);
+            }
+            legacy.shrink(move);
+            if (legacy.isEmpty()) this.items.set(slot, ItemStack.EMPTY);
+            changed = true;
+         }
+         pending |= !legacy.isEmpty();
+      }
+      if (changed) {
+         this.setChanged();
+         this.updateComparator();
+      }
+      return pending;
+   }
+
+   private void migrateTreeCutterInventory() {
+      if (this.treeInventoryVersion != 0) return;
+      // Authorized legacy-log discard is deliberately narrow: preserve modded/customized items.
+      // Tags are consulted on the server tick, after registry/tag loading, not during NBT decode.
+      for (int slot = 0; slot < this.items.size(); slot++) {
+         ItemStack stack = this.items.get(slot);
+         if (!stack.isEmpty() && stack.is(net.minecraft.tags.ItemTags.LOGS)
+               && "minecraft".equals(BuiltInRegistries.ITEM.getKey(stack.getItem()).getNamespace())
+               && stack.getComponentsPatch().isEmpty()) {
+            this.items.set(slot, ItemStack.EMPTY);
+         }
+      }
+      this.treeInventoryVersion = 1;
+      this.setChanged();
+      this.updateComparator();
+   }
+
    private void tickTreeCutter(boolean powered) {
+      this.migrateTreeCutterInventory();
+      // Recovery remains available while paused. Do not let new production starve old contents.
+      if (this.drainTreeCutterLegacyItems()) {
+         this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+         return;
+      }
       if (this.level != null && powered) {
          this.setBooleanProperty(MachineBlocks.ACTIVE, false);
       } else if (this.level != null && this.cooldown <= 0 && this.tickCounter % 40 == 0) {
@@ -2890,26 +3113,35 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (powered) {
          this.stopFreezerProcess();
       } else {
+         // Item recipes retain priority; fluid work never consumes or overwrites an occupied input slot.
+         boolean fluidInput = this.freezerFluidInputReady();
          int slot = this.firstFreezableSlot();
-         if (slot < 0) {
+         if (slot < 0 && !fluidInput) {
             this.stopFreezerProcess();
          } else {
-            ItemStack result = this.freezerResult((ItemStack)this.items.get(slot));
+            if (this.progress > 0 && this.freezerFluidProcess != fluidInput) this.stopFreezerProcess();
+            ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult((ItemStack)this.items.get(slot));
             if (!result.isEmpty() && this.canInsertIntoSlots(result, 2)) {
                if (this.energy < 8) {
                   this.stopFreezerProcess();
                } else {
+                  this.freezerFluidProcess = fluidInput;
                   this.energy -= 8;
                   this.setChanged();
                   this.progress++;
                   this.setIntProperty(MachineBlocks.PHASE_0_4, Math.min(4, this.progress / 45));
                   if (this.progress >= FREEZER_PROCESS_TICKS) {
-                     ItemStack input = (ItemStack)this.items.get(slot);
-                     if (input.is(Items.WATER_BUCKET)) {
-                        input.shrink(1);
-                        this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);
+                     if (fluidInput) {
+                        this.fluidAmount -= BUCKET_AMOUNT;
+                        if (this.fluidAmount == 0) this.fluidType = "";
                      } else {
-                        input.shrink(1);
+                        ItemStack input = (ItemStack)this.items.get(slot);
+                        if (input.is(Items.WATER_BUCKET)) {
+                           input.shrink(1);
+                           this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);
+                        } else {
+                           input.shrink(1);
+                        }
                      }
 
                      this.insertIntoSlots(result, 2);
@@ -2924,8 +3156,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void stopFreezerProcess() {
-      boolean changed = this.progress != 0 || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;
+      boolean changed = this.progress != 0 || this.freezerFluidProcess || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;
       this.progress = 0;
+      this.freezerFluidProcess = false;
       this.setIntProperty(MachineBlocks.PHASE_0_4, 0);
       if (changed) {
          this.setChanged();
@@ -3150,27 +3383,36 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void tickMilkingMachine(boolean powered) {
-      if (this.level != null) {
+      if (this.level instanceof ServerLevel serverLevel) {
          Direction direction = this.facing(this.getBlockState());
          if (this.tickCounter % 20 == 0) {
             this.tickMilkingMachineContainerIo(direction);
          }
-
          if (!powered && this.tickCounter % 120 == 0) {
             this.tickMilkingMachineContainerIo(direction);
-            ItemStack milkBucket = new ItemStack(Items.MILK_BUCKET);
-            boolean canFillBucket = ((ItemStack)this.items.get(0)).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1);
-            boolean canStoreFluid = this.canAddFluid("milk", 1000, 4000);
-            if (!canFillBucket && !this.canAddFluid("milk", 1, 4000)) {
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-               this.syncMilkingFilled();
-               return;
-            }
+         }
 
-            AABB box = new AABB(this.worldPosition.relative(direction)).inflate(2.0, 1.5, 2.0);
-            boolean produced = false;
-            if ((canFillBucket || canStoreFluid)
-                  && !this.level.getEntitiesOfClass(Cow.class, box, cow -> cow.isAlive() && !cow.isBaby()).isEmpty()) {
+         ItemStack milkBucket = new ItemStack(Items.MILK_BUCKET);
+         boolean canFillBucket = this.items.get(0).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1);
+         boolean canStoreFluid = this.canAddFluid("milk", 1000, 4000);
+         AABB box = new AABB(this.worldPosition.relative(direction)).inflate(2.0, 1.5, 2.0);
+         this.milkingRetries.replaceAll((animal, ticks) -> ticks - 1);
+         this.milkingRetries.entrySet().removeIf(entry -> entry.getValue() <= 0
+               || TfcMilkingCompat.inspect(serverLevel, box, entry.getKey()).state() != MilkingState.READY);
+         Cow vanilla = this.level.getEntitiesOfClass(Cow.class, box,
+               cow -> cow.isAlive() && !cow.isRemoved() && !cow.isBaby()).stream()
+               .min(java.util.Comparator.comparingInt(Cow::getId)).orElse(null);
+         // Preserve the existing vanilla-first transaction policy. A partial tank may
+         // still accept an event-modified TFC product, as it could before this projection.
+         MilkingState selected = vanilla != null && (canFillBucket || canStoreFluid)
+               ? new MilkingState(MilkingState.VANILLA, MilkingState.READY, vanilla.getId(), vanilla.getUUID(), 0, 0, 0)
+               : TfcMilkingCompat.select(serverLevel, box, this.milkingRetries.keySet(), this.lastMilkingAttemptId);
+         if (selected.source() == MilkingState.NONE && vanilla != null) {
+            selected = new MilkingState(MilkingState.VANILLA, MilkingState.READY, vanilla.getId(), vanilla.getUUID(), 0, 0, 0);
+         }
+         boolean produced = false;
+         if (!powered && selected.source() == MilkingState.VANILLA && this.tickCounter % 120 == 0
+               && (canFillBucket || canStoreFluid)) {
                if (canFillBucket) {
                   ((ItemStack)this.items.get(0)).shrink(1);
                   this.insertIntoSlots(milkBucket, 1);
@@ -3179,24 +3421,41 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   this.addFluid("milk", 1000, 4000);
                }
                produced = true;
-            } else if (this.level instanceof ServerLevel serverLevel) {
-               this.milkingTransactionActive = true;
-               try {
-                  produced = com.oblixorprime.engineersdecorreforged.compat.TfcMilkingCompat.tryMilk(
-                        serverLevel, this.worldPosition, box, product -> this.commitTfcMilk(serverLevel, direction, product));
-               } finally {
-                  this.milkingTransactionActive = false;
-               }
+         } else if (!powered && selected.source() == MilkingState.TFC && selected.state() == MilkingState.READY
+               && !this.milkingRetries.containsKey(selected.animalId())
+               && (canFillBucket || this.canAddFluid("milk", 1, 4000))) {
+            this.milkingTransactionActive = true;
+            this.lastMilkingAttemptId = selected.entityId();
+            try {
+               produced = TfcMilkingCompat.tryMilk(serverLevel, this.worldPosition, box, selected.animalId(),
+                     product -> this.commitTfcMilk(serverLevel, direction, product));
+            } finally {
+               this.milkingTransactionActive = false;
             }
-            this.setBooleanProperty(MachineBlocks.ACTIVE, produced);
-            this.syncMilkingFilled();
-            if (produced) {
-               this.setChanged();
-               this.updateComparator();
+            // Read the exact attempted animal again: callbacks may milk, remove, move
+            // or invalidate it. Never display the pre-transaction recovery snapshot.
+            selected = TfcMilkingCompat.inspect(serverLevel, box, selected.animalId());
+            if (!produced && selected.state() == MilkingState.READY) {
+               this.milkingRetries.put(selected.animalId(), 120);
+               // At most one native attempt per tick. Eviction may allow an older
+               // refusal to retry early in pathological herds; it never delays a
+               // new ready cow or grows unbounded machine memory.
+               if (this.milkingRetries.size() > 64) this.milkingRetries.remove(this.milkingRetries.keySet().iterator().next());
             }
-         } else {
-            this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-            this.syncMilkingFilled();
+         }
+         int flags = serverLevel.hasNeighborSignal(this.worldPosition) ? MilkingState.PAUSED : 0;
+         boolean bucketSpace = this.items.get(0).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1);
+         if (!bucketSpace && !this.canAddFluid("milk", selected.source() == MilkingState.VANILLA ? 1000 : 1, 4000))
+            flags |= MilkingState.STORAGE_BLOCKED;
+         if (selected.source() == MilkingState.TFC && this.milkingRetries.containsKey(selected.animalId())
+               && selected.state() == MilkingState.READY)
+            flags |= MilkingState.RETRY_WAIT;
+         this.milkingState = selected.withMachineFlags(flags);
+         this.setBooleanProperty(MachineBlocks.ACTIVE, produced);
+         this.syncMilkingFilled();
+         if (produced) {
+            this.setChanged();
+            this.updateComparator();
          }
       }
    }
@@ -3499,7 +3758,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private boolean canHandleFluids(MachineKind kind) {
-      return kind != null && kind.isFluidContainer();
+      // Keep bucket-hand interaction and comparator semantics separate from pipe capability support.
+      return kind != null && (kind.isFluidContainer() || kind == MachineKind.SMALL_FREEZER);
    }
 
    private boolean canStoreFluidType(MachineKind kind, String type) {
@@ -3509,7 +3769,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
       return switch (kind) {
          case SMALL_MINERAL_SMELTER -> type.equals("lava");
-         case PASSIVE_FLUID_ACCUMULATOR -> type.equals("water");
+         case PASSIVE_FLUID_ACCUMULATOR, SMALL_FREEZER -> type.equals("water");
          case SMALL_MILKING_MACHINE -> type.equals("milk");
          case FLUID_BARREL, SMALL_FLUID_FUNNEL -> type.equals("water") || type.equals("lava") || type.equals("milk");
          default -> false;
@@ -3541,6 +3801,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private int capacityFor(MachineKind kind) {
+      if (kind == MachineKind.SMALL_FREEZER) return FREEZER_WATER_CAPACITY;
       if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
          return 3000;
       } else {
@@ -4020,46 +4281,64 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             ? new AABB(this.worldPosition.above()).inflate(0.1 + this.hopperRange, 0.6, 0.1 + this.hopperRange)
             : new AABB(this.worldPosition.below(2)).inflate(0.1 + this.hopperRange, 1.0, 0.1 + this.hopperRange);
 
-         for (ItemEntity itemEntity : this.level.getEntitiesOfClass(ItemEntity.class, range, item -> item.isAlive() && !item.getItem().isEmpty())) {
+         Vec3 center = Vec3.atCenterOf(facing == Direction.UP ? this.worldPosition.above() : this.worldPosition.below(2));
+         int distantCollected = 0;
+         for (ItemEntity itemEntity : this.level.getEntitiesOfClass(ItemEntity.class, range, item -> item.isAlive() && item.onGround() && !item.getItem().isEmpty())) {
+            boolean direct = itemEntity.distanceToSqr(center) < 0.7;
+            if (!direct && itemEntity.hasPickUpDelay()) continue;
             ItemStack stack = itemEntity.getItem();
             ItemStack remainder = this.insertRemainder(stack);
+            int accepted = stack.getCount() - remainder.getCount();
             if (remainder.isEmpty()) {
                itemEntity.discard();
             } else if (remainder.getCount() != stack.getCount()) {
                itemEntity.setItem(remainder);
             }
+            if (accepted > 0 && !direct && ++distantCollected >= 3) break;
          }
       }
    }
 
    private void pushItems(Direction direction, int maxCount) {
+      int size = this.accessibleSlots().length;
+      for (int n = 0; n < size && this.items.get(this.machineSlotCursor % size).isEmpty(); n++)
+         this.machineSlotCursor = (this.machineSlotCursor + 1) % size;
+      ItemStack stack = this.items.get(this.machineSlotCursor % size);
+      if (stack.isEmpty()) { this.machineSlotCursor = 0; return; }
+      BlockPos targetPos = this.worldPosition.relative(direction);
+      if (!this.level.hasChunkAt(targetPos)) return;
+      BlockState targetState = this.level.getBlockState(targetPos);
+      if (targetState.getBlock() instanceof net.minecraft.world.level.block.HopperBlock
+            && targetState.getValue(net.minecraft.world.level.block.HopperBlock.FACING) == direction.getOpposite()) return;
+      if (targetState.is(ModBlocks.FACTORY_HOPPER.get())
+            && targetState.getValue(MachineBlocks.FACING) == direction.getOpposite()) return;
       IItemHandler target = this.hopperInventory(direction);
-      if (target != null) {
-         int var11 = Math.max(1, maxCount);
-
-         for (int tries = 0; tries < this.accessibleSlots().length && var11 > 0; tries++) {
-            int slotIndex = this.accessibleSlots()[this.machineSlotCursor % this.accessibleSlots().length];
-            ItemStack stack = (ItemStack)this.items.get(slotIndex);
-            if (!stack.isEmpty()) {
-               int count = Math.min(var11, stack.getCount());
-               ItemStack moving = stack.copyWithCount(count);
-               ItemStack remainder = ItemHandlerHelper.insertItem(target, moving, false);
-               int inserted = count - remainder.getCount();
-               if (inserted > 0) {
-                  stack.shrink(inserted);
-                  var11 -= inserted;
-                  this.setChanged();
-                  this.updateComparator();
-               }
-            }
-
-            this.machineSlotCursor = (this.machineSlotCursor + 1) % this.accessibleSlots().length;
-         }
+      if (target == null) { this.cooldown = 12; return; }
+      ItemStack remaining = stack.copyWithCount(Math.min(stack.getCount(), Math.max(1, maxCount)));
+      int initial = remaining.getCount();
+      // Complete matching stacks before consuming a free slot, as in the original Hopper.
+      for (int slot = 0; slot < target.getSlots() && !remaining.isEmpty(); slot++)
+         if (ItemStack.isSameItemSameComponents(target.getStackInSlot(slot), remaining))
+            remaining = target.insertItem(slot, remaining.copy(), false);
+      for (int slot = 0; slot < target.getSlots() && !remaining.isEmpty(); slot++)
+         remaining = target.insertItem(slot, remaining.copy(), false);
+      int inserted = initial - remaining.getCount();
+      if (inserted > 0) {
+         stack.shrink(inserted);
+         this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);
+         this.setChanged(); this.updateComparator();
+      }
+      if (!remaining.isEmpty()) {
+         this.machineSlotCursor = (this.machineSlotCursor + 1) % size;
+         this.setChanged();
       }
    }
 
    private void pullItems(Direction direction, int maxCount) {
-      IItemHandler source = this.hopperInventory(direction);
+      this.pullHopperItems(this.hopperInventory(direction), maxCount);
+   }
+
+   private void pullHopperItems(IItemHandler source, int maxCount) {
       if (source != null) {
          int remaining = Math.max(1, maxCount);
 
@@ -4092,24 +4371,37 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       IItemHandler handler = this.level.getCapability(ItemHandler.BLOCK, pos, side);
       if (handler != null) return handler;
 
-      // Preserve legacy Container-only inventories, including their sided access rules.
-      BlockEntity neighbor = this.level.getBlockEntity(pos);
-      if (neighbor instanceof WorldlyContainer container) {
-         return new SidedInvWrapper(container, side) {
+      // A present block entity without a capability is authoritative on the output side.
+      if (this.level.getBlockEntity(pos) != null) return null;
+      return this.hopperEntityInventory(pos);
+   }
+
+   private IItemHandler hopperContainerHandler(Container container, Direction side) {
+      if (container instanceof WorldlyContainer sided) {
+         return new SidedInvWrapper(sided, side) {
             @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {
-               int actualSlot = SidedInvWrapper.getSlot(container, slot, side);
-               return actualSlot >= 0 && container.canTakeItem(MachineBlockEntity.this, actualSlot, container.getItem(actualSlot))
+               int actualSlot = SidedInvWrapper.getSlot(sided, slot, side);
+               return actualSlot >= 0 && sided.canTakeItem(MachineBlockEntity.this, actualSlot, sided.getItem(actualSlot))
                   ? super.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
             }
          };
       }
-      if (neighbor instanceof Container container) {
-         return new InvWrapper(container) {
-            @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {
-               return container.canTakeItem(MachineBlockEntity.this, slot, container.getItem(slot))
-                  ? super.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
-            }
-         };
+      return new InvWrapper(container) {
+         @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {
+            return container.canTakeItem(MachineBlockEntity.this, slot, container.getItem(slot))
+               ? super.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
+         }
+      };
+   }
+
+   private IItemHandler hopperEntityInventory(BlockPos pos) {
+      if (!this.level.hasChunkAt(pos)) return null;
+      for (net.minecraft.world.entity.Entity entity : this.level.getEntities((net.minecraft.world.entity.Entity)null,
+            new AABB(pos), net.minecraft.world.entity.EntitySelector.CONTAINER_ENTITY_SELECTOR)) {
+         IItemHandler entityHandler = entity.getCapability(ItemHandler.ENTITY, null);
+         if (entityHandler != null) return entityHandler;
+         if (entity instanceof Container container) return this.hopperContainerHandler(container, Direction.UP);
+         break;
       }
       return null;
    }
@@ -4520,6 +4812,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.fluidAmount = 0;
          this.fluidType = "";
       }
+      if (kind == MachineKind.SMALL_FREEZER && this.freezerFluidProcess
+            && (this.progress == 0 || !this.freezerFluidInputReady())) {
+         this.stopFreezerProcess();
+      }
    }
 
    private static int validSavedProgress(int value, int completeAt) {
@@ -4563,6 +4859,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (kind == null || !this.validAutomationSlot(slot)) {
          return false;
       }
+      if (kind == MachineKind.SMALL_FREEZER && slot == 0 && this.items.get(0).is(Items.BUCKET)) return true;
 
       return MachineLayout.forKind(kind).allowsAutomationExtraction(slot);
    }
@@ -4597,16 +4894,21 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return !this.freezerResult((ItemStack)this.items.get(0)).isEmpty() ? 0 : -1;
    }
 
+   private boolean freezerFluidInputReady() {
+      return this.items.get(0).isEmpty() && "water".equals(this.fluidType) && this.fluidAmount >= BUCKET_AMOUNT;
+   }
+
    private int freezerStatusSyncValue() {
       int status;
       if (this.previousPowered) {
          status = FREEZER_STATUS_REDSTONE_PAUSED;
       } else {
          ItemStack input = (ItemStack)this.items.get(0);
-         if (input.isEmpty()) {
+         boolean fluidInput = this.freezerFluidInputReady();
+         if (input.isEmpty() && !fluidInput) {
             status = FREEZER_STATUS_IDLE;
          } else {
-            ItemStack result = this.freezerResult(input);
+            ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult(input);
             if (result.isEmpty()) {
                status = FREEZER_STATUS_INVALID_INPUT;
             } else if (!this.canInsertIntoSlots(result, 2)) {
@@ -4679,6 +4981,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          if (((ItemStack)this.items.get(i)).isEmpty()) {
             int move = Math.min(remaining.getCount(), Math.min(remaining.getMaxStackSize(), this.getMaxStackSize(remaining)));
             this.items.set(i, remaining.copyWithCount(move));
+            if (this.kind() == MachineKind.FACTORY_HOPPER) this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);
             remaining.shrink(move);
             this.setChanged();
             insertedAny = true;

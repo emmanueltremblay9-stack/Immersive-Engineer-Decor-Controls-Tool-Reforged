@@ -1,5 +1,5 @@
 Fourneau de laboratoire
 Unité de traitement compacte
-<&recipe>Le fourneau de laboratoire assure de petits travaux de cuisson au combustible solide dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : employez du combustible solide pour de petits lots de cuisson.<br>
+<&recipe>Utilisez des ingrédients acceptés par la cuisson ordinaire au four avec un combustible de four valide. L'interface sépare l'entrée active, le combustible et la sortie, chacun avec deux emplacements tampons. Tous les 20 ticks, chaque liaison entre ces emplacements avance au maximum un objet. Gardez de la place pour le résultat.<br>
+Le four fonctionne sans FE. Pour accélérer la cuisson, placez un réchauffeur externe d'Immersive Engineering dans l'un des emplacements auxiliaires et alimentez le four en FE. Il consomme 8 FE par tick de cuisson accélérée et avance deux fois plus vite que sans ce bonus. Le combustible reste indispensable ; deux réchauffeurs ne cumulent pas le bonus.<br>
+La redstone ne met pas ce four en pause. Arrêtez l'apport d'ingrédients ou de combustible pour interrompre la production.<br>

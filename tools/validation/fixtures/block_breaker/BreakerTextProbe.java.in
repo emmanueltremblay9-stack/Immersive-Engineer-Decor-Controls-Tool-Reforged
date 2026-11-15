@@ -1,0 +1,90 @@
+/** Recording test doubles only; not a Minecraft client or gameplay simulation. */
+public final class BreakerTextProbe {
+   private static final String TITLE = "block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker";
+   private MachineMenu menu = new MachineMenu();
+   private int leftPos, topPos;
+   private static final class GuiGraphics {}
+   private enum MachineKind { SMALL_BLOCK_BREAKER, OTHER }
+   private static final class Stack { boolean isEmpty() { return false; } }
+   private static final class MachineMenu {
+      MachineKind kind = MachineKind.SMALL_BLOCK_BREAKER;
+      MachineKind kind() { return kind; }
+      String blockBreakerTargetName() { return "Stone"; }
+      float blockBreakerHardness() { return 1.5F; }
+      Stack blockBreakerTargetStack() { return new Stack(); }
+      int blockBreakerEnergyCostPerBlock() { return 400; }
+      int energyStored() { return 12300; }
+      int energyCapacity() { return 32000; }
+      boolean blockBreakerRedstonePowered() { return true; }
+      int blockBreakerPendingItems() { return 3; }
+      int field(int index) { return index == 1 ? 12 : 40; }
+      int blockBreakerStatus() { return 4; }
+   }
+   private static final class Component {
+      private String text;
+      private Component(String text) { this.text = text; }
+      static Component translatable(String key, Object... args) {
+         return new Component(key + java.util.Arrays.toString(args));
+      }
+      String getString() { return text; }
+      Component copy() { return new Component(text); }
+      Component append(Object value) { text += value.toString(); return this; }
+      public String toString() { return text; }
+   }
+   private boolean isHovering(int x, int y, int width, int height, double mouseX, double mouseY) {
+      // Model vanilla's one-pixel hover padding. Exact native input remains a CI/manual gate.
+      return mouseX >= leftPos + x - 1 && mouseX < leftPos + x + width + 1
+         && mouseY >= topPos + y - 1 && mouseY < topPos + y + height + 1;
+   }
+   private void drawScaledCenteredString(Object... args) {
+      throw new AssertionError("Permanent title drawn");
+   }
+   private static boolean blockBreakerHasTarget(String name) { return true; }
+   private static String blockBreakerHardnessKey(float hardness, boolean hasTarget) { return "hardness.value"; }
+   private String formatBlockBreakerHardness(float hardness) { return "1.50"; }
+   private static int blockBreakerEstimatedCost(float hardness, boolean target, boolean preview, int estimate) { return estimate; }
+   private static String blockBreakerStatusLabelKey(int state) { return "state.working"; }
+   private static String blockBreakerStatusDetailKey(int state) { return "detail.working"; }
+   private static Component blockBreakerText(String key, Object... args) { return Component.translatable(key, args); }
+
+   /* PRODUCTION_METHODS */
+
+   private Component at(int x, int y) { return blockBreakerTooltip(leftPos + x, topPos + y); }
+   private static void contains(Component text, String expected, String reason) {
+      if (text == null || !text.getString().contains(expected)) throw new AssertionError(reason + ": " + text);
+   }
+   private static void absent(Component text, String reason) {
+      if (text != null) throw new AssertionError(reason + ": " + text);
+   }
+   public static void main(String[] args) {
+      BreakerTextProbe screen = new BreakerTextProbe();
+      screen.drawBlockBreakerLabels(new GuiGraphics());
+      // Production region dispatch, with the model's padded edges and translated origins.
+      for (int[] origin : new int[][] {{0, 0}, {512, 220}, {-20, -30}}) {
+         screen.leftPos = origin[0]; screen.topPos = origin[1];
+         for (int[] point : new int[][] {{41, 5}, {214, 5}, {41, 24}, {214, 24}, {128, 14}}) {
+            contains(screen.at(point[0], point[1]), TITLE, "Nameplate identity");
+         }
+         for (int[] point : new int[][] {{40, 14}, {215, 14}, {128, 4}, {128, 25}, {-1, -1}}) {
+            absent(screen.at(point[0], point[1]), "Outside nameplate");
+         }
+         contains(screen.at(200, 55), "tooltip.energy[12300, 32000]", "Live FE retained");
+         contains(screen.at(200, 55), "tooltip.input", "FE input retained");
+         contains(screen.at(200, 75), "tooltip.fluid_unavailable", "Fluid caveat retained");
+         contains(screen.at(40, 110), "signal.high", "Redstone signal retained");
+         contains(screen.at(40, 110), "tooltip.power_unavailable", "Neutral power caveat retained");
+         contains(screen.at(210, 110), "tooltip.legacy_pending[3]", "Output state retained");
+         contains(screen.at(40, 75), "tooltip.target[Stone]", "Target identity retained");
+         contains(screen.at(40, 75), "1.50", "Target hardness retained");
+         contains(screen.at(115, 100), "tooltip.static_scene", "Static artwork caveat retained");
+         contains(screen.at(128, 140), "tooltip.work_details[12, 40", "Work progress retained");
+         contains(screen.at(128, 140), "cost.per_block[400]", "Cost retained");
+         contains(screen.at(128, 140), "state.working", "Work status retained");
+         screen.menu.kind = MachineKind.OTHER;
+         absent(screen.at(128, 14), "Other machine title");
+         absent(screen.at(200, 55), "Other machine FE");
+         screen.menu.kind = MachineKind.SMALL_BLOCK_BREAKER;
+      }
+      System.out.println("Breaker text-free checks passed");
+   }
+}

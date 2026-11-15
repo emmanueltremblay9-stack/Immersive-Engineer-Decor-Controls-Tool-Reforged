@@ -37,6 +37,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.item.Item;
@@ -78,7 +79,7 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
       new MachineGuiGameTests.MachineEntry(
-         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_v081/background"
+         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_rp_v3/background"
       ),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
@@ -91,8 +92,8 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FLUID_FUNNEL, MachineKind.SMALL_FLUID_FUNNEL, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.PASSIVE_FLUID_ACCUMULATOR, MachineKind.PASSIVE_FLUID_ACCUMULATOR, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL, 1, null),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MILKING_MACHINE, MachineKind.SMALL_MILKING_MACHINE, 2, null),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER, 10, null)
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MILKING_MACHINE, MachineKind.SMALL_MILKING_MACHINE, 2, "milking_redesign_v1/background"),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER, 1, null)
    );
 
    @GameTest(template = "empty", timeoutTicks = 40)
@@ -206,8 +207,8 @@ public final class MachineGuiGameTests {
             );
          }
          if (entry.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
-            helper.assertValueEqual(209, menu.layout().imageWidth(), "Block Breaker should use the approved v0.8 logical width");
-            helper.assertValueEqual(235, menu.layout().imageHeight(), "Block Breaker should use the approved v0.8 logical height");
+            helper.assertValueEqual(256, menu.layout().imageWidth(), "Block Breaker should use the v3 logical width");
+            helper.assertValueEqual(256, menu.layout().imageHeight(), "Block Breaker should use the v3 logical height");
             helper.assertValueEqual(0, menu.layout().machineSlots().get(0).containerIndex(), "single visible output should use vanilla slot index 0");
             helper.assertTrue(
                menu.layout().machineSlots().get(0).role().toLowerCase(java.util.Locale.ROOT).contains("output"),
@@ -803,7 +804,7 @@ public final class MachineGuiGameTests {
       hopperSave.putInt("Cooldown", 9999);
       MachineBlockEntity loadedHighCooldown = new MachineBlockEntity(hopper.getBlockPos(), hopper.getBlockState());
       loadedHighCooldown.loadWithComponents(hopperSave, helper.getLevel().registryAccess());
-      helper.assertValueEqual(400, loadedHighCooldown.dataAccessForTests().get(4), "loaded factory hopper should clamp oversized cooldown");
+      helper.assertValueEqual(0, loadedHighCooldown.dataAccessForTests().get(4), "original hopper resets transient insertion delay on reload, including oversized legacy values");
       helper.succeed();
    }
 
@@ -1331,6 +1332,111 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the batch resumes after output space is freed");
       helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
       helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void reference_flags_preserve_both_authoritative_menu_layouts(GameTestHelper helper) {
+      String[] properties = {
+         MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY,
+         MachineMenu.DEV_FREEZER_LIVE_ENERGY_PROPERTY,
+         MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY
+      };
+      String[] previous = java.util.Arrays.stream(properties).map(System::getProperty).toArray(String[]::new);
+      try {
+         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+         // All eight flag combinations include both Freezer modes plus Placer at once.
+         for (int flags = 0; flags < 8; flags++) {
+            for (int i = 0; i < properties.length; i++) {
+               System.setProperty(properties[i], Boolean.toString((flags & (1 << i)) != 0));
+            }
+            for (MachineKind kind : List.of(MachineKind.SMALL_FREEZER, MachineKind.FACTORY_PLACER)) {
+               MachineMenu authoritative = new MachineMenu(kind, 1, player.getInventory(),
+                  new SimpleContainer(27), new SimpleContainerData(MachineMenu.DATA_COUNT));
+               MachineMenu fromClientFactory = MachineMenu.client(2, player.getInventory(), kind);
+               for (MachineMenu menu : List.of(authoritative, fromClientFactory)) {
+                  helper.assertTrue(!menu.freezerReferencePresentation(), "server world must not enable Freezer presentation");
+                  helper.assertTrue(!menu.factoryPlacerV2ReferencePresentation(), "server world must not enable Placer presentation");
+                  MachineLayout layout = MachineLayout.forKind(kind);
+                  int machineSlots = layout.machineSlots().size();
+                  helper.assertValueEqual(machineSlots + 36, menu.slots.size(), "protocol slot count is unchanged");
+                  for (int i = 0; i < machineSlots; i++) {
+                     MachineLayout.MachineSlot expected = layout.machineSlots().get(i);
+                     helper.assertValueEqual(expected.containerIndex(), menu.getSlot(i).getSlotIndex(), "machine backing index is unchanged");
+                     helper.assertValueEqual(expected.x(), menu.getSlot(i).x, "server machine x remains legacy");
+                     helper.assertValueEqual(expected.y(), menu.getSlot(i).y, "server machine y remains legacy");
+                  }
+                  for (int i = 0; i < 36; i++) {
+                     var slot = menu.getSlot(machineSlots + i);
+                     helper.assertValueEqual(i < 27 ? i + 9 : i - 27, slot.getSlotIndex(), "player backing index is unchanged");
+                     helper.assertValueEqual(i < 27 ? layout.playerSlotX(i % 9) : layout.hotbarSlotX(i % 9), slot.x, "server player x remains legacy");
+                     helper.assertValueEqual(i < 27 ? layout.playerSlotY(i / 9) : layout.hotbarY(), slot.y, "server player y remains legacy");
+                  }
+                  menu.removed(player);
+               }
+            }
+         }
+         helper.succeed();
+      } finally {
+         for (int i = 0; i < properties.length; i++) {
+            if (previous[i] == null) System.clearProperty(properties[i]);
+            else System.setProperty(properties[i], previous[i]);
+         }
+      }
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_freezer_reference_flag_preserves_server_slots_and_reserved_recovery(GameTestHelper helper) {
+      String previous = System.getProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY);
+      System.setProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY, "true");
+      try {
+         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+         MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+         ItemStack reserved = new ItemStack(Items.DIRT, 5);
+         reserved.set(DataComponents.CUSTOM_NAME, net.minecraft.network.chat.Component.literal("Legacy reserved items"));
+         machine.setItem(0, new ItemStack(Items.ICE));
+         machine.setItem(1, reserved);
+         machine.setItem(2, new ItemStack(Items.PACKED_ICE));
+         CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+         machine.setItem(1, ItemStack.EMPTY);
+         machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+
+         MachineMenu menu = new MachineMenu(
+            MachineKind.SMALL_FREEZER, 1, player.getInventory(), machine, machine.dataAccessForTests());
+         helper.assertTrue(!menu.freezerReferencePresentation(), "client development flag must not change server presentation");
+         helper.assertValueEqual(39, menu.slots.size(), "both presentations preserve all 39 protocol slots");
+         helper.assertValueEqual(3, menu.visibleMachineSlots(), "quickMove machine range stays 0..2");
+         for (int index = 0; index < 3; index++) {
+            helper.assertValueEqual(index, menu.getSlot(index).getSlotIndex(), "machine container indices stay unchanged");
+         }
+         for (int index = 3; index < 30; index++) {
+            helper.assertValueEqual(index + 6, menu.getSlot(index).getSlotIndex(), "inventory slot order stays unchanged");
+         }
+         for (int index = 30; index < 39; index++) {
+            helper.assertValueEqual(index - 30, menu.getSlot(index).getSlotIndex(), "hotbar slot order stays unchanged");
+         }
+         helper.assertValueEqual(30, menu.getSlot(0).x, "server retains legacy layout x");
+         helper.assertValueEqual(66, menu.getSlot(0).y, "server retains legacy layout y");
+         helper.assertTrue(menu.getSlot(1).isActive(), "server retains ordinary reserved slot access");
+         helper.assertTrue(!menu.getSlot(1).mayPlace(new ItemStack(Items.DIRT)), "reserved insertion remains disabled");
+         helper.assertTrue(!menu.getSlot(2).mayPlace(new ItemStack(Items.ICE)), "output insertion remains disabled");
+         helper.assertTrue(ItemStack.isSameItemSameComponents(reserved, machine.getItem(1)), "saved reserved NBT/components survive");
+
+         for (int index = 0; index < 36; index++) player.getInventory().setItem(index, new ItemStack(Items.STONE, 64));
+         menu.clicked(1, 0, ClickType.QUICK_MOVE, player);
+         helper.assertValueEqual(5, machine.getItem(1).getCount(), "full inventory does not lose reserved items");
+         player.getInventory().setItem(0, ItemStack.EMPTY);
+         menu.clicked(1, 0, ClickType.QUICK_MOVE, player);
+         helper.assertTrue(machine.getItem(1).isEmpty(), "normal QUICK_MOVE packet path recovers reserved contents");
+         helper.assertValueEqual(5, player.getInventory().getItem(0).getCount(), "all reserved items reach player inventory");
+         helper.assertTrue(ItemStack.isSameItemSameComponents(reserved, player.getInventory().getItem(0)), "recovery retains item components");
+         helper.assertTrue(machine.getItem(0).is(Items.ICE), "recovery leaves input untouched");
+         helper.assertTrue(machine.getItem(2).is(Items.PACKED_ICE), "recovery leaves output untouched");
+         menu.removed(player);
+         helper.succeed();
+      } finally {
+         if (previous == null) System.clearProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY);
+         else System.setProperty(MachineMenu.DEV_FREEZER_REFERENCE_PROPERTY, previous);
+      }
    }
 
    @GameTest(template = "empty", timeoutTicks = 100)
@@ -2634,6 +2740,209 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_single_output_menu_and_all_automation_routes(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_TREE_CUTTER, 1, player.getInventory(), machine, machine.dataAccessForTests());
+      helper.assertValueEqual(37, menu.slots.size(), "one output plus 36 player slots");
+      helper.assertTrue(!menu.treeCutterV3ReferencePresentation(), "server menu must not use client reference coordinates");
+      helper.assertValueEqual(122, menu.getSlot(0).x, "server output x remains authoritative layout");
+      helper.assertValueEqual(42, menu.getSlot(0).y, "server output y remains authoritative layout");
+      helper.assertTrue(!menu.getSlot(0).mayPlace(new ItemStack(Items.OAK_LOG)), "output rejects manual insertion");
+      machine.setItem(0, new ItemStack(Items.OAK_LOG, 5));
+      machine.setItem(26, new ItemStack(Items.DIAMOND, 7));
+      for (int face = -1; face < Direction.values().length; face++) {
+         Direction side = face < 0 ? null : Direction.values()[face];
+         IItemHandler handler = machine.itemHandler(side);
+         helper.assertValueEqual(1, handler.getSlots(), "all existing faces and unsided expose one output");
+         helper.assertValueEqual(2, handler.insertItem(0, new ItemStack(Items.OAK_LOG, 2), false).getCount(), "automation rejects insertion");
+         helper.assertValueEqual(5, handler.extractItem(0, 64, true).getCount(), "simulation sees output");
+         helper.assertTrue(handler.extractItem(26, 64, false).isEmpty(), "hidden storage is inaccessible");
+         helper.assertValueEqual(5, machine.getItem(0).getCount(), "simulation leaves output unchanged");
+         if (side != null) {
+            helper.assertValueEqual(1, machine.getSlotsForFace(side).length, "vanilla sided slot count");
+            helper.assertTrue(machine.canTakeItemThroughFace(0, machine.getItem(0), side), "vanilla output extraction");
+            helper.assertTrue(!machine.canTakeItemThroughFace(26, machine.getItem(26), side), "no hidden extraction");
+         }
+      }
+      helper.assertTrue(!machine.canTakeItem(new SimpleContainer(1), 26, machine.getItem(26)), "unsided container cannot bypass hidden storage");
+      helper.assertValueEqual(5, menu.quickMoveStack(player, 0).getCount(), "shift-click extracts output");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(machine.getItem(0).is(Items.DIAMOND) && machine.getItem(0).getCount() == 7, "next tick exposes preserved legacy items");
+      helper.assertTrue(machine.getItem(26).isEmpty(), "legacy transfer consumes original exactly once");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_legacy_all_positions_reload_and_component_safe_drain(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
+      for (int slot = 0; slot < 27; slot++) {
+         ItemStack stack = new ItemStack(slot == 26 ? Items.ENDER_PEARL : Items.OAK_LOG, slot == 26 ? 16 : slot + 1);
+         stack.set(DataComponents.CUSTOM_NAME, net.minecraft.network.chat.Component.literal("legacy-" + slot));
+         machine.setItem(slot, stack);
+      }
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+      for (int slot = 0; slot < 27; slot++) {
+         helper.assertValueEqual(slot == 26 ? 16 : slot + 1, machine.getItem(slot).getCount(), "reload retains every saved position");
+      }
+      IItemHandler output = machine.itemHandler(null);
+      for (int slot = 0; slot < 27; slot++) {
+         tickMachine(helper, machine, 1);
+         ItemStack extracted = output.extractItem(0, 64, false);
+         helper.assertValueEqual("legacy-" + slot, extracted.getHoverName().getString(), "components prevent merging and preserve ascending recovery order");
+         helper.assertValueEqual(slot == 26 ? 16 : slot + 1, extracted.getCount(), "recover each stack once at its own stack limit");
+         // Exercise repeated mid-drain saves, not merely an initial migration.
+         saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+         machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+      }
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(machine.isEmpty(), "no duplicate after complete recovery and reload");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_legacy_partial_merge_and_pending_backpressure(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      machine.setItem(0, new ItemStack(Items.ENDER_PEARL, 15));
+      machine.setItem(1, new ItemStack(Items.ENDER_PEARL, 4));
+      machine.setItem(9, new ItemStack(Items.OAK_LOG, 3));
+      BlockPos target = TEST_POS.relative(machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING));
+      helper.setBlock(target, Blocks.OAK_LOG);
+      tickMachine(helper, machine, 80);
+      helper.assertValueEqual(16, machine.getItem(0).getCount(), "respect sixteen-item output capacity");
+      helper.assertValueEqual(3, machine.getItem(1).getCount(), "preserve exact partial remainder");
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.OAK_LOG), "pending legacy items pause new harvesting");
+      machine.itemHandler(null).extractItem(0, 64, false);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(3, machine.getItem(0).getCount(), "remaining pearls are recoverable");
+      helper.assertTrue(machine.getItem(9).is(Items.OAK_LOG), "incompatible old I/O stack remains retained");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_harvest_requires_complete_single_slot_capacity(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      BlockPos target = TEST_POS.relative(machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING));
+      helper.setBlock(target, Blocks.OAK_LOG);
+      machine.setItem(0, new ItemStack(Items.OAK_LOG, 64));
+      tickMachine(helper, machine, 40);
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.OAK_LOG), "full output leaves log intact");
+      machine.setItem(0, new ItemStack(Items.BIRCH_LOG));
+      tickMachine(helper, machine, 40);
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.OAK_LOG), "mixed species leaves log intact");
+      machine.setItem(0, new ItemStack(Items.OAK_LOG, 63));
+      tickMachine(helper, machine, 40);
+      helper.assertTrue(helper.getBlockState(target).isAir(), "one available place permits one log");
+      helper.assertValueEqual(64, machine.getItem(0).getCount(), "harvest fills sole output exactly");
+      for (int slot = 1; slot < 27; slot++) helper.assertTrue(machine.getItem(slot).isEmpty(), "new harvest never enters legacy storage");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_multi_stack_drop_preflight_is_atomic(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      try {
+         var method = MachineBlockEntity.class.getDeclaredMethod("canInsertAllIntoSlots", List.class, int[].class);
+         method.setAccessible(true);
+         helper.assertTrue(!(boolean)method.invoke(machine, List.of(new ItemStack(Items.OAK_LOG), new ItemStack(Items.BIRCH_LOG)), new int[]{0}), "incompatible loot cannot fit one output");
+         helper.assertTrue(!(boolean)method.invoke(machine, List.of(new ItemStack(Items.OAK_LOG, 40), new ItemStack(Items.OAK_LOG, 25)), new int[]{0}), "combined loot cannot overflow output");
+         helper.assertTrue((boolean)method.invoke(machine, List.of(new ItemStack(Items.OAK_LOG, 40), new ItemStack(Items.OAK_LOG, 24)), new int[]{0}), "compatible loot fits exact capacity");
+         helper.assertTrue(machine.isEmpty(), "all preflights leave inventory unchanged");
+      } catch (ReflectiveOperationException exception) {
+         throw new AssertionError(exception);
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_break_drops_visible_and_all_legacy_positions_once(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      for (int slot = 0; slot < 27; slot++) machine.setItem(slot, new ItemStack(Items.DIAMOND, slot + 1));
+      helper.setBlock(TEST_POS, Blocks.AIR);
+      int total = helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(helper.absolutePos(TEST_POS)).inflate(2), entity -> entity.getItem().is(Items.DIAMOND))
+         .stream().mapToInt(entity -> entity.getItem().getCount()).sum();
+      helper.assertValueEqual(378, total, "block removal spills all 27 positions exactly once");
+      helper.setBlock(TEST_POS, Blocks.AIR);
+      int repeated = helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(helper.absolutePos(TEST_POS)).inflate(2), entity -> entity.getItem().is(Items.DIAMOND))
+         .stream().mapToInt(entity -> entity.getItem().getCount()).sum();
+      helper.assertValueEqual(total, repeated, "repeated removal adds no duplicate");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_vanilla_hopper_extracts_only_visible_output(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      machine.setItem(0, new ItemStack(Items.DIAMOND, 2));
+      machine.setItem(26, new ItemStack(Items.EMERALD, 3));
+      helper.setBlock(TEST_POS.below(), Blocks.HOPPER);
+      var hopper = (net.minecraft.world.level.block.entity.HopperBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS.below()));
+      helper.assertTrue(net.minecraft.world.level.block.entity.HopperBlockEntity.suckInItems(helper.getLevel(), hopper), "real vanilla hopper extracts output");
+      helper.assertValueEqual(1, machine.getItem(0).getCount(), "hopper removes one visible item");
+      helper.assertValueEqual(3, machine.getItem(26).getCount(), "hopper never removes hidden items");
+      machine.removeItem(0, 64);
+      helper.assertTrue(!net.minecraft.world.level.block.entity.HopperBlockEntity.suckInItems(helper.getLevel(), hopper), "hopper cannot bypass empty output before recovery tick");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(net.minecraft.world.level.block.entity.HopperBlockEntity.suckInItems(helper.getLevel(), hopper), "hopper extracts recovered output next tick");
+      helper.assertValueEqual(2, machine.getItem(0).getCount(), "recovered remainder retained");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_unversioned_log_migration_is_narrow_and_runs_once(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
+      machine.setItem(0, new ItemStack(Items.OAK_LOG, 10));
+      machine.setItem(9, new ItemStack(Items.BIRCH_LOG, 12));
+      machine.setItem(26, new ItemStack(Items.DIAMOND, 3));
+      ItemStack named = new ItemStack(Items.OAK_LOG, 2);
+      named.set(DataComponents.CUSTOM_NAME, net.minecraft.network.chat.Component.literal("keep me"));
+      machine.setItem(10, named.copy());
+      CompoundTag old = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      old.remove("TreeInventoryVersion");
+      machine.loadWithComponents(old, helper.getLevel().registryAccess());
+      CompoundTag beforeTick = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      helper.assertTrue(!beforeTick.contains("TreeInventoryVersion"), "save before migration must not mark it completed");
+      helper.assertValueEqual(10, machine.getItem(0).getCount(), "load alone does not delete items");
+      machine.loadWithComponents(beforeTick, helper.getLevel().registryAccess());
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(ItemStack.matches(named, machine.getItem(0)), "customized vanilla logs are retained and recoverable");
+      helper.assertTrue(machine.getItem(9).isEmpty(), "plain legacy logs removed from former I/O position");
+      helper.assertValueEqual(3, machine.getItem(26).getCount(), "nonlogs remain retained");
+      CompoundTag migrated = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      helper.assertValueEqual(1, migrated.getInt("TreeInventoryVersion"), "completed migration persisted");
+      machine.clearContent();
+      machine.setItem(0, new ItemStack(Items.OAK_LOG, 13));
+      for (int reload = 0; reload < 3; reload++) {
+         machine.loadWithComponents(machine.saveWithFullMetadata(helper.getLevel().registryAccess()), helper.getLevel().registryAccess());
+         tickMachine(helper, machine, 1);
+         helper.assertValueEqual(13, machine.getItem(0).getCount(), "post-migration logs survive repeated save/reload");
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void tree_new_and_unknown_version_inventories_do_not_discard_logs(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_TREE_CUTTER, MachineKind.SMALL_TREE_CUTTER);
+      machine.setItem(0, new ItemStack(Items.OAK_LOG, 11));
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(11, machine.getItem(0).getCount(), "fresh entity never discards new logs");
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      saved.putInt("TreeInventoryVersion", 99);
+      machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(11, machine.getItem(0).getCount(), "unknown future version is not treated as legacy");
+      helper.assertValueEqual(99, machine.saveWithFullMetadata(helper.getLevel().registryAccess()).getInt("TreeInventoryVersion"), "future version retained");
+      saved.putString("TreeInventoryVersion", "unknown");
+      machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(11, machine.getItem(0).getCount(), "malformed version conservatively preserves logs");
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 120)
    public static void small_tree_cutter_routes_log_drops_into_internal_buffer(GameTestHelper helper) {
       helper.setBlock(TEST_POS, Blocks.AIR);
@@ -2889,10 +3198,11 @@ public final class MachineGuiGameTests {
          helper.getLevel().getSignal(helper.absolutePos(comparatorPos), Direction.EAST),
          "empty factory hopper should start with no comparator signal"
       );
-      BlockPos itemPos = helper.absolutePos(TEST_POS.above());
+      BlockPos itemPos = helper.absolutePos(TEST_POS.below(2));
       ItemEntity looseItem = new ItemEntity(
          helper.getLevel(), itemPos.getX() + 0.5, itemPos.getY() + 0.5, itemPos.getZ() + 0.5, new ItemStack(Items.COBBLESTONE)
       );
+      looseItem.setOnGround(true);
       helper.getLevel().addFreshEntity(looseItem);
       tickMachine(helper, machine, 10);
       helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "factory hopper should collect the loose item into inventory");
@@ -2906,7 +3216,7 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 120)
-   public static void factory_hopper_pulse_mode_respects_redstone_before_collecting_items(GameTestHelper helper) {
+   public static void factory_hopper_pulse_mode_collects_without_a_redstone_edge(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       helper.setBlock(TEST_POS, Blocks.AIR);
       helper.setBlock(
@@ -2918,14 +3228,15 @@ public final class MachineGuiGameTests {
       MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
       MachineMenu menu = new MachineMenu(MachineKind.FACTORY_HOPPER, 7, player.getInventory(), machine, machine.dataAccessForTests());
       menu.handleAction(player, 3, 0, 0);
-      BlockPos itemPos = helper.absolutePos(TEST_POS.above());
+      BlockPos itemPos = helper.absolutePos(TEST_POS.below(2));
       ItemEntity looseItem = new ItemEntity(
          helper.getLevel(), itemPos.getX() + 0.5, itemPos.getY() + 0.5, itemPos.getZ() + 0.5, new ItemStack(Items.COBBLESTONE)
       );
+      looseItem.setOnGround(true);
       helper.getLevel().addFreshEntity(looseItem);
       tickMachine(helper, machine, 20);
-      helper.assertTrue(machine.getItem(0).isEmpty(), "factory hopper pulse mode should not collect loose items while redstone is inactive");
-      helper.assertTrue(looseItem.isAlive(), "redstone-disabled pulse hopper should leave the loose item in the world");
+      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "original pulse mode collects independently of output edges");
+      helper.assertTrue(!looseItem.isAlive(), "collected item must be removed exactly once");
       menu.handleAction(player, 5, 1, 0);
       tickMachine(helper, machine, 12);
       helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "factory hopper manual trigger should collect loose items before transfer");
@@ -2934,37 +3245,33 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 160)
-   public static void factory_hopper_pulse_mode_requires_new_redstone_edge_before_collection(GameTestHelper helper) {
+   public static void factory_hopper_pulse_mode_collects_but_requires_edge_for_output(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
-      helper.setBlock(TEST_POS, Blocks.AIR);
-      helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
-      helper.setBlock(
-         TEST_POS,
-         (BlockState)((MachineBlocks.DirectionalMachineBlock)ModBlocks.FACTORY_HOPPER.get()).defaultBlockState().setValue(MachineBlocks.FACING, Direction.UP)
-      );
-      BlockEntity blockEntity = helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
-      helper.assertTrue(blockEntity instanceof MachineBlockEntity, "factory hopper should create a machine block entity");
-      MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
-      MachineMenu menu = new MachineMenu(MachineKind.FACTORY_HOPPER, 7, player.getInventory(), machine, machine.dataAccessForTests());
-      menu.handleAction(player, 3, 0, 0);
-      tickMachine(helper, machine, 12);
-
-      BlockPos itemPos = helper.absolutePos(TEST_POS.above());
-      ItemEntity looseItem = new ItemEntity(
-         helper.getLevel(), itemPos.getX() + 0.5, itemPos.getY() + 0.5, itemPos.getZ() + 0.5, new ItemStack(Items.COBBLESTONE)
-      );
+      helper.setBlock(TEST_POS, ModBlocks.FACTORY_HOPPER.get().defaultBlockState().setValue(MachineBlocks.FACING, Direction.UP));
+      helper.setBlock(TEST_POS.above(), Blocks.BARREL);
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      Container target = (Container)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS.above()));
+      machine.handleGuiAction(player, 3, 0, 0);
+      BlockPos itemPos = helper.absolutePos(TEST_POS.below(2));
+      ItemEntity looseItem = new ItemEntity(helper.getLevel(), itemPos.getX()+0.5, itemPos.getY()+0.5,
+         itemPos.getZ()+0.5, new ItemStack(Items.COBBLESTONE, 3));
+      looseItem.setOnGround(true);
       helper.getLevel().addFreshEntity(looseItem);
       tickMachine(helper, machine, 20);
-      helper.assertTrue(machine.getItem(0).isEmpty(), "factory hopper pulse mode should ignore held redstone power without a new edge");
-      helper.assertTrue(looseItem.isAlive(), "held-power pulse hopper should leave the loose item in the world until the next edge");
-
-      helper.setBlock(TEST_POS.south(), Blocks.AIR);
-      tickMachine(helper, machine, 12);
-      helper.assertTrue(machine.getItem(0).isEmpty(), "factory hopper pulse mode should not collect on a redstone falling edge when non-inverted");
+      helper.assertValueEqual(3, machine.getItem(0).getCount(), "pulse input collects without power");
+      helper.assertTrue(target.isEmpty(), "pulse output requires its first rising edge");
       helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
       tickMachine(helper, machine, 12);
-      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "factory hopper pulse mode should collect loose items on the next rising edge");
-      helper.assertTrue(!looseItem.isAlive(), "factory hopper pulse mode should remove the collected loose item entity after a new edge");
+      helper.assertValueEqual(1, target.getItem(0).getCount(), "one item sent on rising edge");
+      tickMachine(helper, machine, 30);
+      helper.assertValueEqual(1, target.getItem(0).getCount(), "held power must not repeat output");
+      helper.setBlock(TEST_POS.south(), Blocks.AIR);
+      tickMachine(helper, machine, 12);
+      helper.assertValueEqual(1, target.getItem(0).getCount(), "normal falling edge must not output");
+      helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
+      tickMachine(helper, machine, 12);
+      helper.assertValueEqual(2, target.getItem(0).getCount(), "next rising edge sends next item");
+      helper.assertValueEqual(1, machine.getItem(0).getCount(), "items conserved");
       helper.succeed();
    }
 

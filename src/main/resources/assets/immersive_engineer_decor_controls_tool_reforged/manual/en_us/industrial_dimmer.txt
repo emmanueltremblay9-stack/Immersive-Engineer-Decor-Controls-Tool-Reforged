@@ -1,9 +1,7 @@
 Dimmer
 Variable signal
-<&recipe>A rotary control dials redstone strength from a compact panel face.<br>
+<&recipe>The Dimmer selects redstone strength from the point clicked on its panel.<br>
 <br>
-Usage: Right-click it to step the output upward, then back to zero after full strength.<br>
+Usage: Right-click higher or lower on a wall-mounted panel to select stronger or weaker output. On a floor or ceiling, the north-south click position sets the strength instead.<br>
 <br>
-Notes: Outputs strength from 0 to 15.
-
-
+Notes: Each click selects the output directly; repeated clicks do not cycle through the values.

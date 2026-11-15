@@ -1,5 +1,7 @@
 # Passive Fluid Accumulator GUI
 
+Historical legacy-art provenance. The active renderer now uses the retained orange V1 concept; see [current integration and qualification](../../testing/fluid-gui-text-free.md).
+
 ## Reference
 
 ![Owner-supplied Passive Fluid Accumulator reference](passive-fluid-accumulator.reference.png)

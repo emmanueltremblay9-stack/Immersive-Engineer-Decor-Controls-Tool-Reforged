@@ -1,9 +1,7 @@
 Interval Timer
 Timed pulse
-<&recipe>A compact timer switch provides a scheduled redstone pulse.<br>
+<&recipe>This timer produces a single full-strength redstone pulse when clicked.<br>
 <br>
-Usage: Use it where a small mechanism needs periodic or delayed control.<br>
+Usage: Right-click it to trigger a mechanism immediately. The output switches off after 40 game ticks, about two seconds at normal tick speed.<br>
 <br>
-Notes: Uses scheduled redstone pulses.
-
-
+Notes: It does not repeat automatically; use it for a manually triggered timed signal.

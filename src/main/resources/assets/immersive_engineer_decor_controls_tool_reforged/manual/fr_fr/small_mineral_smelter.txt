@@ -1,5 +1,5 @@
 Fourneau de fusion de minéraux
 Unité de traitement compacte
-<&recipe>Le fourneau de fusion de minéraux traite les minéraux à haute température dans un espace d'atelier réduit.<br>
-<br>
-Utilisation : fournissez des blocs minéraux et de l'énergie pour les opérations de fusion à haute température.<br>
+<&recipe>Choisissez le mode Lave, Magma ou Obsidienne dans l'interface. Un bloc minéral accepté, comme la pierre ou les pierres, produit 1 000 mB de lave en mode Lave, ou un bloc de magma en mode Magma. Le mode Obsidienne refroidit un lot de 1 000 mB de lave en une obsidienne sans consommer d'eau. Un changement de mode pendant un lot s'applique au lot suivant.<br>
+Insérez les objets et la lave par dessus, extrayez-les par dessous et fournissez les FE à l'arrière. Le réservoir contient 4 000 mB de lave. Pendant le refroidissement de l'obsidienne, les 1 000 mB engagés sont réservés ; seul l'excédent peut être retiré. L'ancien emplacement supplémentaire n'est pas un emplacement de combustible. Évitez le contact avec la machine chaude.<br>
+En mode Obsidienne, un lot de 1 000 mB de lave déjà présent dans le réservoir est refroidi en priorité. À défaut, un bloc minéral accepté peut être chauffé en lave, puis refroidi en obsidienne au cours du même lot. La redstone suspend la chauffe ; le refroidissement engagé et la sortie vers le bas peuvent continuer sans FE.<br>

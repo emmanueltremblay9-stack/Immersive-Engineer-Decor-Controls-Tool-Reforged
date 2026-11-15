@@ -1,6 +1,6 @@
 Factory Dropper
 Shop-floor utility
-<&recipe>This block releases stored items from an aimed face.<br>
-<br>
-Usage: Aim the front toward the release point, load its internal slots, and tune force, angle, delay, filter logic, and redstone mode in its screen.<br>
-
+<&recipe>The Factory Dropper ejects item entities from its working face. Load the 12 stock slots, then adjust launch speed, aim, unfiltered batch size and delay. Unfiltered batches contain 1-32 items from one eligible stack, selected in rotation. No FE is required.<br>
+The three lower filter slots hold real example stacks. Each filter matches both the item and its components, and its stack size is the required quantity. Matching quantities are taken from the 12 stock slots; the filter examples remain in place. Repeated filters require enough stock for their combined quantities.<br>
+Filter AND waits until every defined filter is satisfied. Filter OR accepts satisfied filters individually. A filtered drop ejects each satisfied filter's specified quantity, rather than the unfiltered batch size. Items matching a defined filter are excluded from the unfiltered rotation.<br>
+Combine filter readiness with the external redstone trigger using AND or OR. Ignored redstone supplies a permanent external trigger. Pulse responds to a rising signal change; continuous repeats while powered, subject to the delay. Clicking the signal indicator simulates an external trigger and still follows the filter logic and delay.<br>

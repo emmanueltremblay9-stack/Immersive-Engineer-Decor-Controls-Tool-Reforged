@@ -44,9 +44,9 @@ Sac de couchage
 Couchage portatif
 <&sleeping_bag>Le sac de couchage est un nécessaire de repos résistant aux intempéries pour les travaux loin d’un lit.<br>
 <br>
-Utilisation : utilisez-le la nuit dans l’Overworld pour vous reposer jusqu’au matin. Il ne définit ni ne déplace votre point de réapparition.<br>
+Utilisation : utilisez-le la nuit dans l’Overworld pour vous reposer jusqu’au matin, à côté d'un feu de camp vanilla allumé. Le feu doit occuper l'une des huit cases voisines horizontales, à hauteur de vos pieds ; les diagonales comptent. Un feu dans votre propre case, à deux blocs, au-dessus ou en dessous, éteint ou un feu des âmes ne convient pas.<br>
 <br>
-Il refuse l’utilisation de jour, les environs dangereux avec des monstres proches et les dimensions impropres à un repos sûr. Chaque repos réussi use le sac.
+Il ne définit ni ne déplace votre point de réapparition. Il refuse l’utilisation de jour, les environs dangereux avec des monstres proches et les dimensions autres que l’Overworld. Chaque repos réussi impose un délai de 400 ticks et use le sac hors du mode Créatif.
 <np>
 Caisse de matériaux
 Caisse de fournitures de chantier

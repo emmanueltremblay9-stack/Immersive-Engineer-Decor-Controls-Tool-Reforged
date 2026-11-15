@@ -1,0 +1,288 @@
+{
+  "status": "PASS_RESOURCE_IDENTITY_NOT_NATIVE_RUNTIME",
+  "source_filename": "freezer-mixed-rp-v5-preview.png",
+  "runtime_resource": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/background.png",
+  "bytes": 2769644,
+  "byte_sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+  "rgba_sha256": "61377093d58be84df2852af2e020ae1df56c36190f9a4536d5e65c4260de0d0c",
+  "metadata": {
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGB",
+    "chunks": [
+      "IHDR",
+      "caBX",
+      "IDAT",
+      "IEND"
+    ],
+    "has_color_profile": false
+  },
+  "native_runtime_capture": "NOT_RUN",
+  "sampling": "CPU point sampling at integer destination pixel centers, direct1254 UVs, nearest/clamp. Not hardware framebuffer/color-pipeline proof.",
+  "original_source_byte_identity": true,
+  "original_source_rgba_different_pixels": 0,
+  "existing_official_render": {
+    "byte_sha256": "f8f376c0b974929421f8400335966680ca02ae620a029ca028c55986d01e2304",
+    "same_file_bytes": false,
+    "rgba_different_pixels": 0
+  },
+  "conservative_v5_interior_pixel_checks": [
+    {
+      "menu_index": 0,
+      "max_rgb_channel": 60
+    },
+    {
+      "menu_index": 2,
+      "max_rgb_channel": 59
+    },
+    {
+      "menu_index": 3,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 4,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 5,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 6,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 7,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 8,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 9,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 10,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 11,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 12,
+      "max_rgb_channel": 55
+    },
+    {
+      "menu_index": 13,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 14,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 15,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 16,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 17,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 18,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 19,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 20,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 21,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 22,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 23,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 24,
+      "max_rgb_channel": 50
+    },
+    {
+      "menu_index": 25,
+      "max_rgb_channel": 51
+    },
+    {
+      "menu_index": 26,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 27,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 28,
+      "max_rgb_channel": 51
+    },
+    {
+      "menu_index": 29,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 30,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 31,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 32,
+      "max_rgb_channel": 51
+    },
+    {
+      "menu_index": 33,
+      "max_rgb_channel": 50
+    },
+    {
+      "menu_index": 34,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 35,
+      "max_rgb_channel": 52
+    },
+    {
+      "menu_index": 36,
+      "max_rgb_channel": 54
+    },
+    {
+      "menu_index": 37,
+      "max_rgb_channel": 53
+    },
+    {
+      "menu_index": 38,
+      "max_rgb_channel": 54
+    }
+  ],
+  "cpu_sampling_checks": [
+    {
+      "display_square": 314,
+      "sampled_rgba_sha256": "505911cd8836ae7bd21cf4c76fba91701d5835cca1e04ef9d240258dff2ea347",
+      "different_pixels": 0,
+      "item_display_pixels": 16.0
+    },
+    {
+      "display_square": 228,
+      "sampled_rgba_sha256": "ab442a0fe0e4623a3341f7e3c73137a5703174c5803633dd3a6d7d8bccd0d3fe",
+      "different_pixels": 0,
+      "item_display_pixels": 11.617834394904458
+    },
+    {
+      "display_square": 168,
+      "sampled_rgba_sha256": "efe7d0c947f158dbe6557d742d7492ee76464b5814bc68698ac6e549b8257f37",
+      "different_pixels": 0,
+      "item_display_pixels": 8.560509554140127
+    },
+    {
+      "display_square": 108,
+      "sampled_rgba_sha256": "8497eb829b91e3f5d9200b1cb90e5a1e2c167fbd8027789c87ddf7d53f88d627",
+      "different_pixels": 0,
+      "item_display_pixels": 5.503184713375796
+    }
+  ],
+  "untouched_production_background": {
+    "byte_sha256": "be8066887498aa01d029123da7a33ad32a1e935907ae3a3e706ccdd09bfaa3eb",
+    "metadata": {
+      "width": 941,
+      "height": 1672,
+      "mode": "RGBA",
+      "chunks": [
+        "IHDR",
+        "sRGB",
+        "gAMA",
+        "cHRM",
+        "pHYs",
+        "tIME",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "has_color_profile": true
+    },
+    "is_exact_v5_reference": false
+  },
+  "historical_crop_identity": {
+    "rectangle": [
+      259,
+      614,
+      681,
+      1057
+    ],
+    "size": [
+      422,
+      443
+    ],
+    "reference_crop_byte_sha256": "838cc4359f0f925077b5d7d6398a0a60b3646505592ec9578fda4f07436f91d1",
+    "toolkit_crop_byte_sha256": "838cc4359f0f925077b5d7d6398a0a60b3646505592ec9578fda4f07436f91d1",
+    "source_crop_rgba_different_pixels": 0,
+    "toolkit_crop_rgba_different_pixels": 0,
+    "is_exact_v5_reference": false
+  }
+}

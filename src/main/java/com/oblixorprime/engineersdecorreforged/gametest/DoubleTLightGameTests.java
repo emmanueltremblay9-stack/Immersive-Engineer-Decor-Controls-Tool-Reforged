@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import blusunrize.immersiveengineering.common.register.IEItems;
 import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
@@ -86,9 +87,29 @@ public final class DoubleTLightGameTests {
          var point=Vec3.atLowerCornerOf(pos).add(across?.1:.3,.5,1);
          use(p,new BlockHitResult(point,Direction.NORTH,pos.south(),false));var state=level.getBlockState(pos);var be=SupportLights.entity(level,pos);
          h.assertTrue(state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&SupportLights.attached(state),"beam combines with existing lamp in intended target cell");
-         h.assertValueEqual(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),across,"ordinary wall click zones apply even with light-first order");
+         h.assertFalse(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL),"all wall-face clicks stay upright when merging a lamp-first placement");
          h.assertTrue(be.attachment().lamp.is(lamp)&&be.attachment().paid,"pre-existing light value conserved");
          h.assertValueEqual(p.getMainHandItem().getCount(),2,"one beam consumed; light not rebought");h.assertValueEqual(drops(h,pos,lamp),0,"no dropped copy of the merged lamp");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty",timeoutTicks=120)
+   public static void common_horizontal_item_merges_lamp_first_as_wall_support(GameTestHelper h){
+      var level=h.getLevel();var pos=h.absolutePos(P);var p=player(h,pos);
+      for(Block lamp:lamps()){
+         clear(h,pos);var old=lamp.defaultBlockState().setValue(PortedBlocks.FACING,Direction.SOUTH);level.setBlock(pos,old,Block.UPDATE_ALL);
+         level.setBlock(pos.south(),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+         p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(),2));
+         var point=Vec3.atLowerCornerOf(pos).add(.3,.5,1);
+         use(p,new BlockHitResult(point,Direction.NORTH,pos.south(),false));
+         var state=level.getBlockState(pos);var be=SupportLights.entity(level,pos);
+         h.assertTrue(state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&SupportLights.attached(state),
+            "the existing horizontal support item selects the wall ID when merging a lamp-first placement");
+         h.assertTrue(be!=null&&be.attachment().lamp.is(lamp)&&be.attachment().paid,
+            "lamp identity and paid ownership survive common-item dispatch");
+         h.assertValueEqual(p.getMainHandItem().getCount(),1,"common wall support consumes once");
+         h.assertValueEqual(drops(h,pos,lamp),0,"common placement does not duplicate the original lamp drop");
       }
       h.succeed();
    }
@@ -215,7 +236,7 @@ public final class DoubleTLightGameTests {
          h.assertTrue(level.getBlockState(pos).is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&!SupportLights.attached(level.getBlockState(pos)),"support remains unlit");
          h.assertValueEqual(drops(h,pos,lamp),1,"one paid original lamp returned");
          p.gameMode.destroyBlock(pos);h.assertTrue(level.getBlockState(pos).is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),"stale completion cannot turn partial removal into beam removal");
-         h.assertValueEqual(drops(h,pos,lamp),1,"stale completion cannot refund twice");h.assertValueEqual(drops(h,pos,ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),0,"no beam duplication");
+         h.assertValueEqual(drops(h,pos,lamp),1,"stale completion cannot refund twice");h.assertValueEqual(drops(h,pos,ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()),0,"no beam duplication");
       }
       h.succeed();
    }
@@ -232,7 +253,7 @@ public final class DoubleTLightGameTests {
          h.assertTrue(part!=null&&part.kind()==PortedBlocks.PartKind.BASE,"clear native ray deliberately selects structural metal");
          p.gameMode.handleBlockBreakAction(pos,ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,Direction.NORTH,level.getMaxBuildHeight(),0);p.gameMode.destroyBlock(pos);
          h.assertTrue(level.getBlockState(pos).isAir(),"whole support removed normally");
-         h.assertValueEqual(drops(h,pos,ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),1,"one support item");
+         h.assertValueEqual(drops(h,pos,ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()),1,"one support item");
          h.assertValueEqual(drops(h,pos,lamp),creative?0:1,"only one genuinely paid lamp is returned");
       }
       h.succeed();
@@ -257,9 +278,12 @@ public final class DoubleTLightGameTests {
       var level=h.getLevel();var pos=h.absolutePos(P);var p=player(h,pos);
       for(boolean across:List.of(false,true))for(Block lamp:lamps()){
          clear(h,pos);level.setBlock(pos,wall(across),Block.UPDATE_ALL);p.setYRot(0);p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(lamp));use(p,front(pos));
-         var be=SupportLights.entity(level,pos);var before=be.attachment();var state=level.getBlockState(pos).rotate(net.minecraft.world.level.block.Rotation.CLOCKWISE_90);level.setBlock(pos,state,Block.UPDATE_ALL);
-         var changed=be.attachment();h.assertValueEqual(changed.offset,new Vec3(-before.offset.z,before.offset.y,before.offset.x),"rigid translation rotates with the support");
-         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.WEST,"original lamp orientation rotates with the wall frame");
+         var be=SupportLights.entity(level,pos);var before=be.attachment();var hammer=IEItems.Tools.HAMMER.get();var hammerStack=new ItemStack(hammer);p.setItemInHand(InteractionHand.MAIN_HAND,hammerStack);
+         var result=hammer.onItemUseFirst(hammerStack,new UseOnContext(p,InteractionHand.MAIN_HAND,front(pos)));
+         h.assertTrue(result.consumesAction(),"registered IE Engineer's Hammer rotates the attached support");
+         var state=level.getBlockState(pos);var changed=be.attachment();
+         h.assertValueEqual(changed.offset,new Vec3(-before.offset.z,before.offset.y,before.offset.x),"rigid translation rotates clockwise with the support");
+         h.assertValueEqual(changed.lamp.getValue(PortedBlocks.FACING),Direction.WEST,"original lamp orientation rotates clockwise with the wall frame");
          var copy=new DoubleTLightBlockEntity(pos,state);copy.loadWithComponents(be.saveWithoutMetadata(level.registryAccess()),level.registryAccess());
          h.assertValueEqual(copy.attachment().offset,changed.offset,"rotated saved pose frame resolves after reload");h.assertTrue(copy.attachment().lamp==changed.lamp,"rotated light identity/facing restores");
          h.assertFalse(Shapes.joinIsNotEmpty(state.getCollisionShape(level,pos),changed.shape(),BooleanOp.AND),"native rotation introduces no beam overlap");

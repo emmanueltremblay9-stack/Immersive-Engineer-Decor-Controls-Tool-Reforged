@@ -1,5 +1,7 @@
-Porte de clôture en maille d'acier
+Portail grillagé en acier
 Élément de voie de service
-<&recipe>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<&recipe>Ce portail manuel peut mesurer un ou deux blocs de haut.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Utilisation : posez un second segment directement au-dessus du premier pour former un grand portail. Un clic droit sur un segment commande les deux. Casser un segment retire tout le grand portail.<br>
+<br>
+Deux portails voisins assortis, dans le même plan et de même hauteur, peuvent s'ouvrir ensemble par un clic avec la main principale vide. Une rangée de trois ne forme pas une paire liée. Ces portails restent manuels, sans activation redstone.
