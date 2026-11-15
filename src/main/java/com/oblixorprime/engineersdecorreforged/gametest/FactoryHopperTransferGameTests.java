@@ -34,7 +34,7 @@ public final class FactoryHopperTransferGameTests {
       source.setItem(0, new ItemStack(Items.OAK_LOG, 35));
       target.setItem(0, new ItemStack(Items.OAK_LOG, 63));
       hopper.handleGuiAction(player, 2, 32, 0);
-      tick(helper, hopper, 10);
+      tick(helper, hopper, 1);
       helper.assertValueEqual(3, source.getItem(0).getCount(), "default inverted continuous mode must extract while unpowered");
       helper.assertValueEqual(64, target.getItem(0).getCount(), "fill the existing stack without exceeding its limit");
       helper.assertValueEqual(31, target.getItem(1).getCount(), "insert remaining batch into the next slot");
@@ -56,7 +56,7 @@ public final class FactoryHopperTransferGameTests {
             helper.assertTrue(helper.getLevel().getBlockEntity(helper.absolutePos(POS.relative(output))) == null,
                "fixture must not expose a Container or block entity");
             configure(hopper, player, 4, 4, 0);
-            tick(helper, hopper, 10);
+            tick(helper, hopper, 1);
             helper.assertValueEqual(5, source.getStackInSlot(0).getCount(), "extract configured batch from " + output);
             helper.assertValueEqual(4, target.getStackInSlot(0).getCount(), "insert configured batch toward " + output);
             helper.assertValueEqual(0, count(hopper), "batch should pass through without duplication");
@@ -78,7 +78,7 @@ public final class FactoryHopperTransferGameTests {
       try (var in = ItemHandlerTestTargets.install(helper.getLevel(), helper.absolutePos(POS.above()), Direction.UP, source);
            var out = ItemHandlerTestTargets.install(helper.getLevel(), helper.absolutePos(POS.below()), Direction.DOWN, target)) {
          configure(hopper, player, 4, 4, 0);
-         tick(helper, hopper, 10);
+         tick(helper, hopper, 1);
          helper.assertValueEqual(7, source.getStackInSlot(0).getCount(), "denied intake face must not fall back to another side");
          helper.assertValueEqual(5, count(hopper), "denied output must retain stored items");
          helper.assertTrue(target.getStackInSlot(0).isEmpty(), "denied output face must remain untouched");
@@ -87,8 +87,12 @@ public final class FactoryHopperTransferGameTests {
            var out = ItemHandlerTestTargets.install(helper.getLevel(), helper.absolutePos(POS.below()), Direction.UP, target)) {
          tick(helper, hopper, 10);
          helper.assertValueEqual(3, source.getStackInSlot(0).getCount(), "replacement intake capability must be queried again");
-         helper.assertValueEqual(4, target.getStackInSlot(0).getCount(), "replacement output capability must be queried again");
-         helper.assertValueEqual(5, count(hopper), "total items must be conserved across denied and allowed cycles");
+         helper.assertTrue(target.getStackInSlot(0).isEmpty(), "missing-handler backoff12 is not bypassed when input resumes");
+         helper.assertValueEqual(9, count(hopper), "input continues during backoff");
+         tick(helper, hopper, 10);
+         helper.assertValueEqual(0, source.getStackInSlot(0).getCount(), "second intake runs independently of output delay");
+         helper.assertValueEqual(4, target.getStackInSlot(0).getCount(), "replacement output receives exact budget after backoff");
+         helper.assertValueEqual(8, count(hopper), "initial12items conserved between source, hopper and target");
       }
       helper.succeed();
    }
@@ -109,16 +113,16 @@ public final class FactoryHopperTransferGameTests {
       try (var in = ItemHandlerTestTargets.install(helper.getLevel(), helper.absolutePos(POS.above()), Direction.DOWN, source);
            var out = ItemHandlerTestTargets.install(helper.getLevel(), helper.absolutePos(POS.below()), Direction.UP, target)) {
          configure(hopper, player, 4, 32, 0);
-         tick(helper, hopper, 10);
+         tick(helper, hopper, 1);
          helper.assertValueEqual(9, source.getStackInSlot(0).getCount(), "consume only the real extraction result");
          helper.assertValueEqual(2, target.getStackInSlot(0).getCount(), "simulation must not insert extra items");
-         tick(helper, hopper, 10);
-         helper.assertValueEqual(7, source.getStackInSlot(0).getCount(), "second extraction should remain bounded");
+         tick(helper, hopper, 16);
+         helper.assertValueEqual(5, source.getStackInSlot(0).getCount(), "three work cycles at1,9,17 extract only2 each");
          helper.assertValueEqual(3, target.getStackInSlot(0).getCount(), "partial insertion must honor destination slot limit");
-         helper.assertValueEqual(1, count(hopper), "unaccepted output must remain in the hopper");
+         helper.assertValueEqual(3, count(hopper), "unaccepted output must remain in the hopper");
          for (int slot = 0; slot < hopper.getContainerSize(); slot++) hopper.setItem(slot, new ItemStack(Items.DIRT, 64));
          tick(helper, hopper, 10);
-         helper.assertValueEqual(7, source.getStackInSlot(0).getCount(), "full storage must not execute a simulated extraction");
+         helper.assertValueEqual(5, source.getStackInSlot(0).getCount(), "full storage must not execute a simulated extraction");
          helper.assertValueEqual(64 * hopper.getContainerSize(), count(hopper), "failed transfers must leave full storage unchanged");
       }
       helper.succeed();

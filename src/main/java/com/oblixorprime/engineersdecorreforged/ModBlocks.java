@@ -218,7 +218,7 @@ public final class ModBlocks {
       "labeled_crate", () -> new MachineBlocks.LabeledCrateBlock(wood())
    );
    public static final DeferredBlock<MachineBlocks.DirectionalMachineBlock> FACTORY_HOPPER = registerWithItem(
-      "factory_hopper", () -> new MachineBlocks.DirectionalMachineBlock(machineMetal(), MachineKind.FACTORY_HOPPER)
+      "factory_hopper", () -> new MachineBlocks.DirectionalMachineBlock(machineMetal().strength(2.0F, 15.0F), MachineKind.FACTORY_HOPPER)
    );
    public static final DeferredBlock<MachineBlocks.OpenDirectionalMachineBlock> FACTORY_DROPPER = registerWithItem(
       "factory_dropper", () -> new MachineBlocks.OpenDirectionalMachineBlock(machineMetal(), MachineKind.FACTORY_DROPPER)

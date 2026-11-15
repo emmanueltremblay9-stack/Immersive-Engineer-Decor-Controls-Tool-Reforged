@@ -28,3 +28,9 @@ No models, textures, blockstates or GUI artwork are changed. The horizontal mode
 | Stateful loot evaluation | Pure drop preview, separate player-break lifecycle state |
 
 Local source changes and GameTests are not native evidence. Full compilation, GameTests, drops lifecycle, minecart paths and packaged runtime qualification remain required. Previous e35 JAR proofs do NOT qualify this new binary; do not update pinned hashes without a new exact build and evidence.
+
+## Explicit owner upgrade (separate from original fidelity)
+
+Owner approved Factory Hopper ONLY blast resistance 12→15, hardness remains2. The shared machineMetal default and all other machines remain12. Reference IE1.21.1 commit75a27f03e4243544243567e8d5c38d336f4f10f4, IEBlocks.java metal properties/steel structures; this is structural steel resistance15, not steel storage-block resistance10. Existing recipe is already five c:plates/steel plus one vanilla hopper, unchanged. This is resistance, not immunity: real TNT tests still exercise destruction and content release in a contained bedrock cavity, with drop-decay variants and doTileDrops=false.
+
+CI first pass de4a799d compiled Java successfully. Five legacy GameTest expectations used the old ten-tick phase/input coupling or persisted cooldown. Updated tests now inspect the exact first work tick, the inventory wakeups at1/9/17, input continuing while output is backed off, and upstream transient cooldown reset. No production timing relaxed to satisfy those assertions. Manual EN/FR category copies are synchronized with individual entries.

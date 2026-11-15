@@ -804,7 +804,7 @@ public final class MachineGuiGameTests {
       hopperSave.putInt("Cooldown", 9999);
       MachineBlockEntity loadedHighCooldown = new MachineBlockEntity(hopper.getBlockPos(), hopper.getBlockState());
       loadedHighCooldown.loadWithComponents(hopperSave, helper.getLevel().registryAccess());
-      helper.assertValueEqual(400, loadedHighCooldown.dataAccessForTests().get(4), "loaded factory hopper should clamp oversized cooldown");
+      helper.assertValueEqual(0, loadedHighCooldown.dataAccessForTests().get(4), "original hopper resets transient insertion delay on reload, including oversized legacy values");
       helper.succeed();
    }
 
