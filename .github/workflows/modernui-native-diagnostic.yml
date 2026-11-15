@@ -1,0 +1,47 @@
+name: ModernUI additional blur diagnostic
+on:
+  pull_request:
+    paths:
+      - 'src/modernuiDiagnostic/**'
+      - 'tools/validation/*modernui*'
+      - '.github/workflows/modernui-native-diagnostic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        additional_blur: ['off', 'on']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Prepare workspace-local temporary directory
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/build/diagnostic-tmp"
+          echo "TMPDIR=$GITHUB_WORKSPACE/build/diagnostic-tmp" >> "$GITHUB_ENV"
+      - name: Validate diagnostic proof gates
+        run: python -m unittest discover -s tools/validation -p 'test_modernui*.py' -v
+      - name: Observe pinned ordinary JAR and official ModernUI in real client
+        run: python tools/validation/modernui_native_diagnostic.py --additional-blur '${{ matrix.additional_blur }}' --expected-jar-sha256 53ff03f30cb0c8921f4a8fdb205788cba567aab515804c7d2c7a0ab2daf6f98f
+      - name: Retain unaltered captures, loaded settings and logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: modernui-${{ matrix.additional_blur }}-${{ github.event.pull_request.head.sha || github.sha }}
+          path: build/modernui-native-*/
+          if-no-files-found: error
+          retention-days: 14
