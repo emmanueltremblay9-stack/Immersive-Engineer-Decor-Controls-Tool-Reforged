@@ -1,6 +1,5 @@
 Tree Cutter
 Shop-floor utility
-<&recipe>The Small Tree Cutter is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
-<br>
-Usage: Aim it at grown trees and collect drops separately.<br>
-
+<&recipe>Aim the working face at the bottom of a vertical log column. The cutter checks up to 18 consecutive logs upward; it does not fell branching trees or process leaves. A redstone signal pauses harvesting. This implementation does not consume FE.<br>
+Collect logs from the single output slot, manually or with extraction automation. There is no production input slot. If the complete drops of a block cannot fit, that block stays intact. Retained legacy contents drain through the same output before harvesting resumes, even while redstone-paused.<br>
+Upgrade warning: the first server tick of an unversioned old inventory discards plain, unmodified vanilla logs from its saved slots. Modded logs, customized items and other contents are retained for recovery. Back up old worlds before upgrading.<br>

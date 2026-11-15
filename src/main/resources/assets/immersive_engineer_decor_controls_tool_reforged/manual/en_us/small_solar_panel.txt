@@ -1,6 +1,4 @@
 Solar Panel
 Shop-floor utility
-<&recipe>The Small Solar Panel is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
-<br>
-Usage: Give it open sky and connect low-demand equipment.<br>
-
+<&recipe>Place the panel with unobstructed sky above it in a dimension with skylight. During daytime it generates 32 FE every 20 ticks, reduced to 16 FE when rain reaches the panel. Night or a blocked sky stops generation. Its buffer holds 64,000 FE.<br>
+Insert an item that accepts FE into the charging slot. Every 20 ticks the panel first charges that item, then sends the remaining transfer budget to receivers below or beside it. The shared active transfer budget is 256 FE per update, not 256 FE per tick.<br>

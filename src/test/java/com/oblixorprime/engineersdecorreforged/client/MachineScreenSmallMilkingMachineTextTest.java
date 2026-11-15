@@ -17,7 +17,7 @@ public class MachineScreenSmallMilkingMachineTextTest {
    }
 
    @Test
-   public void amountReadoutUsesTheSelectedLocaleAndMenuCapacity() {
+   public void amountTooltipUsesTheSelectedLocaleAndMenuCapacity() {
       assertEquals("2,000 / 4,000 mB", MachineScreen.formatSmallMilkingMachineAmount(2000, 4000, Locale.US));
       NumberFormat french = NumberFormat.getIntegerInstance(Locale.FRANCE);
       assertEquals(french.format(2000) + " / " + french.format(4000) + " mB",

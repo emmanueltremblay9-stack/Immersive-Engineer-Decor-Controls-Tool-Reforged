@@ -1,5 +1,7 @@
 Toit en bardeaux foncés
 Élément de toiture patinée
-<&recipe>La cheminée de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<&recipe>Cette cheminée émet une fumée décorative réglable sans combustible.<br>
 <br>
-Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+Utilisation : faites un clic droit pour parcourir les intensités de 0 à 15 ; 0 arrête la fumée. Une nouvelle cheminée sans redstone démarre à 5. Un changement du signal reçu règle l'intensité sur ce signal, y compris 0 lorsque le courant est retiré.<br>
+<br>
+Tenez une autre cheminée pour prolonger la pile au lieu de régler la fumée. Dans une pile continue de têtes de cheminée, seule la tête supérieure émet de la fumée.

@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="iedctr_factory_placer_validation"
+version="1.0"
+displayName="IEDCTR Factory Placer isolated validation harness"
+
+[[dependencies.iedctr_factory_placer_validation]]
+modId="immersive_engineer_decor_controls_tool_reforged"
+type="required"
+versionRange="[0,)"
+ordering="AFTER"
+side="CLIENT"

@@ -1,0 +1,583 @@
+{
+  "source_url": "https://github.com/emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-DEV/blob/0c166b34fb19cdf4a54373ff5e9c4770a854be12/candidates/iedctr/retained-concepts/2026-11-04/small-solar-panel-v2.png",
+  "source_sha256": "d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "canvas_size": [
+    418,
+    418
+  ],
+  "coordinate_contract": "source_interiors use [x,y,width,height]; source rectangles are measurements, not vanilla hitboxes",
+  "fe_source_safe_interior": [
+    146,
+    588,
+    851,
+    37
+  ],
+  "fe_canvas_interior": [
+    49,
+    196,
+    283,
+    12
+  ],
+  "menu_slot_count": 37,
+  "slots": [
+    {
+      "menu_index": 0,
+      "role": "Cell",
+      "inventory_index": 0,
+      "source_interior": [
+        979,
+        312,
+        156,
+        165
+      ],
+      "canvas_item_origin": [
+        344,
+        124
+      ]
+    },
+    {
+      "menu_index": 1,
+      "role": "player_inventory",
+      "inventory_index": 9,
+      "source_interior": [
+        164,
+        762,
+        82,
+        67
+      ],
+      "canvas_item_origin": [
+        60,
+        257
+      ]
+    },
+    {
+      "menu_index": 2,
+      "role": "player_inventory",
+      "inventory_index": 10,
+      "source_interior": [
+        270,
+        762,
+        81,
+        67
+      ],
+      "canvas_item_origin": [
+        96,
+        257
+      ]
+    },
+    {
+      "menu_index": 3,
+      "role": "player_inventory",
+      "inventory_index": 11,
+      "source_interior": [
+        376,
+        762,
+        80,
+        67
+      ],
+      "canvas_item_origin": [
+        131,
+        257
+      ]
+    },
+    {
+      "menu_index": 4,
+      "role": "player_inventory",
+      "inventory_index": 12,
+      "source_interior": [
+        482,
+        762,
+        81,
+        67
+      ],
+      "canvas_item_origin": [
+        166,
+        257
+      ]
+    },
+    {
+      "menu_index": 5,
+      "role": "player_inventory",
+      "inventory_index": 13,
+      "source_interior": [
+        587,
+        762,
+        81,
+        67
+      ],
+      "canvas_item_origin": [
+        201,
+        257
+      ]
+    },
+    {
+      "menu_index": 6,
+      "role": "player_inventory",
+      "inventory_index": 14,
+      "source_interior": [
+        694,
+        762,
+        81,
+        67
+      ],
+      "canvas_item_origin": [
+        237,
+        257
+      ]
+    },
+    {
+      "menu_index": 7,
+      "role": "player_inventory",
+      "inventory_index": 15,
+      "source_interior": [
+        799,
+        762,
+        81,
+        67
+      ],
+      "canvas_item_origin": [
+        272,
+        257
+      ]
+    },
+    {
+      "menu_index": 8,
+      "role": "player_inventory",
+      "inventory_index": 16,
+      "source_interior": [
+        906,
+        762,
+        81,
+        67
+      ],
+      "canvas_item_origin": [
+        308,
+        257
+      ]
+    },
+    {
+      "menu_index": 9,
+      "role": "player_inventory",
+      "inventory_index": 17,
+      "source_interior": [
+        1012,
+        762,
+        81,
+        67
+      ],
+      "canvas_item_origin": [
+        343,
+        257
+      ]
+    },
+    {
+      "menu_index": 10,
+      "role": "player_inventory",
+      "inventory_index": 18,
+      "source_interior": [
+        164,
+        856,
+        82,
+        68
+      ],
+      "canvas_item_origin": [
+        60,
+        289
+      ]
+    },
+    {
+      "menu_index": 11,
+      "role": "player_inventory",
+      "inventory_index": 19,
+      "source_interior": [
+        270,
+        856,
+        81,
+        68
+      ],
+      "canvas_item_origin": [
+        96,
+        289
+      ]
+    },
+    {
+      "menu_index": 12,
+      "role": "player_inventory",
+      "inventory_index": 20,
+      "source_interior": [
+        376,
+        856,
+        80,
+        68
+      ],
+      "canvas_item_origin": [
+        131,
+        289
+      ]
+    },
+    {
+      "menu_index": 13,
+      "role": "player_inventory",
+      "inventory_index": 21,
+      "source_interior": [
+        482,
+        856,
+        81,
+        68
+      ],
+      "canvas_item_origin": [
+        166,
+        289
+      ]
+    },
+    {
+      "menu_index": 14,
+      "role": "player_inventory",
+      "inventory_index": 22,
+      "source_interior": [
+        587,
+        856,
+        81,
+        68
+      ],
+      "canvas_item_origin": [
+        201,
+        289
+      ]
+    },
+    {
+      "menu_index": 15,
+      "role": "player_inventory",
+      "inventory_index": 23,
+      "source_interior": [
+        694,
+        856,
+        81,
+        68
+      ],
+      "canvas_item_origin": [
+        237,
+        289
+      ]
+    },
+    {
+      "menu_index": 16,
+      "role": "player_inventory",
+      "inventory_index": 24,
+      "source_interior": [
+        799,
+        856,
+        81,
+        68
+      ],
+      "canvas_item_origin": [
+        272,
+        289
+      ]
+    },
+    {
+      "menu_index": 17,
+      "role": "player_inventory",
+      "inventory_index": 25,
+      "source_interior": [
+        906,
+        856,
+        81,
+        68
+      ],
+      "canvas_item_origin": [
+        308,
+        289
+      ]
+    },
+    {
+      "menu_index": 18,
+      "role": "player_inventory",
+      "inventory_index": 26,
+      "source_interior": [
+        1012,
+        856,
+        81,
+        68
+      ],
+      "canvas_item_origin": [
+        343,
+        289
+      ]
+    },
+    {
+      "menu_index": 19,
+      "role": "player_inventory",
+      "inventory_index": 27,
+      "source_interior": [
+        164,
+        951,
+        82,
+        71
+      ],
+      "canvas_item_origin": [
+        60,
+        321
+      ]
+    },
+    {
+      "menu_index": 20,
+      "role": "player_inventory",
+      "inventory_index": 28,
+      "source_interior": [
+        270,
+        951,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        96,
+        321
+      ]
+    },
+    {
+      "menu_index": 21,
+      "role": "player_inventory",
+      "inventory_index": 29,
+      "source_interior": [
+        376,
+        951,
+        80,
+        71
+      ],
+      "canvas_item_origin": [
+        131,
+        321
+      ]
+    },
+    {
+      "menu_index": 22,
+      "role": "player_inventory",
+      "inventory_index": 30,
+      "source_interior": [
+        482,
+        951,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        166,
+        321
+      ]
+    },
+    {
+      "menu_index": 23,
+      "role": "player_inventory",
+      "inventory_index": 31,
+      "source_interior": [
+        587,
+        951,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        201,
+        321
+      ]
+    },
+    {
+      "menu_index": 24,
+      "role": "player_inventory",
+      "inventory_index": 32,
+      "source_interior": [
+        694,
+        951,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        237,
+        321
+      ]
+    },
+    {
+      "menu_index": 25,
+      "role": "player_inventory",
+      "inventory_index": 33,
+      "source_interior": [
+        799,
+        951,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        272,
+        321
+      ]
+    },
+    {
+      "menu_index": 26,
+      "role": "player_inventory",
+      "inventory_index": 34,
+      "source_interior": [
+        906,
+        951,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        308,
+        321
+      ]
+    },
+    {
+      "menu_index": 27,
+      "role": "player_inventory",
+      "inventory_index": 35,
+      "source_interior": [
+        1012,
+        951,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        343,
+        321
+      ]
+    },
+    {
+      "menu_index": 28,
+      "role": "hotbar",
+      "inventory_index": 0,
+      "source_interior": [
+        164,
+        1084,
+        82,
+        71
+      ],
+      "canvas_item_origin": [
+        60,
+        365
+      ]
+    },
+    {
+      "menu_index": 29,
+      "role": "hotbar",
+      "inventory_index": 1,
+      "source_interior": [
+        270,
+        1084,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        96,
+        365
+      ]
+    },
+    {
+      "menu_index": 30,
+      "role": "hotbar",
+      "inventory_index": 2,
+      "source_interior": [
+        376,
+        1084,
+        80,
+        71
+      ],
+      "canvas_item_origin": [
+        131,
+        365
+      ]
+    },
+    {
+      "menu_index": 31,
+      "role": "hotbar",
+      "inventory_index": 3,
+      "source_interior": [
+        482,
+        1084,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        166,
+        365
+      ]
+    },
+    {
+      "menu_index": 32,
+      "role": "hotbar",
+      "inventory_index": 4,
+      "source_interior": [
+        587,
+        1084,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        201,
+        365
+      ]
+    },
+    {
+      "menu_index": 33,
+      "role": "hotbar",
+      "inventory_index": 5,
+      "source_interior": [
+        694,
+        1084,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        237,
+        365
+      ]
+    },
+    {
+      "menu_index": 34,
+      "role": "hotbar",
+      "inventory_index": 6,
+      "source_interior": [
+        799,
+        1084,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        272,
+        365
+      ]
+    },
+    {
+      "menu_index": 35,
+      "role": "hotbar",
+      "inventory_index": 7,
+      "source_interior": [
+        906,
+        1084,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        308,
+        365
+      ]
+    },
+    {
+      "menu_index": 36,
+      "role": "hotbar",
+      "inventory_index": 8,
+      "source_interior": [
+        1012,
+        1084,
+        81,
+        71
+      ],
+      "canvas_item_origin": [
+        343,
+        365
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 Entonnoir à fluides
 Équipement de réseau de fluides
-<&recipe>Le petit entonnoir de collecte de fluides est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
-<br>
-Utilisation : placez-le sous le point de collecte de fluide et dirigez son contenu vers des réservoirs ou des conduites situés plus bas.<br>
+<&recipe>Placez le dessus ouvert sous un fluide en mouvement relié à une source par au maximum 16 connexions entre cellules de fluide. Le trajet ne traverse ni blocs secs ni faces fermées. Une source directement au-dessus n'est pas une entrée de fluide en mouvement valide.<br>
+L'entonnoir travaille toutes les 40 ticks. Quatre étapes réussies retirent une véritable source et ajoutent 1 000 mB au réservoir ; la progression précédente n'est pas du fluide stocké et ne peut pas être extraite. Sans source accessible, le courant ne donne aucun fluide de drainage. Une source perdue ou remplacée annule cette progression. Gardez assez de place pour le seau complet.<br>
+Le réservoir contient 3 000 mB d'un seul fluide compatible. Il envoie au maximum 250 mB vers le bas toutes les 40 ticks, selon ce que le récepteur accepte. Les sources prises en charge comprennent l'eau ordinaire, la lave et la créosote IE ; certaines sources non prises en charge sont refusées. Le drainage d'une décoration remplie d'un fluide compatible retire le fluide, pas le bloc décoratif.<br>
+Si la collecte de source ne progresse pas, la pluie sur le dessus exposé peut ajouter 50 mB d'eau toutes les 80 ticks, ou 100 mB pendant un orage. Un toit ou des précipitations inadaptées empêchent cette collecte ; l'eau ne se mélange pas à un autre fluide du réservoir.<br>

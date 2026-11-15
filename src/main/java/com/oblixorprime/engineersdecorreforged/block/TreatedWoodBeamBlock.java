@@ -70,15 +70,16 @@ public final class TreatedWoodBeamBlock extends NativeDecorativeBlocks.NativeOpe
       Direction positive=mount==Mount.WALL_HORIZONTAL?Direction.UP:facing.getClockWise();
       boolean pole=mount==Mount.CEILING&&level.getBlockState(pos.below()).is(ModBlocks.TREATED_WOOD_POLE.get())
          &&level.getBlockState(pos.below()).getValue(BlockStateProperties.FACING).getAxis()==Direction.Axis.Y;
-      return state.setValue(JOIN_NEGATIVE,connects(level.getBlockState(pos.relative(positive.getOpposite())),state))
-         .setValue(JOIN_POSITIVE,connects(level.getBlockState(pos.relative(positive)),state)).setValue(POLE,pole);
+      Direction negative=positive.getOpposite();
+      return state.setValue(JOIN_NEGATIVE,connects(level.getBlockState(pos.relative(negative)),state,negative))
+         .setValue(JOIN_POSITIVE,connects(level.getBlockState(pos.relative(positive)),state,positive)).setValue(POLE,pole);
    }
-   private static boolean connects(BlockState neighbor,BlockState state) {
+   private static boolean connects(BlockState neighbor,BlockState state,Direction direction) {
       Mount mount=state.getValue(MOUNT);
       if(mount==Mount.CEILING&&neighbor.getBlock() instanceof PortedBlocks.SupportBlock)return true;
       if(mount!=Mount.CEILING)return orthogonalWall(state,neighbor);
-      if(!(neighbor.getBlock() instanceof TreatedWoodBeamBlock))return false;
-      return neighbor.getValue(MOUNT)==Mount.CEILING;
+      if(neighbor.getBlock() instanceof TreatedWoodBeamBlock)return neighbor.getValue(MOUNT)==Mount.CEILING;
+      return VerticalDoubleTSupportBlock.connectsToCeilingBeam(neighbor,state,direction.getOpposite());
    }
    /** A half-cross ends on a perpendicular core in the same physical wall plane. */
    static boolean orthogonalWall(BlockState state,BlockState neighbor) {

@@ -6,3 +6,6 @@ Usage: Place it as maintenance access around machines, upper floors, and service
 <br>
 Hold Steel Railing and right-click the left or right side of the stairs to install or remove that side in place. Installing a side costs one railing in Survival; removing a purchased side returns it.<br>
 Mine the aimed railing to remove only that side. Mine the step itself to remove the stairs and their remaining purchased railings.<br>
+<br>
+Click an open edge of a Steel Catwalk, Raised Steel Catwalk or Steel Floor Grating to attach the stair's high end; the flight descends away from the platform. A bottom-mounted catwalk places the stair one cell lower, while raised catwalks and grating place it at the same cell height. Click the low or high end of a stair to extend the flight one cell down or up. The selected edge or endpoint, not your look direction, chooses the connection.<br>
+The separate Raised Steel Catwalk Stair uses the same placement and railing rules. With a matching wood, thin-steel or thick-steel pole or pole head below, it displays a matching V support. An upward-facing Treated Wood Pole Support also qualifies. The pole remains a separate block with its own collision and drops; the V is not an extra mined item. This variant currently has no crafting recipe and is available in the creative catalogue or through commands.<br>

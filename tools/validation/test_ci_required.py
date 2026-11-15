@@ -287,8 +287,8 @@ class BuildWorkflowContractTests(unittest.TestCase):
             block = mapping_block(self.jobs, job, indent=2)
             self.assertNotRegex(block, r"(?m)^    if:")
         native_gui = mapping_block(self.jobs, OPTIONAL_JOB, indent=2)
-        self.assertIn("    if: " + chr(36) + "{{ github.event_name == 'pull_request' && (github.event.pull_request.number == 133 || github.event.pull_request.number == 144 || github.event.pull_request.number == 147) }}\n",
-                      native_gui)
+        self.assertIn("    if: " + chr(36) + "{{ github.event_name == 'pull_request' }}\n", native_gui)
+        self.assertNotIn("github.event.pull_request.number", native_gui)
         build = mapping_block(self.jobs, "build", indent=2)
         for command in ("./gradlew compileJava processResources --stacktrace", "./gradlew test --stacktrace",
                         "./gradlew runGameTestServer --stacktrace", "./gradlew build --stacktrace",

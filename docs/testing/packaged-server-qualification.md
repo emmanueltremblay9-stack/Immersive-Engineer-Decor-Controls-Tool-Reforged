@@ -1,5 +1,55 @@
 # IEDCTR 1.1.58 packaged dedicated-server qualification
 
+## Later candidates: exact-byte qualification route
+
+The historical 1.1.58 harness below remains pinned and unchanged. For a later
+reviewed candidate, use `tools/qualification/qualify_1_1_65.py server --spec` or
+manually dispatch **Qualify exact JAR** with `qualification_spec` set to the
+reviewed JSON under `tools/qualification/`, `run_server=true`, and the separate
+explicit EULA/Microsoft Services Agreement acknowledgment. A blank spec preserves
+the historical branch defaults; it does not select the current main source.
+
+Before running, review the [Minecraft EULA](https://www.minecraft.net/en-us/eula)
+and [Microsoft Services Agreement](https://www.microsoft.com/servicesagreement),
+and obtain explicit consent for this candidate's isolated server setup and run.
+Do not populate the acknowledgment from historical approval for another version.
+No push or pull request starts this candidate server path.
+
+Prerequisites: Python 3.11+, Java 21, Bash, a clean checkout of the exact candidate
+commit, its built JAR in `build/libs/`, and that build's isolated Gradle home with
+the original pinned Immersive Engineering dependency. The reviewed spec must
+record the final source SHA, successful **main-push Build** run ID/attempt, mod ID,
+version, and CI-reported SHA-256. Historical specs are not evidence for newer
+changes. No release manifest or new candidate identity is supplied by this change.
+
+Only after consent, with `EULA_ACKNOWLEDGMENT` explicitly supplied for this run:
+
+```sh
+python tools/qualification/qualify_1_1_65.py server \
+  --spec tools/qualification/REVIEWED-CANDIDATE.json \
+  --source-a /path/to/clean-exact-source \
+  --gradle-home /path/to/isolated-build-cache \
+  --eula-acknowledgment "$EULA_ACKNOWLEDGMENT" \
+  --report /path/to/new-run/server.json
+```
+
+The CLI checks consent, clean exact source, actual JAR hash/size/embedded metadata
+and attribution, and exact successful main-push Build before loading the pinned
+harness or setting up a temporary server. The workflow additionally requires two
+independent builds to match before the server step. The copied JAR is checked
+before and after the baseline startup/restart and hatch/ladder/gate assertions.
+Candidate dependency versions remain pinned; dependency drift fails closed.
+
+A pass records `PACKAGED_SERVER_BASELINE_SMOKE_PASSED`, source/CI identity, measured
+artifact identity, and console evidence. It is **not** full candidate gameplay QA:
+new-feature gameplay and exact-JAR client validation remain `NOT_RUN`, and
+`publicationReady` remains false. Qualification tooling tests install nothing and
+do not accept terms. No CurseForge upload, GitHub Release, or merge is performed.
+
+```sh
+python -W error::ResourceWarning -m unittest discover -s tools/qualification -p 'test_*.py' -v
+```
+
 ## Status and limits
 
 This is a production-server smoke harness, not a GameTest server and not a claim

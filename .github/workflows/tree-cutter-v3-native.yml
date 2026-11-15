@@ -1,0 +1,74 @@
+name: Tree Cutter V3 packaged qualification
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-default-tree:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: en_us
+            width: 1280
+            height: 720
+            scale: 1
+          - language: fr_fr
+            width: 1280
+            height: 260
+            scale: 1
+          - language: en_us
+            width: 1920
+            height: 1080
+            scale: 1
+          - language: en_us
+            width: 1920
+            height: 1080
+            scale: 2
+          - language: fr_fr
+            width: 1920
+            height: 1080
+            scale: 3
+    steps:
+      - name: Checkout exact candidate head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Test independent Tree evidence guards
+        run: python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_tree_cutter*.py' -v
+      - name: Compile normal artifact and run mapped tests
+        run: bash ./gradlew test runGameTestServer jar --stacktrace
+      - name: Native exact-JAR default GUI and synthetic inventory routes
+        run: python tools/validation/tree_cutter_v3_native.py --language ${{ matrix.language }} --height ${{ matrix.height }} --width ${{ matrix.width }} --gui-scale ${{ matrix.scale }}
+      - name: Retain native evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: tree-cutter-native-${{ matrix.language }}-${{ matrix.height }}-scale${{ matrix.scale }}
+          path: |
+            build/tree-cutter-native-*/run/tree-proof.json
+            build/tree-cutter-native-*/run/tree-*.png
+            build/tree-cutter-native-*/packaged-runtime-classpath.json
+            build/tree-cutter-native-*/*.log
+            build/reports/tests/
+            build/test-results/
+            build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

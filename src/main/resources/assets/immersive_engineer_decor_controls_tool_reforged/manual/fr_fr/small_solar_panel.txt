@@ -1,5 +1,4 @@
 Panneau solaire
 Équipement d'atelier
-<&recipe>Le petit panneau solaire est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
-<br>
-Utilisation : exposez-le à ciel ouvert et reliez des équipements peu gourmands.<br>
+<&recipe>Placez le panneau avec une vue dégagée vers le ciel dans une dimension éclairée par le ciel. De jour, il produit 32 FE toutes les 20 ticks, ou 16 FE si la pluie atteint le panneau. La nuit ou un ciel obstrué arrêtent la production. Sa réserve contient 64 000 FE.<br>
+Insérez un objet acceptant les FE dans l'emplacement de recharge. Toutes les 20 ticks, le panneau recharge d'abord cet objet, puis envoie le budget de transfert restant aux récepteurs dessous ou sur les côtés. Le budget actif partagé est de 256 FE par mise à jour, et non par tick.<br>

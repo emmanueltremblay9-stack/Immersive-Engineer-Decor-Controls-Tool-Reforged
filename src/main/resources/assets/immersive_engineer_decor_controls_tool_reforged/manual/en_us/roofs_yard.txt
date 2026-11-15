@@ -24,21 +24,27 @@ Usage: Use the pieces together to make believable roof profiles.<br>
 <np>
 Roof Chimney Trunk
 Weathered roof fitting
-<&dark_shingle_roof_chimneytrunk>The Dark Shingle Roof Chimney Trunk builds dark, practical roof lines for workshops and industrial sheds.<br>
+<&dark_shingle_roof_chimneytrunk>This roof fitting provides a raised rim for the separate Dark Shingle Roof Chimney.<br>
 <br>
-Usage: Use the pieces together to make believable roof profiles.<br>
+Usage: Aim at the rim with a chimney head to place it above the fitting. Use the head's page for smoke controls; the trunk itself is a roof fitting.<br>
+<br>
+New placements stay upright and straight instead of turning into roof corners. Existing corner-shaped fittings keep their old state; replace one if you need the visible chimney fitting.
 <np>
 Roof Wire Conduit
 Weathered roof fitting
-<&dark_shingle_roof_wireconduit>The Dark Shingle Roof Wire Conduit builds dark, practical roof lines for workshops and industrial sheds.<br>
+<&dark_shingle_roof_wireconduit>The Dark Shingle Roof Wire Conduit has a small opening straight through its center, from top to bottom.<br>
 <br>
-Usage: Use the pieces together to make believable roof profiles.<br>
+Usage: Align two compatible Immersive Engineering connectors vertically above and below the opening, then connect them with the matching wire coil. The conduit lets the cable pass; it is not itself a connector or relay. Off-center or sideways cables can hit the solid walls.<br>
+<br>
+New placements keep the fitting upright and straight. Existing straight fittings gain the hollow collision without replacement. Replace an old corner-shaped fitting to restore its visible conduit.<br>
 <np>
 Dark Shingle Roof
 Weathered roof fitting
-<&dark_shingle_roof_chimney>The Dark Shingle Roof Chimney. Dark Shingle Roof Chimney builds dark, practical roof lines for workshops and industrial sheds.<br>
+<&dark_shingle_roof_chimney>This chimney emits adjustable decorative smoke without fuel.<br>
 <br>
-Usage: Use the pieces together to make believable roof profiles.<br>
+Usage: Right-click to cycle the intensity from 0 to 15; 0 switches smoke off. A new unpowered chimney starts at 5. A change in incoming redstone strength sets the intensity to that signal, including 0 when power is removed.<br>
+<br>
+Hold another chimney to build upward instead of adjusting the smoke. In a contiguous stack of chimney heads, only the top head emits smoke.
 <np>
 Dark Shingle Roof Block
 Weathered roof fitting
@@ -96,7 +102,9 @@ Usage: Use it for old shop floors, stairs, doors, and trim.<br>
 <np>
 Old Industrial Wood Door
 Aged shop timber
-<&old_industrial_wood_door>This block adds aged shop timber for floors, steps, doors, and warm interior trim.<br>
+<&old_industrial_wood_door>This wooden door can open by hand and can share a manual click with a matching neighboring door.<br>
 <br>
-Usage: Use it for old shop floors, stairs, doors, and trim.<br>
+Usage: Place two doors of this type side by side at the same height, facing the same direction, with opposite hinges on the outer edges of the opening. With neither door powered, right-click either using an empty main hand to open or close both.<br>
+<br>
+The linked click respects interaction permissions. It does not add shared redstone control: powered doors keep their normal independent behavior.
 
