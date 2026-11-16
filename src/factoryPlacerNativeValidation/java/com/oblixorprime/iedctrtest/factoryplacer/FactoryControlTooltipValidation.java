@@ -51,7 +51,7 @@ public final class FactoryControlTooltipValidation {
     private static final BlockPos POS = new BlockPos(0, 80, 0);
     private static final boolean HOPPER = "hopper".equals(System.getProperty("iedctr.factoryControlMachine"));
     private static final String PREFIX = "block.immersive_engineer_decor_controls_tool_reforged.factory_" + (HOPPER ? "hopper" : "dropper");
-    private static final int[][] POINTS = HOPPER ? new int[][]{{148,23},{148,52},{148,52},{162,52},{162,52}} : new int[][]{{135,20},{135,69},{151,69},{164,69}};
+    private static final int[][] POINTS = HOPPER ? new int[][]{{148,23},{148,52},{148,52},{162,52},{162,52}} : new int[][]{{156,46},{151,103},{174,103},{197,103}};
     private static final String[] NAMES = HOPPER ? new String[]{"delayindicator","inversion","inversion_changed","triggermode","triggermode_changed"} : new String[]{"velocity","filtergate","externgate","triggermode"};
     private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, TRIGGER_SETUP }
     private static Stage stage = Stage.BOOT;

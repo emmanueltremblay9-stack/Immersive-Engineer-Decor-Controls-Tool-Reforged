@@ -1,11 +1,27 @@
 """Reject malformed native proof records; fixtures are NOT runtime qualification."""
 import copy
+import re
 from pathlib import Path
 import unittest
 from unittest.mock import patch
 from factory_control_tooltip_native import validate, NAMES, SmokeFailure
 
 class ProofTests(unittest.TestCase):
+    def test_dropper_native_hover_points_match_live_tooltip_regions(self):
+        root = Path(__file__).resolve().parents[2]
+        harness = (root/'src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/FactoryControlTooltipValidation.java').read_text()
+        production = (root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java').read_text()
+        point_text = re.search(r'POINTS = HOPPER .*? : new int\[\]\[\](.*?);', harness).group(1)
+        points = [tuple(map(int, p)) for p in re.findall(r'\{(\d+),(\d+)\}', point_text)]
+        zones = {name: tuple(map(int, (x,y,w,h))) for x,y,w,h,name in re.findall(
+            r'isHovering\((\d+),(\d+),(\d+),(\d+),mouseX,mouseY\)\)part="([^" ]+)"', production)}
+        self.assertEqual(len(points), 4)
+        for point, name in zip(points, ('velocity','filtergate','externgate','triggermode')):
+            x,y,w,h = zones[name]
+            self.assertTrue(x <= point[0] < x+w and y <= point[1] < y+h, (name,point,zones[name]))
+        x,y,w,h = zones['velocity']
+        self.assertFalse(x <= 135 < x+w and y <= 20 < y+h, 'old Dropper point must stay rejected')
+
     def make(self, machine):
         p=dict(suite='native-factory-control-tooltip-v2',status='passed',nonce='a'*32,
             executed_source_sha='b'*40,width=320,height=260,selected_language='fr_fr',machine=machine,
