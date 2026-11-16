@@ -16,6 +16,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.WorldOptions;
@@ -77,6 +79,8 @@ public final class GuiAlbumThree {
                     if(!inspection.isDone())return;
                     require(inspection.join(),"Server menu mismatch");
                     var obs=new JsonObject();obs.addProperty("screen",mc.screen.getClass().getName());obs.addProperty("case",NAMES[index]);obs.addProperty("server_menu_acknowledged",true);
+                    obs.addProperty("gui_scale",mc.getWindow().getGuiScale());
+                    obs.addProperty("visible_nonempty_slots",mc.player.containerMenu.slots.stream().filter(slot->slot.hasItem()).count());
                     var production=ModList.get().getModFileById(EngineersDecorReforged.MOD_ID).getFile();
                     var entry=mc.screen.getClass().getName().replace('.', '/')+".class";
                     var resource=mc.screen.getClass().getResource("/"+entry);
@@ -110,8 +114,13 @@ public final class GuiAlbumThree {
         var p=player(mc);p.setGameMode(GameType.SURVIVAL);var level=p.serverLevel();
         for(int x=-2;x<=12;x++)for(int z=-1;z<=4;z++)level.setBlock(new BlockPos(x,79,z),Blocks.STONE.defaultBlockState(),3);
         p.connection.teleport(.5,80,2.5,180,0);
+        p.getInventory().setItem(0,new ItemStack(Items.IRON_INGOT,16));
+        p.getInventory().setItem(1,new ItemStack(Items.REDSTONE,8));
+        p.getInventory().setItem(9,new ItemStack(Items.COBBLESTONE,32));
         var blocks=List.of(ModBlocks.FACTORY_HOPPER.get(),ModBlocks.METAL_CRAFTING_TABLE.get(),ModBlocks.SMALL_ELECTRICAL_FURNACE.get(),ModBlocks.SMALL_WASTE_INCINERATOR.get(),ModBlocks.LABELED_CRATE.get(),ModBlocks.FACTORY_DROPPER.get());
         for(int i=0;i<NAMES.length;i++){var pos=new BlockPos(i*2,80,0);level.setBlock(pos,blocks.get(i).defaultBlockState(),3);machines[i]=(MachineBlockEntity)level.getBlockEntity(pos);require(machines[i]!=null,"Missing machine "+i);}
+        machines[0].setItem(0,new ItemStack(Items.IRON_INGOT,8));
+        machines[5].setItem(0,new ItemStack(Items.IRON_INGOT,8));
     }
     private static ServerPlayer player(Minecraft mc){var p=mc.getSingleplayerServer().getPlayerList().getPlayer(playerId);require(p!=null,"Player missing");return p;}
     private static void enter(Stage next){stage=next;ticks=0;inspection=null;}

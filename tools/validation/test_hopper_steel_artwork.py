@@ -41,6 +41,13 @@ class HopperSteelArtworkTests(unittest.TestCase):
         self.assertIn('sx-1,sy-1,18,1', frame)
         self.assertIn('sx+16,sy,1,16', frame)
 
+    def test_hopper_control_panel_is_not_a_legacy_grey_rectangle(self):
+        artwork=(JAVA / 'client/FactoryHopperSteelArtwork.java').read_text()
+        self.assertNotIn('127, 8, 46, 53',artwork)
+        self.assertIn('panel(g,x+125,y+4,47,59)',artwork)
+        self.assertIn('original,x+bx,y+49,bx,49,9,9',artwork)
+        self.assertIn('sx-1,sy-1,sx+17,sy',artwork)
+
     def test_only_hopper_dispatches_new_material(self):
         screen = (JAVA / 'client/MachineScreen.java').read_text()
         self.assertIn('if (kind == MachineKind.FACTORY_HOPPER) {\n                FactoryHopperSteelArtwork.render(graphics, this.menu, texture, x, y);', screen)

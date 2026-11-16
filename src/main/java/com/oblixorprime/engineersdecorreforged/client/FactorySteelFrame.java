@@ -40,6 +40,21 @@ final class FactorySteelFrame {
       }
    }
 
+   static void inset(GuiGraphics g,int x,int y,int w,int h) {
+      g.fill(x,y,x+w,y+h,0xFF101519);
+      g.fill(x+1,y+1,x+w-1,y+h-1,0xFF222A30);
+      g.fill(x+1,y+1,x+w-1,y+2,0xFF070B0D);
+      g.fill(x,y+h-1,x+w,y+h,0xFF727E85);
+   }
+   static void thumb(GuiGraphics g,int x,int y,int w,int h) {
+      g.fill(x,y,x+w,y+h,0xFF151A1E);
+      g.fill(x,y,x+w,y+1,0xFFD9DEE0);
+      g.fill(x,y,x+1,y+h,0xFFACB7BE);
+      g.fill(x+1,y+1,x+w-1,y+h-1,0xFF87969F);
+      g.fill(x+w-1,y+1,x+w,y+h,0xFF414D55);
+      g.fill(x+1,y+h-1,x+w,y+h,0xFF414D55);
+   }
+
    private static void corner(GuiGraphics g,int x,int y) {part(g,x,y,12,12,30,1130,100,90);}
    private static void part(GuiGraphics g,int x,int y,int w,int h,int u,int v,int sw,int sh) {
       g.blit(STEEL,x,y,w,h,(float)u,(float)v,sw,sh,1199,1312);

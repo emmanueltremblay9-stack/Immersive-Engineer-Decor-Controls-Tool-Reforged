@@ -109,3 +109,20 @@ No production code changes in this coverage commit. The existing official pinned
 ModernUI harness observes both settings; success is a compatibility observation,
 not proof that the previously un-reproduced issue 70 is fixed. OFF/ON images need
 visual comparison before a conclusion.
+
+## Critical revision after rejected first steel captures
+
+The owner rejected the first steel pass. Independent review identified the
+Hopper's retained grey control rectangle, irregular one-pixel sampled slot rims,
+and Dropper control masks flattening the retained material. The replacement
+Hopper renderer separates storage, controls, inventory and hotbar into recessed
+steel panels without moving any slot or hitbox. Slot borders are authored at the
+final pixel thickness; the old large grey rectangle is removed while native
+state symbols remain. Dropper dynamic wells/thumbs now have steel bevels rather
+than flat paint.
+
+New captures use actual GUI scale 2, not image enlargement, and contain server-
+supplied items. The proof validates the actual scale and nonempty visible slots.
+The existing native tooltip/state matrix remains necessary. Prior captures are
+rejected design iterations, not visual acceptance. A generated Hopper candidate
+was discarded because it lost a slot row; no generated layout is substituted.

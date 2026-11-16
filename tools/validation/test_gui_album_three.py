@@ -8,7 +8,7 @@ class ProofTests(unittest.TestCase):
         self.jar=Path('/tmp/album.jar');self.digest='a'*64
         self.proof=dict(suite='gui-album-three-v1',status='observed',nonce='b'*32,executed_source_sha='c'*40,visual_acceptance=False,physical_os_input=False,
             packaged_runtime=dict(jar_path=str(self.jar.resolve()),jar_sha256=self.digest,fixture_free_jar=True,separate_harness_module=True),
-            cases=[dict(case=n,screen='com.oblixorprime.engineersdecorreforged.client.'+('MachineScreen$' if i!=4 else '')+SCREENS[i],server_menu_acknowledged=True,screen_class_sha256='d'*64,capture=n+'.png',capture_sha256='e'*64) for i,n in enumerate(CASES)])
+            cases=[dict(case=n,screen='com.oblixorprime.engineersdecorreforged.client.'+('MachineScreen$' if i!=4 else '')+SCREENS[i],server_menu_acknowledged=True,gui_scale=2,visible_nonempty_slots=3,screen_class_sha256='d'*64,capture=n+'.png',capture_sha256='e'*64) for i,n in enumerate(CASES)])
     def check(self,p):
         with patch('gui_album_three.png') as png:
             validate(p,'b'*32,'c'*40,self.jar,self.digest,Path('/tmp/run'),1280,720)
@@ -29,3 +29,8 @@ class ProofTests(unittest.TestCase):
     def test_reject_unsynchronized_menu(self):
         self.proof['cases'][2]['server_menu_acknowledged']=False
         with self.assertRaises(SmokeFailure):self.check(self.proof)
+
+    def test_reject_wrong_scale_or_empty_visual_evidence(self):
+        for key,value in [('gui_scale',1),('visible_nonempty_slots',0)]:
+            p=copy.deepcopy(self.proof);p['cases'][0][key]=value
+            with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)

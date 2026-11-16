@@ -25,7 +25,7 @@ def require(condition, message):
 
 CASES = ['factory-hopper', 'metal-crafting-table', 'small-electrical-furnace', 'small-waste-incinerator', 'labeled-crate', 'factory-dropper']
 SCREENS = ['FactoryHopperScreen', 'MetalCraftingTableScreen', 'SmallElectricalFurnaceScreen', 'SmallWasteIncineratorScreen', 'LabeledCrateScreen', 'FactoryDropperScreen']
-def validate(proof,nonce,sha,jar,jar_sha,game,width,height):
+def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
     for key,value in dict(suite='gui-album-three-v1',status='observed',nonce=nonce,
                          executed_source_sha=sha,visual_acceptance=False,physical_os_input=False).items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
@@ -37,6 +37,8 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height):
     for index,row in enumerate(cases):
         require(row.get('screen')=='com.oblixorprime.engineersdecorreforged.client.'+('MachineScreen$' if index!=4 else '')+SCREENS[index],'Wrong screen')
         require(row.get('server_menu_acknowledged') is True,'Missing server menu acknowledgement')
+        require(row.get('gui_scale') == gui_scale,'Wrong native GUI scale')
+        require(type(row.get('visible_nonempty_slots')) is int and row['visible_nonempty_slots'] > 0,'Empty visual evidence')
         require(re.fullmatch('[0-9a-f]{64}',row.get('screen_class_sha256','')),'Screen provenance missing')
         require(row.get('capture')==CASES[index]+'.png','Unexpected capture name')
         png(game/row['capture'],width,height,row.get('capture_sha256'))
@@ -57,6 +59,7 @@ def main():
     parser.add_argument('--expected-jar-sha256',required=True)
     parser.add_argument('--language', choices=['en_us','fr_fr'], default='en_us')
     parser.add_argument('--width', type=int, default=1280)
+    parser.add_argument('--gui-scale', type=int, choices=[1,2], default=2)
     parser.add_argument('--height', type=int, default=720)
     parser.add_argument('--prepare-timeout', type=int, default=900)
     parser.add_argument('--timeout', type=int, default=900)
@@ -76,7 +79,7 @@ def main():
     evidence = Path(tempfile.mkdtemp(prefix='gui-album-three-native-',dir=project/'build'))
     game=evidence/'run';game.mkdir();nonce=secrets.token_hex(16)
     (game/'.iedctr-client-gameplay-nonce').write_text(nonce)
-    (game/'options.txt').write_text('onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\nmaxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:1\nlang:'+args.language+'\n')
+    (game/'options.txt').write_text('onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\nmaxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:'+str(args.gui_scale)+'\nlang:'+args.language+'\n')
     init=evidence/'gui-album-three.init.gradle'
     init.write_text("""gradle.projectsEvaluated {
  rootProject.sourceSets.factoryPlacerNativeValidation.java.srcDir(rootProject.file('src/guiAlbumThree/java'))
@@ -135,7 +138,7 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
         require(code==0 and not expired and not FATAL_PATTERN.search(logs)
                 and 'IEDCTR_GUI_ALBUM_THREE OBSERVED nonce='+nonce in logs,'Native exit/log gate failed')
         proof=json.loads((game/'gui-album-three-proof.json').read_text())
-        validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height)
+        validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.gui_scale)
         final_sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
         require(clean() and final_sha == sha and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,
                 'Source/JAR changed during run')
