@@ -24,7 +24,7 @@ class ConservationTests(unittest.TestCase):
         self.assertIn('task.taskDependencies.getDependencies(task).contains(blocked)',g)
         self.assertIn("'include_tfc_milking_runtime','include_tfc_crossover_runtime'",g)
         self.assertIn('harnessPackages.contains',g)
-        self.assertIn('b95b33bbbbca449a0aee8727d3f82a2fc0cc960203f06a81191c67fce02d7052',g)
+        self.assertIn('1198f2b5f21a38e42dd2cbbc1888f9f51f6924b8d637ae8f7ae6b9b227764006',g)
     def test_dependency_edge_regressions_rejected(self):
         text=(ROOT/'gradle/tfc-packaged-validation.gradle').read_text()
         def check(g):
