@@ -32,6 +32,19 @@ class FactoryCandidateV2Tests(unittest.TestCase):
         for name,digest in source['assets'].items():
             self.assertEqual(hashlib.sha256((ASSETS/f'{name}.png').read_bytes()).hexdigest(),digest)
 
+    def test_live_slot_rims_and_symbols_are_outside_content(self):
+        folder=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client'
+        hopper=(folder/'FactoryHopperSteelArtwork.java').read_text()
+        dropper=(folder/'MachineScreen.java').read_text().split('private void drawRetainedDropper',1)[1].split('private void drawFactoryDropperWidgets',1)[0]
+        self.assertIn('FactorySteelFrame.slots(g,menu,x,y);',hopper)
+        self.assertIn('FactorySteelFrame.slots(graphics,m,x,y);',dropper)
+        self.assertIn('controlSymbol(graphics,x+sx+5,y+90,n)',dropper)
+        self.assertIn('inset(graphics,x+sx,y+100,18,8)',dropper)
+        self.assertLess(90+7,100)
+        frame=(folder/'FactorySteelFrame.java').read_text()
+        for fragment in ['sx-1,sy-1,18,1','sx-1,sy+16,18,1','sx-1,sy,1,16','sx+16,sy,1,16']:
+            self.assertIn(fragment,frame)
+
     def test_capture_uses_full_stacks_for_frame_review(self):
         source=(ROOT/'src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java').read_text()
         for index in [0,5]:

@@ -769,6 +769,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       // Specialist candidate uses six raster texels per logical pixel, not the older atlas UVs.
       graphics.blit(steel,x,y,228,250,0F,0F,1368,1500,1368,1500);
       MachineMenu m=(MachineMenu)this.menu;
+      FactorySteelFrame.slots(graphics,m,x,y);
       int active=Mth.clamp(m.field(15),0,11);
       MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);
       this.drawHoverOutline(graphics,x+slot.x()-1,y+slot.y()-1,18,18,0xFFFFC34A);
@@ -792,6 +793,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       int[] state={(logic&1)!=0?1:0,(logic&32)!=0?2:((logic&2)!=0?1:0),(logic&16)!=0?1:0};
       for(int n=0;n<3;n++) {
          int sx=143+n*23;
+         // Fixed function symbols sit above the synchronized rail, never beneath its thumb.
+         FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n);
          FactorySteelFrame.inset(graphics,x+sx,y+100,18,8);
          int offset=state[n]*(n==1?6:12);
          FactorySteelFrame.thumb(graphics,x+sx+1+offset,y+101,5,6);

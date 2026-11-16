@@ -55,6 +55,17 @@ final class FactorySteelFrame {
       g.fill(x+1,y+h-1,x+w,y+h,0xFF414D55);
    }
 
+   /** Fixed identity glyphs: play, direction and pulse, separate from state rails. */
+   static void controlSymbol(GuiGraphics g,int x,int y,int index) {
+      String[] rows = switch(index) {
+         case 0 -> new String[]{"1000000","1110000","1111100","1111111","1111100","1110000","1000000"};
+         case 1 -> new String[]{"0001000","0001100","1111110","1111111","1111110","0001100","0001000"};
+         default -> new String[]{"0011100","0010100","0010100","0010100","1110111","0000000","0000000"};
+      };
+      for(int row=0;row<rows.length;row++) for(int col=0;col<7;col++)
+         if(rows[row].charAt(col)=='1') g.fill(x+col,y+row,x+col+1,y+row+1,0xFFD9DEE0);
+   }
+
    private static void corner(GuiGraphics g,int x,int y) {part(g,x,y,12,12,30,1130,100,90);}
    private static void part(GuiGraphics g,int x,int y,int w,int h,int u,int v,int sw,int sh) {
       g.blit(STEEL,x,y,w,h,(float)u,(float)v,sw,sh,1199,1312);
