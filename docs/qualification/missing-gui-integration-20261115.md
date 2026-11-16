@@ -98,3 +98,14 @@ inspection, not native qualification. The first generated Hopper design was
 rejected because it changed the slot count; it is not shipped. Hopper instead
 uses tiled dark brushed material from the retained Placer with native geometry.
 New in-game captures and visual review are still required.
+
+## ModernUI compatibility coverage
+
+The existing OFF/ON diagnostic was not triggered by production GUI changes. Its
+path filter now includes client renderer and GUI texture changes, and its exact
+JAR pin is updated to the bytes verified from this candidate's native artifact:
+`a6658ecffed82188f084ea57090b358a0a3e3cc85360019c25fe0a91e70bb09a`.
+No production code changes in this coverage commit. The existing official pinned
+ModernUI harness observes both settings; success is a compatibility observation,
+not proof that the previously un-reproduced issue 70 is fixed. OFF/ON images need
+visual comparison before a conclusion.
