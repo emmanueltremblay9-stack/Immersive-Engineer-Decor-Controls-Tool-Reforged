@@ -26,6 +26,15 @@ class HopperSteelArtworkTests(unittest.TestCase):
         for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
             self.assertNotIn(forbidden, artwork)
 
+    def test_shared_steel_frame_is_presentation_only(self):
+        frame = (JAVA / 'client/FactorySteelFrame.java').read_text()
+        self.assertIn('FactorySteelFrame.frame', (JAVA / 'client/FactoryHopperSteelArtwork.java').read_text())
+        self.assertIn('FactorySteelFrame.frame(graphics,x+7,y+9,214,224)', (JAVA / 'client/MachineScreen.java').read_text())
+        for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
+            self.assertNotIn(forbidden, frame)
+        self.assertIn('sx-1,sy-1,18,1', frame)
+        self.assertIn('sx+16,sy,1,16', frame)
+
     def test_only_hopper_dispatches_new_material(self):
         screen = (JAVA / 'client/MachineScreen.java').read_text()
         self.assertIn('if (kind == MachineKind.FACTORY_HOPPER) {\n                FactoryHopperSteelArtwork.render(graphics, this.menu, texture, x, y);', screen)

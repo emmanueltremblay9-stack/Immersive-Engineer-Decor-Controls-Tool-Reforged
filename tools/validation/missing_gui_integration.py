@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 RECORD = ROOT / 'docs/qualification/missing-gui-source-delta.json'
-RECORD_SHA256 = 'ec9722daf058e0a81ce3fedb08a3d34d76d4c13905ae61480af9ddbb7183a0a7'
+RECORD_SHA256 = '15aa54afc778afc2774330f0a44ec433274ef056825b167d84fd75014ee3f19c'
 RECORD_BYTES = RECORD.read_bytes()
 
 

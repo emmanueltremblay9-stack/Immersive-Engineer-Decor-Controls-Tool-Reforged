@@ -66,3 +66,18 @@ Static review notes: retained furnace geometry checks cover 95 machine/player
 anchors. Native review must also check the 250/256-high panels at a GUI viewport
 of 240 pixels and the electrical speed-selector mask. These are unverified
 visual conditions, not evidence of successful client qualification.
+
+## Owner-requested steel-frame refinement
+
+After reviewing the first actual captures, the owner requested improved steel
+frames for both Factory Hopper and Factory Dropper. The structural rails, corner
+fasteners, separators and slot rims now reuse the retained Placer steel texture.
+The Dropper's retained control symbols remain as small bronze accents; its
+control regions and slot coordinates are unchanged. The Hopper keeps its own
+layout, not a copy of the Placer. No other GUI asset is changed.
+
+Shape: stronger external bevelled rails and riveted corners. Texture: existing
+Placer UV strips and rim samples only, no generated texture. Style: neutral steel
+structure with limited warm warning accents. Validation requires new exact-head
+client captures and user visual review; previous captures do not qualify this
+refinement.

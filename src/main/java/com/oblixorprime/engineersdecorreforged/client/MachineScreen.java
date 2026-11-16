@@ -766,6 +766,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawRetainedDropper(GuiGraphics graphics,ResourceLocation texture,int x,int y) {
       graphics.blit(texture,x,y,228,250,0F,0F,1199,1312,1199,1312);
       MachineMenu m=(MachineMenu)this.menu;
+      // Steel structural skin only; retained control icons and exact hitboxes stay intact.
+      FactorySteelFrame.frame(graphics,x+7,y+9,214,224);
+      FactorySteelFrame.divider(graphics,x+12,y+114,204);
+      FactorySteelFrame.slots(graphics,m,x,y);
       int active=Mth.clamp(m.field(15),0,11);
       MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);
       this.drawHoverOutline(graphics,x+slot.x()-1,y+slot.y()-1,18,18,0xFFFFC34A);
