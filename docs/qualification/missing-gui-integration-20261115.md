@@ -81,3 +81,20 @@ Placer UV strips and rim samples only, no generated texture. Style: neutral stee
 structure with limited warm warning accents. Validation requires new exact-head
 client captures and user visual review; previous captures do not qualify this
 refinement.
+
+### Second steel pass, after native visual inspection
+
+The first thin-rail treatment was visually insufficient; it is not accepted as
+the requested restyle. Dropper now uses a newly generated steel material variant
+of its retained source, saved separately as `retained_dropper/steel.png`. The
+original copper reference is preserved. The built-in image editor used the
+Dropper as strict layout target and Placer as material-only reference. Prompt:
+change orange structural frames to neutral brushed silver steel, keep exact
+canvas, all slots/controls/symbols, charcoal wells, red button and hazard stripes.
+Canvas is 1199x1312; SHA256 c831762e5df2dfd618a82c6ab048acb2f3ac51526b4deb121c6662a14ab4a594.
+Inspection found all 51 native machine/player/hotbar slot centers remain in black
+interiors (maximum RGB channel 33), with no layout code changes. This is asset
+inspection, not native qualification. The first generated Hopper design was
+rejected because it changed the slot count; it is not shipped. Hopper instead
+uses tiled dark brushed material from the retained Placer with native geometry.
+New in-game captures and visual review are still required.

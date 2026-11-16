@@ -764,28 +764,26 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void drawRetainedDropper(GuiGraphics graphics,ResourceLocation texture,int x,int y) {
-      graphics.blit(texture,x,y,228,250,0F,0F,1199,1312,1199,1312);
+      ResourceLocation steel=ResourceLocation.fromNamespaceAndPath(
+         "immersive_engineer_decor_controls_tool_reforged", "textures/gui/retained_dropper/steel.png");
+      graphics.blit(steel,x,y,228,250,0F,0F,1199,1312,1199,1312);
       MachineMenu m=(MachineMenu)this.menu;
-      // Steel structural skin only; retained control icons and exact hitboxes stay intact.
-      FactorySteelFrame.frame(graphics,x+7,y+9,214,224);
-      FactorySteelFrame.divider(graphics,x+12,y+114,204);
-      FactorySteelFrame.slots(graphics,m,x,y);
       int active=Mth.clamp(m.field(15),0,11);
       MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);
       this.drawHoverOutline(graphics,x+slot.x()-1,y+slot.y()-1,18,18,0xFFFFC34A);
       // Cover painted default positions; display only synchronized settings.
-      graphics.fill(x+153,y+32,x+160,y+61,0xFF30291F);
+      graphics.fill(x+153,y+32,x+160,y+61,0xFF25292D);
       int velocity=34+(100-Mth.clamp(m.field(0),0,100))*25/100;
       graphics.fill(x+154,y+velocity-1,x+159,y+velocity+2,0xFFFFBF5A);
-      graphics.fill(x+170,y+33,x+198,y+60,0xFF30291F);
-      graphics.fill(x+183,y+34,x+184,y+59,0xFF70542E);
-      graphics.fill(x+171,y+46,x+197,y+47,0xFF70542E);
+      graphics.fill(x+170,y+33,x+198,y+60,0xFF25292D);
+      graphics.fill(x+183,y+34,x+184,y+59,0xFF687078);
+      graphics.fill(x+171,y+46,x+197,y+47,0xFF687078);
       int dx=184+Mth.clamp(m.field(1),-100,100)*13/100,dy=46-Mth.clamp(m.field(2),-100,100)*13/100;
       graphics.fill(x+dx-1,y+dy-1,x+dx+2,y+dy+2,0xFFFFBF5A);
       for(int n=0;n<2;n++) {
          int sy=69+n*12;
-         graphics.fill(x+156,y+sy-3,x+199,y+sy+4,0xFF30291F);
-         graphics.fill(x+160,y+sy,x+197,y+sy+1,0xFF957448);
+         graphics.fill(x+156,y+sy-3,x+199,y+sy+4,0xFF25292D);
+         graphics.fill(x+160,y+sy,x+197,y+sy+1,0xFF929A9E);
          int value=n==0 ? (Mth.clamp(m.field(4),1,32)-1)*37/31 : Mth.clamp(m.field(6),0,100)*37/100;
          graphics.fill(x+159+value,y+sy-2,x+162+value,y+sy+3,0xFFFFBF5A);
       }
@@ -793,7 +791,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       int[] state={(logic&1)!=0?1:0,(logic&32)!=0?2:((logic&2)!=0?1:0),(logic&16)!=0?1:0};
       for(int n=0;n<3;n++) {
          int sx=143+n*23;
-         graphics.fill(x+sx,y+100,x+sx+18,y+108,0xFF30291F);
+         graphics.fill(x+sx,y+100,x+sx+18,y+108,0xFF25292D);
          int offset=state[n]*(n==1?6:12);
          graphics.fill(x+sx+1+offset,y+102,x+sx+5+offset,y+106,0xFFFFBF5A);
          int status=Mth.clamp(m.field(12+n),0,2);
@@ -802,7 +800,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
       graphics.fill(x+126,y+96,x+131,y+101,m.field(11)!=0?0xFFFF4545:0xFF712424);
       // Cadence activity lamp remains next to the cadence control, never quantity.
-      graphics.fill(x+202,y+79,x+206,y+83,m.field(9)>10&&System.currentTimeMillis()%1000L<500L?0xFFFFC34A:0xFF403829);
+      graphics.fill(x+202,y+79,x+206,y+83,m.field(9)>10&&System.currentTimeMillis()%1000L<500L?0xFFFFC34A:0xFF343A3F);
    }
 
    private void drawFactoryDropperWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {

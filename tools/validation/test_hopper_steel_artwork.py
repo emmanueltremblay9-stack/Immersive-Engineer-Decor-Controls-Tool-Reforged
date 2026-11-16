@@ -26,10 +26,16 @@ class HopperSteelArtworkTests(unittest.TestCase):
         for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
             self.assertNotIn(forbidden, artwork)
 
+    def test_dropper_steel_texture_keeps_canvas_and_identity(self):
+        data = (ASSETS / 'retained_dropper/steel.png').read_bytes()
+        self.assertEqual(hashlib.sha256(data).hexdigest(), 'c831762e5df2dfd618a82c6ab048acb2f3ac51526b4deb121c6662a14ab4a594')
+        self.assertEqual(int.from_bytes(data[16:20], 'big'), 1199)
+        self.assertEqual(int.from_bytes(data[20:24], 'big'), 1312)
+
     def test_shared_steel_frame_is_presentation_only(self):
         frame = (JAVA / 'client/FactorySteelFrame.java').read_text()
         self.assertIn('FactorySteelFrame.frame', (JAVA / 'client/FactoryHopperSteelArtwork.java').read_text())
-        self.assertIn('FactorySteelFrame.frame(graphics,x+7,y+9,214,224)', (JAVA / 'client/MachineScreen.java').read_text())
+        self.assertIn('textures/gui/retained_dropper/steel.png', (JAVA / 'client/MachineScreen.java').read_text())
         for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
             self.assertNotIn(forbidden, frame)
         self.assertIn('sx-1,sy-1,18,1', frame)

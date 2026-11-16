@@ -17,8 +17,14 @@ final class FactoryHopperSteelArtwork {
       int width = menu.layout().imageWidth(), height = menu.layout().imageHeight();
       // Retained unlettered steel nameplate material, tiled by the renderer, not a
       // stretched copy of the Placer inventory or an additional texture asset.
-      part(g, x, y, width, height, 250, 36, 680, 48);
-      g.fill(x + 5, y + 5, x + width - 5, y + height - 5, 0xFF242628);
+      // Tile an unlettered dark brushed inset sample. Never stretch a flat fill
+      // across the whole machine, nor copy the Placer slot arrangement.
+      for(int row=0;row<height;row+=8) {
+         for(int col=0;col<width;col+=32) {
+            int w=Math.min(32,width-col),h=Math.min(8,height-row);
+            part(g,x+col,y+row,w,h,250,160,w*8,h*3);
+         }
+      }
       FactorySteelFrame.frame(g,x,y,width,height);
       FactorySteelFrame.divider(g,x+3,y+height-99,width-6);
       for (var slot : menu.slots) {
