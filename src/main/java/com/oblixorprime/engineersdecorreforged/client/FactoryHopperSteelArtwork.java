@@ -18,15 +18,27 @@ final class FactoryHopperSteelArtwork {
       panel(g,x+4,y+67,168,57);
       panel(g,x+4,y+126,168,21);
       FactorySteelFrame.divider(g,x+4,y+62,width-8);
-      // A quiet brushed nameplate occupies existing unused footer space, not slots.
-      part(g,x+9,y+151,158,10,260,36,670,44);
+      // Recessed ventilation in existing footer space, not an unexplained title plate.
+      panel(g,x+5,y+150,166,12);
+      for(int vent=0;vent<12;vent++) {
+         int vx=x+12+vent*13;
+         g.fill(vx,y+154,vx+8,y+157,0xFF080C0F);
+         g.fill(vx,y+157,vx+8,y+158,0xFF6B767D);
+      }
       for (var slot : menu.slots) {
          int sx=x+slot.x,sy=y+slot.y;
-         g.fill(sx-1,sy-1,sx+17,sy+17,0xFF171A1D);
-         g.fill(sx-1,sy-1,sx+17,sy,0xFFB9C1C5);
-         g.fill(sx-1,sy,sx,sy+16,0xFF899398);
-         g.fill(sx,sy+16,sx+17,sy+17,0xFF4D565D);
-         g.fill(sx+16,sy,sx+17,sy+16,0xFF4D565D);
+         // Two-tone bevels live outside the complete 16x16 item footprint.
+         // Adjacent rims share the 2px gap; their logical item slots never move.
+         g.fill(sx-1,sy-2,sx+17,sy+18,0xFF171D21);
+         g.fill(sx-2,sy-1,sx+18,sy+17,0xFF171D21);
+         g.fill(sx-1,sy-2,sx+17,sy-1,0xFFCFD6D9);
+         g.fill(sx,sy-1,sx+16,sy,0xFF76838C);
+         g.fill(sx-2,sy,sx-1,sy+16,0xFFAFBBC3);
+         g.fill(sx-1,sy,sx,sy+16,0xFF64717A);
+         g.fill(sx,sy+16,sx+16,sy+17,0xFF52616B);
+         g.fill(sx-1,sy+17,sx+17,sy+18,0xFF080D10);
+         g.fill(sx+16,sy,sx+17,sy+16,0xFF45545F);
+         g.fill(sx+17,sy-1,sx+18,sy+17,0xFF080D10);
          g.fill(sx,sy,sx+16,sy+16,0xFF101315);
       }
       for(int row=0;row<3;row++) {

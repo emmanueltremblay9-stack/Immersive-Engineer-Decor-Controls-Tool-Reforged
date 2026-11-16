@@ -744,10 +744,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       int slotIndex = Mth.clamp(((MachineMenu)this.menu).field(6), 0, 17);
       graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 17, 200, 8, 18, 18);
       int[] rangeMarkers = new int[]{133, 141, 149, 157, 166};
-      graphics.blit(texture, x0 + rangeMarkers[Mth.clamp(((MachineMenu)this.menu).field(0), 0, 4)] - 2, y0 + 14, 179, 40, 5, 5);
+      FactorySteelFrame.thumb(graphics, x0 + rangeMarkers[Mth.clamp(((MachineMenu)this.menu).field(0), 0, 4)] - 2, y0 + 14, 5, 5);
       int periodX = Mth.clamp((int)Math.round(33.5 * ((MachineMenu)this.menu).field(3) / 100.0 + 1.0), 0, 34);
-      graphics.blit(texture, x0 + 132 - 2 + periodX, y0 + 27, 179, 40, 5, 5);
-      graphics.blit(texture, x0 + 133 - 2 + Mth.clamp(((MachineMenu)this.menu).field(1), 1, 32), y0 + 40, 179, 40, 5, 5);
+      FactorySteelFrame.thumb(graphics, x0 + 132 - 2 + periodX, y0 + 27, 5, 5);
+      FactorySteelFrame.thumb(graphics, x0 + 133 - 2 + Mth.clamp(((MachineMenu)this.menu).field(1), 1, 32), y0 + 40, 5, 5);
       if (((MachineMenu)this.menu).field(5) != 0) {
          graphics.blit(texture, x0 + 133, y0 + 49, 217, 49, 9, 9);
       }
@@ -766,7 +766,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawRetainedDropper(GuiGraphics graphics,ResourceLocation texture,int x,int y) {
       ResourceLocation steel=ResourceLocation.fromNamespaceAndPath(
          "immersive_engineer_decor_controls_tool_reforged", "textures/gui/retained_dropper/steel.png");
-      graphics.blit(steel,x,y,228,250,0F,0F,1199,1312,1199,1312);
+      // Exclude empty atlas margin without rescaling or moving the retained artwork.
+      graphics.pose().pushPose();
+      graphics.pose().translate(x,y,0);
+      graphics.pose().scale(228F/1199F,250F/1312F,1F);
+      graphics.blit(steel,29,0,1142,1225,29F,0F,1142,1225,1199,1312);
+      graphics.pose().popPose();
       MachineMenu m=(MachineMenu)this.menu;
       int active=Mth.clamp(m.field(15),0,11);
       MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);

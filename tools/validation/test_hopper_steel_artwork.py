@@ -46,7 +46,12 @@ class HopperSteelArtworkTests(unittest.TestCase):
         self.assertNotIn('127, 8, 46, 53',artwork)
         self.assertIn('panel(g,x+125,y+4,47,59)',artwork)
         self.assertIn('original,x+bx,y+49,bx,49,9,9',artwork)
-        self.assertIn('sx-1,sy-1,sx+17,sy',artwork)
+        self.assertIn('sx-1,sy-2,sx+17,sy-1',artwork)
+
+    def test_dropper_margin_crop_keeps_original_scale(self):
+        screen=(JAVA / 'client/MachineScreen.java').read_text()
+        self.assertIn('scale(228F/1199F,250F/1312F,1F)',screen)
+        self.assertIn('blit(steel,29,0,1142,1225,29F,0F,1142,1225,1199,1312)',screen)
 
     def test_only_hopper_dispatches_new_material(self):
         screen = (JAVA / 'client/MachineScreen.java').read_text()

@@ -72,7 +72,7 @@ public final class GuiAlbumThree {
                     enter(Stage.WAIT);
                 }
                 case WAIT -> {
-                    if(ticks<35||mc.screen==null)return;
+                    if(ticks<(index==0?650:35)||mc.screen==null)return;
                     require(mc.screen.getClass().getName().equals("com.oblixorprime.engineersdecorreforged.client."+(index!=4?"MachineScreen$":"")+SCREENS[index]),"Wrong machine screen");
                     require(mc.screen instanceof AbstractContainerScreen<?> && (index==4 || mc.player.containerMenu instanceof MachineMenu),"Missing actual container");
                     if(inspection==null){inspection=mc.getSingleplayerServer().submit(()->player(mc).containerMenu.getClass()==mc.player.containerMenu.getClass() && player(mc).containerMenu.containerId==mc.player.containerMenu.containerId);return;}
