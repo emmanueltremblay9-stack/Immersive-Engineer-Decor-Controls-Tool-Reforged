@@ -765,13 +765,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawRetainedDropper(GuiGraphics graphics,ResourceLocation texture,int x,int y) {
       ResourceLocation steel=ResourceLocation.fromNamespaceAndPath(
-         "immersive_engineer_decor_controls_tool_reforged", "textures/gui/retained_dropper/steel.png");
-      // Exclude empty atlas margin without rescaling or moving the retained artwork.
-      graphics.pose().pushPose();
-      graphics.pose().translate(x,y,0);
-      graphics.pose().scale(228F/1199F,250F/1312F,1F);
-      graphics.blit(steel,29,0,1142,1225,29F,0F,1142,1225,1199,1312);
-      graphics.pose().popPose();
+         "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_steel_v2/dropper.png");
+      // Specialist candidate uses six raster texels per logical pixel, not the older atlas UVs.
+      graphics.blit(steel,x,y,228,250,0F,0F,1368,1500,1368,1500);
       MachineMenu m=(MachineMenu)this.menu;
       int active=Mth.clamp(m.field(15),0,11);
       MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);

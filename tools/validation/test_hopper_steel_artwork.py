@@ -21,7 +21,7 @@ class HopperSteelArtworkTests(unittest.TestCase):
         layout = (JAVA / 'utility/MachineLayout.java').read_text()
         self.assertIn('original(grid(0, 11, 9, 6, 3, "Storage"), 8, 71, 8, 129, "factory_hopper_gui")', layout)
         artwork = (JAVA / 'client/FactoryHopperSteelArtwork.java').read_text()
-        self.assertIn('for (var slot : menu.slots)', artwork)
+        self.assertIn('176,166,0F,0F,1056,996,1056,996', artwork)
         self.assertNotIn('FactoryPlacerV2ReferenceGeometry', artwork)
         for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
             self.assertNotIn(forbidden, artwork)
@@ -34,8 +34,8 @@ class HopperSteelArtworkTests(unittest.TestCase):
 
     def test_shared_steel_frame_is_presentation_only(self):
         frame = (JAVA / 'client/FactorySteelFrame.java').read_text()
-        self.assertIn('FactorySteelFrame.frame', (JAVA / 'client/FactoryHopperSteelArtwork.java').read_text())
-        self.assertIn('textures/gui/retained_dropper/steel.png', (JAVA / 'client/MachineScreen.java').read_text())
+        self.assertIn('textures/gui/factory_steel_v2/hopper.png', (JAVA / 'client/FactoryHopperSteelArtwork.java').read_text())
+        self.assertIn('textures/gui/factory_steel_v2/dropper.png', (JAVA / 'client/MachineScreen.java').read_text())
         for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
             self.assertNotIn(forbidden, frame)
         self.assertIn('sx-1,sy-1,18,1', frame)
@@ -44,14 +44,14 @@ class HopperSteelArtworkTests(unittest.TestCase):
     def test_hopper_control_panel_is_not_a_legacy_grey_rectangle(self):
         artwork=(JAVA / 'client/FactoryHopperSteelArtwork.java').read_text()
         self.assertNotIn('127, 8, 46, 53',artwork)
-        self.assertIn('panel(g,x+125,y+4,47,59)',artwork)
+        self.assertIn('textures/gui/factory_steel_v2/hopper.png',artwork)
         self.assertIn('original,x+bx,y+49,bx,49,9,9',artwork)
-        self.assertIn('sx-1,sy-2,sx+17,sy-1',artwork)
+        self.assertNotIn('g.fill(',artwork)
 
     def test_dropper_margin_crop_keeps_original_scale(self):
         screen=(JAVA / 'client/MachineScreen.java').read_text()
-        self.assertIn('scale(228F/1199F,250F/1312F,1F)',screen)
-        self.assertIn('blit(steel,29,0,1142,1225,29F,0F,1142,1225,1199,1312)',screen)
+        self.assertIn('228,250,0F,0F,1368,1500,1368,1500',screen)
+        self.assertNotIn('blit(steel,29,0,1142,1225',screen)
 
     def test_only_hopper_dispatches_new_material(self):
         screen = (JAVA / 'client/MachineScreen.java').read_text()
