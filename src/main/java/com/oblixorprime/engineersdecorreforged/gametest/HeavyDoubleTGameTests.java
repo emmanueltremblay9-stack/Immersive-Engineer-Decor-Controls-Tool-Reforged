@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTOrientation;
 import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTSupportBlock;
 import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTTopology;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTTopology.Contact;
 import com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock;
 import com.oblixorprime.engineersdecorreforged.block.VerticalDoubleTSupportBlock;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -65,6 +67,27 @@ public final class HeavyDoubleTGameTests {
             "inverse rotation restores roll");
       }
       h.assertValueEqual(rotations.size(), 24, "all six placement faces and four rolls are distinct");
+      h.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void compact_fluid_schema_keeps_all_24_orientation_states(GameTestHelper h) {
+      var block = ModBlocks.HEAVY_INDUSTRIAL_DOUBLE_T_SUPPORT.get();
+      h.assertTrue(block instanceof NativeFluidloggedBlock, "Heavy is native-fluid compatible");
+      h.assertTrue(block instanceof NativeFluidloggedBlock.CompactState, "compact schema avoids redundant fluid props");
+      h.assertValueEqual(block.getStateDefinition().getPossibleStates().size(), 24 * 19,
+         "24 orientations have precisely 19 compact fluid states each");
+      for (Direction direction : Direction.values()) for (int roll=0; roll<4; roll++) {
+         var dry = heavy(direction,roll);
+         h.assertValueEqual(dry.getFluidState().isEmpty(),true,"default support stays dry");
+         var water = NativeFluidloggedBlock.placement(dry,Fluids.WATER.getSource(false));
+         h.assertValueEqual(water.getFluidState(),Fluids.WATER.getSource(false),
+            "water source retained without changing axis or roll");
+         h.assertValueEqual(water.getValue(HeavyDoubleTSupportBlock.FACING),direction,
+            "water retains facing");
+         h.assertValueEqual(water.getValue(HeavyDoubleTSupportBlock.ROLL),roll,
+            "water retains roll");
+      }
       h.succeed();
    }
 

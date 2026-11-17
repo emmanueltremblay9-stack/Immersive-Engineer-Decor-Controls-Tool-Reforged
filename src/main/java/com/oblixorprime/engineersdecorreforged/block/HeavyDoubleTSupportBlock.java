@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** New MK3/MK3.1 prototype block. Does not replace either legacy steel Double-T registry ID. */
-public final class HeavyDoubleTSupportBlock extends Block {
+public final class HeavyDoubleTSupportBlock extends NativeDecorativeBlocks.NativeOpenBlock implements NativeFluidloggedBlock.CompactState {
    public static final MapCodec<HeavyDoubleTSupportBlock> CODEC = simpleCodec(HeavyDoubleTSupportBlock::new);
    public static final DirectionProperty FACING = BlockStateProperties.FACING;
    public static final IntegerProperty ROLL = IntegerProperty.create("roll", 0, 3);
@@ -50,12 +50,14 @@ public final class HeavyDoubleTSupportBlock extends Block {
    @Override protected MapCodec<? extends Block> codec() { return CODEC; }
 
    @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+      super.createBlockStateDefinition(builder);
       builder.add(FACING, ROLL);
    }
 
    @Override public BlockState getStateForPlacement(BlockPlaceContext context) {
       Direction face = context.getClickedFace();
-      return defaultBlockState().setValue(FACING, face).setValue(ROLL, clickRoll(context, face));
+      return NativeFluidloggedBlock.placement(
+         defaultBlockState().setValue(FACING, face).setValue(ROLL, clickRoll(context, face)), context);
    }
 
    /** Four quadrants of the clicked face control roll, for all six placement faces. */
@@ -98,6 +100,7 @@ public final class HeavyDoubleTSupportBlock extends Block {
       LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
       // Contextual model data contains no saved stale neighbor mask. Flag same-state rerender
       // when an adjacent block changes; don't convert or destroy already placed supports.
+      NativeFluidloggedBlock.schedule(state, level, pos);
       if (level instanceof Level world && !world.isClientSide) {
          world.sendBlockUpdated(pos, state, state, Block.UPDATE_CLIENTS);
       }
