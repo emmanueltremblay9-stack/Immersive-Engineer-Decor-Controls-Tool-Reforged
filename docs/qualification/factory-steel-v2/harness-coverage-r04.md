@@ -31,8 +31,9 @@ with items of varying counts, including retained 64-count examples. Continuous
 transfer is disabled in the seeded album world (no redstone source, no neighboring
 inventory or dropped-item source). Dropper input/player occupancy must be at least
 48 server/client slots. Filter slots are not artificially populated. Pointer
-placement is synthetic GLFW positioning, verified outside the GUI before capture;
-no physical input is claimed for the album.
+placement is synthetic XTest OS motion, verified outside the GUI before capture;
+physical_os_input=true records this honestly, human_input=false, and zero button
+events are required. No selection click is performed.
 
 ## Dropper control driver
 
@@ -58,3 +59,25 @@ configuration. Run album at scale 2 and both localized native control suites on
 the exact committed source/JAR. Review captures independently. The source parser
 and Python fixture tests do **not** replace that runtime qualification; no new
 native screenshot or mapped compilation has been produced by this local edit.
+
+## Native 88 album timeout follow-up
+
+Native run 88 timed out at WAIT before any captures. The old proof did not expose
+which wait condition was blocking, so its exact cause cannot be reconstructed.
+The prior GLFW target at window width/height minus two was unsafe on a bounded
+Xvfb desktop: a nonzero window origin/decorations can make that target unreachable.
+The driver also did not request focus. These are identified harness defects,
+not a confirmed explanation of that particular timeout.
+
+The revised driver reuses the already native-validated XTest motion mechanism
+from the Dropper harness, focuses the window, targets window-local (8,8), and still
+requires the actual Minecraft pointer callback to report that position. It also
+requires the observed pointer to be outside the panel. Only OS-synthetic pointer motion is sent; no click, synthetic selection callback,
+timer extension or removed selection gate is added. The validator requires the
+explicit motion-only input method, physical_os_input=true, human_input=false and
+synthetic_button_events=0; negative tests reject clicks and ambiguous provenance.
+Periodic/changed-reason diagnostics and terminal proof record actual Minecraft
+and GLFW pointer positions, window position/dimensions/focus, client selection,
+occupied slots and frame count. They distinguish focus/pointer, synchronization,
+render callbacks and server-inspection waits if the native run fails again.
+The correction requires a new native run; source tests are not runtime proof.

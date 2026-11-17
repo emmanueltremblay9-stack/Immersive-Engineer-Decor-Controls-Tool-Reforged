@@ -1,6 +1,9 @@
 package com.oblixorprime.iedctrtest.factoryplacer;
 
 import com.google.gson.*;
+import com.sun.jna.NativeLibrary;
+import com.sun.jna.NativeLong;
+import com.sun.jna.Pointer;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
@@ -38,6 +41,11 @@ public final class GuiAlbumThree {
     private enum Stage {BOOT,WORLD,OPEN,WAIT,CLOSE}
     private static Stage stage=Stage.BOOT;
     private static boolean complete;
+    private static final int POINTER_TARGET=8;
+    private static NativeLibrary x11,xtest;
+    private static Pointer display;
+    private static String waitReason="not waiting";
+    private static final JsonArray waitDiagnostics=new JsonArray();
     private static long deadline;
     private static int ticks,index,selectionRow,selectionRenderFrames;
     private static UUID playerId;
@@ -54,7 +62,7 @@ public final class GuiAlbumThree {
         var mc=Minecraft.getInstance();
         try {
             if(deadline==0)deadline=System.nanoTime()+900_000_000_000L;
-            require(System.nanoTime()<deadline&&++ticks<1800,"Timeout at "+stage);
+            require(System.nanoTime()<deadline&&++ticks<1800,"Timeout at "+stage+" reason="+waitReason+" state="+diagnostic(mc));
             if(stage==Stage.BOOT){if(mc.screen instanceof TitleScreen&&mc.getOverlay()==null)boot(mc);return;}
             if(stage==Stage.WORLD){
                 if(mc.level==null||mc.player==null||mc.gameMode==null||mc.screen!=null)return;
@@ -66,8 +74,8 @@ public final class GuiAlbumThree {
             if(mc.getOverlay()!=null)return;
             switch(stage){
                 case OPEN -> {
-                    // Synthetic pointer placement, not a physical/user gesture; avoid slot tooltips.
-                    GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),mc.getWindow().getScreenWidth()-2,mc.getWindow().getScreenHeight()-2);
+                    // Synthetic OS pointer motion only, no clicks or human input; avoid tooltips.
+                    positionPointer(mc);
                     pending=mc.getSingleplayerServer().submit(()->{
                         var p=player(mc); var pos=machines[index].getBlockPos();
                         // Every case must remain within the native menu stillValid radius.
@@ -77,20 +85,30 @@ public final class GuiAlbumThree {
                     enter(Stage.WAIT);
                 }
                 case WAIT -> {
-                    if(mc.screen==null)return;
-                    if(Math.abs(mc.mouseHandler.xpos()-(mc.getWindow().getScreenWidth()-2))>1
-                        || Math.abs(mc.mouseHandler.ypos()-(mc.getWindow().getScreenHeight()-2))>1){
-                        GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),mc.getWindow().getScreenWidth()-2,mc.getWindow().getScreenHeight()-2);
+                    if(mc.screen==null){waiting(mc,"screen not opened");return;}
+                    if(GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){
+                        waiting(mc,"window not focused");GLFW.glfwFocusWindow(mc.getWindow().getWindow());return;
+                    }
+                    if(Math.abs(mc.mouseHandler.xpos()-POINTER_TARGET)>1
+                        || Math.abs(mc.mouseHandler.ypos()-POINTER_TARGET)>1){
+                        waiting(mc,"pointer callback not at target");positionPointer(mc);
                         selectionRenderFrames=0;return;
                     }
-                    if(ticks<(index==0?650:35))return;
+                    require(index==4 || mc.player.containerMenu instanceof MachineMenu,"Unexpected menu while positioning pointer");
+                    int panelLeft=(mc.screen.width-(index==4?176:((MachineMenu)mc.player.containerMenu).layout().imageWidth()))/2;
+                    int panelTop=(mc.screen.height-(index==4?166:((MachineMenu)mc.player.containerMenu).layout().imageHeight()))/2;
+                    require(mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth()<panelLeft
+                        && mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight()<panelTop,
+                        "Pointer target must remain outside panel");
+                    if(ticks<(index==0?650:35)){waiting(mc,"render warmup");return;}
                     require(mc.screen.getClass().getName().equals("com.oblixorprime.engineersdecorreforged.client."+(index!=4?"MachineScreen$":"")+SCREENS[index]),"Wrong machine screen");
                     require(mc.screen instanceof AbstractContainerScreen<?> && (index==4 || mc.player.containerMenu instanceof MachineMenu),"Missing actual container");
-                    if(index==0 && (((MachineMenu)mc.player.containerMenu).field(6)!=selectionRow*6 || selectionRenderFrames<3))return;
+                    if(index==0 && ((MachineMenu)mc.player.containerMenu).field(6)!=selectionRow*6){waiting(mc,"client selection not synchronized");return;}
+                    if(index==0 && selectionRenderFrames<3){waiting(mc,"selection render frames missing");return;}
                     if(inspection==null){inspection=mc.getSingleplayerServer().submit(()->player(mc).containerMenu.getClass()==mc.player.containerMenu.getClass() && player(mc).containerMenu.containerId==mc.player.containerMenu.containerId && (index!=0 || ((MachineMenu)player(mc).containerMenu).field(6)==selectionRow*6)
                         && (index!=0 || player(mc).containerMenu.slots.stream().filter(slot->slot.hasItem()).count()==54)
                         && (index!=5 || player(mc).containerMenu.slots.stream().filter(slot->slot.hasItem()).count()>=48));return;}
-                    if(!inspection.isDone())return;
+                    if(!inspection.isDone()){waiting(mc,"server inspection pending");return;}
                     require(inspection.join(),"Server menu mismatch");
                     var obs=new JsonObject();obs.addProperty("screen",mc.screen.getClass().getName());obs.addProperty("case",NAMES[index]);obs.addProperty("server_menu_acknowledged",true);
                     obs.addProperty("gui_scale",mc.getWindow().getGuiScale());
@@ -140,6 +158,40 @@ public final class GuiAlbumThree {
             && menu.field(6)==selectionRow*6)selectionRenderFrames++;
         else selectionRenderFrames=0;
     }
+    private static void positionPointer(Minecraft mc){
+        long window=mc.getWindow().getWindow();
+        if(GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){GLFW.glfwFocusWindow(window);return;}
+        // Window-local interior target: unlike width-2,height-2, not beyond Xvfb's
+        // desktop when the client window has decorations or a nonzero origin.
+        int[] wx={0},wy={0};GLFW.glfwGetWindowPos(window,wx,wy);
+        require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display,-1,wx[0]+POINTER_TARGET,wy[0]+POINTER_TARGET,new NativeLong(0)})!=0,
+            "Synthetic pointer motion failed");
+        x11.getFunction("XFlush").invokeInt(new Object[]{display});
+    }
+    private static JsonObject diagnostic(Minecraft mc){
+        var d=new JsonObject();d.addProperty("reason",waitReason);d.addProperty("stage",stage.name());
+        d.addProperty("ticks",ticks);d.addProperty("case_index",index);d.addProperty("selection_row",selectionRow);
+        d.addProperty("selection_render_frames",selectionRenderFrames);d.addProperty("pointer_target",POINTER_TARGET);
+        d.addProperty("mouse_x",mc.mouseHandler.xpos());d.addProperty("mouse_y",mc.mouseHandler.ypos());
+        d.addProperty("screen_width",mc.getWindow().getScreenWidth());d.addProperty("screen_height",mc.getWindow().getScreenHeight());
+        d.addProperty("framebuffer_width",mc.getWindow().getWidth());d.addProperty("framebuffer_height",mc.getWindow().getHeight());
+        d.addProperty("focused",GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE);
+        int[] wx={0},wy={0};GLFW.glfwGetWindowPos(mc.getWindow().getWindow(),wx,wy);
+        d.addProperty("window_x",wx[0]);d.addProperty("window_y",wy[0]);
+        double[] gx={0},gy={0};GLFW.glfwGetCursorPos(mc.getWindow().getWindow(),gx,gy);
+        d.addProperty("glfw_cursor_x",gx[0]);d.addProperty("glfw_cursor_y",gy[0]);
+        d.addProperty("screen",mc.screen==null?"none":mc.screen.getClass().getName());
+        if(mc.player!=null && mc.player.containerMenu instanceof MachineMenu menu){
+            d.addProperty("client_selection",menu.field(6));d.addProperty("menu_id",menu.containerId);
+            d.addProperty("occupied_slots",menu.slots.stream().filter(slot->slot.hasItem()).count());
+        }
+        return d;
+    }
+    private static void waiting(Minecraft mc,String reason){
+        boolean changed=!reason.equals(waitReason);waitReason=reason;
+        if(changed || ticks%100==0){var d=diagnostic(mc);waitDiagnostics.add(d);
+            EngineersDecorReforged.LOGGER.info("IEDCTR_GUI_ALBUM_WAIT {}",d);}
+    }
     private static void boot(Minecraft mc) throws Exception {
         nonce=System.getProperty("iedctr.clientGameplayNonce","");
         require(nonce.matches("[a-f0-9]{32}")&&System.getProperty("iedctr.executedSourceSha","").matches("[a-f0-9]{40}"),"Missing identity");
@@ -149,6 +201,9 @@ public final class GuiAlbumThree {
         require(mc.level==null&&mc.getSingleplayerServer()==null&&!Files.exists(directory.resolve("gui-album-three-proof.json")),"Existing world/proof");
         if(Files.exists(directory.resolve("saves")))try(var entries=Files.list(directory.resolve("saves"))){require(entries.findAny().isEmpty(),"Existing saves forbidden");}
         packaged=PackagedRuntimeProof.verify(mc);
+        x11=NativeLibrary.getInstance("X11");xtest=NativeLibrary.getInstance("Xtst");
+        display=x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null});
+        require(display!=null,"X11 unavailable");
         String name="iedctr-gui-album-three-"+nonce;mc.options.pauseOnLostFocus=false;enter(Stage.WORLD);
         mc.createWorldOpenFlows().createFreshLevel(name,new LevelSettings(name,GameType.SURVIVAL,false,Difficulty.PEACEFUL,true,new GameRules(),WorldDataConfiguration.DEFAULT),new WorldOptions(0L,false,false),registries->registries.registryOrThrow(Registries.WORLD_PRESET).getHolderOrThrow(WorldPresets.FLAT).value().createWorldDimensions(),new TitleScreen());
     }
@@ -175,7 +230,8 @@ public final class GuiAlbumThree {
     private static void enter(Stage next){stage=next;ticks=0;inspection=null;selectionRenderFrames=0;}
     private static void finish(Minecraft mc,Throwable error){
         complete=true;
-        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v1");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",false);if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
+        if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}
+        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v1");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.add("wait_diagnostics",waitDiagnostics);proof.add("terminal_state",diagnostic(mc));proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",true);proof.addProperty("human_input",false);proof.addProperty("input_method","synthetic XTest pointer positioning only; no clicks");proof.addProperty("synthetic_button_events",0);if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
         catch(Exception e){EngineersDecorReforged.LOGGER.error("Album proof error",e);}
         if(error==null)EngineersDecorReforged.LOGGER.info("IEDCTR_GUI_ALBUM_THREE OBSERVED nonce={}",nonce);else EngineersDecorReforged.LOGGER.error("IEDCTR_GUI_ALBUM_THREE FAILED "+stage,error);mc.stop();
     }

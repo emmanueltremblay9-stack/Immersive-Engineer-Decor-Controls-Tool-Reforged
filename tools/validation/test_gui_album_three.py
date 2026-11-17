@@ -6,7 +6,8 @@ from gui_album_three import validate, validate_selection_pixels, CASES, SCREENS,
 class ProofTests(unittest.TestCase):
     def setUp(self):
         self.jar=Path('/tmp/album.jar');self.digest='a'*64
-        self.proof=dict(suite='gui-album-three-v1',status='observed',nonce='b'*32,executed_source_sha='c'*40,visual_acceptance=False,physical_os_input=False,
+        self.proof=dict(suite='gui-album-three-v1',status='observed',nonce='b'*32,executed_source_sha='c'*40,visual_acceptance=False,physical_os_input=True,human_input=False,
+            input_method="synthetic XTest pointer positioning only; no clicks",synthetic_button_events=0,
             packaged_runtime=dict(jar_path=str(self.jar.resolve()),jar_sha256=self.digest,fixture_free_jar=True,separate_harness_module=True),
             cases=[dict(case=n,screen='com.oblixorprime.engineersdecorreforged.client.'+('MachineScreen$' if i!=4 else '')+SCREENS[i],server_menu_acknowledged=True,gui_scale=2,visible_nonempty_slots=3,screen_class_sha256='d'*64,capture=n+'.png',capture_sha256='e'*64) for i,n in enumerate(CASES)])
         self.proof['cases'][0].update(visible_nonempty_slots=54,server_selection=0,client_selection=0,ring_x=10,ring_y=8,
@@ -29,7 +30,7 @@ class ProofTests(unittest.TestCase):
         self.proof['cases'][0]['screen_class_sha256']=''
         with self.assertRaises(SmokeFailure):self.check(self.proof)
     def test_reject_human_claim(self):
-        self.proof['physical_os_input']=True
+        self.proof['human_input']=True
         with self.assertRaises(SmokeFailure):self.check(self.proof)
     def test_reject_unsynchronized_menu(self):
         self.proof['cases'][2]['server_menu_acknowledged']=False
@@ -74,3 +75,35 @@ class ProofTests(unittest.TestCase):
         for images in (pixels(17),pixels(18,True)):
             with patch('gui_album_three.decode_png',side_effect=images),self.assertRaises(SmokeFailure):
                 validate_selection_pixels(records,Path('/tmp'),width,height,scale)
+
+    def test_pointer_target_is_interior_and_observed_not_bypassed(self):
+        root=Path(__file__).resolve().parents[2]
+        source=(root/'src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java').read_text()
+        self.assertIn('POINTER_TARGET=8',source)
+        self.assertNotIn('getScreenWidth()-2',source)
+        self.assertNotIn('getScreenHeight()-2',source)
+        self.assertIn('GLFW.glfwFocusWindow(window)',source)
+        self.assertIn('XTestFakeMotionEvent',source)
+        self.assertNotIn('XTestFakeButtonEvent',source)
+        self.assertNotIn('glfwSetCursorPos',source)
+        self.assertIn('Math.abs(mc.mouseHandler.xpos()-POINTER_TARGET)>1',source)
+        self.assertIn('Math.abs(mc.mouseHandler.ypos()-POINTER_TARGET)>1',source)
+        self.assertIn('Pointer target must remain outside panel',source)
+        self.assertIn('++ticks<1800',source)
+        self.assertIn('selectionRenderFrames<3',source)
+
+    def test_wait_failure_preserves_state_diagnostics(self):
+        root=Path(__file__).resolve().parents[2]
+        source=(root/'src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java').read_text()
+        for field in ('wait_diagnostics','terminal_state','mouse_x','mouse_y','screen_width','screen_height',
+                      'window_x','window_y','glfw_cursor_x','glfw_cursor_y','focused','client_selection','selection_render_frames'):
+            self.assertIn('"'+field+'"',source)
+        for reason in ('screen not opened','window not focused','pointer callback not at target',
+                       'client selection not synchronized','selection render frames missing','server inspection pending'):
+            self.assertIn('waiting(mc,"'+reason+'")',source)
+
+    def test_reject_album_clicks_or_ambiguous_input_provenance(self):
+        for key,value in [('physical_os_input',False),('human_input',True),('synthetic_button_events',1),
+                          ('synthetic_button_events',False),('input_method','XTest clicks')]:
+            p=copy.deepcopy(self.proof);p[key]=value
+            with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)

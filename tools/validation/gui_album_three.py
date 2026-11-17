@@ -55,7 +55,8 @@ def validate_selection_pixels(selections,game,width,height,scale):
 
 def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
     for key,value in dict(suite='gui-album-three-v1',status='observed',nonce=nonce,
-                         executed_source_sha=sha,visual_acceptance=False,physical_os_input=False).items():
+                         executed_source_sha=sha,visual_acceptance=False,physical_os_input=True,human_input=False,
+                         input_method="synthetic XTest pointer positioning only; no clicks",synthetic_button_events=0).items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
     runtime=proof.get('packaged_runtime',{})
     require(runtime.get('jar_path')==str(jar.resolve()) and runtime.get('jar_sha256')==jar_sha,'Wrong production JAR')
