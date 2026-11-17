@@ -6,10 +6,11 @@ from pathlib import Path
 import re
 from client_mixin_smoke import SmokeFailure
 from freezer_v5_reconciliation import current_hash as freezer_current_hash
-from breaker_current_main_integration import RECORD, integrated_current_hash
+from breaker_current_main_integration import RECORD, integrated_current_hash, merge_current_hash
 
 def current_hash(path, previous):
-    return integrated_current_hash(path, previous) if path in RECORD["files"] else freezer_current_hash(path, previous)
+    previous = integrated_current_hash(path, previous) if path in RECORD["files"] else freezer_current_hash(path, previous)
+    return merge_current_hash(path, previous)
 
 from tree_integration_preservation import (
     MAIN_COMMIT, MILKING_UPSTREAM_INTEGRATED_FILES, TREE_COMMIT,

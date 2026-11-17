@@ -36,8 +36,9 @@ assert 'Component.translatable(PREFIX + "cell_tooltip")' in s
 assert 'hoveredSlot.index == 0 && !hoveredSlot.hasItem()' in s
 assert 'font.split(cellTooltip, wrapWidth)' in s
 from solar_cell_integration import FILES as CELL_LOCALES, project_history
+from breaker_current_main_integration import project_merge_tree
 for locale_path in CELL_LOCALES:
-    project_history(locale_path, (r / locale_path).read_bytes())
+    project_history(locale_path, project_merge_tree(locale_path, (r / locale_path).read_bytes(), "main"))
 assert 'this(kind, id, inventory, container, data, false, false, false, false)' in m
 assert 'boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,' in m
 assert 'kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide' in m
