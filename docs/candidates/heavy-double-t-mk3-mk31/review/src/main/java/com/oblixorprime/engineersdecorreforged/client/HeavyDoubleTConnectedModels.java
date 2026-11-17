@@ -1,7 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.client;
 
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
-import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import net.minecraft.core.registries.BuiltInRegistries;
 import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTSupportBlock;
 import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTTopology;
 import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTTopology.Contact;
@@ -69,11 +69,14 @@ public final class HeavyDoubleTConnectedModels {
          }
       }
       Map<BakedModel, BakedModel> wrapped = new IdentityHashMap<>();
-      for (BlockState state : ModBlocks.HEAVY_INDUSTRIAL_DOUBLE_T_SUPPORT.get().getStateDefinition().getPossibleStates()) {
+      for (var block : BuiltInRegistries.BLOCK) {
+         if (!(block instanceof HeavyDoubleTSupportBlock)) continue;
+         for (BlockState state : block.getStateDefinition().getPossibleStates()) {
          ModelResourceLocation key = BlockModelShaper.stateToModelLocation(state);
          BakedModel original = event.getModels().get(key);
          if (original == null) throw new IllegalStateException("Missing heavy Double-T core model " + key);
          event.getModels().put(key, wrapped.computeIfAbsent(original, model -> new Model(model, parts)));
+         }
       }
    }
 

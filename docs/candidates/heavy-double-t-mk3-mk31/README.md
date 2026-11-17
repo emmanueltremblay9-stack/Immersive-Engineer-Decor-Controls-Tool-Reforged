@@ -54,3 +54,9 @@ python3 -m unittest discover -s tests -v
 ```
 
 Reproduced on this revision: 87 generated assets checked; six static tests passed. NeoForge compilation, GameTests, actual CTM visual continuity and runtime integration remain NOT_RUN. This revision makes the candidate reviewable through a draft PR, superseding the earlier branch-only delivery scope; it does not adopt the candidate registration ID.
+
+## Candidate compilation gate
+
+`bash gradlew compileHeavyDoubleTCandidateJava jar` now compiles the actual four candidate classes against the production toolchain in a separate source set. The dedicated workflow verifies compiled classes exist and do not enter the normal JAR. Candidate models discover registered blocks by class rather than referencing a nonexistent `ModBlocks` field; this does not register or adopt any candidate block.
+
+Local cloud compilation is currently blocked before Gradle starts: the official distribution download reports `Network is unreachable`. The new CI gate must pass before claiming compilation. No candidate runtime is loaded by this source set, so placement/rendering/GameTests still remain unqualified.

@@ -589,3 +589,9 @@ apply from: 'gradle/smelter-packaged-validation.gradle'
 apply from: 'gradle/milking-packaged-validation.gradle'
 
 apply from: 'gradle/tfc-packaged-validation.gradle'
+
+// Compile-only candidate validation: never added to a mod run or the production JAR.
+sourceSets.create('heavyDoubleTCandidate') {
+    java.srcDir('docs/candidates/heavy-double-t-mk3-mk31/review/src/main/java')
+    compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+}
