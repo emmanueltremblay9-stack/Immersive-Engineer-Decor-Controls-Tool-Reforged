@@ -15,7 +15,7 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from factory_placer_v2_reference_native import png
 
 NAMES = {'hopper': ['normal','delayindicator','inversion','inversion_changed','triggermode','triggermode_changed'],
-         'dropper': ['normal','velocity','filtergate','externgate','triggermode']}
+         'dropper': ['normal','velocity','filtergate','filtergate_changed','externgate','externgate_changed','triggermode','triggermode_changed']}
 
 
 def require(condition, message):
@@ -26,7 +26,7 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, mac
     for key,value in dict(suite='native-factory-control-tooltip-v2',status='passed',nonce=nonce,
         executed_source_sha=sha, width=width,height=height,selected_language=language,machine=machine,
         presentation_selector_absent=True,opened_via_native_block_interaction=1,native_visual_acceptance=False,
-        state_change_server_acks=3 if machine=='hopper' else 0).items():
+        state_change_server_acks=3).items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
     runtime=proof.get('packaged_runtime',{})
     require(runtime.get('jar_path')==str(jar.resolve()) and runtime.get('jar_sha256')==jar_sha,'Runtime identity differs')
@@ -59,6 +59,18 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, mac
             require(' '.join(texts[name].split())!=' '.join(texts[name+'_changed'].split()),'Visible state text unchanged: '+name)
 
             require(states[name]!=states[name+'_changed'],'Hopper state change absent: '+name)
+
+    if machine=='dropper':
+        transitions=proof.get('dropper_transitions',[])
+        require([t.get('control') for t in transitions]==['filtergate','externgate','triggermode'],'Missing real Dropper transitions')
+        states={c['name']:c.get('tooltip',{}).get('synced_logic') for c in captures}
+        for index,t in enumerate(transitions):
+            name=t['control']; before=t.get('before'); after=t.get('client_after')
+            require(all(type(t.get(k)) is int for k in ('before','client_after','server_after','expected_after')),'Missing Dropper state values')
+            require(index==0 or before==transitions[index-1]['client_after'],'Dropper transition chain broken')
+            expected=before^1 if name=='filtergate' else before^16 if name=='triggermode' else (before&~34)|({0:32,2:0}.get(before&34,2))
+            require(after==expected and after!=before and t.get('server_after')==after and t.get('expected_after')==after,'Dropper transition acknowledgement differs')
+            require(states[name]==before and states[name+'_changed']==after,'Dropper captures not tied to transition')
 
 
 def main():

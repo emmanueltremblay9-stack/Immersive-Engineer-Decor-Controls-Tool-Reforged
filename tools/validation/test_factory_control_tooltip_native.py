@@ -15,8 +15,8 @@ class ProofTests(unittest.TestCase):
         points = [tuple(map(int, p)) for p in re.findall(r'\{(\d+),(\d+)\}', point_text)]
         zones = {name: tuple(map(int, (x,y,w,h))) for x,y,w,h,name in re.findall(
             r'isHovering\((\d+),(\d+),(\d+),(\d+),mouseX,mouseY\)\)part="([^" ]+)"', production)}
-        self.assertEqual(len(points), 4)
-        for point, name in zip(points, ('velocity','filtergate','externgate','triggermode')):
+        self.assertEqual(len(points), 7)
+        for point, name in zip(points, ('velocity','filtergate','filtergate','externgate','externgate','triggermode','triggermode')):
             x,y,w,h = zones[name]
             self.assertTrue(x <= point[0] < x+w and y <= point[1] < y+h, (name,point,zones[name]))
         x,y,w,h = zones['velocity']
@@ -26,7 +26,7 @@ class ProofTests(unittest.TestCase):
         p=dict(suite='native-factory-control-tooltip-v2',status='passed',nonce='a'*32,
             executed_source_sha='b'*40,width=320,height=260,selected_language='fr_fr',machine=machine,
             presentation_selector_absent=True,opened_via_native_block_interaction=1,native_visual_acceptance=False,
-            state_change_server_acks=3 if machine=='hopper' else 0,
+            state_change_server_acks=3,
             trigger_setup_before=4,trigger_setup_after=0,
             packaged_runtime=dict(jar_path=str(Path('artifact.jar').resolve()),jar_sha256='c'*64,
                 fixture_free_jar=True,separate_harness_module=True),captures=[])
@@ -36,6 +36,10 @@ class ProofTests(unittest.TestCase):
             p['captures'].append(dict(name=name,file='factory-control-'+name+'.png',sha256='d'*64,
                 render_frames=3,tooltip=dict(in_bounds=True,width=230,height=40,gray_characters=10,
                     text=text,expected_text=text,synced_logic=states.get(name,0))))
+        if machine=='dropper':
+            states={'filtergate':2,'filtergate_changed':3,'externgate':3,'externgate_changed':1,'triggermode':1,'triggermode_changed':17}
+            for c in p['captures']:c['tooltip']['synced_logic']=states.get(c['name'],2)
+            p['dropper_transitions']=[dict(control=n,before=states[n],client_after=states[n+'_changed'],server_after=states[n+'_changed'],expected_after=states[n+'_changed']) for n in ('filtergate','externgate','triggermode')]
         return p
     def check(self,p):
         with patch('factory_control_tooltip_native.png'):
@@ -70,4 +74,13 @@ class ProofTests(unittest.TestCase):
         for key,value in [('in_bounds',False),('width',241),('height',10),('gray_characters',0),('text','short'),('synced_logic',None)]:
             q=self.make('hopper');q['captures'][2]['tooltip'][key]=value
             with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(q)
+
+    def test_reject_dropper_missing_or_wrong_ack(self):
+        for key,value in [('before',3),('client_after',2),('server_after',2),('expected_after',2),('control','velocity')]:
+            p=self.make('dropper');p['dropper_transitions'][0][key]=value
+            with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)
+        p=self.make('dropper');p['dropper_transitions']=[]
+        with self.assertRaises(SmokeFailure):self.check(p)
+        p=self.make('dropper');p['captures'][3]['tooltip']['synced_logic']=2
+        with self.assertRaises(SmokeFailure):self.check(p)
 if __name__=='__main__':unittest.main()

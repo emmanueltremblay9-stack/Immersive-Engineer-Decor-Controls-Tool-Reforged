@@ -51,8 +51,8 @@ public final class FactoryControlTooltipValidation {
     private static final BlockPos POS = new BlockPos(0, 80, 0);
     private static final boolean HOPPER = "hopper".equals(System.getProperty("iedctr.factoryControlMachine"));
     private static final String PREFIX = "block.immersive_engineer_decor_controls_tool_reforged.factory_" + (HOPPER ? "hopper" : "dropper");
-    private static final int[][] POINTS = HOPPER ? new int[][]{{148,23},{148,52},{148,52},{162,52},{162,52}} : new int[][]{{156,46},{151,103},{174,103},{197,103}};
-    private static final String[] NAMES = HOPPER ? new String[]{"delayindicator","inversion","inversion_changed","triggermode","triggermode_changed"} : new String[]{"velocity","filtergate","externgate","triggermode"};
+    private static final int[][] POINTS = HOPPER ? new int[][]{{148,23},{148,52},{148,52},{162,52},{162,52}} : new int[][]{{156,46},{151,103},{151,103},{174,103},{174,103},{197,103},{197,103}};
+    private static final String[] NAMES = HOPPER ? new String[]{"delayindicator","inversion","inversion_changed","triggermode","triggermode_changed"} : new String[]{"velocity","filtergate","filtergate_changed","externgate","externgate_changed","triggermode","triggermode_changed"};
     private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, TRIGGER_SETUP }
     private static Stage stage = Stage.BOOT;
     private static boolean complete, tooltipInFrame;
@@ -68,7 +68,8 @@ public final class FactoryControlTooltipValidation {
     private static final JsonArray captures = new JsonArray();
     private static NativeLibrary x11, xtest;
     private static Pointer display;
-    private static int opened, awaitingLogic = -1, stateChangeAcks;
+    private static int opened, awaitingLogic = -1, stateChangeAcks, expectedDropperLogic;
+    private static final JsonArray transitions = new JsonArray();
     private static String triggerTextBefore;
     private static int triggerSetupBefore = -1, triggerSetupAfter = -1;
     private FactoryControlTooltipValidation() {}
@@ -128,7 +129,15 @@ public final class FactoryControlTooltipValidation {
             if (stage == Stage.HOVER) {
                 if (!atPointer(mc, screen)) { move(mc, screen); return; }
                 if (awaitingLogic != -1) {
-                    if (menu.field(2) == awaitingLogic || !matches(mc, p -> p.containerMenu instanceof MachineMenu serverMenu && serverMenu.field(2) == menu.field(2))) return;
+                    int field = HOPPER ? 2 : 5;
+                    int current = menu.field(field);
+                    if (current == awaitingLogic || (!HOPPER && current != expectedDropperLogic)
+                        || !matches(mc, p -> p.containerMenu instanceof MachineMenu serverMenu
+                            && serverMenu.containerId == menu.containerId && serverMenu.field(field) == current)) return;
+                    if(!HOPPER){var transition=new JsonObject();transition.addProperty("control",NAMES[hoverIndex].replace("_changed",""));
+                        transition.addProperty("before",awaitingLogic);transition.addProperty("client_after",current);
+                        transition.addProperty("server_after",current);transition.addProperty("expected_after",expectedDropperLogic);
+                        transitions.add(transition);}
                     awaitingLogic = -1; stateChangeAcks++; ticks = 0; tooltipFrames = 0; observed = null; return;
                 }
                 if (ticks < 12 || tooltipFrames < 3 || observed == null) return;
@@ -142,6 +151,7 @@ public final class FactoryControlTooltipValidation {
                 }
                 expected = net.minecraft.ChatFormatting.stripFormatting(expected);
                 observed.addProperty("expected_text", expected);
+                if(!HOPPER)observed.addProperty("synced_logic",menu.field(5));
                 if (HOPPER && hoverIndex >= 3) {
                     require((menu.field(2) & 4) == 0, "Trigger tooltip must describe pulse or continuous, not ignored mode");
                     String visible = observed.get("text").getAsString().replaceAll("\\s+", " ").trim();
@@ -162,6 +172,12 @@ public final class FactoryControlTooltipValidation {
                 }
                 if (HOPPER && (hoverIndex == 1 || hoverIndex == 3)) {
                     awaitingLogic = menu.field(2); nativeClick(1);
+                }
+                if (!HOPPER && (hoverIndex==1 || hoverIndex==3 || hoverIndex==5)) {
+                    awaitingLogic=menu.field(5);
+                    expectedDropperLogic=hoverIndex==1?awaitingLogic^1:hoverIndex==5?awaitingLogic^16:
+                        (awaitingLogic&~34)|switch(awaitingLogic&34){case 0->32;case 2->0;default->2;};
+                    nativeClick(1);
                 }
                 if (++hoverIndex < POINTS.length) { ticks = 0; setHover(mc, screen); return; }
                 packaged = FactoryControlRuntimeProof.verify(mc); finish(mc, null);
@@ -264,6 +280,7 @@ public final class FactoryControlTooltipValidation {
             proof.addProperty("presentation_selector_absent",System.getProperty(MachineMenu.DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY)==null);
             proof.addProperty("opened_via_native_block_interaction",opened);
             proof.addProperty("state_change_server_acks",stateChangeAcks);
+            proof.add("dropper_transitions",transitions);
             if (HOPPER) {
                 proof.addProperty("trigger_setup_before",triggerSetupBefore);
                 proof.addProperty("trigger_setup_after",triggerSetupAfter);

@@ -9,6 +9,7 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.client.Minecraft;
+import org.lwjgl.glfw.GLFW;
 import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -27,6 +28,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 
 /** Test-only album capture, server-opened containers. No human input or gameplay qualification claimed. */
 @EventBusSubscriber(modid=FactoryPlacerValidationMod.MOD_ID, value=Dist.CLIENT)
@@ -37,12 +39,13 @@ public final class GuiAlbumThree {
     private static Stage stage=Stage.BOOT;
     private static boolean complete;
     private static long deadline;
-    private static int ticks,index;
+    private static int ticks,index,selectionRow,selectionRenderFrames;
     private static UUID playerId;
     private static Path directory;
     private static String nonce;
     private static JsonObject packaged;
     private static final JsonArray cases=new JsonArray();
+    private static final JsonArray selections=new JsonArray();
     private static final MachineBlockEntity[] machines=new MachineBlockEntity[NAMES.length];
     private static CompletableFuture<?> pending;
     private static CompletableFuture<Boolean> inspection;
@@ -63,6 +66,8 @@ public final class GuiAlbumThree {
             if(mc.getOverlay()!=null)return;
             switch(stage){
                 case OPEN -> {
+                    // Synthetic pointer placement, not a physical/user gesture; avoid slot tooltips.
+                    GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),mc.getWindow().getScreenWidth()-2,mc.getWindow().getScreenHeight()-2);
                     pending=mc.getSingleplayerServer().submit(()->{
                         var p=player(mc); var pos=machines[index].getBlockPos();
                         // Every case must remain within the native menu stillValid radius.
@@ -72,15 +77,27 @@ public final class GuiAlbumThree {
                     enter(Stage.WAIT);
                 }
                 case WAIT -> {
-                    if(ticks<(index==0?650:35)||mc.screen==null)return;
+                    if(mc.screen==null)return;
+                    if(Math.abs(mc.mouseHandler.xpos()-(mc.getWindow().getScreenWidth()-2))>1
+                        || Math.abs(mc.mouseHandler.ypos()-(mc.getWindow().getScreenHeight()-2))>1){
+                        GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),mc.getWindow().getScreenWidth()-2,mc.getWindow().getScreenHeight()-2);
+                        selectionRenderFrames=0;return;
+                    }
+                    if(ticks<(index==0?650:35))return;
                     require(mc.screen.getClass().getName().equals("com.oblixorprime.engineersdecorreforged.client."+(index!=4?"MachineScreen$":"")+SCREENS[index]),"Wrong machine screen");
                     require(mc.screen instanceof AbstractContainerScreen<?> && (index==4 || mc.player.containerMenu instanceof MachineMenu),"Missing actual container");
-                    if(inspection==null){inspection=mc.getSingleplayerServer().submit(()->player(mc).containerMenu.getClass()==mc.player.containerMenu.getClass() && player(mc).containerMenu.containerId==mc.player.containerMenu.containerId);return;}
+                    if(index==0 && (((MachineMenu)mc.player.containerMenu).field(6)!=selectionRow*6 || selectionRenderFrames<3))return;
+                    if(inspection==null){inspection=mc.getSingleplayerServer().submit(()->player(mc).containerMenu.getClass()==mc.player.containerMenu.getClass() && player(mc).containerMenu.containerId==mc.player.containerMenu.containerId && (index!=0 || ((MachineMenu)player(mc).containerMenu).field(6)==selectionRow*6)
+                        && (index!=0 || player(mc).containerMenu.slots.stream().filter(slot->slot.hasItem()).count()==54)
+                        && (index!=5 || player(mc).containerMenu.slots.stream().filter(slot->slot.hasItem()).count()>=48));return;}
                     if(!inspection.isDone())return;
                     require(inspection.join(),"Server menu mismatch");
                     var obs=new JsonObject();obs.addProperty("screen",mc.screen.getClass().getName());obs.addProperty("case",NAMES[index]);obs.addProperty("server_menu_acknowledged",true);
                     obs.addProperty("gui_scale",mc.getWindow().getGuiScale());
-                    obs.addProperty("visible_nonempty_slots",mc.player.containerMenu.slots.stream().filter(slot->slot.hasItem()).count());
+                    long occupied=mc.player.containerMenu.slots.stream().filter(slot->slot.hasItem()).count();
+                    require(index!=0 || occupied==54,"Hopper inventory changed during capture");
+                    require(index!=5 || occupied>=48,"Dropper inventory changed during capture");
+                    obs.addProperty("visible_nonempty_slots",occupied);
                     var production=ModList.get().getModFileById(EngineersDecorReforged.MOD_ID).getFile();
                     var entry=mc.screen.getClass().getName().replace('.', '/')+".class";
                     var resource=mc.screen.getClass().getResource("/"+entry);
@@ -88,15 +105,40 @@ public final class GuiAlbumThree {
                     try(var input=resource.openStream();var zip=new java.util.zip.ZipFile(production.getFilePath().toFile());var archived=zip.getInputStream(zip.getEntry(entry))){
                         String hash=PackagedRuntimeProof.hash(input.readAllBytes());require(hash.equals(PackagedRuntimeProof.hash(archived.readAllBytes())),"Screen bytes differ");obs.addProperty("screen_class_sha256",hash);
                     }
-                    var imageName=NAMES[index]+".png";
+                    if(index==0){
+                        int selected=((MachineMenu)mc.player.containerMenu).field(6);
+                        var slot=mc.player.containerMenu.slots.get(selected);
+                        require(slot.x==11 && slot.y==9+selectionRow*18,"Unexpected Hopper slot geometry");
+                        obs.addProperty("selection_render_frames",selectionRenderFrames);
+                        obs.addProperty("server_selection",selectionRow*6);obs.addProperty("client_selection",selected);
+                        obs.addProperty("ring_x",slot.x-1);obs.addProperty("ring_y",slot.y-1);
+                        obs.addProperty("selection_source","server-seeded ContainerData; not user selection");
+                    }
+                    var imageName=NAMES[index]+(index==0 && selectionRow>0?"-selection-row-"+selectionRow:"")+".png";
                     try(var image=Screenshot.takeScreenshot(mc.getMainRenderTarget())){image.writeToFile(directory.resolve(imageName));}
                     obs.addProperty("capture",imageName);obs.addProperty("capture_sha256",PackagedRuntimeProof.hash(Files.readAllBytes(directory.resolve(imageName))));
-                    cases.add(obs);mc.screen.onClose();enter(Stage.CLOSE);
+                    if(index==0){
+                        selections.add(obs.deepCopy());
+                        if(selectionRow==0)cases.add(obs);
+                        if(selectionRow<2){
+                            selectionRow++;
+                            pending=mc.getSingleplayerServer().submit(()->{machines[0].dataAccessForTests().set(6,selectionRow*6);player(mc).containerMenu.broadcastChanges();});
+                            enter(Stage.WAIT);return;
+                        }
+                    }else cases.add(obs);
+                    mc.screen.onClose();enter(Stage.CLOSE);
                 }
                 case CLOSE -> {if(mc.screen!=null||ticks<20)return;index++;if(index==NAMES.length)finish(mc,null);else enter(Stage.OPEN);}
                 default -> throw new IllegalStateException("Unexpected "+stage);
             }
         }catch(Throwable error){finish(mc,error);}
+    }
+    @SubscribeEvent public static void rendered(ScreenEvent.Render.Post event){
+        if(!Boolean.getBoolean("iedctr.guiAlbumThree") || complete || stage!=Stage.WAIT || index!=0)return;
+        var mc=Minecraft.getInstance();
+        if(event.getScreen()==mc.screen && mc.player!=null && mc.player.containerMenu instanceof MachineMenu menu
+            && menu.field(6)==selectionRow*6)selectionRenderFrames++;
+        else selectionRenderFrames=0;
     }
     private static void boot(Minecraft mc) throws Exception {
         nonce=System.getProperty("iedctr.clientGameplayNonce","");
@@ -114,19 +156,26 @@ public final class GuiAlbumThree {
         var p=player(mc);p.setGameMode(GameType.SURVIVAL);var level=p.serverLevel();
         for(int x=-2;x<=12;x++)for(int z=-1;z<=4;z++)level.setBlock(new BlockPos(x,79,z),Blocks.STONE.defaultBlockState(),3);
         p.connection.teleport(.5,80,2.5,180,0);
+        for(int slot=0;slot<36;slot++)p.getInventory().setItem(slot,new ItemStack(slot%2==0?Items.IRON_INGOT:Items.REDSTONE,slot+1));
         p.getInventory().setItem(0,new ItemStack(Items.IRON_INGOT,64));
         p.getInventory().setItem(1,new ItemStack(Items.REDSTONE,8));
         p.getInventory().setItem(9,new ItemStack(Items.COBBLESTONE,64));
         var blocks=List.of(ModBlocks.FACTORY_HOPPER.get(),ModBlocks.METAL_CRAFTING_TABLE.get(),ModBlocks.SMALL_ELECTRICAL_FURNACE.get(),ModBlocks.SMALL_WASTE_INCINERATOR.get(),ModBlocks.LABELED_CRATE.get(),ModBlocks.FACTORY_DROPPER.get());
         for(int i=0;i<NAMES.length;i++){var pos=new BlockPos(i*2,80,0);level.setBlock(pos,blocks.get(i).defaultBlockState(),3);machines[i]=(MachineBlockEntity)level.getBlockEntity(pos);require(machines[i]!=null,"Missing machine "+i);}
+        // Disable continuous transfer while recording deterministic, filled slots.
+        machines[0].dataAccessForTests().set(2,0);
+        machines[5].dataAccessForTests().set(5,0);
+        for(int slot=0;slot<18;slot++)machines[0].setItem(slot,new ItemStack(Items.COBBLESTONE,slot+1));
+        for(int slot=0;slot<12;slot++)machines[5].setItem(slot,new ItemStack(Items.COBBLESTONE,slot+1));
+        machines[0].dataAccessForTests().set(6,0);
         machines[0].setItem(0,new ItemStack(Items.COBBLESTONE,64));
         machines[5].setItem(0,new ItemStack(Items.COBBLESTONE,64));
     }
     private static ServerPlayer player(Minecraft mc){var p=mc.getSingleplayerServer().getPlayerList().getPlayer(playerId);require(p!=null,"Player missing");return p;}
-    private static void enter(Stage next){stage=next;ticks=0;inspection=null;}
+    private static void enter(Stage next){stage=next;ticks=0;inspection=null;selectionRenderFrames=0;}
     private static void finish(Minecraft mc,Throwable error){
         complete=true;
-        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v1");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",false);if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
+        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v1");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",false);if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
         catch(Exception e){EngineersDecorReforged.LOGGER.error("Album proof error",e);}
         if(error==null)EngineersDecorReforged.LOGGER.info("IEDCTR_GUI_ALBUM_THREE OBSERVED nonce={}",nonce);else EngineersDecorReforged.LOGGER.error("IEDCTR_GUI_ALBUM_THREE FAILED "+stage,error);mc.stop();
     }

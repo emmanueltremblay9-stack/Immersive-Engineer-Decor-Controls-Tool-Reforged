@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -13,7 +14,7 @@ import sys
 import tempfile
 import urllib.request
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
-from factory_placer_v2_reference_native import png
+from factory_placer_v2_reference_native import png, decode_png
 
 
 
@@ -25,6 +26,33 @@ def require(condition, message):
 
 CASES = ['factory-hopper', 'metal-crafting-table', 'small-electrical-furnace', 'small-waste-incinerator', 'labeled-crate', 'factory-dropper']
 SCREENS = ['FactoryHopperScreen', 'MetalCraftingTableScreen', 'SmallElectricalFurnaceScreen', 'SmallWasteIncineratorScreen', 'LabeledCrateScreen', 'FactoryDropperScreen']
+def validate_selection_pixels(selections,game,width,height,scale):
+    """Compare the same border in selected/unselected real screenshots, not art mockups.
+
+    A top/bottom corner-marker delta proves a rendered marker reaches the expected row;
+    it is not an exact-color aesthetic approval or exhaustive 18-slot test.
+    """
+    require(type(scale) is int and scale in (1,2) and width>=176*scale and height>=166*scale,
+            'Selection panel outside viewport')
+    images=[]
+    for record in selections:
+        w,h,pixels=decode_png(game/record['capture'])
+        require((w,h)==(width,height),'Selection viewport differs')
+        images.append(pixels)
+    left=(math.ceil(width/scale)-176)//2
+    top=(math.ceil(height/scale)-166)//2
+    for row in range(3):
+        active=images[row];inactive=images[(row+1)%3];other_inactive=images[(row+2)%3]
+        for edge_y in (8+18*row,25+18*row):
+            changed=0
+            for y in range((top+edge_y)*scale,(top+edge_y+1)*scale):
+                for x in range((left+10)*scale,(left+28)*scale):
+                    offset=(y*width+x)*4
+                    if (active[offset:offset+3]!=inactive[offset:offset+3]
+                        and inactive[offset:offset+3]==other_inactive[offset:offset+3]):changed+=1
+            require(changed>=3*scale*scale,'Hopper marker missing/misaligned at row '+str(row)+' edge '+str(edge_y))
+
+
 def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
     for key,value in dict(suite='gui-album-three-v1',status='observed',nonce=nonce,
                          executed_source_sha=sha,visual_acceptance=False,physical_os_input=False).items():
@@ -42,6 +70,24 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
         require(re.fullmatch('[0-9a-f]{64}',row.get('screen_class_sha256','')),'Screen provenance missing')
         require(row.get('capture')==CASES[index]+'.png','Unexpected capture name')
         png(game/row['capture'],width,height,row.get('capture_sha256'))
+
+    selections=proof.get('hopper_selections',[])
+    require(len(selections)==3,'Missing three Hopper selection rows')
+    for row,c in enumerate(selections):
+        require(all(type(c.get(k)) is int for k in ('server_selection','client_selection','ring_x','ring_y','visible_nonempty_slots')),'Selection integer evidence missing')
+        require(all(c.get(k)==cases[0].get(k) for k in ('screen','case','screen_class_sha256')),'Selection screen provenance differs')
+        require(c.get('server_selection')==row*6 and c.get('client_selection')==row*6,
+                'Hopper selection server/client mismatch')
+        require(c.get('ring_x')==10 and c.get('ring_y')==8+18*row,'Hopper ring/slot alignment differs')
+        require(c.get('selection_source')=='server-seeded ContainerData; not user selection','Selection origin differs')
+        require(c.get('server_menu_acknowledged') is True and c.get('gui_scale')==gui_scale,'Selection menu/scale mismatch')
+        require(c.get('visible_nonempty_slots')==54,'Hopper inventory not full')
+        require(type(c.get('selection_render_frames')) is int and c['selection_render_frames']>=3,'Selection not rendered stably')
+        require(c.get('capture')=='factory-hopper'+('' if row==0 else '-selection-row-'+str(row))+'.png','Unexpected selection capture')
+        png(game/c['capture'],width,height,c.get('capture_sha256'))
+    validate_selection_pixels(selections,game,width,height,gui_scale)
+    require(selections[0]==cases[0],'Initial Hopper observation differs')
+    require(cases[5].get('visible_nonempty_slots')>=48,'Dropper input/player inventory not full')
 
 
 def bind_built_jar(project, expected_hash, env):
@@ -142,7 +188,7 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
         final_sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
         require(clean() and final_sha == sha and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,
                 'Source/JAR changed during run')
-        print('OBSERVED six native machine screens; screenshots still require independent review. Not gameplay acceptance.')
+        print('OBSERVED six native machine screens and three Hopper selection rows; screenshots still require independent review. Not gameplay acceptance.')
         return 0
     except (SmokeFailure,OSError,ValueError,KeyError) as error:
         print('FAIL: '+str(error),file=sys.stderr);return 1
