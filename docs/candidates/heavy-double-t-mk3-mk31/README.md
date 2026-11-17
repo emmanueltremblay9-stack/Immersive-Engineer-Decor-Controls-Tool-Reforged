@@ -1,0 +1,42 @@
+# Heavy Industrial Double-T Support — MK3 / MK3.1 (candidate)
+
+Project: Immersive Engineer Decor & Controls & Tool Reforged (DS-IEDCTR)
+
+**Status: SOURCE_CANDIDATE / NOT_INTEGRATED / NOT_COMPILED / NOT_TESTED_IN_GAME.**
+
+Source reviewed against implementation `main` at `e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c` (2026-11-16). This repository candidate does not change production Java/resources, block registrations, saves, legacy Double-T IDs, attached bulbs, fluidlogging or shipped artifacts.
+
+## Contents
+
+- `IEDCTR_Heavy_Double_T_MK3_MK31_SOURCES.tar.xz` — seven source files, including four Java candidate classes, the Python resource generator, six static-test definitions and the owner's original `.bbs.json` structural reference.
+- MK3: 6 directional axes/faces × 4 quarter-turn rolls (24 discrete orientations); context-sensitive axial joints, side junctions and visual ends.
+- MK3.1: conditional baseplates on directly contacting sturdy faces, without plate duplication between compatible candidate supports.
+
+**Archive SHA-256:** `6e30c2e467ca5c7d2615a48023f5c66e2a0987828ccc9473eaedb23734345749`
+**Archive Git blob SHA-1:** `c76b4d9455df02f4a4ec863837aa077c723acf05`
+**Source conversation ZIP SHA-256:** `bdcb2dc65bd4b5523b0ac80738ac3ed9ca0d012c2065d24ab57ace83f965a931`
+
+This compact source archive is **not byte-identical** to the conversation ZIP. The 87 generated model/asset JSON files are **not committed** here; they are reproducible by running the included `tools/models/generate_heavy_double_t.py`. The owner's image reference is also omitted from this source-only archive. The full original ZIP remains separately available in the originating conversation.
+
+## Reproduce the static candidate check
+
+Extract the `.tar.xz` into an isolated workspace, then from its root:
+
+```bash
+python3 tools/models/generate_heavy_double_t.py
+python3 tools/models/generate_heavy_double_t.py --check
+python3 -m unittest discover -s tests -v
+```
+
+Reproduced locally before upload: **87 JSON assets generated / checked, six static tests PASS**. These checks prove neither NeoForge compilation nor Minecraft rendering.
+
+## Integration gates (NOT_PERFORMED)
+
+1. Re-read live target `AGENTS.md`, branch/HEAD, target source paths, ongoing PR overlap and the accepted source-policy revision before editing runtime files.
+2. Review owner decision on candidate registration ID `heavy_industrial_double_t_support` versus integration with existing `steel_double_t_support` and `vertical_steel_double_t_support`. No new registry identity is adopted here.
+3. Add registration, localization, mining metadata and generated resources only after compatibility checks, and verify APIs against the exact NeoForge toolchain.
+4. Compile; run focused JUnit/GameTests; inspect actual placement in 24 orientations, all six anchors, CTM surface/UV continuity, chunk reload and neighbor changes, legacy support/lamp/fluidlogging regressions and dedicated-server behavior.
+
+**Explicit limitations:** the candidate does not include a dedicated pixel-continuous CTM atlas, full collision/visual QA or validated compatibility with legacy supports. Do not claim implementation, integration, release or adoption from this commit.
+
+**Git operation scope:** candidate source archive + this README on a dedicated branch only; no PR, merge, tag, release or publication.
