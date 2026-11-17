@@ -742,7 +742,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawFactoryHopperWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       int slotIndex = Mth.clamp(((MachineMenu)this.menu).field(6), 0, 17);
-      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 17, 200, 8, 18, 18);
+      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 18, 200, 8, 18, 18);
       int[] rangeMarkers = new int[]{133, 141, 149, 157, 166};
       FactorySteelFrame.thumb(graphics, x0 + rangeMarkers[Mth.clamp(((MachineMenu)this.menu).field(0), 0, 4)] - 2, y0 + 14, 5, 5);
       int periodX = Mth.clamp((int)Math.round(33.5 * ((MachineMenu)this.menu).field(3) / 100.0 + 1.0), 0, 34);

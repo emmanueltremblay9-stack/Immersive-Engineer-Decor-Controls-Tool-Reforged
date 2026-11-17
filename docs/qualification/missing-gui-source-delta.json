@@ -93,7 +93,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
       "base_sha256": "92fc98c4a92e236c6f8237109d85eed485beda0abeb2d0060ba495622397fabf",
-      "current_sha256": "b46165f820b9a510df2ecfd1481bd7422e7236b3d8bf3ae4cc0562ab7bdb37a0",
+      "current_sha256": "32dcc7e1307b977e4e2ce2ff1e3d0e61bc2e1e5c13c6295b079ae6ed0849db2c",
       "hunks": [
         {
           "start": 147,
@@ -112,6 +112,12 @@
           "end": 401,
           "current": "      if (menu.kind() == MachineKind.METAL_CRAFTING_TABLE) return;\n",
           "previous": ""
+        },
+        {
+          "start": 744,
+          "end": 745,
+          "current": "      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 18, 200, 8, 18, 18);\n",
+          "previous": "      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 17, 200, 8, 18, 18);\n"
         },
         {
           "start": 746,
