@@ -3,6 +3,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
+from breaker_current_main_integration import project_merge_tree
 from client_mixin_smoke import SmokeFailure
 from solar_tooltip_proof import validate_tooltip
 from test_solar_tooltip_proof import SolarTooltipProofTest
@@ -55,7 +56,7 @@ class AdditiveHistoryTest(unittest.TestCase):
   import hashlib
   from solar_cell_integration import FILES, project_history, current_hash
   for path,row in FILES.items():
-   data=(ROOT/path).read_bytes()
+   data=project_merge_tree(path,(ROOT/path).read_bytes(),'main')
    self.assertEqual(row['baseline_sha256'],hashlib.sha256(project_history(path,data)).hexdigest())
    self.assertEqual(row['current_sha256'],current_hash(path,row['baseline_sha256']))
    for changed in [data+b' ',data.replace(b'FE',b'RF',1),data.replace(b'cell_tooltip',b'cell_tooltip_bad')]:

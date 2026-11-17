@@ -1,5 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import blusunrize.immersiveengineering.common.blocks.metal.FluidPipeBlockEntity;
+
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
@@ -25,6 +27,7 @@ import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtUtils;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -52,6 +55,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ComparatorBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -2327,6 +2331,397 @@ public final class MachineGuiGameTests {
          31000, fluidHandler.fill(new FluidStack(Fluids.WATER, 31000), FluidAction.EXECUTE), "fluid barrel should fill the remaining water capacity"
       );
       helper.assertTrue(!machine.canPreviewItemUse(new ItemStack(Items.WATER_BUCKET)), "full fluid barrel should not preview another filled bucket insertion");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void small_block_breaker_required_lubricant_profile_is_present(GameTestHelper helper) {
+      if (Boolean.getBoolean("iedctr.requireLubricantProfile")) {
+         Fluid lubricant = BuiltInRegistries.FLUID.get(ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant"));
+         helper.assertTrue(lubricant != Fluids.EMPTY, "Required IP lubricant profile must not silently skip accelerated tests");
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 140)
+   public static void small_block_breaker_lubricant_port_is_strict_and_rotation_safe(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      IFluidHandler west = machine.fluidHandler(Direction.WEST);
+      helper.assertTrue(west != null, "north-facing Breaker should expose its right fluid port on west");
+      helper.assertValueEqual(1, west.getTanks(), "the Block Breaker should expose one dedicated tank");
+      helper.assertValueEqual(4000, west.getTankCapacity(0), "the dedicated lubricant tank should hold 4,000 mB");
+      Direction[] fronts = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
+      Direction[] rightPorts = {Direction.WEST, Direction.NORTH, Direction.EAST, Direction.SOUTH};
+      for (int i = 0; i < fronts.length; i++) {
+         helper.setBlock(TEST_POS,
+            ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+               .setValue(MachineBlocks.HORIZONTAL_FACING, fronts[i]));
+         for (Direction side : Direction.values()) {
+            helper.assertTrue((side == rightPorts[i]) == (machine.fluidHandler(side) != null),
+               "right-side mapping should match front " + fronts[i] + " at side " + side);
+         }
+         helper.assertTrue(machine.fluidHandler(null) == null, "unsided fluid capability must be rejected");
+      }
+      helper.setBlock(TEST_POS,
+         ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH));
+      helper.assertValueEqual(0, west.fill(new FluidStack(Fluids.WATER, 1000), FluidAction.SIMULATE),
+         "simulation must reject water without changing tank state");
+      helper.assertValueEqual(0, west.fill(new FluidStack(Fluids.WATER, 1000), FluidAction.EXECUTE),
+         "execution must reject water without changing tank state");
+      helper.assertValueEqual(0, west.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.SIMULATE),
+         "simulation must reject lava without changing tank state");
+      helper.assertValueEqual(0, west.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE),
+         "the dedicated port must reject every non-lubricant fluid");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(2), "rejected and simulated fills must leave the tank empty");
+
+      Fluid lubricant = BuiltInRegistries.FLUID.get(ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant"));
+      if (lubricant != Fluids.EMPTY) {
+         helper.assertValueEqual(4000, west.fill(new FluidStack(lubricant, 5000), FluidAction.SIMULATE),
+            "simulation should report only the remaining dedicated capacity");
+         helper.assertValueEqual(0, machine.dataAccessForTests().get(2), "simulated lubricant fill must be side-effect free");
+         helper.assertValueEqual(4000, west.fill(new FluidStack(lubricant, 5000), FluidAction.EXECUTE),
+            "the tank should accept exactly 4,000 mB");
+         helper.assertValueEqual(0, west.fill(new FluidStack(lubricant, 1), FluidAction.EXECUTE), "a full tank must reject more lubricant");
+         helper.assertTrue(west.drain(10, FluidAction.EXECUTE).isEmpty(), "the external capability must be fill-only");
+         helper.assertValueEqual(4000, machine.dataAccessForTests().get(2), "a rejected drain must leave the lubricant amount unchanged");
+      }
+
+      helper.setBlock(TEST_POS,
+         ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST));
+      helper.assertTrue(machine.fluidHandler(Direction.NORTH) != null, "east-facing Breaker should map its right port to north");
+      helper.assertValueEqual(0, west.getTanks(), "a previously obtained west handler must stop routing after rotation");
+      helper.assertTrue(machine.fluidHandler(Direction.WEST) == null, "west must cease to be the port after rotation");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void small_block_breaker_real_ie_pipe_routes_only_to_relative_right_port(GameTestHelper helper) {
+      Fluid lubricant = BuiltInRegistries.FLUID.get(ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant"));
+      if (lubricant == Fluids.EMPTY) {
+         helper.assertTrue(!Boolean.getBoolean("iedctr.requireLubricantProfile"),
+            "the required IP profile must execute actual IE pipe routing rather than skip it");
+         helper.succeed();
+         return;
+      }
+      Block pipeBlock = BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", "fluid_pipe"));
+      helper.assertTrue(pipeBlock != Blocks.AIR, "the real IE fluid pipe must be loaded");
+      BlockPos center = helper.absolutePos(new BlockPos(3, 3, 3));
+      Direction[] fronts = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
+      Direction[] rightPorts = {Direction.WEST, Direction.NORTH, Direction.EAST, Direction.SOUTH};
+      for (int row = 0; row < fronts.length; row++) {
+         Direction right = rightPorts[row];
+         BlockPos pipePos = center.relative(right);
+         BlockPos wrongPos = center.relative(right.getOpposite());
+         helper.getLevel().setBlock(center, Blocks.AIR.defaultBlockState(), 3);
+         helper.getLevel().setBlock(center, ModBlocks.SMALL_BLOCK_BREAKER.get().defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, fronts[row]), 3);
+         MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(center);
+         try {
+            helper.getLevel().setBlock(wrongPos, pipeBlock.defaultBlockState(), 3);
+            FluidPipeBlockEntity wrongPipe = (FluidPipeBlockEntity)helper.getLevel().getBlockEntity(wrongPos);
+            wrongPipe.onNeighborBlockChange(center);
+            helper.assertTrue((wrongPipe.getAvailableConnectionByte() & (1 << right.get3DDataValue())) == 0,
+               "IE must not detect a fluid route on the left side of front " + fronts[row]);
+            IFluidHandler wrongInlet = helper.getLevel().getCapability(FluidHandler.BLOCK, wrongPos, right.getOpposite());
+            if (wrongInlet != null) {
+               helper.assertValueEqual(0, wrongInlet.fill(new FluidStack(lubricant, 1000), FluidAction.SIMULATE),
+                  "wrong-side simulated route must reject lubricant");
+               helper.assertValueEqual(0, wrongInlet.fill(new FluidStack(lubricant, 1000), FluidAction.EXECUTE),
+                  "wrong-side real route must reject lubricant");
+            }
+            helper.assertValueEqual(0, machine.dataAccessForTests().get(2), "wrong-side attempts must conserve the empty tank");
+            helper.getLevel().setBlock(wrongPos, Blocks.AIR.defaultBlockState(), 3);
+            helper.getLevel().setBlock(pipePos, pipeBlock.defaultBlockState(), 3);
+            FluidPipeBlockEntity pipe = (FluidPipeBlockEntity)helper.getLevel().getBlockEntity(pipePos);
+            pipe.onNeighborBlockChange(center);
+            helper.assertTrue((pipe.getAvailableConnectionByte() & (1 << right.getOpposite().get3DDataValue())) != 0,
+               "IE must detect the right-side fluid port for front " + fronts[row]);
+            IFluidHandler inlet = helper.getLevel().getCapability(FluidHandler.BLOCK, pipePos, right);
+            helper.assertTrue(inlet != null, "real IE pipe must expose its external inlet");
+            helper.assertValueEqual(0, inlet.fill(new FluidStack(Fluids.WATER, 1000), FluidAction.EXECUTE),
+               "real IE route must preserve the Breaker's lubricant-only restriction");
+            int transferred = 0;
+            for (int attempt = 0; transferred < 1000 && attempt < 100; attempt++) {
+               int accepted = inlet.fill(new FluidStack(lubricant, 1000 - transferred), FluidAction.SIMULATE);
+               helper.assertTrue(accepted > 0, "real IE pipe route must make progress");
+               helper.assertValueEqual(transferred, machine.dataAccessForTests().get(2), "pipe simulation must not mutate the tank");
+               int executed = inlet.fill(new FluidStack(lubricant, accepted), FluidAction.EXECUTE);
+               helper.assertValueEqual(accepted, executed, "actual transfer must match its preceding simulation");
+               transferred += executed;
+               helper.assertValueEqual(transferred, machine.dataAccessForTests().get(2), "every actual pipe transfer must be conserved");
+            }
+            helper.assertValueEqual(1000, transferred, "one actual bucket must traverse IE pipe at each right-side orientation");
+         } finally {
+            helper.getLevel().setBlock(pipePos, Blocks.AIR.defaultBlockState(), 3);
+            helper.getLevel().setBlock(wrongPos, Blocks.AIR.defaultBlockState(), 3);
+            helper.getLevel().setBlock(center, Blocks.AIR.defaultBlockState(), 3);
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void small_block_breaker_duration_preview_rounds_odd_cycles_up(GameTestHelper helper) {
+      // Projection-only boundary coverage; the real-block cycle matrix is separate.
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      SimpleContainerData data = new SimpleContainerData(MachineMenu.DATA_COUNT);
+      setBlockBreakerTargetData(data, BuiltInRegistries.BLOCK.getId(Blocks.STONE));
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_BLOCK_BREAKER, 41, player.getInventory(),
+         new SimpleContainer(MachineMenu.MACHINE_SLOT_COUNT), data);
+      float[] hardness = {0.0F, 0.5F, 1.05F, 1.25F, 1.5F, 50.0F};
+      int[] normal = {20, 30, 41, 45, 50, 200};
+      int[] accelerated = {20, 20, 21, 23, 25, 100};
+      for (int row = 0; row < hardness.length; row++) {
+         int bits = Float.floatToIntBits(hardness[row]);
+         for (int field : new int[]{MachineBlockBreakerDataSync.HARDNESS_LOW_FIELD,
+               MachineBlockBreakerDataSync.HARDNESS_MIDDLE_FIELD, MachineBlockBreakerDataSync.HARDNESS_HIGH_FIELD}) {
+            data.set(field, MachineBlockBreakerDataSync.hardnessFieldValue(bits, field));
+         }
+         data.set(2, 9);
+         helper.assertValueEqual(normal[row], menu.blockBreakerDurationTicks(), "normal preview below reservation");
+         data.set(2, 10);
+         helper.assertValueEqual(accelerated[row], menu.blockBreakerDurationTicks(), "accelerated preview must round odd cycles up");
+         data.set(3, normal[row]);
+         helper.assertValueEqual(normal[row], menu.blockBreakerDurationTicks(), "active synced duration must override idle preview");
+         data.set(3, 0);
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 140)
+   public static void small_block_breaker_lubricant_duration_and_total_energy_matrix(GameTestHelper helper) {
+      Fluid lubricant = BuiltInRegistries.FLUID.get(ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant"));
+      if (lubricant == Fluids.EMPTY) {
+         helper.assertTrue(!Boolean.getBoolean("iedctr.requireLubricantProfile"),
+            "the required IP profile must execute the duration matrix rather than skip it");
+         helper.succeed();
+         return;
+      }
+      Block[] targets = {Blocks.SLIME_BLOCK, Blocks.DIRT, Blocks.STONE, Blocks.OAK_PLANKS, Blocks.OBSIDIAN};
+      int[] normalDurations = {20, 30, 50, 60, 200};
+      int[] acceleratedDurations = {20, 20, 25, 30, 100};
+      int[] totalCosts = {160, 240, 400, 480, 8160};
+      BlockPos target = TEST_POS.east();
+      for (int row = 0; row < targets.length; row++) {
+         for (boolean accelerated : new boolean[]{false, true}) {
+            String scenario = BuiltInRegistries.BLOCK.getKey(targets[row]) + " accelerated=" + accelerated;
+            helper.setBlock(target, Blocks.AIR);
+            helper.setBlock(TEST_POS, Blocks.AIR);
+            helper.setBlock(TEST_POS,
+               ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+                  .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST));
+            MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+            IEnergyStorage energy = machine.energyStorage(Direction.DOWN);
+            int remaining = totalCosts[row];
+            while (remaining > 0) {
+               int accepted = energy.receiveEnergy(remaining, false);
+               helper.assertTrue(accepted > 0, "energy preparation must make progress: " + scenario);
+               remaining -= accepted;
+               if (remaining > 0) tickMachine(helper, machine, 1); // No target while charging.
+            }
+            helper.assertValueEqual(totalCosts[row], energy.getEnergyStored(), "exact FE budget: " + scenario);
+            if (accelerated) {
+               helper.assertValueEqual(20, machine.fluidHandler(Direction.NORTH)
+                  .fill(new FluidStack(lubricant, 20), FluidAction.EXECUTE), "fill real right-side capability: " + scenario);
+            }
+            helper.setBlock(target, targets[row]);
+            int duration = accelerated ? acceleratedDurations[row] : normalDurations[row];
+            tickMachine(helper, machine, 1);
+            helper.assertValueEqual(duration, machine.dataAccessForTests().get(3), "latched work duration: " + scenario);
+            helper.assertTrue(((machine.dataAccessForTests().get(4) & 2) != 0) == accelerated,
+               "latched mode must match the reservation: " + scenario);
+            tickMachine(helper, machine, duration - 2);
+            helper.assertTrue(helper.getBlockState(target).is(targets[row]), "no premature destruction: " + scenario);
+            helper.assertValueEqual(duration - 1, machine.dataAccessForTests().get(1), "last work tick still required: " + scenario);
+            int lastTickCost = totalCosts[row] - (int)((long)totalCosts[row] * (duration - 1) / duration);
+            helper.assertValueEqual(lastTickCost, energy.getEnergyStored(), "exact cumulative FE before success: " + scenario);
+            helper.assertValueEqual(accelerated ? 20 : 0, machine.dataAccessForTests().get(2),
+               "no lubricant debit before success: " + scenario);
+            tickMachine(helper, machine, 1);
+            helper.assertTrue(helper.getBlockState(target).isAir(), "destruction at exact duration: " + scenario);
+            helper.assertValueEqual(0, energy.getEnergyStored(), "both modes must consume the same full FE budget: " + scenario);
+            helper.assertValueEqual(accelerated ? 10 : 0, machine.dataAccessForTests().get(2),
+               "exactly 10 mB consumed only by successful accelerated cycle: " + scenario);
+            helper.assertValueEqual(12, machine.dataAccessForTests().get(5), "cooldown remains separate from work duration: " + scenario);
+            tickMachine(helper, machine, 12);
+            helper.assertValueEqual(accelerated ? 10 : 0, machine.dataAccessForTests().get(2),
+               "cooldown must not consume more lubricant: " + scenario);
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_block_breaker_latches_accelerated_mode_across_output_pause_and_reload(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      Fluid lubricant = BuiltInRegistries.FLUID.get(ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant"));
+      if (lubricant == Fluids.EMPTY) {
+         helper.succeed();
+         return;
+      }
+      BlockPos target = TEST_POS.east();
+      helper.setBlock(target, Blocks.DIRT);
+      IFluidHandler port = machine.fluidHandler(Direction.NORTH);
+      helper.assertValueEqual(10, port.fill(new FluidStack(lubricant, 10), FluidAction.EXECUTE),
+         "10 mB should reserve acceleration without an upfront debit");
+      machine.energyStorage(Direction.DOWN).receiveEnergy(240, false);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(20, machine.dataAccessForTests().get(3), "a 30-tick dirt cycle should latch a 20-tick accelerated duration");
+      helper.assertValueEqual(10, machine.dataAccessForTests().get(2), "starting an accelerated cycle must not debit lubricant");
+      helper.assertTrue((machine.dataAccessForTests().get(4) & 2) != 0, "the active accelerated mode should synchronize through field 4");
+
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE, 64));
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "output blockage should preserve the active cycle progress");
+      helper.assertValueEqual(10, machine.dataAccessForTests().get(2), "output blockage must not consume reserved lubricant");
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "reload should preserve active-cycle progress");
+      helper.assertTrue((machine.dataAccessForTests().get(4) & 2) != 0, "reload should preserve the latched accelerated mode");
+      machine.setItem(0, ItemStack.EMPTY);
+      tickMachine(helper, machine, 18);
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "the last accelerated work tick should still be required");
+      helper.assertValueEqual(12, machine.energyStorage(Direction.DOWN).getEnergyStored(), "19 accelerated ticks should charge 228 of 240 FE");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getBlockState(target).isAir(), "the accelerated cycle should destroy the target on its twentieth tick");
+      helper.assertTrue(machine.getItem(0).is(Items.DIRT), "the accelerated break should place its drop in the real output slot");
+      helper.assertValueEqual(12, machine.dataAccessForTests().get(5), "the successful accelerated break should retain the separate 12-tick cooldown");
+      helper.assertValueEqual(0, machine.energyStorage(Direction.DOWN).getEnergyStored(), "accelerated mode must preserve the exact normal 240 FE cost");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(2), "success should consume exactly the reserved 10 mB");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_block_breaker_does_not_accelerate_below_reservation_or_after_cycle_start(GameTestHelper helper) {
+      helper.setBlock(TEST_POS,
+         ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST));
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      Fluid lubricant = BuiltInRegistries.FLUID.get(ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant"));
+      if (lubricant == Fluids.EMPTY) {
+         helper.succeed();
+         return;
+      }
+      helper.setBlock(TEST_POS.east(), Blocks.DIRT);
+      IFluidHandler port = machine.fluidHandler(Direction.NORTH);
+      helper.assertValueEqual(9, port.fill(new FluidStack(lubricant, 9), FluidAction.EXECUTE), "less than the reservation should still be accepted");
+      machine.energyStorage(Direction.DOWN).receiveEnergy(240, false);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "a new cycle with only 9 mB must use normal duration");
+      helper.assertTrue((machine.dataAccessForTests().get(4) & 2) == 0, "less than 10 mB must not latch acceleration");
+      helper.assertValueEqual(1, port.fill(new FluidStack(lubricant, 1), FluidAction.EXECUTE), "the tank may fill during an active normal cycle");
+      tickMachine(helper, machine, 28);
+      helper.assertValueEqual(29, machine.dataAccessForTests().get(1), "mid-cycle filling must not change normal progress duration");
+      helper.assertTrue((machine.dataAccessForTests().get(4) & 2) == 0, "mid-cycle filling must not accelerate the latched cycle");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getBlockState(TEST_POS.east()).isAir(), "the normal cycle should finish at its original 30-tick duration");
+      helper.assertValueEqual(10, machine.dataAccessForTests().get(2), "a normal cycle must not consume lubricant");
+      helper.assertValueEqual(0, machine.energyStorage(Direction.DOWN).getEnergyStored(), "normal mode should retain the exact 240 FE cost");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_block_breaker_resets_progress_when_facing_a_same_hardness_target_elsewhere(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      helper.setBlock(TEST_POS.east(), Blocks.DIRT);
+      machine.energyStorage(Direction.DOWN).receiveEnergy(240, false);
+      tickMachine(helper, machine, 2);
+      helper.assertValueEqual(2, machine.dataAccessForTests().get(1), "initial target should accumulate two ticks");
+      helper.setBlock(TEST_POS, ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+         .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.SOUTH));
+      helper.setBlock(TEST_POS.south(), Blocks.DIRT);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "same-hardness block at a new target position must start a fresh cycle");
+      helper.assertTrue(helper.getBlockState(TEST_POS.south()).is(Blocks.DIRT), "the replacement target must not inherit the previous target's completed work");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_legacy_and_invalid_lubricant_saves_are_quarantined(GameTestHelper helper) {
+      helper.setBlock(TEST_POS,
+         ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST));
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      CompoundTag legacy = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      legacy.remove("BlockBreakerLubricant");
+      legacy.remove("BlockBreakerCycleTarget");
+      legacy.remove("BlockBreakerCyclePosition");
+      legacy.remove("BlockBreakerCycleAccelerated");
+      legacy.remove("BlockBreakerCycleEnergyCost");
+      legacy.putInt("Progress", 5);
+      legacy.putInt("ProcessTimeNeeded", 30);
+      machine.loadWithComponents(legacy, helper.getLevel().registryAccess());
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(2), "legacy saves should default to an empty lubricant tank");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "legacy progress without a captured target should reset safely");
+      helper.assertTrue((machine.dataAccessForTests().get(4) & 2) == 0, "legacy saves should default to normal mode");
+
+      CompoundTag invalid = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      CompoundTag invalidFluid = new CompoundTag();
+      invalidFluid.putString("id", "missingmod:lubricant");
+      invalidFluid.putInt("amount", 12000);
+      invalid.put("BlockBreakerLubricant", invalidFluid);
+      machine.loadWithComponents(invalid, helper.getLevel().registryAccess());
+      IFluidHandler port = machine.fluidHandler(Direction.NORTH);
+      helper.assertValueEqual(0, port.getTanks(), "unavailable or oversized saved fluid should quarantine the tank");
+      CompoundTag preserved = machine.saveWithFullMetadata(helper.getLevel().registryAccess()).getCompound("BlockBreakerLubricant");
+      helper.assertTrue("missingmod:lubricant".equals(preserved.getString("id")), "quarantine should preserve unknown fluid data without coercion");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_rejects_accelerated_cycle_without_valid_reservation(GameTestHelper helper) {
+      helper.setBlock(TEST_POS,
+         ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST));
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      helper.setBlock(TEST_POS.east(), Blocks.DIRT);
+      String[] fluidIds = {null, "minecraft:water", "immersivepetroleum:lubricant"};
+      int[] fluidAmounts = {0, 1000, 9};
+      for (int i = 0; i < fluidIds.length; i++) {
+         CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+         saved.putInt("Progress", 1);
+         saved.putInt("ProcessTimeNeeded", 20);
+         saved.put("BlockBreakerCycleTarget", NbtUtils.writeBlockState(Blocks.DIRT.defaultBlockState()));
+         saved.putLong("BlockBreakerCyclePosition", machine.getBlockPos().relative(Direction.EAST).asLong());
+         saved.putBoolean("BlockBreakerCycleAccelerated", true);
+         saved.putInt("BlockBreakerCycleEnergyCost", 240);
+         if (fluidIds[i] == null) {
+            saved.remove("BlockBreakerLubricant");
+         } else {
+            CompoundTag fluid = new CompoundTag();
+            fluid.putString("id", fluidIds[i]);
+            fluid.putInt("amount", fluidAmounts[i]);
+            saved.put("BlockBreakerLubricant", fluid);
+         }
+         machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+         helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "an accelerated save without 10 mB must reset progress");
+         helper.assertValueEqual(0, machine.dataAccessForTests().get(3), "a rejected accelerated save must clear its duration");
+         helper.assertTrue((machine.dataAccessForTests().get(4) & 6) == 0,
+            "a rejected accelerated save must clear both mode and active-cycle sync flags");
+         CompoundTag sanitized = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+         helper.assertTrue(!sanitized.contains("BlockBreakerCycleTarget"), "a rejected cycle must not be written back as active");
+         if (fluidIds[i] != null) {
+            helper.assertTrue(fluidIds[i].equals(sanitized.getCompound("BlockBreakerLubricant").getString("id")),
+               "invalid or underfilled fluid data must remain unchanged while the cycle is reset");
+         }
+      }
       helper.succeed();
    }
 
