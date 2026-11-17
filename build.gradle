@@ -590,8 +590,5 @@ apply from: 'gradle/milking-packaged-validation.gradle'
 
 apply from: 'gradle/tfc-packaged-validation.gradle'
 
-// Compile-only candidate validation: never added to a mod run or the production JAR.
-sourceSets.create('heavyDoubleTCandidate') {
-    java.srcDir('docs/candidates/heavy-double-t-mk3-mk31/review/src/main/java')
-    compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
-}
+// Heavy Double-T MK3/MK3.1 now compiles through sourceSets.main on this draft branch.
+// The source-only review copy remains under docs/candidates and is not compiled separately.

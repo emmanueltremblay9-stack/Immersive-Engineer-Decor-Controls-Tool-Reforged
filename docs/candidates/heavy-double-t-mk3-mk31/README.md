@@ -2,9 +2,9 @@
 
 Project: Immersive Engineer Decor & Controls & Tool Reforged (DS-IEDCTR)
 
-**Status: SOURCE_CANDIDATE / NOT_INTEGRATED / NOT_COMPILED / NOT_TESTED_IN_GAME.**
+**Status: PR_DRAFT_RUNTIME_CANDIDATE / NOT_MERGED / NOT_TESTED_IN_GAME.**
 
-Source reviewed against implementation `main` at `e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c` (2026-11-16). This repository candidate does not change production Java/resources, block registrations, saves, legacy Double-T IDs, attached bulbs, fluidlogging or shipped artifacts.
+Source reviewed against implementation `main` at `e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c` (2026-11-16). At the initial archive-only commit this candidate did not touch production sources. The later draft integration now stages new runtime Java/resources and a **PROPOSED**, not adopted, separate registry entry; it does not rename existing Double-T IDs, rewrite saved states, alter paid bulbs or publish artifacts.
 
 ## Contents
 
@@ -60,3 +60,11 @@ Reproduced on this revision: 87 generated assets checked; six static tests passe
 `bash gradlew compileHeavyDoubleTCandidateJava jar` now compiles the actual four candidate classes against the production toolchain in a separate source set. The dedicated workflow verifies compiled classes exist and do not enter the normal JAR. Candidate models discover registered blocks by class rather than referencing a nonexistent `ModBlocks` field; this does not register or adopt any candidate block.
 
 Local cloud compilation is currently blocked before Gradle starts: the official distribution download reports `Network is unreachable`. The new CI gate must pass before claiming compilation. No candidate runtime is loaded by this source set, so placement/rendering/GameTests still remain unqualified.
+
+## 2026-11-17 — Draft runtime integration gate
+
+The PR now stages the production source files, all 87 source-identical generated JSON assets and a **proposed** registered `immersive_engineer_decor_controls_tool_reforged:heavy_industrial_double_t_support` item. Legacy identities are unchanged, with the historical bulb and fluidlogging logic unmodified. `HeavyDoubleTTopology` draws junction geometry only when the new heavy beam's and legacy beam's collision profiles share positive area at the touching face. It does not rewrite legacy neighbor blockstates. Sturdy full-face backing produces an anchor; compatible heavy axial sections produce continuous middles.
+
+This is **draft source integration**, not owner acceptance of a new registry name, passed gameplay QA, connected pixel UV proof or release. The stage's GameTests are source-provided; they remain NOT_RUN until an actual target GameTest server run reports their execution. CI compilation, JUnit and JAR inspection provide only their respective evidence; do not substitute them for rendered client or actual gameplay tests. Existing client texture atlases are reused and exact CTM seam/UV continuity is still unqualified.
+
+The separate compile-only `heavyDoubleTCandidate` Gradle source set was removed so duplicate packaged and review code are not compiled together; the historical review copy remains unchanged under `docs/candidates/`. This branch may only be merged by a separate owner decision after verified integration.
