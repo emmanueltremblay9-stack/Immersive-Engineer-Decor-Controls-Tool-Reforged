@@ -40,3 +40,17 @@ Reproduced locally before upload: **87 JSON assets generated / checked, six stat
 **Explicit limitations:** the candidate does not include a dedicated pixel-continuous CTM atlas, full collision/visual QA or validated compatibility with legacy supports. Do not claim implementation, integration, release or adoption from this commit.
 
 **Git operation scope:** candidate source archive + this README on a dedicated branch only; no PR, merge, tag, release or publication.
+
+## Reviewable source expansion (2026-11-17)
+
+The `review/` directory now contains the seven original archive members as individual files, plus all 87 generated JSON resources. The archive is retained unchanged as provenance. Candidate files remain under `docs/candidates/`; this does not register a new block, alter production source/resource sets or claim runtime integration.
+
+To reproduce from the repository root:
+
+```sh
+cd docs/candidates/heavy-double-t-mk3-mk31/review
+python3 tools/models/generate_heavy_double_t.py --check
+python3 -m unittest discover -s tests -v
+```
+
+Reproduced on this revision: 87 generated assets checked; six static tests passed. NeoForge compilation, GameTests, actual CTM visual continuity and runtime integration remain NOT_RUN. This revision makes the candidate reviewable through a draft PR, superseding the earlier branch-only delivery scope; it does not adopt the candidate registration ID.
