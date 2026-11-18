@@ -1,0 +1,58 @@
+name: Heavy Double-T native scene capture
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/heavy-double-t-native.yml'
+      - 'gradle/heavy-packaged-validation.gradle'
+      - 'src/heavyPackagedValidation/**'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/block/HeavyDoubleT*.java'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/client/HeavyDoubleT*.java'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/ModBlocks.java'
+      - 'src/main/resources/**'
+      - 'tools/validation/heavy_native.py'
+      - 'tools/validation/test_heavy_native.py'
+      - 'build.gradle'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: heavy-native-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  native-heavy-scenes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Checkout exact candidate head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Install isolated display dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libgl1-mesa-dri
+      - name: Test Heavy evidence guards
+        run: python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_heavy_native.py' -v
+      - name: Capture exact-JAR Heavy world scenes
+        run: python tools/validation/heavy_native.py --width 1280 --height 720 --prepare-timeout 900 --timeout 900
+      - name: Retain native evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: heavy-native-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            build/heavy-native-*/
+            build/reports/heavy-packaged-runtime.json
+            build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

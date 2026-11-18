@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="iedctr_heavy_validation"
+version="1.0"
+displayName="IEDCTR Heavy world-scene isolated validation harness"
+
+[[dependencies.iedctr_heavy_validation]]
+modId="immersive_engineer_decor_controls_tool_reforged"
+type="required"
+versionRange="[0,)"
+ordering="AFTER"
+side="CLIENT"

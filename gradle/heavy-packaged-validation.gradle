@@ -1,0 +1,97 @@
+// Separate Heavy harness. Ordinary production packaging is untouched.
+def heavyPackagedValidation = providers.gradleProperty('include_heavy_packaged_validation').map { it.toBoolean() }.getOrElse(false)
+def heavyRuntimeJar = providers.gradleProperty('heavy_runtime_jar').map { file(it) }
+        .orElse(tasks.named('jar', Jar).flatMap { it.archiveFile }.map { it.asFile })
+if (heavyPackagedValidation) {
+    if (providers.gradleProperty('include_barrel_v5_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Heavy and Barrel V5 packaged validation separately')
+    if (providers.gradleProperty('include_barrel_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Heavy and legacy Barrel packaged validation separately')
+    if (providers.gradleProperty('include_factory_placer_native_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Heavy and Factory/Breaker packaged validation separately')
+    if (providers.gradleProperty('include_fluid_gesture_native_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Legacy source-runtime fluid fixture cannot accompany Heavy packaged validation')
+    if (providers.gradleProperty('include_fluid_packaged_validation').map { it.toBoolean() }.getOrElse(false))
+        throw new GradleException('Run Heavy and Funnel/Accumulator packaged validation separately')
+    sourceSets.create('heavyPackagedValidation') {
+        java.srcDir('src/heavyPackagedValidation/java')
+        compileClasspath += files(heavyRuntimeJar) + sourceSets.main.compileClasspath
+        runtimeClasspath = output + configurations.getByName(runtimeClasspathConfigurationName) +
+                (sourceSets.main.runtimeClasspath - sourceSets.main.output) + files(heavyRuntimeJar)
+    }
+    tasks.named('compileHeavyPackagedValidationJava').configure { dependsOn(tasks.named('jar')) }
+}
+// Explicitly enabled separate test mod; no presentation selector is set.
+if (heavyPackagedValidation) {
+    def harness = sourceSets.heavyPackagedValidation
+    neoForge.mods.create('iedctr_heavy_validation') { sourceSet(harness) }
+    neoForge.runs.configureEach { loadedMods = [neoForge.mods.getByName(project.mod_id)] }
+    ['heavyPackagedDefaultClient'].each { runName ->
+        neoForge.runs.create(runName) {
+            client()
+            sourceSet = harness
+            loadedMods = [neoForge.mods.getByName('iedctr_heavy_validation')]
+            disableIdeRun()
+            taskBefore(tasks.named('jar'))
+            taskBefore(tasks.named('heavyPackagedValidationClasses'))
+            // The verifier is registered below; no source-output fallback is permitted.
+            if (runName == 'heavyPackagedDefaultClient') {
+                systemProperty 'iedctr.heavyPackagedNative', 'true'
+            }
+        }
+    }
+    def verifyPackagedRuntime = tasks.register('verifyHeavyPackagedRuntime') {
+        group = 'verification'
+        dependsOn(tasks.named('jar'), tasks.named('heavyPackagedValidationClasses'))
+        doLast {
+            def jarFile = heavyRuntimeJar.get().canonicalFile
+            def normalJar = tasks.named('jar', Jar).get().archiveFile.get().asFile.canonicalFile
+            def sha256 = { file -> java.security.MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
+            if (sha256(jarFile) != sha256(normalJar)) {
+                throw new GradleException('Supplied runtime JAR differs from the normal JAR built from this exact source checkout')
+            }
+            def classpath = harness.runtimeClasspath.files.collect { it.canonicalFile }
+            def mainOutputs = sourceSets.main.output.files.collect { it.canonicalFile }
+            if (!classpath.contains(jarFile) || classpath.any { mainOutputs.contains(it) }) {
+                throw new GradleException('Packaged validation requires the exact JAR and forbids main output on runtime classpath')
+            }
+            def harnessPackages = [] as Set
+            harness.output.classesDirs.asFileTree.matching { include '**/*.class' }.files.each {
+                def root = harness.output.classesDirs.files.find { dir -> it.toPath().startsWith(dir.toPath()) }
+                def relative = root.toPath().relativize(it.toPath()).toString().replace('\\', '/')
+                harnessPackages.add(relative.contains('/') ? relative.substring(0, relative.lastIndexOf('/')) : '')
+            }
+            new java.util.zip.ZipFile(jarFile).withCloseable { zip ->
+                def entryNames = [] as Set
+                zip.entries().each { entry ->
+                    if (!entryNames.add(entry.name)) throw new GradleException('Duplicate entries in normal JAR')
+                    if (entry.name.startsWith('com/oblixorprime/iedctrtest/') || entry.name.contains('client/validation/NativeHeavyValidation')) {
+                        throw new GradleException('Validation fixture leaked into production JAR')
+                    }
+                    if (entry.name.endsWith('.class') && entry.name.contains('/') &&
+                            harnessPackages.contains(entry.name.substring(0, entry.name.lastIndexOf('/')))) {
+                        throw new GradleException('Harness and production JAR contain a split package')
+                    }
+                }
+            }
+            ['heavyPackagedDefaultClient'].each { name ->
+                def run = neoForge.runs.getByName(name)
+                if (run.sourceSet.get() != harness || run.loadedMods.get()*.name != ['iedctr_heavy_validation']) {
+                    throw new GradleException('Packaged validation must load only the separate harness development mod')
+                }
+            }
+            def report = layout.buildDirectory.file('reports/heavy-packaged-runtime.json').get().asFile
+            report.parentFile.mkdirs()
+            report.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson([
+                    jar_path: jarFile.path,
+                    jar_sha256: java.security.MessageDigest.getInstance('SHA-256').digest(jarFile.bytes).encodeHex().toString(),
+                    runtime_classpath: classpath*.path, forbidden_main_outputs: mainOutputs*.path,
+                    harness_outputs: harness.output.files.collect { it.canonicalPath },
+                    loaded_development_mods: ['iedctr_heavy_validation'],
+                    fixture_free_jar: true, split_packages: false]))
+        }
+    }
+    ['heavyPackagedDefaultClient'].each { name ->
+        neoForge.runs.getByName(name).taskBefore(verifyPackagedRuntime)
+    }
+}
