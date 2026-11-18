@@ -27,10 +27,11 @@ HOPPER_ATLAS='assets/immersive_engineer_decor_controls_tool_reforged/textures/gu
 
 
 def validate_hopper_icon_pixels(icons,game,width,height,jar):
-    """Match ordinary-JAR alpha sprites over their opaque original underlay.
+    """Match ordinary-JAR sprite RGB exactly on the native icon draw path.
 
-    Native screenshots only, scale 1. A two-level RGB tolerance allows GPU rounding,
-    not a different sprite. No guessed icon semantics or external repaint is used.
+    Native screenshots only, scale 1. The native draw copies sprite RGB without
+    alpha blending, verified across all 81 pixels of each mode in run 44307407908.
+    No tolerance, guessed icon semantics or external repaint is used.
     """
     with zipfile.ZipFile(jar) as archive:
         aw,ah,atlas=decode_png(zipfile.Path(archive,HOPPER_ATLAS))
@@ -43,12 +44,10 @@ def validate_hopper_icon_pixels(icons,game,width,height,jar):
         expected=[]
         for y in range(9):
             for x in range(9):
-                base=((49+y)*aw+145+x)*4; sprite=((v+y)*aw+u+x)*4
-                require(atlas[base+3]==255,'Icon underlay must be opaque')
-                alpha=atlas[sprite+3]
-                rgb=tuple((atlas[sprite+k]*alpha+atlas[base+k]*(255-alpha)+127)//255 for k in range(3))
+                sprite=((v+y)*aw+u+x)*4
+                rgb=tuple(atlas[sprite+k] for k in range(3))
                 offset=((top+49+y)*w+left+145+x)*4
-                require(all(abs(image[offset+k]-rgb[k])<=2 for k in range(3)),
+                require(all(image[offset+k]==rgb[k] for k in range(3)),
                         'Hopper icon pixels mismatch '+record['name']+' at '+str((x,y)))
                 expected.extend(rgb)
         expected_patches.append(bytes(expected))

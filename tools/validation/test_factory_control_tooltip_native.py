@@ -112,9 +112,9 @@ class ProofTests(unittest.TestCase):
             pixels=bytearray(width*height*4)
             for y in range(9):
                 for x in range(9):
-                    a=((v+y)*aw+u+x)*4;b=((49+y)*aw+145+x)*4
+                    a=((v+y)*aw+u+x)*4
                     target=((top+49+y)*width+left+145+x)*4
-                    for k in range(3):pixels[target+k]=round((atlas[a+k]*atlas[a+3]+atlas[b+k]*(255-atlas[a+3]))/255)
+                    for k in range(3):pixels[target+k]=atlas[a+k]
             images.append((width,height,bytes(pixels)))
         records=self.make('hopper')['hopper_icons']
         def check(frames):
@@ -123,7 +123,7 @@ class ProofTests(unittest.TestCase):
         check(images)
         for frames in ([images[1],images[0],images[2]],[images[0]]*3,[images[2],images[1],images[0]]):
             with self.assertRaises(SmokeFailure):check(frames)
-        damaged=bytearray(images[2][2]);damaged[((top+49)*width+left+145)*4]^=128
+        damaged=bytearray(images[2][2]);damaged[((top+49)*width+left+145)*4]^=1
         with self.assertRaises(SmokeFailure):check(images[:2]+[(width,height,bytes(damaged))])
 
     def test_hopper_points_and_exact_modes_remain_native(self):
