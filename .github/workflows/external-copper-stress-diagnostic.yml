@@ -1,0 +1,54 @@
+name: External copper sync stress diagnostic
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/external-copper-stress-diagnostic.yml'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/ExternalFluidClientValidation.java'
+      - 'tools/validation/test_external_sync_diagnostic.py'
+
+permissions:
+  contents: read
+
+jobs:
+  copper-stress:
+    # Diagnostic negative test for the dedicated draft PR only, never a release gate.
+    if: ${{ github.event.pull_request.head.ref == 'codex/external-copper-sync-diagnostic-20261118' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      JAVA_TOOL_OPTIONS: '-Diedctr.externalCopperStress=true'
+    steps:
+      - name: Checkout exact candidate head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Make wrapper executable
+        run: chmod +x ./gradlew
+      - name: Exercise strict native copper sync with accelerated random ticks
+        timeout-minutes: 20
+        run: python tools/validation/client_gameplay.py --lithium --renderer-profile native --flow-distance-only --prepare-timeout 600 --timeout 420
+      - name: Retain independent negative-test evidence even on expected failure
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: external-copper-stress-diagnostic
+          path: |
+            build/client-gameplay-*/run/client-gameplay-result.json
+            build/client-gameplay-*/run/client-generic-fluid-result.json
+            build/client-gameplay-*/run/logs/*.log
+            build/client-gameplay-*/lithium-dependency/identity.json
+          if-no-files-found: error
+          retention-days: 14
