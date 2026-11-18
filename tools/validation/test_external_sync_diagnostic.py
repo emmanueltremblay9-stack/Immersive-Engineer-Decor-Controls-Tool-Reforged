@@ -9,6 +9,8 @@ BASELINE_TICK_SHA256 = "b6f5df5f9262d13d6dbb014b56ed675f23717bd394932106d7610b3a
 def original_tick(source):
     tick = source[source.index('   static boolean tick('):source.index('   // Diagnostics only:')]
     tick = tick.replace('      if (!(++wait < 400)) check(false, "external sync stalled " + stalledDiagnostic(mc));', '      check(++wait < 400, "external sync stalled");')
+    tick = tick.replace('         if (index == 64) resetCopperServerSampling();\n', '')
+    tick = tick.replace('         if (index == 64) sampleCopperServerIfNeeded(mc);\n', '')
     tick = tick.replace('            lastServerObservation = observeServer(level, "setup-complete");\n', '')
     tick = tick.replace('            lastServerObservation = observeServer(level, "drain-submitted");\n', '')
     return hashlib.sha256(tick.strip().encode()).hexdigest()
@@ -23,6 +25,20 @@ class ExternalDiagnosticTest(unittest.TestCase):
                          ('pending.join();', ''),
                          ('if(!mc.level.getFluidState(POS).isEmpty())return false;', '')]:
             self.assertNotEqual(original_tick(source.replace(old, new)), BASELINE_TICK_SHA256)
+
+    def test_case_64_sampling_and_strict_diagnostics(self):
+        source = SOURCE.read_text()
+        self.assertEqual(source.count('if (index == 64) resetCopperServerSampling();'), 1)
+        self.assertEqual(source.count('if (index == 64) sampleCopperServerIfNeeded(mc);'), 1)
+        self.assertIn('wait % 20 != 0', source)
+        self.assertIn('server.submit(() -> {', source)
+        self.assertIn('getGameRules().getInt(GameRules.RULE_RANDOMTICKING)', source)
+        self.assertIn('serverBlock.equals(expectedBlock)', source)
+        self.assertIn('latestCopperServerSample={', source)
+        self.assertIn('firstCopperServerChange={', source)
+        self.assertIn('firstCopperClientMismatch={', source)
+        self.assertIn('IEDCTR_EXTERNAL_COPPER_FIRST_SERVER_CHANGE', source)
+        self.assertIn('IEDCTR_EXTERNAL_COPPER_CLIENT_MISMATCH', source)
 
     def test_diagnostics_do_not_join_or_read_server_from_client(self):
         source = SOURCE.read_text()
