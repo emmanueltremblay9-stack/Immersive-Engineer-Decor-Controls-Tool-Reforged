@@ -42,6 +42,7 @@ final class ExternalFluidClientValidation {
    private static volatile String latestCopperServerSample = "none";
    private static volatile String firstCopperServerChange = "none";
    private static String firstCopperClientMismatch = "none";
+   private static volatile int priorCopperRandomTickSpeed = -1;
 
    private static String blockId() { return BLOCKS[(index / 6) % BLOCKS.length]; }
    private static FluidState expected() {
@@ -88,6 +89,7 @@ final class ExternalFluidClientValidation {
       if(!pending.isDone())return false;pending.join();
       if(stage==1) {
          if (index == 64) sampleCopperServerIfNeeded(mc);
+         if (index == 64 && Boolean.getBoolean("iedctr.externalCopperStress") && wait < 320) return false;
          if(!mc.level.getFluidState(POS).equals(expected()) || !mc.level.getBlockState(POS).equals(state()))return false;
          check(mc.level.getChunkAt(POS).getFluidState(POS).equals(expected()),"client chunk differs");
          mc.level.setBlock(POS,Blocks.AIR.defaultBlockState(),3);
@@ -141,6 +143,7 @@ final class ExternalFluidClientValidation {
       latestCopperServerSample = "none";
       firstCopperServerChange = "none";
       firstCopperClientMismatch = "none";
+      priorCopperRandomTickSpeed = -1;
    }
    private static void sampleCopperServerIfNeeded(Minecraft mc) {
       if (mc.level == null || mc.player == null) return;
@@ -153,7 +156,7 @@ final class ExternalFluidClientValidation {
             + ",rawCell=" + NativeFluidCells.snapshot(mc.level.getChunkAt(POS)).get(POS);
          EngineersDecorReforged.LOGGER.warn("IEDCTR_EXTERNAL_COPPER_CLIENT_MISMATCH {}", firstCopperClientMismatch);
       }
-      if (wait != 1 && wait % 20 != 0 && !firstMismatch) return;
+      if (wait != 1 && wait % 20 != 0 && !firstMismatch && !Boolean.getBoolean("iedctr.externalCopperStress")) return;
       if (copperSamplePending != null && !copperSamplePending.isDone()) return;
       var server = mc.getSingleplayerServer();
       if (server == null) return;
@@ -167,6 +170,21 @@ final class ExternalFluidClientValidation {
             return;
          }
          var level = player.serverLevel();
+         if (Boolean.getBoolean("iedctr.externalCopperStress")) {
+            var rule = level.getGameRules().getRule(GameRules.RULE_RANDOMTICKING);
+            if (observedWait == 1) {
+               priorCopperRandomTickSpeed = rule.get();
+               rule.set(1024, server);
+               EngineersDecorReforged.LOGGER.info(
+                  "IEDCTR_EXTERNAL_COPPER_STRESS_START case=64 priorRandomTickSpeed={} stressRandomTickSpeed=1024",
+                  priorCopperRandomTickSpeed);
+            } else if (observedWait >= 320 && priorCopperRandomTickSpeed >= 0) {
+               rule.set(priorCopperRandomTickSpeed, server);
+               EngineersDecorReforged.LOGGER.info(
+                  "IEDCTR_EXTERNAL_COPPER_STRESS_RESTORE case=64 randomTickSpeed={}", priorCopperRandomTickSpeed);
+               priorCopperRandomTickSpeed = -1;
+            }
+         }
          BlockState serverBlock = level.getBlockState(POS);
          String sample = "case=64,wait=" + observedWait + ",clientRequestTime=" + requestedClientTime
             + ",serverTime=" + level.getGameTime()

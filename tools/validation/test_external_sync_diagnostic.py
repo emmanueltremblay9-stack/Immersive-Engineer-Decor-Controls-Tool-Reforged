@@ -11,6 +11,7 @@ def original_tick(source):
     tick = tick.replace('      if (!(++wait < 400)) check(false, "external sync stalled " + stalledDiagnostic(mc));', '      check(++wait < 400, "external sync stalled");')
     tick = tick.replace('         if (index == 64) resetCopperServerSampling();\n', '')
     tick = tick.replace('         if (index == 64) sampleCopperServerIfNeeded(mc);\n', '')
+    tick = tick.replace('         if (index == 64 && Boolean.getBoolean("iedctr.externalCopperStress") && wait < 320) return false;\n', '')
     tick = tick.replace('            lastServerObservation = observeServer(level, "setup-complete");\n', '')
     tick = tick.replace('            lastServerObservation = observeServer(level, "drain-submitted");\n', '')
     return hashlib.sha256(tick.strip().encode()).hexdigest()
@@ -39,6 +40,9 @@ class ExternalDiagnosticTest(unittest.TestCase):
         self.assertIn('firstCopperClientMismatch={', source)
         self.assertIn('IEDCTR_EXTERNAL_COPPER_FIRST_SERVER_CHANGE', source)
         self.assertIn('IEDCTR_EXTERNAL_COPPER_CLIENT_MISMATCH', source)
+        self.assertIn('Boolean.getBoolean("iedctr.externalCopperStress") && wait < 320', source)
+        self.assertIn('rule.set(1024, server)', source)
+        self.assertIn('IEDCTR_EXTERNAL_COPPER_STRESS_RESTORE', source)
 
     def test_diagnostics_do_not_join_or_read_server_from_client(self):
         source = SOURCE.read_text()
