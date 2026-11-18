@@ -1,5 +1,7 @@
 """Contract/mutation tests, not Minecraft rendering or screenshot acceptance."""
 import copy
+import io
+import zipfile
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -63,6 +65,20 @@ class HeavyEvidenceTests(unittest.TestCase):
         for key,value in [('fixture_free_jar',False),('separate_harness_module',False),('jar_sha256','e'*64),('class_origins',[])]:
             p=self.proof();p['packaged_runtime'][key]=value
             with self.subTest(key=key),self.assertRaises(SmokeFailure):self.validate(p)
+    def test_model_archive_directory_is_not_a_resource(self):
+        java=(ROOT/'src/heavyPackagedValidation/java/com/oblixorprime/iedctrtest/heavy/PackagedRuntimeProof.java').read_text()
+        self.assertIn('zip.stream().filter(entry -> !entry.isDirectory() && entry.getName().startsWith(assetPrefix)',java)
+        archive=io.BytesIO()
+        prefix='assets/test/models/block/heavy_double_t/'
+        with zipfile.ZipFile(archive,'w') as z:
+            z.writestr(prefix,'')
+            for i in range(84):z.writestr(prefix+str(i)+'.json','{}')
+            z.writestr('assets/test/models/item/heavy_industrial_double_t_support.json','{}')
+            z.writestr('assets/test/blockstates/heavy_industrial_double_t_support.json','{}')
+        with zipfile.ZipFile(archive) as z:
+            self.assertEqual(len(z.infolist()),87)
+            self.assertEqual(sum(not e.is_dir() for e in z.infolist()),86)
+
     def test_fixture_isolation_and_native_not_mocked(self):
         gradle=(ROOT/'gradle/heavy-packaged-validation.gradle').read_text()
         for guard in ['sourceSets.main.runtimeClasspath - sourceSets.main.output','fixture_free_jar: true','split_packages: false','sha256(jarFile) != sha256(normalJar)']:

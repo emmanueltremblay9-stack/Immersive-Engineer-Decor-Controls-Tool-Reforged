@@ -90,7 +90,7 @@ public final class PackagedRuntimeProof {
             }
             var modelResources = new JsonArray();
             String assetPrefix = "assets/"+EngineersDecorReforged.MOD_ID+"/";
-            var modelEntries = zip.stream().filter(entry -> entry.getName().startsWith(assetPrefix)
+            var modelEntries = zip.stream().filter(entry -> !entry.isDirectory() && entry.getName().startsWith(assetPrefix)
                 && (entry.getName().contains("/models/block/heavy_double_t/")
                     || entry.getName().endsWith("/models/item/heavy_industrial_double_t_support.json")
                     || entry.getName().endsWith("/blockstates/heavy_industrial_double_t_support.json"))).toList();
