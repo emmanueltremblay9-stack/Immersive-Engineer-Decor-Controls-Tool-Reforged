@@ -11,15 +11,48 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import zipfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
-from factory_placer_v2_reference_native import png
+from factory_placer_v2_reference_native import png, decode_png
 
-NAMES = {'hopper': ['normal','delayindicator','inversion','inversion_changed','triggermode','triggermode_changed'],
+NAMES = {'hopper': ['normal','delayindicator','inversion','inversion_changed','inversion_normal','triggermode','triggermode_changed'],
          'dropper': ['normal','velocity','filtergate','filtergate_changed','externgate','externgate_changed','triggermode','triggermode_changed']}
 
 
 def require(condition, message):
     if not condition: raise SmokeFailure(message)
+
+
+HOPPER_ATLAS='assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_hopper_gui.png'
+
+
+def validate_hopper_icon_pixels(icons,game,width,height,jar):
+    """Match ordinary-JAR alpha sprites over their opaque original underlay.
+
+    Native screenshots only, scale 1. A two-level RGB tolerance allows GPU rounding,
+    not a different sprite. No guessed icon semantics or external repaint is used.
+    """
+    with zipfile.ZipFile(jar) as archive:
+        aw,ah,atlas=decode_png(zipfile.Path(archive,HOPPER_ATLAS))
+    require((aw,ah)==(256,256),'Unexpected original Hopper atlas dimensions')
+    left=(width-176)//2;top=(height-166)//2
+    expected_patches=[]
+    for record,(u,v) in zip(icons,((188,49),(177,59),(177,49))):
+        w,h,image=decode_png(game/record['file'])
+        require((w,h)==(width,height),'Icon screenshot viewport differs')
+        expected=[]
+        for y in range(9):
+            for x in range(9):
+                base=((49+y)*aw+145+x)*4; sprite=((v+y)*aw+u+x)*4
+                require(atlas[base+3]==255,'Icon underlay must be opaque')
+                alpha=atlas[sprite+3]
+                rgb=tuple((atlas[sprite+k]*alpha+atlas[base+k]*(255-alpha)+127)//255 for k in range(3))
+                offset=((top+49+y)*w+left+145+x)*4
+                require(all(abs(image[offset+k]-rgb[k])<=2 for k in range(3)),
+                        'Hopper icon pixels mismatch '+record['name']+' at '+str((x,y)))
+                expected.extend(rgb)
+        expected_patches.append(bytes(expected))
+    require(len(set(expected_patches))==3,'Mode sprite fixture is not distinct')
 
 
 def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, machine):
@@ -44,17 +77,37 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, mac
         require(type(t.get('gray_characters')) is int and t['gray_characters']>0,'Missing gray styled characters')
         require(type(t.get('text')) is str and len(t['text'])>20 and '\n' in t['text'],'Missing rendered multiline text')
         require(type(t.get('expected_text')) is str and ' '.join(t['text'].split())==' '.join(t['expected_text'].split()),'Rendered semantic text differs')
-        if machine=='hopper' and c['name'] in ('inversion','inversion_changed','triggermode','triggermode_changed'):
+        if machine=='hopper' and c['name'] in ('inversion','inversion_changed','inversion_normal','triggermode','triggermode_changed'):
             require(type(t.get('synced_logic')) is int,'Missing actual synchronized logic state')
 
     if machine=='hopper':
         states={c['name']:c.get('tooltip',{}).get('synced_logic') for c in captures}
         before=proof.get('trigger_setup_before'); after=proof.get('trigger_setup_after')
         require(type(before) is int and type(after) is int and before & 4 != 0 and after & 4 == 0
-                and before == states['inversion_changed'] and after == states['triggermode'],'Trigger setup state acknowledgement differs')
+                and before == states['inversion_changed'] and after == states['inversion_normal'] == states['triggermode'],'Trigger setup state acknowledgement differs')
         require(states['triggermode'] & 4 == 0 and states['triggermode_changed'] & 4 == 0
                 and states['triggermode'] ^ states['triggermode_changed'] == 2,'Trigger pulse/continuous transition differs')
+        require([states[n] for n in ('inversion','inversion_changed','inversion_normal','triggermode','triggermode_changed')]==[3,6,2,2,0],
+                'Hopper exact native mode sequence differs')
+        icons=proof.get('hopper_icons',[])
+        require([c.get('name') for c in icons]==['icon-inversion','icon-inversion_changed','icon-inversion_normal'],'Missing unhovered mode icons')
+        for c,state in zip(icons,(3,6,2)):
+            require(type(c.get('client_logic')) is int and type(c.get('server_logic')) is int
+                    and c['client_logic']==c['server_logic']==state,'Icon server/client state differs')
+            require(type(c.get('render_frames')) is int and c['render_frames']>=3
+                    and c.get('tooltip_absent') is True and c.get('gui_scale')==1,'Icon visibility/scale differs')
+            require(c.get('file')=='factory-control-'+c['name']+'.png','Icon filename differs')
+            png(game/c['file'],width,height,c.get('sha256'))
+        validate_hopper_icon_pixels(icons,game,width,height,jar)
         texts={c['name']:c.get('tooltip',{}).get('text','') for c in captures}
+        phrases={'en_us':('Current: inverted — enabled by an unpowered signal (default).',
+                            'Current: redstone ignored — always enabled.',
+                            'Current: normal — enabled by a powered signal.'),
+                 'fr_fr':('État : inversé — activé sans signal (par défaut).',
+                          'État : redstone ignorée — toujours activé.',
+                          'État : normal — activé par un signal alimenté.')}
+        for name,phrase in zip(('inversion','inversion_changed','inversion_normal'),phrases[language]):
+            require(phrase in ' '.join(texts[name].split()),'Hopper state description differs from real mode: '+name)
         for name in ('inversion','triggermode'):
             require(' '.join(texts[name].split())!=' '.join(texts[name+'_changed'].split()),'Visible state text unchanged: '+name)
 
