@@ -41,7 +41,8 @@ public final class GuiAlbumThree {
     private enum Stage {BOOT,WORLD,OPEN,WAIT,CLOSE}
     private static Stage stage=Stage.BOOT;
     private static boolean complete;
-    private static final int POINTER_TARGET=8;
+    private static final int POINTER_TARGET=8, POINTER_PRIME=12;
+    private static int pointerPhase,lastMotionTick=-1;
     private static NativeLibrary x11,xtest;
     private static Pointer display;
     private static String waitReason="not waiting";
@@ -74,8 +75,6 @@ public final class GuiAlbumThree {
             if(mc.getOverlay()!=null)return;
             switch(stage){
                 case OPEN -> {
-                    // Synthetic OS pointer motion only, no clicks or human input; avoid tooltips.
-                    positionPointer(mc);
                     pending=mc.getSingleplayerServer().submit(()->{
                         var p=player(mc); var pos=machines[index].getBlockPos();
                         // Every case must remain within the native menu stillValid radius.
@@ -89,11 +88,7 @@ public final class GuiAlbumThree {
                     if(GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){
                         waiting(mc,"window not focused");GLFW.glfwFocusWindow(mc.getWindow().getWindow());return;
                     }
-                    if(Math.abs(mc.mouseHandler.xpos()-POINTER_TARGET)>1
-                        || Math.abs(mc.mouseHandler.ypos()-POINTER_TARGET)>1){
-                        waiting(mc,"pointer callback not at target");positionPointer(mc);
-                        selectionRenderFrames=0;return;
-                    }
+                    if(!pointerReady(mc)){selectionRenderFrames=0;return;}
                     require(index==4 || mc.player.containerMenu instanceof MachineMenu,"Unexpected menu while positioning pointer");
                     int panelLeft=(mc.screen.width-(index==4?176:((MachineMenu)mc.player.containerMenu).layout().imageWidth()))/2;
                     int panelTop=(mc.screen.height-(index==4?166:((MachineMenu)mc.player.containerMenu).layout().imageHeight()))/2;
@@ -158,13 +153,37 @@ public final class GuiAlbumThree {
             && menu.field(6)==selectionRow*6)selectionRenderFrames++;
         else selectionRenderFrames=0;
     }
-    private static void positionPointer(Minecraft mc){
+    private static boolean pointerReady(Minecraft mc){
+        // Opening the screen can discard the first cursor motion. Force two
+        // distinct OS motions AFTER opening, separated by client ticks.
+        if(pointerPhase==0){
+            waiting(mc,"pointer priming motion");positionPointer(mc,POINTER_PRIME);
+            pointerPhase=1;lastMotionTick=ticks;return false;
+        }
+        if(ticks<=lastMotionTick)return false;
+        if(pointerPhase==1){
+            double[] x={0},y={0};GLFW.glfwGetCursorPos(mc.getWindow().getWindow(),x,y);
+            if(Math.abs(x[0]-POINTER_PRIME)>1 || Math.abs(y[0]-POINTER_PRIME)>1){
+                waiting(mc,"pointer priming event pending");return false;
+            }
+            waiting(mc,"pointer final motion");positionPointer(mc,POINTER_TARGET);
+            pointerPhase=2;lastMotionTick=ticks;return false;
+        }
+        if(Math.abs(mc.mouseHandler.xpos()-POINTER_TARGET)>1
+            || Math.abs(mc.mouseHandler.ypos()-POINTER_TARGET)>1){
+            // A repeated move to the same OS coordinate may emit no event.
+            // Retry through the distinct prime point, never overwrite MouseHandler.
+            waiting(mc,"pointer callback not at target");pointerPhase=0;return false;
+        }
+        return true;
+    }
+    private static void positionPointer(Minecraft mc,int target){
         long window=mc.getWindow().getWindow();
         if(GLFW.glfwGetWindowAttrib(window,GLFW.GLFW_FOCUSED)!=GLFW.GLFW_TRUE){GLFW.glfwFocusWindow(window);return;}
         // Window-local interior target: unlike width-2,height-2, not beyond Xvfb's
         // desktop when the client window has decorations or a nonzero origin.
         int[] wx={0},wy={0};GLFW.glfwGetWindowPos(window,wx,wy);
-        require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display,-1,wx[0]+POINTER_TARGET,wy[0]+POINTER_TARGET,new NativeLong(0)})!=0,
+        require(xtest.getFunction("XTestFakeMotionEvent").invokeInt(new Object[]{display,-1,wx[0]+target,wy[0]+target,new NativeLong(0)})!=0,
             "Synthetic pointer motion failed");
         x11.getFunction("XFlush").invokeInt(new Object[]{display});
     }
@@ -172,6 +191,7 @@ public final class GuiAlbumThree {
         var d=new JsonObject();d.addProperty("reason",waitReason);d.addProperty("stage",stage.name());
         d.addProperty("ticks",ticks);d.addProperty("case_index",index);d.addProperty("selection_row",selectionRow);
         d.addProperty("selection_render_frames",selectionRenderFrames);d.addProperty("pointer_target",POINTER_TARGET);
+        d.addProperty("pointer_phase",pointerPhase);d.addProperty("last_motion_tick",lastMotionTick);
         d.addProperty("mouse_x",mc.mouseHandler.xpos());d.addProperty("mouse_y",mc.mouseHandler.ypos());
         d.addProperty("screen_width",mc.getWindow().getScreenWidth());d.addProperty("screen_height",mc.getWindow().getScreenHeight());
         d.addProperty("framebuffer_width",mc.getWindow().getWidth());d.addProperty("framebuffer_height",mc.getWindow().getHeight());
@@ -227,7 +247,7 @@ public final class GuiAlbumThree {
         machines[5].setItem(0,new ItemStack(Items.COBBLESTONE,64));
     }
     private static ServerPlayer player(Minecraft mc){var p=mc.getSingleplayerServer().getPlayerList().getPlayer(playerId);require(p!=null,"Player missing");return p;}
-    private static void enter(Stage next){stage=next;ticks=0;inspection=null;selectionRenderFrames=0;}
+    private static void enter(Stage next){stage=next;ticks=0;inspection=null;selectionRenderFrames=0;pointerPhase=0;lastMotionTick=-1;}
     private static void finish(Minecraft mc,Throwable error){
         complete=true;
         if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}

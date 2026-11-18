@@ -107,3 +107,20 @@ class ProofTests(unittest.TestCase):
                           ('synthetic_button_events',False),('input_method','XTest clicks')]:
             p=copy.deepcopy(self.proof);p[key]=value
             with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)
+
+    def test_pointer_primes_after_open_on_separate_ticks(self):
+        root=Path(__file__).resolve().parents[2]
+        source=(root/'src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java').read_text()
+        opening=source.split('case OPEN -> {',1)[1].split('case WAIT -> {',1)[0]
+        self.assertNotIn('positionPointer',opening)
+        self.assertIn('POINTER_PRIME=12',source)
+        self.assertIn('if(!pointerReady(mc))',source)
+        self.assertIn('positionPointer(mc,POINTER_PRIME)',source)
+        self.assertIn('if(ticks<=lastMotionTick)return false;',source)
+        self.assertIn('Math.abs(x[0]-POINTER_PRIME)>1',source)
+        self.assertIn('positionPointer(mc,POINTER_TARGET)',source)
+        self.assertIn('pointerPhase=2;lastMotionTick=ticks;return false;',source)
+        self.assertIn('pointer callback not at target");pointerPhase=0;return false;',source)
+        self.assertIn('pointerPhase=0;lastMotionTick=-1;',source)
+        self.assertNotIn('mouseHandler.onMove',source)
+        self.assertNotIn('mouseHandler.set',source)

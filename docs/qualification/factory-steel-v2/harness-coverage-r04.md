@@ -81,3 +81,20 @@ and GLFW pointer positions, window position/dimensions/focus, client selection,
 occupied slots and frame count. They distinguish focus/pointer, synchronization,
 render callbacks and server-inspection waits if the native run fails again.
 The correction requires a new native run; source tests are not runtime proof.
+
+## Native ee: observed callback stall
+
+The ee proof now establishes the blocked gate: focused window at (0,0), GLFW cursor
+(8,8), Minecraft MouseHandler (640,360), selection 0, 54 occupied slots and three
+render callbacks. It is not a selection synchronization or render-frame timeout.
+The first-move discard hypothesis is consistent with these observations, but the
+mapped MouseHandler source was not present in this local workspace/cache to
+verify its implementation.
+
+The next driver removes pre-opening motion. After the screen opens it sends a
+prime motion to (12,12), observes that GLFW reached it, waits a different client
+tick, then sends (8,8). It still requires Minecraft's actual callback coordinates.
+If that acknowledgement is absent it repeats the distinct two-point sequence,
+never repeatedly sending an already-current target and never writing MouseHandler
+state. Phase and last-motion tick are included in diagnostics. No timeout, pixel,
+state, frame, inventory, provenance or input-scope gate is relaxed.
