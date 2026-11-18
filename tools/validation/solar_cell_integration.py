@@ -2,6 +2,7 @@
 Only the exact appended locale entry may be projected away, restoring baseline bytes.
 """
 import hashlib
+from heavy_double_t_provenance import project as heavy_project, current_hash as heavy_hash
 import json
 BASELINE_COMMIT = "630cf7ba"
 KEY = 'gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip'
@@ -10,6 +11,7 @@ FILES = {'src/main/resources/assets/immersive_engineer_decor_controls_tool_refor
 def project_history(path, data):
     if path not in FILES:
         return data
+    data = heavy_project(path, data)
     row = FILES[path]
     assert hashlib.sha256(data).hexdigest() == row['current_sha256'], 'Solar cell current bytes changed: '+path
     suffix = (',\n  '+json.dumps(KEY)+': '+json.dumps(row['added_text'], ensure_ascii=False)+'\n}\n').encode()
@@ -22,4 +24,4 @@ def current_hash(path, historical_hash):
     if path not in FILES:
         return historical_hash
     assert historical_hash == FILES[path]['baseline_sha256'], 'Solar cell baseline changed: '+path
-    return FILES[path]['current_sha256']
+    return heavy_hash(path, FILES[path]['current_sha256'])
