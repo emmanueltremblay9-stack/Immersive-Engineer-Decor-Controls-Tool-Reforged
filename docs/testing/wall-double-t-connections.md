@@ -1,8 +1,24 @@
 # Steel Double T wall placement and junctions
 
+## Status update — 2026-11-18
+
+The placement instructions and qualification results below describe the original
+pre-PR #150 implementation. [PR #150](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/150)
+was merged on 2026-11-05. Current canonical steel-support placement on a wall is
+upright, including edge clicks; the historical 25/50/25 click zones below no longer
+select the steel wall support's orientation. The existing Engineer's Hammer rotates
+the support's facing while preserving its saved wall-horizontal state and fluid;
+it does not toggle upright/horizontal mounting. See the
+[Engineer's Manual audit](engineer-manual-refresh.md) for the current integrated
+behavior. These steel-support rules do not replace the separate wood beam's click zones.
+
+The historical tests and counts below remain unchanged and are not new qualification
+evidence. This documentation correction does not establish a runtime defect or a
+new rendered-client visual qualification of the support profiles.
+
 This change extends the existing `vertical_steel_double_t_support` item; it adds no block, recipe, texture, diagonal or connector design. The original ceiling support and its paid Iron Bulb attachment remain unchanged. This section describes the original wall prerequisite; the same PR now includes the [four-light extension](double-t-light-attachments.md), qualified separately on its updated commit.
 
-## Placement and geometry
+## Historical placement and geometry (before PR #150)
 
 On any horizontal wall face, click the outer left/right quarter to place the beam horizontally along that wall. The upper/lower edges select upright placement. At corners the nearer edge wins; the central 50% width and equal-distance cases select upright. These are the retained 25/50/25 placement zones, not a new camera-look rule. Floor and ceiling clicks remain rejected by this wall item. The ceiling beam's existing placement is unchanged.
 
@@ -16,7 +32,7 @@ New boolean properties `wall_horizontal`, `join_negative`, `join_positive` defau
 
 Selection and collision follow the same transformed core/arms. Native water, lava and transient flowing-water fields are retained. The existing self-item loot and tool rules are unchanged; connectors do not have independent items. Breaking a wall is not given a new destruction/drop rule.
 
-## Qualification
+## Historical qualification
 
 The new native item-placement regression fails on the previous main: a side-edge click yields horizontal length6/16 instead of16/16. After correction,672 required GameTests pass locally; after the resource correction135 JUnit tests and the build pass. Tests exercise four wall faces, two hands, click zones/corners/ties, both placement orders, incompatible planes, neighbour removal, rotated UVs/models, collision/contact, native server ray/mining, one self drop, fluid retention, legacy properties and serialized state. A first join fixture used raw setBlock rather than item placement; it was corrected to exercise the actual item transaction without relaxing the join assertion.
 
