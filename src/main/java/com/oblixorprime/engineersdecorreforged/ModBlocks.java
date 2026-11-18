@@ -172,6 +172,11 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.SupportBlock> STEEL_DOUBLE_T_SUPPORT = registerWithItem(
       "steel_double_t_support", () -> new com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock(metal().noOcclusion())
    );
+   // MK3/MK3.1 proposed Heavy Double-T item on the draft implementation branch.
+   // Does not replace either legacy Double-T registry identity.
+   public static final DeferredBlock<com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTSupportBlock> HEAVY_INDUSTRIAL_DOUBLE_T_SUPPORT = registerWithItem(
+      "heavy_industrial_double_t_support", () -> new com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTSupportBlock(metal().noOcclusion())
+   );
    public static final DeferredBlock<PortedBlocks.FloorGratingBlock> STEEL_FLOOR_GRATING = registerWithItem(
       "steel_floor_grating", () -> new PortedBlocks.FloorGratingBlock(metal().noOcclusion())
    );

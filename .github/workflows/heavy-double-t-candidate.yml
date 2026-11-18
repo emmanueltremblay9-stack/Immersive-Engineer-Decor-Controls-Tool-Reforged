@@ -1,0 +1,65 @@
+name: Heavy Double-T draft runtime integration validation
+on:
+  pull_request:
+    paths:
+      - 'docs/candidates/heavy-double-t-mk3-mk31/**'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/block/HeavyDoubleT*.java'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/client/HeavyDoubleT*.java'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/gametest/HeavyDoubleT*.java'
+      - 'src/main/java/com/oblixorprime/engineersdecorreforged/ModBlocks.java'
+      - 'src/main/resources/**'
+      - 'build.gradle'
+      - '.github/workflows/heavy-double-t-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  draft-runtime-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Check historical review assets and static tests
+        working-directory: docs/candidates/heavy-double-t-mk3-mk31/review
+        run: |
+          python3 tools/models/generate_heavy_double_t.py --check
+          python3 -m unittest discover -s tests -v
+      - name: Check all 87 production JSON assets match the reviewed candidate
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          source = Path('docs/candidates/heavy-double-t-mk3-mk31/review/src/main/resources')
+          target = Path('src/main/resources')
+          paths = list(source.rglob('*.json'))
+          assert len(paths) == 87, f'Expected 87 model assets, found {len(paths)}'
+          for path in paths:
+              out = target / path.relative_to(source)
+              assert out.is_file() and out.read_bytes() == path.read_bytes(), f'Production asset mismatch: {out}'
+          PY
+      - name: Compile registered production block and JUnit
+        run: bash gradlew compileJava test jar --stacktrace
+      - name: Verify actual runtime classes and model assets are in candidate JAR
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          classes = ('HeavyDoubleTOrientation', 'HeavyDoubleTSupportBlock', 'HeavyDoubleTTopology', 'HeavyDoubleTConnectedModels')
+          jars = [p for p in Path('build/libs').glob('*.jar') if not p.name.endswith('-sources.jar')]
+          assert jars, 'No production JAR was built'
+          for jar in jars:
+              with ZipFile(jar) as z:
+                  members=set(z.namelist())
+                  if all(any(path.endswith('/' + name + '.class') for path in members) for name in classes):
+                      assert 'assets/immersive_engineer_decor_controls_tool_reforged/blockstates/heavy_industrial_double_t_support.json' in members
+                      assert 'assets/immersive_engineer_decor_controls_tool_reforged/models/item/heavy_industrial_double_t_support.json' in members
+                      assert 'data/immersive_engineer_decor_controls_tool_reforged/loot_table/blocks/heavy_industrial_double_t_support.json' in members
+                      print(f'Runtime candidate classes and assets verified in {jar}')
+                      break
+          else:
+              raise AssertionError('No JAR contains all four registered Heavy Double-T classes')
+          PY

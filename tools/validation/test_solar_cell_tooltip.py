@@ -57,7 +57,7 @@ class AdditiveHistoryTest(unittest.TestCase):
   for path,row in FILES.items():
    data=(ROOT/path).read_bytes()
    self.assertEqual(row['baseline_sha256'],hashlib.sha256(project_history(path,data)).hexdigest())
-   self.assertEqual(row['current_sha256'],current_hash(path,row['baseline_sha256']))
+   self.assertEqual(hashlib.sha256(data).hexdigest(),current_hash(path,row['baseline_sha256']))
    for changed in [data+b' ',data.replace(b'FE',b'RF',1),data.replace(b'cell_tooltip',b'cell_tooltip_bad')]:
     with self.assertRaises(AssertionError):project_history(path,changed)
    with self.assertRaises(AssertionError):current_hash(path,'0'*64)

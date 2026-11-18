@@ -1125,5 +1125,6 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge": "changement de signal",
   "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.output": "Sortie : bûches coupées",
   "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy": "Énergie : %s / %s FE",
-  "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip": "Emplacement pour objet à réserve d’énergie FE. La recharge dépend de la capacité de l’objet à recevoir de l’énergie."
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip": "Emplacement pour objet à réserve d’énergie FE. La recharge dépend de la capacité de l’objet à recevoir de l’énergie.",
+  "block.immersive_engineer_decor_controls_tool_reforged.heavy_industrial_double_t_support": "Support industriel lourd à double T"
 }
