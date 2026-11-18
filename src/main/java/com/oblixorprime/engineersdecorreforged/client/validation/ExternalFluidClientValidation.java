@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.client.validation;
 
 import com.google.gson.*;
+import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.fluid.*;
 import java.nio.file.*;
 import java.util.concurrent.CompletableFuture;
@@ -10,6 +11,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundLevelChunkWithLightPacket;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -35,6 +37,11 @@ final class ExternalFluidClientValidation {
    private static int index, stage, wait;
    private static CompletableFuture<?> pending;
    private static volatile String lastServerObservation = "none";
+   // Case-64-only test diagnostics; never used to waive a sync assertion.
+   private static CompletableFuture<?> copperSamplePending;
+   private static volatile String latestCopperServerSample = "none";
+   private static volatile String firstCopperServerChange = "none";
+   private static String firstCopperClientMismatch = "none";
 
    private static String blockId() { return BLOCKS[(index / 6) % BLOCKS.length]; }
    private static FluidState expected() {
@@ -55,6 +62,7 @@ final class ExternalFluidClientValidation {
       if (index == PER_SYNC * 2) return true;
       if (!(++wait < 400)) check(false, "external sync stalled " + stalledDiagnostic(mc));
       if (stage == 0) {
+         if (index == 64) resetCopperServerSampling();
          if (index >= PER_SYNC) mc.level.getChunkAt(POS).removeData(NativeFluidCells.CELLS.get());
          pending = mc.getSingleplayerServer().submit(() -> {
             var player=mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID());
@@ -79,6 +87,7 @@ final class ExternalFluidClientValidation {
       }
       if(!pending.isDone())return false;pending.join();
       if(stage==1) {
+         if (index == 64) sampleCopperServerIfNeeded(mc);
          if(!mc.level.getFluidState(POS).equals(expected()) || !mc.level.getBlockState(POS).equals(state()))return false;
          check(mc.level.getChunkAt(POS).getFluidState(POS).equals(expected()),"client chunk differs");
          mc.level.setBlock(POS,Blocks.AIR.defaultBlockState(),3);
@@ -124,6 +133,54 @@ final class ExternalFluidClientValidation {
          return "case=" + index + ",operation=" + operation + ",unavailable=" + error.getClass().getSimpleName();
       }
    }
+   // Only case 64: unwaxed cut-copper slab, flowing lava 7, update-sync.
+   // Snapshot the real integrated server through its own execution thread;
+   // preserve the existing timeout and exact block/fluid comparisons.
+   private static void resetCopperServerSampling() {
+      copperSamplePending = null;
+      latestCopperServerSample = "none";
+      firstCopperServerChange = "none";
+      firstCopperClientMismatch = "none";
+   }
+   private static void sampleCopperServerIfNeeded(Minecraft mc) {
+      if (mc.level == null || mc.player == null) return;
+      BlockState expectedBlock = state();
+      BlockState clientBlock = mc.level.getBlockState(POS);
+      boolean firstMismatch = !clientBlock.equals(expectedBlock) && "none".equals(firstCopperClientMismatch);
+      if (firstMismatch) {
+         firstCopperClientMismatch = "case=64,clientTime=" + mc.level.getGameTime()
+            + ",block=" + clientBlock + ",fluid=" + mc.level.getFluidState(POS)
+            + ",rawCell=" + NativeFluidCells.snapshot(mc.level.getChunkAt(POS)).get(POS);
+         EngineersDecorReforged.LOGGER.warn("IEDCTR_EXTERNAL_COPPER_CLIENT_MISMATCH {}", firstCopperClientMismatch);
+      }
+      if (wait != 1 && wait % 20 != 0 && !firstMismatch) return;
+      if (copperSamplePending != null && !copperSamplePending.isDone()) return;
+      var server = mc.getSingleplayerServer();
+      if (server == null) return;
+      var playerId = mc.player.getUUID();
+      int observedWait = wait;
+      long requestedClientTime = mc.level.getGameTime();
+      copperSamplePending = server.submit(() -> {
+         var player = server.getPlayerList().getPlayer(playerId);
+         if (player == null) {
+            latestCopperServerSample = "case=64,wait=" + observedWait + ",serverPlayer=missing";
+            return;
+         }
+         var level = player.serverLevel();
+         BlockState serverBlock = level.getBlockState(POS);
+         String sample = "case=64,wait=" + observedWait + ",clientRequestTime=" + requestedClientTime
+            + ",serverTime=" + level.getGameTime()
+            + ",randomTickSpeed=" + level.getGameRules().getInt(GameRules.RULE_RANDOMTICKING)
+            + ",block=" + serverBlock + ",fluid=" + level.getFluidState(POS)
+            + ",rawCell=" + NativeFluidCells.snapshot(level.getChunkAt(POS)).get(POS);
+         latestCopperServerSample = sample;
+         if (!serverBlock.equals(expectedBlock) && "none".equals(firstCopperServerChange)) {
+            firstCopperServerChange = sample;
+            EngineersDecorReforged.LOGGER.warn("IEDCTR_EXTERNAL_COPPER_FIRST_SERVER_CHANGE {}", sample);
+         }
+         EngineersDecorReforged.LOGGER.info("IEDCTR_EXTERNAL_COPPER_SERVER_SAMPLE {}", sample);
+      });
+   }
    private static String stalledDiagnostic(Minecraft mc) {
       String client;
       try {
@@ -137,7 +194,10 @@ final class ExternalFluidClientValidation {
          + " block=" + blockId() + " expectedBlock=" + (stage == 2 ? state().setValue(BlockStateProperties.WATERLOGGED,false) : state())
          + " expectedFluid=" + (stage == 2 ? Fluids.EMPTY.defaultFluidState() : expected())
          + " pending=" + (pending == null ? "none" : "done=" + pending.isDone() + ",exceptional=" + pending.isCompletedExceptionally())
-         + " clientObserved={" + client + "} lastServerObserved={" + lastServerObservation + "}";
+         + " clientObserved={" + client + "} lastServerObserved={" + lastServerObservation + "}"
+         + " latestCopperServerSample={" + latestCopperServerSample + "}"
+         + " firstCopperServerChange={" + firstCopperServerChange + "}"
+         + " firstCopperClientMismatch={" + firstCopperClientMismatch + "}";
    }
    private static void check(boolean condition,String text){if(!condition)throw new IllegalStateException(text+" externalCase="+index);}
 }
