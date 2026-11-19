@@ -82,9 +82,9 @@
     },
     {
       "path": "docs/qualification/factory-steel-v2/SCOPED_R04.md",
-      "git_blob_sha": "2110b0ef1a18b82a330148e7856fcdb352abf5b4",
+      "git_blob_sha": "9ed5427a8744d575054e3a9c2e51c06c19a1bd82",
       "status": "modified",
-      "note": "record second guard pin and separate previous CI identities"
+      "note": "report test fixture compatibility and observed native Dropper HOVER blocker"
     },
     {
       "path": "tools/validation/test_factory_registered_artwork.py",
@@ -118,9 +118,9 @@
     },
     {
       "path": "tools/validation/factory_r04_inverse_projection.py",
-      "git_blob_sha": "7b6c28f3bd5b5bd5e0fe1e5342b9a7894f53ad5c",
+      "git_blob_sha": "28150421353fce330c0c86c10e0121a606cabd1b",
       "status": "modified",
-      "note": "exact independent inverse for Screen and Dropper Layout only"
+      "note": "context-managed exact recipe read to avoid test-only mocked Path.read_bytes; unchanged SHA guards"
     },
     {
       "path": "tools/validation/test_factory_r04_inverse_projection.py",
@@ -151,6 +151,24 @@
       "git_blob_sha": "8acd629656cc94401fe406e99c4f10702792755d",
       "status": "added",
       "note": "Four exact Dropper-only MachineLayout inverses"
+    },
+    {
+      "path": "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/FactoryControlTooltipValidation.java",
+      "git_blob_sha": "8aea8d20c78021fb15ee8dea3e2d890d06c4868c",
+      "status": "modified",
+      "note": "Factory-only exact #196 harness with correct Dropper R04 hover and native state transitions"
+    },
+    {
+      "path": "tools/validation/factory_control_tooltip_native.py",
+      "git_blob_sha": "a90e75fe8fa00fb437a1c20e4152795fe1b0eda6",
+      "status": "modified",
+      "note": "Factory-only exact #196 proof validator, no new proof identity assumption"
+    },
+    {
+      "path": "tools/validation/test_factory_control_tooltip_native.py",
+      "git_blob_sha": "ce2f6cb54129b522db45be0d66fdeb03257a010f",
+      "status": "modified",
+      "note": "Factory-only #196 negative proof tests including hover coordinates and icon mapping"
     }
   ],
   "exclusions": [
@@ -193,6 +211,9 @@
     "layout_inverse_git_sha": "8acd629656cc94401fe406e99c4f10702792755d",
     "parent_followup_commit": "d810f007d7204368df6243bf0ac0294ed3cec058",
     "exact_original_layout_git_blob": "710069d40e28dba9caa13e54d47f5e6ad573937f",
-    "exact_candidate_layout_git_blob": "606ff668080cf82adcf256e309ae15bcede16f99"
+    "exact_candidate_layout_git_blob": "606ff668080cf82adcf256e309ae15bcede16f99",
+    "latest_parent": "ced5230db28f7dfa4c4404fd785d82bd37a6adc7",
+    "fixture_source": "09c8a0e8ebb231dd399a525d615c9eedc6516dc4",
+    "known_native_blocker": "main Factory Dropper hover target outside R04 hitbox; exact #196 harness imported"
   }
 }

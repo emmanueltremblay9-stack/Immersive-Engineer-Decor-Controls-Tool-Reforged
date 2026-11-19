@@ -39,7 +39,11 @@ def project_screen_to_main(source, *, recipe_bytes=None):
         raise FactoryProjectionError('Expected UTF-8 decoded MachineScreen text')
     if git_blob_sha(source) != R04_SCREEN_BLOB:
         raise FactoryProjectionError('Unexpected MachineScreen bytes; Factory-only allowlist rejected mutation')
-    data = RECIPE_PATH.read_bytes() if recipe_bytes is None else recipe_bytes
+    if recipe_bytes is None:
+        with RECIPE_PATH.open('rb') as stream:
+            data = stream.read()
+    else:
+        data = recipe_bytes
     if git_blob_sha(data) != RECIPE_GIT_BLOB:
         raise FactoryProjectionError('Inverse recipe changed')
     recipe = json.loads(data)
@@ -69,7 +73,11 @@ def project_layout_to_main(source, *, recipe_bytes=None):
         raise FactoryProjectionError('Expected UTF-8 decoded MachineLayout text')
     if git_blob_sha(source) != R04_LAYOUT_BLOB:
         raise FactoryProjectionError('Unexpected MachineLayout bytes; Dropper-only allowlist rejected mutation')
-    data = LAYOUT_RECIPE_PATH.read_bytes() if recipe_bytes is None else recipe_bytes
+    if recipe_bytes is None:
+        with LAYOUT_RECIPE_PATH.open('rb') as stream:
+            data = stream.read()
+    else:
+        data = recipe_bytes
     if git_blob_sha(data) != LAYOUT_RECIPE_GIT_BLOB:
         raise FactoryProjectionError('Dropper layout inverse recipe changed')
     recipe = json.loads(data)
