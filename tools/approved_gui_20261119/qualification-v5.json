@@ -1,0 +1,14 @@
+{
+  "schema": "owner-20261119-v5-metal-assembly",
+  "base_commit": "87f8b8e03cac46a6154b54522d1497baa52c67b2",
+  "previous_commit": "8f909beebf96b0197830813aaa415a0e72d44881",
+  "previous_recipe_sha256": "b59832808af932dcd366dfbe0ca03b246bd1f1c44b4384780cb1c59a8b4e3955",
+  "change": "Explicit owner Metal Assembly revision: 105 matte plate backgrounds, fixed command wells and inner interstices, central metal plate bar instead of yellow/black. No geometry or semantic-state change. Native NOT_RUN.",
+  "candidate_delta": {
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png": "0dbff7d15d60aa333ef0f3d5ddd36009066ccc09ca5221b2d4d749be3768f0ab",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png": "59b0d6029aa2440df05c59e4cc92da220450322ecf5d57b9f4c4d92981d0e8cf",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/owner_control_well.png": "5cb5c4fe1d727024992790782d25c197746529b7862ba400f6d3e6e29e1eb827",
+    "tools/approved_gui_20261119/build_metal_assets.py": "8e71e6212cc47a25a88c21ee5cfa529c7cf7ab8fbe60844e16560e0948e76f15",
+    "tools/approved_gui_20261119/test_metal_assets.py": "cbbb5a5a60b54b04e9a47a552de63732b822de357bb54a7469db7e9408bb45ca"
+  }
+}

@@ -54,6 +54,32 @@ class OwnerQualification(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,'Unapproved historical Git anchor'):
             gate.ensure_base_object(anchor='0'*40)
 
+    def test_reject_v4_assets_as_metal_candidate(self):
+        gate.ensure_base_object(anchor=gate.V4_COMMIT)
+        for machine in ('hopper','dropper','owner_control_well'):
+            path='src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/'+machine+'.png'
+            previous=subprocess.check_output(['git','show',gate.V4_COMMIT+':'+path],cwd=gate.ROOT)
+            root=self.mutated_root(path,previous)
+            with self.subTest(asset=machine), self.assertRaisesRegex(AssertionError,'Wrong owner asset'):
+                gate.validate_candidate(root)
+
+    def test_reject_historical_v4_recipe_mutation(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/'v4.json';p.write_bytes(gate.V4_RECIPE.read_bytes()+b' ')
+            with patch.object(gate,'V4_RECIPE',p), self.assertRaisesRegex(AssertionError,'Historical v4 recipe changed'):
+                gate.validate_candidate()
+
+    def test_historical_v4_view_is_not_current_assets(self):
+        root=gate.historical_v4_root()
+        self.assertNotEqual(root,gate.ROOT)
+        path='src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png'
+        self.assertNotEqual((root/path).read_bytes(),(gate.ROOT/path).read_bytes())
+        self.assertEqual(gate.digest((root/path).read_bytes()),gate.historical_v4_recipe()['candidate'][path])
+
+    def test_historical_suite_wrapper_is_not_flattened(self):
+        suite=load_tests(unittest.defaultTestLoader,unittest.TestSuite(),None)
+        self.assertTrue(any(isinstance(item,HistoricalV4Assets) for item in suite))
+
     def test_reject_guard_mutation(self):
         for path in ['tools/validation/test_factory_tooltip_wrap.py','tools/validation/factory_r04_inverse_projection.py']:
             root=self.mutated_root(path,(gate.ROOT/path).read_bytes()+b'\n# altered\n')
@@ -125,15 +151,30 @@ class OwnerQualification(unittest.TestCase):
 
 
 
+class HistoricalV4Assets(unittest.TestSuite):
+    """Unmodified v4 art tests run on exact v4 Git bytes, explicitly historical."""
+    def __init__(self, tests, module):
+        super().__init__(tests);self.module=module
+    def run(self,result,debug=False):
+        root=gate.historical_v4_root()
+        data=gate.historical_v4_recipe()
+        b=self.module.b
+        out=root/self.module.b.OUT.relative_to(gate.ROOT)
+        with patch.object(b,'ROOT',root), patch.object(b,'OUT',out), patch.object(gate,'recipe',return_value=data):
+            return super().run(result,debug)
+
+
 def load_tests(loader, tests, pattern):
-    # The existing native workflow's tooltip glob now executes both the strict
-    # candidate gate and its actual geometry/asset tests, not only old fixtures.
+    # Native workflow preflight always runs the NEW metal gate and tests.
+    # Old v4 art assertions stay byte-identical and run separately on v4 Git.
     pkg=gate.PACKAGE
     sys.path.insert(0,str(pkg))
     try:
-        for name in ['test_assets','test_click_bounds']:
-            spec=importlib.util.spec_from_file_location('owner_v1_'+name,pkg/(name+'.py'))
+        for name in ['test_assets','test_click_bounds','test_metal_assets']:
+            spec=importlib.util.spec_from_file_location('owner_'+name,pkg/(name+'.py'))
             module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-            tests.addTests(loader.loadTestsFromModule(module))
+            suite=loader.loadTestsFromModule(module)
+            if name=='test_assets':tests.addTest(HistoricalV4Assets(suite,module))
+            else:tests.addTests(suite)
     finally:sys.path.remove(str(pkg))
     return tests

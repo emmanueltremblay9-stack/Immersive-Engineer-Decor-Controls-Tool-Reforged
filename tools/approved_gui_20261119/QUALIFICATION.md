@@ -86,3 +86,35 @@ claimed. The held-stack scenario is separately prepared and must not reuse the
 old (-8,83) outside witness: that point is now inside the visible protected panel;
 the correct outside witness is (-9,83). No remote run or publication is authorized
 by this documentation.
+
+## v5 Metal Assembly: local preparation, not native-tested
+
+Owner superseding art direction: all visible internal backgrounds are assembled
+metal plates; slot backgrounds are matte steel; the central yellow/black ribbon
+becomes a metal plate bar. The exact November19 images still control geometry and
+identity, but their black/hazard fills are no longer the desired background art.
+
+The compact v5 recipe replaces exactly three PNGs and pins the new generator and
+five mandatory metal regression tests. v3 and v4 manifests are unmodified. Old
+R04, ef40 and 8f90 assets fail as current candidates. Java, layout, slot coordinates,
+input boundaries, native glyph atlas and control thumbs are unchanged. Fixed
+control background `owner_control_well.png` changes only dark neutral opaque pixels;
+its luminous/copper border pixels and alpha remain exact.
+
+The unmodified v4 art tests continue to run in a separately constructed temporary
+view of exact8f90 Git bytes. This is historical regression evidence, NOT evidence
+for new metal art. The native workflow's existing preflight also runs the v5 gate
+and all five new metal tests on actual candidate files. No sources/fixtures are
+copied into the public repository. CI may fetch only the three specifically pinned
+Git commits87f8,ef40,8f90; local missing objects fail without a network request.
+
+Public preflight uses standard-library PNG decoding, no Pillow/numpy dependency.
+Private reproduction requires external SHA-pinned originals and Pillow:
+`IEDCTR_OWNER_SOURCE_DIR=<external-originals> python tools/approved_gui_20261119/build_metal_assets.py`.
+
+Metal checks cover all105 matte opaque textured item footprints, unchanged slot
+rims/exterior/alpha and protected bright control pixels, no central hazard stripe,
+unchanged production/semantic-control assets, and the darker runtime fixed-well
+background. Reproduction and1x/2x asset inspection do not establish a Minecraft
+render, actual item legibility, cursor visibility or owner approval. Held-stack
+work remains in a distinct local test-only copy and is NOT part of this candidate.

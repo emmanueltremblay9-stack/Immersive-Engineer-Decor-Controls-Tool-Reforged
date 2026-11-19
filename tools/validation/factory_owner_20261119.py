@@ -1,4 +1,4 @@
-"""Owner v4 public candidate gate and exact historical view. No native validation claim.
+"""Owner v5 Metal Assembly candidate gate and exact historical view. No native validation claim.
 
 This is a closed, versioned transition, not a general allowlist. The old guards
 and their inputs remain archived byte-for-byte. Only the named candidate bytes
@@ -18,11 +18,14 @@ ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / 'tools/approved_gui_20261119'
 BASELINE = None
 _BASELINE_TEMP = None
-RECIPE = PACKAGE / 'qualification-v4.json'
+RECIPE = PACKAGE / 'qualification-v5.json'
+V4_RECIPE = PACKAGE / 'qualification-v4.json'
+V4_RECIPE_SHA256 = 'b59832808af932dcd366dfbe0ca03b246bd1f1c44b4384780cb1c59a8b4e3955'
+V4_COMMIT = '8f909beebf96b0197830813aaa415a0e72d44881'
 PREVIOUS_RECIPE = PACKAGE / 'qualification-v3.json'
 PREVIOUS_RECIPE_SHA256 = 'cefa38e5b9121bbe9524272b729b5387612c1c300390fa3742c0e164c14caa6c'
 PREVIOUS_COMMIT = 'ef40b46776148026e5df5a815483c2f69fb982b4'
-RECIPE_SHA256 = 'b59832808af932dcd366dfbe0ca03b246bd1f1c44b4384780cb1c59a8b4e3955'
+RECIPE_SHA256 = '100c3b42e73965d59a7c956c79ec77791e7459b8763f7b8611e9ef9ccc560a38'
 BASE = '87f8b8e03cac46a6154b54522d1497baa52c67b2'
 SCREEN = 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
 
@@ -37,20 +40,17 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def recipe():
-    if not __debug__:
-        raise RuntimeError("Owner qualification requires Python assertions; optimized mode refused")
-    raw = read_exact(RECIPE)
-    assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
+def historical_v4_recipe():
+    v3 = read_exact(PREVIOUS_RECIPE)
+    assert digest(v3) == PREVIOUS_RECIPE_SHA256, 'Historical v3 recipe changed'
+    previous = json.loads(v3)
+    raw = read_exact(V4_RECIPE)
+    assert digest(raw) == V4_RECIPE_SHA256, 'Historical v4 recipe changed'
     data = json.loads(raw)
     assert data['schema'] == 'owner-20261119-v4-public' and data['base_commit'] == BASE
-    previous_raw = read_exact(PREVIOUS_RECIPE)
-    assert digest(previous_raw) == PREVIOUS_RECIPE_SHA256, 'Historical v3 recipe changed'
     assert data['previous_commit'] == PREVIOUS_COMMIT
     assert data['previous_recipe_sha256'] == PREVIOUS_RECIPE_SHA256
-    previous = json.loads(previous_raw)
     assert previous['schema'] == 'owner-20261119-v3-public' and previous['base_commit'] == BASE
-    # v3 remains immutable historical evidence, NEVER an alternate accepted candidate.
     assert set(data['candidate_delta']) == V4_CHANGED_PATHS
     assert set(data['inverse_delta']) == {SCREEN, HOPPER}
     merged = dict(previous)
@@ -62,8 +62,24 @@ def recipe():
     return merged
 
 
+def recipe():
+    if not __debug__:
+        raise RuntimeError("Owner qualification requires Python assertions; optimized mode refused")
+    raw = read_exact(RECIPE)
+    assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
+    data = json.loads(raw)
+    assert data['schema'] == 'owner-20261119-v5-metal-assembly' and data['base_commit'] == BASE
+    assert data['previous_commit'] == V4_COMMIT and data['previous_recipe_sha256'] == V4_RECIPE_SHA256
+    assert set(data['candidate_delta']) == V5_CHANGED_PATHS
+    merged = historical_v4_recipe()
+    merged['candidate'] = dict(merged['candidate'], **data['candidate_delta'])
+    merged['schema'] = data['schema']
+    merged['change'] = data['change']
+    return merged
+
+
 def ensure_base_object(root=ROOT, anchor=BASE):
-    assert anchor in {BASE, PREVIOUS_COMMIT}, "Unapproved historical Git anchor"
+    assert anchor in {BASE, PREVIOUS_COMMIT, V4_COMMIT}, "Unapproved historical Git anchor"
     check = subprocess.run(['git','cat-file','-e',anchor+'^{commit}'],cwd=root,capture_output=True)
     if check.returncode:
         # Only GitHub CI may acquire the exact historical object automatically.
@@ -174,3 +190,42 @@ V4_CHANGED_PATHS = {SCREEN, HOPPER,
  'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png',
  'tools/approved_gui_20261119/build_assets.py',
  'tools/approved_gui_20261119/test_assets.py'}
+
+V5_CHANGED_PATHS = {
+ 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png',
+ 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png',
+ 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/owner_control_well.png',
+ 'tools/approved_gui_20261119/build_metal_assets.py',
+ 'tools/approved_gui_20261119/test_metal_assets.py'}
+_V4_VIEW = None
+
+
+def historical_v4_root():
+    """Ephemeral exact Git view for unchanged old-art tests, never current proof."""
+    global _V4_VIEW
+    validate_candidate()
+    data = historical_v4_recipe()
+    expected = dict(data['baseline'], **data['candidate'])
+    expected.update(ADAPTER_HASHES)
+    if _V4_VIEW is None:
+        ensure_base_object(anchor=V4_COMMIT)
+        raw = subprocess.check_output(['git','archive','--format=tar',V4_COMMIT,'--',*sorted(expected)],cwd=ROOT)
+        temporary = tempfile.TemporaryDirectory(prefix='iedctr-v4-history-')
+        dest = Path(temporary.name)
+        seen = set()
+        with tarfile.open(fileobj=io.BytesIO(raw),mode='r:') as archive:
+            for member in archive:
+                if member.isdir():continue
+                assert member.isfile() and member.name in expected and member.name not in seen
+                with archive.extractfile(member) as stream: content = stream.read()
+                assert digest(content) == expected[member.name], 'Historical v4 Git bytes changed'
+                path=dest/member.name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(content);seen.add(member.name)
+        assert seen == set(expected)
+        # Read-only git-show calls in old tests resolve existing objects; no checkout.
+        gitdir=subprocess.check_output(['git','rev-parse','--absolute-git-dir'],cwd=ROOT,text=True).strip()
+        (dest/'.git').write_text('gitdir: '+gitdir+'\n')
+        atexit.register(temporary.cleanup)
+        _V4_VIEW=(dest,temporary)
+    dest=_V4_VIEW[0]
+    for path,sha in expected.items():assert digest(read_exact(dest/path)) == sha, 'Historical v4 view altered'
+    return dest
