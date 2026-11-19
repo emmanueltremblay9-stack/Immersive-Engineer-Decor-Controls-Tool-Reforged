@@ -1,4 +1,4 @@
-"""Owner v3 public candidate gate and exact historical view. No native validation claim.
+"""Owner v4 public candidate gate and exact historical view. No native validation claim.
 
 This is a closed, versioned transition, not a general allowlist. The old guards
 and their inputs remain archived byte-for-byte. Only the named candidate bytes
@@ -18,8 +18,11 @@ ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / 'tools/approved_gui_20261119'
 BASELINE = None
 _BASELINE_TEMP = None
-RECIPE = PACKAGE / 'qualification-v3.json'
-RECIPE_SHA256 = 'cefa38e5b9121bbe9524272b729b5387612c1c300390fa3742c0e164c14caa6c'
+RECIPE = PACKAGE / 'qualification-v4.json'
+PREVIOUS_RECIPE = PACKAGE / 'qualification-v3.json'
+PREVIOUS_RECIPE_SHA256 = 'cefa38e5b9121bbe9524272b729b5387612c1c300390fa3742c0e164c14caa6c'
+PREVIOUS_COMMIT = 'ef40b46776148026e5df5a815483c2f69fb982b4'
+RECIPE_SHA256 = 'b59832808af932dcd366dfbe0ca03b246bd1f1c44b4384780cb1c59a8b4e3955'
 BASE = '87f8b8e03cac46a6154b54522d1497baa52c67b2'
 SCREEN = 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
 
@@ -40,20 +43,36 @@ def recipe():
     raw = read_exact(RECIPE)
     assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
     data = json.loads(raw)
-    assert data['schema'] == 'owner-20261119-v3-public' and data['base_commit'] == BASE
-    return data
+    assert data['schema'] == 'owner-20261119-v4-public' and data['base_commit'] == BASE
+    previous_raw = read_exact(PREVIOUS_RECIPE)
+    assert digest(previous_raw) == PREVIOUS_RECIPE_SHA256, 'Historical v3 recipe changed'
+    assert data['previous_commit'] == PREVIOUS_COMMIT
+    assert data['previous_recipe_sha256'] == PREVIOUS_RECIPE_SHA256
+    previous = json.loads(previous_raw)
+    assert previous['schema'] == 'owner-20261119-v3-public' and previous['base_commit'] == BASE
+    # v3 remains immutable historical evidence, NEVER an alternate accepted candidate.
+    assert set(data['candidate_delta']) == V4_CHANGED_PATHS
+    assert set(data['inverse_delta']) == {SCREEN, HOPPER}
+    merged = dict(previous)
+    merged['schema'] = data['schema']
+    merged['candidate'] = dict(previous['candidate'], **data['candidate_delta'])
+    merged['inverse'] = dict(previous['inverse'], **data['inverse_delta'])
+    merged['stripe_projection_sha256'] = data['stripe_projection_sha256']
+    merged['change'] = data['change']
+    return merged
 
 
-def ensure_base_object(root=ROOT):
-    check = subprocess.run(['git','cat-file','-e',BASE+'^{commit}'],cwd=root,capture_output=True)
+def ensure_base_object(root=ROOT, anchor=BASE):
+    assert anchor in {BASE, PREVIOUS_COMMIT}, "Unapproved historical Git anchor"
+    check = subprocess.run(['git','cat-file','-e',anchor+'^{commit}'],cwd=root,capture_output=True)
     if check.returncode:
         # Only GitHub CI may acquire the exact historical object automatically.
         # Local validation never silently makes a network request.
         if os.environ.get('GITHUB_ACTIONS') != 'true' or os.environ.get('CI') != 'true':
-            raise AssertionError('Missing exact historical Git object '+BASE+'; fetch that commit before validation')
-        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',BASE],cwd=root,check=True,capture_output=True,timeout=120)
-    actual = subprocess.check_output(['git','rev-parse',BASE+'^{commit}'],cwd=root,text=True).strip()
-    assert actual == BASE, 'Historical Git commit changed'
+            raise AssertionError('Missing exact historical Git object '+anchor+'; fetch that commit before validation')
+        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',anchor],cwd=root,check=True,capture_output=True,timeout=120)
+    actual = subprocess.check_output(['git','rev-parse',anchor+'^{commit}'],cwd=root,text=True).strip()
+    assert actual == anchor, 'Historical Git commit changed'
 
 
 def ensure_baseline():
@@ -148,3 +167,10 @@ def historical_root():
 ADAPTER_HASHES = {'tools/validation/factory_r04_inverse_projection.py': 'de8208b3383b39d5afd2707d381e64b80b6e229c73790dc1667946f5f012b0f9', 'tools/validation/test_factory_r04_scoped.py': '1ccc93b2705266fd4d2e608810355e0937e090de25560e97b149af7cf76c4dd8', 'tools/validation/test_factory_registered_artwork.py': 'db126fe274db2944a833747e0fc2b8fa202c733fab5fa17180d8e667d1aea867'}
 
 NEW_GATE_PATHS = {'tools/validation/factory_owner_20261119.py', 'tools/validation/test_factory_owner_tooltip_qualification.py'}
+
+HOPPER = 'src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java'
+V4_CHANGED_PATHS = {SCREEN, HOPPER,
+ 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png',
+ 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png',
+ 'tools/approved_gui_20261119/build_assets.py',
+ 'tools/approved_gui_20261119/test_assets.py'}

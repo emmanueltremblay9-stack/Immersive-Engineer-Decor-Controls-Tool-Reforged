@@ -775,7 +775,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       // Specialist candidate uses six raster texels per logical pixel, not the older atlas UVs.
       graphics.blit(steel,x,y,228,250,0F,0F,1368,1500,1368,1500);
       MachineMenu m=(MachineMenu)this.menu;
-      FactorySteelFrame.slots(graphics,m,x,y);
+      // Slot borders are registered once in the owner-source background.
       int active=Mth.clamp(m.field(15),0,11);
       MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);
       this.drawHoverOutline(graphics,x+slot.x()-1,y+slot.y()-1,18,18,0xFFFFC34A);

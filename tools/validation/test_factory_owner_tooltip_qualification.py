@@ -35,6 +35,25 @@ class OwnerQualification(unittest.TestCase):
         root=self.mutated_root(path,(gate.BASELINE/path).read_bytes())
         with self.assertRaisesRegex(AssertionError,'Wrong owner asset'):gate.validate_candidate(root)
 
+    def test_reject_previous_ef40_png_as_new_candidate(self):
+        gate.ensure_base_object(anchor=gate.PREVIOUS_COMMIT)
+        for machine in ('hopper', 'dropper'):
+            path='src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/'+machine+'.png'
+            previous=subprocess.check_output(['git','show',gate.PREVIOUS_COMMIT+':'+path],cwd=gate.ROOT)
+            root=self.mutated_root(path,previous)
+            with self.subTest(machine=machine), self.assertRaisesRegex(AssertionError,'Wrong owner asset'):
+                gate.validate_candidate(root)
+
+    def test_reject_historical_v3_recipe_mutation(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/'v3.json';p.write_bytes(gate.PREVIOUS_RECIPE.read_bytes()+b' ')
+            with patch.object(gate,'PREVIOUS_RECIPE',p), self.assertRaisesRegex(AssertionError,'Historical v3 recipe changed'):
+                gate.validate_candidate()
+
+    def test_reject_unapproved_history_anchor(self):
+        with self.assertRaisesRegex(AssertionError,'Unapproved historical Git anchor'):
+            gate.ensure_base_object(anchor='0'*40)
+
     def test_reject_guard_mutation(self):
         for path in ['tools/validation/test_factory_tooltip_wrap.py','tools/validation/factory_r04_inverse_projection.py']:
             root=self.mutated_root(path,(gate.ROOT/path).read_bytes()+b'\n# altered\n')

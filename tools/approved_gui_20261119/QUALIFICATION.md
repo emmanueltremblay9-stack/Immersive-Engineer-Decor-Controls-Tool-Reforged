@@ -55,3 +55,34 @@ puis construit et vérifie le JAR avant prepareFactoryControlTooltipClientRun et
 runFactoryControlTooltipClient. Le delta local non commité et l'environnement
 Xvfb bloqué ne permettent pas d'affirmer que runClient a été atteint.
 Clic pile tenue, états/glyphes, clipping et rendu Minecraft restent NOT RUN.
+
+## v4 local follow-up to the rejected ef40 runtime (not published)
+
+The original v3 recipe remains byte-identical historical evidence. The active
+v4 recipe is a compact, closed six-path candidate delta and two exact Java
+inverses, not an alternate acceptance path. The historical 87f8 inventory and
+all its guard hashes remain unchanged. ef40's old Hopper and Dropper PNGs are
+explicitly rejected as the new candidate. No private original PNG or historical
+fixture copy is added to this repository.
+
+v4 changes only empty-well tonal depth, removes the generic rim overdrawing
+registered borders, and corrects the Hopper ribbon using an isotropically sampled
+central painted strip, separate rails and three 5px source heads. Selection is
+still drawn after the background. Slot coordinates, input boundaries, widgets,
+state symbols and Dropper ribbon remain unchanged. The RGB curve may shift chroma
+slightly; it is restricted to empty cavity pixels, not a whole-panel adjustment.
+
+The previous private v2 reproduction archive recorded in v3 remains historical;
+it does not prove v4 reproduction. v4 reproduction uses the same two external
+SHA-pinned originals and the newly pinned generator. Public CI checks the exact
+outputs, source attestations, unchanged pixel regions, nearest-sampled cavity
+contrast, baseline inverses, and rejection tests. It never reconstructs unavailable
+private source images. The old ef40 object may be fetched by exact SHA only in
+GitHub CI for previous-candidate rejection and pixel-delta tests; local tests fail
+closed if historical objects are unavailable.
+
+No v4 native capture, actual held-stack click, or owner artistic acceptance is
+claimed. The held-stack scenario is separately prepared and must not reuse the
+old (-8,83) outside witness: that point is now inside the visible protected panel;
+the correct outside witness is (-9,83). No remote run or publication is authorized
+by this documentation.

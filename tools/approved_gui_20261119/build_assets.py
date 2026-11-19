@@ -58,6 +58,13 @@ def build(output=OUT, manifest_path=None):
    # Preserve the complete dark well and its vignette, not a flat centre crop.
    # A fixed 16-source-pixel inset excludes metal on every approved source slot.
    well=tile.crop((16,16,tile.width-16,tile.height-16))
+   # Local rejected-runtime follow-up: lift only the empty cavity, not metal,
+   # controls, items or the panel. Preserve source vignette; RGB curve may shift chroma slightly.
+   # Shadow floor + concave tonal curve retain a dark edge and graded matte
+   # cavity. Only RGB of the empty well changes; alpha stays opaque.
+   channels=well.split()
+   lut=[min(255,round(5+50*(v/32)**0.7)) for v in range(256)]
+   well=Image.merge('RGBA',tuple(c.point(lut) for c in channels[:3])+(channels[3],))
    patch(result,well,(x*6,y*6,(x+16)*6,(y+16)*6));rects.append([x,y,16,16])
   controls=([(131,13,38,7,(911,146,1193,218)),(130,26,39,7,(911,241,1193,314)),(132,39,37,7,(911,336,1193,409)),(132,48,11,11,(909,432,988,512)),(144,48,11,11,(1009,432,1088,512)),(158,48,11,11,(1111,432,1190,512))] if kind=='hopper' else [(152,31,9,31,(806,174,858,343)),(169,32,30,29,(900,180,1062,336)),(155,65,45,9,(808,366,1072,412)),(155,77,45,9,(808,432,1072,480)),(142,89,20,20,(796,508,879,567)),(165,89,20,20,(899,508,982,567)),(188,89,20,20,(1000,508,1083,567))])
   # Erase transformed control frames before registration, using only a blank
@@ -71,16 +78,28 @@ def build(output=OUT, manifest_path=None):
    patch(result,source.crop(box),(x*6,y*6,(x+w)*6,(y+h)*6))
   if kind=='hopper':
    # Native gap is only 8 logical pixels: preserve stripe direction isotropically.
-   # Repetition uses one 83px source period, not a flattened whole crossmember.
+   # Repetition uses one 86px source period, not a flattened whole crossmember.
    left,right,top,bottom=18*6,177*6,78*6,86*6
-   stripe=source.crop((178,575,261,613))  # 83x38; untouched diagonal pixels
-   for xx in range(left,right,stripe.width):
-    result.paste(stripe.crop((0,0,min(stripe.width,right-xx),38)),(xx,top+5))
-   patch(result,source.crop((140,554,1173,563)),(left,top,right,top+5))
-   patch(result,source.crop((140,615,1173,624)),(left,bottom-5,right,bottom))
-   for sx in (135,377,647,917,1159):
-    cx=round((18+(sx-129)*160/1066)*6)
-    patch(result,source.crop((sx-23,567,sx+23,613)),(cx-20,top+4,cx+20,top+44))
+   # Pure painted ribbon sampled between fixings. Isotropic sampling preserves
+   # the original diagonal; phase is tied to source x=140, period 86 texels.
+   ribbon=source.crop((439,575,525,613))
+   scale=(right-left)/1033
+   tile_w=round(86*scale);tile_h=round(38*scale)
+   ribbon=ribbon.resize((tile_w,tile_h),Image.Resampling.LANCZOS)
+   phase=round(((140-439)%86)*scale)
+   for xx in range(left-phase,right,tile_w):
+    lo=max(left,xx);hi=min(right,xx+tile_w)
+    result.paste(ribbon.crop((lo-xx,0,hi-xx,tile_h)),(lo,top+(48-tile_h)//2))
+   # Close the integer-resampling seam explicitly, never retain old motif.
+   seam=top+(48-tile_h)//2+tile_h
+   if seam<bottom-6:
+    result.paste(result.crop((left,seam-1,right,seam)).resize((right-left,bottom-6-seam)),(left,seam))
+   patch(result,source.crop((140,554,1173,563)),(left,top,right,top+6))
+   patch(result,source.crop((140,615,1173,624)),(left,bottom-6,right,bottom))
+   # Small sampled heads preserve source cadence, with 1.5px guard to rails.
+   for sx in (377,647,917):
+    cx=round((18+(sx-140)*159/1033)*6)
+    patch(result,source.crop((sx-23,567,sx+23,613)),(cx-15,top+9,cx+15,top+39))
    # Large octagonal corner bolts cannot fit that gap. Keep them circular in
    # the margins, fully outside all slot/control footprints (14px wide).
    patch(result,source.crop((0,516,130,646)),(0,75*6,14*6,89*6))

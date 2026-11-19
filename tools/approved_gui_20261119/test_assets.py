@@ -29,6 +29,43 @@ class ApprovedAssets(unittest.TestCase):
     values=[max(pixels[(row*width+col)*4:(row*width+col)*4+3]) for row in range(y*6,(y+16)*6) for col in range(x*6,(x+16)*6)]
     self.assertGreaterEqual(max(values)-min(values),10,(kind,x,y))
 
+ def test_native_size_well_contrast_survives_sampling(self):
+  for kind in b.SPECS:
+   w,h,p=decode_png(b.OUT/(kind+'.png'))
+   for x,y,_ in b.slots(kind):
+    if kind=='hopper':x+=8;y+=16
+    values=[max(p[((y*6+row*6+3)*w+x*6+col*6+3)*4:((y*6+row*6+3)*w+x*6+col*6+3)*4+3]) for row in range(16) for col in range(16)]
+    self.assertGreaterEqual(max(values)-min(values),15)
+    self.assertGreater(sum(values)/len(values),18)
+
+ def test_v4_pixels_changed_only_in_wells_and_hopper_ribbon(self):
+  gate.ensure_base_object(anchor=gate.PREVIOUS_COMMIT)
+  for kind in b.SPECS:
+   path=b.OUT/(kind+'.png')
+   previous=subprocess.check_output(['git','show',gate.PREVIOUS_COMMIT+':'+str(path.relative_to(b.ROOT))],cwd=b.ROOT)
+   with tempfile.TemporaryDirectory() as td:
+    old=Path(td)/'old.png';old.write_bytes(previous);ow,oh,op=decode_png(old)
+   w,h,p=decode_png(path);self.assertEqual((w,h),(ow,oh))
+   ox,oy=(8,16) if kind=='hopper' else (0,0)
+   boxes=[((x+ox)*6,(y+oy)*6,(x+ox+16)*6,(y+oy+16)*6) for x,y,_ in b.slots(kind)]
+   if kind=='hopper':boxes.append((14*6,78*6,178*6,86*6))
+   for row in range(h):
+    spans=sorted((x,z) for x,y,z,t in boxes if y<=row<t);end=0
+    for x,z in spans:
+     if x>end:self.assertEqual(p[(row*w+end)*4:(row*w+x)*4],op[(row*w+end)*4:(row*w+x)*4])
+     end=max(end,z)
+    self.assertEqual(p[(row*w+end)*4:(row*w+w)*4],op[(row*w+end)*4:(row*w+w)*4])
+
+ def test_only_registered_rims_and_selection_order(self):
+  screen=(b.ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java').read_text()
+  hopper=(b.ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java').read_text()
+  self.assertNotIn('FactorySteelFrame.slots(g,menu,x,y)',hopper)
+  self.assertNotIn('FactorySteelFrame.slots(graphics,m,x,y)',screen)
+  start=screen.index('   private void drawRetainedDropper(')
+  end=screen.index('   private void drawFactoryDropperWidgets(',start)
+  section=screen[start:end]
+  self.assertLess(section.index('graphics.blit(steel'),section.index('this.drawHoverOutline('))
+
  def test_hopper_stripe_matches_privately_proven_source_projection(self):
   w,h,pixels=decode_png(b.OUT/'hopper.png')
   crop=b''.join(bytes(pixels[((473+y)*w+140)*4:((473+y)*w+300)*4]) for y in range(38))
@@ -49,6 +86,10 @@ class ApprovedAssets(unittest.TestCase):
    if file=='client/MachineScreen.java':
     start=current.index(b'   @Override\n   protected boolean hasClickedOutside(');end=current.index(b'   private void drawFactoryHopperWidgets(',start)
     current=current[:start]+current[end:]
+    old=b'      FactorySteelFrame.slots(graphics,m,x,y);'
+    new=b'      // Slot borders are registered once in the owner-source background.'
+    self.assertEqual(current.count(new),1)
+    current=current.replace(new,old)
     current=current.replace(b'FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n,state[n]);',b'FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n);')
    self.assertEqual(current,(gate.ensure_baseline()/p).read_bytes())
  def test_runtime_rim_only_new_owner_source(self):
