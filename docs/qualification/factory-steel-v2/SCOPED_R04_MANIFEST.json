@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSED_NOT_APPROVED_NOT_NATIVE_QUALIFIED",
+  "parent_main": "e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c",
+  "source_factory_pr196": "09c8a0e8ebb231dd399a525d615c9eedc6516dc4",
+  "source_r04_pr204": "4e5c1b68c0fed9e091438e26c0c6d3e2ff262f2a",
+  "source_held_item_qa_pr205": "08edc2f3279cc2cd027542e8da22a57bbdce097a",
+  "source_zip_sha256": "a4894cb9e6f73a6bc84c094009e2aa1b8daad826d9fee5d6270ccd2e63602ba3",
+  "previous_native_r04_jar_sha256": "d34fb6b0be27f45eabacb2c968853487edf48e6f92582951b7ad99ae196fd664",
+  "tracked_files": [
+    {
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java",
+      "git_blob_sha": "c740cb61b0fa6185d0dd2e665cc9c13a4f21659c",
+      "status": "modified",
+      "note": "main + Factory-only source blocks"
+    },
+    {
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java",
+      "git_blob_sha": "606ff668080cf82adcf256e309ae15bcede16f99",
+      "status": "modified",
+      "note": "main + Dropper-only geometry lookup"
+    },
+    {
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java",
+      "git_blob_sha": "3369f4d19c786b00891d5fd318430eeb53556fd7",
+      "status": "added",
+      "note": "PR196 original factory render"
+    },
+    {
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactorySteelFrame.java",
+      "git_blob_sha": "68b3bad5c739804be7bcb1b9a15cb9a787a900b3",
+      "status": "added",
+      "note": "trimmed native slot and control rendering; no frame()"
+    },
+    {
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/utility/RetainedDropperLayout.java",
+      "git_blob_sha": "5f26749ac3e9c9026ad7b8e266c7d96daf953039",
+      "status": "added",
+      "note": "PR196 Dropper layout"
+    },
+    {
+      "path": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png",
+      "git_blob_sha": "14799156521554bcefc22e5f437a255075a3b393",
+      "status": "added",
+      "note": "PR204 R04 exact SHA256 14d2a06b9d434a722e67a28c7a3ea1c889d52cbf45236b3678d1248e140622e3"
+    },
+    {
+      "path": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png",
+      "git_blob_sha": "2051e4fdca2378058e8268333556bb8a284fe19f",
+      "status": "added",
+      "note": "PR204 R04 exact SHA256 9c8517f4a8c6c138b899038de3bb72ed4856676351d6b1dd4972c90b1787baaf"
+    },
+    {
+      "path": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/retained_dropper/background.png",
+      "git_blob_sha": "3b0bf2381214c7190a66014f0f0f6dd0c7db9529",
+      "status": "added",
+      "note": "layout textureName auxiliary only; not visual R04"
+    },
+    {
+      "path": "docs/qualification/factory-steel-v2/hopper-mapping.json",
+      "git_blob_sha": "b02f9c5ab9b996228ffb649fda8bd650dbf34503",
+      "status": "added",
+      "note": "PR196 geometry"
+    },
+    {
+      "path": "docs/qualification/factory-steel-v2/dropper-mapping.json",
+      "git_blob_sha": "5d01323ec8dd4396707dd3e658738152591077e4",
+      "status": "added",
+      "note": "PR196 geometry"
+    },
+    {
+      "path": "docs/qualification/factory-steel-v2/protected-regions-r04.json",
+      "git_blob_sha": "9b59e35e6d4a1f3374593e3a5e3bbe5942b1033b",
+      "status": "added",
+      "note": "PR196 144 protected regions"
+    },
+    {
+      "path": "docs/qualification/factory-steel-v2/provenance.json",
+      "git_blob_sha": "32b2eefebf06850a823ea46f743334b4e04501fd",
+      "status": "added",
+      "note": "PR204 asset provenance"
+    },
+    {
+      "path": "docs/qualification/factory-steel-v2/SCOPED_R04.md",
+      "git_blob_sha": "f489d420aa329a09772e70b7f6ec519fe8c1176f",
+      "status": "added",
+      "note": "release boundaries and unrun tests"
+    },
+    {
+      "path": "tools/validation/test_factory_registered_artwork.py",
+      "git_blob_sha": "e32774ae0b98f6407d984aa1f9791490287e3724",
+      "status": "added",
+      "note": "PR196 immutable alpha/regions guard"
+    },
+    {
+      "path": "tools/validation/test_factory_hopper_selection_alignment.py",
+      "git_blob_sha": "4c3cef59630ecc038cb54fe59cb687c04e988db9",
+      "status": "added",
+      "note": "PR196 Hopper 18 pitch guard"
+    },
+    {
+      "path": "tools/validation/test_factory_r04_scoped.py",
+      "git_blob_sha": "5d682b6f04073d167b168a8a5899be2806802fdc",
+      "status": "added",
+      "note": "new candidate static regression"
+    }
+  ],
+  "exclusions": [
+    "R05",
+    "PR199",
+    "Labeled Crate and label editor",
+    "Metal Crafting Table and storage changes",
+    "Electrical Furnace and Waste Incinerator",
+    "MachineMenu.java",
+    "MachineBlockEntity.java",
+    "out-of-bounds FactorySteelFrame.frame()",
+    "retained_dropper/steel.png",
+    "publication/release metadata"
+  ],
+  "test_commands": [
+    "python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory_r04_scoped.py' -v",
+    "python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory_registered_artwork.py' -v",
+    "python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory_hopper_selection_alignment.py' -v",
+    "./gradlew compileJava test build --stacktrace"
+  ],
+  "pending": [
+    "fresh exact-JAR native controls and states",
+    "slider min/mid/max",
+    "persistence save/reload",
+    "dispensing and transfer",
+    "GUI scales 3/4",
+    "artistic owner acceptance"
+  ]
+}
