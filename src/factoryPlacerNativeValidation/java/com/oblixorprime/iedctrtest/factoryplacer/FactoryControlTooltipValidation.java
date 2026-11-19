@@ -53,7 +53,7 @@ public final class FactoryControlTooltipValidation {
     private static final String PREFIX = "block.immersive_engineer_decor_controls_tool_reforged.factory_" + (HOPPER ? "hopper" : "dropper");
     private static final int[][] POINTS = HOPPER ? new int[][]{{148,23},{148,52},{148,52},{148,52},{162,52},{162,52}} : new int[][]{{156,46},{151,103},{151,103},{174,103},{174,103},{197,103},{197,103}};
     private static final String[] NAMES = HOPPER ? new String[]{"delayindicator","inversion","inversion_changed","inversion_normal","triggermode","triggermode_changed"} : new String[]{"velocity","filtergate","filtergate_changed","externgate","externgate_changed","triggermode","triggermode_changed"};
-    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, TRIGGER_SETUP, ICON, RESUME }
+    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, TRIGGER_SETUP, ICON, RESUME, HELD_ITEM }
     private static Stage stage = Stage.BOOT;
     private static boolean complete, tooltipInFrame;
     private static int ticks, hoverIndex, tooltipFrames, pointerX, pointerY;
@@ -112,6 +112,7 @@ public final class FactoryControlTooltipValidation {
             var menu = (MachineMenu)mc.player.containerMenu;
             require(menu.kind() == (HOPPER ? com.oblixorprime.engineersdecorreforged.utility.MachineKind.FACTORY_HOPPER : com.oblixorprime.engineersdecorreforged.utility.MachineKind.FACTORY_DROPPER), "Wrong factory menu");
             require(!screen.isSuppressTooltipsForPanelCapture(), "Tooltip suppression forbidden");
+            if (stage == Stage.HELD_ITEM) { HeldItem.tick(mc, screen, menu); return; }
             if (stage == Stage.OPEN) {
                 if (ticks < 20 || !matches(mc, p -> p.containerMenu instanceof MachineMenu serverMenu && serverMenu.kind() == menu.kind() && serverMenu.field(2) == menu.field(2))) return;
                 opened++; pointerX = screen.width - 2; pointerY = screen.height - 2; move(mc, screen);
@@ -215,6 +216,7 @@ public final class FactoryControlTooltipValidation {
                     nativeClick(1);
                 }
                 if (++hoverIndex < POINTS.length) { enter(Stage.HOVER); setHover(mc, screen); return; }
+                if (Boolean.getBoolean("iedctr.factoryControlInteraction")) { enter(Stage.HELD_ITEM); return; }
                 packaged = FactoryControlRuntimeProof.verify(mc); finish(mc, null);
     }
     private static void boot(Minecraft mc) throws Exception {
@@ -273,6 +275,14 @@ public final class FactoryControlTooltipValidation {
         return Math.abs(mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth()-pointerX)<1
             && Math.abs(mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight()-pointerY)<1;
     }
+    @SubscribeEvent public static void heldPress(ScreenEvent.MouseButtonPressed.Post event) {
+        if (Boolean.getBoolean("iedctr.factoryControlInteraction") && stage==Stage.HELD_ITEM && !complete)
+            HeldItem.input(event.getScreen(),event.getMouseX(),event.getMouseY(),event.getButton(),true);
+    }
+    @SubscribeEvent public static void heldRelease(ScreenEvent.MouseButtonReleased.Post event) {
+        if (Boolean.getBoolean("iedctr.factoryControlInteraction") && stage==Stage.HELD_ITEM && !complete)
+            HeldItem.input(event.getScreen(),event.getMouseX(),event.getMouseY(),event.getButton(),false);
+    }
     @SubscribeEvent public static void before(ScreenEvent.Render.Pre event) { tooltipInFrame=false; }
     @SubscribeEvent public static void tooltip(RenderTooltipEvent.Color event) {
         var mc=Minecraft.getInstance();
@@ -295,6 +305,7 @@ public final class FactoryControlTooltipValidation {
         } catch(Throwable error){finish(mc,error);}
     }
     @SubscribeEvent public static void after(ScreenEvent.Render.Post event) {
+        if(stage==Stage.HELD_ITEM && !complete)HeldItem.render(event);
         if(stage==Stage.ICON && event.getScreen()==Minecraft.getInstance().screen && atPointer(Minecraft.getInstance(),(MachineScreen)event.getScreen()))iconFrames++;
         if(tooltipInFrame && stage==Stage.HOVER && event.getScreen()==Minecraft.getInstance().screen){observed=tooltip.deepCopy();tooltipFrames++;} tooltipInFrame=false;
     }
@@ -325,12 +336,184 @@ public final class FactoryControlTooltipValidation {
             proof.addProperty("selected_language",mc.getLanguageManager().getSelected());proof.addProperty("width",mc.getWindow().getWidth());proof.addProperty("height",mc.getWindow().getHeight());
             proof.addProperty("native_visual_acceptance",false);
             proof.addProperty("input_method", "XTest block interaction and tooltip hover; seeded isolated integrated world");
+            if (Boolean.getBoolean("iedctr.factoryControlInteraction")) proof.add("interaction",HeldItem.proof());
             proof.add("captures",captures);if(error!=null)proof.addProperty("error",error.toString());
             Files.writeString(directory.resolve("factory-control-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");
         }}catch(Exception ex){EngineersDecorReforged.LOGGER.error("Factory tooltip proof write failed",ex);}
         if(error==null)EngineersDecorReforged.LOGGER.info("IEDCTR_FACTORY_CONTROL PASSED nonce={}",nonce);
         else EngineersDecorReforged.LOGGER.error("IEDCTR_FACTORY_CONTROL FAILED at "+stage,error);
         mc.stop();
+    }
+    /** Opt-in witness, executed after the unmodified tooltip traversal. Test fixtures only. */
+    private static final class HeldItem {
+        private static final int[][] POINTS_HELD = HOPPER
+            ? new int[][]{{2,2},{175,2},{2,164},{174,164},{2,83},{174,83},{88,64},{88,153}}
+            : new int[][]{{2,2},{226,2},{2,248},{226,248},{2,125},{226,125},{114,116},{114,243}};
+        private static final int[][] CONTROLS = HOPPER ? new int[][]{{126,1,49,60}}
+            : new int[][]{{151,31,11,31},{168,31,32,31},{154,65,47,10},{154,76,47,10},
+                {122,92,13,13},{143,99,18,9},{166,99,18,9},{189,99,18,9}};
+        private static final JsonArray cases = new JsonArray();
+        private static CompletableFuture<JsonObject> snapshot;
+        private static JsonObject before, pickup;
+        private static int phase, action = -1, localX, localY, button;
+        private static String beforeFile, beforeHash;
+        private static int panelWidth,panelHeight,panelLeft,panelTop;
+        private static double guiScale;
+        private static int mcPressCount,mcReleaseCount,beforeFrames,afterFrames;
+        private static JsonObject renderedState;
+
+        static void tick(Minecraft mc, MachineScreen screen, MachineMenu menu) throws Exception {
+            if (phase == 0) {
+                panelWidth=menu.layout().imageWidth();panelHeight=menu.layout().imageHeight();
+                panelLeft=(screen.width-panelWidth)/2;panelTop=(screen.height-panelHeight)/2;guiScale=mc.getWindow().getGuiScale();
+                pending = mc.getSingleplayerServer().submit(() -> {
+                    var p = player(mc);
+                    require(p.containerMenu.getCarried().isEmpty() && p.getInventory().isEmpty() && machine.isEmpty(), "Held fixture not empty");
+                    require(p.serverLevel().getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class,
+                        p.getBoundingBox().inflate(32)).isEmpty(), "Preexisting item entities");
+                    p.getInventory().setItem(9, new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.STONE,64));
+                    p.containerMenu.broadcastChanges();
+                });
+                phase=1; ticks=0; return;
+            }
+            if (phase == 1) {
+                if(ticks<12)return;
+                JsonObject server=serverSnapshot(mc,false); if(server==null)return;
+                if(!synced(server,clientSnapshot(mc,menu)))return;
+                require(server.get("slots").getAsInt()==64 && server.get("carried").getAsInt()==0
+                    && server.get("drops").getAsInt()==0,"Held fixture must contain exactly 64 stone");
+                for(int i=0;i<server.getAsJsonArray("player_inventory").size();i++)
+                    require(server.getAsJsonArray("player_inventory").get(i).getAsInt()==(i==9?64:0),"Wrong fixture inventory slot");
+                var source=menu.slots.stream().filter(s -> s.container==mc.player.getInventory() && s.getContainerSlot()==9).findFirst().orElseThrow();
+                localX=source.x+8; localY=source.y+8;button=1;
+                position(mc,screen,menu);phase=2;ticks=0;beforeFrames=0;return;
+            }
+            if(phase==2){
+                if(!atPointer(mc,screen)){move(mc,screen);return;}
+                if(ticks<12 || beforeFrames<3)return;
+                JsonObject server=serverSnapshot(mc,false);if(server==null)return;
+                if(!synced(server,clientSnapshot(mc,menu)))return;
+                before=server;
+                beforeFile="factory-interaction-before-"+(action<0?"pickup":Integer.toString(action))+".png";
+                screenshot(mc,directory.resolve(beforeFile));
+                beforeHash=FactoryControlRuntimeProof.hash(Files.readAllBytes(directory.resolve(beforeFile)));
+                mcPressCount=0;mcReleaseCount=0;afterFrames=0;renderedState=null;
+                phase=3;ticks=0;nativeClick(button);return;
+            }
+            if(phase==3){
+                if(ticks<12)return;
+                require(ticks<100 || (mcPressCount==1&&mcReleaseCount==1),"Minecraft input callbacks absent");
+                if(mcPressCount!=1||mcReleaseCount!=1)return;
+                boolean outside=action==POINTS_HELD.length*2;
+                JsonObject server=serverSnapshot(mc,outside);if(server==null)return;
+                JsonObject client=clientSnapshot(mc,menu);
+                if(!synced(server,client))return;
+                int expectedCarried=outside?63:64,expectedDrops=outside?1:0;
+                // A real pickup/drop must be acknowledged, never manufactured by fixture code.
+                if(action==-1 && server.get("carried").getAsInt()!=64){require(ticks<100,"Pickup not acknowledged");return;}
+                if(outside && server.get("drops").getAsInt()!=1){require(ticks<100,"Outside drop not acknowledged");return;}
+                require(server.get("carried").getAsInt()==expectedCarried && server.get("slots").getAsInt()==0
+                    && server.get("drops").getAsInt()==expectedDrops && server.get("total").getAsInt()==64,
+                    "Held item conservation or outside witness differs");
+                for(var count:server.getAsJsonArray("player_inventory"))require(count.getAsInt()==0,"Fixture left player inventory");
+                require(server.get("entity_count").getAsInt()==(outside?1:0),"Unexpected item entity count");
+                require(configEqual(server,before),"Decorative click changed machine configuration");
+                if(action>=0)require(server.get("slot_counts").equals(before.get("slot_counts"))
+                    && server.get("player_inventory").equals(before.get("player_inventory")),"Decoration altered inventory");
+                if(renderedState==null || !synced(renderedState,client)){renderedState=client.deepCopy();afterFrames=0;return;}
+                if(afterFrames<3)return;
+                var entry=new JsonObject();
+                entry.addProperty("name",action==-1?"pickup":outside?"outside_right":"decoration_"+(action/2)+"_"+(button==1?"left":"right"));
+                entry.addProperty("button",button);entry.addProperty("x",localX);entry.addProperty("y",localY);
+                entry.addProperty("pointer_x",pointerX);entry.addProperty("pointer_y",pointerY);
+                entry.addProperty("pointer_ack",atPointer(mc,screen));entry.addProperty("xtest_press_release_ack",true);
+                entry.addProperty("input_callback_scope","ScreenEvent.MouseButtonPressed.Post + MouseButtonReleased.Post; normal handler ran, not necessarily returned handled=true");
+                entry.addProperty("consumed_press_count",mcPressCount);entry.addProperty("consumed_release_count",mcReleaseCount);
+                entry.addProperty("mc_button",button==1?0:1);entry.addProperty("mc_input_action_index",action);
+                entry.addProperty("render_frames_before",beforeFrames);entry.addProperty("render_frames_after",afterFrames);
+                entry.addProperty("ack_scope","authoritative unchanged-state observation; no rejected-packet receipt claim");
+                entry.addProperty("server_ack",true);entry.addProperty("settle_ticks",ticks);
+                entry.add("before",before.deepCopy());entry.add("after",server);entry.add("client_after",client);
+                entry.addProperty("before_file",beforeFile);entry.addProperty("before_sha256",beforeHash);
+                Path file=directory.resolve("factory-interaction-"+(action<0?"pickup":Integer.toString(action))+".png");
+                screenshot(mc,file);entry.addProperty("file",file.getFileName().toString());
+                entry.addProperty("sha256",FactoryControlRuntimeProof.hash(Files.readAllBytes(file)));
+                if(action==-1)pickup=entry;else cases.add(entry);
+                if(outside){packaged=FactoryControlRuntimeProof.verify(mc);finish(mc,null);return;}
+                action++; if(action<POINTS_HELD.length*2){
+                    localX=POINTS_HELD[action/2][0];localY=POINTS_HELD[action/2][1];button=action%2==0?1:3;
+                    checkDecoration(menu,localX,localY);
+                }else{localX=-8;localY=menu.layout().imageHeight()/2;button=3;}
+                position(mc,screen,menu);phase=2;ticks=0;beforeFrames=0;
+            }
+        }
+        static void input(net.minecraft.client.gui.screens.Screen screen,double x,double y,int b,boolean press){
+            var mc=Minecraft.getInstance();
+            try{
+                if(phase!=3 || screen!=mc.screen)return;
+                require(Math.abs(x-pointerX)<1&&Math.abs(y-pointerY)<1&&b==(button==1?0:1),"Unexpected Minecraft input target/button");
+                if(press){require(mcPressCount==0&&mcReleaseCount==0,"Duplicate/out-of-order Minecraft press");mcPressCount++;}
+                else{require(mcPressCount==1&&mcReleaseCount==0,"Duplicate/out-of-order Minecraft release");mcReleaseCount++;}
+            }catch(Throwable error){finish(mc,error);}
+        }
+        static void render(ScreenEvent.Render.Post event){
+            var mc=Minecraft.getInstance();
+            try{
+                if(event.getScreen()!=mc.screen || !(mc.screen instanceof MachineScreen screen) || !atPointer(mc,screen))return;
+                if(phase==2)beforeFrames++;
+                if(phase==3&&renderedState!=null){
+                    if(synced(renderedState,clientSnapshot(mc,(MachineMenu)mc.player.containerMenu)))afterFrames++;
+                    else{afterFrames=0;renderedState=null;}
+                }
+            }catch(Throwable error){finish(mc,error);}
+        }
+        private static void screenshot(Minecraft mc,Path file)throws Exception{
+            require(!Files.exists(file),"Stale interaction capture");
+            try(var image=Screenshot.takeScreenshot(mc.getMainRenderTarget())){image.writeToFile(file);}
+        }
+        private static void checkDecoration(MachineMenu menu,int x,int y){
+            require(x>=0&&y>=0&&x<menu.layout().imageWidth()&&y<menu.layout().imageHeight(),"Decoration outside native rectangle");
+            for(var slot:menu.slots)require(!(x>=slot.x-1&&x<slot.x+17&&y>=slot.y-1&&y<slot.y+17),"Decoration intersects slot hover bounds");
+            for(var r:CONTROLS)require(!(x>=r[0]&&x<r[0]+r[2]&&y>=r[1]&&y<r[1]+r[3]),"Decoration intersects control");
+        }
+        private static void position(Minecraft mc,MachineScreen screen,MachineMenu menu){
+            pointerX=(screen.width-menu.layout().imageWidth())/2+localX;
+            pointerY=(screen.height-menu.layout().imageHeight())/2+localY;
+            require(pointerX>=0&&pointerY>=0&&pointerX<screen.width&&pointerY<screen.height,"Witness outside window");move(mc,screen);
+        }
+        private static JsonObject clientSnapshot(Minecraft mc,MachineMenu menu){return counts(menu,mc.player.getInventory());}
+        private static JsonObject counts(MachineMenu menu,net.minecraft.world.entity.player.Inventory inventory){
+            var out=new JsonObject();var slots=new JsonArray();int total=0;
+            for(var slot:menu.slots){var stack=slot.getItem();require(stack.isEmpty()||stack.is(net.minecraft.world.item.Items.STONE),"Unexpected fixture item");slots.add(stack.getCount());total+=stack.getCount();}
+            var carried=menu.getCarried();require(carried.isEmpty()||carried.is(net.minecraft.world.item.Items.STONE),"Unexpected carried item");
+            var inv=new JsonArray();for(int i=0;i<inventory.getContainerSize();i++){var stack=inventory.getItem(i);require(stack.isEmpty()||stack.is(net.minecraft.world.item.Items.STONE),"Unexpected player item");inv.add(stack.getCount());}
+            var fields=new JsonArray();for(int i=0;i<16;i++)fields.add(menu.field(i));
+            out.addProperty("container_id",menu.containerId);out.addProperty("slots",total);out.addProperty("carried",carried.getCount());out.add("slot_counts",slots);out.add("player_inventory",inv);out.add("fields",fields);return out;
+        }
+        private static JsonObject serverSnapshot(Minecraft mc,boolean outsideWitness){
+            if(snapshot==null){snapshot=mc.getSingleplayerServer().submit(()->{
+                var p=player(mc);require(p.containerMenu instanceof MachineMenu,"Server menu closed during held witness");
+                var out=counts((MachineMenu)p.containerMenu,p.getInventory());int drops=0;
+                var entities=p.serverLevel().getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class,p.getBoundingBox().inflate(32));
+                for(var entity:entities){require(entity.getItem().is(net.minecraft.world.item.Items.STONE),"Unexpected dropped item");drops+=entity.getItem().getCount();}
+                out.addProperty("drops",drops);out.addProperty("entity_count",entities.size());
+                out.addProperty("total",out.get("slots").getAsInt()+out.get("carried").getAsInt()+drops);return out;
+            });return null;}
+            if(!snapshot.isDone())return null;JsonObject result=snapshot.join();snapshot=null;return result;
+        }
+        private static boolean synced(JsonObject server,JsonObject client){
+            for(String key:new String[]{"container_id","slots","carried","slot_counts","player_inventory"})if(!server.get(key).equals(client.get(key)))return false;
+            return configEqual(server,client);
+        }
+        private static boolean configEqual(JsonObject a,JsonObject b){
+            for(int i=0;i<(HOPPER?4:7);i++)if(!a.getAsJsonArray("fields").get(i).equals(b.getAsJsonArray("fields").get(i)))return false;
+            return true;
+        }
+        static JsonObject proof(){var p=new JsonObject();p.addProperty("input_method","XTest");p.addProperty("fixture_item","minecraft:stone");
+            p.addProperty("initial_total",64);p.addProperty("scope","held-item decoration and one right-click outside positive witness; not all controls");
+            p.addProperty("entity_mutation",false);p.addProperty("panel_width",panelWidth);p.addProperty("panel_height",panelHeight);
+            p.addProperty("panel_left",panelLeft);p.addProperty("panel_top",panelTop);p.addProperty("gui_scale",guiScale);
+            p.addProperty("stable_config_field_count",HOPPER?4:7);if(pickup!=null)p.add("pickup",pickup);p.add("cases",cases);return p;}
     }
     private static void require(boolean ok,String reason){FactoryControlRuntimeProof.require(ok,reason);}
 }

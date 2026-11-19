@@ -128,6 +128,7 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, mac
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--machine', choices=['hopper','dropper'], required=True)
+    parser.add_argument('--interaction', action='store_true', help='Also qualify held-stack decor/margins and outside-click witness')
     parser.add_argument('--language', choices=['en_us','fr_fr'], default='en_us')
     parser.add_argument('--width', type=int, default=1280)
     parser.add_argument('--height', type=int, default=720)
@@ -157,6 +158,7 @@ def main():
   systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
   systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
   systemProperty 'iedctr.factoryControlMachine', System.getenv('IEDCTR_FACTORY_MACHINE')
+  systemProperty 'iedctr.factoryControlInteraction', System.getenv('IEDCTR_FACTORY_INTERACTION')
   systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
   systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_MOD_JAR')
   systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_MOD_JAR_SHA256')
@@ -178,7 +180,7 @@ assert not marker.exists()
 marker.write_text(nonce+'\n'+os.environ['DISPLAY'])
 os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
 """)
-    env=dict(os.environ,IEDCTR_FACTORY_MACHINE=args.machine,IEDCTR_GAMEPLAY_DIR=str(game),IEDCTR_GAMEPLAY_NONCE=nonce,IEDCTR_EXECUTED_SOURCE_SHA=sha,
+    env=dict(os.environ,IEDCTR_FACTORY_INTERACTION=str(args.interaction).lower(),IEDCTR_FACTORY_MACHINE=args.machine,IEDCTR_GAMEPLAY_DIR=str(game),IEDCTR_GAMEPLAY_NONCE=nonce,IEDCTR_EXECUTED_SOURCE_SHA=sha,
              IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')
     base=['bash',str(project/'gradlew'),'--no-daemon','--stacktrace']
     print('Independent native Factory control evidence: '+str(evidence),flush=True)
@@ -191,6 +193,8 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
         report=json.loads((project/'build/reports/factory-placer-packaged-runtime.json').read_text())
         jar=Path(report['jar_path']);jar_sha=hashlib.sha256(jar.read_bytes()).hexdigest()
         require(jar_sha==report['jar_sha256'],'Classpath JAR hash differs')
+        if args.interaction:
+            require(jar_sha=='d34fb6b0be27f45eabacb2c968853487edf48e6f92582951b7ad99ae196fd664', 'R04 production JAR changed in test-only extension')
         (evidence/'packaged-runtime-classpath.json').write_text(json.dumps(report,indent=2))
         env.update(IEDCTR_EXPECTED_MOD_JAR=str(jar.resolve()),IEDCTR_EXPECTED_MOD_JAR_SHA256=jar_sha)
         gradle=base+['--init-script',str(init)]
@@ -204,6 +208,9 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
                 and 'IEDCTR_FACTORY_CONTROL PASSED nonce='+nonce in logs,'Native exit/log gate failed')
         proof=json.loads((game/'factory-control-proof.json').read_text())
         validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.language,args.machine)
+        if args.interaction:
+            from factory_control_interaction_proof import validate_interaction
+            validate_interaction(proof, game, args.width, args.height, args.machine)
         require(clean() and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,'Source/JAR changed during run')
         print('PASS bounded native Factory control tooltips; not owner visual acceptance or complete modpack qualification.')
         return 0
