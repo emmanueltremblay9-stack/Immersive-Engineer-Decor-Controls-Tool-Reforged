@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 from client_mixin_smoke import SmokeFailure
+from factory_r04_inverse_projection import project_preserved_bytes
 from freezer_v5_reconciliation import current_hash
 from tree_integration_preservation import (
     MAIN_COMMIT, MILKING_UPSTREAM_INTEGRATED_FILES, TREE_COMMIT,
@@ -55,7 +56,7 @@ def check_preservation(root=ROOT):
     for name,expected in pins['sha256'].items():
         expected = current_hash(name, expected)
         path=root/name
-        if path.is_symlink() or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
+        if path.is_symlink() or not path.is_file() or hashlib.sha256(project_preserved_bytes(name, path.read_bytes())).hexdigest()!=expected:
             raise SmokeFailure('Production preservation failed: '+name)
     j=root/'src/main/java/com/oblixorprime/engineersdecorreforged'
     screen=(j/'client/MachineScreen.java').read_text()

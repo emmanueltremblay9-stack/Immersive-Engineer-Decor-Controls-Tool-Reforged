@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "PROPOSED_NOT_APPROVED_NOT_NATIVE_QUALIFIED",
+  "status": "PROPOSED_GUARDS_RECONCILIATION_PENDING_CI_AND_ARTISTIC_APPROVAL",
   "parent_main": "e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c",
   "source_factory_pr196": "09c8a0e8ebb231dd399a525d615c9eedc6516dc4",
   "source_r04_pr204": "4e5c1b68c0fed9e091438e26c0c6d3e2ff262f2a",
@@ -82,9 +82,9 @@
     },
     {
       "path": "docs/qualification/factory-steel-v2/SCOPED_R04.md",
-      "git_blob_sha": "f489d420aa329a09772e70b7f6ec519fe8c1176f",
-      "status": "added",
-      "note": "release boundaries and unrun tests"
+      "git_blob_sha": "eba60dd1250913f7fd53ed0cff6dbc5b774f9f6f",
+      "status": "modified",
+      "note": "record evidence and hard exclusions"
     },
     {
       "path": "tools/validation/test_factory_registered_artwork.py",
@@ -103,6 +103,48 @@
       "git_blob_sha": "5d682b6f04073d167b168a8a5899be2806802fdc",
       "status": "added",
       "note": "new candidate static regression"
+    },
+    {
+      "path": "src/main/java/com/oblixorprime/engineersdecorreforged/gametest/MachineGuiGameTests.java",
+      "git_blob_sha": "d3ef4f91a8a908323a26d0becc7cef0be8f7a50b",
+      "status": "modified",
+      "note": "single Factory Dropper parent texture expectation; exact reversal to main guarded"
+    },
+    {
+      "path": "tools/validation/factory_r04_inverse_edits.json",
+      "git_blob_sha": "1c3d1dabb7b9ab3443843bd70ecec8e54d70a112",
+      "status": "added",
+      "note": "immutable five Factory-only inverse edits"
+    },
+    {
+      "path": "tools/validation/factory_r04_inverse_projection.py",
+      "git_blob_sha": "be50ee70c35661c5496be440425f20906d94b6c1",
+      "status": "added",
+      "note": "fail-closed full-byte Git blob projection"
+    },
+    {
+      "path": "tools/validation/test_factory_r04_inverse_projection.py",
+      "git_blob_sha": "f308fb204849471f105b5559053855e05f35f5b4",
+      "status": "added",
+      "note": "positive exact and negative foreign mutation tests"
+    },
+    {
+      "path": "tools/validation/factory_tooltip_integration.py",
+      "git_blob_sha": "a9aeeb34a5d4b9496a379f109ec5bd9a240d4c65",
+      "status": "modified",
+      "note": "retain historical SHA pins after exact R04 reverse projection"
+    },
+    {
+      "path": "tools/validation/tree_integration_preservation.py",
+      "git_blob_sha": "3e18cfd7dbe6babc98d8e9d442ce8ab4bff91f76",
+      "status": "modified",
+      "note": "project MachineScreen only while preserving historical Tree/Solar/Milking/Freezer pins"
+    },
+    {
+      "path": "tools/validation/check_milking_qualification.py",
+      "git_blob_sha": "3cbb2af160698ca644dea92b5df771059a2eaaeb",
+      "status": "modified",
+      "note": "use exact projection for pinned MachineScreen only"
     }
   ],
   "exclusions": [
@@ -118,17 +160,29 @@
     "publication/release metadata"
   ],
   "test_commands": [
+    "python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory_r04_inverse_projection.py' -v",
     "python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory_r04_scoped.py' -v",
     "python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory_registered_artwork.py' -v",
     "python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory_hopper_selection_alignment.py' -v",
     "./gradlew compileJava test build --stacktrace"
   ],
   "pending": [
+    "re-run exactly scoped negative guard projection tests on new commit and read back",
     "fresh exact-JAR native controls and states",
     "slider min/mid/max",
     "persistence save/reload",
     "dispensing and transfer",
     "GUI scales 3/4",
     "artistic owner acceptance"
-  ]
+  ],
+  "correctif_206_r04": {
+    "parent_commit": "5b2453eca29ad06378dab81b1500f23486713185",
+    "updated_paths": 8,
+    "projection_recipe_git_sha": "1c3d1dabb7b9ab3443843bd70ecec8e54d70a112",
+    "historical_pins_modified": false,
+    "old_game_test_git_blob": "36e1cac30819b332e185006bf211f804f2e67826",
+    "projected_main_screen_git_blob": "ca92525bc350e161c136e3dd295c70c381bf1153",
+    "candidate_screen_git_blob": "c740cb61b0fa6185d0dd2e665cc9c13a4f21659c",
+    "current_ci_status": "NOT_PERFORMED"
+  }
 }

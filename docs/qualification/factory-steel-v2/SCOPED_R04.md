@@ -17,3 +17,16 @@ The two 6× backgrounds use immutable Git blobs from #204 and must have SHA-256:
 Historical R04 evidence belongs to #204/#205 and the original JAR `d34fb6b0be27f45eabacb2c968853487edf48e6f92582951b7ad99ae196fd664`. Any new build here receives a new JAR SHA and its **own** native proof. Existing 35-case matrix remains open: state extremes, persistence, dispensing, scales 3/4, partial tooltip/focus/input checks, and owner visual approval.
 
 Targeted checks: `python -m unittest discover -s tools/validation -p 'test_factory*' -v`; `./gradlew compileJava test build` (Java 21). Full build and game tests are independently recorded, not implied by this source-only preparation. No merge or publication.
+
+## CORRECTIF-206-R04 — exact regression reconciliation (proposed, unqualified)
+
+Base candidate: `5b2453eca29ad06378dab81b1500f23486713185`.
+The baseline GameTest's **single** Factory Dropper parent texture expectation now matches the actual unchanged `RetainedDropperLayout.TEXTURE` (`retained_dropper/background`). The test still checks the real menu, slot count and parent texture. `tools/validation/test_factory_r04_inverse_projection.py` compares the one-line reversal to the immutable original complete `MachineGuiGameTests.java` Git blob; unrelated mutations fail.
+
+Historical Factory tooltip, Milking/Freezer, Solar, Tree and Barrel SHA-256 pins remain unchanged. Their MachineScreen checks normalize **only** through `factory_r04_inverse_projection.py`: the exact R04 screen Git blob must match, five explicitly stored inverse edits must be unique and byte-identical to the anchored source, and the reconstructed complete screen must match the immutable `main` Git blob. Only then are the existing historical SHA-256 assertions run. Source changes outside Factory, altered controls, an altered recipe or altered history fail closed. No global allowlist, wildcard or ignored hash mismatch is introduced.
+
+`factory_r04_inverse_edits.json` contains the exact five inverse edits: `renderBg`, Hopper widgets, Dropper click path, Dropper tooltip and removal of the added Dropper rendered overlay method. The immutable original and candidate Git blobs are recorded inside the projection code. Negative mutation tests cover unrelated Milking/Freezer changes, Factory selector/tooltip/action changes, recipe tampering and arbitrary GameTest edits.
+
+Observed pre-fix CI (head `5b2453ec`): `compileJava processResources` PASS; JUnit `test` PASS; `runGameTestServer` FAIL (only `all_machine_blocks_open_machine_menu` parent texture mismatch); Factory controls preflight FAIL at the complete historical SHA guard; Solar/Milking/Barrel preservation preflight FAIL at `MachineScreen.java`; some other jobs stop at the same GameTest before native capture. The French milking pagination job additionally had an unrelated apt mirror sync failure. All post-fix CI, build and native outcomes are **NOT_PERFORMED** until new exact commit evidence exists.
+
+No new artwork, mechanics, slot positions, packets, public release metadata, or edits to #196/#199/#204/#205.

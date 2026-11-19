@@ -1,5 +1,6 @@
 """Exact additive Factory control-tooltip layer; historical pins remain immutable."""
 import hashlib
+from factory_r04_inverse_projection import project_screen_to_main
 PATH = 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
 BASE_SHA256 = '2b0f8cc8bfeac9f421b6948833e4d88b7c993c5c633b6f26feebc6f96f2a0e6f'
 CURRENT_SHA256 = '92fc98c4a92e236c6f8237109d85eed485beda0abeb2d0060ba495622397fabf'
@@ -13,6 +14,9 @@ def current_hash(path, historical_hash):
     return CURRENT_SHA256
 
 def assert_projection(source):
+    # Fail closed unless the exact, five-edit R04 Factory inverse reconstructs
+    # the immutable historical MachineScreen bytes. Do not modify the pins.
+    source = project_screen_to_main(source)
     assert hashlib.sha256(source.encode()).hexdigest() == CURRENT_SHA256
     assert source.count(AFTER) == 1
     assert hashlib.sha256(source.replace(AFTER, BEFORE, 1).encode()).hexdigest() == BASE_SHA256
