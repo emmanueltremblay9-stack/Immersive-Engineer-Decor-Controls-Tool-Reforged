@@ -82,9 +82,9 @@
     },
     {
       "path": "docs/qualification/factory-steel-v2/SCOPED_R04.md",
-      "git_blob_sha": "eba60dd1250913f7fd53ed0cff6dbc5b774f9f6f",
+      "git_blob_sha": "2110b0ef1a18b82a330148e7856fcdb352abf5b4",
       "status": "modified",
-      "note": "record evidence and hard exclusions"
+      "note": "record second guard pin and separate previous CI identities"
     },
     {
       "path": "tools/validation/test_factory_registered_artwork.py",
@@ -118,15 +118,15 @@
     },
     {
       "path": "tools/validation/factory_r04_inverse_projection.py",
-      "git_blob_sha": "be50ee70c35661c5496be440425f20906d94b6c1",
-      "status": "added",
-      "note": "fail-closed full-byte Git blob projection"
+      "git_blob_sha": "7b6c28f3bd5b5bd5e0fe1e5342b9a7894f53ad5c",
+      "status": "modified",
+      "note": "exact independent inverse for Screen and Dropper Layout only"
     },
     {
       "path": "tools/validation/test_factory_r04_inverse_projection.py",
-      "git_blob_sha": "f308fb204849471f105b5559053855e05f35f5b4",
-      "status": "added",
-      "note": "positive exact and negative foreign mutation tests"
+      "git_blob_sha": "98e26ba35b365291f42a45e76c069be170e0e6ff",
+      "status": "modified",
+      "note": "positive exact projection plus negative mutations of unrelated Hopper/metal table"
     },
     {
       "path": "tools/validation/factory_tooltip_integration.py",
@@ -145,6 +145,12 @@
       "git_blob_sha": "3cbb2af160698ca644dea92b5df771059a2eaaeb",
       "status": "modified",
       "note": "use exact projection for pinned MachineScreen only"
+    },
+    {
+      "path": "tools/validation/factory_r04_layout_inverse_edits.json",
+      "git_blob_sha": "8acd629656cc94401fe406e99c4f10702792755d",
+      "status": "added",
+      "note": "Four exact Dropper-only MachineLayout inverses"
     }
   ],
   "exclusions": [
@@ -183,6 +189,10 @@
     "old_game_test_git_blob": "36e1cac30819b332e185006bf211f804f2e67826",
     "projected_main_screen_git_blob": "ca92525bc350e161c136e3dd295c70c381bf1153",
     "candidate_screen_git_blob": "c740cb61b0fa6185d0dd2e665cc9c13a4f21659c",
-    "current_ci_status": "NOT_PERFORMED"
+    "current_ci_status": "PENDING_NEXT_COMMIT",
+    "layout_inverse_git_sha": "8acd629656cc94401fe406e99c4f10702792755d",
+    "parent_followup_commit": "d810f007d7204368df6243bf0ac0294ed3cec058",
+    "exact_original_layout_git_blob": "710069d40e28dba9caa13e54d47f5e6ad573937f",
+    "exact_candidate_layout_git_blob": "606ff668080cf82adcf256e309ae15bcede16f99"
   }
 }

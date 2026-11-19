@@ -30,3 +30,9 @@ Historical Factory tooltip, Milking/Freezer, Solar, Tree and Barrel SHA-256 pins
 Observed pre-fix CI (head `5b2453ec`): `compileJava processResources` PASS; JUnit `test` PASS; `runGameTestServer` FAIL (only `all_machine_blocks_open_machine_menu` parent texture mismatch); Factory controls preflight FAIL at the complete historical SHA guard; Solar/Milking/Barrel preservation preflight FAIL at `MachineScreen.java`; some other jobs stop at the same GameTest before native capture. The French milking pagination job additionally had an unrelated apt mirror sync failure. All post-fix CI, build and native outcomes are **NOT_PERFORMED** until new exact commit evidence exists.
 
 No new artwork, mechanics, slot positions, packets, public release metadata, or edits to #196/#199/#204/#205.
+
+### Second exact pin: Dropper-only MachineLayout inverse
+
+The first corrective CI identified a second **historical full-file preservation guard** on `MachineLayout.java`. No historical pin was changed. `factory_r04_layout_inverse_edits.json` restores the complete `main` layout with four precisely anchored inverses: `playerSlotX`, `playerSlotY`, `hotbarSlotX`, and `dropper()`. The projection accepts only the committed layout Git blob `606ff668080cf82adcf256e309ae15bcede16f99` and requires reconstructed original Git blob `710069d40e28dba9caa13e54d47f5e6ad573937f`. All other paths remain raw. Negative tests mutate Hopper, Metal Crafting Table and Dropper lookup plus the layout recipe. This is additive to the five-edit screen-only inverse; it does not update global historical pin values.
+
+First corrective commit `d810f007d7204368df6243bf0ac0294ed3cec058` showed Milking and Solar preservation preflight stopping on `MachineLayout.java` after the screen projection, while its Java compile and JUnit test stages had passed and the GameTest stage was still executing when this note was prepared. These historical observations do not certify the later commit.

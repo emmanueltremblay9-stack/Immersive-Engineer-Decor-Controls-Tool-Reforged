@@ -2,8 +2,8 @@
 import unittest
 from pathlib import Path
 from factory_r04_inverse_projection import (
-    SCREEN_PATH, GAME_TEST_PATH, RECIPE_PATH, MAIN_SCREEN_BLOB, MAIN_GAME_TEST_BLOB,
-    FactoryProjectionError, git_blob_sha, project_screen_to_main, project_preserved_bytes,
+    SCREEN_PATH, GAME_TEST_PATH, LAYOUT_PATH, RECIPE_PATH, LAYOUT_RECIPE_PATH, MAIN_SCREEN_BLOB, MAIN_LAYOUT_BLOB, MAIN_GAME_TEST_BLOB,
+    FactoryProjectionError, git_blob_sha, project_screen_to_main, project_layout_to_main, project_preserved_bytes,
     assert_exact_dropper_game_test,
 )
 from factory_tooltip_integration import assert_projection, BASE_SHA256, CURRENT_SHA256
@@ -11,6 +11,7 @@ from factory_tooltip_integration import assert_projection, BASE_SHA256, CURRENT_
 ROOT = Path(__file__).resolve().parents[2]
 SCREEN = ROOT / SCREEN_PATH
 GAME_TEST = ROOT / GAME_TEST_PATH
+LAYOUT = ROOT / LAYOUT_PATH
 
 
 class FactoryInverseProjectionTests(unittest.TestCase):
@@ -18,6 +19,7 @@ class FactoryInverseProjectionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.source = SCREEN.read_text(encoding='utf-8')
         cls.game_test = GAME_TEST.read_text(encoding='utf-8')
+        cls.layout = LAYOUT.read_text(encoding='utf-8')
 
     def test_exact_inverse_and_retained_historical_factory_tooltip_pins(self):
         projected = project_screen_to_main(self.source)
@@ -61,6 +63,27 @@ class FactoryInverseProjectionTests(unittest.TestCase):
         original = assert_exact_dropper_game_test(self.game_test)
         self.assertEqual(git_blob_sha(original), MAIN_GAME_TEST_BLOB)
         self.assertIn('retained_dropper/background', self.game_test)
+
+    def test_layout_exact_inverse_restores_all_historical_bytes(self):
+        restored = project_layout_to_main(self.layout)
+        self.assertEqual(git_blob_sha(restored), MAIN_LAYOUT_BLOB)
+        self.assertEqual(project_preserved_bytes(LAYOUT_PATH, self.layout.encode()).decode(), restored)
+
+    def test_layout_rejects_foreign_factory_and_non_factory_mutations(self):
+        for needle, replacement in (
+            ('case FACTORY_HOPPER -> hopper();', 'case FACTORY_HOPPER -> dropper();'),
+            ('private static MachineLayout metalCraftingTable()', 'private static MachineLayout metalCraftingTableAltered()'),
+            ('return RetainedDropperLayout.layout();', 'return RetainedDropperLayout.invalid();'),
+        ):
+            self.assertIn(needle, self.layout)
+            with self.subTest(needle=needle), self.assertRaises(FactoryProjectionError):
+                project_layout_to_main(self.layout.replace(needle, replacement, 1))
+
+    def test_layout_recipe_tampering_rejected(self):
+        recipe = LAYOUT_RECIPE_PATH.read_bytes()
+        self.assertIn(b'Dropper', recipe)
+        with self.assertRaises(FactoryProjectionError):
+            project_layout_to_main(self.layout, recipe_bytes=recipe.replace(b'Dropper', b'DroppEr', 1))
 
     def test_game_test_foreign_mutation_rejected(self):
         self.assertIn('ModBlocks.FACTORY_HOPPER', self.game_test)
