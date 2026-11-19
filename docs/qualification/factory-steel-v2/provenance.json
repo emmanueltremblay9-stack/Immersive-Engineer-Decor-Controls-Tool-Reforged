@@ -1,33 +1,50 @@
 {
   "status": "candidate_not_approved_not_native_qualified",
-  "source_head": "c3a2fd55e290a1102e885b3b30972cf41f6cf0d4",
-  "source_zip_sha256": "03a581d48e3b484947749c134feb610cdda2cb88af9d83e00d1c6ad682920d35",
+  "source_head": "09c8a0e8ebb231dd399a525d615c9eedc6516dc4",
+  "source_zip_sha256": "a4894cb9e6f73a6bc84c094009e2aa1b8daad826d9fee5d6270ccd2e63602ba3",
+  "specialist_conversation": "https://chatgpt.com/g/g-p-6ae2ab9a5d0c8191b6b277c252844fcd-master-generalist-gui-architect-designer/c/6afbbec6-f500-83ea-a7c5-451c6def8c92",
   "assets": {
-    "hopper": "fb5994b0a375c1120f4a9cbfb1c9536a3ad1ec604d1dda2989fb7fa4993ff7be",
-    "dropper": "3a5ea34d1804a93b810207e5dda9b6ae039d4ed92a2db0f603e89075267819f5"
+    "hopper": "14d2a06b9d434a722e67a28c7a3ea1c889d52cbf45236b3678d1248e140622e3",
+    "dropper": "9c8517f4a8c6c138b899038de3bb72ed4856676351d6b1dd4972c90b1787baaf"
   },
-  "method": "Imagegen material study registered by SVG patches to exact original geometry; original functional regions and alpha retained.",
+  "method": "Exact PNG bytes recovered from dedicated GUI project R04 native handoff; isolated CI qualification only. No runtime or protected geometry changes.",
   "previous_candidate": {
     "status": "candidate_not_approved_not_native_qualified",
-    "source_head": "55f740053d05908bae7c8e737fe79723d90339d0",
-    "specialist_conversation": "https://chatgpt.com/g/g-p-6ae2ab9a5d0c8191b6b277c252844fcd-master-generalist-gui-architect-designer/c/6ae94ffc-b25c-83e9-ac03-182f96d22aa9",
-    "source_zip_sha256": "fc0f24b3f1523004be384a2e7ea776ea8b3e4f7a372959d400bfef1eb7382754",
+    "source_head": "c3a2fd55e290a1102e885b3b30972cf41f6cf0d4",
+    "source_zip_sha256": "03a581d48e3b484947749c134feb610cdda2cb88af9d83e00d1c6ad682920d35",
     "assets": {
-      "hopper": "056097ed915b3e2138bdebbe36e52de24a932939b8385cb3eafe53ce4f54717a",
-      "dropper": "52a7aff6c25de987b7260e8c44eb6308a48e8513d5ff9611b7dfa163c974c715"
+      "hopper": "fb5994b0a375c1120f4a9cbfb1c9536a3ad1ec604d1dda2989fb7fa4993ff7be",
+      "dropper": "3a5ea34d1804a93b810207e5dda9b6ae039d4ed92a2db0f603e89075267819f5"
+    },
+    "method": "Imagegen material study registered by SVG patches to exact original geometry; original functional regions and alpha retained.",
+    "previous_candidate": {
+      "status": "candidate_not_approved_not_native_qualified",
+      "source_head": "55f740053d05908bae7c8e737fe79723d90339d0",
+      "specialist_conversation": "https://chatgpt.com/g/g-p-6ae2ab9a5d0c8191b6b277c252844fcd-master-generalist-gui-architect-designer/c/6ae94ffc-b25c-83e9-ac03-182f96d22aa9",
+      "source_zip_sha256": "fc0f24b3f1523004be384a2e7ea776ea8b3e4f7a372959d400bfef1eb7382754",
+      "assets": {
+        "hopper": "056097ed915b3e2138bdebbe36e52de24a932939b8385cb3eafe53ce4f54717a",
+        "dropper": "52a7aff6c25de987b7260e8c44eb6308a48e8513d5ff9611b7dfa163c974c715"
+      },
+      "limitations": [
+        "New candidate, not owner accepted.",
+        "Dropper remains a stylistic alternative, not established improvement.",
+        "Native controls and state overlays retained; no gameplay changes.",
+        "Historical CI is not proof for this candidate."
+      ]
     },
     "limitations": [
-      "New candidate, not owner accepted.",
-      "Dropper remains a stylistic alternative, not established improvement.",
-      "Native controls and state overlays retained; no gameplay changes.",
-      "Historical CI is not proof for this candidate."
+      "Owner visual acceptance pending.",
+      "Current source/JAR native captures and CI required; no historical qualification transferred.",
+      "Renderer still redraws native slot rims and control symbols.",
+      "Hopper selection row pitch corrected from 17 to 18 to match unchanged menu grid.",
+      "Earlier R03 used an uploaded Dropper image with 763 semi-transparent RGB differences. All current technical restores now use exact PR196 c3a2fd55 original PNGs."
     ]
   },
   "limitations": [
-    "Owner visual acceptance pending.",
-    "Current source/JAR native captures and CI required; no historical qualification transferred.",
-    "Renderer still redraws native slot rims and control symbols.",
-    "Hopper selection row pitch corrected from 17 to 18 to match unchanged menu grid.",
-    "Earlier R03 used an uploaded Dropper image with 763 semi-transparent RGB differences. All current technical restores now use exact PR196 c3a2fd55 original PNGs."
+    "No owner visual acceptance.",
+    "No native qualification claimed until exact current source/JAR execution and evidence verified.",
+    "Separate handoff JAR 2a0d9c2b634fed8bd3c962607194e65c6deb7cbd4dc5000266f589a244ed2d7b is not the CI rebuilt JAR.",
+    "Existing automation covers only a subset of the 35-case native QA matrix. No merge or publication authorized."
   ]
 }

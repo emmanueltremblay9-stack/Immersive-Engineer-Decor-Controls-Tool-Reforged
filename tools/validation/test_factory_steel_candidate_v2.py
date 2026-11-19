@@ -28,7 +28,7 @@ class FactoryCandidateV2Tests(unittest.TestCase):
 
     def test_exact_bytes_match_specialist_provenance(self):
         source=json.loads((DOC/'provenance.json').read_text())
-        self.assertEqual(source['source_zip_sha256'],'03a581d48e3b484947749c134feb610cdda2cb88af9d83e00d1c6ad682920d35')
+        self.assertEqual(source['source_zip_sha256'],'a4894cb9e6f73a6bc84c094009e2aa1b8daad826d9fee5d6270ccd2e63602ba3')
         for name,digest in source['assets'].items():
             self.assertEqual(hashlib.sha256((ASSETS/f'{name}.png').read_bytes()).hexdigest(),digest)
 
