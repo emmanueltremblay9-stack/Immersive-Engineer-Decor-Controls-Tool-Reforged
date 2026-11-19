@@ -4,50 +4,46 @@ import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 
-/** Read-only steel skin, assembled from the retained Placer material. No geometry or input ownership. */
+/** Runtime slot rim sampled only from the owner-approved Hopper source. No geometry or input ownership. */
 final class FactorySteelFrame {
    private static final ResourceLocation STEEL = ResourceLocation.fromNamespaceAndPath(
-      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_placer_v2_reference/background.png");
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_steel_v2/owner_slot_rim.png");
    private FactorySteelFrame() {}
 
    static void slots(GuiGraphics g,MachineMenu menu,int x,int y) {
       for(var slot:menu.slots) {
          int sx=x+slot.x,sy=y+slot.y;
          // Crop the silver rim only; never paint over the 16x16 item content.
-         part(g,sx-1,sy-1,18,1,110,202,90,8);
-         part(g,sx-1,sy+16,18,1,110,288,90,8);
-         part(g,sx-1,sy,1,16,110,210,8,78);
-         part(g,sx+16,sy,1,16,192,210,8,78);
+         part(g,sx-1,sy-1,18,1,0,0,108,6);
+         part(g,sx-1,sy+16,18,1,0,102,108,6);
+         part(g,sx-1,sy,1,16,0,6,6,96);
+         part(g,sx+16,sy,1,16,102,6,6,96);
       }
    }
 
+   private static final ResourceLocation WELL = ResourceLocation.fromNamespaceAndPath(
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_steel_v2/owner_control_well.png");
+   private static final ResourceLocation THUMB = ResourceLocation.fromNamespaceAndPath(
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_steel_v2/owner_control_thumb.png");
+   private static final ResourceLocation NATIVE_DROPPER = ResourceLocation.fromNamespaceAndPath(
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_dropper_gui.png");
+
    static void inset(GuiGraphics g,int x,int y,int w,int h) {
-      g.fill(x,y,x+w,y+h,0xFF101519);
-      g.fill(x+1,y+1,x+w-1,y+h-1,0xFF222A30);
-      g.fill(x+1,y+1,x+w-1,y+2,0xFF070B0D);
-      g.fill(x,y+h-1,x+w,y+h,0xFF727E85);
+      g.blit(WELL,x,y,w,h,0F,0F,108,108,108,108);
    }
 
    static void thumb(GuiGraphics g,int x,int y,int w,int h) {
-      g.fill(x,y,x+w,y+h,0xFF151A1E);
-      g.fill(x,y,x+w,y+1,0xFFD9DEE0);
-      g.fill(x,y,x+1,y+h,0xFFACB7BE);
-      g.fill(x+1,y+1,x+w-1,y+h-1,0xFF87969F);
-      g.fill(x+w-1,y+1,x+w,y+h,0xFF414D55);
-      g.fill(x+1,y+h-1,x+w,y+h,0xFF414D55);
+      g.blit(THUMB,x,y,w,h,0F,0F,60,60,60,60);
    }
 
-   static void controlSymbol(GuiGraphics g,int x,int y,int index) {
-      String[] rows = switch(index) {
-         case 0 -> new String[]{"1000000","1110000","1111100","1111111","1111100","1110000","1000000"};
-         case 1 -> new String[]{"0001000","0001100","1111110","1111111","1111110","0001100","0001000"};
-         default -> new String[]{"0011100","0010100","0010100","0010100","1110111","0000000","0000000"};
-      };
-      for(int row=0;row<rows.length;row++) for(int col=0;col<7;col++)
-         if(rows[row].charAt(col)=='1') g.fill(x+col,y+row,x+col+1,y+row+1,0xFFD9DEE0);
+   // Preserve the original mod's semantic state symbols, not R04's drawn ASCII arrows.
+   static void controlSymbol(GuiGraphics g,int x,int y,int index,int state) {
+      int u=index==2 ? 200+(state==1?10:0) : 179+(state==1?11:0);
+      int v=index==1 && state==2 ? 76 : 66;
+      g.blit(NATIVE_DROPPER,x,y,u,v,9,9);
    }
 
    private static void part(GuiGraphics g,int x,int y,int w,int h,int u,int v,int sw,int sh) {
-      g.blit(STEEL,x,y,w,h,(float)u,(float)v,sw,sh,1199,1312);
+      g.blit(STEEL,x,y,w,h,(float)u,(float)v,sw,sh,108,108);
    }
 }

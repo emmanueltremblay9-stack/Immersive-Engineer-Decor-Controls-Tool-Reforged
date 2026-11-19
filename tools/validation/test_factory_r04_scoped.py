@@ -2,7 +2,8 @@
 import hashlib, json, unittest
 from pathlib import Path
 from factory_placer_v2_reference_native import decode_png
-ROOT=Path(__file__).resolve().parents[2]
+from factory_owner_20261119 import historical_root
+ROOT=historical_root()
 ASSET=ROOT/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2'
 DOC=ROOT/'docs/qualification/factory-steel-v2'
 CLIENT=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client'

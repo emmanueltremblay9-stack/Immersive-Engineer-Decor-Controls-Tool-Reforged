@@ -1,0 +1,948 @@
+{
+  "schema": "owner-20261119-v3-public",
+  "base_commit": "87f8b8e03cac46a6154b54522d1497baa52c67b2",
+  "baseline": {
+    "docs/qualification/factory-steel-v2/SCOPED_R04.md": "287e241bd9995f4ef9bb506ab6e9b490425e176197cf2e4316885495f4b2392b",
+    "docs/qualification/factory-steel-v2/SCOPED_R04_MANIFEST.json": "56ccc14393d15f1c2c9cc11e0e2b8d8e245c87c1cf6aaa971baac960a391b1fe",
+    "docs/qualification/factory-steel-v2/dropper-mapping.json": "fd1fb66ca581ad5cedd9d099d1b504b69b3f0dad4f2f08c5933ffa3486511251",
+    "docs/qualification/factory-steel-v2/hopper-mapping.json": "496f40f7d550887a58746f2ee49e6f086cbf17f4eba17f38cebf44d154cf3b6c",
+    "docs/qualification/factory-steel-v2/protected-regions-r04.json": "cd1bac05da8d8055cb9d6c2ccaf570a12d1226fa240122559f3b05890bbf17b1",
+    "docs/qualification/factory-steel-v2/provenance.json": "6ca95485a68f8bf84500e8afc75dc631fedb5b1cc6783fcc3f129282acfe4d8c",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/BarrelReferenceScreen.java": "48b378b2301693758cf38d016671ff6b5e3721664b5cacc0b3465101ba9f7afb",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientInsetLightMiningEvents.java": "c3cd52de1981fc48d78823816551336252129f8ecc68f3ae0285c900b7067a25",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": "bf327e4fa3ff6b32afa1ec80c03c23b2c372ff8470a9181e86351cf29feba29c",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/DoubleTLightModels.java": "31347102eddc1e7b774fff52dde28122a710d6553c4cfe160a8153d1ce37b369",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/EngineerManualShortcut.java": "8f555d63ba118893be341de447d791556b28502d5c580dfbdb3a8003e7abb6e7",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java": "ccba43dc91d0c88926d6b5f74d3ac594ec8097579fcd018664280d95d6181247",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryPlacerV2ReferenceScreen.java": "df35bf1ff120c51106af7a4348ef0b990e25a0d18ff3030063ee2c5af8a0f6e0",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactorySteelFrame.java": "5bf33d56b0f7628a1b6b8add0d4a5b973628f865340af6290792f3a76a332e55",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FluidBarrelSpriteRenderer.java": "53b06847d57db6f0dbccc06ffe0f94af07959d41d9c8375ffacbcdb6852312d9",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FluidTooltipPositioner.java": "3cb301af096cba21ef81696fbfaa8afe8c7715e82bd9ec3cb873c0e75aea055d",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FreezerReferenceScreen.java": "5aca7662717427b8d18b79aaaf84676646640a4b5c87f8606a79082d2c883b32",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/InsetLightMiningHold.java": "8a79575548a51f9e2c9ec55f20b29ce5ffcfd08dde18ac7386343fd39a69d3e6",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/LabeledCrateBlockEntityRenderer.java": "7fe6c40a7a8460dd255fa2fe5a386601ed6f7b0adfa26bb715b6ee984cd05ebb",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/LabeledCrateEditScreen.java": "8b6b620a0f25c39b2ddee1c574f19ddd97c240325e768f12def7e4b5a338c3ed",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/LabeledCrateScreen.java": "efe8802613c82205d3cf4ebbad992ec652de20a9b97f13782023d0f98364a445",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "0f2d86d46beb6b6f0287dae8110be59b1b90d51b4c3918ce6fa88ef3d87af3b1",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ManualShortcutHold.java": "021f154759fcc18e9c53ce8e9e6f69e1be54ea9207c4310c2cbe16e27db34305",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ManualViewportFit.java": "b1fec2feffdbe0d1edfc4822b86c54ffde575f786181f16e0aabe4be3a7fea2b",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RailingHighlightEvents.java": "6932e3f214609acc427d0fcc3e4df073ea1d71b831aa6e74ef2f21659b811b11",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RailingMiningClientEvents.java": "8f9175258bdaa16ac62a239df688742d1e8c6087d7d1047773e10e7c59d44a1b",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RaisedStairPoleModels.java": "594ed907d3d82b1cc496870e97eb008242a31dc6df7516cd9eeb93ffdeec5b83",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RetainedFluidMachineArtwork.java": "c1d07b748c5b60690f5c905640332954feb08ee9bfcdb47dce815a1dc4d99781",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/SmallMineralSmelterHybridScreen.java": "62070962190716b664536d8a5229ca6d15be8e1750e1571a7367ecd0ec7d1d19",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/SolarV2ReferenceScreen.java": "3a543f5befb867a5a1ab20d872acf6f11ce96920bdc501de5b170e8fbaea1968",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/StoolSeatRenderer.java": "92eb299054509c248c17d6d1cd17ae02556670e6b10571a231d31876a175ed78",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/TrackerClientEvents.java": "f3243374993a8db39c6c6c2c076401699f2f5334fff56194846fa457d8d1150b",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/TrackerItemRenderer.java": "b904c8a26fd2234bd7b38d62a06978289cdb1297d6a4bfecf439ed60fa5fbc2d",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/TrackerRenderState.java": "919f460f04bc64d121ad18f87dcf7eea6915063f29e0feaceac3721c5ab8e01a",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/TreeCutterV3ReferenceScreen.java": "65d74205a112859c0f09e784d83fd4fae20df76ae5d79eba0919ae132be0a297",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/ExternalFluidClientValidation.java": "fabf067d21a778fd41743325a3dd6914f236278c57bd12d8a0028f4ca96c57e4",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java": "dbdfde41783d8c9d2b8e04805f445a9457ca297d9d68ef600b848ffddc23f01b",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBeamsFluidValidation.java": "7ba11ca37d81f5d989eedd275f404d28d5a586480daf58e24a49b3a8395f18b8",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeCatalogueValidation.java": "99e0f3691ff659f62ba9bf2b2fcc3340832352a5d0ddd9c4d9fa8191aa1880c8",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeCatwalkJunctionValidation.java": "e315b01c7d8f84f441800fae082aa6f9c8b72d4b893cc5126bbd90ccafe041f3",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeClientMiningValidation.java": "f10ba2c6b15e1c91b27416d632257c4a660e4ac36f180fb041aaa0c53eb88812",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeCorrectedMachineGuiValidation.java": "644a3b5a88b5ee20e3600ba2f6ef22538e1896b8233f04178900c9bf6021ac44",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeDoorSensorValidation.java": "efeb0aba23d3d1cebc522b691f35f748aed9c444d039556ba10e4b7e040c8be2",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeDoubleTLightValidation.java": "440c4de7eddaa4f8478b5ea89b1cbb838ebf3cea1c74ceb98da67d5e48828303",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFluidloggingValidation.java": "71a4c14c00e15c299eea5fd9cdd7267934cf2997e3d11a26f3fb53bdd80f574c",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java": "fb790d8e6f3f47090e17c943207558650501275c630fde2fbaeb78c7c4a7ec4c",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFunnelRuntimeValidation.java": "036a59389a3717ab5839a502759399179d1213743feee4a149f98f654286ddfc",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeGenericFluidValidation.java": "7fdace21c8289aa0e397758c2714ea324724b2d7d6b533230627c003eef5285a",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeLavaSurfaceValidation.java": "a73cefb42fe4046b30d98db41426177c084183b0954ac7d3ac5835a3948f4aaf",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeMilkingQualificationValidation.java": "bbf9e0c24cba379788d61bececf0ac3d4d2e35e195a2ec7d31fa5d3f8beb650e",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativePanzerGlassValidation.java": "2da5e663dce2b59e95087459a001935b065630711f8529a14e4e199e49c57198",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeRaisedStairVValidation.java": "2b69d4ce02b302e2ca439b4a51858410ceae58fbda94805352e8b81374be5dd0",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java": "a05b4d7bea5de0f4f7218e95c6bc5dd86739b43d3f8eb1cb1d946ddf670c3eb5",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSubmergedCatwalkValidation.java": "297655ccb24fb8dc32f727c436deab6b38848d76f9ce9a031ba837e5d6ef2007",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeVerticalDoubleTValidation.java": "adf529c1ef09ebee68af33882c684a105884a4dcc1cccf5b552d94320d886bf0",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeWaterCanalValidation.java": "409663bae6a79cd451cde15b9b6249350b511382579cd572248e6b61ae3e6c42",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeWaterFlowDistanceValidation.java": "6e93093ee1b87ea444535e232e2faf1ff7d1ad42a710085e6245d022ba273e93",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/TrackerRenderValidation.java": "abdbb8f04967fe2d2bbd3570b5b6275a7e5b795e955d8afa6d2e24ef2e5f5c49",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png": "9c8517f4a8c6c138b899038de3bb72ed4856676351d6b1dd4972c90b1787baaf",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png": "14d2a06b9d434a722e67a28c7a3ea1c889d52cbf45236b3678d1248e140622e3",
+    "tools/validation/ParseBarrelSources.java": "a4c8bafdc5c3bb81ce7498465d0b83e5b0ea78a4ba4e9d6464a6d19ee06b449e",
+    "tools/validation/ParseJavaSources.java": "c27e83a3d5d14d03fb045779540f932aa824acb3479e51385c59161dc05cf052",
+    "tools/validation/barrel_packaged_native.py": "81f869b92e7cb1d6cf454bdbcf42a60f818ed3ec1a34f077cbd1b2634366dd65",
+    "tools/validation/barrel_packaged_proof.py": "285c611465b6a2587b6b0f5867f3c5eb3d61ae16df870366a5cb3beb8de8553a",
+    "tools/validation/barrel_reference_native.py": "bf7ccc006e2be862f9f98e6abdd7b89b7c2e8272612b1d0a6c9cb305c3c1eddd",
+    "tools/validation/barrel_v5_packaged_native.py": "65dc6822014447832b809ccb58ccace4158997837ed7569940ca83ba82a43593",
+    "tools/validation/barrel_v5_packaged_proof.py": "32c6ab6016542c00ea7eabf0488a0589ac783f711e94412594f21b6d5b608b00",
+    "tools/validation/block_breaker_packaged_native.py": "3aa541dc8c477d21e0ba80bf06e184513fc2731e6eb190b813ad2fdb44117892",
+    "tools/validation/catalogue_visual.py": "4df186a25ae5172bb738b0d729c19539c568df5df5cddb06aad0bd66867eb115",
+    "tools/validation/check_barrel_reference.sh": "50eb24175a75860716e96228fdc98bd1b9119677211ca6aa9f547d6095adf72c",
+    "tools/validation/check_barrel_reference_wiring.py": "108015af3c2e33c3b7953a50f867b1506a85cee8d6dca0f1f15528402c45fa37",
+    "tools/validation/check_freezer_reference_event_routing.py": "1b691ea0573edaf8c46ff30c3e4956beb97f70f4fc0efb28044f9f5be8a33137",
+    "tools/validation/check_freezer_reference_geometry.sh": "20867431b9435579e21e8f3f32958b72e9dbbe2aa2d90669f5e2d467965a8ad9",
+    "tools/validation/check_freezer_reference_live.sh": "977878dc39fb67957e197c5f88488c7cd938beb5a7139183db901fa9688b8715",
+    "tools/validation/check_freezer_reference_live_wiring.py": "304c5f88727218d3b0e6a6c2a8e8f8a0012aa11a5c00b7545c5b3e93bd39a402",
+    "tools/validation/check_milking_qualification.py": "a49160a9446f07afd4aeb19626c0484a5299eaee419e17e4ba0111c60e953209",
+    "tools/validation/check_solar_v2_reference.sh": "bb72e594a09c6e69cb895dfb82de228c2d930d671ca67a115d70f34d1d3f2be5",
+    "tools/validation/check_solar_v2_reference_wiring.py": "b696918b9ffa77c5aad99441ae82796bb19b8f17426c3a1169b7cccc599e2f6f",
+    "tools/validation/ci_required.py": "b6617fe61424fd88e2680f70b9b29d9a2c8b4b7f7a06f927b60cd13ae2307337",
+    "tools/validation/client_gameplay.py": "d62e2deceed386f4bdc19c019b0b98d5be8880b64a466acd001a5ca442c0f66a",
+    "tools/validation/client_mixin_smoke.py": "d2bb927a232036f948e98c8af2738eb628a86ecbcb5c5572c75cdcbdb6db4656",
+    "tools/validation/crate_label_native.py": "35684844b261b25e02fef7a18e53fe3e6713aed17972992298f048990798c005",
+    "tools/validation/factory_control_tooltip_native.py": "76b4e42ebba17865a30cb27a02432ef100e6d1008c608628129f78e7bda35eef",
+    "tools/validation/factory_placer_delivery_evidence.py": "3b075b249be64a2f2a730f11e1d33ee2794e928b7c1059df9e2699d058047dab",
+    "tools/validation/factory_placer_v2_reference_native.py": "b6f9cf96df76320b1d51a0fcc70e2b63f9b19674feedf3166b7993468340cebe",
+    "tools/validation/factory_r04_inverse_edits.json": "159f20a30045c284ddfa9364dad167d298f36c30772d22cac7a2ebc0087919d2",
+    "tools/validation/factory_r04_inverse_projection.py": "5d542e46993b5f112b9188f4d23f27c9a36bf1c92486407afb5dd5c76f7a6023",
+    "tools/validation/factory_r04_layout_inverse_edits.json": "3b9561e916754e85461815fbcba3b515627f03a6e2497668f4c47571b083c398",
+    "tools/validation/factory_tooltip_integration.py": "888c6f092e69de440420deae0a2d30604f2a849c82b4c0934d41fb919d860147",
+    "tools/validation/fixtures/barrel_sprite/BarrelScreenProbe.java.in": "cf4e25d2c522fcc0fa5ccd1f273287da32828702e7cdb1933651bc6ecf1d4710",
+    "tools/validation/fixtures/barrel_sprite/Fluid.java": "f36473c698e9cc978c4d123c60d5ba4d221b7cf3f8db11378e5d8637cd5c7d01",
+    "tools/validation/fixtures/barrel_sprite/FluidBarrelSpriteChecks.java": "b06f4a469147127928690e3d3b7138178ecfe42b37cf56394a757d7ecaf0c02b",
+    "tools/validation/fixtures/barrel_sprite/FluidStack.java": "aa8cdc5db6c025b06269f9a238ad0c5778a8e082285f456ab8ce93d401b4101d",
+    "tools/validation/fixtures/barrel_sprite/Fluids.java": "69baa0a09e5ce2dde4b418aa2db217e46494cd3b6680ee8b8b9a7f672ed7a325",
+    "tools/validation/fixtures/barrel_sprite/GuiGraphics.java": "a3d14903369de65ce036b736ddfbf1d5cf9559e09d6c6d91e1e244c959b5ff31",
+    "tools/validation/fixtures/barrel_sprite/IClientFluidTypeExtensions.java": "8a4bb136cfe9c4c38178ece4bd618a956682f1666e611d7bac27389fdb8322b5",
+    "tools/validation/fixtures/barrel_sprite/InventoryMenu.java": "437e8131b93996210fc07a417f99e7bf979d79d15780b14e1b978188ed544060",
+    "tools/validation/fixtures/barrel_sprite/Minecraft.java": "74b1e6a4e828aeb4b156b88c94a5ae080ce8df5511c0f14cdd0eaa14e83cdb63",
+    "tools/validation/fixtures/barrel_sprite/MissingTextureAtlasSprite.java": "0c2f134370b9b73eedb041f169dbb649fea4d4c1f2a07e2cf1d510826dc5cca5",
+    "tools/validation/fixtures/barrel_sprite/Mth.java": "7cd384410970abf7829f8b829b252c34394d3ba05e291ed4cfc789d284ef7d9b",
+    "tools/validation/fixtures/barrel_sprite/ResourceLocation.java": "fe5df1fbb0f52967fe18204e8fffa72984ed76b0a485b97112e5105c574f7ea1",
+    "tools/validation/fixtures/barrel_sprite/TextureAtlasSprite.java": "62f0cacea2218a7dc9e1dfe651a41d0e3ab349a9eb114d43f2616e28cdd722c9",
+    "tools/validation/fixtures/block_breaker/BreakerTextProbe.java.in": "09a6e1333a44ec2d07bb54d87253f08f169dfac759162f6a5ce90451c89b40db",
+    "tools/validation/fixtures/engineers_tools_1_1_6/crushing_hammer.json": "a9ff001b2238bac5ef2313ff8eb03bf5f4b759d994f105f1c391889f6017dab7",
+    "tools/validation/fixtures/engineers_tools_1_1_6/diving_capsule.json": "cb3c23175f33b32b290138ac01702cb30361a84cd1eb06b4c2da4e6b1f7780cc",
+    "tools/validation/fixtures/engineers_tools_1_1_6/material_box.json": "bfea83569599860efcc3c707a773870d530e96d58335e616b52c03915291acd6",
+    "tools/validation/fixtures/engineers_tools_1_1_6/musli_bar_press.json": "4f1a773f0eeb54da0ae97372d6aec3973fa5be5d361445527e64a85c0fe15f4f",
+    "tools/validation/fixtures/fluid_text_free/FluidTextProbe.java.in": "f7e5bdf20246c202fd38584d8ba871753c5957ad1590ce436541900b1f353029",
+    "tools/validation/fixtures/tracker_1_1_6/tracker.json": "19834739755af1209c8eed49680801533541831a200a2aa1e4d0e1fb2c0e1071",
+    "tools/validation/fixtures/tracker_1_1_6/tracker_model.json": "29db73c6dae9c57e154dcfebca76fca768bab9be2fc30b2a216d69be99d17f8f",
+    "tools/validation/fixtures/tracker_1_1_6/tracker_pointer_model.json": "151ea794161f8b7cc35c29d08af52c0abbd178ed11c7529da6f7471312b97088",
+    "tools/validation/flow_distance.py": "5975318f43bc35efe74b3f043a4f509be02de2f91c9b246ba1203dbada818dd9",
+    "tools/validation/fluid_extensions.py": "6308406ba6d6f454b14daf8b5bfe397a8f16a986ad5029b690406cd52582b75a",
+    "tools/validation/fluid_gestures_native.py": "6a5e7915a1cf8c25612eacef1e56a5e421a1458d70a72e36960b5b71ea07f77b",
+    "tools/validation/fluid_packaged_native.py": "ff4824ff9dca56e036bc7f7df8cf2b85517c11b032d86b116824c76613878fdb",
+    "tools/validation/fluid_packaged_proof.py": "4551b5bae784cf3bf72486e44124532908954dc7b112cbd7a4a91a10664b42b8",
+    "tools/validation/freezer_packaged_native.py": "9114dc637085a997750069fa9cbb2471d98508f6eb87da8f48d6022aee8b08e2",
+    "tools/validation/freezer_packaged_proof.py": "5e0041bd7bb2ee65fb35c987fefae6eaf6bdb9933183d3f625ad723bc5994dfb",
+    "tools/validation/freezer_recovery_tooltip_proof.py": "6e79f33606bcc432eedd052a005c23d0647975c80aa5379fd137a88931cb2b0d",
+    "tools/validation/freezer_reference_native.py": "656316633d79e5a32108ab5f9b22c98475d6cd8cdec4e32b58ad82034cda876a",
+    "tools/validation/freezer_v5_reconciliation.py": "3648a12ee4b8b481a0162fe87b8f1939f6f2b246293e3226b71b0e4b936c341f",
+    "tools/validation/hopper_fidelity_integration.py": "a02bf484f14a8691608b193a4d7feb5988eb4f988fb1009b2de1a3b06c99591f",
+    "tools/validation/lava_surface.py": "4d90e3c8780d6e2e030a629e3a3321fc046d5ca94999e1e5db15ecdd76178d85",
+    "tools/validation/lithium_profile.py": "e71c4359c59cd17de4294e7060c8db1a60c8191882170eae12abed98076ab510",
+    "tools/validation/manual_packaged_native.py": "c84f0638c928bffff4c444a42fd9856ebb3148205a787da5d17a60c8843ff77e",
+    "tools/validation/manual_packaged_proof.py": "a4acd0f5143f871dfe60e5b28e87110c135ccc1e2159efc1aa13fde67ff4038e",
+    "tools/validation/milking_packaged_native.py": "499003fbc82668f385e26b84343d0c17165a1fd054aef247697c0f7c23618bec",
+    "tools/validation/milking_packaged_proof.py": "b7368607548e14798e4d7a677bf1c4e0c2344e644967d0d709f061454a057035",
+    "tools/validation/milking_qualification_native.py": "85b4e02f207463a0ad327b767a79feb02a685998c16752a1eb440934c26c39f2",
+    "tools/validation/modernui_native_diagnostic.py": "b6538e4ee42b3d0a042d735b6cd0e50728d217c5e53710608669ca42508a6e53",
+    "tools/validation/mooshroom_milking_native.py": "a40ffec9edbe146cd8718533b5eebe160936ebc7ee2f5099f65da406739617a6",
+    "tools/validation/renderer_profiles.py": "9cad4668b2c120f26962d13093e23b1da86db993cb3a60f00031af2c96ba8659",
+    "tools/validation/run_renderer_matrix.ps1": "880c07208b5d5799df2ba3847108ca09e6ae53396806003bbd1d0bc15b1c1127",
+    "tools/validation/smelter_packaged_native.py": "59e3211873b34f6370d7dadde37505b73e1c7c877266951533cea59b78273285",
+    "tools/validation/smelter_packaged_proof.py": "7d8159606a5b5b283296485bb6ae2ef1fcdb3952f2f07e4d6a99168a56f02e8e",
+    "tools/validation/solar_cell_integration.py": "8d1d8095f82f439675700c5dabf33979dd342bee99dcd98ee6ad8ab61f2523b1",
+    "tools/validation/solar_packaged_proof.py": "1144c5d59a0c744368bde0c167774eff9a69461ace018ccccdc98b559f83024f",
+    "tools/validation/solar_tooltip_proof.py": "880582eecf33ef671872355a201a2b55c250faba515c8f1add70e3df721d4b57",
+    "tools/validation/solar_v2_reference_native.py": "0c7f5bcaaf3fdc057b3195e156191c81c2f3473bbbebb2adb51967dc91611f9f",
+    "tools/validation/test_accumulator_tooltip_wrap.py": "4fe64394415fff2860024f74f90526db1cb90c4d8a960bc992bc6a6e8c99bae5",
+    "tools/validation/test_barrel_fluid_sprite.py": "e894bbfab1c60f8c0d3596f68edbcb2cb1e1f7f6b4b379aae1fa50acad8662a2",
+    "tools/validation/test_barrel_packaged_driver.py": "da6120da67e71c79f4867bda1d5f484cf8bb57e850fbd8e462171ebb8ce48ed3",
+    "tools/validation/test_barrel_packaged_proof.py": "a04db647480e7a55858f135c1f71e1d4079a4049a0aac46cda6cd18e840b99b0",
+    "tools/validation/test_barrel_placer_routing.py": "313044d786e26c9e0769a192c3c17c4be145301cffc2edcf2b62d2d6e44776f5",
+    "tools/validation/test_barrel_reference_native.py": "21ae04a7833ec438fd17063cfea810e169d150dcb2068b22b0cd0bd6b9be5535",
+    "tools/validation/test_barrel_v5_packaged_driver.py": "caf2c74a48d82e0e258e922a3d0215d073b13a95c9fc05f138aeed4a6c568272",
+    "tools/validation/test_barrel_v5_packaged_proof.py": "8cbe5940c48a1c8ebb1a805d3f993fbd8010b50abdfd4c350d2ba409bffbb31a",
+    "tools/validation/test_block_breaker_packaged_native.py": "3e37b5221a9cafbb5cc4bd1e6abb9ee245ba991f49e747d75ab49cd4d3d97e6a",
+    "tools/validation/test_block_breaker_player_return.py": "d8e783d427083775a500100232c78b1a83944710990c49ff859d45c54195ffd3",
+    "tools/validation/test_block_breaker_text_free.py": "8ce6784d14bb37b09371e88a2ec60f211d146dda2505c2816a637f731803daf1",
+    "tools/validation/test_catalogue_visual.py": "f079c5fdf9855b5f92cf9afc17760f491f87f1f63b643458b0eaf2ed1d4cb487",
+    "tools/validation/test_ci_required.py": "1afb7e89b06158b65506eb95145da327af71eb6eb5d72ed91c3f63c87d581e4b",
+    "tools/validation/test_client_fluidlogging.py": "97bd690a6a26a5d261263027fb9409f34e8003d678d4b2cfd05be5fe7c67a203",
+    "tools/validation/test_client_gameplay.py": "d967cf2c9061a7d9421db110d2b5d5116eb2703be4d1f57f9c49c9c57f8bc3b8",
+    "tools/validation/test_client_mixin_smoke.py": "d29a710cc6a87863449e9701efec2da6cc967965ef606cd764c347bac0962159",
+    "tools/validation/test_crate_label_keyboard_cancel.py": "da437c25b9f1d38950de75999cbfdc417fbe41960d492f6b186055031d366bd2",
+    "tools/validation/test_crate_label_native.py": "d01c0bb794f5258eb7693760842eaeb5d36316111e47a91414c6a65edecf3492",
+    "tools/validation/test_external_sync_diagnostic.py": "06c5f1843710e27aa6ee384eb0c7d5d190cba2531182798cce862b9504d4acf0",
+    "tools/validation/test_factory_control_tooltip_native.py": "8a1c32cfc2bdd406f52cc36799d91633f1adda30119b6fe0d11288560eca5d6e",
+    "tools/validation/test_factory_hopper_selection_alignment.py": "18976b10d981de733ff8be5f927444b199c2d9872708bee90bc699aa36120c05",
+    "tools/validation/test_factory_placer_default_screen_wait.py": "711887015d84d072ca3921a02c2c12ff65fde2a158cc121e5a72b56d74574f49",
+    "tools/validation/test_factory_placer_delivery_evidence.py": "61ad107a318445bc0f0c263cf3e3492a0a37c32747b1a5d94811afd804993ff4",
+    "tools/validation/test_factory_placer_v2_reference_native.py": "8711ff4931672e83229b9dac94d3024c13fac3aa8e9ad451a0d4a927e52ecd45",
+    "tools/validation/test_factory_r04_inverse_projection.py": "0b6e7c86ce7748d2ec709bb95233247c14b7fd90ad5282a8cc676835220d522b",
+    "tools/validation/test_factory_r04_scoped.py": "8e5d272955bb57615398a4426a2b84a131cb2325b61dbc8d4fd13f8b07b35b43",
+    "tools/validation/test_factory_registered_artwork.py": "97bdc30e4c7f470f72cc530dc07d17dbc84d17b52d0f940e53d0b16ffa1c6764",
+    "tools/validation/test_factory_tooltip_wrap.py": "f7edadbc039df5ff8af942ba25115919e9f017a32a6e38bcf5925b3f95ec00fe",
+    "tools/validation/test_flow_distance.py": "132eac7fb60d783fa36c23c4c993b178ce9ce96244551ca75f43258fdc48a63f",
+    "tools/validation/test_fluid_extensions.py": "0cfe311031eea61a20f180145d4b280465f837618a00915a2f90ee07c8fc9ab5",
+    "tools/validation/test_fluid_gestures_native.py": "f0dfd7903b6306403749ce35d5dad3609cc902d082738309647820267cec9643",
+    "tools/validation/test_fluid_gui_text_free.py": "da3b2a28e8113260510b4b042782bda5b40af07125c0662ea77adbf16a54b1fa",
+    "tools/validation/test_fluid_packaged_driver.py": "698297f9c059a3aaf56b81dc8d4e66487fa9f74ef30fdc230c7d480d110e00e8",
+    "tools/validation/test_fluid_packaged_proof.py": "fc54d0781690ff8ac40dd752cfd27a8b4c5cee21b04956d4c92c911f326f593c",
+    "tools/validation/test_fluid_tooltip_bounds.py": "850a4ba0cfd49226be77f6aba9a503d88b0ade2973ec8d8b73f86bbf2d6942fa",
+    "tools/validation/test_freezer_packaged_driver.py": "5635d7747a64baf8c253682e7088b73871bda821537fd3a430cf3e760ead2c5c",
+    "tools/validation/test_freezer_packaged_proof.py": "e1f26420d50078234192b5df00be599c5f436c9aca6983fc0bcb42878cb5b510",
+    "tools/validation/test_freezer_recovery_tooltip_proof.py": "69cbfc6cc715e5ff3e7697df83d41e6f75c6864e63a2828c6f16b33c54a1cc50",
+    "tools/validation/test_freezer_recovery_tooltip_wrap.py": "66d92e74db09fac6395795b2785970a791c0a4031ba026a046fda980b8828f76",
+    "tools/validation/test_freezer_reference_native.py": "b20aeff8a9cab9a53e08c2a8d5e71060d25d6ac352e839bee3743987e1a2160c",
+    "tools/validation/test_freezer_render_sync.py": "7d9c6e194207ea48e0b2aa3c96a09984b98fefc333ff1efc5694a9779261fe39",
+    "tools/validation/test_freezer_snapshot_hold.py": "76160bbb4e2031cc17fb7bc1e04b53a2a59128c12998a3582370d71aec027a29",
+    "tools/validation/test_freezer_v5_reconciliation.py": "6c74612f4dabd7dd439dd6748fd3f3688561951fd465359c4cad1b0a25f137ae",
+    "tools/validation/test_hopper_fidelity_integration.py": "17d1273406a630abe541048237224cf13e5a6d6ed6be89db6f878eff0c0c8121",
+    "tools/validation/test_labeled_crate_edit_resize.py": "5da4419019641600560648baf3ddc18692acbe8bcfb9abfeb7ad604c4445abc6",
+    "tools/validation/test_lava_surface.py": "61e6c8988a2ba3f47a434ba76e1b383d1c72c2f232d2b92d6d61bf4b89e2ef80",
+    "tools/validation/test_lithium_profile.py": "3036431ff18ac83448ec8bed6d4f446f1252e078f13cd6f466a555c3a5cc14c2",
+    "tools/validation/test_manual_packaged_proof.py": "b733cd685e0ec4b5ba712d7d6f9fac6eb8432489b964d3d0d2f6a53cd61b2a20",
+    "tools/validation/test_milking_packaged_driver.py": "de60788f559f5c024a9277df83f21c712ac1dbcc67ed868a112e9b10b2195878",
+    "tools/validation/test_milking_packaged_proof.py": "0a72201fddd7dbcbabfc338f28f597c56d3c0fa7bf4983706f68c740c316cdeb",
+    "tools/validation/test_milking_qualification_native.py": "01324eee9f7a701a3d48f0704c39f117e8e4bb5ab901e31ad121d3ad38ba1cf7",
+    "tools/validation/test_milking_renderer.py": "68cc555f0a5966f2f8bf43e834c847218fad650b01cacbddc50f97595e98fa7c",
+    "tools/validation/test_modernui_native_diagnostic.py": "c534790703232c79497a1cb69e7288b66d92d3295a586d6c9bbd87eb0080a07b",
+    "tools/validation/test_mooshroom_milking_native.py": "dfd56c7986ed2ee1d6fbde00d2300c8ff1778e4670c744b8314698f1e1e14fd3",
+    "tools/validation/test_renderer_profiles.py": "14c51d2cf12735c33f0d625975f3cf16214b8c6d66c8669dfafb15fad4fa08a1",
+    "tools/validation/test_smelter_drawer_accessibility.py": "c2feba0a6063dbda3fd7000db3ac6799b82ea4d4e22b195b3fef071708fce5c5",
+    "tools/validation/test_smelter_packaged_driver.py": "03c553463fc197c04b4ae13f1cd062aefc537648095bfc7773d1348b3544b808",
+    "tools/validation/test_smelter_packaged_proof.py": "f19021feb645e645ed45f6166794c663a4db6ff10894b4c2ca9f42c52ba67363",
+    "tools/validation/test_smelter_public_bounds.py": "d35922660caa38a3ca2626b7af4da67462e5549241e414fb953f7c0371c672e9",
+    "tools/validation/test_solar_cell_tooltip.py": "30eccf52aeac738bb22385012b9d24674d525dad7b38585543bfe292ad06aa06",
+    "tools/validation/test_solar_packaged_driver.py": "7f73b4b93e1f4846985606c1bb4c3c5dedc7230cc540bd70f25f1c9844144108",
+    "tools/validation/test_solar_packaged_proof.py": "b320967a2cbcf1a8a2e1cd0e66bc3cd1592dd3783f371bfadc3f7f7a1ed838db",
+    "tools/validation/test_solar_tooltip_proof.py": "a5963784edb6f229a9397c8d879b6e376447a76e492942e9fda751a345720c17",
+    "tools/validation/test_solar_tooltip_wrap.py": "fc228f2c18645af5623fcbfb98c249fa6228554e9195f0ef2369a94e27aff22e",
+    "tools/validation/test_solar_v2_reference_native.py": "14a5339934cf0e9238ec98b542afc61d4a494c870bdbb9f4dec5fd3b2a41d82c",
+    "tools/validation/test_tfc_milking_recovery_native.py": "14543e5d5ea3b2a194dae0ac561dc2c208d24dfcef2a22f72b64008654201242",
+    "tools/validation/test_tfc_packaged_driver.py": "046a54c11a3715e1087779c396921437b66409d67ceef8fc671845934603e256",
+    "tools/validation/test_tfc_packaged_proof.py": "bf09201443be7e5f22da92ad82399c6657db7d5ebddfbe220d871be52f2f02ba",
+    "tools/validation/test_tfc_recovery_native_input.py": "bc38e1a2208fc60c707388e1612a54fde5a15ed1fdd4f6fa1ea46a0714bf5c18",
+    "tools/validation/test_tree_cutter_v3_native.py": "fc6755aee64eb898f96c0e25b302166d168c4e41f6999aa65bd744fea37b08d3",
+    "tools/validation/test_tree_integration_preservation.py": "85808149b2fd9703ea2cd95e4df9f0f36c916cdf98fc7e96a757e34e0f0820bb",
+    "tools/validation/test_water_canal.py": "059ca990b3cc510a1f127e2e7240b6b3db200d2cf19d44d850c231e3e42d7c71",
+    "tools/validation/tfc_milking_recovery_native.py": "94989f0628ce0a16121fa9b86f525effef251d8f75f0e1570a12ebc9a022fd95",
+    "tools/validation/tfc_packaged_mooshroom_native.py": "5fb87120293004eb5f198717c48fffeca2c9ac7d0188109a45028f2d05f29c59",
+    "tools/validation/tfc_packaged_proof.py": "c675013cac541bdc5800a8b9f77908cd358014eab45ad62be53a4e4812032ded",
+    "tools/validation/tfc_packaged_recovery_native.py": "01169db47e2ee48e83b3c1cbecd3d288a470450d7d16760cb4d56c4870c60c54",
+    "tools/validation/tracker_render.py": "ba3d6e4593657451ed5a6b1120632429b1db1917f1bc3d7eff2c7ee727bfe66d",
+    "tools/validation/tree_cutter_v3_native.py": "e21de9b735b1224cbdcb306afa4ad4c2c2273031d5c7266362863231ccecc327",
+    "tools/validation/tree_integration_preservation.py": "f1ac80a0ee79c0d169f8f6078da1331c24cb54e3474a813132a178398dd0af2e",
+    "tools/validation/validate_renderer_run.py": "d066bf468c19604255630049e4438bde3c957b8df4ec8b1988f4a080fac4ed81",
+    "tools/validation/verify_freezer_reference.py": "2925ebdf492fc521d7e45b4ffdaee028aa4dc8cfa396d99047cba070d1813c6f",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": "d4163f404671b3933c0a6a97d9aff869b48d2275568b25606ce6d3d043b4564d",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/RetainedDropperLayout.java": "452cd6cac17c8f1586a95116217327835d3bc4084127fec4adda9b42147e8b7e",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": "74f95f7e8ab5af051ae6ce9ff435070a95cc12ea199f11c775e35fd14dfeb3de"
+  },
+  "candidate": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java": "e8940086a38cc8e932cc6dce8dee50bd54e9c04bee1610628a77bd88e1504031",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactorySteelFrame.java": "6334b5d646fdb2939e0d4072eb56b67273f53217d61d7a8a35b07b20b187dd92",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "200ed777cd8e17d418f296f9bdff85a130ce0fd075d17a519bcaac32c814a395",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png": "c17f8a1914a1c5e6419c7884df4651d39de380c654fd45214d8c58b7123942cf",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png": "2e97980c12634397098fe20e3d2bfa5012560f6b839ed455d1e63b9d97ef3981",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/owner_slot_rim.png": "99f1f45454d359995ccde5e1128d06ed18a34b77e7b823da9d24445f62ba4092",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/owner_control_thumb.png": "f5afbd94eca98b9a43eb09eb30540023a1321d3e654aeb0bc4513ca123350dbd",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/owner_control_well.png": "b9af6295caa259573c10752499d576da9eca98a3312b7b873f20b5031a518fef",
+    "tools/approved_gui_20261119/build_assets.py": "0a32f82ee41f7668cb40d251386d6ed8403e35bf68e4339c97bdd68db881e8dd",
+    "tools/approved_gui_20261119/test_assets.py": "0ee2871553cbccd872882d4e1d810c6766e60ab70b39a7c6d4634da68513bcd7",
+    "tools/approved_gui_20261119/test_click_bounds.py": "729f6e9d20008aa9ed55b1ed3c8a5f0453f64cabb298f1ae933afecd600b52cf"
+  },
+  "inverse": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java": [
+      {
+        "start": 692,
+        "end": 695,
+        "from": "Own",
+        "to": "Six rast"
+      },
+      {
+        "start": 697,
+        "end": 704,
+        "from": "-source",
+        "to": ""
+      },
+      {
+        "start": 705,
+        "end": 711,
+        "from": "decora",
+        "to": ""
+      },
+      {
+        "start": 712,
+        "end": 716,
+        "from": "ion ",
+        "to": ""
+      },
+      {
+        "start": 718,
+        "end": 719,
+        "from": "t",
+        "to": ""
+      },
+      {
+        "start": 720,
+        "end": 722,
+        "from": "nd",
+        "to": "l"
+      },
+      {
+        "start": 724,
+        "end": 725,
+        "from": "8",
+        "to": ""
+      },
+      {
+        "start": 726,
+        "end": 726,
+        "from": "",
+        "to": "er logical pi"
+      },
+      {
+        "start": 727,
+        "end": 727,
+        "from": "",
+        "to": "el,"
+      },
+      {
+        "start": 728,
+        "end": 736,
+        "from": "sideways",
+        "to": "no"
+      },
+      {
+        "start": 737,
+        "end": 758,
+        "from": "and 16px above the un",
+        "to": ""
+      },
+      {
+        "start": 764,
+        "end": 765,
+        "from": "d",
+        "to": " to the"
+      },
+      {
+        "start": 778,
+        "end": 893,
+        "from": ".\n      // Slot/widget/menu geometry stays unchanged; MachineScreen protects the visible border from outside clicks",
+        "to": ""
+      },
+      {
+        "start": 915,
+        "end": 917,
+        "from": "-8",
+        "to": ""
+      },
+      {
+        "start": 919,
+        "end": 920,
+        "from": "-",
+        "to": ","
+      },
+      {
+        "start": 921,
+        "end": 921,
+        "from": "",
+        "to": "7"
+      },
+      {
+        "start": 924,
+        "end": 930,
+        "from": "92,182",
+        "to": "66"
+      },
+      {
+        "start": 938,
+        "end": 939,
+        "from": "1",
+        "to": "0"
+      },
+      {
+        "start": 940,
+        "end": 941,
+        "from": "2",
+        "to": "6,996"
+      },
+      {
+        "start": 944,
+        "end": 944,
+        "from": "",
+        "to": "56,"
+      },
+      {
+        "start": 945,
+        "end": 954,
+        "from": "2,1152,10",
+        "to": ""
+      },
+      {
+        "start": 955,
+        "end": 956,
+        "from": "2",
+        "to": "6"
+      }
+    ],
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactorySteelFrame.java": [
+      {
+        "start": 222,
+        "end": 227,
+        "from": "untim",
+        "to": ""
+      },
+      {
+        "start": 228,
+        "end": 239,
+        "from": " slot rim s",
+        "to": ""
+      },
+      {
+        "start": 240,
+        "end": 244,
+        "from": "mple",
+        "to": ""
+      },
+      {
+        "start": 245,
+        "end": 246,
+        "from": " ",
+        "to": "-"
+      },
+      {
+        "start": 250,
+        "end": 250,
+        "from": "",
+        "to": " steel skin, assembled"
+      },
+      {
+        "start": 260,
+        "end": 262,
+        "from": "ow",
+        "to": "retai"
+      },
+      {
+        "start": 263,
+        "end": 272,
+        "from": "er-approv",
+        "to": ""
+      },
+      {
+        "start": 275,
+        "end": 279,
+        "from": "Hopp",
+        "to": "Plac"
+      },
+      {
+        "start": 282,
+        "end": 285,
+        "from": "sou",
+        "to": "mate"
+      },
+      {
+        "start": 286,
+        "end": 288,
+        "from": "ce",
+        "to": "ial"
+      },
+      {
+        "start": 524,
+        "end": 526,
+        "from": "st",
+        "to": "plac"
+      },
+      {
+        "start": 527,
+        "end": 529,
+        "from": "el",
+        "to": "r"
+      },
+      {
+        "start": 532,
+        "end": 536,
+        "from": "/own",
+        "to": "_ref"
+      },
+      {
+        "start": 538,
+        "end": 541,
+        "from": "_sl",
+        "to": "ence/backgr"
+      },
+      {
+        "start": 542,
+        "end": 547,
+        "from": "t_rim",
+        "to": "und"
+      },
+      {
+        "start": 838,
+        "end": 838,
+        "from": "",
+        "to": "11"
+      },
+      {
+        "start": 840,
+        "end": 840,
+        "from": "",
+        "to": "202,9"
+      },
+      {
+        "start": 842,
+        "end": 844,
+        "from": "10",
+        "to": ""
+      },
+      {
+        "start": 845,
+        "end": 847,
+        "from": ",6",
+        "to": ""
+      },
+      {
+        "start": 882,
+        "end": 882,
+        "from": "",
+        "to": "11"
+      },
+      {
+        "start": 884,
+        "end": 886,
+        "from": "10",
+        "to": ""
+      },
+      {
+        "start": 887,
+        "end": 890,
+        "from": ",10",
+        "to": "8"
+      },
+      {
+        "start": 892,
+        "end": 893,
+        "from": "6",
+        "to": "90,8"
+      },
+      {
+        "start": 925,
+        "end": 925,
+        "from": "",
+        "to": "11"
+      },
+      {
+        "start": 927,
+        "end": 928,
+        "from": "6",
+        "to": "210"
+      },
+      {
+        "start": 929,
+        "end": 930,
+        "from": "6",
+        "to": "8"
+      },
+      {
+        "start": 931,
+        "end": 933,
+        "from": "96",
+        "to": "78"
+      },
+      {
+        "start": 967,
+        "end": 968,
+        "from": "0",
+        "to": "9"
+      },
+      {
+        "start": 970,
+        "end": 971,
+        "from": "6",
+        "to": "210"
+      },
+      {
+        "start": 972,
+        "end": 973,
+        "from": "6",
+        "to": "8"
+      },
+      {
+        "start": 974,
+        "end": 976,
+        "from": "96",
+        "to": "78"
+      },
+      {
+        "start": 991,
+        "end": 1591,
+        "from": "\n\n   private static final ResourceLocation WELL = ResourceLocation.fromNamespaceAndPath(\n      \"immersive_engineer_decor_controls_tool_reforged\", \"textures/gui/factory_steel_v2/owner_control_well.png\");\n   private static final ResourceLocation THUMB = ResourceLocation.fromNamespaceAndPath(\n      \"immersive_engineer_decor_controls_tool_reforged\", \"textures/gui/factory_steel_v2/owner_control_thumb.png\");\n   private static final ResourceLocation NATIVE_DROPPER = ResourceLocation.fromNamespaceAndPath(\n      \"immersive_engineer_decor_controls_tool_reforged\", \"textures/gui/factory_dropper_gui.png\");",
+        "to": ""
+      },
+      {
+        "start": 1663,
+        "end": 1664,
+        "from": "b",
+        "to": "fi"
+      },
+      {
+        "start": 1665,
+        "end": 1667,
+        "from": "it",
+        "to": "l"
+      },
+      {
+        "start": 1668,
+        "end": 1673,
+        "from": "WELL,",
+        "to": ""
+      },
+      {
+        "start": 1677,
+        "end": 1677,
+        "from": "",
+        "to": "x+"
+      },
+      {
+        "start": 1679,
+        "end": 1679,
+        "from": "",
+        "to": "y+"
+      },
+      {
+        "start": 1682,
+        "end": 1682,
+        "from": "",
+        "to": "x"
+      },
+      {
+        "start": 1683,
+        "end": 1683,
+        "from": "",
+        "to": "F101519);\n      g.fill(x+1,y+1,x+w-1,y+h-1"
+      },
+      {
+        "start": 1685,
+        "end": 1685,
+        "from": "",
+        "to": "x"
+      },
+      {
+        "start": 1686,
+        "end": 1686,
+        "from": "",
+        "to": "F222A30);\n      g.fill(x+1"
+      },
+      {
+        "start": 1687,
+        "end": 1687,
+        "from": "",
+        "to": "y+"
+      },
+      {
+        "start": 1688,
+        "end": 1688,
+        "from": "",
+        "to": ",x+w-1,y+2,"
+      },
+      {
+        "start": 1689,
+        "end": 1689,
+        "from": "",
+        "to": "xFF070B0D);\n      g.fill(x,y+h-1,x+w,y+h,0xFF727E"
+      },
+      {
+        "start": 1690,
+        "end": 1702,
+        "from": ",108,108,108",
+        "to": "5"
+      },
+      {
+        "start": 1781,
+        "end": 1782,
+        "from": "b",
+        "to": "fi"
+      },
+      {
+        "start": 1783,
+        "end": 1785,
+        "from": "it",
+        "to": "l"
+      },
+      {
+        "start": 1786,
+        "end": 1792,
+        "from": "THUMB,",
+        "to": ""
+      },
+      {
+        "start": 1796,
+        "end": 1796,
+        "from": "",
+        "to": "x+"
+      },
+      {
+        "start": 1798,
+        "end": 1798,
+        "from": "",
+        "to": "y+"
+      },
+      {
+        "start": 1801,
+        "end": 1801,
+        "from": "",
+        "to": "x"
+      },
+      {
+        "start": 1802,
+        "end": 1802,
+        "from": "",
+        "to": "F151A1E);\n      g.fill(x,y,x+w,y+1"
+      },
+      {
+        "start": 1804,
+        "end": 1804,
+        "from": "",
+        "to": "x"
+      },
+      {
+        "start": 1805,
+        "end": 1805,
+        "from": "",
+        "to": "FD9DEE0);\n      g.fill(x"
+      },
+      {
+        "start": 1806,
+        "end": 1806,
+        "from": "",
+        "to": "y,x+1,y+h,0xFFACB7BE);\n      g.fill(x+1,y+1,x+w-1,y+h-1,0xFF879"
+      },
+      {
+        "start": 1807,
+        "end": 1807,
+        "from": "",
+        "to": "9F);\n      g.fill(x+w-1,y+1,x+w,y+h,"
+      },
+      {
+        "start": 1808,
+        "end": 1808,
+        "from": "",
+        "to": "xFF414D55);\n      g.fill(x+1"
+      },
+      {
+        "start": 1809,
+        "end": 1810,
+        "from": "6",
+        "to": "y+h-1,x+w,y+h,"
+      },
+      {
+        "start": 1811,
+        "end": 1817,
+        "from": ",60,60",
+        "to": "xFF414D55"
+      },
+      {
+        "start": 1825,
+        "end": 1913,
+        "from": "\n   // Preserve the original mod's semantic state symbols, not R04's drawn ASCII arrows.",
+        "to": ""
+      },
+      {
+        "start": 1978,
+        "end": 1988,
+        "from": ",int state",
+        "to": ""
+      },
+      {
+        "start": 1998,
+        "end": 1998,
+        "from": "",
+        "to": "Str"
+      },
+      {
+        "start": 2000,
+        "end": 2000,
+        "from": "",
+        "to": "g[] rows = swi"
+      },
+      {
+        "start": 2001,
+        "end": 2004,
+        "from": " u=",
+        "to": "ch("
+      },
+      {
+        "start": 2009,
+        "end": 2012,
+        "from": "==2",
+        "to": ")"
+      },
+      {
+        "start": 2013,
+        "end": 2014,
+        "from": "?",
+        "to": "{\n"
+      },
+      {
+        "start": 2015,
+        "end": 2016,
+        "from": "2",
+        "to": "        case 0 -> new String[]{\"1"
+      },
+      {
+        "start": 2018,
+        "end": 2027,
+        "from": "+(state==",
+        "to": "0000\",\""
+      },
+      {
+        "start": 2028,
+        "end": 2029,
+        "from": "?",
+        "to": "1"
+      },
+      {
+        "start": 2031,
+        "end": 2032,
+        "from": ":",
+        "to": ""
+      },
+      {
+        "start": 2033,
+        "end": 2051,
+        "from": ") : 179+(state==1?",
+        "to": "00\",\""
+      },
+      {
+        "start": 2053,
+        "end": 2054,
+        "from": ":",
+        "to": "111"
+      },
+      {
+        "start": 2055,
+        "end": 2056,
+        "from": ")",
+        "to": "0\",\"1111111\",\"1111100\",\"1110000\",\"1000000\"}"
+      },
+      {
+        "start": 2064,
+        "end": 2064,
+        "from": "",
+        "to": "   case 1 -> new Str"
+      },
+      {
+        "start": 2066,
+        "end": 2077,
+        "from": "t v=index==",
+        "to": "g[]{\"000"
+      },
+      {
+        "start": 2078,
+        "end": 2100,
+        "from": " && state==2 ? 76 : 66",
+        "to": "000\",\"0001100\",\"1111110\",\"1111111\",\"1111110\",\"0001100\",\"0001000\"}"
+      },
+      {
+        "start": 2108,
+        "end": 2108,
+        "from": "",
+        "to": "   default -> new String[]{\"0011100\",\"0010100\",\"0010100\",\"0010100\",\"1110111\",\"0000000\",\"0000000\"};\n      };\n      for(int row=0;row<rows.length;row++) for(int col=0;col<7;col++)\n         if(rows[row].charAt(col)=='1') "
+      },
+      {
+        "start": 2110,
+        "end": 2111,
+        "from": "b",
+        "to": "fi"
+      },
+      {
+        "start": 2112,
+        "end": 2114,
+        "from": "it",
+        "to": "l"
+      },
+      {
+        "start": 2115,
+        "end": 2129,
+        "from": "NATIVE_DROPPER",
+        "to": "x+col,y+row"
+      },
+      {
+        "start": 2131,
+        "end": 2131,
+        "from": "",
+        "to": "+col+1"
+      },
+      {
+        "start": 2133,
+        "end": 2133,
+        "from": "",
+        "to": "+row+1"
+      },
+      {
+        "start": 2134,
+        "end": 2138,
+        "from": "u,v,",
+        "to": "0xFFD"
+      },
+      {
+        "start": 2139,
+        "end": 2141,
+        "from": ",9",
+        "to": "DEE0"
+      },
+      {
+        "start": 2297,
+        "end": 2299,
+        "from": "08",
+        "to": "199"
+      },
+      {
+        "start": 2301,
+        "end": 2303,
+        "from": "08",
+        "to": "312"
+      }
+    ],
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": [
+      {
+        "start": 37007,
+        "end": 37555,
+        "from": "@Override\n   protected boolean hasClickedOutside(double mouseX, double mouseY, int left, int top, int button) {\n      if (((MachineMenu)this.menu).kind() == MachineKind.FACTORY_HOPPER) {\n         // The owner-source border is visible but has no slot/widget action.\n         // Treat it as empty panel, not outside (-999 / carried-stack drop).\n         return mouseX < left - 8 || mouseX >= left + 184\n            || mouseY < top - 16 || mouseY >= top + 166;\n      }\n      return super.hasClickedOutside(mouseX, mouseY, left, top, button);\n   }\n\n   ",
+        "to": ""
+      },
+      {
+        "start": 41048,
+        "end": 41057,
+        "from": ",state[n]",
+        "to": ""
+      }
+    ]
+  },
+  "contract": {
+    "hopper_draw": [
+      -8,
+      -16,
+      192,
+      182
+    ],
+    "hopper_input_half_open": [
+      -8,
+      -16,
+      184,
+      166
+    ],
+    "dropper_draw": [
+      0,
+      0,
+      228,
+      250
+    ],
+    "item_size": [
+      16,
+      16
+    ],
+    "slot_counts": {
+      "hopper": 54,
+      "dropper": 51
+    },
+    "native_carried_stack": "NOT_RUN",
+    "native_capture": "NOT_RUN"
+  },
+  "change": "restore full well vignette; remove displaced supports; preserve diagonal stripe period and round bolts in bounded Hopper gap",
+  "source_attestations": {
+    "ChatGPT Image 19 Nov 2026, 05_52_17-1.png": "566a03669af7e5299b4ec3c795f8cb4937fa47b8cb1770ca16d6b00676196282",
+    "ChatGPT Image 19 Nov 2026, 05_52_20-2.png": "844ded3692701c998790b2d61b946355a6f6a44f72e4b389f6f558ce8b8d5fa2"
+  },
+  "private_reproduction_artifact_sha256": "e910eda70ae7c5fd2ac74fdf90e310b03ae47b1a1a725e9cbf3186ba464ff64e",
+  "stripe_projection_sha256": "f3b3a3b04cfd3535081e95208d90ad29bf4a750d06a5991b56078aa2e5e0a2e4"
+}

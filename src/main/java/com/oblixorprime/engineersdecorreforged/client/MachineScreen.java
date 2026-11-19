@@ -735,6 +735,17 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
+   @Override
+   protected boolean hasClickedOutside(double mouseX, double mouseY, int left, int top, int button) {
+      if (((MachineMenu)this.menu).kind() == MachineKind.FACTORY_HOPPER) {
+         // The owner-source border is visible but has no slot/widget action.
+         // Treat it as empty panel, not outside (-999 / carried-stack drop).
+         return mouseX < left - 8 || mouseX >= left + 184
+            || mouseY < top - 16 || mouseY >= top + 166;
+      }
+      return super.hasClickedOutside(mouseX, mouseY, left, top, button);
+   }
+
    private void drawFactoryHopperWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       int slotIndex = Mth.clamp(((MachineMenu)this.menu).field(6), 0, 17);
       graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 18, 200, 8, 18, 18);
@@ -789,7 +800,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       for(int n=0;n<3;n++) {
          int sx=143+n*23;
          // Fixed function symbols sit above the synchronized rail, never beneath its thumb.
-         FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n);
+         FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n,state[n]);
          FactorySteelFrame.inset(graphics,x+sx,y+100,18,8);
          int offset=state[n]*(n==1?6:12);
          FactorySteelFrame.thumb(graphics,x+sx+1+offset,y+101,5,6);

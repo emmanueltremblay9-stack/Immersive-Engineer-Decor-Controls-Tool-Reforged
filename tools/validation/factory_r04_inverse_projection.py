@@ -37,6 +37,14 @@ def git_blob_sha(data):
 def project_screen_to_main(source, *, recipe_bytes=None):
     if not isinstance(source, str):
         raise FactoryProjectionError('Expected UTF-8 decoded MachineScreen text')
+    # Owner v1 is first validated independently, then exactly restored to R04.
+    from factory_owner_20261119 import validate_candidate, project_source
+    try:
+        validate_candidate()
+        if git_blob_sha(source) != R04_SCREEN_BLOB:
+            source = project_source(SCREEN_PATH, source)
+    except (AssertionError, OSError, ValueError) as error:
+        raise FactoryProjectionError(str(error)) from error
     if git_blob_sha(source) != R04_SCREEN_BLOB:
         raise FactoryProjectionError('Unexpected MachineScreen bytes; Factory-only allowlist rejected mutation')
     if recipe_bytes is None:
