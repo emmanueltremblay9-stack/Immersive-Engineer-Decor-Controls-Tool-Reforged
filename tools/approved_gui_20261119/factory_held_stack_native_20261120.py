@@ -43,8 +43,15 @@ def validate_fields(proof, nonce, sha, jar, jar_sha, width, height, machine, sca
         "native_visual_acceptance": False,
     }
     for key, value in expected.items():
-        require(type(proof.get(key)) is type(value) and proof[key] == value,
-                "Native held-stack proof field differs: " + key)
+        actual = proof.get(key)
+        if key == "gui_scale":
+            # Minecraft Window.getGuiScale() may serialize an integral double (2.0).
+            # Require the exact value, a finite number, and reject booleans.
+            import math
+            valid = type(actual) in (int, float) and math.isfinite(actual) and actual == value
+        else:
+            valid = type(actual) is type(value) and actual == value
+        require(valid, "Native held-stack proof field differs: " + key)
     rt = proof.get("packaged_runtime", {})
     require(rt.get("jar_path") == str(jar.resolve())
             and rt.get("jar_sha256") == jar_sha
