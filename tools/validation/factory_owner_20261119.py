@@ -32,6 +32,16 @@ PREVIOUS_RECIPE = PACKAGE / 'qualification-v3.json'
 PREVIOUS_RECIPE_SHA256 = 'cefa38e5b9121bbe9524272b729b5387612c1c300390fa3742c0e164c14caa6c'
 PREVIOUS_COMMIT = 'ef40b46776148026e5df5a815483c2f69fb982b4'
 RECIPE_SHA256 = '9bb521a4c336d2d0b79cf48848d078829b9ccbad1e748ee736b5c0cf9a30b327'
+# Versioned successor; the V7 recipe and every earlier hash remain untouched.
+V7_COMMIT = 'cca76b0019d9a241e1f92461dccfccba728e3ec1'
+V8B_RECIPE = PACKAGE / 'qualification-v8b.json'
+V8B_RECIPE_SHA256 = '73077d6b7c2bf2b49f0c4d254050000f6e7f55aae8d479be5cbecbf7e0f93b59'
+V8B_EXACT_BINARIES = {
+    'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png':
+        'deb156c121171ae199488080879219ad41c3758326290746c6c40a68f460fc17',
+    'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png':
+        '01ae08557fd2f7fd66e4573284527c8ca39a557201157b9a46e324f87cab6d3c',
+}
 BASE = '87f8b8e03cac46a6154b54522d1497baa52c67b2'
 SCREEN = 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
 
@@ -98,7 +108,7 @@ def historical_v6_recipe():
     return merged
 
 
-def recipe():
+def historical_v7_recipe():
     merged = historical_v6_recipe()
     raw = read_exact(RECIPE)
     assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
@@ -112,8 +122,32 @@ def recipe():
     return merged
 
 
+def recipe():
+    '''Closed V8b successor: exactly two runtime binaries advance from V7.'''
+    historical = historical_v7_recipe()
+    raw = read_exact(V8B_RECIPE)
+    assert digest(raw) == V8B_RECIPE_SHA256, 'V8b successor recipe changed'
+    data = json.loads(raw)
+    assert data['schema'] == 'owner-20261120-v8b-exact-runtime-regions'
+    assert data['previous_commit'] == V7_COMMIT
+    assert data['previous_recipe_sha256'] == RECIPE_SHA256
+    assert data['source_zip_sha256'] == 'a1ff86499732b1467936b1024aedd48d537c4f9342f8fd258847d1dcfd49ac64'
+    assert data['candidate_delta'] == V8B_EXACT_BINARIES, 'V8b replacement exceeds two pinned binaries'
+    assert data['historical_v7'] == {
+        p: historical['candidate'][p] for p in V8B_EXACT_BINARIES
+    }, 'Frozen V7 binary identities changed'
+    # All old file paths, old checksums, inverse edits and baseline stay intact.
+    result = dict(historical)
+    result['candidate'] = dict(historical['candidate'], **V8B_EXACT_BINARIES)
+    assert set(result['candidate']) == set(historical['candidate']), 'Protected inventory changed'
+    assert all(result['candidate'][path] == expected for path, expected in historical['candidate'].items()
+               if path not in V8B_EXACT_BINARIES), 'Non-binary V7 pins changed'
+    result['schema'] = data['schema']
+    return result
+
+
 def ensure_base_object(root=ROOT, anchor=BASE):
-    assert anchor in {BASE, PREVIOUS_COMMIT, V4_COMMIT, V5_COMMIT, V6_COMMIT}, "Unapproved historical Git anchor"
+    assert anchor in {BASE, PREVIOUS_COMMIT, V4_COMMIT, V5_COMMIT, V6_COMMIT, V7_COMMIT}, "Unapproved historical Git anchor"
     check = subprocess.run(['git','cat-file','-e',anchor+'^{commit}'],cwd=root,capture_output=True)
     if check.returncode:
         # Only GitHub CI may acquire the exact historical object automatically.

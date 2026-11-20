@@ -81,6 +81,7 @@ class OwnerQualification(unittest.TestCase):
         self.assertTrue(any(isinstance(item,HistoricalV4Assets) for item in suite))
         self.assertTrue(any(isinstance(item,HistoricalV5Metal) for item in suite))
         self.assertTrue(any(isinstance(item,HistoricalV6Alpha) for item in suite))
+        self.assertTrue(any(isinstance(item,HistoricalV7SlotRelief) for item in suite))
 
     def test_reject_guard_mutation(self):
         for path in ['tools/validation/test_factory_tooltip_wrap.py','tools/validation/factory_r04_inverse_projection.py']:
@@ -125,6 +126,22 @@ class OwnerQualification(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             p=Path(td)/'recipe.json';p.write_bytes(gate.RECIPE.read_bytes()+b' ')
             with patch.object(gate,'RECIPE',p),self.assertRaisesRegex(AssertionError,'recipe changed'):gate.validate_candidate()
+
+    def test_v8b_successor_is_closed_and_rejects_recipe_mutation(self):
+        historical = gate.historical_v7_recipe()
+        current = gate.recipe()
+        self.assertEqual(set(current['candidate']), set(historical['candidate']))
+        self.assertEqual({p for p in current['candidate']
+                          if current['candidate'][p] != historical['candidate'][p]},
+                         set(gate.V8B_EXACT_BINARIES))
+        for path, expected in gate.V8B_EXACT_BINARIES.items():
+            self.assertEqual(current['candidate'][path], expected)
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / 'qualification-v8b.json'
+            path.write_bytes(gate.V8B_RECIPE.read_bytes() + b' ')
+            with patch.object(gate, 'V8B_RECIPE', path), self.assertRaisesRegex(
+                    AssertionError, 'V8b successor recipe changed'):
+                gate.validate_candidate()
 
     def test_reject_private_sources_added_to_public_tree(self):
         path='tools/validation/test_factory_tooltip_wrap.py'
@@ -201,8 +218,41 @@ class HistoricalV6Alpha(unittest.TestSuite):
             return super().run(result,debug)
 
 
+class HistoricalV7SlotRelief(unittest.TestSuite):
+    '''Run the unchanged V6-to-V7 slot-relief tests on Git-pinned V7 PNG bytes.'''
+    def __init__(self, tests, module):
+        super().__init__(tests)
+        self.module = module
+
+    def run(self, result, debug=False):
+        gate.validate_candidate()  # Current V8b is mandatory, not a fallback.
+        gate.ensure_base_object(anchor=gate.V7_COMMIT)
+        gate.ensure_base_object(anchor=gate.V6_COMMIT)
+        m = self.module
+        v7 = gate.historical_v7_recipe()['candidate']
+        v6 = gate.historical_v6_recipe()['candidate']
+
+        def frozen_pictures(kind):
+            self.assert_kind(kind)
+            path = str((m.art.base.OUT / (kind + '.png')).relative_to(gate.ROOT))
+            old = subprocess.check_output(['git', 'show', m.art.PARENT + ':' + path], cwd=gate.ROOT)
+            new = subprocess.check_output(['git', 'show', gate.V7_COMMIT + ':' + path], cwd=gate.ROOT)
+            assert gate.digest(old) == v6[path], 'Historical V6 input changed'
+            assert gate.digest(new) == v7[path], 'Historical V7 input changed'
+            return m.decode_png(m.Bytes(old)), m.decode_png(m.Bytes(new))
+
+        # No modification to test_slot_relief.py or the frozen V7 inputs.
+        with patch.object(m, 'pictures', side_effect=frozen_pictures):
+            return super().run(result, debug)
+
+    @staticmethod
+    def assert_kind(kind):
+        if kind not in ('hopper', 'dropper'):
+            raise AssertionError('Unexpected historical Factory kind')
+
+
 def load_tests(loader, tests, pattern):
-    # Current RGB-only contract and frozen historical v4/v5/v6 art checks.
+    # Current V8b contract and frozen historical v4/v5/v6/V7 art checks.
     pkg=gate.PACKAGE
     sys.path.insert(0,str(pkg))
     try:
@@ -213,6 +263,12 @@ def load_tests(loader, tests, pattern):
             if name=='test_assets':tests.addTest(HistoricalV4Assets(suite,module))
             elif name=='test_metal_assets':tests.addTest(HistoricalV5Metal(suite,module))
             elif name=='test_dropper_alpha':tests.addTest(HistoricalV6Alpha(suite,module))
+            elif name=='test_slot_relief':tests.addTest(HistoricalV7SlotRelief(suite,module))
             else:tests.addTests(suite)
+        # This exact live V8b suite runs in every existing Factory tooltip/fixture
+        # preflight and in the main Build validation discovery. No workflow downgrade.
+        spec=importlib.util.spec_from_file_location('owner_v8b_exact',pkg/'test_v8b_exact_runtime_regions.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        tests.addTests(loader.loadTestsFromModule(module))
     finally:sys.path.remove(str(pkg))
     return tests

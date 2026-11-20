@@ -88,5 +88,14 @@ class FactoryHeldStackProof(unittest.TestCase):
         with self.assertRaises(SmokeFailure):validate_fields(changed,*args)
 
 
+class V8bHeldStackArtworkGate(unittest.TestCase):
+    '''Native carried-stack jobs must not run on stale V7/incorrect V8b pixels.'''
+    def test_exact_v8b_is_active_before_held_stack_client(self):
+        from test_v8b_exact_runtime_regions import inspect, EXPECTED
+        for kind in ('hopper', 'dropper'):
+            with self.subTest(kind=kind):
+                self.assertEqual(inspect(kind)['sha256'], EXPECTED[kind]['sha_v8b'])
+
+
 if __name__=="__main__":
     unittest.main()

@@ -1,0 +1,15 @@
+{
+  "schema": "owner-20261120-v8b-exact-runtime-regions",
+  "previous_commit": "cca76b0019d9a241e1f92461dccfccba728e3ec1",
+  "previous_recipe_sha256": "9bb521a4c336d2d0b79cf48848d078829b9ccbad1e748ee736b5c0cf9a30b327",
+  "candidate_delta": {
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png": "deb156c121171ae199488080879219ad41c3758326290746c6c40a68f460fc17",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png": "01ae08557fd2f7fd66e4573284527c8ca39a557201157b9a46e324f87cab6d3c"
+  },
+  "source_zip_sha256": "a1ff86499732b1467936b1024aedd48d537c4f9342f8fd258847d1dcfd49ac64",
+  "historical_v7": {
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png": "da41853c9b1c01582900bdc5c1dbbe5d240d8dcf48923c2e010b73f7522e6f0e",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png": "363a10f20398be9efdb45ee48501e64c1c86ed9c94292c0064bd4c8bfea72813"
+  },
+  "scope_note": "Only these two runtime asset SHA-256 values advance; all other V7 candidate/baseline/inverse entries remain pinned and unchanged. Raw original reference images and V8b ZIP stay outside the repository."
+}
