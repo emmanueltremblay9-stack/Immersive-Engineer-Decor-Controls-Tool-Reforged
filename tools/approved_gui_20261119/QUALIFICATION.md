@@ -1,5 +1,44 @@
 # Owner 19 novembre : candidat public-minimal v3 (LOCAL seulement)
 
+## v7 relief des cases et platine des filtres (local, NOT NATIVE)
+
+The exact parent `b144a647b9c77a6dac88ec6ee0ddda1e8adace2e` is frozen. The
+old alpha-only assertions run on that verified historical Dropper, never as
+evidence for the current RGB delta. Both current assets inherit V6 alpha
+byte-for-byte. Their only changed areas are the one-pixel slot outlines,
+Dropper's polygonal three-filter backing, and +5 RGB on the interior steel of
+those three filters (not a decorative overlay; the first pixel remains
+unchanged). No textures outside that mask, slot layout, hitboxes, controls,
+indicators, center bars or production Java changes.
+
+Reproduce locally with `python tools/approved_gui_20261119/build_slot_relief.py
+<directory of exact private originals> <separate output directory>`. Both
+source SHA-256 values are verified before reading artwork; sources never live
+inside the repository. The packaged candidate hashes and narrow scope are
+tested without Pillow or those private source files. The 1×/2× static texture
+bench is not Minecraft evidence; empty/occupied native scale qualification is
+still pending on this exact candidate.
+
+The existing Factory workflow keeps its original four tooltip jobs unchanged.
+An independent opt-in launcher profile is exercised by four new matrix jobs
+(`hopper`/`dropper`, observed scale 1/2 at 1280×720). Each requires the exact
+checkout SHA, verifies the ordinary JAR, then takes empty and occupied images
+in the same opened menu with the pointer parked. The fixture seeds all slots
+server-side, including three deliberately nonmatching Dropper filter items.
+The proof checks menu/logic identity, server-client item identities and counts,
+fixed slot coordinates and per-slot central pixel changes excluding the lower
+count band. Pixel changes are smoke evidence, not item-sprite identity or
+pixel-perfect occlusion analysis; actual images need visual review. No transfer,
+held-stack click, or new control mode is claimed. The two screen designs,
+controls, metallic traverses and V6 alpha silhouettes remain separate from
+this test-only workflow extension.
+
+Only PR #206 triggers these jobs automatically; `workflow_dispatch` may also
+explicitly select its exact branch. Unrelated PRs do not run the fixture.
+The additional artifact includes only the two captures, proof, classpath
+manifest, build/package/prepare/client logs and JAR. No saves, world or player
+data, native options, or whole run directory is included in the new job.
+
 ## v6 Dropper exterior-alpha follow-up (local, NOT NATIVE)
 
 The immutable v5 recipe and metal tests remain historical evidence anchored to

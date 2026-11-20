@@ -80,6 +80,7 @@ class OwnerQualification(unittest.TestCase):
         suite=load_tests(unittest.defaultTestLoader,unittest.TestSuite(),None)
         self.assertTrue(any(isinstance(item,HistoricalV4Assets) for item in suite))
         self.assertTrue(any(isinstance(item,HistoricalV5Metal) for item in suite))
+        self.assertTrue(any(isinstance(item,HistoricalV6Alpha) for item in suite))
 
     def test_reject_guard_mutation(self):
         for path in ['tools/validation/test_factory_tooltip_wrap.py','tools/validation/factory_r04_inverse_projection.py']:
@@ -183,18 +184,35 @@ class HistoricalV5Metal(unittest.TestSuite):
             return super().run(result,debug)
 
 
+class HistoricalV6Alpha(unittest.TestSuite):
+    """Run frozen v6 checks against the exact v6 candidate, not altered art."""
+    def __init__(self,tests,module):
+        super().__init__(tests);self.module=module
+    def run(self,result,debug=False):
+        gate.validate_candidate()
+        gate.ensure_base_object(anchor=gate.V6_COMMIT)
+        m=self.module;path=m.a.ASSET
+        raw=subprocess.check_output(['git','show',gate.V6_COMMIT+':'+path],cwd=gate.ROOT)
+        assert gate.digest(raw)==gate.historical_v6_recipe()['candidate'][path]
+        decode=m.decode_png
+        def historical_decode(p):
+            return decode(m.Bytes(raw) if p==gate.ROOT/path else p)
+        with patch.object(m,'decode_png',side_effect=historical_decode):
+            return super().run(result,debug)
+
+
 def load_tests(loader, tests, pattern):
-    # Preflight runs the real alpha candidate independently. Frozen v4/v5 art
-    # assertions run as explicitly historical suites, never as native proof.
+    # Current RGB-only contract and frozen historical v4/v5/v6 art checks.
     pkg=gate.PACKAGE
     sys.path.insert(0,str(pkg))
     try:
-        for name in ['test_assets','test_click_bounds','test_metal_assets','test_dropper_alpha']:
+        for name in ['test_assets','test_click_bounds','test_metal_assets','test_dropper_alpha','test_slot_relief']:
             spec=importlib.util.spec_from_file_location('owner_'+name,pkg/(name+'.py'))
             module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             suite=loader.loadTestsFromModule(module)
             if name=='test_assets':tests.addTest(HistoricalV4Assets(suite,module))
             elif name=='test_metal_assets':tests.addTest(HistoricalV5Metal(suite,module))
+            elif name=='test_dropper_alpha':tests.addTest(HistoricalV6Alpha(suite,module))
             else:tests.addTests(suite)
     finally:sys.path.remove(str(pkg))
     return tests

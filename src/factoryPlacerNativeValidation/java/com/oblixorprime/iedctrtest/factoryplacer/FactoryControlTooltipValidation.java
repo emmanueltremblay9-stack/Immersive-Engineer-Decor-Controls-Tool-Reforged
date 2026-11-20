@@ -23,11 +23,15 @@ import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.LevelSettings;
@@ -53,7 +57,11 @@ public final class FactoryControlTooltipValidation {
     private static final String PREFIX = "block.immersive_engineer_decor_controls_tool_reforged.factory_" + (HOPPER ? "hopper" : "dropper");
     private static final int[][] POINTS = HOPPER ? new int[][]{{148,23},{148,52},{148,52},{148,52},{162,52},{162,52}} : new int[][]{{156,46},{151,103},{151,103},{174,103},{174,103},{197,103},{197,103}};
     private static final String[] NAMES = HOPPER ? new String[]{"delayindicator","inversion","inversion_changed","inversion_normal","triggermode","triggermode_changed"} : new String[]{"velocity","filtergate","filtergate_changed","externgate","externgate_changed","triggermode","triggermode_changed"};
-    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, TRIGGER_SETUP, ICON, RESUME }
+    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, TRIGGER_SETUP, ICON, RESUME, FIXTURE_EMPTY, FIXTURE_OCCUPIED }
+    private static final int FIXTURE_SCALE = Integer.getInteger("iedctr.factoryFixtureScale", 0);
+    private static final JsonArray fixtureCaptures = new JsonArray();
+    private static int fixtureFrames;
+    private static CompletableFuture<JsonObject> fixtureInspection;
     private static Stage stage = Stage.BOOT;
     private static boolean complete, tooltipInFrame;
     private static int ticks, hoverIndex, tooltipFrames, pointerX, pointerY;
@@ -114,8 +122,32 @@ public final class FactoryControlTooltipValidation {
             require(!screen.isSuppressTooltipsForPanelCapture(), "Tooltip suppression forbidden");
             if (stage == Stage.OPEN) {
                 if (ticks < 20 || !matches(mc, p -> p.containerMenu instanceof MachineMenu serverMenu && serverMenu.kind() == menu.kind() && serverMenu.field(2) == menu.field(2))) return;
-                opened++; pointerX = screen.width - 2; pointerY = screen.height - 2; move(mc, screen);
+                opened++;
+                if (FIXTURE_SCALE != 0) {
+                    require(mc.getWindow().getGuiScale()==FIXTURE_SCALE, "Actual GUI scale differs");
+                    pointerX=8;pointerY=8;fixtureFrames=0;enter(Stage.FIXTURE_EMPTY);move(mc,screen);return;
+                }
+                pointerX = screen.width - 2; pointerY = screen.height - 2; move(mc, screen);
                 enter(Stage.CLEAN); return;
+            }
+            if (stage==Stage.FIXTURE_EMPTY || stage==Stage.FIXTURE_OCCUPIED) {
+                if(!atPointer(mc,screen)){fixtureFrames=0;move(mc,screen);return;}
+                boolean filled=stage==Stage.FIXTURE_OCCUPIED;
+                if(!matchesFixture(menu,filled)){fixtureFrames=0;return;}
+                if(ticks<12 || fixtureFrames<3)return;
+                if(fixtureInspection==null){
+                    int menuId=menu.containerId;
+                    fixtureInspection=mc.getSingleplayerServer().submit(()-> player(mc).containerMenu instanceof MachineMenu sm
+                        && sm.containerId==menuId && matchesFixture(sm,filled) ? fixtureSnapshot(sm) : null);
+                    return;
+                }
+                if(!fixtureInspection.isDone())return;
+                var server=fixtureInspection.join();fixtureInspection=null;
+                if(server==null || !server.equals(fixtureSnapshot(menu)))return;
+                fixtureCapture(mc,screen,menu,filled,server);
+                if(filled){packaged=FactoryControlRuntimeProof.verify(mc);finish(mc,null);return;}
+                pending=mc.getSingleplayerServer().submit(()->seedFixture(mc));
+                fixtureFrames=0;enter(Stage.FIXTURE_OCCUPIED);return;
             }
             if (stage == Stage.CLEAN) {
                 if (!atPointer(mc, screen)) { move(mc, screen); return; }
@@ -244,6 +276,50 @@ public final class FactoryControlTooltipValidation {
         require(machine.isEmpty(), "Nonempty initial machine");
         p.getInventory().clearContent(); p.connection.teleport(.5,80,3.5,180,24);
     }
+    private static int machineSlots(){return HOPPER?18:15;}
+    private static Item fixtureItem(int i) {
+        if(!HOPPER && i>=12 && i<15)return new Item[]{Items.REDSTONE,Items.DIAMOND,Items.EMERALD}[i-12];
+        return new Item[]{Items.STONE,Items.GOLD_INGOT,Items.IRON_INGOT,Items.BREAD}[i%4];
+    }
+    private static int fixtureCount(int i){return !HOPPER && i>=12 && i<15 ? 1 : 2+i%61;}
+    private static void seedFixture(Minecraft mc){
+        var p=player(mc);var menu=(MachineMenu)p.containerMenu;
+        require(matchesFixture(menu,false),"Fixture must start empty");
+        for(int i=0;i<machineSlots();i++)machine.setItem(menu.layout().machineSlots().get(i).containerIndex(),new ItemStack(fixtureItem(i),fixtureCount(i)));
+        for(int i=0;i<36;i++)p.getInventory().setItem((i+9)%36,new ItemStack(fixtureItem(machineSlots()+i),fixtureCount(machineSlots()+i)));
+        menu.broadcastChanges();
+    }
+    private static boolean matchesFixture(MachineMenu menu,boolean filled){
+        if(menu.slots.size()!=machineSlots()+36 || !menu.getCarried().isEmpty())return false;
+        if(!HOPPER)for(int i=12;i<15;i++)if(menu.field(i)!=(filled?1:0))return false;
+        for(int i=0;i<menu.slots.size();i++){
+            var item=menu.slots.get(i).getItem();
+            if(filled ? (!item.is(fixtureItem(i)) || item.getCount()!=fixtureCount(i)) : !item.isEmpty())return false;
+        }
+        return true;
+    }
+    private static JsonObject fixtureSnapshot(MachineMenu menu){
+        var snapshot=new JsonObject();var slots=new JsonArray();var filters=new JsonArray();
+        for(var slot:menu.slots){
+            var s=new JsonObject();var item=slot.getItem();
+            s.addProperty("x",slot.x);s.addProperty("y",slot.y);s.addProperty("count",item.getCount());
+            s.addProperty("item",BuiltInRegistries.ITEM.getKey(item.getItem()).toString());slots.add(s);
+        }
+        if(!HOPPER)for(int i=12;i<15;i++)filters.add(menu.field(i));
+        snapshot.add("slots",slots);snapshot.add("filters",filters);
+        snapshot.addProperty("logic",menu.field(HOPPER?2:5));snapshot.addProperty("container_id",menu.containerId);
+        return snapshot;
+    }
+    private static void fixtureCapture(Minecraft mc,MachineScreen screen,MachineMenu menu,boolean filled,JsonObject server)throws Exception{
+        var e=new JsonObject();String name=filled?"occupied":"empty";
+        Path file=directory.resolve("factory-fixture-"+name+".png");require(!Files.exists(file),"Stale fixture capture");
+        try(var image=Screenshot.takeScreenshot(mc.getMainRenderTarget())){image.writeToFile(file);}
+        e.addProperty("name",name);e.addProperty("file",file.getFileName().toString());e.addProperty("sha256",FactoryControlRuntimeProof.hash(Files.readAllBytes(file)));
+        e.addProperty("gui_scale",mc.getWindow().getGuiScale());e.addProperty("gui_width",screen.width);e.addProperty("gui_height",screen.height);
+        e.addProperty("render_frames",fixtureFrames);e.addProperty("tooltip_absent",true);
+        e.addProperty("panel_x",screen.getGuiLeft());e.addProperty("panel_y",screen.getGuiTop());
+        e.add("client",fixtureSnapshot(menu));e.add("server",server);fixtureCaptures.add(e);
+    }
     private static ServerPlayer player(Minecraft mc) { var p = mc.getSingleplayerServer().getPlayerList().getPlayer(playerId); require(p != null, "Player missing"); return p; }
     private static boolean matches(Minecraft mc, Predicate<ServerPlayer> test) {
         if (inspection == null) { inspection = mc.getSingleplayerServer().submit(() -> test.test(player(mc))); return false; }
@@ -276,10 +352,11 @@ public final class FactoryControlTooltipValidation {
     @SubscribeEvent public static void before(ScreenEvent.Render.Pre event) { tooltipInFrame=false; }
     @SubscribeEvent public static void tooltip(RenderTooltipEvent.Color event) {
         var mc=Minecraft.getInstance();
-        if (!Boolean.getBoolean("iedctr.factoryControlTooltipNative") || complete || (stage != Stage.HOVER && stage != Stage.ICON)
+        if (!Boolean.getBoolean("iedctr.factoryControlTooltipNative") || complete || (stage != Stage.HOVER && stage != Stage.ICON && stage!=Stage.FIXTURE_EMPTY && stage!=Stage.FIXTURE_OCCUPIED)
             || !(mc.screen instanceof MachineScreen screen) || !atPointer(mc,screen)) return;
         try {
             require(stage!=Stage.ICON,"Tooltip covers icon evidence");
+            require(stage!=Stage.FIXTURE_EMPTY && stage!=Stage.FIXTURE_OCCUPIED,"Tooltip covers fixture evidence");
             int[] gray = {0};
             StringBuilder text=new StringBuilder(); int width=0,height=event.getComponents().size()==1?-2:0;
             for (var c:event.getComponents()) {
@@ -295,6 +372,10 @@ public final class FactoryControlTooltipValidation {
         } catch(Throwable error){finish(mc,error);}
     }
     @SubscribeEvent public static void after(ScreenEvent.Render.Post event) {
+        if((stage==Stage.FIXTURE_EMPTY || stage==Stage.FIXTURE_OCCUPIED)
+            && event.getScreen() instanceof MachineScreen screen && screen==Minecraft.getInstance().screen
+            && atPointer(Minecraft.getInstance(),screen)
+            && matchesFixture((MachineMenu)Minecraft.getInstance().player.containerMenu,stage==Stage.FIXTURE_OCCUPIED))fixtureFrames++;
         if(stage==Stage.ICON && event.getScreen()==Minecraft.getInstance().screen && atPointer(Minecraft.getInstance(),(MachineScreen)event.getScreen()))iconFrames++;
         if(tooltipInFrame && stage==Stage.HOVER && event.getScreen()==Minecraft.getInstance().screen){observed=tooltip.deepCopy();tooltipFrames++;} tooltipInFrame=false;
     }
@@ -324,7 +405,9 @@ public final class FactoryControlTooltipValidation {
             proof.addProperty("machine", HOPPER ? "hopper" : "dropper");
             proof.addProperty("selected_language",mc.getLanguageManager().getSelected());proof.addProperty("width",mc.getWindow().getWidth());proof.addProperty("height",mc.getWindow().getHeight());
             proof.addProperty("native_visual_acceptance",false);
-            proof.addProperty("input_method", "XTest block interaction and tooltip hover; seeded isolated integrated world");
+            if(FIXTURE_SCALE!=0)proof.add("fixture_captures",fixtureCaptures);
+            proof.addProperty("input_method", FIXTURE_SCALE==0 ? "XTest block interaction and tooltip hover; seeded isolated integrated world"
+                : "XTest block interaction and pointer parking; server-seeded inventory fixture, not an item-transfer test");
             proof.add("captures",captures);if(error!=null)proof.addProperty("error",error.toString());
             Files.writeString(directory.resolve("factory-control-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");
         }}catch(Exception ex){EngineersDecorReforged.LOGGER.error("Factory tooltip proof write failed",ex);}

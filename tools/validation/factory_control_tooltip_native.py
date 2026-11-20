@@ -125,15 +125,87 @@ def validate(proof, nonce, sha, jar, jar_sha, game, width, height, language, mac
             require(states[name]==before and states[name+'_changed']==after,'Dropper captures not tied to transition')
 
 
+def fixture_coordinates(machine):
+    if machine=='hopper':
+        return ([(11+18*c,9+18*r) for r in range(3) for c in range(6)]
+                +[(8+18*c,71+18*r) for r in range(3) for c in range(9)]
+                +[(8+18*c,129) for c in range(9)])
+    x=lambda n:(2*n*228+1199)//2398-8
+    y=lambda n:(2*n*250+1312)//2624-8
+    return ([(x(154+99*c),y(239+108*r)) for r in range(2) for c in range(6)]
+            +[(x(202+174*c),y(474)) for c in range(3)]
+            +[(x(199+100*c),y(740+96*r)) for r in range(3) for c in range(9)]
+            +[(x(207+98*c),y(1075)) for c in range(9)])
+
+
+def validate_fixture(proof,nonce,sha,jar,jar_sha,game,width,height,language,machine,scale):
+    for key,value in dict(suite='native-factory-control-tooltip-v2',status='passed',nonce=nonce,executed_source_sha=sha,
+        width=width,height=height,selected_language=language,machine=machine,presentation_selector_absent=True,
+        opened_via_native_block_interaction=1,native_visual_acceptance=False,state_change_server_acks=0,captures=[]).items():
+        require(type(proof.get(key)) is type(value) and proof[key]==value,'Fixture proof differs: '+key)
+    rt=proof.get('packaged_runtime',{})
+    require(rt.get('jar_path')==str(jar.resolve()) and rt.get('jar_sha256')==jar_sha
+        and rt.get('fixture_free_jar') is True and rt.get('separate_harness_module') is True,'Fixture JAR identity differs')
+    entries=proof.get('fixture_captures',[])
+    require([e.get('name') for e in entries]==['empty','occupied'],'Missing ordered fixture images')
+    nw,nh=(176,166) if machine=='hopper' else (228,250)
+    sw,sh=width//scale,height//scale; ox,oy=(sw-nw)//2,(sh-nh)//2
+    count=18 if machine=='hopper' else 15
+    snaps=[]
+    baseline=None
+    for e in entries:
+        name=e['name']; file=game/('factory-fixture-'+name+'.png')
+        require(e.get('file')==file.name and e.get('gui_scale')==scale and e.get('gui_width')==sw and e.get('gui_height')==sh
+            and type(e.get('render_frames')) is int and e['render_frames']>=3
+            and e.get('tooltip_absent') is True and (e.get('panel_x'),e.get('panel_y'))==(ox,oy),'Fixture frame evidence differs')
+        client=e.get('client');server=e.get('server')
+        require(isinstance(client,dict) and client==server,'Server/client fixture snapshots differ')
+        require(client.get('filters')==(([0]*3 if name=='empty' else [1]*3) if machine=='dropper' else []),
+                'Fixture filter witnesses differ')
+        png(file,width,height,e.get('sha256')); snaps.append(decode_png(file)[2]); coords=[]
+        slots=client.get('slots',[]); require(len(slots)==count+36,'Fixture slot coverage differs')
+        for i,s in enumerate(slots):
+            x,y=s.get('x'),s.get('y')
+            require(type(x) is int and type(y) is int and 0<=x<=nw-16 and 0<=y<=nh-16,'Slot geometry outside menu')
+            coords.append((x,y))
+            if name=='empty':want=('air',0)
+            elif machine=='dropper' and 12<=i<15:want=(['redstone','diamond','emerald'][i-12],1)
+            else:want=(['stone','gold_ingot','iron_ingot','bread'][i%4],2+i%61)
+            require((s.get('item'),s.get('count'))==('minecraft:'+want[0],want[1]),'Fixture stack differs')
+        for i,(x,y) in enumerate(coords):
+            require(all(abs(x-u)>=16 or abs(y-v)>=16 for u,v in coords[:i]),'Fixture slot footprints overlap')
+        require(coords==fixture_coordinates(machine),'Fixture slot geometry differs from registered layout')
+        require(type(client.get('logic')) is int and type(client.get('container_id')) is int,'Missing fixture menu/logic identity')
+        identity=(coords,client.get('logic'),client.get('container_id'))
+        if baseline is None:baseline=identity
+        else:require(identity==baseline,'Fixture menu/logic changed')
+    for x,y in baseline[0]:
+        x,y=(ox+x)*scale,(oy+y)*scale
+        changed=0; central_changed=0
+        for yy in range(y,y+16*scale):
+            for xx in range(x,x+16*scale):
+                j=(yy*width+xx)*4
+                differs=snaps[0][j:j+3]!=snaps[1][j:j+3]
+                changed+=differs
+                if x+3*scale<=xx<x+13*scale and y+3*scale<=yy<y+11*scale:central_changed+=differs
+        # Render smoke only; inventory identity is observed server/client, not
+        # inferred from pixels. Exclude the lower count band from the center test.
+        require(changed>=20*scale*scale and central_changed>=12*scale*scale,'No rendered item witness inside slot')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--machine', choices=['hopper','dropper'], required=True)
     parser.add_argument('--language', choices=['en_us','fr_fr'], default='en_us')
     parser.add_argument('--width', type=int, default=1280)
     parser.add_argument('--height', type=int, default=720)
+    parser.add_argument('--fixture-scale', type=int, choices=(1,2))
+    parser.add_argument('--expect-source-sha')
     parser.add_argument('--prepare-timeout', type=int, default=900)
     parser.add_argument('--timeout', type=int, default=900)
     args = parser.parse_args()
+    if args.fixture_scale and ((args.width,args.height)!=(1280,720) or not args.expect_source_sha):
+        parser.error('Fixture requires 1280x720 and --expect-source-sha')
     project = Path(__file__).resolve().parents[2]
     if sys.platform != 'linux' or args.width < 320 or args.height < 260 or min(args.timeout,args.prepare_timeout) <= 0:
         parser.error('Linux, at least 320x260, positive timeouts required')
@@ -144,12 +216,13 @@ def main():
     require(clean(), 'Requires clean committed exact-source checkout')
     sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
     require(re.fullmatch('[a-f0-9]{40}',sha), 'Invalid source SHA')
+    require(not args.expect_source_sha or args.expect_source_sha==sha,'Expected exact source commit differs')
     (project/'build').mkdir(exist_ok=True)
     evidence = Path(tempfile.mkdtemp(prefix='factory-control-native-',dir=project/'build'))
     game=evidence/'run';game.mkdir();nonce=secrets.token_hex(16)
     (game/'.iedctr-client-gameplay-nonce').write_text(nonce)
     (game/'options.txt').write_text('onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n'
-        'maxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:1\nlang:'+args.language+'\n')
+        'maxFps:60\npauseOnLostFocus:false\nsoundCategory_master:0.0\nguiScale:'+str(args.fixture_scale or 1)+'\nlang:'+args.language+'\n')
     init=evidence/'factory-control.init.gradle'
     init.write_text("""gradle.projectsEvaluated {
  rootProject.extensions.getByName('neoForge').runs.named('factoryControlTooltipClient') {
@@ -157,6 +230,7 @@ def main():
   systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
   systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
   systemProperty 'iedctr.factoryControlMachine', System.getenv('IEDCTR_FACTORY_MACHINE')
+  systemProperty 'iedctr.factoryFixtureScale', System.getenv('IEDCTR_FACTORY_FIXTURE_SCALE')
   systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
   systemProperty 'iedctr.expectedModJar', System.getenv('IEDCTR_EXPECTED_MOD_JAR')
   systemProperty 'iedctr.expectedModJarSha256', System.getenv('IEDCTR_EXPECTED_MOD_JAR_SHA256')
@@ -178,7 +252,7 @@ assert not marker.exists()
 marker.write_text(nonce+'\n'+os.environ['DISPLAY'])
 os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
 """)
-    env=dict(os.environ,IEDCTR_FACTORY_MACHINE=args.machine,IEDCTR_GAMEPLAY_DIR=str(game),IEDCTR_GAMEPLAY_NONCE=nonce,IEDCTR_EXECUTED_SOURCE_SHA=sha,
+    env=dict(os.environ,IEDCTR_FACTORY_MACHINE=args.machine,IEDCTR_FACTORY_FIXTURE_SCALE=str(args.fixture_scale or 0),IEDCTR_GAMEPLAY_DIR=str(game),IEDCTR_GAMEPLAY_NONCE=nonce,IEDCTR_EXECUTED_SOURCE_SHA=sha,
              IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')
     base=['bash',str(project/'gradlew'),'--no-daemon','--stacktrace']
     print('Independent native Factory control evidence: '+str(evidence),flush=True)
@@ -203,9 +277,11 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
         require(code==0 and not expired and not FATAL_PATTERN.search(logs)
                 and 'IEDCTR_FACTORY_CONTROL PASSED nonce='+nonce in logs,'Native exit/log gate failed')
         proof=json.loads((game/'factory-control-proof.json').read_text())
-        validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.language,args.machine)
+        if args.fixture_scale:validate_fixture(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.language,args.machine,args.fixture_scale)
+        else:validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.language,args.machine)
         require(clean() and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,'Source/JAR changed during run')
-        print('PASS bounded native Factory control tooltips; not owner visual acceptance or complete modpack qualification.')
+        print('PASS bounded native Factory empty/occupied slots; no sprite identity, transfer or artistic acceptance claim.' if args.fixture_scale
+              else 'PASS bounded native Factory control tooltips; not owner visual acceptance or complete modpack qualification.')
         return 0
     except (SmokeFailure,OSError,ValueError,KeyError) as error:
         print('FAIL: '+str(error),file=sys.stderr);return 1

@@ -1,4 +1,4 @@
-"""Owner v6 Dropper exterior-alpha gate and exact historical views. No native claim.
+"""Owner v7 bounded artwork/fixture gate and exact historical views. No native claim.
 
 This is a closed, versioned transition, not a general allowlist. The old guards
 and their inputs remain archived byte-for-byte. Only the named candidate bytes
@@ -18,7 +18,10 @@ ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / 'tools/approved_gui_20261119'
 BASELINE = None
 _BASELINE_TEMP = None
-RECIPE = PACKAGE / 'qualification-v6.json'
+RECIPE = PACKAGE / 'qualification-v7.json'
+V6_RECIPE = PACKAGE / 'qualification-v6.json'
+V6_RECIPE_SHA256 = '096e5f36db9ac11c48b8620c7dda56739457436c5fee95faa22f79f6ee3c0082'
+V6_COMMIT = 'b144a647b9c77a6dac88ec6ee0ddda1e8adace2e'
 V5_RECIPE = PACKAGE / 'qualification-v5.json'
 V5_RECIPE_SHA256 = '100c3b42e73965d59a7c956c79ec77791e7459b8763f7b8611e9ef9ccc560a38'
 V5_COMMIT = 'cec601e71369e87fa39b1ed7498ad628480a0a80'
@@ -28,7 +31,7 @@ V4_COMMIT = '8f909beebf96b0197830813aaa415a0e72d44881'
 PREVIOUS_RECIPE = PACKAGE / 'qualification-v3.json'
 PREVIOUS_RECIPE_SHA256 = 'cefa38e5b9121bbe9524272b729b5387612c1c300390fa3742c0e164c14caa6c'
 PREVIOUS_COMMIT = 'ef40b46776148026e5df5a815483c2f69fb982b4'
-RECIPE_SHA256 = '096e5f36db9ac11c48b8620c7dda56739457436c5fee95faa22f79f6ee3c0082'
+RECIPE_SHA256 = '2fcf5713a510b0631f184036b07c63d8e91e10c670c794d7b13495227f0eb4ed'
 BASE = '87f8b8e03cac46a6154b54522d1497baa52c67b2'
 SCREEN = 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
 
@@ -81,10 +84,10 @@ def historical_v5_recipe():
     return merged
 
 
-def recipe():
+def historical_v6_recipe():
     merged = historical_v5_recipe()
-    raw = read_exact(RECIPE)
-    assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
+    raw = read_exact(V6_RECIPE)
+    assert digest(raw) == V6_RECIPE_SHA256, 'Historical v6 recipe changed'
     data = json.loads(raw)
     assert data['schema'] == 'owner-20261120-v6-dropper-alpha'
     assert data['previous_commit'] == V5_COMMIT
@@ -95,8 +98,22 @@ def recipe():
     return merged
 
 
+def recipe():
+    merged = historical_v6_recipe()
+    raw = read_exact(RECIPE)
+    assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
+    data = json.loads(raw)
+    assert data['schema'] == 'owner-20261120-v7-slot-relief'
+    assert data['previous_commit'] == V6_COMMIT
+    assert data['previous_recipe_sha256'] == V6_RECIPE_SHA256
+    assert set(data['candidate_delta']) == V7_CHANGED_PATHS
+    merged['candidate'] = dict(merged['candidate'], **data['candidate_delta'])
+    merged['schema'] = data['schema']
+    return merged
+
+
 def ensure_base_object(root=ROOT, anchor=BASE):
-    assert anchor in {BASE, PREVIOUS_COMMIT, V4_COMMIT, V5_COMMIT}, "Unapproved historical Git anchor"
+    assert anchor in {BASE, PREVIOUS_COMMIT, V4_COMMIT, V5_COMMIT, V6_COMMIT}, "Unapproved historical Git anchor"
     check = subprocess.run(['git','cat-file','-e',anchor+'^{commit}'],cwd=root,capture_output=True)
     if check.returncode:
         # Only GitHub CI may acquire the exact historical object automatically.
@@ -219,6 +236,13 @@ V6_CHANGED_PATHS = {
  'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png',
  'tools/approved_gui_20261119/dropper_alpha.py',
  'tools/approved_gui_20261119/test_dropper_alpha.py'}
+V7_CHANGED_PATHS = {p for p in V5_CHANGED_PATHS if p.endswith(('/hopper.png','/dropper.png'))} | {
+ 'tools/approved_gui_20261119/build_slot_relief.py',
+ 'tools/approved_gui_20261119/test_slot_relief.py',
+ 'tools/validation/factory_control_tooltip_native.py',
+ 'tools/validation/test_factory_slot_fixture_tooltip.py',
+ 'src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/FactoryControlTooltipValidation.java',
+ '.github/workflows/factory-control-tooltips.yml'}
 
 
 def historical_v4_root():
