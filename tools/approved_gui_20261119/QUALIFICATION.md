@@ -1,5 +1,23 @@
 # Owner 19 novembre : candidat public-minimal v3 (LOCAL seulement)
 
+## v6 Dropper exterior-alpha follow-up (local, NOT NATIVE)
+
+The immutable v5 recipe and metal tests remain historical evidence anchored to
+`cec601e71369e87fa39b1ed7498ad628480a0a80`. The historical suite reads the exact
+parent PNGs only after validating the current candidate; scoped test doubles
+are restored before the independent current-candidate alpha tests execute.
+
+The closed v6 delta replaces only Dropper PNG alpha plus its verifier/tests.
+Every RGB byte, dimensions, all slots, controls and other assets stay unchanged.
+The silhouette is a solid interval per row enclosing all RGB support above16,
+expanded8texels in both axes. Only the133796 exterior matte texels lose alpha.
+There is no flood-fill into interior black details. Tests reject the previous
+matte, an interior hole, RGB mutation and historical recipe mutation.
+
+No private original, duplicated fixture, production Java or workflow change.
+No new native screenshot, occupied-inventory proof, third external-signal-mode
+proof or held-stack claim. Existing V5 screenshots do not prove this alpha edit.
+
 Aucun commit/push/PR/publication. Aucun JAR ou rendu natif qualifié.
 Les deux fonds PNG livrés précédemment restent inchangés.
 

@@ -1,4 +1,4 @@
-"""Owner v5 Metal Assembly candidate gate and exact historical view. No native validation claim.
+"""Owner v6 Dropper exterior-alpha gate and exact historical views. No native claim.
 
 This is a closed, versioned transition, not a general allowlist. The old guards
 and their inputs remain archived byte-for-byte. Only the named candidate bytes
@@ -18,14 +18,17 @@ ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / 'tools/approved_gui_20261119'
 BASELINE = None
 _BASELINE_TEMP = None
-RECIPE = PACKAGE / 'qualification-v5.json'
+RECIPE = PACKAGE / 'qualification-v6.json'
+V5_RECIPE = PACKAGE / 'qualification-v5.json'
+V5_RECIPE_SHA256 = '100c3b42e73965d59a7c956c79ec77791e7459b8763f7b8611e9ef9ccc560a38'
+V5_COMMIT = 'cec601e71369e87fa39b1ed7498ad628480a0a80'
 V4_RECIPE = PACKAGE / 'qualification-v4.json'
 V4_RECIPE_SHA256 = 'b59832808af932dcd366dfbe0ca03b246bd1f1c44b4384780cb1c59a8b4e3955'
 V4_COMMIT = '8f909beebf96b0197830813aaa415a0e72d44881'
 PREVIOUS_RECIPE = PACKAGE / 'qualification-v3.json'
 PREVIOUS_RECIPE_SHA256 = 'cefa38e5b9121bbe9524272b729b5387612c1c300390fa3742c0e164c14caa6c'
 PREVIOUS_COMMIT = 'ef40b46776148026e5df5a815483c2f69fb982b4'
-RECIPE_SHA256 = '100c3b42e73965d59a7c956c79ec77791e7459b8763f7b8611e9ef9ccc560a38'
+RECIPE_SHA256 = '096e5f36db9ac11c48b8620c7dda56739457436c5fee95faa22f79f6ee3c0082'
 BASE = '87f8b8e03cac46a6154b54522d1497baa52c67b2'
 SCREEN = 'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
 
@@ -62,11 +65,11 @@ def historical_v4_recipe():
     return merged
 
 
-def recipe():
+def historical_v5_recipe():
     if not __debug__:
         raise RuntimeError("Owner qualification requires Python assertions; optimized mode refused")
-    raw = read_exact(RECIPE)
-    assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
+    raw = read_exact(V5_RECIPE)
+    assert digest(raw) == V5_RECIPE_SHA256, 'Historical v5 recipe changed'
     data = json.loads(raw)
     assert data['schema'] == 'owner-20261119-v5-metal-assembly' and data['base_commit'] == BASE
     assert data['previous_commit'] == V4_COMMIT and data['previous_recipe_sha256'] == V4_RECIPE_SHA256
@@ -78,8 +81,22 @@ def recipe():
     return merged
 
 
+def recipe():
+    merged = historical_v5_recipe()
+    raw = read_exact(RECIPE)
+    assert digest(raw) == RECIPE_SHA256, 'Owner public recipe changed'
+    data = json.loads(raw)
+    assert data['schema'] == 'owner-20261120-v6-dropper-alpha'
+    assert data['previous_commit'] == V5_COMMIT
+    assert data['previous_recipe_sha256'] == V5_RECIPE_SHA256
+    assert set(data['candidate_delta']) == V6_CHANGED_PATHS
+    merged['candidate'] = dict(merged['candidate'], **data['candidate_delta'])
+    merged['schema'] = data['schema']
+    return merged
+
+
 def ensure_base_object(root=ROOT, anchor=BASE):
-    assert anchor in {BASE, PREVIOUS_COMMIT, V4_COMMIT}, "Unapproved historical Git anchor"
+    assert anchor in {BASE, PREVIOUS_COMMIT, V4_COMMIT, V5_COMMIT}, "Unapproved historical Git anchor"
     check = subprocess.run(['git','cat-file','-e',anchor+'^{commit}'],cwd=root,capture_output=True)
     if check.returncode:
         # Only GitHub CI may acquire the exact historical object automatically.
@@ -198,6 +215,10 @@ V5_CHANGED_PATHS = {
  'tools/approved_gui_20261119/build_metal_assets.py',
  'tools/approved_gui_20261119/test_metal_assets.py'}
 _V4_VIEW = None
+V6_CHANGED_PATHS = {
+ 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png',
+ 'tools/approved_gui_20261119/dropper_alpha.py',
+ 'tools/approved_gui_20261119/test_dropper_alpha.py'}
 
 
 def historical_v4_root():
