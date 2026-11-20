@@ -1,0 +1,46 @@
+{
+  "schema": "owner-20261119-v4-public",
+  "base_commit": "87f8b8e03cac46a6154b54522d1497baa52c67b2",
+  "previous_commit": "ef40b46776148026e5df5a815483c2f69fb982b4",
+  "previous_recipe_sha256": "cefa38e5b9121bbe9524272b729b5387612c1c300390fa3742c0e164c14caa6c",
+  "change": "Local rejected-native follow-up: bounded cavity RGB curve, single registered rims, isotropic Hopper ribbon with 5px sampled heads. Runtime and held-stack NOT_RUN.",
+  "candidate_delta": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java": "3fa3aa9f451406e0e35822f6c34d6a7934aa61b4a643fde7cbee50160d3fdc1a",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": "73aeb9e83866be95f0dda838e0dd2e94233ad0d5ea8df598463256e778e51f32",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png": "78469f5e481cbbd8715d70ef38b9577d6b462e1b6f99e08eb95358237537883e",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png": "0e466874384dc4009e99573b155e617927cd5120788bf94653892d229c3148e5",
+    "tools/approved_gui_20261119/build_assets.py": "c963454f9d7a82ee480f37e628f1c87e705f015b26e665cacbce35142493172c",
+    "tools/approved_gui_20261119/test_assets.py": "62c64ded2aeb31c4745df13c9cd26ef32ebffa6d5f73d29824fe43cea233d441"
+  },
+  "inverse_delta": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryHopperSteelArtwork.java": [
+      {
+        "start": 683,
+        "end": 1033,
+        "from": "      // Owner-source decoration extends 8px sideways and 16px above the unchanged 176x166 menu.\n      // Slot/widget/menu geometry stays unchanged; MachineScreen protects the visible border from outside clicks.\n      g.blit(STEEL,x-8,y-16,192,182,0F,0F,1152,1092,1152,1092);\n      // Slot borders are registered once in the owner-source background.\n",
+        "to": "      // Six raster texels per logical pixel, no change to the 176x166 menu.\n      g.blit(STEEL,x,y,176,166,0F,0F,1056,996,1056,996);\n      FactorySteelFrame.slots(g,menu,x,y);\n"
+      }
+    ],
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": [
+      {
+        "start": 37004,
+        "end": 37552,
+        "from": "   @Override\n   protected boolean hasClickedOutside(double mouseX, double mouseY, int left, int top, int button) {\n      if (((MachineMenu)this.menu).kind() == MachineKind.FACTORY_HOPPER) {\n         // The owner-source border is visible but has no slot/widget action.\n         // Treat it as empty panel, not outside (-999 / carried-stack drop).\n         return mouseX < left - 8 || mouseX >= left + 184\n            || mouseY < top - 16 || mouseY >= top + 166;\n      }\n      return super.hasClickedOutside(mouseX, mouseY, left, top, button);\n   }\n\n",
+        "to": ""
+      },
+      {
+        "start": 39523,
+        "end": 39597,
+        "from": "      // Slot borders are registered once in the owner-source background.\n",
+        "to": "      FactorySteelFrame.slots(graphics,m,x,y);\n"
+      },
+      {
+        "start": 41012,
+        "end": 41087,
+        "from": "         FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n,state[n]);\n",
+        "to": "         FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n);\n"
+      }
+    ]
+  },
+  "stripe_projection_sha256": "3bd6353a50f3bc0ad31b5260d044c91d4441c6d4baff579198c65a10b955b40e"
+}

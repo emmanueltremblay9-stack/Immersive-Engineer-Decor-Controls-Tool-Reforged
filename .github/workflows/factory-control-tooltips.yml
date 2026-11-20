@@ -61,3 +61,56 @@ jobs:
             build/libs/*.jar
           if-no-files-found: error
           retention-days: 14
+
+  native-factory-slot-fixture:
+    if: >-
+      (github.event_name == 'pull_request' && github.event.pull_request.number == 206) ||
+      (github.event_name == 'workflow_dispatch' && github.ref_name == 'gui/r04-hopper-dropper-targeted-20261119')
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      matrix:
+        machine: [hopper, dropper]
+        gui_scale: [1, 2]
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Checkout exact candidate head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ env.EXPECTED_SOURCE_SHA }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Verify fixture witness controls
+        run: python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory*tooltip*.py' -v
+      - name: Native exact-JAR Factory slots, empty and occupied
+        run: >-
+          python tools/validation/factory_control_tooltip_native.py
+          --machine ${{ matrix.machine }} --language en_us --width 1280 --height 720
+          --fixture-scale ${{ matrix.gui_scale }} --expect-source-sha "$EXPECTED_SOURCE_SHA"
+      - name: Retain scoped fixture evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: factory-slot-fixture-${{ matrix.machine }}-scale${{ matrix.gui_scale }}
+          path: |
+            build/factory-control-native-*/run/factory-fixture-*.png
+            build/factory-control-native-*/run/factory-control-proof.json
+            build/factory-control-native-*/packaged-runtime-classpath.json
+            build/factory-control-native-*/client.log
+            build/factory-control-native-*/jar.log
+            build/factory-control-native-*/package.log
+            build/factory-control-native-*/prepare.log
+            build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

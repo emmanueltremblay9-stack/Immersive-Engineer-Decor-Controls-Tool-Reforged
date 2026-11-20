@@ -1,0 +1,69 @@
+name: Factory carried-stack border native qualification
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/factory-held-stack-native.yml"
+      - "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/FactoryHeldStackValidation.java"
+      - "tools/approved_gui_20261119/factory_held_stack_native_20261120.py"
+      - "tools/approved_gui_20261119/test_factory_held_stack_native_20261120.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  factory-held-stack-native:
+    if: >-
+      (github.event_name == 'pull_request' && github.event.pull_request.number == 206) ||
+      (github.event_name == 'workflow_dispatch' && github.ref_name == 'gui/r04-hopper-dropper-targeted-20261119')
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      matrix:
+        machine: [hopper, dropper]
+        gui_scale: [1, 2]
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Checkout exact draft head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ env.EXPECTED_SOURCE_SHA }}
+      - name: Set up Java 21
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.13"
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Verify strict proof negatives and tool syntax
+        run: |
+          python -m py_compile tools/approved_gui_20261119/factory_held_stack_native_20261120.py
+          python -W error::ResourceWarning -m unittest discover -s tools/approved_gui_20261119 -p test_factory_held_stack_native_20261120.py -v
+      - name: Physical XTest carried-stack border and outside witness
+        run: >-
+          python tools/approved_gui_20261119/factory_held_stack_native_20261120.py
+          --machine ${{ matrix.machine }} --gui-scale ${{ matrix.gui_scale }}
+          --expect-source-sha "$EXPECTED_SOURCE_SHA"
+      - name: Retain exact-source evidence and packaged JAR
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: factory-held-${{ matrix.machine }}-scale${{ matrix.gui_scale }}
+          path: |
+            build/factory-held-native-*/run/factory-held-*.png
+            build/factory-held-native-*/run/factory-held-proof.json
+            build/factory-held-native-*/packaged-runtime-classpath.json
+            build/factory-held-native-*/client.log
+            build/factory-held-native-*/jar.log
+            build/factory-held-native-*/package.log
+            build/factory-held-native-*/prepare.log
+            build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

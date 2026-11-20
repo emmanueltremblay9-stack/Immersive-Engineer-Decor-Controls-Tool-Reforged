@@ -76,7 +76,7 @@ public final class MachineGuiGameTests {
    private static final List<MachineGuiGameTests.MachineEntry> MACHINE_ENTRIES = List.of(
       new MachineGuiGameTests.MachineEntry(ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE, 11, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER, 18, "factory_hopper_gui"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "retained_dropper/background"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
       new MachineGuiGameTests.MachineEntry(
          ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_rp_v3/background"

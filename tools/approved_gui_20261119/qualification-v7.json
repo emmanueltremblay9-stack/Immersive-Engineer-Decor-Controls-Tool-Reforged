@@ -1,0 +1,15 @@
+{
+  "schema": "owner-20261120-v7-slot-relief",
+  "previous_commit": "b144a647b9c77a6dac88ec6ee0ddda1e8adace2e",
+  "previous_recipe_sha256": "096e5f36db9ac11c48b8620c7dda56739457436c5fee95faa22f79f6ee3c0082",
+  "candidate_delta": {
+    ".github/workflows/factory-control-tooltips.yml": "1af13e1b2d40f22a78656800ec464e7d459ef8250b2dce15d7572adfb334c8f8",
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/FactoryControlTooltipValidation.java": "df3f59de75cd2041521ed5db314ef0fa96bb8c3bf37ee9e7523ea10b4935e889",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/dropper.png": "363a10f20398be9efdb45ee48501e64c1c86ed9c94292c0064bd4c8bfea72813",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_steel_v2/hopper.png": "da41853c9b1c01582900bdc5c1dbbe5d240d8dcf48923c2e010b73f7522e6f0e",
+    "tools/approved_gui_20261119/build_slot_relief.py": "8d22a29df59ab2a9ee9eca7aa612c495d38b35de82f03a24e5852a5c7bfb16cc",
+    "tools/approved_gui_20261119/test_slot_relief.py": "ba5a0065fc0bd5bdff9e8f9334b6c47821041a9f0cb8a4ce0aa20cc441c2ab40",
+    "tools/validation/factory_control_tooltip_native.py": "5191188a3b02e6383c1eabda671b2a963a18f3c1d8a6c98ae984991ae283f85b",
+    "tools/validation/test_factory_slot_fixture_tooltip.py": "75948321c3a82e15eff92e5745d830ecb06472fffb592dde51175bf360e74940"
+  }
+}
