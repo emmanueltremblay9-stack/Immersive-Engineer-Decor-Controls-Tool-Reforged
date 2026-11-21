@@ -17,3 +17,10 @@ nine-lane isolation, exact FE conservation, loading/unloading, multi-sink/source
 and a real Minecraft GameTest/physical test. A static pass does NOT establish those results.
 
 PR is not authorization to merge/tag/release/publish. Do not alter unrelated GUI, KX, Double-T or release areas.
+
+## R3 functional topology update
+- Multiple individually placed C03 machine connectors may tap the SIDES of a long C01 bundle, not only its end faces. This is required for more than one LV line to be used over a shared physical run.
+- Each C03 exposes a single selected lane [1..9] and explicitly configures source/sink behavior; lane changes cannot move saved residual FE between lanes.
+- Only same-axis adjacent C01 blocks continue a conduit segment. Side-by-side perpendicular bundles do not merge.
+- Source/sink transitions read the machine's faced NeoForge energy capability; no C01 FE buffer is created.
+- Side-tap model/port visual join, mounting proof and runtime behavior in Minecraft still require native validation.

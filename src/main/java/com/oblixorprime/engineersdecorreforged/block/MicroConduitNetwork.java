@@ -31,7 +31,9 @@ public final class MicroConduitNetwork {
       int channel = sourceState.getValue(MicroMachineConnectorBlock.CHANNEL);
       BlockPos first = origin.relative(machineFacing.getOpposite());
 
-      if (!level.hasChunkAt(first) || !isConduitAlong(level.getBlockState(first), machineFacing.getAxis())) return;
+      // C03 may attach on ANY face of the bundle. Nine independent lanes need side taps,
+      // since one adjacent Minecraft block cannot hold nine full-block connectors.
+      if (!level.hasChunkAt(first) || !level.getBlockState(first).is(ModBlocks.MICROCONDUIT_9LV.get())) return;
       List<BlockPos> sinks = findSinks(level, first, channel);
       if (sinks.isEmpty()) return;
 
@@ -87,15 +89,17 @@ public final class MicroConduitNetwork {
          if (!state.is(ModBlocks.MICROCONDUIT_9LV.get())) continue;
          Direction.Axis axis = state.getValue(MicroConduitBlock.AXIS);
          for (Direction direction : Direction.values()) {
-            if (direction.getAxis() != axis) continue;
             BlockPos nextPos = pos.relative(direction);
             if (!level.hasChunkAt(nextPos)) continue;
             BlockState next = level.getBlockState(nextPos);
-            if (isConduitAlong(next, axis)) {
+            // Only continue the physical conduit along its fixed longitudinal axis.
+            // Perpendicular neighboring bundles must NOT short together.
+            if (direction.getAxis() == axis && isConduitAlong(next, axis)) {
                if (!visited.contains(nextPos.asLong())) queue.add(nextPos);
             } else if (next.is(ModBlocks.MICRO_MACHINE_CONNECTOR.get()) &&
                        next.getValue(MicroMachineConnectorBlock.FACING) == direction &&
                        MicroConduitChannels.same(channel, next.getValue(MicroMachineConnectorBlock.CHANNEL))) {
+               // Side, top, bottom and end taps all address exactly ONE LV lane.
                sinks.add(nextPos.immutable());
             }
          }
