@@ -56,20 +56,20 @@ public final class MicroConduitNetwork {
 
          int planned = Math.max(0, Math.min(budget, receiver.receiveEnergy(budget, true)));
          if (planned == 0) continue;
-         int pending = source.pendingEnergy();
+         int pending = source.pendingEnergy(channel);
          int needed = Math.max(0, planned - pending);
          if (needed > 0 && power != null && power.canExtract()) {
             int simulated = Math.max(0, Math.min(needed, power.extractEnergy(needed, true)));
             if (simulated > 0) {
                int extracted = Math.max(0, Math.min(simulated, power.extractEnergy(simulated, false)));
                pending += extracted;
-               source.setPendingEnergy(pending);
+               source.setPendingEnergy(channel, pending);
             }
          }
-         int offered = Math.min(planned, source.pendingEnergy());
+         int offered = Math.min(planned, source.pendingEnergy(channel));
          if (offered <= 0) continue;
          int accepted = Math.max(0, Math.min(offered, receiver.receiveEnergy(offered, false)));
-         source.setPendingEnergy(source.pendingEnergy() - accepted);
+         source.setPendingEnergy(channel, source.pendingEnergy(channel) - accepted);
          budget -= accepted;
       }
       source.setNextSink(start + 1);

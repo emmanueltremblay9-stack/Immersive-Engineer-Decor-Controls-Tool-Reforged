@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.block;
 
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
+import java.util.Arrays;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -12,7 +13,8 @@ import net.minecraft.world.level.block.state.BlockState;
 /** Persistent residual-energy protection for one selected LV channel. */
 public final class MicroConnectorBlockEntity extends BlockEntity {
    private boolean source = false;
-   private int pendingEnergy = 0;
+   // Saved by lane: changing C03 selector cannot redirect residual FE to another independent circuit.
+   private final int[] pendingByChannel = new int[9];
    private int nextSink = 0;
 
    public MicroConnectorBlockEntity(BlockPos pos, BlockState state) {
@@ -28,14 +30,14 @@ public final class MicroConnectorBlockEntity extends BlockEntity {
       setChanged();
    }
 
-   public int pendingEnergy() {
-      return pendingEnergy;
+   public int pendingEnergy(int channel) {
+      return pendingByChannel[channel];
    }
 
-   public void setPendingEnergy(int value) {
+   public void setPendingEnergy(int channel, int value) {
       int clamped = Math.max(0, Math.min(MicroConduitNetwork.MAX_PENDING, value));
-      if (pendingEnergy != clamped) {
-         pendingEnergy = clamped;
+      if (pendingByChannel[channel] != clamped) {
+         pendingByChannel[channel] = clamped;
          setChanged();
       }
    }
@@ -61,7 +63,7 @@ public final class MicroConnectorBlockEntity extends BlockEntity {
    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
       super.saveAdditional(tag, registries);
       tag.putBoolean("Source", source);
-      tag.putInt("PendingEnergy", pendingEnergy);
+      tag.putIntArray("PendingByChannel", pendingByChannel);
       tag.putInt("NextSink", nextSink);
    }
 
@@ -69,7 +71,17 @@ public final class MicroConnectorBlockEntity extends BlockEntity {
    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
       super.loadAdditional(tag, registries);
       source = tag.getBoolean("Source");
-      pendingEnergy = Math.max(0, Math.min(MicroConduitNetwork.MAX_PENDING, tag.getInt("PendingEnergy")));
+      Arrays.fill(pendingByChannel, 0);
+      if (tag.contains("PendingByChannel")) {
+         int[] stored = tag.getIntArray("PendingByChannel");
+         for (int i = 0; i < Math.min(stored.length, pendingByChannel.length); i++) {
+            pendingByChannel[i] = Math.max(0, Math.min(MicroConduitNetwork.MAX_PENDING, stored[i]));
+         }
+      } else if (tag.contains("PendingEnergy")) {
+         // WIP-save recovery for previous single-residual schema.
+         int selected = getBlockState().getValue(MicroMachineConnectorBlock.CHANNEL);
+         pendingByChannel[selected] = Math.max(0, Math.min(MicroConduitNetwork.MAX_PENDING, tag.getInt("PendingEnergy")));
+      }
       nextSink = Math.max(0, tag.getInt("NextSink"));
    }
 }
