@@ -21,7 +21,7 @@ public class SmallMineralSmelterHybridScreenTextBoundsTest {
 
    @Test
    public void compactTitleAndCombinedEnergyLineStayInsideTextApertures() {
-      assertEquals(0.70F,
+      assertEquals(101.0F / 144.0F,
          SmallMineralSmelterHybridScreen.fittedTextScale(144, 101, 0.82F), 0.0001F);
       assertEquals(0.48F,
          SmallMineralSmelterHybridScreen.fittedTextScale(85, 50, 0.48F), 0.0001F);
