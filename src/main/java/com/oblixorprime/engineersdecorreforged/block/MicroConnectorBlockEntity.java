@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public final class MicroConnectorBlockEntity extends BlockEntity {
    private boolean source = false;
    // Saved by lane: changing C03 selector cannot redirect residual FE to another independent circuit.
-   private final int[] pendingByChannel = new int[9];
+   private final int[] pendingByChannel = new int[MicroConduitChannels.COUNT];
    private int nextSink = 0;
 
    public MicroConnectorBlockEntity(BlockPos pos, BlockState state) {

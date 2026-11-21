@@ -46,7 +46,7 @@ public final class MicroConduitNetwork {
          if (!level.hasChunkAt(sinkPos)) continue;
          BlockState sinkState = level.getBlockState(sinkPos);
          if (!sinkState.is(ModBlocks.MICRO_MACHINE_CONNECTOR.get()) ||
-               sinkState.getValue(MicroMachineConnectorBlock.CHANNEL) != channel ||
+               !MicroConduitChannels.same(channel, sinkState.getValue(MicroMachineConnectorBlock.CHANNEL)) ||
                !(level.getBlockEntity(sinkPos) instanceof MicroConnectorBlockEntity sink) || sink.isSource()) continue;
          Direction sinkFacing = sinkState.getValue(MicroMachineConnectorBlock.FACING);
          BlockPos target = sinkPos.relative(sinkFacing);
@@ -95,7 +95,7 @@ public final class MicroConduitNetwork {
                if (!visited.contains(nextPos.asLong())) queue.add(nextPos);
             } else if (next.is(ModBlocks.MICRO_MACHINE_CONNECTOR.get()) &&
                        next.getValue(MicroMachineConnectorBlock.FACING) == direction &&
-                       next.getValue(MicroMachineConnectorBlock.CHANNEL) == channel) {
+                       MicroConduitChannels.same(channel, next.getValue(MicroMachineConnectorBlock.CHANNEL))) {
                sinks.add(nextPos.immutable());
             }
          }

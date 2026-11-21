@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 public final class MicroMachineConnectorBlock extends BaseEntityBlock {
    public static final MapCodec<MicroMachineConnectorBlock> CODEC = simpleCodec(MicroMachineConnectorBlock::new);
    public static final DirectionProperty FACING = BlockStateProperties.FACING;
-   public static final IntegerProperty CHANNEL = IntegerProperty.create("channel", 0, 8);
+   public static final IntegerProperty CHANNEL = IntegerProperty.create("channel", 0, MicroConduitChannels.COUNT - 1);
 
    public MicroMachineConnectorBlock(Properties properties) {
       super(properties);
@@ -76,9 +76,9 @@ public final class MicroMachineConnectorBlock extends BaseEntityBlock {
                player.displayClientMessage(Component.literal("LV connector: " + (entity.isSource() ? "SOURCE" : "SINK")), true);
             }
          } else {
-            int ch = (state.getValue(CHANNEL) + 1) % 9;
+            int ch = (state.getValue(CHANNEL) + 1) % MicroConduitChannels.COUNT;
             level.setBlock(pos, state.setValue(CHANNEL, ch), net.minecraft.world.level.block.Block.UPDATE_ALL);
-            player.displayClientMessage(Component.literal("LV channel " + (ch + 1) + " / 9"), true);
+            player.displayClientMessage(Component.literal("LV channel " + (ch + 1) + " / " + MicroConduitChannels.COUNT), true);
          }
       }
       return InteractionResult.SUCCESS;
