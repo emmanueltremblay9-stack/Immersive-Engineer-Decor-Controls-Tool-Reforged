@@ -966,6 +966,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.energy": "Stored FE: %1$s of %2$s FE capacity.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.input": "FE is accepted from the bottom face only, up to 256 FE per tick.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.status": "Current state: %1$s. %2$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.title.compact": "SMALL MINERAL FURNACE",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.open_accessible": "Open item output drawer",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.close_accessible": "Close item output drawer",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.tooltip": "Show or hide the item output slot",

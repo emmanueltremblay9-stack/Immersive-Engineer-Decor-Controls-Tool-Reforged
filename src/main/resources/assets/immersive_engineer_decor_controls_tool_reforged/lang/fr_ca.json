@@ -920,6 +920,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.thermal": "%1$s%%  %2$s",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.unselected": "non sélectionné",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.capacity": "/ %1$s mB",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.title.compact": "PETIT FOURNEAU MINÉRAL",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.open_accessible": "Ouvrir le tiroir de sortie",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.surface.hot": "SURFACE CHAUDE",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.selected": "sélectionné",
