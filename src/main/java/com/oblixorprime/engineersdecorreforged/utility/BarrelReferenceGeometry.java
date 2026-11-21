@@ -17,7 +17,7 @@ public final class BarrelReferenceGeometry {
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 38;
    public static final int VISIBLE_SLOT_COUNT = 38;
-   public static final String SOURCE_SHA256 = "df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9";
+   public static final String SOURCE_SHA256 = "db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c";
    public static final String SOURCE_FILENAME = "fluid-barrel-breaker-tree-family-v5.png";
    public static final List<Integer> INVENTORY_SOURCE_X = List.of(132, 232, 332, 432, 532, 632, 732, 832, 932);
    public static final List<Integer> HOTBAR_SOURCE_X = List.of(148, 244, 340, 436, 532, 628, 724, 820, 916);

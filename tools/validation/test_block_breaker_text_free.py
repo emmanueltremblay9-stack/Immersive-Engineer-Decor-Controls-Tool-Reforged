@@ -60,7 +60,7 @@ class BlockBreakerTextFreeTests(unittest.TestCase):
 
     def test_retained_art_is_byte_identical(self):
         for name, digest in {
-            "background.png": "2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d",
+            "background.png": "0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879",
             "power_neutral.png": "23ff15c60420b8951117f748d0b6122e174c915f87e91466930af80fbdc12123",
         }.items():
             with self.subTest(name=name):

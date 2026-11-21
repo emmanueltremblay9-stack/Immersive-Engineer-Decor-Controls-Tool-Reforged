@@ -1,0 +1,33 @@
+{
+  "status": "candidate_not_approved_not_native_qualified",
+  "source_head": "c3a2fd55e290a1102e885b3b30972cf41f6cf0d4",
+  "source_zip_sha256": "03a581d48e3b484947749c134feb610cdda2cb88af9d83e00d1c6ad682920d35",
+  "assets": {
+    "hopper": "fb5994b0a375c1120f4a9cbfb1c9536a3ad1ec604d1dda2989fb7fa4993ff7be",
+    "dropper": "3a5ea34d1804a93b810207e5dda9b6ae039d4ed92a2db0f603e89075267819f5"
+  },
+  "method": "Imagegen material study registered by SVG patches to exact original geometry; original functional regions and alpha retained.",
+  "previous_candidate": {
+    "status": "candidate_not_approved_not_native_qualified",
+    "source_head": "55f740053d05908bae7c8e737fe79723d90339d0",
+    "specialist_conversation": "https://chatgpt.com/g/g-p-6ae2ab9a5d0c8191b6b277c252844fcd-master-generalist-gui-architect-designer/c/6ae94ffc-b25c-83e9-ac03-182f96d22aa9",
+    "source_zip_sha256": "fc0f24b3f1523004be384a2e7ea776ea8b3e4f7a372959d400bfef1eb7382754",
+    "assets": {
+      "hopper": "056097ed915b3e2138bdebbe36e52de24a932939b8385cb3eafe53ce4f54717a",
+      "dropper": "52a7aff6c25de987b7260e8c44eb6308a48e8513d5ff9611b7dfa163c974c715"
+    },
+    "limitations": [
+      "New candidate, not owner accepted.",
+      "Dropper remains a stylistic alternative, not established improvement.",
+      "Native controls and state overlays retained; no gameplay changes.",
+      "Historical CI is not proof for this candidate."
+    ]
+  },
+  "limitations": [
+    "Owner visual acceptance pending.",
+    "Current source/JAR native captures and CI required; no historical qualification transferred.",
+    "Renderer still redraws native slot rims and control symbols.",
+    "Hopper selection row pitch corrected from 17 to 18 to match unchanged menu grid.",
+    "Earlier R03 used an uploaded Dropper image with 763 semi-transparent RGB differences. All current technical restores now use exact PR196 c3a2fd55 original PNGs."
+  ]
+}

@@ -16,7 +16,7 @@ import tempfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from factory_placer_v2_reference_native import decode_png
 
-ART_SHA = 'bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d'
+ART_SHA = '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4'
 ART_PATH = Path(__file__).resolve().parents[2] / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png'
 NAMES = ['normal','transferred','reopened','reloaded']
 SCREEN = 'com.oblixorprime.engineersdecorreforged.client.TreeCutterV3ReferenceScreen'

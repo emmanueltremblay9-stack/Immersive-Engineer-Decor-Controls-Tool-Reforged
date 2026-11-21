@@ -1,3 +1,4 @@
+from missing_gui_integration import project_history as gui_history, current_hash as gui_hash
 """Exact additive PR194 Hopper projection. Historical machine pins stay immutable."""
 import hashlib
 
@@ -364,10 +365,11 @@ def current_hash(path, historical_hash):
     if path != PATH:
         return historical_hash
     assert historical_hash == BASE_SHA256, 'Unexpected Hopper fidelity baseline'
-    return CURRENT_SHA256
+    return gui_hash(path, CURRENT_SHA256)
 
 
 def project_history(source):
+    source = gui_history(PATH, source)
     assert hashlib.sha256(source).hexdigest() == CURRENT_SHA256, 'Hopper integrated bytes changed'
     lines = source.decode('utf-8').splitlines(keepends=True)
     for start, end, current, previous in reversed(CHANGES):

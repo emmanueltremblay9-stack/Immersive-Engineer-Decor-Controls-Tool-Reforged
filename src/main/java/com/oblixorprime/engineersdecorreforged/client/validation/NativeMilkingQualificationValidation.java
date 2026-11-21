@@ -144,7 +144,7 @@ public final class NativeMilkingQualificationValidation {
       if(Files.exists(directory.resolve("saves"))) try(var entries=Files.list(directory.resolve("saves"))) { require(entries.findAny().isEmpty(),"Existing saves forbidden"); }
       isolatedDirectoryValidated=true;
       verifyViewport(mc);
-      verifyArt(mc,"background","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
+      verifyArt(mc,"background","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
       verifyArt(mc,"milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
       String name="iedctr-milking-qualification-"+nonce;
       mc.options.pauseOnLostFocus=false;
@@ -277,7 +277,7 @@ public final class NativeMilkingQualificationValidation {
          var p=new JsonObject();p.addProperty("suite",SUITE);p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
          p.addProperty("nonce",nonce);p.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));
          p.addProperty("requested_language",System.getProperty("iedctr.requestedLanguage",""));p.addProperty("selected_language",mc.getLanguageManager().getSelected());
-         p.addProperty("source_background_sha256","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
+         p.addProperty("source_background_sha256","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
          p.addProperty("source_milk_sha256","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");p.addProperty("glass_overlay_enabled",false);
          addViewport(p,mc);p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);
          p.addProperty("native_visual_acceptance",false);p.addProperty("menu_slot_count",38);p.addProperty("screen_class",MachineScreen.SmallMilkingMachineScreen.class.getName());

@@ -17,7 +17,7 @@ CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.BarrelReferenceS
     'utility.BarrelReferenceGeometry', 'utility.BarrelReferenceState', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity',
     'client.FluidBarrelSpriteRenderer')]
 TEXTURES = {
-    'textures/gui/barrel_reference_v5/background.png': 'df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9',
+    'textures/gui/barrel_reference_v5/background.png': 'db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c',
 }
 
 

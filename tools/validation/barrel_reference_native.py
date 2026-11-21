@@ -18,7 +18,7 @@ import zlib
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 SUITE = "native-barrel-reference-v2"
-ART_SHA = "df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9"
+ART_SHA = "db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c"
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.BarrelReferenceScreen"
 CASES = {"all_38_pickup_return_server_confirmed", "native_empty_water_lava_milk_half_full",
          "resource_reload_preserves_server_client_state", "post_reload_all_38_pickup_return_server_confirmed",

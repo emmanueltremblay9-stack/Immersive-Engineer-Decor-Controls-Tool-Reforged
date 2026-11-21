@@ -19,7 +19,7 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 
 SUITE = 'native-factory-placer-v2-reference-v1'
-ART_SHA = 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b'
+ART_SHA = 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d'
 SCREEN_CLASS = 'com.oblixorprime.engineersdecorreforged.client.FactoryPlacerV2ReferenceScreen'
 CAPTURES = {'normal.png':(0,0),'row-middle.png':(0,6),'row-bottom.png':(0,12),
             'inverted.png':(1,0),'continuous.png':(2,0),'placed.png':(0,1),

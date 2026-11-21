@@ -17,7 +17,7 @@ public final class SolarV2ReferenceGeometry {
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 37;
    public static final int VISIBLE_SLOT_COUNT = 37;
-   public static final String SOURCE_SHA256 = "d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796";
+   public static final String SOURCE_SHA256 = "c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa";
    public static final String SOURCE_FILENAME = "small-solar-panel-v2.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();

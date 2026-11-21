@@ -674,6 +674,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       super((BlockEntityType)ModBlockEntities.MACHINE.get(), pos, state);
       if (isLabeledCrateState(state)) {
          this.items = NonNullList.withSize(LabeledCrateMenu.CRATE_SLOT_COUNT, ItemStack.EMPTY);
+      } else if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
+         this.items = NonNullList.withSize(29, ItemStack.EMPTY);
       }
    }
 
@@ -1221,7 +1223,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                case 10:
                   yield false;
                default:
-                  yield index >= 1 && index < 10;
+                  yield index >= 1 && index < 29;
             }
          }
          default -> true;
@@ -1930,7 +1932,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.milkingRetries.clear();
       this.lastMilkingAttemptId = -1;
       this.items = NonNullList.withSize(
-         this.kind() == MachineKind.LABELED_CRATE ? LabeledCrateMenu.CRATE_SLOT_COUNT : SLOT_COUNT, ItemStack.EMPTY
+         this.kind() == MachineKind.LABELED_CRATE ? LabeledCrateMenu.CRATE_SLOT_COUNT
+            : this.kind() == MachineKind.METAL_CRAFTING_TABLE ? 29 : SLOT_COUNT, ItemStack.EMPTY
       );
       ContainerHelper.loadAllItems(tag, this.items, registries);
       if (this.kind() == MachineKind.SMALL_TREE_CUTTER) {

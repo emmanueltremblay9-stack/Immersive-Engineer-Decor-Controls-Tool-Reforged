@@ -75,7 +75,7 @@ public final class PackagedRuntimeProof {
             }
             var textures = new JsonArray();
             String[] paths = {"milking_redesign_v1/background.png","milking_redesign_v1/milk.png"};
-            String[] hashes = {"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5"};
+            String[] hashes = {"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5"};
             for(int i=0;i<paths.length;i++) {
                 var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+paths[i]);
                 var active = mc.getResourceManager().getResource(texture).orElseThrow();

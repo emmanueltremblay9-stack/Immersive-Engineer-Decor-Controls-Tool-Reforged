@@ -14,7 +14,7 @@ import tempfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from factory_placer_v2_reference_native import png
 
-ART_SHA = '2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d'
+ART_SHA = '0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879'
 NAMES = ['normal','title','energy','fluid','power','target','scene','work','worked','returned']
 
 

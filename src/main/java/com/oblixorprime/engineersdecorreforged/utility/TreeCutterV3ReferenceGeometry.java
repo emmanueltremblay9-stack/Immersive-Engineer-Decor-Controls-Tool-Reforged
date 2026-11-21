@@ -19,7 +19,7 @@ public final class TreeCutterV3ReferenceGeometry {
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 37;
    public static final int VISIBLE_SLOT_COUNT = 37;
-   public static final String SOURCE_SHA256 = "bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d";
+   public static final String SOURCE_SHA256 = "307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4";
    public static final String SOURCE_FILENAME = "source_validated.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();

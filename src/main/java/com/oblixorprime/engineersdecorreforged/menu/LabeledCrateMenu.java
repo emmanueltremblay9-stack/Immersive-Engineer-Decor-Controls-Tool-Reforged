@@ -22,10 +22,14 @@ public final class LabeledCrateMenu extends AbstractContainerMenu {
    private final Container container;
 
    public static LabeledCrateMenu client(int id, Inventory inventory) {
-      return new LabeledCrateMenu(id, inventory, new SimpleContainer(CRATE_SLOT_COUNT));
+      return new LabeledCrateMenu(id, inventory, new SimpleContainer(CRATE_SLOT_COUNT), true);
    }
 
    public LabeledCrateMenu(int id, Inventory inventory, Container container) {
+      this(id, inventory, container, false);
+   }
+
+   private LabeledCrateMenu(int id, Inventory inventory, Container container, boolean referencePresentation) {
       super((MenuType)ModMenus.LABELED_CRATE.get(), id);
       checkContainerSize(container, CRATE_SLOT_COUNT);
       this.container = container;
@@ -34,19 +38,19 @@ public final class LabeledCrateMenu extends AbstractContainerMenu {
       for (int row = 0; row < 6; row++) {
          for (int column = 0; column < 9; column++) {
             int slot = column + row * 9;
-            this.addSlot(new StorageSlot(container, slot, 28 + column * 18, 10 + row * 18));
+            this.addSlot(new StorageSlot(container, slot, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(slot).x() : 28 + column * 18, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(slot).y() : 10 + row * 18));
          }
       }
-      this.addSlot(new FrameSlot(container, FRAME_SLOT, 191, 100));
+      this.addSlot(new FrameSlot(container, FRAME_SLOT, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(FRAME_SLOT).x() : 191, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(FRAME_SLOT).y() : 100));
 
       // Keep the original inventory order: three main rows first, then the hotbar.
       for (int row = 0; row < 3; row++) {
          for (int column = 0; column < 9; column++) {
-            this.addSlot(new Slot(inventory, column + row * 9 + 9, 28 + column * 18, 125 + row * 18));
+            this.addSlot(new Slot(inventory, column + row * 9 + 9, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(55 + row * 9 + column).x() : 28 + column * 18, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(55 + row * 9 + column).y() : 125 + row * 18));
          }
       }
       for (int column = 0; column < 9; column++) {
-         this.addSlot(new Slot(inventory, column, 28 + column * 18, 183));
+         this.addSlot(new Slot(inventory, column, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(82 + column).x() : 28 + column * 18, referencePresentation ? com.oblixorprime.engineersdecorreforged.utility.CrateReferenceGeometry.anchor(82 + column).y() : 183));
       }
    }
 

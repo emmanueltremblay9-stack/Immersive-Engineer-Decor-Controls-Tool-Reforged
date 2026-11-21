@@ -19,7 +19,7 @@ public final class FactoryPlacerV2ReferenceGeometry {
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 54;
    public static final int VISIBLE_SLOT_COUNT = 54;
-   public static final String SOURCE_SHA256 = "ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b";
+   public static final String SOURCE_SHA256 = "bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d";
    public static final String SOURCE_FILENAME = "factory-placer-grey-steel-v2-concept.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();

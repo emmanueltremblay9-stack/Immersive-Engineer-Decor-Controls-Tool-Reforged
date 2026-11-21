@@ -28,7 +28,7 @@ jobs:
       - name: Verify retained artwork and clean exact checkout
         run: |
           test -z "$(git status --porcelain --untracked-files=all)"
-          echo 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b  src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png' | sha256sum --check
+          echo 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d  src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png' | sha256sum --check
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
       - name: Compile, run JUnit and existing GameTests, build JAR

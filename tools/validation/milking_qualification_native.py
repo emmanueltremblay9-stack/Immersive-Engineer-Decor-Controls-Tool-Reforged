@@ -22,7 +22,7 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 SUITE = "native-milking-qualification-v1"
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallMilkingMachineScreen"
-BACKGROUND_SHA = "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b"
+BACKGROUND_SHA = "1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411"
 MILK_SHA = "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5"
 PROFILES = {
     "en-1280x720-scale1": (1280, 720, 1, "en_us"),

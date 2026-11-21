@@ -1,3 +1,4 @@
+from gui_exterior_alpha import current_hash as alpha_hash
 """Source contract guardrails; does not substitute for native interactions."""
 from pathlib import Path
 import hashlib
@@ -42,7 +43,7 @@ assert struct.unpack('>II',art.read_bytes()[16:24])==(source_width,source_height
 manifest=json.loads((r/'docs/testing/barrel-reference-v5/geometry-manifest.json').read_text())
 assert manifest['source_size']==[source_width,source_height]
 assert manifest['canvas_size']==[379,461] and [source_width,source_height]==[3*x for x in manifest['canvas_size']]
-assert manifest['source_sha256']==hashlib.sha256(art.read_bytes()).hexdigest()
+assert alpha_hash(art.relative_to(r).as_posix(), manifest['source_sha256'])==hashlib.sha256(art.read_bytes()).hexdigest()
 for a in manifest['slots']:
     x,y,w,h=a['source_interior']
     assert a['canvas_item_origin']==[int((x+w/2)/3-8+0.5),int((y+h/2)/3-8+0.5)]

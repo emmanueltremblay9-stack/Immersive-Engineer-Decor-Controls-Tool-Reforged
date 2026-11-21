@@ -1,0 +1,50 @@
+{
+  "scope": "Exterior-alpha follow-up on PR196 parent 09c8a0e8ebb231dd399a525d615c9eedc6516dc4",
+  "asset_checks": {
+    "status": "PASS",
+    "input": "Fourteen pinned parent PNGs and the exact fourteen alpha exports",
+    "criterion": "Source/output hashes verified, identical dimensions and decoded RGB, identical protected RGBA, alpha never increased, all canvas-edge alpha zero",
+    "files": 14,
+    "rgb_changed_pixels": 0,
+    "protected_rgba_changed_pixels": 0,
+    "evidence": "manifest.json"
+  },
+  "active_hash_expectations_and_historical_pins": {
+    "status": "PASS",
+    "criterion": "Exact export byte hashes required; all recorded text changes reconstruct their preceding byte hashes; historical manifests unchanged; Java changes contain only hash literal substitutions",
+    "evidence": "tools/validation/test_gui_exterior_alpha.py and existing integration/preservation tests"
+  },
+  "local_validation_suite": {
+    "status": "PASS",
+    "command": "python3 -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_*.py' -v",
+    "tests": 836,
+    "reported_seconds": 108.774,
+    "environment": "Linux, Python 3.12.14, Java 21.0.13; process-local javac launcher delegates to installed jdk.compiler module",
+    "limits": "Offline/unit/evidence-validator suite; no new Minecraft run"
+  },
+  "resource_and_geometry_checks": {
+    "status": "PASS",
+    "commands": [
+      "python3 tools/validation/verify_freezer_reference.py",
+      "bash tools/validation/check_barrel_reference.sh",
+      "bash tools/validation/check_solar_v2_reference.sh",
+      "python3 tools/validation/check_solar_v2_reference_wiring.py",
+      "python3 tools/validation/check_barrel_reference_wiring.py",
+      "python3 tools/validation/check_milking_qualification.py",
+      "git diff --check"
+    ],
+    "limits": "Dependency-free geometry, static source wiring, resource identity and declared CPU sampling only"
+  },
+  "local_gradle_build": {
+    "status": "BLOCKED",
+    "attempt": "bash ./gradlew --version",
+    "observation": "Missing Gradle 9.2.1 distribution; wrapper download failed with java.net.SocketException: Network is unreachable",
+    "limits": "Mapped compilation, Gradle JUnit/GameTests and JAR build not executed locally"
+  },
+  "current_commit_native_runtime": "NOT_PERFORMED_LOCALLY",
+  "owner_visual_acceptance_of_aggregate_pr": "NOT_ESTABLISHED_BY_THIS_FOLLOWUP",
+  "independent_review": "NOT_PERFORMED",
+  "historical_native_results": "NOT_TRANSFERRED_TO_THESE_EXPORTS",
+  "remote_ci_at_preparation": "PENDING_NEW_COMMIT",
+  "merge_or_release": "NOT_PERFORMED"
+}

@@ -18,7 +18,7 @@ import zlib
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 SUITE = "native-solar-v2-reference-v3"
-ART_SHA = "d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796"
+ART_SHA = "c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa"
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.SolarV2ReferenceScreen"
 CASES = {"all_37_pickup_return_server_confirmed", "native_empty_half_full_fe",
          "close_reaches_server", "reopen_preserves_energy_and_geometry"}

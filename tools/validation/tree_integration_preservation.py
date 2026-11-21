@@ -1,3 +1,4 @@
+from missing_gui_integration import project_history as gui_history
 """Exact Tree/Freezer/Milking integration layers, never broad preservation exclusions."""
 from hopper_fidelity_integration import PATH as HOPPER_PATH, project_history as hopper_history, BLOCKS_PATH as HOPPER_BLOCKS_PATH, project_blocks_history
 import hashlib
@@ -130,6 +131,10 @@ def assert_milking_integration_preserved(root, pins):
 
 def assert_menu_tail_preserved(source):
     """Normalize only the exact Tree accessor and complete Freezer preview method."""
+    try:
+        source = gui_history("src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java", source.encode()).decode()
+    except AssertionError as error:
+        raise AssertionError("Menu transfer/data/validation changed: " + str(error)) from error
     marker = '   private static MenuType<?> resolveMenuType'
     assert source.count(marker) == 1, 'Ambiguous menu preservation boundary'
     tail = source.split(marker, 1)[1]

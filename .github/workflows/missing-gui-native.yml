@@ -1,0 +1,68 @@
+name: Missing GUI exact-JAR native captures
+
+on:
+  pull_request:
+    paths:
+      - 'src/main/**'
+      - 'src/guiAlbumThree/**'
+      - 'tools/validation/*gui_album_three*'
+      - '.github/workflows/missing-gui-native.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Check existing display prerequisites
+        run: command -v Xvfb && command -v xvfb-run && command -v xauth
+      - name: Validate capture proof gates
+        run: python -m unittest discover -s tools/validation -p 'test_gui_album_three.py' -v
+      - name: Identify ordinary candidate JAR before native execution
+        id: jar
+        shell: bash
+        env:
+          EXPECTED_SOURCE: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE"
+          test -z "$(git status --porcelain --untracked-files=all)"
+          bash gradlew jar --no-daemon --stacktrace
+          mod_id="$(sed -n 's/^mod_id=//p' gradle.properties)"
+          version="$(sed -n 's/^mod_version=//p' gradle.properties)"
+          jar="build/libs/${mod_id}-${version}.jar"
+          test -f "$jar"
+          sha="$(sha256sum "$jar" | awk '{print $1}')"
+          test "${#sha}" = 64
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          mkdir -p build/gui-candidate-identity
+          git rev-parse HEAD > build/gui-candidate-identity/source.txt
+          sha256sum "$jar" > build/gui-candidate-identity/jar.sha256
+      - name: Open six actual candidate containers and capture
+        run: python tools/validation/gui_album_three.py --expected-jar-sha256 '${{ steps.jar.outputs.sha }}' --language fr_fr --width 1280 --height 720
+      - name: Retain exact candidate and native evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: missing-gui-native-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            build/gui-candidate-identity/
+            build/gui-album-three-native-*/
+            build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

@@ -13,7 +13,7 @@ PREFIX = 'com.oblixorprime.engineersdecorreforged.'
 CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.SolarV2ReferenceScreen',
     'utility.SolarV2ReferenceGeometry', 'utility.SolarV2ReferenceState', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity')]
 TEXTURES = {
-    'textures/gui/solar_v2_reference/background.png': 'd702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796',
+    'textures/gui/solar_v2_reference/background.png': 'c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa',
 }
 
 
