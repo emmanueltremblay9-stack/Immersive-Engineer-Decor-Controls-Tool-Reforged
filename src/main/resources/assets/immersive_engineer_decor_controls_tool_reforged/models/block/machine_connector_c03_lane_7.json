@@ -1,0 +1,13 @@
+{
+  "loader": "neoforge:obj",
+  "model": "immersive_engineer_decor_controls_tool_reforged:models/block/machine_connector_c03_lane_7.obj",
+  "mtl_override": "immersive_engineer_decor_controls_tool_reforged:models/block/machine_connector_c03.mtl",
+  "textures": {
+    "texture0": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_r3_industrial",
+    "particle": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_r3_industrial"
+  },
+  "automatic_culling": false,
+  "flip_v": false,
+  "shade_quads": true,
+  "emissive_ambient": false
+}

@@ -1,0 +1,15 @@
+{
+  "loader": "neoforge:composite",
+  "children": {
+    "conduit": {
+      "parent": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_c01"
+    },
+    "support": {
+      "parent": "immersive_engineer_decor_controls_tool_reforged:block/structural_support_s01"
+    }
+  },
+  "visibility": {
+    "conduit": true,
+    "support": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "axis=x,supported=false": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_c01"
+    },
+    "axis=x,supported=true": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_c01_supported"
+    },
+    "axis=y,supported=false": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_c01",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,supported=true": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_c01_supported",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z,supported=false": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_c01",
+      "y": 90
+    },
+    "axis=z,supported=true": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/microconduit_c01_supported",
+      "y": 90
+    }
+  }
+}
