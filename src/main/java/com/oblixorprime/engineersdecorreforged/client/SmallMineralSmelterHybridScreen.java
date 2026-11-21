@@ -57,7 +57,6 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
    private int requestFeedback;
    private Button outputDrawerButton;
    private final Button[] modeButtons = new Button[3];
-   private Button statusButton;
 
    public SmallMineralSmelterHybridScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
@@ -111,12 +110,6 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
          modeButtons[mode].setAlpha(0.0F);
       }
 
-      statusButton = addRenderableWidget(Button.builder(
-         statusAccessibleComponent(), button -> { })
-         .bounds(18, 157, 116, 12)
-         .tooltip(Tooltip.create(statusLabelComponent()))
-         .build());
-      statusButton.setAlpha(0.0F);
       updateModeButtonAvailability();
    }
 
@@ -221,6 +214,17 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       return Component.translatable(PREFIX + key, statusComponent());
    }
 
+   /** Read-only machine status: hover tooltip, not a clickable no-op action. */
+   private Component detailedStatusComponent() {
+      Component detail = statusAccessibleComponent();
+      int queued = projectedField(MachineMenu.SMS_UI_QUEUED_MODE);
+      if (queued >= 0 && queued < MODE_KEYS.length) {
+         detail = Component.empty().append(detail).append(Component.literal("; "))
+            .append(Component.translatable(PREFIX + "next", modeComponent(queued)));
+      }
+      return detail;
+   }
+
    @Override
    public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
       renderBg(graphics, partialTick, mouseX, mouseY);
@@ -238,6 +242,12 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       // Keep item tooltips legible outside the panel transform.
       if (hoveredSlot != null && hoveredSlot.hasItem()) {
          graphics.renderTooltip(font, hoveredSlot.getItem(), mouseX, mouseY);
+      } else if (mouseWithin(mouseX, mouseY, 18, 147, 116, 12)) {
+         graphics.renderTooltip(font, font.split(detailedStatusComponent(),
+            Math.max(80, Math.min(240, width - 16))), mouseX, mouseY);
+      } else if (mouseWithin(mouseX, mouseY, 101, 7, 103, 18)) {
+         graphics.renderTooltip(font, Component.translatable(
+            "block.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter"), mouseX, mouseY);
       }
    }
 
@@ -247,6 +257,11 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
 
    private double localY(double y) {
       return (y - originY) / viewScale;
+   }
+
+   private boolean mouseWithin(double mouseX, double mouseY, int x, int y, int w, int h) {
+      double localMouseX = localX(mouseX), localMouseY = localY(mouseY);
+      return localMouseX >= x && localMouseX < x + w && localMouseY >= y && localMouseY < y + h;
    }
 
    @Override
@@ -261,6 +276,7 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
 
       int thermal = projectedField(MachineMenu.SMS_UI_THERMAL);
       int phase = projectedField(MachineMenu.SMS_UI_PHASE);
+      renderThermalViewport(graphics, x, y, phase, thermal);
       int fire = phase == 0 ? 0xFF69AFC4 : phase == 1 ? AMBER : phase == 2 ? 0xFFE46A25 : RED;
       for (int i = 0; i < 4; i++) {
          int yy = y + 45 + i * 10;
@@ -297,12 +313,43 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
             if (pendingMode == i) outline(graphics, x + 175, top, 41, 9, 0xFF92D9F3);
          }
       }
+      // The output is a real collapsible item slot; expose the drawer direction.
+      graphics.fill(x + 210, y + 35, x + 215, y + 36, EDGE);
+      if (outputDrawerOpen) {
+         graphics.fill(x + 211, y + 39, x + 214, y + 40, AMBER);
+         graphics.fill(x + 212, y + 37, x + 213, y + 39, AMBER);
+      } else {
+         graphics.fill(x + 211, y + 37, x + 214, y + 38, AMBER);
+         graphics.fill(x + 212, y + 38, x + 213, y + 40, AMBER);
+      }
       if (outputDrawerButton != null && (outputDrawerButton.isFocused() || outputDrawerButton.isHovered())) {
          outline(graphics, x + 160, y + 33, 58, 11, WHITE);
       }
-      if (statusButton != null && (statusButton.isFocused() || statusButton.isHovered())) {
-         outline(graphics, x + 17, y + 156, 118, 14, AMBER);
+   }
+
+   /** Phase-dependent glass insert over the reference's frozen lava illustration.
+    *  Leave metal rings, bolts, slots and pipes untouched. LAVA uses the source art.
+    */
+   private static void renderThermalViewport(GuiGraphics graphics, int x, int y, int phase, int thermal) {
+      if (phase >= 3) return;
+      int glowHeight = phase <= 0 ? 0 : Mth.clamp(
+         phase == 1 ? 5 + Math.max(0, thermal) / 16 : 12 + Math.max(0, thermal) / 12,
+         0, 31);
+      for (int row = 0; row < 31; row++) {
+         int inset = row < 2 || row > 28 ? 2 : row < 4 || row > 26 ? 1 : 0;
+         int bottom = 30 - row;
+         int color = 0xFF182027;
+         if (phase > 0 && bottom < glowHeight) {
+            color = phase == 1
+               ? (row % 3 == 0 ? 0xFF7D3C22 : 0xFF47291F)
+               : (row % 3 == 0 ? 0xFFD97925 : 0xFF9F441D);
+         }
+         graphics.fill(x + 40 + inset, y + 57 + row, x + 66 - inset, y + 58 + row, color);
       }
+      graphics.fill(x + 41, y + 63, x + 42, y + 82,
+         phase <= 0 ? 0xFF4C6471 : 0xFF8E5A39);
+      graphics.fill(x + 64, y + 63, x + 65, y + 83,
+         phase <= 0 ? 0xFF303F4A : 0xFF753D25);
    }
 
    private static void outline(GuiGraphics graphics, int x, int y, int width, int height, int color) {
@@ -327,13 +374,13 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
    }
 
    private void drawLocalizedMachineTitle(GuiGraphics graphics) {
-      Component title = Component.translatable(
-         "block.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter"
-      );
-      float scale = fittedTextScale(font.width(title), 164, 0.82F);
+      // Keep the readable live title to the right of the observed recipe/effect overlay.
+      // Hover reveals the full localized machine name.
+      Component title = Component.translatable(PREFIX + "title.compact");
+      float scale = fittedTextScale(font.width(title), 101, 0.82F);
       if (scale <= 0.0F) return;
-      int centeredX = 117 - Mth.ceil(font.width(title) * scale) / 2;
-      drawSmall(graphics, title, centeredX, 9, 164, 0xFF171614, 0.82F);
+      int rightAlignedX = 202 - Mth.ceil(font.width(title) * scale);
+      drawSmall(graphics, title, rightAlignedX, 9, 101, 0xFF171614, 0.82F);
    }
 
    private static void gauge(GuiGraphics graphics, int x, int y, int width, int height, int value, int max, int color) {
@@ -377,48 +424,53 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       int hazard = projectedField(MachineMenu.SMS_UI_HAZARD);
       String surfaceKey = hazard < 0 ? "surface.unknown" : hazard == 1 ? "surface.hot" : "surface.cool";
       drawSmall(graphics, Component.translatable(PREFIX + surfaceKey),
-         20, 140, 84, hazard == 1 ? RED : hazard < 0 ? MUTED : 0xFF81D77B, 0.68F);
+         20, 139, 106, hazard == 1 ? RED : hazard < 0 ? MUTED : 0xFF81D77B, 0.63F);
 
       int batchMode = projectedField(MachineMenu.SMS_UI_BATCH_MODE);
       int batchProgress = projectedField(MachineMenu.SMS_UI_BATCH_PROGRESS);
-      Component batchLabel = batchMode >= 0 && batchMode < MODE_KEYS.length
-         ? Component.translatable(PREFIX + "batch.progress",
-            modeComponent(batchMode), numberComponent(batchProgress))
-         : Component.translatable(PREFIX + "batch.idle");
-      drawSmall(graphics, batchLabel, 20, 150, 114, batchMode >= 0 ? AMBER : MUTED, 0.52F);
+      if (batchMode >= 0 && batchMode < MODE_KEYS.length) {
+         drawSmall(graphics, Component.translatable(PREFIX + "batch.progress",
+            modeComponent(batchMode), numberComponent(batchProgress)),
+            20, 145, 114, AMBER, 0.46F);
+      }
 
       int queued = projectedField(MachineMenu.SMS_UI_QUEUED_MODE);
-      if (queued >= 0 && queued < MODE_KEYS.length) {
+      if (queued >= 0 && queued < MODE_KEYS.length && batchMode < 0) {
          drawSmall(graphics, Component.translatable(PREFIX + "next", modeComponent(queued)),
-            20, 158, 114, AMBER, 0.52F);
+            20, 145, 114, AMBER, 0.46F);
       }
 
       int statusId = isUiSynchronized() ? menu.field(MachineMenu.SMS_UI_STATUS) : 0;
+      boolean threeLines = batchMode >= 0 || queued >= 0;
       drawSmall(graphics, statusLabelComponent(),
-         20, 163, 114, requestFeedback == 0 ? statusColor(statusId) : RED, 0.52F);
-      if (statusButton != null) {
-         statusButton.setMessage(statusAccessibleComponent());
-         statusButton.setTooltip(Tooltip.create(statusLabelComponent()));
+         20, threeLines ? 152 : 149, 114,
+         requestFeedback == 0 ? statusColor(statusId) : RED, 0.48F);
+      // The read-only status is narrated from the actual focusable output control.
+      if (outputDrawerButton != null) {
+         outputDrawerButton.setMessage(Component.empty().append(drawerAccessibleComponent())
+            .append(Component.literal(". ")).append(detailedStatusComponent()));
       }
 
       int fluid = projectedField(MachineMenu.SMS_UI_TANK_AMOUNT);
       int fluidCapacity = projectedField(MachineMenu.SMS_UI_TANK_CAPACITY);
+      // Tank and FE values occupy separate apertures, not the adjoining gauge.
       drawSmall(graphics, Component.translatable(PREFIX + "fluid", numberComponent(fluid)),
-         148, 102, 34, fluid < 0 ? MUTED : WHITE, 0.63F);
+         147, 104, 23, fluid < 0 ? MUTED : WHITE, 0.55F);
       drawSmall(graphics, Component.translatable(PREFIX + "capacity", numberComponent(fluidCapacity)),
-         148, 110, 34, MUTED, 0.52F);
+         143, 112, 27, MUTED, 0.49F);
 
       int energy = projectedField(MachineMenu.SMS_UI_ENERGY);
       int energyCapacity = projectedField(MachineMenu.SMS_UI_ENERGY_CAPACITY);
-      drawSmall(graphics, Component.translatable(PREFIX + "energy", numberComponent(energy)),
-         185, 102, 39, energy < 0 ? MUTED : WHITE, 0.53F);
-      drawSmall(graphics, Component.translatable(PREFIX + "energy_capacity", numberComponent(energyCapacity)),
-         185, 110, 39, MUTED, 0.49F);
+      Component energyLine = Component.empty().append(numberComponent(energy))
+         .append(Component.literal(" / ")).append(numberComponent(energyCapacity))
+         .append(Component.literal(" FE"));
+      drawSmall(graphics, energyLine,
+         176, 102, 50, energy < 0 ? MUTED : WHITE, 0.48F);
 
       int feRate = projectedField(MachineMenu.SMS_UI_FE_RATE);
       Component feRateValue = feRate < 0 ? Component.translatable(PREFIX + "unknown") : Component.literal(Integer.toString(feRate));
       drawSmall(graphics, Component.translatable(PREFIX + "fe_rate", feRateValue),
-         191, 120, 39, feRate < 0 ? MUTED : WHITE, 0.58F);
+         191, 121, 39, feRate < 0 ? MUTED : WHITE, 0.58F);
 
       int redstone = projectedField(MachineMenu.SMS_UI_REDSTONE);
       String redstoneKey = redstone < 0 ? "redstone.unknown" : redstone == 1 ? "redstone.high" : "redstone.low";
@@ -445,9 +497,11 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
    private int statusColor(int status) {
       if (!isUiSynchronized() || status == 0) return MUTED;
       return switch (status) {
-         case 1, 2 -> AMBER;
-         case 9, 10 -> 0xFF81D77B;
-         default -> RED;
+         case 1, 2, 3, 4, 5, 6, 10, 11 -> AMBER;
+         case 7 -> MUTED; // Expected no-input idle state, not an alarm.
+         case 9 -> 0xFF81D77B;
+         case 8 -> RED; // Invalid input is an actual fault.
+         default -> MUTED;
       };
    }
 
