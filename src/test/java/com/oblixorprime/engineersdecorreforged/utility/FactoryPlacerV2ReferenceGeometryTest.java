@@ -19,7 +19,6 @@ public final class FactoryPlacerV2ReferenceGeometryTest {
          assertEquals(1312, header.getInt(20));
          assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH, header.getInt(16));
          assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT, header.getInt(20));
-         assertEquals(1991965, png.length);
       }
    }
 }

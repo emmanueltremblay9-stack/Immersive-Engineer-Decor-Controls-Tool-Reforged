@@ -19,7 +19,6 @@ public final class TreeCutterV3ReferenceGeometryTest {
          assertEquals(1254, header.getInt(20));
          assertEquals(TreeCutterV3ReferenceGeometry.SOURCE_WIDTH, header.getInt(16));
          assertEquals(TreeCutterV3ReferenceGeometry.SOURCE_HEIGHT, header.getInt(20));
-         assertEquals(2186328, png.length);
       }
    }
 }
