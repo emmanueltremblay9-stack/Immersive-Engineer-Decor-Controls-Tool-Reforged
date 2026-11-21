@@ -22,6 +22,8 @@ public final class ReforgedConfig {
    public static final BooleanValue ENABLE_STYLE_GLASS;
    private static final Set<String> UTILITY_BLOCK_ITEMS = Set.of(
       "metal_crafting_table",
+      "microconduit_9lv",
+      "micro_machine_connector",
       "labeled_crate",
       "factory_hopper",
       "factory_dropper",

@@ -1,6 +1,8 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.MicroConduitBlock;
+import com.oblixorprime.engineersdecorreforged.block.MicroMachineConnectorBlock;
 import com.oblixorprime.engineersdecorreforged.block.NativeDecorativeBlocks;
 import com.oblixorprime.engineersdecorreforged.block.CatwalkStairsItem;
 import com.oblixorprime.engineersdecorreforged.stool.TreatedWoodStoolBlock;
@@ -36,6 +38,10 @@ public final class ModBlocks {
    public static final Blocks BLOCKS = DeferredRegister.createBlocks("immersive_engineer_decor_controls_tool_reforged");
    private static final List<DeferredBlock<? extends Block>> MUTABLE_ORDERED_BLOCKS = new ArrayList<>();
    public static final List<DeferredBlock<? extends Block>> ORDERED_BLOCKS = Collections.unmodifiableList(MUTABLE_ORDERED_BLOCKS);
+   public static final DeferredBlock<MicroConduitBlock> MICROCONDUIT_9LV = registerWithItem("microconduit_9lv",
+      () -> new MicroConduitBlock(Properties.of().mapColor(MapColor.METAL).strength(1.5F, 10.0F).sound(SoundType.METAL).noOcclusion()));
+   public static final DeferredBlock<MicroMachineConnectorBlock> MICRO_MACHINE_CONNECTOR = registerWithItem("micro_machine_connector",
+      () -> new MicroMachineConnectorBlock(Properties.of().mapColor(MapColor.METAL).strength(2.0F, 10.0F).sound(SoundType.METAL).noOcclusion()));
    public static final DeferredBlock<Block> CLINKER_BRICK_BLOCK = registerWithItem("clinker_brick_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(stone(0.5F, 7.0F)));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> CLINKER_BRICK_SLAB = registerWithItem(
       "clinker_brick_slab", () -> new PortedBlocks.VariantSlabBlock(stone(0.5F, 7.0F))

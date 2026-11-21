@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.block.MicroConnectorBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -12,6 +13,8 @@ public final class ModBlockEntities {
    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(
       Registries.BLOCK_ENTITY_TYPE, "immersive_engineer_decor_controls_tool_reforged"
    );
+   public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MicroConnectorBlockEntity>> MICRO_CONNECTOR = BLOCK_ENTITY_TYPES.register(
+      "micro_connector", () -> Builder.of(MicroConnectorBlockEntity::new, ModBlocks.MICRO_MACHINE_CONNECTOR.get()).build(null));
    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MachineBlockEntity>> MACHINE = BLOCK_ENTITY_TYPES.register(
       "machine",
       () -> Builder.of(MachineBlockEntity::new, machineBlocks()).build(null)
