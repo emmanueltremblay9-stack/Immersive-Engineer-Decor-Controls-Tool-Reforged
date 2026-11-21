@@ -445,11 +445,7 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       drawSmall(graphics, statusLabelComponent(),
          20, threeLines ? 152 : 149, 114,
          requestFeedback == 0 ? statusColor(statusId) : RED, 0.48F);
-      // The read-only status is narrated from the actual focusable output control.
-      if (outputDrawerButton != null) {
-         outputDrawerButton.setMessage(Component.empty().append(drawerAccessibleComponent())
-            .append(Component.literal(". ")).append(detailedStatusComponent()));
-      }
+      // Status remains read-only with a hover tooltip; drawer narration is unchanged.
 
       int fluid = projectedField(MachineMenu.SMS_UI_TANK_AMOUNT);
       int fluidCapacity = projectedField(MachineMenu.SMS_UI_TANK_CAPACITY);
