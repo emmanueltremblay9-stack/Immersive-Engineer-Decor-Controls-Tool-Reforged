@@ -18,7 +18,7 @@ public final class FreezerReferenceGeometry {
    public static final int MENU_SLOT_COUNT = 39;
    public static final int VISIBLE_SLOT_COUNT = 38;
    public static final int RESERVED_MENU_INDEX = 1;
-   public static final String SOURCE_SHA256 = "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46";
+   public static final String SOURCE_SHA256 = "e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7";
    public static final String SOURCE_FILENAME = "freezer-mixed-rp-v5-preview.png";
    public static final List<Integer> INVENTORY_SOURCE_X = List.of(164, 270, 376, 482, 588, 694, 800, 906, 1012);
    public static final List<Integer> INVENTORY_SOURCE_ROW_Y = List.of(758, 854, 952, 1082);

@@ -17,7 +17,7 @@ public final class CrateReferenceGeometry {
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 91;
    public static final int VISIBLE_SLOT_COUNT = 91;
-   public static final String SOURCE_SHA256 = "9658f359d5675b13bc46ba5af12120f2ddcc7ef7f2b1bf563da4234f16132ea2";
+   public static final String SOURCE_SHA256 = "fbd91d759dcc40a4733b7a5749fd356577c6d92bb2e42dbf0fc60d73e14cc8a3";
    public static final String SOURCE_FILENAME = "labeled-crate-v1-static-exact.official-render.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();

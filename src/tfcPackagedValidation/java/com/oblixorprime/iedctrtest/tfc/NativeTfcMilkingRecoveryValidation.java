@@ -165,7 +165,7 @@ public final class NativeTfcMilkingRecoveryValidation {
       tfcVersion=net.neoforged.fml.ModList.get().getModContainerById("tfc").orElseThrow().getModInfo().getVersion().toString();
       require(tfcVersion.equals("4.2.12"),"Wrong native TFC runtime version");
       verifyViewport(mc);
-      verifyArt(mc,"background","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
+      verifyArt(mc,"background","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
       verifyArt(mc,"milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
       String name="iedctr-tfc-milking-recovery-"+nonce;
       mc.options.pauseOnLostFocus=false;
@@ -309,7 +309,7 @@ public final class NativeTfcMilkingRecoveryValidation {
          var p=new JsonObject();p.add("packaged_runtime",runtimeBefore);p.add("packaged_runtime_after",runtimeAfter);p.addProperty("suite",SUITE);p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
          p.addProperty("nonce",nonce);p.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));
          p.addProperty("requested_language",System.getProperty("iedctr.requestedLanguage",""));p.addProperty("selected_language",mc.getLanguageManager().getSelected());
-         p.addProperty("source_background_sha256","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
+         p.addProperty("source_background_sha256","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
          p.addProperty("source_milk_sha256","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
          p.addProperty("input_method","XTest native motion; observed Minecraft cursor and unchanged server transitions");
          p.addProperty("native_motion_events",nativeMotionEvents);

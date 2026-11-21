@@ -15,8 +15,8 @@ CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.MachineScreen',
     'menu.MachineMenu', 'utility.FluidMachineRedesignLayout', 'utility.MachineBlockEntity',
     'client.RetainedFluidMachineArtwork', 'client.FluidTooltipPositioner')]
 TEXTURES = {
-    'textures/gui/small_fluid_funnel_v1/background.png': 'c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64',
-    'textures/gui/passive_fluid_accumulator_v1/background.png': 'da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872',
+    'textures/gui/small_fluid_funnel_v1/background.png': '75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e',
+    'textures/gui/passive_fluid_accumulator_v1/background.png': 'f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db',
 }
 
 

@@ -6,7 +6,7 @@ JAVA=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged'
 class CrateReferenceSourceTest(unittest.TestCase):
  def test_art_exact(self):
   p=ROOT/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/crate_reference_v1/background.png'
-  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'9658f359d5675b13bc46ba5af12120f2ddcc7ef7f2b1bf563da4234f16132ea2')
+  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'fbd91d759dcc40a4733b7a5749fd356577c6d92bb2e42dbf0fc60d73e14cc8a3')
  def test_client_only_mapping(self):
   s=(JAVA/'menu/LabeledCrateMenu.java').read_text()
   self.assertIn('new SimpleContainer(CRATE_SLOT_COUNT), true)',s)

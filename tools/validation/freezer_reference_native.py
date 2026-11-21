@@ -23,7 +23,7 @@ import tempfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 SUITE = "native-freezer-reference-v1"
-ART_SHA = "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46"
+ART_SHA = "e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7"
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen"
 CASES = {
     "pickup_from_hotbar", "right_click_places_one_input", "output_rejects_insertion",

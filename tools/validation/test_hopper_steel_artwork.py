@@ -11,7 +11,7 @@ ASSETS = ROOT / 'src/main/resources/assets/immersive_engineer_decor_controls_too
 class HopperSteelArtworkTests(unittest.TestCase):
     def test_retained_artwork_not_replaced(self):
         for name, digest in {
-            'factory_placer_v2_reference/background.png': 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b',
+            'factory_placer_v2_reference/background.png': 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d',
             'factory_hopper_gui.png': '8a085db73897ea8e7a2e6af75b822a4509f5a0efa300a0a08d22da58f024795f',
         }.items():
             with self.subTest(name=name):

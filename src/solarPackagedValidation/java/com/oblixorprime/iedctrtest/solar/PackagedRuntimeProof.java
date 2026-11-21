@@ -77,7 +77,7 @@ public final class PackagedRuntimeProof {
             }
             var textures = new JsonArray();
             String[] paths = {"solar_v2_reference/background.png"};
-            String[] hashes = {"d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796"};
+            String[] hashes = {"c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa"};
             for(int i=0;i<paths.length;i++) {
                 var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+paths[i]);
                 var active = mc.getResourceManager().getResource(texture).orElseThrow();

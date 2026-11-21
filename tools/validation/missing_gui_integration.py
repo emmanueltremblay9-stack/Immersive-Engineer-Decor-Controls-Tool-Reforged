@@ -6,6 +6,7 @@ Separate current-commit native qualification remains mandatory.
 import hashlib
 import json
 from pathlib import Path
+from gui_exterior_alpha import current_hash as alpha_hash, project_history as alpha_history
 
 ROOT = Path(__file__).resolve().parents[2]
 RECORD = ROOT / 'docs/qualification/missing-gui-source-delta.json'
@@ -20,6 +21,7 @@ def records():
 
 
 def project_history(path, data):
+    data = alpha_history(path, data)
     record = records().get(path)
     if record is None:
         return data
@@ -39,6 +41,6 @@ def project_history(path, data):
 def current_hash(path, previous):
     record = records().get(path)
     if record is None:
-        return previous
+        return alpha_hash(path, previous)
     assert previous == record['base_sha256'], 'Unexpected GUI integration baseline: ' + path
-    return record['current_sha256']
+    return alpha_hash(path, record['current_sha256'])

@@ -70,7 +70,7 @@ public final class BlockBreakerRuntimeProof {
             String activeHash;
             try (var input = active.open(); var archived = zip.getInputStream(zip.getEntry("assets/" + texture.getNamespace() + "/" + texture.getPath()))) {
                 activeHash = hash(input.readAllBytes());
-                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d"),
+                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879"),
                     "Active artwork bytes differ from normal JAR/source reference");
             }
             var powerTexture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,

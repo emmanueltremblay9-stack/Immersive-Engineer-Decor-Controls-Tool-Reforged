@@ -70,7 +70,7 @@ public final class TreeCutterRuntimeProof {
             String activeHash;
             try (var input = active.open(); var archived = zip.getInputStream(zip.getEntry("assets/" + texture.getNamespace() + "/" + texture.getPath()))) {
                 activeHash = hash(input.readAllBytes());
-                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d"),
+                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4"),
                     "Active artwork bytes differ from normal JAR/source reference");
             }
             var proof = new JsonObject();

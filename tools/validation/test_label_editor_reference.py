@@ -6,7 +6,7 @@ SOURCE=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/Labele
 class LabelEditorReferenceTest(unittest.TestCase):
  def test_art_exact(self):
   p=ROOT/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/label_editor_reference_v1/background.png'
-  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'8329a12b0fd82a767044cec03651bd4672ecca2d4cd6b3b5edbe49ea3f75e7ac')
+  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'9cc07fbf4fcc99025dbe17d03f48242475df84ad129297dabb011acae0a6cf8e')
  def test_preserves_native_widgets_and_unsaved_values(self):
   s=SOURCE.read_text()
   self.assertEqual(s.count('new EditBox('),2)
