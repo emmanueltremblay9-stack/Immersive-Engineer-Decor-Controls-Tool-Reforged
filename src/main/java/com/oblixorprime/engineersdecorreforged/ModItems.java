@@ -15,10 +15,10 @@ import net.neoforged.neoforge.registries.DeferredRegister.Items;
 
 public final class ModItems {
    public static final Items ITEMS = DeferredRegister.createItems("immersive_engineer_decor_controls_tool_reforged");
-   public static final DeferredItem<com.oblixorprime.engineersdecorreforged.block.MicroSupportItem> MICROCONDUIT_SUPPORT =
-      registerItem("microconduit_support", () -> new com.oblixorprime.engineersdecorreforged.block.MicroSupportItem(new Item.Properties().stacksTo(64)));
    private static final List<DeferredItem<? extends Item>> MUTABLE_ORDERED_ITEMS = new ArrayList<>();
    public static final List<DeferredItem<? extends Item>> ORDERED_ITEMS = Collections.unmodifiableList(MUTABLE_ORDERED_ITEMS);
+   public static final DeferredItem<com.oblixorprime.engineersdecorreforged.block.MicroSupportItem> MICROCONDUIT_SUPPORT =
+      registerItem("microconduit_support", () -> new com.oblixorprime.engineersdecorreforged.block.MicroSupportItem(new Item.Properties().stacksTo(64)));
 
    private ModItems() {
    }
