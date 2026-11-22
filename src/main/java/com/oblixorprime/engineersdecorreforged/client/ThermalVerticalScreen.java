@@ -137,6 +137,10 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
       // These are presentation regions only: no item can occupy them.
       graphics.blit(FREEZER_ART, 30, 119, 48, 48, 90, 220, 210, 210, 1254, 1254);
       graphics.blit(FREEZER_ART, 235, 119, 48, 48, 920, 220, 210, 210, 1254, 1254);
+      // The retained V5 background includes a pre-lit horizontal FE strip.
+      // Cover it with a sampled steel section BEFORE drawing the lower slot rim,
+      // so zero stored energy cannot appear as a permanently glowing second gauge.
+      graphics.blit(FREEZER_ART, 116, 160, 90, 21, 350, 35, 360, 84, 1254, 1254);
       // Move the original sculpted slot rims to the vertical center line.
       graphics.blit(FREEZER_ART, 137, 37, 32, 34, 154, 502, 130, 120, 1254, 1254);
       graphics.blit(FREEZER_ART, 137, 149, 32, 35, 964, 502, 130, 120, 1254, 1254);
