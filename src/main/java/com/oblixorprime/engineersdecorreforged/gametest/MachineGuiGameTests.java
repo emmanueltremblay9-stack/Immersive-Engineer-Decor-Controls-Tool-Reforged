@@ -1033,24 +1033,26 @@ public final class MachineGuiGameTests {
    @GameTest(template = "empty", timeoutTicks = 240)
    public static void small_mineral_smelter_waits_when_lava_tank_is_full(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      IFluidHandler fluidHandler = machine.fluidHandler(Direction.UP);
-      helper.assertTrue(fluidHandler != null, "small mineral smelter should expose a lava fluid handler");
-      helper.assertValueEqual(
-         4000, fluidHandler.fill(new FluidStack(Fluids.LAVA, 4000), FluidAction.EXECUTE), "small mineral smelter should accept a full lava tank"
-      );
-      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      // A full tank of PREEXISTING PRODUCT lava: not top-inserted Obsidian ingredient.
+      CompoundTag outputSave = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      outputSave.putString("FluidType", "lava");
+      outputSave.putInt("FluidAmount", 4000);
+      outputSave.putInt("MineralInputLava", 0);
+      machine.loadWithComponents(outputSave, helper.getLevel().registryAccess());
+      IFluidHandler output = machine.fluidHandler(Direction.DOWN);
+      machine.setItem(0, new ItemStack(Items.MAGMA_BLOCK));
       machine.energyStorage(null).receiveEnergy(4000, false);
       tickMachine(helper, machine, 220);
-      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "full lava tank should prevent consuming mineral input");
-      helper.assertTrue(machine.getItem(2).isEmpty(), "full lava tank should prevent magma output");
-      helper.assertValueEqual(4000, fluidHandler.getFluidInTank(0).getAmount(), "full lava tank should keep all stored lava");
-      helper.assertValueEqual(4000, machine.energyStorage(null).getEnergyStored(), "full lava tank should prevent wasting FE");
-      helper.assertValueEqual(5, machine.dataAccessForTests().get(12), "full tank status is synchronized from the server");
-      FluidStack drained = machine.fluidHandler(Direction.DOWN).drain(1000, FluidAction.EXECUTE);
-      helper.assertValueEqual(1000, drained.getAmount(), "bottom automation can free tank capacity");
+      helper.assertTrue(machine.getItem(0).is(Items.MAGMA_BLOCK), "full product tank preserves stage 2 input");
+      helper.assertTrue(machine.getItem(2).isEmpty(), "no magma or obsidian byproduct");
+      helper.assertValueEqual(4000, output.getFluidInTank(0).getAmount(), "tank content conserved");
+      helper.assertValueEqual(4000, machine.energyStorage(null).getEnergyStored(), "blocked stage consumes no FE");
+      helper.assertValueEqual(5, machine.dataAccessForTests().get(12), "tank full status is synchronized");
+      FluidStack drained = output.drain(1000, FluidAction.EXECUTE);
+      helper.assertValueEqual(1000, drained.getAmount(), "downstream can extract product lava");
       tickMachine(helper, machine, 10);
-      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the blocked batch resumes after tank space is freed");
-      helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "magma-to-lava stage resumes");
+      helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "ten active ticks debit 160 FE");
       helper.succeed();
    }
 
