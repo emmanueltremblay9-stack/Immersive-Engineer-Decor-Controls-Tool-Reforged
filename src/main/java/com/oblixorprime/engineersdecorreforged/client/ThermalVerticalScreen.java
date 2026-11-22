@@ -127,7 +127,7 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
          // Hot chamber: actual refractory Smelter source, not orange-recolored frost.
          graphics.blit(SMELTER_ART, 106, 89, 102, 61,
             150, 170, 260, 300, 1168, 1346);
-         int phase = menu.field(MachineMenu.SMS_UI_SCHEMA) == 3
+         int phase = menu.field(MachineMenu.SMS_UI_FLAGS) == 3
             ? menu.field(MachineMenu.SMS_UI_PHASE) : -1;
          if (phase <= 0) graphics.fill(115, 99, 198, 140, 0xD010161B);
          else if (phase == 1) graphics.fill(115, 99, 198, 140, 0x80161412);
