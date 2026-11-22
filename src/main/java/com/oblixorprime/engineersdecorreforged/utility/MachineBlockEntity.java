@@ -2077,6 +2077,20 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.mineralHeatTickRemainder = 0;
          this.mineralBatchInput = ItemStack.EMPTY;
       }
+      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
+         int version = tag.getInt("MineralAutoVersion");
+         this.mineralLegacyBatch = version < 1 ? this.mineralBatchActive
+            : tag.getBoolean("MineralLegacyBatch") && this.mineralBatchActive;
+         this.mineralAutoRecipe = version >= 1 && this.mineralBatchActive && !this.mineralLegacyBatch
+            ? Mth.clamp(tag.getInt("MineralAutoRecipe"), -1, 2) : -1;
+         this.mineralInputLava = version >= 1
+            ? Mth.clamp(tag.getInt("MineralInputLava"), 0, this.fluidAmount) : 0;
+         this.mineralQueuedMode = -1; // Never carry a hidden next-recipe preference.
+         if (this.mineralBatchActive && !this.mineralLegacyBatch && this.mineralAutoRecipe < 0) {
+            this.mineralBatchActive = false;
+            this.progress = 0;
+         }
+      }
       this.hopperRange = Mth.clamp(tag.getInt("HopperRange"), 0, 4);
       this.hopperTransferCount = Mth.clamp(tag.getInt("HopperTransferCount"), 1, 32);
       this.hopperLogic = sanitizeTriggerLogic(savedIntOrDefault(tag, "HopperLogic", 3));
@@ -2172,6 +2186,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       tag.putBoolean("ManualRedstoneTrigger", this.manualRedstoneTrigger);
       tag.putBoolean("MineralCooling", this.mineralCooling);
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
+         tag.putInt("MineralAutoVersion", 1);
+         tag.putInt("MineralAutoRecipe", this.mineralAutoRecipe);
+         tag.putInt("MineralInputLava", this.mineralInputLava);
+         tag.putBoolean("MineralLegacyBatch", this.mineralLegacyBatch);
          tag.putInt("MineralHybridVersion", 1);
          tag.putInt("MineralMode", this.mineralMode);
          tag.putInt("MineralBatchMode", this.mineralBatchMode);
