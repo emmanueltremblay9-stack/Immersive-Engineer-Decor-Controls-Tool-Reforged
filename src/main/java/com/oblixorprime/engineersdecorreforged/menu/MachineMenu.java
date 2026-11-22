@@ -121,6 +121,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private final ContainerData data;
    private final ContainerData milkingData;
    private final boolean smelterV05Projection;
+   private final boolean thermalVerticalPresentation;
    private final ContainerLevelAccess menuAccess;
    private final Block expectedMenuBlock;
    private final boolean hasServerMenuAccess;
@@ -158,6 +159,8 @@ public class MachineMenu extends AbstractContainerMenu {
       checkContainerSize(container, 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
+      this.thermalVerticalPresentation = inventory.player.level().isClientSide
+         && (kind == MachineKind.SMALL_FREEZER || kind == MachineKind.SMALL_MINERAL_SMELTER);
       this.menuPlayer = inventory.player;
       // Geometry is client presentation only. Both sides retain the same per-machine slot
       // count/order, container indices, transfer ranges and data fields. A server JVM flag does
@@ -184,7 +187,11 @@ public class MachineMenu extends AbstractContainerMenu {
 
       for (MachineLayout.MachineSlot slot : this.layout.machineSlots()) {
          MachineLayout.MachineSlot presentationSlot = slot;
-         if (this.freezerReferencePresentation && slot.containerIndex() != 1) {
+         if (this.thermalVerticalPresentation && slot.containerIndex() != 1) {
+            var anchor = ThermalVerticalGeometry.slot(slot.containerIndex());
+            presentationSlot = new MachineLayout.MachineSlot(
+               slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         } else if (this.freezerReferencePresentation && slot.containerIndex() != 1) {
             var anchor = FreezerReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(
                slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
@@ -211,7 +218,10 @@ public class MachineMenu extends AbstractContainerMenu {
             int x = kind == MachineKind.SMALL_MINERAL_SMELTER
                ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerSlotX(column);
             int y = this.layout.playerSlotY(row);
-            if (this.freezerReferencePresentation) {
+            if (this.thermalVerticalPresentation) {
+               var anchor = ThermalVerticalGeometry.slot(3 + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
+            } else if (this.freezerReferencePresentation) {
                var anchor = FreezerReferenceGeometry.anchor(3 + row * 9 + column);
                x = anchor.x();
                y = anchor.y();
@@ -238,7 +248,10 @@ public class MachineMenu extends AbstractContainerMenu {
          int x = kind == MachineKind.SMALL_MINERAL_SMELTER
             ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarSlotX(column);
          int y = this.layout.hotbarY();
-         if (this.freezerReferencePresentation) {
+         if (this.thermalVerticalPresentation) {
+            var anchor = ThermalVerticalGeometry.slot(30 + column);
+            x = anchor.x(); y = anchor.y();
+         } else if (this.freezerReferencePresentation) {
             var anchor = FreezerReferenceGeometry.anchor(30 + column);
             x = anchor.x();
             y = anchor.y();
@@ -283,6 +296,9 @@ public class MachineMenu extends AbstractContainerMenu {
 
    public boolean freezerReferencePresentation() {
       return this.freezerReferencePresentation;
+   }
+   public boolean thermalVerticalPresentation() {
+      return this.thermalVerticalPresentation;
    }
    public boolean treeCutterV3ReferencePresentation() { return this.treeCutterV3ReferencePresentation; }
 
@@ -582,7 +598,8 @@ public class MachineMenu extends AbstractContainerMenu {
             public boolean isActive() {
                // Hide the historical reserved opening only in the opt-in presentation.
                // Its backing contents and ordinary QUICK_MOVE recovery remain intact.
-               return !MachineMenu.this.freezerReferencePresentation;
+               return !MachineMenu.this.freezerReferencePresentation
+                  && !MachineMenu.this.thermalVerticalPresentation;
             }
          };
       }
@@ -591,7 +608,8 @@ public class MachineMenu extends AbstractContainerMenu {
             @Override
             public boolean isActive() {
                // The drawer is only a client-side visual gate, not a server permission.
-               return !MachineMenu.this.menuPlayer.level().isClientSide || MachineMenu.this.smelterOutputDrawerOpen;
+               return !MachineMenu.this.menuPlayer.level().isClientSide
+                  || MachineMenu.this.thermalVerticalPresentation || MachineMenu.this.smelterOutputDrawerOpen;
             }
          };
       }
