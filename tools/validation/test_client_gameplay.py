@@ -115,13 +115,10 @@ class NativeGameplayProofTests(unittest.TestCase):
 
 
 class NativeSmelterGuiProofTests(unittest.TestCase):
-    def setUp(self):
-        import hashlib
-        import struct
-        import tempfile
+    """Synthetic schema/mutation unit tests, never real framebuffer acceptance."""
 
-        self.hashlib = hashlib
-        self.struct = struct
+    def setUp(self):
+        import tempfile
         self.temp = tempfile.TemporaryDirectory()
         self.directory = Path(self.temp.name)
         self.image_dir = self.directory / "smelter-gui-screenshots"
@@ -129,55 +126,62 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
         self.nonce = "a" * 32
         self.source_sha = "1" * 40
         self.pr_head_sha = "2" * 40
-        self.window_width = 1280
-        self.window_height = 260
-        gui_width, gui_height = 1280, 260
-        scale = max(0.1, min(1.0, (gui_width - 12.0) / 234.0, (gui_height - 12.0) / 270.0))
+        self.window_width, self.window_height = 1280, 260
+        width, height = 1280, 260
+        scale = min(1.0, (min(width, height) - 12.0) / 314.0)
         self.proof = {
-            "suite": "native-smelter-gui-v1", "nonce": self.nonce, "status": "passed",
-            "actual_integrated_world": True, "executed_source_sha": self.source_sha,
-            "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "translated_lava_mode": "LAVE",
-            "screen_identity": "com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen",
+            "suite": "native-smelter-gui-v2", "schema_version": 2,
+            "nonce": self.nonce, "status": "passed", "actual_integrated_world": True,
+            "executed_source_sha": self.source_sha, "pull_request_head_sha": self.pr_head_sha,
+            "language": "fr_fr", "selected_language": "fr_fr",
+            "translated_machine_name": "Petit fourneau de fusion de minéraux",
+            "screen_identity": "com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen",
             "client_menu_identity": "com.oblixorprime.engineersdecorreforged.menu.MachineMenu",
             "server_menu_identity": "com.oblixorprime.engineersdecorreforged.menu.MachineMenu",
-            "machine_kind": "SMALL_MINERAL_SMELTER", "client_menu_id": 4, "server_menu_id": 4,
-            "server_menu_context_valid": True, "visible_machine_slots": 2, "total_slots": 38,
+            "machine_kind": "SMALL_MINERAL_SMELTER",
+            "client_menu_id": 4, "server_menu_id": 4, "server_menu_context_valid": True,
+            "visible_machine_slots": 2, "total_slots": 38,
             "machine_slot_backing_indices": [0, 2], "data_fields": 17,
             "live_state": {
-                "selected_mode": 0, "batch_mode": 0, "batch_progress": 12, "thermal": 12,
-                "input_item": "minecraft:cobblestone", "output_item": "minecraft:magma_block",
-                "output_count": 2, "tank_amount": 2500, "tank_capacity": 4000,
-                "energy": 10000, "energy_capacity": 16000, "fe_rate": 16, "status": 1,
+                "selected_mode": -1, "batch_mode": -1, "queued_mode": -1,
+                "batch_progress": 52, "thermal": 95, "input_item": "minecraft:cobblestone",
+                "output_item": "minecraft:magma_block", "output_count": 2,
+                "tank_amount": 2500, "tank_capacity": 4000,
+                "energy": 11984, "energy_capacity": 16000, "fe_rate": 16, "status": 1,
             },
             "window_width": self.window_width, "window_height": self.window_height,
             "screen": {
-                "gui_width": gui_width, "gui_height": gui_height, "panel_width": 234, "panel_height": 270,
-                "view_scale": scale, "drawer_closed_capture": True, "drawer_open_capture": True,
-                "output_slot_hidden_when_closed": True, "output_slot_visible_when_open": True,
+                "gui_width": width, "gui_height": height, "panel_width": 314, "panel_height": 314,
+                "view_scale": scale, "origin_x": (width - 314 * scale) / 2,
+                "origin_y": (height - 314 * scale) / 2,
+                "output_slot_visible": True, "output_slot_insertion_forbidden": True,
+                "legacy_drawer_and_mode_tabs_absent": True, "resize_restored": True,
             },
-            "drawer_accessible_messages": [dict(phase=phase, open=state,
-                message=("Fermer le tiroir de sortie" if state else "Ouvrir le tiroir de sortie"))
-                for phase,state in zip(["closed","opened","resized_open","restored_open","closed_again","reopened"],
-                                       [False,True,True,True,False,True])],
-            "narration_audio_verified": False,
-            "drawer_input_method": "programmatic native screen callbacks and resize; not OS input",
+            "output_transfer": {
+                "method": "integrated_server_MachineMenu.quickMoveStack",
+                "source_menu_slot": 1, "source_container_slot": 2,
+                "moved_magma": 2, "output_after": 0, "player_magma_after": 2,
+            },
             "screenshots": [],
+            "screenshot_method": "Minecraft Screenshot.takeScreenshot(getMainRenderTarget())",
         }
-        for name, progress, energy, status in (
-            ("progress-empty.png", 0, 0, 3),
-            ("progress-mid.png", 50, 0, 3),
-            ("progress-full.png", 90, 0, 3),
-            ("screen-closed.png", 52, 11984, 1),
-            ("drawer-open.png", 52, 11984, 1),
+        for name, progress, energy, status, phase, output in (
+            ("progress-empty.png", 0, 0, 3, 0, 2),
+            ("progress-mid.png", 50, 0, 3, 1, 2),
+            ("progress-full.png", 90, 0, 3, 2, 2),
+            ("screen-active.png", 52, 11984, 1, 2, 2),
+            ("output-extracted.png", 52, 11984, 1, 2, 0),
         ):
-            data = (bytes((137, 80, 78, 71, 13, 10, 26, 10)) + bytes((0, 0, 0, 13)) + b"IHDR"
+            # These controlled bytes test proof validation, not native acceptance.
+            data = (b"\x89PNG\r\n\x1a\n" + bytes((0, 0, 0, 13)) + b"IHDR"
                     + struct.pack(">II", self.window_width, self.window_height)
-                    + bytes((8, 6, 0, 0, 0)) + bytes(4) + bytes(1100))
+                    + bytes((8, 6, 0, 0, 0)) + bytes(4) + bytes(1100) + name.encode())
             (self.image_dir / name).write_bytes(data)
             self.proof["screenshots"].append({
                 "name": name, "sha256": hashlib.sha256(data).hexdigest(),
                 "width": self.window_width, "height": self.window_height,
-                "batch_progress": progress, "energy": energy, "status": status,
+                "batch_progress": progress, "energy": energy,
+                "status": status, "phase": phase, "output_count": output,
             })
         self.logs = f"IEDCTR_SMELTER_GUI PASSED nonce={self.nonce}"
 
@@ -192,88 +196,96 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
         args.update(overrides)
         return validate_smelter_gui_proof(**args)
 
-    def test_accepts_native_progress_states_and_two_fresh_drawer_views(self):
+    def test_accepts_thermal_vertical_schema_as_unit_control(self):
         self.assertEqual(self.check(), self.proof)
 
-    def test_rejects_stale_or_missing_drawer_messages(self):
-        for field,value in [('drawer_accessible_messages', []), ('narration_audio_verified', True),
-                            ('drawer_input_method', 'OS input')]:
-            p=copy.deepcopy(self.proof);p[field]=value
-            with self.subTest(field=field),self.assertRaises(SmokeFailure):self.check(p)
-        p=copy.deepcopy(self.proof);p['drawer_accessible_messages'][0]['open']=0
-        with self.assertRaises(SmokeFailure):self.check(p)
-        p=copy.deepcopy(self.proof);p['drawer_accessible_messages'].reverse()
-        with self.assertRaises(SmokeFailure):self.check(p)
-        for index in range(6):
-            p=copy.deepcopy(self.proof);p['drawer_accessible_messages'][index]['message']='Stale label'
-            with self.subTest(index=index),self.assertRaises(SmokeFailure):self.check(p)
-
-    def test_rejects_wrong_nonce_or_source_or_pr_head(self):
-        for patch in ({"nonce": "b" * 32}, {"executed_source_sha": "3" * 40},
-                      {"pull_request_head_sha": "4" * 40}):
+    def test_rejects_obsolete_drawer_and_mode_tabs(self):
+        for field in ("drawer_accessible_messages", "drawer_input_method", "translated_lava_mode"):
             proof = copy.deepcopy(self.proof)
-            proof.update(patch)
-            with self.subTest(patch=patch), self.assertRaises(SmokeFailure):
+            proof[field] = []
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(proof)
+        for field in ("output_slot_visible", "output_slot_insertion_forbidden",
+                      "legacy_drawer_and_mode_tabs_absent", "resize_restored"):
+            proof = copy.deepcopy(self.proof)
+            proof["screen"][field] = False
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
                 self.check(proof)
 
-    def test_rejects_wrong_screen_menu_or_slots(self):
-        for patch in ({"screen_identity": "FixtureScreen"}, {"client_menu_identity": "FixtureMenu"},
-                      {"server_menu_context_valid": False}, {"machine_slot_backing_indices": [0, 1]},
-                      {"data_fields": 16}):
+    def test_rejects_wrong_screen_menu_and_source_identity(self):
+        for field, value in (
+            ("screen_identity", "SmallMineralSmelterHybridScreen"),
+            ("client_menu_identity", "FixtureMenu"),
+            ("server_menu_context_valid", False),
+            ("machine_slot_backing_indices", [0, 1]),
+            ("visible_machine_slots", 1), ("data_fields", 16),
+            ("executed_source_sha", "3" * 40),
+            ("pull_request_head_sha", "4" * 40),
+            ("nonce", "b" * 32),
+        ):
             proof = copy.deepcopy(self.proof)
-            proof.update(patch)
-            with self.subTest(patch=patch), self.assertRaises(SmokeFailure):
+            proof[field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
                 self.check(proof)
 
-    def test_rejects_empty_live_state(self):
-        proof = copy.deepcopy(self.proof)
-        proof["live_state"]["batch_progress"] = 0
-        with self.assertRaises(SmokeFailure):
-            self.check(proof)
+    def test_rejects_fabricated_legacy_modes_or_server_state(self):
+        for field, value in (
+            ("selected_mode", 0), ("batch_mode", 0), ("queued_mode", 0),
+            ("batch_progress", 0), ("tank_amount", 0), ("energy", 0),
+            ("status", 3), ("output_count", 0),
+        ):
+            proof = copy.deepcopy(self.proof)
+            proof["live_state"][field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(proof)
 
-    def test_rejects_progress_frame_with_wrong_server_state(self):
-        proof = copy.deepcopy(self.proof)
-        full = next(item for item in proof["screenshots"] if item["name"] == "progress-full.png")
-        full["batch_progress"] = 0
-        with self.assertRaises(SmokeFailure):
-            self.check(proof)
+    def test_rejects_missing_output_transfer(self):
+        for field, value in (
+            ("method", "synthetic_move"), ("moved_magma", 1),
+            ("output_after", 2), ("player_magma_after", 0),
+        ):
+            proof = copy.deepcopy(self.proof)
+            proof["output_transfer"][field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(proof)
 
-    def test_rejects_bad_locale_or_translation(self):
-        proof = copy.deepcopy(self.proof)
-        proof["translated_lava_mode"] = "LAVA"
-        with self.assertRaises(SmokeFailure):
-            self.check(proof)
-        with self.assertRaises(SmokeFailure):
-            self.check(language="en_us")
+    def test_rejects_wrong_fitted_viewport_and_locale(self):
+        for field, value in (("panel_width", 234), ("view_scale", 1.0), ("origin_y", 0.0)):
+            proof = copy.deepcopy(self.proof)
+            proof["screen"][field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(proof)
+        for field, value in (("selected_language", "en_us"), ("translated_machine_name", "LAVA")):
+            proof = copy.deepcopy(self.proof)
+            proof[field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(proof)
 
-    def test_rejects_wrong_window_scale_or_clipping(self):
-        proof = copy.deepcopy(self.proof)
-        proof["screen"]["view_scale"] = 1.0
-        with self.assertRaises(SmokeFailure):
-            self.check(proof)
-        with self.assertRaises(SmokeFailure):
-            self.check(window_height=720)
-
-    def test_rejects_stale_missing_bad_hash_and_extra_screenshots(self):
-        (self.image_dir / "stale.png").write_bytes(b"stale")
-        with self.assertRaises(SmokeFailure):
-            self.check()
-        (self.image_dir / "stale.png").unlink()
+    def test_rejects_wrong_capture_hash_phase_and_missing_image(self):
         proof = copy.deepcopy(self.proof)
         proof["screenshots"][0]["sha256"] = "0" * 64
         with self.assertRaises(SmokeFailure):
             self.check(proof)
-        (self.image_dir / "drawer-open.png").unlink()
+        proof = copy.deepcopy(self.proof)
+        next(c for c in proof["screenshots"] if c["name"] == "progress-full.png")["phase"] = 0
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+        proof = copy.deepcopy(self.proof)
+        next(c for c in proof["screenshots"] if c["name"] == "output-extracted.png")["output_count"] = 2
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+        (self.image_dir / "screen-active.png").unlink()
+        with self.assertRaises(SmokeFailure):
+            self.check()
+        (self.image_dir / "screen-active.png").write_bytes(b"stale")
         with self.assertRaises(SmokeFailure):
             self.check()
 
-    def test_rejects_wrong_capture_size_and_missing_marker(self):
-        proof = copy.deepcopy(self.proof)
-        proof["window_height"] = 720
-        with self.assertRaises(SmokeFailure):
-            self.check(proof)
+    def test_rejects_missing_marker_and_wrong_window(self):
         with self.assertRaises(SmokeFailure):
             self.check(logs="")
+        with self.assertRaises(SmokeFailure):
+            self.check(window_height=720)
 
 
 class CorrectedMachineGuiProofTests(unittest.TestCase):

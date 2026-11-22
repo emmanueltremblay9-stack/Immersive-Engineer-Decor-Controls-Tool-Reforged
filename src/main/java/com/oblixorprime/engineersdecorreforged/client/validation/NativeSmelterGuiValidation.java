@@ -4,9 +4,11 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
-import com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen;
+import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
@@ -15,6 +17,7 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -28,347 +31,272 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.FluidStack;
 import org.lwjgl.glfw.GLFW;
 
-/** Opt-in native-client fixture for the real Small Mineral Smelter screen and menu. */
+/** Test the registered thermal vertical Smelter, not the superseded drawer screen. */
 final class NativeSmelterGuiValidation {
    private static final BlockPos POS = new BlockPos(0, 80, 0);
-   private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.";
-   private static final String SUITE = "native-smelter-gui-v1";
-   private static final int PANEL_WIDTH = 234;
-   private static final int PANEL_HEIGHT = 270;
-
-   private enum Stage {
-      WAIT_SERVER, WAIT_SCREEN, WAIT_PROGRESS_ZERO, WAIT_PROGRESS_MID, WAIT_PROGRESS_FULL,
-      WAIT_PROGRESS_RESTORE, WAIT_DRAWER_RENDER
-   }
+   private static final String SUITE = "native-smelter-gui-v2";
+   private static final String TITLE_KEY = "block.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter";
+   private enum Stage { WAIT_SERVER, WAIT_SCREEN, WAIT_EMPTY, WAIT_MID, WAIT_FULL, WAIT_ACTIVE, WAIT_TRANSFER }
    private static Stage stage;
    private static CompletableFuture<?> pending;
    private static int ticks;
    private static int serverMenuId = -1;
    private static MachineBlockEntity serverMachine;
-   private static boolean serverMenuContextValid;
-   private static boolean outputSlotHiddenWhenClosed;
-   private static String serverMenuClass;
-   private static Path gameDirectory;
-   private static Path screenshots;
-   private static String nonce;
-   private static String executedSourceSha;
-   private static String pullRequestHeadSha;
-   private static String language;
-   private static final JsonArray DRAWER_LABELS = new JsonArray();
+   private static String serverMenuClass = "";
+   private static boolean serverContextValid;
+   private static volatile int serverMoved = -1;
+   private static volatile int serverInventoryCount = -1;
+   private static volatile int serverOutputCount = -1;
+   private static boolean resized;
+   private static Path gameDirectory, screenshots;
+   private static String nonce, executedSourceSha, pullRequestHeadSha, language;
+   private static JsonObject activeState;
    private static final JsonArray CAPTURES = new JsonArray();
 
    private NativeSmelterGuiValidation() {}
 
    static void begin(Minecraft mc, Path directory, String runNonce) {
-      require(mc.getSingleplayerServer() != null && mc.player != null, "Native Smelter fixture requires an integrated player");
+      require(mc.getSingleplayerServer() != null && mc.player != null, "Smelter requires a real integrated client");
       gameDirectory = directory;
       nonce = runNonce;
       executedSourceSha = System.getProperty("iedctr.executedSourceSha", "");
       pullRequestHeadSha = System.getProperty("iedctr.pullRequestHeadSha", "");
       language = System.getProperty("iedctr.smelterLanguage", "");
-      require(executedSourceSha.matches("[0-9a-f]{40}"), "Fixture requires the executed source SHA");
-      require(pullRequestHeadSha.matches("[0-9a-f]{40}"), "Fixture requires the exact PR head SHA");
-      require(language.equals("en_us") || language.equals("fr_fr"), "Fixture language must be en_us or fr_fr");
-      screenshots = gameDirectory.resolve("smelter-gui-screenshots");
-      require(!Files.exists(screenshots), "Refusing stale Smelter screenshots");
-      while (CAPTURES.size() > 0) {
-         CAPTURES.remove(CAPTURES.size() - 1);
-      }
-      while (DRAWER_LABELS.size() > 0) DRAWER_LABELS.remove(DRAWER_LABELS.size() - 1);
-      ticks = 0;
-      serverMenuId = -1;
-      serverMachine = null;
-      serverMenuContextValid = false;
-      outputSlotHiddenWhenClosed = false;
-      serverMenuClass = "";
-      UUID playerId = mc.player.getUUID();
+      require(executedSourceSha.matches("[0-9a-f]{40}") && pullRequestHeadSha.matches("[0-9a-f]{40}"),
+         "Smelter proof requires the exact source and PR HEAD");
+      require(language.equals("en_us") || language.equals("fr_fr"), "Smelter proof requires en_us or fr_fr");
+      screenshots = directory.resolve("smelter-gui-screenshots");
+      require(!Files.exists(screenshots), "Refusing stale Smelter screenshot directory");
+      while (CAPTURES.size() > 0) CAPTURES.remove(CAPTURES.size() - 1);
+      ticks = 0; serverMenuId = -1; serverMachine = null; serverMenuClass = "";
+      serverContextValid = false; serverMoved = -1; serverInventoryCount = -1;
+      serverOutputCount = -1; resized = false; activeState = null;
+      UUID id = mc.player.getUUID();
       var server = mc.getSingleplayerServer();
       pending = server.submit(() -> {
-         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
-         require(player != null, "Integrated server player disappeared before Smelter fixture setup");
+         ServerPlayer player = server.getPlayerList().getPlayer(id);
+         require(player != null, "Integrated Smelter player disappeared");
          var level = player.serverLevel();
          player.setGameMode(GameType.CREATIVE);
          player.getInventory().clearContent();
          player.connection.teleport(POS.getX() + 0.5, POS.getY() + 1.0, POS.getZ() + 3.5, 180.0F, 0.0F);
          level.setBlock(POS.below(), Blocks.STONE.defaultBlockState(), 3);
          level.setBlock(POS, ModBlocks.SMALL_MINERAL_SMELTER.get().defaultBlockState(), 3);
-         if (!(level.getBlockEntity(POS) instanceof MachineBlockEntity machine)
-            || machine.kind() == null || !machine.getBlockState().is(ModBlocks.SMALL_MINERAL_SMELTER.get())) {
-            throw new IllegalStateException("Fixture did not create the Small Mineral Smelter block entity");
-         }
+         require(level.getBlockEntity(POS) instanceof MachineBlockEntity, "Real Smelter BE missing");
+         MachineBlockEntity machine = (MachineBlockEntity)level.getBlockEntity(POS);
          serverMachine = machine;
-         ItemStack input = new ItemStack(Items.COBBLESTONE);
-         require(machine.canPlaceItem(0, input), "Fixture mineral input is not accepted");
-         machine.setItem(0, input);
+         require(machine.canPlaceItem(0, new ItemStack(Items.COBBLESTONE)), "Smelter rejected its actual mineral ingredient");
+         machine.setItem(0, new ItemStack(Items.COBBLESTONE));
          machine.setItem(2, new ItemStack(Items.MAGMA_BLOCK, 2));
          require(machine.fluidHandler(Direction.UP).fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500,
-            "Fixture lava did not fill the top input");
-         require(machine.energyStorage(null).receiveEnergy(12000, false) == 12000,
-            "Fixture FE did not fill the real energy storage");
+            "Smelter top input failed to receive actual lava");
+         require(machine.energyStorage(null).receiveEnergy(12000, false) == 12000, "Smelter FE fill failed");
+         require(!machine.requestMineralModeFromGui(player, 0, 0), "Legacy manual mode request must be inert");
          player.openMenu(machine);
-         if (!(player.containerMenu instanceof MachineMenu menu)
-            || !menu.isMineralSmelterMenuFor(machine)
-            || !menu.kind().name().equals("SMALL_MINERAL_SMELTER")
-            || menu.visibleMachineSlots() != 2 || menu.slots.size() != 38
-            || menu.getSlot(0).getSlotIndex() != 0 || menu.getSlot(1).getSlotIndex() != 2
-            || !menu.stillValid(player) || !menu.getSlot(1).isActive()
-            || !menu.getSlot(0).getItem().is(Items.COBBLESTONE)
-            || !menu.getSlot(1).getItem().is(Items.MAGMA_BLOCK)) {
-            throw new IllegalStateException("Server did not open the real Smelter menu with the expected slots");
-         }
+         require(player.containerMenu instanceof MachineMenu, "Server did not open the registered Smelter menu");
+         MachineMenu menu = (MachineMenu)player.containerMenu;
+         require(menu.isMineralSmelterMenuFor(machine) && menu.stillValid(player)
+            && menu.visibleMachineSlots() == 2 && menu.slots.size() == 38
+            && menu.getSlot(0).getSlotIndex() == 0 && menu.getSlot(1).getSlotIndex() == 2
+            && menu.getSlot(1).isActive() && menu.getSlot(0).getItem().is(Items.COBBLESTONE)
+            && menu.getSlot(1).getItem().is(Items.MAGMA_BLOCK)
+            && menu.getSlot(1).getItem().getCount() == 2,
+            "Server opened wrong Smelter backing inventory or menu");
          serverMenuId = menu.containerId;
-         serverMenuContextValid = true;
          serverMenuClass = menu.getClass().getName();
+         serverContextValid = true;
          menu.broadcastChanges();
       });
       stage = Stage.WAIT_SERVER;
    }
 
    static boolean tick(Minecraft mc, Path directory, String runNonce) throws Exception {
+      require(directory.equals(gameDirectory) && runNonce.equals(nonce), "Smelter run nonce/directory changed");
       if (stage == Stage.WAIT_SERVER) {
-         if (++ticks > 300) throw new IllegalStateException("Integrated server did not prepare the Smelter menu");
+         if (++ticks > 300) throw new IllegalStateException("Integrated server did not open Smelter");
          if (!pending.isDone()) return false;
          pending.join();
-         ticks = 0;
-         stage = Stage.WAIT_SCREEN;
+         stage = Stage.WAIT_SCREEN; ticks = 0;
          return false;
       }
       if (stage == Stage.WAIT_SCREEN) {
-         if (++ticks > 300) throw new IllegalStateException("Real Smelter screen did not open or synchronize");
-         if (!(mc.screen instanceof SmallMineralSmelterHybridScreen screen)) return false;
-         if (!(mc.player.containerMenu instanceof MachineMenu menu)) return false;
-         if (screen.validationOutputDrawerOpen()) {
-            throw new IllegalStateException("Smelter output drawer must start closed");
-         }
-         if (!menu.kind().name().equals("SMALL_MINERAL_SMELTER")
-            || menu.containerId != serverMenuId || !serverMenuContextValid
-            || menu.visibleMachineSlots() != 2 || menu.slots.size() != 38
-            || menu.getSlot(0).getSlotIndex() != 0 || menu.getSlot(1).getSlotIndex() != 2) {
-            return false;
-         }
-         if ((menu.field(MachineMenu.SMS_UI_FLAGS) & 3) != 3
-            || menu.field(MachineMenu.SMS_UI_SELECTED_MODE) != 0
-            || menu.field(MachineMenu.SMS_UI_BATCH_MODE) != 0
+         if (++ticks > 300) throw new IllegalStateException("Real ThermalVerticalScreen did not open or synchronize");
+         if (!(mc.screen instanceof ThermalVerticalScreen screen)) return false;
+         MachineMenu menu = currentMenu(mc);
+         if (menu == null || !geometryVerified(screen, menu)
+            || menu.field(MachineMenu.SMS_UI_FLAGS) != 1
+            || menu.field(MachineMenu.SMS_UI_SELECTED_MODE) != -1
+            || menu.field(MachineMenu.SMS_UI_BATCH_MODE) != -1
+            || menu.field(MachineMenu.SMS_UI_QUEUED_MODE) != -1
             || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) <= 0
             || menu.field(MachineMenu.SMS_UI_THERMAL) <= 0
-            || menu.field(MachineMenu.SMS_UI_TANK_AMOUNT) <= 0
+            || menu.field(MachineMenu.SMS_UI_TANK_AMOUNT) != 2500
             || menu.field(MachineMenu.SMS_UI_ENERGY) <= 0
             || menu.field(MachineMenu.SMS_UI_FE_RATE) != 16
             || menu.field(MachineMenu.SMS_UI_STATUS) != 1
             || !menu.getSlot(0).getItem().is(Items.COBBLESTONE)
             || !menu.getSlot(1).getItem().is(Items.MAGMA_BLOCK)
-            || menu.getSlot(1).getItem().getCount() != 2) {
-            return false;
-         }
+            || menu.getSlot(1).getItem().getCount() != 2) return false;
          if (ticks < 30) return false;
-         moveCursorOutsidePanel(mc);
-         scheduleProgressFixture(mc, 0, 0, Stage.WAIT_PROGRESS_ZERO);
+         moveCursorOutside(mc);
+         fixtureState(mc, 0, 0, 0, Stage.WAIT_EMPTY);
          return false;
       }
-      if (stage == Stage.WAIT_PROGRESS_ZERO) {
-         if (++ticks > 120) {
-            MachineMenu menu = currentFixtureMenu(mc);
-            String state = menu == null ? "menu=missing" : "menuProgress=" + menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS)
-               + ", menuEnergy=" + menu.field(MachineMenu.SMS_UI_ENERGY)
-               + ", menuStatus=" + menu.field(MachineMenu.SMS_UI_STATUS);
-            throw new IllegalStateException("Smelter zero-progress fixture did not synchronize: " + state);
-         }
+      if (stage == Stage.WAIT_EMPTY || stage == Stage.WAIT_MID || stage == Stage.WAIT_FULL) {
+         if (++ticks > 160) throw new IllegalStateException("Smelter thermal projection did not synchronize: " + stage);
          if (!pending.isDone()) return false;
          pending.join();
-         MachineMenu menu = currentFixtureMenu(mc);
-         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 0
-            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 3) return false;
-         moveCursorOutsidePanel(mc);
-         capture(mc, menu, "progress-empty.png");
-         scheduleProgressFixture(mc, 50, 0, Stage.WAIT_PROGRESS_MID);
+         if (!(mc.screen instanceof ThermalVerticalScreen screen)) return false;
+         MachineMenu menu = currentMenu(mc);
+         if (menu == null || !geometryVerified(screen, menu)) return false;
+         int expectedProgress = stage == Stage.WAIT_EMPTY ? 0 : stage == Stage.WAIT_MID ? 50 : 90;
+         int expectedPhase = stage == Stage.WAIT_EMPTY ? 0 : stage == Stage.WAIT_MID ? 1 : 2;
+         if (menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != expectedProgress
+            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0
+            || menu.field(MachineMenu.SMS_UI_STATUS) != 3
+            || menu.field(MachineMenu.SMS_UI_PHASE) != expectedPhase) return false;
+         if (ticks < 6) return false;
+         moveCursorOutside(mc);
+         capture(mc, menu, stage == Stage.WAIT_EMPTY ? "progress-empty.png"
+            : stage == Stage.WAIT_MID ? "progress-mid.png" : "progress-full.png");
+         if (stage == Stage.WAIT_EMPTY) fixtureState(mc, 50, 0, 50, Stage.WAIT_MID);
+         else if (stage == Stage.WAIT_MID) fixtureState(mc, 90, 0, 95, Stage.WAIT_FULL);
+         else fixtureState(mc, 50, 12000, 95, Stage.WAIT_ACTIVE);
          return false;
       }
-      if (stage == Stage.WAIT_PROGRESS_MID) {
-         if (++ticks > 120) throw new IllegalStateException("Smelter intermediate-progress fixture did not synchronize");
+      if (stage == Stage.WAIT_ACTIVE) {
+         if (++ticks > 180) throw new IllegalStateException("Live Smelter heating did not resume");
          if (!pending.isDone()) return false;
          pending.join();
-         MachineMenu menu = currentFixtureMenu(mc);
-         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 50
-            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 3) return false;
-         capture(mc, menu, "progress-mid.png");
-         scheduleProgressFixture(mc, 90, 0, Stage.WAIT_PROGRESS_FULL);
-         return false;
-      }
-      if (stage == Stage.WAIT_PROGRESS_FULL) {
-         if (++ticks > 120) throw new IllegalStateException("Smelter full-progress fixture did not synchronize");
-         if (!pending.isDone()) return false;
-         pending.join();
-         MachineMenu menu = currentFixtureMenu(mc);
-         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 90
-            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 3) return false;
-         capture(mc, menu, "progress-full.png");
-         scheduleProgressFixture(mc, 50, 12000, Stage.WAIT_PROGRESS_RESTORE);
-         return false;
-      }
-      if (stage == Stage.WAIT_PROGRESS_RESTORE) {
-         if (++ticks > 180) throw new IllegalStateException("Smelter active fixture did not resume after progress captures");
-         if (!pending.isDone()) return false;
-         pending.join();
-         if (!(mc.screen instanceof SmallMineralSmelterHybridScreen screen)) return false;
-         MachineMenu menu = currentFixtureMenu(mc);
-         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) <= 0
+         if (!(mc.screen instanceof ThermalVerticalScreen screen)) return false;
+         MachineMenu menu = currentMenu(mc);
+         if (menu == null || !geometryVerified(screen, menu)
+            || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) <= 0
             || menu.field(MachineMenu.SMS_UI_ENERGY) <= 0
-            || menu.field(MachineMenu.SMS_UI_FE_RATE) != 16 || menu.field(MachineMenu.SMS_UI_STATUS) != 1) return false;
+            || menu.field(MachineMenu.SMS_UI_STATUS) != 1
+            || menu.field(MachineMenu.SMS_UI_FE_RATE) != 16
+            || !menu.getSlot(1).getItem().is(Items.MAGMA_BLOCK)
+            || menu.getSlot(1).getItem().getCount() != 2) return false;
          if (ticks < 30) return false;
-         outputSlotHiddenWhenClosed = !menu.getSlot(1).isActive();
-         require(outputSlotHiddenWhenClosed, "Output item slot is not hidden while the drawer is closed");
+         int width = screen.width, height = screen.height;
+         screen.resize(mc, width - 1, height - 1);
+         require(screen.width == width - 1 && screen.height == height - 1,
+            "ThermalVerticalScreen did not process native resize callbacks");
+         screen.resize(mc, width, height);
+         resized = screen.width == width && screen.height == height && geometryVerified(screen, menu);
+         require(resized, "ThermalVerticalScreen did not restore its fitted menu after resize");
          mc.options.hideGui = false;
-         moveCursorOutsidePanel(mc);
-         capture(mc, menu, "screen-closed.png");
-         checkDrawerMessage(screen, "closed", false);
-         double scale = screen.validationViewScale();
-         double guiWidth = mc.getWindow().getGuiScaledWidth();
-         double guiHeight = mc.getWindow().getGuiScaledHeight();
-         double originX = (guiWidth - PANEL_WIDTH * scale) / 2.0;
-         double originY = (guiHeight - PANEL_HEIGHT * scale) / 2.0;
-         double drawerButtonX = originX + 189.0 * scale;
-         double drawerButtonY = originY + 39.0 * scale;
-         require(screen.mouseClicked(drawerButtonX, drawerButtonY, 0), "Output drawer button did not receive the click");
-         screen.mouseReleased(drawerButtonX, drawerButtonY, 0);
-         require(screen.validationOutputDrawerOpen() && menu.getSlot(1).isActive(),
-            "The native output drawer did not reveal the real output slot");
-         checkDrawerMessage(screen, "opened", true);
-         ticks = 0;
-         stage = Stage.WAIT_DRAWER_RENDER;
+         moveCursorOutside(mc);
+         activeState = liveState(menu);
+         capture(mc, menu, "screen-active.png");
+         outputQuickMove(mc);
+         stage = Stage.WAIT_TRANSFER; ticks = 0;
          return false;
       }
-      if (stage == Stage.WAIT_DRAWER_RENDER) {
-         if (++ticks < 20) return false;
-         if (!(mc.screen instanceof SmallMineralSmelterHybridScreen screen)
-            || !(mc.player.containerMenu instanceof MachineMenu menu)
-            || !screen.validationOutputDrawerOpen() || !menu.getSlot(1).isActive()
-            || !menu.getSlot(1).getItem().is(Items.MAGMA_BLOCK)
-            || menu.getSlot(1).getItem().getCount() != 2) {
-            throw new IllegalStateException("Output drawer lost its real item or visible slot before capture");
-         }
-         capture(mc, menu, "drawer-open.png");
-         // Exercise the real screen lifecycle and callbacks, not OS input or audio narration.
-         int originalWidth = screen.width, originalHeight = screen.height;
-         screen.resize(mc, originalWidth - 1, originalHeight - 1);
-         checkDrawerMessage(screen, "resized_open", true);
-         screen.resize(mc, originalWidth, originalHeight);
-         checkDrawerMessage(screen, "restored_open", true);
-         require(screen.keyPressed(GLFW.GLFW_KEY_ESCAPE, 0, 0), "Escape drawer close callback not handled");
-         require(screen.getFocused() == drawerButton(screen), "Escape did not restore drawer button focus");
-         checkDrawerMessage(screen, "closed_again", false);
-         require(!menu.getSlot(1).isActive(), "Closed drawer output slot stayed active");
-         clickDrawer(screen);
-         checkDrawerMessage(screen, "reopened", true);
-         require(menu.getSlot(1).isActive(), "Reopened drawer output slot stayed hidden");
-         writeProof(mc, screen, menu, runNonce);
+      if (stage == Stage.WAIT_TRANSFER) {
+         if (++ticks > 120) throw new IllegalStateException("Smelter output transfer did not sync");
+         if (!pending.isDone()) return false;
+         pending.join();
+         if (!(mc.screen instanceof ThermalVerticalScreen screen)) return false;
+         MachineMenu menu = currentMenu(mc);
+         if (menu == null || !geometryVerified(screen, menu)
+            || !menu.getSlot(1).getItem().isEmpty()
+            || serverMoved != 2 || serverInventoryCount != 2 || serverOutputCount != 0
+            || inventoryMagma(mc) != 2) return false;
+         if (ticks < 6) return false;
+         capture(mc, menu, "output-extracted.png");
+         writeProof(mc, menu);
          return true;
       }
-      throw new IllegalStateException("Unexpected Smelter GUI fixture stage: " + stage);
+      throw new IllegalStateException("Unexpected Smelter native stage " + stage);
    }
 
-   private static net.minecraft.client.gui.components.Button drawerButton(SmallMineralSmelterHybridScreen screen) {
-      var matches = screen.children().stream()
-         .filter(child -> child instanceof net.minecraft.client.gui.components.Button button
-            && button.getX() == 162 && button.getY() == 35 && button.getWidth() == 54 && button.getHeight() == 8)
-         .toList();
-      require(matches.size() == 1, "Missing or ambiguous real drawer button");
-      return (net.minecraft.client.gui.components.Button)matches.getFirst();
+   private static boolean geometryVerified(ThermalVerticalScreen screen, MachineMenu menu) {
+      if (!serverContextValid || menu.containerId != serverMenuId
+         || !menu.thermalVerticalPresentation() || !menu.kind().name().equals("SMALL_MINERAL_SMELTER")
+         || menu.visibleMachineSlots() != 2 || menu.slots.size() != 38
+         || menu.getSlot(0).getSlotIndex() != 0 || menu.getSlot(1).getSlotIndex() != 2
+         || !menu.getSlot(1).isActive()
+         || menu.getSlot(1).mayPlace(new ItemStack(Items.MAGMA_BLOCK))
+         || screen.children().stream().anyMatch(child -> child instanceof Button)) return false;
+      for (int i = 0; i < menu.slots.size(); i++) {
+         int position = i == 0 ? 0 : i == 1 ? 2 : i + 1;
+         var anchor = ThermalVerticalGeometry.slot(position);
+         var slot = menu.getSlot(i);
+         if (slot.x != anchor.x() || slot.y != anchor.y()) return false;
+      }
+      return true;
    }
 
-   private static void checkDrawerMessage(SmallMineralSmelterHybridScreen screen, String phase, boolean open) {
-      String key = PREFIX + (open ? "drawer.close_accessible" : "drawer.open_accessible");
-      String expected = Component.translatable(key).getString();
-      String actual = drawerButton(screen).getMessage().getString();
-      require(screen.validationOutputDrawerOpen() == open && actual.equals(expected) && !actual.equals(key),
-         "Stale/untranslated drawer accessible message at " + phase + ": " + actual);
-      JsonObject record = new JsonObject();
-      record.addProperty("phase", phase); record.addProperty("open", open);
-      record.addProperty("message", actual); DRAWER_LABELS.add(record);
-   }
-
-   private static void clickDrawer(SmallMineralSmelterHybridScreen screen) {
-      double scale = screen.validationViewScale();
-      double x = (screen.width - PANEL_WIDTH * scale) / 2.0 + 189.0 * scale;
-      double y = (screen.height - PANEL_HEIGHT * scale) / 2.0 + 39.0 * scale;
-      require(screen.mouseClicked(x, y, 0), "Programmatic native drawer click not handled");
-      screen.mouseReleased(x, y, 0);
-   }
-
-   private static MachineMenu currentFixtureMenu(Minecraft mc) {
+   private static MachineMenu currentMenu(Minecraft mc) {
       if (mc.player == null || !(mc.player.containerMenu instanceof MachineMenu menu)
-         || !menu.kind().name().equals("SMALL_MINERAL_SMELTER") || menu.containerId != serverMenuId) return null;
+         || !menu.kind().name().equals("SMALL_MINERAL_SMELTER")
+         || menu.containerId != serverMenuId) return null;
       return menu;
    }
 
-   private static void scheduleProgressFixture(Minecraft mc, int progress, int energy, Stage waitStage) {
-      UUID playerId = mc.player.getUUID();
+   private static int inventoryMagma(Minecraft mc) {
+      int total = 0;
+      for (int i = 0; i < mc.player.getInventory().getContainerSize(); i++) {
+         ItemStack stack = mc.player.getInventory().getItem(i);
+         if (stack.is(Items.MAGMA_BLOCK)) total += stack.getCount();
+      }
+      return total;
+   }
+
+   private static void fixtureState(Minecraft mc, int progress, int energy, int thermal, Stage next) {
+      UUID id = mc.player.getUUID();
       var server = mc.getSingleplayerServer();
       pending = server.submit(() -> {
-         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
-         require(player != null && serverMachine != null, "Smelter fixture lost its live machine");
+         ServerPlayer player = server.getPlayerList().getPlayer(id);
+         require(player != null && serverMachine != null, "Smelter state fixture lost the live server");
+         // Mutate only actual MachineBlockEntity test fields; no fake client or pre-rendered image.
          serverMachine.dataAccessForTests().set(1, progress);
          serverMachine.dataAccessForTests().set(6, energy);
+         serverMachine.dataAccessForTests().set(10, thermal);
          serverMachine.setChanged();
          if (player.containerMenu instanceof MachineMenu menu) menu.broadcastChanges();
       });
-      stage = waitStage;
-      ticks = 0;
+      stage = next; ticks = 0;
    }
 
-   private static void moveCursorOutsidePanel(Minecraft mc) {
-      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getWidth() - 3, mc.getWindow().getHeight() - 3);
+   private static void outputQuickMove(Minecraft mc) {
+      UUID id = mc.player.getUUID();
+      var server = mc.getSingleplayerServer();
+      pending = server.submit(() -> {
+         ServerPlayer player = server.getPlayerList().getPlayer(id);
+         require(player != null && player.containerMenu instanceof MachineMenu && serverMachine != null,
+            "Output quick-move lost the integrated server menu");
+         MachineMenu menu = (MachineMenu)player.containerMenu;
+         require(menu.containerId == serverMenuId && menu.getSlot(1).getSlotIndex() == 2
+            && serverMachine.getItem(2).is(Items.MAGMA_BLOCK)
+            && serverMachine.getItem(2).getCount() == 2,
+            "Smelter output no longer has the two source Magma Blocks");
+         ItemStack moved = menu.quickMoveStack(player, 1);
+         int count = 0;
+         for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+            ItemStack stack = player.getInventory().getItem(i);
+            if (stack.is(Items.MAGMA_BLOCK)) count += stack.getCount();
+         }
+         serverMoved = moved.is(Items.MAGMA_BLOCK) ? moved.getCount() : -1;
+         serverOutputCount = serverMachine.getItem(2).getCount();
+         serverInventoryCount = count;
+         require(serverMoved == 2 && serverOutputCount == 0 && serverInventoryCount == 2,
+            "Output quick-move lost or duplicated Magma");
+         menu.broadcastChanges();
+      });
    }
 
-   private static void capture(Minecraft mc, MachineMenu menu, String name) throws Exception {
-      Files.createDirectories(screenshots);
-      Path output = screenshots.resolve(name);
-      if (Files.exists(output)) throw new IllegalStateException("Refusing to overwrite a Smelter capture");
-      try (var image = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
-         image.writeToFile(output);
-      }
-      JsonObject capture = new JsonObject();
-      capture.addProperty("name", name);
-      capture.addProperty("sha256", HexFormat.of().formatHex(
-         MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
-      capture.addProperty("width", mc.getWindow().getWidth());
-      capture.addProperty("height", mc.getWindow().getHeight());
-      capture.addProperty("batch_progress", menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS));
-      capture.addProperty("energy", menu.field(MachineMenu.SMS_UI_ENERGY));
-      capture.addProperty("status", menu.field(MachineMenu.SMS_UI_STATUS));
-      CAPTURES.add(capture);
+   private static void moveCursorOutside(Minecraft mc) {
+      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(),
+         mc.getWindow().getWidth() - 3, mc.getWindow().getHeight() - 3);
    }
 
-   private static void writeProof(Minecraft mc, SmallMineralSmelterHybridScreen screen,
-                                  MachineMenu menu, String runNonce) throws Exception {
-      require(nonce.equals(runNonce), "Native Smelter fixture nonce changed during the run");
-      JsonObject proof = new JsonObject();
-      proof.addProperty("suite", SUITE);
-      proof.addProperty("nonce", nonce);
-      proof.addProperty("status", "passed");
-      proof.addProperty("actual_integrated_world", mc.getSingleplayerServer() != null
-         && mc.player.connection.getConnection().isMemoryConnection());
-      proof.addProperty("executed_source_sha", executedSourceSha);
-      proof.addProperty("pull_request_head_sha", pullRequestHeadSha);
-      proof.addProperty("language", language);
-      proof.addProperty("translated_lava_mode", Component.translatable(PREFIX + "mode.lava").getString());
-      proof.addProperty("screen_identity", mc.screen.getClass().getName());
-      proof.addProperty("client_menu_identity", menu.getClass().getName());
-      proof.addProperty("server_menu_identity", serverMenuClass);
-      proof.addProperty("machine_kind", menu.kind().name());
-      proof.addProperty("client_menu_id", menu.containerId);
-      proof.addProperty("server_menu_id", serverMenuId);
-      proof.addProperty("server_menu_context_valid", serverMenuContextValid);
-      proof.addProperty("visible_machine_slots", menu.visibleMachineSlots());
-      proof.addProperty("total_slots", menu.slots.size());
-      JsonArray backingSlots = new JsonArray();
-      backingSlots.add(menu.getSlot(0).getSlotIndex());
-      backingSlots.add(menu.getSlot(1).getSlotIndex());
-      proof.add("machine_slot_backing_indices", backingSlots);
-      proof.addProperty("data_fields", MachineMenu.SMALL_MINERAL_SMELTER_V05_DATA_COUNT);
-
+   private static JsonObject liveState(MachineMenu menu) {
       JsonObject state = new JsonObject();
       state.addProperty("selected_mode", menu.field(MachineMenu.SMS_UI_SELECTED_MODE));
       state.addProperty("batch_mode", menu.field(MachineMenu.SMS_UI_BATCH_MODE));
+      state.addProperty("queued_mode", menu.field(MachineMenu.SMS_UI_QUEUED_MODE));
       state.addProperty("batch_progress", menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS));
       state.addProperty("thermal", menu.field(MachineMenu.SMS_UI_THERMAL));
       state.addProperty("input_item", "minecraft:cobblestone");
@@ -380,40 +308,97 @@ final class NativeSmelterGuiValidation {
       state.addProperty("energy_capacity", menu.field(MachineMenu.SMS_UI_ENERGY_CAPACITY));
       state.addProperty("fe_rate", menu.field(MachineMenu.SMS_UI_FE_RATE));
       state.addProperty("status", menu.field(MachineMenu.SMS_UI_STATUS));
-      proof.add("live_state", state);
+      return state;
+   }
 
-      JsonObject geometry = new JsonObject();
-      geometry.addProperty("gui_width", mc.getWindow().getGuiScaledWidth());
-      geometry.addProperty("gui_height", mc.getWindow().getGuiScaledHeight());
-      geometry.addProperty("panel_width", menu.layout().imageWidth());
-      geometry.addProperty("panel_height", menu.layout().imageHeight());
-      geometry.addProperty("view_scale", screen.validationViewScale());
-      geometry.addProperty("drawer_closed_capture", hasCapture("screen-closed.png"));
-      geometry.addProperty("drawer_open_capture", screen.validationOutputDrawerOpen());
-      geometry.addProperty("output_slot_hidden_when_closed", outputSlotHiddenWhenClosed);
-      geometry.addProperty("output_slot_visible_when_open", menu.getSlot(1).isActive()
-         && menu.getSlot(1).getItem().is(Items.MAGMA_BLOCK));
+   private static void capture(Minecraft mc, MachineMenu menu, String name) throws Exception {
+      Files.createDirectories(screenshots);
+      Path output = screenshots.resolve(name);
+      require(!Files.exists(output), "Refusing stale Smelter capture");
+      try (var image = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+         image.writeToFile(output);
+      }
+      JsonObject c = new JsonObject();
+      c.addProperty("name", name);
+      c.addProperty("sha256", HexFormat.of().formatHex(
+         MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
+      c.addProperty("width", mc.getWindow().getWidth());
+      c.addProperty("height", mc.getWindow().getHeight());
+      c.addProperty("batch_progress", menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS));
+      c.addProperty("thermal", menu.field(MachineMenu.SMS_UI_THERMAL));
+      c.addProperty("phase", menu.field(MachineMenu.SMS_UI_PHASE));
+      c.addProperty("energy", menu.field(MachineMenu.SMS_UI_ENERGY));
+      c.addProperty("status", menu.field(MachineMenu.SMS_UI_STATUS));
+      c.addProperty("output_count", menu.getSlot(1).getItem().getCount());
+      CAPTURES.add(c);
+   }
+
+   private static void writeProof(Minecraft mc, MachineMenu menu) throws Exception {
+      require(CAPTURES.size() == 5 && activeState != null && resized
+         && serverMoved == 2 && serverInventoryCount == 2 && serverOutputCount == 0,
+         "Smelter framebuffer and item-transfer evidence is incomplete");
+      String selected = mc.getLanguageManager().getSelected();
+      require(language.equals(selected), "Minecraft did not load requested Smelter locale");
+      String title = Component.translatable(TITLE_KEY).getString();
+      require(!title.equals(TITLE_KEY) && !title.isBlank(), "Smelter localized title is unavailable");
+      var fit = FreezerReferenceGeometry.fit(mc.screen.width, mc.screen.height);
+      JsonObject proof = new JsonObject();
+      proof.addProperty("suite", SUITE);
+      proof.addProperty("schema_version", 2);
+      proof.addProperty("nonce", nonce);
+      proof.addProperty("status", "passed");
+      proof.addProperty("actual_integrated_world", mc.getSingleplayerServer() != null
+         && mc.player.connection.getConnection().isMemoryConnection());
+      proof.addProperty("executed_source_sha", executedSourceSha);
+      proof.addProperty("pull_request_head_sha", pullRequestHeadSha);
+      proof.addProperty("language", language);
+      proof.addProperty("selected_language", selected);
+      proof.addProperty("translated_machine_name", title);
+      proof.addProperty("screen_identity", mc.screen.getClass().getName());
+      proof.addProperty("client_menu_identity", menu.getClass().getName());
+      proof.addProperty("server_menu_identity", serverMenuClass);
+      proof.addProperty("machine_kind", menu.kind().name());
+      proof.addProperty("client_menu_id", menu.containerId);
+      proof.addProperty("server_menu_id", serverMenuId);
+      proof.addProperty("server_menu_context_valid", serverContextValid);
+      proof.addProperty("visible_machine_slots", menu.visibleMachineSlots());
+      proof.addProperty("total_slots", menu.slots.size());
+      JsonArray indices = new JsonArray();
+      indices.add(menu.getSlot(0).getSlotIndex()); indices.add(menu.getSlot(1).getSlotIndex());
+      proof.add("machine_slot_backing_indices", indices);
+      proof.addProperty("data_fields", MachineMenu.SMALL_MINERAL_SMELTER_V05_DATA_COUNT);
+      proof.add("live_state", activeState);
       proof.addProperty("window_width", mc.getWindow().getWidth());
       proof.addProperty("window_height", mc.getWindow().getHeight());
-      proof.add("screen", geometry);
-      proof.add("drawer_accessible_messages", DRAWER_LABELS.deepCopy());
-      proof.addProperty("drawer_input_method", "programmatic native screen callbacks and resize; not OS input");
-      proof.addProperty("narration_audio_verified", false);
+      JsonObject screen = new JsonObject();
+      screen.addProperty("gui_width", mc.getWindow().getGuiScaledWidth());
+      screen.addProperty("gui_height", mc.getWindow().getGuiScaledHeight());
+      screen.addProperty("panel_width", ThermalVerticalGeometry.CANVAS_WIDTH);
+      screen.addProperty("panel_height", ThermalVerticalGeometry.CANVAS_HEIGHT);
+      screen.addProperty("view_scale", fit.scale());
+      screen.addProperty("origin_x", fit.originX());
+      screen.addProperty("origin_y", fit.originY());
+      screen.addProperty("output_slot_visible", menu.getSlot(1).isActive());
+      screen.addProperty("output_slot_insertion_forbidden", !menu.getSlot(1).mayPlace(new ItemStack(Items.MAGMA_BLOCK)));
+      screen.addProperty("legacy_drawer_and_mode_tabs_absent", mc.screen.children().stream()
+         .noneMatch(child -> child instanceof Button));
+      screen.addProperty("resize_restored", resized);
+      proof.add("screen", screen);
+      JsonObject transfer = new JsonObject();
+      transfer.addProperty("method", "integrated_server_MachineMenu.quickMoveStack");
+      transfer.addProperty("source_menu_slot", 1);
+      transfer.addProperty("source_container_slot", 2);
+      transfer.addProperty("moved_magma", serverMoved);
+      transfer.addProperty("output_after", serverOutputCount);
+      transfer.addProperty("player_magma_after", serverInventoryCount);
+      proof.add("output_transfer", transfer);
       proof.add("screenshots", CAPTURES.deepCopy());
       proof.addProperty("screenshot_method", "Minecraft Screenshot.takeScreenshot(getMainRenderTarget())");
-
       Files.writeString(gameDirectory.resolve("client-smelter-gui-result.json"),
          new GsonBuilder().setPrettyPrinting().create().toJson(proof) + "\n");
    }
 
-   private static boolean hasCapture(String name) {
-      for (int index = 0; index < CAPTURES.size(); index++) {
-         if (CAPTURES.get(index).getAsJsonObject().get("name").getAsString().equals(name)) return true;
-      }
-      return false;
-   }
-
-   private static void require(boolean condition, String message) {
-      if (!condition) throw new IllegalStateException(message);
+   private static void require(boolean valid, String message) {
+      if (!valid) throw new IllegalStateException(message);
    }
 }
