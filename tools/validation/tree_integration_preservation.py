@@ -3,6 +3,7 @@ from hopper_fidelity_integration import PATH as HOPPER_PATH, project_history as 
 import hashlib
 import json
 from freezer_v5_reconciliation import LAYER as V5_LAYER, assert_freezer_v5_reconciliation, current_hash
+from thermal_single_stage_projection import project_historical_if_candidate
 
 
 V5_ACCESSOR = '   public boolean freezerReferencePresentation() {\n      return this.freezerReferencePresentation;\n   }\n'
@@ -100,14 +101,15 @@ def record_sha256(record):
 
 def assert_combined_integration_preserved(root, manifest):
     """Pin both parent identities and current bytes independently of editable manifests."""
-    hopper_history((root / HOPPER_PATH).read_bytes())
+    hopper_history(project_historical_if_candidate(MACHINE_ENTITY, (root / HOPPER_PATH).read_bytes()))
     project_blocks_history((root / HOPPER_BLOCKS_PATH).read_bytes())
     assert_freezer_v5_reconciliation(root, manifest)
     combined = manifest.get(COMBINED_LAYER)
     assert record_sha256(combined) == COMBINED_RECORD_SHA256, 'Combined Milking/Freezer integration changed'
     for path, record in COMBINED_FILES.items():
         assert record['main_sha256'] == FREEZER_FILES[path]['integrated_sha256'], path
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_hash(path, record['integrated_sha256']), path
+        historical = project_historical_if_candidate(path, (root / path).read_bytes())
+        assert hashlib.sha256(historical).hexdigest() == current_hash(path, record['integrated_sha256']), path
 
 
 def assert_milking_integration_preserved(root, pins):
@@ -129,7 +131,8 @@ def assert_milking_integration_preserved(root, pins):
 
 
 def assert_menu_tail_preserved(source):
-    """Normalize only the exact Tree accessor and complete Freezer preview method."""
+    """Project only the exact thermal candidate, then normalize historical Tree/Freezer deltas."""
+    source = project_historical_if_candidate(MACHINE_MENU, source.encode('utf-8')).decode('utf-8')
     marker = '   private static MenuType<?> resolveMenuType'
     assert source.count(marker) == 1, 'Ambiguous menu preservation boundary'
     tail = source.split(marker, 1)[1]
@@ -184,4 +187,5 @@ def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None
             expected = milking_current_hashes[path]
         if path in COMBINED_FILES:
             expected = COMBINED_FILES[path]['integrated_sha256']
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest() == current_hash(path, expected), path
+        historical = project_historical_if_candidate(path, (root / path).read_bytes())
+        assert hashlib.sha256(historical).hexdigest() == current_hash(path, expected), path
