@@ -562,7 +562,9 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             or near_end.get("sha256") != hashlib.sha256(near_end_data).hexdigest()
             or (near_end.get("width"), near_end.get("height")) != near_end_size
             or type(near_end.get("freezer_progress_ticks")) is not int
-            or not 178 <= near_end["freezer_progress_ticks"] < 180):
+            or not 178 <= near_end["freezer_progress_ticks"] < 180
+            or type(near_end.get("freezer_phase")) is not int
+            or near_end["freezer_phase"] != 3):
         raise SmokeFailure("Native Freezer near-end frame does not prove progress immediately before completion")
 
     if f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={nonce}" not in logs:

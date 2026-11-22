@@ -466,7 +466,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 capture = {"name": name, "state": "near-end", "kind": kind,
                            "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
                            "fluid_amount": 0, "energy": 8, "progress": 0,
-                           "freezer_progress_ticks": 178,
+                           "freezer_progress_ticks": 178, "freezer_phase": 3,
                            "capture_mode": "gui_panel", "panel_cursor_outside": True,
                            "panel_tooltips_suppressed": True,
                            "width": panel_width, "height": panel_height}
@@ -605,6 +605,16 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         near_end = next(item for item in proof["screenshots"] if item["name"] == "small_freezer-near-end.png")
         near_end["freezer_progress_ticks"] = 0
         with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_stale_freezer_phase_despite_near_complete_progress(self):
+        # Near-complete work cannot substitute for synchronized frost phase 3.
+        proof = copy.deepcopy(self.proof)
+        near = next(image for image in proof["screenshots"]
+                    if image["name"] == "small_freezer-near-end.png")
+        self.assertEqual(near["freezer_progress_ticks"], 178)
+        near["freezer_phase"] = 2
+        with self.assertRaisesRegex(SmokeFailure, "Freezer near-end"):
+            self.check(proof)
 
     def test_rejects_missing_malformed_or_duplicate_milking_tank_pixels(self):
         name = "small_milking_machine-mid.png"

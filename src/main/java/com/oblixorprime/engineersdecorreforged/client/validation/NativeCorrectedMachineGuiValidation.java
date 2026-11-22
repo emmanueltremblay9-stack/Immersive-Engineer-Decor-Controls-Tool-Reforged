@@ -774,6 +774,7 @@ final class NativeCorrectedMachineGuiValidation {
       capture.addProperty("progress", menu.progress());
       if (menu.kind() == MachineKind.SMALL_FREEZER) {
          capture.addProperty("freezer_progress_ticks", menu.freezerProgressTicks());
+         capture.addProperty("freezer_phase", menu.freezerPhase());
       }
       if (menu.kind() == MachineKind.SMALL_MILKING_MACHINE) {
          capture.add("machine_slot_items", machineSlotItems(menu));
