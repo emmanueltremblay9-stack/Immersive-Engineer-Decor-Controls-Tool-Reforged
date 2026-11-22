@@ -1540,6 +1540,56 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 300)
+   public static void thermal_freezer_processes_stacked_inputs_without_reprocessing_outputs(GameTestHelper helper) {
+      MachineBlockEntity freezer = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+      freezer.setItem(0, new ItemStack(Items.ICE, 3));
+      freezer.energyStorage(null).receiveEnergy(6000, false);
+      tickMachine(helper, freezer, 540);
+      helper.assertTrue(freezer.getItem(0).isEmpty(), "three consecutive cycles consume three Ice");
+      helper.assertTrue(freezer.getItem(2).is(Items.PACKED_ICE), "one physical Freezer performs only Ice to Packed Ice");
+      helper.assertValueEqual(3, freezer.getItem(2).getCount(), "compatible outputs stack to three items");
+      helper.assertValueEqual(1680, freezer.energyStorage(null).getEnergyStored(), "three paid cycles each use 1440 FE");
+      tickMachine(helper, freezer, 180);
+      helper.assertValueEqual(3, freezer.getItem(2).getCount(), "result slot never re-enters its own recipe");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 300)
+   public static void mineral_magma_lava_obsidian_each_requires_an_independent_machine(GameTestHelper helper) {
+      MachineBlockEntity mineral = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      mineral.setItem(0, new ItemStack(Items.COBBLESTONE));
+      mineral.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, mineral, 900);
+      helper.assertTrue(mineral.getItem(2).is(Items.MAGMA_BLOCK), "first stage yields a Magma Block");
+      helper.assertValueEqual(0, mineral.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+         "first stage cannot skip to lava");
+      ItemStack transportedMagma = mineral.getItem(2).copy();
+
+      // Replace the block entity: the next recipe runs on a different physical machine.
+      MachineBlockEntity magma = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      magma.setItem(0, transportedMagma);
+      magma.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, magma, 1000);
+      helper.assertTrue(magma.getItem(0).isEmpty(), "second stage consumed only the transported Magma Block");
+      helper.assertTrue(magma.getItem(2).isEmpty(), "second stage returns no extra magma or obsidian");
+      helper.assertValueEqual(1000, magma.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+         "second stage produces one bucket of lava");
+      tickMachine(helper, magma, 100);
+      helper.assertTrue(magma.getItem(2).isEmpty(), "its produced lava never becomes its own Obsidian input");
+      FluidStack transportedLava = magma.fluidHandler(Direction.DOWN).drain(1000, FluidAction.EXECUTE);
+      helper.assertValueEqual(1000, transportedLava.getAmount(), "output lava can be extracted from below");
+
+      MachineBlockEntity obsidian = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      helper.assertValueEqual(1000, obsidian.fluidHandler(Direction.UP).fill(transportedLava, FluidAction.EXECUTE),
+         "third machine accepts ingredient lava from above");
+      tickMachine(helper, obsidian, 1000);
+      helper.assertTrue(obsidian.getItem(2).is(Items.OBSIDIAN), "one cooling stage converts lava to Obsidian");
+      helper.assertValueEqual(0, obsidian.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+         "third stage consumes the whole bucket once");
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 240)
    public static void powered_temperature_machines_do_not_process_without_fe(GameTestHelper helper) {
       MachineBlockEntity mineralSmelter = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
