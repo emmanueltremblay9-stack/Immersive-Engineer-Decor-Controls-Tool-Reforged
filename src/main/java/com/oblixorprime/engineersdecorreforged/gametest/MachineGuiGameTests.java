@@ -1089,6 +1089,7 @@ public final class MachineGuiGameTests {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
       var data = machine.mineralSmelterUiDataAccessForTests();
       helper.assertValueEqual(17, data.getCount(), "v0.5 synced field count is preserved");
+      helper.assertValueEqual(1, data.get(0), "synchronization is supported but mode selection is not");
       helper.assertValueEqual(-1, data.get(2), "no selected recipe is projected");
       helper.assertValueEqual(-1, data.get(3), "no active legacy recipe");
       helper.assertValueEqual(-1, data.get(4), "no queued recipe");
