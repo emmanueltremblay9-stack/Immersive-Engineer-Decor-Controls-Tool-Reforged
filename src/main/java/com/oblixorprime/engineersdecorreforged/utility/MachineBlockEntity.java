@@ -2999,7 +2999,125 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    /** Hybrid mineral process. Each lot is checked before consumption; product and input
     * are changed only on the authoritative server tick after capacity preflight.
     * Balancing remains candidate until reviewed in the draft PR. */
+   /** One machine, one automatic stage per cycle.
+    * Item mineral -> item magma; item magma -> output lava fluid;
+    * externally pumped top lava -> item obsidian. No hidden mode selects a result.
+    */
    private void tickMineralSmelter(boolean powered) {
+      if (this.mineralLegacyBatch) {
+         this.tickLegacyMineralSmelter(powered);
+         return;
+      }
+      this.mineralActualFeRate = 0;
+      if (this.level == null) return;
+      if (!this.mineralBatchActive && this.tickCounter % MINERAL_COOL_TICK_PERIOD == 0
+         && this.mineralTemperature > 0) {
+         this.setMineralTemperature(this.mineralTemperature - 1);
+      }
+
+      ItemStack input = this.items.get(0);
+      if (!this.mineralBatchActive) {
+         this.mineralAutoRecipe = this.nextAutomaticMineralStage();
+         if (this.mineralAutoRecipe < 0) {
+            this.mineralStatus = input.isEmpty() ? 3 : 4; // NO_INPUT / INVALID_INPUT
+            return;
+         }
+         this.mineralBatchActive = true;
+         this.mineralCooling = this.mineralAutoRecipe == 2;
+         this.mineralBatchInput = this.mineralCooling ? ItemStack.EMPTY : input.copyWithCount(1);
+         this.progress = 0;
+         this.mineralHeatTickRemainder = 0;
+         if (this.mineralCooling) this.setMineralTemperature(100);
+         this.setChanged();
+      }
+
+      int stage = this.mineralAutoRecipe;
+      boolean inputValid = stage == 2
+         ? input.isEmpty() && "lava".equals(this.fluidType)
+            && this.mineralInputLava >= BUCKET_AMOUNT && this.fluidAmount >= BUCKET_AMOUNT
+         : (stage == 0 ? this.isMineralInput(input) : input.is(Items.MAGMA_BLOCK))
+            && ItemStack.isSameItemSameComponents(input, this.mineralBatchInput);
+      if (!inputValid) {
+         this.cancelMineralWork();
+         this.mineralStatus = 4;
+         return;
+      }
+
+      ItemStack result = new ItemStack(stage == 2 ? Items.OBSIDIAN : Items.MAGMA_BLOCK);
+      if (stage != 1 && !this.canInsertIntoSlots(result, 2)) {
+         this.mineralStatus = 6; // OUTPUT_FULL, preserve paid work
+         return;
+      }
+      if (stage == 1 && !this.canAddFluid("lava", MINERAL_LAVA_PER_INPUT,
+         this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER))) {
+         this.mineralStatus = 5; // TANK_FULL, preserve paid work
+         return;
+      }
+      if (powered) {
+         this.mineralStatus = 8; // REDSTONE_PAUSED
+         return;
+      }
+      if (stage == 2) {
+         // Cooling consumes no FE as in the former Obsidian cooling stage.
+         this.mineralStatus = 2;
+         if (this.tickCounter % MINERAL_COOL_TICK_PERIOD != 0) return;
+         this.progress = Math.min(100, this.progress + 1);
+         this.setMineralTemperature(Math.max(0, 100 - this.progress));
+         this.setChanged();
+         if (this.progress >= 100) {
+            // Atomic server-side commit after output and ingredient revalidation.
+            if (!this.canInsertIntoSlots(result, 2)
+               || this.mineralInputLava < BUCKET_AMOUNT || this.fluidAmount < BUCKET_AMOUNT) return;
+            this.fluidAmount -= BUCKET_AMOUNT;
+            this.mineralInputLava -= BUCKET_AMOUNT;
+            if (this.fluidAmount == 0) this.fluidType = "";
+            this.insertIntoSlots(result, 2);
+            this.finishMineralBatch();
+         }
+         return;
+      }
+
+      if (this.energy < MINERAL_SMELTER_ENERGY_PER_TICK) {
+         this.mineralStatus = 9; // WAIT_FE, preserve paid work
+         return;
+      }
+      this.energy -= MINERAL_SMELTER_ENERGY_PER_TICK;
+      this.mineralActualFeRate = MINERAL_SMELTER_ENERGY_PER_TICK;
+      this.mineralStatus = 1; // HEATING
+      this.mineralHeatTickRemainder++;
+      if (this.mineralHeatTickRemainder >= MINERAL_HEAT_TICK_PERIOD) {
+         this.mineralHeatTickRemainder = 0;
+         this.progress = Math.min(100, this.progress + 1);
+         this.setMineralTemperature(Math.max(this.mineralTemperature, this.progress));
+      }
+      this.setChanged();
+      int goal = stage == 0 ? 90 : 100;
+      if (this.progress < goal) return;
+
+      if (stage == 0 && this.canInsertIntoSlots(result, 2)) {
+         input.shrink(1);
+         this.insertIntoSlots(result, 2);
+         this.finishMineralBatch();
+      } else if (stage == 1 && this.canAddFluid("lava", MINERAL_LAVA_PER_INPUT,
+         this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER))) {
+         input.shrink(1);
+         this.addFluid("lava", MINERAL_LAVA_PER_INPUT, this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER));
+         // Generated lava has NO input credit: it is a product for the next machine.
+         this.finishMineralBatch();
+      }
+   }
+
+   private int nextAutomaticMineralStage() {
+      ItemStack input = this.items.get(0);
+      if (!input.isEmpty()) {
+         if (input.is(Items.MAGMA_BLOCK)) return 1;
+         return this.isMineralInput(input) ? 0 : -1;
+      }
+      return "lava".equals(this.fluidType) && this.mineralInputLava >= BUCKET_AMOUNT ? 2 : -1;
+   }
+
+   /** Legacy selected-mode batch runs ONLY if it was active in an old saved world. */
+   private void tickLegacyMineralSmelter(boolean powered) {
       this.mineralActualFeRate = 0;
       if (this.level == null) return;
       if (!this.mineralBatchActive && this.mineralQueuedMode >= 0) this.applyQueuedMineralMode();
@@ -3129,10 +3247,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.mineralBatchActive = false;
       this.mineralHeatTickRemainder = 0;
       this.mineralBatchInput = ItemStack.EMPTY;
+      this.mineralAutoRecipe = -1;
+      this.mineralLegacyBatch = false;
+      this.mineralQueuedMode = -1;
       this.mineralStatus = 0;
       this.setChanged();
       this.updateComparator();
-      this.applyQueuedMineralMode();
    }
 
    private void applyQueuedMineralMode() {
@@ -3149,7 +3269,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.mineralCooling = false;
       this.mineralHeatTickRemainder = 0;
       this.mineralBatchInput = ItemStack.EMPTY;
-      this.applyQueuedMineralMode();
+      this.mineralAutoRecipe = -1;
+      this.mineralLegacyBatch = false;
+      this.mineralQueuedMode = -1;
       this.setChanged();
    }
 
