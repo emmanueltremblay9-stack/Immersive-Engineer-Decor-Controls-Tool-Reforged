@@ -36,7 +36,7 @@ public class ThermalVerticalGeometryTest {
          for (int col = 0; col < 9; col++) {
             var p = ThermalVerticalGeometry.slot(start + col);
             assertEquals(y, p.y());
-            assertEquals(ThermalVerticalGeometry.slot(start).x() + col * 25, p.x());
+            assertEquals(FreezerReferenceGeometry.anchor(start + col).x(), p.x());
          }
       }
       assertTrue(ThermalVerticalGeometry.contains(0, 150, 55));
