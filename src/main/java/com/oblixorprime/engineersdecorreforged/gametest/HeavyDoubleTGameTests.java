@@ -27,6 +27,8 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
@@ -67,6 +69,27 @@ public final class HeavyDoubleTGameTests {
             "inverse rotation restores roll");
       }
       h.assertValueEqual(rotations.size(), 24, "all six placement faces and four rolls are distinct");
+      h.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void outline_and_collision_match_the_i_profile(GameTestHelper h) {
+      var level = h.getLevel();
+      var pos = h.absolutePos(CENTER);
+      var local = Shapes.or(
+         Block.box(2, 0, 2, 14, 16, 4),
+         Block.box(7, 0, 4, 9, 16, 12),
+         Block.box(2, 0, 12, 14, 16, 14)
+      );
+      for (Direction facing : Direction.values()) for (int roll = 0; roll < 4; roll++) {
+         BlockState state = heavy(facing, roll);
+         var expected = HeavyDoubleTOrientation.shape(local, facing, roll);
+         String orientation = facing + "/" + roll;
+         h.assertTrue(!Shapes.joinIsNotEmpty(expected, state.getCollisionShape(level, pos), BooleanOp.NOT_SAME),
+            "collision matches all three rotated prisms at " + orientation);
+         h.assertTrue(!Shapes.joinIsNotEmpty(expected, state.getShape(level, pos), BooleanOp.NOT_SAME),
+            "outline matches all three rotated prisms at " + orientation);
+      }
       h.succeed();
    }
 

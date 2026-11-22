@@ -26,14 +26,11 @@ public final class HeavyDoubleTSupportBlock extends NativeDecorativeBlocks.Nativ
    public static final DirectionProperty FACING = BlockStateProperties.FACING;
    public static final IntegerProperty ROLL = IntegerProperty.create("roll", 0, 3);
 
-   // I-profile, short cantilever and visually supported brace. Decorative connector plates are
-   // selected from world context; collision remains the core profile only.
+   // The two flanges and web match the three prisms in the block models.
    private static final VoxelShape CORE_LOCAL = Shapes.or(
       Block.box(2, 0, 2, 14, 16, 4),
       Block.box(7, 0, 4, 9, 16, 12),
-      Block.box(2, 0, 12, 14, 16, 14),
-      Block.box(0, 11.5, 5.5, 8, 14, 10.5),
-      Block.box(2, 4, 6, 10, 12, 10)
+      Block.box(2, 0, 12, 14, 16, 14)
    ).optimize();
    private static final VoxelShape[][] COLLISIONS = new VoxelShape[Direction.values().length][4];
    static {
@@ -81,8 +78,6 @@ public final class HeavyDoubleTSupportBlock extends NativeDecorativeBlocks.Nativ
    }
 
    @Override protected BlockState mirror(BlockState state, Mirror mirror) {
-      // Proper quarter-turn orientation retained. A mirror of the asymmetric bracket needs
-      // a separately mirrored asset and is intentionally NOT claimed as fidelity-preserving.
       Direction nextFacing = mirror.mirror(state.getValue(FACING));
       Direction nextRight = mirror.mirror(HeavyDoubleTOrientation.right(state.getValue(FACING), state.getValue(ROLL)));
       return state.setValue(FACING, nextFacing).setValue(ROLL, HeavyDoubleTOrientation.rollFor(nextFacing, nextRight));

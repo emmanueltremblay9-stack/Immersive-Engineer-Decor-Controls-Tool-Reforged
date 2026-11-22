@@ -9,6 +9,7 @@ on:
       - 'src/main/java/com/oblixorprime/engineersdecorreforged/ModBlocks.java'
       - 'src/main/resources/**'
       - 'build.gradle'
+      - 'tools/validation/check_heavy_double_t_i_profile.py'
       - '.github/workflows/heavy-double-t-candidate.yml'
   workflow_dispatch:
 permissions:
@@ -29,18 +30,8 @@ jobs:
         run: |
           python3 tools/models/generate_heavy_double_t.py --check
           python3 -m unittest discover -s tests -v
-      - name: Check all 87 production JSON assets match the reviewed candidate
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          source = Path('docs/candidates/heavy-double-t-mk3-mk31/review/src/main/resources')
-          target = Path('src/main/resources')
-          paths = list(source.rglob('*.json'))
-          assert len(paths) == 87, f'Expected 87 model assets, found {len(paths)}'
-          for path in paths:
-              out = target / path.relative_to(source)
-              assert out.is_file() and out.read_bytes() == path.read_bytes(), f'Production asset mismatch: {out}'
-          PY
+      - name: Verify the runtime I profiles and preserve blockstate, item and loot
+        run: python3 tools/validation/check_heavy_double_t_i_profile.py
       - name: Compile registered production block and JUnit
         run: bash gradlew compileJava test jar --stacktrace
       - name: Verify actual runtime classes and model assets are in candidate JAR
