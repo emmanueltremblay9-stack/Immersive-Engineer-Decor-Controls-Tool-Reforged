@@ -10,6 +10,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.TreeCutterV3ReferenceGeometry;
