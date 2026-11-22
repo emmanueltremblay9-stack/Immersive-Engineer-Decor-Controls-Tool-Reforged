@@ -3331,8 +3331,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void tickFreezer(boolean powered) {
-      // Redstone, insufficient FE and full output pause a paid batch instead of resetting it.
-      if (powered) return;
+      // Confirmed Freezer contract: redstone and insufficient FE stop the paid cycle.
+      // A full output remains a distinct blocked state; its reset/pause rule is not changed here.
+      if (powered) {
+         this.stopFreezerProcess();
+         return;
+      }
       boolean fluidInput = this.freezerFluidInputReady();
       int slot = this.firstFreezableSlot();
       if (slot < 0 && !fluidInput) {
@@ -3351,7 +3355,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.stopFreezerProcess();
          return;
       }
-      if (!this.canInsertIntoSlots(result, 2) || this.energy < FREEZER_ENERGY_PER_TICK) return;
+      if (!this.canInsertIntoSlots(result, 2)) return;
+      if (this.energy < FREEZER_ENERGY_PER_TICK) {
+         this.stopFreezerProcess();
+         return;
+      }
       this.freezerFluidProcess = fluidInput;
       if (!fluidInput && this.progress == 0) this.freezerBatchInput = this.items.get(slot).copyWithCount(1);
       this.energy -= FREEZER_ENERGY_PER_TICK;

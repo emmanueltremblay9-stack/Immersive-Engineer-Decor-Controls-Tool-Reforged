@@ -117,9 +117,14 @@ public class SnapshotCheck {
         source = (BASE / 'utility/MachineBlockEntity.java').read_text()
         tick = method(source, 'private void tickFreezer(')
         stop = method(source, 'private void stopFreezerProcess(')
-        self.assertIn('if (this.energy < 8)', tick)
-        self.assertIn('this.stopFreezerProcess();', tick.split('if (this.energy < 8)')[1].split('else')[0])
-        self.assertIn('this.energy -= 8;', tick)
+        self.assertIn('private static final int FREEZER_ENERGY_PER_TICK = 8;', source)
+        self.assertIn('if (powered)', tick)
+        redstone_stop = tick.split('if (powered)', 1)[1].split('return;', 1)[0]
+        self.assertIn('this.stopFreezerProcess();', redstone_stop)
+        self.assertIn('if (this.energy < FREEZER_ENERGY_PER_TICK)', tick)
+        energy_stop = tick.split('if (this.energy < FREEZER_ENERGY_PER_TICK)', 1)[1].split('return;', 1)[0]
+        self.assertIn('this.stopFreezerProcess();', energy_stop)
+        self.assertIn('this.energy -= FREEZER_ENERGY_PER_TICK;', tick)
         self.assertIn('this.progress++;', tick)
         self.assertIn('this.progress = 0;', stop)
 

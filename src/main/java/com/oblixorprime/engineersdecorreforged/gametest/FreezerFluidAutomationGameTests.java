@@ -252,38 +252,63 @@ public final class FreezerFluidAutomationGameTests {
    public static void freezer_bucket_recycling_preserves_item_recipes_and_restricts_inputs(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
       tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE);
-      IItemHandler handler = items(h, machine, Direction.NORTH);
-      h.assertTrue(handler.insertItem(0, new ItemStack(Items.WATER_BUCKET), false).isEmpty(), "water bucket inserts through public item capability");
+      IItemHandler input = items(h, machine, Direction.UP);
+      IItemHandler output = items(h, machine, Direction.DOWN);
+      BlockPos pos = machine.getBlockPos();
+      h.assertValueEqual(input.getSlots(), 1, "top item port exposes only the input");
+      h.assertValueEqual(output.getSlots(), 2, "bottom item port exposes output and returned bucket only");
       for (Direction side : Direction.values()) {
-         h.assertTrue(items(h, machine, side).extractItem(0, 1, false).isEmpty(), "full bucket cannot be pulled before processing");
-         h.assertFalse(machine.canTakeItemThroughFace(0, machine.getItem(0), side), "vanilla extraction agrees for full bucket");
+         if (side == Direction.UP || side == Direction.DOWN) continue;
+         h.assertTrue(h.getLevel().getCapability(Capabilities.ItemHandler.BLOCK, pos, side) == null,
+            "Freezer has no public item port on " + side);
       }
-      h.assertFalse(machine.canTakeItem(new SimpleContainer(1), 0, machine.getItem(0)), "Container extraction also protects input");
+      h.assertTrue(input.insertItem(0, new ItemStack(Items.WATER_BUCKET), false).isEmpty(),
+         "water bucket inserts through the public top item capability");
+      for (Direction side : Direction.values()) {
+         h.assertTrue(input.extractItem(0, 1, false).isEmpty(), "top input handler never extracts the full bucket");
+         h.assertFalse(machine.canTakeItemThroughFace(0, machine.getItem(0), side),
+            "full water bucket cannot leave through " + side);
+      }
+      h.assertTrue(output.extractItem(0, 1, false).isEmpty(), "no ice output before the timed recipe");
+      h.assertTrue(output.extractItem(1, 1, false).isEmpty(), "no returned empty bucket before processing");
+      h.assertFalse(machine.canTakeItem(new SimpleContainer(1), 0, machine.getItem(0)),
+         "arbitrary Container cannot pull a full input bucket");
       ticks(h, machine, 180);
-      h.assertTrue(machine.getItem(0).is(Items.BUCKET) && machine.getItem(2).is(Items.ICE), "bucket recipe conserves the bucket");
+      h.assertTrue(machine.getItem(0).is(Items.BUCKET) && machine.getItem(2).is(Items.ICE),
+         "bucket recipe conserves the bucket and produces ice");
       h.assertValueEqual(amount(h, machine), 2000, "bucket recipe never also charges tank water");
-      h.assertTrue(handler.extractItem(0, 1, true).is(Items.BUCKET), "empty bucket extraction simulates");
+      h.assertTrue(output.getStackInSlot(1).is(Items.BUCKET), "bottom output port exposes the returned bucket");
+      h.assertTrue(output.extractItem(1, 1, true).is(Items.BUCKET), "empty bucket extraction simulates");
       h.assertTrue(machine.getItem(0).is(Items.BUCKET), "simulation preserves empty bucket");
-      for (Direction side : Direction.values()) h.assertTrue(machine.canTakeItemThroughFace(0, machine.getItem(0), side), "empty bucket can leave through any face");
-      h.assertTrue(machine.canTakeItem(new SimpleContainer(1), 0, machine.getItem(0)), "Container may recover empty bucket");
-      h.assertTrue(handler.extractItem(0, 1, false).is(Items.BUCKET), "empty bucket extraction executes");
-      h.assertTrue(handler.extractItem(0, 1, false).isEmpty(), "bucket is not duplicated");
-      h.assertTrue(handler.extractItem(2, 1, false).is(Items.ICE), "ice extraction still works");
-      for (Item input : new Item[]{Items.ICE, Items.PACKED_ICE}) {
-         handler.insertItem(0, new ItemStack(input), false);
-         h.assertTrue(handler.extractItem(0, 1, false).isEmpty(), "solid recipe input remains protected");
+      for (Direction side : Direction.values()) {
+         h.assertValueEqual(machine.canTakeItemThroughFace(0, machine.getItem(0), side), side == Direction.DOWN,
+            "only the bottom face can extract the returned bucket");
+      }
+      h.assertFalse(machine.canTakeItem(new SimpleContainer(1), 0, machine.getItem(0)),
+         "arbitrary Container cannot pull a bucket without being the block below");
+      h.assertTrue(output.extractItem(1, 1, false).is(Items.BUCKET), "empty bucket extraction executes");
+      h.assertTrue(output.extractItem(1, 1, false).isEmpty(), "bucket is not duplicated");
+      h.assertTrue(output.extractItem(0, 1, false).is(Items.ICE), "ice extraction still works");
+
+      for (Item item : new Item[]{Items.ICE, Items.PACKED_ICE}) {
+         h.assertTrue(input.insertItem(0, new ItemStack(item), false).isEmpty(), "solid recipe input uses the top port");
+         h.assertTrue(input.extractItem(0, 1, false).isEmpty(), "solid recipe input remains protected");
          ticks(h, machine, 180);
-         Item expected = input == Items.ICE ? Items.PACKED_ICE : Items.BLUE_ICE;
-         h.assertTrue(handler.extractItem(2, 1, false).is(expected), "existing solid recipe output retained");
+         Item expected = item == Items.ICE ? Items.PACKED_ICE : Items.BLUE_ICE;
+         h.assertTrue(output.extractItem(0, 1, false).is(expected), "existing solid recipe output retained");
          h.assertValueEqual(amount(h, machine), 2000, "solid recipes do not spend water");
       }
-      h.assertFalse(handler.insertItem(0, new ItemStack(Items.BUCKET), false).isEmpty(), "empty bucket remains output-only, not a new recipe input");
+      h.assertFalse(input.insertItem(0, new ItemStack(Items.BUCKET), false).isEmpty(),
+         "empty bucket remains output-only, not a new recipe input");
       machine.setItem(1, new ItemStack(Items.DIRT));
-      h.assertTrue(handler.extractItem(1, 1, false).isEmpty(), "reserved slot remains outside item automation");
-      h.assertFalse(machine.canTakeItemThroughFace(1, machine.getItem(1), Direction.DOWN), "vanilla hopper cannot take reserved items");
+      h.assertTrue(output.getStackInSlot(1).isEmpty(), "reserved legacy slot is not exposed by bottom automation");
+      h.assertFalse(machine.canTakeItemThroughFace(1, machine.getItem(1), Direction.DOWN),
+         "vanilla hopper cannot take reserved items");
+      h.assertFalse(machine.canTakeItem(new SimpleContainer(1), 1, machine.getItem(1)),
+         "arbitrary Container cannot take reserved items");
+      h.assertTrue(machine.getItem(1).is(Items.DIRT), "reserved slot contents remain untouched");
       h.succeed();
    }
-
    @GameTest(template = "empty")
    public static void freezer_water_progress_and_legacy_item_progress_survive_reload(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
@@ -538,8 +563,9 @@ public final class FreezerFluidAutomationGameTests {
       IFluidHandler reloadedInlet = h.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, pipePos, Direction.UP);
       h.assertTrue(reloadedInlet != null, "reloaded IE top feed exists");
       ticks(h, machine, 1);
-      h.assertTrue(items(h, machine, Direction.DOWN).extractItem(2, 1, false).is(Items.ICE),
-         "top pipe-fed cycle survives entity reload and extracts output");
+      h.assertTrue(machine.getItem(2).is(Items.ICE), "top pipe-fed cycle completes after entity reload");
+      h.assertTrue(items(h, machine, Direction.DOWN).extractItem(0, 1, false).is(Items.ICE),
+         "bottom item handler extracts output slot 2");
       h.assertValueEqual(amount(h, machine), 0, "reloaded cycle pays its water");
       int reloadedTransfer = reloadedInlet.fill(water(1000), FluidAction.EXECUTE);
       h.assertTrue(reloadedTransfer > 0, "IE re-discovers replacement entity after reload");
