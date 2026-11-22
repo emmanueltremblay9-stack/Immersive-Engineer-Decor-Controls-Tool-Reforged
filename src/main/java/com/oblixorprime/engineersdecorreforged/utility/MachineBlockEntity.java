@@ -3051,15 +3051,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       ItemStack result = new ItemStack(stage == 2 ? Items.OBSIDIAN : Items.MAGMA_BLOCK);
       if (stage != 1 && !this.canInsertIntoSlots(result, 2)) {
          this.mineralStatus = 6; // OUTPUT_FULL, preserve paid work
+         this.coolAutoMineralWhileBlocked();
          return;
       }
       if (stage == 1 && !this.canAddFluid("lava", MINERAL_LAVA_PER_INPUT,
          this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER))) {
          this.mineralStatus = 5; // TANK_FULL, preserve paid work
+         this.coolAutoMineralWhileBlocked();
          return;
       }
       if (powered) {
          this.mineralStatus = 8; // REDSTONE_PAUSED
+         this.coolAutoMineralWhileBlocked();
          return;
       }
       if (stage == 2) {
@@ -3084,6 +3087,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
       if (this.energy < MINERAL_SMELTER_ENERGY_PER_TICK) {
          this.mineralStatus = 9; // WAIT_FE, preserve paid work
+         this.coolAutoMineralWhileBlocked();
          return;
       }
       this.energy -= MINERAL_SMELTER_ENERGY_PER_TICK;
@@ -3110,6 +3114,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          // Generated lava has NO input credit: it is a product for the next machine.
          this.finishMineralBatch();
       }
+   }
+
+   private void coolAutoMineralWhileBlocked() {
+      if (this.tickCounter % MINERAL_COOL_TICK_PERIOD == 0 && this.mineralTemperature > 0)
+         this.setMineralTemperature(this.mineralTemperature - 1);
    }
 
    private int nextAutomaticMineralStage() {
