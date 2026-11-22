@@ -267,7 +267,7 @@ public final class FreezerFluidAutomationGameTests {
       h.assertValueEqual(progress(machine), 179, "fluid work source persists");
       ticks(h, machine, 1);
       h.assertTrue(machine.getItem(2).is(Items.ICE), "reloaded fluid cycle completes once");
-      h.assertValueEqual(amount(h, machine), 1000, "reloaded cycle pays exactly one bucket");
+      h.assertValueEqual(tank(h, machine, Direction.UP).getFluidInTank(0).getAmount(), 1000, "reloaded cycle pays exactly one bucket");
       h.assertValueEqual(energy(machine), 16000 - 1440, "reloaded cycle pays exact total FE");
       machine = place(h); power(machine); machine.setItem(0, new ItemStack(Items.ICE));
       machine.setItem(1, new ItemStack(Items.DIRT)); ticks(h, machine, 179);
