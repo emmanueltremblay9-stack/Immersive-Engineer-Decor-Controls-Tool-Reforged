@@ -3332,7 +3332,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    private void tickFreezer(boolean powered) {
       // Confirmed Freezer contract: redstone and insufficient FE stop the paid cycle.
-      // A full output remains a distinct blocked state; its reset/pause rule is not changed here.
+      // Owner-confirmed: full output resets work, without refunding already-paid FE.
       if (powered) {
          this.stopFreezerProcess();
          return;
@@ -3355,7 +3355,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.stopFreezerProcess();
          return;
       }
-      if (!this.canInsertIntoSlots(result, 2)) return;
+      if (!this.canInsertIntoSlots(result, 2)) {
+         this.stopFreezerProcess();
+         return;
+      }
       if (this.energy < FREEZER_ENERGY_PER_TICK) {
          this.stopFreezerProcess();
          return;

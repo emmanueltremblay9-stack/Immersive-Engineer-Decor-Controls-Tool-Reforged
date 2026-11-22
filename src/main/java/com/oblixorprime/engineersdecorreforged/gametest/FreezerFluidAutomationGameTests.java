@@ -214,10 +214,14 @@ public final class FreezerFluidAutomationGameTests {
          int before = energy(machine);
          if (failure == 0) machine.setItem(2, new ItemStack(Items.ICE, 64));
          if (failure == 1) machine.setItem(2, new ItemStack(Items.PACKED_ICE));
+         ItemStack blockedOutput = machine.getItem(2).copy();
          ticks(h, machine, 1);
          h.assertValueEqual(progress(machine), 0, "existing output-full rule resets work: " + failure);
          h.assertValueEqual(amount(h, machine), 1000, "blocked output retains its water");
          h.assertValueEqual(energy(machine), before, "blocked output spends no FE");
+         h.assertTrue(ItemStack.matches(blockedOutput, machine.getItem(2))
+            && machine.getItem(0).isEmpty() && machine.getItem(1).isEmpty(),
+            "blocked output conserved exactly; input and reserved slot untouched");
          machine.setItem(2, ItemStack.EMPTY); power(machine);
          ticks(h, machine, 179);
          h.assertTrue(machine.getItem(2).isEmpty(), "unblocking does not restore discarded work");
