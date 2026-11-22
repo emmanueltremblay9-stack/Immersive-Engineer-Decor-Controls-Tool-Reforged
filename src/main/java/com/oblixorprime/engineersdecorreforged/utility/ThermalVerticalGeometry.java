@@ -10,8 +10,9 @@ public final class ThermalVerticalGeometry {
    public static final int CANVAS_HEIGHT = 314;
    public static final int ITEM_SIZE = 16;
    public static final int VISIBLE_SLOTS = 38;
-   private static final int[] PLAYER_X = {48, 73, 98, 123, 148, 173, 198, 223, 248};
-   private static final int[] PLAYER_Y = {195, 219, 243, 267};
+   // Exact retained Freezer V5 1254->314 measured player-slot anchors.
+   private static final int[] PLAYER_X = {43, 70, 96, 123, 149, 176, 202, 229, 255};
+   private static final int[] PLAYER_Y = {191, 215, 239, 272};
 
    private ThermalVerticalGeometry() { }
 
