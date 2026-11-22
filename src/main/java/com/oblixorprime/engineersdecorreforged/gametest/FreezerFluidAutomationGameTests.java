@@ -14,6 +14,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.SimpleContainer;
@@ -257,8 +258,12 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_water_progress_and_legacy_item_progress_survive_reload(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      tank(h, machine, null).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
-      machine = reload(h, machine.saveWithFullMetadata(h.getLevel().registryAccess()));
+      tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
+      CompoundTag savedWater = machine.saveWithFullMetadata(h.getLevel().registryAccess());
+      h.assertTrue(savedWater.getBoolean("FreezerFluidProcess"), "actual water batch keeps its source marker");
+      h.assertValueEqual(savedWater.getInt("FreezerBatchVersion"), 1, "new water batch format is versioned");
+      h.assertFalse(savedWater.contains("FreezerBatchInput"), "water work has no item signature");
+      machine = reload(h, savedWater);
       h.assertValueEqual(progress(machine), 179, "fluid work source persists");
       ticks(h, machine, 1);
       h.assertTrue(machine.getItem(2).is(Items.ICE), "reloaded fluid cycle completes once");
@@ -266,10 +271,73 @@ public final class FreezerFluidAutomationGameTests {
       h.assertValueEqual(energy(machine), 16000 - 1440, "reloaded cycle pays exact total FE");
       machine = place(h); power(machine); machine.setItem(0, new ItemStack(Items.ICE));
       machine.setItem(1, new ItemStack(Items.DIRT)); ticks(h, machine, 179);
-      CompoundTag legacy = machine.saveWithFullMetadata(h.getLevel().registryAccess()); legacy.remove("FreezerFluidProcess");
-      machine = reload(h, legacy); ticks(h, machine, 1);
+      CompoundTag legacy = machine.saveWithFullMetadata(h.getLevel().registryAccess());
+      h.assertTrue(legacy.contains("FreezerFluidProcess", Tag.TAG_BYTE)
+         && !legacy.getBoolean("FreezerFluidProcess"), "main-era item work writes fluid marker false");
+      legacy.remove("FreezerBatchVersion");
+      legacy.remove("FreezerBatchInput");
+      h.assertTrue(legacy.contains("FreezerFluidProcess", Tag.TAG_BYTE),
+         "historical fixture must retain original fluid marker");
+      machine = reload(h, legacy);
+      h.assertValueEqual(progress(machine), 179, "historical item work retains 179 paid ticks");
+      ticks(h, machine, 1);
       h.assertTrue(machine.getItem(2).is(Items.PACKED_ICE), "old item-only saves keep their paid work");
+      h.assertValueEqual(energy(machine), 16000 - 1440, "legacy item uses exactly 180 paid ticks");
       h.assertTrue(machine.getItem(1).is(Items.DIRT), "legacy reserved contents survive");
+      h.succeed();
+   }
+
+
+   @GameTest(template = "empty")
+   public static void freezer_batch_signature_reload_rejects_modern_incomplete_and_changed_items(GameTestHelper h) {
+      MachineBlockEntity machine = place(h); power(machine);
+      machine.setItem(0, new ItemStack(Items.ICE));
+      machine.setItem(1, new ItemStack(Items.DIRT)); ticks(h, machine, 179);
+      CompoundTag saved = machine.saveWithFullMetadata(h.getLevel().registryAccess());
+      h.assertValueEqual(saved.getInt("FreezerBatchVersion"), 1, "modern item work writes version");
+      h.assertTrue(saved.contains("FreezerBatchInput", Tag.TAG_COMPOUND), "modern item work has signature");
+      h.assertTrue(saved.contains("FreezerFluidProcess", Tag.TAG_BYTE)
+         && !saved.getBoolean("FreezerFluidProcess"), "item work is not water funded");
+
+      machine = reload(h, saved);
+      h.assertValueEqual(progress(machine), 179, "valid modern item signature retains work");
+      ticks(h, machine, 1);
+      h.assertTrue(machine.getItem(2).is(Items.PACKED_ICE), "modern saved item completes once");
+      h.assertTrue(machine.getItem(1).is(Items.DIRT), "modern reload preserves reserved slot");
+
+      // Prior unversioned candidate saved the item signature, unlike historical main.
+      CompoundTag transitional = saved.copy(); transitional.remove("FreezerBatchVersion");
+      machine = reload(h, transitional);
+      h.assertValueEqual(progress(machine), 179, "pre-version candidate with signature retains work");
+      ticks(h, machine, 1);
+      h.assertTrue(machine.getItem(2).is(Items.PACKED_ICE), "pre-version signed item completes once");
+
+      MachineBlockEntity changedSource = place(h); power(changedSource);
+      changedSource.setItem(0, new ItemStack(Items.ICE));
+      changedSource.setItem(1, new ItemStack(Items.DIRT)); ticks(h, changedSource, 179);
+      changedSource.setItem(0, new ItemStack(Items.PACKED_ICE));
+      CompoundTag changed = changedSource.saveWithFullMetadata(h.getLevel().registryAccess());
+      machine = reload(h, changed);
+      h.assertValueEqual(progress(machine), 0, "changed ingredient discards unrelated paid work on load");
+      ticks(h, machine, 1);
+      h.assertValueEqual(progress(machine), 1, "new ingredient starts from first paid tick");
+      h.assertTrue(machine.getItem(2).isEmpty(), "no premature blue ice");
+      h.assertTrue(machine.getItem(1).is(Items.DIRT), "ingredient change preserves reserved slot");
+
+      CompoundTag missing = saved.copy(); missing.remove("FreezerBatchInput");
+      machine = reload(h, missing);
+      h.assertValueEqual(progress(machine), 0, "incomplete versioned signature cannot borrow legacy work");
+      ticks(h, machine, 1);
+      h.assertValueEqual(progress(machine), 1, "missing signature restarts work");
+      h.assertTrue(machine.getItem(2).isEmpty(), "missing signature cannot grant output");
+      h.assertTrue(machine.getItem(1).is(Items.DIRT), "missing signature retains reserved slot");
+
+      CompoundTag invalidVersion = saved.copy(); invalidVersion.putInt("FreezerBatchVersion", 2);
+      machine = reload(h, invalidVersion);
+      h.assertValueEqual(progress(machine), 0, "unsupported modern version cannot borrow work");
+      CompoundTag missingMarker = saved.copy(); missingMarker.remove("FreezerFluidProcess");
+      machine = reload(h, missingMarker);
+      h.assertValueEqual(progress(machine), 0, "missing source marker cannot authorize paid item work");
       h.succeed();
    }
 

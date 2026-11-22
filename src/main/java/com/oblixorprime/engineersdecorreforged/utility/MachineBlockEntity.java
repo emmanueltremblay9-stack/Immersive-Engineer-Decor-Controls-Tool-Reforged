@@ -179,6 +179,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
     private static final TagKey<Item> MINERAL_INPUT_TAG = TagKey.create(Registries.ITEM,
         ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", "mineral_smelter_inputs"));
     public static final int FREEZER_PROCESS_TICKS = 180;
+    private static final int FREEZER_BATCH_VERSION = 1;
    public static final int FREEZER_WATER_CAPACITY = 2000;
     public static final int FREEZER_STATUS_IDLE = 0;
     public static final int FREEZER_STATUS_READY = 1;
@@ -2004,8 +2005,27 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.energy = tag.getInt("Energy");
       this.fluidType = tag.getString("FluidType");
       this.freezerFluidProcess = this.kind() == MachineKind.SMALL_FREEZER && tag.getBoolean("FreezerFluidProcess");
-      this.freezerBatchInput = this.kind() == MachineKind.SMALL_FREEZER
-         ? ItemStack.parseOptional(registries, tag.getCompound("FreezerBatchInput")) : ItemStack.EMPTY;
+      if (this.kind() == MachineKind.SMALL_FREEZER) {
+         boolean historicalMarker = tag.contains("FreezerFluidProcess", Tag.TAG_BYTE);
+         boolean noBatchVersion = !tag.contains("FreezerBatchVersion");
+         boolean currentBatchVersion = tag.contains("FreezerBatchVersion", Tag.TAG_INT)
+            && tag.getInt("FreezerBatchVersion") == FREEZER_BATCH_VERSION;
+         boolean signedItemBatch = historicalMarker && !this.freezerFluidProcess
+            && (noBatchVersion || currentBatchVersion)
+            && tag.contains("FreezerBatchInput", Tag.TAG_COMPOUND);
+         boolean historicalItemBatch = historicalMarker && !this.freezerFluidProcess
+            && noBatchVersion && !tag.contains("FreezerBatchInput")
+            && this.progress > 0 && this.progress < FREEZER_PROCESS_TICKS
+            && !this.freezerResult(this.items.get(0)).isEmpty();
+         // main@e8b21c91 wrote FreezerFluidProcess=false for item work, but no
+         // item signature. Only that exact legacy shape may recover paid work.
+         // Modern versioned states with an absent signature cannot borrow it.
+         this.freezerBatchInput = signedItemBatch
+            ? ItemStack.parseOptional(registries, tag.getCompound("FreezerBatchInput"))
+            : historicalItemBatch ? this.items.get(0).copyWithCount(1) : ItemStack.EMPTY;
+      } else {
+         this.freezerBatchInput = ItemStack.EMPTY;
+      }
       if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
          this.unreadableFunnelFluid = null;
          this.funnelCaptureProgress = 0;
@@ -2154,9 +2174,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       tag.putInt("MachineSlotCursor", this.machineSlotCursor);
       tag.putInt("Progress", this.progress);
       if (this.kind() == MachineKind.SMALL_FREEZER) {
+         tag.putInt("FreezerBatchVersion", FREEZER_BATCH_VERSION);
          tag.putBoolean("FreezerFluidProcess", this.freezerFluidProcess);
          if (!this.freezerBatchInput.isEmpty())
             tag.put("FreezerBatchInput", this.freezerBatchInput.save(registries));
+         else tag.remove("FreezerBatchInput");
       }
       tag.putInt("ProcessTimeNeeded", this.processTimeNeeded);
       if (this.kind() != MachineKind.FACTORY_HOPPER) tag.putInt("Cooldown", this.cooldown);
@@ -5018,9 +5040,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.fluidAmount = 0;
          this.fluidType = "";
       }
-      if (kind == MachineKind.SMALL_FREEZER && this.freezerFluidProcess
-            && (this.progress == 0 || !this.freezerFluidInputReady())) {
-         this.stopFreezerProcess();
+      if (kind == MachineKind.SMALL_FREEZER) {
+         if (this.progress == 0) {
+            this.freezerFluidProcess = false;
+            this.freezerBatchInput = ItemStack.EMPTY;
+         } else if (this.freezerFluidProcess) {
+            if (!this.freezerFluidInputReady() || !this.freezerBatchInput.isEmpty()) this.stopFreezerProcess();
+         } else if (this.freezerBatchInput.isEmpty() || this.freezerBatchInput.getCount() != 1
+               || this.firstFreezableSlot() < 0
+               || !ItemStack.isSameItemSameComponents(this.items.get(0), this.freezerBatchInput)) {
+            // Modern missing/mismatched signature is not legacy item progress.
+            this.stopFreezerProcess();
+         }
       }
    }
 
