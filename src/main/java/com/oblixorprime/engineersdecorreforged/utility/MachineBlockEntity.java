@@ -261,6 +261,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private boolean mineralCooling;
    private int mineralMode = MINERAL_MODE_LAVA;
    private int mineralBatchMode = MINERAL_MODE_LAVA;
+   // One-stage automatic recipes, with a one-time legacy in-flight job migration.
+   private int mineralAutoRecipe = -1; // 0 mineral->magma, 1 magma->lava, 2 top lava->obsidian
+   private int mineralInputLava; // Top-inserted ingredient credit, not generated lava.
+   private boolean mineralLegacyBatch;
    private int mineralQueuedMode = -1;
    private int mineralModeRevision;
    private int mineralTemperature;
@@ -599,7 +603,16 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             return MachineBlockEntity.this.fluidHandler.isFluidValid(tank, stack);
          }
          public int fill(FluidStack resource, FluidAction action) {
-            return input ? MachineBlockEntity.this.fluidHandler.fill(resource, action) : 0;
+            if (!input) return 0;
+            int accepted = MachineBlockEntity.this.fluidHandler.fill(resource, action);
+            if (accepted > 0 && action.execute() && !output
+               && MachineBlockEntity.this.kind() == MachineKind.SMALL_MINERAL_SMELTER
+               && resource.is(Fluids.LAVA)) {
+               MachineBlockEntity.this.mineralInputLava = Math.min(MachineBlockEntity.this.fluidAmount,
+                  MachineBlockEntity.this.mineralInputLava + accepted);
+               MachineBlockEntity.this.setChanged();
+            }
+            return accepted;
          }
          public FluidStack drain(FluidStack resource, FluidAction action) {
             if (!output || resource.isEmpty()) return FluidStack.EMPTY;
@@ -619,8 +632,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private int availableMineralFluidForExternalDrain() {
-      if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER || !this.mineralCooling) return this.fluidAmount;
-      return Math.max(0, this.fluidAmount - BUCKET_AMOUNT);
+      if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER) return this.fluidAmount;
+      int reserved = Math.max(this.mineralInputLava,
+         this.mineralLegacyBatch && this.mineralCooling ? BUCKET_AMOUNT : 0);
+      return Math.max(0, this.fluidAmount - reserved);
    }
    private final IFluidHandler mineralTopFluid = this.mineralPort(true, false);
    private final IFluidHandler mineralBottomFluid = this.mineralPort(false, true);
@@ -1315,7 +1330,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          case SMALL_MINERAL_SMELTER -> {
             switch (index) {
                case 0:
-                  yield this.isMineralInput(stack);
+                  yield this.isMineralInput(stack) || stack.is(Items.MAGMA_BLOCK);
                default:
                   yield false;
             }
@@ -1468,16 +1483,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void selectMineralMode(int requested, int expectedRevision) {
-      if (requested < MINERAL_MODE_LAVA || requested > MINERAL_MODE_OBSIDIAN
-         || expectedRevision != this.mineralModeRevision) return;
-      if (this.mineralBatchActive) {
-         this.mineralQueuedMode = requested;
-      } else {
-         this.mineralMode = requested;
-         this.mineralQueuedMode = -1;
-      }
-      this.mineralModeRevision = (this.mineralModeRevision + 1) % 30000;
-      this.setChanged();
+      // Legacy action is inert; recipes depend exclusively on input.
    }
 
    private int mineralSmelterUiField(int index) {
@@ -1485,9 +1491,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return switch (index) {
          case 0 -> 3;
          case 1 -> this.mineralModeRevision;
-         case 2 -> this.mineralMode;
-         case 3 -> this.mineralBatchActive ? this.mineralBatchMode : -1;
-         case 4 -> this.mineralQueuedMode;
+         case 2 -> -1;
+         case 3 -> this.mineralLegacyBatch && this.mineralBatchActive ? this.mineralBatchMode : -1;
+         case 4 -> -1;
          case 5 -> this.mineralTemperature;
          case 6 -> this.mineralTemperature >= 100 ? 3 : this.mineralTemperature >= 90 ? 2 : this.mineralTemperature >= 5 ? 1 : 0;
          case 7 -> this.fluidAmount;
@@ -1506,7 +1512,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    private int mineralSmelterUiStatus() {
       // v0.5 stable enum; WAIT_LAVA is an appended v0.4 mechanics extension at 11.
-      if (this.mineralStatus == 0) return this.mineralQueuedMode >= 0 ? 10 : 9;
+      if (this.mineralStatus == 0) return 9;
       return switch (this.mineralStatus) {
          case 1 -> 1;  // HEATING
          case 2 -> 2;  // COOLING
@@ -1522,18 +1528,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    public boolean requestMineralModeFromGui(Player player, int requested, int expectedRevision) {
-      if (player == null || player.isSpectator() || this.level == null || this.level.isClientSide
-         || this.kind() != MachineKind.SMALL_MINERAL_SMELTER
-         || !(player.containerMenu instanceof MachineMenu menu)
-         || !menu.isMineralSmelterMenuFor(this) || !menu.stillValid(player)
-         || this.level.getBlockEntity(this.worldPosition) != this
-         || !this.level.getBlockState(this.worldPosition).is(ModBlocks.SMALL_MINERAL_SMELTER.get())
-         || requested < MINERAL_MODE_LAVA || requested > MINERAL_MODE_OBSIDIAN
-         || expectedRevision != this.mineralModeRevision) {
-         return false;
-      }
-      this.selectMineralMode(requested, expectedRevision);
-      return true;
+      return false; // The old GUI/network packet cannot select hidden modes.
    }
 
    private int fieldValue(MachineKind kind, int index) {
