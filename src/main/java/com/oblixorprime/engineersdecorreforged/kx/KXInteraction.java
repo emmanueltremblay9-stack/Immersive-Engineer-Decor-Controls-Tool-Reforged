@@ -3,6 +3,7 @@ package com.oblixorprime.engineersdecorreforged.kx;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -43,13 +44,29 @@ public final class KXInteraction {
         return KXPlacement.plan(from.orientation(),from.plane(),java.util.List.of(
                 new KXPlacement.Span(from.pillar(),target.pillar(),from.port(),from.plane())));
     }
-    /** Server confirmation: preflight and apply a previously previewable connection. */
-    public synchronized KXPlacement.Result confirm(UUID user,Endpoint target,KXPlacement.World world) {
+    /**
+     * Server confirmation. Placement and its topology/client invalidation are one
+     * integration path; callers must provide the real game adapter's sync port.
+     */
+    public synchronized KXRuntimePlacement.Result confirm(UUID user,Endpoint target,
+            KXPlacement.World world,KXRuntimePlacement.SyncPort sync) {
+        Objects.requireNonNull(world,"world");
+        Objects.requireNonNull(sync,"sync");
         final KXPlacement.Plan plan;
-        try {plan=preview(user,target);}
-        catch(RuntimeException ex){return new KXPlacement.Result(KXPlacement.Status.REJECTED,0,0,ex.getMessage());}
-        var result=KXPlacement.apply(world,plan);
-        if(result.status()==KXPlacement.Status.APPLIED)pending.remove(user);
+        try {
+            plan=preview(user,target);
+        } catch(RuntimeException ex) {
+            var rejected=new KXPlacement.Result(KXPlacement.Status.REJECTED,0,0,
+                    Objects.requireNonNullElse(ex.getMessage(),"invalid K/X endpoint"));
+            return new KXRuntimePlacement.Result(rejected,KXRuntimePlacement.SyncState.NOT_NEEDED,Set.of());
+        }
+        var result=KXRuntimePlacement.apply(world,plan,sync);
+        // A committed placement is final even when sync is pending. An incomplete
+        // rollback is also non-retryable because the world may require recovery.
+        if(result.placement().status()==KXPlacement.Status.APPLIED
+                || result.placement().status()==KXPlacement.Status.RECOVERY_REQUIRED) {
+            pending.remove(user);
+        }
         return result;
     }
     public synchronized void cancel(UUID user) { pending.remove(user); }

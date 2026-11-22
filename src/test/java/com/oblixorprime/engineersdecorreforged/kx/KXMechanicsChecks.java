@@ -100,11 +100,11 @@ public final class KXMechanicsChecks {
         eq(crossing.segments().get(new Cell(0,0,0)),Set.of(Slot.UL,Slot.UR),"crossing cell owns both real bars");
         return p;
     }
-    private static final class MockWorld implements World {
+    private static final class MockWorld implements World, KXRuntimePlacement.SyncPort {
         final Map<Cell,Snapshot> cells=new HashMap<>();
         final Set<Cell> unloaded=new HashSet<>(),occupied=new HashSet<>();
-        int items=10,writes=0,restores=0,failOn=0,denyAt=-1;
-        boolean creative=false,server=true,reciprocal=true,compat=true,restoreSuccess=true;
+        int items=10,writes=0,restores=0,failOn=0,denyAt=-1,refreshes=0,notifications=0;
+        boolean creative=false,server=true,reciprocal=true,compat=true,restoreSuccess=true,failRefresh=false,failNotify=false;
         public boolean isServerThread(){return server;}
         public boolean isLoaded(Cell c){return !unloaded.contains(c);}
         public boolean isCompatiblePillar(Cell c,KXOrientation o){return compat;}
@@ -120,6 +120,8 @@ public final class KXMechanicsChecks {
         public int itemsAvailable(){return items;}
         public boolean consumeItems(int count){if(denyAt==count)return false;items-=count;return true;}
         public boolean creativeMode(){return creative;}
+        public void refreshTopology(Set<Cell> affected){refreshes++;if(failRefresh)throw new IllegalStateException("refresh failed");}
+        public void notifyClients(Set<Cell> affected){notifications++;if(failNotify)throw new IllegalStateException("notify failed");}
     }
     private static void transaction(Plan plan) {
         MockWorld w=new MockWorld();
@@ -159,12 +161,37 @@ public final class KXMechanicsChecks {
         service.begin(player,a);
         ok(service.hasPending(player),"first port selected");
         eq(service.preview(player,b).uniqueCells(),3,"preview is deterministic and bounded");
+
         MockWorld fail=new MockWorld();fail.items=0;
-        eq(service.confirm(player,b,fail).status(),Status.REJECTED,"failed confirmation is not silently applied");
-        ok(service.hasPending(player),"failed confirmation retains the selected source");
+        var rejected=service.confirm(player,b,fail,fail);
+        eq(rejected.placement().status(),Status.REJECTED,"failed confirmation is not silently applied");
+        eq(rejected.sync(),KXRuntimePlacement.SyncState.NOT_NEEDED,"rejection does not request sync");
+        eq(fail.refreshes,0,"rejected placement does not refresh topology");
+        ok(service.hasPending(player),"failed preflight retains the selected source");
+
         MockWorld success=new MockWorld();
-        eq(service.confirm(player,b,success).status(),Status.APPLIED,"confirmed placement succeeds");
-        ok(!service.hasPending(player),"success clears source selection");
+        var applied=service.confirm(player,b,success,success);
+        eq(applied.placement().status(),Status.APPLIED,"confirmed placement succeeds");
+        eq(applied.sync(),KXRuntimePlacement.SyncState.COMPLETED,"interaction uses runtime sync path");
+        eq(success.refreshes,1,"successful interaction refreshes topology");
+        eq(success.notifications,1,"successful interaction notifies clients");
+        ok(!service.hasPending(player),"committed placement clears source selection");
+
+        service.begin(player,a);
+        MockWorld syncFailure=new MockWorld();syncFailure.failRefresh=true;
+        var pending=service.confirm(player,b,syncFailure,syncFailure);
+        eq(pending.placement().status(),Status.APPLIED,"sync failure does not undo committed placement");
+        eq(pending.sync(),KXRuntimePlacement.SyncState.PENDING,"sync failure is visible to caller");
+        eq(pending.placement().chargedItems(),3,"sync failure does not repeat or alter item charge");
+        eq(syncFailure.notifications,1,"client notification is still attempted after topology refresh fails");
+        ok(!service.hasPending(player),"sync-pending commit is not offered for duplicate retry");
+
+        service.begin(player,a);
+        MockWorld recovery=new MockWorld();recovery.failOn=1;recovery.restoreSuccess=false;
+        var unsafe=service.confirm(player,b,recovery,recovery);
+        eq(unsafe.placement().status(),Status.RECOVERY_REQUIRED,"incomplete rollback is reported");
+        ok(!service.hasPending(player),"unsafe world state clears pending selection");
+
         service.begin(player,a);
         var wrongDim=new KXInteraction.Endpoint(new Cell(4,4,0),o(),Slot.LL,"front","test:nether");
         fail(()->service.preview(player,wrongDim),"cannot connect across dimensions");
