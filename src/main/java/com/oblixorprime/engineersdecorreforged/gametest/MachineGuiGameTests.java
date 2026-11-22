@@ -391,12 +391,69 @@ public final class MachineGuiGameTests {
       Player player = helper.makeMockPlayer(GameType.SURVIVAL);
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
       MachineMenu menu = new MachineMenu(MachineKind.SMALL_MINERAL_SMELTER, 10, player.getInventory(), machine, machine.mineralSmelterUiDataAccessForTests());
+      helper.assertValueEqual(2, menu.visibleMachineSlots(), "Smelter exposes input 0 and output 2 only");
+      helper.assertValueEqual(0, menu.slots.get(0).getSlotIndex(), "first menu slot is the ingredient input");
+      helper.assertValueEqual(2, menu.slots.get(1).getSlotIndex(), "second menu slot is the product output");
       machine.setItem(2, new ItemStack(Items.MAGMA_BLOCK));
       player.getInventory().setItem(9, new ItemStack(Items.MAGMA_BLOCK, 5));
-      ItemStack refused = menu.quickMoveStack(player, menu.visibleMachineSlots());
-      helper.assertTrue(refused.isEmpty(), "shift-click should refuse player items that only match an output slot");
-      helper.assertValueEqual(1, machine.getItem(2).getCount(), "shift-click should not merge player items into output-only machine slots");
-      helper.assertValueEqual(5, player.getInventory().getItem(9).getCount(), "refused shift-click should keep the player stack untouched");
+      player.getInventory().setItem(10, new ItemStack(Items.DIRT, 3));
+      player.getInventory().setItem(11, new ItemStack(Items.BUCKET, 2));
+
+      // Magma is a legitimate ingredient of the NEXT machine stage, not only an output.
+      helper.assertTrue(menu.slots.get(0).mayPlace(new ItemStack(Items.MAGMA_BLOCK)), "input accepts player-supplied Magma");
+      helper.assertFalse(menu.slots.get(1).mayPlace(new ItemStack(Items.MAGMA_BLOCK)), "output forbids Magma insertion");
+      helper.assertFalse(menu.slots.get(1).mayPlace(new ItemStack(Items.DIRT)), "output forbids unrelated item insertion");
+      helper.assertFalse(menu.slots.get(0).mayPlace(new ItemStack(Items.DIRT)), "input rejects unrelated Dirt");
+      helper.assertFalse(menu.slots.get(0).mayPlace(new ItemStack(Items.BUCKET)), "input rejects unrelated Bucket");
+
+      // Merely retaining Magma in the output must not start the Magma-to-lava stage.
+      tickMachine(helper, machine, 5);
+      helper.assertTrue(machine.getItem(0).isEmpty(), "own output cannot become an ingredient");
+      helper.assertValueEqual(1, machine.getItem(2).getCount(), "unconsumed output stays available");
+      helper.assertValueEqual(7, machine.mineralSmelterUiDataAccessForTests().get(MachineMenu.SMS_UI_STATUS), "output-only state remains NO_INPUT");
+      helper.assertValueEqual(-1, machine.mineralSmelterUiDataAccessForTests().get(MachineMenu.SMS_UI_BATCH_PROGRESS), "output-only state cannot start a batch");
+      helper.assertValueEqual(0, machine.mineralSmelterUiDataAccessForTests().get(MachineMenu.SMS_UI_TANK_AMOUNT), "output-only state creates no free lava");
+
+      // Preserve the old refusal and conservation coverage for incompatible items.
+      ItemStack refusedDirt = menu.quickMoveStack(player, menu.visibleMachineSlots() + 1);
+      ItemStack refusedBucket = menu.quickMoveStack(player, menu.visibleMachineSlots() + 2);
+      helper.assertTrue(refusedDirt.isEmpty() && refusedBucket.isEmpty(), "shift-click refuses incompatible player items");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "refused items do not enter the ingredient slot");
+      helper.assertValueEqual(1, machine.getItem(2).getCount(), "refused items never merge into the output");
+      helper.assertValueEqual(3, player.getInventory().getItem(10).getCount(), "rejected Dirt remains with the player");
+      helper.assertValueEqual(2, player.getInventory().getItem(11).getCount(), "rejected Bucket remains with the player");
+
+      // The five Magma Blocks move to input 0, while the existing product remains in output 2.
+      ItemStack admitted = menu.quickMoveStack(player, menu.visibleMachineSlots());
+      helper.assertTrue(admitted.is(Items.MAGMA_BLOCK) && admitted.getCount() == 5, "player Magma is a valid next-stage ingredient");
+      helper.assertTrue(machine.getItem(0).is(Items.MAGMA_BLOCK), "Magma enters the ingredient slot");
+      helper.assertValueEqual(5, machine.getItem(0).getCount(), "all five input Magma Blocks are retained");
+      helper.assertValueEqual(1, machine.getItem(2).getCount(), "input transfer never merges into the output slot");
+      helper.assertTrue(player.getInventory().getItem(9).isEmpty(), "accepted player stack leaves its source slot");
+      helper.assertValueEqual(6, machine.getItem(0).getCount() + machine.getItem(2).getCount()
+         + countItem(player.getInventory(), Items.MAGMA_BLOCK), "input transfer neither loses nor duplicates Magma");
+
+      // The independently produced Magma remains extractable by shift-click.
+      ItemStack taken = menu.quickMoveStack(player, 1);
+      helper.assertTrue(taken.is(Items.MAGMA_BLOCK) && taken.getCount() == 1, "shift-click extracts the produced Magma");
+      helper.assertTrue(machine.getItem(2).isEmpty(), "the product leaves its output slot");
+      helper.assertValueEqual(5, machine.getItem(0).getCount(), "extracting the product does not consume next-stage ingredients");
+      helper.assertValueEqual(1, countItem(player.getInventory(), Items.MAGMA_BLOCK), "player receives the single produced Magma");
+      helper.assertValueEqual(6, machine.getItem(0).getCount() + countItem(player.getInventory(), Items.MAGMA_BLOCK),
+         "output extraction conserves all six Magma Blocks");
+      helper.assertValueEqual(3, countItem(player.getInventory(), Items.DIRT), "incompatible Dirt stays unchanged");
+      helper.assertValueEqual(2, countItem(player.getInventory(), Items.BUCKET), "incompatible Bucket stays unchanged");
+
+      // A deliberately supplied input may initiate heating; it still cannot produce lava after one tick.
+      machine.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(1, machine.mineralSmelterUiDataAccessForTests().get(MachineMenu.SMS_UI_STATUS), "manually supplied Magma starts HEATING");
+      helper.assertValueEqual(0, machine.mineralSmelterUiDataAccessForTests().get(MachineMenu.SMS_UI_TANK_AMOUNT), "first heating tick produces no free lava");
+      helper.assertValueEqual(5, machine.getItem(0).getCount(), "first paid tick does not prematurely consume the input");
+      helper.assertTrue(machine.getItem(2).isEmpty(), "no item appears in the output during Magma heating");
+      helper.assertValueEqual(6, machine.getItem(0).getCount() + countItem(player.getInventory(), Items.MAGMA_BLOCK),
+         "first heating tick retains every Magma Block");
+
       menu.removed(player);
       helper.succeed();
    }
