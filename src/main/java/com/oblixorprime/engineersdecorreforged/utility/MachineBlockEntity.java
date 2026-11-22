@@ -214,6 +214,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int fuelBurnTime;
    private int fluidAmount;
    private boolean freezerFluidProcess;
+   private ItemStack freezerBatchInput = ItemStack.EMPTY;
    private int energy;
    private int blockBreakerStatus;
    private int blockBreakerHardnessBits;
@@ -1052,19 +1053,16 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          if (kind.isFluidContainer()) {
             changed = this.handleFluidBucket(stack, player, hand, this.capacityFor(kind));
          } else if (kind == MachineKind.SMALL_FREEZER && stack.is(Items.WATER_BUCKET)) {
-            if (this.energy < 1440) {
-               return false;
+            // Right-click inserts an ingredient; it must not bypass the timed server cycle.
+            if (this.items.get(0).isEmpty() && this.canPlaceItem(0, stack)) {
+               this.items.set(0, new ItemStack(Items.WATER_BUCKET));
+               if (!player.getAbilities().instabuild) {
+                  stack.shrink(1);
+                  if (stack.isEmpty()) player.setItemInHand(hand, ItemStack.EMPTY);
+               }
+               this.stopFreezerProcess();
+               changed = true;
             }
-
-            ItemStack result = new ItemStack(Items.ICE);
-            changed = this.canInsertIntoSlots(result, 2)
-               && this.consumeHeldBucket(stack, player, hand, new ItemStack(Items.BUCKET))
-               && this.insertIntoSlots(result, 2);
-            if (changed) {
-               this.energy -= 1440;
-            }
-
-            this.stopFreezerProcess();
          }
 
          if (changed) {
@@ -1085,7 +1083,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       } else {
          return kind.isFluidContainer()
             ? this.canHandleFluidBucket(stack, this.capacityFor(kind))
-            : kind == MachineKind.SMALL_FREEZER && stack.is(Items.WATER_BUCKET) && this.energy >= 1440 && this.canInsertIntoSlots(new ItemStack(Items.ICE), 2);
+            : kind == MachineKind.SMALL_FREEZER && stack.is(Items.WATER_BUCKET)
+               && this.items.get(0).isEmpty() && this.canPlaceItem(0, stack);
       }
    }
 
@@ -2005,6 +2004,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.energy = tag.getInt("Energy");
       this.fluidType = tag.getString("FluidType");
       this.freezerFluidProcess = this.kind() == MachineKind.SMALL_FREEZER && tag.getBoolean("FreezerFluidProcess");
+      this.freezerBatchInput = this.kind() == MachineKind.SMALL_FREEZER
+         ? ItemStack.parseOptional(registries, tag.getCompound("FreezerBatchInput")) : ItemStack.EMPTY;
       if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
          this.unreadableFunnelFluid = null;
          this.funnelCaptureProgress = 0;
@@ -2152,7 +2153,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       tag.putInt("FifoTimer", this.fifoTimer);
       tag.putInt("MachineSlotCursor", this.machineSlotCursor);
       tag.putInt("Progress", this.progress);
-      if (this.kind() == MachineKind.SMALL_FREEZER) tag.putBoolean("FreezerFluidProcess", this.freezerFluidProcess);
+      if (this.kind() == MachineKind.SMALL_FREEZER) {
+         tag.putBoolean("FreezerFluidProcess", this.freezerFluidProcess);
+         if (!this.freezerBatchInput.isEmpty())
+            tag.put("FreezerBatchInput", this.freezerBatchInput.save(registries));
+      }
       tag.putInt("ProcessTimeNeeded", this.processTimeNeeded);
       if (this.kind() != MachineKind.FACTORY_HOPPER) tag.putInt("Cooldown", this.cooldown);
       tag.putInt("BurnTicks", this.burnTicks);
@@ -3296,55 +3301,62 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void tickFreezer(boolean powered) {
-      if (powered) {
+      // Redstone, insufficient FE and full output pause a paid batch instead of resetting it.
+      if (powered) return;
+      boolean fluidInput = this.freezerFluidInputReady();
+      int slot = this.firstFreezableSlot();
+      if (slot < 0 && !fluidInput) {
          this.stopFreezerProcess();
-      } else {
-         // Item recipes retain priority; fluid work never consumes or overwrites an occupied input slot.
-         boolean fluidInput = this.freezerFluidInputReady();
-         int slot = this.firstFreezableSlot();
-         if (slot < 0 && !fluidInput) {
-            this.stopFreezerProcess();
-         } else {
-            if (this.progress > 0 && this.freezerFluidProcess != fluidInput) this.stopFreezerProcess();
-            ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult((ItemStack)this.items.get(slot));
-            if (!result.isEmpty() && this.canInsertIntoSlots(result, 2)) {
-               if (this.energy < 8) {
-                  this.stopFreezerProcess();
-               } else {
-                  this.freezerFluidProcess = fluidInput;
-                  this.energy -= 8;
-                  this.setChanged();
-                  this.progress++;
-                  this.setIntProperty(MachineBlocks.PHASE_0_4, Math.min(4, this.progress / 45));
-                  if (this.progress >= FREEZER_PROCESS_TICKS) {
-                     if (fluidInput) {
-                        this.fluidAmount -= BUCKET_AMOUNT;
-                        if (this.fluidAmount == 0) this.fluidType = "";
-                     } else {
-                        ItemStack input = (ItemStack)this.items.get(slot);
-                        if (input.is(Items.WATER_BUCKET)) {
-                           input.shrink(1);
-                           this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);
-                        } else {
-                           input.shrink(1);
-                        }
-                     }
+         return;
+      }
+      if (this.progress > 0 && this.freezerFluidProcess != fluidInput) {
+         this.stopFreezerProcess();
+      }
+      if (!fluidInput && this.progress > 0
+         && !ItemStack.isSameItemSameComponents(this.items.get(slot), this.freezerBatchInput)) {
+         this.stopFreezerProcess(); // New ingredient must not inherit work paid for another.
+      }
+      ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult(this.items.get(slot));
+      if (result.isEmpty()) {
+         this.stopFreezerProcess();
+         return;
+      }
+      if (!this.canInsertIntoSlots(result, 2) || this.energy < FREEZER_ENERGY_PER_TICK) return;
+      this.freezerFluidProcess = fluidInput;
+      if (!fluidInput && this.progress == 0) this.freezerBatchInput = this.items.get(slot).copyWithCount(1);
+      this.energy -= FREEZER_ENERGY_PER_TICK;
+      this.setChanged();
+      this.progress++;
+      this.setIntProperty(MachineBlocks.PHASE_0_4, Math.min(4, this.progress / 45));
+      if (this.progress < FREEZER_PROCESS_TICKS) return;
 
-                     this.insertIntoSlots(result, 2);
-                     this.stopFreezerProcess();
-                  }
-               }
-            } else {
-               this.stopFreezerProcess();
-            }
+      if (fluidInput) {
+         if (this.fluidAmount < BUCKET_AMOUNT || !"water".equals(this.fluidType)) return;
+         this.fluidAmount -= BUCKET_AMOUNT;
+         if (this.fluidAmount == 0) this.fluidType = "";
+      } else {
+         ItemStack input = this.items.get(slot);
+         if (!ItemStack.isSameItemSameComponents(input, this.freezerBatchInput)) {
+            this.stopFreezerProcess();
+            return;
+         }
+         if (input.is(Items.WATER_BUCKET)) {
+            input.shrink(1);
+            this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);
+         } else {
+            input.shrink(1);
          }
       }
+      this.insertIntoSlots(result, 2);
+      this.stopFreezerProcess(); // Next unit starts a new independent cycle.
    }
 
    private void stopFreezerProcess() {
-      boolean changed = this.progress != 0 || this.freezerFluidProcess || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;
+      boolean changed = this.progress != 0 || this.freezerFluidProcess
+         || !this.freezerBatchInput.isEmpty() || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;
       this.progress = 0;
       this.freezerFluidProcess = false;
+      this.freezerBatchInput = ItemStack.EMPTY;
       this.setIntProperty(MachineBlocks.PHASE_0_4, 0);
       if (changed) {
          this.setChanged();
