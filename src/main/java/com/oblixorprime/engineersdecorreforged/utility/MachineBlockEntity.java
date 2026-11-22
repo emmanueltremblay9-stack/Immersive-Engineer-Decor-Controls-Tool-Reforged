@@ -1488,7 +1488,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int mineralSmelterUiField(int index) {
       if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER) return 0;
       return switch (index) {
-         case 0 -> 3;
+         case 0 -> 1; // Synchronized data only; interactive recipe selection is disabled.
          case 1 -> this.mineralModeRevision;
          case 2 -> -1;
          case 3 -> this.mineralLegacyBatch && this.mineralBatchActive ? this.mineralBatchMode : -1;
