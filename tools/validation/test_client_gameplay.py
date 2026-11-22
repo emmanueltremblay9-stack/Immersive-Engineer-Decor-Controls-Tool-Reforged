@@ -281,6 +281,22 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
         with self.assertRaises(SmokeFailure):
             self.check()
 
+    def test_rejects_active_capture_without_paid_heating(self):
+        # A server quickMove result is not evidence of a live, paid heating frame.
+        proof = copy.deepcopy(self.proof)
+        active = next(c for c in proof["screenshots"] if c["name"] == "screen-active.png")
+        active["batch_progress"] = 0
+        with self.assertRaisesRegex(SmokeFailure, "active capture lacks real heating"):
+            self.check(proof)
+
+    def test_rejects_post_extraction_capture_with_output_still_present(self):
+        # A successful quickMove report cannot substitute for the post-transfer frame.
+        proof = copy.deepcopy(self.proof)
+        extracted = next(c for c in proof["screenshots"] if c["name"] == "output-extracted.png")
+        extracted["output_count"] = 2
+        with self.assertRaisesRegex(SmokeFailure, "post-transfer screenshot predates actual extraction"):
+            self.check(proof)
+
     def test_rejects_missing_marker_and_wrong_window(self):
         with self.assertRaises(SmokeFailure):
             self.check(logs="")

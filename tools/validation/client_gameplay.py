@@ -276,11 +276,11 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
                 c.get("batch_progress")!=progress or c.get("energy")!=energy
                 or c.get("status")!=status or c.get("phase")!=phase):
             raise SmokeFailure(f"Smelter thermal capture does not match its live state: {name}")
-        if name=="screen-active" and (type(c.get("batch_progress")) is not int
+        if name=="screen-active.png" and (type(c.get("batch_progress")) is not int
                 or c["batch_progress"]<=0 or type(c.get("energy")) is not int
                 or c["energy"]<=0 or c.get("status")!=1 or c.get("output_count")!=2):
             raise SmokeFailure("Smelter active capture lacks real heating and output")
-        if name=="output-extracted" and c.get("output_count")!=0:
+        if name=="output-extracted.png" and c.get("output_count")!=0:
             raise SmokeFailure("Smelter post-transfer screenshot predates actual extraction")
     if len({digests[n] for n in ("progress-empty.png","progress-mid.png","progress-full.png")})!=3:
         raise SmokeFailure("Three thermal phases must produce distinct native framebuffer pixels")
