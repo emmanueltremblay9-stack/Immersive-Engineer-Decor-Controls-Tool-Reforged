@@ -1556,7 +1556,8 @@ public final class MachineGuiGameTests {
       helper.assertTrue(machine.getItem(0).is(Items.ICE), "full output should keep the freezer input untouched");
       helper.assertValueEqual(64, machine.getItem(2).getCount(), "full output should stay full after the blocked tick");
       helper.assertValueEqual(energyBeforeBlockedTick, machine.energyStorage(null).getEnergyStored(), "blocked freezer output should not waste FE");
-      helper.assertValueEqual(4, machine.comparatorOutput(), "blocked output pauses but preserves the cold phase");
+      helper.assertBlockProperty(TEST_POS, MachineBlocks.PHASE_0_4, 0);
+      helper.assertValueEqual(0, machine.comparatorOutput(), "blocked output resets and clears the cold phase");
       helper.succeed();
    }
 
