@@ -47,11 +47,8 @@ public final class ClientModEvents {
       event.register((MenuType)ModMenus.SMALL_WASTE_INCINERATOR.get(), MachineScreen.SmallWasteIncineratorScreen::new);
       event.register((MenuType)ModMenus.SMALL_LAB_FURNACE.get(), MachineScreen.SmallLabFurnaceScreen::new);
       event.register((MenuType)ModMenus.SMALL_ELECTRICAL_FURNACE.get(), MachineScreen.SmallElectricalFurnaceScreen::new);
-      event.register((MenuType)ModMenus.SMALL_MINERAL_SMELTER.get(), SmallMineralSmelterHybridScreen::new);
-      event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.SMALL_FREEZER.get(), (menu, inventory, title) ->
-         menu.freezerReferencePresentation()
-            ? new FreezerReferenceScreen(menu, inventory, title)
-            : new MachineScreen.SmallFreezerScreen(menu, inventory, title));
+      event.register((MenuType)ModMenus.SMALL_MINERAL_SMELTER.get(), ThermalVerticalScreen::new);
+      event.register((MenuType)ModMenus.SMALL_FREEZER.get(), ThermalVerticalScreen::new);
       event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.FLUID_BARREL.get(), (menu, inventory, title) -> menu.barrelReferencePresentation()
          ? new BarrelReferenceScreen(menu, inventory, title) : new MachineScreen.FluidBarrelScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_FLUID_FUNNEL.get(), MachineScreen.SmallFluidFunnelScreen::new);
