@@ -3070,7 +3070,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.mineralStatus = 2;
          if (this.tickCounter % MINERAL_COOL_TICK_PERIOD != 0) return;
          this.progress = Math.min(100, this.progress + 1);
-         this.setMineralTemperature(Math.max(0, 100 - this.progress));
+         // Cooling progress is a ceiling, never a heat source after output/redstone pauses.
+         this.setMineralTemperature(Math.min(this.mineralTemperature, Math.max(0, 100 - this.progress)));
          this.setChanged();
          if (this.progress >= 100) {
             // Atomic server-side commit after output and ingredient revalidation.

@@ -1156,8 +1156,27 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "blocked output preserves the committed lava");
       helper.assertValueEqual(64, machine.getItem(2).getCount(), "blocked cooling preserves the full output stack");
 
+      // Reload the active blocked cooling batch: paid progress, temperature and materials are retained.
+      CompoundTag blockedSave = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      machine.loadWithComponents(blockedSave, helper.getLevel().registryAccess());
+      helper.assertValueEqual(blockedTemperature, machine.dataAccessForTests().get(10), "reload cannot raise blocked temperature");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "reload preserves the stalled cooling progress");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "reload retains the input bucket");
+      helper.assertValueEqual(64, machine.getItem(2).getCount(), "reload retains the full output");
+
+      // After opening the output, redstone HIGH must still pause cooling without reheating.
       machine.setItem(2, ItemStack.EMPTY);
-      int previousTemperature = blockedTemperature;
+      BlockPos signalPos = machine.getBlockPos().west();
+      helper.getLevel().setBlock(signalPos, Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
+      tickMachine(helper, machine, 21);
+      int pausedTemperature = machine.dataAccessForTests().get(10);
+      helper.assertTrue(pausedTemperature <= blockedTemperature, "redstone pause cannot heat the core");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "redstone pause preserves cooling progress");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "redstone pause preserves the lava input");
+      helper.assertValueEqual(4, machine.mineralSmelterUiDataAccessForTests().get(15), "redstone inhibition is reported");
+      helper.getLevel().setBlock(signalPos, Blocks.AIR.defaultBlockState(), 3);
+
+      int previousTemperature = pausedTemperature;
       for (int tick = 0; tick < 30; tick++) {
          tickMachine(helper, machine, 1);
          int currentTemperature = machine.dataAccessForTests().get(10);
