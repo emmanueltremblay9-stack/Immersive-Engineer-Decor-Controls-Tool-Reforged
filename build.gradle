@@ -589,3 +589,6 @@ apply from: 'gradle/smelter-packaged-validation.gradle'
 apply from: 'gradle/milking-packaged-validation.gradle'
 
 apply from: 'gradle/tfc-packaged-validation.gradle'
+
+// Heavy Double-T MK3/MK3.1 now compiles through sourceSets.main on this draft branch.
+// The source-only review copy remains under docs/candidates and is not compiled separately.

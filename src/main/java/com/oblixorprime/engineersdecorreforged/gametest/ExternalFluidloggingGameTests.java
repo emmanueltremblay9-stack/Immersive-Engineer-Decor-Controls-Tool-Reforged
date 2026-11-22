@@ -78,7 +78,10 @@ public final class ExternalFluidloggingGameTests {
             Blocks.STONE, Blocks.SEA_PICKLE, ie("metal_ladder_none"), ie("steel_catwalk_stairs"), ie("capacitor_lv"),
             ie("stairs_concrete"), ie("slab_steel_scaffolding_standard")))
          h.assertFalse(ExternalFluidAdapter.supported(block.defaultBlockState()), "unqualified block stays excluded " + block);
-      h.assertValueEqual(ModBlocks.ORDERED_BLOCKS.size(), 203, "native catalogue, contextual V stair and treated wood beam retained");
+      h.assertValueEqual(ModBlocks.ORDERED_BLOCKS.size(), 204,
+         "native catalogue adds exactly one new heavy Double-T to the retained 203 blocks");
+      h.assertTrue(ModBlocks.HEAVY_INDUSTRIAL_DOUBLE_T_SUPPORT.get() instanceof NativeFluidloggedBlock,
+         "the new heavy Double-T is explicitly native-fluid integrated");
       for (var holder : ModBlocks.ORDERED_BLOCKS) {
          h.assertTrue(NativeFluidCells.supported(holder.get().defaultBlockState()), "native opt-in retained");
          h.assertFalse(ExternalFluidAdapter.supported(holder.get().defaultBlockState()), "native block uses its original adapter");
