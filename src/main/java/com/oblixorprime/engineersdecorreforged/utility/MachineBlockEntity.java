@@ -3114,11 +3114,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    private int nextAutomaticMineralStage() {
       ItemStack input = this.items.get(0);
-      if (!input.isEmpty()) {
-         if (input.is(Items.MAGMA_BLOCK)) return 1;
-         return this.isMineralInput(input) ? 0 : -1;
-      }
-      return "lava".equals(this.fluidType) && this.mineralInputLava >= BUCKET_AMOUNT ? 2 : -1;
+      return MineralStageRules.select(!input.isEmpty(), this.isMineralInput(input),
+         input.is(Items.MAGMA_BLOCK), "lava".equals(this.fluidType),
+         this.mineralInputLava, BUCKET_AMOUNT);
    }
 
    /** Legacy selected-mode batch runs ONLY if it was active in an old saved world. */
