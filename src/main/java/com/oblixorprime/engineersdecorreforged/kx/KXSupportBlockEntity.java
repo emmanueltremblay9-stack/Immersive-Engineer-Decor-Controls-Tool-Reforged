@@ -76,6 +76,7 @@ public final class KXSupportBlockEntity extends BlockEntity {
     }
 
     private final EnumMap<KXTopology.Slot, Connection> connections = new EnumMap<>(KXTopology.Slot.class);
+    private final Set<BlockPos> temporarilyUnavailablePeers = new HashSet<>();
     private CompoundTag unknownPayload;
     private boolean dataValid = true;
     private KXTopology.Selection clientSelection;
@@ -136,6 +137,7 @@ public final class KXSupportBlockEntity extends BlockEntity {
     }
 
     private boolean isReciprocal(Connection connection) {
+        if (temporarilyUnavailablePeers.contains(connection.peerPos())) return false;
         if (level == null || !level.hasChunkAt(connection.peerPos())) return false;
         if (!level.getBlockState(connection.peerPos()).is(KXModule.KX_MK2_SUPPORT.get())) return false;
         BlockEntity remote = level.getBlockEntity(connection.peerPos());
@@ -266,6 +268,34 @@ public final class KXSupportBlockEntity extends BlockEntity {
         }
     }
 
+    /** A chunk-unload event invalidates only the remote visual; reciprocal NBT is retained. */
+    private void markPeerUnavailable(BlockPos peerPos, boolean unavailable) {
+        boolean changed = unavailable
+            ? temporarilyUnavailablePeers.add(peerPos.immutable())
+            : temporarilyUnavailablePeers.remove(peerPos);
+        if (changed) refreshVisualState();
+    }
+
+    /** Remove one-sided records only after their peer chunk is loaded; never force-load or prune an unloaded edge. */
+    private void pruneLoadedInvalidConnections() {
+        if (level == null || level.isClientSide || !dataValid) return;
+        boolean changed = false;
+        for (Connection connection : List.copyOf(connections.values())) {
+            if (temporarilyUnavailablePeers.contains(connection.peerPos()) || !level.hasChunkAt(connection.peerPos())) continue;
+            if (isReciprocal(connection)) continue;
+            if (!connections.remove(connection.localSlot(), connection)) continue;
+            if (level.getBlockEntity(connection.peerPos()) instanceof KXSupportBlockEntity peer) {
+                Connection inverse = peer.connections.get(connection.peerSlot());
+                if (inverse != null && inverse.peerPos().equals(worldPosition)) {
+                    peer.connections.remove(connection.peerSlot());
+                    peer.refreshVisualState();
+                }
+            }
+            changed = true;
+        }
+        if (changed) refreshVisualState();
+    }
+
     private void removeInverse(BlockPos localPos, Connection forward) {
         Connection inverse = connections.get(forward.peerSlot());
         if (inverseOf(inverse, localPos, forward)) {
@@ -296,42 +326,49 @@ public final class KXSupportBlockEntity extends BlockEntity {
     public static void onChunkLoad(ChunkEvent.Load event) {
         if (!(event.getLevel() instanceof ServerLevel level)) return;
         net.minecraft.world.level.ChunkPos pos = event.getChunk().getPos();
+        // Load may fire before FULL. Defer Level reads, then use getChunkNow (never force-load).
+        // Reciprocal edges are only one cell long, so inspect the loaded 3x3 chunk neighborhood:
+        // this also prunes a remote stale edge when a removed endpoint's chunk loads later.
         level.getServer().execute(() -> {
-            LevelChunk loaded = level.getChunkSource().getChunkNow(pos.x, pos.z);
-            if (loaded == null) return;
-            for (BlockEntity blockEntity : loaded.getBlockEntities().values()) {
-                if (!(blockEntity instanceof KXSupportBlockEntity local)) continue;
-                local.refreshVisualState();
-                for (Connection connection : local.connections.values()) {
-                    if (!level.hasChunkAt(connection.peerPos())) continue;
-                    if (level.getBlockEntity(connection.peerPos()) instanceof KXSupportBlockEntity peer) {
-                        peer.refreshVisualState();
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    LevelChunk loaded = level.getChunkSource().getChunkNow(pos.x + dx, pos.z + dz);
+                    if (loaded == null) continue;
+                    for (BlockEntity blockEntity : loaded.getBlockEntities().values()) {
+                        if (!(blockEntity instanceof KXSupportBlockEntity local)) continue;
+                        boolean localChunkLoaded = dx == 0 && dz == 0;
+                        if (localChunkLoaded) local.temporarilyUnavailablePeers.clear();
+                        for (Connection connection : List.copyOf(local.connections.values())) {
+                            if (!level.hasChunkAt(connection.peerPos())) continue;
+                            boolean peerChunkLoaded = new net.minecraft.world.level.ChunkPos(connection.peerPos()).equals(pos);
+                            if (peerChunkLoaded) local.markPeerUnavailable(connection.peerPos(), false);
+                            if (level.getBlockEntity(connection.peerPos()) instanceof KXSupportBlockEntity peer) {
+                                if (localChunkLoaded || peerChunkLoaded) {
+                                    peer.markPeerUnavailable(local.worldPosition, false);
+                                }
+                            }
+                        }
+                        local.pruneLoadedInvalidConnections();
+                        local.refreshLoadedPeers();
                     }
                 }
             }
         });
     }
 
-    /** Refresh surviving remote endpoints after the unloading chunk leaves the loaded set. */
+    /** Invalidate remote visuals immediately; keep canonical edge records for reciprocal reload. */
     public static void onChunkUnload(ChunkEvent.Unload event) {
         if (!(event.getLevel() instanceof ServerLevel level) || !(event.getChunk() instanceof LevelChunk chunk)) return;
-        var remotePeers = new HashSet<BlockPos>();
         for (BlockEntity blockEntity : chunk.getBlockEntities().values()) {
             if (!(blockEntity instanceof KXSupportBlockEntity local)) continue;
-            for (Connection connection : local.connections.values()) {
-                if (!new net.minecraft.world.level.ChunkPos(connection.peerPos()).equals(chunk.getPos())) {
-                    remotePeers.add(connection.peerPos());
+            for (Connection connection : List.copyOf(local.connections.values())) {
+                if (new net.minecraft.world.level.ChunkPos(connection.peerPos()).equals(chunk.getPos())) continue;
+                if (!level.hasChunkAt(connection.peerPos())) continue;
+                if (level.getBlockEntity(connection.peerPos()) instanceof KXSupportBlockEntity peer) {
+                    peer.markPeerUnavailable(local.worldPosition, true);
                 }
             }
         }
-        level.getServer().execute(() -> {
-            for (BlockPos peerPos : remotePeers) {
-                if (!level.hasChunkAt(peerPos)) continue;
-                if (level.getBlockEntity(peerPos) instanceof KXSupportBlockEntity peer) {
-                    peer.refreshVisualState();
-                }
-            }
-        });
     }
 
     @Override
@@ -366,6 +403,7 @@ public final class KXSupportBlockEntity extends BlockEntity {
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
         connections.clear();
+        temporarilyUnavailablePeers.clear();
         unknownPayload = null;
         dataValid = true;
         clientSelection = null;

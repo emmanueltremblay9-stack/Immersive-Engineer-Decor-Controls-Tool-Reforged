@@ -3,6 +3,7 @@ package com.oblixorprime.engineersdecorreforged.gametest;
 import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.kx.KXModule;
 import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.fluid.*;
 import java.util.*;
@@ -78,8 +79,29 @@ public final class ExternalFluidloggingGameTests {
             Blocks.STONE, Blocks.SEA_PICKLE, ie("metal_ladder_none"), ie("steel_catwalk_stairs"), ie("capacitor_lv"),
             ie("stairs_concrete"), ie("slab_steel_scaffolding_standard")))
          h.assertFalse(ExternalFluidAdapter.supported(block.defaultBlockState()), "unqualified block stays excluded " + block);
-      h.assertValueEqual(ModBlocks.ORDERED_BLOCKS.size(), 203, "native catalogue, contextual V stair and treated wood beam retained");
+      h.assertValueEqual(ModBlocks.ORDERED_BLOCKS.size(), 204,
+         "204 registered blocks include the retained 203-block native fluidlogging catalogue and one K/X exception");
+      long nativeCount = ModBlocks.ORDERED_BLOCKS.stream()
+         .filter(holder -> holder.get() instanceof NativeFluidloggedBlock).count();
+      long nonNativeCount = ModBlocks.ORDERED_BLOCKS.stream()
+         .filter(holder -> !(holder.get() instanceof NativeFluidloggedBlock)).count();
+      h.assertValueEqual(nativeCount, 203L, "native fluidlogging catalogue remains exactly 203 blocks");
+      h.assertValueEqual(nonNativeCount, 1L, "exactly one registered block is outside the native catalogue");
+      var kx = KXModule.KX_MK2_SUPPORT.get();
+      h.assertFalse(kx instanceof NativeFluidloggedBlock, "K/X is not opted into the native fluidlogging interface");
+      h.assertFalse(NativeFluidCells.supported(kx.defaultBlockState()), "K/X is not natively fluidloggable");
+      h.assertFalse(ExternalFluidAdapter.supported(kx.defaultBlockState()), "K/X is not externally fluidloggable");
+      for (var state : kx.getStateDefinition().getPossibleStates()) {
+         h.assertFalse(NativeFluidCells.supported(state), "no K/X state is natively fluidloggable");
+         h.assertFalse(ExternalFluidAdapter.supported(state), "no K/X state is externally fluidloggable");
+         h.assertFalse(state.hasProperty(NativeFluidloggedBlock.FLUID_CELL), "K/X has no native fluid_cell property");
+         h.assertFalse(state.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT), "K/X has no compact native fluid property");
+         h.assertFalse(state.hasProperty(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.WATER_FLOW),
+            "K/X has no transient water property");
+         h.assertFalse(state.hasProperty(BlockStateProperties.WATERLOGGED), "K/X has no waterlogged property");
+      }
       for (var holder : ModBlocks.ORDERED_BLOCKS) {
+         if (holder.get() == kx) continue;
          h.assertTrue(NativeFluidCells.supported(holder.get().defaultBlockState()), "native opt-in retained");
          h.assertFalse(ExternalFluidAdapter.supported(holder.get().defaultBlockState()), "native block uses its original adapter");
       }
