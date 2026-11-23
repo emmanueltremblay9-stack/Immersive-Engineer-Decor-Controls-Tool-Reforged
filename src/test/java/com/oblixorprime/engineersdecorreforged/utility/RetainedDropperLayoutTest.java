@@ -3,13 +3,20 @@ import static org.junit.Assert.*;
 import java.util.*;
 import org.junit.Test;
 public class RetainedDropperLayoutTest {
- @Test public void preservesTwelveInputsAndThreeFilters(){
+ @Test public void preservesHistoricalTextureAndTwelveInputsAndThreeFilters(){
   var l=MachineLayout.forKind(MachineKind.FACTORY_DROPPER);
-  assertEquals(RetainedDropperLayout.TEXTURE,l.textureName());
+  assertEquals("factory_dropper_gui",l.textureName());
+  assertEquals(176,l.imageWidth());
+  assertEquals(166,l.imageHeight());
   assertEquals(15,l.machineSlots().size());
   for(int i=0;i<15;i++) {
-   assertEquals(i,l.machineSlots().get(i).containerIndex());
-   assertEquals(i<12?"Input":"Filter",l.machineSlots().get(i).role());
+   var slot=l.machineSlots().get(i);
+   assertEquals(i,slot.containerIndex());
+   assertEquals(i<12?"Input":"Filter",slot.role());
+   int expectedX=i<12?10+(i%6)*18:new int[]{19,55,91}[i-12];
+   int expectedY=i<12?6+(i/6)*18:48;
+   assertEquals(expectedX,slot.x());
+   assertEquals(expectedY,slot.y());
    assertFalse(l.isOutputSlot(i));
   }
  }

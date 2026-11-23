@@ -1,4 +1,4 @@
-"""Presentation/source guards only; native screenshots are separately required."""
+"""Static guards that the historic Hopper/Dropper artwork remains the runtime source."""
 import hashlib
 from pathlib import Path
 import unittest
@@ -9,56 +9,53 @@ ASSETS = ROOT / 'src/main/resources/assets/immersive_engineer_decor_controls_too
 
 
 class HopperSteelArtworkTests(unittest.TestCase):
-    def test_retained_artwork_not_replaced(self):
+    def test_historical_artwork_bytes_are_preserved(self):
         for name, digest in {
             'factory_placer_v2_reference/background.png': 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d',
             'factory_hopper_gui.png': '8a085db73897ea8e7a2e6af75b822a4509f5a0efa300a0a08d22da58f024795f',
+            'factory_dropper_gui.png': '7d67a1f13fadde830e91aebb79d9014384eecc836e417f6e2ebb66f89543a4d1',
         }.items():
             with self.subTest(name=name):
                 self.assertEqual(hashlib.sha256((ASSETS / name).read_bytes()).hexdigest(), digest)
 
-    def test_hopper_keeps_own_slot_and_inventory_geometry(self):
+    def test_rejected_candidate_art_and_renderers_are_absent(self):
+        candidates = (
+            ASSETS / 'factory_steel_v2/hopper.png',
+            ASSETS / 'factory_steel_v2/dropper.png',
+            ASSETS / 'retained_dropper/background.png',
+            ASSETS / 'retained_dropper/steel.png',
+            JAVA / 'client/FactoryHopperSteelArtwork.java',
+            JAVA / 'client/FactorySteelFrame.java',
+            JAVA / 'utility/RetainedDropperLayout.java',
+        )
+        for path in candidates:
+            with self.subTest(path=path):
+                self.assertFalse(path.exists(), f'rejected candidate remains: {path.relative_to(ROOT)}')
+
+    def test_historic_hopper_and_dropper_geometry_and_atlas_remain_registered(self):
         layout = (JAVA / 'utility/MachineLayout.java').read_text()
         self.assertIn('original(grid(0, 11, 9, 6, 3, "Storage"), 8, 71, 8, 129, "factory_hopper_gui")', layout)
-        artwork = (JAVA / 'client/FactoryHopperSteelArtwork.java').read_text()
-        self.assertIn('176,166,0F,0F,1056,996,1056,996', artwork)
-        self.assertNotIn('FactoryPlacerV2ReferenceGeometry', artwork)
-        for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
-            self.assertNotIn(forbidden, artwork)
+        self.assertIn('grid(0, 10, 6, 6, 2, "Input")', layout)
+        self.assertIn('new MachineLayout.MachineSlot(12, 19, 48, "Filter")', layout)
+        self.assertIn('new MachineLayout.MachineSlot(13, 55, 48, "Filter")', layout)
+        self.assertIn('new MachineLayout.MachineSlot(14, 91, 48, "Filter")', layout)
+        self.assertIn('"factory_dropper_gui"', layout)
 
-    def test_dropper_steel_texture_keeps_canvas_and_identity(self):
-        data = (ASSETS / 'retained_dropper/steel.png').read_bytes()
-        self.assertEqual(hashlib.sha256(data).hexdigest(), 'c831762e5df2dfd618a82c6ab048acb2f3ac51526b4deb121c6662a14ab4a594')
-        self.assertEqual(int.from_bytes(data[16:20], 'big'), 1199)
-        self.assertEqual(int.from_bytes(data[20:24], 'big'), 1312)
-
-    def test_shared_steel_frame_is_presentation_only(self):
-        frame = (JAVA / 'client/FactorySteelFrame.java').read_text()
-        self.assertIn('textures/gui/factory_steel_v2/hopper.png', (JAVA / 'client/FactoryHopperSteelArtwork.java').read_text())
-        self.assertIn('textures/gui/factory_steel_v2/dropper.png', (JAVA / 'client/MachineScreen.java').read_text())
-        for forbidden in ('PacketDistributor', 'MachineActionPayload', 'menu.set', 'setItem(', 'new Slot('):
-            self.assertNotIn(forbidden, frame)
-        self.assertIn('sx-1,sy-1,18,1', frame)
-        self.assertIn('sx+16,sy,1,16', frame)
-
-    def test_hopper_control_panel_is_not_a_legacy_grey_rectangle(self):
-        artwork=(JAVA / 'client/FactoryHopperSteelArtwork.java').read_text()
-        self.assertNotIn('127, 8, 46, 53',artwork)
-        self.assertIn('textures/gui/factory_steel_v2/hopper.png',artwork)
-        self.assertIn('original,x+bx,y+49,bx,49,9,9',artwork)
-        self.assertNotIn('g.fill(',artwork)
-
-    def test_dropper_margin_crop_keeps_original_scale(self):
-        screen=(JAVA / 'client/MachineScreen.java').read_text()
-        self.assertIn('228,250,0F,0F,1368,1500,1368,1500',screen)
-        self.assertNotIn('blit(steel,29,0,1142,1225',screen)
-
-    def test_only_hopper_dispatches_new_material(self):
         screen = (JAVA / 'client/MachineScreen.java').read_text()
-        self.assertIn('if (kind == MachineKind.FACTORY_HOPPER) {\n                FactoryHopperSteelArtwork.render(graphics, this.menu, texture, x, y);', screen)
-        self.assertIn('this.drawOriginalWidgets(graphics, texture, x, y);', screen)
+        self.assertIn('this.drawOriginalTextureBackdrop(graphics, x, y);', screen)
+        self.assertIn('this.drawFactoryHopperWidgets(graphics, texture, x0, y0);', screen)
+        self.assertIn('this.drawFactoryDropperWidgets(graphics, texture, x0, y0);', screen)
+        self.assertNotIn('FactoryHopperSteelArtwork', screen)
+        self.assertNotIn('FactorySteelFrame', screen)
+        self.assertNotIn('factory_steel_v2/', screen)
+        self.assertNotIn('retained_dropper/', screen)
+
+    def test_hopper_controls_keep_original_click_and_tooltip_dispatch(self):
+        screen = (JAVA / 'client/MachineScreen.java').read_text()
         self.assertIn('case FACTORY_HOPPER -> this.handleFactoryHopperClick(mouseX, mouseY);', screen)
+        self.assertIn('case FACTORY_DROPPER -> this.handleFactoryDropperClick(mouseX, mouseY);', screen)
         self.assertIn('case FACTORY_HOPPER -> this.factoryHopperTooltip(mouseX, mouseY);', screen)
+        self.assertIn('case FACTORY_DROPPER -> this.factoryDropperTooltip(mouseX, mouseY);', screen)
 
 
 if __name__ == '__main__':
