@@ -88,7 +88,7 @@ public final class ExternalFluidloggingGameTests {
       h.assertValueEqual(nativeCount, 203L, "native fluidlogging catalogue remains exactly 203 blocks");
       h.assertValueEqual(nonNativeCount, 1L, "exactly one registered block is outside the native catalogue");
       var kx = KXModule.KX_MK2_SUPPORT.get();
-      h.assertFalse(kx instanceof NativeFluidloggedBlock, "K/X is not opted into the native fluidlogging interface");
+      h.assertFalse(NativeFluidloggedBlock.class.isInstance(kx), "K/X is not opted into the native fluidlogging interface");
       h.assertFalse(NativeFluidCells.supported(kx.defaultBlockState()), "K/X is not natively fluidloggable");
       h.assertFalse(ExternalFluidAdapter.supported(kx.defaultBlockState()), "K/X is not externally fluidloggable");
       for (var state : kx.getStateDefinition().getPossibleStates()) {

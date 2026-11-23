@@ -3,22 +3,9 @@
 ## Current task boundary
 
 - PR: #200, draft only.
-- Parent implementation head for the resumed delta: `df42ba66fce56bd6d11b5fd3804a1a69ff32f2c4` (itself descended from `b57de4fa1aa5bb464d274df7321d1379f3e5d8f9`).
+- Parent implementation head: `b57de4fa1aa5bb464d274df7321d1379f3e5d8f9`.
 - Owner decision: ONE registered block and ONE BlockItem, path `kx_mk2_support`; all eight K/X R3 forms are derived automatically from canonical reciprocal connections.
 - Explicit exclusions: #199 Heavy I-only, #207 microconduit, Prism alpha/Thermal JAR, electrical gameplay, merge, release and publication.
-
-## 2026-11-23 — registry and K/X qualification delta
-
-- Baseline commit: `df42ba66fce56bd6d11b5fd3804a1a69ff32f2c4`.
-- Exact current registry inventory: 204 registered mod blocks and 204 `ModBlocks.ORDERED_BLOCKS` entries.
-- Native fluidlogging catalogue: exactly 203 entries. `kx_mk2_support` is the sole additional registered exception; every other entry remains a `NativeFluidloggedBlock`.
-- `kx_mk2_support` is explicitly negative for both `NativeFluidCells.supported` and `ExternalFluidAdapter.supported` for every blockstate. No fluid property or fluidlogging adapter was added.
-- Added only the K/X ID to the vanilla `mineable/pickaxe` block tag; the block retains its metal `requiresCorrectToolForDrops` property.
-- Actions run `45092816977` reproduced three failures with and without Lithium: native catalogue count drift, blanket native-catalogue assertion, and missing conventional mining tag. This delta corrects those causes; the new CI results remain pending until Actions completes.
-- New GameTests cover an unloaded real chunk edge without force-loading, a loaded cross-chunk reciprocal edge, both `ChunkEvent` lifecycle directions, NBT reload of both endpoint BlockEntities, X-arm removal with three real remaining arms, one drop/no second item debit, and exact UL-versus-LL arm bits while reusing `k_left_side`.
-- The common placement-engine regression applies a crossing X with five unique cells, verifies exactly five total item debits, and verifies a repeated application charges zero additional items.
-- No changes were pushed to PR #199 or #207. This PR #200 delta touches two paths that are independently modified on PR #199 (`ExternalFluidloggingGameTests.java` and `mineable/pickaxe.json`); the other PR branch remains unchanged and future combined integration must reconcile those overlapping paths.
-- No Prism JAR or R3 model/atlas assets were changed or added. No merge, release or publication was performed.
 
 ## Implemented in this draft delta
 

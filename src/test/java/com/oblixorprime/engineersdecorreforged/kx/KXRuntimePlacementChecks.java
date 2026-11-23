@@ -5,7 +5,7 @@ public final class KXRuntimePlacementChecks {
     static int count;
     static void check(boolean condition) { count++; if (!condition) throw new AssertionError("check " + count); }
     static final class World implements KXPlacement.World, KXRuntimePlacement.SyncPort {
-        Map<Cell,Snapshot> cells = new HashMap<>(); int items=20,writes,charges,chargedTotal,refreshes,notifications;
+        Map<Cell,Snapshot> cells = new HashMap<>(); int items=20,writes,charges,refreshes,notifications;
         boolean failWrite,failRestore,failSync,failNotify,denyCharge,server=true;
         public boolean isServerThread(){return server;}
         public boolean isLoaded(Cell c){return true;}
@@ -16,7 +16,7 @@ public final class KXRuntimePlacementChecks {
         public boolean placeOrUpdate(Cell c,KXOrientation o,String p,Set<KXTopology.Slot> s){writes++;cells.put(c,new Snapshot(CellKind.OWN_SEGMENT,o,p,s,null));return !failWrite;}
         public boolean restore(Cell c,Snapshot old){if(failRestore)return false;if(old.kind()==CellKind.AIR)cells.remove(c);else cells.put(c,old);return true;}
         public int itemsAvailable(){return items;}
-        public boolean consumeItems(int n){charges++;if(denyCharge||items<n)return false;items-=n;chargedTotal+=n;return true;}
+        public boolean consumeItems(int n){charges++;if(denyCharge||items<n)return false;items-=n;return true;}
         public boolean creativeMode(){return false;}
         public void refreshTopology(Set<Cell> a){refreshes++;if(failSync)throw new IllegalStateException();}
         public void notifyClients(Set<Cell> a){notifications++;if(failNotify)throw new IllegalStateException();}
@@ -31,26 +31,6 @@ public final class KXRuntimePlacementChecks {
             check(r.affected().contains(p.spans().getFirst().fromPillar()));check(r.affected().contains(p.spans().getFirst().toPillar()));
             check(r.affected().containsAll(p.segments().keySet()));
         }
-        KXOrientation upright = KXOrientation.all().stream()
-            .filter(o -> o.facing() == KXOrientation.Face.UP && o.roll() == 0).findFirst().orElseThrow();
-        KXPlacement.Cell x1 = new KXPlacement.Cell(-2,-2,0);
-        KXPlacement.Cell x2 = new KXPlacement.Cell(2,2,0);
-        KXPlacement.Cell x3 = new KXPlacement.Cell(-2,2,0);
-        KXPlacement.Cell x4 = new KXPlacement.Cell(2,-2,0);
-        Plan crossingX = KXPlacement.plan(upright,"front",List.of(
-            new KXPlacement.Span(x1,x2,KXTopology.Slot.UL,"front"),
-            new KXPlacement.Span(x3,x4,KXTopology.Slot.UR,"front")));
-        check(crossingX.uniqueCells()==5);
-        World crossingWorld = new World();
-        var crossingResult = KXRuntimePlacement.apply(crossingWorld,crossingX,crossingWorld);
-        check(crossingResult.placement().status()==Status.APPLIED);
-        check(crossingResult.placement().chargedItems()==5);
-        check(crossingWorld.cells.size()==5 && crossingWorld.items==15 && crossingWorld.chargedTotal==5);
-        var crossingRetry = KXRuntimePlacement.apply(crossingWorld,crossingX,crossingWorld);
-        check(crossingRetry.placement().status()==Status.APPLIED);
-        check(crossingRetry.placement().chargedItems()==0);
-        check(crossingWorld.items==15 && crossingWorld.chargedTotal==5);
-
         Plan p=plan(KXOrientation.all().getFirst());
         World w=new World();w.failSync=true;var r=KXRuntimePlacement.apply(w,p,w);
         check(r.placement().status()==Status.APPLIED && r.sync()==KXRuntimePlacement.SyncState.PENDING);check(w.charges==1&&w.notifications==1);

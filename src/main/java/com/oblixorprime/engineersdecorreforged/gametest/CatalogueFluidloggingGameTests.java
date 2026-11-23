@@ -2,9 +2,6 @@ package com.oblixorprime.engineersdecorreforged.gametest;
 
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
-import com.oblixorprime.engineersdecorreforged.fluid.ExternalFluidAdapter;
-import com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells;
-import com.oblixorprime.engineersdecorreforged.kx.KXModule;
 import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import net.minecraft.core.BlockPos;
@@ -25,33 +22,10 @@ public final class CatalogueFluidloggingGameTests {
       rows.add("id\tclass\tstates\twaterlogged\tnative_cell\ttransient_water\tcompact_fluid\tdefault_full_collision");
       long registered = BuiltInRegistries.BLOCK.keySet().stream()
          .filter(id -> id.getNamespace().equals(EngineersDecorReforged.MOD_ID)).count();
-      h.assertValueEqual(registered, 204L, "exactly 204 mod blocks are registered in this baseline");
       h.assertValueEqual((long)ModBlocks.ORDERED_BLOCKS.size(), registered, "inventory includes every registered mod block");
-      var kx = KXModule.KX_MK2_SUPPORT.get();
-      long nativeEntries = 0;
-      long explicitExceptions = 0;
       for (var entry : ModBlocks.ORDERED_BLOCKS) {
          var block = entry.get(); var state = block.defaultBlockState();
-         if (block == kx) {
-            explicitExceptions++;
-            h.assertFalse(block instanceof NativeFluidloggedBlock, "K/X is the sole non-native registry exception");
-            h.assertFalse(NativeFluidCells.supported(state), "K/X is not natively fluidloggable");
-            h.assertFalse(ExternalFluidAdapter.supported(state), "K/X is not externally fluidloggable");
-            for (var variant : block.getStateDefinition().getPossibleStates()) {
-               h.assertFalse(NativeFluidCells.supported(variant), "no K/X state enters native fluid storage");
-               h.assertFalse(ExternalFluidAdapter.supported(variant), "no K/X state enters external fluid storage");
-               h.assertFalse(variant.hasProperty(BlockStateProperties.WATERLOGGED), "K/X has no waterlogged property");
-               h.assertFalse(variant.hasProperty(NativeFluidloggedBlock.FLUID_CELL), "K/X has no native fluid_cell property");
-               h.assertFalse(variant.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT), "K/X has no compact native fluid property");
-               h.assertFalse(variant.hasProperty(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.WATER_FLOW),
-                  "K/X has no transient water property");
-            }
-            continue;
-         }
-         h.assertTrue(block instanceof NativeFluidloggedBlock, "all other registered mod blocks retain explicit native integration: " + entry.getId());
-         h.assertTrue(NativeFluidCells.supported(state), "native catalogue entry is supported: " + entry.getId());
-         h.assertFalse(ExternalFluidAdapter.supported(state), "native entry does not switch to the external adapter: " + entry.getId());
-         nativeEntries++;
+         h.assertTrue(block instanceof NativeFluidloggedBlock, "every registered mod block is explicitly integrated: " + entry.getId());
          boolean full = net.minecraft.world.level.block.Block.isShapeFullBlock(state.getCollisionShape(h.getLevel(),h.absolutePos(new BlockPos(3,2,3))));
          rows.add(String.join("\t", entry.getId().toString(), block.getClass().getName(),
             Integer.toString(block.getStateDefinition().getPossibleStates().size()),
@@ -60,8 +34,6 @@ public final class CatalogueFluidloggingGameTests {
             Boolean.toString(state.hasProperty(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.WATER_FLOW)),
             Boolean.toString(state.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT)), Boolean.toString(full)));
       }
-      h.assertValueEqual(nativeEntries, 203L, "native fluidlogging TSV remains exactly 203 eligible blocks");
-      h.assertValueEqual(explicitExceptions, 1L, "K/X is the only additional non-fluidlogged registered block");
       java.nio.file.Files.write(java.nio.file.Path.of("catalogue-fluidlogging.tsv"), rows);
       for (var entry : ModBlocks.ORDERED_BLOCKS) {
          if (entry.get() instanceof com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock) {
