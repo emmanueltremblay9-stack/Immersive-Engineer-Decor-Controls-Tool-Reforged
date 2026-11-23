@@ -5,6 +5,7 @@ from solar_cell_integration import project_history as solar_cell_history, curren
 import hashlib
 import json
 from factory_tooltip_integration import current_hash as factory_current_hash
+from thermal_single_stage_projection import project_historical_if_candidate
 
 LAYER = 'freezer_v5_reconciliation'
 RECORD_SHA256 = 'b4c91dcd9553c8d1af5af02846299c6dda5505622d9ed0caa956ea1e597c980b'
@@ -42,7 +43,8 @@ def assert_freezer_v5_reconciliation(root, manifest):
     assert hashlib.sha256(json.dumps(diagnostic, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == DIAGNOSTIC_RECORD_SHA256, 'Legacy diagnostic record changed'
     for path, hashes in FILES.items():
         assert record['files'][path] == hashes, path
-        data = solar_cell_history(path, gui_history(path, (root / path).read_bytes()))
+        raw = (root / path).read_bytes()
+        data = solar_cell_history(path, gui_history(path, project_historical_if_candidate(path, raw)))
         if path == ACTIVATION_PATH:
             assert hashlib.sha256(data).hexdigest() == DIAGNOSTIC_SHA256, path
             text = data.decode()

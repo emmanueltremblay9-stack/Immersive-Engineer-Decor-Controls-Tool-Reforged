@@ -175,134 +175,117 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
 def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                directory: Path, window_width: int, window_height: int,
                                language: str, logs: str) -> dict:
-    """Validate live-menu identity/state and exact fresh Minecraft framebuffer captures."""
-    if (proof.get("suite") != "native-smelter-gui-v1" or proof.get("nonce") != nonce
-            or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
-        raise SmokeFailure("Missing matching successful native Smelter GUI proof")
+    """Fail closed for ThermalVerticalScreen, not the superseded manual-mode/drawer GUI."""
+    if (proof.get("suite") != "native-smelter-gui-v2" or proof.get("schema_version") != 2
+            or proof.get("nonce") != nonce or proof.get("status") != "passed"
+            or proof.get("actual_integrated_world") is not True):
+        raise SmokeFailure("Missing exact successful integrated ThermalVertical Smelter proof")
     if (not re.fullmatch(r"[0-9a-f]{40}", executed_sha)
-            or proof.get("executed_source_sha") != executed_sha):
-        raise SmokeFailure("Smelter GUI proof does not identify the exact executed source revision")
-    if (not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha)
+            or not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha)
+            or proof.get("executed_source_sha") != executed_sha
             or proof.get("pull_request_head_sha") != pr_head_sha):
-        raise SmokeFailure("Smelter GUI proof does not identify the checked PR head")
-
-    if proof.get("language") != language or language not in {"en_us", "fr_fr"}:
-        raise SmokeFailure("Smelter GUI proof locale does not match the requested locale")
-    expected_label = {"en_us": "LAVA", "fr_fr": "LAVE"}[language]
-    if proof.get("translated_lava_mode") != expected_label:
-        raise SmokeFailure("Smelter GUI did not load the expected localized mode label")
-
-    expected_identity = "com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen"
-    expected_menu = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
-    if proof.get("screen_identity") != expected_identity:
-        raise SmokeFailure("The real Small Mineral Smelter screen is absent")
-    if proof.get("client_menu_identity") != expected_menu or proof.get("server_menu_identity") != expected_menu:
-        raise SmokeFailure("The real registered Smelter menu is absent on client or server")
-    if proof.get("machine_kind") != "SMALL_MINERAL_SMELTER":
-        raise SmokeFailure("The menu is not bound to the Small Mineral Smelter kind")
-    client_id, server_id = proof.get("client_menu_id"), proof.get("server_menu_id")
-    if (type(client_id) is not int or type(server_id) is not int or client_id < 0 or client_id != server_id
-            or proof.get("server_menu_context_valid") is not True):
-        raise SmokeFailure("Client and server do not share a valid live Smelter menu context")
-    if (proof.get("visible_machine_slots") != 2 or proof.get("total_slots") != 38
-            or proof.get("machine_slot_backing_indices") != [0, 2]
+        raise SmokeFailure("Smelter proof does not bind exact executed and PR HEAD revisions")
+    titles = {"en_us": "Small Mineral Melting Furnace", "fr_fr": "Petit fourneau de fusion de minéraux"}
+    if (language not in titles or proof.get("language") != language
+            or proof.get("selected_language") != language
+            or proof.get("translated_machine_name") != titles[language]):
+        raise SmokeFailure("Minecraft did not load the expected EN/FR Smelter locale")
+    if (proof.get("screen_identity") !=
+            "com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen"
+            or proof.get("client_menu_identity") !=
+            "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+            or proof.get("server_menu_identity") !=
+            "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+            or proof.get("machine_kind") != "SMALL_MINERAL_SMELTER"):
+        raise SmokeFailure("Smelter proof names a legacy screen or wrong registered menu")
+    cid,sid=proof.get("client_menu_id"),proof.get("server_menu_id")
+    if (type(cid) is not int or type(sid) is not int or cid < 0 or cid != sid
+            or proof.get("server_menu_context_valid") is not True
+            or proof.get("visible_machine_slots") != 2 or proof.get("total_slots") != 38
+            or proof.get("machine_slot_backing_indices") != [0,2]
             or proof.get("data_fields") != 17):
-        raise SmokeFailure("Smelter GUI slot backing or v0.5 data projection is incorrect")
-
+        raise SmokeFailure("Smelter live server-client menu and slot backing do not match")
     state = proof.get("live_state")
-    if not isinstance(state, dict):
-        raise SmokeFailure("Smelter GUI lacks live server-projected state")
-    if (state.get("selected_mode") != 0 or state.get("batch_mode") != 0
+    if (not isinstance(state,dict)
+            or any(state.get(k) != -1 for k in ("selected_mode","batch_mode","queued_mode"))
             or type(state.get("batch_progress")) is not int or state["batch_progress"] <= 0
             or type(state.get("thermal")) is not int or state["thermal"] <= 0
             or state.get("input_item") != "minecraft:cobblestone"
             or state.get("output_item") != "minecraft:magma_block" or state.get("output_count") != 2
-            or type(state.get("tank_amount")) is not int or state["tank_amount"] <= 0
-            or type(state.get("tank_capacity")) is not int or state["tank_capacity"] < state["tank_amount"]
+            or state.get("tank_amount") != 2500 or state.get("tank_capacity") != 4000
             or type(state.get("energy")) is not int or state["energy"] <= 0
-            or type(state.get("energy_capacity")) is not int or state["energy_capacity"] < state["energy"]
+            or state.get("energy_capacity") != 16000
             or state.get("fe_rate") != 16 or state.get("status") != 1):
-        raise SmokeFailure("Smelter menu did not synchronize the fixture's non-empty, actively heating state")
-
+        raise SmokeFailure("Smelter real automatic-stage thermal state did not synchronize")
     screen = proof.get("screen")
-    if not isinstance(screen, dict):
-        raise SmokeFailure("Smelter GUI lacks native screen geometry")
+    if not isinstance(screen,dict):
+        raise SmokeFailure("Thermal vertical canvas evidence is missing")
+    gw,gh,scale=screen.get("gui_width"),screen.get("gui_height"),screen.get("view_scale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or screen.get("panel_width") != 234 or screen.get("panel_height") != 270):
-        raise SmokeFailure("Smelter GUI window or logical panel dimensions differ from the requested fixture")
-    gui_width, gui_height, scale = screen.get("gui_width"), screen.get("gui_height"), screen.get("view_scale")
-    if (type(gui_width) is not int or type(gui_height) is not int
-            or gui_width <= 0 or gui_height <= 0
-            or type(scale) not in (int, float) or not 0.1 <= scale <= 1.0):
-        raise SmokeFailure("Smelter GUI scale measurements are invalid")
-    expected_scale = max(0.1, min(1.0, (gui_width - 12.0) / 234.0, (gui_height - 12.0) / 270.0))
-    if abs(scale - expected_scale) > 0.002:
-        raise SmokeFailure("Recorded viewScale differs from the live screen's scale rule")
-    origin_x, origin_y = (gui_width - 234.0 * scale) / 2.0, (gui_height - 270.0 * scale) / 2.0
-    if (origin_x < -0.01 or origin_y < -0.01
-            or origin_x + 234.0 * scale > gui_width + 0.01
-            or origin_y + 270.0 * scale > gui_height + 0.01):
-        raise SmokeFailure("Smelter faceplate does not fit inside the active GUI viewport")
-    if window_height < 300 and scale >= 1.0:
-        raise SmokeFailure("The reduced-height capture did not exercise viewScale")
-
-    if (screen.get("drawer_closed_capture") is not True
-            or screen.get("drawer_open_capture") is not True
-            or screen.get("output_slot_hidden_when_closed") is not True
-            or screen.get("output_slot_visible_when_open") is not True):
-        raise SmokeFailure("The native screen did not verify the real output-drawer interaction")
-
-    phases = ["closed", "opened", "resized_open", "restored_open", "closed_again", "reopened"]
-    states = [False, True, True, True, False, True]
-    labels = proof.get("drawer_accessible_messages")
-    words = ("Ouvrir le tiroir de sortie", "Fermer le tiroir de sortie") if language == "fr_fr" else ("Open item output drawer", "Close item output drawer")
-    expected_labels = [dict(phase=phase, open=state, message=words[int(state)]) for phase,state in zip(phases, states)]
-    if (type(labels) is not list or any(type(row) is not dict or type(row.get("open")) is not bool for row in labels)
-            or labels != expected_labels or proof.get("narration_audio_verified") is not False
-            or proof.get("drawer_input_method") != "programmatic native screen callbacks and resize; not OS input"):
-        raise SmokeFailure("Smelter drawer accessible messages missing or stale")
-
-    captures = proof.get("screenshots")
-    expected_names = {
-        "progress-empty.png", "progress-mid.png", "progress-full.png",
-        "screen-closed.png", "drawer-open.png",
-    }
-    if not isinstance(captures, list) or len(captures) != len(expected_names):
-        raise SmokeFailure("Native Smelter GUI must provide three progress states plus both drawer views")
-    if {item.get("name") for item in captures if isinstance(item, dict)} != expected_names:
-        raise SmokeFailure("Native Smelter GUI capture names are missing, duplicated, or unexpected")
-    image_dir = directory / "smelter-gui-screenshots"
-    if not image_dir.is_dir() or {path.name for path in image_dir.glob("*.png")} != expected_names:
-        raise SmokeFailure("Smelter screenshots are stale or contain unexpected files")
-    png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
-    captures_by_name = {item["name"]: item for item in captures}
-    for capture in captures:
-        name = capture["name"]
-        image = image_dir / name
-        data = image.read_bytes()
-        if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
-            raise SmokeFailure(f"Native Smelter screenshot is absent or invalid: {name}")
-        width, height = struct.unpack(">II", data[16:24])
-        if (width, height) != (window_width, window_height):
-            raise SmokeFailure(f"Native Smelter screenshot has stale or unexpected dimensions: {name}")
-        digest = hashlib.sha256(data).hexdigest()
-        if capture.get("sha256") != digest:
-            raise SmokeFailure(f"Native Smelter screenshot hash does not match its proof: {name}")
-        if (capture.get("width"), capture.get("height")) != (window_width, window_height):
-            raise SmokeFailure(f"Native Smelter screenshot dimensions do not match its proof: {name}")
-    for name, progress in (("progress-empty.png", 0), ("progress-mid.png", 50), ("progress-full.png", 90)):
-        capture = captures_by_name[name]
-        if (capture.get("batch_progress") != progress or capture.get("energy") != 0
-                or capture.get("status") != 3):
-            raise SmokeFailure(f"Native Smelter progress frame does not show its frozen live state: {name}")
-    for name in ("screen-closed.png", "drawer-open.png"):
-        capture = captures_by_name[name]
-        if (type(capture.get("batch_progress")) is not int or capture["batch_progress"] <= 0
-                or type(capture.get("energy")) is not int or capture["energy"] <= 0
-                or capture.get("status") != 1):
-            raise SmokeFailure(f"Native Smelter drawer view did not resume active heating: {name}")
+            or screen.get("panel_width") != 314 or screen.get("panel_height") != 314
+            or type(gw) is not int or type(gh) is not int or gw <= 12 or gh <= 12
+            or type(scale) not in (int,float) or not 0 < scale <= 1
+            or screen.get("output_slot_visible") is not True
+            or screen.get("output_slot_insertion_forbidden") is not True
+            or screen.get("legacy_drawer_and_mode_tabs_absent") is not True
+            or screen.get("resize_restored") is not True
+            or any(old in proof for old in (
+                "drawer_accessible_messages","drawer_input_method","translated_lava_mode"))):
+        raise SmokeFailure("Smelter screen failed visible-output or no-obsolete-widgets gate")
+    expected_scale=min(1.0,(min(gw,gh)-12.0)/314.0)
+    ox,oy=(gw-314*expected_scale)/2.0,(gh-314*expected_scale)/2.0
+    if (abs(scale-expected_scale)>0.002 or type(screen.get("origin_x")) not in (int,float)
+            or type(screen.get("origin_y")) not in (int,float)
+            or abs(screen["origin_x"]-ox)>0.6 or abs(screen["origin_y"]-oy)>0.6
+            or ox < 0 or oy < 0 or (window_height==260 and scale >= 1)):
+        raise SmokeFailure("Smelter logical 314-square panel is not fitted to the native viewport")
+    transfer=proof.get("output_transfer")
+    if (not isinstance(transfer,dict)
+            or transfer.get("method") != "integrated_server_MachineMenu.quickMoveStack"
+            or transfer.get("source_menu_slot") != 1 or transfer.get("source_container_slot") != 2
+            or any(type(transfer.get(k)) is not int or transfer[k] != v for k,v in (
+                ("moved_magma",2),("output_after",0),("player_magma_after",2)))):
+        raise SmokeFailure("Smelter did not extract and conserve two real Magma Blocks")
+    expectations={"progress-empty.png":(0,0,3,0),
+                  "progress-mid.png":(50,0,3,1),
+                  "progress-full.png":(90,0,3,2),
+                  "screen-active.png":(None,None,1,None),
+                  "output-extracted.png":(None,None,None,None)}
+    captures=proof.get("screenshots")
+    if (not isinstance(captures,list) or len(captures)!=len(expectations)
+            or any(not isinstance(c,dict) for c in captures)
+            or {c.get("name") for c in captures} != set(expectations)
+            or proof.get("screenshot_method") !=
+            "Minecraft Screenshot.takeScreenshot(getMainRenderTarget())"):
+        raise SmokeFailure("Smelter native framebuffer matrix is incomplete or obsolete")
+    folder=directory/"smelter-gui-screenshots"
+    if not folder.is_dir() or {p.name for p in folder.glob("*.png")} != set(expectations):
+        raise SmokeFailure("Smelter PNG files are absent, stale or unexpected")
+    digests={}
+    for c in captures:
+        name=c["name"]
+        data=(folder/name).read_bytes()
+        if (len(data)<1000 or data[:8]!=b"\x89PNG\r\n\x1a\n" or data[12:16]!=b"IHDR"
+                or struct.unpack(">II",data[16:24])!=(window_width,window_height)
+                or (c.get("width"),c.get("height"))!=(window_width,window_height)
+                or c.get("sha256")!=hashlib.sha256(data).hexdigest()):
+            raise SmokeFailure(f"Smelter framebuffer not fresh, intact, or correct sized: {name}")
+        digests[name]=c["sha256"]
+        progress,energy,status,phase=expectations[name]
+        if name.startswith("progress-") and (
+                c.get("batch_progress")!=progress or c.get("energy")!=energy
+                or c.get("status")!=status or c.get("phase")!=phase):
+            raise SmokeFailure(f"Smelter thermal capture does not match its live state: {name}")
+        if name=="screen-active.png" and (type(c.get("batch_progress")) is not int
+                or c["batch_progress"]<=0 or type(c.get("energy")) is not int
+                or c["energy"]<=0 or c.get("status")!=1 or c.get("output_count")!=2):
+            raise SmokeFailure("Smelter active capture lacks real heating and output")
+        if name=="output-extracted.png" and c.get("output_count")!=0:
+            raise SmokeFailure("Smelter post-transfer screenshot predates actual extraction")
+    if len({digests[n] for n in ("progress-empty.png","progress-mid.png","progress-full.png")})!=3:
+        raise SmokeFailure("Three thermal phases must produce distinct native framebuffer pixels")
     if f"IEDCTR_SMELTER_GUI PASSED nonce={nonce}" not in logs:
-        raise SmokeFailure("Missing current-run native Smelter GUI completion marker")
+        raise SmokeFailure("Smelter native successful completion marker is absent")
     return proof
 
 
@@ -579,7 +562,9 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             or near_end.get("sha256") != hashlib.sha256(near_end_data).hexdigest()
             or (near_end.get("width"), near_end.get("height")) != near_end_size
             or type(near_end.get("freezer_progress_ticks")) is not int
-            or not 178 <= near_end["freezer_progress_ticks"] < 180):
+            or not 178 <= near_end["freezer_progress_ticks"] < 180
+            or type(near_end.get("freezer_phase")) is not int
+            or near_end["freezer_phase"] != 3):
         raise SmokeFailure("Native Freezer near-end frame does not prove progress immediately before completion")
 
     if f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={nonce}" not in logs:
@@ -745,7 +730,7 @@ gradle.projectsEvaluated {
             if not main_proof_path.is_file():
                 raise SmokeFailure("Native Smelter GUI fixture did not write its isolated-world result")
             main_proof = json.loads(main_proof_path.read_text(encoding="utf-8"))
-            if (main_proof.get("suite") != "native-smelter-gui-v1" or main_proof.get("nonce") != nonce
+            if (main_proof.get("suite") != "native-smelter-gui-v2" or main_proof.get("nonce") != nonce
                     or main_proof.get("status") != "passed" or main_proof.get("actual_integrated_world") is not True):
                 raise SmokeFailure("The isolated native-client fixture did not complete successfully")
             validate_smelter_gui_proof(proof, nonce, executed_source_sha, args.smelter_pr_head_sha,

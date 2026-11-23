@@ -685,7 +685,7 @@ public final class NativeClientMiningValidation {
 
    private static void write(String status, Throwable error) throws Exception {
       JsonObject proof = new JsonObject();
-      proof.addProperty("suite", Boolean.getBoolean("iedctr.freezerReferenceOnly") ? "native-freezer-reference-v1" : Boolean.getBoolean("iedctr.correctedMachineGuiOnly") ? "native-corrected-machine-gui-v1" : Boolean.getBoolean("iedctr.smelterGuiOnly") ? "native-smelter-gui-v1" : Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "catwalk-junction-capture-session-v1" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "panzer-glass-session-v1" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "door-sensor-session-v1" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "lava-surface-session-v1" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "native-water-flow-session-v1" : SUITE);
+      proof.addProperty("suite", Boolean.getBoolean("iedctr.freezerReferenceOnly") ? "native-freezer-reference-v1" : Boolean.getBoolean("iedctr.correctedMachineGuiOnly") ? "native-corrected-machine-gui-v1" : Boolean.getBoolean("iedctr.smelterGuiOnly") ? "native-smelter-gui-v2" : Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "catwalk-junction-capture-session-v1" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "panzer-glass-session-v1" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "door-sensor-session-v1" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "lava-surface-session-v1" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "native-water-flow-session-v1" : SUITE);
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", status);
       proof.addProperty("phase", phase.name());

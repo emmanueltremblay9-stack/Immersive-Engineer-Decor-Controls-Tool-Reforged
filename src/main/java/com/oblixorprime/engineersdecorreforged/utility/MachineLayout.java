@@ -84,7 +84,6 @@ public record MachineLayout(
 
    public int playerSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Player inventory column out of range");
-      if (RetainedDropperLayout.TEXTURE.equals(this.textureName)) return RetainedDropperLayout.playerX(column);
       if (RetainedFurnaceLayout.uses(this.textureName)) return RetainedFurnaceLayout.playerX(this.textureName, column);
       if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotX(column);
       return "block_breaker_rp_v3/background".equals(this.textureName)
@@ -93,7 +92,6 @@ public record MachineLayout(
 
    public int playerSlotY(int row) {
       if (row < 0 || row >= 3) throw new IllegalArgumentException("Player inventory row out of range");
-      if (RetainedDropperLayout.TEXTURE.equals(this.textureName)) return RetainedDropperLayout.playerY(row);
       if (RetainedFurnaceLayout.uses(this.textureName)) return RetainedFurnaceLayout.playerY(this.textureName, row);
       if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotY(row);
       return "block_breaker_rp_v3/background".equals(this.textureName)
@@ -102,7 +100,6 @@ public record MachineLayout(
 
    public int hotbarSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Hotbar column out of range");
-      if (RetainedDropperLayout.TEXTURE.equals(this.textureName)) return RetainedDropperLayout.hotbarX(column);
       if (RetainedFurnaceLayout.uses(this.textureName)) return RetainedFurnaceLayout.hotbarX(this.textureName, column);
       if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotX(column);
       return "block_breaker_rp_v3/background".equals(this.textureName)
@@ -209,7 +206,21 @@ public record MachineLayout(
    }
 
    private static MachineLayout dropper() {
-      return RetainedDropperLayout.layout();
+      return original(
+         concat(
+            grid(0, 10, 6, 6, 2, "Input"),
+            List.of(
+               new MachineLayout.MachineSlot(12, 19, 48, "Filter"),
+               new MachineLayout.MachineSlot(13, 55, 48, "Filter"),
+               new MachineLayout.MachineSlot(14, 91, 48, "Filter")
+            )
+         ),
+         8,
+         86,
+         8,
+         144,
+         "factory_dropper_gui"
+      );
    }
 
    private static MachineLayout labFurnace() {
