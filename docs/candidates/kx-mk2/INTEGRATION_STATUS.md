@@ -1,55 +1,36 @@
-# K/X MK2 common-code integration — 2026-11-17
+# K/X MK2 integration status — 2026-11-22
 
-## Scope
+## Current task boundary
 
-Recovered engine and transaction bridge are now compiled as common Java code and
-covered by JUnit. `KXRuntimePlacement` recomputes canonical occupancy before writes,
-keeps `KXPlacement` as the only placement/economy transaction owner, and uses the
-bridge's bounded invalidation footprint for cells and remote endpoints. It reports
-sync failure separately and does not retry item consumption after a sync failure.
+- PR: #200, draft only.
+- Parent implementation head: `b57de4fa1aa5bb464d274df7321d1379f3e5d8f9`.
+- Owner decision: ONE registered block and ONE BlockItem, path `kx_mk2_support`; all eight K/X R3 forms are derived automatically from canonical reciprocal connections.
+- Explicit exclusions: #199 Heavy I-only, #207 microconduit, Prism alpha/Thermal JAR, electrical gameplay, merge, release and publication.
 
-This is NOT a playable block. No registry ID, BlockEntity, inventory/world adapter,
-model bake, game interaction, or client renderer is registered. No historical
-Double-T source, registry, resource, native fluid schema or pinned validator is
-changed. PR #199 Heavy Double-T remains separate.
+## Implemented in this draft delta
 
-## Provenance
+1. `KXModule` adds exactly one block, one BlockItem and one BlockEntity type through the existing IEDCTR registries. Initialization occurs before legacy aliases and registry binding.
+2. `KXSupportBlock` stores six-way facing plus four-way roll (24 proper orientations). Its collision core is the common R3 I-profile; brace-arm collision is not yet qualified.
+3. `KXSupportBlockEntity` persists schema version 1 with up to four directed edge records. Each edge stores peer position, local/peer slots, plane and both explicit port coordinates.
+4. An edge is real only when the peer chunk is already loaded, the peer is still the same K/X block, orientations match, positions are adjacent on the 45-degree brace plane, and the peer stores the exact inverse record. One-sided, stale, absent or mismatched peers contribute no arms.
+5. Source and target slots/coordinates are supplied explicitly. The API never guesses same/opposite slot pairing. The eight topology keys are derived only from those reciprocal records and the verified down-face support contact.
+6. Server updates send the canonical state plus a derived model-selection projection. Chunk load/unload invalidations are deferred to the server task queue and never force-load chunks.
+7. `KXTopology` selects all eight R3 keys: clean, anchor_down_only, K-left, K-right, K-both, K-staggered, X-centered and X-broken-three. The broken X exposes only three actual arms and no center plate.
+8. The legacy two-endpoint `KXInteraction` path accepts only an explicitly matching source/target slot because its existing `Span` record can represent one slot only. Different slots are rejected; no opposite-slot rule is inferred.
+9. GameTests cover one-item placement, all 24 blockstate orientations, all eight topology keys, save/load round-trip, update-tag/model-data synchronization and one-sided/removed-peer ghost rejection.
 
-Original engine archive: `IEDCTR_KX_MK2_PLACEMENT_MECHANIC_CANDIDATE.zip`
-SHA-256: `e62c75e72cb30d65104404ad926635bab06469cf34fd25c8f4e83a76ac9c634a`
+## Explicit remaining gates
 
-Original bridge archive: `IEDCTR_KX_MK2_PLACEMENT_BRIDGE_CANDIDATE.zip`
-SHA-256: `b56bbb2de73e4e62c53e4452fbf1c711a4ab84d81e631ecde99d7c24de1f4be6`
+- **Player port-picking / span placement:** no proven user-facing source-to-target pairing contract or per-cell intermediate segment map was present in the recovered core. The metadata API requires both endpoint slots and coordinates explicitly; it does not invent a click mapping, place intermediate blocks, or consume items. The old ambiguous interaction path fails closed.
+- **Rendering:** the R3 BBModels and atlas remain private test inputs. Redistribution rights are UNKNOWN. No blockstate model, item model, atlas, texture, or fallback renderer is added to this public repository. Client rendering is therefore intentionally NOT_READY; this draft must not be built/distributed as a playable public version.
+- **Translations:** the existing language JSON files are concurrently modified by #207 and are intentionally untouched in this delta.
+- **Arm collision:** only the shared central I-profile collision is present. Exact arm collision needs a separately reviewed geometry/collision contract.
+- **Native Blockbench open/save/reopen:** NOT_RUN. Local static R3 package checks do not claim native Blockbench qualification.
+- **Actual client visual rendering:** NOT_RUN / BLOCKED_BY_REDISTRIBUTION_RIGHTS.
 
-Recovered from the author's New Block Model Idea and Créer mécanique KX Java
-conversations. Original archives are preserved unchanged. Engine sources are copied
-with one explicit inventory contract comment. Harnesses are renamed to `*Checks`
-and invoked by JUnit, avoiding accidental discovery of non-JUnit `*Test` classes.
-The generic coordinator remains unchanged. New seam is `KXRuntimePlacement`.
+## Provenance and safety
 
-## Executed validation
-
-- Java 21.0.13 compilation of all common classes and harnesses: PASS.
-- JUnit 4.13.2 `KXIntegrationTest`: 3 tests PASS, 451 assertions
-  (222 recovered engine + 24 recovered bridge + 205 new seam).
-- Separate recovered fixture parity run: 67 assertions PASS, 8 models/24 rotations.
-- Independent static seam review: no blocking defect found.
-- Full Gradle compile/test: BLOCKED before tasks by network-unreachable download
-  of the wrapper distribution. This is NOT a successful NeoForge build.
-- Minecraft GameTests, block registration, placement, persistence, client visuals,
-  textures/CTM and new JAR: NOT_RUN / NOT_IMPLEMENTED as applicable.
-
-## Remaining integration gates
-
-1. Choose/review independent K/X identity and persistence schema without replacing
-   existing Double-T IDs. No choice is implied by this common-code staging.
-2. Implement actual world/inventory adapter: permissions, loaded chunks only,
-   complete state/BlockEntity/fluid snapshots, safe drops/events and compensation.
-3. `consumeItems` MUST be atomic: false/exception leaves inventory unchanged.
-   The existing core rollback only restores world cells. Qualify inventory behavior
-   with failure-injection tests before using it in Minecraft.
-4. Persist reciprocal edges; notify both ends on removal and reload; defer unloaded
-   endpoints without forcing chunks.
-5. Qualify 24-way rendered geometry and exact owned segment collisions separately.
-6. Run exact-commit Gradle, Minecraft GameTests and client checks before calling
-   integration complete. This draft must not be counted as a released K/X feature.
+- R3 source ZIP authenticated locally by SHA-256 `4eae32046a0acdbcdf828cc519eac53eaad4c7ffa9c3e52f2fb780b8d636af26`; it is not the 81-file Handoff archive.
+- R3 atlas SHA-256 `27c8fef6a2c816ddd82ab760308b3b23a9c6e81331b1b66e1170211fbb6b532b`; not copied into the repository.
+- No third-party source/atlas assets were added. No electrical, FE, or unrelated gameplay was changed.
+- No files from #199 or #207 were edited. No merge, tag, release or publication was performed.

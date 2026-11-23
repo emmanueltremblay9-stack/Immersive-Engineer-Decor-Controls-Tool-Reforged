@@ -156,11 +156,13 @@ public final class KXMechanicsChecks {
         KXInteraction service = new KXInteraction();
         UUID player=UUID.fromString("ae34b7c8-e021-426b-8bf1-74c90b5c6012");
         var a=new KXInteraction.Endpoint(new Cell(0,0,0),o(),Slot.UL,"front","test:overworld");
-        var b=new KXInteraction.Endpoint(new Cell(4,4,0),o(),Slot.LL,"front","test:overworld");
+        var b=new KXInteraction.Endpoint(new Cell(4,4,0),o(),Slot.UL,"front","test:overworld");
         ok(!service.hasPending(player),"session is empty before first click");
         service.begin(player,a);
         ok(service.hasPending(player),"first port selected");
-        eq(service.preview(player,b).uniqueCells(),3,"preview is deterministic and bounded");
+        eq(service.preview(player,b).uniqueCells(),3,"an explicitly matching source/target slot is representable");
+        var ambiguous=new KXInteraction.Endpoint(new Cell(4,4,0),o(),Slot.LL,"front","test:overworld");
+        fail(()->service.preview(player,ambiguous),"different source/target slots are rejected instead of guessed");
 
         MockWorld fail=new MockWorld();fail.items=0;
         var rejected=service.confirm(player,b,fail,fail);
@@ -193,9 +195,9 @@ public final class KXMechanicsChecks {
         ok(!service.hasPending(player),"unsafe world state clears pending selection");
 
         service.begin(player,a);
-        var wrongDim=new KXInteraction.Endpoint(new Cell(4,4,0),o(),Slot.LL,"front","test:nether");
+        var wrongDim=new KXInteraction.Endpoint(new Cell(4,4,0),o(),Slot.UL,"front","test:nether");
         fail(()->service.preview(player,wrongDim),"cannot connect across dimensions");
-        var wrongRoll=new KXInteraction.Endpoint(new Cell(4,4,0),new KXOrientation(Face.UP,1),Slot.LL,"front","test:overworld");
+        var wrongRoll=new KXInteraction.Endpoint(new Cell(4,4,0),new KXOrientation(Face.UP,1),Slot.UL,"front","test:overworld");
         fail(()->service.preview(player,wrongRoll),"cannot connect misrotated planes");
         service.cancel(player);ok(!service.hasPending(player),"cancel releases selection");
         service.begin(player,a);service.clear(player);
