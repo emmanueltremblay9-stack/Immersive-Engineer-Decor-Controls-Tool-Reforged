@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.menu.MusliBarPressMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -9,6 +10,7 @@ import java.util.Map;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -54,6 +56,10 @@ public final class ModMenus {
    public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> SMALL_TREE_CUTTER = registerMachine(
       "small_tree_cutter_menu", MachineKind.SMALL_TREE_CUTTER
    );
+
+   public static final DeferredHolder<MenuType<?>, MenuType<MusliBarPressMenu>> MUSLI_BAR_PRESS =
+      MENU_TYPES.register("musli_bar_press_menu",
+         () -> IMenuTypeExtension.create(MusliBarPressMenu::new));
 
    private ModMenus() {
    }

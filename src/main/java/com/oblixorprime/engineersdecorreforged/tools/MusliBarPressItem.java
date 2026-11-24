@@ -5,6 +5,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
+import com.oblixorprime.engineersdecorreforged.menu.MusliBarPressMenu;
+import com.oblixorprime.engineersdecorreforged.tools.muslee.MusleeSessionIngress;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -27,7 +31,34 @@ public class MusliBarPressItem extends TooltipItem {
       super("musli_bar_press", properties);
    }
 
+   @Override
    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+      ItemStack press = player.getItemInHand(hand);
+      if (level.isClientSide) return InteractionResultHolder.success(press);
+      if (!(player instanceof ServerPlayer serverPlayer)) return InteractionResultHolder.pass(press);
+      MusleeSessionIngress ingress = MusleeSessionIngress.open();
+      serverPlayer.openMenu(
+         new SimpleMenuProvider(
+            (id, inventory, actor) -> new MusliBarPressMenu(id, inventory, hand, ingress),
+            Component.translatable("item.immersive_engineer_decor_controls_tool_reforged.musli_bar_press")
+         ),
+         buffer -> {
+            buffer.writeEnum(hand);
+            buffer.writeUUID(ingress.sessionId());
+         }
+      );
+      return InteractionResultHolder.success(press);
+   }
+
+   /**
+    * Historical verification fixture only; live right-click never calls this.
+    * It keeps the previous immediate-craft regression tests as historical evidence.
+    * Do not reactivate while cursor-only durability and persistence gates are open.
+    */
+   @Deprecated(forRemoval = true)
+   public static InteractionResultHolder<ItemStack> historicalImmediatePressFixture(
+      Level level, Player player, InteractionHand hand
+   ) {
       ItemStack press = player.getItemInHand(hand);
       Inventory inventory = player.getInventory();
       ItemStack output = new ItemStack((ItemLike)EngineerToolsModule.MUSLI_BAR.get(), 4);

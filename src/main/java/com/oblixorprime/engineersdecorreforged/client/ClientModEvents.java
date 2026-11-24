@@ -60,6 +60,7 @@ public final class ClientModEvents {
          ? new SolarV2ReferenceScreen(menu, inventory, title) : new MachineScreen.SmallSolarPanelScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_MILKING_MACHINE.get(), MachineScreen.SmallMilkingMachineScreen::new);
       event.register((MenuType)ModMenus.SMALL_TREE_CUTTER.get(), TreeCutterV3ReferenceScreen::new);
+      event.register((MenuType)ModMenus.MUSLI_BAR_PRESS.get(), MusliBarPressScreen::new);
    }
 
    @SubscribeEvent
