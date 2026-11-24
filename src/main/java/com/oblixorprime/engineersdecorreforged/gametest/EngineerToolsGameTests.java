@@ -635,7 +635,7 @@ public final class EngineerToolsGameTests {
       player.getInventory().add(new ItemStack(Items.BREAD));
       player.getInventory().add(new ItemStack(Items.APPLE));
       player.getInventory().add(new ItemStack(Items.WHEAT_SEEDS));
-      press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+      MusliBarPressItem.historicalImmediatePressFixture(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertValueEqual(4, countItem(player.getInventory(), (Item)EngineerToolsModule.MUSLI_BAR.get()), "press should create four Muslee bars");
       helper.assertValueEqual(0, countItem(player.getInventory(), Items.BREAD), "press should consume bread on success");
       helper.assertValueEqual(0, countItem(player.getInventory(), Items.APPLE), "press should consume apple on success");
@@ -660,7 +660,7 @@ public final class EngineerToolsGameTests {
       player.setItemInHand(InteractionHand.MAIN_HAND, press);
       player.getInventory().add(new ItemStack(Items.BREAD));
       player.getInventory().add(new ItemStack(Items.APPLE));
-      press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+      MusliBarPressItem.historicalImmediatePressFixture(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertValueEqual(0, countItem(player.getInventory(), (Item)EngineerToolsModule.MUSLI_BAR.get()), "failed press should not create bars");
       helper.assertValueEqual(1, countItem(player.getInventory(), Items.BREAD), "failed press should keep bread");
       helper.assertValueEqual(1, countItem(player.getInventory(), Items.APPLE), "failed press should keep apple");
@@ -679,7 +679,7 @@ public final class EngineerToolsGameTests {
       inventory.items.set(1, new ItemStack(Items.BREAD));
       inventory.items.set(2, new ItemStack(Items.APPLE));
       inventory.items.set(3, new ItemStack(Items.WHEAT_SEEDS));
-      press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+      MusliBarPressItem.historicalImmediatePressFixture(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertValueEqual(4, countItem(inventory, (Item)EngineerToolsModule.MUSLI_BAR.get()), "press should use slots freed by consumed ingredients");
       helper.assertValueEqual(0, countItem(inventory, Items.BREAD), "press should consume the single bread stack");
       helper.assertValueEqual(0, countItem(inventory, Items.APPLE), "press should consume the single apple stack");
@@ -701,7 +701,7 @@ public final class EngineerToolsGameTests {
       inventory.items.set(3, new ItemStack(Items.WHEAT_SEEDS, 64));
       inventory.items.set(4, new ItemStack((ItemLike)EngineerToolsModule.MUSLI_BAR.get(), 62));
       inventory.items.set(5, new ItemStack((ItemLike)EngineerToolsModule.MUSLI_BAR.get(), 62));
-      press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+      MusliBarPressItem.historicalImmediatePressFixture(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertValueEqual(128, countItem(inventory, (Item)EngineerToolsModule.MUSLI_BAR.get()), "press should fill split matching output stacks");
       helper.assertValueEqual(63, ((ItemStack)inventory.items.get(1)).getCount(), "press should consume one bread from a full stack");
       helper.assertValueEqual(63, ((ItemStack)inventory.items.get(2)).getCount(), "press should consume one apple from a full stack");
@@ -724,7 +724,7 @@ public final class EngineerToolsGameTests {
       inventory.items.set(2, new ItemStack(Items.APPLE, 64));
       inventory.items.set(3, new ItemStack(Items.WHEAT_SEEDS, 64));
       inventory.offhand.set(0, new ItemStack((ItemLike)EngineerToolsModule.MUSLI_BAR.get(), 60));
-      press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+      MusliBarPressItem.historicalImmediatePressFixture(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertValueEqual(60, countItem(inventory, (Item)EngineerToolsModule.MUSLI_BAR.get()), "press should not craft into offhand-only output space");
       helper.assertValueEqual(64, ((ItemStack)inventory.items.get(1)).getCount(), "failed offhand-space press should keep bread");
       helper.assertValueEqual(64, ((ItemStack)inventory.items.get(2)).getCount(), "failed offhand-space press should keep apple");
@@ -811,7 +811,7 @@ public final class EngineerToolsGameTests {
       player.getInventory().add(new ItemStack(Items.APPLE));
       player.getInventory().add(new ItemStack(seed));
       helper.assertTrue(new ItemStack(seed).is(MusliBarPressItem.ACCEPTED_SEEDS), seed + " should be in the Muslee Press accepted seed tag");
-      press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+      MusliBarPressItem.historicalImmediatePressFixture(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertValueEqual(4, countItem(player.getInventory(), (Item)EngineerToolsModule.MUSLI_BAR.get()), seed + " should press into four Muslee bars");
       helper.assertValueEqual(0, countItem(player.getInventory(), seed), seed + " should be consumed as the seed ingredient");
       helper.assertValueEqual(1, press.getDamageValue(), "press should wear after using " + seed);

@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import unittest
 from unittest.mock import patch
+from musli_gui_projection import project_history as musli_gui_history
 from freezer_v5_reconciliation import ACTIVATION_PATH, DIAGNOSTIC_SHA256, FILES, LAYER, assert_freezer_v5_reconciliation, current_hash
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -30,7 +31,7 @@ class FreezerV5ReconciliationTests(unittest.TestCase):
         for path, hashes in FILES.items():
             from solar_cell_integration import project_history
             expected_historical = DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else hashes['integrated_sha256']
-            self.assertEqual(expected_historical, hashlib.sha256(project_history(path, self.bytes[path])).hexdigest())
+            self.assertEqual(expected_historical, hashlib.sha256(project_history(path, musli_gui_history(path, self.bytes[path]))).hexdigest())
             self.assertEqual(hashlib.sha256(self.bytes[path]).hexdigest(), current_hash(path, hashes['main_sha256']))
             with self.assertRaises(AssertionError):
                 current_hash(path, '0' * 64)

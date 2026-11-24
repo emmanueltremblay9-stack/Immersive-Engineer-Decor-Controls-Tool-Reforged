@@ -3,6 +3,7 @@ package com.oblixorprime.engineersdecorreforged.network;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.menu.MusliBarPressMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.block.Block;
@@ -40,6 +41,18 @@ public final class ModNetworking {
       registrar.playToServer(SmelterModePayload.TYPE, SmelterModePayload.STREAM_CODEC, ModNetworking::handleSmelterMode);
       registrar.playToServer(LabeledCrateLabelPayload.TYPE, LabeledCrateLabelPayload.STREAM_CODEC, ModNetworking::handleLabeledCrateLabel);
       registrar.playToServer(LabeledCrateQuickMovePayload.TYPE, LabeledCrateQuickMovePayload.STREAM_CODEC, ModNetworking::handleLabeledCrateQuickMove);
+      registrar.playToServer(MusliActionPayload.TYPE, MusliActionPayload.STREAM_CODEC, ModNetworking::handleMusliIntent);
+   }
+
+   private static void handleMusliIntent(MusliActionPayload payload, IPayloadContext context) {
+      context.enqueueWork(() -> {
+         if (context.player() instanceof ServerPlayer player
+            && player.containerMenu instanceof MusliBarPressMenu menu
+            && menu.containerId == payload.containerId()
+            && menu.hasAuthoritativeAccess(player)) {
+            menu.receiveIntent(player, payload.encoded());
+         }
+      });
    }
 
    private static void handleSmelterMode(SmelterModePayload payload, IPayloadContext context) {
