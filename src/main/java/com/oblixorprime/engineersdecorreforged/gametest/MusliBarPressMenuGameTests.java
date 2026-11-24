@@ -7,6 +7,8 @@ import com.oblixorprime.engineersdecorreforged.tools.MusliBarPressReserve;
 import com.oblixorprime.engineersdecorreforged.tools.muslee.MusleeCommandProtocol;
 import com.oblixorprime.engineersdecorreforged.tools.muslee.MusleeSessionIngress;
 import java.util.UUID;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ClientInformation;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.InteractionHand;
@@ -27,13 +29,16 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 public final class MusliBarPressMenuGameTests {
    private MusliBarPressMenuGameTests() {}
 
-   private static FakePlayer player(GameTestHelper helper) {
-      FakePlayer player = new FakePlayer(helper.getLevel(), new GameProfile(UUID.randomUUID(), "MusliGuiTest"));
+   private static ServerPlayer player(GameTestHelper helper) {
+      ServerPlayer player = new ServerPlayer(helper.getLevel().getServer(), helper.getLevel(),
+         new GameProfile(UUID.randomUUID(), "MusliGuiTest"), ClientInformation.createDefault());
+      player.connection = new FakePlayer(helper.getLevel(),
+         new GameProfile(UUID.randomUUID(), "MusliTransport")).connection;
       player.gameMode.changeGameModeForPlayer(GameType.SURVIVAL);
       return player;
    }
 
-   private static MusliBarPressMenu open(GameTestHelper helper, FakePlayer player, ItemStack press) {
+   private static MusliBarPressMenu open(GameTestHelper helper, ServerPlayer player, ItemStack press) {
       player.setItemInHand(InteractionHand.MAIN_HAND, press);
       press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertTrue(player.containerMenu instanceof MusliBarPressMenu,
@@ -56,7 +61,7 @@ public final class MusliBarPressMenuGameTests {
 
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void right_click_opens_real_menu_without_crafting(GameTestHelper helper) {
-      FakePlayer player = player(helper);
+      ServerPlayer player = player(helper);
       ItemStack press = new ItemStack(EngineerToolsModule.MUSLI_BAR_PRESS.get());
       player.getInventory().add(new ItemStack(Items.BREAD, 2));
       player.getInventory().add(new ItemStack(Items.APPLE, 2));
@@ -73,7 +78,7 @@ public final class MusliBarPressMenuGameTests {
 
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void gauges_read_server_generic_reserves(GameTestHelper helper) {
-      FakePlayer player = player(helper);
+      ServerPlayer player = player(helper);
       MusliBarPressMenu menu = open(helper, player, pressWithReserves(helper, 5));
       for (int i = 0; i < 3; i++) {
          helper.assertValueEqual(5, menu.reserve(i), "three gauges reflect only server press counts");
@@ -85,7 +90,7 @@ public final class MusliBarPressMenuGameTests {
 
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void absorb_intent_cannot_change_inventory_or_reserves(GameTestHelper helper) {
-      FakePlayer player = player(helper);
+      ServerPlayer player = player(helper);
       MusliBarPressMenu menu = open(helper, player, pressWithReserves(helper, 3));
       menu.setCarried(new ItemStack(Items.BREAD, 4));
       ItemStack beforePress = player.getMainHandItem().copy();
@@ -102,7 +107,7 @@ public final class MusliBarPressMenuGameTests {
 
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void duplicate_press_intent_never_duplicates_output(GameTestHelper helper) {
-      FakePlayer player = player(helper);
+      ServerPlayer player = player(helper);
       MusliBarPressMenu menu = open(helper, player, pressWithReserves(helper, 2));
       UUID actionId = UUID.randomUUID();
       byte[] command = MusleeCommandProtocol.encode(menu.sessionId(), new MusleeCommandProtocol.Command(
@@ -119,7 +124,7 @@ public final class MusliBarPressMenuGameTests {
 
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void wrong_held_item_is_not_an_authoritative_session(GameTestHelper helper) {
-      FakePlayer player = player(helper);
+      ServerPlayer player = player(helper);
       MusliBarPressMenu menu = open(helper, player, pressWithReserves(helper, 2));
       byte[] command = MusleeCommandProtocol.encode(menu.sessionId(), new MusleeCommandProtocol.Command(
          UUID.randomUUID(), MusleeCommandProtocol.Type.ABSORB));
@@ -132,7 +137,7 @@ public final class MusliBarPressMenuGameTests {
 
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void menu_closure_invalidates_session_without_replay(GameTestHelper helper) {
-      FakePlayer player = player(helper);
+      ServerPlayer player = player(helper);
       MusliBarPressMenu menu = open(helper, player, pressWithReserves(helper, 2));
       byte[] command = MusleeCommandProtocol.encode(menu.sessionId(), new MusleeCommandProtocol.Command(
          UUID.randomUUID(), MusleeCommandProtocol.Type.PRESS));
@@ -144,7 +149,22 @@ public final class MusliBarPressMenuGameTests {
       helper.succeed();
    }
 
-   private static int count(FakePlayer player, net.minecraft.world.item.Item item) {
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void normal_close_returns_cursor_to_inventory_once(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      MusliBarPressMenu menu = open(helper, player, pressWithReserves(helper, 2));
+      menu.setCarried(new ItemStack(Items.APPLE, 3));
+      player.closeContainer();
+      helper.assertTrue(menu.getCarried().isEmpty(), "native close clears carried items");
+      helper.assertValueEqual(3, count(player, Items.APPLE), "native close returns cursor once");
+      menu.removed(player);
+      helper.assertValueEqual(3, count(player, Items.APPLE), "no replay on repeated removal");
+      helper.assertValueEqual(2, MusliBarPressReserve.read(player.getMainHandItem(),
+         helper.getLevel().registryAccess()).orElseThrow().cereal(), "reserves unchanged on close");
+      helper.succeed();
+   }
+
+   private static int count(ServerPlayer player, net.minecraft.world.item.Item item) {
       int result = 0;
       for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
          ItemStack stack = player.getInventory().getItem(slot);
