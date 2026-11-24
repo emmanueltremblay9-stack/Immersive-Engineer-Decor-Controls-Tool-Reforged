@@ -7,6 +7,10 @@ import com.oblixorprime.engineersdecorreforged.tools.MusliBarPressReserve;
 import com.oblixorprime.engineersdecorreforged.tools.muslee.MusleeCommandProtocol;
 import com.oblixorprime.engineersdecorreforged.tools.muslee.MusleeSessionIngress;
 import java.util.UUID;
+import java.util.OptionalInt;
+import java.util.function.Consumer;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ClientInformation;
 import net.minecraft.gametest.framework.GameTest;
@@ -31,7 +35,17 @@ public final class MusliBarPressMenuGameTests {
 
    private static ServerPlayer player(GameTestHelper helper) {
       ServerPlayer player = new ServerPlayer(helper.getLevel().getServer(), helper.getLevel(),
-         new GameProfile(UUID.randomUUID(), "MusliGuiTest"), ClientInformation.createDefault());
+         new GameProfile(UUID.randomUUID(), "MusliGuiTest"), ClientInformation.createDefault()) {
+         // The NeoForge FakePlayer connection has no Netty channel. Exercise
+         // the REAL Item.use -> MenuProvider -> menu constructor path without
+         // simulating client packet delivery or claiming native network proof.
+         @Override
+         public OptionalInt openMenu(MenuProvider provider, Consumer<RegistryFriendlyByteBuf> extraDataWriter) {
+            if (provider == null || extraDataWriter == null) return OptionalInt.empty();
+            this.containerMenu = provider.createMenu(1, this.getInventory(), this);
+            return this.containerMenu instanceof MusliBarPressMenu ? OptionalInt.of(1) : OptionalInt.empty();
+         }
+      };
       player.connection = new FakePlayer(helper.getLevel(),
          new GameProfile(UUID.randomUUID(), "MusliTransport")).connection;
       player.gameMode.changeGameModeForPlayer(GameType.SURVIVAL);
@@ -42,7 +56,7 @@ public final class MusliBarPressMenuGameTests {
       player.setItemInHand(InteractionHand.MAIN_HAND, press);
       press.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertTrue(player.containerMenu instanceof MusliBarPressMenu,
-         "right-click should open the real server MusliBarPressMenu");
+         "right-click should construct MusliBarPressMenu through provider");
       MusliBarPressMenu menu = (MusliBarPressMenu) player.containerMenu;
       helper.assertTrue(MusleeCommandProtocol.isV4(menu.sessionId()), "server generates the session UUIDv4");
       helper.assertValueEqual(MusliBarPressMenu.PLAYER_SLOT_COUNT, menu.slots.size(),
@@ -154,8 +168,10 @@ public final class MusliBarPressMenuGameTests {
       ServerPlayer player = player(helper);
       MusliBarPressMenu menu = open(helper, player, pressWithReserves(helper, 2));
       menu.setCarried(new ItemStack(Items.APPLE, 3));
-      player.closeContainer();
-      helper.assertTrue(menu.getCarried().isEmpty(), "native close clears carried items");
+      // Call the real vanilla menu removal routine. Network close itself
+      // requires a channel unavailable in this dedicated GameTest fixture.
+      menu.removed(player);
+      helper.assertTrue(menu.getCarried().isEmpty(), "native menu removal clears carried items");
       helper.assertValueEqual(3, count(player, Items.APPLE), "native close returns cursor once");
       menu.removed(player);
       helper.assertValueEqual(3, count(player, Items.APPLE), "no replay on repeated removal");
