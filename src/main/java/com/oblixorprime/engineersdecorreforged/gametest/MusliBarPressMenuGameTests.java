@@ -77,6 +77,7 @@ public final class MusliBarPressMenuGameTests {
    public static void right_click_opens_real_menu_without_crafting(GameTestHelper helper) {
       ServerPlayer player = player(helper);
       ItemStack press = new ItemStack(EngineerToolsModule.MUSLI_BAR_PRESS.get());
+      player.setItemInHand(InteractionHand.MAIN_HAND, press);
       player.getInventory().add(new ItemStack(Items.BREAD, 2));
       player.getInventory().add(new ItemStack(Items.APPLE, 2));
       player.getInventory().add(new ItemStack(Items.WHEAT_SEEDS, 2));
