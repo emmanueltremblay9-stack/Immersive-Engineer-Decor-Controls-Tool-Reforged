@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.oblixorprime.engineersdecorreforged.network.ModNetworking;
 import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsModule;
 import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsModule;
+import com.oblixorprime.engineersdecorreforged.kx.KXModule;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -54,6 +55,7 @@ public final class EngineersDecorReforged {
       net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells::chunkLoaded);
       ControlsModule.init();
       EngineerToolsModule.init();
+      KXModule.initialize();
       addLegacyRegistryAliases();
       ModBlocks.BLOCKS.register(modEventBus);
       ModItems.ITEMS.register(modEventBus);
