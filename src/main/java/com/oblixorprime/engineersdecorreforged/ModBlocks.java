@@ -8,6 +8,7 @@ import com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkBlock;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkStairsBlock;
 import com.oblixorprime.engineersdecorreforged.block.VerticalDoubleTSupportBlock;
+import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTSupportBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyTrunkBlock;
 import com.oblixorprime.engineersdecorreforged.block.RoofWireConduitBlock;
@@ -171,6 +172,9 @@ public final class ModBlocks {
    );
    public static final DeferredBlock<PortedBlocks.SupportBlock> STEEL_DOUBLE_T_SUPPORT = registerWithItem(
       "steel_double_t_support", () -> new com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock(metal().noOcclusion())
+   );
+   public static final DeferredBlock<HeavyDoubleTSupportBlock> HEAVY_INDUSTRIAL_DOUBLE_T_SUPPORT = registerWithItem(
+      "heavy_industrial_double_t_support", () -> new HeavyDoubleTSupportBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.FloorGratingBlock> STEEL_FLOOR_GRATING = registerWithItem(
       "steel_floor_grating", () -> new PortedBlocks.FloorGratingBlock(metal().noOcclusion())
