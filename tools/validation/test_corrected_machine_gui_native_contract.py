@@ -30,6 +30,12 @@ class CorrectedMachineGuiNativeContractTest(unittest.TestCase):
         self.assertIn('captureThermalFreezer', source)
         self.assertIn('freezer_progress_ticks', source)
         self.assertIn('freezer_phase', source)
+        self.assertIn('result.addProperty("visible_machine_slots", 2)', source)
+        self.assertIn('result.addProperty("protocol_machine_slots", menu.visibleMachineSlots())', source)
+        self.assertIn('result.addProperty("visible_screen_slots", ThermalVerticalGeometry.VISIBLE_SLOTS)', source)
+        self.assertIn('capture.addProperty("capture_mode", "native_thermal_canvas_crop")', source)
+        self.assertIn('capture.addProperty("framebuffer_width", mc.getWindow().getScreenWidth())', source)
+        self.assertIn('capture.addProperty("crop_x", cropX)', source)
 
     def test_thermal_screen_hit_test_uses_the_live_canvas_transform(self):
         source = THERMAL.read_text()

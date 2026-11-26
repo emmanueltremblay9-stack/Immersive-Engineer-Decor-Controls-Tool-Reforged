@@ -2,6 +2,7 @@
 
 import copy
 import hashlib
+import math
 from pathlib import Path
 import struct
 import unittest
@@ -323,7 +324,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228, 4000, 0),
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256, 0, 32000),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
-        "small_freezer": ("SMALL_FREEZER", 3, 209, 235, 0, 16000),
+        "small_freezer": ("SMALL_FREEZER", 2, 347, 381, 0, 16000),
         "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256, 3000, 0),
         "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256, 4000, 0),
     }
@@ -341,7 +342,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         self.window_height = 260
         self.proof = {
             "schema_version": 2,
-            "coverage_scope": "seven-machine-screens-excluding-tree-cutter",
+            "coverage_scope": "seven-registered-machine-menus-including-thermal-vertical-freezer-excluding-tree-cutter",
             "tree_cutter_qualification": "independent:tree-cutter-v3-native.yml",
             "barrel_legacy_selector": "iedctr.dev.barrelV5Reference=false", "barrel_qualification": "legacy-diagnostic-only",
             "solar_legacy_selector": "iedctr.dev.solarV2Reference=false", "solar_qualification": "legacy-diagnostic-only",
@@ -354,7 +355,9 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
             "cases": [], "screenshots": [],
         }
         for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
-            screen_identity = f"com.oblixorprime.engineersdecorreforged.client.MachineScreen${machine.title().replace('_', '')}Screen"
+            is_freezer = machine == "small_freezer"
+            screen_identity = ("com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen" if is_freezer else
+                               f"com.oblixorprime.engineersdecorreforged.client.MachineScreen${machine.title().replace('_', '')}Screen")
             menu_identity = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
             slots = []
             for index in range(slot_count):
@@ -363,21 +366,50 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                               "layout_x": 20 + index * 18, "layout_y": 30,
                               "active": True, "center_hit_test": True,
                               "insertion_allowed": insertion_allowed})
-            self.proof["cases"].append({
+            case = {
                 "machine_id": machine, "machine_kind": kind, "screen_identity": screen_identity,
                 "client_menu_identity": menu_identity, "server_menu_identity": menu_identity,
                 "client_menu_id": 2, "server_menu_id": 2, "menu_context_matches": True,
-                "visible_machine_slots": slot_count, "total_slots": slot_count + 36,
+                "visible_machine_slots": slot_count, "total_slots": 39 if is_freezer else slot_count + 36,
                 "panel_width": panel_width, "panel_height": panel_height, "gui_width": 1280,
-                "gui_height": self.window_height, "geometry_matches_layout": True,
+                "gui_height": self.window_height, "geometry_matches_layout": not is_freezer,
                 "fluid_amount": fluid_capacity, "fluid_capacity": fluid_capacity,
                 "energy": energy_capacity, "energy_capacity": energy_capacity,
                 "progress": 25 if machine == "small_freezer" else 0,
                 "freezer_progress_ticks": 45 if machine == "small_freezer" else 0,
                 "language": "fr_fr", "captured_states": (["empty", "mid", "full-hover", "input-occupied", "output-occupied"]
                     if machine == "small_milking_machine" else ["empty", "mid", "full-hover"]),
-                "machine_slots": slots,
-            })
+            }
+            if is_freezer:
+                thermal_view = self._thermal_crop_fields()
+                case.update(visible_screen_slots=38, protocol_machine_slots=3,
+                            reserved_index_1_hidden=True,
+                            geometry_matches_thermal_vertical_geometry=True,
+                            view_scale=thermal_view["view_scale"],
+                            origin_x=thermal_view["origin_x"], origin_y=thermal_view["origin_y"])
+                freezer_x = (53, 81, 110, 139, 168, 197, 226, 254, 283)
+                freezer_y = (247, 272, 299)
+                hotbar_x = (55, 84, 112, 140, 168, 195, 223, 252, 280)
+                anchors = {0: (167, 67), 2: (167, 206)}
+                anchors.update({3 + row * 9 + col: (x, y) for row, y in enumerate(freezer_y)
+                                for col, x in enumerate(freezer_x)})
+                anchors.update({30 + col: (x, 335) for col, x in enumerate(hotbar_x)})
+                menu_slots = []
+                for index in range(39):
+                    backing = index if index < 3 else 9 + index - 3 if index < 30 else index - 30
+                    if index == 1:
+                        menu_slots.append({"menu_index": index, "container_index": backing,
+                                           "x": -2000, "y": -2000, "active": False,
+                                           "insertion_allowed": False})
+                    else:
+                        x, y = anchors[index]
+                        menu_slots.append({"menu_index": index, "container_index": backing,
+                                           "x": x, "y": y, "layout_x": x, "layout_y": y,
+                                           "active": True, "insertion_allowed": True})
+                case["menu_slots"] = menu_slots
+            else:
+                case["machine_slots"] = slots
+            self.proof["cases"].append(case)
             states = ("empty", "mid", "full-hover")
             for state in states:
                 name = f"{machine}-{state}.png"
@@ -391,9 +423,11 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                            "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
                            "fluid_amount": fluid_amount, "energy": energy,
                            "progress": 25 if machine == "small_freezer" and state == "mid" else 0}
-                capture["capture_mode"] = "gui_panel"
+                capture["capture_mode"] = "native_thermal_canvas_crop" if is_freezer else "gui_panel"
                 capture["panel_cursor_outside"] = True
-                capture["panel_tooltips_suppressed"] = True
+                capture["panel_tooltips_suppressed"] = False if is_freezer else True
+                if is_freezer:
+                    capture.update(self._thermal_crop_fields())
                 if machine == "fluid_barrel":
                     top = 73 if state == "mid" else 38
                     capture["barrel_fluid_pixels"] = {
@@ -416,7 +450,8 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                         {"container_index": 0, "item_id": "minecraft:air", "count": 0, "empty": True},
                         {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
                     ]
-                capture_width, capture_height = panel_width, panel_height
+                capture_width = capture["width"] if is_freezer else panel_width
+                capture_height = capture["height"] if is_freezer else panel_height
                 if state == "full-hover":
                     capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
                 image = self.image_dir / name
@@ -480,17 +515,36 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                            "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
                            "fluid_amount": 0, "energy": 8, "progress": 0,
                            "freezer_progress_ticks": 178, "freezer_phase": 3,
-                           "capture_mode": "gui_panel", "panel_cursor_outside": True,
-                           "panel_tooltips_suppressed": True,
-                           "width": panel_width, "height": panel_height}
+                           "capture_mode": "native_thermal_canvas_crop", "panel_cursor_outside": True,
+                           "panel_tooltips_suppressed": False}
+                capture.update(self._thermal_crop_fields())
                 image = self.image_dir / name
-                image.write_bytes(self._png(panel_width, panel_height))
+                image.write_bytes(self._png(capture["width"], capture["height"]))
                 capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
                 self.proof["screenshots"].append(capture)
         self.logs = f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={self.nonce}"
 
     def tearDown(self):
         self.temp.cleanup()
+
+    def _thermal_crop_fields(self):
+        def f32(value):
+            return struct.unpack("!f", struct.pack("!f", value))[0]
+        gui_width, gui_height = 1280, self.window_height
+        margin = min(6.0, (min(gui_width, gui_height) - 1.0) / 2.0)
+        scale = f32(min(0.78, (gui_width - 2 * margin) / 347.0,
+                        (gui_height - 2 * margin) / 381.0))
+        origin_x = f32((gui_width - 347.0 * scale) / 2.0)
+        origin_y = f32((gui_height - 381.0 * scale) / 2.0)
+        width = math.floor(f32(f32(347.0 * scale) * 1.0) + 0.5)
+        height = math.floor(f32(f32(381.0 * scale) * 1.0) + 0.5)
+        return {"panel_width": 347, "panel_height": 381,
+                "framebuffer_width": self.window_width, "framebuffer_height": self.window_height,
+                "crop_x": math.floor(origin_x + 0.5), "crop_y": math.floor(origin_y + 0.5),
+                "view_scale": scale, "origin_x": origin_x, "origin_y": origin_y,
+                "gui_width": gui_width, "gui_height": gui_height,
+                "energy_capacity": 16000,
+                "width": width, "height": height}
 
     @staticmethod
     def _png(width, height):
@@ -602,6 +656,32 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                     else:
                         proof[field] = value
                     with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_thermal_freezer_proves_two_machine_slots_and_reserved_protocol_index(self):
+        freezer = next(case for case in self.proof["cases"] if case["machine_id"] == "small_freezer")
+        self.assertEqual((freezer["visible_machine_slots"], freezer["protocol_machine_slots"],
+                          freezer["visible_screen_slots"], freezer["total_slots"]), (2, 3, 38, 39))
+        self.assertEqual([slot["menu_index"] for slot in freezer["menu_slots"] if slot["active"]][:2], [0, 2])
+        self.assertFalse(freezer["menu_slots"][1]["active"])
+        self.assertEqual(len({(slot["x"], slot["y"]) for slot in freezer["menu_slots"] if slot["active"]}), 38)
+
+    def test_rejects_wrong_thermal_slots_canvas_crop_or_transform(self):
+        mutations = (
+            lambda p: next(c for c in p["cases"] if c["machine_id"] == "small_freezer").update(visible_machine_slots=3),
+            lambda p: next(c for c in p["cases"] if c["machine_id"] == "small_freezer")["menu_slots"][1].update(active=True),
+            lambda p: next(c for c in p["cases"] if c["machine_id"] == "small_freezer")["menu_slots"][2].update(x=168),
+            lambda p: next(c for c in p["cases"] if c["machine_id"] == "small_freezer")["menu_slots"].pop(1),
+            lambda p: next(c for c in p["screenshots"] if c["name"] == "small_freezer-mid.png").update(capture_mode="gui_panel"),
+            lambda p: next(c for c in p["screenshots"] if c["name"] == "small_freezer-mid.png").update(crop_x=0),
+            lambda p: next(c for c in p["screenshots"] if c["name"] == "small_freezer-mid.png").update(framebuffer_width=640),
+            lambda p: next(c for c in p["screenshots"] if c["name"] == "small_freezer-mid.png").update(panel_height=235),
+        )
+        for mutate in mutations:
+            with self.subTest(mutation=mutate):
+                proof = copy.deepcopy(self.proof)
+                mutate(proof)
+                with self.assertRaises(SmokeFailure):
+                    self.check(proof)
 
     def test_rejects_legacy_tree_badge_claim_or_extra_capture(self):
         proof = copy.deepcopy(self.proof)

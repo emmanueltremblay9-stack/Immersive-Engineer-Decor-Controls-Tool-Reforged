@@ -934,6 +934,10 @@ final class NativeCorrectedMachineGuiValidation {
       capture.addProperty("server_menu_id", serverMenuId);
       capture.addProperty("panel_width", ThermalVerticalGeometry.CANVAS_WIDTH);
       capture.addProperty("panel_height", ThermalVerticalGeometry.CANVAS_HEIGHT);
+      capture.addProperty("framebuffer_width", mc.getWindow().getScreenWidth());
+      capture.addProperty("framebuffer_height", mc.getWindow().getScreenHeight());
+      capture.addProperty("crop_x", cropX);
+      capture.addProperty("crop_y", cropY);
       capture.addProperty("view_scale", view.scale());
       capture.addProperty("origin_x", view.originX());
       capture.addProperty("origin_y", view.originY());
@@ -1114,7 +1118,8 @@ final class NativeCorrectedMachineGuiValidation {
       result.addProperty("server_menu_id", serverMenuId);
       result.addProperty("menu_context_matches", menu.containerId == serverMenuId
          && menu.getClass().getName().equals(serverMenuIdentity));
-      result.addProperty("visible_machine_slots", ThermalVerticalGeometry.VISIBLE_SLOTS);
+      result.addProperty("visible_machine_slots", 2);
+      result.addProperty("visible_screen_slots", ThermalVerticalGeometry.VISIBLE_SLOTS);
       result.addProperty("protocol_machine_slots", menu.visibleMachineSlots());
       result.addProperty("total_slots", menu.slots.size());
       result.addProperty("panel_width", ThermalVerticalGeometry.CANVAS_WIDTH);

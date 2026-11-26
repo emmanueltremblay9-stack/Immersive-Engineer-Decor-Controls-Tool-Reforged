@@ -151,7 +151,7 @@ public final class GuiAlbumThree {
                         obs.addProperty("visible_machine_slots",activeMenu.visibleMachineSlots());
                         obs.addProperty("total_menu_slots",activeMenu.slots.size());
                         obs.addProperty("machine_kind",activeMenu.kind().registryName());
-                        if(caseIndex==5){
+                        if(index==5){
                             int filterGate=activeMenu.field(5);
                             boolean powered=mc.level.hasNeighborSignal(machines[5].getBlockPos());
                             require(filterGate==2,"Dropper capture fixture must use the AND filter gate");

@@ -71,6 +71,8 @@ class ProofTests(unittest.TestCase):
         for token in ('Factory Study V3 menu slot layout mismatch','activeMenu.visibleMachineSlots()==EXPECTED_MACHINE_SLOTS[index]',
                       'activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index]','FactoryStudyScreen'):
             self.assertIn(token,source)
+        self.assertIn('if(index==5){',source)
+        self.assertNotIn('if(caseIndex==5){',source)
 
     def test_current_hopper_screen_uses_v3_menu_and_selection_anchors(self):
         root=Path(__file__).resolve().parents[2]
