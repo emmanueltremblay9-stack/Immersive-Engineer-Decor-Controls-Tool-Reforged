@@ -4,6 +4,9 @@ import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.fluid.ExternalFluidAdapter;
+import com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells;
+import com.oblixorprime.engineersdecorreforged.kx.KXModule;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
@@ -23,9 +26,25 @@ public final class CatalogueFluidloggingGameTests {
       long registered = BuiltInRegistries.BLOCK.keySet().stream()
          .filter(id -> id.getNamespace().equals(EngineersDecorReforged.MOD_ID)).count();
       h.assertValueEqual((long)ModBlocks.ORDERED_BLOCKS.size(), registered, "inventory includes every registered mod block");
+      var kx = KXModule.KX_MK2_SUPPORT.get();
+      long nativeCount = 0L;
+      var nonNativeIds = new java.util.ArrayList<String>();
       for (var entry : ModBlocks.ORDERED_BLOCKS) {
          var block = entry.get(); var state = block.defaultBlockState();
-         h.assertTrue(block instanceof NativeFluidloggedBlock, "every registered mod block is explicitly integrated: " + entry.getId());
+         if (block instanceof NativeFluidloggedBlock) {
+            nativeCount++;
+            h.assertTrue(NativeFluidCells.supported(state), "native catalogue entry remains supported: " + entry.getId());
+         } else {
+            nonNativeIds.add(entry.getId().toString());
+            h.assertTrue(block == kx, "only K/X is intentionally outside native fluidlogging: " + entry.getId());
+            h.assertFalse(NativeFluidCells.supported(state), "K/X stays outside native fluidlogging");
+            h.assertFalse(ExternalFluidAdapter.supported(state), "K/X stays outside external fluidlogging");
+            h.assertFalse(state.hasProperty(NativeFluidloggedBlock.FLUID_CELL), "K/X has no native fluid_cell property");
+            h.assertFalse(state.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT), "K/X has no compact native fluid property");
+            h.assertFalse(state.hasProperty(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.WATER_FLOW),
+               "K/X has no transient water property");
+            h.assertFalse(state.hasProperty(BlockStateProperties.WATERLOGGED), "K/X has no waterlogged property");
+         }
          boolean full = net.minecraft.world.level.block.Block.isShapeFullBlock(state.getCollisionShape(h.getLevel(),h.absolutePos(new BlockPos(3,2,3))));
          rows.add(String.join("\t", entry.getId().toString(), block.getClass().getName(),
             Integer.toString(block.getStateDefinition().getPossibleStates().size()),
@@ -34,6 +53,9 @@ public final class CatalogueFluidloggingGameTests {
             Boolean.toString(state.hasProperty(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.WATER_FLOW)),
             Boolean.toString(state.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT)), Boolean.toString(full)));
       }
+      h.assertValueEqual(nativeCount, 203L, "native fluidlogging catalogue remains exactly 203 blocks");
+      h.assertValueEqual(nonNativeIds, java.util.List.of(BuiltInRegistries.BLOCK.getKey(kx).toString()),
+         "K/X is the sole intentional non-native fluidlogging exception");
       java.nio.file.Files.write(java.nio.file.Path.of("catalogue-fluidlogging.tsv"), rows);
       for (var entry : ModBlocks.ORDERED_BLOCKS) {
          if (entry.get() instanceof com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock) {
