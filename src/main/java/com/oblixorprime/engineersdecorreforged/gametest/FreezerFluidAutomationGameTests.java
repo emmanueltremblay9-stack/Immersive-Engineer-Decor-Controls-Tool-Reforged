@@ -58,8 +58,12 @@ public final class FreezerFluidAutomationGameTests {
       return h.getLevel().getCapability(Capabilities.ItemHandler.BLOCK, machine.getBlockPos(), side);
    }
 
+   private static Direction rear(MachineBlockEntity machine) {
+      return machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
+   }
+
    private static FluidStack water(int amount) { return new FluidStack(Fluids.WATER, amount); }
-   private static int amount(GameTestHelper h, MachineBlockEntity machine) { return tank(h, machine, Direction.UP).getFluidInTank(0).getAmount(); }
+   private static int amount(GameTestHelper h, MachineBlockEntity machine) { return tank(h, machine, rear(machine)).getFluidInTank(0).getAmount(); }
    private static int energy(MachineBlockEntity machine) { return machine.energyCapability(null).getEnergyStored(); }
    private static int progress(MachineBlockEntity machine) { return machine.dataAccessForTests().get(1); }
    private static void ticks(GameTestHelper h, MachineBlockEntity machine, int count) {
@@ -76,19 +80,20 @@ public final class FreezerFluidAutomationGameTests {
    }
 
    @GameTest(template = "empty")
-   public static void freezer_public_fluid_port_is_top_input_only_and_keeps_capacity_types_and_simulation(GameTestHelper h) {
+   public static void freezer_public_fluid_port_is_rear_input_only_and_keeps_capacity_types_and_simulation(GameTestHelper h) {
       MachineBlockEntity machine = place(h);
       BlockPos pos = machine.getBlockPos();
-      IFluidHandler handler = tank(h, machine, Direction.UP);
+      Direction inputSide = rear(machine);
+      IFluidHandler handler = tank(h, machine, inputSide);
       for (Direction side : Direction.values()) {
-         if (side == Direction.UP) continue;
+         if (side == inputSide) continue;
          h.assertTrue(h.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, pos, side) == null,
             "Freezer has no public fluid port on " + side);
       }
       h.assertTrue(h.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, pos, null) == null,
          "Freezer has no unsided public fluid port");
 
-      h.assertValueEqual(handler.getTanks(), 1, "one tank on the upper input port");
+      h.assertValueEqual(handler.getTanks(), 1, "one tank on the rear input port");
       h.assertValueEqual(handler.getTankCapacity(0), 2000, "upstream two-bucket capacity");
       h.assertValueEqual(handler.getTankCapacity(1), 0, "invalid tank has no capacity");
       h.assertTrue(handler.getFluidInTank(-1).isEmpty(), "invalid tank is empty");
@@ -110,12 +115,12 @@ public final class FreezerFluidAutomationGameTests {
       FluidStack copy = handler.getFluidInTank(0); copy.setAmount(1);
       h.assertValueEqual(amount(h, machine), 2000, "query stack cannot mutate tank");
 
-      h.assertTrue(handler.drain(markedWater, FluidAction.EXECUTE).isEmpty(), "upper input port refuses component-mismatched drain");
-      h.assertTrue(handler.drain(new FluidStack(Fluids.LAVA, 1), FluidAction.EXECUTE).isEmpty(), "upper input port refuses wrong-fluid drain");
-      h.assertTrue(handler.drain(water(125), FluidAction.SIMULATE).isEmpty(), "upper input port refuses simulated drain");
-      h.assertTrue(handler.drain(water(125), FluidAction.EXECUTE).isEmpty(), "upper input port refuses executed stack drain");
-      h.assertTrue(handler.drain(5000, FluidAction.SIMULATE).isEmpty(), "upper input port refuses simulated amount drain");
-      h.assertTrue(handler.drain(5000, FluidAction.EXECUTE).isEmpty(), "upper input port refuses amount drain");
+      h.assertTrue(handler.drain(markedWater, FluidAction.EXECUTE).isEmpty(), "rear input port refuses component-mismatched drain");
+      h.assertTrue(handler.drain(new FluidStack(Fluids.LAVA, 1), FluidAction.EXECUTE).isEmpty(), "rear input port refuses wrong-fluid drain");
+      h.assertTrue(handler.drain(water(125), FluidAction.SIMULATE).isEmpty(), "rear input port refuses simulated drain");
+      h.assertTrue(handler.drain(water(125), FluidAction.EXECUTE).isEmpty(), "rear input port refuses executed stack drain");
+      h.assertTrue(handler.drain(5000, FluidAction.SIMULATE).isEmpty(), "rear input port refuses simulated amount drain");
+      h.assertTrue(handler.drain(5000, FluidAction.EXECUTE).isEmpty(), "rear input port refuses amount drain");
       h.assertTrue(handler.drain(0, FluidAction.EXECUTE).isEmpty(), "zero drain is inert");
       h.assertTrue(handler.drain(-1, FluidAction.EXECUTE).isEmpty(), "negative drain is inert");
       h.assertValueEqual(amount(h, machine), 2000, "input-only port cannot remove stored water");
@@ -124,7 +129,7 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_partial_water_waits_then_pays_one_exact_cycle(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      IFluidHandler handler = tank(h, machine, Direction.UP);
+      IFluidHandler handler = tank(h, machine, rear(machine));
       handler.fill(water(999), FluidAction.EXECUTE);
       ticks(h, machine, 200);
       h.assertValueEqual(progress(machine), 0, "partial bucket cannot begin work");
@@ -148,7 +153,7 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_two_water_batches_produce_two_ice_without_free_upgrades(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE);
+      tank(h, machine, rear(machine)).fill(water(2000), FluidAction.EXECUTE);
       ticks(h, machine, 360);
       h.assertTrue(machine.getItem(2).is(Items.ICE), "output is not automatically upgraded");
       h.assertValueEqual(machine.getItem(2).getCount(), 2, "two paid water batches");
@@ -162,12 +167,12 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_internal_source_loss_invalidates_only_lost_active_water(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      IFluidHandler publicTop = tank(h, machine, Direction.UP);
+      IFluidHandler publicRear = tank(h, machine, rear(machine));
       // This handler is a direct internal test hook for simulating an in-tick source mutation.
       // It is deliberately not used as evidence of a public port or an IE pipe connection.
       IFluidHandler internalMutation = machine.fluidHandler(null);
-      h.assertTrue(internalMutation != null, "internal mutation hook exists separately from the public top port");
-      publicTop.fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
+      h.assertTrue(internalMutation != null, "internal mutation hook exists separately from the public rear port");
+      publicRear.fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
       CompoundTag before = machine.saveWithFullMetadata(h.getLevel().registryAccess());
       internalMutation.drain(2000, FluidAction.SIMULATE);
       internalMutation.fill(water(1), FluidAction.SIMULATE);
@@ -190,7 +195,7 @@ public final class FreezerFluidAutomationGameTests {
    public static void freezer_item_and_water_sources_cannot_exchange_partial_work(GameTestHelper h) {
       for (Item input : new Item[]{Items.WATER_BUCKET, Items.ICE, Items.PACKED_ICE}) {
          MachineBlockEntity machine = place(h); power(machine);
-         tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
+         tank(h, machine, rear(machine)).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
          machine.setItem(0, new ItemStack(input)); ticks(h, machine, 1);
          h.assertValueEqual(progress(machine), 1, "item starts fresh after fluid work: " + input);
          h.assertTrue(machine.getItem(2).isEmpty(), "no early item output");
@@ -210,7 +215,7 @@ public final class FreezerFluidAutomationGameTests {
    public static void freezer_output_full_keeps_existing_reset_assertions(GameTestHelper h) {
       for (int failure = 0; failure < 2; failure++) {
          MachineBlockEntity machine = place(h); power(machine);
-         tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
+         tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
          int before = energy(machine);
          if (failure == 0) machine.setItem(2, new ItemStack(Items.ICE, 64));
          if (failure == 1) machine.setItem(2, new ItemStack(Items.PACKED_ICE));
@@ -235,7 +240,7 @@ public final class FreezerFluidAutomationGameTests {
    public static void freezer_redstone_and_insufficient_fe_keep_confirmed_reset_rules(GameTestHelper h) {
       for (int failure = 2; failure < 4; failure++) {
          MachineBlockEntity machine = place(h); power(machine);
-         tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
+         tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
          int before = energy(machine);
          if (failure == 2) h.getLevel().setBlock(machine.getBlockPos().west(), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
          if (failure == 3) machine.dataAccessForTests().set(3, 7);
@@ -255,21 +260,22 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_bucket_recycling_preserves_item_recipes_and_restricts_inputs(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE);
-      IItemHandler input = items(h, machine, Direction.UP);
+      Direction inputSide = rear(machine);
+      tank(h, machine, inputSide).fill(water(2000), FluidAction.EXECUTE);
+      IItemHandler input = items(h, machine, inputSide);
       IItemHandler output = items(h, machine, Direction.DOWN);
       BlockPos pos = machine.getBlockPos();
-      h.assertValueEqual(input.getSlots(), 1, "top item port exposes only the input");
+      h.assertValueEqual(input.getSlots(), 1, "rear item port exposes only the input");
       h.assertValueEqual(output.getSlots(), 2, "bottom item port exposes output and returned bucket only");
       for (Direction side : Direction.values()) {
-         if (side == Direction.UP || side == Direction.DOWN) continue;
+         if (side == inputSide || side == Direction.DOWN) continue;
          h.assertTrue(h.getLevel().getCapability(Capabilities.ItemHandler.BLOCK, pos, side) == null,
             "Freezer has no public item port on " + side);
       }
       h.assertTrue(input.insertItem(0, new ItemStack(Items.WATER_BUCKET), false).isEmpty(),
-         "water bucket inserts through the public top item capability");
+         "water bucket inserts through the public rear item capability");
       for (Direction side : Direction.values()) {
-         h.assertTrue(input.extractItem(0, 1, false).isEmpty(), "top input handler never extracts the full bucket");
+         h.assertTrue(input.extractItem(0, 1, false).isEmpty(), "rear input handler never extracts the full bucket");
          h.assertFalse(machine.canTakeItemThroughFace(0, machine.getItem(0), side),
             "full water bucket cannot leave through " + side);
       }
@@ -295,7 +301,7 @@ public final class FreezerFluidAutomationGameTests {
       h.assertTrue(output.extractItem(0, 1, false).is(Items.ICE), "ice extraction still works");
 
       for (Item item : new Item[]{Items.ICE, Items.PACKED_ICE}) {
-         h.assertTrue(input.insertItem(0, new ItemStack(item), false).isEmpty(), "solid recipe input uses the top port");
+         h.assertTrue(input.insertItem(0, new ItemStack(item), false).isEmpty(), "solid recipe input uses the rear port");
          h.assertTrue(input.extractItem(0, 1, false).isEmpty(), "solid recipe input remains protected");
          ticks(h, machine, 180);
          Item expected = item == Items.ICE ? Items.PACKED_ICE : Items.BLUE_ICE;
@@ -316,7 +322,7 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_water_progress_and_legacy_item_progress_survive_reload(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
+      tank(h, machine, rear(machine)).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);
       CompoundTag savedWater = machine.saveWithFullMetadata(h.getLevel().registryAccess());
       h.assertTrue(savedWater.getBoolean("FreezerFluidProcess"), "actual water batch keeps its source marker");
       h.assertValueEqual(savedWater.getInt("FreezerBatchVersion"), 1, "new water batch format is versioned");
@@ -325,7 +331,7 @@ public final class FreezerFluidAutomationGameTests {
       h.assertValueEqual(progress(machine), 179, "fluid work source persists");
       ticks(h, machine, 1);
       h.assertTrue(machine.getItem(2).is(Items.ICE), "reloaded fluid cycle completes once");
-      h.assertValueEqual(tank(h, machine, Direction.UP).getFluidInTank(0).getAmount(), 1000, "reloaded cycle pays exactly one bucket");
+      h.assertValueEqual(tank(h, machine, rear(machine)).getFluidInTank(0).getAmount(), 1000, "reloaded cycle pays exactly one bucket");
       h.assertValueEqual(energy(machine), 16000 - 1440, "reloaded cycle pays exact total FE");
       machine = place(h); power(machine); machine.setItem(0, new ItemStack(Items.ICE));
       machine.setItem(1, new ItemStack(Items.DIRT)); ticks(h, machine, 179);
@@ -426,13 +432,13 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_reload_cannot_transfer_source_credit_or_restore_invalid_water(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
+      tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
       machine.setItem(0, new ItemStack(Items.ICE));
       machine = reload(h, machine.saveWithFullMetadata(h.getLevel().registryAccess())); ticks(h, machine, 1);
       h.assertValueEqual(progress(machine), 1, "saving between source mutation and tick cannot transfer credit");
       h.assertTrue(machine.getItem(2).isEmpty(), "no premature packed ice on load");
       machine = place(h); power(machine); machine.setItem(0, new ItemStack(Items.ICE));
-      tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
+      tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);
       machine.setItem(0, ItemStack.EMPTY);
       machine = reload(h, machine.saveWithFullMetadata(h.getLevel().registryAccess())); ticks(h, machine, 1);
       h.assertValueEqual(progress(machine), 1, "item-to-water mutation before save cannot transfer credit either");
@@ -462,10 +468,10 @@ public final class FreezerFluidAutomationGameTests {
       h.assertValueEqual(menu.slots.size(), 39, "three existing machine slots and vanilla player inventory");
       h.assertValueEqual(machine.dataAccessForTests().getCount(), 16, "existing data count preserved");
       h.assertTrue(menu.freezerPreviewStack().isEmpty(), "empty tank has no result preview");
-      tank(h, machine, Direction.UP).fill(water(999), FluidAction.EXECUTE);
+      tank(h, machine, rear(machine)).fill(water(999), FluidAction.EXECUTE);
       h.assertTrue(menu.freezerPreviewStack().isEmpty(), "partial water has no recipe preview");
       h.assertValueEqual(menu.freezerStatus(), MachineMenu.FREEZER_STATUS_IDLE, "partial water is idle");
-      tank(h, machine, Direction.UP).fill(water(1), FluidAction.EXECUTE);
+      tank(h, machine, rear(machine)).fill(water(1), FluidAction.EXECUTE);
       h.assertValueEqual(machine.dataAccessForTests().get(2), 1000, "existing unused field carries exact water amount");
       h.assertTrue(menu.freezerPreviewStack().is(Items.ICE), "fluid recipe preview matches processing");
       h.assertValueEqual(menu.freezerStatus(), MachineMenu.FREEZER_STATUS_WAITING_FOR_ENERGY, "fluid recipe reports missing FE");
@@ -488,7 +494,7 @@ public final class FreezerFluidAutomationGameTests {
    @GameTest(template = "empty")
    public static void freezer_hand_bucket_inserts_item_recipe_and_keeps_pipe_tank_independent(GameTestHelper h) {
       MachineBlockEntity machine = place(h); power(machine);
-      tank(h, machine, Direction.UP).fill(water(1250), FluidAction.EXECUTE);
+      tank(h, machine, rear(machine)).fill(water(1250), FluidAction.EXECUTE);
       var player = h.makeMockPlayer(GameType.SURVIVAL);
       player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.WATER_BUCKET));
       h.assertTrue(machine.handleItemUse(player.getMainHandItem(), player, InteractionHand.MAIN_HAND),
@@ -515,13 +521,15 @@ public final class FreezerFluidAutomationGameTests {
       h.succeed();
    }
    @GameTest(template = "empty")
-   public static void freezer_real_ie_pipes_use_top_input_only_and_reconnect_after_entity_reload(GameTestHelper h) {
+   public static void freezer_real_ie_pipes_use_rear_input_only_and_reconnect_after_entity_reload(GameTestHelper h) {
       var pipeBlock = BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", "fluid_pipe"));
       h.assertTrue(pipeBlock != Blocks.AIR, "required IE pipe is loaded");
       MachineBlockEntity machine = place(h); power(machine);
+      Direction inputSide = rear(machine);
 
-      // A real IE pipe on any non-top face must not discover a Freezer fluid endpoint.
-      for (Direction side : new Direction[]{Direction.DOWN, Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST}) {
+      // A real IE pipe on any non-rear face must not discover a Freezer fluid endpoint.
+      for (Direction side : Direction.values()) {
+         if (side == inputSide) continue;
          BlockPos sidePipePos = machine.getBlockPos().relative(side);
          h.getLevel().setBlock(sidePipePos, pipeBlock.defaultBlockState(), 3);
          FluidPipeBlockEntity sidePipe = (FluidPipeBlockEntity)h.getLevel().getBlockEntity(sidePipePos);
@@ -536,45 +544,46 @@ public final class FreezerFluidAutomationGameTests {
          h.getLevel().setBlock(sidePipePos, Blocks.AIR.defaultBlockState(), 3);
       }
 
-      // The upper pipe face feeds the Freezer's public UP capability.
-      BlockPos pipePos = machine.getBlockPos().above();
+      // The rear pipe face feeds the Freezer's rear-facing public capability.
+      BlockPos pipePos = machine.getBlockPos().relative(inputSide);
       h.getLevel().setBlock(pipePos, pipeBlock.defaultBlockState(), 3);
       FluidPipeBlockEntity pipe = (FluidPipeBlockEntity)h.getLevel().getBlockEntity(pipePos);
       pipe.onNeighborBlockChange(machine.getBlockPos());
-      int downConnection = 1 << Direction.DOWN.get3DDataValue();
-      h.assertTrue((pipe.getAvailableConnectionByte() & downConnection) != 0, "IE detects the Freezer top input");
+      Direction pipeInputFace = inputSide.getOpposite();
+      int inputConnection = 1 << pipeInputFace.get3DDataValue();
+      h.assertTrue((pipe.getAvailableConnectionByte() & inputConnection) != 0, "IE detects the Freezer rear input");
       IFluidHandler inlet = h.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, pipePos, Direction.UP);
-      h.assertTrue(inlet != null, "external IE pipe top feed exists");
+      h.assertTrue(inlet != null, "external IE pipe rear feed exists");
 
       int transferred = 0;
       for (int attempt = 0; transferred < 1000 && attempt < 100; attempt++) {
          int accepted = inlet.fill(water(1000 - transferred), FluidAction.SIMULATE);
-         h.assertTrue(accepted > 0, "IE top route accepts water");
+         h.assertTrue(accepted > 0, "IE rear route accepts water");
          h.assertValueEqual(amount(h, machine), transferred, "IE pipe simulation does not fill destination");
          int executed = inlet.fill(water(1000 - transferred), FluidAction.EXECUTE);
          h.assertValueEqual(executed, accepted, "IE simulated and actual transfer agree");
          transferred += executed;
       }
-      h.assertValueEqual(transferred, 1000, "one actual bucket crosses the top IE pipe");
-      h.assertValueEqual(amount(h, machine), 1000, "top pipe transfer is conserved");
+      h.assertValueEqual(transferred, 1000, "one actual bucket crosses the rear IE pipe");
+      h.assertValueEqual(amount(h, machine), 1000, "rear pipe transfer is conserved");
       ticks(h, machine, 179);
 
       machine = reload(h, machine.saveWithFullMetadata(h.getLevel().registryAccess()));
       FluidPipeBlockEntity reloadedPipe = (FluidPipeBlockEntity)h.getLevel().getBlockEntity(pipePos);
       reloadedPipe.onNeighborBlockChange(machine.getBlockPos());
-      h.assertTrue((reloadedPipe.getAvailableConnectionByte() & downConnection) != 0,
-         "IE rediscovers the replacement Freezer through its top input");
+      h.assertTrue((reloadedPipe.getAvailableConnectionByte() & inputConnection) != 0,
+         "IE rediscovers the replacement Freezer through its rear input");
       IFluidHandler reloadedInlet = h.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, pipePos, Direction.UP);
-      h.assertTrue(reloadedInlet != null, "reloaded IE top feed exists");
+      h.assertTrue(reloadedInlet != null, "reloaded IE rear feed exists");
       ticks(h, machine, 1);
-      h.assertTrue(machine.getItem(2).is(Items.ICE), "top pipe-fed cycle completes after entity reload");
+      h.assertTrue(machine.getItem(2).is(Items.ICE), "rear pipe-fed cycle completes after entity reload");
       h.assertTrue(items(h, machine, Direction.DOWN).extractItem(0, 1, false).is(Items.ICE),
          "bottom item handler extracts output slot 2");
       h.assertValueEqual(amount(h, machine), 0, "reloaded cycle pays its water");
       int reloadedTransfer = reloadedInlet.fill(water(1000), FluidAction.EXECUTE);
       h.assertTrue(reloadedTransfer > 0, "IE re-discovers replacement entity after reload");
       h.assertValueEqual(amount(h, machine), reloadedTransfer,
-         "post-reload top transfer reaches the replacement rather than a stale entity");
+         "post-reload rear transfer reaches the replacement rather than a stale entity");
       h.getLevel().setBlock(pipePos, Blocks.AIR.defaultBlockState(), 3);
       h.succeed();
    }

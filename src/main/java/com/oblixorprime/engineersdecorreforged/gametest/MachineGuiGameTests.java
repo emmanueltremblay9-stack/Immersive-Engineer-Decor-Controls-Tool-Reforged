@@ -1091,12 +1091,13 @@ public final class MachineGuiGameTests {
             ItemStack output=machine==freezer?new ItemStack(Items.PACKED_ICE):new ItemStack(Items.MAGMA_BLOCK);
             machine.setItem(2,output);
             helper.assertTrue(machine.canTakeItemThroughFace(2,output,Direction.DOWN),"output remains extractable below");
+            machine.setItem(0, ItemStack.EMPTY);
          }
          IFluidHandler rearFreezer=helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),rear);
          IFluidHandler rearSmelter=helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),rear);
          helper.assertTrue(rearFreezer!=null&&rearSmelter!=null,"fluid input capabilities follow rear orientation");
-         helper.assertValueEqual(1000,rearFreezer.fill(new FluidStack(Fluids.WATER,1000),FluidAction.EXECUTE),"Freezer rear accepts water");
-         helper.assertValueEqual(1000,rearSmelter.fill(new FluidStack(Fluids.LAVA,1000),FluidAction.EXECUTE),"Smelter rear accepts lava");
+         helper.assertValueEqual(rearFreezer.fill(new FluidStack(Fluids.WATER,1000),FluidAction.EXECUTE),1000,"Freezer rear accepts water after independent item-port probe");
+         helper.assertValueEqual(rearSmelter.fill(new FluidStack(Fluids.LAVA,1000),FluidAction.EXECUTE),1000,"Smelter rear accepts lava after independent item-port probe");
          helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),Direction.UP)==null,"Freezer top fluid capability is absent");
          helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),Direction.UP)==null,"Smelter top fluid capability is absent");
          helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),facing)==null,"Smelter front fluid capability is absent");
@@ -1105,6 +1106,8 @@ public final class MachineGuiGameTests {
          for(Direction face:Direction.values()) if(face!=rear&&face!=Direction.DOWN)
             helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),face)==null,"Smelter has no fluid input on top/front/sides");
          helper.assertTrue(smelter.fluidHandler(Direction.DOWN).drain(1000,FluidAction.EXECUTE).isEmpty(),"bottom cannot drain reserved rear input lava");
+         freezer.fluidHandler(null).drain(2000,FluidAction.EXECUTE);
+         smelter.fluidHandler(null).drain(2000,FluidAction.EXECUTE);
       }
       helper.succeed();
    }
@@ -1412,10 +1415,12 @@ public final class MachineGuiGameTests {
       IEnergyStorage unsidedEnergy = helper.getLevel().getCapability(EnergyStorage.BLOCK, pos, null);
       helper.assertTrue(unsidedEnergy == null, "unsided FE capability cannot bypass the rear input port");
 
+      IItemHandler rearItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, rear);
       IItemHandler topItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, Direction.UP);
       IItemHandler bottomItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, Direction.DOWN);
-      helper.assertTrue(topItems != null && bottomItems != null, "physical item ports remain available");
-      helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), "rear item port cannot extract the input");
+      helper.assertTrue(rearItems != null && bottomItems != null, "physical rear-input and bottom-output item ports remain available");
+      helper.assertTrue(topItems == null, "the retired top item port is not exposed");
+      helper.assertTrue(rearItems.extractItem(0, 1, true).isEmpty(), "rear item port cannot extract the input");
       helper.assertValueEqual(1, bottomItems.insertItem(0, new ItemStack(Items.COBBLESTONE), true).getCount(),
          "bottom item port rejects insertion");
       Direction back = machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
