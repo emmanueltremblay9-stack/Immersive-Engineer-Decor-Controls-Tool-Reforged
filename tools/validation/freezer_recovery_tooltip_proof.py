@@ -31,6 +31,8 @@ def validate_tooltip(proof,game,nonce,sha,language):
     if ''.join(''.join(proof.get('lines',[])).split())!=''.join(proof.get('expected_text','').split()) or not proof.get('styles'):
         raise SmokeFailure('Freezer recovery tooltip text/style missing')
     w,h=proof['tooltip_width'],proof['tooltip_height'];x,y=proof['x'],proof['y']
+    if w > min(240, proof['viewport_width'] - 8):
+        raise SmokeFailure('Freezer recovery tooltip exceeds the bounded width for a narrow viewport')
     if not (x-4>=0 and y-4>=0 and x+w+4<=proof['viewport_width'] and y+h+4<=proof['viewport_height']) or proof.get('in_bounds') is not True:
         raise SmokeFailure(f'Native Freezer recovery tooltip clipped: ({x},{y},{w},{h}) in {proof["viewport_width"]}x{proof["viewport_height"]}')
     return True

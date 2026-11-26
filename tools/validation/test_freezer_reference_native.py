@@ -178,5 +178,20 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
         with self.assertRaises(SmokeFailure): self.validate(proof=proof, height=260)
 
 
+class HiddenRecoveryClickContractTests(unittest.TestCase):
+    def test_hidden_recovery_button_reuses_native_hit_test_without_visible_guard(self):
+        source_path = Path(__file__).resolve().parents[2] / (
+            "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/"
+            "NativeFreezerReferenceValidation.java")
+        source = source_path.read_text()
+        repeat = source.split("case REPEAT_RECOVERY -> {", 1)[1].split("case CLOSE -> {", 1)[0]
+        self.assertIn("require(!screen.validationRecoveryVisible()", repeat)
+        self.assertIn("clickRecoveryButtonCenter(screen)", repeat)
+        self.assertNotIn("clickRecovery(screen)", repeat)
+        guarded = source.split("private static void clickRecovery(ThermalVerticalScreen screen)", 1)[1].split(
+            "private static void clickRecoveryButtonCenter", 1)[0]
+        self.assertIn("require(screen.validationRecoveryVisible()", guarded)
+
+
 if __name__ == "__main__":
     unittest.main()

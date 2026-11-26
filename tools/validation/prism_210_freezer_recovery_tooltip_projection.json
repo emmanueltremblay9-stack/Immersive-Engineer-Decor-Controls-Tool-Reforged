@@ -1,0 +1,90 @@
+{
+  "schema": "iedctr-prism-freezer-recovery-tooltip-wrap-v1",
+  "base_commit": "1a2963e3120987eee036007b209ef87cf70b44ae",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java": {
+      "old_sha256": "c3043ab5a905ea17086135c27b4bd8520ad09ddd846a020ac4f17a50b98f3b13",
+      "new_sha256": "c81800015e554b510b7f49ca6acb65e0af4fe3c577a07187e17920c3576ac1ae",
+      "hunks": [
+        {
+          "start": 128,
+          "end": 129,
+          "current": "         Component recoveryHelp = Component.translatableWithFallback(\n",
+          "previous": "         graphics.renderTooltip(font, Component.translatableWithFallback(\n"
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "current": "            \"Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.\");\n         // Keep the localized instruction inside narrow Prism windows without\n         // changing its wording or the recovery control's hitbox.\n         graphics.renderTooltip(font, font.split(recoveryHelp, Math.max(80, Math.min(240, width - 16))), mouseX, mouseY);\n",
+          "previous": "            \"Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.\"), mouseX, mouseY);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java": {
+      "old_sha256": "701c4499cc8f1e6da2cf17de15a0ec3b603b98847d09a25f30825596288e0ec9",
+      "new_sha256": "908406853e9a636f94e449aa528d1b095e2637aef1dde965c429dc24fb7ef7df",
+      "hunks": [
+        {
+          "start": 294,
+          "end": 295,
+          "current": "               clickRecoveryButtonCenter(screen); // Same coordinate after disappearance must not duplicate/drop anything.\n",
+          "previous": "               clickRecovery(screen); // Same coordinate after disappearance must not duplicate/drop anything.\n"
+        },
+        {
+          "start": 446,
+          "end": 449,
+          "current": "      clickRecoveryButtonCenter(screen);\n   }\n   private static void clickRecoveryButtonCenter(ThermalVerticalScreen screen) {\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/freezer_recovery_tooltip_proof.py": {
+      "old_sha256": "5c592de0f5b6fd41a6ac51c1e3884c9e93c21c19fd17874d2e9b8462c6a37c22",
+      "new_sha256": "5d0c74c75265889cc4be62a6d918b9cb42258d4384929877b30f3819ad93d9f3",
+      "hunks": [
+        {
+          "start": 33,
+          "end": 35,
+          "current": "    if w > min(240, proof['viewport_width'] - 8):\n        raise SmokeFailure('Freezer recovery tooltip exceeds the bounded width for a narrow viewport')\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_freezer_recovery_tooltip_proof.py": {
+      "old_sha256": "12b63f9dc7135c92c51061e976f64176dd52f43ee651debe8acb18e75ccdb4ca",
+      "new_sha256": "f0b51b474d335281963ac46f191877619ee64dec49ec4cc83f85ab128feb3918",
+      "hunks": [
+        {
+          "start": 17,
+          "end": 18,
+          "current": "        for key,value in [('frames',0),('nonce','stale'),('styles',[]),('lines',['missing']),('tooltip_width',241),('x',-2),('in_bounds',False),('capture_sha256','bad'),('viewport_width',640),('expected_text',''),('tooltip_height',True),('translation_key','wrong'),('hovered_control','slot'),('button_canvas_x',True),('pointer_canvas_x',0)]:\n",
+          "previous": "        for key,value in [('frames',0),('nonce','stale'),('styles',[]),('lines',['missing']),('tooltip_width',400),('x',-2),('in_bounds',False),('capture_sha256','bad'),('viewport_width',640),('expected_text',''),('tooltip_height',True),('translation_key','wrong'),('hovered_control','slot'),('button_canvas_x',True),('pointer_canvas_x',0)]:\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_recovery_tooltip_wrap.py": {
+      "old_sha256": "c2c3955880706224edf472d36e9b6e1d5d4b2a9a42f05ffd3fdd537bc2fcaaaf",
+      "new_sha256": "71717380d5eddb189f15ddebf1609ab3860f7e697a6089f2f5d3aa0cdf38c26e",
+      "hunks": [
+        {
+          "start": 32,
+          "end": 38,
+          "current": "    def test_recovery_instruction_is_wrapped_to_a_narrow_viewport(self):\n        source = SCREEN.read_text()\n        self.assertIn(\"font.split(recoveryHelp, Math.max(80, Math.min(240, width - 16)))\", source)\n        self.assertIn(\"graphics.renderTooltip(font, font.split(recoveryHelp\", source)\n        self.assertNotIn(\"graphics.renderTooltip(font, Component.translatableWithFallback(\", source)\n\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_freezer_reference_native.py": {
+      "old_sha256": "3374b15a8de599055ef18883a1e801d4630e7903ad250f74d8157ed609bd74ac",
+      "new_sha256": "797a86d5a7a5f724bdd8dfd8611a1f4742f4673f34a36fc34f1e196c217d007a",
+      "hunks": [
+        {
+          "start": 180,
+          "end": 195,
+          "current": "class HiddenRecoveryClickContractTests(unittest.TestCase):\n    def test_hidden_recovery_button_reuses_native_hit_test_without_visible_guard(self):\n        source_path = Path(__file__).resolve().parents[2] / (\n            \"src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/\"\n            \"NativeFreezerReferenceValidation.java\")\n        source = source_path.read_text()\n        repeat = source.split(\"case REPEAT_RECOVERY -> {\", 1)[1].split(\"case CLOSE -> {\", 1)[0]\n        self.assertIn(\"require(!screen.validationRecoveryVisible()\", repeat)\n        self.assertIn(\"clickRecoveryButtonCenter(screen)\", repeat)\n        self.assertNotIn(\"clickRecovery(screen)\", repeat)\n        guarded = source.split(\"private static void clickRecovery(ThermalVerticalScreen screen)\", 1)[1].split(\n            \"private static void clickRecoveryButtonCenter\", 1)[0]\n        self.assertIn(\"require(screen.validationRecoveryVisible()\", guarded)\n\n\n",
+          "previous": ""
+        }
+      ]
+    }
+  }
+}

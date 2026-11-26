@@ -126,9 +126,12 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
       }
       renderTooltip(graphics, mouseX, mouseY);
       if (recoveryButton != null && recoveryButton.visible && recoveryButton.isHovered()) {
-         graphics.renderTooltip(font, Component.translatableWithFallback(
+         Component recoveryHelp = Component.translatableWithFallback(
             NS + ".freezer_reference.recover_help",
-            "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored."), mouseX, mouseY);
+            "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.");
+         // Keep the localized instruction inside narrow Prism windows without
+         // changing its wording or the recovery control's hitbox.
+         graphics.renderTooltip(font, font.split(recoveryHelp, Math.max(80, Math.min(240, width - 16))), mouseX, mouseY);
       } else if (hoveredSlot == null && localOver(mouseX, mouseY, 55, 88, 25, 105)) {
          graphics.renderTooltip(font, Component.literal(menu.energyStored() + " / " + menu.energyCapacity() + " FE"),
             mouseX, mouseY);

@@ -30,6 +30,12 @@ class FreezerRecoveryTooltipTest(unittest.TestCase):
         self.assertIn("ThermalVerticalGeometry.CANVAS_WIDTH", source)
         self.assertIn("ThermalVerticalGeometry.CANVAS_HEIGHT", source)
 
+    def test_recovery_instruction_is_wrapped_to_a_narrow_viewport(self):
+        source = SCREEN.read_text()
+        self.assertIn("font.split(recoveryHelp, Math.max(80, Math.min(240, width - 16)))", source)
+        self.assertIn("graphics.renderTooltip(font, font.split(recoveryHelp", source)
+        self.assertNotIn("graphics.renderTooltip(font, Component.translatableWithFallback(", source)
+
 
 if __name__ == "__main__":
     unittest.main()

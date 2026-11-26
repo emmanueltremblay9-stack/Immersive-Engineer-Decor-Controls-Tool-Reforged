@@ -16,11 +16,14 @@ LATE_VALIDATION_RECORD = Path(__file__).with_name("prism_210_late_validation_pro
 LATE_VALIDATION_RECORD_SHA256 = "87336694ba35c1d9d01dc8fe9fb7ae97546ede5a1a712c31ce36566bad83220f"
 FREEZER_NATIVE_PORT_RECORD = Path(__file__).with_name("prism_210_freezer_native_port_projection.json")
 FREEZER_NATIVE_PORT_RECORD_SHA256 = "45c7eda7753117ce2ffccb7206bf00e7568435d6cf3bcf7b53754e1e15aa7071"
+FREEZER_RECOVERY_TOOLTIP_RECORD = Path(__file__).with_name("prism_210_freezer_recovery_tooltip_projection.json")
+FREEZER_RECOVERY_TOOLTIP_RECORD_SHA256 = "ff20fadb6932b79b83a0cf7afb6f8d2284b7ff9aff0fff7bc0ae13fe4e8bc841"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 HEAD_COMMIT = "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
 RECORD_BYTES = RECORD.read_bytes()
 LATE_VALIDATION_RECORD_BYTES = LATE_VALIDATION_RECORD.read_bytes()
 FREEZER_NATIVE_PORT_RECORD_BYTES = FREEZER_NATIVE_PORT_RECORD.read_bytes()
+FREEZER_RECOVERY_TOOLTIP_RECORD_BYTES = FREEZER_RECOVERY_TOOLTIP_RECORD.read_bytes()
 
 
 def _record():
@@ -56,6 +59,17 @@ def _freezer_native_port_record():
     return data
 
 
+def _freezer_recovery_tooltip_record():
+    if sha256(FREEZER_RECOVERY_TOOLTIP_RECORD_BYTES) != FREEZER_RECOVERY_TOOLTIP_RECORD_SHA256:
+        raise AssertionError("#210 Freezer recovery tooltip projection record changed")
+    data = json.loads(FREEZER_RECOVERY_TOOLTIP_RECORD_BYTES)
+    if data.get("schema") != "iedctr-prism-freezer-recovery-tooltip-wrap-v1":
+        raise AssertionError("#210 Freezer recovery tooltip projection schema changed")
+    if data.get("base_commit") != "1a2963e3120987eee036007b209ef87cf70b44ae":
+        raise AssertionError("#210 Freezer recovery tooltip projection base changed")
+    return data
+
+
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -82,13 +96,21 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
     be checked by its own fail-closed validator. Call with strict=True in tests
     that specifically validate this candidate's recorded state.
     """
+    recovery_tooltip = _freezer_recovery_tooltip_record()["files"].get(path)
+    recovery_tooltip_reversed = False
+    if recovery_tooltip is not None:
+        if sha256(source) == recovery_tooltip["new_sha256"]:
+            source = _reverse_layer(path, source, recovery_tooltip)
+            recovery_tooltip_reversed = True
+        elif strict:
+            raise AssertionError("Unrecognized #210 candidate bytes: " + path)
     port = _freezer_native_port_record()["files"].get(path)
     port_reversed = False
     if port is not None:
         if sha256(source) == port["new_sha256"]:
             source = _reverse_layer(path, source, port)
             port_reversed = True
-        elif strict:
+        elif strict and not recovery_tooltip_reversed:
             raise AssertionError("Unrecognized #210 candidate bytes: " + path)
     record = _record()["files"].get(path)
     if record is None:
@@ -103,7 +125,7 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
             if strict:
                 raise AssertionError("Unrecognized #210 late validation bytes: " + path)
         if strict:
-            if not port_reversed:
+            if not port_reversed and not recovery_tooltip_reversed:
                 raise AssertionError("Path is outside the #210 projection allowlist: " + path)
         return source
     digest = sha256(source)
@@ -150,6 +172,9 @@ def project_file_from_root(path: str, *, strict: bool = True) -> bytes:
 
 def expected_current_sha256(path: str) -> str | None:
     """Return the pinned final candidate blob identity for an allowed path."""
+    recovery_tooltip = _freezer_recovery_tooltip_record()["files"].get(path)
+    if recovery_tooltip is not None:
+        return recovery_tooltip["new_sha256"]
     port = _freezer_native_port_record()["files"].get(path)
     if port is not None:
         return port["new_sha256"]

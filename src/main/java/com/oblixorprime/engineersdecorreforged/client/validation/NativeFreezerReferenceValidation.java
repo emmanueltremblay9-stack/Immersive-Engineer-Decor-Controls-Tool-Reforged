@@ -292,7 +292,7 @@ public final class NativeFreezerReferenceValidation {
          case REPEAT_RECOVERY -> {
             if (ticks == 3) {
                require(!screen.validationRecoveryVisible(), "Recovery control must disappear after extraction");
-               clickRecovery(screen); // Same coordinate after disappearance must not duplicate/drop anything.
+               clickRecoveryButtonCenter(screen); // Same coordinate after disappearance must not duplicate/drop anything.
             }
             if (ticks < 8 || !menu.getCarried().isEmpty()
                || !serverMatches(mc, p -> machine.getItem(1).isEmpty() && countDirt(p) == 5 && p.containerMenu.getCarried().isEmpty() && droppedDirt(p) == 0)) return false;
@@ -444,6 +444,9 @@ public final class NativeFreezerReferenceValidation {
    }
    private static void clickRecovery(ThermalVerticalScreen screen) {
       require(screen.validationRecoveryVisible(), "Reserved-item recovery control is not visible");
+      clickRecoveryButtonCenter(screen);
+   }
+   private static void clickRecoveryButtonCenter(ThermalVerticalScreen screen) {
       click(screen, screen.validationRecoveryButtonX() + screen.validationRecoveryButtonWidth() / 2.0D,
          screen.validationRecoveryButtonY() + screen.validationRecoveryButtonHeight() / 2.0D, 0);
    }
