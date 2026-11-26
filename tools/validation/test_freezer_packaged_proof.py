@@ -6,12 +6,9 @@ import tempfile
 import unittest
 import warnings
 import zipfile
-import subprocess
 from client_mixin_smoke import SmokeFailure
 from freezer_packaged_proof import CLASSES, HARNESS, MOD, TEXTURES, SELECTORS, validate_runtime
-V5_BACKGROUND_SOURCE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
-THERMAL_CHAMBER_SOURCE_COMMIT = "7abd0166b122e5b40caec13318fef72c6cf63d09"
-V5_PHASE_SOURCE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
+from freezer_reference_native import SCREEN_CLASS
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -25,17 +22,8 @@ class RuntimeTests(unittest.TestCase):
             for name in CLASSES:
                 archive.writestr(name.replace('.', '/')+'.class', name.encode())
             for name in TEXTURES:
-                # The package test is for the archived Freezer V5 runtime, not the
-                # later vertical-screen candidate. Pull its exact immutable bytes.
                 old_path = 'src/main/resources/assets/'+MOD+'/'+name
-                # The V5 panel and phase art retain their source pins. The clean
-                # chamber is the approved common thermal base introduced by the
-                # candidate composition, not the earlier e8b21c91 base.
-                source_commit = (THERMAL_CHAMBER_SOURCE_COMMIT
-                    if name.endswith('freezer_v5_chamber_clean_base.png')
-                    else V5_BACKGROUND_SOURCE_COMMIT if name.endswith('background.png')
-                    else V5_PHASE_SOURCE_COMMIT)
-                artwork = subprocess.check_output(['git', 'show', f'{source_commit}:{old_path}'], cwd=ROOT)
+                artwork = (ROOT / old_path).read_bytes()
                 self.assertEqual(hashlib.sha256(artwork).hexdigest(), TEXTURES[name], name)
                 archive.writestr('assets/'+MOD+'/'+name, artwork)
         digest = hashlib.sha256(jar.read_bytes()).hexdigest()
@@ -46,6 +34,7 @@ class RuntimeTests(unittest.TestCase):
         self.proof = dict(packaged_runtime=dict(jar_path=str(jar), jar_sha256=digest,
             fixture_free_jar=False, separate_provenance_harness=True, separate_harness_module=True, production_selectors_absent=False, production_selectors=SELECTORS, presentation_mode="normal-dynamic", dev_selectors_absent=True,
             harness_mod_id=HARNESS, harness_mod_path='/isolated/harness', mod_root_uri=root,
+            active_screen_class=SCREEN_CLASS,
             class_origins=[{'class': n, 'resource_uri': root+n.replace('.', '/')+'.class',
                 'code_source_uri': root, 'sha256': hashlib.sha256(n.encode()).hexdigest()} for n in CLASSES],
             active_textures=[dict(path=n, sha256=h, pack='mod/'+MOD) for n, h in TEXTURES.items()]))

@@ -66,7 +66,8 @@ class DriverTests(unittest.TestCase):
 
     def test_no_stale_static_chamber_scope(self):
         source=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeClientMiningValidation.java').read_text()
-        self.assertIn('chamber frost from server phases; static decorative rim',source)
-        self.assertNotIn('inventory/energy smoke; static frost;',source)
+        self.assertIn('ThermalVerticalScreen Freezer smoke',source)
+        self.assertIn('39 menu entries with reserved index 1 hidden, two visible machine slots',source)
+        self.assertNotIn('static decorative rim',source)
 
 if __name__=='__main__': unittest.main()

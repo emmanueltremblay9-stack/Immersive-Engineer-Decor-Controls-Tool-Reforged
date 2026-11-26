@@ -6,13 +6,14 @@ import zipfile
 from fluid_gestures_native import require
 from factory_placer_delivery_evidence import uri_identity
 from client_mixin_smoke import SmokeFailure
+from freezer_reference_native import SCREEN_CLASS
 
 MOD = 'immersive_engineer_decor_controls_tool_reforged'
 HARNESS = 'iedctr_freezer_validation'
 PREFIX = 'com.oblixorprime.engineersdecorreforged.'
-CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.FreezerReferenceScreen',
-    'utility.FreezerReferenceGeometry', 'utility.FreezerReferenceLiveState', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity', 'client.validation.NativeFreezerReferenceValidation', 'client.validation.NativeClientMiningValidation')]
-TEXTURES = {'textures/gui/freezer_reference_v5/background.png': 'e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_clean_base.png': 'b1d1e5760c29667d1f7e8dbf453528d97941a7d53dc5f9854784f5caf55af60f', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_mask_alpha.png': '625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase0.png': 'eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase1.png': '5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase2.png': 'ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase3.png': '3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase4.png': 'b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0'}
+CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.ThermalVerticalScreen',
+    'utility.FreezerReferenceGeometry', 'utility.ThermalVerticalGeometry', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity', 'client.validation.NativeFreezerReferenceValidation', 'client.validation.NativeClientMiningValidation')]
+TEXTURES = {'textures/gui/thermal_vertical/freezer/neutral.png': '48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806', 'textures/gui/thermal_vertical/freezer/effect.png': '046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957', 'textures/gui/thermal_vertical/freezer/energy.png': '73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638'}
 SELECTORS = sorted(["iedctr.clientGameplay", "iedctr.freezerReferenceOnly", "iedctr.freezerPackagedNative"])
 
 
@@ -44,6 +45,7 @@ def _validate_runtime(proof, report, archive_path=None):
     require(runtime.get('separate_provenance_harness') is True and runtime.get('harness_mod_id') == HARNESS and runtime.get('fixture_free_jar') is False
             and runtime.get('separate_harness_module') is True and runtime.get('production_selectors_absent') is False
             and runtime.get('production_selectors') == SELECTORS and 'opt_in_selector' not in runtime and runtime.get('presentation_mode') == 'normal-dynamic' and runtime.get('dev_selectors_absent') is True
+            and runtime.get('active_screen_class') == SCREEN_CLASS
             and type(runtime.get('harness_mod_path')) is str and runtime['harness_mod_path']
             and Path(runtime['harness_mod_path']).is_absolute()
             and evidence_path(runtime['harness_mod_path']) != jar, 'Not an independent normal-path Freezer provenance mod')

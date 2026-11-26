@@ -1,0 +1,636 @@
+{
+  "schema": "iedctr-prism-freezer-native-port-v1",
+  "base_commit": "e429a1fa1551c4532eb3e59d531ccf86570ff9b5",
+  "files": {
+    "src/freezerPackagedValidation/java/com/oblixorprime/iedctrtest/freezer/PackagedRuntimeProof.java": {
+      "old_sha256": "af7d8f8c4df612be1e3c8241f29ebaca162813ef256af2dedb269e4eb8f5af23",
+      "new_sha256": "3d2afaae47a53854f07454055afaa3c142fc683f5835ac072c7a0b8c9aabada7",
+      "hunks": [
+        {
+          "start": 5,
+          "end": 6,
+          "current": "import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;\n",
+          "previous": "import com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen;\n"
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;\n",
+          "previous": "import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceLiveState;\n"
+        },
+        {
+          "start": 49,
+          "end": 53,
+          "current": "            for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, ThermalVerticalScreen.class,\n                    FreezerReferenceGeometry.class, ThermalVerticalGeometry.class, MachineMenu.class, MachineLayout.class,\n                    MachineBlockEntity.class, Class.forName(\"com.oblixorprime.engineersdecorreforged.client.validation.NativeFreezerReferenceValidation\"),\n                    Class.forName(\"com.oblixorprime.engineersdecorreforged.client.validation.NativeClientMiningValidation\")}) {\n",
+          "previous": "            for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, FreezerReferenceScreen.class,\n                    FreezerReferenceGeometry.class, FreezerReferenceLiveState.class, MachineMenu.class, MachineLayout.class, MachineBlockEntity.class, Class.forName(\"com.oblixorprime.engineersdecorreforged.client.validation.NativeFreezerReferenceValidation\"), Class.forName(\"com.oblixorprime.engineersdecorreforged.client.validation.NativeClientMiningValidation\")}) {\n"
+        },
+        {
+          "start": 77,
+          "end": 79,
+          "current": "            String[] paths = {\"thermal_vertical/freezer/neutral.png\", \"thermal_vertical/freezer/effect.png\", \"thermal_vertical/freezer/energy.png\"};\n            String[] hashes = {\"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\", \"046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957\", \"73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638\"};\n",
+          "previous": "            String[] paths = {\"freezer_reference_v5/background.png\", \"freezer_reference_v5/freezer_v5_chamber_clean_base.png\", \"freezer_reference_v5/freezer_v5_chamber_mask_alpha.png\", \"freezer_reference_v5/freezer_v5_frost_overlay_phase0.png\", \"freezer_reference_v5/freezer_v5_frost_overlay_phase1.png\", \"freezer_reference_v5/freezer_v5_frost_overlay_phase2.png\", \"freezer_reference_v5/freezer_v5_frost_overlay_phase3.png\", \"freezer_reference_v5/freezer_v5_frost_overlay_phase4.png\"};\n            String[] hashes = {\"e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7\", \"b1d1e5760c29667d1f7e8dbf453528d97941a7d53dc5f9854784f5caf55af60f\", \"625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0\", \"eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664\", \"5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b\", \"ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898\", \"3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49\", \"b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0\"};\n"
+        },
+        {
+          "start": 99,
+          "end": 101,
+          "current": "            proof.addProperty(\"fixture_scope\", \"Separate com/oblixorprime/iedctrtest harness excluded; real ThermalVerticalScreen Freezer fixture explicitly enabled; no physical OS input claim\"); proof.addProperty(\"separate_harness_module\", true);\n            proof.addProperty(\"active_screen_class\", ThermalVerticalScreen.class.getName());\n",
+          "previous": "            proof.addProperty(\"fixture_scope\", \"Separate com/oblixorprime/iedctrtest harness excluded; historical bundled Freezer/world fixture explicitly enabled; no physical OS input claim\"); proof.addProperty(\"separate_harness_module\", true);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java": {
+      "old_sha256": "539f146b1b3d6cfaa447f5a75645f668c5599ad99d3af3187172b36e6d8fbc89",
+      "new_sha256": "c3043ab5a905ea17086135c27b4bd8520ad09ddd846a020ac4f17a50b98f3b13",
+      "hunks": [
+        {
+          "start": 65,
+          "end": 79,
+          "current": "   /** Read-only hooks for the nonce-owned native Freezer recovery validation. */\n   public boolean validationRecoveryVisible() {\n      return freezer() && recoveryButton != null && recoveryButton.visible;\n   }\n\n   public boolean validationRecoveryButtonHovered() {\n      return validationRecoveryVisible() && recoveryButton.isHovered();\n   }\n\n   public int validationRecoveryButtonX() { return recoveryButton == null ? -1 : recoveryButton.getX(); }\n   public int validationRecoveryButtonY() { return recoveryButton == null ? -1 : recoveryButton.getY(); }\n   public int validationRecoveryButtonWidth() { return recoveryButton == null ? 0 : recoveryButton.getWidth(); }\n   public int validationRecoveryButtonHeight() { return recoveryButton == null ? 0 : recoveryButton.getHeight(); }\n\n",
+          "previous": ""
+        },
+        {
+          "start": 128,
+          "end": 131,
+          "current": "         graphics.renderTooltip(font, Component.translatableWithFallback(\n            NS + \".freezer_reference.recover_help\",\n            \"Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.\"), mouseX, mouseY);\n",
+          "previous": "         graphics.renderTooltip(font, Component.literal(\"Recover reserved legacy items\"), mouseX, mouseY);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeClientMiningValidation.java": {
+      "old_sha256": "644ff44d8146073cd27732e2c8e88235fdb8ee6d9832239798db2da49afdabc2",
+      "new_sha256": "a276ba21ff40ce33dcd84754073ed2ed600761ff2a19b6ee38b7d2fae80278c2",
+      "hunks": [
+        {
+          "start": 694,
+          "end": 695,
+          "current": "      proof.addProperty(\"scope\", Boolean.getBoolean(\"iedctr.freezerReferenceOnly\") ? \"Bounded ThermalVerticalScreen Freezer smoke: real 1440 FE recipe, server-synchronized frost phases, 39 menu entries with reserved index 1 hidden, two visible machine slots, close/reopen and reserved-item recovery; no physical OS input or full visual acceptance\" : Boolean.getBoolean(\"iedctr.correctedMachineGuiOnly\") ? \"Seven registered machine menus with synchronized fixture states and native captures; current Freezer uses ThermalVerticalScreen; excludes Tree Cutter V3, which requires independent qualification\" : Boolean.getBoolean(\"iedctr.smelterGuiOnly\") ? \"Real Small Mineral Smelter v0.5 menu and live integrated-server projection with native framebuffer captures\" : Boolean.getBoolean(\"iedctr.catwalkJunctionOnly\") ? \"Landing/stair scene capture and packaged-model measurements only; no alignment or survival qualification\" : Boolean.getBoolean(\"iedctr.panzerGlassOnly\") ? \"Isolated Panzer Glass scene captures and face visibility checks; no mining qualification\" : Boolean.getBoolean(\"iedctr.doorSensorOnly\") ? \"Isolated native Door Sensor placement and captures; no mining qualification\" : Boolean.getBoolean(\"iedctr.lavaSurfaceOnly\") ? \"Isolated lava height and mesh diagnostic; no mining qualification\" : Boolean.getBoolean(\"iedctr.flowDistanceOnly\") ? \"Natural water flow observation only; no lamp mining qualification\" : \"Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions\");\n",
+          "previous": "      proof.addProperty(\"scope\", Boolean.getBoolean(\"iedctr.freezerReferenceOnly\") ? \"Bounded Freezer V5 native inventory/energy smoke; chamber frost from server phases; static decorative rim; not full visual acceptance\" : Boolean.getBoolean(\"iedctr.correctedMachineGuiOnly\") ? \"Seven registered machine menus with synchronized fixture states and native captures; current Freezer uses ThermalVerticalScreen; excludes Tree Cutter V3, which requires independent qualification\" : Boolean.getBoolean(\"iedctr.smelterGuiOnly\") ? \"Real Small Mineral Smelter v0.5 menu and live integrated-server projection with native framebuffer captures\" : Boolean.getBoolean(\"iedctr.catwalkJunctionOnly\") ? \"Landing/stair scene capture and packaged-model measurements only; no alignment or survival qualification\" : Boolean.getBoolean(\"iedctr.panzerGlassOnly\") ? \"Isolated Panzer Glass scene captures and face visibility checks; no mining qualification\" : Boolean.getBoolean(\"iedctr.doorSensorOnly\") ? \"Isolated native Door Sensor placement and captures; no mining qualification\" : Boolean.getBoolean(\"iedctr.lavaSurfaceOnly\") ? \"Isolated lava height and mesh diagnostic; no mining qualification\" : Boolean.getBoolean(\"iedctr.flowDistanceOnly\") ? \"Natural water flow observation only; no lamp mining qualification\" : \"Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions\");\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java": {
+      "old_sha256": "fb790d8e6f3f47090e17c943207558650501275c630fde2fbaeb78c7c4a7ec4c",
+      "new_sha256": "701c4499cc8f1e6da2cf17de15a0ec3b603b98847d09a25f30825596288e0ec9",
+      "hunks": [
+        {
+          "start": 12,
+          "end": 13,
+          "current": "import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;\n",
+          "previous": "import com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen;\n"
+        },
+        {
+          "start": 14,
+          "end": 15,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;\n",
+          "previous": "import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;\nimport com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceLiveState;\n"
+        },
+        {
+          "start": 47,
+          "end": 61,
+          "current": "   private static final String NEUTRAL_SHA256 = \"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\";\n   private static final String EFFECT_SHA256 = \"046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957\";\n   private static final String ENERGY_SHA256 = \"73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638\";\n   private static final double RASTER_PER_CANVAS_PIXEL = 3.0D;\n   // Verified alpha bounds of the exact 1041x1143 Freezer energy/effect layers,\n   // projected onto the 347x381 ThermalVerticalScreen canvas.\n   private static final double ENERGY_LEFT = 187.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double ENERGY_TOP = 371.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double ENERGY_RIGHT = 216.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double ENERGY_BOTTOM = 559.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_LEFT = 331.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_TOP = 324.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_RIGHT = 720.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_BOTTOM = 564.0D / RASTER_PER_CANVAS_PIXEL;\n",
+          "previous": ""
+        },
+        {
+          "start": 152,
+          "end": 153,
+          "current": "         if (!(mc.screen instanceof ThermalVerticalScreen) || current(mc) == null) return false;\n",
+          "previous": "         if (!(mc.screen instanceof FreezerReferenceScreen) || current(mc) == null) return false;\n"
+        },
+        {
+          "start": 172,
+          "end": 173,
+          "current": "      if (menu == null || !(mc.screen instanceof ThermalVerticalScreen screen)) return false;\n",
+          "previous": "      if (menu == null || !(mc.screen instanceof FreezerReferenceScreen screen)) return false;\n"
+        },
+        {
+          "start": 247,
+          "end": 249,
+          "current": "               pointerX = view.screenX(screen.validationRecoveryButtonX() + screen.validationRecoveryButtonWidth() / 2.0D);\n               pointerY = view.screenY(screen.validationRecoveryButtonY() + screen.validationRecoveryButtonHeight() / 2.0D);\n",
+          "previous": "               pointerX = view.screenX(157); pointerY = view.screenY(93);\n"
+        },
+        {
+          "start": 348,
+          "end": 349,
+          "current": "         || !(event.getScreen() instanceof ThermalVerticalScreen) || event.getScreen() != mc.screen\n",
+          "previous": "         || !(event.getScreen() instanceof FreezerReferenceScreen) || event.getScreen() != mc.screen\n"
+        },
+        {
+          "start": 438,
+          "end": 443,
+          "current": "   private static void clickSlot(ThermalVerticalScreen screen, int index, int button) {\n      require(index == 0 || index == 2 || index >= 3 && index <= 38,\n         \"Only visible Thermal Freezer slots may be clicked: \" + index);\n      var anchor = ThermalVerticalGeometry.slot(index, MachineKind.SMALL_FREEZER);\n         click(screen, anchor.x() + 8, anchor.y() + 8, button);\n",
+          "previous": "   private static void clickSlot(FreezerReferenceScreen screen, int index, int button) {\n      var anchor = FreezerReferenceGeometry.anchor(index);\n      click(screen, anchor.x() + 8, anchor.y() + 8, button);\n"
+        },
+        {
+          "start": 444,
+          "end": 450,
+          "current": "   private static void clickRecovery(ThermalVerticalScreen screen) {\n      require(screen.validationRecoveryVisible(), \"Reserved-item recovery control is not visible\");\n      click(screen, screen.validationRecoveryButtonX() + screen.validationRecoveryButtonWidth() / 2.0D,\n         screen.validationRecoveryButtonY() + screen.validationRecoveryButtonHeight() / 2.0D, 0);\n   }\n   private static void click(ThermalVerticalScreen screen, double x, double y, int button) {\n",
+          "previous": "   private static void clickRecovery(FreezerReferenceScreen screen) { click(screen, 157, 93, 0); }\n   private static void click(FreezerReferenceScreen screen, double x, double y, int button) {\n"
+        },
+        {
+          "start": 456,
+          "end": 457,
+          "current": "      var screen = (ThermalVerticalScreen)mc.screen;\n",
+          "previous": "      var screen = (FreezerReferenceScreen)mc.screen;\n"
+        },
+        {
+          "start": 458,
+          "end": 463,
+          "current": "      require(menu != null && menu.thermalVerticalPresentation() && menu.slots.size() == 39\n         && menu.visibleMachineSlots() == 3 && !menu.getSlot(1).isActive()\n         && menu.getSlot(0).isActive() && menu.getSlot(2).isActive(),\n         \"Thermal Freezer must retain 39 protocol slots, expose two machine slots, and hide only reserved index 1\");\n      ThermalVerticalGeometry.validate(MachineKind.SMALL_FREEZER);\n",
+          "previous": "      require(menu != null && menu.freezerReferencePresentation() && menu.slots.size() == 39\n         && menu.visibleMachineSlots() == 3 && !menu.getSlot(1).isActive(), \"Actual client must retain all 39 protocol slots and hide only reserved slot 1\");\n"
+        },
+        {
+          "start": 464,
+          "end": 480,
+          "current": "      require(!screen.validationSlotHoveredAt(1, view.screenX(238), view.screenY(207)),\n         \"Reserved protocol slot 1 must not have a visible hover target\");\n      int visible = 0;\n      for (int menuIndex = 0; menuIndex < menu.slots.size(); menuIndex++) {\n         var slot = menu.getSlot(menuIndex);\n         boolean shouldBeVisible = menuIndex != 1;\n         require(slot.isActive() == shouldBeVisible, \"Unexpected active state at menu slot \" + menuIndex);\n         if (!shouldBeVisible) continue;\n         var anchor = ThermalVerticalGeometry.slot(menuIndex, MachineKind.SMALL_FREEZER);\n         int expectedContainerIndex = menuIndex < 3 ? menuIndex\n            : menuIndex < 30 ? menuIndex + 6 : menuIndex - 30;\n         require(slot.getSlotIndex() == expectedContainerIndex && slot.x == anchor.x() && slot.y == anchor.y(),\n            \"Thermal slot mapping changed at menu index \" + menuIndex);\n         require(screen.validationSlotHoveredAt(menuIndex, view.screenX(slot.x + 8), view.screenY(slot.y + 8)),\n            \"Rendered Thermal slot center cannot be hovered at menu index \" + menuIndex);\n         visible++;\n",
+          "previous": "      for (var anchor : FreezerReferenceGeometry.SLOT_ANCHORS) {\n         var slot = menu.getSlot(anchor.menuIndex());\n         int expectedContainerIndex = anchor.menuIndex() < 3 ? anchor.menuIndex()\n            : anchor.menuIndex() < 30 ? anchor.menuIndex() + 6 : anchor.menuIndex() - 30;\n         require(slot.getSlotIndex() == expectedContainerIndex && slot.x == anchor.x() && slot.y == anchor.y(), \"Slot mapping changed at \" + anchor.menuIndex());\n         require(screen.validationSlotHoveredAt(anchor.menuIndex(), view.screenX(slot.x + 8), view.screenY(slot.y + 8)), \"Rendered slot center cannot be hovered\");\n"
+        },
+        {
+          "start": 481,
+          "end": 483,
+          "current": "      require(visible == ThermalVerticalGeometry.VISIBLE_SLOTS,\n         \"Thermal canvas must expose exactly 38 slots (2 machine + 36 inventory), got \" + visible);\n",
+          "previous": ""
+        },
+        {
+          "start": 495,
+          "end": 496,
+          "current": "   private static void moveNativePointer(Minecraft mc, ThermalVerticalScreen screen) {\n",
+          "previous": "   private static void moveNativePointer(Minecraft mc, FreezerReferenceScreen screen) {\n"
+        },
+        {
+          "start": 507,
+          "end": 508,
+          "current": "        var mc=Minecraft.getInstance();if(!(mc.screen instanceof ThermalVerticalScreen screen)||screen.getSlotUnderMouse()!=null)return;\n",
+          "previous": "        var mc=Minecraft.getInstance();if(!(mc.screen instanceof FreezerReferenceScreen screen)||screen.getSlotUnderMouse()!=null)return;\n"
+        },
+        {
+          "start": 510,
+          "end": 511,
+          "current": "        if (Math.abs(mx-pointerX)>1 || Math.abs(my-pointerY)>1 || !screen.validationRecoveryButtonHovered()) return;\n",
+          "previous": "        if (Math.abs(mx-pointerX)>1 || Math.abs(my-pointerY)>1 || !screen.validationRecoveryVisible()) return;\n"
+        },
+        {
+          "start": 523,
+          "end": 531,
+          "current": "            record.addProperty(\"translation_key\", RECOVERY_KEY);\n            record.addProperty(\"hovered_control\", \"freezer_recovery_button\");\n            record.addProperty(\"button_canvas_x\", screen.validationRecoveryButtonX());\n            record.addProperty(\"button_canvas_y\", screen.validationRecoveryButtonY());\n            record.addProperty(\"button_canvas_width\", screen.validationRecoveryButtonWidth());\n            record.addProperty(\"button_canvas_height\", screen.validationRecoveryButtonHeight());\n            record.addProperty(\"pointer_screen_x\", mx); record.addProperty(\"pointer_screen_y\", my);\n            record.addProperty(\"pointer_canvas_x\", v.localX(mx)); record.addProperty(\"pointer_canvas_y\", v.localY(my));\n",
+          "previous": ""
+        },
+        {
+          "start": 542,
+          "end": 566,
+          "current": "   private record CropResult(int width, int height, String sha256) { }\n\n   private static CropResult captureCanvasCrop(Minecraft mc, NativeImage frame, Path path,\n                                               double left, double top, double right, double bottom) throws Exception {\n      var screen = (ThermalVerticalScreen)mc.screen;\n      var view = screen.validationViewTransform();\n      double pixelX = (double)frame.getWidth() / mc.getWindow().getGuiScaledWidth();\n      double pixelY = (double)frame.getHeight() / mc.getWindow().getGuiScaledHeight();\n      int x0 = (int)Math.floor(view.screenX(left) * pixelX);\n      int y0 = (int)Math.floor(view.screenY(top) * pixelY);\n      int x1 = (int)Math.ceil(view.screenX(right) * pixelX);\n      int y1 = (int)Math.ceil(view.screenY(bottom) * pixelY);\n      require(x0 >= 0 && y0 >= 0 && x1 <= frame.getWidth() && y1 <= frame.getHeight() && x1 > x0 && y1 > y0,\n         \"Thermal artwork crop is outside the native framebuffer: \" + path.getFileName());\n      require(!Files.exists(path), \"Refusing stale Thermal artwork crop: \" + path.getFileName());\n      try (var crop = new NativeImage(x1 - x0, y1 - y0, false)) {\n         for (int y = y0; y < y1; y++) for (int x = x0; x < x1; x++)\n            crop.setPixelRGBA(x - x0, y - y0, frame.getPixelRGBA(x, y));\n         crop.writeToFile(path);\n      }\n      return new CropResult(x1 - x0, y1 - y0,\n         HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(Files.readAllBytes(path))));\n   }\n\n",
+          "previous": ""
+        },
+        {
+          "start": 576,
+          "end": 592,
+          "current": "         // Hash only exact active artwork bounds, so an animated world backdrop\n         // cannot make a frozen gauge/effect pass merely because the full frame differs.\n         Path energyFile = folder.resolve(label + \"-energy.png\");\n         CropResult energyCrop = captureCanvasCrop(mc, frame, energyFile,\n            ENERGY_LEFT, ENERGY_TOP, ENERGY_RIGHT, ENERGY_BOTTOM);\n         capture.addProperty(\"energy_crop_name\", energyFile.getFileName().toString());\n         capture.addProperty(\"energy_crop_sha256\", energyCrop.sha256());\n         capture.addProperty(\"energy_crop_width\", energyCrop.width());\n         capture.addProperty(\"energy_crop_height\", energyCrop.height());\n         Path effectFile = folder.resolve(label + \"-effect.png\");\n         CropResult effectCrop = captureCanvasCrop(mc, frame, effectFile,\n            EFFECT_LEFT, EFFECT_TOP, EFFECT_RIGHT, EFFECT_BOTTOM);\n         capture.addProperty(\"effect_crop_name\", effectFile.getFileName().toString());\n         capture.addProperty(\"effect_crop_sha256\", effectCrop.sha256());\n         capture.addProperty(\"effect_crop_width\", effectCrop.width());\n         capture.addProperty(\"effect_crop_height\", effectCrop.height());\n",
+          "previous": "         // Hash only native meter pixels too: an animated world backdrop must not\n         // make a frozen/static gauge pass merely because full screenshots differ.\n         var view = ((FreezerReferenceScreen)mc.screen).validationViewTransform();\n         var meter = FreezerReferenceLiveState.ENERGY_HIT_REGION;\n         double factor = (double)FreezerReferenceGeometry.CANVAS_WIDTH / FreezerReferenceGeometry.SOURCE_WIDTH;\n         double pixelX = (double)frame.getWidth() / mc.getWindow().getGuiScaledWidth();\n         double pixelY = (double)frame.getHeight() / mc.getWindow().getGuiScaledHeight();\n         int x0 = (int)Math.floor(view.screenX(meter.x() * factor) * pixelX);\n         int y0 = (int)Math.floor(view.screenY(meter.y() * factor) * pixelY);\n         int x1 = (int)Math.ceil(view.screenX(meter.right() * factor) * pixelX);\n         int y1 = (int)Math.ceil(view.screenY(meter.bottom() * factor) * pixelY);\n         Path meterFile = folder.resolve(label + \"-meter.png\");\n         require(!Files.exists(meterFile), \"Refusing to overwrite native meter crop\");\n         try (var crop = new NativeImage(x1 - x0, y1 - y0, false)) {\n            for (int y = y0; y < y1; y++) for (int x = x0; x < x1; x++) {\n               crop.setPixelRGBA(x - x0, y - y0, frame.getPixelRGBA(x, y));\n            }\n            crop.writeToFile(meterFile);\n         }\n         capture.addProperty(\"meter_name\", meterFile.getFileName().toString());\n         capture.addProperty(\"meter_sha256\", HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(Files.readAllBytes(meterFile))));\n         capture.addProperty(\"meter_width\", x1 - x0);\n         capture.addProperty(\"meter_height\", y1 - y0);\n         // Conservative interior glass crop only, excluding animated world and FE.\n         int fx0 = (int)Math.floor(view.screenX(460 * factor) * pixelX);\n         int fy0 = (int)Math.floor(view.screenY(390 * factor) * pixelY);\n         int fx1 = (int)Math.ceil(view.screenX(795 * factor) * pixelX);\n         int fy1 = (int)Math.ceil(view.screenY(555 * factor) * pixelY);\n         Path frostFile = folder.resolve(label + \"-frost.png\");\n         require(!Files.exists(frostFile), \"Refusing stale frost crop\");\n         try (var crop = new NativeImage(fx1 - fx0, fy1 - fy0, false)) {\n            for (int y = fy0; y < fy1; y++) for (int x = fx0; x < fx1; x++)\n               crop.setPixelRGBA(x - fx0, y - fy0, frame.getPixelRGBA(x, y));\n            crop.writeToFile(frostFile);\n         }\n         capture.addProperty(\"frost_name\", frostFile.getFileName().toString());\n         capture.addProperty(\"frost_sha256\", HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(Files.readAllBytes(frostFile))));\n         capture.addProperty(\"frost_width\", fx1 - fx0);\n         capture.addProperty(\"frost_height\", fy1 - fy0);\n"
+        },
+        {
+          "start": 596,
+          "end": 598,
+          "current": "      capture.addProperty(\"energy_capacity\", menu.energyCapacity());\n      capture.addProperty(\"energy_clip_top\", ThermalVerticalGeometry.energyClipTop(89, 192, menu.energyStored(), menu.energyCapacity()));\n",
+          "previous": "      capture.addProperty(\"lit_cells\", FreezerReferenceLiveState.energy(menu.energyStored(), menu.energyCapacity()).litCells());\n"
+        },
+        {
+          "start": 600,
+          "end": 601,
+          "current": "      capture.addProperty(\"view_scale\", ((ThermalVerticalScreen)mc.screen).validationViewTransform().scale());\n",
+          "previous": "      capture.addProperty(\"view_scale\", ((FreezerReferenceScreen)mc.screen).validationViewTransform().scale());\n"
+        },
+        {
+          "start": 618,
+          "end": 627,
+          "current": "      proof.addProperty(\"screen_class\", ThermalVerticalScreen.class.getName());\n      proof.addProperty(\"source_art_sha256\", NEUTRAL_SHA256);\n      proof.addProperty(\"effect_art_sha256\", EFFECT_SHA256);\n      proof.addProperty(\"energy_art_sha256\", ENERGY_SHA256);\n      proof.addProperty(\"canvas_width\", ThermalVerticalGeometry.CANVAS_WIDTH);\n      proof.addProperty(\"canvas_height\", ThermalVerticalGeometry.CANVAS_HEIGHT);\n      proof.addProperty(\"visible_machine_slots\", 2);\n      proof.addProperty(\"visible_slot_count\", ThermalVerticalGeometry.VISIBLE_SLOTS);\n      proof.addProperty(\"reserved_menu_index\", 1);\n",
+          "previous": "      proof.addProperty(\"source_art_sha256\", FreezerReferenceGeometry.SOURCE_SHA256);\n"
+        },
+        {
+          "start": 630,
+          "end": 631,
+          "current": "      proof.addProperty(\"effect_visibility_rule\", \"server_phase_greater_than_zero_single_effect_texture\");\n",
+          "previous": "      proof.addProperty(\"decorative_rim_frost_static\", true);\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_packaged_native.py": {
+      "old_sha256": "9114dc637085a997750069fa9cbb2471d98508f6eb87da8f48d6022aee8b08e2",
+      "new_sha256": "07de867eda5c15421a97e63421aad3241590b5fc6e65d6aedacb0cc4cb13bd55",
+      "hunks": [
+        {
+          "start": 1,
+          "end": 2,
+          "current": "\"\"\"Run the bounded Thermal Vertical Freezer smoke in a fresh isolated Linux client.\n",
+          "previous": "\"\"\"Run the bounded Freezer V5 smoke in a fresh isolated Linux client.\n"
+        },
+        {
+          "start": 59,
+          "end": 60,
+          "current": "    art = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/thermal_vertical/freezer/neutral.png\"\n",
+          "previous": "    art = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/background.png\"\n"
+        },
+        {
+          "start": 61,
+          "end": 62,
+          "current": "        parser.error(\"Active Thermal Freezer neutral art changed\")\n",
+          "previous": "        parser.error(\"Retained Freezer V5 art changed\")\n"
+        },
+        {
+          "start": 148,
+          "end": 149,
+          "current": "        print(\"PASS bounded ordinary-JAR ThermalVerticalScreen Freezer smoke; bundled fixture explicitly active, no physical OS input claim. Dynamic frost layer follows synchronized server phases; recovery tooltip and exact active artwork crops verified; full visual/input acceptance is not claimed.\")\n",
+          "previous": "        print(\"PASS bounded ordinary-JAR normal-path Freezer smoke; bundled fixture explicitly active, no physical OS input claim. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.\")\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_packaged_proof.py": {
+      "old_sha256": "06ded3c897bbc1e9e1c37d9ba51d8978ff1ff71e8d0b07721d59df56e9da04c7",
+      "new_sha256": "2ce045818e60da039747124a5a182a3fdcbc04b8a44566a37e9868ac2270d5e4",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "current": "from freezer_reference_native import SCREEN_CLASS\n",
+          "previous": ""
+        },
+        {
+          "start": 13,
+          "end": 16,
+          "current": "CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.ThermalVerticalScreen',\n    'utility.FreezerReferenceGeometry', 'utility.ThermalVerticalGeometry', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity', 'client.validation.NativeFreezerReferenceValidation', 'client.validation.NativeClientMiningValidation')]\nTEXTURES = {'textures/gui/thermal_vertical/freezer/neutral.png': '48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806', 'textures/gui/thermal_vertical/freezer/effect.png': '046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957', 'textures/gui/thermal_vertical/freezer/energy.png': '73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638'}\n",
+          "previous": "CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.FreezerReferenceScreen',\n    'utility.FreezerReferenceGeometry', 'utility.FreezerReferenceLiveState', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity', 'client.validation.NativeFreezerReferenceValidation', 'client.validation.NativeClientMiningValidation')]\nTEXTURES = {'textures/gui/freezer_reference_v5/background.png': 'e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_clean_base.png': 'b1d1e5760c29667d1f7e8dbf453528d97941a7d53dc5f9854784f5caf55af60f', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_mask_alpha.png': '625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase0.png': 'eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase1.png': '5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase2.png': 'ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase3.png': '3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase4.png': 'b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0'}\n"
+        },
+        {
+          "start": 47,
+          "end": 48,
+          "current": "            and runtime.get('active_screen_class') == SCREEN_CLASS\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/freezer_recovery_tooltip_proof.py": {
+      "old_sha256": "6e79f33606bcc432eedd052a005c23d0647975c80aa5379fd137a88931cb2b0d",
+      "new_sha256": "5c592de0f5b6fd41a6ac51c1e3884c9e93c21c19fd17874d2e9b8462c6a37c22",
+      "hunks": [
+        {
+          "start": 19,
+          "end": 28,
+          "current": "    if (proof.get('translation_key')!='gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help'\n            or proof.get('hovered_control')!='freezer_recovery_button'\n            or any(type(proof.get(k)) is not int or proof[k] != v for k,v in\n                (('button_canvas_x',238),('button_canvas_y',199),('button_canvas_width',16),('button_canvas_height',16)))\n            or type(proof.get('pointer_canvas_x')) not in (int,float)\n            or type(proof.get('pointer_canvas_y')) not in (int,float)\n            or abs(proof.get('pointer_canvas_x',-100)-246)>1\n            or abs(proof.get('pointer_canvas_y',-100)-207)>1):\n        raise SmokeFailure('Tooltip was not opened from the localized Thermal Freezer recovery button')\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/freezer_reference_native.py": {
+      "old_sha256": "c5bfbdc76a1cb16b8ce98220f5fa1d7512c8164832763991f671cdd441874398",
+      "new_sha256": "86a643c6e0fa11c37decd01a5d5e541240954642650290ce4edc808f0cd10cfb",
+      "hunks": [
+        {
+          "start": 1,
+          "end": 2,
+          "current": "\"\"\"Run the bounded Thermal Vertical Freezer smoke in a fresh isolated Linux client.\n",
+          "previous": "\"\"\"Run the bounded Freezer V5 smoke in a fresh isolated Linux client.\n"
+        },
+        {
+          "start": 25,
+          "end": 36,
+          "current": "ART_SHA = \"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\"\nACTIVE_ARTS = {\n    \"neutral\": ART_SHA,\n    \"effect\": \"046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957\",\n    \"energy\": \"73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638\",\n}\nSCREEN_CLASS = \"com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen\"\nCANVAS_WIDTH, CANVAS_HEIGHT, MAX_VIEW_SCALE, VIEW_MARGIN = 347, 381, 0.78, 6\nENERGY_CROP = (187 / 3, 371 / 3, 216 / 3, 559 / 3)\nEFFECT_CROP = (331 / 3, 324 / 3, 720 / 3, 564 / 3)\nENERGY_CLIP_TOP = {0: 192, 8000: 140, 16000: 89}\n",
+          "previous": "ART_SHA = \"e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7\"\nSCREEN_CLASS = \"com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen\"\n"
+        },
+        {
+          "start": 42,
+          "end": 77,
+          "current": "CAPTURES = {\"energy-0.png\": 0, \"energy-8000.png\": 8000,\n            \"energy-16000.png\": 16000, \"completed-recipe.png\": 0}\n\n\ndef _expected_scale(width: int, height: int) -> float:\n    short_edge = min(width, height)\n    margin = min(VIEW_MARGIN, (short_edge - 1) / 2)\n    return min(1.0, MAX_VIEW_SCALE, (width - 2 * margin) / CANVAS_WIDTH,\n               (height - 2 * margin) / CANVAS_HEIGHT)\n\n\ndef _crop_dimensions(width: int, height: int, scale: float, rect: tuple[float, float, float, float]) -> tuple[int, int]:\n    left, top, right, bottom = rect\n    origin_x = (width - CANVAS_WIDTH * scale) / 2\n    origin_y = (height - CANVAS_HEIGHT * scale) / 2\n    x0, y0 = math.floor(origin_x + left * scale), math.floor(origin_y + top * scale)\n    x1, y1 = math.ceil(origin_x + right * scale), math.ceil(origin_y + bottom * scale)\n    return x1 - x0, y1 - y0\n\n\ndef _validate_crop(capture: dict, suffix: str, rect: tuple[float, float, float, float],\n                   game: Path, width: int, height: int, scale: float) -> str:\n    name = capture.get(\"name\", \"\")[:-4] + \"-\" + suffix\n    path = game / \"freezer-reference-screenshots\" / name\n    expected_width, expected_height = _crop_dimensions(width, height, scale, rect)\n    if capture.get(suffix.removesuffix(\".png\") + \"_crop_name\") != name or not path.is_file() or path.is_symlink():\n        raise SmokeFailure(f\"Missing native Freezer {suffix.removesuffix('.png')} crop\")\n    data = path.read_bytes()\n    if (len(data) < 33 or data[:16] != b\"\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\rIHDR\"\n            or struct.unpack(\">II\", data[16:24]) != (expected_width, expected_height)\n            or capture.get(suffix.removesuffix(\".png\") + \"_crop_width\") != expected_width\n            or capture.get(suffix.removesuffix(\".png\") + \"_crop_height\") != expected_height\n            or capture.get(suffix.removesuffix(\".png\") + \"_crop_sha256\") != hashlib.sha256(data).hexdigest()):\n        raise SmokeFailure(f\"Native Freezer {suffix.removesuffix('.png')} crop bytes/geometry differ\")\n    return hashlib.sha256(data).hexdigest()\n",
+          "previous": "CAPTURES = {\"energy-0.png\": (0, 0), \"energy-8000.png\": (8000, 5),\n            \"energy-16000.png\": (16000, 11), \"completed-recipe.png\": (0, 0)}\n"
+        },
+        {
+          "start": 94,
+          "end": 104,
+          "current": "            or proof.get(\"screen_class\") != SCREEN_CLASS\n            or proof.get(\"source_art_sha256\") != ACTIVE_ARTS[\"neutral\"]\n            or proof.get(\"effect_art_sha256\") != ACTIVE_ARTS[\"effect\"]\n            or proof.get(\"energy_art_sha256\") != ACTIVE_ARTS[\"energy\"]\n            or type(proof.get(\"canvas_width\")) is not int or proof[\"canvas_width\"] != CANVAS_WIDTH\n            or type(proof.get(\"canvas_height\")) is not int or proof[\"canvas_height\"] != CANVAS_HEIGHT\n            or type(proof.get(\"visible_machine_slots\")) is not int or proof[\"visible_machine_slots\"] != 2\n            or type(proof.get(\"visible_slot_count\")) is not int or proof[\"visible_slot_count\"] != 38\n            or type(proof.get(\"reserved_menu_index\")) is not int or proof[\"reserved_menu_index\"] != 1\n            or type(proof.get(\"menu_slot_count\")) is not int or proof[\"menu_slot_count\"] != 39\n",
+          "previous": "            or proof.get(\"source_art_sha256\") != ART_SHA\n"
+        },
+        {
+          "start": 108,
+          "end": 109,
+          "current": "            or proof.get(\"effect_visibility_rule\") != \"server_phase_greater_than_zero_single_effect_texture\"\n",
+          "previous": "            or proof.get(\"decorative_rim_frost_static\") is not True\n"
+        },
+        {
+          "start": 111,
+          "end": 113,
+          "current": "            or proof.get(\"native_visual_acceptance\") is not False):\n        raise SmokeFailure(\"Freezer proof identity, ThermalVerticalScreen scope, art or slot contract differs\")\n",
+          "previous": "            or proof.get(\"native_visual_acceptance\") is not False\n            or type(proof.get(\"menu_slot_count\")) is not int or proof[\"menu_slot_count\"] != 39):\n        raise SmokeFailure(\"Freezer proof identity, bounded scope or slot contract differs\")\n"
+        },
+        {
+          "start": 119,
+          "end": 121,
+          "current": "    expected_scale = _expected_scale(width, height)\n    seen, menu_ids, energy_hashes = set(), {}, {}\n",
+          "previous": "    seen, menu_ids, hashes = set(), {}, {}\n"
+        },
+        {
+          "start": 128,
+          "end": 130,
+          "current": "        energy = CAPTURES[name]\n        clip_top = ENERGY_CLIP_TOP[energy]\n",
+          "previous": "        energy, cells = CAPTURES[name]\n"
+        },
+        {
+          "start": 131,
+          "end": 133,
+          "current": "                or type(capture.get(\"energy_capacity\")) is not int or capture[\"energy_capacity\"] != 16000\n                or type(capture.get(\"energy_clip_top\")) is not int or capture[\"energy_clip_top\"] != clip_top\n",
+          "previous": "                or type(capture.get(\"lit_cells\")) is not int or capture[\"lit_cells\"] != cells\n"
+        },
+        {
+          "start": 136,
+          "end": 139,
+          "current": "                or not math.isfinite(capture[\"view_scale\"])\n                or abs(capture[\"view_scale\"] - expected_scale) > 0.00001):\n            raise SmokeFailure(\"Native Freezer capture has incorrect live menu/canvas state\")\n",
+          "previous": "                or not 0 < capture[\"view_scale\"] <= 1):\n            raise SmokeFailure(\"Native Freezer capture has incorrect live menu state\")\n"
+        },
+        {
+          "start": 145,
+          "end": 146,
+          "current": "                or capture.get(\"width\") != width or capture.get(\"height\") != height\n",
+          "previous": "                or type(capture.get(\"width\")) is not int or capture[\"width\"] != width\n                or type(capture.get(\"height\")) is not int or capture[\"height\"] != height\n"
+        },
+        {
+          "start": 148,
+          "end": 151,
+          "current": "        energy_hashes[name] = _validate_crop(capture, \"energy.png\", ENERGY_CROP, game, width, height, expected_scale)\n        _validate_crop(capture, \"effect.png\", EFFECT_CROP, game, width, height, expected_scale)\n        menu_ids[name] = capture[\"menu_id\"]\n",
+          "previous": "        expected_scale = min(1, (min(width, height) - 12) / 314)\n        if abs(capture[\"view_scale\"] - expected_scale) > 0.00001:\n            raise SmokeFailure(\"Freezer panel did not use the expected fitted viewport\")\n        # NativeImage writes deterministic meter crops; require the gauge itself to\n        # change, not merely an animated full-frame world backdrop.\n        meter_name = name[:-4] + \"-meter.png\"\n        meter_path = game / \"freezer-reference-screenshots\" / meter_name\n        scale = capture[\"view_scale\"]\n        ox, oy = (width - 314 * scale) / 2, (height - 314 * scale) / 2\n        mw = math.ceil(ox + 790 * 314 / 1254 * scale) - math.floor(ox + 500 * 314 / 1254 * scale)\n        mh = math.ceil(oy + 698 * 314 / 1254 * scale) - math.floor(oy + 670 * 314 / 1254 * scale)\n        if capture.get(\"meter_name\") != meter_name or not meter_path.is_file() or meter_path.is_symlink():\n            raise SmokeFailure(\"Missing native Freezer meter crop\")\n        meter_data = meter_path.read_bytes()\n        if (len(meter_data) < 33 or meter_data[:16] != b\"\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\rIHDR\"\n                or struct.unpack(\">II\", meter_data[16:24]) != (mw, mh)\n                or type(capture.get(\"meter_width\")) is not int or capture[\"meter_width\"] != mw\n                or type(capture.get(\"meter_height\")) is not int or capture[\"meter_height\"] != mh\n                or capture.get(\"meter_sha256\") != hashlib.sha256(meter_data).hexdigest()):\n            raise SmokeFailure(\"Native meter bytes or geometry differ from proof\")\n        menu_ids[name], hashes[name] = capture[\"menu_id\"], capture[\"meter_sha256\"]\n"
+        },
+        {
+          "start": 155,
+          "end": 160,
+          "current": "    if len({energy_hashes[name] for name in (\"energy-0.png\", \"energy-8000.png\", \"energy-16000.png\")}) != 3:\n        raise SmokeFailure(\"Native FE crop did not change across 0, half and full capacity\")\n    if energy_hashes[\"completed-recipe.png\"] != energy_hashes[\"energy-0.png\"]:\n        raise SmokeFailure(\"FE crop did not return to zero after recipe completion\")\n\n",
+          "previous": "    if len({hashes[name] for name in CAPTURES if name.startswith(\"energy-\")}) != 3:\n        raise SmokeFailure(\"Native meter crops are duplicates, not live gauge changes\")\n"
+        },
+        {
+          "start": 163,
+          "end": 164,
+          "current": "    seen_phases, effect_hashes = set(), {}\n",
+          "previous": "    seen_phases, frost_hashes = set(), set()\n"
+        },
+        {
+          "start": 178,
+          "end": 181,
+          "current": "                    or type(capture.get(\"energy\")) is not int\n                    or (phase > 0 and capture.get(\"energy\") != 1440 - 8 * ticks)\n                    or (phase == 0 and capture.get(\"energy\") != 0)):\n",
+          "previous": "                    or (phase > 0 and capture.get(\"energy\") != 1440 - 8 * ticks)):\n"
+        },
+        {
+          "start": 182,
+          "end": 186,
+          "current": "            natural_energy = capture[\"energy\"]\n            natural_clip_top = 192 - math.floor(103 * min(16000, max(0, natural_energy)) / 16000 + 0.5)\n            if capture.get(\"energy_capacity\") != 16000 or capture.get(\"energy_clip_top\") != natural_clip_top:\n                raise SmokeFailure(\"Natural frost frame energy scissor differs from synchronized FE\")\n",
+          "previous": ""
+        },
+        {
+          "start": 187,
+          "end": 189,
+          "current": "            expected_menu_id = menu_ids[\"energy-0.png\"] if phase == 0 else menu_ids[\"completed-recipe.png\"]\n            if capture.get(\"screen_class\") != SCREEN_CLASS or capture.get(\"menu_id\") != expected_menu_id:\n",
+          "previous": "            if capture.get(\"screen_class\") != SCREEN_CLASS or capture.get(\"menu_id\") != (menu_ids[\"energy-0.png\"] if phase == 0 else menu_ids[\"completed-recipe.png\"]):\n"
+        },
+        {
+          "start": 194,
+          "end": 197,
+          "current": "            if (len(data) < 33 or data[:16] != b\"\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\rIHDR\"\n                    or hashlib.sha256(data).hexdigest() != capture.get(\"sha256\")\n                    or struct.unpack(\">II\", data[16:24]) != (width, height)):\n",
+          "previous": "            if len(data) < 33 or data[:16] != b\"\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\rIHDR\" or hashlib.sha256(data).hexdigest() != capture.get(\"sha256\") or struct.unpack(\">II\", data[16:24]) != (width, height):\n"
+        },
+        {
+          "start": 200,
+          "end": 203,
+          "current": "        scale = capture.get(\"view_scale\")\n        if (type(scale) not in (int, float) or not math.isfinite(scale)\n                or abs(scale - expected_scale) > 0.00001):\n",
+          "previous": "        scale = min(1, (min(width, height) - 12) / 314)\n        if (type(capture.get(\"view_scale\")) not in (int, float) or not math.isfinite(capture[\"view_scale\"])\n                or abs(capture[\"view_scale\"] - scale) > 0.00001):\n"
+        },
+        {
+          "start": 204,
+          "end": 216,
+          "current": "        effect_hashes[capture[\"name\"]] = _validate_crop(capture, \"effect.png\", EFFECT_CROP, game, width, height, expected_scale)\n        _validate_crop(capture, \"energy.png\", ENERGY_CROP, game, width, height, expected_scale)\n    if {c.get(\"phase\") for c in frost_captures} != {0, 1, 2, 3}:\n        raise SmokeFailure(\"Natural frost capture set is incomplete\")\n    active_hashes = {effect_hashes[f\"frost-phase-{phase}.png\"] for phase in (1, 2, 3)}\n    if len(active_hashes) != 1:\n        raise SmokeFailure(\"Active frost layer is not stable across its server phases\")\n    zero_hash = effect_hashes[\"frost-phase-0.png\"]\n    if next(iter(active_hashes)) == zero_hash:\n        raise SmokeFailure(\"Server phase transition did not reveal the frost layer\")\n    if any(effect_hashes[capture[\"name\"]] != zero_hash for capture in captures):\n        raise SmokeFailure(\"Idle/completed Freezer effect did not return to phase zero\")\n",
+          "previous": "        ox, oy = (width - 314 * scale) / 2, (height - 314 * scale) / 2\n        fw = math.ceil(ox + 795 * 314 / 1254 * scale) - math.floor(ox + 460 * 314 / 1254 * scale)\n        fh = math.ceil(oy + 555 * 314 / 1254 * scale) - math.floor(oy + 390 * 314 / 1254 * scale)\n        name = capture[\"name\"][:-4] + \"-frost.png\"\n        path = game / \"freezer-reference-screenshots\" / name\n        if capture.get(\"frost_name\") != name or not path.is_file() or path.is_symlink():\n            raise SmokeFailure(\"Missing frost crop\")\n        data = path.read_bytes()\n        if (len(data) < 33 or data[:16] != b\"\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\rIHDR\"\n                or struct.unpack(\">II\", data[16:24]) != (fw, fh)\n                or capture.get(\"frost_width\") != fw or capture.get(\"frost_height\") != fh\n                or hashlib.sha256(data).hexdigest() != capture.get(\"frost_sha256\")):\n            raise SmokeFailure(\"Frost crop hash or geometry differs\")\n        if natural:\n            frost_hashes.add(capture[\"frost_sha256\"])\n    if len(frost_hashes) != 4:\n        raise SmokeFailure(\"Natural frost crops do not show distinct phases\")\n    zero_hash = next(c[\"frost_sha256\"] for c in frost_captures if c[\"phase\"] == 0)\n    if any(c[\"frost_sha256\"] != zero_hash for c in captures):\n        raise SmokeFailure(\"Idle/completed chamber differs from phase zero\")\n"
+        },
+        {
+          "start": 241,
+          "end": 246,
+          "current": "    art_root = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/thermal_vertical/freezer\"\n    for name, expected in ACTIVE_ARTS.items():\n        path = art_root / (name + \".png\")\n        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:\n            parser.error(f\"Active Thermal Freezer {name} art changed\")\n",
+          "previous": "    art = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/background.png\"\n    if hashlib.sha256(art.read_bytes()).hexdigest() != ART_SHA:\n        parser.error(\"Retained Freezer V5 art changed\")\n"
+        },
+        {
+          "start": 302,
+          "end": 303,
+          "current": "        print(\"PASS bounded native Thermal Vertical Freezer smoke. Frost overlay follows synchronized server phases; reserved slot recovery and exact FE states were exercised; full visual/input acceptance is not claimed.\")\n",
+          "previous": "        print(\"PASS bounded native Freezer smoke. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.\")\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_packaged_driver.py": {
+      "old_sha256": "5635d7747a64baf8c253682e7088b73871bda821537fd3a430cf3e760ead2c5c",
+      "new_sha256": "1d8f7edef8675541c02e10c1975a208cdadb808b93be44b3055dfa3cb1701929",
+      "hunks": [
+        {
+          "start": 68,
+          "end": 71,
+          "current": "        self.assertIn('ThermalVerticalScreen Freezer smoke',source)\n        self.assertIn('39 menu entries with reserved index 1 hidden, two visible machine slots',source)\n        self.assertNotIn('static decorative rim',source)\n",
+          "previous": "        self.assertIn('chamber frost from server phases; static decorative rim',source)\n        self.assertNotIn('inventory/energy smoke; static frost;',source)\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_packaged_proof.py": {
+      "old_sha256": "08a84c4ee2b37a5105417481fa40865ba6ba8a27d66dacca9eee65f135518545",
+      "new_sha256": "95fe0c575df5e1512df51ee808755277b0d2f7cefb6c1acf9b94d14b16afc062",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 8,
+          "current": "",
+          "previous": "import subprocess\n"
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "current": "from freezer_reference_native import SCREEN_CLASS\n",
+          "previous": "V5_BACKGROUND_SOURCE_COMMIT = \"d7dce0724698a069855d2284c758e8761edd17b6\"\nTHERMAL_CHAMBER_SOURCE_COMMIT = \"7abd0166b122e5b40caec13318fef72c6cf63d09\"\nV5_PHASE_SOURCE_COMMIT = \"d7dce0724698a069855d2284c758e8761edd17b6\"\n"
+        },
+        {
+          "start": 24,
+          "end": 24,
+          "current": "",
+          "previous": "                # The package test is for the archived Freezer V5 runtime, not the\n                # later vertical-screen candidate. Pull its exact immutable bytes.\n"
+        },
+        {
+          "start": 25,
+          "end": 26,
+          "current": "                artwork = (ROOT / old_path).read_bytes()\n",
+          "previous": "                # The V5 panel and phase art retain their source pins. The clean\n                # chamber is the approved common thermal base introduced by the\n                # candidate composition, not the earlier e8b21c91 base.\n                source_commit = (THERMAL_CHAMBER_SOURCE_COMMIT\n                    if name.endswith('freezer_v5_chamber_clean_base.png')\n                    else V5_BACKGROUND_SOURCE_COMMIT if name.endswith('background.png')\n                    else V5_PHASE_SOURCE_COMMIT)\n                artwork = subprocess.check_output(['git', 'show', f'{source_commit}:{old_path}'], cwd=ROOT)\n"
+        },
+        {
+          "start": 36,
+          "end": 37,
+          "current": "            active_screen_class=SCREEN_CLASS,\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_freezer_recovery_tooltip_proof.py": {
+      "old_sha256": "69cbfc6cc715e5ff3e7697df83d41e6f75c6864e63a2828c6f16b33c54a1cc50",
+      "new_sha256": "12b63f9dc7135c92c51061e976f64176dd52f43ee651debe8acb18e75ccdb4ca",
+      "hunks": [
+        {
+          "start": 14,
+          "end": 15,
+          "current": "        self.p=dict(nonce='n',source_sha='s',language='fr_fr',frames=3,lines=[EXPECTED['fr_fr']],expected_text=EXPECTED['fr_fr'],styles=['{}'],x=8,y=8,tooltip_width=200,tooltip_height=8,viewport_width=320,viewport_height=260,in_bounds=True,capture_sha256=hashlib.sha256(data).hexdigest(),translation_key='gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help',hovered_control='freezer_recovery_button',button_canvas_x=238,button_canvas_y=199,button_canvas_width=16,button_canvas_height=16,pointer_canvas_x=246,pointer_canvas_y=207)\n",
+          "previous": "        self.p=dict(nonce='n',source_sha='s',language='fr_fr',frames=3,lines=[EXPECTED['fr_fr']],expected_text=EXPECTED['fr_fr'],styles=['{}'],x=8,y=8,tooltip_width=200,tooltip_height=8,viewport_width=320,viewport_height=260,in_bounds=True,capture_sha256=hashlib.sha256(data).hexdigest())\n"
+        },
+        {
+          "start": 17,
+          "end": 18,
+          "current": "        for key,value in [('frames',0),('nonce','stale'),('styles',[]),('lines',['missing']),('tooltip_width',400),('x',-2),('in_bounds',False),('capture_sha256','bad'),('viewport_width',640),('expected_text',''),('tooltip_height',True),('translation_key','wrong'),('hovered_control','slot'),('button_canvas_x',True),('pointer_canvas_x',0)]:\n",
+          "previous": "        for key,value in [('frames',0),('nonce','stale'),('styles',[]),('lines',['missing']),('tooltip_width',400),('x',-2),('in_bounds',False),('capture_sha256','bad'),('viewport_width',640),('expected_text',''),('tooltip_height',True)]:\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_recovery_tooltip_wrap.py": {
+      "old_sha256": "66d92e74db09fac6395795b2785970a791c0a4031ba026a046fda980b8828f76",
+      "new_sha256": "c2c3955880706224edf472d36e9b6e1d5d4b2a9a42f05ffd3fdd537bc2fcaaaf",
+      "hunks": [
+        {
+          "start": 0,
+          "end": 1,
+          "current": "\"\"\"Current Freezer recovery tooltip source/localization gates; native workflow checks placement.\"\"\"\n",
+          "previous": "\"\"\"Execute exact production recovery tooltip body using a recording Font; not native qualification.\"\"\"\n"
+        },
+        {
+          "start": 2,
+          "end": 4,
+          "current": "import json\nimport unittest\n",
+          "previous": "import subprocess,tempfile,unittest\nROOT=Path(__file__).resolve().parents[2]\nSOURCE=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/FreezerReferenceScreen.java'\nFIXTURE='''import java.util.*;\npublic class Probe {\n static final String PREFIX=\"freezer_reference.\";\n record Component(String key,String fallback){static Component translatableWithFallback(String key,String fallback){return new Component(key,fallback);}}\n static class Font{int size;Component original;List<Component> split(Component text,int size){this.size=size;original=text;return List.of(text);}}\n static class Draw{int calls,x,y;Component text;void renderTooltip(Font f,List<Component> lines,int x,int y){calls++;text=lines.get(0);this.x=x;this.y=y;}void renderTooltip(Font f,Component text,int x,int y){calls++;this.text=text;}}\n Font font=new Font();int width;\n void render(Draw graphics,int mouseX,int mouseY){BODY}\n public static void main(String[]args){for(int w:new int[]{1,24,100,240,320,1280}){Probe p=new Probe();p.width=w;Draw d=new Draw();p.render(d,160,125);\n if(p.font.size!=Math.max(1,Math.min(240,w-16))||p.font.original!=d.text||d.calls!=1||d.x!=160||d.y!=125||!d.text.key().equals(\"freezer_reference.recover_help\")||!d.text.fallback().equals(\"Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.\"))throw new AssertionError(\"wrap/content/pointer changed\");}}\n}'''\n"
+        },
+        {
+          "start": 5,
+          "end": 35,
+          "current": "ROOT = Path(__file__).resolve().parents[2]\nMOD = \"immersive_engineer_decor_controls_tool_reforged\"\nSCREEN = ROOT / \"src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java\"\nKEY = f\"gui.{MOD}.freezer_reference.recover_help\"\nENGLISH = \"Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.\"\nFRENCH = \"Récupérer l’ancien emplacement 1 dans votre inventaire. Ctrl+Maj+R. Inventaire plein : les objets restent stockés.\"\n\n\nclass FreezerRecoveryTooltipTest(unittest.TestCase):\n    def test_real_registered_screen_uses_localized_recovery_key(self):\n        source = SCREEN.read_text()\n        self.assertIn(\"Component.translatableWithFallback(\", source)\n        self.assertIn('NS + \".freezer_reference.recover_help\"', source)\n        self.assertNotIn('Component.literal(\"Recover reserved legacy items\")', source)\n        self.assertIn(\"recoveryButton.isHovered()\", source)\n\n    def test_english_and_french_localizations_are_exact(self):\n        for language, expected in ((\"en_us\", ENGLISH), (\"fr_fr\", FRENCH)):\n            path = ROOT / f\"src/main/resources/assets/{MOD}/lang/{language}.json\"\n            self.assertEqual(json.loads(path.read_text())[KEY], expected)\n\n    def test_recovery_button_remains_inside_thermal_canvas(self):\n        source = SCREEN.read_text()\n        self.assertIn(\".bounds(238, 199, 16, 16)\", source)\n        self.assertIn(\"ThermalVerticalGeometry.CANVAS_WIDTH\", source)\n        self.assertIn(\"ThermalVerticalGeometry.CANVAS_HEIGHT\", source)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+          "previous": "def body():\n s=SOURCE.read_text();a=s.index('         Component recoveryTooltip =');b=s.index('\\n      } else if',a);return s[a:b]\ndef run(code):\n with tempfile.TemporaryDirectory() as tmp:\n  p=Path(tmp)/'Probe.java';p.write_text(FIXTURE.replace('BODY',code))\n  subprocess.run(['java','-m','jdk.compiler/com.sun.tools.javac.Main',str(p)],check=True,capture_output=True)\n  return subprocess.run(['java','-cp',tmp,'Probe'],capture_output=True).returncode\nclass FreezerRecoveryWrapTest(unittest.TestCase):\n def test_body(self):self.assertEqual(0,run(body()))\n def test_mutations(self):\n  for code in [body().replace('font.split(recoveryTooltip, wrapWidth)','recoveryTooltip'),body().replace('width - 16','width + 16'),body().replace('Math.min(240, width - 16)','Math.max(240, width - 16)')]:self.assertNotEqual(0,run(code))\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_reference_native.py": {
+      "old_sha256": "b20aeff8a9cab9a53e08c2a8d5e71060d25d6ac352e839bee3743987e1a2160c",
+      "new_sha256": "3374b15a8de599055ef18883a1e801d4630e7903ad250f74d8157ed609bd74ac",
+      "hunks": [
+        {
+          "start": 0,
+          "end": 1,
+          "current": "\"\"\"Synthetic schema/rejection tests only; these do not execute Minecraft.\"\"\"\n",
+          "previous": "\"\"\"Synthetic validator unit tests only. These do NOT execute Minecraft or prove GUI behavior.\"\"\"\n"
+        },
+        {
+          "start": 3,
+          "end": 3,
+          "current": "",
+          "previous": "import json\nimport math\n"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "current": "from freezer_reference_native import (ACTIVE_ARTS, CANVAS_HEIGHT, CANVAS_WIDTH, CAPTURES, CASES,\n    EFFECT_CROP, ENERGY_CROP, SCREEN_CLASS, SUITE, _crop_dimensions, _expected_scale, validate_proof)\n",
+          "previous": "from freezer_reference_native import ART_SHA, CAPTURES, CASES, SCREEN_CLASS, SUITE, validate_proof\n"
+        },
+        {
+          "start": 12,
+          "end": 20,
+          "current": "\n\ndef png(width, height, token):\n    def chunk(kind, payload):\n        return struct.pack(\">I\", len(payload)) + kind + payload + struct.pack(\">I\", zlib.crc32(kind + payload))\n    row = b\"\\0\" + bytes((token & 255, (token * 3) & 255, (token * 7) & 255)) * width\n    return (b\"\\x89PNG\\r\\n\\x1a\\n\" + chunk(b\"IHDR\", struct.pack(\">IIBBBBB\", width, height, 8, 2, 0, 0, 0))\n            + chunk(b\"IDAT\", zlib.compress(row * height)) + chunk(b\"IEND\", b\"\"))\n",
+          "previous": ""
+        },
+        {
+          "start": 27,
+          "end": 29,
+          "current": "        self.folder = self.game / \"freezer-reference-screenshots\"\n        self.folder.mkdir(parents=True)\n",
+          "previous": "        folder = self.game / \"freezer-reference-screenshots\"\n        folder.mkdir(parents=True)\n"
+        },
+        {
+          "start": 33,
+          "end": 44,
+          "current": "            \"executed_source_sha\": self.sha, \"screen_class\": SCREEN_CLASS,\n            \"source_art_sha256\": ACTIVE_ARTS[\"neutral\"], \"effect_art_sha256\": ACTIVE_ARTS[\"effect\"],\n            \"energy_art_sha256\": ACTIVE_ARTS[\"energy\"], \"canvas_width\": CANVAS_WIDTH,\n            \"canvas_height\": CANVAS_HEIGHT, \"visible_machine_slots\": 2, \"visible_slot_count\": 38,\n            \"reserved_menu_index\": 1, \"menu_slot_count\": 39, \"actual_integrated_world\": True,\n            \"presentation_mode\": \"normal-dynamic\", \"dev_selectors_absent\": True, \"frost_art_static\": False,\n            \"effect_visibility_rule\": \"server_phase_greater_than_zero_single_effect_texture\",\n            \"phase_source\": \"server_menu_phase_natural_recipe\", \"phase4_native_observed\": False,\n            \"native_visual_acceptance\": False, \"selected_language\": \"en_us\", \"cases\": sorted(CASES),\n            \"captures\": [], \"frost_captures\": []}\n        self.rebuild(1280, 720)\n",
+          "previous": "                      \"executed_source_sha\": self.sha, \"source_art_sha256\": ART_SHA,\n                      \"actual_integrated_world\": True, \"presentation_mode\": \"normal-dynamic\", \"dev_selectors_absent\": True, \"frost_art_static\": False, \"decorative_rim_frost_static\": True, \"phase_source\": \"server_menu_phase_natural_recipe\", \"phase4_native_observed\": False,\n                      \"native_visual_acceptance\": False, \"menu_slot_count\": 39,\n                      \"selected_language\": \"en_us\", \"cases\": sorted(CASES), \"captures\": []}\n        for i, (name, (energy, cells)) in enumerate(CAPTURES.items()):\n            # Explicit synthetic colored PNG fixtures for parser tests, never native evidence.\n            def chunk(kind, payload):\n                return struct.pack(\">I\", len(payload)) + kind + payload + struct.pack(\">I\", zlib.crc32(kind + payload))\n            data = (b\"\\x89PNG\\r\\n\\x1a\\n\" + chunk(b\"IHDR\", struct.pack(\">IIBBBBB\", 1280, 720, 8, 2, 0, 0, 0))\n                    + chunk(b\"IDAT\", zlib.compress((b\"\\0\" + bytes((i, 0, 0)) * 1280) * 720)) + chunk(b\"IEND\", b\"\"))\n            (folder / name).write_bytes(data)\n            self.proof[\"captures\"].append({\"name\": name, \"sha256\": hashlib.sha256(data).hexdigest(),\n                \"width\": 1280, \"height\": 720, \"energy\": energy, \"lit_cells\": cells,\n                \"menu_id\": 1 if i < 3 else 2, \"screen_class\": SCREEN_CLASS, \"view_scale\": 1.0})\n"
+        },
+        {
+          "start": 45,
+          "end": 52,
+          "current": "    def _write_crop(self, capture, kind, rect, width, height, scale, token):\n        name = capture[\"name\"][:-4] + f\"-{kind}.png\"\n        cw, ch = _crop_dimensions(width, height, scale, rect)\n        data = png(cw, ch, token)\n        (self.folder / name).write_bytes(data)\n        capture.update({f\"{kind}_crop_name\": name, f\"{kind}_crop_width\": cw,\n            f\"{kind}_crop_height\": ch, f\"{kind}_crop_sha256\": hashlib.sha256(data).hexdigest()})\n",
+          "previous": "        self.write_meters(720)\n"
+        },
+        {
+          "start": 53,
+          "end": 60,
+          "current": "    def _write_frame(self, capture, width, height, token, *, energy_token, effect_token):\n        data = png(width, height, token)\n        (self.folder / capture[\"name\"]).write_bytes(data)\n        capture.update(width=width, height=height, sha256=hashlib.sha256(data).hexdigest())\n        scale = capture[\"view_scale\"]\n        self._write_crop(capture, \"energy\", ENERGY_CROP, width, height, scale, energy_token)\n        self._write_crop(capture, \"effect\", EFFECT_CROP, width, height, scale, effect_token)\n",
+          "previous": "    def write_meters(self, height):\n        for i, capture in enumerate(self.proof[\"captures\"]):\n            scale = capture[\"view_scale\"]\n            ox, oy = (1280 - 314 * scale) / 2, (height - 314 * scale) / 2\n            width = math.ceil(ox + 790 * 314 / 1254 * scale) - math.floor(ox + 500 * 314 / 1254 * scale)\n            mh = math.ceil(oy + 698 * 314 / 1254 * scale) - math.floor(oy + 670 * 314 / 1254 * scale)\n            def chunk(kind, payload):\n                return struct.pack(\">I\", len(payload)) + kind + payload + struct.pack(\">I\", zlib.crc32(kind + payload))\n            data = (b\"\\x89PNG\\r\\n\\x1a\\n\" + chunk(b\"IHDR\", struct.pack(\">IIBBBBB\", width, mh, 8, 2, 0, 0, 0))\n                    + chunk(b\"IDAT\", zlib.compress((b\"\\0\" + bytes((i, 0, 0)) * width) * mh)) + chunk(b\"IEND\", b\"\"))\n            name = capture[\"name\"][:-4] + \"-meter.png\"\n            (self.game / \"freezer-reference-screenshots\" / name).write_bytes(data)\n            capture.update(meter_name=name, meter_width=width, meter_height=mh, meter_sha256=hashlib.sha256(data).hexdigest())\n"
+        },
+        {
+          "start": 61,
+          "end": 73,
+          "current": "    def rebuild(self, width, height):\n        scale = _expected_scale(width, height)\n        self.proof[\"captures\"] = []\n        for i, (name, energy) in enumerate(CAPTURES.items()):\n            clip = 192 - round(103 * energy / 16000)\n            capture = {\"name\": name, \"energy\": energy, \"energy_capacity\": 16000,\n                \"energy_clip_top\": clip, \"menu_id\": 1 if i < 3 else 2, \"screen_class\": SCREEN_CLASS,\n                \"view_scale\": scale, \"phase\": 0, \"progress_ticks\": 0}\n            self._write_frame(capture, width, height, i, energy_token=energy // 1000,\n                effect_token=0)\n            self.proof[\"captures\"].append(capture)\n        self.proof[\"frost_captures\"] = []\n",
+          "previous": "        self.write_frost(height)\n\n    def write_frost(self, height):\n        def png(w,h,n):\n            def chunk(k,p): return struct.pack(\">I\",len(p))+k+p+struct.pack(\">I\",zlib.crc32(k+p))\n            return b\"\\x89PNG\\r\\n\\x1a\\n\"+chunk(b\"IHDR\",struct.pack(\">IIBBBBB\",w,h,8,2,0,0,0))+chunk(b\"IDAT\",zlib.compress((b\"\\0\"+bytes((n,0,0))*w)*h))+chunk(b\"IEND\",b\"\")\n        self.proof[\"frost_captures\"]=[]\n"
+        },
+        {
+          "start": 74,
+          "end": 84,
+          "current": "            ticks = phase * 45\n            energy = 0 if phase == 0 else 1440 - 8 * ticks\n            capture = {\"name\": f\"frost-phase-{phase}.png\", \"phase\": phase, \"progress_ticks\": ticks,\n                \"energy\": energy, \"energy_capacity\": 16000,\n                \"energy_clip_top\": 192 - round(103 * energy / 16000),\n                \"menu_id\": 1 if phase == 0 else 2, \"screen_class\": SCREEN_CLASS,\n                \"view_scale\": scale, \"rendered_frames\": 3, \"capture_event\": \"ScreenEvent.Render.Post\"}\n            self._write_frame(capture, width, height, 10 + phase, energy_token=energy // 100,\n                effect_token=0 if phase == 0 else 1)\n            self.proof[\"frost_captures\"].append(capture)\n",
+          "previous": "            c=copy.deepcopy(self.proof[\"captures\"][0]);c.update(rendered_frames=3,capture_event=\"ScreenEvent.Render.Post\",name=f\"frost-phase-{phase}.png\",phase=phase,progress_ticks=phase*45,menu_id=1 if phase==0 else 2,energy=0 if phase==0 else 1440-phase*45*8)\n            data=png(1280,height,phase);(self.game/'freezer-reference-screenshots'/c['name']).write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()\n            self.proof[\"frost_captures\"].append(c)\n        for c in self.proof[\"captures\"]: c.update(phase=0,progress_ticks=0)\n        for c in self.proof[\"captures\"]+self.proof[\"frost_captures\"]:\n            scale=c['view_scale'];ox,oy=(1280-314*scale)/2,(height-314*scale)/2\n            fw=math.ceil(ox+795*314/1254*scale)-math.floor(ox+460*314/1254*scale)\n            fh=math.ceil(oy+555*314/1254*scale)-math.floor(oy+390*314/1254*scale)\n            data=png(fw,fh,c['phase']);name=c['name'][:-4]+'-frost.png';(self.game/'freezer-reference-screenshots'/name).write_bytes(data)\n            c.update(frost_name=name,frost_width=fw,frost_height=fh,frost_sha256=hashlib.sha256(data).hexdigest())\n\n    def test_render_frame_gate_rejects_tick_only_evidence(self):\n        for field, value in ((\"rendered_frames\", 2), (\"rendered_frames\", True),\n                             (\"rendered_frames\", None), (\"capture_event\", \"ClientTick\")):\n            proof = copy.deepcopy(self.proof)\n            proof[\"frost_captures\"][1][field] = value\n            with self.assertRaises(SmokeFailure):\n                self.validate(proof=proof)\n\n    def test_missing_or_fabricated_natural_phase_fails(self):\n        for change in ('missing','phase4','progress','static','reset'):\n            p=copy.deepcopy(self.proof)\n            if change=='missing':p['frost_captures'].pop()\n            elif change=='phase4':p['frost_captures'][3]['phase']=4\n            elif change=='progress':p['frost_captures'][1]['progress_ticks']=0\n            elif change=='static':p['frost_art_static']=True\n            else:p['captures'][-1]['phase']=3\n            with self.subTest(change=change),self.assertRaises(SmokeFailure):self.validate(proof=p)\n\n    def test_frost_crop_tampering_or_duplicate_phase_fails(self):\n        for field,value in ((\"phase\",0),(\"frost_name\",\"../outside.png\"),(\"frost_sha256\",\"0\"*64),(\"energy\",999),(\"view_scale\",0.5)):\n            p=copy.deepcopy(self.proof);p[\"frost_captures\"][1][field]=value\n            with self.subTest(field=field),self.assertRaises(SmokeFailure):self.validate(proof=p)\n"
+        },
+        {
+          "start": 87,
+          "end": 88,
+          "current": "            game=self.game, logs=self.logs, exit_code=0, timed_out=False, width=1280, height=720, language=\"en_us\")\n",
+          "previous": "                      game=self.game, logs=self.logs, exit_code=0, timed_out=False, width=1280, height=720, language=\"en_us\")\n"
+        },
+        {
+          "start": 94,
+          "end": 101,
+          "current": "    def test_screen_canvas_slots_and_active_art_are_strict(self):\n        for field, wrong in {\"screen_class\": \"FreezerReferenceScreen\", \"canvas_width\": 314,\n            \"canvas_height\": 314, \"visible_machine_slots\": 3, \"visible_slot_count\": 39,\n            \"reserved_menu_index\": 0, \"menu_slot_count\": 38, \"energy_art_sha256\": \"0\" * 64,\n            \"effect_visibility_rule\": \"static\"}.items():\n            proof = copy.deepcopy(self.proof); proof[field] = wrong\n            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.validate(proof=proof)\n",
+          "previous": "    def test_missing_wrong_or_unrequested_language_fails(self):\n        for selected in (None, \"fr_fr\", \"de_de\", True):\n            proof = copy.deepcopy(self.proof)\n            if selected is None:\n                proof.pop(\"selected_language\")\n            else:\n                proof[\"selected_language\"] = selected\n            with self.subTest(selected=selected), self.assertRaises(SmokeFailure):\n                self.validate(proof=proof)\n        with self.assertRaises(SmokeFailure):\n            self.validate(language=\"fr_fr\")\n        with self.assertRaises(SmokeFailure):\n            self.validate(language=\"de_de\")\n"
+        },
+        {
+          "start": 102,
+          "end": 103,
+          "current": "    def test_wrong_source_language_or_scope_fails(self):\n",
+          "previous": "    def test_requested_french_language_passes(self):\n        self.proof[\"selected_language\"] = \"fr_fr\"\n        self.assertIs(self.proof, self.validate(language=\"fr_fr\"))\n\n    def test_wrong_identity_or_scope_fails(self):\n"
+        },
+        {
+          "start": 104,
+          "end": 112,
+          "current": "            \"executed_source_sha\": \"c\" * 40, \"source_art_sha256\": \"d\" * 64,\n            \"actual_integrated_world\": False, \"frost_art_static\": True,\n            \"native_visual_acceptance\": True}.items():\n            proof = copy.deepcopy(self.proof); proof[field] = wrong\n            with self.subTest(field=field), self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        with self.assertRaises(SmokeFailure): self.validate(language=\"de_de\")\n        proof = copy.deepcopy(self.proof); proof[\"selected_language\"] = \"fr_fr\"\n        self.assertIs(proof, self.validate(proof=proof, language=\"fr_fr\"))\n",
+          "previous": "            \"executed_source_sha\": \"c\" * 40, \"source_art_sha256\": \"d\" * 64, \"actual_integrated_world\": False,\n            \"frost_art_static\": True, \"native_visual_acceptance\": True, \"menu_slot_count\": 38}.items():\n            with self.subTest(field=field):\n                proof = copy.deepcopy(self.proof)\n                proof[field] = wrong\n                with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n"
+        },
+        {
+          "start": 115,
+          "end": 117,
+          "current": "            proof = copy.deepcopy(self.proof); proof[\"cases\"] = cases\n            with self.subTest(cases=cases), self.assertRaises(SmokeFailure): self.validate(proof=proof)\n",
+          "previous": "            with self.subTest(cases=cases):\n                proof = copy.deepcopy(self.proof)\n                proof[\"cases\"] = cases\n                with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n"
+        },
+        {
+          "start": 118,
+          "end": 164,
+          "current": "    def test_energy_states_are_real_capacity_and_crop_distinct(self):\n        proof = copy.deepcopy(self.proof)\n        for key, value in ((\"energy\", 1), (\"energy_capacity\", 32000), (\"energy_clip_top\", 191),\n                           (\"screen_class\", \"MachineScreen\"), (\"menu_id\", -1), (\"view_scale\", 0.5)):\n            proof[\"captures\"][0][key] = value\n            with self.subTest(key=key), self.assertRaises(SmokeFailure): self.validate(proof=proof)\n            proof = copy.deepcopy(self.proof)\n        proof[\"captures\"][1][\"energy_crop_sha256\"] = proof[\"captures\"][0][\"energy_crop_sha256\"]\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n\n    def test_frost_phases_require_live_frame_evidence_and_reset(self):\n        for key, value in ((\"rendered_frames\", 2), (\"capture_event\", \"ClientTick\"),\n                           (\"phase\", 4), (\"progress_ticks\", 0), (\"energy\", 999)):\n            proof = copy.deepcopy(self.proof); proof[\"frost_captures\"][1][key] = value\n            with self.subTest(key=key), self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        proof = copy.deepcopy(self.proof)\n        proof[\"frost_captures\"][0][\"effect_crop_sha256\"] = proof[\"frost_captures\"][1][\"effect_crop_sha256\"]\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        proof = copy.deepcopy(self.proof)\n        proof[\"frost_captures\"].pop()\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n\n    def test_recipe_menu_identity_close_reopen_and_completion_reset(self):\n        proof = copy.deepcopy(self.proof)\n        proof[\"captures\"][-1][\"menu_id\"] = 1\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        proof = copy.deepcopy(self.proof); proof[\"captures\"][1][\"menu_id\"] = 3\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        proof = copy.deepcopy(self.proof)\n        proof[\"captures\"][-1][\"energy_crop_sha256\"] = \"f\" * 64\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n\n    def test_missing_tampered_linked_images_and_crashes_fail(self):\n        proof = copy.deepcopy(self.proof)\n        path = self.folder / \"energy-0.png\"\n        path.unlink()\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        path.write_bytes(b\"not a PNG\")\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        path.unlink(); path.symlink_to(self.folder / \"energy-8000.png\")\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n        path.unlink(); self._write_frame(self.proof[\"captures\"][0], 1280, 720, 0, energy_token=0, effect_token=0)\n        crash = self.game / \"crash-reports\"; crash.mkdir(); (crash / \"crash.txt\").write_text(\"failure\")\n        with self.assertRaises(SmokeFailure): self.validate()\n\n    def test_process_failure_and_missing_marker_fail(self):\n",
+          "previous": "    def test_failed_process_or_missing_marker_fails(self):\n"
+        },
+        {
+          "start": 168,
+          "end": 171,
+          "current": "    def test_small_window_uses_347_by_381_fit_and_exact_crop_dimensions(self):\n        self.rebuild(1280, 260)\n        self.assertAlmostEqual(_expected_scale(1280, 260), 248 / 381, places=6)\n",
+          "previous": "    def test_world_harness_cannot_be_missing_or_stale(self):\n        for main in ({}, dict(self.main, status=\"running\"), dict(self.main, nonce=\"old\"), dict(self.main, actual_integrated_world=False)):\n            with self.subTest(main=main), self.assertRaises(SmokeFailure): self.validate(main=main)\n\n    def test_bad_capture_metadata_fails(self):\n        for key, value in {\"energy\": 1, \"lit_cells\": True, \"screen_class\": \"MachineScreen\",\n                           \"menu_id\": -1, \"view_scale\": 0.8, \"width\": 314, \"height\": 314,\n                           \"sha256\": \"e\" * 64, \"name\": \"../outside.png\"}.items():\n            proof = copy.deepcopy(self.proof)\n            proof[\"captures\"][0][key] = value\n            with self.subTest(field=key), self.assertRaises(SmokeFailure): self.validate(proof=proof)\n\n    def test_duplicate_capture_names_fail(self):\n        proof = copy.deepcopy(self.proof)\n        proof[\"captures\"][1] = proof[\"captures\"][0]\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof)\n\n    def test_no_reopen_identity_fails(self):\n        self.proof[\"captures\"][-1][\"menu_id\"] = 1\n        with self.assertRaises(SmokeFailure): self.validate()\n\n    def test_energy_identity_changes_fail(self):\n        self.proof[\"captures\"][1][\"menu_id\"] = 3\n        with self.assertRaises(SmokeFailure): self.validate()\n\n    def test_static_meter_with_different_world_backdrops_fails(self):\n        folder = self.game / \"freezer-reference-screenshots\"\n        (folder / \"energy-8000-meter.png\").write_bytes((folder / \"energy-0-meter.png\").read_bytes())\n        self.proof[\"captures\"][1][\"meter_sha256\"] = self.proof[\"captures\"][0][\"meter_sha256\"]\n        with self.assertRaises(SmokeFailure): self.validate()\n\n    def test_missing_tampered_or_linked_png_fails(self):\n        path = self.game / \"freezer-reference-screenshots\" / \"energy-0.png\"\n        path.unlink()\n        with self.assertRaises(SmokeFailure): self.validate()\n        path.write_bytes(b\"not a native png\")\n        with self.assertRaises(SmokeFailure): self.validate()\n        path.unlink()\n        path.symlink_to(path.parent / \"energy-8000.png\")\n        with self.assertRaises(SmokeFailure): self.validate()\n\n    def test_crash_report_fails(self):\n        crash = self.game / \"crash-reports\"\n        crash.mkdir()\n        (crash / \"crash.txt\").write_text(\"synthetic failure\")\n        with self.assertRaises(SmokeFailure): self.validate()\n\n    def test_complete_small_window_synthetic_schema_is_accepted(self):\n        for i, capture in enumerate(self.proof[\"captures\"]):\n            def chunk(kind, payload):\n                return struct.pack(\">I\", len(payload)) + kind + payload + struct.pack(\">I\", zlib.crc32(kind + payload))\n            data = (b\"\\x89PNG\\r\\n\\x1a\\n\" + chunk(b\"IHDR\", struct.pack(\">IIBBBBB\", 1280, 260, 8, 2, 0, 0, 0))\n                    + chunk(b\"IDAT\", zlib.compress((b\"\\0\" + bytes((i, 0, 0)) * 1280) * 260)) + chunk(b\"IEND\", b\"\"))\n            (self.game / \"freezer-reference-screenshots\" / capture[\"name\"]).write_bytes(data)\n            capture.update(height=260, view_scale=248 / 314, sha256=hashlib.sha256(data).hexdigest())\n        self.write_meters(260)\n"
+        },
+        {
+          "start": 173,
+          "end": 178,
+          "current": "    def test_small_window_rejects_old_square_fit(self):\n        self.rebuild(1280, 260)\n        proof = copy.deepcopy(self.proof)\n        proof[\"captures\"][0][\"view_scale\"] = 248 / 314\n        with self.assertRaises(SmokeFailure): self.validate(proof=proof, height=260)\n",
+          "previous": "    def test_small_window_requires_fitted_panel(self):\n        with self.assertRaises(SmokeFailure): self.validate(height=260)\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_render_sync.py": {
+      "old_sha256": "7d9c6e194207ea48e0b2aa3c96a09984b98fefc333ff1efc5694a9779261fe39",
+      "new_sha256": "c4cbac62d3143782c04a54f78793e3552d14cd22d50f731c580906a961446b2c",
+      "hunks": [
+        {
+          "start": 7,
+          "end": 24,
+          "current": "    def test_freezer_fixture_uses_registered_thermal_screen_and_menu_contract(self):\n        source = SOURCE.read_text()\n        self.assertIn(\"instanceof ThermalVerticalScreen\", source)\n        self.assertNotIn(\"instanceof FreezerReferenceScreen\", source)\n        self.assertIn(\"menu.slots.size() == 39\", source)\n        self.assertIn(\"menu.getSlot(1).isActive()\", source)\n        self.assertIn(\"visible == ThermalVerticalGeometry.VISIBLE_SLOTS\", source)\n        self.assertIn(\"ThermalVerticalGeometry.slot(menuIndex, MachineKind.SMALL_FREEZER)\", source)\n\n    def test_capture_crop_and_proof_use_real_canvas_dynamic_layers(self):\n        source = SOURCE.read_text()\n        self.assertIn(\"ENERGY_LEFT\", source)\n        self.assertIn(\"EFFECT_LEFT\", source)\n        self.assertIn(\"ThermalVerticalGeometry.energyClipTop(89, 192\", source)\n        self.assertIn('proof.addProperty(\"canvas_width\", ThermalVerticalGeometry.CANVAS_WIDTH)', source)\n        self.assertIn('proof.addProperty(\"canvas_height\", ThermalVerticalGeometry.CANVAS_HEIGHT)', source)\n\n",
+          "previous": ""
+        }
+      ]
+    }
+  }
+}

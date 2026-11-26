@@ -14,10 +14,13 @@ RECORD = Path(__file__).with_name("prism_210_history_projection.json")
 RECORD_SHA256 = "c0274bd87ceb4ddc040ac2d93d663344a0a59d0b85c7a513fe2ff6fd94e61522"
 LATE_VALIDATION_RECORD = Path(__file__).with_name("prism_210_late_validation_projection.json")
 LATE_VALIDATION_RECORD_SHA256 = "87336694ba35c1d9d01dc8fe9fb7ae97546ede5a1a712c31ce36566bad83220f"
+FREEZER_NATIVE_PORT_RECORD = Path(__file__).with_name("prism_210_freezer_native_port_projection.json")
+FREEZER_NATIVE_PORT_RECORD_SHA256 = "45c7eda7753117ce2ffccb7206bf00e7568435d6cf3bcf7b53754e1e15aa7071"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 HEAD_COMMIT = "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
 RECORD_BYTES = RECORD.read_bytes()
 LATE_VALIDATION_RECORD_BYTES = LATE_VALIDATION_RECORD.read_bytes()
+FREEZER_NATIVE_PORT_RECORD_BYTES = FREEZER_NATIVE_PORT_RECORD.read_bytes()
 
 
 def _record():
@@ -39,6 +42,17 @@ def _late_validation_record():
         raise AssertionError("#210 late validation projection schema changed")
     if data.get("base_commit") != HEAD_COMMIT:
         raise AssertionError("#210 late validation projection base changed")
+    return data
+
+
+def _freezer_native_port_record():
+    if sha256(FREEZER_NATIVE_PORT_RECORD_BYTES) != FREEZER_NATIVE_PORT_RECORD_SHA256:
+        raise AssertionError("#210 Freezer native port projection record changed")
+    data = json.loads(FREEZER_NATIVE_PORT_RECORD_BYTES)
+    if data.get("schema") != "iedctr-prism-freezer-native-port-v1":
+        raise AssertionError("#210 Freezer native port projection schema changed")
+    if data.get("base_commit") != "e429a1fa1551c4532eb3e59d531ccf86570ff9b5":
+        raise AssertionError("#210 Freezer native port projection base changed")
     return data
 
 
@@ -68,6 +82,14 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
     be checked by its own fail-closed validator. Call with strict=True in tests
     that specifically validate this candidate's recorded state.
     """
+    port = _freezer_native_port_record()["files"].get(path)
+    port_reversed = False
+    if port is not None:
+        if sha256(source) == port["new_sha256"]:
+            source = _reverse_layer(path, source, port)
+            port_reversed = True
+        elif strict:
+            raise AssertionError("Unrecognized #210 candidate bytes: " + path)
     record = _record()["files"].get(path)
     if record is None:
         # A few native validation files are new after the pinned #210 history
@@ -81,7 +103,8 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
             if strict:
                 raise AssertionError("Unrecognized #210 late validation bytes: " + path)
         if strict:
-            raise AssertionError("Path is outside the #210 projection allowlist: " + path)
+            if not port_reversed:
+                raise AssertionError("Path is outside the #210 projection allowlist: " + path)
         return source
     digest = sha256(source)
     states = record["states"]
@@ -127,6 +150,9 @@ def project_file_from_root(path: str, *, strict: bool = True) -> bytes:
 
 def expected_current_sha256(path: str) -> str | None:
     """Return the pinned final candidate blob identity for an allowed path."""
+    port = _freezer_native_port_record()["files"].get(path)
+    if port is not None:
+        return port["new_sha256"]
     record = _record()["files"].get(path)
     if record is None:
         return None

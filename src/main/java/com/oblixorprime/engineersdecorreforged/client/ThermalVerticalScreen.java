@@ -63,6 +63,20 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
          view.localX(screenX), view.localY(screenY));
    }
 
+   /** Read-only hooks for the nonce-owned native Freezer recovery validation. */
+   public boolean validationRecoveryVisible() {
+      return freezer() && recoveryButton != null && recoveryButton.visible;
+   }
+
+   public boolean validationRecoveryButtonHovered() {
+      return validationRecoveryVisible() && recoveryButton.isHovered();
+   }
+
+   public int validationRecoveryButtonX() { return recoveryButton == null ? -1 : recoveryButton.getX(); }
+   public int validationRecoveryButtonY() { return recoveryButton == null ? -1 : recoveryButton.getY(); }
+   public int validationRecoveryButtonWidth() { return recoveryButton == null ? 0 : recoveryButton.getWidth(); }
+   public int validationRecoveryButtonHeight() { return recoveryButton == null ? 0 : recoveryButton.getHeight(); }
+
    @Override
    protected void init() {
       super.init();
@@ -112,7 +126,9 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
       }
       renderTooltip(graphics, mouseX, mouseY);
       if (recoveryButton != null && recoveryButton.visible && recoveryButton.isHovered()) {
-         graphics.renderTooltip(font, Component.literal("Recover reserved legacy items"), mouseX, mouseY);
+         graphics.renderTooltip(font, Component.translatableWithFallback(
+            NS + ".freezer_reference.recover_help",
+            "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored."), mouseX, mouseY);
       } else if (hoveredSlot == null && localOver(mouseX, mouseY, 55, 88, 25, 105)) {
          graphics.renderTooltip(font, Component.literal(menu.energyStored() + " / " + menu.energyCapacity() + " FE"),
             mouseX, mouseY);

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the bounded Freezer V5 smoke in a fresh isolated Linux client.
+"""Run the bounded Thermal Vertical Freezer smoke in a fresh isolated Linux client.
 
 A CPU preview, stale file, title screen, missing case or dirty checkout cannot pass.
 This runner does not publish, upload, merge, release, or use an installed client.
@@ -57,9 +57,9 @@ def main() -> int:
                                 capture_output=True, text=True).stdout.strip()
     if not re.fullmatch(r"[a-f0-9]{40}", source_sha):
         parser.error("Missing exact source SHA")
-    art = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/background.png"
+    art = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/thermal_vertical/freezer/neutral.png"
     if hashlib.sha256(art.read_bytes()).hexdigest() != ART_SHA:
-        parser.error("Retained Freezer V5 art changed")
+        parser.error("Active Thermal Freezer neutral art changed")
     missing = [name for name in ("java", "Xvfb", "xvfb-run", "xauth") if not shutil.which(name)]
     if missing:
         parser.error("Missing native prerequisites: " + ", ".join(missing))
@@ -146,7 +146,7 @@ def main() -> int:
         validate_proof(proof, main_proof, nonce, source_sha, game, logs, code, expired, args.width, args.height, args.language)
         if args.recovery_tooltip_probe:
             validate_tooltip(json.loads((game/"freezer-recovery-tooltip.json").read_text()), game, nonce, source_sha, args.language)
-        print("PASS bounded ordinary-JAR normal-path Freezer smoke; bundled fixture explicitly active, no physical OS input claim. Chamber frost follows server phases; decorative rim remains static; full visual/input acceptance is not claimed.")
+        print("PASS bounded ordinary-JAR ThermalVerticalScreen Freezer smoke; bundled fixture explicitly active, no physical OS input claim. Dynamic frost layer follows synchronized server phases; recovery tooltip and exact active artwork crops verified; full visual/input acceptance is not claimed.")
         return 0
     except (SmokeFailure, OSError, ValueError, KeyError, TypeError) as error:
         print(f"FAIL: {error}", file=sys.stderr)
