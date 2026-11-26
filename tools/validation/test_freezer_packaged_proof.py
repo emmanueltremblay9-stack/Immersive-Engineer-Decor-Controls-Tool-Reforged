@@ -6,8 +6,12 @@ import tempfile
 import unittest
 import warnings
 import zipfile
+import subprocess
 from client_mixin_smoke import SmokeFailure
 from freezer_packaged_proof import CLASSES, HARNESS, MOD, TEXTURES, SELECTORS, validate_runtime
+V5_BACKGROUND_SOURCE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
+THERMAL_CHAMBER_SOURCE_COMMIT = "e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c"
+V5_PHASE_SOURCE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -21,7 +25,20 @@ class RuntimeTests(unittest.TestCase):
             for name in CLASSES:
                 archive.writestr(name.replace('.', '/')+'.class', name.encode())
             for name in TEXTURES:
-                archive.write(ROOT/'src/main/resources/assets'/MOD/name, 'assets/'+MOD+'/'+name)
+                # The package test is for the archived Freezer V5 runtime, not the
+                # later vertical-screen candidate. Pull its exact immutable bytes.
+                old_path = 'src/main/resources/assets/'+MOD+'/'+name
+                # The historical fixture is a composed source set: its V5 panel
+                # and phase art predate the later clean thermal chamber patch.
+                # Pin each exact source revision independently instead of assuming
+                # one commit contains this archived blend.
+                source_commit = (THERMAL_CHAMBER_SOURCE_COMMIT
+                    if name.endswith('freezer_v5_chamber_clean_base.png')
+                    else V5_BACKGROUND_SOURCE_COMMIT if name.endswith('background.png')
+                    else V5_PHASE_SOURCE_COMMIT)
+                artwork = subprocess.check_output(['git', 'show', f'{source_commit}:{old_path}'], cwd=ROOT)
+                self.assertEqual(hashlib.sha256(artwork).hexdigest(), TEXTURES[name], name)
+                archive.writestr('assets/'+MOD+'/'+name, artwork)
         digest = hashlib.sha256(jar.read_bytes()).hexdigest()
         root = 'union:/exact-normal-jar/'
         self.report = dict(jar_path=str(jar), jar_sha256=digest, fixture_free_jar=False, separate_provenance_harness=True,

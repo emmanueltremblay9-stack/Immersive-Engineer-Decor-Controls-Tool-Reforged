@@ -3,6 +3,7 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 from gui_album_three import validate, validate_selection_pixels, CASES, SCREENS, SmokeFailure
+from test_factory_hopper_selection_alignment import assert_v3_alignment
 class ProofTests(unittest.TestCase):
     def setUp(self):
         self.jar=Path('/tmp/album.jar');self.digest='a'*64
@@ -48,12 +49,15 @@ class ProofTests(unittest.TestCase):
         p=copy.deepcopy(self.proof);p['cases'][5]['visible_nonempty_slots']=47
         with self.assertRaises(SmokeFailure):self.check(p)
 
-    def test_production_hopper_ring_uses_real_slot_pitch(self):
+    def test_current_hopper_screen_uses_v3_menu_and_selection_anchors(self):
         root=Path(__file__).resolve().parents[2]
-        source=(root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java').read_text()
-        method=source.split('private void drawFactoryHopperWidgets(',1)[1].split('private ',1)[0]
-        self.assertIn('x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 18',method)
-        self.assertNotIn('slotIndex / 6 * 17',method)
+        geometry=(root/'src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometry.java').read_text()
+        menu=(root/'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java').read_text()
+        screen=(root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryStudyScreen.java').read_text()
+        events=(root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java').read_text()
+        anchors=assert_v3_alignment(geometry,menu,screen,events)
+        self.assertEqual(len(anchors),54)
+        self.assertIn('FactoryStudyScreen::new',events)
 
     def test_selection_pixel_guard_rejects_old_pitch_and_missing_ring(self):
         width,height,scale=640,480,2

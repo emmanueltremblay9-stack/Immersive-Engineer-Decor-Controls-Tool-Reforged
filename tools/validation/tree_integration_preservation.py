@@ -3,7 +3,11 @@ from missing_gui_integration import project_history as gui_history
 from hopper_fidelity_integration import PATH as HOPPER_PATH, project_history as hopper_history, BLOCKS_PATH as HOPPER_BLOCKS_PATH, project_blocks_history
 import hashlib
 import json
-from freezer_v5_reconciliation import LAYER as V5_LAYER, assert_freezer_v5_reconciliation, current_hash
+from freezer_v5_reconciliation import (
+    LAYER as V5_LAYER, assert_freezer_v5_reconciliation,
+    current_hash, historical_digest,
+)
+from missing_gui_integration import SUPERSEDED_BASE_SHA256
 from thermal_single_stage_projection import project_historical_if_candidate
 
 
@@ -83,6 +87,16 @@ COMBINED_FILES = {
         'integrated_sha256': 'a8a3d691e191bf4dc5a9725e7c9e4e9b0e19b8647a5a6c1408e2f2a92dcc9fdd',
     },
 }
+# `project_historical_if_candidate` reconstructs exact preimages for the
+# #196 and retained-GUI composite layers before old Tree/Milking guard layers.
+# Pin those immutable bytes directly; the former helper compared projected
+# states to later candidate hashes and rejected an unchanged source tree.
+PROJECTED_SOURCE_SHA256 = {
+    MACHINE_ENTITY: '3f4d20a63fe8d67d917a518d1f66997e37fe4503f84d5857c7e39696fe22e983',
+    MACHINE_MENU: 'ed253400fa0a277e60b3c1ae972a4b390dbcb17a7214d586782d86b9ea3741f9',
+    'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java':
+        '61a32b15204a138c492105b64dee4623aa063a518327394167688741a241187f',
+}
 MILKING_CURRENT_HASHES = {
     'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java': '2b0f8cc8bfeac9f421b6948833e4d88b7c993c5c633b6f26feebc6f96f2a0e6f',
     MACHINE_ENTITY: COMBINED_FILES[MACHINE_ENTITY]['integrated_sha256'],
@@ -110,7 +124,7 @@ def assert_combined_integration_preserved(root, manifest):
     for path, record in COMBINED_FILES.items():
         assert record['main_sha256'] == FREEZER_FILES[path]['integrated_sha256'], path
         historical = project_historical_if_candidate(path, (root / path).read_bytes())
-        assert hashlib.sha256(historical).hexdigest() == current_hash(path, record['integrated_sha256']), path
+        assert hashlib.sha256(historical).hexdigest() == PROJECTED_SOURCE_SHA256[path], path
 
 
 def assert_milking_integration_preserved(root, pins):
@@ -131,13 +145,7 @@ def assert_milking_integration_preserved(root, pins):
     assert record_sha256(history) == MILKING_HISTORY_SHA256, 'Historical Milking preservation changed'
 
 
-def assert_menu_tail_preserved(source):
-    """Normalize the thermal, retained GUI, and historical Tree/Freezer layers."""
-    try:
-        data = project_historical_if_candidate(MACHINE_MENU, source.encode('utf-8'))
-        source = gui_history(MACHINE_MENU, data).decode('utf-8')
-    except AssertionError as error:
-        raise AssertionError("Menu transfer/data/validation changed: " + str(error)) from error
+def _assert_historical_menu_tail(source):
     marker = '   private static MenuType<?> resolveMenuType'
     assert source.count(marker) == 1, 'Ambiguous menu preservation boundary'
     tail = source.split(marker, 1)[1]
@@ -148,6 +156,16 @@ def assert_menu_tail_preserved(source):
     assert tail.count(FREEZER_PREVIEW) == 1, 'Missing or changed Freezer preview method'
     normalized = tail.replace(TREE_ACCESSOR, '', 1).replace(FREEZER_PREVIEW, HISTORICAL_FREEZER_PREVIEW, 1)
     assert hashlib.sha256(normalized.encode()).hexdigest() == MENU_TAIL_SHA256, 'Menu transfer/data/validation changed'
+
+
+def assert_menu_tail_preserved(source):
+    """Normalize the thermal, retained GUI, and historical Tree/Freezer layers."""
+    try:
+        data = project_historical_if_candidate(MACHINE_MENU, source.encode('utf-8'))
+        source = gui_history(MACHINE_MENU, data).decode('utf-8')
+    except AssertionError as error:
+        raise AssertionError("Menu transfer/data/validation changed: " + str(error)) from error
+    _assert_historical_menu_tail(source)
 
 
 def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None):
@@ -190,7 +208,10 @@ def assert_solar_baseline_preserved(root, preserved, milking_current_hashes=None
             expected = overrides[path]['integrated_sha256']
         if path in milking_current_hashes:
             expected = milking_current_hashes[path]
-        if path in COMBINED_FILES:
-            expected = COMBINED_FILES[path]['integrated_sha256']
+        if path in PROJECTED_SOURCE_SHA256:
+            expected = PROJECTED_SOURCE_SHA256[path]
+        elif path in SUPERSEDED_BASE_SHA256:
+            expected = SUPERSEDED_BASE_SHA256[path]
         historical = project_historical_if_candidate(path, (root / path).read_bytes())
-        assert hashlib.sha256(historical).hexdigest() == current_hash(path, expected), path
+        expected_projected = expected if path in PROJECTED_SOURCE_SHA256 or path in SUPERSEDED_BASE_SHA256 else historical_digest(path, expected)
+        assert hashlib.sha256(historical).hexdigest() == expected_projected, path

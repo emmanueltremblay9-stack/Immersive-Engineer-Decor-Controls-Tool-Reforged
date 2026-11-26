@@ -94,13 +94,18 @@ class FreezerV5ReconciliationTests(unittest.TestCase):
                         self.check(changed)
 
     def test_menu_tail_requires_exact_freezer_accessor_and_reserved_slot(self):
-        from tree_integration_preservation import assert_menu_tail_preserved, V5_ACCESSOR, V5_RESERVED_SLOT
+        from tree_integration_preservation import (
+            _assert_historical_menu_tail, assert_menu_tail_preserved,
+            MACHINE_MENU, V5_ACCESSOR, V5_RESERVED_SLOT,
+        )
+        from thermal_single_stage_projection import project_historical_if_candidate
         source = (ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java').read_text()
         assert_menu_tail_preserved(source)
+        historical = gui_history(MACHINE_MENU, project_historical_if_candidate(MACHINE_MENU, source.encode())).decode()
         for fragment in (V5_ACCESSOR, V5_RESERVED_SLOT):
             for replacement in ('', fragment * 2, fragment.replace('freezerReferencePresentation', 'true')):
                 with self.subTest(fragment=fragment, replacement=replacement), self.assertRaises(AssertionError):
-                    assert_menu_tail_preserved(source.replace(fragment, replacement))
+                    _assert_historical_menu_tail(historical.replace(fragment, replacement))
 
 if __name__ == '__main__':
     unittest.main()

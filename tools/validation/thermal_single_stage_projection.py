@@ -7,8 +7,11 @@ from functools import lru_cache
 import hashlib
 from pathlib import Path
 import re
+import subprocess
+from prism_210_history_projection import project_current_candidate
 
 BASE_COMMIT = "e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c"
+ROOT = Path(__file__).resolve().parents[2]
 PATCH_PATH = Path(__file__).with_name("thermal_single_stage_main_projection.patch")
 
 FILES = {
@@ -127,6 +130,28 @@ def reverse_hunks(path: str, source: bytes, hunks: tuple[Hunk, ...] | None = Non
     return historical
 
 
+def load_pr209_candidate(path: str) -> bytes:
+    """Rebuild the archived #209 proof input from its pinned base plus patch.
+
+    This keeps the exact historical projection test runnable in a later combined
+    candidate without pretending that the later tree is byte-identical to #209.
+    """
+    if path not in FILES:
+        raise AssertionError("Path is not in the thermal projection allowlist: " + path)
+    base = subprocess.check_output(["git", "show", f"{BASE_COMMIT}:{path}"], cwd=ROOT)
+    lines = base.decode("utf-8").splitlines(keepends=True)
+    for hunk in sorted(load_hunks()[path], key=lambda item: item.old_start, reverse=True):
+        start = hunk.old_start - 1 if hunk.old_count else hunk.old_start
+        actual = tuple(lines[start:start + hunk.old_count])
+        if actual != hunk.old_lines:
+            raise AssertionError(f"Thermal source patch base hunk mismatch: {path}:{hunk.old_start}")
+        lines[start:start + hunk.old_count] = hunk.new_lines
+    candidate = "".join(lines).encode("utf-8")
+    if sha256(candidate) != FILES[path]["candidate_sha256"]:
+        raise AssertionError("Archived #209 candidate reconstruction failed: " + path)
+    return candidate
+
+
 def project_historical_file(path: str, source: bytes) -> bytes:
     """Require the exact current candidate before constructing one historical view."""
     if path not in FILES:
@@ -158,6 +183,7 @@ def _project_exact_composite(path: str, source: bytes) -> bytes:
 
 def project_historical_if_candidate(path: str, source: bytes) -> bytes:
     """Project only exact candidate bytes; leave all other bytes for legacy guards to reject."""
+    source = project_current_candidate(path, source)
     if path not in FILES:
         return _project_exact_composite(path, source)
     if sha256(source) != FILES[path]["candidate_sha256"]:

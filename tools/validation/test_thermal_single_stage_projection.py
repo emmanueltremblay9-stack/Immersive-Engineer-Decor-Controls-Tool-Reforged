@@ -3,7 +3,7 @@ from pathlib import Path
 import unittest
 
 from thermal_single_stage_projection import (
-    FILES, load_hunks, project_historical_files, reverse_hunks, sha256,
+    FILES, load_hunks, load_pr209_candidate, project_historical_files, reverse_hunks, sha256,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -23,7 +23,9 @@ def read(path):
 class ThermalProjectionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.candidate = {path: (ROOT / path).read_bytes() for path in FILES}
+        # This suite preserves the exact, isolated #209 patch. The current combined
+        # #210 candidate has later reviewed layers and is checked by separate tests.
+        cls.candidate = {path: load_pr209_candidate(path) for path in FILES}
 
     def test_exact_candidate_projects_to_the_pinned_main_bytes_without_mutation(self):
         before = dict(self.candidate)
@@ -50,7 +52,7 @@ class ThermalProjectionTests(unittest.TestCase):
         hunks_by_path = load_hunks()
         for path, source in self.candidate.items():
             changed = source + b"// unauthorized byte outside all declared hunks\n"
-            with self.subTest(path=path), self.assertRaisesRegex(AssertionError, "historical bytes changed outside declared hunks"):
+            with self.subTest(path=path), self.assertRaisesRegex(AssertionError, "hunk mismatch|historical bytes changed outside declared hunks"):
                 reverse_hunks(path, changed, hunks_by_path[path])
 
     def test_no_projection_path_is_a_resource_or_texture(self):
@@ -77,9 +79,10 @@ class ThermalCandidateContractTests(unittest.TestCase):
         self.assertIn("menu.slots.size() != menu.visibleMachineSlots() + 36", native)
         self.assertEqual(3 + 27 + 9, 39)
         self.assertIn("public static final int VISIBLE_SLOTS = 38;", geometry)
-        self.assertIn("if (menuIndex == 1 || menuIndex < 0 || menuIndex > 38)", geometry)
-        self.assertIn("if (menuIndex == 0) return new Point(145, 50);", geometry)
-        self.assertIn("if (menuIndex == 2) return new Point(145, 160);", geometry)
+        self.assertIn("if(menuIndex==1||menuIndex<3||menuIndex>38)", geometry)
+        self.assertIn("if(menuIndex==0) return freezer?new Point(167,67):new Point(164,66);", geometry)
+        self.assertIn("if(menuIndex==2) return freezer?new Point(167,206):new Point(164,205);", geometry)
+        self.assertIn("if(menuIndex==1||menuIndex<3||menuIndex>38)", geometry)
         self.assertIn("return !MachineMenu.this.freezerReferencePresentation\n                  && !MachineMenu.this.thermalVerticalPresentation;", menu)
         self.assertIn("recoveryButton.visible = menu.getSlot(1).hasItem();", screen)
         self.assertIn("slotClicked(menu.getSlot(1), 1, 0, ClickType.QUICK_MOVE);", screen)
@@ -92,11 +95,22 @@ class ThermalCandidateContractTests(unittest.TestCase):
         self.assertIn("MachineBlockEntity.this.items.get(0).is(Items.BUCKET)", bottom)
         self.assertIn("itemHandler.extractItem(2, amount, simulate)", bottom)
         self.assertIn("itemHandler.extractItem(0, amount, simulate)", bottom)
-        self.assertIn("return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2, 0} : new int[0];", entity)
+        self.assertIn("return side == this.facing(this.getBlockState()).getOpposite() ? new int[]{0}\n               : side == Direction.DOWN ? new int[]{2, 0} : new int[0];", entity)
         self.assertIn("return side == Direction.DOWN && (slot == 2 || slot == 0 && stack.is(Items.BUCKET));", entity)
-        self.assertIn("destination.getBlockPos().equals(this.worldPosition.below())", entity)
+        self.assertIn("below.getBlockPos().equals(this.worldPosition.below())", entity)
         self.assertIn("private final IItemHandler freezerTopItems", entity)
         self.assertIn("slot == 0 ? MachineBlockEntity.this.itemHandler.insertItem(0, stack, simulate)", entity)
+
+    def test_both_thermal_inputs_are_rear_routed_and_outputs_are_bottom_only(self):
+        entity = read(ENTITY)
+        for machine_handler in ("mineralTopItems", "freezerTopItems"):
+            self.assertIn(f"side == this.facing(this.getBlockState()).getOpposite()) return this.{machine_handler};", entity)
+        self.assertIn("side == Direction.DOWN) return this.mineralBottomItems;", entity)
+        self.assertIn("side == Direction.DOWN) return this.freezerBottomItems;", entity)
+        self.assertIn("return side == this.facing(this.getBlockState()).getOpposite() ? new int[]{0}", entity)
+        self.assertIn("return side == Direction.DOWN && slot == 2;", entity)
+        self.assertIn("if (side == this.facing(this.getBlockState()).getOpposite()) return this.mineralTopFluid;", entity)
+        self.assertIn("side == this.facing(this.getBlockState()).getOpposite() ? this.freezerTopFluid", entity)
 
     def test_tree_extraction_contract_and_registration_are_unchanged(self):
         entity, menu, events = read(ENTITY), read(MENU), read(EVENTS)

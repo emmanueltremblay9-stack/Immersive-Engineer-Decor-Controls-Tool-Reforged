@@ -1,6 +1,7 @@
 from missing_gui_integration import project_history as gui_history, current_hash as gui_hash
 """Exact additive PR194 Hopper projection. Historical machine pins stay immutable."""
 import hashlib
+from prism_210_history_projection import project_current_candidate, expected_current_sha256
 
 PATH = 'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java'
 BASE_SHA256 = '24266c03ec35e12517d8b8f86d1ef53bf1a3e9d266666d38e645045155999128'
@@ -361,11 +362,11 @@ CHANGES = ((271,
 def current_hash(path, historical_hash):
     if path == BLOCKS_PATH:
         assert historical_hash == BLOCKS_BASE_SHA256, "Unexpected Hopper strength baseline"
-        return BLOCKS_CURRENT_SHA256
+        return expected_current_sha256(path) or BLOCKS_CURRENT_SHA256
     if path != PATH:
         return historical_hash
     assert historical_hash == BASE_SHA256, 'Unexpected Hopper fidelity baseline'
-    return gui_hash(path, CURRENT_SHA256)
+    return expected_current_sha256(path) or gui_hash(path, CURRENT_SHA256)
 
 
 def project_history(source):
@@ -381,6 +382,7 @@ def project_history(source):
 
 
 def project_blocks_history(source):
+    source = project_current_candidate(BLOCKS_PATH, source)
     assert hashlib.sha256(source).hexdigest() == BLOCKS_CURRENT_SHA256, 'Hopper strength integrated bytes changed'
     current, previous = BLOCKS_AFTER.encode(), BLOCKS_BEFORE.encode()
     assert source.count(current) == 1, 'Ambiguous Hopper strength projection'

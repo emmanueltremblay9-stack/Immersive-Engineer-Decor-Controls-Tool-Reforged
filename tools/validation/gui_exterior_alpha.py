@@ -6,6 +6,7 @@ admitted. This does not accept arbitrary alpha edits or transfer native proof.
 import hashlib
 import json
 from pathlib import Path
+from prism_210_history_projection import project_current_candidate
 
 ROOT = Path(__file__).resolve().parents[2]
 RECORD = ROOT / 'docs/qualification/gui-exterior-alpha/manifest.json'
@@ -28,6 +29,7 @@ def current_hash(path, previous):
 
 
 def project_history(path, data):
+    data = project_current_candidate(path, data)
     record = records()['text_files'].get(path)
     if record is None:
         return data

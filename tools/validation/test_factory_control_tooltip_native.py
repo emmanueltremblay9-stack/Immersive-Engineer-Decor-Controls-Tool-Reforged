@@ -8,20 +8,23 @@ from factory_control_tooltip_native import validate, validate_hopper_icon_pixels
 from factory_placer_v2_reference_native import decode_png
 
 class ProofTests(unittest.TestCase):
-    def test_dropper_native_hover_points_match_live_tooltip_regions(self):
+    def test_dropper_v3_controls_share_live_tooltip_geometry(self):
         root = Path(__file__).resolve().parents[2]
-        harness = (root/'src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/FactoryControlTooltipValidation.java').read_text()
-        production = (root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java').read_text()
-        point_text = re.search(r'POINTS = HOPPER .*? : new int\[\]\[\](.*?);', harness).group(1)
-        points = [tuple(map(int, p)) for p in re.findall(r'\{(\d+),(\d+)\}', point_text)]
-        zones = {name: tuple(map(int, (x,y,w,h))) for x,y,w,h,name in re.findall(
-            r'isHovering\((\d+),(\d+),(\d+),(\d+),mouseX,mouseY\)\)part="([^" ]+)"', production)}
-        self.assertEqual(len(points), 7)
-        for point, name in zip(points, ('velocity','filtergate','filtergate','externgate','externgate','triggermode','triggermode')):
+        geometry = (root/'src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometry.java').read_text()
+        screen = (root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryStudyScreen.java').read_text()
+        events = (root/'src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java').read_text()
+        dropper = geometry.split('if (kind == MachineKind.FACTORY_DROPPER) return switch (control) {', 1)[1].split('\n      };', 1)[0]
+        zones = {name: tuple(map(int, rect)) for name, *rect in re.findall(
+            r'case (VELOCITY|DIRECTION|COUNT|PERIOD|MANUAL|FILTER_GATE|REDSTONE|TRIGGER) -> new Rect\((\d+), (\d+), (\d+), (\d+)\)', dropper)}
+        points = {'VELOCITY': (195, 52), 'FILTER_GATE': (221, 139), 'REDSTONE': (250, 139), 'TRIGGER': (280, 139)}
+        self.assertEqual(set(zones), {'VELOCITY','DIRECTION','COUNT','PERIOD','MANUAL','FILTER_GATE','REDSTONE','TRIGGER'})
+        for name, point in points.items():
             x,y,w,h = zones[name]
             self.assertTrue(x <= point[0] < x+w and y <= point[1] < y+h, (name,point,zones[name]))
-        x,y,w,h = zones['velocity']
-        self.assertFalse(x <= 135 < x+w and y <= 20 < y+h, 'old Dropper point must stay rejected')
+        self.assertIn('FactoryStudyGeometry.controlAt(kind, localPointerX, localPointerY)', screen)
+        self.assertIn('tooltip = controls.get(hovered).description()', screen)
+        self.assertIn('font.split(tooltip, FactoryStudyGeometry.tooltipWidth(width))', screen)
+        self.assertIn('event.register((MenuType)ModMenus.FACTORY_DROPPER.get(), FactoryStudyScreen::new)', events)
 
     def make(self, machine):
         p=dict(suite='native-factory-control-tooltip-v2',status='passed',nonce='a'*32,

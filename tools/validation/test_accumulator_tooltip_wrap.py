@@ -10,7 +10,7 @@ SCREEN = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/Ma
 FIXTURE = r'''
 import java.util.List;
 public class TooltipProbe {
-    record Component(String text) { Line getVisualOrderText() { return new Line(this); } }
+    record Component(String text) { Line getVisualOrderText() { return new Line(this); } String getString() { return text; } }
     record Line(Component source) {}
     static final class Font {
         int width;
@@ -42,6 +42,7 @@ public class TooltipProbe {
         }
     }
     static final class FluidTooltipPositioner { static final FluidTooltipPositioner INSTANCE = new FluidTooltipPositioner(); }
+    static final class Mth { static int clamp(int value,int min,int max) { return Math.max(min,Math.min(max,value)); } }
     static final class FluidMachineRedesignLayout { static final int ACCUMULATOR_COLLECTION = 1; }
     static final class MachineLayout {
         record MachineSlot(int x, int y) {}

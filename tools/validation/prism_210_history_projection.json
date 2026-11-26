@@ -1,0 +1,1629 @@
+{
+  "schema": "iedctr-prism-candidate-projection-v1",
+  "base_commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+  "head_commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+  "commits": [
+    "d7dce0724698a069855d2284c758e8761edd17b6",
+    "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+    "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+    "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+    "52c89b95cfc43db2f3a7c3756d22923295613654",
+    "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
+  ],
+  "files": {
+    "build.gradle": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "35ec141e20d1447853a6fb74867927e1b33ea4259640279e71ab477f43ffea17"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "c6f8e51523b4e6cfc3493061c578892f738fc7976a1d96b24769066289c008ee"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "c6f8e51523b4e6cfc3493061c578892f738fc7976a1d96b24769066289c008ee"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "c6f8e51523b4e6cfc3493061c578892f738fc7976a1d96b24769066289c008ee"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "c6f8e51523b4e6cfc3493061c578892f738fc7976a1d96b24769066289c008ee"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "c6f8e51523b4e6cfc3493061c578892f738fc7976a1d96b24769066289c008ee"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "old_sha256": "35ec141e20d1447853a6fb74867927e1b33ea4259640279e71ab477f43ffea17",
+          "new_sha256": "c6f8e51523b4e6cfc3493061c578892f738fc7976a1d96b24769066289c008ee",
+          "hunks": [
+            {
+              "start": 591,
+              "end": 593,
+              "current": "\napply from: 'gradle/factory-study-packaged-validation.gradle'\n",
+              "previous": ""
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/ModBlocks.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "6f70b18b025bfb070e99f97306cb3fa550a056ee0371d2ed254c20673b6e6585"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "old_sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a",
+          "new_sha256": "6f70b18b025bfb070e99f97306cb3fa550a056ee0371d2ed254c20673b6e6585",
+          "hunks": [
+            {
+              "start": 10,
+              "end": 11,
+              "current": "import com.oblixorprime.engineersdecorreforged.block.HeavyDoubleTSupportBlock;\n",
+              "previous": ""
+            },
+            {
+              "start": 174,
+              "end": 177,
+              "current": "   );\n   public static final DeferredBlock<HeavyDoubleTSupportBlock> HEAVY_INDUSTRIAL_DOUBLE_T_SUPPORT = registerWithItem(\n      \"heavy_industrial_double_t_support\", () -> new HeavyDoubleTSupportBlock(metal().noOcclusion())\n",
+              "previous": ""
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "90777c211657075dd5fc1e3c3f78e6fdfc771ed130468acc6a10760579fae147"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "532e6db4ae31263889e66a19b62c36e8079e02a61d220df8a60439f1c44edc65"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "532e6db4ae31263889e66a19b62c36e8079e02a61d220df8a60439f1c44edc65"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "532e6db4ae31263889e66a19b62c36e8079e02a61d220df8a60439f1c44edc65"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "532e6db4ae31263889e66a19b62c36e8079e02a61d220df8a60439f1c44edc65"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "532e6db4ae31263889e66a19b62c36e8079e02a61d220df8a60439f1c44edc65"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "old_sha256": "90777c211657075dd5fc1e3c3f78e6fdfc771ed130468acc6a10760579fae147",
+          "new_sha256": "532e6db4ae31263889e66a19b62c36e8079e02a61d220df8a60439f1c44edc65",
+          "hunks": [
+            {
+              "start": 39,
+              "end": 41,
+              "current": "      event.register((MenuType)ModMenus.FACTORY_HOPPER.get(), FactoryStudyScreen::new);\n      event.register((MenuType)ModMenus.FACTORY_DROPPER.get(), FactoryStudyScreen::new);\n",
+              "previous": "      event.register((MenuType)ModMenus.FACTORY_HOPPER.get(), MachineScreen.FactoryHopperScreen::new);\n      event.register((MenuType)ModMenus.FACTORY_DROPPER.get(), MachineScreen.FactoryDropperScreen::new);\n"
+            },
+            {
+              "start": 47,
+              "end": 48,
+              "current": "      event.register((MenuType)ModMenus.SMALL_LAB_FURNACE.get(), FactoryStudyScreen::new);\n",
+              "previous": "      event.register((MenuType)ModMenus.SMALL_LAB_FURNACE.get(), MachineScreen.SmallLabFurnaceScreen::new);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/LabeledCrateBlockEntityRenderer.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "7fe6c40a7a8460dd255fa2fe5a386601ed6f7b0adfa26bb715b6ee984cd05ebb"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "7fe6c40a7a8460dd255fa2fe5a386601ed6f7b0adfa26bb715b6ee984cd05ebb"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "a182d8c38f8920d032fb9bfb9a584e64a3185656bef4f90887492bcc589fc91b"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "36cee4e1fe5b17b4a7546cfc9f529f544aa83a4bb7fe2a509ed36dfc7e420d62"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "36cee4e1fe5b17b4a7546cfc9f529f544aa83a4bb7fe2a509ed36dfc7e420d62"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "36cee4e1fe5b17b4a7546cfc9f529f544aa83a4bb7fe2a509ed36dfc7e420d62"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "7fe6c40a7a8460dd255fa2fe5a386601ed6f7b0adfa26bb715b6ee984cd05ebb",
+          "new_sha256": "a182d8c38f8920d032fb9bfb9a584e64a3185656bef4f90887492bcc589fc91b",
+          "hunks": [
+            {
+              "start": 93,
+              "end": 94,
+              "current": "         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, minimumItemLight(packedLight), packedOverlay,\n",
+              "previous": "         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, packedLight, packedOverlay,\n"
+            },
+            {
+              "start": 97,
+              "end": 102,
+              "current": "   }\n\n   static int minimumItemLight(int packedLight) {\n      int blockLight = (packedLight >>> 4) & 0xF;\n      return blockLight >= 4 ? packedLight : (packedLight & ~(0xF << 4)) | (4 << 4);\n",
+              "previous": ""
+            }
+          ]
+        },
+        {
+          "parent": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "old_sha256": "a182d8c38f8920d032fb9bfb9a584e64a3185656bef4f90887492bcc589fc91b",
+          "new_sha256": "36cee4e1fe5b17b4a7546cfc9f529f544aa83a4bb7fe2a509ed36dfc7e420d62",
+          "hunks": [
+            {
+              "start": 11,
+              "end": 12,
+              "current": "import net.minecraft.client.renderer.LightTexture;\n",
+              "previous": ""
+            },
+            {
+              "start": 15,
+              "end": 16,
+              "current": "import net.minecraft.core.BlockPos;\n",
+              "previous": ""
+            },
+            {
+              "start": 19,
+              "end": 21,
+              "current": "import net.minecraft.world.level.BlockAndTintGetter;\nimport net.minecraft.world.level.LightLayer;\n",
+              "previous": ""
+            },
+            {
+              "start": 35,
+              "end": 36,
+              "current": "            this.renderFrameItem(machine, frameStack, poseStack, buffer, packedOverlay);\n",
+              "previous": "            this.renderFrameItem(machine, frameStack, poseStack, buffer, packedLight, packedOverlay);\n"
+            },
+            {
+              "start": 59,
+              "end": 60,
+              "current": "      MachineBlockEntity machine, ItemStack stack, PoseStack poseStack, MultiBufferSource buffer, int packedOverlay\n",
+              "previous": "      MachineBlockEntity machine, ItemStack stack, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay\n"
+            },
+            {
+              "start": 96,
+              "end": 97,
+              "current": "      int frameLight = frameItemLight(machine.getLevel(), machine.getBlockPos(), facing);\n",
+              "previous": ""
+            },
+            {
+              "start": 98,
+              "end": 99,
+              "current": "         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, frameLight, packedOverlay,\n",
+              "previous": "         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, minimumItemLight(packedLight), packedOverlay,\n"
+            },
+            {
+              "start": 104,
+              "end": 108,
+              "current": "   static int frameItemLight(BlockAndTintGetter level, BlockPos cratePos, Direction facing) {\n      // Like a vanilla item frame, the displayed item receives light from outside its support.\n      BlockPos front = cratePos.relative(facing);\n      return LightTexture.pack(level.getBrightness(LightLayer.BLOCK, front), level.getBrightness(LightLayer.SKY, front));\n",
+              "previous": "   static int minimumItemLight(int packedLight) {\n      int blockLight = (packedLight >>> 4) & 0xF;\n      return blockLight >= 4 ? packedLight : (packedLight & ~(0xF << 4)) | (4 << 4);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "cdf011b77435905ebc05abfc577eff4f5bd0596e0d7f726016ae01ee5bb4ee22"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "cdf011b77435905ebc05abfc577eff4f5bd0596e0d7f726016ae01ee5bb4ee22"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "861bc495100bb1ea5057d1f55191f9bac78904a3b9e1095bfa1c1b766d6973d5"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "861bc495100bb1ea5057d1f55191f9bac78904a3b9e1095bfa1c1b766d6973d5"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "861bc495100bb1ea5057d1f55191f9bac78904a3b9e1095bfa1c1b766d6973d5"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "861bc495100bb1ea5057d1f55191f9bac78904a3b9e1095bfa1c1b766d6973d5"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "cdf011b77435905ebc05abfc577eff4f5bd0596e0d7f726016ae01ee5bb4ee22",
+          "new_sha256": "861bc495100bb1ea5057d1f55191f9bac78904a3b9e1095bfa1c1b766d6973d5",
+          "hunks": [
+            {
+              "start": 32,
+              "end": 34,
+              "current": "   private static final ResourceLocation ELECTRICAL_DIAL_NEUTRAL = ResourceLocation.fromNamespaceAndPath(\n      \"immersive_engineer_decor_controls_tool_reforged\", \"textures/gui/retained_furnaces/electrical_dial_neutral.png\");\n",
+              "previous": ""
+            },
+            {
+              "start": 835,
+              "end": 841,
+              "current": "      // Replace only the dial's painted spindle with the original ring face, then mark the live detent.\n      graphics.blit(ELECTRICAL_DIAL_NEUTRAL, x+171, y+74, 23, 23, 0F, 0F, 120, 120, 120, 120);\n      int[] detent = electricalDialOffset(speed);\n      int markerX=x+182+detent[0], markerY=y+87+detent[1];\n      graphics.fill(markerX+1,markerY,markerX+3,markerY+4,0xFF5B3A1C);\n      graphics.fill(markerX,markerY+1,markerX+4,markerY+3,0xFFFFD180);\n",
+              "previous": "      int[] dx = {0,-9,0,9};\n      int[] dy = {9,0,-9,0};\n      // Mask the painted upright knob position before drawing the actual selection.\n      graphics.fill(x+178,y+82,x+189,y+94,0xFF493B2C);\n      graphics.fill(x+182+dx[speed],y+87+dy[speed],x+185+dx[speed],y+90+dy[speed],0xFFFFD180);\n"
+            },
+            {
+              "start": 1486,
+              "end": 1488,
+              "current": "                  Component tooltip = this.slotTooltip(slot);\n                  if (hasVisibleTooltipText(tooltip)) this.renderFluidArtworkTooltip(graphics, tooltip, mouseX, mouseY);\n",
+              "previous": "                  this.renderFluidArtworkTooltip(graphics, this.slotTooltip(slot), mouseX, mouseY);\n"
+            },
+            {
+              "start": 1489,
+              "end": 1491,
+              "current": "                  Component tooltip = this.slotTooltip(slot);\n                  if (hasVisibleTooltipText(tooltip)) graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);\n",
+              "previous": "                  graphics.renderTooltip(this.font, this.slotTooltip(slot), mouseX, mouseY);\n"
+            },
+            {
+              "start": 1496,
+              "end": 1509,
+              "current": "   }\n\n   static boolean hasVisibleTooltipText(Component tooltip) {\n      return tooltip != null && !tooltip.getString().isBlank();\n   }\n\n   static int[] electricalDialOffset(int speed) {\n      return switch (Mth.clamp(speed,0,3)) {\n         case 1 -> new int[]{-9,0};\n         case 2 -> new int[]{0,-9};\n         case 3 -> new int[]{9,0};\n         default -> new int[]{0,9};\n      };\n",
+              "previous": ""
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "85cba616034d5045b0bc9f331564be4684668407073bba7d13842c1e954949f8"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "85cba616034d5045b0bc9f331564be4684668407073bba7d13842c1e954949f8"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "d0d00734bccfc49a59e33edca6472858b7f0d5d2433c0c4c856a4e4dcd9c1e64"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "d0d00734bccfc49a59e33edca6472858b7f0d5d2433c0c4c856a4e4dcd9c1e64"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "d0d00734bccfc49a59e33edca6472858b7f0d5d2433c0c4c856a4e4dcd9c1e64"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "d0d00734bccfc49a59e33edca6472858b7f0d5d2433c0c4c856a4e4dcd9c1e64"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "85cba616034d5045b0bc9f331564be4684668407073bba7d13842c1e954949f8",
+          "new_sha256": "d0d00734bccfc49a59e33edca6472858b7f0d5d2433c0c4c856a4e4dcd9c1e64",
+          "hunks": [
+            {
+              "start": 6,
+              "end": 7,
+              "current": "import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;\n",
+              "previous": ""
+            },
+            {
+              "start": 24,
+              "end": 35,
+              "current": "   private static final ResourceLocation FREEZER_BASE = texture(\"thermal_vertical/freezer/neutral.png\");\n   private static final ResourceLocation FREEZER_EFFECT = texture(\"thermal_vertical/freezer/effect.png\");\n   private static final ResourceLocation FREEZER_ENERGY = texture(\"thermal_vertical/freezer/energy.png\");\n   private static final ResourceLocation SMELTER_BASE = texture(\"thermal_vertical/smelter/neutral.png\");\n   private static final ResourceLocation SMELTER_EFFECT = texture(\"thermal_vertical/smelter/effect.png\");\n   private static final ResourceLocation SMELTER_ENERGY = texture(\"thermal_vertical/smelter/energy.png\");\n   private static final int RENDER_WIDTH = 1041;\n   private static final int RENDER_HEIGHT = 1143;\n   private static final float MAX_VIEW_SCALE = 0.78F;\n   private FreezerReferenceGeometry.ViewTransform view = FreezerReferenceGeometry.fitCanvas(\n      ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 347, 381, MAX_VIEW_SCALE);\n",
+              "previous": "   private static final ResourceLocation FREEZER_ART = texture(\"freezer_reference_v5/background.png\");\n   private static final ResourceLocation FREEZER_CLEAN = texture(\"freezer_reference_v5/freezer_v5_chamber_clean_base.png\");\n   private static final List<ResourceLocation> FROST = java.util.stream.IntStream.rangeClosed(0, 4)\n      .mapToObj(i -> texture(\"freezer_reference_v5/freezer_v5_frost_overlay_phase\" + i + \".png\")).toList();\n   private static final ResourceLocation SMELTER_ART = texture(\"small_mineral_smelter_hybrid_v05/background.png\");\n   private FreezerReferenceGeometry.ViewTransform view = FreezerReferenceGeometry.fit(314, 314);\n"
+            },
+            {
+              "start": 48,
+              "end": 50,
+              "current": "      imageWidth = ThermalVerticalGeometry.CANVAS_WIDTH;\n      imageHeight = ThermalVerticalGeometry.CANVAS_HEIGHT;\n",
+              "previous": "      imageWidth = 314;\n      imageHeight = 314;\n"
+            },
+            {
+              "start": 59,
+              "end": 60,
+              "current": "      view = FreezerReferenceGeometry.fitCanvas(width, height, imageWidth, imageHeight, MAX_VIEW_SCALE);\n",
+              "previous": "      view = FreezerReferenceGeometry.fit(width, height);\n"
+            },
+            {
+              "start": 63,
+              "end": 64,
+              "current": "            .bounds(238, 199, 16, 16).build());\n",
+              "previous": "            .bounds(246, 155, 16, 16).build());\n"
+            },
+            {
+              "start": 104,
+              "end": 105,
+              "current": "      } else if (hoveredSlot == null && localOver(mouseX, mouseY, 55, 88, 25, 105)) {\n",
+              "previous": "      } else if (hoveredSlot == null && localOver(mouseX, mouseY, 52, 76, 18, 78)) {\n"
+            },
+            {
+              "start": 107,
+              "end": 108,
+              "current": "      } else if (hoveredSlot == null && localOver(mouseX, mouseY, 105, 107, 136, 81)) {\n",
+              "previous": "      } else if (hoveredSlot == null && localOver(mouseX, mouseY, 106, 89, 102, 61)) {\n"
+            },
+            {
+              "start": 123,
+              "end": 125,
+              "current": "      ResourceLocation base = freezer() ? FREEZER_BASE : SMELTER_BASE;\n      graphics.blit(base, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);\n",
+              "previous": "      // Reuse known Freezer steel art, not an unverified resized generated image.\n      graphics.blit(FREEZER_CLEAN, 0, 0, imageWidth, imageHeight, 0, 0, 1254, 1254, 1254, 1254);\n"
+            },
+            {
+              "start": 126,
+              "end": 129,
+              "current": "         if (ThermalVerticalGeometry.effectVisible(menu.kind(), menu.freezerPhase(), 0))\n            graphics.blit(FREEZER_EFFECT, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);\n         drawEnergy(graphics, FREEZER_ENERGY, 56, 89, 77, 192);\n",
+              "previous": "         RenderSystem.enableBlend();\n         RenderSystem.defaultBlendFunc();\n         int phase = Math.max(0, Math.min(4, menu.freezerPhase()));\n         graphics.blit(FROST.get(phase), 0, 0, imageWidth, imageHeight, 0, 0, 1254, 1254, 1254, 1254);\n         RenderSystem.disableBlend();\n"
+            },
+            {
+              "start": 130,
+              "end": 133,
+              "current": "         if (ThermalVerticalGeometry.effectVisible(menu.kind(), menu.field(MachineMenu.SMS_UI_PHASE), menu.field(MachineMenu.SMS_UI_FLAGS)))\n            graphics.blit(SMELTER_EFFECT, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);\n         drawEnergy(graphics, SMELTER_ENERGY, 58, 88, 79, 193);\n",
+              "previous": "         // Hot chamber: actual refractory Smelter source, not orange-recolored frost.\n         graphics.blit(SMELTER_ART, 106, 89, 102, 61,\n            150, 170, 260, 300, 1168, 1346);\n         int phase = (menu.field(MachineMenu.SMS_UI_FLAGS) & 1) != 0\n            ? menu.field(MachineMenu.SMS_UI_PHASE) : -1;\n         if (phase <= 0) graphics.fill(115, 99, 198, 140, 0xD010161B);\n         else if (phase == 1) graphics.fill(115, 99, 198, 140, 0x80161412);\n"
+            },
+            {
+              "start": 134,
+              "end": 135,
+              "current": "   }\n",
+              "previous": ""
+            },
+            {
+              "start": 136,
+              "end": 145,
+              "current": "   private void drawEnergy(GuiGraphics graphics, ResourceLocation layer, int x0, int y0, int x1, int y1) {\n      int top = ThermalVerticalGeometry.energyClipTop(y0, y1, menu.energyStored(), menu.energyCapacity());\n      if (top >= y1) return;\n      // Reveal the painted cells from the bottom upward, and draw nothing at zero FE.\n      graphics.enableScissor(x0, top, x1, y1);\n      try {\n         graphics.blit(layer, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);\n      } finally {\n         graphics.disableScissor();\n",
+              "previous": "      // Remove old lateral wells using independent patches of source steel/pipe artwork.\n      // These are presentation regions only: no item can occupy them.\n      graphics.blit(FREEZER_ART, 30, 119, 48, 48, 90, 220, 210, 210, 1254, 1254);\n      graphics.blit(FREEZER_ART, 235, 119, 48, 48, 920, 220, 210, 210, 1254, 1254);\n      // The retained V5 background includes a pre-lit horizontal FE strip.\n      // Cover it with a sampled steel section BEFORE drawing the lower slot rim,\n      // so zero stored energy cannot appear as a permanently glowing second gauge.\n      graphics.blit(FREEZER_ART, 116, 160, 90, 21, 350, 35, 360, 84, 1254, 1254);\n      // Move the original sculpted slot rims to the vertical center line.\n      graphics.blit(FREEZER_ART, 137, 37, 32, 34, 154, 502, 130, 120, 1254, 1254);\n      graphics.blit(FREEZER_ART, 137, 149, 32, 35, 964, 502, 130, 120, 1254, 1254);\n\n      // The V5 reference contains lit energy cells; replace them with server-owned state.\n      graphics.fill(56, 99, 66, 148, 0xFF0D1318);\n      int capacity = Math.max(0, menu.energyCapacity());\n      int stored = Math.max(0, menu.energyStored());\n      int cells = capacity == 0 ? 0 : Math.min(10, (int)((long)stored * 10 / capacity));\n      for (int i = 0; i < cells; i++) {\n         int y = 144 - i * 5;\n         graphics.fill(57, y, 65, y + 4, 0xFFFFB22C);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "25976330898e9e03cd2407984a49ba38281758ff243982c39b90168d0a5b1784"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "25976330898e9e03cd2407984a49ba38281758ff243982c39b90168d0a5b1784"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "008cc62b9d7cc163f5676ebb4bc2dc7ab88230d4663f15467a2a3fc0d1f1b604"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "008cc62b9d7cc163f5676ebb4bc2dc7ab88230d4663f15467a2a3fc0d1f1b604"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "008cc62b9d7cc163f5676ebb4bc2dc7ab88230d4663f15467a2a3fc0d1f1b604"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "008cc62b9d7cc163f5676ebb4bc2dc7ab88230d4663f15467a2a3fc0d1f1b604"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "25976330898e9e03cd2407984a49ba38281758ff243982c39b90168d0a5b1784",
+          "new_sha256": "008cc62b9d7cc163f5676ebb4bc2dc7ab88230d4663f15467a2a3fc0d1f1b604",
+          "hunks": [
+            {
+              "start": 223,
+              "end": 224,
+              "current": "         var anchor = ThermalVerticalGeometry.slot(position, menu.kind());\n",
+              "previous": "         var anchor = ThermalVerticalGeometry.slot(position);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/compat/jei/EngineersDecorJeiPlugin.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "a32c784df86e3bca28599ee79e69898360fc0beb428b26762df125041389dfbf"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "ac392883bf0feeb127b7fa4d22ca0e7eabc7e6b94a2f03239a25f22c04178bf8"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "ac392883bf0feeb127b7fa4d22ca0e7eabc7e6b94a2f03239a25f22c04178bf8"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "ac392883bf0feeb127b7fa4d22ca0e7eabc7e6b94a2f03239a25f22c04178bf8"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "ac392883bf0feeb127b7fa4d22ca0e7eabc7e6b94a2f03239a25f22c04178bf8"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "ac392883bf0feeb127b7fa4d22ca0e7eabc7e6b94a2f03239a25f22c04178bf8"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "old_sha256": "a32c784df86e3bca28599ee79e69898360fc0beb428b26762df125041389dfbf",
+          "new_sha256": "ac392883bf0feeb127b7fa4d22ca0e7eabc7e6b94a2f03239a25f22c04178bf8",
+          "hunks": [
+            {
+              "start": 5,
+              "end": 6,
+              "current": "import com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen;\n",
+              "previous": ""
+            },
+            {
+              "start": 72,
+              "end": 73,
+              "current": "      registration.addGuiContainerHandler(FactoryStudyScreen.class, new FactoryStudyJeiHandler());\n",
+              "previous": ""
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/gametest/ExternalFluidloggingGameTests.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "b43d65bce85c93d40d4f81d97caf1f187cc60899b1de65b1d6f87d1ef05eebf2"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "b43d65bce85c93d40d4f81d97caf1f187cc60899b1de65b1d6f87d1ef05eebf2"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "b43d65bce85c93d40d4f81d97caf1f187cc60899b1de65b1d6f87d1ef05eebf2"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "b43d65bce85c93d40d4f81d97caf1f187cc60899b1de65b1d6f87d1ef05eebf2"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "b43d65bce85c93d40d4f81d97caf1f187cc60899b1de65b1d6f87d1ef05eebf2"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "ad2e48336280c77897e96226f044386332df629ccd9ea7e5f8661a024324a987"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "old_sha256": "b43d65bce85c93d40d4f81d97caf1f187cc60899b1de65b1d6f87d1ef05eebf2",
+          "new_sha256": "ad2e48336280c77897e96226f044386332df629ccd9ea7e5f8661a024324a987",
+          "hunks": [
+            {
+              "start": 80,
+              "end": 84,
+              "current": "      h.assertValueEqual(ModBlocks.ORDERED_BLOCKS.size(), 204,\n         \"existing native catalogue plus the separate Heavy Double-T registration\");\n      h.assertTrue(ModBlocks.ORDERED_BLOCKS.stream().filter(holder -> holder == ModBlocks.HEAVY_INDUSTRIAL_DOUBLE_T_SUPPORT).count() == 1,\n         \"new Heavy Double-T is present exactly once in the ordered native catalogue\");\n",
+              "previous": "      h.assertValueEqual(ModBlocks.ORDERED_BLOCKS.size(), 203, \"native catalogue, contextual V stair and treated wood beam retained\");\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/gametest/FreezerFluidAutomationGameTests.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "7c17e17390b308f99b346485940341e3fae896796a82d25902cb56a26a121154"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "7c17e17390b308f99b346485940341e3fae896796a82d25902cb56a26a121154"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "7c17e17390b308f99b346485940341e3fae896796a82d25902cb56a26a121154"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "7c17e17390b308f99b346485940341e3fae896796a82d25902cb56a26a121154"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "6ba4523fdaf5be703d9eb1b357c43c426ea6753e689c0d7045bb0b458ad22139"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "6ba4523fdaf5be703d9eb1b357c43c426ea6753e689c0d7045bb0b458ad22139"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "old_sha256": "7c17e17390b308f99b346485940341e3fae896796a82d25902cb56a26a121154",
+          "new_sha256": "6ba4523fdaf5be703d9eb1b357c43c426ea6753e689c0d7045bb0b458ad22139",
+          "hunks": [
+            {
+              "start": 60,
+              "end": 64,
+              "current": "   private static Direction rear(MachineBlockEntity machine) {\n      return machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();\n   }\n\n",
+              "previous": ""
+            },
+            {
+              "start": 65,
+              "end": 66,
+              "current": "   private static int amount(GameTestHelper h, MachineBlockEntity machine) { return tank(h, machine, rear(machine)).getFluidInTank(0).getAmount(); }\n",
+              "previous": "   private static int amount(GameTestHelper h, MachineBlockEntity machine) { return tank(h, machine, Direction.UP).getFluidInTank(0).getAmount(); }\n"
+            },
+            {
+              "start": 82,
+              "end": 83,
+              "current": "   public static void freezer_public_fluid_port_is_rear_input_only_and_keeps_capacity_types_and_simulation(GameTestHelper h) {\n",
+              "previous": "   public static void freezer_public_fluid_port_is_top_input_only_and_keeps_capacity_types_and_simulation(GameTestHelper h) {\n"
+            },
+            {
+              "start": 85,
+              "end": 87,
+              "current": "      Direction inputSide = rear(machine);\n      IFluidHandler handler = tank(h, machine, inputSide);\n",
+              "previous": "      IFluidHandler handler = tank(h, machine, Direction.UP);\n"
+            },
+            {
+              "start": 88,
+              "end": 89,
+              "current": "         if (side == inputSide) continue;\n",
+              "previous": "         if (side == Direction.UP) continue;\n"
+            },
+            {
+              "start": 95,
+              "end": 96,
+              "current": "      h.assertValueEqual(handler.getTanks(), 1, \"one tank on the rear input port\");\n",
+              "previous": "      h.assertValueEqual(handler.getTanks(), 1, \"one tank on the upper input port\");\n"
+            },
+            {
+              "start": 117,
+              "end": 123,
+              "current": "      h.assertTrue(handler.drain(markedWater, FluidAction.EXECUTE).isEmpty(), \"rear input port refuses component-mismatched drain\");\n      h.assertTrue(handler.drain(new FluidStack(Fluids.LAVA, 1), FluidAction.EXECUTE).isEmpty(), \"rear input port refuses wrong-fluid drain\");\n      h.assertTrue(handler.drain(water(125), FluidAction.SIMULATE).isEmpty(), \"rear input port refuses simulated drain\");\n      h.assertTrue(handler.drain(water(125), FluidAction.EXECUTE).isEmpty(), \"rear input port refuses executed stack drain\");\n      h.assertTrue(handler.drain(5000, FluidAction.SIMULATE).isEmpty(), \"rear input port refuses simulated amount drain\");\n      h.assertTrue(handler.drain(5000, FluidAction.EXECUTE).isEmpty(), \"rear input port refuses amount drain\");\n",
+              "previous": "      h.assertTrue(handler.drain(markedWater, FluidAction.EXECUTE).isEmpty(), \"upper input port refuses component-mismatched drain\");\n      h.assertTrue(handler.drain(new FluidStack(Fluids.LAVA, 1), FluidAction.EXECUTE).isEmpty(), \"upper input port refuses wrong-fluid drain\");\n      h.assertTrue(handler.drain(water(125), FluidAction.SIMULATE).isEmpty(), \"upper input port refuses simulated drain\");\n      h.assertTrue(handler.drain(water(125), FluidAction.EXECUTE).isEmpty(), \"upper input port refuses executed stack drain\");\n      h.assertTrue(handler.drain(5000, FluidAction.SIMULATE).isEmpty(), \"upper input port refuses simulated amount drain\");\n      h.assertTrue(handler.drain(5000, FluidAction.EXECUTE).isEmpty(), \"upper input port refuses amount drain\");\n"
+            },
+            {
+              "start": 131,
+              "end": 132,
+              "current": "      IFluidHandler handler = tank(h, machine, rear(machine));\n",
+              "previous": "      IFluidHandler handler = tank(h, machine, Direction.UP);\n"
+            },
+            {
+              "start": 155,
+              "end": 156,
+              "current": "      tank(h, machine, rear(machine)).fill(water(2000), FluidAction.EXECUTE);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE);\n"
+            },
+            {
+              "start": 169,
+              "end": 170,
+              "current": "      IFluidHandler publicRear = tank(h, machine, rear(machine));\n",
+              "previous": "      IFluidHandler publicTop = tank(h, machine, Direction.UP);\n"
+            },
+            {
+              "start": 173,
+              "end": 175,
+              "current": "      h.assertTrue(internalMutation != null, \"internal mutation hook exists separately from the public rear port\");\n      publicRear.fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);\n",
+              "previous": "      h.assertTrue(internalMutation != null, \"internal mutation hook exists separately from the public top port\");\n      publicTop.fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);\n"
+            },
+            {
+              "start": 197,
+              "end": 198,
+              "current": "         tank(h, machine, rear(machine)).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);\n",
+              "previous": "         tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);\n"
+            },
+            {
+              "start": 217,
+              "end": 218,
+              "current": "         tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n",
+              "previous": "         tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n"
+            },
+            {
+              "start": 242,
+              "end": 243,
+              "current": "         tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n",
+              "previous": "         tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n"
+            },
+            {
+              "start": 262,
+              "end": 265,
+              "current": "      Direction inputSide = rear(machine);\n      tank(h, machine, inputSide).fill(water(2000), FluidAction.EXECUTE);\n      IItemHandler input = items(h, machine, inputSide);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE);\n      IItemHandler input = items(h, machine, Direction.UP);\n"
+            },
+            {
+              "start": 267,
+              "end": 268,
+              "current": "      h.assertValueEqual(input.getSlots(), 1, \"rear item port exposes only the input\");\n",
+              "previous": "      h.assertValueEqual(input.getSlots(), 1, \"top item port exposes only the input\");\n"
+            },
+            {
+              "start": 270,
+              "end": 271,
+              "current": "         if (side == inputSide || side == Direction.DOWN) continue;\n",
+              "previous": "         if (side == Direction.UP || side == Direction.DOWN) continue;\n"
+            },
+            {
+              "start": 275,
+              "end": 276,
+              "current": "         \"water bucket inserts through the public rear item capability\");\n",
+              "previous": "         \"water bucket inserts through the public top item capability\");\n"
+            },
+            {
+              "start": 277,
+              "end": 278,
+              "current": "         h.assertTrue(input.extractItem(0, 1, false).isEmpty(), \"rear input handler never extracts the full bucket\");\n",
+              "previous": "         h.assertTrue(input.extractItem(0, 1, false).isEmpty(), \"top input handler never extracts the full bucket\");\n"
+            },
+            {
+              "start": 303,
+              "end": 304,
+              "current": "         h.assertTrue(input.insertItem(0, new ItemStack(item), false).isEmpty(), \"solid recipe input uses the rear port\");\n",
+              "previous": "         h.assertTrue(input.insertItem(0, new ItemStack(item), false).isEmpty(), \"solid recipe input uses the top port\");\n"
+            },
+            {
+              "start": 324,
+              "end": 325,
+              "current": "      tank(h, machine, rear(machine)).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(2000), FluidAction.EXECUTE); ticks(h, machine, 179);\n"
+            },
+            {
+              "start": 333,
+              "end": 334,
+              "current": "      h.assertValueEqual(tank(h, machine, rear(machine)).getFluidInTank(0).getAmount(), 1000, \"reloaded cycle pays exactly one bucket\");\n",
+              "previous": "      h.assertValueEqual(tank(h, machine, Direction.UP).getFluidInTank(0).getAmount(), 1000, \"reloaded cycle pays exactly one bucket\");\n"
+            },
+            {
+              "start": 434,
+              "end": 435,
+              "current": "      tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n"
+            },
+            {
+              "start": 440,
+              "end": 441,
+              "current": "      tank(h, machine, rear(machine)).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(1000), FluidAction.EXECUTE); ticks(h, machine, 179);\n"
+            },
+            {
+              "start": 470,
+              "end": 471,
+              "current": "      tank(h, machine, rear(machine)).fill(water(999), FluidAction.EXECUTE);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(999), FluidAction.EXECUTE);\n"
+            },
+            {
+              "start": 473,
+              "end": 474,
+              "current": "      tank(h, machine, rear(machine)).fill(water(1), FluidAction.EXECUTE);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(1), FluidAction.EXECUTE);\n"
+            },
+            {
+              "start": 496,
+              "end": 497,
+              "current": "      tank(h, machine, rear(machine)).fill(water(1250), FluidAction.EXECUTE);\n",
+              "previous": "      tank(h, machine, Direction.UP).fill(water(1250), FluidAction.EXECUTE);\n"
+            },
+            {
+              "start": 523,
+              "end": 524,
+              "current": "   public static void freezer_real_ie_pipes_use_rear_input_only_and_reconnect_after_entity_reload(GameTestHelper h) {\n",
+              "previous": "   public static void freezer_real_ie_pipes_use_top_input_only_and_reconnect_after_entity_reload(GameTestHelper h) {\n"
+            },
+            {
+              "start": 527,
+              "end": 528,
+              "current": "      Direction inputSide = rear(machine);\n",
+              "previous": ""
+            },
+            {
+              "start": 529,
+              "end": 532,
+              "current": "      // A real IE pipe on any non-rear face must not discover a Freezer fluid endpoint.\n      for (Direction side : Direction.values()) {\n         if (side == inputSide) continue;\n",
+              "previous": "      // A real IE pipe on any non-top face must not discover a Freezer fluid endpoint.\n      for (Direction side : new Direction[]{Direction.DOWN, Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST}) {\n"
+            },
+            {
+              "start": 546,
+              "end": 548,
+              "current": "      // The rear pipe face feeds the Freezer's rear-facing public capability.\n      BlockPos pipePos = machine.getBlockPos().relative(inputSide);\n",
+              "previous": "      // The upper pipe face feeds the Freezer's public UP capability.\n      BlockPos pipePos = machine.getBlockPos().above();\n"
+            },
+            {
+              "start": 551,
+              "end": 554,
+              "current": "      Direction pipeInputFace = inputSide.getOpposite();\n      int inputConnection = 1 << pipeInputFace.get3DDataValue();\n      h.assertTrue((pipe.getAvailableConnectionByte() & inputConnection) != 0, \"IE detects the Freezer rear input\");\n",
+              "previous": "      int downConnection = 1 << Direction.DOWN.get3DDataValue();\n      h.assertTrue((pipe.getAvailableConnectionByte() & downConnection) != 0, \"IE detects the Freezer top input\");\n"
+            },
+            {
+              "start": 555,
+              "end": 556,
+              "current": "      h.assertTrue(inlet != null, \"external IE pipe rear feed exists\");\n",
+              "previous": "      h.assertTrue(inlet != null, \"external IE pipe top feed exists\");\n"
+            },
+            {
+              "start": 560,
+              "end": 561,
+              "current": "         h.assertTrue(accepted > 0, \"IE rear route accepts water\");\n",
+              "previous": "         h.assertTrue(accepted > 0, \"IE top route accepts water\");\n"
+            },
+            {
+              "start": 566,
+              "end": 568,
+              "current": "      h.assertValueEqual(transferred, 1000, \"one actual bucket crosses the rear IE pipe\");\n      h.assertValueEqual(amount(h, machine), 1000, \"rear pipe transfer is conserved\");\n",
+              "previous": "      h.assertValueEqual(transferred, 1000, \"one actual bucket crosses the top IE pipe\");\n      h.assertValueEqual(amount(h, machine), 1000, \"top pipe transfer is conserved\");\n"
+            },
+            {
+              "start": 573,
+              "end": 575,
+              "current": "      h.assertTrue((reloadedPipe.getAvailableConnectionByte() & inputConnection) != 0,\n         \"IE rediscovers the replacement Freezer through its rear input\");\n",
+              "previous": "      h.assertTrue((reloadedPipe.getAvailableConnectionByte() & downConnection) != 0,\n         \"IE rediscovers the replacement Freezer through its top input\");\n"
+            },
+            {
+              "start": 576,
+              "end": 577,
+              "current": "      h.assertTrue(reloadedInlet != null, \"reloaded IE rear feed exists\");\n",
+              "previous": "      h.assertTrue(reloadedInlet != null, \"reloaded IE top feed exists\");\n"
+            },
+            {
+              "start": 578,
+              "end": 579,
+              "current": "      h.assertTrue(machine.getItem(2).is(Items.ICE), \"rear pipe-fed cycle completes after entity reload\");\n",
+              "previous": "      h.assertTrue(machine.getItem(2).is(Items.ICE), \"top pipe-fed cycle completes after entity reload\");\n"
+            },
+            {
+              "start": 585,
+              "end": 586,
+              "current": "         \"post-reload rear transfer reaches the replacement rather than a stale entity\");\n",
+              "previous": "         \"post-reload top transfer reaches the replacement rather than a stale entity\");\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/gametest/MachineGuiGameTests.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "c1ad4c2369a17028721c7a223848d54b7c82fbfe2f6158294fb2213250265c77"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "48bb4c933ce3ff85dddaaee933a6b2bedb3ee740a34ab249faf95b1721e596c3"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "8bd129fa9a44cbcbe6bfba06890f7a7c848feb3e1112e6e6e5e851aa92ab7488"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "8bd129fa9a44cbcbe6bfba06890f7a7c848feb3e1112e6e6e5e851aa92ab7488"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "2057fc0dbb8cf4748fad02e1637234cf2a0416af2d535221e7b65fea52d66aa8"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "2057fc0dbb8cf4748fad02e1637234cf2a0416af2d535221e7b65fea52d66aa8"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "old_sha256": "c1ad4c2369a17028721c7a223848d54b7c82fbfe2f6158294fb2213250265c77",
+          "new_sha256": "48bb4c933ce3ff85dddaaee933a6b2bedb3ee740a34ab249faf95b1721e596c3",
+          "hunks": [
+            {
+              "start": 1797,
+              "end": 1798,
+              "current": "      attachTestMenu(helper, player, hopperMenu, TEST_POS);\n",
+              "previous": ""
+            },
+            {
+              "start": 1806,
+              "end": 1807,
+              "current": "      attachTestMenu(helper, player, dropperMenu, TEST_POS);\n",
+              "previous": ""
+            },
+            {
+              "start": 1834,
+              "end": 1835,
+              "current": "      attachTestMenu(helper, player, hopperMenu, TEST_POS);\n",
+              "previous": ""
+            },
+            {
+              "start": 1846,
+              "end": 1847,
+              "current": "      attachTestMenu(helper, player, dropperMenu, TEST_POS.offset(3, 0, 0));\n",
+              "previous": ""
+            },
+            {
+              "start": 1910,
+              "end": 1911,
+              "current": "      attachTestMenu(helper, player, menu, TEST_POS);\n",
+              "previous": ""
+            },
+            {
+              "start": 1927,
+              "end": 1928,
+              "current": "      attachTestMenu(helper, player, menu, TEST_POS);\n",
+              "previous": ""
+            },
+            {
+              "start": 3261,
+              "end": 3262,
+              "current": "      attachTestMenu(helper, player, menu, TEST_POS);\n",
+              "previous": ""
+            },
+            {
+              "start": 3595,
+              "end": 3602,
+              "current": "   private static void attachTestMenu(GameTestHelper helper, Player player, MachineMenu menu, BlockPos machinePos) {\n      BlockPos absolutePos = helper.absolutePos(machinePos);\n      player.setPos(absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 0.5);\n      player.containerMenu = menu;\n      helper.assertTrue(menu.stillValid(player), \"the simulated player should have the active, in-range machine menu\");\n   }\n\n",
+              "previous": ""
+            }
+          ]
+        },
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "48bb4c933ce3ff85dddaaee933a6b2bedb3ee740a34ab249faf95b1721e596c3",
+          "new_sha256": "8bd129fa9a44cbcbe6bfba06890f7a7c848feb3e1112e6e6e5e851aa92ab7488",
+          "hunks": [
+            {
+              "start": 1061,
+              "end": 1111,
+              "current": "   @GameTest(template = \"empty\", timeoutTicks = 80)\n   public static void thermal_inputs_route_only_from_rotating_rear(GameTestHelper helper) {\n      Direction[] facings={Direction.NORTH,Direction.EAST,Direction.SOUTH,Direction.WEST};\n      for (int i=0;i<facings.length;i++) {\n         Direction facing=facings[i], rear=facing.getOpposite();\n         BlockPos freezerPos=TEST_POS, smelterPos=TEST_POS.offset(0,0,1);\n         helper.setBlock(freezerPos,((MachineBlocks.MachineBlock)ModBlocks.SMALL_FREEZER.get()).defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING,facing));\n         helper.setBlock(smelterPos,((MachineBlocks.MachineBlock)ModBlocks.SMALL_MINERAL_SMELTER.get()).defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING,facing));\n         MachineBlockEntity freezer=(MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(freezerPos));\n         MachineBlockEntity smelter=(MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(smelterPos));\n         helper.assertTrue(freezer!=null&&smelter!=null,\"both thermal machines load for every horizontal facing\");\n         for (MachineBlockEntity machine : new MachineBlockEntity[]{freezer,smelter}) {\n            BlockPos pos=machine.getBlockPos();\n            IItemHandler rearItems=helper.getLevel().getCapability(ItemHandler.BLOCK,pos,rear);\n            helper.assertTrue(rearItems!=null,\"rear item input follows facing\");\n            ItemStack accepted=machine==freezer?new ItemStack(Items.ICE):new ItemStack(Items.COBBLESTONE);\n            helper.assertTrue(rearItems.insertItem(0,accepted,false).isEmpty(),\"rear item input accepts its existing recipe item\");\n            helper.assertTrue(helper.getLevel().getCapability(ItemHandler.BLOCK,pos,Direction.UP)==null,\"top item capability is absent\");\n            helper.assertTrue(helper.getLevel().getCapability(ItemHandler.BLOCK,pos,facing)==null,\"front item capability is absent\");\n            for(Direction side:Direction.Plane.HORIZONTAL) if(side!=rear&&side!=facing)\n               helper.assertTrue(helper.getLevel().getCapability(ItemHandler.BLOCK,pos,side)==null,\"lateral item capability is absent\");\n            helper.assertTrue(machine.canPlaceItemThroughFace(0,accepted,rear),\"vanilla sided container accepts input from rear\");\n            helper.assertTrue(!machine.canPlaceItemThroughFace(0,accepted,Direction.UP)&&!machine.canPlaceItemThroughFace(0,accepted,facing),\"vanilla sided container rejects top/front input\");\n            helper.assertValueEqual(1,machine.getSlotsForFace(rear).length,\"WorldlyContainer exposes rear input\");\n            helper.assertValueEqual(0,machine.getSlotsForFace(Direction.UP).length,\"WorldlyContainer rejects top input\");\n            helper.assertValueEqual(2,machine.getSlotsForFace(Direction.DOWN)[0],\"WorldlyContainer keeps the output below\");\n            for(Direction face:Direction.values()) if(face!=rear)\n               helper.assertTrue(!machine.canPlaceItemThroughFace(0,accepted,face),\"WorldlyContainer rejects every non-rear input face\");\n            helper.assertTrue(!machine.canTakeItemThroughFace(0,accepted,rear),\"rear does not extract its input\");\n            ItemStack output=machine==freezer?new ItemStack(Items.PACKED_ICE):new ItemStack(Items.MAGMA_BLOCK);\n            machine.setItem(2,output);\n            helper.assertTrue(machine.canTakeItemThroughFace(2,output,Direction.DOWN),\"output remains extractable below\");\n         }\n         IFluidHandler rearFreezer=helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),rear);\n         IFluidHandler rearSmelter=helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),rear);\n         helper.assertTrue(rearFreezer!=null&&rearSmelter!=null,\"fluid input capabilities follow rear orientation\");\n         helper.assertValueEqual(1000,rearFreezer.fill(new FluidStack(Fluids.WATER,1000),FluidAction.EXECUTE),\"Freezer rear accepts water\");\n         helper.assertValueEqual(1000,rearSmelter.fill(new FluidStack(Fluids.LAVA,1000),FluidAction.EXECUTE),\"Smelter rear accepts lava\");\n         helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),Direction.UP)==null,\"Freezer top fluid capability is absent\");\n         helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),Direction.UP)==null,\"Smelter top fluid capability is absent\");\n         helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),facing)==null,\"Smelter front fluid capability is absent\");\n         for(Direction face:Direction.values()) if(face!=rear)\n            helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),face)==null,\"Freezer fluid input is absent from every non-rear face\");\n         for(Direction face:Direction.values()) if(face!=rear&&face!=Direction.DOWN)\n            helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),face)==null,\"Smelter has no fluid input on top/front/sides\");\n         helper.assertTrue(smelter.fluidHandler(Direction.DOWN).drain(1000,FluidAction.EXECUTE).isEmpty(),\"bottom cannot drain reserved rear input lava\");\n      }\n      helper.succeed();\n   }\n\n",
+              "previous": ""
+            },
+            {
+              "start": 1120,
+              "end": 1121,
+              "current": "      helper.assertValueEqual(0, machine.fluidHandler(thermalRear(machine)).getFluidInTank(0).getAmount(),\n",
+              "previous": "      helper.assertValueEqual(0, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),\n"
+            },
+            {
+              "start": 1139,
+              "end": 1140,
+              "current": "      helper.assertValueEqual(0, machine.fluidHandler(thermalRear(machine)).getFluidInTank(0).getAmount(),\n",
+              "previous": "      helper.assertValueEqual(0, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),\n"
+            },
+            {
+              "start": 1182,
+              "end": 1183,
+              "current": "      IFluidHandler top = machine.fluidHandler(thermalRear(machine));\n",
+              "previous": "      IFluidHandler top = machine.fluidHandler(Direction.UP);\n"
+            },
+            {
+              "start": 1270,
+              "end": 1271,
+              "current": "      IFluidHandler top = machine.fluidHandler(thermalRear(machine));\n",
+              "previous": "      IFluidHandler top = machine.fluidHandler(Direction.UP);\n"
+            },
+            {
+              "start": 1320,
+              "end": 1321,
+              "current": "      IFluidHandler top = machine.fluidHandler(thermalRear(machine));\n",
+              "previous": "      IFluidHandler top = machine.fluidHandler(Direction.UP);\n"
+            },
+            {
+              "start": 1341,
+              "end": 1342,
+              "current": "      IFluidHandler top = machine.fluidHandler(thermalRear(machine));\n",
+              "previous": "      IFluidHandler top = machine.fluidHandler(Direction.UP);\n"
+            },
+            {
+              "start": 1392,
+              "end": 1398,
+              "current": "      Direction rear = thermalRear(machine);\n      IFluidHandler topFluid = helper.getLevel().getCapability(FluidHandler.BLOCK, pos, rear);\n      helper.assertTrue(topFluid != null, \"the public rear fluid input remains available\");\n      helper.assertValueEqual(1000, topFluid.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), \"rear input accepts one bucket\");\n      helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK, pos, Direction.UP) == null,\n         \"top has no fluid input capability\");\n",
+              "previous": "      IFluidHandler topFluid = helper.getLevel().getCapability(FluidHandler.BLOCK, pos, Direction.UP);\n      helper.assertTrue(topFluid != null, \"the public top fluid input remains available\");\n      helper.assertValueEqual(1000, topFluid.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), \"top input accepts one bucket\");\n"
+            },
+            {
+              "start": 1417,
+              "end": 1418,
+              "current": "      helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), \"rear item port cannot extract the input\");\n",
+              "previous": "      helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), \"top item port cannot extract the input\");\n"
+            },
+            {
+              "start": 1438,
+              "end": 1439,
+              "current": "      helper.assertValueEqual(0, machine.fluidHandler(thermalRear(machine)).getFluidInTank(0).getAmount(),\n",
+              "previous": "      helper.assertValueEqual(0, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),\n"
+            },
+            {
+              "start": 1446,
+              "end": 1450,
+              "current": "      helper.assertTrue(machine.itemHandler(Direction.UP) == null,\n         \"top has no item input handler\");\n      helper.assertTrue(machine.itemHandler(thermalRear(machine)) != null && machine.itemHandler(thermalRear(machine)).getSlots() == 1,\n         \"rear item handler maps only the mineral input\");\n",
+              "previous": "      helper.assertTrue(machine.itemHandler(Direction.UP) != null && machine.itemHandler(Direction.UP).getSlots() == 1,\n         \"top item handler maps only the mineral input\");\n"
+            },
+            {
+              "start": 1456,
+              "end": 1460,
+              "current": "      helper.assertTrue(machine.fluidHandler(Direction.UP) == null,\n         \"top fluid capability is absent\");\n      helper.assertTrue(machine.fluidHandler(thermalRear(machine)).drain(1000, FluidAction.EXECUTE).isEmpty(),\n         \"rear fluid input does not permit extraction\");\n",
+              "previous": "      helper.assertTrue(machine.fluidHandler(Direction.UP).drain(1000, FluidAction.EXECUTE).isEmpty(),\n         \"top fluid port does not permit extraction\");\n"
+            },
+            {
+              "start": 1464,
+              "end": 1466,
+              "current": "      helper.assertValueEqual(0, machine.getSlotsForFace(Direction.UP).length, \"top exposes no automation slots\");\n      helper.assertValueEqual(1, machine.getSlotsForFace(back).length, \"rear exposes one input slot\");\n",
+              "previous": "      helper.assertValueEqual(1, machine.getSlotsForFace(Direction.UP).length, \"top exposes one input slot\");\n"
+            },
+            {
+              "start": 1788,
+              "end": 1789,
+              "current": "      helper.assertValueEqual(0, mineral.fluidHandler(thermalRear(mineral)).getFluidInTank(0).getAmount(),\n",
+              "previous": "      helper.assertValueEqual(0, mineral.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),\n"
+            },
+            {
+              "start": 1799,
+              "end": 1800,
+              "current": "      helper.assertValueEqual(1000, magma.fluidHandler(thermalRear(magma)).getFluidInTank(0).getAmount(),\n",
+              "previous": "      helper.assertValueEqual(1000, magma.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),\n"
+            },
+            {
+              "start": 1807,
+              "end": 1809,
+              "current": "      helper.assertValueEqual(1000, obsidian.fluidHandler(thermalRear(obsidian)).fill(transportedLava, FluidAction.EXECUTE),\n         \"third machine accepts ingredient lava from the rear\");\n",
+              "previous": "      helper.assertValueEqual(1000, obsidian.fluidHandler(Direction.UP).fill(transportedLava, FluidAction.EXECUTE),\n         \"third machine accepts ingredient lava from above\");\n"
+            },
+            {
+              "start": 1811,
+              "end": 1812,
+              "current": "      helper.assertValueEqual(0, obsidian.fluidHandler(thermalRear(obsidian)).getFluidInTank(0).getAmount(),\n",
+              "previous": "      helper.assertValueEqual(0, obsidian.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),\n"
+            },
+            {
+              "start": 2195,
+              "end": 2196,
+              "current": "      IItemHandler mineralSmelterHandler = mineralSmelter.itemHandler(thermalRear(mineralSmelter));\n",
+              "previous": "      IItemHandler mineralSmelterHandler = mineralSmelter.itemHandler(Direction.UP);\n"
+            },
+            {
+              "start": 2204,
+              "end": 2205,
+              "current": "      IItemHandler freezerHandler = freezer.itemHandler(thermalRear(freezer));\n",
+              "previous": "      IItemHandler freezerHandler = freezer.itemHandler(Direction.UP);\n"
+            },
+            {
+              "start": 2408,
+              "end": 2409,
+              "current": "      IFluidHandler mineralHandler = mineralSmelter.fluidHandler(thermalRear(mineralSmelter));\n",
+              "previous": "      IFluidHandler mineralHandler = mineralSmelter.fluidHandler(Direction.UP);\n"
+            },
+            {
+              "start": 3660,
+              "end": 3664,
+              "current": "   private static Direction thermalRear(MachineBlockEntity machine) {\n      return machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();\n   }\n\n",
+              "previous": ""
+            }
+          ]
+        },
+        {
+          "parent": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "old_sha256": "8bd129fa9a44cbcbe6bfba06890f7a7c848feb3e1112e6e6e5e851aa92ab7488",
+          "new_sha256": "2057fc0dbb8cf4748fad02e1637234cf2a0416af2d535221e7b65fea52d66aa8",
+          "hunks": [
+            {
+              "start": 1093,
+              "end": 1094,
+              "current": "            machine.setItem(0, ItemStack.EMPTY);\n",
+              "previous": ""
+            },
+            {
+              "start": 1098,
+              "end": 1100,
+              "current": "         helper.assertValueEqual(rearFreezer.fill(new FluidStack(Fluids.WATER,1000),FluidAction.EXECUTE),1000,\"Freezer rear accepts water after independent item-port probe\");\n         helper.assertValueEqual(rearSmelter.fill(new FluidStack(Fluids.LAVA,1000),FluidAction.EXECUTE),1000,\"Smelter rear accepts lava after independent item-port probe\");\n",
+              "previous": "         helper.assertValueEqual(1000,rearFreezer.fill(new FluidStack(Fluids.WATER,1000),FluidAction.EXECUTE),\"Freezer rear accepts water\");\n         helper.assertValueEqual(1000,rearSmelter.fill(new FluidStack(Fluids.LAVA,1000),FluidAction.EXECUTE),\"Smelter rear accepts lava\");\n"
+            },
+            {
+              "start": 1108,
+              "end": 1110,
+              "current": "         freezer.fluidHandler(null).drain(2000,FluidAction.EXECUTE);\n         smelter.fluidHandler(null).drain(2000,FluidAction.EXECUTE);\n",
+              "previous": ""
+            },
+            {
+              "start": 1417,
+              "end": 1418,
+              "current": "      IItemHandler rearItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, rear);\n",
+              "previous": ""
+            },
+            {
+              "start": 1420,
+              "end": 1423,
+              "current": "      helper.assertTrue(rearItems != null && bottomItems != null, \"physical rear-input and bottom-output item ports remain available\");\n      helper.assertTrue(topItems == null, \"the retired top item port is not exposed\");\n      helper.assertTrue(rearItems.extractItem(0, 1, true).isEmpty(), \"rear item port cannot extract the input\");\n",
+              "previous": "      helper.assertTrue(topItems != null && bottomItems != null, \"physical item ports remain available\");\n      helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), \"rear item port cannot extract the input\");\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "52f9cea8450a1e195a5d44c2fd84950131941161ebcd42565d7aac78a8e3291c"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "6b8837cddca22a3c79eb536cce2d74e9de0e9fae3d5a5763d5145a9cebbb5904"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "f7525cc75f6ec5db270c39f5014bf70276a955648d14efccb0885184cee1c67a"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "f7525cc75f6ec5db270c39f5014bf70276a955648d14efccb0885184cee1c67a"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "f7525cc75f6ec5db270c39f5014bf70276a955648d14efccb0885184cee1c67a"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "f7525cc75f6ec5db270c39f5014bf70276a955648d14efccb0885184cee1c67a"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "old_sha256": "52f9cea8450a1e195a5d44c2fd84950131941161ebcd42565d7aac78a8e3291c",
+          "new_sha256": "6b8837cddca22a3c79eb536cce2d74e9de0e9fae3d5a5763d5145a9cebbb5904",
+          "hunks": [
+            {
+              "start": 15,
+              "end": 16,
+              "current": "import com.oblixorprime.engineersdecorreforged.utility.FactoryStudyGeometry;\n",
+              "previous": ""
+            },
+            {
+              "start": 56,
+              "end": 58,
+              "current": "   private final boolean factoryStudyPresentation;\n   public boolean factoryStudyPresentation() { return this.factoryStudyPresentation; }\n",
+              "previous": ""
+            },
+            {
+              "start": 161,
+              "end": 162,
+              "current": "      this.factoryStudyPresentation = FactoryStudyGeometry.supports(kind) && inventory.player.level().isClientSide;\n",
+              "previous": ""
+            },
+            {
+              "start": 208,
+              "end": 211,
+              "current": "         } else if (factoryStudyPresentation) {\n            var anchor = FactoryStudyGeometry.anchor(kind, this.slots.size());\n            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());\n",
+              "previous": ""
+            },
+            {
+              "start": 241,
+              "end": 244,
+              "current": "            } else if (factoryStudyPresentation) {\n               var anchor = FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + row * 9 + column);\n               x = anchor.x(); y = anchor.y();\n",
+              "previous": ""
+            },
+            {
+              "start": 273,
+              "end": 276,
+              "current": "            x = anchor.x(); y = anchor.y();\n         } else if (factoryStudyPresentation) {\n            var anchor = FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + 27 + column);\n",
+              "previous": ""
+            },
+            {
+              "start": 518,
+              "end": 528,
+              "current": "         // Bounded to the newly integrated screens. Presentation cannot authorize a\n         // stale, spectator, remote or wrong-machine action; the server still clamps values.\n         if (FactoryStudyGeometry.supports(this.kind)) {\n            if (player == null || player.level().isClientSide || player.containerMenu != this\n               || player.isSpectator() || !this.stillValid(player) || machine.isRemoved()\n               || machine.getLevel() != player.level()) return;\n            boolean allowed = this.kind == MachineKind.FACTORY_HOPPER ? action >= 1 && action <= 5\n               : this.kind == MachineKind.FACTORY_DROPPER && action >= 10 && action <= 16;\n            if (!allowed) return;\n         }\n",
+              "previous": ""
+            }
+          ]
+        },
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "6b8837cddca22a3c79eb536cce2d74e9de0e9fae3d5a5763d5145a9cebbb5904",
+          "new_sha256": "f7525cc75f6ec5db270c39f5014bf70276a955648d14efccb0885184cee1c67a",
+          "hunks": [
+            {
+              "start": 195,
+              "end": 196,
+              "current": "            var anchor = ThermalVerticalGeometry.slot(slot.containerIndex(), kind);\n",
+              "previous": "            var anchor = ThermalVerticalGeometry.slot(slot.containerIndex());\n"
+            },
+            {
+              "start": 229,
+              "end": 230,
+              "current": "               var anchor = ThermalVerticalGeometry.slot(3 + row * 9 + column, kind);\n",
+              "previous": "               var anchor = ThermalVerticalGeometry.slot(3 + row * 9 + column);\n"
+            },
+            {
+              "start": 262,
+              "end": 263,
+              "current": "            var anchor = ThermalVerticalGeometry.slot(30 + column, kind);\n",
+              "previous": "            var anchor = ThermalVerticalGeometry.slot(30 + column);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometry.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "dc532f265cca5f28433872c41dda73ccc470f885c2fffb87377e49af2e35282c"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "dc532f265cca5f28433872c41dda73ccc470f885c2fffb87377e49af2e35282c"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "1e2263a7108706978575cbea9176832900616bce3899bbd45e926975f950f925"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "1e2263a7108706978575cbea9176832900616bce3899bbd45e926975f950f925"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "1e2263a7108706978575cbea9176832900616bce3899bbd45e926975f950f925"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "1e2263a7108706978575cbea9176832900616bce3899bbd45e926975f950f925"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "dc532f265cca5f28433872c41dda73ccc470f885c2fffb87377e49af2e35282c",
+          "new_sha256": "1e2263a7108706978575cbea9176832900616bce3899bbd45e926975f950f925",
+          "hunks": [
+            {
+              "start": 46,
+              "end": 56,
+              "current": "      return fitCanvas(viewportWidth, viewportHeight, CANVAS_WIDTH, CANVAS_HEIGHT);\n   }\n\n   /** Uniformly fit an arbitrary presentation canvas while preserving the same margin policy. */\n   public static ViewTransform fitCanvas(int viewportWidth, int viewportHeight, int canvasWidth, int canvasHeight) {\n      return fitCanvas(viewportWidth, viewportHeight, canvasWidth, canvasHeight, 1.0F);\n   }\n\n   /** Uniform fit with a caller supplied logical-size ceiling for large artwork panels. */\n   public static ViewTransform fitCanvas(int viewportWidth, int viewportHeight, int canvasWidth, int canvasHeight, float maxScale) {\n",
+              "previous": ""
+            },
+            {
+              "start": 59,
+              "end": 61,
+              "current": "      if (canvasWidth <= 0 || canvasHeight <= 0) throw new IllegalArgumentException(\"Canvas dimensions must be positive\");\n      if (!(maxScale > 0.0F) || Float.isNaN(maxScale)) throw new IllegalArgumentException(\"Maximum scale must be positive\");\n",
+              "previous": ""
+            },
+            {
+              "start": 63,
+              "end": 67,
+              "current": "      double scale = Math.min((viewportWidth - 2.0D * margin) / canvasWidth,\n         (viewportHeight - 2.0D * margin) / canvasHeight);\n      scale = Math.min(Math.min(1.0D, maxScale), scale);\n      float fittedScale = (float)scale;\n",
+              "previous": "      double available = shortEdge - 2.0D * margin;\n      float scale = (float)Math.min(1.0D, available / CANVAS_WIDTH);\n"
+            },
+            {
+              "start": 68,
+              "end": 70,
+              "current": "      if ((double)fittedScale * canvasWidth > viewportWidth || (double)fittedScale * canvasHeight > viewportHeight) {\n         fittedScale = Math.nextDown(fittedScale);\n",
+              "previous": "      if ((double)scale * CANVAS_WIDTH > available) {\n         scale = Math.nextDown(scale);\n"
+            },
+            {
+              "start": 71,
+              "end": 74,
+              "current": "      float originX = (float)((viewportWidth - (double)canvasWidth * fittedScale) / 2.0D);\n      float originY = (float)((viewportHeight - (double)canvasHeight * fittedScale) / 2.0D);\n      return new ViewTransform(fittedScale, originX, originY);\n",
+              "previous": "      float originX = (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2.0D);\n      float originY = (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2.0D);\n      return new ViewTransform(scale, originX, originY);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "cb3f7acacb0a2da155b6a6d4699833cb09bb89281a155ee71c0c1e8ab4497233"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "cb3f7acacb0a2da155b6a6d4699833cb09bb89281a155ee71c0c1e8ab4497233"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "579de3f88e298153ddd50dd9965ecb6541816a5a47c3058dbc02fdf72910d5b1"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "579de3f88e298153ddd50dd9965ecb6541816a5a47c3058dbc02fdf72910d5b1"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "579de3f88e298153ddd50dd9965ecb6541816a5a47c3058dbc02fdf72910d5b1"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "579de3f88e298153ddd50dd9965ecb6541816a5a47c3058dbc02fdf72910d5b1"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "cb3f7acacb0a2da155b6a6d4699833cb09bb89281a155ee71c0c1e8ab4497233",
+          "new_sha256": "579de3f88e298153ddd50dd9965ecb6541816a5a47c3058dbc02fdf72910d5b1",
+          "hunks": [
+            {
+              "start": 448,
+              "end": 449,
+              "current": "   /** Freezer physical input 0 is accessible to automation only from the rear. */\n",
+              "previous": "   /** Freezer physical input 0 is accessible to automation only from above. */\n"
+            },
+            {
+              "start": 830,
+              "end": 831,
+              "current": "         if (side == this.facing(this.getBlockState()).getOpposite()) return this.mineralTopItems;\n",
+              "previous": "         if (side == Direction.UP) return this.mineralTopItems;\n"
+            },
+            {
+              "start": 835,
+              "end": 836,
+              "current": "         if (side == this.facing(this.getBlockState()).getOpposite()) return this.freezerTopItems;\n",
+              "previous": "         if (side == Direction.UP) return this.freezerTopItems;\n"
+            },
+            {
+              "start": 898,
+              "end": 899,
+              "current": "         return side == this.facing(this.getBlockState()).getOpposite() ? this.freezerTopFluid : side == null ? this.fluidHandler : null;\n",
+              "previous": "         return side == Direction.UP ? this.freezerTopFluid : side == null ? this.fluidHandler : null;\n"
+            },
+            {
+              "start": 900,
+              "end": 901,
+              "current": "         if (side == this.facing(this.getBlockState()).getOpposite()) return this.mineralTopFluid;\n",
+              "previous": "         if (side == Direction.UP) return this.mineralTopFluid;\n"
+            },
+            {
+              "start": 1180,
+              "end": 1182,
+              "current": "            return side == this.facing(this.getBlockState()).getOpposite() ? new int[]{0}\n               : side == Direction.DOWN ? new int[]{2} : new int[0];\n",
+              "previous": "            return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2} : new int[0];\n"
+            },
+            {
+              "start": 1184,
+              "end": 1186,
+              "current": "            return side == this.facing(this.getBlockState()).getOpposite() ? new int[]{0}\n               : side == Direction.DOWN ? new int[]{2, 0} : new int[0];\n",
+              "previous": "            return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2, 0} : new int[0];\n"
+            },
+            {
+              "start": 1199,
+              "end": 1200,
+              "current": "         return side == this.facing(this.getBlockState()).getOpposite() && slot == 0 && this.canPlaceItem(0, stack);\n",
+              "previous": "         return side == Direction.UP && slot == 0 && this.canPlaceItem(0, stack);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/ThermalVerticalGeometry.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "e9e645b73ea40be99779171f4837ef5024bc7b57185eeba4974a744f88d40958"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "e9e645b73ea40be99779171f4837ef5024bc7b57185eeba4974a744f88d40958"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "1e4bf69a17f2360800aee1584b8b714177749640a50423dc593841b61c87c607"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "1e4bf69a17f2360800aee1584b8b714177749640a50423dc593841b61c87c607"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "1e4bf69a17f2360800aee1584b8b714177749640a50423dc593841b61c87c607"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "1e4bf69a17f2360800aee1584b8b714177749640a50423dc593841b61c87c607"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "e9e645b73ea40be99779171f4837ef5024bc7b57185eeba4974a744f88d40958",
+          "new_sha256": "1e4bf69a17f2360800aee1584b8b714177749640a50423dc593841b61c87c607",
+          "hunks": [
+            {
+              "start": 2,
+              "end": 6,
+              "current": "import java.util.HashSet;\nimport java.util.Set;\n\n/** Machine-specific presentation anchors measured from the normalized thermal artwork. */\n",
+              "previous": "/**\n * Shared, text-free 314x314 treatment screen. Coordinates are client presentation only:\n * backing index 0 is input, 2 is output, 1 is a hidden historical Freezer reserve.\n * This does not change serialized inventories or server menu slot ordering.\n */\n"
+            },
+            {
+              "start": 7,
+              "end": 9,
+              "current": "   public static final int CANVAS_WIDTH = 347;\n   public static final int CANVAS_HEIGHT = 381;\n",
+              "previous": "   public static final int CANVAS_WIDTH = 314;\n   public static final int CANVAS_HEIGHT = 314;\n"
+            },
+            {
+              "start": 11,
+              "end": 17,
+              "current": "   private static final int[] F_INV_X={53,81,110,139,168,197,226,254,283};\n   private static final int[] F_INV_Y={247,272,299};\n   private static final int[] F_HOT_X={55,84,112,140,168,195,223,252,280};\n   private static final int[] S_INV_X={55,83,110,137,164,191,218,245,272};\n   private static final int[] S_INV_Y={246,273,299};\n   private static final int[] S_HOT_X={56,83,110,137,164,191,217,244,272};\n",
+              "previous": "   // Exact retained Freezer V5 1254->314 measured player-slot anchors.\n   private static final int[] PLAYER_X = {43, 70, 96, 123, 149, 176, 202, 229, 255};\n   private static final int[] PLAYER_Y = {191, 215, 239, 272};\n"
+            },
+            {
+              "start": 19,
+              "end": 31,
+              "current": "   public record Point(int x,int y) {\n      public Point { if(x<0||y<0||x+ITEM_SIZE>CANVAS_WIDTH||y+ITEM_SIZE>CANVAS_HEIGHT) throw new IllegalArgumentException(\"Thermal slot outside canvas\"); }\n   }\n   public static Point slot(int menuIndex, MachineKind kind) {\n      boolean freezer=kind==MachineKind.SMALL_FREEZER;\n      if(!freezer&&kind!=MachineKind.SMALL_MINERAL_SMELTER) throw new IllegalArgumentException(\"Not a thermal machine: \"+kind);\n      if(menuIndex==0) return freezer?new Point(167,67):new Point(164,66);\n      if(menuIndex==2) return freezer?new Point(167,206):new Point(164,205);\n      if(menuIndex==1||menuIndex<3||menuIndex>38) throw new IllegalArgumentException(\"No visible thermal slot \"+menuIndex);\n      if(menuIndex<30) {\n         int i=menuIndex-3,row=i/9,col=i%9;\n         return new Point(freezer?F_INV_X[col]:S_INV_X[col],freezer?F_INV_Y[row]:S_INV_Y[row]);\n",
+              "previous": "\n   public record Point(int x, int y) {\n      public Point {\n         if (x < 0 || y < 0 || x + ITEM_SIZE > CANVAS_WIDTH || y + ITEM_SIZE > CANVAS_HEIGHT)\n            throw new IllegalArgumentException(\"Slot outside the thermal vertical canvas\");\n"
+            },
+            {
+              "start": 32,
+              "end": 34,
+              "current": "      int col=menuIndex-30;\n      return new Point(freezer?F_HOT_X[col]:S_HOT_X[col],freezer?335:337);\n",
+              "previous": ""
+            },
+            {
+              "start": 35,
+              "end": 37,
+              "current": "   public static boolean contains(int menuIndex, MachineKind kind, double x,double y) {\n      Point p=slot(menuIndex,kind); return x>=p.x&&x<p.x+ITEM_SIZE&&y>=p.y&&y<p.y+ITEM_SIZE;\n",
+              "previous": "\n   public static Point slot(int menuIndex) {\n      if (menuIndex == 0) return new Point(145, 50);\n      if (menuIndex == 2) return new Point(145, 160);\n      if (menuIndex == 1 || menuIndex < 0 || menuIndex > 38)\n         throw new IllegalArgumentException(\"No visible thermal slot \" + menuIndex);\n      int index = menuIndex - 3;\n      return new Point(PLAYER_X[index % 9], PLAYER_Y[index / 9]);\n"
+            },
+            {
+              "start": 38,
+              "end": 51,
+              "current": "   public static boolean effectVisible(MachineKind kind, int phase, int flags) {\n      return (kind==MachineKind.SMALL_FREEZER || kind==MachineKind.SMALL_MINERAL_SMELTER) && phase>0;\n   }\n   public static int energyClipTop(int y0,int y1,int stored,int capacity) {\n      if(capacity<=0||stored<=0||y1<=y0) return y1;\n      double fraction=Math.max(0.0,Math.min(1.0,(double)stored/capacity));\n      return y1-(int)Math.round((y1-y0)*fraction);\n   }\n   public static void validate(MachineKind kind) {\n      Set<String> seen=new HashSet<>();\n      for(int i:new int[]{0,2}) { Point p=slot(i,kind); if(!seen.add(p.x+\":\"+p.y)) throw new IllegalStateException(\"Duplicate thermal slot\"); }\n      for(int i=3;i<=38;i++) { Point p=slot(i,kind); if(!seen.add(p.x+\":\"+p.y)) throw new IllegalStateException(\"Duplicate thermal slot\"); }\n      if(seen.size()!=VISIBLE_SLOTS) throw new IllegalStateException(\"Expected exactly 38 visible thermal slots\");\n",
+              "previous": "\n   public static boolean contains(int menuIndex, double x, double y) {\n      Point p = slot(menuIndex);\n      return x >= p.x && x < p.x + ITEM_SIZE && y >= p.y && y < p.y + ITEM_SIZE;\n"
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "39b48736b027d915123882143a649d1da6394eecc894bf4867d1e7d049a644db"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "ac57bcdffd18a1c2a7aa7202af4250af4424158159c636803a747fb11ea290b6"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "ac57bcdffd18a1c2a7aa7202af4250af4424158159c636803a747fb11ea290b6"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "ac57bcdffd18a1c2a7aa7202af4250af4424158159c636803a747fb11ea290b6"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "ac57bcdffd18a1c2a7aa7202af4250af4424158159c636803a747fb11ea290b6"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "9b15d7ab9af9a8beedfb9afae60e47a180c10aa1f1c256be810f82db8c64de61"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "old_sha256": "39b48736b027d915123882143a649d1da6394eecc894bf4867d1e7d049a644db",
+          "new_sha256": "ac57bcdffd18a1c2a7aa7202af4250af4424158159c636803a747fb11ea290b6",
+          "hunks": [
+            {
+              "start": 1127,
+              "end": 1167,
+              "current": "  \"gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip\": \"Energy item slot: accepts items with FE energy storage. Charging depends on the item accepting energy.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.range\": \"Collection range setting: %s / 4.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.period\": \"Delay: %s ticks (%s s at 20 TPS).\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.count\": \"Items per transfer: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.velocity\": \"Ejection speed setting: %s / 100.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.direction\": \"Direction: X %s / 100; Y %s / 100.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.manual\": \"Request a manual signal. Signal or manual flash: %s. This does not confirm an item transfer.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.redstone\": \"Redstone mode: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.trigger\": \"Trigger mode: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_gate\": \"Filter combination: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.external_gate\": \"External signal combination: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.flame\": \"Fuel remaining: %s / %s ticks.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.progress\": \"Smelting: %s / %s ticks (%s%%).\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.energy\": \"Stored energy: %s / %s FE.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_status\": \"Filter %s: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.slot\": \"Slot %s: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.pending\": \"Waiting for the server update…\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.unconfirmed\": \"No confirmation received. Check the synchronized value before trying again.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.control_help\": \"Tab: select a control. Arrows: adjust. Enter/Space: activate. Home/End: slider limits.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.signal_on\": \"active\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.signal_off\": \"inactive\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.normal\": \"requires power\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.inverted\": \"requires no power\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.ignored\": \"ignores the external signal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.pulse\": \"pulse\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.continuous\": \"continuous\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.any\": \"any matching filter\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.all\": \"all defined filters must match\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.or\": \"OR\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.and\": \"AND\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_empty\": \"undefined\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_insufficient\": \"defined; insufficient matching stock\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_matched\": \"matching stock available\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.selected_slot\": \"Current round-robin slot: %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.direction_help\": \"Arrow keys: adjust X/Y. Home: center the direction.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.drop_count\": \"Unfiltered round-robin quantity: %s. Filter stacks set their own required quantities.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_slot\": \"Real item storage. The stack size sets the required matching quantity.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.lab_aux\": \"Support inventory. An Immersive Engineering furnace heater can accelerate smelting using FE; fuel is still required.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.recipes_help\": \"Click to show smelting recipes in JEI.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.carried_blocked\": \"Put down the carried stack before using this control.\"\n",
+              "previous": "  \"gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip\": \"Energy item slot: accepts items with FE energy storage. Charging depends on the item accepting energy.\"\n"
+            }
+          ]
+        },
+        {
+          "parent": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "old_sha256": "ac57bcdffd18a1c2a7aa7202af4250af4424158159c636803a747fb11ea290b6",
+          "new_sha256": "9b15d7ab9af9a8beedfb9afae60e47a180c10aa1f1c256be810f82db8c64de61",
+          "hunks": [
+            {
+              "start": 237,
+              "end": 238,
+              "current": "  \"block.immersive_engineer_decor_controls_tool_reforged.heavy_industrial_double_t_support\": \"Heavy Industrial Double-T Support\",\n",
+              "previous": ""
+            }
+          ]
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "550f1ffbe5ad7dd1d2f070222a0d6f66c253c3848f7c523fa27ba390911c7ef9"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "c1de2f6ec2e0037f4e9d9035520569a2fd51f1841aa16af21bbf23208724358d"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "c1de2f6ec2e0037f4e9d9035520569a2fd51f1841aa16af21bbf23208724358d"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "c1de2f6ec2e0037f4e9d9035520569a2fd51f1841aa16af21bbf23208724358d"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "c1de2f6ec2e0037f4e9d9035520569a2fd51f1841aa16af21bbf23208724358d"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "5dbcacd04a6682f57f23a3043d7188ac7ab646ee5ad20c3c990ede9682f67cbb"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "old_sha256": "550f1ffbe5ad7dd1d2f070222a0d6f66c253c3848f7c523fa27ba390911c7ef9",
+          "new_sha256": "c1de2f6ec2e0037f4e9d9035520569a2fd51f1841aa16af21bbf23208724358d",
+          "hunks": [
+            {
+              "start": 1127,
+              "end": 1167,
+              "current": "  \"gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip\": \"Emplacement pour objet à réserve d’énergie FE. La recharge dépend de la capacité de l’objet à recevoir de l’énergie.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.range\": \"Réglage de la portée de collecte : %s / 4.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.period\": \"Délai : %s ticks (%s s à 20 TPS).\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.count\": \"Objets par transfert : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.velocity\": \"Réglage de la vitesse de largage : %s / 100.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.direction\": \"Direction : X %s / 100 ; Y %s / 100.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.manual\": \"Demander une impulsion manuelle. Signal ou impulsion manuelle : %s. Cela ne confirme pas un transfert d’objet.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.redstone\": \"Mode redstone : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.trigger\": \"Mode de déclenchement : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_gate\": \"Combinaison des filtres : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.external_gate\": \"Combinaison du signal externe : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.flame\": \"Combustion restante : %s / %s ticks.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.progress\": \"Cuisson : %s / %s ticks (%s%%).\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.energy\": \"Énergie stockée : %s / %s FE.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_status\": \"Filtre %s : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.slot\": \"Emplacement %s : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.pending\": \"En attente de la mise à jour du serveur…\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.unconfirmed\": \"Confirmation non reçue. Vérifier la valeur synchronisée avant de réessayer.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.control_help\": \"Tab : choisir une commande. Flèches : régler. Entrée/Espace : activer. Début/Fin : bornes du curseur.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.signal_on\": \"actif\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.signal_off\": \"inactif\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.normal\": \"nécessite un signal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.inverted\": \"nécessite une absence de signal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.ignored\": \"ignore le signal externe\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.pulse\": \"impulsion\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.continuous\": \"continu\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.any\": \"chaque filtre correspondant\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.all\": \"tous les filtres définis doivent correspondre\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.or\": \"OU\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.and\": \"ET\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_empty\": \"non défini\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_insufficient\": \"défini ; réserve correspondante insuffisante\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_matched\": \"réserve correspondante disponible\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.selected_slot\": \"Emplacement actuel du parcours : %s.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.direction_help\": \"Flèches : régler X/Y. Début : recentrer la direction.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.drop_count\": \"Quantité larguée sans filtre, à tour de rôle : %s. Les piles des filtres définissent leurs propres quantités requises.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.filter_slot\": \"Cet emplacement contient de vrais objets. La taille de la pile définit la quantité correspondante requise.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.lab_aux\": \"Inventaire d’appoint. Un réchauffeur de fourneau Immersive Engineering peut accélérer la cuisson en consommant des FE ; le combustible reste nécessaire.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.recipes_help\": \"Cliquer pour afficher les recettes de cuisson dans JEI.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_study.carried_blocked\": \"Reposer d’abord la pile portée pour utiliser cette commande.\"\n",
+              "previous": "  \"gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip\": \"Emplacement pour objet à réserve d’énergie FE. La recharge dépend de la capacité de l’objet à recevoir de l’énergie.\"\n"
+            }
+          ]
+        },
+        {
+          "parent": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "old_sha256": "c1de2f6ec2e0037f4e9d9035520569a2fd51f1841aa16af21bbf23208724358d",
+          "new_sha256": "5dbcacd04a6682f57f23a3043d7188ac7ab646ee5ad20c3c990ede9682f67cbb",
+          "hunks": [
+            {
+              "start": 237,
+              "end": 238,
+              "current": "  \"block.immersive_engineer_decor_controls_tool_reforged.heavy_industrial_double_t_support\": \"Support industriel lourd à double T\",\n",
+              "previous": ""
+            }
+          ]
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/ThermalVerticalGeometryTest.java": {
+      "states": [
+        {
+          "commit": "d7dce0724698a069855d2284c758e8761edd17b6",
+          "sha256": "102c8541eb6ad44e9bc7bd0a5d0fd7c7f4479395091317ae9f3f8b1c3a84665b"
+        },
+        {
+          "commit": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "sha256": "102c8541eb6ad44e9bc7bd0a5d0fd7c7f4479395091317ae9f3f8b1c3a84665b"
+        },
+        {
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "sha256": "ce4bff402ce64876abd9d54fd2dbdfafd567fa130b8b05b19e1ea16136ff5ec7"
+        },
+        {
+          "commit": "6cbe9a7b787df00f42cf7b9466517e605edb6bc5",
+          "sha256": "ce4bff402ce64876abd9d54fd2dbdfafd567fa130b8b05b19e1ea16136ff5ec7"
+        },
+        {
+          "commit": "52c89b95cfc43db2f3a7c3756d22923295613654",
+          "sha256": "ce4bff402ce64876abd9d54fd2dbdfafd567fa130b8b05b19e1ea16136ff5ec7"
+        },
+        {
+          "commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+          "sha256": "ce4bff402ce64876abd9d54fd2dbdfafd567fa130b8b05b19e1ea16136ff5ec7"
+        }
+      ],
+      "layers": [
+        {
+          "parent": "36b673d79ba65b9ed17e3a6a64da4069406fbc5e",
+          "commit": "4170974d20399b40a1bcb2b0bcf99dea41bccbba",
+          "old_sha256": "102c8541eb6ad44e9bc7bd0a5d0fd7c7f4479395091317ae9f3f8b1c3a84665b",
+          "new_sha256": "ce4bff402ce64876abd9d54fd2dbdfafd567fa130b8b05b19e1ea16136ff5ec7",
+          "hunks": [
+            {
+              "start": 5,
+              "end": 6,
+              "current": "import static org.junit.Assert.*;\n",
+              "previous": "import static org.junit.Assert.assertTrue;\nimport static org.junit.Assert.assertFalse;\nimport static org.junit.Assert.assertEquals;\nimport static org.junit.Assert.assertThrows;\n"
+            },
+            {
+              "start": 8,
+              "end": 16,
+              "current": "   @Test public void eachMachineHasExactlyThirtyEightUniqueSixteenPixelSlots() {\n      for (MachineKind kind : new MachineKind[]{MachineKind.SMALL_FREEZER,MachineKind.SMALL_MINERAL_SMELTER}) {\n         ThermalVerticalGeometry.validate(kind);\n         Set<String> occupied=new HashSet<>();\n         for(int i:new int[]{0,2}) assertRect(kind,i,occupied);\n         for(int i=3;i<=38;i++) assertRect(kind,i,occupied);\n         assertEquals(38*16*16,occupied.size());\n         assertThrows(IllegalArgumentException.class,()->ThermalVerticalGeometry.slot(1,kind));\n",
+              "previous": "   @Test\n   public void verticalMachineSlotMapAndThirtySixPlayerSlotsDoNotOverlap() {\n      var input = ThermalVerticalGeometry.slot(0);\n      var output = ThermalVerticalGeometry.slot(2);\n      assertEquals(input.x(), output.x());\n      assertTrue(input.y() + 16 < output.y());\n      Set<String> occupied = new HashSet<>();\n      for (int index = 0; index <= 38; index++) {\n         if (index == 1) continue;\n         var p = ThermalVerticalGeometry.slot(index);\n         for (int x = p.x(); x < p.x() + 16; x++) {\n            for (int y = p.y(); y < p.y() + 16; y++)\n               assertTrue(\"Overlapping slot pixel\", occupied.add(x + \":\" + y));\n         }\n"
+            },
+            {
+              "start": 17,
+              "end": 34,
+              "current": "   }\n   private static void assertRect(MachineKind kind,int i,Set<String> occupied) {\n      var p=ThermalVerticalGeometry.slot(i,kind);\n      assertTrue(ThermalVerticalGeometry.contains(i,kind,p.x()+8,p.y()+8));\n      assertFalse(ThermalVerticalGeometry.contains(i,kind,p.x()+16,p.y()+8));\n      for(int x=p.x();x<p.x()+16;x++) for(int y=p.y();y<p.y()+16;y++)\n         assertTrue(\"Overlapping slot pixel for \"+kind+\" \"+i,occupied.add(x+\":\"+y));\n   }\n   @Test public void inactiveEffectsAndEmptyEnergyHaveNoOverlay() {\n      assertFalse(ThermalVerticalGeometry.effectVisible(MachineKind.SMALL_FREEZER,0,0));\n      assertFalse(ThermalVerticalGeometry.effectVisible(MachineKind.SMALL_MINERAL_SMELTER,0,0));\n      assertFalse(ThermalVerticalGeometry.effectVisible(MachineKind.SMALL_MINERAL_SMELTER,0,3));\n      assertTrue(ThermalVerticalGeometry.effectVisible(MachineKind.SMALL_MINERAL_SMELTER,1,0));\n      assertEquals(192,ThermalVerticalGeometry.energyClipTop(89,192,0,100));\n      assertEquals(192,ThermalVerticalGeometry.energyClipTop(89,192,0,0));\n      assertEquals(140,ThermalVerticalGeometry.energyClipTop(89,192,50,100));\n      assertEquals(89,ThermalVerticalGeometry.energyClipTop(89,192,100,100));\n",
+              "previous": "      assertEquals(38 * 16 * 16, occupied.size());\n      assertThrows(IllegalArgumentException.class, () -> ThermalVerticalGeometry.slot(1));\n"
+            },
+            {
+              "start": 36,
+              "end": 45,
+              "current": "   @Test public void freezerOutputAndThermalViewportUseTheCorrectedUniformTransform() {\n      var output=ThermalVerticalGeometry.slot(2,MachineKind.SMALL_FREEZER);\n      assertEquals(206,output.y());\n      var view=FreezerReferenceGeometry.fitCanvas(960,570,347,381,0.78F);\n      assertEquals(0.78F,view.scale(),0.0001F);\n      double screenX=view.originX()+view.scale()*(output.x()+8);\n      double screenY=view.originY()+view.scale()*(output.y()+8);\n      assertEquals(output.x()+8,view.localX(screenX),0.0001D);\n      assertEquals(output.y()+8,view.localY(screenY),0.0001D);\n",
+              "previous": "   @Test\n   public void allPlayerSlotsInNineColumnsAndFourRows() {\n      for (int row = 0; row < 4; row++) {\n         int start = 3 + row * 9;\n         int y = ThermalVerticalGeometry.slot(start).y();\n         for (int col = 0; col < 9; col++) {\n            var p = ThermalVerticalGeometry.slot(start + col);\n            assertEquals(y, p.y());\n            assertEquals(FreezerReferenceGeometry.anchor(start + col).x(), p.x());\n         }\n      }\n      assertTrue(ThermalVerticalGeometry.contains(0, 150, 55));\n      assertFalse(ThermalVerticalGeometry.contains(2, 150, 55));\n"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

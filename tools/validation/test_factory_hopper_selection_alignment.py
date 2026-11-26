@@ -1,58 +1,85 @@
-"""Source geometry regression only, not native Minecraft or physical input QA."""
+"""Active V3 slot/outline/pointer geometry source checks (not native captures)."""
 import re
-import hashlib
 import unittest
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parent
-SOURCE=ROOT/'MachineScreen.java'
-LAYOUT=ROOT/'MachineLayout.java'
-if not SOURCE.exists():
-    ROOT=Path(__file__).resolve().parents[2]
-    SOURCE=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java'
-    LAYOUT=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java'
+ROOT = Path(__file__).resolve().parents[2]
+GEOMETRY = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometry.java"
+MENU = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java"
+SCREEN = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryStudyScreen.java"
+EVENTS = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java"
+KIND = "MachineKind.FACTORY_HOPPER"
 
-def layout_geometry():
-    layout=LAYOUT.read_text()
-    hopper=layout.split('private static MachineLayout hopper()',1)[1].split('\n   private ',1)[0]
-    grid=re.search(r'grid\(0,\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*"Storage"\)',hopper)
-    assert grid, 'Hopper layout changed; review selection alignment'
-    sx,sy,cols,rows=map(int,grid.groups())
-    grid_body=layout.split('private static List<MachineLayout.MachineSlot> grid(',1)[1].split('\n   @',1)[0]
-    px=int(re.search(r'startX\s*\+\s*column\s*\*\s*(\d+)',grid_body).group(1))
-    py=int(re.search(r'startY\s*\+\s*row\s*\*\s*(\d+)',grid_body).group(1))
-    return sx,sy,cols,rows,px,py
 
-def selection_xy(source,index,x0=0,y0=0):
-    body=source.split('private void drawFactoryHopperWidgets(',1)[1].split('\n   private ',1)[0]
-    match=re.search(r'graphics\.blit\(texture, (x0[^,]+), (y0[^,]+), 200, 8, 18, 18\);',body)
-    assert match, 'Selection expression missing or changed; re-review actual geometry'
-    # Strict grammar accepts only this integer arithmetic expression, no arbitrary code.
-    exprs=match.groups()
-    for expr in exprs:
-        assert re.fullmatch(r'[a-zA-Z0-9_ +*/%()-]+',expr)
-        assert set(re.findall(r'[A-Za-z_][A-Za-z_0-9]*',expr)) <= {'x0','y0','slotIndex'}
-    return tuple(eval(e.replace('/','//'),{'__builtins__':{}},{'x0':x0,'y0':y0,'slotIndex':index}) for e in exprs)
+def hopper_anchors(geometry_source):
+    body = geometry_source.split("FACTORY_HOPPER_ANCHORS = List.of(", 1)[1].split("\n   );", 1)[0]
+    rows = [tuple(map(int, row)) for row in re.findall(
+        r"new SlotAnchor\((\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\)", body)]
+    if len(rows) != 54:
+        raise AssertionError(f"Expected 54 active Hopper anchors, got {len(rows)}")
+    return rows
 
-def assert_layout(source):
-    sx,sy,cols,rows,px,py=layout_geometry()
-    for x0,y0 in [(0,0),(31,47)]:
-        for i in range(cols*rows):
-            expected=(x0+sx+(i%cols)*px-1,y0+sy+(i//cols)*py-1)
-            assert selection_xy(source,i,x0,y0)==expected,(i,expected,selection_xy(source,i,x0,y0))
+
+def assert_v3_alignment(geometry_source, menu_source, screen_source, events_source):
+    anchors = hopper_anchors(geometry_source)
+    if [row[0] for row in anchors] != list(range(54)):
+        raise AssertionError("Hopper slot IDs must remain contiguous 0..53")
+    if len({(row[5], row[6]) for row in anchors}) != 54:
+        raise AssertionError("Hopper anchors must be unique")
+    machine = menu_source.split("if (factoryStudyPresentation)", 1)[1].split("\n      }", 1)[0]
+    if "FactoryStudyGeometry.anchor(kind, this.slots.size())" not in machine:
+        raise AssertionError("Machine slot hitboxes no longer use the measured artwork anchors")
+    if "FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + row * 9 + column)" not in menu_source:
+        raise AssertionError("Player inventory slot hitboxes no longer use V3 anchors")
+    if "FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + 27 + column)" not in menu_source:
+        raise AssertionError("Hotbar hitboxes no longer use V3 anchors")
+    if "FactoryStudyGeometry.anchor(kind, cursor)" not in screen_source:
+        raise AssertionError("V3 outline no longer resolves from the same slot anchors")
+    if "graphics.renderOutline(slot.x() - 1, slot.y() - 1, 18, 18" not in screen_source:
+        raise AssertionError("Selection outline must preserve the one-pixel border around the actual 16x16 slot")
+    if "FactoryStudyGeometry.fit(width, height)" not in screen_source:
+        raise AssertionError("V3 screen fit transform missing")
+    if "view.renderPointerX(mouseX)" not in screen_source or "view.renderPointerY(mouseY)" not in screen_source:
+        raise AssertionError("Mouse pointer is not transformed with the GUI hitboxes")
+    if "FactoryStudyScreen::new" not in events_source:
+        raise AssertionError("V3 screen is not registered as the active GUI")
+    return anchors
+
 
 class HopperSelectionAlignment(unittest.TestCase):
-    def test_all_six_columns_all_three_rows_and_offset(self):
-        assert_layout(SOURCE.read_text())
-    def test_old_seventeen_pitch_is_rejected(self):
-        source=SOURCE.read_text();start=source.index('private void drawFactoryHopperWidgets(')
-        mutated=source[:start]+source[start:].replace('y0 + 8 + slotIndex / 6 * 18','y0 + 8 + slotIndex / 6 * 17',1)
-        with self.assertRaises(AssertionError): assert_layout(mutated)
-    def test_each_row_top(self):
-        s=SOURCE.read_text()
-        self.assertEqual([selection_xy(s,i)[1] for i in (0,6,12)],[8,26,44])
-    def test_placer_method_unchanged_by_hopper_fix(self):
-        part=SOURCE.read_text().split('   private void drawFactoryPlacerWidgets(',1)[1].split('\n   private ',1)[0]
-        self.assertEqual(hashlib.sha256(part.encode()).hexdigest(),'2bcef1a03a54fd16966dcf87dbe1a075356d66b7189269b8f54d617b3be70271')
+    def setUp(self):
+        self.geometry = GEOMETRY.read_text(encoding="utf-8")
+        self.menu = MENU.read_text(encoding="utf-8")
+        self.screen = SCREEN.read_text(encoding="utf-8")
+        self.events = EVENTS.read_text(encoding="utf-8")
 
-if __name__=='__main__':unittest.main()
+    def test_all_54_machine_inventory_and_hotbar_hitboxes_share_v3_art_anchors(self):
+        anchors = assert_v3_alignment(self.geometry, self.menu, self.screen, self.events)
+        self.assertEqual(len(anchors[:18]), 18)
+        self.assertEqual(len(anchors[18:45]), 27)
+        self.assertEqual(len(anchors[45:]), 9)
+        # The three machine rows are measured in the artwork coordinate plane,
+        # and each full row has distinct 16x16 logical hitboxes.
+        self.assertEqual([anchors[i][6] for i in (0, 6, 12)], [68, 93, 118])
+        self.assertEqual([anchors[i][5] for i in (0, 1, 2, 3, 4, 5)], [34, 57, 81, 105, 128, 152])
+
+    def test_old_machine_screen_pitch_is_not_the_active_v3_contract(self):
+        self.assertNotIn("drawFactoryHopperWidgets", self.screen)
+        self.assertIn("FACTORY_HOPPER_ANCHORS", self.geometry)
+        self.assertIn("FactoryStudyScreen::new", self.events)
+
+    def test_selection_or_pointer_transform_mutation_is_rejected(self):
+        mutations = [
+            self.screen.replace("slot.x() - 1", "slot.x() - 2", 1),
+            self.screen.replace("view.renderPointerX(mouseX)", "mouseX", 1),
+            self.menu.replace("FactoryStudyGeometry.anchor(kind, this.slots.size())", "new MachineLayout.MachineSlot(0,0,0,\"bad\")", 1),
+        ]
+        for mutated in mutations:
+            with self.subTest(mutated=mutated[:50]), self.assertRaises(AssertionError):
+                assert_v3_alignment(self.geometry, self.menu, mutated if mutated != mutations[2] else self.screen,
+                                    self.events) if mutated != mutations[2] else assert_v3_alignment(
+                                        self.geometry, mutated, self.screen, self.events)
+
+
+if __name__ == "__main__":
+    unittest.main()

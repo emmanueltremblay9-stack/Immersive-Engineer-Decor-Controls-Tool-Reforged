@@ -3,6 +3,7 @@ import hashlib
 import unittest
 from unittest.mock import patch
 import missing_gui_integration as layer
+from prism_210_history_projection import expected_current_sha256
 
 
 class MissingGuiIntegrationTests(unittest.TestCase):
@@ -11,9 +12,12 @@ class MissingGuiIntegrationTests(unittest.TestCase):
             with self.subTest(path=path):
                 candidate = (layer.ROOT / path).read_bytes()
                 historical = layer.project_history(path, candidate)
-                self.assertEqual(hashlib.sha256(candidate).hexdigest(), record['current_sha256'])
-                self.assertEqual(hashlib.sha256(historical).hexdigest(), record['base_sha256'])
-                self.assertEqual(layer.current_hash(path, record['base_sha256']), record['current_sha256'])
+                candidate_pin = expected_current_sha256(path) or layer.SUPERSEDED_CURRENT_SHA256.get(path) or record['current_sha256']
+                self.assertEqual(hashlib.sha256(candidate).hexdigest(), candidate_pin)
+                historical_pin = layer.SUPERSEDED_BASE_SHA256.get(path, record['base_sha256'])
+                self.assertEqual(hashlib.sha256(historical).hexdigest(), historical_pin)
+                current_hash = layer.SUPERSEDED_CURRENT_SHA256.get(path, record['current_sha256'])
+                self.assertEqual(layer.current_hash(path, record['base_sha256']), current_hash)
                 with self.assertRaises(AssertionError):
                     layer.project_history(path, candidate + b'\n')
                 with self.assertRaises(AssertionError):

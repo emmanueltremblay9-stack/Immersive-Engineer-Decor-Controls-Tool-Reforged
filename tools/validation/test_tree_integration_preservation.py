@@ -262,12 +262,24 @@ class IntegratedPreservationTests(unittest.TestCase):
 
     def test_each_extraction_branch_is_required_in_both_container_methods(self):
         source = self.files[MACHINE_ENTITY].decode()
-        for method in ('canTakeItemThroughFace', 'canTakeItem(Container'):
-            start = source.index('public boolean ' + method)
-            for branch in (
+        branches_by_method = {
+            'canTakeItemThroughFace': (
                 '      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;\n',
-                '      if (this.kind() == MachineKind.SMALL_FREEZER) return this.canAutomationExtract(slot);\n',
-            ):
+                '      if (this.kind() == MachineKind.SMALL_FREEZER)\n'
+                '         return side == Direction.DOWN && (slot == 2 || slot == 0 && stack.is(Items.BUCKET));\n',
+            ),
+            'canTakeItem(Container': (
+                '      if (this.kind() == MachineKind.SMALL_TREE_CUTTER) return slot == 0;\n',
+                '      if (this.kind() == MachineKind.SMALL_FREEZER) {\n'
+                '         return (slot == 2 || slot == 0 && stack.is(Items.BUCKET))\n'
+                '            && destination instanceof BlockEntity below && below.getLevel() == this.level\n'
+                '            && below.getBlockPos().equals(this.worldPosition.below());\n'
+                '      }\n',
+            ),
+        }
+        for method, branches in branches_by_method.items():
+            start = source.index('public boolean ' + method)
+            for branch in branches:
                 for replacement in ('', branch.replace('return ', 'return true || ')):
                     tail = source[start:]
                     self.assertIn(branch, tail)
