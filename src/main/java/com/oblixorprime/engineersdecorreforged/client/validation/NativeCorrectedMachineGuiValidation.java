@@ -9,6 +9,7 @@ import com.oblixorprime.engineersdecorreforged.client.MachineScreen;
 import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
@@ -516,10 +517,17 @@ final class NativeCorrectedMachineGuiValidation {
          freezerPreviouslyFrozen = server.tickRateManager().isFrozen();
          freezerSnapshotHeld = true;
          server.tickRateManager().setFrozen(true);
-         // 8 FE permits at most one already-admitted tick (178 -> 179). Without
-         // the freeze the following energy-starved tick resets progress to zero.
-         serverMachine.dataAccessForTests().set(1, MachineBlockEntity.FREEZER_PROCESS_TICKS - 2);
+         // Match the real tickFreezer projection at progress 178: its synchronized
+         // phase block-state is progress / 45 (3), and the energy bar is nearly empty.
+         // Freezing this fixture otherwise left a contradictory phase-0/178 snapshot.
+         int nearEndProgress = MachineBlockEntity.FREEZER_PROCESS_TICKS - 2;
+         serverMachine.dataAccessForTests().set(1, nearEndProgress);
          serverMachine.dataAccessForTests().set(3, 8);
+         var freezerState = serverMachine.getBlockState();
+         require(freezerState.hasProperty(MachineBlocks.PHASE_0_4),
+            "Freezer snapshot block is missing its synchronized phase property");
+         serverMachine.getLevel().setBlock(serverMachine.getBlockPos(),
+            freezerState.setValue(MachineBlocks.PHASE_0_4, Math.min(4, nearEndProgress / 45)), 3);
          serverMachine.setChanged();
          if (player.containerMenu instanceof MachineMenu menu) menu.broadcastChanges();
       });

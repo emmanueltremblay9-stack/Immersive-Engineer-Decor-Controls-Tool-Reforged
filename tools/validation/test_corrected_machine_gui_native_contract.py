@@ -37,6 +37,14 @@ class CorrectedMachineGuiNativeContractTest(unittest.TestCase):
         self.assertIn('capture.addProperty("framebuffer_width", mc.getWindow().getScreenWidth())', source)
         self.assertIn('capture.addProperty("crop_x", cropX)', source)
 
+    def test_near_end_snapshot_seeds_progress_phase_and_energy_consistently(self):
+        source = GUI.read_text()
+        setup = source.split('private static void scheduleFreezerNearEnd(')[1].split('static void restoreFreezerSnapshot(', 1)[0]
+        self.assertIn('int nearEndProgress = MachineBlockEntity.FREEZER_PROCESS_TICKS - 2;', setup)
+        self.assertIn('serverMachine.dataAccessForTests().set(3, 8);', setup)
+        self.assertIn('freezerState.setValue(MachineBlocks.PHASE_0_4, Math.min(4, nearEndProgress / 45))', setup)
+        self.assertIn('menu.freezerPhase()', source)
+
     def test_thermal_screen_hit_test_uses_the_live_canvas_transform(self):
         source = THERMAL.read_text()
         self.assertIn('validationViewTransform()', source)

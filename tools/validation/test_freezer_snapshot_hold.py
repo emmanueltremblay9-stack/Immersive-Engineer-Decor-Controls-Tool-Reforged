@@ -49,10 +49,24 @@ public class SnapshotCheck {
  static class Minecraft { Server server=new Server(); ServerPlayer player=server.player; Server getSingleplayerServer(){return server;} }
  static class ServerPlayer { Object containerMenu=new MachineMenu(); UUID getUUID(){return new UUID(0,1);} }
  static class MachineMenu { void broadcastChanges(){} }
+ static class MachineBlocks { static final Object PHASE_0_4=new Object(); }
+ static class BlockPos {}
+ static class BlockState {
+  int phase;
+  boolean hasProperty(Object property){return property==MachineBlocks.PHASE_0_4;}
+  BlockState setValue(Object property,int value){BlockState copy=new BlockState();copy.phase=value;return copy;}
+ }
+ static class Level {
+  MachineBlockEntity entity;
+  Level(MachineBlockEntity entity){this.entity=entity;}
+  void setBlock(BlockPos pos,BlockState state,int flags){entity.state=state;}
+ }
  static class MachineBlockEntity {
   static final int FREEZER_PROCESS_TICKS=180; int progress,energy; boolean fail;
+  BlockState state=new BlockState(); Level level=new Level(this);
   MachineBlockEntity dataAccessForTests(){return this;}
   void set(int field,int value){if(fail)throw new IllegalStateException("setup");if(field==1)progress=value;else if(field==3)energy=value;}
+  BlockState getBlockState(){return state;} Level getLevel(){return level;} BlockPos getBlockPos(){return new BlockPos();}
   void setChanged(){}
   // Deliberately small server model; production guards below pin these semantics.
   void tick(){if(energy<8)progress=0;else{energy-=8;progress++;if(progress>=180)progress=0;}}
@@ -67,6 +81,8 @@ public class SnapshotCheck {
    Minecraft mc=new Minecraft();mc.server.rate.frozen=prior;serverMachine=new MachineBlockEntity();
    scheduleFreezerNearEnd(mc);mc.server.drain();pending.join();
    require(mc.server.rate.frozen,"hold missing");
+   require(serverMachine.progress==178 && serverMachine.energy==8 && serverMachine.state.phase==3,
+      "near-end snapshot must keep progress, energy and server phase coherent");
    // One tick may already have been admitted before setFrozen changed the flag.
    serverMachine.tick();
    for(int i=0;i<600;i++)mc.server.tick();
