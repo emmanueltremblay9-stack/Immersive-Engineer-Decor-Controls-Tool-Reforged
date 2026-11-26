@@ -35,6 +35,7 @@ SCREENS = [
     'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen',
 ]
 V3_LAYOUTS = {0: (18, 54), 5: (15, 51), 6: (11, 47)}
+V3_OCCUPIED_SLOTS = {0: (18, 54), 5: (15, 51), 6: (5, 41)}
 
 
 def v3_outline(width, height, gui_scale, row):
@@ -100,7 +101,9 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
             machine_slots,total_slots=V3_LAYOUTS[index]
             require(row.get('visible_machine_slots')==machine_slots,'Wrong V3 machine slot count')
             require(row.get('total_menu_slots')==total_slots,'Wrong V3 total menu slot count')
-            require(row.get('visible_nonempty_slots')==total_slots,'V3 GUI does not show every expected slot item')
+            machine_occupied,total_occupied=V3_OCCUPIED_SLOTS[index]
+            require(row.get('visible_nonempty_machine_slots')==machine_occupied,'Wrong V3 occupied machine stack count')
+            require(row.get('visible_nonempty_slots')==total_occupied,'V3 GUI occupied-stack count differs')
         require(re.fullmatch('[0-9a-f]{64}',row.get('screen_class_sha256','')),'Screen provenance missing')
         require(row.get('capture')==CASES[index]+'.png','Unexpected capture name')
         png(game/row['capture'],width,height,row.get('capture_sha256'))

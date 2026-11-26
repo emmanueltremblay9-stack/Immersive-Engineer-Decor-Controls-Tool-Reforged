@@ -26,10 +26,39 @@ from freezer_reference_native import validate_proof, ART_SHA
 from freezer_packaged_proof import validate_runtime
 from freezer_recovery_tooltip_proof import validate_tooltip
 
-def require_client_success(code, expired, log):
-    """Report the process failure before attempting to read absent evidence."""
+def gameplay_result_diagnostic(game: Path, logs: str) -> str | None:
+    """Prefer the client gameplay failure stage over a later missing success proof."""
+    path = game / "client-gameplay-result.json"
+    if not path.is_file():
+        stages = re.findall(r"IEDCTR_CLIENT_GAMEPLAY FAILED at ([A-Z_]+)", logs)
+        if stages:
+            return f"client-gameplay-result.json missing; client reported failure at stage {stages[-1]}"
+        return "client-gameplay-result.json missing and no terminal gameplay stage was logged"
+    try:
+        result = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        return f"client-gameplay-result.json is unreadable: {error}"
+    if result.get("status") != "passed":
+        stage = result.get("phase", "unknown")
+        error = result.get("error", "no client error recorded")
+        return f"client gameplay status={result.get('status')!r} at stage {stage}: {error}"
+    return None
+
+
+def require_client_success(code, expired, log, game: Path, logs: str):
+    """Report process/stage failure before attempting to read success-only evidence."""
     if expired or type(code) is not int or code != 0:
-        raise SmokeFailure(f"Freezer packaged client failed (exit={code}, timeout={expired}); inspect {log}")
+        diagnostic = gameplay_result_diagnostic(game, logs)
+        detail = f"; {diagnostic}" if diagnostic else ""
+        raise SmokeFailure(
+            f"Freezer packaged client failed (exit={code}, timeout={expired}){detail}; inspect {log}"
+        )
+
+
+def require_gameplay_result(game: Path, logs: str):
+    diagnostic = gameplay_result_diagnostic(game, logs)
+    if diagnostic:
+        raise SmokeFailure(diagnostic)
 
 
 def main() -> int:
@@ -120,16 +149,20 @@ def main() -> int:
         log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {args.width}x{args.height}x24"]
                                     + [sys.executable, str(bootstrap)] + gradle + ["runFreezerPackagedOptInClient"], project, env, log, args.timeout)
-        require_client_success(code, expired, log)
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):
             runtime = game / "logs" / name
             if runtime.is_file():
                 logs += "\n" + runtime.read_text(errors="replace")
+        require_client_success(code, expired, log, game, logs)
+        require_gameplay_result(game, logs)
         if FATAL_PATTERN.search(logs):
             raise SmokeFailure(f"Freezer packaged client emitted fatal errors; inspect {log}")
-        proof = json.loads((game / "client-freezer-reference-result.json").read_text())
-        main_proof = json.loads((game / "client-gameplay-result.json").read_text())
+        proof_path = game / "client-freezer-reference-result.json"
+        if not proof_path.is_file():
+            raise SmokeFailure("Freezer reference success proof missing after client gameplay passed; inspect " + str(log))
+        proof = json.loads(proof_path.read_text(encoding="utf-8"))
+        main_proof = json.loads((game / "client-gameplay-result.json").read_text(encoding="utf-8"))
         final_status = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], cwd=project,
                                       check=True, capture_output=True, text=True).stdout.strip()
         final_sha = subprocess.run(["git", "rev-parse", "HEAD"], cwd=project, check=True,

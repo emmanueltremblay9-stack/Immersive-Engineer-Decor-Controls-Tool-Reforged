@@ -50,6 +50,11 @@ public final class GuiAlbumThree {
     };
     private static final int[] EXPECTED_MACHINE_SLOTS={18,0,0,0,0,15,11};
     private static final int[] EXPECTED_TOTAL_SLOTS={54,0,0,0,0,51,47};
+    // Slot positions and occupied stacks are distinct facts: the Lab Furnace
+    // menu has 47 positions, while this fixture presents 5 machine stacks plus
+    // the 36 player inventory stacks (41 total).
+    private static final int[] EXPECTED_OCCUPIED_SLOTS={54,0,0,0,0,51,41};
+    private static final int[] EXPECTED_OCCUPIED_MACHINE_SLOTS={18,0,0,0,0,15,5};
     private static final String[] EXPECTED_KINDS={"factory_hopper","","","","","factory_dropper","small_lab_furnace"};
     private enum Stage {BOOT,WORLD,OPEN,WAIT,CLOSE}
     private static Stage stage=Stage.BOOT;
@@ -133,7 +138,9 @@ public final class GuiAlbumThree {
                                     ||!menu.kind().registryName().equals(EXPECTED_KINDS[caseIndex])
                                     ||menu.visibleMachineSlots()!=EXPECTED_MACHINE_SLOTS[caseIndex]
                                     ||menu.slots.size()!=EXPECTED_TOTAL_SLOTS[caseIndex])return false;
-                                if(menu.slots.stream().filter(slot->slot.hasItem()).count()!=EXPECTED_TOTAL_SLOTS[caseIndex])return false;
+                                if(menu.slots.stream().filter(slot->slot.hasItem()).count()!=EXPECTED_OCCUPIED_SLOTS[caseIndex])return false;
+                                long occupiedMachine=menu.slots.subList(0,menu.visibleMachineSlots()).stream().filter(slot->slot.hasItem()).count();
+                                if(occupiedMachine!=EXPECTED_OCCUPIED_MACHINE_SLOTS[caseIndex])return false;
                             }
                             return true;
                         });
@@ -145,11 +152,15 @@ public final class GuiAlbumThree {
                     obs.addProperty("gui_scale",mc.getWindow().getGuiScale());
                     long occupied=mc.player.containerMenu.slots.stream().filter(slot->slot.hasItem()).count();
                     if(EXPECTED_MACHINE_SLOTS[index]>0)
-                        require(occupied==EXPECTED_TOTAL_SLOTS[index],"Factory Study V3 inventory changed during capture");
+                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],"Factory Study V3 occupied-stack fixture changed during capture");
                     obs.addProperty("visible_nonempty_slots",occupied);
                     if(activeMenu!=null){
+                        long occupiedMachine=activeMenu.slots.subList(0,activeMenu.visibleMachineSlots()).stream().filter(slot->slot.hasItem()).count();
+                        if(EXPECTED_MACHINE_SLOTS[index]>0)
+                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],"Factory Study V3 machine-stack fixture changed during capture");
                         obs.addProperty("visible_machine_slots",activeMenu.visibleMachineSlots());
                         obs.addProperty("total_menu_slots",activeMenu.slots.size());
+                        obs.addProperty("visible_nonempty_machine_slots",occupiedMachine);
                         obs.addProperty("machine_kind",activeMenu.kind().registryName());
                         if(index==5){
                             int filterGate=activeMenu.field(5);

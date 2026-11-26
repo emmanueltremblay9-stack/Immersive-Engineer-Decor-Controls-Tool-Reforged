@@ -38,9 +38,14 @@ class RenderSyncTest(unittest.TestCase):
         self.assertNotIn('++frostStableFrames', tick)
         self.assertNotIn('capture(mc, "frost-phase-', tick)
         post = source[source.index('public static void afterFrostRender'):source.index('private static void enter(')]
+        pre = source[source.index('public static void beforeFrostRender'):source.index('@SubscribeEvent\n   public static void afterFrostRender')]
+        self.assertIn('renderingEnergy = menu.energyStored()', pre)
         self.assertIn('++frostStableFrames < 3', post)
         self.assertIn('menu.freezerPhase() != renderingPhase', post)
         self.assertIn('menu.freezerProgressTicks() != renderingProgress', post)
+        self.assertIn('menu.energyStored() != renderingEnergy', post)
+        self.assertIn('1440 - renderingProgress * (1440 / MachineBlockEntity.FREEZER_PROCESS_TICKS)', post)
+        self.assertIn('renderingEnergy != expectedEnergy', post)
         self.assertIn('current(mc) != menu', post)
         self.assertLess(post.index('event.getGuiGraphics().flush()'), post.index('capture(mc, "frost-phase-'))
         self.assertIn('renderFailure = error', post)

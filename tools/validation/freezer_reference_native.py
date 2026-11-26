@@ -203,11 +203,19 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
                 raise SmokeFailure("Invalid or duplicate natural phase")
             if not (ticks == 0 if phase == 0 else phase * 45 <= ticks < (phase + 1) * 45):
                 raise SmokeFailure("Natural phase/progress mismatch")
-            if (capture.get("width") != width or capture.get("height") != height
-                    or type(capture.get("energy")) is not int
-                    or (phase > 0 and capture.get("energy") != 1440 - 8 * ticks)
-                    or (phase == 0 and capture.get("energy") != 0)):
-                raise SmokeFailure("Natural frost capture dimensions/real FE differ")
+            if capture.get("width") != width or capture.get("height") != height:
+                raise SmokeFailure(
+                    f"Natural frost frame dimensions differ at phase={phase}, progress={ticks}: "
+                    f"expected {width}x{height}, got {capture.get('width')}x{capture.get('height')}"
+                )
+            if type(capture.get("energy")) is not int:
+                raise SmokeFailure(f"Natural frost FE is not an integer at phase={phase}, progress={ticks}")
+            expected_energy = 0 if phase == 0 else 1440 - 8 * ticks
+            if capture["energy"] != expected_energy:
+                raise SmokeFailure(
+                    f"Natural frost FE mismatch at phase={phase}, progress={ticks}: "
+                    f"expected {expected_energy} FE from the 1440 FE recipe, got {capture['energy']} FE"
+                )
             natural_energy = capture["energy"]
             natural_clip_top = 192 - math.floor(103 * min(16000, max(0, natural_energy)) / 16000 + 0.5)
             if capture.get("energy_capacity") != 16000 or capture.get("energy_clip_top") != natural_clip_top:

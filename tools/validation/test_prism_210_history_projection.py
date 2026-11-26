@@ -5,12 +5,19 @@ import unittest
 
 from prism_210_history_projection import (
     BASE_COMMIT, HEAD_COMMIT, RECORD, ROOT, FREEZER_NATIVE_PORT_RECORD, FREEZER_RECOVERY_TOOLTIP_RECORD,
-    FREEZER_RECOVERY_KEY_RECORD, FREEZER_ENERGY_SCISSOR_RECORD, LATE_VALIDATION_RECORD, _reverse_layer, expected_current_sha256,
+    FREEZER_RECOVERY_KEY_RECORD, FREEZER_ENERGY_SCISSOR_RECORD, FREEZER_QA_FOLLOWUP_RECORD,
+    LATE_VALIDATION_RECORD, _freezer_qa_followup_record, _reverse_layer, expected_current_sha256,
     project_current_candidate, sha256,
 )
 
 
+def reverse_qa_followup(path, source):
+    layer = _freezer_qa_followup_record()["files"].get(path)
+    return _reverse_layer(path, source, layer) if layer is not None else source
+
+
 def reverse_energy_scissor(path, source, record):
+    source = reverse_qa_followup(path, source)
     layer = record["files"].get(path)
     return _reverse_layer(path, source, layer) if layer is not None else source
 
@@ -206,13 +213,47 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertEqual(layer["previous_source_commit"], scissor["base_commit"])
                 previous = subprocess.check_output(["git", "show", layer["previous_source_commit"] + ":" + path], cwd=ROOT)
-                current = (ROOT / path).read_bytes()
+                current = reverse_qa_followup(path, (ROOT / path).read_bytes())
                 self.assertEqual(sha256(previous), layer["old_sha256"])
                 self.assertEqual(sha256(current), layer["new_sha256"])
                 self.assertEqual(sha256(_reverse_layer(path, current, layer)), layer["old_sha256"])
                 expected = (core[path]["states"][0]["sha256"] if path in core else
                             port[path]["old_sha256"] if path in port else layer["old_sha256"])
                 self.assertEqual(sha256(project_current_candidate(path, current, strict=True)), expected)
+
+    def test_freezer_qa_followup_is_exact_and_reversible_from_a572(self):
+        record = json.loads(FREEZER_QA_FOLLOWUP_RECORD.read_bytes())
+        self.assertEqual(record["schema"], "iedctr-prism-freezer-qa-followup-v1")
+        self.assertEqual(record["base_commit"], "a5723c09d735bf5500586737c8a04ae97ff63e60")
+        expected_paths = {
+            ".github/workflows/milking-packaged-native.yml",
+            ".github/workflows/smelter-packaged-native.yml",
+            ".github/workflows/tfc-packaged-native.yml",
+            "gradle/tfc-packaged-validation.gradle",
+            "src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java",
+            "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java",
+            "tools/validation/freezer_packaged_native.py",
+            "tools/validation/freezer_reference_native.py",
+            "tools/validation/gui_album_three.py",
+            "tools/validation/test_freezer_packaged_driver.py",
+            "tools/validation/test_freezer_render_sync.py",
+            "tools/validation/test_gui_album_three.py",
+            "tools/validation/test_tfc_packaged_driver.py",
+            "tools/validation/tfc_packaged_mooshroom_native.py",
+            "tools/validation/tfc_packaged_recovery_native.py",
+        }
+        self.assertEqual(set(record["files"]), expected_paths)
+        for path, layer in record["files"].items():
+            with self.subTest(path=path):
+                previous = subprocess.check_output(["git", "show", record["base_commit"] + ":" + path], cwd=ROOT)
+                current = (ROOT / path).read_bytes()
+                self.assertEqual(sha256(previous), layer["old_sha256"])
+                self.assertEqual(sha256(current), layer["new_sha256"])
+                self.assertEqual(_reverse_layer(path, current, layer), previous)
+                self.assertEqual(project_current_candidate(path, current, strict=True),
+                                 project_current_candidate(path, previous, strict=False))
+                with self.assertRaisesRegex(AssertionError, "Unrecognized #210"):
+                    project_current_candidate(path, current + b"unrecorded validation bytes\n", strict=True)
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ from client_mixin_smoke import SmokeFailure, run_bounded
 from milking_qualification_native import require, current_candidate
 from tfc_milking_recovery_native import PROFILES
 from tfc_packaged_proof import validate_recovery as validate_proof
-EXPECTED_JAR='3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5'
+EXPECTED_JAR='c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe'
 def main() -> int:
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--project',type=Path,default=Path(__file__).resolve().parents[2])

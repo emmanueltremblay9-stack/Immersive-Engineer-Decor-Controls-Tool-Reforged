@@ -2,7 +2,7 @@ import copy
 from pathlib import Path
 import unittest
 from unittest.mock import patch
-from gui_album_three import validate, validate_selection_pixels, v3_outline, CASES, SCREENS, V3_LAYOUTS, SmokeFailure
+from gui_album_three import validate, validate_selection_pixels, v3_outline, CASES, SCREENS, V3_LAYOUTS, V3_OCCUPIED_SLOTS, SmokeFailure
 from test_factory_hopper_selection_alignment import assert_v3_alignment
 class ProofTests(unittest.TestCase):
     def setUp(self):
@@ -14,9 +14,12 @@ class ProofTests(unittest.TestCase):
         self.proof['cases'][0].update(visible_nonempty_slots=54,server_selection=0,client_selection=0,ring_x=10,ring_y=8,
             selection_source='server-seeded ContainerData; not user selection',selection_render_frames=3)
         self.proof['cases'][0].update(visible_machine_slots=18,total_menu_slots=54,ring_x=33,ring_y=67)
-        self.proof['cases'][5].update(visible_nonempty_slots=51,visible_machine_slots=15,total_menu_slots=51)
+        self.proof['cases'][0]['visible_nonempty_machine_slots']=18
+        self.proof['cases'][5].update(visible_nonempty_slots=51,visible_machine_slots=15,total_menu_slots=51,
+                                      visible_nonempty_machine_slots=15)
         self.proof['cases'][5].update(dropper_filter_gate=2,dropper_external_powered=False)
-        self.proof['cases'][6].update(visible_nonempty_slots=47,visible_machine_slots=11,total_menu_slots=47)
+        self.proof['cases'][6].update(visible_nonempty_slots=41,visible_machine_slots=11,total_menu_slots=47,
+                                      visible_nonempty_machine_slots=5)
         self.proof['hopper_selections']=[dict(self.proof['cases'][0],server_selection=row*6,client_selection=row*6,ring_y=8+18*row,
             capture='factory-hopper'+('' if row==0 else '-selection-row-'+str(row))+'.png') for row in range(3)]
         for row,selection in enumerate(self.proof['hopper_selections']):
@@ -53,7 +56,8 @@ class ProofTests(unittest.TestCase):
             with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)
         p=copy.deepcopy(self.proof);p['cases'][5]['visible_nonempty_slots']=47
         with self.assertRaises(SmokeFailure):self.check(p)
-        for index,key,value in ((0,'visible_machine_slots',17),(5,'total_menu_slots',50),(6,'visible_nonempty_slots',46)):
+        for index,key,value in ((0,'visible_machine_slots',17),(5,'total_menu_slots',50),
+                                (6,'visible_nonempty_slots',40),(6,'visible_nonempty_machine_slots',4)):
             p=copy.deepcopy(self.proof);p['cases'][index][key]=value
             with self.subTest(index=index,key=key),self.assertRaises(SmokeFailure):self.check(p)
 
@@ -64,12 +68,14 @@ class ProofTests(unittest.TestCase):
 
     def test_v3_screens_are_exact_factory_study_screens_with_18_15_and_11_machine_slots(self):
         self.assertEqual(V3_LAYOUTS,{0:(18,54),5:(15,51),6:(11,47)})
+        self.assertEqual(V3_OCCUPIED_SLOTS,{0:(18,54),5:(15,51),6:(5,41)})
         self.assertEqual([SCREENS[i] for i in (0,5,6)],[
             'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen']*3)
         root=Path(__file__).resolve().parents[2]
         source=(root/'src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java').read_text()
         for token in ('Factory Study V3 menu slot layout mismatch','activeMenu.visibleMachineSlots()==EXPECTED_MACHINE_SLOTS[index]',
-                      'activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index]','FactoryStudyScreen'):
+                      'activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index]','EXPECTED_OCCUPIED_SLOTS',
+                      'EXPECTED_OCCUPIED_MACHINE_SLOTS','visible_nonempty_machine_slots','FactoryStudyScreen'):
             self.assertIn(token,source)
         self.assertIn('if(index==5){',source)
         self.assertNotIn('if(caseIndex==5){',source)

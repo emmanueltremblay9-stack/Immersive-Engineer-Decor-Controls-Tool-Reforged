@@ -81,6 +81,7 @@ public final class NativeFreezerReferenceValidation {
    private static MachineMenu renderingMenu;
    private static int renderingPhase;
    private static int renderingProgress;
+   private static int renderingEnergy;
    private static Exception renderFailure;
    private static final boolean[] FROST_SEEN = new boolean[4];
    private static int serverMenuId;
@@ -353,6 +354,7 @@ public final class NativeFreezerReferenceValidation {
       renderingMenu = menu;
       renderingPhase = menu.freezerPhase();
       renderingProgress = menu.freezerProgressTicks();
+      renderingEnergy = menu.energyStored();
    }
 
    @SubscribeEvent
@@ -362,7 +364,7 @@ public final class NativeFreezerReferenceValidation {
       renderingMenu = null; // a Post without its matching Pre cannot count
       if (menu == null || event.getScreen() != mc.screen || mc.getOverlay() != null
          || current(mc) != menu || menu.freezerPhase() != renderingPhase
-         || menu.freezerProgressTicks() != renderingProgress) {
+         || menu.freezerProgressTicks() != renderingProgress || menu.energyStored() != renderingEnergy) {
          frostStableFrames = 0;
          return;
       }
@@ -371,6 +373,11 @@ public final class NativeFreezerReferenceValidation {
          && (stage == Stage.PROCESS ? phase > 0
             : stage == Stage.ENERGY && energyIndex == 0 && phase == 0 && menu.energyStored() == 0);
       if (!eligible) { frostStableFrames = 0; return; }
+      // Energy and progress are synchronized through separate ContainerData
+      // entries. Capture only after both values describe the same server tick.
+      int expectedEnergy = phase == 0 ? 0
+         : 1440 - renderingProgress * (1440 / MachineBlockEntity.FREEZER_PROCESS_TICKS);
+      if (renderingEnergy != expectedEnergy) { frostStableFrames = 0; return; }
       if (phase != previousFrostPhase) { previousFrostPhase = phase; frostStableFrames = 0; }
       if (++frostStableFrames < 3 || FROST_SEEN[phase]) return;
       try {

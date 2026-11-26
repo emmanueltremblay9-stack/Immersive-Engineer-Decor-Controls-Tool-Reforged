@@ -22,6 +22,8 @@ FREEZER_RECOVERY_KEY_RECORD = Path(__file__).with_name("prism_210_freezer_recove
 FREEZER_RECOVERY_KEY_RECORD_SHA256 = "32a85aed550eef187c74978d996d99a54e4ce9e26e2e86ecc78416516b4400c8"
 FREEZER_ENERGY_SCISSOR_RECORD = Path(__file__).with_name("prism_210_freezer_energy_scissor_projection.json")
 FREEZER_ENERGY_SCISSOR_RECORD_SHA256 = "0d0c106569237b2a69d78abbe70fbd0b1170699f218b516238526b19aee56e2a"
+FREEZER_QA_FOLLOWUP_RECORD = Path(__file__).with_name("prism_210_freezer_qa_followup_projection.json")
+FREEZER_QA_FOLLOWUP_RECORD_SHA256 = "32299db7dc9ff2dffba801f2455976b54e1b75df64c0592aea5ff25c8e1427d2"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 HEAD_COMMIT = "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
 RECORD_BYTES = RECORD.read_bytes()
@@ -30,6 +32,7 @@ FREEZER_NATIVE_PORT_RECORD_BYTES = FREEZER_NATIVE_PORT_RECORD.read_bytes()
 FREEZER_RECOVERY_TOOLTIP_RECORD_BYTES = FREEZER_RECOVERY_TOOLTIP_RECORD.read_bytes()
 FREEZER_RECOVERY_KEY_RECORD_BYTES = FREEZER_RECOVERY_KEY_RECORD.read_bytes()
 FREEZER_ENERGY_SCISSOR_RECORD_BYTES = FREEZER_ENERGY_SCISSOR_RECORD.read_bytes()
+FREEZER_QA_FOLLOWUP_RECORD_BYTES = FREEZER_QA_FOLLOWUP_RECORD.read_bytes()
 
 
 def _record():
@@ -98,6 +101,17 @@ def _freezer_energy_scissor_record():
     return data
 
 
+def _freezer_qa_followup_record():
+    if sha256(FREEZER_QA_FOLLOWUP_RECORD_BYTES) != FREEZER_QA_FOLLOWUP_RECORD_SHA256:
+        raise AssertionError("#210 Freezer QA follow-up projection record changed")
+    data = json.loads(FREEZER_QA_FOLLOWUP_RECORD_BYTES)
+    if data.get("schema") != "iedctr-prism-freezer-qa-followup-v1":
+        raise AssertionError("#210 Freezer QA follow-up projection schema changed")
+    if data.get("base_commit") != "a5723c09d735bf5500586737c8a04ae97ff63e60":
+        raise AssertionError("#210 Freezer QA follow-up projection base changed")
+    return data
+
+
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -124,6 +138,16 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
     be checked by its own fail-closed validator. Call with strict=True in tests
     that specifically validate this candidate's recorded state.
     """
+    followup = _freezer_qa_followup_record()["files"].get(path)
+    followup_reversed = False
+    if followup is not None:
+        if sha256(source) == followup["new_sha256"]:
+            source = _reverse_layer(path, source, followup)
+            followup_reversed = True
+        elif sha256(source) == followup["old_sha256"]:
+            followup_reversed = True
+        elif strict:
+            raise AssertionError("Unrecognized #210 candidate bytes: " + path)
     scissor = _freezer_energy_scissor_record()["files"].get(path)
     scissor_reversed = False
     if scissor is not None:
@@ -169,7 +193,7 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
             if strict:
                 raise AssertionError("Unrecognized #210 late validation bytes: " + path)
         if strict:
-            if not scissor_reversed and not port_reversed and not recovery_tooltip_reversed and not recovery_key_reversed:
+            if not followup_reversed and not scissor_reversed and not port_reversed and not recovery_tooltip_reversed and not recovery_key_reversed:
                 raise AssertionError("Path is outside the #210 projection allowlist: " + path)
         return source
     digest = sha256(source)
@@ -216,6 +240,9 @@ def project_file_from_root(path: str, *, strict: bool = True) -> bytes:
 
 def expected_current_sha256(path: str) -> str | None:
     """Return the pinned final candidate blob identity for an allowed path."""
+    followup = _freezer_qa_followup_record()["files"].get(path)
+    if followup is not None:
+        return followup["new_sha256"]
     scissor = _freezer_energy_scissor_record()["files"].get(path)
     if scissor is not None:
         return scissor["new_sha256"]
