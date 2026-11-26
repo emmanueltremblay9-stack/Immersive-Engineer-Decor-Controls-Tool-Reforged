@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 RECORD = Path(__file__).with_name("prism_210_history_projection.json")
 RECORD_SHA256 = "c0274bd87ceb4ddc040ac2d93d663344a0a59d0b85c7a513fe2ff6fd94e61522"
 LATE_VALIDATION_RECORD = Path(__file__).with_name("prism_210_late_validation_projection.json")
-LATE_VALIDATION_RECORD_SHA256 = "f7aae94db52d5e57cd6a924ba5894116f9980b4df7211c459e56d255fc3d5f04"
+LATE_VALIDATION_RECORD_SHA256 = "87336694ba35c1d9d01dc8fe9fb7ae97546ede5a1a712c31ce36566bad83220f"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 HEAD_COMMIT = "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
 RECORD_BYTES = RECORD.read_bytes()
@@ -70,6 +70,16 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
     """
     record = _record()["files"].get(path)
     if record is None:
+        # A few native validation files are new after the pinned #210 history
+        # range. Admit only an exact late-layer projection with its source commit
+        # explicitly pinned; all other unknown paths remain fail-closed in strict
+        # mode and pass through untouched for legacy layer composition.
+        late = _late_validation_record()["files"].get(path)
+        if late is not None and late.get("previous_source_commit"):
+            if sha256(source) == late["new_sha256"]:
+                return _reverse_layer(path, source, late)
+            if strict:
+                raise AssertionError("Unrecognized #210 late validation bytes: " + path)
         if strict:
             raise AssertionError("Path is outside the #210 projection allowlist: " + path)
         return source

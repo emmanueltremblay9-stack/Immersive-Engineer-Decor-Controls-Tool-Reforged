@@ -4,7 +4,7 @@
   "files": {
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java": {
       "old_sha256": "008cc62b9d7cc163f5676ebb4bc2dc7ab88230d4663f15467a2a3fc0d1f1b604",
-      "new_sha256": "45ed4a99ce95dbf987a13cd1bfc7583b7839c3bf4d9ae332bb1f2e866ba2e7a0",
+      "new_sha256": "16cf7b90d37852098df682e025163d79df63728b4800594053ff51fb992bce55",
       "hunks": [
         {
           "start": 10,
@@ -29,8 +29,63 @@
           "end": 104,
           "current": "         var rear = level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.SOUTH);\n         require(rear != null && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.UP) == null\n            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.NORTH) == null\n            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.EAST) == null\n            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.WEST) == null,\n            \"Smelter lava capability must be exposed at the rear only\");\n         require(rear.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500,\n            \"Smelter rear input failed to receive actual lava\");\n         var bottom = level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.DOWN);\n         require(bottom != null && bottom.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 0,\n            \"Smelter bottom output must reject lava insertion\");\n",
           "previous": "         require(machine.fluidHandler(Direction.UP).fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500,\n            \"Smelter top input failed to receive actual lava\");\n"
+        },
+        {
+          "start": 355,
+          "end": 357,
+          "current": "      var fit = FreezerReferenceGeometry.fitCanvas(mc.screen.width, mc.screen.height,\n         ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);\n",
+          "previous": "      var fit = FreezerReferenceGeometry.fit(mc.screen.width, mc.screen.height);\n"
         }
       ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java": {
+      "old_sha256": "d0d00734bccfc49a59e33edca6472858b7f0d5d2433c0c4c856a4e4dcd9c1e64",
+      "new_sha256": "539f146b1b3d6cfaa447f5a75645f668c5599ad99d3af3187172b36e6d8fbc89",
+      "hunks": [
+        {
+          "start": 53,
+          "end": 64,
+          "current": "\n   /** Read-only hook used by nonce-owned native GUI validation. */\n   public FreezerReferenceGeometry.ViewTransform validationViewTransform() { return view; }\n\n   /** Hit-test an actual menu slot through the same inverse canvas transform used by mouse input. */\n   public boolean validationSlotHoveredAt(int menuIndex, double screenX, double screenY) {\n      if (menuIndex < 0 || menuIndex >= menu.slots.size()) return false;\n      var slot = menu.getSlot(menuIndex);\n      return slot.isActive() && isHovering(slot.x, slot.y, 16, 16,\n         view.localX(screenX), view.localY(screenY));\n   }\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/factory_placer_v2_reference_native.py": {
+      "old_sha256": "46490c5181b613211f707b648019b9b5c04696af942ed53501ca8fafbe6b0544",
+      "new_sha256": "f22a0716c38f485b8b0595df722ce19d6913fa7cf3b4cbf91785605699b6aff8",
+      "hunks": [
+        {
+          "start": 174,
+          "end": 180,
+          "current": "    \"\"\"Hash unchanged opaque artwork outside controls and item footprints.\n\n    The artwork has a transparent exterior. In an integrated test world, placing\n    the machine changes the scene visible through those pixels; hashing the full\n    canvas therefore treats an expected world change as a GUI regression.\n    \"\"\"\n",
+          "previous": ""
+        },
+        {
+          "start": 186,
+          "end": 189,
+          "current": "    sw,sh,art=load_source()\n    _,view_scale,_=expected_geometry(width,height,gui_scale)\n    factor=view_scale*f32(1/3)*gui_scale\n",
+          "previous": ""
+        },
+        {
+          "start": 194,
+          "end": 195,
+          "current": "        source_y=min(sh-1,max(0,math.floor((y+.5-sy(0))/factor)))\n",
+          "previous": ""
+        },
+        {
+          "start": 197,
+          "end": 202,
+          "current": "            if l>cursor:\n                for x in range(cursor,min(l,right)):\n                    source_x=min(sw-1,max(0,math.floor((x+.5-sx(0))/factor)))\n                    if art[(source_y*sw+source_x)*4+3] == 255:\n                        digest.update(pixels[(y*w+x)*4:(y*w+x+1)*4])\n",
+          "previous": "            if l>cursor:digest.update(pixels[(y*w+cursor)*4:(y*w+min(l,right))*4])\n"
+        },
+        {
+          "start": 204,
+          "end": 209,
+          "current": "        if cursor<right:\n            for x in range(cursor,right):\n                source_x=min(sw-1,max(0,math.floor((x+.5-sx(0))/factor)))\n                if art[(source_y*sw+source_x)*4+3] == 255:\n                    digest.update(pixels[(y*w+x)*4:(y*w+x+1)*4])\n",
+          "previous": "        if cursor<right:digest.update(pixels[(y*w+cursor)*4:(y*w+right)*4])\n"
+        }
+      ],
+      "previous_source_commit": "1712b6d5682faaeb84e0be103898b0109aa3c87a"
     }
   }
 }

@@ -353,7 +353,8 @@ final class NativeSmelterGuiValidation {
       require(language.equals(selected), "Minecraft did not load requested Smelter locale");
       String title = Component.translatable(TITLE_KEY).getString();
       require(!title.equals(TITLE_KEY) && !title.isBlank(), "Smelter localized title is unavailable");
-      var fit = FreezerReferenceGeometry.fit(mc.screen.width, mc.screen.height);
+      var fit = FreezerReferenceGeometry.fitCanvas(mc.screen.width, mc.screen.height,
+         ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);
       JsonObject proof = new JsonObject();
       proof.addProperty("suite", SUITE);
       proof.addProperty("schema_version", 2);

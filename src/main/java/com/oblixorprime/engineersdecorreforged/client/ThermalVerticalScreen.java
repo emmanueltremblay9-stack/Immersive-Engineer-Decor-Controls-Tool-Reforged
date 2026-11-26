@@ -52,6 +52,17 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
 
    private boolean freezer() { return menu.kind() == MachineKind.SMALL_FREEZER; }
 
+   /** Read-only hook used by nonce-owned native GUI validation. */
+   public FreezerReferenceGeometry.ViewTransform validationViewTransform() { return view; }
+
+   /** Hit-test an actual menu slot through the same inverse canvas transform used by mouse input. */
+   public boolean validationSlotHoveredAt(int menuIndex, double screenX, double screenY) {
+      if (menuIndex < 0 || menuIndex >= menu.slots.size()) return false;
+      var slot = menu.getSlot(menuIndex);
+      return slot.isActive() && isHovering(slot.x, slot.y, 16, 16,
+         view.localX(screenX), view.localY(screenY));
+   }
+
    @Override
    protected void init() {
       super.init();

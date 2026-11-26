@@ -11,9 +11,9 @@ class DriverTests(unittest.TestCase):
         new=new.replace('package com.oblixorprime.iedctrtest.smelter;', 'package com.oblixorprime.engineersdecorreforged.client.validation;')
         actual_fit='''var fit = FreezerReferenceGeometry.fitCanvas(mc.screen.width, mc.screen.height,
          ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);'''
-        historical_fit='var fit = FreezerReferenceGeometry.fit(mc.screen.width, mc.screen.height);'
-        self.assertEqual(new.count(actual_fit),1,'Only the verified ThermalVertical canvas fit may differ from the original fixture')
-        self.assertEqual(new.replace(actual_fit,historical_fit),old)
+        self.assertEqual(new.count(actual_fit),1,'Packaged fixture must fit the actual ThermalVertical canvas')
+        self.assertEqual(old.count(actual_fit),1,'Build validation fixture must fit the actual ThermalVertical canvas')
+        self.assertEqual(new,old,'Packaged and build fixtures must preserve the same GUI and proof gates')
     def test_support_is_server_prepared_before_original_fixture(self):
         text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
         self.assertIn('new BlockPos(x, 80, z), Blocks.STONE.defaultBlockState()',text)

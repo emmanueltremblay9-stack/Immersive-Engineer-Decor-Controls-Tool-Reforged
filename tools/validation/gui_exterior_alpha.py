@@ -10,7 +10,7 @@ from prism_210_history_projection import project_current_candidate
 
 ROOT = Path(__file__).resolve().parents[2]
 RECORD = ROOT / 'docs/qualification/gui-exterior-alpha/manifest.json'
-RECORD_SHA256 = '4acd3ee2c5ac7e46ac6d0815979909f5601a624da4d587583593c1b731851184'
+RECORD_SHA256 = '8a4463d1a1518180eeaf6ac4dd4339547b8925222e2f83aaced69416ae66738b'
 RECORD_BYTES = RECORD.read_bytes()
 
 

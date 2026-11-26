@@ -172,23 +172,41 @@ INDICATORS=[(266,67,276,71),(266,95,276,99),(266,124,276,128),(249,160,254,163),
 
 
 def image_evidence(path,crop_path,width,height,gui_scale):
+    """Hash unchanged opaque artwork outside controls and item footprints.
+
+    The artwork has a transparent exterior. In an integrated test world, placing
+    the machine changes the scene visible through those pixels; hashing the full
+    canvas therefore treats an expected world change as a GUI regression.
+    """
     w,h,pixels=decode_png(path);cw,ch,crop=decode_png(crop_path)
     _,_,(tx,ty,tw,th)=expected_geometry(width,height,gui_scale)
     require((w,h,cw,ch)==(width,height,tw,th),'Decoded PNG dimensions differ')
     actual=b''.join(pixels[(y*w+tx)*4:(y*w+tx+tw)*4] for y in range(ty,ty+th))
     require(actual==crop,'Controls crop is not the native screenshot region')
     sx,sy=transform(width,height,gui_scale)
+    sw,sh,art=load_source()
+    _,view_scale,_=expected_geometry(width,height,gui_scale)
+    factor=view_scale*f32(1/3)*gui_scale
     rects=INDICATORS+[(x-1,y-1,x+17,y+17) for x,y in SLOT_ORIGINS]
     rects=[(math.floor(sx(l))-2,math.floor(sy(t))-2,math.ceil(sx(r))+2,math.ceil(sy(b))+2) for l,t,r,b in rects]
     digest=hashlib.sha256()
     left,right=math.ceil(sx(0)),math.floor(sx(f32(1199*f32(1/3))))
     for y in range(math.ceil(sy(0)),math.floor(sy(f32(1312*f32(1/3))))):
+        source_y=min(sh-1,max(0,math.floor((y+.5-sy(0))/factor)))
         cursor=left
         for l,r in sorted((l,r) for l,t,r,b in rects if t<=y<=b):
-            if l>cursor:digest.update(pixels[(y*w+cursor)*4:(y*w+min(l,right))*4])
+            if l>cursor:
+                for x in range(cursor,min(l,right)):
+                    source_x=min(sw-1,max(0,math.floor((x+.5-sx(0))/factor)))
+                    if art[(source_y*sw+source_x)*4+3] == 255:
+                        digest.update(pixels[(y*w+x)*4:(y*w+x+1)*4])
             cursor=max(cursor,r+1)
             if cursor>=right:break
-        if cursor<right:digest.update(pixels[(y*w+cursor)*4:(y*w+right)*4])
+        if cursor<right:
+            for x in range(cursor,right):
+                source_x=min(sw-1,max(0,math.floor((x+.5-sx(0))/factor)))
+                if art[(source_y*sw+source_x)*4+3] == 255:
+                    digest.update(pixels[(y*w+x)*4:(y*w+x+1)*4])
     return digest.hexdigest()
 
 

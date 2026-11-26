@@ -144,7 +144,7 @@ class NativePlacerProofTest(unittest.TestCase):
         with self.assertRaisesRegex(SmokeFailure,'Inversion pixels'):self.validate(p)
 
     def test_exterior_mutation_with_recomputed_hash(self):
-        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px);sx,sy=transform(w,h,self.scale);x,y=math.ceil(sx(10)),math.ceil(sy(10));pixels[(y*w+x)*4]^=1
+        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px);sx,sy=transform(w,h,self.scale);x,y=math.ceil(sx(40)),math.ceil(sy(40));pixels[(y*w+x)*4]^=1
         data=png_rows(w,h,[pixels[y*w*4:(y+1)*w*4] for y in range(h)]);path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest();c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
         with self.assertRaises(SmokeFailure):self.validate(p)
 
@@ -211,18 +211,19 @@ class NativePlacerProofTest(unittest.TestCase):
     def test_authorized_transparent_exterior_uses_world_pixels(self):
         # This source sample lies in the manifest-approved transparent exterior.
         # It may show the world behind the panel; opaque retained artwork must
-        # still match exact native pixels.
+        # still match exact native pixels. Change only one capture to model a
+        # placed world block behind the transparent panel area.
         x,y=442,143
-        for c in self.proof['captures']:
-            w,h=c['width'],c['height'];path=self.folder/c['name']
-            _,_,pixels=decode_png(path);pixels=bytearray(pixels)
-            pixels[(y*w+x)*4:(y*w+x+1)*4]=bytes((24,31,38,255))
-            data=png_rows(w,h,[pixels[row*w*4:(row+1)*w*4] for row in range(h)])
-            path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
-            tx,ty,tw,th=c['controls_x'],c['controls_y'],c['controls_width'],c['controls_height']
-            crop=png_rows(tw,th,[pixels[(row*w+tx)*4:(row*w+tx+tw)*4] for row in range(ty,ty+th)])
-            (self.folder/c['controls_name']).write_bytes(crop);c['controls_sha256']=hashlib.sha256(crop).hexdigest()
-            c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
+        c=self.proof['captures'][6]
+        w,h=c['width'],c['height'];path=self.folder/c['name']
+        _,_,pixels=decode_png(path);pixels=bytearray(pixels)
+        pixels[(y*w+x)*4:(y*w+x+1)*4]=bytes((24,31,38,255))
+        data=png_rows(w,h,[pixels[row*w*4:(row+1)*w*4] for row in range(h)])
+        path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
+        tx,ty,tw,th=c['controls_x'],c['controls_y'],c['controls_width'],c['controls_height']
+        crop=png_rows(tw,th,[pixels[(row*w+tx)*4:(row*w+tx+tw)*4] for row in range(ty,ty+th)])
+        (self.folder/c['controls_name']).write_bytes(crop);c['controls_sha256']=hashlib.sha256(crop).hexdigest()
+        c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
         self.validate()
 
     def test_source_hash_verified_even_after_cache_populated(self):

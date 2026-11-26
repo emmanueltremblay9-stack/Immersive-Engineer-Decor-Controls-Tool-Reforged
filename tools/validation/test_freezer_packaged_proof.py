@@ -10,7 +10,7 @@ import subprocess
 from client_mixin_smoke import SmokeFailure
 from freezer_packaged_proof import CLASSES, HARNESS, MOD, TEXTURES, SELECTORS, validate_runtime
 V5_BACKGROUND_SOURCE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
-THERMAL_CHAMBER_SOURCE_COMMIT = "e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c"
+THERMAL_CHAMBER_SOURCE_COMMIT = "7abd0166b122e5b40caec13318fef72c6cf63d09"
 V5_PHASE_SOURCE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -28,10 +28,9 @@ class RuntimeTests(unittest.TestCase):
                 # The package test is for the archived Freezer V5 runtime, not the
                 # later vertical-screen candidate. Pull its exact immutable bytes.
                 old_path = 'src/main/resources/assets/'+MOD+'/'+name
-                # The historical fixture is a composed source set: its V5 panel
-                # and phase art predate the later clean thermal chamber patch.
-                # Pin each exact source revision independently instead of assuming
-                # one commit contains this archived blend.
+                # The V5 panel and phase art retain their source pins. The clean
+                # chamber is the approved common thermal base introduced by the
+                # candidate composition, not the earlier e8b21c91 base.
                 source_commit = (THERMAL_CHAMBER_SOURCE_COMMIT
                     if name.endswith('freezer_v5_chamber_clean_base.png')
                     else V5_BACKGROUND_SOURCE_COMMIT if name.endswith('background.png')

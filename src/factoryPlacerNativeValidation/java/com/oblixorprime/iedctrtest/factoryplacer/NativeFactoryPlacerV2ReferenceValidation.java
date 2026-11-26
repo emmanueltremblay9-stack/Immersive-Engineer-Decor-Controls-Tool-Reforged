@@ -35,6 +35,7 @@ import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -96,6 +97,7 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
    private static boolean actionSent, shiftDown, tooltipInFrame, occupiedSelection;
    private static NativeLibrary x11, xtest;
    private static Pointer display;
+   private static byte[] sourceAlpha;
    private static JsonObject gesture, observedServer, tooltipObservation, renderedTooltip, selectionServer;
    private static CompletableFuture<JsonObject> snapshotFuture;
    private static final int[] expectedSlots = new int[54];
@@ -653,11 +655,22 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
          c.addProperty("controls_name", cropFile.getFileName().toString()); c.addProperty("controls_sha256", hash(cropFile));
          c.addProperty("controls_x", x0); c.addProperty("controls_y", y0); c.addProperty("controls_width", x1 - x0); c.addProperty("controls_height", y1 - y0);
          var digest = MessageDigest.getInstance("SHA-256");
+         // Exclude transparent/partially transparent artwork pixels: their
+         // framebuffer color comes from the test world behind the GUI and may
+         // correctly change when this fixture places a block.
+         byte[] alpha = sourceAlpha(mc);
          double artWidth = FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;
          double artHeight = FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;
+         double sourceFactor = (double)v.scale() * (double)FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE * scale;
          for (int y = (int)Math.ceil(v.screenY(0) * scale); y < (int)Math.floor(v.screenY(artHeight) * scale); y++)
             for (int x = (int)Math.ceil(v.screenX(0) * scale); x < (int)Math.floor(v.screenX(artWidth) * scale); x++) {
-               if (excludedPixel(x, y, v, scale)) continue; int pixel = frame.getPixelRGBA(x, y); for (int b = 0; b < 4; b++) digest.update((byte)(pixel >>> (8 * b)));
+               if (excludedPixel(x, y, v, scale)) continue;
+               int sourceX = Math.max(0, Math.min(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH - 1,
+                  (int)Math.floor((x + .5 - v.screenX(0) * scale) / sourceFactor)));
+               int sourceY = Math.max(0, Math.min(FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT - 1,
+                  (int)Math.floor((y + .5 - v.screenY(0) * scale) / sourceFactor)));
+               if ((alpha[sourceY * FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH + sourceX] & 0xff) != 255) continue;
+               int pixel = frame.getPixelRGBA(x, y); for (int b = 0; b < 4; b++) digest.update((byte)(pixel >>> (8 * b)));
             }
          c.addProperty("frame_exterior_sha256", HexFormat.of().formatHex(digest.digest()));
       }
@@ -670,6 +683,21 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
       return inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.SIGNAL_INDICATOR)
          || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR)
          || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR);
+   }
+   private static byte[] sourceAlpha(Minecraft mc) throws Exception {
+      if (sourceAlpha != null) return sourceAlpha;
+      var location = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,
+         "textures/gui/factory_placer_v2_reference/background.png");
+      var resource = mc.getResourceManager().getResource(location).orElseThrow();
+      try (var input = resource.open(); var image = NativeImage.read(input)) {
+         require(image.getWidth() == FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH
+            && image.getHeight() == FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT,
+            "Retained Factory Placer source dimensions differ");
+         sourceAlpha = new byte[image.getWidth() * image.getHeight()];
+         for (int y = 0; y < image.getHeight(); y++) for (int x = 0; x < image.getWidth(); x++)
+            sourceAlpha[y * image.getWidth() + x] = (byte)(image.getPixelRGBA(x, y) >>> 24);
+      }
+      return sourceAlpha;
    }
    private static boolean inRect(int x, int y, ViewTransform v, double scale, Rect r) {
       return x >= Math.floor(v.screenX(r.x()) * scale) - 2 && x <= Math.ceil(v.screenX(r.x() + r.width()) * scale) + 2

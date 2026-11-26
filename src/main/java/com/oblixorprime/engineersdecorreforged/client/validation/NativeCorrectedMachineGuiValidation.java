@@ -6,10 +6,13 @@ import com.google.gson.JsonObject;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.client.MachineScreen;
+import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
@@ -21,6 +24,7 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -43,7 +47,8 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.BufferUtils;
 
 /**
- * Native integrated-client captures for seven MachineScreen GUIs.
+ * Native integrated-client captures for seven registered machine menus.
+ * The current Freezer is the thermal vertical screen; it is not a MachineScreen.
  * Tree Cutter V3 is qualified independently by tree-cutter-v3-native.yml; this suite
  * deliberately makes no claim about that screen or the superseded legacy badge.
  */
@@ -139,13 +144,12 @@ final class NativeCorrectedMachineGuiValidation {
             return false;
          }
          case WAIT_MENU -> {
-            if (++ticks > 300) throw new IllegalStateException("Real corrected machine screen did not open");
-            if (!(mc.screen instanceof MachineScreen screen)
-               || !(mc.player.containerMenu instanceof MachineMenu menu)
-               || menu.kind() != SPECS.get(specIndex).kind()
-               || menu.containerId != serverMenuId
-               || !menu.getClass().getName().equals(serverMenuIdentity)) return false;
-            verifyMenuGeometry(screen, menu, SPECS.get(specIndex));
+            Spec spec = SPECS.get(specIndex);
+            if (++ticks > 300) throw new IllegalStateException("Real corrected machine screen did not open for "
+               + spec.id() + " (" + spec.kind() + "): " + describeClientMenu(mc, spec));
+            MachineMenu menu = currentExpectedMenu(mc, spec);
+            if (menu == null) return false;
+            verifyMenuGeometry(mc, menu, spec);
             if (ticks < 15) return false;
             stateIndex = 0;
             scheduleState(mc, 0);
@@ -157,15 +161,14 @@ final class NativeCorrectedMachineGuiValidation {
             if (++ticks > 300) throw new IllegalStateException("Corrected GUI live state did not synchronize");
             if (!pending.isDone()) return false;
             pending.join();
-            if (!(mc.screen instanceof MachineScreen screen)
-               || !(mc.player.containerMenu instanceof MachineMenu menu)
-               || menu.kind() != SPECS.get(specIndex).kind()
-               || menu.containerId != serverMenuId) return false;
+            Spec spec = SPECS.get(specIndex);
+            MachineMenu menu = currentExpectedMenu(mc, spec);
+            if (menu == null) return false;
             if (!stateIsVisible(menu, SPECS.get(specIndex), stateIndex)) return false;
             if (SPECS.get(specIndex).kind() == MachineKind.SMALL_FREEZER && stateIndex == 1
                && menu.freezerProgressTicks() < 30) return false;
             if (ticks < 6) return false;
-            screen.setSuppressTooltipsForPanelCapture(true);
+            if (mc.screen instanceof MachineScreen screen) screen.setSuppressTooltipsForPanelCapture(true);
             moveCursorOutsidePanel(mc);
             stage = Stage.WAIT_PANEL_CAPTURE;
             ticks = 0;
@@ -173,18 +176,16 @@ final class NativeCorrectedMachineGuiValidation {
          }
          case WAIT_PANEL_CAPTURE -> {
             if (++ticks < 3) return false;
-            if (!(mc.screen instanceof MachineScreen screen)
-               || !(mc.player.containerMenu instanceof MachineMenu menu)
-               || menu.kind() != SPECS.get(specIndex).kind()
-               || menu.containerId != serverMenuId
-               || !stateIsVisible(menu, SPECS.get(specIndex), stateIndex)) {
+            Spec spec = SPECS.get(specIndex);
+            MachineMenu menu = currentExpectedMenu(mc, spec);
+            if (menu == null || !stateIsVisible(menu, spec, stateIndex)) {
                throw new IllegalStateException("Corrected GUI changed before its clean panel capture");
             }
             String state = stateIndex == 2 ? "full-hover" : STATES[stateIndex];
-            capture(mc, screen, menu, SPECS.get(specIndex), state);
+            captureCurrentScreen(mc, menu, spec, state);
             if (stateIndex == 2) {
-               screen.setSuppressTooltipsForPanelCapture(false);
-               moveCursorToFirstSlot(mc, menu);
+               if (mc.screen instanceof MachineScreen screen) screen.setSuppressTooltipsForPanelCapture(false);
+               moveCursorToFirstSlot(mc, menu, spec);
                stage = Stage.WAIT_HOVER;
                ticks = 0;
                return false;
@@ -205,10 +206,8 @@ final class NativeCorrectedMachineGuiValidation {
             if (++ticks > 60) throw new IllegalStateException("Freezer near-end GUI state did not synchronize");
             if (!pending.isDone()) return false;
             pending.join();
-            if (!(mc.screen instanceof MachineScreen screen)
-               || !(mc.player.containerMenu instanceof MachineMenu menu)
-               || menu.kind() != MachineKind.SMALL_FREEZER
-               || menu.containerId != serverMenuId) return false;
+            MachineMenu menu = currentExpectedMenu(mc, SPECS.get(specIndex));
+            if (menu == null || menu.kind() != MachineKind.SMALL_FREEZER) return false;
             if (menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS - 2) return false;
             require(menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
                "Freezer fixture completed before its near-end frame could be captured");
@@ -219,15 +218,13 @@ final class NativeCorrectedMachineGuiValidation {
          case WAIT_FREEZER_CAPTURE -> {
             // Wait for rendered frames after the synchronized fields arrive.
             if (++ticks < 3) return false;
-            require(mc.screen instanceof MachineScreen && mc.player.containerMenu instanceof MachineMenu,
-               "Freezer snapshot screen disappeared");
-            MachineScreen screen = (MachineScreen)mc.screen;
-            MachineMenu menu = (MachineMenu)mc.player.containerMenu;
+            MachineMenu menu = currentExpectedMenu(mc, SPECS.get(specIndex));
+            require(menu != null, "Freezer snapshot screen/menu disappeared: " + describeClientMenu(mc, SPECS.get(specIndex)));
             require(menu.kind() == MachineKind.SMALL_FREEZER && menu.containerId == serverMenuId
                && menu.freezerProgressTicks() >= MachineBlockEntity.FREEZER_PROCESS_TICKS - 2
                && menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
                "Freezer snapshot changed before capture");
-            capture(mc, screen, menu, SPECS.get(specIndex), "near-end");
+            captureCurrentScreen(mc, menu, SPECS.get(specIndex), "near-end");
             restoreFreezerSnapshot(mc);
             stateIndex++;
             scheduleState(mc, stateIndex);
@@ -237,23 +234,45 @@ final class NativeCorrectedMachineGuiValidation {
          }
          case WAIT_HOVER -> {
             if (++ticks < 6) return false;
-            if (!(mc.screen instanceof MachineScreen screen)
-               || !(mc.player.containerMenu instanceof MachineMenu menu)
-               || !stateIsVisible(menu, SPECS.get(specIndex), 2)) {
+            Spec spec = SPECS.get(specIndex);
+            MachineMenu menu = currentExpectedMenu(mc, spec);
+            if (menu == null || !stateIsVisible(menu, spec, 2)) {
                throw new IllegalStateException("Corrected GUI changed before its hover capture");
             }
-            MachineLayout.MachineSlot target = menu.layout().machineSlots().get(0);
+            int targetX, targetY;
+            if (spec.kind() == MachineKind.SMALL_FREEZER) {
+               var target = ThermalVerticalGeometry.slot(0, spec.kind());
+               targetX = target.x(); targetY = target.y();
+            } else {
+               MachineLayout.MachineSlot target = menu.layout().machineSlots().get(0);
+               targetX = target.x(); targetY = target.y();
+            }
             JsonObject hover = new JsonObject();
-            hover.addProperty("slot_index", target.containerIndex());
-            hover.addProperty("slot_local_x", target.x());
-            hover.addProperty("slot_local_y", target.y());
-            double centerX = (mc.getWindow().getGuiScaledWidth() - menu.layout().imageWidth()) / 2.0 + target.x() + 8;
-            double centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + target.y() + 8;
-            hover.addProperty("slot_hitbox_center_verified", screen.isMachineSlotHoveredAt(0, centerX, centerY));
+            hover.addProperty("slot_index", menu.getSlot(0).getSlotIndex());
+            hover.addProperty("slot_local_x", targetX);
+            hover.addProperty("slot_local_y", targetY);
+            double centerX, centerY;
+            boolean hoverVerified;
+            if (mc.screen instanceof ThermalVerticalScreen thermal && spec.kind() == MachineKind.SMALL_FREEZER) {
+               var view = FreezerReferenceGeometry.fitCanvas(mc.getWindow().getGuiScaledWidth(),
+                  mc.getWindow().getGuiScaledHeight(), ThermalVerticalGeometry.CANVAS_WIDTH,
+                  ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);
+               centerX = view.screenX(targetX + 8); centerY = view.screenY(targetY + 8);
+               hoverVerified = thermal.validationSlotHoveredAt(0, centerX, centerY);
+            } else if (mc.screen instanceof MachineScreen screen) {
+               centerX = (mc.getWindow().getGuiScaledWidth() - menu.layout().imageWidth()) / 2.0 + targetX + 8;
+               centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + targetY + 8;
+               hoverVerified = screen.isMachineSlotHoveredAt(0, centerX, centerY);
+            } else {
+               throw new IllegalStateException("Expected GUI class disappeared before hover: " + describeClientMenu(mc, spec));
+            }
+            hover.addProperty("slot_hitbox_center_verified", hoverVerified);
             require(hover.get("slot_hitbox_center_verified").getAsBoolean(), "First machine slot does not hover at its center");
             JsonObject panelCapture = CAPTURES.get(CAPTURES.size() - 1).getAsJsonObject();
             captureHoverWindow(mc, panelCapture, hover);
-            JsonObject result = caseProof(mc, screen, menu, SPECS.get(specIndex));
+            JsonObject result = spec.kind() == MachineKind.SMALL_FREEZER
+               ? thermalCaseProof(mc, (ThermalVerticalScreen)mc.screen, menu, spec)
+               : caseProof(mc, (MachineScreen)mc.screen, menu, spec);
             if (menu.kind() == MachineKind.SMALL_MILKING_MACHINE) {
                milkingCaseProof = result;
                scheduleMilkingInput(mc);
@@ -365,6 +384,70 @@ final class NativeCorrectedMachineGuiValidation {
 
    private static void scheduleMachine(Minecraft mc, int index) {
       scheduleMachine(mc, SPECS.get(index));
+   }
+
+   private static MachineMenu currentExpectedMenu(Minecraft mc, Spec spec) {
+      if (mc.player == null || !(mc.player.containerMenu instanceof MachineMenu menu)
+         || menu.kind() != spec.kind() || menu.containerId != serverMenuId
+         || !menu.getClass().getName().equals(serverMenuIdentity)) return null;
+      boolean expectedScreen = spec.kind() == MachineKind.SMALL_FREEZER
+         ? mc.screen instanceof ThermalVerticalScreen
+         : mc.screen instanceof MachineScreen;
+      return expectedScreen ? menu : null;
+   }
+
+   private static String describeClientMenu(Minecraft mc, Spec expected) {
+      String screen = mc.screen == null ? "<none>" : mc.screen.getClass().getName();
+      if (mc.player == null || mc.player.containerMenu == null)
+         return "expected=" + expected.id() + ", clientScreen=" + screen + ", clientMenu=<none>, serverMenuId=" + serverMenuId;
+      var client = mc.player.containerMenu;
+      String kind = client instanceof MachineMenu menu ? menu.kind().name() : "<not-machine-menu>";
+      String clientId = Integer.toString(client.containerId);
+      return "expected=" + expected.id() + "/" + expected.kind()
+         + ", clientScreen=" + screen + ", clientMenu=" + client.getClass().getName()
+         + ", clientKind=" + kind + ", clientMenuId=" + clientId
+         + ", serverMenu=" + serverMenuIdentity + ", serverMenuId=" + serverMenuId;
+   }
+
+   private static void verifyMenuGeometry(Minecraft mc, MachineMenu menu, Spec spec) {
+      if (spec.kind() == MachineKind.SMALL_FREEZER) {
+         require(mc.screen instanceof ThermalVerticalScreen,
+            "Current Freezer must open ThermalVerticalScreen: " + describeClientMenu(mc, spec));
+         verifyThermalMenuGeometry(menu);
+         return;
+      }
+      require(mc.screen instanceof MachineScreen,
+         "Expected registered MachineScreen for " + spec.id() + ": " + describeClientMenu(mc, spec));
+      verifyMenuGeometry((MachineScreen)mc.screen, menu, spec);
+   }
+
+   private static void verifyThermalMenuGeometry(MachineMenu menu) {
+      MachineKind kind = MachineKind.SMALL_FREEZER;
+      ThermalVerticalGeometry.validate(kind);
+      require(menu.thermalVerticalPresentation() && menu.visibleMachineSlots() == 3 && menu.slots.size() == 39,
+         "Thermal Freezer protocol lattice must retain 39 menu entries with reserved index 1 hidden");
+      require(!menu.getSlot(1).isActive() && !menu.getSlot(1).mayPlace(new ItemStack(Items.STONE)),
+         "Thermal Freezer reserved slot must stay hidden and reject insertion");
+      HashSet<String> positions = new HashSet<>();
+      int visible = 0;
+      for (int menuIndex = 0; menuIndex < menu.slots.size(); menuIndex++) {
+         var actual = menu.getSlot(menuIndex);
+         if (menuIndex == 1) continue;
+         var expected = ThermalVerticalGeometry.slot(menuIndex, kind);
+         int backingIndex = menuIndex < 3 ? menuIndex
+            : menuIndex < 30 ? 9 + menuIndex - 3 : menuIndex - 30;
+         require(actual.isActive() && actual.getSlotIndex() == backingIndex
+            && actual.x == expected.x() && actual.y == expected.y()
+            && actual.x >= 0 && actual.y >= 0
+            && actual.x + 16 <= ThermalVerticalGeometry.CANVAS_WIDTH
+            && actual.y + 16 <= ThermalVerticalGeometry.CANVAS_HEIGHT,
+            "Thermal Freezer slot differs from vertical art anchor at menu index " + menuIndex);
+         require(positions.add(actual.x + ":" + actual.y),
+            "Thermal Freezer repeats a visible 16x16 slot at menu index " + menuIndex);
+         visible++;
+      }
+      require(visible == ThermalVerticalGeometry.VISIBLE_SLOTS,
+         "Thermal Freezer must expose exactly 38 unique 16x16 item slots");
    }
 
    private static void scheduleMachine(Minecraft mc, Spec spec) {
@@ -688,15 +771,26 @@ final class NativeCorrectedMachineGuiValidation {
       }
    }
 
-   private static void moveCursorToFirstSlot(Minecraft mc, MachineMenu menu) {
-      MachineLayout layout = menu.layout();
+   private static void moveCursorToFirstSlot(Minecraft mc, MachineMenu menu, Spec spec) {
       int guiWidth = mc.getWindow().getGuiScaledWidth();
       int guiHeight = mc.getWindow().getGuiScaledHeight();
-      MachineLayout.MachineSlot target = layout.machineSlots().get(0);
       double scaleX = mc.getWindow().getScreenWidth() / (double)guiWidth;
       double scaleY = mc.getWindow().getScreenHeight() / (double)guiHeight;
-      double x = ((guiWidth - layout.imageWidth()) / 2.0 + target.x() + 8) * scaleX;
-      double y = ((guiHeight - layout.imageHeight()) / 2.0 + target.y() + 8) * scaleY;
+      double guiX, guiY;
+      if (spec.kind() == MachineKind.SMALL_FREEZER) {
+         require(mc.screen instanceof ThermalVerticalScreen, "Thermal Freezer screen disappeared before hover");
+         var target = ThermalVerticalGeometry.slot(0, spec.kind());
+         var view = ((ThermalVerticalScreen)mc.screen).validationViewTransform();
+         guiX = view.screenX(target.x() + 8);
+         guiY = view.screenY(target.y() + 8);
+      } else {
+         MachineLayout layout = menu.layout();
+         MachineLayout.MachineSlot target = layout.machineSlots().get(0);
+         guiX = (guiWidth - layout.imageWidth()) / 2.0 + target.x() + 8;
+         guiY = (guiHeight - layout.imageHeight()) / 2.0 + target.y() + 8;
+      }
+      double x = guiX * scaleX;
+      double y = guiY * scaleY;
       GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), x, y);
    }
 
@@ -780,6 +874,77 @@ final class NativeCorrectedMachineGuiValidation {
          capture.add("machine_slot_items", machineSlotItems(menu));
          capture.add("tank_pixels", tankPixels);
       }
+      CAPTURES.add(capture);
+      return capture;
+   }
+
+   private static JsonObject captureCurrentScreen(Minecraft mc, MachineMenu menu, Spec spec, String state) throws Exception {
+      if (mc.screen instanceof MachineScreen screen) return capture(mc, screen, menu, spec, state);
+      if (mc.screen instanceof ThermalVerticalScreen screen && spec.kind() == MachineKind.SMALL_FREEZER)
+         return captureThermalFreezer(mc, screen, menu, spec, state);
+      throw new IllegalStateException("Unexpected screen during native panel capture: " + describeClientMenu(mc, spec));
+   }
+
+   private static JsonObject captureThermalFreezer(Minecraft mc, ThermalVerticalScreen screen,
+                                                    MachineMenu menu, Spec spec, String state) throws Exception {
+      int guiWidth = mc.getWindow().getGuiScaledWidth();
+      int guiHeight = mc.getWindow().getGuiScaledHeight();
+      var view = screen.validationViewTransform();
+      double physicalScaleX = mc.getWindow().getScreenWidth() / (double)guiWidth;
+      double physicalScaleY = mc.getWindow().getScreenHeight() / (double)guiHeight;
+      var cursorX = BufferUtils.createDoubleBuffer(1);
+      var cursorY = BufferUtils.createDoubleBuffer(1);
+      GLFW.glfwGetCursorPos(mc.getWindow().getWindow(), cursorX, cursorY);
+      double cursorGuiX = cursorX.get(0) * guiWidth / mc.getWindow().getScreenWidth();
+      double cursorGuiY = cursorY.get(0) * guiHeight / mc.getWindow().getScreenHeight();
+      boolean pointerOutside = cursorGuiX < view.originX() || cursorGuiX >= view.originX()
+         + ThermalVerticalGeometry.CANVAS_WIDTH * view.scale()
+         || cursorGuiY < view.originY() || cursorGuiY >= view.originY()
+         + ThermalVerticalGeometry.CANVAS_HEIGHT * view.scale();
+      require(pointerOutside, "Thermal Freezer panel capture has a cursor overlay");
+      int cropX = Math.round(view.originX() * (float)physicalScaleX);
+      int cropY = Math.round(view.originY() * (float)physicalScaleY);
+      int cropWidth = Math.round(ThermalVerticalGeometry.CANVAS_WIDTH * view.scale() * (float)physicalScaleX);
+      int cropHeight = Math.round(ThermalVerticalGeometry.CANVAS_HEIGHT * view.scale() * (float)physicalScaleY);
+      String name = spec.id() + "-" + state + ".png";
+      Files.createDirectories(screenshots);
+      Path output = screenshots.resolve(name);
+      require(!Files.exists(output), "Refusing to overwrite a corrected GUI capture");
+      try (NativeImage full = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+         require(cropX >= 0 && cropY >= 0 && cropX + cropWidth <= full.getWidth()
+            && cropY + cropHeight <= full.getHeight(), "Thermal Freezer crop exceeds the live framebuffer");
+         try (NativeImage crop = new NativeImage(cropWidth, cropHeight, false)) {
+            for (int py = 0; py < cropHeight; py++) for (int px = 0; px < cropWidth; px++)
+               crop.setPixelRGBA(px, py, full.getPixelRGBA(cropX + px, cropY + py));
+            crop.writeToFile(output);
+         }
+      }
+      JsonObject capture = new JsonObject();
+      capture.addProperty("name", name);
+      capture.addProperty("state", state);
+      capture.addProperty("capture_mode", "native_thermal_canvas_crop");
+      capture.addProperty("panel_cursor_outside", pointerOutside);
+      capture.addProperty("panel_tooltips_suppressed", false);
+      capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
+      capture.addProperty("width", cropWidth);
+      capture.addProperty("height", cropHeight);
+      capture.addProperty("kind", spec.kind().name());
+      capture.addProperty("screen_identity", screen.getClass().getName());
+      capture.addProperty("menu_id", menu.containerId);
+      capture.addProperty("server_menu_id", serverMenuId);
+      capture.addProperty("panel_width", ThermalVerticalGeometry.CANVAS_WIDTH);
+      capture.addProperty("panel_height", ThermalVerticalGeometry.CANVAS_HEIGHT);
+      capture.addProperty("view_scale", view.scale());
+      capture.addProperty("origin_x", view.originX());
+      capture.addProperty("origin_y", view.originY());
+      capture.addProperty("gui_width", guiWidth);
+      capture.addProperty("gui_height", guiHeight);
+      capture.addProperty("fluid_amount", menu.fluidAmount());
+      capture.addProperty("energy", menu.energyStored());
+      capture.addProperty("energy_capacity", menu.energyCapacity());
+      capture.addProperty("progress", menu.progress());
+      capture.addProperty("freezer_progress_ticks", menu.freezerProgressTicks());
+      capture.addProperty("freezer_phase", menu.freezerPhase());
       CAPTURES.add(capture);
       return capture;
    }
@@ -936,6 +1101,63 @@ final class NativeCorrectedMachineGuiValidation {
       return result;
    }
 
+   private static JsonObject thermalCaseProof(Minecraft mc, ThermalVerticalScreen screen,
+                                              MachineMenu menu, Spec spec) {
+      JsonObject result = new JsonObject();
+      var view = screen.validationViewTransform();
+      result.addProperty("machine_id", spec.id());
+      result.addProperty("machine_kind", spec.kind().name());
+      result.addProperty("screen_identity", screen.getClass().getName());
+      result.addProperty("client_menu_identity", menu.getClass().getName());
+      result.addProperty("server_menu_identity", serverMenuIdentity);
+      result.addProperty("client_menu_id", menu.containerId);
+      result.addProperty("server_menu_id", serverMenuId);
+      result.addProperty("menu_context_matches", menu.containerId == serverMenuId
+         && menu.getClass().getName().equals(serverMenuIdentity));
+      result.addProperty("visible_machine_slots", ThermalVerticalGeometry.VISIBLE_SLOTS);
+      result.addProperty("protocol_machine_slots", menu.visibleMachineSlots());
+      result.addProperty("total_slots", menu.slots.size());
+      result.addProperty("panel_width", ThermalVerticalGeometry.CANVAS_WIDTH);
+      result.addProperty("panel_height", ThermalVerticalGeometry.CANVAS_HEIGHT);
+      result.addProperty("gui_width", mc.getWindow().getGuiScaledWidth());
+      result.addProperty("gui_height", mc.getWindow().getGuiScaledHeight());
+      result.addProperty("view_scale", view.scale());
+      result.addProperty("origin_x", view.originX());
+      result.addProperty("origin_y", view.originY());
+      result.addProperty("geometry_matches_thermal_vertical_geometry", true);
+      result.addProperty("reserved_index_1_hidden", !menu.getSlot(1).isActive());
+      result.addProperty("fluid_amount", menu.fluidAmount());
+      result.addProperty("fluid_capacity", menu.fluidCapacity());
+      result.addProperty("energy", menu.energyStored());
+      result.addProperty("energy_capacity", menu.energyCapacity());
+      result.addProperty("progress", menu.progress());
+      result.addProperty("freezer_progress_ticks", menu.freezerProgressTicks());
+      result.addProperty("freezer_phase", menu.freezerPhase());
+      result.addProperty("language", language);
+      JsonArray stateNames = new JsonArray();
+      stateNames.add("empty"); stateNames.add("mid"); stateNames.add("full-hover");
+      result.add("captured_states", stateNames);
+      JsonArray slots = new JsonArray();
+      for (int index = 0; index < menu.slots.size(); index++) {
+         var liveSlot = menu.getSlot(index);
+         JsonObject slot = new JsonObject();
+         slot.addProperty("menu_index", index);
+         slot.addProperty("container_index", liveSlot.getSlotIndex());
+         slot.addProperty("x", liveSlot.x);
+         slot.addProperty("y", liveSlot.y);
+         slot.addProperty("active", liveSlot.isActive());
+         if (index != 1) {
+            var anchor = ThermalVerticalGeometry.slot(index, spec.kind());
+            slot.addProperty("layout_x", anchor.x());
+            slot.addProperty("layout_y", anchor.y());
+         }
+         slot.addProperty("insertion_allowed", liveSlot.mayPlace(new ItemStack(Items.STONE)));
+         slots.add(slot);
+      }
+      result.add("menu_slots", slots);
+      return result;
+   }
+
    private static void writeProof(Minecraft mc, String runNonce) throws Exception {
       require(nonce.equals(runNonce) && CASES.size() == SPECS.size()
          && CAPTURES.size() == SPECS.size() * STATES.length + 3
@@ -959,7 +1181,7 @@ final class NativeCorrectedMachineGuiValidation {
       proof.addProperty("freezer_qualification", "legacy-diagnostic-only");
       proof.addProperty("suite", SUITE);
       proof.addProperty("schema_version", 2);
-      proof.addProperty("coverage_scope", "seven-machine-screens-excluding-tree-cutter");
+      proof.addProperty("coverage_scope", "seven-registered-machine-menus-including-thermal-vertical-freezer-excluding-tree-cutter");
       proof.addProperty("tree_cutter_qualification", "independent:tree-cutter-v3-native.yml");
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", "passed");
