@@ -13,6 +13,7 @@ import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.FactoryStudyGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.TreeCutterV3ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
 import com.oblixorprime.engineersdecorreforged.utility.MilkingState;
@@ -53,6 +54,8 @@ public class MachineMenu extends AbstractContainerMenu {
    // It no longer selects the Factory Placer presentation: ordinary clients use V2.
    public static final String DEV_FACTORY_PLACER_V2_REFERENCE_PROPERTY = "iedctr.dev.factoryPlacerV2Reference";
    private final boolean factoryPlacerV2ReferencePresentation;
+   private final boolean factoryStudyPresentation;
+   public boolean factoryStudyPresentation() { return this.factoryStudyPresentation; }
    private final boolean treeCutterV3ReferencePresentation;
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
@@ -156,6 +159,7 @@ public class MachineMenu extends AbstractContainerMenu {
          && kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide;
       this.factoryPlacerV2ReferencePresentation = factoryPlacerV2ReferenceRequested
          && kind == MachineKind.FACTORY_PLACER && inventory.player.level().isClientSide;
+      this.factoryStudyPresentation = FactoryStudyGeometry.supports(kind) && inventory.player.level().isClientSide;
       this.treeCutterV3ReferencePresentation = kind == MachineKind.SMALL_TREE_CUTTER && inventory.player.level().isClientSide;
       checkContainerSize(container, kind == MachineKind.METAL_CRAFTING_TABLE ? 29 : 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
@@ -202,6 +206,9 @@ public class MachineMenu extends AbstractContainerMenu {
          } else if (factoryPlacerV2ReferencePresentation) {
             var anchor = FactoryPlacerV2ReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
+         } else if (factoryStudyPresentation) {
+            var anchor = FactoryStudyGeometry.anchor(kind, this.slots.size());
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
          }
          if (treeCutterV3ReferencePresentation) {
             var anchor = TreeCutterV3ReferenceGeometry.anchor(slot.containerIndex());
@@ -232,6 +239,9 @@ public class MachineMenu extends AbstractContainerMenu {
             } else if (factoryPlacerV2ReferencePresentation) {
                var anchor = FactoryPlacerV2ReferenceGeometry.anchor(18 + row * 9 + column);
                x = anchor.x(); y = anchor.y();
+            } else if (factoryStudyPresentation) {
+               var anchor = FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + row * 9 + column);
+               x = anchor.x(); y = anchor.y();
             }
             if (treeCutterV3ReferencePresentation) {
                var anchor = TreeCutterV3ReferenceGeometry.anchor(1 + row * 9 + column);
@@ -261,6 +271,9 @@ public class MachineMenu extends AbstractContainerMenu {
             x = anchor.x(); y = anchor.y();
          } else if (factoryPlacerV2ReferencePresentation) {
             var anchor = FactoryPlacerV2ReferenceGeometry.anchor(45 + column);
+            x = anchor.x(); y = anchor.y();
+         } else if (factoryStudyPresentation) {
+            var anchor = FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + 27 + column);
             x = anchor.x(); y = anchor.y();
          }
          if (treeCutterV3ReferencePresentation) {
@@ -503,6 +516,16 @@ public class MachineMenu extends AbstractContainerMenu {
    public void handleAction(Player player, int action, int valueA, int valueB) {
       if (action == 31) return; // Smelter mode changes use the v0.5 dedicated payload only.
       if (this.container instanceof MachineBlockEntity machine) {
+         // Bounded to the newly integrated screens. Presentation cannot authorize a
+         // stale, spectator, remote or wrong-machine action; the server still clamps values.
+         if (FactoryStudyGeometry.supports(this.kind)) {
+            if (player == null || player.level().isClientSide || player.containerMenu != this
+               || player.isSpectator() || !this.stillValid(player) || machine.isRemoved()
+               || machine.getLevel() != player.level()) return;
+            boolean allowed = this.kind == MachineKind.FACTORY_HOPPER ? action >= 1 && action <= 5
+               : this.kind == MachineKind.FACTORY_DROPPER && action >= 10 && action <= 16;
+            if (!allowed) return;
+         }
          machine.handleGuiAction(player, action, valueA, valueB);
       }
    }

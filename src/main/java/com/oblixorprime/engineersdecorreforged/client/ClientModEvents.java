@@ -37,15 +37,15 @@ public final class ClientModEvents {
    public static void registerMenuScreens(RegisterMenuScreensEvent event) {
       event.register((MenuType)ModMenus.METAL_CRAFTING_TABLE.get(), MachineScreen.MetalCraftingTableScreen::new);
       event.register((MenuType)ModMenus.LABELED_CRATE.get(), LabeledCrateScreen::new);
-      event.register((MenuType)ModMenus.FACTORY_HOPPER.get(), MachineScreen.FactoryHopperScreen::new);
-      event.register((MenuType)ModMenus.FACTORY_DROPPER.get(), MachineScreen.FactoryDropperScreen::new);
+      event.register((MenuType)ModMenus.FACTORY_HOPPER.get(), FactoryStudyScreen::new);
+      event.register((MenuType)ModMenus.FACTORY_DROPPER.get(), FactoryStudyScreen::new);
       event.<MachineMenu, AbstractContainerScreen<MachineMenu>>register(ModMenus.FACTORY_PLACER.get(), (menu, inventory, title) ->
          menu.factoryPlacerV2ReferencePresentation()
             ? new FactoryPlacerV2ReferenceScreen(menu, inventory, title)
             : new MachineScreen.FactoryPlacerScreen(menu, inventory, title));
       event.register((MenuType)ModMenus.SMALL_BLOCK_BREAKER.get(), MachineScreen.SmallBlockBreakerScreen::new);
       event.register((MenuType)ModMenus.SMALL_WASTE_INCINERATOR.get(), MachineScreen.SmallWasteIncineratorScreen::new);
-      event.register((MenuType)ModMenus.SMALL_LAB_FURNACE.get(), MachineScreen.SmallLabFurnaceScreen::new);
+      event.register((MenuType)ModMenus.SMALL_LAB_FURNACE.get(), FactoryStudyScreen::new);
       event.register((MenuType)ModMenus.SMALL_ELECTRICAL_FURNACE.get(), MachineScreen.SmallElectricalFurnaceScreen::new);
       event.register((MenuType)ModMenus.SMALL_MINERAL_SMELTER.get(), ThermalVerticalScreen::new);
       event.register((MenuType)ModMenus.SMALL_FREEZER.get(), ThermalVerticalScreen::new);
