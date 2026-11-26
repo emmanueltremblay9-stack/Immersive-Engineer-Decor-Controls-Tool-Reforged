@@ -15,6 +15,7 @@ class ProofTests(unittest.TestCase):
             selection_source='server-seeded ContainerData; not user selection',selection_render_frames=3)
         self.proof['cases'][0].update(visible_machine_slots=18,total_menu_slots=54,ring_x=33,ring_y=67)
         self.proof['cases'][5].update(visible_nonempty_slots=51,visible_machine_slots=15,total_menu_slots=51)
+        self.proof['cases'][5].update(dropper_filter_gate=2,dropper_external_powered=False)
         self.proof['cases'][6].update(visible_nonempty_slots=47,visible_machine_slots=11,total_menu_slots=47)
         self.proof['hopper_selections']=[dict(self.proof['cases'][0],server_selection=row*6,client_selection=row*6,ring_y=8+18*row,
             capture='factory-hopper'+('' if row==0 else '-selection-row-'+str(row))+'.png') for row in range(3)]
@@ -55,6 +56,11 @@ class ProofTests(unittest.TestCase):
         for index,key,value in ((0,'visible_machine_slots',17),(5,'total_menu_slots',50),(6,'visible_nonempty_slots',46)):
             p=copy.deepcopy(self.proof);p['cases'][index][key]=value
             with self.subTest(index=index,key=key),self.assertRaises(SmokeFailure):self.check(p)
+
+    def test_rejects_dropper_capture_fixture_that_can_transfer_items(self):
+        for key,value in [('dropper_filter_gate',0),('dropper_external_powered',True)]:
+            p=copy.deepcopy(self.proof);p['cases'][5][key]=value
+            with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)
 
     def test_v3_screens_are_exact_factory_study_screens_with_18_15_and_11_machine_slots(self):
         self.assertEqual(V3_LAYOUTS,{0:(18,54),5:(15,51),6:(11,47)})

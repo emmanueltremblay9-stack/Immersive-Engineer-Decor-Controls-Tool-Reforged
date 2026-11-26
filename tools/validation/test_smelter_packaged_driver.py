@@ -8,7 +8,12 @@ class DriverTests(unittest.TestCase):
     def test_fixture_preserves_every_original_gate(self):
         old=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java').read_text()
         new=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/NativeSmelterGuiValidation.java').read_text()
-        self.assertEqual(new.replace('package com.oblixorprime.iedctrtest.smelter;', 'package com.oblixorprime.engineersdecorreforged.client.validation;'),old)
+        new=new.replace('package com.oblixorprime.iedctrtest.smelter;', 'package com.oblixorprime.engineersdecorreforged.client.validation;')
+        actual_fit='''var fit = FreezerReferenceGeometry.fitCanvas(mc.screen.width, mc.screen.height,
+         ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);'''
+        historical_fit='var fit = FreezerReferenceGeometry.fit(mc.screen.width, mc.screen.height);'
+        self.assertEqual(new.count(actual_fit),1,'Only the verified ThermalVertical canvas fit may differ from the original fixture')
+        self.assertEqual(new.replace(actual_fit,historical_fit),old)
     def test_support_is_server_prepared_before_original_fixture(self):
         text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
         self.assertIn('new BlockPos(x, 80, z), Blocks.STONE.defaultBlockState()',text)

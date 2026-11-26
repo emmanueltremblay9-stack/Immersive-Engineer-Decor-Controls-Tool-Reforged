@@ -10,8 +10,12 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure
 MOD = 'immersive_engineer_decor_controls_tool_reforged'
 HARNESS = 'iedctr_smelter_validation'
 PREFIX = 'com.oblixorprime.engineersdecorreforged.'
-CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'ModBlocks', 'client.SmallMineralSmelterHybridScreen', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity')]
-TEXTURES = {'textures/gui/small_mineral_smelter_hybrid_v05/background.png': '450784a3989897a9241abe6cec891f0432812e55f5a38c84a09b0f2334cda182'}
+CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'ModBlocks', 'client.ThermalVerticalScreen', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity')]
+TEXTURES = {
+    'textures/gui/thermal_vertical/smelter/neutral.png': 'bd51e1a8e9c1fa684f57a4636787c263a0e686e6f7ac5b9336ecd466768e738d',
+    'textures/gui/thermal_vertical/smelter/effect.png': '1489c7a0e4dcd666cbe0995a424969d677be7459fd5123703c52dbf0957a94e5',
+    'textures/gui/thermal_vertical/smelter/energy.png': 'a45c63638fce49f90b9e396bdb318556c59e71ac4a56cdbc3a6864d2a91551ea',
+}
 
 
 

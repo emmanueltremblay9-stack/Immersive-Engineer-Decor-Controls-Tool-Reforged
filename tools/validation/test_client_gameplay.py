@@ -8,7 +8,8 @@ import unittest
 import zlib
 
 from client_gameplay import (EXPECTED_CASES, SUITE, validate_corrected_machine_gui_proof,
-                             validate_proof, validate_smelter_gui_proof)
+                             validate_proof, validate_smelter_gui_proof,
+                             thermal_vertical_fit)
 from client_mixin_smoke import SmokeFailure
 
 
@@ -128,7 +129,7 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
         self.pr_head_sha = "2" * 40
         self.window_width, self.window_height = 1280, 260
         width, height = 1280, 260
-        scale = min(1.0, (min(width, height) - 12.0) / 314.0)
+        scale, origin_x, origin_y = thermal_vertical_fit(width, height)
         self.proof = {
             "suite": "native-smelter-gui-v2", "schema_version": 2,
             "nonce": self.nonce, "status": "passed", "actual_integrated_world": True,
@@ -151,9 +152,8 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             },
             "window_width": self.window_width, "window_height": self.window_height,
             "screen": {
-                "gui_width": width, "gui_height": height, "panel_width": 314, "panel_height": 314,
-                "view_scale": scale, "origin_x": (width - 314 * scale) / 2,
-                "origin_y": (height - 314 * scale) / 2,
+                "gui_width": width, "gui_height": height, "panel_width": 347, "panel_height": 381,
+                "view_scale": scale, "origin_x": origin_x, "origin_y": origin_y,
                 "output_slot_visible": True, "output_slot_insertion_forbidden": True,
                 "legacy_drawer_and_mode_tabs_absent": True, "resize_restored": True,
             },
@@ -198,6 +198,18 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
 
     def test_accepts_thermal_vertical_schema_as_unit_control(self):
         self.assertEqual(self.check(), self.proof)
+
+    def test_independent_rectangular_fit_matches_both_native_viewports(self):
+        # Native JSON dimensions are screen-logical pixels. These two test
+        # profiles run with GUI scale 1, so logical and framebuffer sizes agree.
+        scale, x, y = thermal_vertical_fit(1280, 720)
+        self.assertAlmostEqual(scale, 0.78)
+        self.assertAlmostEqual(x, 504.67)
+        self.assertAlmostEqual(y, 211.41)
+        scale, x, y = thermal_vertical_fit(1280, 260)
+        self.assertAlmostEqual(scale, 0.6509186351706037)
+        self.assertAlmostEqual(x, 527.0656167979002)
+        self.assertAlmostEqual(y, 6.0)
 
     def test_rejects_obsolete_drawer_and_mode_tabs(self):
         for field in ("drawer_accessible_messages", "drawer_input_method", "translated_lava_mode"):
@@ -250,7 +262,8 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
                 self.check(proof)
 
     def test_rejects_wrong_fitted_viewport_and_locale(self):
-        for field, value in (("panel_width", 234), ("view_scale", 1.0), ("origin_y", 0.0)):
+        for field, value in (("panel_width", 234), ("panel_height", 314),
+                             ("view_scale", 1.0), ("origin_y", 0.0)):
             proof = copy.deepcopy(self.proof)
             proof["screen"][field] = value
             with self.subTest(field=field), self.assertRaises(SmokeFailure):

@@ -122,6 +122,8 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
     validate_selection_pixels(selections,game,width,height,gui_scale)
     require(selections[0]==cases[0],'Initial Hopper observation differs')
     require(cases[5].get('visible_nonempty_slots')==51,'Dropper 15 machine slots and 36 player slots are not all present')
+    require(cases[5].get('dropper_filter_gate')==2,'Dropper capture did not use the AND filter gate')
+    require(cases[5].get('dropper_external_powered') is False,'Dropper capture fixture was powered')
 
 
 def bind_built_jar(project, expected_hash, env):

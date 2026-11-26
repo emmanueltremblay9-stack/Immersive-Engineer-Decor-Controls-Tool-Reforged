@@ -170,6 +170,13 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
     return proof
 
 
+def thermal_vertical_fit(gui_width: int, gui_height: int) -> tuple[float, float, float]:
+    """Independent mirror of ThermalVerticalScreen's uniform 347x381 fit."""
+    short_edge = min(gui_width, gui_height)
+    margin = min(6.0, (short_edge - 1.0) / 2.0)
+    scale = min(1.0, 0.78, (gui_width - 2.0 * margin) / 347.0,
+                (gui_height - 2.0 * margin) / 381.0)
+    return scale, (gui_width - 347.0 * scale) / 2.0, (gui_height - 381.0 * scale) / 2.0
 
 
 def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
@@ -222,7 +229,7 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
         raise SmokeFailure("Thermal vertical canvas evidence is missing")
     gw,gh,scale=screen.get("gui_width"),screen.get("gui_height"),screen.get("view_scale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or screen.get("panel_width") != 314 or screen.get("panel_height") != 314
+            or screen.get("panel_width") != 347 or screen.get("panel_height") != 381
             or type(gw) is not int or type(gh) is not int or gw <= 12 or gh <= 12
             or type(scale) not in (int,float) or not 0 < scale <= 1
             or screen.get("output_slot_visible") is not True
@@ -232,13 +239,14 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
             or any(old in proof for old in (
                 "drawer_accessible_messages","drawer_input_method","translated_lava_mode"))):
         raise SmokeFailure("Smelter screen failed visible-output or no-obsolete-widgets gate")
-    expected_scale=min(1.0,(min(gw,gh)-12.0)/314.0)
-    ox,oy=(gw-314*expected_scale)/2.0,(gh-314*expected_scale)/2.0
+    # ThermalVerticalScreen fits the actual 347x381 canvas, with the same
+    # six-pixel margin policy and 0.78 logical-size ceiling used by the screen.
+    expected_scale, ox, oy = thermal_vertical_fit(gw, gh)
     if (abs(scale-expected_scale)>0.002 or type(screen.get("origin_x")) not in (int,float)
             or type(screen.get("origin_y")) not in (int,float)
             or abs(screen["origin_x"]-ox)>0.6 or abs(screen["origin_y"]-oy)>0.6
             or ox < 0 or oy < 0 or (window_height==260 and scale >= 1)):
-        raise SmokeFailure("Smelter logical 314-square panel is not fitted to the native viewport")
+        raise SmokeFailure("Smelter logical 347x381 panel is not fitted to the native viewport")
     transfer=proof.get("output_transfer")
     if (not isinstance(transfer,dict)
             or transfer.get("method") != "integrated_server_MachineMenu.quickMoveStack"

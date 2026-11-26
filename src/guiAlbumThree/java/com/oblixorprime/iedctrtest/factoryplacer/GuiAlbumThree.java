@@ -151,6 +151,14 @@ public final class GuiAlbumThree {
                         obs.addProperty("visible_machine_slots",activeMenu.visibleMachineSlots());
                         obs.addProperty("total_menu_slots",activeMenu.slots.size());
                         obs.addProperty("machine_kind",activeMenu.kind().registryName());
+                        if(caseIndex==5){
+                            int filterGate=activeMenu.field(5);
+                            boolean powered=mc.level.hasNeighborSignal(machines[5].getBlockPos());
+                            require(filterGate==2,"Dropper capture fixture must use the AND filter gate");
+                            require(!powered,"Dropper capture fixture must remain unpowered");
+                            obs.addProperty("dropper_filter_gate",filterGate);
+                            obs.addProperty("dropper_external_powered",powered);
+                        }
                     }
                     var production=ModList.get().getModFileById(EngineersDecorReforged.MOD_ID).getFile();
                     var entry=mc.screen.getClass().getName().replace('.', '/')+".class";
@@ -280,7 +288,10 @@ public final class GuiAlbumThree {
         for(int i=0;i<NAMES.length;i++){var pos=new BlockPos(i*2,80,0);level.setBlock(pos,blocks.get(i).defaultBlockState(),3);machines[i]=(MachineBlockEntity)level.getBlockEntity(pos);require(machines[i]!=null,"Missing machine "+i);}
         // Disable continuous transfer while recording deterministic, filled slots.
         machines[0].dataAccessForTests().set(2,0);
-        machines[5].dataAccessForTests().set(5,0);
+        // The capture fixture fills matching input and filter stacks. Keep the
+        // production AND gate and leave redstone disconnected so it cannot
+        // trigger real Dropper transfers during the screenshot.
+        machines[5].dataAccessForTests().set(5,2);
         for(int slot=0;slot<18;slot++)machines[0].setItem(slot,new ItemStack(Items.COBBLESTONE,slot+1));
         for(int slot=0;slot<12;slot++)machines[5].setItem(slot,new ItemStack(Items.COBBLESTONE,slot+1));
         for(int slot=12;slot<15;slot++)machines[5].setItem(slot,new ItemStack(Items.COBBLESTONE,1));
