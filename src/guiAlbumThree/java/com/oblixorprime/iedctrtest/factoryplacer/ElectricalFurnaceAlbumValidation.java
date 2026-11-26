@@ -153,7 +153,10 @@ final class ElectricalFurnaceAlbumValidation {
                 record.addProperty("expected_speed",SPEEDS[step]);record.addProperty("expected_energy",ENERGY[step]);
                 record.addProperty("client_speed",menu(mc).field(4));record.addProperty("client_energy",menu(mc).field(1));
                 record.addProperty("client_capacity",menu(mc).field(5));record.add("server",serverEvidence);
-                record.addProperty("menu_id",menu(mc).containerId);record.addProperty("gui_scale",mc.getWindow().getGuiScale());
+                double guiScale=mc.getWindow().getGuiScale();
+                require(Double.isFinite(guiScale)&&guiScale>=1&&guiScale<=Integer.MAX_VALUE&&guiScale==Math.rint(guiScale),
+                    "Native GUI scale must be a finite positive integer");
+                record.addProperty("menu_id",menu(mc).containerId);record.addProperty("gui_scale",(int)guiScale);
                 record.addProperty("screen",mc.screen.getClass().getName());record.addProperty("render_frames",renderFrames);
                 record.addProperty("native_presses",CLICKS[step]);record.addProperty("x11_button",BUTTONS[step]);
                 record.addProperty("click_x",step==8?BORDER_X:DIAL_X);record.addProperty("click_y",DIAL_Y);
