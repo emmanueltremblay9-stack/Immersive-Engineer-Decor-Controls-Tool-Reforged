@@ -753,13 +753,25 @@
     },
     "tools/validation/tree_cutter_v3_native.py": {
       "source_sha256": "e21de9b735b1224cbdcb306afa4ad4c2c2273031d5c7266362863231ccecc327",
-      "output_sha256": "f3345b44e818c6a451164d3b8aec444cc21b2c57de2e2bbdb63b04e8d1b58bcd",
+      "output_sha256": "88e0bbda84ec2a4090c358d5577b8762f6d9cc24e225139580f51287f94a1ec6",
       "hunks": [
         {
           "start": 18,
           "end": 19,
           "previous": "ART_SHA = 'bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d'\n",
           "current": "ART_SHA = '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4'\n"
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "previous": "",
+          "current": "            # The authorized exterior-alpha pass makes non-opaque source pixels\n            # compose over the live world; they cannot be compared to the PNG's\n            # stored RGBA bytes. The exact packaged-art hash is checked above,\n            # so retain strict native equality only for fully opaque neighborhoods.\n"
+        },
+        {
+          "start": 83,
+          "end": 85,
+          "previous": "",
+          "current": "            if any(candidate[3] != 255 for candidate in candidates):\n                continue\n"
         }
       ]
     },
@@ -819,13 +831,25 @@
     },
     "tools/validation/factory_placer_v2_reference_native.py": {
       "source_sha256": "b6f9cf96df76320b1d51a0fcc70e2b63f9b19674feedf3166b7993468340cebe",
-      "output_sha256": "96e1f6cc225466f091faabfc6b880b6e4576f0b5713e8cd487826011e289ddf6",
+      "output_sha256": "46490c5181b613211f707b648019b9b5c04696af942ed53501ca8fafbe6b0544",
       "hunks": [
         {
           "start": 21,
           "end": 22,
           "previous": "ART_SHA = 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b'\n",
           "current": "ART_SHA = 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d'\n"
+        },
+        {
+          "start": 313,
+          "end": 314,
+          "previous": "        require(any(actual==art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]\n",
+          "current": "        candidates=[art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]\n"
+        },
+        {
+          "start": 315,
+          "end": 323,
+          "previous": "                    for xx in range(max(0,tx-1),min(sw,tx+2))),\n",
+          "current": "                    for xx in range(max(0,tx-1),min(sw,tx+2))]\n        # Only the approved alpha pass changes these exterior pixels. They\n        # composite over the live world, so compare source RGB only for opaque\n        # texels with fully opaque neighborhoods; the exact texture hash above\n        # still pins the alpha mask.\n        if any(candidate[3] != 255 for candidate in candidates):\n            continue\n        require(actual in candidates,\n"
         }
       ]
     },

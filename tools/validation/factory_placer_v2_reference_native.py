@@ -311,9 +311,16 @@ def validate_source_pixels(pixels,width,height,gui_scale,source):
     count=0
     for x,y,tx,ty in source_samples(width,height,gui_scale):
         actual=pixels[(y*width+x)*4:(y*width+x+1)*4]
-        require(any(actual==art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]
+        candidates=[art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]
                     for yy in range(max(0,ty-1),min(sh,ty+2))
-                    for xx in range(max(0,tx-1),min(sw,tx+2))),
+                    for xx in range(max(0,tx-1),min(sw,tx+2))]
+        # Only the approved alpha pass changes these exterior pixels. They
+        # composite over the live world, so compare source RGB only for opaque
+        # texels with fully opaque neighborhoods; the exact texture hash above
+        # still pins the alpha mask.
+        if any(candidate[3] != 255 for candidate in candidates):
+            continue
+        require(actual in candidates,
                 f'Native exterior pixel differs from retained source at ({x},{y})')
         count+=1
     require(count>=100,'Insufficient retained-source pixel samples')

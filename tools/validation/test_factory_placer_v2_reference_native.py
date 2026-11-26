@@ -208,6 +208,23 @@ class NativePlacerProofTest(unittest.TestCase):
             c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
         with self.assertRaisesRegex(SmokeFailure,'differs from retained source'):self.validate(p)
 
+    def test_authorized_transparent_exterior_uses_world_pixels(self):
+        # This source sample lies in the manifest-approved transparent exterior.
+        # It may show the world behind the panel; opaque retained artwork must
+        # still match exact native pixels.
+        x,y=442,143
+        for c in self.proof['captures']:
+            w,h=c['width'],c['height'];path=self.folder/c['name']
+            _,_,pixels=decode_png(path);pixels=bytearray(pixels)
+            pixels[(y*w+x)*4:(y*w+x+1)*4]=bytes((24,31,38,255))
+            data=png_rows(w,h,[pixels[row*w*4:(row+1)*w*4] for row in range(h)])
+            path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
+            tx,ty,tw,th=c['controls_x'],c['controls_y'],c['controls_width'],c['controls_height']
+            crop=png_rows(tw,th,[pixels[(row*w+tx)*4:(row*w+tx+tw)*4] for row in range(ty,ty+th)])
+            (self.folder/c['controls_name']).write_bytes(crop);c['controls_sha256']=hashlib.sha256(crop).hexdigest()
+            c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
+        self.validate()
+
     def test_source_hash_verified_even_after_cache_populated(self):
         source=self.game/'wrong-source.png';source.write_bytes(b'wrong source')
         with self.assertRaisesRegex(SmokeFailure,'artwork hash differs'):self.validate(source_path=source)

@@ -101,6 +101,18 @@ class TreeEvidenceTests(unittest.TestCase):
         (self.game/c['file']).write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
         with self.assertRaisesRegex(SmokeFailure,'pixels differ'):self.validate()
 
+    def test_authorized_transparent_exterior_uses_world_pixels(self):
+        c=self.proof['captures'][0];w,h=c['width'],c['height'];path=self.game/c['file']
+        _,_,pixels=decode_png(path);pixels=bytearray(pixels)
+        # At the first broad source sample this source alpha is zero. A native
+        # framebuffer contains the world behind it, not the stored transparent
+        # RGBA value; opaque source samples remain strictly checked.
+        x,y=5,5
+        pixels[(y*w+x)*4:(y*w+x+1)*4]=bytes((24,31,38,255))
+        data=png_rows(w,h,[pixels[row*w*4:(row+1)*w*4] for row in range(h)])
+        path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
+        self.validate()
+
     def test_full_frame_rejected_even_with_updated_hash(self):
         c=self.proof['captures'][0]
         data=png_rows(self.width,self.height,[bytes((20,20,20,255))*self.width]*self.height)

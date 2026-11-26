@@ -74,9 +74,15 @@ def validate_pixels(path,width,height,scale,source):
             px=pixels[(cy*w+cx)*4:(cy*w+cx+1)*4]
             ix,iy=math.floor(sx),math.floor(sy)
             # One source texel tolerance for float rasterization at reduced GUI scales.
+            # The authorized exterior-alpha pass makes non-opaque source pixels
+            # compose over the live world; they cannot be compared to the PNG's
+            # stored RGBA bytes. The exact packaged-art hash is checked above,
+            # so retain strict native equality only for fully opaque neighborhoods.
             candidates=[source[(yy*1254+xx)*4:(yy*1254+xx+1)*4]
                         for yy in range(max(0,iy-1),min(1254,iy+2))
                         for xx in range(max(0,ix-1),min(1254,ix+2))]
+            if any(candidate[3] != 255 for candidate in candidates):
+                continue
             require(px in candidates,'Native GUI pixels differ from retained source')
             colors.add(px);samples+=1
     require(samples>=500 and len(colors)>=25,'Insufficient source-bound pixel coverage')
