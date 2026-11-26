@@ -77,6 +77,34 @@ def _validate_crop(capture: dict, suffix: str, rect: tuple[float, float, float, 
     return hashlib.sha256(data).hexdigest()
 
 
+def load_run_proofs(game: Path) -> tuple[dict, dict]:
+    """Read gameplay status before requiring the success-only Freezer proof."""
+    main_path = game / "client-gameplay-result.json"
+    if not main_path.is_file():
+        raise SmokeFailure("Native client gameplay result is missing; cannot identify failed stage")
+    try:
+        main = json.loads(main_path.read_text())
+    except (OSError, json.JSONDecodeError) as error:
+        raise SmokeFailure(f"Native client gameplay result is unreadable: {error}") from error
+    if not isinstance(main, dict):
+        raise SmokeFailure("Native client gameplay result is not a JSON object")
+    if main.get("status") != "passed":
+        phase = main.get("phase") or "UNKNOWN"
+        detail = main.get("error") or "no failure detail recorded"
+        raise SmokeFailure(f"Native client gameplay failed at {phase}: {detail}")
+
+    proof_path = game / "client-freezer-reference-result.json"
+    if not proof_path.is_file():
+        raise SmokeFailure("Freezer success proof is missing after gameplay status passed")
+    try:
+        proof = json.loads(proof_path.read_text())
+    except (OSError, json.JSONDecodeError) as error:
+        raise SmokeFailure(f"Freezer success proof is unreadable after gameplay status passed: {error}") from error
+    if not isinstance(proof, dict):
+        raise SmokeFailure("Freezer success proof is not a JSON object")
+    return main, proof
+
+
 def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: Path,
                    logs: str, exit_code: int | None, timed_out: bool,
                    width: int, height: int, language: str) -> dict:
@@ -286,8 +314,7 @@ def main() -> int:
         log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 1280x{args.height}x24"]
                                     + gradle + ["runClient"], project, env, log, args.timeout)
-        proof = json.loads((game / "client-freezer-reference-result.json").read_text())
-        main_proof = json.loads((game / "client-gameplay-result.json").read_text())
+        main_proof, proof = load_run_proofs(game)
         logs = log.with_suffix(".observed.log").read_text(errors="replace")
         for name in ("latest.log", "debug.log"):
             runtime = game / "logs" / name

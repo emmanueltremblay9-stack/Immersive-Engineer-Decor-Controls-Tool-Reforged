@@ -22,6 +22,7 @@ import org.lwjgl.glfw.GLFW;
  */
 public final class ThermalVerticalScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String NS = "immersive_engineer_decor_controls_tool_reforged";
+   public static final String FREEZER_RECOVERY_HELP_KEY = "gui." + NS + ".freezer_reference.recover_help";
    private static final ResourceLocation FREEZER_BASE = texture("thermal_vertical/freezer/neutral.png");
    private static final ResourceLocation FREEZER_EFFECT = texture("thermal_vertical/freezer/effect.png");
    private static final ResourceLocation FREEZER_ENERGY = texture("thermal_vertical/freezer/energy.png");
@@ -127,7 +128,7 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
       renderTooltip(graphics, mouseX, mouseY);
       if (recoveryButton != null && recoveryButton.visible && recoveryButton.isHovered()) {
          Component recoveryHelp = Component.translatableWithFallback(
-            NS + ".freezer_reference.recover_help",
+            FREEZER_RECOVERY_HELP_KEY,
             "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.");
          // Keep the localized instruction inside narrow Prism windows without
          // changing its wording or the recovery control's hitbox.

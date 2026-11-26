@@ -14,8 +14,11 @@ FRENCH = "Récupérer l’ancien emplacement 1 dans votre inventaire. Ctrl+Maj+R
 class FreezerRecoveryTooltipTest(unittest.TestCase):
     def test_real_registered_screen_uses_localized_recovery_key(self):
         source = SCREEN.read_text()
-        self.assertIn("Component.translatableWithFallback(", source)
-        self.assertIn('NS + ".freezer_reference.recover_help"', source)
+        self.assertIn('FREEZER_RECOVERY_HELP_KEY = "gui." + NS + ".freezer_reference.recover_help"', source)
+        self.assertIn("Component.translatableWithFallback(\n            FREEZER_RECOVERY_HELP_KEY,", source)
+        validation = (ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java").read_text()
+        self.assertIn("RECOVERY_KEY = ThermalVerticalScreen.FREEZER_RECOVERY_HELP_KEY", validation)
+        self.assertNotIn('RECOVERY_KEY = "gui.', validation)
         self.assertNotIn('Component.literal("Recover reserved legacy items")', source)
         self.assertIn("recoveryButton.isHovered()", source)
 

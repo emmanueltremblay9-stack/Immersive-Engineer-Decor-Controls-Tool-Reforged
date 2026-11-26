@@ -72,7 +72,7 @@ public final class NativeFreezerReferenceValidation {
    private static JsonObject tooltipObservation;
    private static int tooltipFrames;
    private static boolean tooltipInFrame;
-   private static final String RECOVERY_KEY = "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help";
+   private static final String RECOVERY_KEY = ThermalVerticalScreen.FREEZER_RECOVERY_HELP_KEY;
    private static int ticks;
    private static int energyIndex;
    private static int stableFrames;

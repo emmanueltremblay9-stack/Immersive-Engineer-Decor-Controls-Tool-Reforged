@@ -1,6 +1,7 @@
 """Synthetic schema/rejection tests only; these do not execute Minecraft."""
 import copy
 import hashlib
+import json
 from pathlib import Path
 import struct
 import tempfile
@@ -8,7 +9,8 @@ import unittest
 import zlib
 
 from freezer_reference_native import (ACTIVE_ARTS, CANVAS_HEIGHT, CANVAS_WIDTH, CAPTURES, CASES,
-    EFFECT_CROP, ENERGY_CROP, SCREEN_CLASS, SUITE, _crop_dimensions, _expected_scale, validate_proof)
+    EFFECT_CROP, ENERGY_CROP, SCREEN_CLASS, SUITE, _crop_dimensions, _expected_scale,
+    load_run_proofs, validate_proof)
 from client_mixin_smoke import SmokeFailure
 
 
@@ -42,6 +44,17 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
             "native_visual_acceptance": False, "selected_language": "en_us", "cases": sorted(CASES),
             "captures": [], "frost_captures": []}
         self.rebuild(1280, 720)
+
+    def test_gameplay_failure_stage_precedes_missing_success_proof(self):
+        game = Path(self.temp.name) / "failed-run"
+        game.mkdir()
+        (game / "client-gameplay-result.json").write_text(json.dumps({
+            "status": "failed", "phase": "FREEZER_REFERENCE",
+            "error": "Reserved-item recovery control is not visible"
+        }))
+        with self.assertRaisesRegex(SmokeFailure,
+                "FREEZER_REFERENCE: Reserved-item recovery control is not visible"):
+            load_run_proofs(game)
 
     def _write_crop(self, capture, kind, rect, width, height, scale, token):
         name = capture["name"][:-4] + f"-{kind}.png"
