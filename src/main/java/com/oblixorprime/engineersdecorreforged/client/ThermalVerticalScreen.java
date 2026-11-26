@@ -168,8 +168,11 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
    private void drawEnergy(GuiGraphics graphics, ResourceLocation layer, int x0, int y0, int x1, int y1) {
       int top = ThermalVerticalGeometry.energyClipTop(y0, y1, menu.energyStored(), menu.energyCapacity());
       if (top >= y1) return;
-      // Reveal the painted cells from the bottom upward, and draw nothing at zero FE.
-      graphics.enableScissor(x0, top, x1, y1);
+      // GuiGraphics.enableScissor uses GUI-scaled screen coordinates and does
+      // not follow the pose-stack transform used to draw this canvas. Project
+      // the logical meter bounds through the same view transform first.
+      var scissor = view.screenBounds(x0, top, x1, y1);
+      graphics.enableScissor(scissor.left(), scissor.top(), scissor.right(), scissor.bottom());
       try {
          graphics.blit(layer, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);
       } finally {

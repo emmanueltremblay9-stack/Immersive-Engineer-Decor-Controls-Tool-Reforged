@@ -1,0 +1,70 @@
+{
+  "schema": "iedctr-prism-freezer-energy-scissor-v1",
+  "base_commit": "b9fd7697645654633873a967eebaf2d61eda35ce",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java": {
+      "previous_source_commit": "b9fd7697645654633873a967eebaf2d61eda35ce",
+      "old_sha256": "ed075bc81813346f1af7fc57c3ed672366df12489f8388f0d2f956f3067602d4",
+      "new_sha256": "a026fded31b1ef6cfab59c1a4a6b9d3e0e2f5dcc5f6ffbc6e01c406bb17da4e5",
+      "hunks": [
+        {
+          "start": 170,
+          "end": 175,
+          "current": "      // GuiGraphics.enableScissor uses GUI-scaled screen coordinates and does\n      // not follow the pose-stack transform used to draw this canvas. Project\n      // the logical meter bounds through the same view transform first.\n      var scissor = view.screenBounds(x0, top, x1, y1);\n      graphics.enableScissor(scissor.left(), scissor.top(), scissor.right(), scissor.bottom());\n",
+          "previous": "      // Reveal the painted cells from the bottom upward, and draw nothing at zero FE.\n      graphics.enableScissor(x0, top, x1, y1);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometry.java": {
+      "previous_source_commit": "b9fd7697645654633873a967eebaf2d61eda35ce",
+      "old_sha256": "1e2263a7108706978575cbea9176832900616bce3899bbd45e926975f950f925",
+      "new_sha256": "9f228a5b84bf60c02abd61ec7bb1808d833fd28dc991b1800d30a723c6acc7a3",
+      "hunks": [
+        {
+          "start": 174,
+          "end": 188,
+          "current": "      /**\n       * Convert a canvas-local rectangle to the GUI-scaled screen coordinates\n       * expected by GuiGraphics.enableScissor. Unlike draw coordinates, the\n       * scissor stack is not transformed by the active pose stack.\n       */\n      public ScissorBounds screenBounds(double left, double top, double right, double bottom) {\n         if (!Double.isFinite(left) || !Double.isFinite(top) || !Double.isFinite(right)\n            || !Double.isFinite(bottom) || right <= left || bottom <= top) {\n            throw new IllegalArgumentException(\"Scissor rectangle must be finite and non-empty\");\n         }\n         return new ScissorBounds((int)Math.floor(this.screenX(left)), (int)Math.floor(this.screenY(top)),\n            (int)Math.ceil(this.screenX(right)), (int)Math.ceil(this.screenY(bottom)));\n      }\n\n",
+          "previous": ""
+        },
+        {
+          "start": 206,
+          "end": 212,
+          "current": "\n   public record ScissorBounds(int left, int top, int right, int bottom) {\n      public ScissorBounds {\n         if (right <= left || bottom <= top) throw new IllegalArgumentException(\"Scissor bounds must be non-empty\");\n      }\n   }\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometryTest.java": {
+      "previous_source_commit": "b9fd7697645654633873a967eebaf2d61eda35ce",
+      "old_sha256": "ff250a39f715b88c6387700b4ecfeca1d90e500f7995025f89b6c567ff773060",
+      "new_sha256": "02559d7464841664af976d1c7c3e0e5c0e2d75cc8000d8659e41ba16eb49f6b3",
+      "hunks": [
+        {
+          "start": 3,
+          "end": 5,
+          "current": "import static org.junit.Assert.assertEquals;\nimport static org.junit.Assert.assertTrue;\n",
+          "previous": ""
+        },
+        {
+          "start": 34,
+          "end": 53,
+          "current": "   public void scissorBoundsFollowCanvasTransformInGuiScaledScreenCoordinates() {\n      for (int[] viewport : new int[][] {{1280, 260}, {1280, 720}}) {\n         var view = FreezerReferenceGeometry.fitCanvas(viewport[0], viewport[1], 347, 381, 0.78F);\n         var bounds = view.screenBounds(56, 89, 77, 192);\n         assertEquals((int)Math.floor(view.screenX(56)), bounds.left());\n         assertEquals((int)Math.floor(view.screenY(89)), bounds.top());\n         assertEquals((int)Math.ceil(view.screenX(77)), bounds.right());\n         assertEquals((int)Math.ceil(view.screenY(192)), bounds.bottom());\n         // The real 7-segment art sits inside the local meter bounds. The\n         // projected clip must include it even when the canvas is scaled.\n         assertTrue(bounds.left() <= view.screenX(62.3));\n         assertTrue(bounds.right() > view.screenX(72));\n         assertTrue(bounds.top() <= view.screenY(124));\n         assertTrue(bounds.bottom() >= view.screenY(186));\n         assertTrue(\"screen-space scissor must not be mistaken for canvas-local coordinates\", bounds.left() > 56);\n      }\n   }\n\n   @Test\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_freezer_render_sync.py": {
+      "previous_source_commit": "b9fd7697645654633873a967eebaf2d61eda35ce",
+      "old_sha256": "c4cbac62d3143782c04a54f78793e3552d14cd22d50f731c580906a961446b2c",
+      "new_sha256": "668f5006ab4e52a44f19c6454c8f0a1567b8e6cfb907dbca5b64fd358c7b877b",
+      "hunks": [
+        {
+          "start": 24,
+          "end": 34,
+          "current": "    def test_energy_clip_projects_scissor_to_screen_space(self):\n        screen = (Path(__file__).resolve().parents[2] /\n                  'src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java').read_text()\n        geometry = (Path(__file__).resolve().parents[2] /\n                    'src/main/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometry.java').read_text()\n        self.assertIn('view.screenBounds(x0, top, x1, y1)', screen)\n        self.assertIn('enableScissor(scissor.left(), scissor.top(), scissor.right(), scissor.bottom())', screen)\n        self.assertIn('Math.floor(this.screenX(left))', geometry)\n        self.assertIn('Math.ceil(this.screenY(bottom))', geometry)\n\n",
+          "previous": ""
+        }
+      ]
+    }
+  }
+}

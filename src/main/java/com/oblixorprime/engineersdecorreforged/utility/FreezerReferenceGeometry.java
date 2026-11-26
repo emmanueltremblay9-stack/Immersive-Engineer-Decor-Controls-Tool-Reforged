@@ -172,6 +172,20 @@ public final class FreezerReferenceGeometry {
          return this.originY + localY * this.scale;
       }
 
+      /**
+       * Convert a canvas-local rectangle to the GUI-scaled screen coordinates
+       * expected by GuiGraphics.enableScissor. Unlike draw coordinates, the
+       * scissor stack is not transformed by the active pose stack.
+       */
+      public ScissorBounds screenBounds(double left, double top, double right, double bottom) {
+         if (!Double.isFinite(left) || !Double.isFinite(top) || !Double.isFinite(right)
+            || !Double.isFinite(bottom) || right <= left || bottom <= top) {
+            throw new IllegalArgumentException("Scissor rectangle must be finite and non-empty");
+         }
+         return new ScissorBounds((int)Math.floor(this.screenX(left)), (int)Math.floor(this.screenY(top)),
+            (int)Math.ceil(this.screenX(right)), (int)Math.ceil(this.screenY(bottom)));
+      }
+
       public double localDelta(double screenDelta) {
          return screenDelta / this.scale;
       }
@@ -188,6 +202,12 @@ public final class FreezerReferenceGeometry {
       /** Floor rather than truncate: a pointer just outside the top edge stays outside. */
       public int renderPointerY(double screenY) {
          return (int)Math.floor(this.localY(screenY));
+      }
+   }
+
+   public record ScissorBounds(int left, int top, int right, int bottom) {
+      public ScissorBounds {
+         if (right <= left || bottom <= top) throw new IllegalArgumentException("Scissor bounds must be non-empty");
       }
    }
 }

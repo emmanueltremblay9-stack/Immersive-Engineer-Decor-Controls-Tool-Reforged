@@ -5,9 +5,14 @@ import unittest
 
 from prism_210_history_projection import (
     BASE_COMMIT, HEAD_COMMIT, RECORD, ROOT, FREEZER_NATIVE_PORT_RECORD, FREEZER_RECOVERY_TOOLTIP_RECORD,
-    FREEZER_RECOVERY_KEY_RECORD, LATE_VALIDATION_RECORD, _reverse_layer, expected_current_sha256,
+    FREEZER_RECOVERY_KEY_RECORD, FREEZER_ENERGY_SCISSOR_RECORD, LATE_VALIDATION_RECORD, _reverse_layer, expected_current_sha256,
     project_current_candidate, sha256,
 )
+
+
+def reverse_energy_scissor(path, source, record):
+    layer = record["files"].get(path)
+    return _reverse_layer(path, source, layer) if layer is not None else source
 
 
 class Prism210HistoryProjectionTests(unittest.TestCase):
@@ -54,6 +59,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
         port = json.loads(FREEZER_NATIVE_PORT_RECORD.read_bytes())
         recovery = json.loads(FREEZER_RECOVERY_TOOLTIP_RECORD.read_bytes())
         key_layer = json.loads(FREEZER_RECOVERY_KEY_RECORD.read_bytes())
+        scissor = json.loads(FREEZER_ENERGY_SCISSOR_RECORD.read_bytes())
         self.assertEqual(late["files"][smelter]["old_sha256"], core[smelter]["states"][-1]["sha256"])
         self.assertEqual(late["files"][thermal]["old_sha256"], core[thermal]["states"][-1]["sha256"])
         self.assertEqual(late["files"][v2]["previous_source_commit"], "1712b6d5682faaeb84e0be103898b0109aa3c87a")
@@ -63,9 +69,10 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
                               if path in port["files"] else candidate)
             self.assertEqual(sha256(late_candidate), late["files"][path]["new_sha256"], path)
             if path in port["files"]:
+                candidate_before_recovery = reverse_energy_scissor(path, candidate, scissor)
                 key = key_layer["files"].get(path)
-                candidate_before_recovery = (_reverse_layer(path, candidate, key)
-                                             if key is not None else candidate)
+                candidate_before_recovery = (_reverse_layer(path, candidate_before_recovery, key)
+                                             if key is not None else candidate_before_recovery)
                 top = recovery["files"].get(path)
                 if top is not None:
                     candidate_before_recovery = _reverse_layer(path, candidate_before_recovery, top)
@@ -79,6 +86,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
 
     def test_freezer_native_port_is_exact_and_reversible_from_e429(self):
         port = json.loads(FREEZER_NATIVE_PORT_RECORD.read_bytes())
+        scissor = json.loads(FREEZER_ENERGY_SCISSOR_RECORD.read_bytes())
         self.assertEqual(port["schema"], "iedctr-prism-freezer-native-port-v1")
         self.assertEqual(port["base_commit"], "e429a1fa1551c4532eb3e59d531ccf86570ff9b5")
         self.assertEqual(set(port["files"]), {
@@ -107,7 +115,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
             with self.subTest(path=path):
                 parent = subprocess.check_output(["git", "show", port["base_commit"] + ":" + path], cwd=ROOT)
                 candidate = (ROOT / path).read_bytes()
-                current = candidate
+                current = reverse_energy_scissor(path, candidate, scissor)
                 self.assertEqual(sha256(parent), layer["old_sha256"])
                 key = key_layer["files"].get(path)
                 if key is not None:
@@ -126,6 +134,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
 
     def test_freezer_recovery_tooltip_layer_is_exact_and_reversible(self):
         recovery = json.loads(FREEZER_RECOVERY_TOOLTIP_RECORD.read_bytes())
+        scissor = json.loads(FREEZER_ENERGY_SCISSOR_RECORD.read_bytes())
         port = json.loads(FREEZER_NATIVE_PORT_RECORD.read_bytes())
         key_layer = json.loads(FREEZER_RECOVERY_KEY_RECORD.read_bytes())
         core = json.loads(RECORD.read_bytes())["files"]
@@ -137,7 +146,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
             with self.subTest(path=path):
                 parent = subprocess.check_output(["git", "show", recovery["base_commit"] + ":" + path], cwd=ROOT)
                 candidate = (ROOT / path).read_bytes()
-                current = candidate
+                current = reverse_energy_scissor(path, candidate, scissor)
                 self.assertEqual(sha256(parent), layer["old_sha256"])
                 key = key_layer["files"].get(path)
                 if key is not None:
@@ -152,6 +161,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
 
     def test_freezer_recovery_key_and_stage_layer_is_exact_and_reversible(self):
         key_layer = json.loads(FREEZER_RECOVERY_KEY_RECORD.read_bytes())
+        scissor = json.loads(FREEZER_ENERGY_SCISSOR_RECORD.read_bytes())
         recovery = json.loads(FREEZER_RECOVERY_TOOLTIP_RECORD.read_bytes())
         port = json.loads(FREEZER_NATIVE_PORT_RECORD.read_bytes())
         core = json.loads(RECORD.read_bytes())["files"]
@@ -168,16 +178,41 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
         for path, layer in key_layer["files"].items():
             with self.subTest(path=path):
                 parent = subprocess.check_output(["git", "show", key_layer["base_commit"] + ":" + path], cwd=ROOT)
-                current = (ROOT / path).read_bytes()
+                candidate = (ROOT / path).read_bytes()
+                current = reverse_energy_scissor(path, candidate, scissor)
                 self.assertEqual(sha256(parent), layer["old_sha256"])
                 self.assertEqual(sha256(current), layer["new_sha256"])
                 self.assertEqual(sha256(_reverse_layer(path, current, layer)), layer["old_sha256"])
                 expected = (core[path]["states"][0]["sha256"] if path in core
                             else late[path]["old_sha256"] if path in late
                             else port["files"][path]["old_sha256"])
-                self.assertEqual(sha256(project_current_candidate(path, current, strict=True)), expected)
+                self.assertEqual(sha256(project_current_candidate(path, candidate, strict=True)), expected)
                 with self.assertRaisesRegex(AssertionError, "Unrecognized #210 candidate bytes"):
-                    project_current_candidate(path, current + b"outside exact recovery key layer\n", strict=True)
+                    project_current_candidate(path, candidate + b"outside exact recovery key layer\n", strict=True)
+
+    def test_freezer_energy_scissor_layer_is_exact_and_reversible(self):
+        scissor = json.loads(FREEZER_ENERGY_SCISSOR_RECORD.read_bytes())
+        self.assertEqual(scissor["schema"], "iedctr-prism-freezer-energy-scissor-v1")
+        self.assertEqual(scissor["base_commit"], "b9fd7697645654633873a967eebaf2d61eda35ce")
+        self.assertEqual(set(scissor["files"]), {
+            "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java",
+            "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometry.java",
+            "src/test/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometryTest.java",
+            "tools/validation/test_freezer_render_sync.py",
+        })
+        core = json.loads(RECORD.read_bytes())["files"]
+        port = json.loads(FREEZER_NATIVE_PORT_RECORD.read_bytes())["files"]
+        for path, layer in scissor["files"].items():
+            with self.subTest(path=path):
+                self.assertEqual(layer["previous_source_commit"], scissor["base_commit"])
+                previous = subprocess.check_output(["git", "show", layer["previous_source_commit"] + ":" + path], cwd=ROOT)
+                current = (ROOT / path).read_bytes()
+                self.assertEqual(sha256(previous), layer["old_sha256"])
+                self.assertEqual(sha256(current), layer["new_sha256"])
+                self.assertEqual(sha256(_reverse_layer(path, current, layer)), layer["old_sha256"])
+                expected = (core[path]["states"][0]["sha256"] if path in core else
+                            port[path]["old_sha256"] if path in port else layer["old_sha256"])
+                self.assertEqual(sha256(project_current_candidate(path, current, strict=True)), expected)
 
 
 if __name__ == "__main__":
