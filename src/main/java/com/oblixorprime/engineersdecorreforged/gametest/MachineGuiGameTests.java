@@ -1628,6 +1628,7 @@ public final class MachineGuiGameTests {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       MachineBlockEntity hopper = placeMachine(helper, ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER);
       MachineMenu hopperMenu = new MachineMenu(MachineKind.FACTORY_HOPPER, 1, player.getInventory(), hopper, hopper.dataAccessForTests());
+      attachTestMenu(helper, player, hopperMenu, TEST_POS);
       hopperMenu.handleAction(player, 1, 4, 0);
       hopperMenu.handleAction(player, 2, 16, 0);
       hopperMenu.handleAction(player, 4, 75, 0);
@@ -1636,6 +1637,7 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(75, hopperMenu.field(3), "factory hopper GUI period action should update parent field 3");
       MachineBlockEntity dropper = placeMachine(helper, ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER);
       MachineMenu dropperMenu = new MachineMenu(MachineKind.FACTORY_DROPPER, 2, player.getInventory(), dropper, dropper.dataAccessForTests());
+      attachTestMenu(helper, player, dropperMenu, TEST_POS);
       dropperMenu.handleAction(player, 10, 80, 0);
       dropperMenu.handleAction(player, 11, -50, 25);
       dropperMenu.handleAction(player, 12, 7, 0);
@@ -1663,6 +1665,7 @@ public final class MachineGuiGameTests {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       MachineBlockEntity hopper = placeMachine(helper, ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER);
       MachineMenu hopperMenu = new MachineMenu(MachineKind.FACTORY_HOPPER, 5, player.getInventory(), hopper, hopper.dataAccessForTests());
+      attachTestMenu(helper, player, hopperMenu, TEST_POS);
       hopperMenu.handleAction(player, 3, -1, 0);
       helper.assertValueEqual(hopperMenu.field(2), 7, "factory hopper GUI logic should discard unknown packet bits");
       CompoundTag hopperSave = hopper.saveWithFullMetadata(helper.getLevel().registryAccess());
@@ -1674,6 +1677,7 @@ public final class MachineGuiGameTests {
 
       MachineBlockEntity dropper = placeMachineAt(helper, TEST_POS.offset(3, 0, 0), ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER);
       MachineMenu dropperMenu = new MachineMenu(MachineKind.FACTORY_DROPPER, 6, player.getInventory(), dropper, dropper.dataAccessForTests());
+      attachTestMenu(helper, player, dropperMenu, TEST_POS.offset(3, 0, 0));
       dropperMenu.handleAction(player, 14, -1, 0);
       helper.assertValueEqual(dropperMenu.field(5), 51, "factory dropper GUI logic should discard unknown packet bits");
       CompoundTag dropperSave = dropper.saveWithFullMetadata(helper.getLevel().registryAccess());
@@ -1737,6 +1741,7 @@ public final class MachineGuiGameTests {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER);
       MachineMenu menu = new MachineMenu(MachineKind.FACTORY_DROPPER, 4, player.getInventory(), machine, machine.dataAccessForTests());
+      attachTestMenu(helper, player, menu, TEST_POS);
       machine.setItem(0, new ItemStack(Items.COBBLESTONE, 5));
       menu.handleAction(player, 12, 3, 0);
       menu.handleAction(player, 16, 1, 0);
@@ -1753,6 +1758,7 @@ public final class MachineGuiGameTests {
       machine.setItem(0, new ItemStack(Items.DIRT, 6));
       machine.setItem(12, new ItemStack(Items.DIRT, 4));
       machine.setItem(13, new ItemStack(Items.DIRT, 4));
+      attachTestMenu(helper, player, menu, TEST_POS);
       menu.handleAction(player, 16, 1, 0);
       tickMachine(helper, machine, 8);
       helper.assertValueEqual(2, machine.getItem(0).getCount(), "factory dropper should leave stock that cannot satisfy a full duplicate filter");
@@ -3086,6 +3092,7 @@ public final class MachineGuiGameTests {
       MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
       Container target = (Container)targetEntity;
       MachineMenu menu = new MachineMenu(MachineKind.FACTORY_HOPPER, 6, player.getInventory(), machine, machine.dataAccessForTests());
+      attachTestMenu(helper, player, menu, TEST_POS);
       machine.setItem(0, new ItemStack(Items.SNOWBALL, 16));
       menu.handleAction(player, 2, 32, 0);
       menu.handleAction(player, 5, 1, 0);
@@ -3417,6 +3424,13 @@ public final class MachineGuiGameTests {
       BlockEntity blockEntity = helper.getLevel().getBlockEntity(helper.absolutePos(pos));
       helper.assertTrue(blockEntity instanceof MachineBlockEntity, kind.registryName() + " should create a machine block entity");
       return (MachineBlockEntity)blockEntity;
+   }
+
+   private static void attachTestMenu(GameTestHelper helper, Player player, MachineMenu menu, BlockPos machinePos) {
+      BlockPos absolutePos = helper.absolutePos(machinePos);
+      player.setPos(absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 0.5);
+      player.containerMenu = menu;
+      helper.assertTrue(menu.stillValid(player), "the simulated player should have the active, in-range machine menu");
    }
 
    private static void tickMachine(GameTestHelper helper, MachineBlockEntity machine, int times) {

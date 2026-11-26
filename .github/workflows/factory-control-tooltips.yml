@@ -1,63 +1,55 @@
-name: Factory control tooltip qualification
+name: Factory Study V3 native qualification
 
 on:
   pull_request:
-  workflow_dispatch:
+    paths:
+      - ".github/workflows/factory-control-tooltips.yml"
+      - "build.gradle"
+      - "gradle/factory-study-packaged-validation.gradle"
+      - "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/FactoryStudy*.java"
+      - "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java"
+      - "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryStudyScreen.java"
+      - "src/main/java/com/oblixorprime/engineersdecorreforged/compat/jei/EngineersDecorJeiPlugin.java"
+      - "src/main/java/com/oblixorprime/engineersdecorreforged/compat/jei/FactoryStudyJeiHandler.java"
+      - "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java"
+      - "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometry.java"
+      - "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyState.java"
+      - "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/**"
+      - "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_study_v3/**"
+      - "src/test/java/com/oblixorprime/engineersdecorreforged/compat/jei/FactoryStudyJeiHandlerTest.java"
+      - "src/test/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudy*Test.java"
+      - "tools/validation/factory_study_native.py"
 
 permissions:
   contents: read
 
 jobs:
-  native-factory-controls:
+  factory-study-native:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - language: en_us
-            height: 720
-            width: 1280
-            machine: dropper
-          - language: fr_fr
-            height: 260
-            width: 320
-            machine: hopper
-          - language: fr_fr
-            height: 260
-            width: 320
-            machine: dropper
-          - language: en_us
-            height: 720
-            width: 1280
-            machine: hopper
+    timeout-minutes: 90
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      LIBGL_ALWAYS_SOFTWARE: "1"
+      LP_NUM_THREADS: "4"
+      ALSOFT_DRIVERS: "null"
     steps:
-      - name: Checkout exact candidate head
+      - name: Check out the exact PR head
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-      - name: Set up Java
+          fetch-depth: 0
+      - name: Set up Java 21
         uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
         with:
           distribution: temurin
-          java-version: 21
+          java-version: "21"
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
-          python-version: '3.13'
+          python-version: "3.13"
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
-      - name: Test Factory tooltip bounds and proof guards
-        run: python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory*tooltip*.py' -v
-      - name: Native exact-JAR Factory control hover
-        run: python tools/validation/factory_control_tooltip_native.py --machine ${{ matrix.machine }} --language ${{ matrix.language }} --width ${{ matrix.width }} --height ${{ matrix.height }}
-      - name: Retain native evidence
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        with:
-          name: factory-control-${{ matrix.machine }}-${{ matrix.language }}-${{ matrix.height }}
-          path: |
-            build/factory-control-native-*/
-            build/libs/*.jar
-          if-no-files-found: error
-          retention-days: 14
+      - name: Check harness syntax
+        run: python -m py_compile tools/validation/factory_study_native.py
+      - name: Open exact packaged JAR in two cold Minecraft sessions
+        run: xvfb-run -a -s "-screen 0 1920x1080x24" python tools/validation/factory_study_native.py

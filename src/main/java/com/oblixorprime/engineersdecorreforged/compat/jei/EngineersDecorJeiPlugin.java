@@ -3,6 +3,7 @@ package com.oblixorprime.engineersdecorreforged.compat.jei;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.client.MachineScreen;
+import com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen;
 import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsModule;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -69,6 +70,7 @@ public final class EngineersDecorJeiPlugin implements IModPlugin {
 
    @Override
    public void registerGuiHandlers(IGuiHandlerRegistration registration) {
+      registration.addGuiContainerHandler(FactoryStudyScreen.class, new FactoryStudyJeiHandler());
       registration.addRecipeClickArea(MachineScreen.SmallLabFurnaceScreen.class, 78, 37, 22, 18, RecipeTypes.SMELTING);
       registration.addRecipeClickArea(MachineScreen.SmallElectricalFurnaceScreen.class, 78, 28, 22, 18, RecipeTypes.SMELTING);
    }
