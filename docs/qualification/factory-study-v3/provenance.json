@@ -1,0 +1,52 @@
+{
+  "record_id": "factory-study-v3-pr206",
+  "record_type": "draft-pr-integration-scope",
+  "objective": "Intégrer les compositions approuvées Factory Hopper, Factory Dropper et Small Lab Furnace dans IEDCTR.",
+  "repository": "emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged",
+  "base_main_commit": "e8b21c91d5a7a3a6beb9d0b12c71e8bccc0f8d2c",
+  "integration": {
+    "target": "existing draft PR 206",
+    "screen_class": "com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen",
+    "runtime_registration": "ClientModEvents",
+    "geometry": "FactoryStudyGeometry",
+    "jei_handler": "FactoryStudyJeiHandler",
+    "inventory_rules": "Existing menu indices, roles and server-side handlers are preserved.",
+    "small_lab_furnace": "Fuel remains required. Existing auxiliary-heater behavior is unchanged.",
+    "new_runtime_dependencies": []
+  },
+  "assets": [
+    {
+      "machine": "factory_hopper",
+      "runtime_path": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_study_v3/factory_hopper.png",
+      "sha256": "d3f087682be5cb6c8403f054565d66a457b4130ec461ed6a9e753eba3602f3a6",
+      "size_bytes": 2869551,
+      "dimensions": [1261, 1247],
+      "format": "PNG RGBA",
+      "byte_transformation": "none"
+    },
+    {
+      "machine": "factory_dropper",
+      "runtime_path": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_study_v3/factory_dropper.png",
+      "sha256": "c01d510bd06639a112a4fc34cfe8fe7233b987de81dcfc826a9b54bd090d50a6",
+      "size_bytes": 2840651,
+      "dimensions": [1261, 1247],
+      "format": "PNG RGBA",
+      "byte_transformation": "none"
+    },
+    {
+      "machine": "small_lab_furnace",
+      "runtime_path": "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_study_v3/small_lab_furnace.png",
+      "sha256": "b86251e58b95ca8f5a7d94a0893d042f26b419ba2224be7a6004cea0a6583cb4",
+      "size_bytes": 2814756,
+      "dimensions": [1261, 1247],
+      "format": "PNG RGBA",
+      "byte_transformation": "none"
+    }
+  ],
+  "public_candidate_limits": {
+    "draft_only": true,
+    "merge": false,
+    "release_or_distribution": false,
+    "client_visual_acceptance_by_owner": "pending"
+  }
+}

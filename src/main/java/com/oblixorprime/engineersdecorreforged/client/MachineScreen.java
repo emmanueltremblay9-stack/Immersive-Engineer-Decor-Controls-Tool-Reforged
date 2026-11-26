@@ -145,16 +145,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             RetainedFluidMachineArtwork.render(graphics, (MachineMenu)this.menu, x, y);
             return;
          }
-         // Scoped Factory Dropper artwork; native sliders, symbols and state remain runtime-owned.
-         if (((MachineMenu)this.menu).kind() == MachineKind.FACTORY_DROPPER) {
-            this.drawRetainedDropper(graphics, texture, x, y);
-            return;
-         }
          this.drawOriginalTextureBackdrop(graphics, x, y);
             MachineKind kind = ((MachineMenu)this.menu).kind();
-            if (kind == MachineKind.FACTORY_HOPPER) {
-                FactoryHopperSteelArtwork.render(graphics, this.menu, texture, x, y);
-            } else if (kind == MachineKind.SMALL_FREEZER) {
+            if (kind == MachineKind.SMALL_FREEZER) {
                 this.drawSmallFreezerTexture(graphics, texture, x, y);
             } else if (usesExplicitTextureDimensions(kind)) {
                 graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
@@ -735,25 +728,14 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
-   @Override
-   protected boolean hasClickedOutside(double mouseX, double mouseY, int left, int top, int button) {
-      if (((MachineMenu)this.menu).kind() == MachineKind.FACTORY_HOPPER) {
-         // The owner-source border is visible but has no slot/widget action.
-         // Treat it as empty panel, not outside (-999 / carried-stack drop).
-         return mouseX < left - 8 || mouseX >= left + 184
-            || mouseY < top - 16 || mouseY >= top + 166;
-      }
-      return super.hasClickedOutside(mouseX, mouseY, left, top, button);
-   }
-
    private void drawFactoryHopperWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       int slotIndex = Mth.clamp(((MachineMenu)this.menu).field(6), 0, 17);
-      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 18, 200, 8, 18, 18);
+      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 17, 200, 8, 18, 18);
       int[] rangeMarkers = new int[]{133, 141, 149, 157, 166};
-      FactorySteelFrame.thumb(graphics, x0 + rangeMarkers[Mth.clamp(((MachineMenu)this.menu).field(0), 0, 4)] - 2, y0 + 14, 5, 5);
+      graphics.blit(texture, x0 + rangeMarkers[Mth.clamp(((MachineMenu)this.menu).field(0), 0, 4)] - 2, y0 + 14, 179, 40, 5, 5);
       int periodX = Mth.clamp((int)Math.round(33.5 * ((MachineMenu)this.menu).field(3) / 100.0 + 1.0), 0, 34);
-      FactorySteelFrame.thumb(graphics, x0 + 132 - 2 + periodX, y0 + 27, 5, 5);
-      FactorySteelFrame.thumb(graphics, x0 + 133 - 2 + Mth.clamp(((MachineMenu)this.menu).field(1), 1, 32), y0 + 40, 5, 5);
+      graphics.blit(texture, x0 + 132 - 2 + periodX, y0 + 27, 179, 40, 5, 5);
+      graphics.blit(texture, x0 + 133 - 2 + Mth.clamp(((MachineMenu)this.menu).field(1), 1, 32), y0 + 40, 179, 40, 5, 5);
       if (((MachineMenu)this.menu).field(5) != 0) {
          graphics.blit(texture, x0 + 133, y0 + 49, 217, 49, 9, 9);
       }
@@ -767,50 +749,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       if (((MachineMenu)this.menu).field(4) > 10 && System.currentTimeMillis() % 1000L < 500L) {
          graphics.blit(texture, x0 + 148, y0 + 22, 187, 22, 3, 3);
       }
-   }
-
-   private void drawRetainedDropper(GuiGraphics graphics,ResourceLocation texture,int x,int y) {
-      ResourceLocation steel=ResourceLocation.fromNamespaceAndPath(
-         "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_steel_v2/dropper.png");
-      // Specialist candidate uses six raster texels per logical pixel, not the older atlas UVs.
-      graphics.blit(steel,x,y,228,250,0F,0F,1368,1500,1368,1500);
-      MachineMenu m=(MachineMenu)this.menu;
-      // Slot borders are registered once in the owner-source background.
-      int active=Mth.clamp(m.field(15),0,11);
-      MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);
-      this.drawHoverOutline(graphics,x+slot.x()-1,y+slot.y()-1,18,18,0xFFFFC34A);
-      // Cover painted default positions; display only synchronized settings.
-      FactorySteelFrame.inset(graphics,x+153,y+32,7,29);
-      int velocity=34+(100-Mth.clamp(m.field(0),0,100))*25/100;
-      FactorySteelFrame.thumb(graphics,x+153,y+velocity-2,7,5);
-      FactorySteelFrame.inset(graphics,x+170,y+33,28,27);
-      graphics.fill(x+183,y+34,x+184,y+59,0xFF687078);
-      graphics.fill(x+171,y+46,x+197,y+47,0xFF687078);
-      int dx=184+Mth.clamp(m.field(1),-100,100)*13/100,dy=46-Mth.clamp(m.field(2),-100,100)*13/100;
-      graphics.fill(x+dx-1,y+dy-1,x+dx+2,y+dy+2,0xFFFFBF5A);
-      for(int n=0;n<2;n++) {
-         int sy=69+n*12;
-         FactorySteelFrame.inset(graphics,x+156,y+sy-3,43,7);
-         graphics.fill(x+160,y+sy,x+197,y+sy+1,0xFF929A9E);
-         int value=n==0 ? (Mth.clamp(m.field(4),1,32)-1)*37/31 : Mth.clamp(m.field(6),0,100)*37/100;
-         FactorySteelFrame.thumb(graphics,x+158+value,y+sy-3,5,7);
-      }
-      int logic=m.field(5);
-      int[] state={(logic&1)!=0?1:0,(logic&32)!=0?2:((logic&2)!=0?1:0),(logic&16)!=0?1:0};
-      for(int n=0;n<3;n++) {
-         int sx=143+n*23;
-         // Fixed function symbols sit above the synchronized rail, never beneath its thumb.
-         FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n,state[n]);
-         FactorySteelFrame.inset(graphics,x+sx,y+100,18,8);
-         int offset=state[n]*(n==1?6:12);
-         FactorySteelFrame.thumb(graphics,x+sx+1+offset,y+101,5,6);
-         int status=Mth.clamp(m.field(12+n),0,2);
-         int cx=39+n*33;
-         graphics.fill(x+cx-2,y+105,x+cx+2,y+109,new int[]{0xFF555555,0xFFFFC34A,0xFF70C570}[status]);
-      }
-      graphics.fill(x+126,y+96,x+131,y+101,m.field(11)!=0?0xFFFF4545:0xFF712424);
-      // Cadence activity lamp remains next to the cadence control, never quantity.
-      graphics.fill(x+202,y+79,x+206,y+83,m.field(9)>10&&System.currentTimeMillis()%1000L<500L?0xFFFFC34A:0xFF343A3F);
    }
 
    private void drawFactoryDropperWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
@@ -1324,28 +1262,48 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private boolean handleFactoryDropperClick(double mouseX, double mouseY) {
-      int mx=(int)(mouseX-this.leftPos+0.5), my=(int)(mouseY-this.topPos+0.5);
-      if (this.isHovering(151,31,11,31,mouseX,mouseY)) {
-         this.sendAction(10,100-Mth.clamp((my-34)*100/25,0,100));
-      } else if (this.isHovering(168,31,32,31,mouseX,mouseY)) {
-         int dx=Mth.clamp((mx-184)*100/13,-100,100);
-         int dy=Mth.clamp((46-my)*100/13,-100,100);
-         this.sendAction(11,Math.abs(dx)<9?0:dx,Math.abs(dy)<9?0:dy);
-      } else if (this.isHovering(154,65,47,10,mouseX,mouseY)) {
-         this.sendAction(12,this.sliderValue(mx,160,37,1,32,((MachineMenu)this.menu).field(4),1));
-      } else if (this.isHovering(154,76,47,10,mouseX,mouseY)) {
-         this.sendAction(13,this.sliderValue(mx,160,37,0,100,((MachineMenu)this.menu).field(6),3));
-      } else if (this.isHovering(122,92,13,13,mouseX,mouseY)) {
-         this.sendAction(15,1);
-      } else if (this.isHovering(143,99,18,9,mouseX,mouseY)) {
-         this.sendAction(14,((MachineMenu)this.menu).field(5)^1);
-      } else if (this.isHovering(166,99,18,9,mouseX,mouseY)) {
-         int logic=((MachineMenu)this.menu).field(5), mask=34;
-         int next=switch(logic&mask){case 0 ->32;case 2 ->0;default ->2;};
-         this.sendAction(14,(logic&~mask)|next);
-      } else if (this.isHovering(189,99,18,9,mouseX,mouseY)) {
-         this.sendAction(14,((MachineMenu)this.menu).field(5)^16);
-      } else return false;
+      int mx = (int)(mouseX - this.leftPos + 0.5);
+      int my = (int)(mouseY - this.topPos + 0.5);
+      if (!this.isHovering(114, 1, 61, 79, mouseX, mouseY)) {
+         return false;
+      }
+
+      if (this.isHovering(130, 10, 12, 25, mouseX, mouseY)) {
+         this.sendAction(10, 100 - Mth.clamp((my - 10) * 100 / 25, 0, 100));
+      } else if (this.isHovering(145, 10, 25, 25, mouseX, mouseY)) {
+         int xDev = Mth.clamp((int)Math.round((mx - 157) * 100.0 / 12.0), -100, 100);
+         int yDev = Mth.clamp(-((int)Math.round((my - 22) * 100.0 / 12.0)), -100, 100);
+         if (Math.abs(xDev) < 9) {
+            xDev = 0;
+         }
+
+         if (Math.abs(yDev) < 9) {
+            yDev = 0;
+         }
+
+         this.sendAction(11, xDev, yDev);
+      } else if (this.isHovering(129, 40, 44, 10, mouseX, mouseY)) {
+         this.sendAction(12, this.sliderValue(mx, 135, 34, 1, 32, ((MachineMenu)this.menu).field(4), 1));
+      } else if (this.isHovering(129, 50, 44, 10, mouseX, mouseY)) {
+         this.sendAction(13, this.sliderValue(mx, 135, 34, 0, 100, ((MachineMenu)this.menu).field(6), 3));
+      } else if (this.isHovering(114, 51, 9, 9, mouseX, mouseY)) {
+         this.sendAction(15, 1);
+      } else if (this.isHovering(162, 66, 7, 9, mouseX, mouseY)) {
+         this.sendAction(14, ((MachineMenu)this.menu).field(5) ^ 16);
+      } else if (this.isHovering(132, 66, 9, 9, mouseX, mouseY)) {
+         this.sendAction(14, ((MachineMenu)this.menu).field(5) ^ 1);
+      } else if (this.isHovering(148, 66, 9, 9, mouseX, mouseY)) {
+         int mask = 34;
+
+         int next = switch (((MachineMenu)this.menu).field(5) & mask) {
+            case 0 -> 32;
+            case 2 -> 0;
+            case 32 -> 2;
+            default -> 2;
+         };
+         this.sendAction(14, ((MachineMenu)this.menu).field(5) & ~mask | next);
+      }
+
       return true;
    }
 
@@ -1705,16 +1663,25 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private Component factoryDropperTooltip(double mouseX, double mouseY) {
-      String part=null;
-      if(this.isHovering(151,31,11,31,mouseX,mouseY))part="velocity";
-      else if(this.isHovering(168,31,32,31,mouseX,mouseY))part="direction";
-      else if(this.isHovering(154,65,47,10,mouseX,mouseY))part="dropcount";
-      else if(this.isHovering(154,76,47,10,mouseX,mouseY))part="period";
-      else if(this.isHovering(122,92,13,13,mouseX,mouseY))part="rssignal";
-      else if(this.isHovering(143,99,18,9,mouseX,mouseY))part="filtergate";
-      else if(this.isHovering(166,99,18,9,mouseX,mouseY))part="externgate";
-      else if(this.isHovering(189,99,18,9,mouseX,mouseY))part="triggermode";
-      return part==null?null:Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips."+part);
+      if (this.isHovering(130, 10, 12, 25, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.velocity");
+      } else if (this.isHovering(145, 10, 25, 25, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.direction");
+      } else if (this.isHovering(129, 40, 44, 10, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.dropcount");
+      } else if (this.isHovering(129, 50, 44, 10, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.period");
+      } else if (this.isHovering(114, 51, 9, 9, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.rssignal");
+      } else if (this.isHovering(132, 66, 9, 9, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.filtergate");
+      } else if (this.isHovering(148, 66, 9, 9, mouseX, mouseY)) {
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.externgate");
+      } else {
+         return this.isHovering(162, 66, 7, 9, mouseX, mouseY)
+            ? Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.triggermode")
+            : null;
+      }
    }
 
    private Component factoryPlacerTooltip(double mouseX, double mouseY) {
