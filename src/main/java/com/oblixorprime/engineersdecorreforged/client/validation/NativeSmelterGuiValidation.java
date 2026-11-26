@@ -221,7 +221,7 @@ final class NativeSmelterGuiValidation {
          || screen.children().stream().anyMatch(child -> child instanceof Button)) return false;
       for (int i = 0; i < menu.slots.size(); i++) {
          int position = i == 0 ? 0 : i == 1 ? 2 : i + 1;
-         var anchor = ThermalVerticalGeometry.slot(position);
+         var anchor = ThermalVerticalGeometry.slot(position, menu.kind());
          var slot = menu.getSlot(i);
          if (slot.x != anchor.x() || slot.y != anchor.y()) return false;
       }

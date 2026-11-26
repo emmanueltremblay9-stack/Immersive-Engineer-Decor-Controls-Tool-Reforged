@@ -446,7 +446,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
       public boolean isItemValid(int slot, ItemStack stack) { return false; }
    };
-   /** Freezer physical input 0 is accessible to automation only from above. */
+   /** Freezer physical input 0 is accessible to automation only from the rear. */
    private final IItemHandler freezerTopItems = new IItemHandler() {
       public int getSlots() { return 1; }
       public ItemStack getStackInSlot(int slot) { return slot == 0 ? MachineBlockEntity.this.items.get(0).copy() : ItemStack.EMPTY; }
@@ -828,12 +828,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    public IItemHandler itemHandler(Direction side) {
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
-         if (side == Direction.UP) return this.mineralTopItems;
+         if (side == this.facing(this.getBlockState()).getOpposite()) return this.mineralTopItems;
          if (side == Direction.DOWN) return this.mineralBottomItems;
          return side == null ? this.itemHandler : null; // Direct access; registered public capabilities guard unsided requests.
       }
       if (this.kind() == MachineKind.SMALL_FREEZER) {
-         if (side == Direction.UP) return this.freezerTopItems;
+         if (side == this.facing(this.getBlockState()).getOpposite()) return this.freezerTopItems;
          if (side == Direction.DOWN) return this.freezerBottomItems;
          return side == null ? this.itemHandler : null;
       }
@@ -896,9 +896,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    public IFluidHandler fluidHandler(Direction side) {
       if (this.kind() == MachineKind.SMALL_FREEZER)
-         return side == Direction.UP ? this.freezerTopFluid : side == null ? this.fluidHandler : null;
+         return side == this.facing(this.getBlockState()).getOpposite() ? this.freezerTopFluid : side == null ? this.fluidHandler : null;
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
-         if (side == Direction.UP) return this.mineralTopFluid;
+         if (side == this.facing(this.getBlockState()).getOpposite()) return this.mineralTopFluid;
          if (side == Direction.DOWN) return this.mineralBottomFluid;
          return side == null ? this.fluidHandler : null; // Direct diagnostic access; public routing uses fluidCapability().
       }
@@ -1178,10 +1178,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             return this.slotsUpTo(LabeledCrateMenu.STORAGE_SLOT_COUNT);
         }
         if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
-            return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2} : new int[0];
+            return side == this.facing(this.getBlockState()).getOpposite() ? new int[]{0}
+               : side == Direction.DOWN ? new int[]{2} : new int[0];
         }
         if (this.kind() == MachineKind.SMALL_FREEZER) {
-            return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2, 0} : new int[0];
+            return side == this.facing(this.getBlockState()).getOpposite() ? new int[]{0}
+               : side == Direction.DOWN ? new int[]{2, 0} : new int[0];
         }
       if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          return this.isBlockBreakerRearSide(side) ? new int[]{0} : new int[0];
@@ -1195,7 +1197,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    @Override
    public boolean canPlaceItemThroughFace(int slot, ItemStack stack, Direction side) {
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER || this.kind() == MachineKind.SMALL_FREEZER)
-         return side == Direction.UP && slot == 0 && this.canPlaceItem(0, stack);
+         return side == this.facing(this.getBlockState()).getOpposite() && slot == 0 && this.canPlaceItem(0, stack);
       return this.kind() != MachineKind.SMALL_BLOCK_BREAKER && this.canPlaceItem(slot, stack);
    }
 

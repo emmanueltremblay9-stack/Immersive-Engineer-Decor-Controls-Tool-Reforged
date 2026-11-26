@@ -44,20 +44,34 @@ public final class FreezerReferenceGeometry {
     * to leave one usable pixel. The scale has no arbitrary lower clamp.
     */
    public static ViewTransform fit(int viewportWidth, int viewportHeight) {
+      return fitCanvas(viewportWidth, viewportHeight, CANVAS_WIDTH, CANVAS_HEIGHT);
+   }
+
+   /** Uniformly fit an arbitrary presentation canvas while preserving the same margin policy. */
+   public static ViewTransform fitCanvas(int viewportWidth, int viewportHeight, int canvasWidth, int canvasHeight) {
+      return fitCanvas(viewportWidth, viewportHeight, canvasWidth, canvasHeight, 1.0F);
+   }
+
+   /** Uniform fit with a caller supplied logical-size ceiling for large artwork panels. */
+   public static ViewTransform fitCanvas(int viewportWidth, int viewportHeight, int canvasWidth, int canvasHeight, float maxScale) {
       if (viewportWidth <= 0 || viewportHeight <= 0) {
          throw new IllegalArgumentException("Viewport dimensions must be positive");
       }
+      if (canvasWidth <= 0 || canvasHeight <= 0) throw new IllegalArgumentException("Canvas dimensions must be positive");
+      if (!(maxScale > 0.0F) || Float.isNaN(maxScale)) throw new IllegalArgumentException("Maximum scale must be positive");
       double shortEdge = Math.min(viewportWidth, viewportHeight);
       double margin = Math.min(VIEWPORT_MARGIN, (shortEdge - 1.0D) / 2.0D);
-      double available = shortEdge - 2.0D * margin;
-      float scale = (float)Math.min(1.0D, available / CANVAS_WIDTH);
+      double scale = Math.min((viewportWidth - 2.0D * margin) / canvasWidth,
+         (viewportHeight - 2.0D * margin) / canvasHeight);
+      scale = Math.min(Math.min(1.0D, maxScale), scale);
+      float fittedScale = (float)scale;
       // Do not let float rounding make a tiny fitted canvas exceed its viewport.
-      if ((double)scale * CANVAS_WIDTH > available) {
-         scale = Math.nextDown(scale);
+      if ((double)fittedScale * canvasWidth > viewportWidth || (double)fittedScale * canvasHeight > viewportHeight) {
+         fittedScale = Math.nextDown(fittedScale);
       }
-      float originX = (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2.0D);
-      float originY = (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2.0D);
-      return new ViewTransform(scale, originX, originY);
+      float originX = (float)((viewportWidth - (double)canvasWidth * fittedScale) / 2.0D);
+      float originY = (float)((viewportHeight - (double)canvasHeight * fittedScale) / 2.0D);
+      return new ViewTransform(fittedScale, originX, originY);
    }
 
    private static List<SlotAnchor> createAnchors() {

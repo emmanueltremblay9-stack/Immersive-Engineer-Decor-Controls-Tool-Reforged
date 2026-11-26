@@ -1,0 +1,86 @@
+{
+  "schema": "iedctr.thermal.hd.layers.v2",
+  "assets": [
+    {
+      "source": "freezer.png",
+      "source_sha256": "e1ee85944fe12b066e26a1aaaa7e494068724191ea9f92e71f67a276886afdd3",
+      "source_bbox": [
+        0,
+        0,
+        1149,
+        1343
+      ],
+      "removed_freezer_band": [
+        1056,
+        1142
+      ],
+      "normalized_canvas": [
+        1041,
+        1143
+      ],
+      "scale_from_source": 0.906,
+      "normalization": "premultiplied-alpha Lanczos resize directly from original PNG; no 347x381 intermediate",
+      "neutral_sha256": "48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806",
+      "effect_sha256": "046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957",
+      "energy_sha256": "73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638",
+      "effect_pixels": 22433,
+      "energy_pixels": 4466,
+      "neutral_changed_pixels": 27769,
+      "amber_counts_zero_partial_full": [
+        0,
+        1752,
+        3599
+      ],
+      "scale_canvas": {
+        "logical": [
+          347,
+          381
+        ],
+        "render": [
+          1041,
+          1143
+        ]
+      },
+      "method_note": "Colors outside bounded masks are pixel-identical to scaled source. Base GUI is neutrally reconstructed at chamber active pixels and seven gauge cells. Effect/energy overlays retain source pixels."
+    },
+    {
+      "source": "small mineral smelter.png",
+      "source_sha256": "0a605ec7bbaab3ad921558df1e658ea286d481ae181d6634d00dfae939ece9be",
+      "source_bbox": [
+        31,
+        0,
+        1141,
+        1261
+      ],
+      "removed_freezer_band": null,
+      "normalized_canvas": [
+        1041,
+        1143
+      ],
+      "scale_from_source": 0.906,
+      "normalization": "premultiplied-alpha Lanczos resize directly from original PNG; no 347x381 intermediate",
+      "neutral_sha256": "bd51e1a8e9c1fa684f57a4636787c263a0e686e6f7ac5b9336ecd466768e738d",
+      "effect_sha256": "1489c7a0e4dcd666cbe0995a424969d677be7459fd5123703c52dbf0957a94e5",
+      "energy_sha256": "a45c63638fce49f90b9e396bdb318556c59e71ac4a56cdbc3a6864d2a91551ea",
+      "effect_pixels": 10158,
+      "energy_pixels": 4896,
+      "neutral_changed_pixels": 16356,
+      "amber_counts_zero_partial_full": [
+        0,
+        1498,
+        3252
+      ],
+      "scale_canvas": {
+        "logical": [
+          347,
+          381
+        ],
+        "render": [
+          1041,
+          1143
+        ]
+      },
+      "method_note": "Colors outside bounded masks are pixel-identical to scaled source. Base GUI is neutrally reconstructed at chamber active pixels and seven gauge cells. Effect/energy overlays retain source pixels."
+    }
+  ]
+}

@@ -193,7 +193,7 @@ public class MachineMenu extends AbstractContainerMenu {
       for (MachineLayout.MachineSlot slot : this.layout.machineSlots()) {
          MachineLayout.MachineSlot presentationSlot = slot;
          if (this.thermalVerticalPresentation && slot.containerIndex() != 1) {
-            var anchor = ThermalVerticalGeometry.slot(slot.containerIndex());
+            var anchor = ThermalVerticalGeometry.slot(slot.containerIndex(), kind);
             presentationSlot = new MachineLayout.MachineSlot(
                slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
          } else if (this.freezerReferencePresentation && slot.containerIndex() != 1) {
@@ -227,7 +227,7 @@ public class MachineMenu extends AbstractContainerMenu {
                ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerSlotX(column);
             int y = this.layout.playerSlotY(row);
             if (this.thermalVerticalPresentation) {
-               var anchor = ThermalVerticalGeometry.slot(3 + row * 9 + column);
+               var anchor = ThermalVerticalGeometry.slot(3 + row * 9 + column, kind);
                x = anchor.x(); y = anchor.y();
             } else if (this.freezerReferencePresentation) {
                var anchor = FreezerReferenceGeometry.anchor(3 + row * 9 + column);
@@ -260,7 +260,7 @@ public class MachineMenu extends AbstractContainerMenu {
             ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarSlotX(column);
          int y = this.layout.hotbarY();
          if (this.thermalVerticalPresentation) {
-            var anchor = ThermalVerticalGeometry.slot(30 + column);
+            var anchor = ThermalVerticalGeometry.slot(30 + column, kind);
             x = anchor.x(); y = anchor.y();
          } else if (this.freezerReferencePresentation) {
             var anchor = FreezerReferenceGeometry.anchor(30 + column);

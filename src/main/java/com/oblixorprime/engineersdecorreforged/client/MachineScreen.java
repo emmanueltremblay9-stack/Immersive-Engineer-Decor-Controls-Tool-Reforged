@@ -30,6 +30,8 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu> {
+   private static final ResourceLocation ELECTRICAL_DIAL_NEUTRAL = ResourceLocation.fromNamespaceAndPath(
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/retained_furnaces/electrical_dial_neutral.png");
    private static final int FRAME = -14934755;
    private static final int BODY = -12960450;
    private static final int BODY_DARK = -13618380;
@@ -831,11 +833,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x+94, y+86, x+94+energy, y+92, 0xFFECA42C);
       graphics.fill(x+108, y+51, x+108+this.progressPixels(13), y+54, 0xFFFFC34A);
       int speed = Mth.clamp(((MachineMenu)this.menu).field(4), 0, 3);
-      int[] dx = {0,-9,0,9};
-      int[] dy = {9,0,-9,0};
-      // Mask the painted upright knob position before drawing the actual selection.
-      graphics.fill(x+178,y+82,x+189,y+94,0xFF493B2C);
-      graphics.fill(x+182+dx[speed],y+87+dy[speed],x+185+dx[speed],y+90+dy[speed],0xFFFFD180);
+      // Replace only the dial's painted spindle with the original ring face, then mark the live detent.
+      graphics.blit(ELECTRICAL_DIAL_NEUTRAL, x+171, y+74, 23, 23, 0F, 0F, 120, 120, 120, 120);
+      int[] detent = electricalDialOffset(speed);
+      int markerX=x+182+detent[0], markerY=y+87+detent[1];
+      graphics.fill(markerX+1,markerY,markerX+3,markerY+4,0xFF5B3A1C);
+      graphics.fill(markerX,markerY+1,markerX+4,markerY+3,0xFFFFD180);
    }
 
    private void drawElectricalFurnaceWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
@@ -1481,14 +1484,29 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             if (this.isHovering(slot.x(), slot.y(), 16, 16, mouseX, mouseY)) {
                MachineKind kind = ((MachineMenu)this.menu).kind();
                if (kind == MachineKind.SMALL_FLUID_FUNNEL || kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
-                  this.renderFluidArtworkTooltip(graphics, this.slotTooltip(slot), mouseX, mouseY);
+                  Component tooltip = this.slotTooltip(slot);
+                  if (hasVisibleTooltipText(tooltip)) this.renderFluidArtworkTooltip(graphics, tooltip, mouseX, mouseY);
                } else {
-                  graphics.renderTooltip(this.font, this.slotTooltip(slot), mouseX, mouseY);
+                  Component tooltip = this.slotTooltip(slot);
+                  if (hasVisibleTooltipText(tooltip)) graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);
                }
                return;
             }
          }
       }
+   }
+
+   static boolean hasVisibleTooltipText(Component tooltip) {
+      return tooltip != null && !tooltip.getString().isBlank();
+   }
+
+   static int[] electricalDialOffset(int speed) {
+      return switch (Mth.clamp(speed,0,3)) {
+         case 1 -> new int[]{-9,0};
+         case 2 -> new int[]{0,-9};
+         case 3 -> new int[]{9,0};
+         default -> new int[]{0,9};
+      };
    }
 
    private void renderFluidArtworkTooltip(GuiGraphics graphics, Component tooltip, int mouseX, int mouseY) {

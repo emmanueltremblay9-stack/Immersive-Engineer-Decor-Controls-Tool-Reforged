@@ -91,10 +91,15 @@ public final class LabeledCrateBlockEntityRenderer implements BlockEntityRendere
       Minecraft minecraft = Minecraft.getInstance();
       var itemRenderer = minecraft.getItemRenderer();
       itemRenderer.render(
-         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, packedLight, packedOverlay,
+         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, minimumItemLight(packedLight), packedOverlay,
          itemRenderer.getModel(stack, machine.getLevel(), null, 0)
       );
       poseStack.popPose();
+   }
+
+   static int minimumItemLight(int packedLight) {
+      int blockLight = (packedLight >>> 4) & 0xF;
+      return blockLight >= 4 ? packedLight : (packedLight & ~(0xF << 4)) | (4 << 4);
    }
 
    private void drawCentered(String text, float y, PoseStack poseStack, MultiBufferSource buffer) {

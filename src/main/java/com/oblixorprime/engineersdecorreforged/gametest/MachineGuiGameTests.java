@@ -1059,6 +1059,56 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void thermal_inputs_route_only_from_rotating_rear(GameTestHelper helper) {
+      Direction[] facings={Direction.NORTH,Direction.EAST,Direction.SOUTH,Direction.WEST};
+      for (int i=0;i<facings.length;i++) {
+         Direction facing=facings[i], rear=facing.getOpposite();
+         BlockPos freezerPos=TEST_POS, smelterPos=TEST_POS.offset(0,0,1);
+         helper.setBlock(freezerPos,((MachineBlocks.MachineBlock)ModBlocks.SMALL_FREEZER.get()).defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING,facing));
+         helper.setBlock(smelterPos,((MachineBlocks.MachineBlock)ModBlocks.SMALL_MINERAL_SMELTER.get()).defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING,facing));
+         MachineBlockEntity freezer=(MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(freezerPos));
+         MachineBlockEntity smelter=(MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(smelterPos));
+         helper.assertTrue(freezer!=null&&smelter!=null,"both thermal machines load for every horizontal facing");
+         for (MachineBlockEntity machine : new MachineBlockEntity[]{freezer,smelter}) {
+            BlockPos pos=machine.getBlockPos();
+            IItemHandler rearItems=helper.getLevel().getCapability(ItemHandler.BLOCK,pos,rear);
+            helper.assertTrue(rearItems!=null,"rear item input follows facing");
+            ItemStack accepted=machine==freezer?new ItemStack(Items.ICE):new ItemStack(Items.COBBLESTONE);
+            helper.assertTrue(rearItems.insertItem(0,accepted,false).isEmpty(),"rear item input accepts its existing recipe item");
+            helper.assertTrue(helper.getLevel().getCapability(ItemHandler.BLOCK,pos,Direction.UP)==null,"top item capability is absent");
+            helper.assertTrue(helper.getLevel().getCapability(ItemHandler.BLOCK,pos,facing)==null,"front item capability is absent");
+            for(Direction side:Direction.Plane.HORIZONTAL) if(side!=rear&&side!=facing)
+               helper.assertTrue(helper.getLevel().getCapability(ItemHandler.BLOCK,pos,side)==null,"lateral item capability is absent");
+            helper.assertTrue(machine.canPlaceItemThroughFace(0,accepted,rear),"vanilla sided container accepts input from rear");
+            helper.assertTrue(!machine.canPlaceItemThroughFace(0,accepted,Direction.UP)&&!machine.canPlaceItemThroughFace(0,accepted,facing),"vanilla sided container rejects top/front input");
+            helper.assertValueEqual(1,machine.getSlotsForFace(rear).length,"WorldlyContainer exposes rear input");
+            helper.assertValueEqual(0,machine.getSlotsForFace(Direction.UP).length,"WorldlyContainer rejects top input");
+            helper.assertValueEqual(2,machine.getSlotsForFace(Direction.DOWN)[0],"WorldlyContainer keeps the output below");
+            for(Direction face:Direction.values()) if(face!=rear)
+               helper.assertTrue(!machine.canPlaceItemThroughFace(0,accepted,face),"WorldlyContainer rejects every non-rear input face");
+            helper.assertTrue(!machine.canTakeItemThroughFace(0,accepted,rear),"rear does not extract its input");
+            ItemStack output=machine==freezer?new ItemStack(Items.PACKED_ICE):new ItemStack(Items.MAGMA_BLOCK);
+            machine.setItem(2,output);
+            helper.assertTrue(machine.canTakeItemThroughFace(2,output,Direction.DOWN),"output remains extractable below");
+         }
+         IFluidHandler rearFreezer=helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),rear);
+         IFluidHandler rearSmelter=helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),rear);
+         helper.assertTrue(rearFreezer!=null&&rearSmelter!=null,"fluid input capabilities follow rear orientation");
+         helper.assertValueEqual(1000,rearFreezer.fill(new FluidStack(Fluids.WATER,1000),FluidAction.EXECUTE),"Freezer rear accepts water");
+         helper.assertValueEqual(1000,rearSmelter.fill(new FluidStack(Fluids.LAVA,1000),FluidAction.EXECUTE),"Smelter rear accepts lava");
+         helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),Direction.UP)==null,"Freezer top fluid capability is absent");
+         helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),Direction.UP)==null,"Smelter top fluid capability is absent");
+         helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),facing)==null,"Smelter front fluid capability is absent");
+         for(Direction face:Direction.values()) if(face!=rear)
+            helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,freezer.getBlockPos(),face)==null,"Freezer fluid input is absent from every non-rear face");
+         for(Direction face:Direction.values()) if(face!=rear&&face!=Direction.DOWN)
+            helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK,smelter.getBlockPos(),face)==null,"Smelter has no fluid input on top/front/sides");
+         helper.assertTrue(smelter.fluidHandler(Direction.DOWN).drain(1000,FluidAction.EXECUTE).isEmpty(),"bottom cannot drain reserved rear input lava");
+      }
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 1200)
    public static void small_mineral_smelter_outputs_to_parent_output_slot(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
@@ -1068,7 +1118,7 @@ public final class MachineGuiGameTests {
       helper.assertTrue(machine.getItem(0).isEmpty(), "one mineral cycle consumes exactly one input");
       helper.assertTrue(machine.getItem(2).is(Items.MAGMA_BLOCK), "mineral always produces one magma item");
       helper.assertTrue(machine.getItem(1).isEmpty(), "legacy Heat slot is untouched");
-      helper.assertValueEqual(0, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+      helper.assertValueEqual(0, machine.fluidHandler(thermalRear(machine)).getFluidInTank(0).getAmount(),
          "the mineral stage cannot jump directly to lava");
       helper.assertValueEqual(1600, machine.energyStorage(null).getEnergyStored(),
          "900 paid heat ticks cost exactly 14400 FE");
@@ -1087,7 +1137,7 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(14400, acceptedFe, "exactly 900 paid heat ticks are supplied");
       helper.assertTrue(machine.getItem(0).isEmpty(), "one mineral item finishes its cycle");
       helper.assertTrue(machine.getItem(2).is(Items.MAGMA_BLOCK), "sparse FE preserves the stage product");
-      helper.assertValueEqual(0, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+      helper.assertValueEqual(0, machine.fluidHandler(thermalRear(machine)).getFluidInTank(0).getAmount(),
          "sparse FE cannot make lava in the mineral stage");
       helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "paid energy is conserved");
       helper.succeed();
@@ -1130,7 +1180,7 @@ public final class MachineGuiGameTests {
       int warm = machine.dataAccessForTests().get(10);
       int paid = machine.dataAccessForTests().get(1);
       helper.assertValueEqual(10, paid, "magma heating has ten progress points");
-      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      IFluidHandler top = machine.fluidHandler(thermalRear(machine));
       helper.assertValueEqual(4000, top.fill(new FluidStack(Fluids.LAVA, 4000), FluidAction.EXECUTE),
          "top port accepts four input buckets and reserves them");
       machine.energyStorage(null).receiveEnergy(1600, false);
@@ -1218,7 +1268,7 @@ public final class MachineGuiGameTests {
    @GameTest(template = "empty", timeoutTicks = 1200)
    public static void small_mineral_smelter_cools_lava_to_obsidian_when_disabled(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      IFluidHandler top = machine.fluidHandler(thermalRear(machine));
       helper.assertValueEqual(1000, top.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE),
          "top lava port accepts one bucket");
       machine.handleGuiAction(null, 31, 2, 0); // Obsidian selected with current server revision.
@@ -1268,7 +1318,7 @@ public final class MachineGuiGameTests {
       MachineBlockEntity receiver = placeMachineAt(helper, TEST_POS.below(), ModBlocks.FLUID_BARREL, MachineKind.FLUID_BARREL);
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
       IFluidHandler tank = receiver.fluidHandler(Direction.UP);
-      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      IFluidHandler top = machine.fluidHandler(thermalRear(machine));
       IFluidHandler bottom = machine.fluidHandler(Direction.DOWN);
       helper.assertValueEqual(1500, top.fill(new FluidStack(Fluids.LAVA, 1500), FluidAction.EXECUTE),
          "all top-inserted lava is recipe input, not immediately extractable output");
@@ -1289,7 +1339,7 @@ public final class MachineGuiGameTests {
    @GameTest(template = "empty", timeoutTicks = 100)
    public static void small_mineral_smelter_blocked_obsidian_cooling_never_reheats(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      IFluidHandler top = machine.fluidHandler(thermalRear(machine));
       helper.assertValueEqual(1000, top.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), "one bucket is accepted");
       machine.handleGuiAction(null, 31, 2, 0);
       machine.setItem(2, new ItemStack(Items.OBSIDIAN, 64));
@@ -1340,9 +1390,12 @@ public final class MachineGuiGameTests {
       BlockPos pos = helper.absolutePos(TEST_POS);
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
       machine.setItem(0, new ItemStack(Items.COBBLESTONE));
-      IFluidHandler topFluid = helper.getLevel().getCapability(FluidHandler.BLOCK, pos, Direction.UP);
-      helper.assertTrue(topFluid != null, "the public top fluid input remains available");
-      helper.assertValueEqual(1000, topFluid.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), "top input accepts one bucket");
+      Direction rear = thermalRear(machine);
+      IFluidHandler topFluid = helper.getLevel().getCapability(FluidHandler.BLOCK, pos, rear);
+      helper.assertTrue(topFluid != null, "the public rear fluid input remains available");
+      helper.assertValueEqual(1000, topFluid.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), "rear input accepts one bucket");
+      helper.assertTrue(helper.getLevel().getCapability(FluidHandler.BLOCK, pos, Direction.UP) == null,
+         "top has no fluid input capability");
       machine.handleGuiAction(null, 31, 2, 0);
       tickMachine(helper, machine, 1);
 
@@ -1362,7 +1415,7 @@ public final class MachineGuiGameTests {
       IItemHandler topItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, Direction.UP);
       IItemHandler bottomItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, Direction.DOWN);
       helper.assertTrue(topItems != null && bottomItems != null, "physical item ports remain available");
-      helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), "top item port cannot extract the input");
+      helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), "rear item port cannot extract the input");
       helper.assertValueEqual(1, bottomItems.insertItem(0, new ItemStack(Items.COBBLESTONE), true).getCount(),
          "bottom item port rejects insertion");
       Direction back = machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
@@ -1383,7 +1436,7 @@ public final class MachineGuiGameTests {
       tickMachine(helper, machine, 900);
       helper.assertTrue(machine.getItem(0).isEmpty(), "Magma batch consumes one input");
       helper.assertTrue(machine.getItem(2).is(Items.MAGMA_BLOCK), "Magma batch creates one item");
-      helper.assertValueEqual(0, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+      helper.assertValueEqual(0, machine.fluidHandler(thermalRear(machine)).getFluidInTank(0).getAmount(),
          "Magma mode does not create free lava");
       helper.succeed();
    }
@@ -1391,21 +1444,26 @@ public final class MachineGuiGameTests {
    @GameTest(template = "empty", timeoutTicks = 80)
    public static void small_mineral_smelter_faces_reject_unrelated_automation(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      helper.assertTrue(machine.itemHandler(Direction.UP) != null && machine.itemHandler(Direction.UP).getSlots() == 1,
-         "top item handler maps only the mineral input");
+      helper.assertTrue(machine.itemHandler(Direction.UP) == null,
+         "top has no item input handler");
+      helper.assertTrue(machine.itemHandler(thermalRear(machine)) != null && machine.itemHandler(thermalRear(machine)).getSlots() == 1,
+         "rear item handler maps only the mineral input");
       helper.assertTrue(machine.itemHandler(Direction.DOWN) != null && machine.itemHandler(Direction.DOWN).getSlots() == 1,
          "bottom item handler maps only the product output");
       helper.assertTrue(machine.itemHandler(Direction.EAST) == null, "sides expose no item port");
       helper.assertTrue(machine.fluidHandler(Direction.EAST) == null, "sides expose no fluid port");
       helper.assertValueEqual(0, machine.fluidHandler(Direction.DOWN).fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE),
          "bottom fluid port does not permit insertion");
-      helper.assertTrue(machine.fluidHandler(Direction.UP).drain(1000, FluidAction.EXECUTE).isEmpty(),
-         "top fluid port does not permit extraction");
+      helper.assertTrue(machine.fluidHandler(Direction.UP) == null,
+         "top fluid capability is absent");
+      helper.assertTrue(machine.fluidHandler(thermalRear(machine)).drain(1000, FluidAction.EXECUTE).isEmpty(),
+         "rear fluid input does not permit extraction");
       helper.assertTrue(machine.energyStorage(Direction.UP) == null, "top is not a FE port");
       Direction back = machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
       helper.assertTrue(machine.energyStorage(back) != null, "rear is the sole directional FE input");
       helper.assertValueEqual(0, machine.getSlotsForFace(Direction.WEST).length, "vanilla sided inventories also block lateral access");
-      helper.assertValueEqual(1, machine.getSlotsForFace(Direction.UP).length, "top exposes one input slot");
+      helper.assertValueEqual(0, machine.getSlotsForFace(Direction.UP).length, "top exposes no automation slots");
+      helper.assertValueEqual(1, machine.getSlotsForFace(back).length, "rear exposes one input slot");
       helper.assertValueEqual(2, machine.getSlotsForFace(Direction.DOWN)[0], "bottom exposes the product backing index 2");
       helper.succeed();
    }
@@ -1728,7 +1786,7 @@ public final class MachineGuiGameTests {
       mineral.energyStorage(null).receiveEnergy(16000, false);
       tickMachine(helper, mineral, 900);
       helper.assertTrue(mineral.getItem(2).is(Items.MAGMA_BLOCK), "first stage yields a Magma Block");
-      helper.assertValueEqual(0, mineral.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+      helper.assertValueEqual(0, mineral.fluidHandler(thermalRear(mineral)).getFluidInTank(0).getAmount(),
          "first stage cannot skip to lava");
       ItemStack transportedMagma = mineral.getItem(2).copy();
 
@@ -1739,7 +1797,7 @@ public final class MachineGuiGameTests {
       tickMachine(helper, magma, 1000);
       helper.assertTrue(magma.getItem(0).isEmpty(), "second stage consumed only the transported Magma Block");
       helper.assertTrue(magma.getItem(2).isEmpty(), "second stage returns no extra magma or obsidian");
-      helper.assertValueEqual(1000, magma.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+      helper.assertValueEqual(1000, magma.fluidHandler(thermalRear(magma)).getFluidInTank(0).getAmount(),
          "second stage produces one bucket of lava");
       tickMachine(helper, magma, 100);
       helper.assertTrue(magma.getItem(2).isEmpty(), "its produced lava never becomes its own Obsidian input");
@@ -1747,11 +1805,11 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(1000, transportedLava.getAmount(), "output lava can be extracted from below");
 
       MachineBlockEntity obsidian = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      helper.assertValueEqual(1000, obsidian.fluidHandler(Direction.UP).fill(transportedLava, FluidAction.EXECUTE),
-         "third machine accepts ingredient lava from above");
+      helper.assertValueEqual(1000, obsidian.fluidHandler(thermalRear(obsidian)).fill(transportedLava, FluidAction.EXECUTE),
+         "third machine accepts ingredient lava from the rear");
       tickMachine(helper, obsidian, 1000);
       helper.assertTrue(obsidian.getItem(2).is(Items.OBSIDIAN), "one cooling stage converts lava to Obsidian");
-      helper.assertValueEqual(0, obsidian.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+      helper.assertValueEqual(0, obsidian.fluidHandler(thermalRear(obsidian)).getFluidInTank(0).getAmount(),
          "third stage consumes the whole bucket once");
       helper.succeed();
    }
@@ -2135,7 +2193,7 @@ public final class MachineGuiGameTests {
       helper.assertTrue(extractedElectricalOutput.is(Items.IRON_INGOT), "small electrical furnace automation should extract from output slot");
       helper.assertTrue(extractedElectricalOutputFifo.is(Items.COPPER_INGOT), "small electrical furnace automation should extract from output FIFO slot");
       MachineBlockEntity mineralSmelter = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      IItemHandler mineralSmelterHandler = mineralSmelter.itemHandler(Direction.UP);
+      IItemHandler mineralSmelterHandler = mineralSmelter.itemHandler(thermalRear(mineralSmelter));
       helper.assertTrue(mineralSmelterHandler != null, "small mineral smelter should expose an item handler capability");
       ItemStack mineralBlocked = mineralSmelterHandler.insertItem(2, new ItemStack(Items.COBBLESTONE), false);
       helper.assertValueEqual(1, mineralBlocked.getCount(), "layout output slots should reject automated insertion");
@@ -2144,7 +2202,7 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(1, mineralHeatBlocked.getCount(), "small mineral smelter heat slot should reject automated mineral insertion");
       helper.assertTrue(mineralSmelter.getItem(1).isEmpty(), "small mineral smelter heat slot should remain empty after rejected insert");
       MachineBlockEntity freezer = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
-      IItemHandler freezerHandler = freezer.itemHandler(Direction.UP);
+      IItemHandler freezerHandler = freezer.itemHandler(thermalRear(freezer));
       helper.assertTrue(freezerHandler != null, "small freezer should expose an item handler capability");
       ItemStack coldSlotBlocked = freezerHandler.insertItem(1, new ItemStack(Items.ICE), false);
       helper.assertValueEqual(1, coldSlotBlocked.getCount(), "small freezer cold slot should reject automated input insertion");
@@ -2348,7 +2406,7 @@ public final class MachineGuiGameTests {
       MachineBlockEntity mineralSmelter = placeMachineAt(
          helper, TEST_POS.offset(3, 0, 0), ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER
       );
-      IFluidHandler mineralHandler = mineralSmelter.fluidHandler(Direction.UP);
+      IFluidHandler mineralHandler = mineralSmelter.fluidHandler(thermalRear(mineralSmelter));
       helper.assertTrue(mineralHandler != null, "small mineral smelter should expose a fluid handler");
       helper.assertTrue(!mineralSmelter.canPreviewItemUse(new ItemStack(Items.WATER_BUCKET)), "small mineral smelter should not preview water insertion");
       helper.assertTrue(mineralSmelter.canPreviewItemUse(new ItemStack(Items.LAVA_BUCKET)), "small mineral smelter should preview lava insertion");
@@ -3598,6 +3656,10 @@ public final class MachineGuiGameTests {
       player.setPos(absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 0.5);
       player.containerMenu = menu;
       helper.assertTrue(menu.stillValid(player), "the simulated player should have the active, in-range machine menu");
+   }
+
+   private static Direction thermalRear(MachineBlockEntity machine) {
+      return machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
    }
 
    private static void tickMachine(GameTestHelper helper, MachineBlockEntity machine, int times) {
