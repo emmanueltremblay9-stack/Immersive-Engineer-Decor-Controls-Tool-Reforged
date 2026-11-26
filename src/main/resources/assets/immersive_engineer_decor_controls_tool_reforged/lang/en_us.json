@@ -206,6 +206,7 @@
   "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.auxslot": "Auxiliary slot\n§7Place a Hopper here to enable automatic feeding from the input side.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.capacitors": "SOC %1$s%%, %2$srf/t",
   "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.speed": "Smelting speed selection §7(OFF/I/II/III)",
+  "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.rotation": "Mode: %s\nLeft click: next detent\nRight click: previous detent",
   "block.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel": "Small Fluid Collection Funnel",
   "block.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.help": "Collects fluids above it. Has an\n internal tank with three buckets\n capacity. Traces flowing fluids\n to nearby source blocks. The\n fluid can be obtained with fluid\n transfer systems or a bucket.\n Fills only tanks below (gravity\n transfer). Compatible with vanilla\n infinite-water-source creation.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_freezer": "Small Water Freezer",

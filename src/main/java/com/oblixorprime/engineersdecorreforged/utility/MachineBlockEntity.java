@@ -1476,10 +1476,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   this.machineSlotCursor = Mth.clamp(row * 6, 0, this.visibleSlotCount(kind) - 1);
                }
                break;
-            case 30:
+            case ElectricalFurnaceControl.SET_SPEED_ACTION:
                if (kind == MachineKind.SMALL_ELECTRICAL_FURNACE) {
                   this.electricalSpeed = Mth.clamp(valueA, 0, 3);
                }
+               break;
+            case ElectricalFurnaceControl.CYCLE_SPEED_ACTION:
+               if (kind != MachineKind.SMALL_ELECTRICAL_FURNACE
+                  || !ElectricalFurnaceControl.validCycleRequest(valueA, valueB)) return;
+               // Resolve every click against the latest server detent, including
+               // multiple requests arriving before a client sync round trip.
+               this.electricalSpeed = ElectricalFurnaceControl.cycleSpeed(this.electricalSpeed, valueA);
+               break;
          }
 
          this.setChanged();

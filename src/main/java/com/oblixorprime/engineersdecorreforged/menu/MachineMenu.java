@@ -9,6 +9,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
+import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
@@ -516,6 +517,15 @@ public class MachineMenu extends AbstractContainerMenu {
    public void handleAction(Player player, int action, int valueA, int valueB) {
       if (action == 31) return; // Smelter mode changes use the v0.5 dedicated payload only.
       if (this.container instanceof MachineBlockEntity machine) {
+         if (this.kind == MachineKind.SMALL_ELECTRICAL_FURNACE) {
+            if (player == null || player.level().isClientSide || player.containerMenu != this
+               || player.isSpectator() || !this.stillValid(player) || machine.isRemoved()
+               || machine.getLevel() != player.level() || machine.kind() != this.kind
+               || !ElectricalFurnaceControl.accepts(action, valueA, valueB)) return;
+            machine.handleGuiAction(player, action, valueA, valueB);
+            this.broadcastChanges();
+            return;
+         }
          // Bounded to the newly integrated screens. Presentation cannot authorize a
          // stale, spectator, remote or wrong-machine action; the server still clamps values.
          if (FactoryStudyGeometry.supports(this.kind)) {

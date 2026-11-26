@@ -6,12 +6,19 @@ import unittest
 from prism_210_history_projection import (
     BASE_COMMIT, HEAD_COMMIT, RECORD, ROOT, FREEZER_NATIVE_PORT_RECORD, FREEZER_RECOVERY_TOOLTIP_RECORD,
     FREEZER_RECOVERY_KEY_RECORD, FREEZER_ENERGY_SCISSOR_RECORD, FREEZER_QA_FOLLOWUP_RECORD,
-    LATE_VALIDATION_RECORD, _freezer_qa_followup_record, _reverse_layer, expected_current_sha256,
+    LATE_VALIDATION_RECORD, _freezer_qa_followup_record, _electrical_controls_record,
+    _reverse_layer, expected_current_sha256,
     project_current_candidate, sha256,
 )
 
 
+def reverse_electrical_controls(path, source):
+    layer = _electrical_controls_record()["files"].get(path)
+    return _reverse_layer(path, source, layer) if layer is not None else source
+
+
 def reverse_qa_followup(path, source):
+    source = reverse_electrical_controls(path, source)
     layer = _freezer_qa_followup_record()["files"].get(path)
     return _reverse_layer(path, source, layer) if layer is not None else source
 
@@ -246,7 +253,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
         for path, layer in record["files"].items():
             with self.subTest(path=path):
                 previous = subprocess.check_output(["git", "show", record["base_commit"] + ":" + path], cwd=ROOT)
-                current = (ROOT / path).read_bytes()
+                current = reverse_electrical_controls(path, (ROOT / path).read_bytes())
                 self.assertEqual(sha256(previous), layer["old_sha256"])
                 self.assertEqual(sha256(current), layer["new_sha256"])
                 self.assertEqual(_reverse_layer(path, current, layer), previous)

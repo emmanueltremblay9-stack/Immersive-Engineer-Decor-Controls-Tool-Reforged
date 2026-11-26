@@ -48,7 +48,7 @@ public class TooltipProbe {
         record MachineSlot(int x, int y) {}
         List<MachineSlot> machineSlots() { return List.of(); }
     }
-    enum MachineKind { SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, FACTORY_HOPPER, FACTORY_DROPPER, OTHER }
+    enum MachineKind { SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, FACTORY_HOPPER, FACTORY_DROPPER, SMALL_ELECTRICAL_FURNACE, OTHER }
     static final class MachineMenu { MachineKind selected = MachineKind.OTHER; MachineLayout layout() { return new MachineLayout(); } MachineKind kind() { return selected; } }
     static final class Slot { boolean hasItem() { return false; } }
     final Font font = new Font();
@@ -97,7 +97,7 @@ public class TooltipProbe {
             }
             check(graphics.source == probe.text && graphics.calls == 1, "Other tooltip content");
         }
-        for (MachineKind kind : new MachineKind[]{MachineKind.FACTORY_HOPPER, MachineKind.FACTORY_DROPPER}) {
+        for (MachineKind kind : new MachineKind[]{MachineKind.FACTORY_HOPPER, MachineKind.FACTORY_DROPPER, MachineKind.SMALL_ELECTRICAL_FURNACE}) {
             for (int width : new int[]{1280, 400, 320, 240, 100, 24, 1}) {
                 TooltipProbe factory = new TooltipProbe(); factory.mode = 7; factory.width = width;
                 factory.menu.selected = kind;

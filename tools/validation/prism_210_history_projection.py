@@ -24,6 +24,8 @@ FREEZER_ENERGY_SCISSOR_RECORD = Path(__file__).with_name("prism_210_freezer_ener
 FREEZER_ENERGY_SCISSOR_RECORD_SHA256 = "0d0c106569237b2a69d78abbe70fbd0b1170699f218b516238526b19aee56e2a"
 FREEZER_QA_FOLLOWUP_RECORD = Path(__file__).with_name("prism_210_freezer_qa_followup_projection.json")
 FREEZER_QA_FOLLOWUP_RECORD_SHA256 = "32299db7dc9ff2dffba801f2455976b54e1b75df64c0592aea5ff25c8e1427d2"
+ELECTRICAL_CONTROLS_RECORD = Path(__file__).with_name("prism_210_electrical_controls_projection.json")
+ELECTRICAL_CONTROLS_RECORD_SHA256 = "d9c5f924307e814e3cc772782c145fcd9e104f8741df305bf93395d3c5967f98"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 HEAD_COMMIT = "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
 RECORD_BYTES = RECORD.read_bytes()
@@ -33,6 +35,7 @@ FREEZER_RECOVERY_TOOLTIP_RECORD_BYTES = FREEZER_RECOVERY_TOOLTIP_RECORD.read_byt
 FREEZER_RECOVERY_KEY_RECORD_BYTES = FREEZER_RECOVERY_KEY_RECORD.read_bytes()
 FREEZER_ENERGY_SCISSOR_RECORD_BYTES = FREEZER_ENERGY_SCISSOR_RECORD.read_bytes()
 FREEZER_QA_FOLLOWUP_RECORD_BYTES = FREEZER_QA_FOLLOWUP_RECORD.read_bytes()
+ELECTRICAL_CONTROLS_RECORD_BYTES = ELECTRICAL_CONTROLS_RECORD.read_bytes()
 
 
 def _record():
@@ -112,6 +115,17 @@ def _freezer_qa_followup_record():
     return data
 
 
+def _electrical_controls_record():
+    if sha256(ELECTRICAL_CONTROLS_RECORD_BYTES) != ELECTRICAL_CONTROLS_RECORD_SHA256:
+        raise AssertionError("#210 electrical controls projection record changed")
+    data = json.loads(ELECTRICAL_CONTROLS_RECORD_BYTES)
+    if data.get("schema") != "iedctr-prism-electrical-controls-v1":
+        raise AssertionError("#210 electrical controls projection schema changed")
+    if data.get("base_commit") != "366ecf2c9d7e74afcc6398b80cfa84896b74e819":
+        raise AssertionError("#210 electrical controls projection base changed")
+    return data
+
+
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -138,6 +152,16 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
     be checked by its own fail-closed validator. Call with strict=True in tests
     that specifically validate this candidate's recorded state.
     """
+    electrical = _electrical_controls_record()["files"].get(path)
+    electrical_reversed = False
+    if electrical is not None:
+        if sha256(source) == electrical["new_sha256"]:
+            source = _reverse_layer(path, source, electrical)
+            electrical_reversed = True
+        elif sha256(source) == electrical["old_sha256"]:
+            electrical_reversed = True
+        elif strict:
+            raise AssertionError("Unrecognized #210 candidate bytes: " + path)
     followup = _freezer_qa_followup_record()["files"].get(path)
     followup_reversed = False
     if followup is not None:
@@ -193,7 +217,7 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
             if strict:
                 raise AssertionError("Unrecognized #210 late validation bytes: " + path)
         if strict:
-            if not followup_reversed and not scissor_reversed and not port_reversed and not recovery_tooltip_reversed and not recovery_key_reversed:
+            if not electrical_reversed and not followup_reversed and not scissor_reversed and not port_reversed and not recovery_tooltip_reversed and not recovery_key_reversed:
                 raise AssertionError("Path is outside the #210 projection allowlist: " + path)
         return source
     digest = sha256(source)
@@ -240,6 +264,9 @@ def project_file_from_root(path: str, *, strict: bool = True) -> bytes:
 
 def expected_current_sha256(path: str) -> str | None:
     """Return the pinned final candidate blob identity for an allowed path."""
+    electrical = _electrical_controls_record()["files"].get(path)
+    if electrical is not None:
+        return electrical["new_sha256"]
     followup = _freezer_qa_followup_record()["files"].get(path)
     if followup is not None:
         return followup["new_sha256"]

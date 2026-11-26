@@ -4,6 +4,7 @@ import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
@@ -30,8 +31,6 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu> {
-   private static final ResourceLocation ELECTRICAL_DIAL_NEUTRAL = ResourceLocation.fromNamespaceAndPath(
-      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/retained_furnaces/electrical_dial_neutral.png");
    private static final int FRAME = -14934755;
    private static final int BODY = -12960450;
    private static final int BODY_DARK = -13618380;
@@ -177,6 +176,13 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+      if (this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE
+         && ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos)) {
+         int step = ElectricalFurnaceArtwork.clickStep(button);
+         if (step == 0) return false;
+         this.sendAction(ElectricalFurnaceControl.CYCLE_SPEED_ACTION, step);
+         return true;
+      }
       return ((MachineMenu)this.menu).layout().style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE && this.handleOriginalClick(mouseX, mouseY)
          ? true
          : super.mouseClicked(mouseX, mouseY, button);
@@ -827,18 +833,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       // Existing synchronized fields only: heat, energy, progress and four-speed selector.
       int heat = Mth.clamp(((MachineMenu)this.menu).field(0), 0, 200);
       graphics.fill(x+71, y+96-heat*14/200, x+78, y+96, 0xFFD87525);
-      int energy = Mth.clamp((int)(55L * ((MachineMenu)this.menu).field(1)
-         / Math.max(1, ((MachineMenu)this.menu).field(5))), 0, 55);
-      graphics.fill(x+94, y+86, x+149, y+92, 0xFF252525);
-      graphics.fill(x+94, y+86, x+94+energy, y+92, 0xFFECA42C);
       graphics.fill(x+108, y+51, x+108+this.progressPixels(13), y+54, 0xFFFFC34A);
-      int speed = Mth.clamp(((MachineMenu)this.menu).field(4), 0, 3);
-      // Replace only the dial's painted spindle with the original ring face, then mark the live detent.
-      graphics.blit(ELECTRICAL_DIAL_NEUTRAL, x+171, y+74, 23, 23, 0F, 0F, 120, 120, 120, 120);
-      int[] detent = electricalDialOffset(speed);
-      int markerX=x+182+detent[0], markerY=y+87+detent[1];
-      graphics.fill(markerX+1,markerY,markerX+3,markerY+4,0xFF5B3A1C);
-      graphics.fill(markerX,markerY+1,markerX+4,markerY+3,0xFFFFD180);
+      ElectricalFurnaceArtwork.render(graphics, texture, x, y, this.imageWidth, this.imageHeight,
+         this.menu.field(1), this.menu.field(5), this.menu.field(4));
    }
 
    private void drawElectricalFurnaceWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
@@ -1256,7 +1253,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case FACTORY_DROPPER -> this.handleFactoryDropperClick(mouseX, mouseY);
          case FACTORY_PLACER -> this.handleFactoryPlacerClick(mouseX, mouseY);
          default -> false;
-         case SMALL_ELECTRICAL_FURNACE -> this.handleElectricalFurnaceClick(mouseX, mouseY);
       };
    }
 
@@ -1416,15 +1412,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
-   private boolean handleElectricalFurnaceClick(double mouseX, double mouseY) {
-      if (!this.isHovering(168, 74, 33, 29, mouseX, mouseY)) return false;
-      double dx = mouseX-this.leftPos-184;
-      double dy = mouseY-this.topPos-88;
-      int speed = Math.abs(dx)>Math.abs(dy) ? (dx<0 ? 1:3) : (dy<0 ? 2:0);
-      this.sendAction(30,speed);
-      return true;
-   }
-
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         Component funnelTooltip = this.smallFluidFunnelTooltip(mouseX, mouseY);
         if (funnelTooltip != null) {
@@ -1472,7 +1459,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       Component controlTooltip = this.originalControlTooltip(mouseX, mouseY);
       if (controlTooltip != null) {
          MachineKind kind = ((MachineMenu)this.menu).kind();
-         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER) {
+         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER
+            || kind == MachineKind.SMALL_ELECTRICAL_FURNACE) {
             // Preserve translated line breaks and styles; bound long control help to the viewport.
             int wrapWidth = Math.max(1, Math.min(240, this.width - 16));
             graphics.renderTooltip(this.font, this.font.split(controlTooltip, wrapWidth), mouseX, mouseY);
@@ -1498,15 +1486,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    static boolean hasVisibleTooltipText(Component tooltip) {
       return tooltip != null && !tooltip.getString().isBlank();
-   }
-
-   static int[] electricalDialOffset(int speed) {
-      return switch (Mth.clamp(speed,0,3)) {
-         case 1 -> new int[]{-9,0};
-         case 2 -> new int[]{0,-9};
-         case 3 -> new int[]{9,0};
-         default -> new int[]{0,9};
-      };
    }
 
    private void renderFluidArtworkTooltip(GuiGraphics graphics, Component tooltip, int mouseX, int mouseY) {
@@ -1748,12 +1727,26 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private Component electricalFurnaceTooltip(double mouseX, double mouseY) {
+      String prefix = "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.";
+      if (this.isHovering(90,82,64,15,mouseX,mouseY)) {
+         int capacity = Math.max(0, this.menu.field(5));
+         return Component.translatable(prefix + "energy").copy().append("\n")
+            .append(Component.literal(Mth.clamp(this.menu.field(1), 0, capacity) + " / " + capacity + " FE"));
+      }
+      if (ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos)) {
+         String mode = switch (Mth.clamp(this.menu.field(4), 0, 3)) {
+            case 1 -> "I";
+            case 2 -> "II";
+            case 3 -> "III";
+            default -> "OFF";
+         };
+         return Component.translatable(prefix + "speed").copy().append("\n")
+            .append(Component.translatable(prefix + "rotation", mode));
+      }
       String part = null;
       if (this.isHovering(69,76,14,23,mouseX,mouseY)) part="heat";
       else if (this.isHovering(106,46,18,14,mouseX,mouseY)) part="progress";
-      else if (this.isHovering(90,82,64,15,mouseX,mouseY)) part="energy";
-      else if (this.isHovering(168,74,33,29,mouseX,mouseY)) part="speed";
-      return part == null ? null : Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips."+part);
+      return part == null ? null : Component.translatable(prefix + part);
    }
 
    private Component wasteIncineratorTooltip(double mouseX, double mouseY) {

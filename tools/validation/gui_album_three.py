@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Capture seven ordinary machine GUIs in a real client; no gameplay acceptance verdict."""
+"""Capture seven ordinary GUIs and exercise Electrical Furnace controls in a real client."""
 import argparse
 import hashlib
 import json
@@ -36,6 +36,13 @@ SCREENS = [
 ]
 V3_LAYOUTS = {0: (18, 54), 5: (15, 51), 6: (11, 47)}
 V3_OCCUPIED_SLOTS = {0: (18, 54), 5: (15, 51), 6: (5, 41)}
+ELECTRICAL_INPUT = 'synthetic XTest pointer and Electrical Furnace button events through GLFW; server-opened menus; no human input'
+ELECTRICAL_CASES = ['empty-off','left-one','left-two','left-three','left-wrap','right-wrap',
+                    'rapid-left-three','middle-inert','border-inert','reopened','half-energy','full-energy']
+ELECTRICAL_SPEEDS = [0,1,2,3,0,3,2,2,2,2,2,2]
+ELECTRICAL_ENERGY = [0,0,0,0,0,0,0,0,0,0,16000,32000]
+ELECTRICAL_CLICKS = [0,1,1,1,1,1,3,1,1,0,0,0]
+ELECTRICAL_BUTTONS = [0,1,1,1,1,3,1,2,1,0,0,0]
 
 
 def v3_outline(width, height, gui_scale, row):
@@ -83,9 +90,9 @@ def validate_selection_pixels(selections,game,width,height,scale):
 
 
 def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
-    for key,value in dict(suite='gui-album-three-v2',status='observed',nonce=nonce,
+    for key,value in dict(suite='gui-album-three-v3',status='observed',nonce=nonce,
                          executed_source_sha=sha,visual_acceptance=False,physical_os_input=True,human_input=False,
-                         input_method="synthetic XTest pointer positioning only; no clicks",synthetic_button_events=0).items():
+                         input_method=ELECTRICAL_INPUT,synthetic_button_events=20).items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
     runtime=proof.get('packaged_runtime',{})
     require(runtime.get('jar_path')==str(jar.resolve()) and runtime.get('jar_sha256')==jar_sha,'Wrong production JAR')
@@ -127,6 +134,123 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
     require(cases[5].get('visible_nonempty_slots')==51,'Dropper 15 machine slots and 36 player slots are not all present')
     require(cases[5].get('dropper_filter_gate')==2,'Dropper capture did not use the AND filter gate')
     require(cases[5].get('dropper_external_powered') is False,'Dropper capture fixture was powered')
+    validate_electrical_controls(proof.get('electrical_controls',{}),cases[2],game,width,height,gui_scale)
+
+
+def validate_electrical_controls(proof,base_case,game,width,height,scale):
+    for key,value in dict(suite='electrical-furnace-native-controls-v1',complete=True,
+                         input_method=ELECTRICAL_INPUT,native_presses_sent=10,native_presses_observed=10,
+                         synthetic_button_events=20,fixture_energy_capacity=32000,
+                         fixture_has_recipe=False,visual_acceptance=False).items():
+        require(type(proof.get(key)) is type(value) and proof[key]==value,'Electrical proof differs: '+key)
+    initial=proof.get('initial_menu_id')
+    require(type(initial) is int and initial>0,'Electrical initial menu missing')
+    records=proof.get('observations',[])
+    require([r.get('case') for r in records]==ELECTRICAL_CASES,'Electrical native scenarios missing')
+    for i,row in enumerate(records):
+        expected=dict(expected_speed=ELECTRICAL_SPEEDS[i],client_speed=ELECTRICAL_SPEEDS[i],
+                      expected_energy=ELECTRICAL_ENERGY[i],client_energy=ELECTRICAL_ENERGY[i],client_capacity=32000,
+                      native_presses=ELECTRICAL_CLICKS[i],x11_button=ELECTRICAL_BUTTONS[i],
+                      click_x=208 if i==8 else 184,click_y=88,gui_scale=scale)
+        for key,value in expected.items():
+            require(type(row.get(key)) is int and row[key]==value,'Electrical observation differs: '+row['case']+'/'+key)
+        require(row.get('screen')==base_case.get('screen')==SCREENS[2],'Electrical screen differs from packaged screen')
+        require(type(row.get('render_frames')) is int and row['render_frames']>=3,'Electrical state not rendered stably')
+        menu_id=row.get('menu_id')
+        require(type(menu_id) is int and (menu_id==initial if i<9 else menu_id>initial),'Electrical reopen identity differs')
+        require(row.get('input_source')==('XTest via GLFW' if ELECTRICAL_CLICKS[i] else
+                'server fixture or programmatic reopen; no button input'),'Electrical input origin differs')
+        server=row.get('server',{})
+        for key,value in dict(matching_menu=True,menu_id=menu_id,speed=ELECTRICAL_SPEEDS[i],
+                             machine_speed=ELECTRICAL_SPEEDS[i],energy=ELECTRICAL_ENERGY[i],capacity=32000,
+                             cursor_empty=True,machine_empty=True).items():
+            require(type(server.get(key)) is type(value) and server[key]==value,'Electrical server acknowledgement differs: '+key)
+        name='electrical-'+ELECTRICAL_CASES[i]+'.png'
+        require(row.get('capture')==name,'Unexpected electrical screenshot name')
+        png(game/name,width,height,row.get('capture_sha256'))
+    require(len({r['menu_id'] for r in records[9:]})==1,'Electrical menu changed after reopen')
+    events=proof.get('input_events',[])
+    expected_events=[(i,n) for i,count in enumerate(ELECTRICAL_CLICKS) for n in range(count)]
+    require(len(events)==len(expected_events),'Native Electrical callback count differs')
+    for event,(i,_) in zip(events,expected_events):
+        require(event.get('case')==ELECTRICAL_CASES[i],'Electrical callbacks reordered or absent')
+        require(type(event.get('glfw_button')) is int and event['glfw_button']=={1:0,2:2,3:1}[ELECTRICAL_BUTTONS[i]],
+                'Electrical callback button differs')
+        for axis,value in [('x',208 if i==8 else 184),('y',88)]:
+            actual=event.get(axis)
+            require(type(actual) in (int,float) and math.isfinite(actual) and abs(actual-value)<=1,
+                    'Electrical callback misses independent acceptance point')
+        require(type(event.get('handled')) is bool and (event['handled'] or i>=7),'Electrical dial did not handle click')
+        # In particular, all three rapid callbacks see the same pre-acknowledgement
+        # speed. The final server speed must still count all three increments.
+        require(type(event.get('client_speed_during_callback')) is int
+                and event['client_speed_during_callback']==ELECTRICAL_SPEEDS[i-1],
+                'Electrical click used unexpected client state or burst was not queued together')
+    validate_electrical_pixels(records,game,width,height,scale)
+
+
+def electrical_panel_origin(width,height,scale):
+    require(type(scale) is int and scale in (1,2) and width>=228*scale and height>=250*scale,
+            'Electrical panel outside viewport')
+    return ((math.ceil(width/scale)-228)//2)*scale,((math.ceil(height/scale)-250)//2)*scale
+
+
+def validate_electrical_pixels(records,game,width,height,scale):
+    """Independent native pixel checks: actual grip rotation and segmented FE fill.
+
+    Geometric acceptance comes from the retained artwork, not renderer helpers.
+    These reject a moving lamp with a static grip, an always-full meter, the old
+    opaque rectangle, reversed fill, and frame/divider overpainting. They do not
+    replace visual acceptance by the owner.
+    """
+    left,top=electrical_panel_origin(width,height,scale)
+    images=[]
+    for row in records:
+        w,h,pixels=decode_png(game/row['capture'])
+        require((w,h)==(width,height),'Electrical screenshot viewport differs')
+        images.append(pixels)
+    def rgb(image,x,y):
+        offset=((top+y)*width+left+x)*4
+        return image[offset:offset+3]
+    # The former detent lamp lies outside this central grip box. A lamp-only
+    # implementation cannot satisfy even one of these orientation comparisons.
+    core=[(x,y) for y in range(82*scale,94*scale) for x in range(178*scale,190*scale)]
+    for a in range(4):
+        for b in range(a+1,4):
+            changed=sum(rgb(images[a],x,y)!=rgb(images[b],x,y) for x,y in core)
+            require(changed>=8*scale*scale,'Electrical grip does not visibly rotate between '+str(a)+' and '+str(b))
+    for earlier,later in [(0,4),(3,5),(2,6),(2,7),(2,8),(2,9),(2,10),(2,11)]:
+        require(all(rgb(images[earlier],x,y)==rgb(images[later],x,y) for x,y in core),
+                'Electrical repeated/reopened detent does not preserve the same grip orientation')
+
+    # Interior probes are inset from the sculpted corner pixels and dividers.
+    # Source-to-framebuffer projection uses the full source raster dimensions.
+    segments=[(493,527),(532,564),(569,600),(606,638),(643,673),(678,708),(714,744),(750,780)]
+    def source_pixels(x1,y1,x2,y2):
+        points=[]
+        for y in range(83*scale,95*scale):
+            sy=(y+.5)*1312/(250*scale)
+            if not y1<=sy<y2:continue
+            for x in range(90*scale,152*scale):
+                sx=(x+.5)*1199/(228*scale)
+                if x1<=sx<x2:points.append((x,y))
+        require(points,'No native pixels in independent meter probe')
+        return points
+    empty,half,full=images[9],images[10],images[11]
+    for number,(start,end) in enumerate(segments):
+        points=source_pixels(start+4,456,end-4,477)
+        changed=sum(rgb(empty,x,y)!=rgb(full,x,y) for x,y in points)
+        require(changed>=.9*len(points),'Electrical full FE segment not filled: '+str(number))
+        expected=full if number<4 else empty
+        require(all(rgb(half,x,y)==rgb(expected,x,y) for x,y in points),
+                'Electrical half FE is not the left half of the meter')
+        require(sum(sum(rgb(full,x,y))-sum(rgb(empty,x,y)) for x,y in points)>15*len(points),
+                'Electrical full FE segment is not brighter than empty')
+    preserved=source_pixels(478,440,793,446)+source_pixels(478,488,793,493)
+    for (_,end),(start,_) in zip(segments,segments[1:]):
+        preserved+=source_pixels(end+.3,454,start-.3,479)
+    require(all(rgb(empty,x,y)==rgb(half,x,y)==rgb(full,x,y) for x,y in preserved),
+            'Electrical FE overpainted the metal frame or segment dividers')
 
 
 def bind_built_jar(project, expected_hash, env):
@@ -227,7 +351,7 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
         final_sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
         require(clean() and final_sha == sha and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,
                 'Source/JAR changed during run')
-        print('OBSERVED seven native machine screens, including Hopper/Dropper/Lab Furnace V3 and three Hopper selection rows; screenshots still require independent review. Not gameplay acceptance.')
+        print('OBSERVED seven native screens, three Hopper rows, native Electrical Furnace dial clicks/reopen and FE 0/16000/32000. Screenshots still require independent visual review; this is bounded interaction evidence, not full gameplay acceptance.')
         return 0
     except (SmokeFailure,OSError,ValueError,KeyError) as error:
         print('FAIL: '+str(error),file=sys.stderr);return 1

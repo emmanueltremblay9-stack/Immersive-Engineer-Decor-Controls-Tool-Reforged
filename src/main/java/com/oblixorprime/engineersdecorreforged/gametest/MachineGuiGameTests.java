@@ -15,6 +15,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;
 import io.netty.buffer.Unpooled;
 import java.util.List;
 import net.minecraft.core.BlockPos;
@@ -1885,8 +1886,114 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(12, placerMenu.field(2), "factory placer schematic line should select the matching stock row");
       MachineBlockEntity electrical = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);
       MachineMenu electricalMenu = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 4, player.getInventory(), electrical, electrical.dataAccessForTests());
+      attachTestMenu(helper, player, electricalMenu, TEST_POS);
       electricalMenu.handleAction(player, 30, 3, 0);
       helper.assertValueEqual(3, electricalMenu.field(4), "small electrical furnace speed selector should update parent field 4");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void electrical_speed_cycles_every_server_request_in_both_directions(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 90, player.getInventory(), machine, machine.dataAccessForTests());
+      attachTestMenu(helper, player, menu, TEST_POS);
+      machine.energyStorage(null).receiveEnergy(8000, false);
+      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, 0, 0);
+      // Consecutive requests deliberately have no tick or client acknowledgement between them.
+      for (int expected : new int[]{1, 2, 3, 0, 1, 2}) {
+         menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+         helper.assertValueEqual(expected, menu.field(4), "every forward click must advance the current server detent");
+      }
+      for (int expected : new int[]{1, 0, 3, 2}) {
+         menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, -1, 0);
+         helper.assertValueEqual(expected, menu.field(4), "reverse clicks must wrap from OFF to HIGH");
+      }
+      helper.assertValueEqual(8000, menu.field(1), "turning the control itself must not consume FE");
+      helper.assertValueEqual(32000, menu.field(5), "the speed control must preserve energy capacity");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void electrical_speed_rejects_unbounded_steps_and_unrelated_actions(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 91, player.getInventory(), machine, machine.dataAccessForTests());
+      attachTestMenu(helper, player, menu, TEST_POS);
+      for (int direction : new int[]{Integer.MIN_VALUE, -2, 0, 2, Integer.MAX_VALUE}) {
+         menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, direction, 0);
+         helper.assertValueEqual(1, menu.field(4), "invalid relative steps must not alter the speed");
+      }
+      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 1);
+      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, -1, -1);
+      for (int action : new int[]{1, 16, 31, 33, Integer.MAX_VALUE}) menu.handleAction(player, action, 1, 0);
+      helper.assertValueEqual(1, menu.field(4), "reserved payloads and unrelated actions must remain inert");
+      // Existing absolute requests retain their historic clamp behavior.
+      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, -99, 0);
+      helper.assertValueEqual(0, menu.field(4), "legacy absolute mode clamps below OFF");
+      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, 99, 0);
+      helper.assertValueEqual(3, menu.field(4), "legacy absolute mode clamps above HIGH");
+      MachineBlockEntity hopper = placeMachineAt(helper, TEST_POS.offset(3, 0, 0), ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER);
+      MachineMenu hopperMenu = new MachineMenu(MachineKind.FACTORY_HOPPER, 92, player.getInventory(), hopper, hopper.dataAccessForTests());
+      attachTestMenu(helper, player, hopperMenu, TEST_POS.offset(3, 0, 0));
+      int hopperRange = hopperMenu.field(0);
+      hopperMenu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      helper.assertValueEqual(hopperRange, hopperMenu.field(0), "electrical rotation must be rejected by another machine menu");
+      helper.assertValueEqual(3, menu.field(4), "a different active machine cannot change the electrical speed");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void electrical_speed_requires_an_active_nearby_non_spectator_menu(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 93, player.getInventory(), machine, machine.dataAccessForTests());
+      attachTestMenu(helper, player, menu, TEST_POS);
+      menu.handleAction(null, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      player.containerMenu = player.inventoryMenu;
+      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      helper.assertValueEqual(1, menu.field(4), "closed/stale menu requests must be inert");
+      attachTestMenu(helper, player, menu, TEST_POS);
+      player.setPos(machine.getBlockPos().getX() + 32.0, machine.getBlockPos().getY(), machine.getBlockPos().getZ());
+      helper.assertTrue(!menu.stillValid(player), "distance rejection fixture must be outside the menu radius");
+      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, 3, 0);
+      helper.assertValueEqual(1, menu.field(4), "distant players must not alter either speed action");
+
+      var spectator = new net.neoforged.neoforge.common.util.FakePlayer(helper.getLevel(),
+         new com.mojang.authlib.GameProfile(java.util.UUID.randomUUID(), "ElectricalDialTest"));
+      spectator.gameMode.changeGameModeForPlayer(GameType.SPECTATOR);
+      attachTestMenu(helper, spectator, menu, TEST_POS);
+      helper.assertTrue(spectator.isSpectator(), "spectator rejection fixture must be a spectator");
+      menu.handleAction(spectator, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      helper.assertValueEqual(1, menu.field(4), "spectators must not turn the control");
+      attachTestMenu(helper, player, menu, TEST_POS);
+      machine.setRemoved();
+      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      helper.assertValueEqual(1, menu.field(4), "a removed block entity must reject the control");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void electrical_speed_survives_menu_reopen_and_saved_state(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);
+      MachineMenu first = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 94, player.getInventory(), machine, machine.dataAccessForTests());
+      attachTestMenu(helper, player, first, TEST_POS);
+      first.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      first.removed(player);
+      player.containerMenu = player.inventoryMenu;
+      MachineMenu reopened = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 95, player.getInventory(), machine, machine.dataAccessForTests());
+      attachTestMenu(helper, player, reopened, TEST_POS);
+      helper.assertValueEqual(2, reopened.field(4), "reopened menus must expose the selected server detent");
+      first.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      helper.assertValueEqual(2, reopened.field(4), "the old menu must stay invalid after opening a new one");
+      reopened.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);
+      helper.assertValueEqual(3, reopened.field(4), "a reopened menu must continue from the persisted selection");
+      MachineBlockEntity loaded = new MachineBlockEntity(machine.getBlockPos(), machine.getBlockState());
+      loaded.loadWithComponents(saved, helper.getLevel().registryAccess());
+      helper.assertValueEqual(2, loaded.dataAccessForTests().get(4), "save/load must restore the selected detent");
       helper.succeed();
    }
 
