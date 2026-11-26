@@ -61,7 +61,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python tools/validation/milking_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log
+          python tools/validation/milking_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 2734a258fd3b8c5d037ee82e34c2a38df8529e1055b5720581e7e1f059106ccc --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log
           test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
           git status --porcelain --untracked-files=all > build/milking-qualification/final-source-status.txt
           test ! -s build/milking-qualification/final-source-status.txt
@@ -72,7 +72,7 @@ jobs:
           echo "Requested exact PR head: $EXPECTED_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
           echo 'Requested profile: ${{ matrix.profile }}' >> "$GITHUB_STEP_SUMMARY"
           echo "Native validation step: ${{ steps.native.outcome }}" >> "$GITHUB_STEP_SUMMARY"
-          echo 'Ordinary candidate JAR hash must match c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Ordinary candidate JAR hash must match 2734a258fd3b8c5d037ee82e34c2a38df8529e1055b5720581e7e1f059106ccc; separate harness and before/after production origins required.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Acceptance requires matching source/nonce/locale/scale/framebuffer, 38 server-confirmed routes, real bucket conversion, decoded PNG crop/fill/exterior checks and clean exit.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Bounded screen-handler input only. Reload/reopen, shift-click, complex gestures, physical OS input, JEI actions and full visual acceptance remain deferred.' >> "$GITHUB_STEP_SUMMARY"
       - name: Retain exact-head native proof, screenshots and logs

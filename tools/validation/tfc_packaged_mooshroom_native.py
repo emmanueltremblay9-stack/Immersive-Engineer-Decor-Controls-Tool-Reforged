@@ -6,7 +6,7 @@ from client_mixin_smoke import SmokeFailure, run_bounded
 from milking_qualification_native import require, current_candidate
 from mooshroom_milking_native import PROFILES
 from tfc_packaged_proof import validate_mooshroom as validate_proof
-EXPECTED_JAR='c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe'
+EXPECTED_JAR='2734a258fd3b8c5d037ee82e34c2a38df8529e1055b5720581e7e1f059106ccc'
 def main() -> int:
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--project',type=Path,default=Path(__file__).resolve().parents[2])
