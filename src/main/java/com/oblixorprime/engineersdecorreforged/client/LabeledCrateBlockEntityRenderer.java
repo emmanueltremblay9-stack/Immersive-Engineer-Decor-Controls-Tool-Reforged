@@ -9,12 +9,16 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.Font.DisplayMode;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider.Context;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.BlockState;
 
 public final class LabeledCrateBlockEntityRenderer implements BlockEntityRenderer<MachineBlockEntity> {
@@ -29,7 +33,7 @@ public final class LabeledCrateBlockEntityRenderer implements BlockEntityRendere
       if (machine.kind() == MachineKind.LABELED_CRATE) {
          ItemStack frameStack = machine.getItem(54);
          if (!frameStack.isEmpty() && machine.getLevel() != null) {
-            this.renderFrameItem(machine, frameStack, poseStack, buffer, packedLight, packedOverlay);
+            this.renderFrameItem(machine, frameStack, poseStack, buffer, packedOverlay);
          }
          List<String> lines = machine.labelLines();
          if (!lines.stream().allMatch(String::isBlank)) {
@@ -53,7 +57,7 @@ public final class LabeledCrateBlockEntityRenderer implements BlockEntityRendere
    }
 
    private void renderFrameItem(
-      MachineBlockEntity machine, ItemStack stack, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay
+      MachineBlockEntity machine, ItemStack stack, PoseStack poseStack, MultiBufferSource buffer, int packedOverlay
    ) {
       Direction facing = machine.getBlockState().hasProperty(MachineBlocks.HORIZONTAL_FACING)
          ? machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING)
@@ -90,16 +94,18 @@ public final class LabeledCrateBlockEntityRenderer implements BlockEntityRendere
       poseStack.scale(0.35F, 0.35F, 0.35F);
       Minecraft minecraft = Minecraft.getInstance();
       var itemRenderer = minecraft.getItemRenderer();
+      int frameLight = frameItemLight(machine.getLevel(), machine.getBlockPos(), facing);
       itemRenderer.render(
-         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, minimumItemLight(packedLight), packedOverlay,
+         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, frameLight, packedOverlay,
          itemRenderer.getModel(stack, machine.getLevel(), null, 0)
       );
       poseStack.popPose();
    }
 
-   static int minimumItemLight(int packedLight) {
-      int blockLight = (packedLight >>> 4) & 0xF;
-      return blockLight >= 4 ? packedLight : (packedLight & ~(0xF << 4)) | (4 << 4);
+   static int frameItemLight(BlockAndTintGetter level, BlockPos cratePos, Direction facing) {
+      // Like a vanilla item frame, the displayed item receives light from outside its support.
+      BlockPos front = cratePos.relative(facing);
+      return LightTexture.pack(level.getBrightness(LightLayer.BLOCK, front), level.getBrightness(LightLayer.SKY, front));
    }
 
    private void drawCentered(String text, float y, PoseStack poseStack, MultiBufferSource buffer) {
