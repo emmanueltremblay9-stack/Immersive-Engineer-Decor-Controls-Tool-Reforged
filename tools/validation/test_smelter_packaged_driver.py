@@ -16,6 +16,15 @@ class DriverTests(unittest.TestCase):
         self.assertLess(text.index('supportReady.join()'),text.index('NativeSmelterGuiValidation.begin'))
         self.assertIn('smelter-failure-diagnostic.json',text)
         self.assertIn('.get(3, TimeUnit.SECONDS)',text)
+    def test_smelter_fixture_uses_rear_public_fluid_capability_and_rejects_wrong_faces(self):
+        source=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/NativeSmelterGuiValidation.java').read_text()
+        self.assertIn('.setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH)',source)
+        self.assertIn('Capabilities.FluidHandler.BLOCK, POS, Direction.SOUTH',source)
+        self.assertIn('rear.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500',source)
+        for face in ('UP','NORTH','EAST','WEST'):
+            self.assertIn('Capabilities.FluidHandler.BLOCK, POS, Direction.'+face,source)
+        self.assertIn('bottom.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 0',source)
+        self.assertNotIn('machine.fluidHandler(Direction.UP)',source)
     def test_failed_isolation_never_stops_user_client(self):
         text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
         catch=text.split('} catch (Throwable error) {',1)[1]

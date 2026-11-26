@@ -17,7 +17,9 @@ import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.item.Items;
@@ -36,8 +38,19 @@ import net.neoforged.neoforge.client.event.ScreenEvent;
 /** Test-only album capture, server-opened containers. No human input or gameplay qualification claimed. */
 @EventBusSubscriber(modid=FactoryPlacerValidationMod.MOD_ID, value=Dist.CLIENT)
 public final class GuiAlbumThree {
-    private static final String[] NAMES={"factory-hopper","metal-crafting-table","small-electrical-furnace","small-waste-incinerator","labeled-crate","factory-dropper"};
-    private static final String[] SCREENS={"FactoryHopperScreen","MetalCraftingTableScreen","SmallElectricalFurnaceScreen","SmallWasteIncineratorScreen","LabeledCrateScreen","FactoryDropperScreen"};
+    private static final String[] NAMES={"factory-hopper","metal-crafting-table","small-electrical-furnace","small-waste-incinerator","labeled-crate","factory-dropper","small-lab-furnace"};
+    private static final String[] SCREEN_CLASSES={
+        "com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen",
+        "com.oblixorprime.engineersdecorreforged.client.MachineScreen$MetalCraftingTableScreen",
+        "com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallElectricalFurnaceScreen",
+        "com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallWasteIncineratorScreen",
+        "com.oblixorprime.engineersdecorreforged.client.LabeledCrateScreen",
+        "com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen",
+        "com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen"
+    };
+    private static final int[] EXPECTED_MACHINE_SLOTS={18,0,0,0,0,15,11};
+    private static final int[] EXPECTED_TOTAL_SLOTS={54,0,0,0,0,51,47};
+    private static final String[] EXPECTED_KINDS={"factory_hopper","","","","","factory_dropper","small_lab_furnace"};
     private enum Stage {BOOT,WORLD,OPEN,WAIT,CLOSE}
     private static Stage stage=Stage.BOOT;
     private static boolean complete;
@@ -90,27 +103,55 @@ public final class GuiAlbumThree {
                     }
                     if(!pointerReady(mc)){selectionRenderFrames=0;return;}
                     require(index==4 || mc.player.containerMenu instanceof MachineMenu,"Unexpected menu while positioning pointer");
-                    int panelLeft=(mc.screen.width-(index==4?176:((MachineMenu)mc.player.containerMenu).layout().imageWidth()))/2;
-                    int panelTop=(mc.screen.height-(index==4?166:((MachineMenu)mc.player.containerMenu).layout().imageHeight()))/2;
-                    require(mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth()<panelLeft
-                        && mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight()<panelTop,
+                    var containerScreen=(AbstractContainerScreen<?>)mc.screen;
+                    require(mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth()<containerScreen.getGuiLeft()
+                        && mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight()<containerScreen.getGuiTop(),
                         "Pointer target must remain outside panel");
                     if(ticks<(index==0?650:35)){waiting(mc,"render warmup");return;}
-                    require(mc.screen.getClass().getName().equals("com.oblixorprime.engineersdecorreforged.client."+(index!=4?"MachineScreen$":"")+SCREENS[index]),"Wrong machine screen");
+                    require(mc.screen.getClass().getName().equals(SCREEN_CLASSES[index]),"Wrong machine screen");
                     require(mc.screen instanceof AbstractContainerScreen<?> && (index==4 || mc.player.containerMenu instanceof MachineMenu),"Missing actual container");
+                    MachineMenu activeMenu=index==4?null:(MachineMenu)mc.player.containerMenu;
+                    if(EXPECTED_MACHINE_SLOTS[index]>0){
+                        require(activeMenu.factoryStudyPresentation()
+                            && activeMenu.kind().registryName().equals(EXPECTED_KINDS[index])
+                            && activeMenu.visibleMachineSlots()==EXPECTED_MACHINE_SLOTS[index]
+                            && activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index],
+                            "Factory Study V3 menu slot layout mismatch for "+NAMES[index]);
+                    }
                     if(index==0 && ((MachineMenu)mc.player.containerMenu).field(6)!=selectionRow*6){waiting(mc,"client selection not synchronized");return;}
                     if(index==0 && selectionRenderFrames<3){waiting(mc,"selection render frames missing");return;}
-                    if(inspection==null){inspection=mc.getSingleplayerServer().submit(()->player(mc).containerMenu.getClass()==mc.player.containerMenu.getClass() && player(mc).containerMenu.containerId==mc.player.containerMenu.containerId && (index!=0 || ((MachineMenu)player(mc).containerMenu).field(6)==selectionRow*6)
-                        && (index!=0 || player(mc).containerMenu.slots.stream().filter(slot->slot.hasItem()).count()==54)
-                        && (index!=5 || player(mc).containerMenu.slots.stream().filter(slot->slot.hasItem()).count()>=48));return;}
+                    if(inspection==null){
+                        final int caseIndex=index;
+                        final Class<?> clientMenuClass=mc.player.containerMenu.getClass();
+                        final int clientMenuId=mc.player.containerMenu.containerId;
+                        inspection=mc.getSingleplayerServer().submit(()->{
+                            var serverMenu=player(mc).containerMenu;
+                            if(serverMenu.getClass()!=clientMenuClass||serverMenu.containerId!=clientMenuId)return false;
+                            if(caseIndex==0&&(!(serverMenu instanceof MachineMenu menu)||menu.field(6)!=selectionRow*6))return false;
+                            if(EXPECTED_MACHINE_SLOTS[caseIndex]>0){
+                                if(!(serverMenu instanceof MachineMenu menu)
+                                    ||!menu.kind().registryName().equals(EXPECTED_KINDS[caseIndex])
+                                    ||menu.visibleMachineSlots()!=EXPECTED_MACHINE_SLOTS[caseIndex]
+                                    ||menu.slots.size()!=EXPECTED_TOTAL_SLOTS[caseIndex])return false;
+                                if(menu.slots.stream().filter(slot->slot.hasItem()).count()!=EXPECTED_TOTAL_SLOTS[caseIndex])return false;
+                            }
+                            return true;
+                        });
+                        return;
+                    }
                     if(!inspection.isDone()){waiting(mc,"server inspection pending");return;}
                     require(inspection.join(),"Server menu mismatch");
                     var obs=new JsonObject();obs.addProperty("screen",mc.screen.getClass().getName());obs.addProperty("case",NAMES[index]);obs.addProperty("server_menu_acknowledged",true);
                     obs.addProperty("gui_scale",mc.getWindow().getGuiScale());
                     long occupied=mc.player.containerMenu.slots.stream().filter(slot->slot.hasItem()).count();
-                    require(index!=0 || occupied==54,"Hopper inventory changed during capture");
-                    require(index!=5 || occupied>=48,"Dropper inventory changed during capture");
+                    if(EXPECTED_MACHINE_SLOTS[index]>0)
+                        require(occupied==EXPECTED_TOTAL_SLOTS[index],"Factory Study V3 inventory changed during capture");
                     obs.addProperty("visible_nonempty_slots",occupied);
+                    if(activeMenu!=null){
+                        obs.addProperty("visible_machine_slots",activeMenu.visibleMachineSlots());
+                        obs.addProperty("total_menu_slots",activeMenu.slots.size());
+                        obs.addProperty("machine_kind",activeMenu.kind().registryName());
+                    }
                     var production=ModList.get().getModFileById(EngineersDecorReforged.MOD_ID).getFile();
                     var entry=mc.screen.getClass().getName().replace('.', '/')+".class";
                     var resource=mc.screen.getClass().getResource("/"+entry);
@@ -121,7 +162,7 @@ public final class GuiAlbumThree {
                     if(index==0){
                         int selected=((MachineMenu)mc.player.containerMenu).field(6);
                         var slot=mc.player.containerMenu.slots.get(selected);
-                        require(slot.x==11 && slot.y==9+selectionRow*18,"Unexpected Hopper slot geometry");
+                        require(slot.x==34 && slot.y==68+selectionRow*25,"Unexpected Factory Study V3 Hopper slot geometry");
                         obs.addProperty("selection_render_frames",selectionRenderFrames);
                         obs.addProperty("server_selection",selectionRow*6);obs.addProperty("client_selection",selected);
                         obs.addProperty("ring_x",slot.x-1);obs.addProperty("ring_y",slot.y-1);
@@ -235,13 +276,19 @@ public final class GuiAlbumThree {
         p.getInventory().setItem(0,new ItemStack(Items.IRON_INGOT,64));
         p.getInventory().setItem(1,new ItemStack(Items.REDSTONE,8));
         p.getInventory().setItem(9,new ItemStack(Items.COBBLESTONE,64));
-        var blocks=List.of(ModBlocks.FACTORY_HOPPER.get(),ModBlocks.METAL_CRAFTING_TABLE.get(),ModBlocks.SMALL_ELECTRICAL_FURNACE.get(),ModBlocks.SMALL_WASTE_INCINERATOR.get(),ModBlocks.LABELED_CRATE.get(),ModBlocks.FACTORY_DROPPER.get());
+        var blocks=List.of(ModBlocks.FACTORY_HOPPER.get(),ModBlocks.METAL_CRAFTING_TABLE.get(),ModBlocks.SMALL_ELECTRICAL_FURNACE.get(),ModBlocks.SMALL_WASTE_INCINERATOR.get(),ModBlocks.LABELED_CRATE.get(),ModBlocks.FACTORY_DROPPER.get(),ModBlocks.SMALL_LAB_FURNACE.get());
         for(int i=0;i<NAMES.length;i++){var pos=new BlockPos(i*2,80,0);level.setBlock(pos,blocks.get(i).defaultBlockState(),3);machines[i]=(MachineBlockEntity)level.getBlockEntity(pos);require(machines[i]!=null,"Missing machine "+i);}
         // Disable continuous transfer while recording deterministic, filled slots.
         machines[0].dataAccessForTests().set(2,0);
         machines[5].dataAccessForTests().set(5,0);
         for(int slot=0;slot<18;slot++)machines[0].setItem(slot,new ItemStack(Items.COBBLESTONE,slot+1));
         for(int slot=0;slot<12;slot++)machines[5].setItem(slot,new ItemStack(Items.COBBLESTONE,slot+1));
+        for(int slot=12;slot<15;slot++)machines[5].setItem(slot,new ItemStack(Items.COBBLESTONE,1));
+        var heater=BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering","furnace_heater"));
+        require(heater!=Items.AIR,"Immersive Engineering furnace heater item is required for Lab Furnace fixture");
+        for(int slot=0;slot<9;slot++)machines[6].setItem(slot,new ItemStack(Items.DIAMOND,1));
+        machines[6].setItem(9,new ItemStack(heater));
+        machines[6].setItem(10,new ItemStack(heater));
         machines[0].dataAccessForTests().set(6,0);
         machines[0].setItem(0,new ItemStack(Items.COBBLESTONE,64));
         machines[5].setItem(0,new ItemStack(Items.COBBLESTONE,64));
@@ -251,7 +298,7 @@ public final class GuiAlbumThree {
     private static void finish(Minecraft mc,Throwable error){
         complete=true;
         if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}
-        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v1");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.add("wait_diagnostics",waitDiagnostics);proof.add("terminal_state",diagnostic(mc));proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",true);proof.addProperty("human_input",false);proof.addProperty("input_method","synthetic XTest pointer positioning only; no clicks");proof.addProperty("synthetic_button_events",0);if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
+        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v2");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.add("wait_diagnostics",waitDiagnostics);proof.add("terminal_state",diagnostic(mc));proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",true);proof.addProperty("human_input",false);proof.addProperty("input_method","synthetic XTest pointer positioning only; no clicks");proof.addProperty("synthetic_button_events",0);if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
         catch(Exception e){EngineersDecorReforged.LOGGER.error("Album proof error",e);}
         if(error==null)EngineersDecorReforged.LOGGER.info("IEDCTR_GUI_ALBUM_THREE OBSERVED nonce={}",nonce);else EngineersDecorReforged.LOGGER.error("IEDCTR_GUI_ALBUM_THREE FAILED "+stage,error);mc.stop();
     }

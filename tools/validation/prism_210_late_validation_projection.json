@@ -1,0 +1,36 @@
+{
+  "schema": "iedctr-prism-late-validation-projection-v1",
+  "base_commit": "276cd7c0a13e7bfacc58921611c605fb0f2411d2",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java": {
+      "old_sha256": "008cc62b9d7cc163f5676ebb4bc2dc7ab88230d4663f15467a2a3fc0d1f1b604",
+      "new_sha256": "45ed4a99ce95dbf987a13cd1bfc7583b7839c3bf4d9ae332bb1f2e866ba2e7a0",
+      "hunks": [
+        {
+          "start": 10,
+          "end": 11,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;\n",
+          "previous": ""
+        },
+        {
+          "start": 23,
+          "end": 24,
+          "current": "import net.neoforged.neoforge.capabilities.Capabilities;\n",
+          "previous": ""
+        },
+        {
+          "start": 85,
+          "end": 87,
+          "current": "         level.setBlock(POS, ModBlocks.SMALL_MINERAL_SMELTER.get().defaultBlockState()\n            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH), 3);\n",
+          "previous": "         level.setBlock(POS, ModBlocks.SMALL_MINERAL_SMELTER.get().defaultBlockState(), 3);\n"
+        },
+        {
+          "start": 93,
+          "end": 104,
+          "current": "         var rear = level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.SOUTH);\n         require(rear != null && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.UP) == null\n            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.NORTH) == null\n            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.EAST) == null\n            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.WEST) == null,\n            \"Smelter lava capability must be exposed at the rear only\");\n         require(rear.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500,\n            \"Smelter rear input failed to receive actual lava\");\n         var bottom = level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.DOWN);\n         require(bottom != null && bottom.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 0,\n            \"Smelter bottom output must reject lava insertion\");\n",
+          "previous": "         require(machine.fluidHandler(Direction.UP).fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500,\n            \"Smelter top input failed to receive actual lava\");\n"
+        }
+      ]
+    }
+  }
+}

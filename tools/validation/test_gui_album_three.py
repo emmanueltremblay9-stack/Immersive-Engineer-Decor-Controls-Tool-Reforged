@@ -2,24 +2,28 @@ import copy
 from pathlib import Path
 import unittest
 from unittest.mock import patch
-from gui_album_three import validate, validate_selection_pixels, CASES, SCREENS, SmokeFailure
+from gui_album_three import validate, validate_selection_pixels, v3_outline, CASES, SCREENS, V3_LAYOUTS, SmokeFailure
 from test_factory_hopper_selection_alignment import assert_v3_alignment
 class ProofTests(unittest.TestCase):
     def setUp(self):
         self.jar=Path('/tmp/album.jar');self.digest='a'*64
-        self.proof=dict(suite='gui-album-three-v1',status='observed',nonce='b'*32,executed_source_sha='c'*40,visual_acceptance=False,physical_os_input=True,human_input=False,
+        self.proof=dict(suite='gui-album-three-v2',status='observed',nonce='b'*32,executed_source_sha='c'*40,visual_acceptance=False,physical_os_input=True,human_input=False,
             input_method="synthetic XTest pointer positioning only; no clicks",synthetic_button_events=0,
             packaged_runtime=dict(jar_path=str(self.jar.resolve()),jar_sha256=self.digest,fixture_free_jar=True,separate_harness_module=True),
-            cases=[dict(case=n,screen='com.oblixorprime.engineersdecorreforged.client.'+('MachineScreen$' if i!=4 else '')+SCREENS[i],server_menu_acknowledged=True,gui_scale=2,visible_nonempty_slots=3,screen_class_sha256='d'*64,capture=n+'.png',capture_sha256='e'*64) for i,n in enumerate(CASES)])
+            cases=[dict(case=n,screen=SCREENS[i],server_menu_acknowledged=True,gui_scale=2,visible_nonempty_slots=3,visible_machine_slots=0,total_menu_slots=0,screen_class_sha256='d'*64,capture=n+'.png',capture_sha256='e'*64) for i,n in enumerate(CASES)])
         self.proof['cases'][0].update(visible_nonempty_slots=54,server_selection=0,client_selection=0,ring_x=10,ring_y=8,
             selection_source='server-seeded ContainerData; not user selection',selection_render_frames=3)
-        self.proof['cases'][5]['visible_nonempty_slots']=48
+        self.proof['cases'][0].update(visible_machine_slots=18,total_menu_slots=54,ring_x=33,ring_y=67)
+        self.proof['cases'][5].update(visible_nonempty_slots=51,visible_machine_slots=15,total_menu_slots=51)
+        self.proof['cases'][6].update(visible_nonempty_slots=47,visible_machine_slots=11,total_menu_slots=47)
         self.proof['hopper_selections']=[dict(self.proof['cases'][0],server_selection=row*6,client_selection=row*6,ring_y=8+18*row,
             capture='factory-hopper'+('' if row==0 else '-selection-row-'+str(row))+'.png') for row in range(3)]
+        for row,selection in enumerate(self.proof['hopper_selections']):
+            selection['ring_y']=67+25*row
     def check(self,p):
         with patch('gui_album_three.png') as png, patch('gui_album_three.validate_selection_pixels'):
             validate(p,'b'*32,'c'*40,self.jar,self.digest,Path('/tmp/run'),1280,720)
-            self.assertEqual(png.call_count,9)
+            self.assertEqual(png.call_count,10)
     def test_accept_structural_proof(self):self.check(self.proof)
     def test_reject_missing_screen(self):
         self.proof['cases'].pop()
@@ -48,6 +52,19 @@ class ProofTests(unittest.TestCase):
             with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)
         p=copy.deepcopy(self.proof);p['cases'][5]['visible_nonempty_slots']=47
         with self.assertRaises(SmokeFailure):self.check(p)
+        for index,key,value in ((0,'visible_machine_slots',17),(5,'total_menu_slots',50),(6,'visible_nonempty_slots',46)):
+            p=copy.deepcopy(self.proof);p['cases'][index][key]=value
+            with self.subTest(index=index,key=key),self.assertRaises(SmokeFailure):self.check(p)
+
+    def test_v3_screens_are_exact_factory_study_screens_with_18_15_and_11_machine_slots(self):
+        self.assertEqual(V3_LAYOUTS,{0:(18,54),5:(15,51),6:(11,47)})
+        self.assertEqual([SCREENS[i] for i in (0,5,6)],[
+            'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen']*3)
+        root=Path(__file__).resolve().parents[2]
+        source=(root/'src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java').read_text()
+        for token in ('Factory Study V3 menu slot layout mismatch','activeMenu.visibleMachineSlots()==EXPECTED_MACHINE_SLOTS[index]',
+                      'activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index]','FactoryStudyScreen'):
+            self.assertIn(token,source)
 
     def test_current_hopper_screen_uses_v3_menu_and_selection_anchors(self):
         root=Path(__file__).resolve().parents[2]
@@ -60,23 +77,28 @@ class ProofTests(unittest.TestCase):
         self.assertIn('FactoryStudyScreen::new',events)
 
     def test_selection_pixel_guard_rejects_old_pitch_and_missing_ring(self):
-        width,height,scale=640,480,2
-        left=(width//scale-176)//2;top=(height//scale-166)//2
+        width,height,scale=1280,720,2
         def pixels(pitch,missing=False):
             outputs=[]
             for row in range(3):
                 data=bytearray(width*height*4)
                 if not missing:
-                    for edge in (8+pitch*row,25+pitch*row):
-                        for y in range((top+edge)*scale,(top+edge+1)*scale):
-                            for x in [v for column in ((0,1,2,16,17) if edge==8+pitch*row else (0,1,16,17)) for v in range((left+10+column)*scale,(left+11+column)*scale)]:
+                    left,top,right,bottom=v3_outline(width,height,scale,row)
+                    # Relocate each row by the candidate pitch and keep the same 18x18 border.
+                    delta=(pitch-25)*row*scale
+                    top+=delta;bottom+=delta
+                    border={(x,top) for x in range(left,right+1)} | {(x,bottom) for x in range(left,right+1)}
+                    border|={(left,y) for y in range(top,bottom+1)} | {(right,y) for y in range(top,bottom+1)}
+                    for px,py in border:
+                        for y in range(py,py+scale):
+                            for x in range(px,px+scale):
                                 data[(y*width+x)*4:(y*width+x)*4+3]=b'\xff\xff\xff'
                 outputs.append((width,height,bytes(data)))
             return outputs
         records=[dict(capture=str(i)+'.png') for i in range(3)]
-        with patch('gui_album_three.decode_png',side_effect=pixels(18)):
+        with patch('gui_album_three.decode_png',side_effect=pixels(25)):
             validate_selection_pixels(records,Path('/tmp'),width,height,scale)
-        for images in (pixels(17),pixels(18,True)):
+        for images in (pixels(17),pixels(18),pixels(25,True)):
             with patch('gui_album_three.decode_png',side_effect=images),self.assertRaises(SmokeFailure):
                 validate_selection_pixels(records,Path('/tmp'),width,height,scale)
 

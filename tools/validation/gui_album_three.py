@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Capture six ordinary machine GUIs in a real client; no gameplay acceptance verdict."""
+"""Capture seven ordinary machine GUIs in a real client; no gameplay acceptance verdict."""
 import argparse
 import hashlib
 import json
@@ -24,37 +24,65 @@ def require(condition, message):
         raise SmokeFailure(message)
 
 
-CASES = ['factory-hopper', 'metal-crafting-table', 'small-electrical-furnace', 'small-waste-incinerator', 'labeled-crate', 'factory-dropper']
-SCREENS = ['FactoryHopperScreen', 'MetalCraftingTableScreen', 'SmallElectricalFurnaceScreen', 'SmallWasteIncineratorScreen', 'LabeledCrateScreen', 'FactoryDropperScreen']
+CASES = ['factory-hopper', 'metal-crafting-table', 'small-electrical-furnace', 'small-waste-incinerator', 'labeled-crate', 'factory-dropper', 'small-lab-furnace']
+SCREENS = [
+    'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen',
+    'com.oblixorprime.engineersdecorreforged.client.MachineScreen$MetalCraftingTableScreen',
+    'com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallElectricalFurnaceScreen',
+    'com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallWasteIncineratorScreen',
+    'com.oblixorprime.engineersdecorreforged.client.LabeledCrateScreen',
+    'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen',
+    'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen',
+]
+V3_LAYOUTS = {0: (18, 54), 5: (15, 51), 6: (11, 47)}
+
+
+def v3_outline(width, height, gui_scale, row):
+    """Project the shared 316x312 Factory Study transform into screenshot pixels."""
+    logical_width = math.ceil(width / gui_scale)
+    logical_height = math.ceil(height / gui_scale)
+    margin = min(6.0, (min(logical_width, logical_height) - 1.0) / 2.0)
+    view_scale = min(1.0, (logical_width - 2 * margin) / 316.0,
+                     (logical_height - 2 * margin) / 312.0)
+    origin_x = (logical_width - 316.0 * view_scale) / 2.0
+    origin_y = (logical_height - 312.0 * view_scale) / 2.0
+    x = origin_x + 33.0 * view_scale
+    y = origin_y + (67.0 + 25.0 * row) * view_scale
+    left = round(x * gui_scale)
+    top = round(y * gui_scale)
+    right = round((x + 18.0 * view_scale) * gui_scale) - 1
+    bottom = round((y + 18.0 * view_scale) * gui_scale) - 1
+    return left, top, right, bottom
+
+
 def validate_selection_pixels(selections,game,width,height,scale):
     """Compare the same border in selected/unselected real screenshots, not art mockups.
 
     A top/bottom corner-marker delta proves a rendered marker reaches the expected row;
     it is not an exact-color aesthetic approval or exhaustive 18-slot test.
     """
-    require(type(scale) is int and scale in (1,2) and width>=176*scale and height>=166*scale,
+    require(type(scale) is int and scale in (1,2) and width>=316*scale and height>=312*scale,
             'Selection panel outside viewport')
     images=[]
     for record in selections:
         w,h,pixels=decode_png(game/record['capture'])
         require((w,h)==(width,height),'Selection viewport differs')
         images.append(pixels)
-    left=(math.ceil(width/scale)-176)//2
-    top=(math.ceil(height/scale)-166)//2
     for row in range(3):
         active=images[row];inactive=images[(row+1)%3];other_inactive=images[(row+2)%3]
-        for edge_y in (8+18*row,25+18*row):
-            changed=0
-            for y in range((top+edge_y)*scale,(top+edge_y+1)*scale):
-                for x in range((left+10)*scale,(left+28)*scale):
-                    offset=(y*width+x)*4
-                    if (active[offset:offset+3]!=inactive[offset:offset+3]
-                        and inactive[offset:offset+3]==other_inactive[offset:offset+3]):changed+=1
-            require(changed>=3*scale*scale,'Hopper marker missing/misaligned at row '+str(row)+' edge '+str(edge_y))
+        left,top,right,bottom=v3_outline(width,height,scale,row)
+        border={(x,top) for x in range(left,right+1)} | {(x,bottom) for x in range(left,right+1)}
+        border|={(left,y) for y in range(top,bottom+1)} | {(right,y) for y in range(top,bottom+1)}
+        changed=0
+        for x,y in border:
+            offset=(y*width+x)*4
+            if (active[offset:offset+3]!=inactive[offset:offset+3]
+                and inactive[offset:offset+3]==other_inactive[offset:offset+3]): changed+=1
+        require(changed>=16*scale*scale,'Factory Study V3 Hopper outline missing/misaligned at row '+str(row))
 
 
 def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
-    for key,value in dict(suite='gui-album-three-v1',status='observed',nonce=nonce,
+    for key,value in dict(suite='gui-album-three-v2',status='observed',nonce=nonce,
                          executed_source_sha=sha,visual_acceptance=False,physical_os_input=True,human_input=False,
                          input_method="synthetic XTest pointer positioning only; no clicks",synthetic_button_events=0).items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
@@ -64,10 +92,15 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
     cases=proof.get('cases',[])
     require([x.get('case') for x in cases]==CASES,'Missing screens')
     for index,row in enumerate(cases):
-        require(row.get('screen')=='com.oblixorprime.engineersdecorreforged.client.'+('MachineScreen$' if index!=4 else '')+SCREENS[index],'Wrong screen')
+        require(row.get('screen')==SCREENS[index],'Wrong screen')
         require(row.get('server_menu_acknowledged') is True,'Missing server menu acknowledgement')
         require(row.get('gui_scale') == gui_scale,'Wrong native GUI scale')
         require(type(row.get('visible_nonempty_slots')) is int and row['visible_nonempty_slots'] > 0,'Empty visual evidence')
+        if index in V3_LAYOUTS:
+            machine_slots,total_slots=V3_LAYOUTS[index]
+            require(row.get('visible_machine_slots')==machine_slots,'Wrong V3 machine slot count')
+            require(row.get('total_menu_slots')==total_slots,'Wrong V3 total menu slot count')
+            require(row.get('visible_nonempty_slots')==total_slots,'V3 GUI does not show every expected slot item')
         require(re.fullmatch('[0-9a-f]{64}',row.get('screen_class_sha256','')),'Screen provenance missing')
         require(row.get('capture')==CASES[index]+'.png','Unexpected capture name')
         png(game/row['capture'],width,height,row.get('capture_sha256'))
@@ -79,7 +112,7 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
         require(all(c.get(k)==cases[0].get(k) for k in ('screen','case','screen_class_sha256')),'Selection screen provenance differs')
         require(c.get('server_selection')==row*6 and c.get('client_selection')==row*6,
                 'Hopper selection server/client mismatch')
-        require(c.get('ring_x')==10 and c.get('ring_y')==8+18*row,'Hopper ring/slot alignment differs')
+        require(c.get('ring_x')==33 and c.get('ring_y')==67+25*row,'Hopper ring/slot alignment differs')
         require(c.get('selection_source')=='server-seeded ContainerData; not user selection','Selection origin differs')
         require(c.get('server_menu_acknowledged') is True and c.get('gui_scale')==gui_scale,'Selection menu/scale mismatch')
         require(c.get('visible_nonempty_slots')==54,'Hopper inventory not full')
@@ -88,7 +121,7 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
         png(game/c['capture'],width,height,c.get('capture_sha256'))
     validate_selection_pixels(selections,game,width,height,gui_scale)
     require(selections[0]==cases[0],'Initial Hopper observation differs')
-    require(cases[5].get('visible_nonempty_slots')>=48,'Dropper input/player inventory not full')
+    require(cases[5].get('visible_nonempty_slots')==51,'Dropper 15 machine slots and 36 player slots are not all present')
 
 
 def bind_built_jar(project, expected_hash, env):
@@ -189,7 +222,7 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
         final_sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
         require(clean() and final_sha == sha and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,
                 'Source/JAR changed during run')
-        print('OBSERVED six native machine screens and three Hopper selection rows; screenshots still require independent review. Not gameplay acceptance.')
+        print('OBSERVED seven native machine screens, including Hopper/Dropper/Lab Furnace V3 and three Hopper selection rows; screenshots still require independent review. Not gameplay acceptance.')
         return 0
     except (SmokeFailure,OSError,ValueError,KeyError) as error:
         print('FAIL: '+str(error),file=sys.stderr);return 1

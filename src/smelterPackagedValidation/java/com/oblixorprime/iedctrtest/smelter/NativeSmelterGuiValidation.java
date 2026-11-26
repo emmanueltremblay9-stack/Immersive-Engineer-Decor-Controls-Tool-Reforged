@@ -8,6 +8,7 @@ import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +21,7 @@ import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -81,15 +83,25 @@ final class NativeSmelterGuiValidation {
          player.getInventory().clearContent();
          player.connection.teleport(POS.getX() + 0.5, POS.getY() + 1.0, POS.getZ() + 3.5, 180.0F, 0.0F);
          level.setBlock(POS.below(), Blocks.STONE.defaultBlockState(), 3);
-         level.setBlock(POS, ModBlocks.SMALL_MINERAL_SMELTER.get().defaultBlockState(), 3);
+         level.setBlock(POS, ModBlocks.SMALL_MINERAL_SMELTER.get().defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH), 3);
          require(level.getBlockEntity(POS) instanceof MachineBlockEntity, "Real Smelter BE missing");
          MachineBlockEntity machine = (MachineBlockEntity)level.getBlockEntity(POS);
          serverMachine = machine;
          require(machine.canPlaceItem(0, new ItemStack(Items.COBBLESTONE)), "Smelter rejected its actual mineral ingredient");
          machine.setItem(0, new ItemStack(Items.COBBLESTONE));
          machine.setItem(2, new ItemStack(Items.MAGMA_BLOCK, 2));
-         require(machine.fluidHandler(Direction.UP).fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500,
-            "Smelter top input failed to receive actual lava");
+         var rear = level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.SOUTH);
+         require(rear != null && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.UP) == null
+            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.NORTH) == null
+            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.EAST) == null
+            && level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.WEST) == null,
+            "Smelter lava capability must be exposed at the rear only");
+         require(rear.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500,
+            "Smelter rear input failed to receive actual lava");
+         var bottom = level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.DOWN);
+         require(bottom != null && bottom.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 0,
+            "Smelter bottom output must reject lava insertion");
          require(machine.energyStorage(null).receiveEnergy(12000, false) == 12000, "Smelter FE fill failed");
          require(!machine.requestMineralModeFromGui(player, 0, 0), "Legacy manual mode request must be inert");
          player.openMenu(machine);
