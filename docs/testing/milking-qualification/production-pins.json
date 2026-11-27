@@ -1,4 +1,10 @@
 {
+  "breaker_legacy_cycle_resume": {
+    "source_commit": "69c3ad9c14403e8213fdce199013a47d1d4e8bd8",
+    "path": "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java",
+    "source_sha256": "84daf564addabec5b010a12beaa461cdc68406182b469fbb97692dc49b75b87e",
+    "integrated_sha256": "c43f3bb5a95b34c09f5a4196aa9c27703df8b5cc3e2935aa7123651a0434ae52"
+  },
   "pr179_current_main_merge_integration": {
     "main_commit": "4edd018989648e1a542b699292b6ecd9d37ad1a2",
     "breaker_commit": "530fb8293c0e2273546e96ff3ddd893e8a728712",

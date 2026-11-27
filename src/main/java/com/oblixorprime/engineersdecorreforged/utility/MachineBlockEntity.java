@@ -2071,7 +2071,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                this.progress = 0;
                this.processTimeNeeded = 0;
             }
-         } else {
+         } else if (tag.contains("BlockBreakerCycleTarget") || tag.contains("BlockBreakerCyclePosition")
+               || tag.contains("BlockBreakerCycleAccelerated") || tag.contains("BlockBreakerCycleEnergyCost")
+               || !tag.contains("Progress", Tag.TAG_INT) || !tag.contains("ProcessTimeNeeded", Tag.TAG_INT)
+               || this.processTimeNeeded < 20 || this.processTimeNeeded > 200
+               || this.progress <= 0 || this.progress >= this.processTimeNeeded) {
+            // Reject incomplete modern records and invalid legacy progress.
             this.progress = 0;
             this.processTimeNeeded = 0;
          }
@@ -2583,6 +2588,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             this.clearBlockBreakerCycle();
             this.setBooleanProperty(MachineBlocks.ACTIVE, false);
          } else {
+            if (this.blockBreakerCycleTarget == null && this.progress > 0) {
+               // Legacy saves paid for elapsed normal ticks without recording a target.
+               if (this.processTimeNeeded == this.blockBreakerProcessTicks(targetState, target)) {
+                  this.blockBreakerCycleTarget = targetState;
+                  this.blockBreakerCyclePosition = target;
+                  this.blockBreakerCycleEnergyCost = blockBreakerEnergyCostPerBlock(hardness);
+               } else {
+                  this.progress = 0;
+                  this.processTimeNeeded = 0;
+               }
+               this.setChanged();
+            }
             int requiredTicks = this.processTimeNeeded;
             int energyCost;
             if (this.blockBreakerCycleTarget == null) {

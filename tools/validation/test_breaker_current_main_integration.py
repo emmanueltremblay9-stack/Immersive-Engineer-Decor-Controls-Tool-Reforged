@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import unittest
 from breaker_current_main_integration import (
+    LEGACY_CYCLE_LAYER, LEGACY_CYCLE_RECORD, project_legacy_cycle,
     LAYER, MERGE_LAYER, MERGE_RECORD, RECORD, assert_merge_record, assert_record,
     integrated_current_hash, merge_current_hash, project, project_merge_tree,
 )
@@ -44,6 +45,23 @@ class CurrentMainIntegrationTests(unittest.TestCase):
             for field in record:
                 mutated=copy.deepcopy(MERGE_RECORD);mutated['files'][path][field]='tampered'
                 with self.subTest(merge_path=path,field=field),self.assertRaises(AssertionError):assert_merge_record({MERGE_LAYER:mutated})
+
+    def test_legacy_cycle_migration_preserves_the_previous_source(self):
+        record = LEGACY_CYCLE_RECORD
+        path = record['path']
+        current = (ROOT/path).read_bytes()
+        previous = project_legacy_cycle(current)
+        self.assertEqual(hashlib.sha256(previous).hexdigest(), MERGE_RECORD['files'][path]['integrated_sha256'])
+        with self.assertRaisesRegex(AssertionError, 'Merged bytes changed'):
+            project_merge_tree(path, previous, 'breaker')
+
+        manifest = {LAYER: RECORD, MERGE_LAYER: MERGE_RECORD}
+        with self.assertRaisesRegex(AssertionError, 'Legacy Block Breaker cycle migration record changed'):
+            assert_record(manifest)
+        assert_record({**manifest, LEGACY_CYCLE_LAYER: record})
+        for key in record:
+            with self.subTest(key=key), self.assertRaisesRegex(AssertionError, 'Legacy Block Breaker cycle migration record changed'):
+                assert_record({**manifest, LEGACY_CYCLE_LAYER: {**record, key: 'tampered'}})
 
     def test_each_merge_projection_is_exact_and_rejects_mutation(self):
         for path,record in MERGE_RECORD['files'].items():

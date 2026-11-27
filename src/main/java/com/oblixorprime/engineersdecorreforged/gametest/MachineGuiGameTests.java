@@ -2654,6 +2654,38 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_resumes_legacy_normal_cycle(GameTestHelper helper) {
+      helper.setBlock(TEST_POS,
+         ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST));
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      BlockPos target = TEST_POS.east();
+      helper.setBlock(target, Blocks.DIRT);
+
+      CompoundTag legacy = new CompoundTag();
+      legacy.putInt("Progress", 29);
+      legacy.putInt("ProcessTimeNeeded", 30);
+      legacy.putInt("Energy", 8);
+      machine.loadWithComponents(legacy, helper.getLevel().registryAccess());
+      helper.assertValueEqual(8, machine.energyStorage(Direction.DOWN).getEnergyStored(), "legacy state should contain the final 8 FE");
+
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getBlockState(target).isAir(), "legacy dirt cycle should finish on the next tick");
+      helper.assertValueEqual(0, machine.energyStorage(Direction.DOWN).getEnergyStored(), "resume should charge only the remaining 8 FE");
+      helper.assertTrue(machine.getItem(0).is(Items.DIRT), "resumed cycle should buffer the target drop");
+
+      helper.setBlock(target, Blocks.OBSIDIAN);
+      legacy.putInt("Progress", 199);
+      legacy.putInt("ProcessTimeNeeded", 200);
+      legacy.putInt("Energy", 41);
+      machine.loadWithComponents(legacy, helper.getLevel().registryAccess());
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getBlockState(target).isAir(), "legacy obsidian cycle should finish on its last tick");
+      helper.assertValueEqual(0, machine.energyStorage(Direction.DOWN).getEnergyStored(), "the last tick should charge 41 FE, not the first tick's 40 FE");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void small_block_breaker_legacy_and_invalid_lubricant_saves_are_quarantined(GameTestHelper helper) {
       helper.setBlock(TEST_POS,
          ((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get()).defaultBlockState()
@@ -2669,8 +2701,28 @@ public final class MachineGuiGameTests {
       legacy.putInt("ProcessTimeNeeded", 30);
       machine.loadWithComponents(legacy, helper.getLevel().registryAccess());
       helper.assertValueEqual(0, machine.dataAccessForTests().get(2), "legacy saves should default to an empty lubricant tank");
-      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "legacy progress without a captured target should reset safely");
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "legacy progress without a breakable target should reset on tick");
       helper.assertTrue((machine.dataAccessForTests().get(4) & 2) == 0, "legacy saves should default to normal mode");
+
+      helper.setBlock(TEST_POS.east(), Blocks.DIRT);
+      legacy.putInt("Progress", 29);
+      legacy.putInt("ProcessTimeNeeded", 31);
+      legacy.putInt("Energy", 8);
+      machine.loadWithComponents(legacy, helper.getLevel().registryAccess());
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "a different target duration should start a new cycle");
+      helper.assertTrue(helper.getBlockState(TEST_POS.east()).is(Blocks.DIRT), "incompatible legacy progress must not break the target");
+
+      legacy.putInt("ProcessTimeNeeded", 30);
+      legacy.putInt("BlockBreakerCycleEnergyCost", 240);
+      machine.loadWithComponents(legacy, helper.getLevel().registryAccess());
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "incomplete modern cycle metadata should not qualify as legacy");
+
+      legacy.remove("BlockBreakerCycleEnergyCost");
+      legacy.putLong("Progress", (1L << 32) + 29);
+      machine.loadWithComponents(legacy, helper.getLevel().registryAccess());
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "a wrongly typed progress tag should not qualify as legacy");
 
       CompoundTag invalid = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
       CompoundTag invalidFluid = new CompoundTag();

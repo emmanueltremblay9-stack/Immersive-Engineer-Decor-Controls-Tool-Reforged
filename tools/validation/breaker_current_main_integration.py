@@ -821,16 +821,44 @@ MERGE_RECORD = json.loads(r'''
 }
 ''')
 
+LEGACY_CYCLE_LAYER = 'breaker_legacy_cycle_resume'
+LEGACY_CYCLE_RECORD = {
+    'source_commit': '69c3ad9c14403e8213fdce199013a47d1d4e8bd8',
+    'path': 'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java',
+    'source_sha256': '84daf564addabec5b010a12beaa461cdc68406182b469fbb97692dc49b75b87e',
+    'integrated_sha256': 'c43f3bb5a95b34c09f5a4196aa9c27703df8b5cc3e2935aa7123651a0434ae52',
+}
+# Replace the two exact migration hunks to recover the previous source file.
+LEGACY_CYCLE_REVERSE = (
+    (2073, 2079, "         } else {\n"),
+    (2590, 2602, ""),
+)
+
+
+def project_legacy_cycle(data):
+    record = LEGACY_CYCLE_RECORD
+    assert hashlib.sha256(data).hexdigest() == record['integrated_sha256'], 'Merged bytes changed: '+record['path']
+    lines = data.decode().splitlines(keepends=True)
+    for start, end, replacement in reversed(LEGACY_CYCLE_REVERSE):
+        lines[start:end] = replacement.splitlines(keepends=True)
+    previous = ''.join(lines).encode()
+    assert hashlib.sha256(previous).hexdigest() == record['source_sha256'], 'Legacy Block Breaker source reconstruction changed'
+    return previous
+
+
 def assert_merge_record(manifest):
     assert manifest.get(MERGE_LAYER) == MERGE_RECORD, 'PR179 current-main merge record changed'
 
 def assert_record(manifest):
     assert manifest.get(LAYER) == RECORD, 'Current-main integration record changed'
     assert_merge_record(manifest)
+    assert manifest.get(LEGACY_CYCLE_LAYER) == LEGACY_CYCLE_RECORD, 'Legacy Block Breaker cycle migration record changed'
 
 def project_merge_tree(path, data, parent):
     assert parent in ('main', 'breaker'), 'Unknown PR179 merge parent: '+parent
     if path not in MERGE_RECORD['files']: return data
+    if path == LEGACY_CYCLE_RECORD['path']:
+        data = project_legacy_cycle(data)
     record = MERGE_RECORD['files'][path]
     assert hashlib.sha256(data).hexdigest() == record['integrated_sha256'], 'Merged bytes changed: '+path
     lines = data.decode().splitlines(keepends=True)
@@ -845,9 +873,10 @@ def project_merge_tree(path, data, parent):
 def merge_current_hash(path, expected):
     if path not in MERGE_RECORD['files']: return expected
     record = MERGE_RECORD['files'][path]
-    if expected == record['integrated_sha256']: return expected
-    assert expected in (record['main_sha256'],record['breaker_sha256']), 'Unexpected PR179 merge parent identity: '+path
-    return record['integrated_sha256']
+    integrated = record['integrated_sha256']
+    current = LEGACY_CYCLE_RECORD['integrated_sha256'] if path == LEGACY_CYCLE_RECORD['path'] else integrated
+    assert expected in (current, integrated, record['main_sha256'], record['breaker_sha256']), 'Unexpected PR179 merge parent identity: '+path
+    return current
 
 def project(path, data, parent):
     data = project_merge_tree(path, data, 'breaker')

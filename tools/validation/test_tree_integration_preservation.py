@@ -165,6 +165,11 @@ class IntegratedPreservationTests(unittest.TestCase):
                     self.check_milking(pins)
 
     def test_milking_history_cannot_be_rewritten_or_dropped(self):
+        diagnostic = (
+            'Historical Milking|Manual integration provenance|Normal activation record changed|Legacy diagnostic record changed|'
+            'Current-main integration record changed|PR179 current-main merge record changed|'
+            'Freezer V5 reconciliation provenance changed|Legacy Block Breaker cycle migration record changed'
+        )
         for key in self.pins.keys() - {'sha256', COMBINED_LAYER, WRAP_LAYER}:
             for drop in (False, True):
                 pins = copy.deepcopy(self.pins)
@@ -172,7 +177,7 @@ class IntegratedPreservationTests(unittest.TestCase):
                     del pins[key]
                 else:
                     pins[key] = 'changed'
-                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, 'Historical Milking|Manual integration provenance|Normal activation record changed|Legacy diagnostic record changed|Current-main integration record changed|PR179 current-main merge record changed|Freezer V5 reconciliation provenance changed'):
+                with self.subTest(key=key, drop=drop), self.assertRaisesRegex(AssertionError, diagnostic):
                     self.check_milking(pins)
 
     def test_freezer_historical_scope_and_reasons_are_preserved(self):
