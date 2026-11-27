@@ -1,0 +1,899 @@
+"""Exact dual-parent byte projections for PR179/current-main integration."""
+import hashlib
+import json
+LAYER = 'breaker_current_main_integration'
+RECORD = json.loads(r'''
+{
+  "main_commit": "362bf1389edd165b1df33fe4150a209aac2cc8d8",
+  "breaker_commit": "ed5d25cdb90153d5fd325e078dbc3d3f036768bd",
+  "scope": "Exact automatic integration with normal Freezer, crate resize and smelter bounds; no new gameplay or protection claim. Both historical parent layers remain immutable.",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
+      "integrated_sha256": "916b05d77a586089d7ecf814f1f9ca4afeb6da2b2fadc0a15423eed67664e78f",
+      "breaker_sha256": "916b05d77a586089d7ecf814f1f9ca4afeb6da2b2fadc0a15423eed67664e78f",
+      "breaker_projection": [],
+      "main_sha256": "2b0f8cc8bfeac9f421b6948833e4d88b7c993c5c633b6f26feebc6f96f2a0e6f",
+      "main_projection": [
+        {
+          "start": 7,
+          "end": 8,
+          "original": "import com.oblixorprime.engineersdecorreforged.utility.BlockBreakerRedesignLayout;\n",
+          "replacement": ""
+        },
+        {
+          "start": 532,
+          "end": 547,
+          "original": "      var fluidRegion = BlockBreakerRedesignLayout.FLUID;\n      if (this.isHovering(fluidRegion.x(), fluidRegion.y(), fluidRegion.width(), fluidRegion.height(), mouseX, mouseY)) {\n         boolean accelerated = menu.blockBreakerCycleActive()\n            ? menu.blockBreakerAccelerated() : menu.fluidAmount() >= MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS;\n         Component mode = blockBreakerText(accelerated ? \"mode.accelerated\" : \"mode.normal\");\n         Component state = blockBreakerText(menu.blockBreakerCycleActive() ? \"cycle.active\" : \"cycle.next\");\n         int duration = menu.blockBreakerDurationTicks();\n         Component costText = cost >= 0 ? blockBreakerText(\"tooltip.lubricant_fe\", cost)\n            : blockBreakerText(\"tooltip.lubricant_fe_unavailable\");\n         Component tooltip = blockBreakerText(\"tooltip.lubricant\", menu.blockBreakerFluidName(), menu.fluidAmount(), menu.fluidCapacity()).copy()\n            .append(\"\\n\").append(blockBreakerText(\"tooltip.lubricant_mode\", mode, state, duration))\n            .append(\"\\n\").append(blockBreakerText(\"tooltip.lubricant_use\", MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS))\n            .append(\"\\n\").append(costText);\n         return tooltip;\n      }\n",
+          "replacement": "      if (this.isHovering(191, 71, 46, 12, mouseX, mouseY))\n         return blockBreakerText(\"tooltip.fluid_unavailable\");\n"
+        },
+        {
+          "start": 1458,
+          "end": 1460,
+          "original": "         graphics.renderTooltip(this.font,\n            this.font.split(blockBreakerTooltip, milkingTooltipWidth(this.width)), mouseX, mouseY);\n",
+          "replacement": "         graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": {
+      "integrated_sha256": "29a3c271ab8edac6e2c032279320266b94db3a28d044576d1771edf8fe530267",
+      "breaker_sha256": "29a3c271ab8edac6e2c032279320266b94db3a28d044576d1771edf8fe530267",
+      "breaker_projection": [],
+      "main_sha256": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
+      "main_projection": [
+        {
+          "start": 46,
+          "end": 60,
+          "original": "      var fluid = BlockBreakerRedesignLayout.FLUID;\n      graphics.fill(x + fluid.x(), y + fluid.y(), x + fluid.right(), y + fluid.bottom(), 0xFF181A19);\n      int fluidFill = fillPixels(menu.fluidAmount(), menu.fluidCapacity(), fluid.height());\n      if (fluidFill > 0 && !menu.blockBreakerFluidStack().isEmpty()) {\n         FluidBarrelSpriteRenderer.draw(graphics, menu.blockBreakerFluidStack(),\n            x + fluid.x(), y + fluid.y(), fluid.width(), fluid.height(),\n            x + fluid.x(), y + fluid.bottom() - fluidFill, x + fluid.right(), y + fluid.bottom());\n      }\n      var progress = BlockBreakerRedesignLayout.PROGRESS;\n      int duration = menu.blockBreakerDurationTicks();\n      int progressFill = duration > 0 ? fillPixels(menu.field(1), duration, progress.width()) : 0;\n      if (progressFill > 0) {\n         graphics.fill(x + progress.x(), y + progress.y(), x + progress.x() + progressFill, y + progress.bottom(), 0xFF7FA77A);\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 61,
+          "end": 62,
+          "original": "      // The power icon is a non-interactive neutral presentation, not an invented on/off command.\n",
+          "replacement": "      // No fluid reservoir exists yet; the fluid gauge remains empty. The power icon\n      // is a non-interactive neutral presentation, not an invented on/off command.\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+      "integrated_sha256": "1d7869986d663e01d0d3257a140597c1dd18e334e6f94aa15433c595de7f9223",
+      "breaker_sha256": "15803c81755ece86eda38308c3fb1bae5dc4a4b21e46eb188fd92a1e781ea3c3",
+      "breaker_projection": [
+        {
+          "start": 11,
+          "end": 12,
+          "original": "import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;\n",
+          "replacement": ""
+        },
+        {
+          "start": 48,
+          "end": 51,
+          "original": "   /** DEVELOPMENT/VALIDATION only. Consulted by the client factory, never server gameplay. */\n   public static final String DEV_FREEZER_REFERENCE_PROPERTY = \"iedctr.dev.freezerV5ExactReference\";\n   public static final String DEV_FREEZER_LIVE_ENERGY_PROPERTY = \"iedctr.dev.freezerV5LiveEnergy\";\n",
+          "replacement": ""
+        },
+        {
+          "start": 120,
+          "end": 121,
+          "original": "   private final boolean freezerReferencePresentation;\n",
+          "replacement": ""
+        },
+        {
+          "start": 140,
+          "end": 142,
+          "original": "         kind == MachineKind.SMALL_FREEZER && (Boolean.getBoolean(DEV_FREEZER_REFERENCE_PROPERTY)\n            || Boolean.parseBoolean(System.getProperty(DEV_FREEZER_LIVE_ENERGY_PROPERTY, \"true\"))),\n",
+          "replacement": ""
+        },
+        {
+          "start": 148,
+          "end": 149,
+          "original": "      this(kind, id, inventory, container, data, false, false, false, false);\n",
+          "replacement": "      this(kind, id, inventory, container, data, false, false, false);\n"
+        },
+        {
+          "start": 152,
+          "end": 153,
+          "original": "                       boolean freezerReferenceRequested, boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,\n",
+          "replacement": "                       boolean barrelReferenceRequested, boolean factoryPlacerV2ReferenceRequested,\n"
+        },
+        {
+          "start": 166,
+          "end": 171,
+          "original": "      // Geometry is client presentation only. Both sides retain the same per-machine slot\n      // count/order, container indices, transfer ranges and data fields. A server JVM flag does\n      // not change authoritative menus, and no client-only Minecraft classes are loaded here.\n      this.freezerReferencePresentation = freezerReferenceRequested\n         && kind == MachineKind.SMALL_FREEZER && inventory.player.level().isClientSide;\n",
+          "replacement": ""
+        },
+        {
+          "start": 191,
+          "end": 196,
+          "original": "         if (this.freezerReferencePresentation && slot.containerIndex() != 1) {\n            var anchor = FreezerReferenceGeometry.anchor(slot.containerIndex());\n            presentationSlot = new MachineLayout.MachineSlot(\n               slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());\n         } else if (barrelReferencePresentation) {\n",
+          "replacement": "         if (barrelReferencePresentation) {\n"
+        },
+        {
+          "start": 218,
+          "end": 223,
+          "original": "            if (this.freezerReferencePresentation) {\n               var anchor = FreezerReferenceGeometry.anchor(3 + row * 9 + column);\n               x = anchor.x();\n               y = anchor.y();\n            } else if (barrelReferencePresentation) {\n",
+          "replacement": "            if (barrelReferencePresentation) {\n"
+        },
+        {
+          "start": 245,
+          "end": 250,
+          "original": "         if (this.freezerReferencePresentation) {\n            var anchor = FreezerReferenceGeometry.anchor(30 + column);\n            x = anchor.x();\n            y = anchor.y();\n         } else if (barrelReferencePresentation) {\n",
+          "replacement": "         if (barrelReferencePresentation) {\n"
+        },
+        {
+          "start": 288,
+          "end": 291,
+          "original": "   public boolean freezerReferencePresentation() {\n      return this.freezerReferencePresentation;\n   }\n",
+          "replacement": ""
+        },
+        {
+          "start": 620,
+          "end": 630,
+          "original": "      if (this.kind == MachineKind.SMALL_FREEZER && slot.containerIndex() == 1) {\n         return new MachineMenu.ValidatedMachineSlot(this.container, 1, slot.x(), slot.y(), true) {\n            @Override\n            public boolean isActive() {\n               // Hide the historical reserved opening only in the opt-in presentation.\n               // Its backing contents and ordinary QUICK_MOVE recovery remain intact.\n               return !MachineMenu.this.freezerReferencePresentation;\n            }\n         };\n      }\n",
+          "replacement": ""
+        }
+      ],
+      "main_sha256": "74f95f7e8ab5af051ae6ce9ff435070a95cc12ea199f11c775e35fd14dfeb3de",
+      "main_projection": [
+        {
+          "start": 45,
+          "end": 46,
+          "original": "import net.neoforged.neoforge.fluids.FluidStack;\n",
+          "replacement": ""
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "original": "   private static final int BLOCK_BREAKER_FLUID_PRESENT = 1;\n   private static final int BLOCK_BREAKER_ACCELERATED = 2;\n   private static final int BLOCK_BREAKER_CYCLE_ACTIVE = 4;\n   private static final ResourceLocation BLOCK_BREAKER_LUBRICANT_ID = ResourceLocation.fromNamespaceAndPath(\"immersivepetroleum\", \"lubricant\");\n",
+          "replacement": ""
+        },
+        {
+          "start": 333,
+          "end": 334,
+          "original": "         case SMALL_BLOCK_BREAKER -> MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_CAPACITY;\n",
+          "replacement": ""
+        },
+        {
+          "start": 347,
+          "end": 351,
+          "original": "      if (this.kind == MachineKind.SMALL_BLOCK_BREAKER) {\n         return (this.data.get(4) & BLOCK_BREAKER_FLUID_PRESENT) != 0 && this.data.get(2) > 0\n            ? BuiltInRegistries.FLUID.get(BLOCK_BREAKER_LUBRICANT_ID) : Fluids.EMPTY;\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 352,
+          "end": 384,
+          "original": "   }\n\n   public boolean blockBreakerAccelerated() {\n      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && (this.data.get(4) & BLOCK_BREAKER_ACCELERATED) != 0;\n   }\n\n   public boolean blockBreakerCycleActive() {\n      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && (this.data.get(4) & BLOCK_BREAKER_CYCLE_ACTIVE) != 0;\n   }\n\n   public FluidStack blockBreakerFluidStack() {\n      Fluid fluid = this.storedFluid();\n      return fluid == Fluids.EMPTY ? FluidStack.EMPTY : new FluidStack(fluid, this.fluidAmount());\n   }\n\n   public Component blockBreakerFluidName() {\n      FluidStack stack = this.blockBreakerFluidStack();\n      return stack.isEmpty()\n         ? Component.translatable(\"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.fluid_name\")\n         : stack.getHoverName();\n   }\n\n   public int blockBreakerDurationTicks() {\n      if (this.kind != MachineKind.SMALL_BLOCK_BREAKER) return 0;\n      int synced = this.data.get(3);\n      if (synced > 0) return synced;\n      float hardness = this.blockBreakerHardness();\n      if (!Float.isFinite(hardness) || hardness < 0.0F || this.blockBreakerTargetStack().isEmpty()) return 0;\n      long normalTicks = 20L + Math.round(hardness * 20.0F);\n      int normal = (int)Math.max(20L, Math.min(200L, normalTicks));\n      return this.fluidAmount() >= MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS\n         ? Math.max(20, (normal + 1) / 2) : normal;\n",
+          "replacement": ""
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+      "integrated_sha256": "3dfb25d8e8d818f6436983b921b2db18d2644be4b28e38ad1d3d0fae4dbe795e",
+      "breaker_sha256": "3dfb25d8e8d818f6436983b921b2db18d2644be4b28e38ad1d3d0fae4dbe795e",
+      "breaker_projection": [],
+      "main_sha256": "24266c03ec35e12517d8b8f86d1ef53bf1a3e9d266666d38e645045155999128",
+      "main_projection": [
+        {
+          "start": 162,
+          "end": 165,
+          "original": "   public static final int BLOCK_BREAKER_LUBRICANT_CAPACITY = 4000;\n   public static final int BLOCK_BREAKER_LUBRICANT_PER_SUCCESS = 10;\n   private static final ResourceLocation BLOCK_BREAKER_LUBRICANT_ID = ResourceLocation.fromNamespaceAndPath(\"immersivepetroleum\", \"lubricant\");\n",
+          "replacement": ""
+        },
+        {
+          "start": 225,
+          "end": 230,
+          "original": "   private BlockState blockBreakerCycleTarget;\n   private BlockPos blockBreakerCyclePosition;\n   private boolean blockBreakerCycleAccelerated;\n   private int blockBreakerCycleEnergyCost;\n   private Tag unreadableBlockBreakerFluid;\n",
+          "replacement": ""
+        },
+        {
+          "start": 254,
+          "end": 305,
+          "original": "\n   private final FluidTank blockBreakerLubricantTank = new FluidTank(BLOCK_BREAKER_LUBRICANT_CAPACITY) {\n      @Override public boolean isFluidValid(int tank, FluidStack stack) {\n         return tank == 0 && MachineBlockEntity.isBlockBreakerLubricant(stack);\n      }\n      @Override public int fill(FluidStack stack, FluidAction action) {\n         return MachineBlockEntity.this.kind() == MachineKind.SMALL_BLOCK_BREAKER\n            && MachineBlockEntity.this.unreadableBlockBreakerFluid == null\n            && MachineBlockEntity.isBlockBreakerLubricant(stack) ? super.fill(stack, action) : 0;\n      }\n      @Override public FluidStack drain(int amount, FluidAction action) { return FluidStack.EMPTY; }\n      @Override public FluidStack drain(FluidStack stack, FluidAction action) { return FluidStack.EMPTY; }\n      @Override protected void onContentsChanged() { MachineBlockEntity.this.setChanged(); }\n   };\n\n   private static boolean isBlockBreakerLubricant(FluidStack stack) {\n      return !stack.isEmpty() && BLOCK_BREAKER_LUBRICANT_ID.equals(BuiltInRegistries.FLUID.getKey(stack.getFluid()));\n   }\n\n   private boolean isBlockBreakerLubricantSide(Direction side) {\n      if (side == null || this.kind() != MachineKind.SMALL_BLOCK_BREAKER) return false;\n      Direction right = switch (this.facing(this.getBlockState())) {\n         case NORTH -> Direction.WEST;\n         case EAST -> Direction.NORTH;\n         case SOUTH -> Direction.EAST;\n         case WEST -> Direction.SOUTH;\n         default -> null;\n      };\n      return side == right;\n   }\n\n   private IFluidHandler blockBreakerLubricantHandler(Direction side) {\n      return new IFluidHandler() {\n         private boolean active() { return MachineBlockEntity.this.isBlockBreakerLubricantSide(side); }\n         public int getTanks() { return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null ? 1 : 0; }\n         public FluidStack getFluidInTank(int tank) {\n            return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null && tank == 0\n               ? MachineBlockEntity.this.blockBreakerLubricantTank.getFluid().copy() : FluidStack.EMPTY;\n         }\n         public int getTankCapacity(int tank) { return active() && tank == 0 ? BLOCK_BREAKER_LUBRICANT_CAPACITY : 0; }\n         public boolean isFluidValid(int tank, FluidStack stack) {\n            return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null\n               && tank == 0 && MachineBlockEntity.isBlockBreakerLubricant(stack);\n         }\n         public int fill(FluidStack stack, FluidAction action) {\n            return active() ? MachineBlockEntity.this.blockBreakerLubricantTank.fill(stack, action) : 0;\n         }\n         public FluidStack drain(FluidStack stack, FluidAction action) { return FluidStack.EMPTY; }\n         public FluidStack drain(int amount, FluidAction action) { return FluidStack.EMPTY; }\n      };\n   }\n",
+          "replacement": ""
+        },
+        {
+          "start": 889,
+          "end": 892,
+          "original": "      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {\n         return this.isBlockBreakerLubricantSide(side) ? this.blockBreakerLubricantHandler(side) : null;\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 1626,
+          "end": 1628,
+          "original": "               case 2:\n                  yield this.blockBreakerLubricantTank.getFluidAmount();\n",
+          "replacement": ""
+        },
+        {
+          "start": 1631,
+          "end": 1634,
+          "original": "                  yield (this.blockBreakerLubricantTank.getFluidAmount() <= 0 ? 0 : 1)\n                     | (this.blockBreakerCycleAccelerated ? 2 : 0)\n                     | (this.blockBreakerCycleTarget != null ? 4 : 0);\n",
+          "replacement": "                  yield this.comparatorOutput();\n"
+        },
+        {
+          "start": 1876,
+          "end": 1879,
+          "original": "                  case 2:\n                  case 4:\n                     return;\n",
+          "replacement": ""
+        },
+        {
+          "start": 2006,
+          "end": 2054,
+          "original": "      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {\n         this.unreadableBlockBreakerFluid = null;\n         this.blockBreakerLubricantTank.setFluid(FluidStack.EMPTY);\n         if (tag.contains(\"BlockBreakerLubricant\")) {\n            Tag raw = tag.get(\"BlockBreakerLubricant\");\n            if (!(raw instanceof CompoundTag savedFluid)\n                  || !savedFluid.contains(\"id\", Tag.TAG_STRING)\n                  || !savedFluid.contains(\"amount\", Tag.TAG_INT)\n                  || !BLOCK_BREAKER_LUBRICANT_ID.toString().equals(savedFluid.getString(\"id\"))\n                  || savedFluid.getInt(\"amount\") <= 0\n                  || savedFluid.getInt(\"amount\") > BLOCK_BREAKER_LUBRICANT_CAPACITY) {\n               this.unreadableBlockBreakerFluid = raw.copy();\n            } else {\n               FluidStack parsed = FluidStack.parseOptional(registries, savedFluid);\n               if (parsed.isEmpty() || !isBlockBreakerLubricant(parsed)) this.unreadableBlockBreakerFluid = savedFluid.copy();\n               else this.blockBreakerLubricantTank.setFluid(parsed);\n            }\n         }\n\n         this.blockBreakerCycleTarget = null;\n         this.blockBreakerCyclePosition = null;\n         this.blockBreakerCycleAccelerated = false;\n         this.blockBreakerCycleEnergyCost = 0;\n         if (tag.contains(\"BlockBreakerCycleTarget\", Tag.TAG_COMPOUND)\n               && tag.contains(\"BlockBreakerCyclePosition\", Tag.TAG_LONG)\n               && tag.contains(\"BlockBreakerCycleAccelerated\", Tag.TAG_BYTE)\n               && tag.contains(\"BlockBreakerCycleEnergyCost\", Tag.TAG_INT)) {\n            BlockState savedTarget = NbtUtils.readBlockState(\n               registries.lookupOrThrow(Registries.BLOCK), tag.getCompound(\"BlockBreakerCycleTarget\")\n            );\n            int savedCost = tag.getInt(\"BlockBreakerCycleEnergyCost\");\n            boolean savedAccelerated = tag.getBoolean(\"BlockBreakerCycleAccelerated\");\n            if (!savedTarget.isAir() && this.progress > 0 && this.progress < this.processTimeNeeded\n                  && this.processTimeNeeded >= 20 && this.processTimeNeeded <= 200 && savedCost > 0\n                  && (!savedAccelerated || this.blockBreakerLubricantTank.getFluidAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS)) {\n               this.blockBreakerCycleTarget = savedTarget;\n               this.blockBreakerCyclePosition = BlockPos.of(tag.getLong(\"BlockBreakerCyclePosition\"));\n               this.blockBreakerCycleAccelerated = savedAccelerated;\n               this.blockBreakerCycleEnergyCost = savedCost;\n            } else {\n               this.progress = 0;\n               this.processTimeNeeded = 0;\n            }\n         } else {\n            this.progress = 0;\n            this.processTimeNeeded = 0;\n         }\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 2203,
+          "end": 2215,
+          "original": "         }\n      }\n      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {\n         if (this.unreadableBlockBreakerFluid != null) tag.put(\"BlockBreakerLubricant\", this.unreadableBlockBreakerFluid.copy());\n         else if (this.blockBreakerLubricantTank.getFluidAmount() > 0) {\n            tag.put(\"BlockBreakerLubricant\", this.blockBreakerLubricantTank.getFluid().save(registries));\n         }\n         if (this.blockBreakerCycleTarget != null) {\n            tag.put(\"BlockBreakerCycleTarget\", NbtUtils.writeBlockState(this.blockBreakerCycleTarget));\n            tag.putLong(\"BlockBreakerCyclePosition\", this.blockBreakerCyclePosition.asLong());\n            tag.putBoolean(\"BlockBreakerCycleAccelerated\", this.blockBreakerCycleAccelerated);\n            tag.putInt(\"BlockBreakerCycleEnergyCost\", this.blockBreakerCycleEnergyCost);\n",
+          "replacement": ""
+        },
+        {
+          "start": 2444,
+          "end": 2450,
+          "original": "         if (this.blockBreakerCycleTarget != null && (!this.blockBreakerCycleTarget.equals(targetState)\n               || !target.equals(this.blockBreakerCyclePosition))) {\n            this.clearBlockBreakerCycle();\n            this.progress = 0;\n            this.processTimeNeeded = 0;\n         }\n",
+          "replacement": ""
+        },
+        {
+          "start": 2454,
+          "end": 2455,
+          "original": "            this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2463,
+          "end": 2464,
+          "original": "            this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2469,
+          "end": 2470,
+          "original": "            this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2472,
+          "end": 2479,
+          "original": "            int requiredTicks = this.processTimeNeeded;\n            int energyCost;\n            if (this.blockBreakerCycleTarget == null) {\n               int normalTicks = this.blockBreakerProcessTicks(targetState, target);\n               boolean accelerated = this.blockBreakerLubricantTank.getFluidAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS;\n               requiredTicks = accelerated ? Math.max(20, (normalTicks + 1) / 2) : normalTicks;\n               int cycleCost = blockBreakerEnergyCostPerBlock(hardness);\n",
+          "replacement": "            int requiredTicks = this.blockBreakerProcessTicks(targetState, target);\n            if (this.processTimeNeeded != requiredTicks) {\n"
+        },
+        {
+          "start": 2480,
+          "end": 2495,
+          "original": "               if (!this.canBlockBreakerStoreDrops(target, targetState)) {\n                  this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               energyCost = this.blockBreakerEnergyCostPerTick(cycleCost, 0, requiredTicks);\n               if (energyCost <= 0 || this.energy < energyCost) {\n                  this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               this.blockBreakerCycleTarget = targetState;\n               this.blockBreakerCyclePosition = target;\n               this.blockBreakerCycleAccelerated = accelerated;\n               this.blockBreakerCycleEnergyCost = cycleCost;\n",
+          "replacement": ""
+        },
+        {
+          "start": 2496,
+          "end": 2515,
+          "original": "            } else {\n               if (requiredTicks < 20 || requiredTicks > 200 || this.blockBreakerCycleEnergyCost <= 0) {\n                  this.clearBlockBreakerCycle();\n                  this.progress = 0;\n                  this.processTimeNeeded = 0;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               if (!this.canBlockBreakerStoreDrops(target, targetState)) {\n                  this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               energyCost = this.blockBreakerEnergyCostPerTick(this.blockBreakerCycleEnergyCost, this.progress, requiredTicks);\n               if (energyCost <= 0 || this.energy < energyCost) {\n                  this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n",
+          "replacement": "            }\n\n            if (!this.canBlockBreakerStoreDrops(target, targetState)) {\n               this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;\n               this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n               return;\n            }\n\n            int energyCost = this.blockBreakerEnergyCostPerTick(hardness, this.progress, requiredTicks);\n            if (energyCost <= 0 || this.energy < energyCost) {\n               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;\n               this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n               return;\n"
+        },
+        {
+          "start": 2525,
+          "end": 2532,
+          "original": "                  if (this.blockBreakerCycleAccelerated) {\n                     FluidStack stored = this.blockBreakerLubricantTank.getFluid();\n                     if (stored.getAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS) {\n                        this.blockBreakerLubricantTank.setFluid(stored.getAmount() == BLOCK_BREAKER_LUBRICANT_PER_SUCCESS\n                           ? FluidStack.EMPTY : stored.copyWithAmount(stored.getAmount() - BLOCK_BREAKER_LUBRICANT_PER_SUCCESS));\n                     }\n                  }\n",
+          "replacement": ""
+        },
+        {
+          "start": 2534,
+          "end": 2535,
+          "original": "                  this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2553,
+          "end": 2560,
+          "original": "   private void clearBlockBreakerCycle() {\n      this.blockBreakerCycleTarget = null;\n      this.blockBreakerCyclePosition = null;\n      this.blockBreakerCycleAccelerated = false;\n      this.blockBreakerCycleEnergyCost = 0;\n   }\n\n",
+          "replacement": ""
+        },
+        {
+          "start": 2573,
+          "end": 2577,
+          "original": "      return this.blockBreakerEnergyCostPerTick(blockBreakerEnergyCostPerBlock(hardness), elapsedTicks, totalTicks);\n   }\n\n   private int blockBreakerEnergyCostPerTick(int totalCost, int elapsedTicks, int totalTicks) {\n",
+          "replacement": ""
+        },
+        {
+          "start": 2582,
+          "end": 2583,
+          "original": "      long costBefore = (long)totalCost * elapsed / totalTicks;\n",
+          "replacement": "      long totalCost = blockBreakerEnergyCostPerBlock(hardness);\n      long costBefore = totalCost * elapsed / totalTicks;\n"
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": {
+      "integrated_sha256": "59bef5693d7fdc70cd7efad7cfdef577e98039ceb2cdf13ccee853333e30daea",
+      "breaker_sha256": "04ef6cd7d2477232a8d3f12cd0a88643919c477231d58f908713301b9f4b5846",
+      "breaker_projection": [
+        {
+          "start": 1103,
+          "end": 1108,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover\": \"Recover reserved items\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help\": \"Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.live_energy_cells\": \"Live energy: %s / %s segments (rounded down).\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_frost\": \"STATIC FROST ART: no clean chamber layer is available.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_art\": \"STATIC REFERENCE ART: frost and energy are not live.\",\n",
+          "replacement": ""
+        }
+      ],
+      "main_sha256": "efdd1e32fa134196f629ca2c06bd2bf74a86e94a4be4f9bb2944b86d605b2c30",
+      "main_projection": [
+        {
+          "start": 1090,
+          "end": 1100,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.fluid_name\": \"Immersive Petroleum Lubricant\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.normal\": \"Normal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.accelerated\": \"Accelerated\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.active\": \"active cycle\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.next\": \"next cycle\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant\": \"%1$s: %2$s / %3$s mB\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_mode\": \"Mode: %1$s (%2$s); duration: %3$s ticks.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_use\": \"Accelerated cycles use %1$s mB only after a successful break.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe\": \"FE cost: %1$s per block.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe_unavailable\": \"FE cost is unavailable for the current target.\",\n",
+          "replacement": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.fluid_unavailable\": \"Fluid storage is not implemented. No level or bonus is simulated.\",\n"
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": {
+      "integrated_sha256": "222c8e97aab9fe9748bef791c7fd1dc7d7d0985f612945d17d68fb055bceb385",
+      "breaker_sha256": "d9fa4353e1436583d6d3a0786ffae9daf42ee33500c7f7c52fdf7ed2ad6a5a97",
+      "breaker_projection": [
+        {
+          "start": 1103,
+          "end": 1108,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover\": \"Récupérer les objets réservés\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help\": \"Récupérer l’ancien emplacement 1 dans votre inventaire. Ctrl+Maj+R. Inventaire plein : les objets restent stockés.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.live_energy_cells\": \"Énergie réelle : %s / %s segments (arrondi inférieur).\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_frost\": \"GIVRE STATIQUE : aucune couche de chambre dégivrée n’est disponible.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.static_art\": \"IMAGE DE RÉFÉRENCE STATIQUE : le givre et l’énergie ne sont pas actualisés.\",\n",
+          "replacement": ""
+        }
+      ],
+      "main_sha256": "4fb0a94655848377b3fe95d2ab173762e9feadc57a7da692b63f54cc47ae8734",
+      "main_projection": [
+        {
+          "start": 1090,
+          "end": 1100,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.fluid_name\": \"Lubrifiant d’Immersive Petroleum\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.normal\": \"Normal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.accelerated\": \"Accéléré\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.active\": \"cycle actif\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.next\": \"prochain cycle\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant\": \"%1$s : %2$s / %3$s mB\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_mode\": \"Mode : %1$s (%2$s) ; durée : %3$s ticks.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_use\": \"Un cycle accéléré consomme %1$s mB uniquement après une destruction réussie.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe\": \"Coût en FE : %1$s par bloc.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe_unavailable\": \"Le coût en FE est indisponible pour la cible actuelle.\",\n",
+          "replacement": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.fluid_unavailable\": \"Réservoir de fluide non implémenté. Aucun niveau ni bonus simulé.\",\n"
+        }
+      ]
+    }
+  }
+}
+''')
+
+MERGE_LAYER = 'pr179_current_main_merge_integration'
+MERGE_RECORD = json.loads(r'''
+{
+  "main_commit": "4edd018989648e1a542b699292b6ecd9d37ad1a2",
+  "breaker_commit": "530fb8293c0e2273546e96ff3ddd893e8a728712",
+  "merge_base": "362bf1389edd165b1df33fe4150a209aac2cc8d8",
+  "scope": "Exact two-parent mixed-tree projections for PR #179 head and fetched main; historical integration records remain unchanged.",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/ModBlocks.java": {
+      "integrated_sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a",
+      "breaker_sha256": "a6399703a9f8c27668b0e7f7baa2e3fda4035bb5c1651c696f9d28bf7824a58a",
+      "breaker_projection": [
+        {
+          "start": 220,
+          "end": 221,
+          "original": "      \"factory_hopper\", () -> new MachineBlocks.DirectionalMachineBlock(machineMetal().strength(2.0F, 15.0F), MachineKind.FACTORY_HOPPER)\n",
+          "replacement": "      \"factory_hopper\", () -> new MachineBlocks.DirectionalMachineBlock(machineMetal(), MachineKind.FACTORY_HOPPER)\n"
+        }
+      ],
+      "main_sha256": "0e39361210dd77bd35714dfdc0029da00a34abb484bd36813731bf47a98d249a",
+      "main_projection": []
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
+      "integrated_sha256": "ba66423469da1a8fcb1e7c26c6cf53834d85400913ffd7e26ccee076d8e78e08",
+      "breaker_sha256": "916b05d77a586089d7ecf814f1f9ca4afeb6da2b2fadc0a15423eed67664e78f",
+      "breaker_projection": [
+        {
+          "start": 1465,
+          "end": 1473,
+          "original": "         MachineKind kind = ((MachineMenu)this.menu).kind();\n         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER) {\n            // Preserve translated line breaks and styles; bound long control help to the viewport.\n            int wrapWidth = Math.max(1, Math.min(240, this.width - 16));\n            graphics.renderTooltip(this.font, this.font.split(controlTooltip, wrapWidth), mouseX, mouseY);\n         } else {\n            graphics.renderTooltip(this.font, controlTooltip, mouseX, mouseY);\n         }\n",
+          "replacement": "         graphics.renderTooltip(this.font, controlTooltip, mouseX, mouseY);\n"
+        }
+      ],
+      "main_sha256": "92fc98c4a92e236c6f8237109d85eed485beda0abeb2d0060ba495622397fabf",
+      "main_projection": [
+        {
+          "start": 7,
+          "end": 8,
+          "original": "import com.oblixorprime.engineersdecorreforged.utility.BlockBreakerRedesignLayout;\n",
+          "replacement": ""
+        },
+        {
+          "start": 532,
+          "end": 547,
+          "original": "      var fluidRegion = BlockBreakerRedesignLayout.FLUID;\n      if (this.isHovering(fluidRegion.x(), fluidRegion.y(), fluidRegion.width(), fluidRegion.height(), mouseX, mouseY)) {\n         boolean accelerated = menu.blockBreakerCycleActive()\n            ? menu.blockBreakerAccelerated() : menu.fluidAmount() >= MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS;\n         Component mode = blockBreakerText(accelerated ? \"mode.accelerated\" : \"mode.normal\");\n         Component state = blockBreakerText(menu.blockBreakerCycleActive() ? \"cycle.active\" : \"cycle.next\");\n         int duration = menu.blockBreakerDurationTicks();\n         Component costText = cost >= 0 ? blockBreakerText(\"tooltip.lubricant_fe\", cost)\n            : blockBreakerText(\"tooltip.lubricant_fe_unavailable\");\n         Component tooltip = blockBreakerText(\"tooltip.lubricant\", menu.blockBreakerFluidName(), menu.fluidAmount(), menu.fluidCapacity()).copy()\n            .append(\"\\n\").append(blockBreakerText(\"tooltip.lubricant_mode\", mode, state, duration))\n            .append(\"\\n\").append(blockBreakerText(\"tooltip.lubricant_use\", MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS))\n            .append(\"\\n\").append(costText);\n         return tooltip;\n      }\n",
+          "replacement": "      if (this.isHovering(191, 71, 46, 12, mouseX, mouseY))\n         return blockBreakerText(\"tooltip.fluid_unavailable\");\n"
+        },
+        {
+          "start": 1458,
+          "end": 1460,
+          "original": "         graphics.renderTooltip(this.font,\n            this.font.split(blockBreakerTooltip, milkingTooltipWidth(this.width)), mouseX, mouseY);\n",
+          "replacement": "         graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/RedesignedMachineArtwork.java": {
+      "integrated_sha256": "29a3c271ab8edac6e2c032279320266b94db3a28d044576d1771edf8fe530267",
+      "breaker_sha256": "29a3c271ab8edac6e2c032279320266b94db3a28d044576d1771edf8fe530267",
+      "breaker_projection": [],
+      "main_sha256": "76436f4e818fbd8bf2d1cc62a69f75746d67ace911c06efdac476cf2e4f8036c",
+      "main_projection": [
+        {
+          "start": 46,
+          "end": 60,
+          "original": "      var fluid = BlockBreakerRedesignLayout.FLUID;\n      graphics.fill(x + fluid.x(), y + fluid.y(), x + fluid.right(), y + fluid.bottom(), 0xFF181A19);\n      int fluidFill = fillPixels(menu.fluidAmount(), menu.fluidCapacity(), fluid.height());\n      if (fluidFill > 0 && !menu.blockBreakerFluidStack().isEmpty()) {\n         FluidBarrelSpriteRenderer.draw(graphics, menu.blockBreakerFluidStack(),\n            x + fluid.x(), y + fluid.y(), fluid.width(), fluid.height(),\n            x + fluid.x(), y + fluid.bottom() - fluidFill, x + fluid.right(), y + fluid.bottom());\n      }\n      var progress = BlockBreakerRedesignLayout.PROGRESS;\n      int duration = menu.blockBreakerDurationTicks();\n      int progressFill = duration > 0 ? fillPixels(menu.field(1), duration, progress.width()) : 0;\n      if (progressFill > 0) {\n         graphics.fill(x + progress.x(), y + progress.y(), x + progress.x() + progressFill, y + progress.bottom(), 0xFF7FA77A);\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 61,
+          "end": 62,
+          "original": "      // The power icon is a non-interactive neutral presentation, not an invented on/off command.\n",
+          "replacement": "      // No fluid reservoir exists yet; the fluid gauge remains empty. The power icon\n      // is a non-interactive neutral presentation, not an invented on/off command.\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+      "integrated_sha256": "1d7869986d663e01d0d3257a140597c1dd18e334e6f94aa15433c595de7f9223",
+      "breaker_sha256": "1d7869986d663e01d0d3257a140597c1dd18e334e6f94aa15433c595de7f9223",
+      "breaker_projection": [],
+      "main_sha256": "74f95f7e8ab5af051ae6ce9ff435070a95cc12ea199f11c775e35fd14dfeb3de",
+      "main_projection": [
+        {
+          "start": 45,
+          "end": 46,
+          "original": "import net.neoforged.neoforge.fluids.FluidStack;\n",
+          "replacement": ""
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "original": "   private static final int BLOCK_BREAKER_FLUID_PRESENT = 1;\n   private static final int BLOCK_BREAKER_ACCELERATED = 2;\n   private static final int BLOCK_BREAKER_CYCLE_ACTIVE = 4;\n   private static final ResourceLocation BLOCK_BREAKER_LUBRICANT_ID = ResourceLocation.fromNamespaceAndPath(\"immersivepetroleum\", \"lubricant\");\n",
+          "replacement": ""
+        },
+        {
+          "start": 333,
+          "end": 334,
+          "original": "         case SMALL_BLOCK_BREAKER -> MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_CAPACITY;\n",
+          "replacement": ""
+        },
+        {
+          "start": 347,
+          "end": 351,
+          "original": "      if (this.kind == MachineKind.SMALL_BLOCK_BREAKER) {\n         return (this.data.get(4) & BLOCK_BREAKER_FLUID_PRESENT) != 0 && this.data.get(2) > 0\n            ? BuiltInRegistries.FLUID.get(BLOCK_BREAKER_LUBRICANT_ID) : Fluids.EMPTY;\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 352,
+          "end": 384,
+          "original": "   }\n\n   public boolean blockBreakerAccelerated() {\n      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && (this.data.get(4) & BLOCK_BREAKER_ACCELERATED) != 0;\n   }\n\n   public boolean blockBreakerCycleActive() {\n      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && (this.data.get(4) & BLOCK_BREAKER_CYCLE_ACTIVE) != 0;\n   }\n\n   public FluidStack blockBreakerFluidStack() {\n      Fluid fluid = this.storedFluid();\n      return fluid == Fluids.EMPTY ? FluidStack.EMPTY : new FluidStack(fluid, this.fluidAmount());\n   }\n\n   public Component blockBreakerFluidName() {\n      FluidStack stack = this.blockBreakerFluidStack();\n      return stack.isEmpty()\n         ? Component.translatable(\"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.fluid_name\")\n         : stack.getHoverName();\n   }\n\n   public int blockBreakerDurationTicks() {\n      if (this.kind != MachineKind.SMALL_BLOCK_BREAKER) return 0;\n      int synced = this.data.get(3);\n      if (synced > 0) return synced;\n      float hardness = this.blockBreakerHardness();\n      if (!Float.isFinite(hardness) || hardness < 0.0F || this.blockBreakerTargetStack().isEmpty()) return 0;\n      long normalTicks = 20L + Math.round(hardness * 20.0F);\n      int normal = (int)Math.max(20L, Math.min(200L, normalTicks));\n      return this.fluidAmount() >= MachineBlockEntity.BLOCK_BREAKER_LUBRICANT_PER_SUCCESS\n         ? Math.max(20, (normal + 1) / 2) : normal;\n",
+          "replacement": ""
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+      "integrated_sha256": "84daf564addabec5b010a12beaa461cdc68406182b469fbb97692dc49b75b87e",
+      "breaker_sha256": "3dfb25d8e8d818f6436983b921b2db18d2644be4b28e38ad1d3d0fae4dbe795e",
+      "breaker_projection": [
+        {
+          "start": 330,
+          "end": 335,
+          "original": "   // Adapted from Stefan Wilhelm, EdHopper (MIT), commit a561e61e35ce0367088356967e1ea4cad5c1f27d.\n   private boolean hopperPlayerBreakPending;\n   private boolean hopperDropHandled;\n   private int hopperTickTimer;\n   private int hopperCollectionTimer;\n",
+          "replacement": ""
+        },
+        {
+          "start": 387,
+          "end": 389,
+          "original": "               if (MachineBlockEntity.this.kind() == MachineKind.FACTORY_HOPPER)\n                  MachineBlockEntity.this.hopperTickTimer = Math.min(MachineBlockEntity.this.hopperTickTimer, 8);\n",
+          "replacement": ""
+        },
+        {
+          "start": 414,
+          "end": 416,
+          "original": "               if (MachineBlockEntity.this.kind() == MachineKind.FACTORY_HOPPER)\n                  MachineBlockEntity.this.hopperTickTimer = Math.min(MachineBlockEntity.this.hopperTickTimer, 8);\n",
+          "replacement": ""
+        },
+        {
+          "start": 982,
+          "end": 983,
+          "original": "         if (powerChanged && kind != MachineKind.FACTORY_HOPPER) {\n",
+          "replacement": "         if (powerChanged) {\n"
+        },
+        {
+          "start": 986,
+          "end": 987,
+          "original": "         if (kind != MachineKind.FACTORY_HOPPER) machine.previousPowered = powered;\n",
+          "replacement": "         machine.previousPowered = powered;\n"
+        },
+        {
+          "start": 1098,
+          "end": 1110,
+          "original": "      if (kind == MachineKind.FACTORY_HOPPER) {\n         float fullness = 0;\n         boolean occupied = false;\n         for (int slot = 0; slot < 18; slot++) {\n            ItemStack stack = this.items.get(slot);\n            if (!stack.isEmpty()) {\n               fullness += (float)stack.getCount() / Math.min(this.getMaxStackSize(stack), stack.getMaxStackSize());\n               occupied = true;\n            }\n         }\n         return Mth.clamp(Mth.floor(fullness / 18 * 14) + (occupied ? 1 : 0), 0, 15);\n      } else if (kind == MachineKind.SMALL_SOLAR_PANEL) {\n",
+          "replacement": "      if (kind == MachineKind.SMALL_SOLAR_PANEL) {\n"
+        },
+        {
+          "start": 1140,
+          "end": 1141,
+          "original": "      if (!removed.isEmpty() && this.kind() == MachineKind.FACTORY_HOPPER) this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);\n",
+          "replacement": ""
+        },
+        {
+          "start": 1171,
+          "end": 1172,
+          "original": "      if (this.kind() == MachineKind.FACTORY_HOPPER) this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);\n",
+          "replacement": ""
+        },
+        {
+          "start": 1189,
+          "end": 1190,
+          "original": "      if (this.kind() == MachineKind.FACTORY_HOPPER) return this.slotsUpTo(18);\n",
+          "replacement": ""
+        },
+        {
+          "start": 1392,
+          "end": 1395,
+          "original": "                  this.previousPowered = true;\n                  this.redstoneUpdated = true;\n                  this.hopperTickTimer = 1;\n",
+          "replacement": "                  this.manualTrigger = true;\n"
+        },
+        {
+          "start": 1396,
+          "end": 1396,
+          "original": "",
+          "replacement": "                  this.cooldown = Math.min(this.cooldown, 1);\n"
+        },
+        {
+          "start": 2122,
+          "end": 2130,
+          "original": "      if (this.kind() == MachineKind.FACTORY_HOPPER) {\n         this.hopperTickTimer = 0;\n         this.hopperCollectionTimer = 0;\n         this.cooldown = 0;\n         this.redstoneUpdated = false;\n         this.manualTrigger = false;\n         this.machineSlotCursor = Math.floorMod(this.machineSlotCursor, 18);\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 2213,
+          "end": 2214,
+          "original": "      if (this.kind() != MachineKind.FACTORY_HOPPER) tag.putInt(\"Cooldown\", this.cooldown);\n",
+          "replacement": "      tag.putInt(\"Cooldown\", this.cooldown);\n"
+        },
+        {
+          "start": 2250,
+          "end": 2254,
+          "original": "      if (this.kind() != MachineKind.FACTORY_HOPPER) {\n         tag.putBoolean(\"RedstoneUpdated\", this.redstoneUpdated);\n         tag.putBoolean(\"ManualTrigger\", this.manualTrigger);\n      }\n",
+          "replacement": "      tag.putBoolean(\"RedstoneUpdated\", this.redstoneUpdated);\n      tag.putBoolean(\"ManualTrigger\", this.manualTrigger);\n"
+        },
+        {
+          "start": 2303,
+          "end": 2304,
+          "original": "   /** ED 1.3.29 EdHopper semantics (Stefan Wilhelm, MIT); modern safe item handlers retained. */\n",
+          "replacement": ""
+        },
+        {
+          "start": 2305,
+          "end": 2327,
+          "original": "      if (this.level == null || --this.hopperTickTimer > 0) return;\n      this.hopperTickTimer = 10;\n      boolean allowed = this.logicAllowsTrigger(this.hopperLogic, this.previousPowered);\n      boolean pulse = (this.hopperLogic & 6) == 0;\n      boolean trigger = (this.hopperLogic & 4) != 0 || allowed && (this.redstoneUpdated || !pulse);\n      boolean dirty = this.redstoneUpdated || this.previousPowered != powered;\n      this.redstoneUpdated = this.previousPowered != powered;\n      this.previousPowered = powered;\n      if (dirty) this.setChanged();\n      Direction output = this.facing(this.getBlockState());\n      Direction input = output == Direction.UP ? Direction.DOWN : Direction.UP;\n      if (allowed || pulse) {\n         BlockPos sourcePos = this.worldPosition.relative(input);\n         if (this.level.hasChunkAt(sourcePos)) {\n         IItemHandler source = this.level.getCapability(ItemHandler.BLOCK, sourcePos, input.getOpposite());\n         if (source != null) this.pullHopperItems(source, this.hopperTransferCount);\n         else {\n            BlockEntity neighbor = this.level.getBlockEntity(sourcePos);\n            if (neighbor instanceof Container container)\n               this.pullHopperItems(this.hopperContainerHandler(container, input.getOpposite()), this.hopperTransferCount);\n            source = this.hopperEntityInventory(sourcePos);\n            if (source != null) this.pullHopperItems(source, this.hopperTransferCount);\n",
+          "replacement": "      if (this.level != null && this.tickCounter % 10 == 0) {\n         boolean redstoneAllowed = this.logicAllowsTrigger(this.hopperLogic, powered);\n         boolean pulseMode = (this.hopperLogic & 6) == 0;\n         boolean manual = this.manualTrigger;\n         boolean trigger = (this.hopperLogic & 4) != 0 || manual || redstoneAllowed && (this.redstoneUpdated || !pulseMode);\n         this.manualTrigger = false;\n         this.redstoneUpdated = false;\n         Direction direction = this.facing(this.getBlockState());\n         if (trigger) {\n            this.collectNearbyItems(direction);\n"
+        },
+        {
+          "start": 2328,
+          "end": 2332,
+          "original": "         if (source == null && (this.hopperCollectionTimer -= 10) <= 0) {\n            this.hopperCollectionTimer = 50;\n            this.collectNearbyItems(input);\n         }\n",
+          "replacement": "\n         if (this.cooldown <= 0) {\n            if (trigger) {\n               this.cooldown = 10 + this.hopperPeriod * 2;\n               this.pullItems(direction.getOpposite(), this.hopperTransferCount);\n               this.pushItems(direction, this.hopperTransferCount);\n            }\n"
+        },
+        {
+          "start": 2334,
+          "end": 2403,
+          "original": "      if (trigger && this.cooldown <= 0) {\n         this.cooldown = 10 + this.hopperPeriod * 2;\n         this.pushItems(output, this.hopperTransferCount);\n      }\n   }\n\n   public void hopperNeighborChanged() {\n      if (this.kind() != MachineKind.FACTORY_HOPPER || this.level == null || this.level.isClientSide) return;\n      boolean powered = this.level.hasNeighborSignal(this.worldPosition);\n      if (this.previousPowered != powered) this.redstoneUpdated = true;\n      this.previousPowered = powered;\n      this.hopperTickTimer = 1;\n      this.setChanged();\n   }\n\n   public void beginHopperPlayerBreak(boolean creative) {\n      if (this.kind() != MachineKind.FACTORY_HOPPER) return;\n      this.hopperPlayerBreakPending = !creative;\n      if (creative) { this.hopperDropHandled = true; this.clearContent(); }\n   }\n\n   public boolean consumeHopperPlayerBreak() {\n      boolean pending = this.hopperPlayerBreakPending;\n      this.hopperPlayerBreakPending = false;\n      return pending;\n   }\n\n   public boolean hopperDropHandled() { return this.hopperDropHandled; }\n\n   public void explodeHopperContents() {\n      if (this.kind() != MachineKind.FACTORY_HOPPER || this.hopperDropHandled || this.level == null) return;\n      this.hopperDropHandled = true;\n      if (this.level.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_DOBLOCKDROPS))\n         Containers.dropContents(this.level, this.worldPosition, this);\n      this.clearContent();\n   }\n\n   /** Whitelisted portable state; never carry an arbitrary block entity id or runtime work. */\n   public CompoundTag portableHopperData() {\n      CompoundTag tag = new CompoundTag();\n      if (this.kind() != MachineKind.FACTORY_HOPPER || this.isEmpty() || this.level == null) return tag;\n      ContainerHelper.saveAllItems(tag, this.items, this.level.registryAccess());\n      tag.putInt(\"HopperRange\", this.hopperRange);\n      tag.putInt(\"HopperTransferCount\", this.hopperTransferCount);\n      tag.putInt(\"HopperLogic\", this.hopperLogic);\n      tag.putInt(\"HopperPeriod\", this.hopperPeriod);\n      tag.putInt(\"MachineSlotCursor\", Math.floorMod(this.machineSlotCursor, 18));\n      return tag;\n   }\n\n   public void restorePortableHopperData(CompoundTag tag) {\n      if (this.kind() != MachineKind.FACTORY_HOPPER || this.level == null) return;\n      NonNullList<ItemStack> imported = NonNullList.withSize(this.items.size(), ItemStack.EMPTY);\n      ContainerHelper.loadAllItems(tag, imported, this.level.registryAccess());\n      for (int slot = 0; slot < this.items.size(); slot++) this.items.set(slot, imported.get(slot));\n      this.hopperRange = Mth.clamp(tag.getInt(\"HopperRange\"), 0, 4);\n      this.hopperTransferCount = Mth.clamp(tag.getInt(\"HopperTransferCount\"), 1, 32);\n      this.hopperLogic = sanitizeTriggerLogic(savedIntOrDefault(tag, \"HopperLogic\", 3));\n      this.hopperPeriod = Mth.clamp(tag.getInt(\"HopperPeriod\"), 0, 100);\n      this.machineSlotCursor = Math.floorMod(tag.getInt(\"MachineSlotCursor\"), 18);\n      this.previousPowered = false;\n      this.redstoneUpdated = false;\n      this.manualTrigger = false;\n      this.hopperTickTimer = this.hopperCollectionTimer = this.cooldown = 0;\n      this.setChanged();\n   }\n\n   public void hopperItemFell() {\n      if (this.kind() == MachineKind.FACTORY_HOPPER) this.hopperCollectionTimer = 0;\n",
+          "replacement": ""
+        },
+        {
+          "start": 4465,
+          "end": 4470,
+          "original": "         Vec3 center = Vec3.atCenterOf(facing == Direction.UP ? this.worldPosition.above() : this.worldPosition.below(2));\n         int distantCollected = 0;\n         for (ItemEntity itemEntity : this.level.getEntitiesOfClass(ItemEntity.class, range, item -> item.isAlive() && item.onGround() && !item.getItem().isEmpty())) {\n            boolean direct = itemEntity.distanceToSqr(center) < 0.7;\n            if (!direct && itemEntity.hasPickUpDelay()) continue;\n",
+          "replacement": "         for (ItemEntity itemEntity : this.level.getEntitiesOfClass(ItemEntity.class, range, item -> item.isAlive() && !item.getItem().isEmpty())) {\n"
+        },
+        {
+          "start": 4472,
+          "end": 4473,
+          "original": "            int accepted = stack.getCount() - remainder.getCount();\n",
+          "replacement": ""
+        },
+        {
+          "start": 4478,
+          "end": 4479,
+          "original": "            if (accepted > 0 && !direct && ++distantCollected >= 3) break;\n",
+          "replacement": ""
+        },
+        {
+          "start": 4484,
+          "end": 4496,
+          "original": "      int size = this.accessibleSlots().length;\n      for (int n = 0; n < size && this.items.get(this.machineSlotCursor % size).isEmpty(); n++)\n         this.machineSlotCursor = (this.machineSlotCursor + 1) % size;\n      ItemStack stack = this.items.get(this.machineSlotCursor % size);\n      if (stack.isEmpty()) { this.machineSlotCursor = 0; return; }\n      BlockPos targetPos = this.worldPosition.relative(direction);\n      if (!this.level.hasChunkAt(targetPos)) return;\n      BlockState targetState = this.level.getBlockState(targetPos);\n      if (targetState.getBlock() instanceof net.minecraft.world.level.block.HopperBlock\n            && targetState.getValue(net.minecraft.world.level.block.HopperBlock.FACING) == direction.getOpposite()) return;\n      if (targetState.is(ModBlocks.FACTORY_HOPPER.get())\n            && targetState.getValue(MachineBlocks.FACING) == direction.getOpposite()) return;\n",
+          "replacement": ""
+        },
+        {
+          "start": 4497,
+          "end": 4515,
+          "original": "      if (target == null) { this.cooldown = 12; return; }\n      ItemStack remaining = stack.copyWithCount(Math.min(stack.getCount(), Math.max(1, maxCount)));\n      int initial = remaining.getCount();\n      // Complete matching stacks before consuming a free slot, as in the original Hopper.\n      for (int slot = 0; slot < target.getSlots() && !remaining.isEmpty(); slot++)\n         if (ItemStack.isSameItemSameComponents(target.getStackInSlot(slot), remaining))\n            remaining = target.insertItem(slot, remaining.copy(), false);\n      for (int slot = 0; slot < target.getSlots() && !remaining.isEmpty(); slot++)\n         remaining = target.insertItem(slot, remaining.copy(), false);\n      int inserted = initial - remaining.getCount();\n      if (inserted > 0) {\n         stack.shrink(inserted);\n         this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);\n         this.setChanged(); this.updateComparator();\n      }\n      if (!remaining.isEmpty()) {\n         this.machineSlotCursor = (this.machineSlotCursor + 1) % size;\n         this.setChanged();\n",
+          "replacement": "      if (target != null) {\n         int var11 = Math.max(1, maxCount);\n\n         for (int tries = 0; tries < this.accessibleSlots().length && var11 > 0; tries++) {\n            int slotIndex = this.accessibleSlots()[this.machineSlotCursor % this.accessibleSlots().length];\n            ItemStack stack = (ItemStack)this.items.get(slotIndex);\n            if (!stack.isEmpty()) {\n               int count = Math.min(var11, stack.getCount());\n               ItemStack moving = stack.copyWithCount(count);\n               ItemStack remainder = ItemHandlerHelper.insertItem(target, moving, false);\n               int inserted = count - remainder.getCount();\n               if (inserted > 0) {\n                  stack.shrink(inserted);\n                  var11 -= inserted;\n                  this.setChanged();\n                  this.updateComparator();\n               }\n            }\n\n            this.machineSlotCursor = (this.machineSlotCursor + 1) % this.accessibleSlots().length;\n         }\n"
+        },
+        {
+          "start": 4519,
+          "end": 4523,
+          "original": "      this.pullHopperItems(this.hopperInventory(direction), maxCount);\n   }\n\n   private void pullHopperItems(IItemHandler source, int maxCount) {\n",
+          "replacement": "      IItemHandler source = this.hopperInventory(direction);\n"
+        },
+        {
+          "start": 4555,
+          "end": 4563,
+          "original": "      // A present block entity without a capability is authoritative on the output side.\n      if (this.level.getBlockEntity(pos) != null) return null;\n      return this.hopperEntityInventory(pos);\n   }\n\n   private IItemHandler hopperContainerHandler(Container container, Direction side) {\n      if (container instanceof WorldlyContainer sided) {\n         return new SidedInvWrapper(sided, side) {\n",
+          "replacement": "      // Preserve legacy Container-only inventories, including their sided access rules.\n      BlockEntity neighbor = this.level.getBlockEntity(pos);\n      if (neighbor instanceof WorldlyContainer container) {\n         return new SidedInvWrapper(container, side) {\n"
+        },
+        {
+          "start": 4564,
+          "end": 4566,
+          "original": "               int actualSlot = SidedInvWrapper.getSlot(sided, slot, side);\n               return actualSlot >= 0 && sided.canTakeItem(MachineBlockEntity.this, actualSlot, sided.getItem(actualSlot))\n",
+          "replacement": "               int actualSlot = SidedInvWrapper.getSlot(container, slot, side);\n               return actualSlot >= 0 && container.canTakeItem(MachineBlockEntity.this, actualSlot, container.getItem(actualSlot))\n"
+        },
+        {
+          "start": 4570,
+          "end": 4586,
+          "original": "      return new InvWrapper(container) {\n         @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {\n            return container.canTakeItem(MachineBlockEntity.this, slot, container.getItem(slot))\n               ? super.extractItem(slot, amount, simulate) : ItemStack.EMPTY;\n         }\n      };\n   }\n\n   private IItemHandler hopperEntityInventory(BlockPos pos) {\n      if (!this.level.hasChunkAt(pos)) return null;\n      for (net.minecraft.world.entity.Entity entity : this.level.getEntities((net.minecraft.world.entity.Entity)null,\n            new AABB(pos), net.minecraft.world.entity.EntitySelector.CONTAINER_ENTITY_SELECTOR)) {\n         IItemHandler entityHandler = entity.getCapability(ItemHandler.ENTITY, null);\n         if (entityHandler != null) return entityHandler;\n         if (entity instanceof Container container) return this.hopperContainerHandler(container, Direction.UP);\n         break;\n",
+          "replacement": "      if (neighbor instanceof Container container) {\n         return new InvWrapper(container) {\n            @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {\n               return container.canTakeItem(MachineBlockEntity.this, slot, container.getItem(slot))\n                  ? super.extractItem(slot, amount, simulate) : ItemStack.EMPTY;\n            }\n         };\n"
+        },
+        {
+          "start": 5165,
+          "end": 5166,
+          "original": "            if (this.kind() == MachineKind.FACTORY_HOPPER) this.hopperTickTimer = Math.min(this.hopperTickTimer, 8);\n",
+          "replacement": ""
+        }
+      ],
+      "main_sha256": "d49d082a4b67fbed04b0eb90fcf1f16f2c4b87f9ac93829ef8198fcdf0a7b894",
+      "main_projection": [
+        {
+          "start": 162,
+          "end": 165,
+          "original": "   public static final int BLOCK_BREAKER_LUBRICANT_CAPACITY = 4000;\n   public static final int BLOCK_BREAKER_LUBRICANT_PER_SUCCESS = 10;\n   private static final ResourceLocation BLOCK_BREAKER_LUBRICANT_ID = ResourceLocation.fromNamespaceAndPath(\"immersivepetroleum\", \"lubricant\");\n",
+          "replacement": ""
+        },
+        {
+          "start": 225,
+          "end": 230,
+          "original": "   private BlockState blockBreakerCycleTarget;\n   private BlockPos blockBreakerCyclePosition;\n   private boolean blockBreakerCycleAccelerated;\n   private int blockBreakerCycleEnergyCost;\n   private Tag unreadableBlockBreakerFluid;\n",
+          "replacement": ""
+        },
+        {
+          "start": 254,
+          "end": 305,
+          "original": "\n   private final FluidTank blockBreakerLubricantTank = new FluidTank(BLOCK_BREAKER_LUBRICANT_CAPACITY) {\n      @Override public boolean isFluidValid(int tank, FluidStack stack) {\n         return tank == 0 && MachineBlockEntity.isBlockBreakerLubricant(stack);\n      }\n      @Override public int fill(FluidStack stack, FluidAction action) {\n         return MachineBlockEntity.this.kind() == MachineKind.SMALL_BLOCK_BREAKER\n            && MachineBlockEntity.this.unreadableBlockBreakerFluid == null\n            && MachineBlockEntity.isBlockBreakerLubricant(stack) ? super.fill(stack, action) : 0;\n      }\n      @Override public FluidStack drain(int amount, FluidAction action) { return FluidStack.EMPTY; }\n      @Override public FluidStack drain(FluidStack stack, FluidAction action) { return FluidStack.EMPTY; }\n      @Override protected void onContentsChanged() { MachineBlockEntity.this.setChanged(); }\n   };\n\n   private static boolean isBlockBreakerLubricant(FluidStack stack) {\n      return !stack.isEmpty() && BLOCK_BREAKER_LUBRICANT_ID.equals(BuiltInRegistries.FLUID.getKey(stack.getFluid()));\n   }\n\n   private boolean isBlockBreakerLubricantSide(Direction side) {\n      if (side == null || this.kind() != MachineKind.SMALL_BLOCK_BREAKER) return false;\n      Direction right = switch (this.facing(this.getBlockState())) {\n         case NORTH -> Direction.WEST;\n         case EAST -> Direction.NORTH;\n         case SOUTH -> Direction.EAST;\n         case WEST -> Direction.SOUTH;\n         default -> null;\n      };\n      return side == right;\n   }\n\n   private IFluidHandler blockBreakerLubricantHandler(Direction side) {\n      return new IFluidHandler() {\n         private boolean active() { return MachineBlockEntity.this.isBlockBreakerLubricantSide(side); }\n         public int getTanks() { return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null ? 1 : 0; }\n         public FluidStack getFluidInTank(int tank) {\n            return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null && tank == 0\n               ? MachineBlockEntity.this.blockBreakerLubricantTank.getFluid().copy() : FluidStack.EMPTY;\n         }\n         public int getTankCapacity(int tank) { return active() && tank == 0 ? BLOCK_BREAKER_LUBRICANT_CAPACITY : 0; }\n         public boolean isFluidValid(int tank, FluidStack stack) {\n            return active() && MachineBlockEntity.this.unreadableBlockBreakerFluid == null\n               && tank == 0 && MachineBlockEntity.isBlockBreakerLubricant(stack);\n         }\n         public int fill(FluidStack stack, FluidAction action) {\n            return active() ? MachineBlockEntity.this.blockBreakerLubricantTank.fill(stack, action) : 0;\n         }\n         public FluidStack drain(FluidStack stack, FluidAction action) { return FluidStack.EMPTY; }\n         public FluidStack drain(int amount, FluidAction action) { return FluidStack.EMPTY; }\n      };\n   }\n",
+          "replacement": ""
+        },
+        {
+          "start": 898,
+          "end": 901,
+          "original": "      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {\n         return this.isBlockBreakerLubricantSide(side) ? this.blockBreakerLubricantHandler(side) : null;\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 1650,
+          "end": 1652,
+          "original": "               case 2:\n                  yield this.blockBreakerLubricantTank.getFluidAmount();\n",
+          "replacement": ""
+        },
+        {
+          "start": 1655,
+          "end": 1658,
+          "original": "                  yield (this.blockBreakerLubricantTank.getFluidAmount() <= 0 ? 0 : 1)\n                     | (this.blockBreakerCycleAccelerated ? 2 : 0)\n                     | (this.blockBreakerCycleTarget != null ? 4 : 0);\n",
+          "replacement": "                  yield this.comparatorOutput();\n"
+        },
+        {
+          "start": 1900,
+          "end": 1903,
+          "original": "                  case 2:\n                  case 4:\n                     return;\n",
+          "replacement": ""
+        },
+        {
+          "start": 2030,
+          "end": 2078,
+          "original": "      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {\n         this.unreadableBlockBreakerFluid = null;\n         this.blockBreakerLubricantTank.setFluid(FluidStack.EMPTY);\n         if (tag.contains(\"BlockBreakerLubricant\")) {\n            Tag raw = tag.get(\"BlockBreakerLubricant\");\n            if (!(raw instanceof CompoundTag savedFluid)\n                  || !savedFluid.contains(\"id\", Tag.TAG_STRING)\n                  || !savedFluid.contains(\"amount\", Tag.TAG_INT)\n                  || !BLOCK_BREAKER_LUBRICANT_ID.toString().equals(savedFluid.getString(\"id\"))\n                  || savedFluid.getInt(\"amount\") <= 0\n                  || savedFluid.getInt(\"amount\") > BLOCK_BREAKER_LUBRICANT_CAPACITY) {\n               this.unreadableBlockBreakerFluid = raw.copy();\n            } else {\n               FluidStack parsed = FluidStack.parseOptional(registries, savedFluid);\n               if (parsed.isEmpty() || !isBlockBreakerLubricant(parsed)) this.unreadableBlockBreakerFluid = savedFluid.copy();\n               else this.blockBreakerLubricantTank.setFluid(parsed);\n            }\n         }\n\n         this.blockBreakerCycleTarget = null;\n         this.blockBreakerCyclePosition = null;\n         this.blockBreakerCycleAccelerated = false;\n         this.blockBreakerCycleEnergyCost = 0;\n         if (tag.contains(\"BlockBreakerCycleTarget\", Tag.TAG_COMPOUND)\n               && tag.contains(\"BlockBreakerCyclePosition\", Tag.TAG_LONG)\n               && tag.contains(\"BlockBreakerCycleAccelerated\", Tag.TAG_BYTE)\n               && tag.contains(\"BlockBreakerCycleEnergyCost\", Tag.TAG_INT)) {\n            BlockState savedTarget = NbtUtils.readBlockState(\n               registries.lookupOrThrow(Registries.BLOCK), tag.getCompound(\"BlockBreakerCycleTarget\")\n            );\n            int savedCost = tag.getInt(\"BlockBreakerCycleEnergyCost\");\n            boolean savedAccelerated = tag.getBoolean(\"BlockBreakerCycleAccelerated\");\n            if (!savedTarget.isAir() && this.progress > 0 && this.progress < this.processTimeNeeded\n                  && this.processTimeNeeded >= 20 && this.processTimeNeeded <= 200 && savedCost > 0\n                  && (!savedAccelerated || this.blockBreakerLubricantTank.getFluidAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS)) {\n               this.blockBreakerCycleTarget = savedTarget;\n               this.blockBreakerCyclePosition = BlockPos.of(tag.getLong(\"BlockBreakerCyclePosition\"));\n               this.blockBreakerCycleAccelerated = savedAccelerated;\n               this.blockBreakerCycleEnergyCost = savedCost;\n            } else {\n               this.progress = 0;\n               this.processTimeNeeded = 0;\n            }\n         } else {\n            this.progress = 0;\n            this.processTimeNeeded = 0;\n         }\n      }\n",
+          "replacement": ""
+        },
+        {
+          "start": 2235,
+          "end": 2247,
+          "original": "         }\n      }\n      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {\n         if (this.unreadableBlockBreakerFluid != null) tag.put(\"BlockBreakerLubricant\", this.unreadableBlockBreakerFluid.copy());\n         else if (this.blockBreakerLubricantTank.getFluidAmount() > 0) {\n            tag.put(\"BlockBreakerLubricant\", this.blockBreakerLubricantTank.getFluid().save(registries));\n         }\n         if (this.blockBreakerCycleTarget != null) {\n            tag.put(\"BlockBreakerCycleTarget\", NbtUtils.writeBlockState(this.blockBreakerCycleTarget));\n            tag.putLong(\"BlockBreakerCyclePosition\", this.blockBreakerCyclePosition.asLong());\n            tag.putBoolean(\"BlockBreakerCycleAccelerated\", this.blockBreakerCycleAccelerated);\n            tag.putInt(\"BlockBreakerCycleEnergyCost\", this.blockBreakerCycleEnergyCost);\n",
+          "replacement": ""
+        },
+        {
+          "start": 2557,
+          "end": 2563,
+          "original": "         if (this.blockBreakerCycleTarget != null && (!this.blockBreakerCycleTarget.equals(targetState)\n               || !target.equals(this.blockBreakerCyclePosition))) {\n            this.clearBlockBreakerCycle();\n            this.progress = 0;\n            this.processTimeNeeded = 0;\n         }\n",
+          "replacement": ""
+        },
+        {
+          "start": 2567,
+          "end": 2568,
+          "original": "            this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2576,
+          "end": 2577,
+          "original": "            this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2582,
+          "end": 2583,
+          "original": "            this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2585,
+          "end": 2592,
+          "original": "            int requiredTicks = this.processTimeNeeded;\n            int energyCost;\n            if (this.blockBreakerCycleTarget == null) {\n               int normalTicks = this.blockBreakerProcessTicks(targetState, target);\n               boolean accelerated = this.blockBreakerLubricantTank.getFluidAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS;\n               requiredTicks = accelerated ? Math.max(20, (normalTicks + 1) / 2) : normalTicks;\n               int cycleCost = blockBreakerEnergyCostPerBlock(hardness);\n",
+          "replacement": "            int requiredTicks = this.blockBreakerProcessTicks(targetState, target);\n            if (this.processTimeNeeded != requiredTicks) {\n"
+        },
+        {
+          "start": 2593,
+          "end": 2608,
+          "original": "               if (!this.canBlockBreakerStoreDrops(target, targetState)) {\n                  this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               energyCost = this.blockBreakerEnergyCostPerTick(cycleCost, 0, requiredTicks);\n               if (energyCost <= 0 || this.energy < energyCost) {\n                  this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               this.blockBreakerCycleTarget = targetState;\n               this.blockBreakerCyclePosition = target;\n               this.blockBreakerCycleAccelerated = accelerated;\n               this.blockBreakerCycleEnergyCost = cycleCost;\n",
+          "replacement": ""
+        },
+        {
+          "start": 2609,
+          "end": 2628,
+          "original": "            } else {\n               if (requiredTicks < 20 || requiredTicks > 200 || this.blockBreakerCycleEnergyCost <= 0) {\n                  this.clearBlockBreakerCycle();\n                  this.progress = 0;\n                  this.processTimeNeeded = 0;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               if (!this.canBlockBreakerStoreDrops(target, targetState)) {\n                  this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n               energyCost = this.blockBreakerEnergyCostPerTick(this.blockBreakerCycleEnergyCost, this.progress, requiredTicks);\n               if (energyCost <= 0 || this.energy < energyCost) {\n                  this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;\n                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n                  return;\n               }\n",
+          "replacement": "            }\n\n            if (!this.canBlockBreakerStoreDrops(target, targetState)) {\n               this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;\n               this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n               return;\n            }\n\n            int energyCost = this.blockBreakerEnergyCostPerTick(hardness, this.progress, requiredTicks);\n            if (energyCost <= 0 || this.energy < energyCost) {\n               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;\n               this.setBooleanProperty(MachineBlocks.ACTIVE, false);\n               return;\n"
+        },
+        {
+          "start": 2638,
+          "end": 2645,
+          "original": "                  if (this.blockBreakerCycleAccelerated) {\n                     FluidStack stored = this.blockBreakerLubricantTank.getFluid();\n                     if (stored.getAmount() >= BLOCK_BREAKER_LUBRICANT_PER_SUCCESS) {\n                        this.blockBreakerLubricantTank.setFluid(stored.getAmount() == BLOCK_BREAKER_LUBRICANT_PER_SUCCESS\n                           ? FluidStack.EMPTY : stored.copyWithAmount(stored.getAmount() - BLOCK_BREAKER_LUBRICANT_PER_SUCCESS));\n                     }\n                  }\n",
+          "replacement": ""
+        },
+        {
+          "start": 2647,
+          "end": 2648,
+          "original": "                  this.clearBlockBreakerCycle();\n",
+          "replacement": ""
+        },
+        {
+          "start": 2666,
+          "end": 2673,
+          "original": "   private void clearBlockBreakerCycle() {\n      this.blockBreakerCycleTarget = null;\n      this.blockBreakerCyclePosition = null;\n      this.blockBreakerCycleAccelerated = false;\n      this.blockBreakerCycleEnergyCost = 0;\n   }\n\n",
+          "replacement": ""
+        },
+        {
+          "start": 2686,
+          "end": 2690,
+          "original": "      return this.blockBreakerEnergyCostPerTick(blockBreakerEnergyCostPerBlock(hardness), elapsedTicks, totalTicks);\n   }\n\n   private int blockBreakerEnergyCostPerTick(int totalCost, int elapsedTicks, int totalTicks) {\n",
+          "replacement": ""
+        },
+        {
+          "start": 2695,
+          "end": 2696,
+          "original": "      long costBefore = (long)totalCost * elapsed / totalTicks;\n",
+          "replacement": "      long totalCost = blockBreakerEnergyCostPerBlock(hardness);\n      long costBefore = totalCost * elapsed / totalTicks;\n"
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": {
+      "integrated_sha256": "6c803c3fcced2fcb57e63206b07424283658dc314ea66c07e4fdc55ae30a5093",
+      "breaker_sha256": "59bef5693d7fdc70cd7efad7cfdef577e98039ceb2cdf13ccee853333e30daea",
+      "breaker_projection": [
+        {
+          "start": 1135,
+          "end": 1137,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy\": \"Energy: %s / %s FE\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip\": \"Energy item slot: accepts items with FE energy storage. Charging depends on the item accepting energy.\"\n",
+          "replacement": "  \"gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy\": \"Energy: %s / %s FE\"\n"
+        }
+      ],
+      "main_sha256": "39b48736b027d915123882143a649d1da6394eecc894bf4867d1e7d049a644db",
+      "main_projection": [
+        {
+          "start": 1090,
+          "end": 1100,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.fluid_name\": \"Immersive Petroleum Lubricant\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.normal\": \"Normal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.accelerated\": \"Accelerated\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.active\": \"active cycle\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.next\": \"next cycle\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant\": \"%1$s: %2$s / %3$s mB\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_mode\": \"Mode: %1$s (%2$s); duration: %3$s ticks.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_use\": \"Accelerated cycles use %1$s mB only after a successful break.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe\": \"FE cost: %1$s per block.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe_unavailable\": \"FE cost is unavailable for the current target.\",\n",
+          "replacement": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.fluid_unavailable\": \"Fluid storage is not implemented. No level or bonus is simulated.\",\n"
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_ca.json": {
+      "integrated_sha256": "6d4d638b67ea0b441a1e4c976d23f70d471b97a25a57e2fba8a0b941510163ba",
+      "breaker_sha256": "df6c25b2a8e14d26a9a20fb169434387d2cfddaa9d597fdf3a67ba523e7c5eda",
+      "breaker_projection": [
+        {
+          "start": 972,
+          "end": 974,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge\": \"changement de signal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip\": \"Emplacement pour objet à réserve d’énergie FE. La recharge dépend de la capacité de l’objet à recevoir de l’énergie.\"\n",
+          "replacement": "  \"gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.edge\": \"changement de signal\"\n"
+        }
+      ],
+      "main_sha256": "6d4d638b67ea0b441a1e4c976d23f70d471b97a25a57e2fba8a0b941510163ba",
+      "main_projection": []
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": {
+      "integrated_sha256": "8a44da7117c5fffe1ba380af68d1045e090c5fcd17378f9575c5f73b8a51c1b6",
+      "breaker_sha256": "222c8e97aab9fe9748bef791c7fd1dc7d7d0985f612945d17d68fb055bceb385",
+      "breaker_projection": [
+        {
+          "start": 1135,
+          "end": 1137,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy\": \"Énergie : %s / %s FE\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.cell_tooltip\": \"Emplacement pour objet à réserve d’énergie FE. La recharge dépend de la capacité de l’objet à recevoir de l’énergie.\"\n",
+          "replacement": "  \"gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.energy\": \"Énergie : %s / %s FE\"\n"
+        }
+      ],
+      "main_sha256": "550f1ffbe5ad7dd1d2f070222a0d6f66c253c3848f7c523fa27ba390911c7ef9",
+      "main_projection": [
+        {
+          "start": 1090,
+          "end": 1100,
+          "original": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.fluid_name\": \"Lubrifiant d’Immersive Petroleum\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.normal\": \"Normal\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.mode.accelerated\": \"Accéléré\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.active\": \"cycle actif\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.cycle.next\": \"prochain cycle\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant\": \"%1$s : %2$s / %3$s mB\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_mode\": \"Mode : %1$s (%2$s) ; durée : %3$s ticks.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_use\": \"Un cycle accéléré consomme %1$s mB uniquement après une destruction réussie.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe\": \"Coût en FE : %1$s par bloc.\",\n  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.lubricant_fe_unavailable\": \"Le coût en FE est indisponible pour la cible actuelle.\",\n",
+          "replacement": "  \"gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.fluid_unavailable\": \"Réservoir de fluide non implémenté. Aucun niveau ni bonus simulé.\",\n"
+        }
+      ]
+    }
+  }
+}
+''')
+
+LEGACY_CYCLE_LAYER = 'breaker_legacy_cycle_resume'
+LEGACY_CYCLE_RECORD = {
+    'source_commit': '69c3ad9c14403e8213fdce199013a47d1d4e8bd8',
+    'path': 'src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java',
+    'source_sha256': '84daf564addabec5b010a12beaa461cdc68406182b469fbb97692dc49b75b87e',
+    'integrated_sha256': 'c43f3bb5a95b34c09f5a4196aa9c27703df8b5cc3e2935aa7123651a0434ae52',
+}
+# Replace the two exact migration hunks to recover the previous source file.
+LEGACY_CYCLE_REVERSE = (
+    (2073, 2079, "         } else {\n"),
+    (2590, 2602, ""),
+)
+
+
+def project_legacy_cycle(data):
+    record = LEGACY_CYCLE_RECORD
+    assert hashlib.sha256(data).hexdigest() == record['integrated_sha256'], 'Merged bytes changed: '+record['path']
+    lines = data.decode().splitlines(keepends=True)
+    for start, end, replacement in reversed(LEGACY_CYCLE_REVERSE):
+        lines[start:end] = replacement.splitlines(keepends=True)
+    previous = ''.join(lines).encode()
+    assert hashlib.sha256(previous).hexdigest() == record['source_sha256'], 'Legacy Block Breaker source reconstruction changed'
+    return previous
+
+
+def assert_merge_record(manifest):
+    assert manifest.get(MERGE_LAYER) == MERGE_RECORD, 'PR179 current-main merge record changed'
+
+def assert_record(manifest):
+    assert manifest.get(LAYER) == RECORD, 'Current-main integration record changed'
+    assert_merge_record(manifest)
+    assert manifest.get(LEGACY_CYCLE_LAYER) == LEGACY_CYCLE_RECORD, 'Legacy Block Breaker cycle migration record changed'
+
+def project_merge_tree(path, data, parent):
+    assert parent in ('main', 'breaker'), 'Unknown PR179 merge parent: '+parent
+    if path not in MERGE_RECORD['files']: return data
+    if path == LEGACY_CYCLE_RECORD['path']:
+        data = project_legacy_cycle(data)
+    record = MERGE_RECORD['files'][path]
+    assert hashlib.sha256(data).hexdigest() == record['integrated_sha256'], 'Merged bytes changed: '+path
+    lines = data.decode().splitlines(keepends=True)
+    for patch in reversed(record[parent+'_projection']):
+        start,end = patch['start'],patch['end']
+        assert ''.join(lines[start:end]) == patch['original'], 'Merge projection source changed: '+path
+        lines[start:end] = patch['replacement'].splitlines(keepends=True)
+    result = ''.join(lines).encode()
+    assert hashlib.sha256(result).hexdigest() == record[parent+'_sha256'], 'Merge parent reconstruction changed: '+path
+    return result
+
+def merge_current_hash(path, expected):
+    if path not in MERGE_RECORD['files']: return expected
+    record = MERGE_RECORD['files'][path]
+    integrated = record['integrated_sha256']
+    current = LEGACY_CYCLE_RECORD['integrated_sha256'] if path == LEGACY_CYCLE_RECORD['path'] else integrated
+    assert expected in (current, integrated, record['main_sha256'], record['breaker_sha256']), 'Unexpected PR179 merge parent identity: '+path
+    return current
+
+def project(path, data, parent):
+    data = project_merge_tree(path, data, 'breaker')
+    if path not in RECORD['files']: return data
+    record = RECORD['files'][path]
+    assert hashlib.sha256(data).hexdigest() == record['integrated_sha256'], 'Integrated bytes changed: '+path
+    lines = data.decode().splitlines(keepends=True)
+    for patch in reversed(record[parent+'_projection']):
+        start,end = patch['start'],patch['end']
+        assert ''.join(lines[start:end]) == patch['original'], 'Projection source changed: '+path
+        lines[start:end] = patch['replacement'].splitlines(keepends=True)
+    result = ''.join(lines).encode()
+    assert hashlib.sha256(result).hexdigest() == record[parent+'_sha256'], 'Parent reconstruction changed: '+path
+    return result
+
+def integrated_current_hash(path, expected):
+    if path not in RECORD['files']: return expected
+    record = RECORD['files'][path]
+    assert expected in (record['main_sha256'],record['breaker_sha256']), 'Unexpected parent identity: '+path
+    return record['integrated_sha256']

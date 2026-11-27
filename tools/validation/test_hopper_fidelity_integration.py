@@ -3,6 +3,7 @@ import hashlib
 from pathlib import Path
 import unittest
 from unittest.mock import patch
+from breaker_current_main_integration import project_merge_tree
 import hopper_fidelity_integration as layer
 from freezer_v5_reconciliation import current_hash
 
@@ -10,12 +11,13 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class HopperFidelityIntegrationTests(unittest.TestCase):
     def setUp(self):
-        self.data = (ROOT / layer.PATH).read_bytes()
+        self.merged_data = (ROOT / layer.PATH).read_bytes()
+        self.data = project_merge_tree(layer.PATH, self.merged_data, 'main')
 
     def test_exact_inverse_reconstructs_immutable_history(self):
         old = layer.project_history(self.data)
         self.assertEqual(hashlib.sha256(old).hexdigest(), layer.BASE_SHA256)
-        self.assertEqual(current_hash(layer.PATH, layer.BASE_SHA256), hashlib.sha256(self.data).hexdigest())
+        self.assertEqual(current_hash(layer.PATH, layer.BASE_SHA256), hashlib.sha256(self.merged_data).hexdigest())
         self.assertNotEqual(old, self.data)
 
     def test_changed_current_bytes_rejected_inside_and_outside_hopper(self):
@@ -42,9 +44,10 @@ class HopperFidelityIntegrationTests(unittest.TestCase):
             layer.project_history(self.data)
 
     def test_strength_exact_inverse_and_immutable_prior_hash(self):
-        data = (ROOT / layer.BLOCKS_PATH).read_bytes()
+        merged_data = (ROOT / layer.BLOCKS_PATH).read_bytes()
+        data = project_merge_tree(layer.BLOCKS_PATH, merged_data, 'main')
         self.assertEqual(hashlib.sha256(layer.project_blocks_history(data)).hexdigest(), layer.BLOCKS_BASE_SHA256)
-        self.assertEqual(current_hash(layer.BLOCKS_PATH, layer.BLOCKS_BASE_SHA256), hashlib.sha256(data).hexdigest())
+        self.assertEqual(current_hash(layer.BLOCKS_PATH, layer.BLOCKS_BASE_SHA256), hashlib.sha256(merged_data).hexdigest())
         with self.assertRaises(AssertionError):
             current_hash(layer.BLOCKS_PATH, '0'*64)
         for marker in (b'15.0F', b'MachineKind.FACTORY_DROPPER', b'MachineKind.SMALL_FREEZER'):

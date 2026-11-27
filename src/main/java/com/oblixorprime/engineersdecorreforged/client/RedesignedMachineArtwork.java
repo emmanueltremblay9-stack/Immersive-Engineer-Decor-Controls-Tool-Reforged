@@ -44,9 +44,22 @@ final class RedesignedMachineArtwork {
       graphics.fill(x + gauge.x(), y + gauge.y(), x + gauge.right(), y + gauge.bottom(), 0xFF181A19);
       int fill = fillPixels(menu.energyStored(), menu.energyCapacity(), gauge.width());
       if (fill > 0) graphics.fill(x + gauge.x(), y + gauge.y(), x + gauge.x() + fill, y + gauge.bottom(), 0xFFFFC326);
+      var fluid = BlockBreakerRedesignLayout.FLUID;
+      graphics.fill(x + fluid.x(), y + fluid.y(), x + fluid.right(), y + fluid.bottom(), 0xFF181A19);
+      int fluidFill = fillPixels(menu.fluidAmount(), menu.fluidCapacity(), fluid.height());
+      if (fluidFill > 0 && !menu.blockBreakerFluidStack().isEmpty()) {
+         FluidBarrelSpriteRenderer.draw(graphics, menu.blockBreakerFluidStack(),
+            x + fluid.x(), y + fluid.y(), fluid.width(), fluid.height(),
+            x + fluid.x(), y + fluid.bottom() - fluidFill, x + fluid.right(), y + fluid.bottom());
+      }
+      var progress = BlockBreakerRedesignLayout.PROGRESS;
+      int duration = menu.blockBreakerDurationTicks();
+      int progressFill = duration > 0 ? fillPixels(menu.field(1), duration, progress.width()) : 0;
+      if (progressFill > 0) {
+         graphics.fill(x + progress.x(), y + progress.y(), x + progress.x() + progressFill, y + progress.bottom(), 0xFF7FA77A);
+      }
       // The central broken block is static artwork, not the block in the world.
-      // No fluid reservoir exists yet; the fluid gauge remains empty. The power icon
-      // is a non-interactive neutral presentation, not an invented on/off command.
+      // The power icon is a non-interactive neutral presentation, not an invented on/off command.
    }
 
    static int fillPixels(int amount, int capacity, int pixels) {

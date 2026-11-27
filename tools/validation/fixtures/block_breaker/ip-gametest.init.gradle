@@ -1,0 +1,9 @@
+gradle.projectsEvaluated {
+    def root = gradle.rootProject
+    def neoForgeExtension = root.extensions.findByName("neoForge")
+    if (neoForgeExtension == null) throw new GradleException("neoForge extension was not found")
+    def gameTestRun = neoForgeExtension.runs.findByName("gameTestServer")
+    if (gameTestRun == null) throw new GradleException("gameTestServer run was not found")
+    gameTestRun.gameDirectory = root.file("build/isolated-ip-gametest")
+    gameTestRun.systemProperty "iedctr.requireLubricantProfile", "true"
+}

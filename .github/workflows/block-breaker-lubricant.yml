@@ -1,0 +1,45 @@
+name: Block Breaker lubricant compatibility
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  real-ip-gametest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout exact candidate head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Retrieve pinned Immersive Petroleum 4.5.0-39
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/isolated-ip-gametest/mods
+          jar=build/isolated-ip-gametest/mods/ImmersivePetroleum-1.21.1-4.5.0-39.jar
+          curl --fail --location --retry 2 --output "$jar" https://cursemaven.com/curse/maven/immersive-petroleum-268250/8420142/immersive-petroleum-268250-8420142.jar
+          echo "c1bfef3290dd8c2c68519155e395059766f5d258a52d5e08faf63eb627312e8b  $jar" | sha256sum --check
+      - name: Run GameTests with required real lubricant registry
+        run: bash ./gradlew --init-script tools/validation/fixtures/block_breaker/ip-gametest.init.gradle runGameTestServer --stacktrace
+      - name: Retain qualification evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: block-breaker-real-ip-gametest
+          path: |
+            build/isolated-ip-gametest/logs/
+            build/reports/gametest/
+          if-no-files-found: error
+          retention-days: 14

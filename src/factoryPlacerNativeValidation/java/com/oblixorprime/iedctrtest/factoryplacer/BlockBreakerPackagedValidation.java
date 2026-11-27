@@ -23,6 +23,13 @@ import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.material.Fluids;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.FormattedCharSequence;
@@ -53,6 +60,11 @@ import org.lwjgl.glfw.GLFW;
 /** Independent test driver only: no production screen construction or presentation flags. */
 @EventBusSubscriber(modid = FactoryPlacerValidationMod.MOD_ID, value = Dist.CLIENT)
 public final class BlockBreakerPackagedValidation {
+    private static final boolean LUBRICANT = Boolean.getBoolean("iedctr.blockBreakerLubricantNative");
+    private static final ResourceLocation LUBRICANT_ID = ResourceLocation.fromNamespaceAndPath("immersivepetroleum", "lubricant");
+    private static final String IP_SHA = "c1bfef3290dd8c2c68519155e395059766f5d258a52d5e08faf63eb627312e8b";
+    private static JsonObject lubricantProof;
+    private static boolean acceleratedCycleObserved;
     private static final BlockPos POS = new BlockPos(0, 80, 0);
     private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.";
     private static final String TITLE = "block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker";
@@ -116,6 +128,15 @@ public final class BlockBreakerPackagedValidation {
                 if (ticks < 20 || menu.energyStored() != 0 || menu.blockBreakerStatus() != 2 || !matches(mc, p ->
                     p.containerMenu instanceof MachineMenu && machine.isEmpty() && machine.energyStorage(Direction.DOWN).getEnergyStored() == 0
                     && p.serverLevel().getBlockState(POS.north()).is(Blocks.DIRT))) return;
+                if (LUBRICANT) {
+                    require(menu.fluidAmount() == 1000 && menu.fluidCapacity() == 4000
+                        && BuiltInRegistries.FLUID.getKey(menu.storedFluid()).equals(LUBRICANT_ID)
+                        && menu.blockBreakerDurationTicks() == 20 && !menu.blockBreakerCycleActive(), "Initial client lubricant sync differs");
+                    lubricantProof.addProperty("client_initial_amount", menu.fluidAmount());
+                    lubricantProof.addProperty("client_fluid_id", BuiltInRegistries.FLUID.getKey(menu.storedFluid()).toString());
+                    lubricantProof.addProperty("client_preview_ticks", menu.blockBreakerDurationTicks());
+                    lubricantProof.addProperty("client_fluid_name", menu.blockBreakerFluidName().getString());
+                }
                 opened++; pointerX = screen.width - 2; pointerY = screen.height - 2; move(mc, screen);
                 enter(Stage.CLEAN); return;
             }
@@ -130,7 +151,12 @@ public final class BlockBreakerPackagedValidation {
                 String actual = observed.get("text").getAsString().replace('\n', ' ');
                 String expected = hoverIndex == 0 ? Component.translatable(TITLE).getString() : switch (hoverIndex) {
                     case 1 -> Component.translatable(PREFIX + "tooltip.input").getString();
-                    case 2 -> Component.translatable(PREFIX + "tooltip.fluid_unavailable").getString();
+                    case 2 -> String.join(" ",
+                        Component.translatable(PREFIX + "tooltip.lubricant", (LUBRICANT ? new FluidStack(BuiltInRegistries.FLUID.get(LUBRICANT_ID), 1000).getHoverName() : Component.translatable(PREFIX + "fluid_name")), LUBRICANT ? 1000 : 0, 4000).getString(),
+                        Component.translatable(PREFIX + "tooltip.lubricant_mode",
+                            Component.translatable(PREFIX + (LUBRICANT ? "mode.accelerated" : "mode.normal")), Component.translatable(PREFIX + "cycle.next"), LUBRICANT ? 20 : 30).getString(),
+                        Component.translatable(PREFIX + "tooltip.lubricant_use", 10).getString(),
+                        Component.translatable(PREFIX + "tooltip.lubricant_fe", 240).getString());
                     case 3 -> Component.translatable(PREFIX + "tooltip.power_unavailable").getString();
                     case 4 -> Component.translatable(PREFIX + "tooltip.front_face").getString();
                     case 5 -> Component.translatable(PREFIX + "tooltip.static_scene").getString();
@@ -138,6 +164,8 @@ public final class BlockBreakerPackagedValidation {
                 };
                 require(actual.contains(expected), "Actual native translated tooltip differs: " + actual + " / " + expected);
                 require(observed.get("in_bounds").getAsBoolean(), "Tooltip clipped");
+                if (hoverIndex == 2) require(observed.get("line_count").getAsInt() >= 4
+                    && observed.get("width").getAsInt() <= Math.min(240, screen.width - 16), "Fluid tooltip must wrap within viewport");
                 capture(mc, NAMES[hoverIndex], observed);
                 if (++hoverIndex < POINTS.length) { ticks = 0; setHover(mc, screen); return; }
                 pending = mc.getSingleplayerServer().submit(() -> {
@@ -148,6 +176,10 @@ public final class BlockBreakerPackagedValidation {
             if (stage == Stage.WORK) {
                 if (ticks < 45 || !dirt(menu.getSlot(0).getItem()) || menu.energyStored() != 0 || !matches(mc, p ->
                     workComplete(p))) return;
+                if (LUBRICANT) {
+                    require(menu.fluidAmount() == 990 && BuiltInRegistries.FLUID.getKey(menu.storedFluid()).equals(LUBRICANT_ID), "Final client lubricant sync differs");
+                    lubricantProof.addProperty("client_final_amount", menu.fluidAmount());
+                }
                 capture(mc, "worked", null); clickSlot(screen, menu, 0); enter(Stage.PICKED); return;
             }
             if (stage == Stage.PICKED) {
@@ -174,6 +206,15 @@ public final class BlockBreakerPackagedValidation {
         require(mc.level == null && mc.getSingleplayerServer() == null && !Files.exists(directory.resolve("breaker-proof.json")), "Existing proof/world forbidden");
         if (Files.exists(directory.resolve("saves"))) try (var entries = Files.list(directory.resolve("saves"))) { require(entries.findAny().isEmpty(), "Existing save"); }
         packaged = BlockBreakerRuntimeProof.verify(mc);
+        if (LUBRICANT) {
+            var ip = ModList.get().getModFileById("immersivepetroleum");
+            require(ip != null && BuiltInRegistries.FLUID.get(LUBRICANT_ID) != Fluids.EMPTY, "Required real IP lubricant missing");
+            String ipHash = BlockBreakerRuntimeProof.hash(Files.readAllBytes(ip.getFile().getFilePath()));
+            require(IP_SHA.equals(ipHash), "Loaded IP JAR differs from pinned distribution");
+            lubricantProof = new JsonObject(); lubricantProof.addProperty("ip_sha256", ipHash);
+            lubricantProof.addProperty("fluid_id", LUBRICANT_ID.toString());
+            lubricantProof.addProperty("setup", "1000 mB injected through registered right-side capability before work; not a pump test");
+        }
         require(Files.readString(directory.resolve(".iedctr-breaker-xvfb")).equals(nonce + "\n" + System.getenv("DISPLAY")), "Display is not nonce-owned Xvfb");
         x11 = NativeLibrary.getInstance("X11"); xtest = NativeLibrary.getInstance("Xtst");
         display = x11.getFunction("XOpenDisplay").invokePointer(new Object[]{null}); require(display != null, "X11 unavailable");
@@ -191,17 +232,39 @@ public final class BlockBreakerPackagedValidation {
         level.setBlock(POS, ModBlocks.SMALL_BLOCK_BREAKER.get().defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH), 3);
         require(level.getBlockEntity(POS) instanceof MachineBlockEntity, "Missing Breaker"); machine = (MachineBlockEntity)level.getBlockEntity(POS);
         require(machine.isEmpty() && machine.energyStorage(Direction.DOWN).getEnergyStored() == 0, "Nonempty initial machine");
+        if (LUBRICANT) {
+            var port = level.getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.WEST);
+            require(port != null && port.fill(new FluidStack(BuiltInRegistries.FLUID.get(LUBRICANT_ID), 1000), FluidAction.EXECUTE) == 1000,
+                "Registered right-side lubricant setup failed");
+            require(port.getFluidInTank(0).getAmount() == 1000 && port.getTankCapacity(0) == 4000, "Initial server tank differs");
+            lubricantProof.addProperty("server_initial_amount", port.getFluidInTank(0).getAmount());
+            lubricantProof.addProperty("capacity", port.getTankCapacity(0));
+        }
         p.getInventory().clearContent(); p.connection.teleport(.5,80,3.5,180,24);
     }
     private static boolean workComplete(ServerPlayer p) {
         if (!p.serverLevel().getBlockState(POS.north()).isAir() || !dirt(machine.getItem(0))
                 || machine.energyStorage(Direction.DOWN).getEnergyStored() != 0 || !noDropsAndEmptyInventory(p)) return false;
+        if (LUBRICANT) {
+            var port = p.serverLevel().getCapability(Capabilities.FluidHandler.BLOCK, POS, Direction.WEST);
+            require(port != null && port.getFluidInTank(0).getAmount() == 990 && acceleratedCycleObserved, "Server accelerated cycle/consumption differs");
+            lubricantProof.addProperty("server_final_amount", port.getFluidInTank(0).getAmount());
+            lubricantProof.addProperty("accelerated_cycle_observed", acceleratedCycleObserved);
+        }
         workEvidence = new JsonObject();
         workEvidence.addProperty("target_before", "minecraft:dirt");workEvidence.addProperty("target_after", "minecraft:air");
         workEvidence.addProperty("energy_seeded",240);workEvidence.addProperty("energy_after",machine.energyStorage(Direction.DOWN).getEnergyStored());
         workEvidence.addProperty("output_item","minecraft:dirt");workEvidence.addProperty("output_count",machine.getItem(0).getCount());
         workEvidence.addProperty("world_drop_count",0);workEvidence.addProperty("server_confirmed",true);
         return true;
+    }
+    @SubscribeEvent public static void observeLubricantCycle(net.neoforged.neoforge.event.tick.ServerTickEvent.Post event) {
+        if (!LUBRICANT || complete || machine == null || stage != Stage.WORK) return;
+        if ((machine.dataAccessForTests().get(4) & 4) != 0) {
+            require((machine.dataAccessForTests().get(4) & 2) != 0 && machine.dataAccessForTests().get(3) == 20,
+                "Observed real cycle is not accelerated for 20 ticks");
+            acceleratedCycleObserved = true;
+        }
     }
     private static boolean noWorldDrops(ServerPlayer p) {
         return p.serverLevel().getEntitiesOfClass(ItemEntity.class, new AABB(POS).inflate(12)).isEmpty();
@@ -292,6 +355,7 @@ public final class BlockBreakerPackagedValidation {
                 width=Math.max(width,c.getWidth(event.getFont()));height+=c.getHeight();
             }
             tooltip=new JsonObject();tooltip.addProperty("text",text.toString());
+            tooltip.addProperty("line_count",event.getComponents().size());
             tooltip.addProperty("in_bounds",event.getX()-4>=0 && event.getY()-4>=0 && event.getX()+width+4<=screen.width && event.getY()+height+4<=screen.height);
             tooltip.addProperty("x",event.getX());tooltip.addProperty("y",event.getY());tooltip.addProperty("width",width);tooltip.addProperty("height",height);tooltipInFrame=true;
         } catch(Throwable error){finish(mc,error);}
@@ -319,6 +383,7 @@ public final class BlockBreakerPackagedValidation {
             proof.addProperty("selected_language",mc.getLanguageManager().getSelected());proof.addProperty("width",mc.getWindow().getWidth());proof.addProperty("height",mc.getWindow().getHeight());
             proof.addProperty("native_visual_acceptance",false);proof.addProperty("input_method","XTest physical right-click on verified block raycast; XTest physical inventory clicks and pointer hover through GLFW/Minecraft; independent server acknowledgements");
             proof.addProperty("setup","Seeded flat survival world, machine, dirt target and 240FE via underside capability. Real ticking performs work. No production state injection during work.");
+            if (LUBRICANT) proof.add("lubricant_profile", lubricantProof);
             proof.add("work",workEvidence);proof.add("final_conservation",finalConservation);proof.add("captures",captures);if(error!=null)proof.addProperty("error",error.toString());
             Files.writeString(directory.resolve("breaker-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");
         }}catch(Exception ex){EngineersDecorReforged.LOGGER.error("Breaker proof write failed",ex);}
