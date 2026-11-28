@@ -86,7 +86,7 @@ def main() -> int:
                                 capture_output=True, text=True).stdout.strip()
     if not re.fullmatch(r"[a-f0-9]{40}", source_sha):
         parser.error("Missing exact source SHA")
-    art = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/thermal_vertical/freezer/neutral.png"
+    art = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/05.png"
     if hashlib.sha256(art.read_bytes()).hexdigest() != ART_SHA:
         parser.error("Active Thermal Freezer neutral art changed")
     missing = [name for name in ("java", "Xvfb", "xvfb-run", "xauth") if not shutil.which(name)]

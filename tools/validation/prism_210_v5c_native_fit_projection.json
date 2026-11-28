@@ -97,6 +97,216 @@
           "previous": "      this.gui11V5CPresentation = Gui11V5CRuntimeGeometry.supports(kind) && inventory.player.level().isClientSide;\n"
         }
       ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java": {
+      "old_sha256": "8d692d0171f6e9490a213ba23ea67e2bd0b1f7b61150a1ff096cf27ad3794aca",
+      "new_sha256": "b2d07c050f41235565612bc5c7b1f7c04636d9f4b2f1d2ee6f4ba0153df9bc47",
+      "hunks": [
+        {
+          "start": 13,
+          "end": 15,
+          "current": "import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;\nimport com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;\n",
+          "previous": ""
+        },
+        {
+          "start": 49,
+          "end": 53,
+          "current": "   private static final String ACTIVE_ART_SHA256 = \"29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6\";\n   private static final MachineKind FREEZER = MachineKind.SMALL_FREEZER;\n   private static final Gui11V5CRuntimeGeometry.Rect ENERGY = Gui11V5CRuntimeGeometry.energy(FREEZER);\n   private static final Gui11V5CRuntimeGeometry.Rect CHAMBER = Gui11V5CRuntimeGeometry.effectBounds(FREEZER, \"cold-chamber\");\n",
+          "previous": "   private static final String NEUTRAL_SHA256 = \"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\";\n   private static final String EFFECT_SHA256 = \"046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957\";\n   private static final String ENERGY_SHA256 = \"73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638\";\n   private static final double RASTER_PER_CANVAS_PIXEL = 3.0D;\n   // Verified alpha bounds of the exact 1041x1143 Freezer energy/effect layers,\n   // projected onto the 347x381 ThermalVerticalScreen canvas.\n   private static final double ENERGY_LEFT = 187.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double ENERGY_TOP = 371.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double ENERGY_RIGHT = 216.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double ENERGY_BOTTOM = 559.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_LEFT = 331.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_TOP = 324.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_RIGHT = 720.0D / RASTER_PER_CANVAS_PIXEL;\n   private static final double EFFECT_BOTTOM = 564.0D / RASTER_PER_CANVAS_PIXEL;\n"
+        },
+        {
+          "start": 582,
+          "end": 583,
+          "current": "            ENERGY.x(), ENERGY.y(), ENERGY.x() + ENERGY.width(), ENERGY.y() + ENERGY.height());\n",
+          "previous": "            ENERGY_LEFT, ENERGY_TOP, ENERGY_RIGHT, ENERGY_BOTTOM);\n"
+        },
+        {
+          "start": 589,
+          "end": 590,
+          "current": "            CHAMBER.x(), CHAMBER.y(), CHAMBER.x() + CHAMBER.width(), CHAMBER.y() + CHAMBER.height());\n",
+          "previous": "            EFFECT_LEFT, EFFECT_TOP, EFFECT_RIGHT, EFFECT_BOTTOM);\n"
+        },
+        {
+          "start": 599,
+          "end": 601,
+          "current": "      capture.addProperty(\"energy_clip_top\", ENERGY.y() + ENERGY.height() - 4\n         - Gui11V5CArtwork.energyFillPixels(FREEZER, menu.energyStored(), menu.energyCapacity()));\n",
+          "previous": "      capture.addProperty(\"energy_clip_top\", ThermalVerticalGeometry.energyClipTop(89, 192, menu.energyStored(), menu.energyCapacity()));\n"
+        },
+        {
+          "start": 622,
+          "end": 632,
+          "current": "      var art = mc.getResourceManager().getResource(Gui11V5CArtwork.texture(FREEZER)).orElseThrow();\n      String artHash;\n      try (var input = art.open()) {\n         artHash = HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(input.readAllBytes()));\n      }\n      require(artHash.equals(ACTIVE_ART_SHA256) && art.sourcePackId().equals(\"mod/\" + EngineersDecorReforged.MOD_ID),\n         \"Wrong active Freezer V5C faceplate\");\n      proof.addProperty(\"source_art_sha256\", artHash);\n      proof.addProperty(\"canvas_width\", ThermalVerticalGeometry.canvasWidth(FREEZER));\n      proof.addProperty(\"canvas_height\", ThermalVerticalGeometry.canvasHeight(FREEZER));\n",
+          "previous": "      proof.addProperty(\"source_art_sha256\", NEUTRAL_SHA256);\n      proof.addProperty(\"effect_art_sha256\", EFFECT_SHA256);\n      proof.addProperty(\"energy_art_sha256\", ENERGY_SHA256);\n      proof.addProperty(\"canvas_width\", ThermalVerticalGeometry.CANVAS_WIDTH);\n      proof.addProperty(\"canvas_height\", ThermalVerticalGeometry.CANVAS_HEIGHT);\n"
+        },
+        {
+          "start": 638,
+          "end": 639,
+          "current": "      proof.addProperty(\"effect_visibility_rule\", \"server_phase_greater_than_zero_v5c_chamber_pulse\");\n",
+          "previous": "      proof.addProperty(\"effect_visibility_rule\", \"server_phase_greater_than_zero_single_effect_texture\");\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_reference_native.py": {
+      "old_sha256": "a13e0f7827bae75c2604d03cd924969d802f3d3cef7311721a8735af56ed059c",
+      "new_sha256": "d964f8919eea4e41d2e53686f37dcbf4ad5e80f472ca234d79cd12a616aae7a4",
+      "hunks": [
+        {
+          "start": 25,
+          "end": 28,
+          "current": "ART_SHA = \"29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6\"\nRETAINED_ARTS = {\n    \"neutral\": \"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\",\n",
+          "previous": "ART_SHA = \"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\"\nACTIVE_ARTS = {\n    \"neutral\": ART_SHA,\n"
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "current": "CANVAS_WIDTH, CANVAS_HEIGHT, MAX_VIEW_SCALE, VIEW_MARGIN = 281, 313, 0.78, 6\nENERGY_CROP = (59, 88, 71, 140)\nEFFECT_CROP = (102, 92, 177, 125)\nENERGY_CLIP_TOP = {0: 136, 8000: 114, 16000: 92}\n",
+          "previous": "CANVAS_WIDTH, CANVAS_HEIGHT, MAX_VIEW_SCALE, VIEW_MARGIN = 347, 381, 0.78, 6\nENERGY_CROP = (187 / 3, 371 / 3, 216 / 3, 559 / 3)\nEFFECT_CROP = (331 / 3, 324 / 3, 720 / 3, 564 / 3)\nENERGY_CLIP_TOP = {0: 192, 8000: 140, 16000: 89}\n"
+        },
+        {
+          "start": 123,
+          "end": 125,
+          "current": "            or proof.get(\"source_art_sha256\") != ART_SHA\n            or \"effect_art_sha256\" in proof or \"energy_art_sha256\" in proof\n",
+          "previous": "            or proof.get(\"source_art_sha256\") != ACTIVE_ARTS[\"neutral\"]\n            or proof.get(\"effect_art_sha256\") != ACTIVE_ARTS[\"effect\"]\n            or proof.get(\"energy_art_sha256\") != ACTIVE_ARTS[\"energy\"]\n"
+        },
+        {
+          "start": 135,
+          "end": 136,
+          "current": "            or proof.get(\"effect_visibility_rule\") != \"server_phase_greater_than_zero_v5c_chamber_pulse\"\n",
+          "previous": "            or proof.get(\"effect_visibility_rule\") != \"server_phase_greater_than_zero_single_effect_texture\"\n"
+        },
+        {
+          "start": 218,
+          "end": 219,
+          "current": "            natural_clip_top = 136 - (44 * min(16000, max(0, natural_energy))) // 16000\n",
+          "previous": "            natural_clip_top = 192 - math.floor(103 * min(16000, max(0, natural_energy)) / 16000 + 0.5)\n"
+        },
+        {
+          "start": 244,
+          "end": 244,
+          "current": "",
+          "previous": "    if len(active_hashes) != 1:\n        raise SmokeFailure(\"Active frost layer is not stable across its server phases\")\n"
+        },
+        {
+          "start": 245,
+          "end": 249,
+          "current": "    # The selected chamber pulse can vary between frames; every synchronized\n    # active phase must still visibly differ from the same idle chamber crop.\n    if zero_hash in active_hashes:\n        raise SmokeFailure(\"An active server phase did not reveal the frost effect\")\n",
+          "previous": "    if next(iter(active_hashes)) == zero_hash:\n        raise SmokeFailure(\"Server phase transition did not reveal the frost layer\")\n"
+        },
+        {
+          "start": 276,
+          "end": 280,
+          "current": "    art_root = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui\"\n    retained = {\"thermal_vertical/freezer/\" + name + \".png\": digest for name, digest in RETAINED_ARTS.items()}\n    for name, expected in {**retained, \"gui11_v5c/05.png\": ART_SHA}.items():\n        path = art_root / name\n",
+          "previous": "    art_root = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/thermal_vertical/freezer\"\n    for name, expected in ACTIVE_ARTS.items():\n        path = art_root / (name + \".png\")\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_packaged_native.py": {
+      "old_sha256": "bf0ea2a9acd3cf7ee0238146056934bf4a6b146ed5ea59a0e6eb627c46acb0f8",
+      "new_sha256": "974f734afb3747c4cafa79d16bcdba3a2a6d9a113e443a650b3ca4416f530db9",
+      "hunks": [
+        {
+          "start": 88,
+          "end": 89,
+          "current": "    art = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/05.png\"\n",
+          "previous": "    art = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/thermal_vertical/freezer/neutral.png\"\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_packaged_proof.py": {
+      "old_sha256": "2ce045818e60da039747124a5a182a3fdcbc04b8a44566a37e9868ac2270d5e4",
+      "new_sha256": "95bc8e659de81eb0eaf5a8ace86ddd81238819649daee6cbd6c947ccc184e9eb",
+      "hunks": [
+        {
+          "start": 15,
+          "end": 16,
+          "current": "TEXTURES = {'textures/gui/gui11_v5c/05.png': '29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6', 'textures/gui/thermal_vertical/freezer/neutral.png': '48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806', 'textures/gui/thermal_vertical/freezer/effect.png': '046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957', 'textures/gui/thermal_vertical/freezer/energy.png': '73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638'}\n",
+          "previous": "TEXTURES = {'textures/gui/thermal_vertical/freezer/neutral.png': '48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806', 'textures/gui/thermal_vertical/freezer/effect.png': '046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957', 'textures/gui/thermal_vertical/freezer/energy.png': '73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638'}\n"
+        }
+      ]
+    },
+    "src/freezerPackagedValidation/java/com/oblixorprime/iedctrtest/freezer/PackagedRuntimeProof.java": {
+      "old_sha256": "3d2afaae47a53854f07454055afaa3c142fc683f5835ac072c7a0b8c9aabada7",
+      "new_sha256": "c53a689018bc7f510fb41323780258bf0cfc8df574a5c9199d3b92808df83315",
+      "hunks": [
+        {
+          "start": 77,
+          "end": 79,
+          "current": "            String[] paths = {\"thermal_vertical/freezer/neutral.png\", \"thermal_vertical/freezer/effect.png\", \"thermal_vertical/freezer/energy.png\", \"gui11_v5c/05.png\"};\n            String[] hashes = {\"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\", \"046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957\", \"73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638\", \"29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6\"};\n",
+          "previous": "            String[] paths = {\"thermal_vertical/freezer/neutral.png\", \"thermal_vertical/freezer/effect.png\", \"thermal_vertical/freezer/energy.png\"};\n            String[] hashes = {\"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806\", \"046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957\", \"73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638\"};\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_reference_native.py": {
+      "old_sha256": "75ab558c937b032609423b3bb3913dff3f0ab075bd5d1931ad9cc6b6a0d159fd",
+      "new_sha256": "a98dd582e8202c6fef804dc9ad21fed6e04e790396b913e17ad5c687d66a95f2",
+      "hunks": [
+        {
+          "start": 10,
+          "end": 11,
+          "current": "from freezer_reference_native import (ART_SHA, CANVAS_HEIGHT, CANVAS_WIDTH, CAPTURES, CASES,\n",
+          "previous": "from freezer_reference_native import (ACTIVE_ARTS, CANVAS_HEIGHT, CANVAS_WIDTH, CAPTURES, CASES,\n"
+        },
+        {
+          "start": 36,
+          "end": 37,
+          "current": "            \"source_art_sha256\": ART_SHA, \"canvas_width\": CANVAS_WIDTH,\n",
+          "previous": "            \"source_art_sha256\": ACTIVE_ARTS[\"neutral\"], \"effect_art_sha256\": ACTIVE_ARTS[\"effect\"],\n            \"energy_art_sha256\": ACTIVE_ARTS[\"energy\"], \"canvas_width\": CANVAS_WIDTH,\n"
+        },
+        {
+          "start": 40,
+          "end": 41,
+          "current": "            \"effect_visibility_rule\": \"server_phase_greater_than_zero_v5c_chamber_pulse\",\n",
+          "previous": "            \"effect_visibility_rule\": \"server_phase_greater_than_zero_single_effect_texture\",\n"
+        },
+        {
+          "start": 77,
+          "end": 78,
+          "current": "            clip = 136 - (44 * energy) // 16000\n",
+          "previous": "            clip = 192 - round(103 * energy / 16000)\n"
+        },
+        {
+          "start": 90,
+          "end": 91,
+          "current": "                \"energy_clip_top\": 136 - (44 * energy) // 16000,\n",
+          "previous": "                \"energy_clip_top\": 192 - round(103 * energy / 16000),\n"
+        },
+        {
+          "start": 180,
+          "end": 181,
+          "current": "    def test_small_window_uses_281_by_313_fit_and_exact_crop_dimensions(self):\n",
+          "previous": "    def test_small_window_uses_347_by_381_fit_and_exact_crop_dimensions(self):\n"
+        },
+        {
+          "start": 182,
+          "end": 183,
+          "current": "        self.assertAlmostEqual(_expected_scale(1280, 260), 0.78, places=6)\n",
+          "previous": "        self.assertAlmostEqual(_expected_scale(1280, 260), 248 / 381, places=6)\n"
+        },
+        {
+          "start": 185,
+          "end": 186,
+          "current": "    def test_small_window_rejects_old_thermal_fit(self):\n",
+          "previous": "    def test_small_window_rejects_old_square_fit(self):\n"
+        },
+        {
+          "start": 188,
+          "end": 189,
+          "current": "        proof[\"captures\"][0][\"view_scale\"] = 248 / 381\n",
+          "previous": "        proof[\"captures\"][0][\"view_scale\"] = 248 / 314\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_render_sync.py": {
+      "old_sha256": "b5eb1cc19269d1ad0abc97ceed45de8f748e7a4828369075d40057c2bf057ef8",
+      "new_sha256": "477da2a5bbee59dfee2236e3851cd49517b494fd7b93f3ab99d91815fa4a49ba",
+      "hunks": [
+        {
+          "start": 18,
+          "end": 24,
+          "current": "        self.assertIn(\"getResource(Gui11V5CArtwork.texture(FREEZER))\", source)\n        self.assertIn(\"Gui11V5CRuntimeGeometry.energy(FREEZER)\", source)\n        self.assertIn('Gui11V5CRuntimeGeometry.effectBounds(FREEZER, \"cold-chamber\")', source)\n        self.assertIn(\"Gui11V5CArtwork.energyFillPixels(FREEZER, menu.energyStored(), menu.energyCapacity())\", source)\n        self.assertIn('proof.addProperty(\"canvas_width\", ThermalVerticalGeometry.canvasWidth(FREEZER))', source)\n        self.assertIn('proof.addProperty(\"canvas_height\", ThermalVerticalGeometry.canvasHeight(FREEZER))', source)\n",
+          "previous": "        self.assertIn(\"ENERGY_LEFT\", source)\n        self.assertIn(\"EFFECT_LEFT\", source)\n        self.assertIn(\"ThermalVerticalGeometry.energyClipTop(89, 192\", source)\n        self.assertIn('proof.addProperty(\"canvas_width\", ThermalVerticalGeometry.CANVAS_WIDTH)', source)\n        self.assertIn('proof.addProperty(\"canvas_height\", ThermalVerticalGeometry.CANVAS_HEIGHT)', source)\n"
+        }
+      ]
     }
   }
 }

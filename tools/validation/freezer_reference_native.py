@@ -23,17 +23,17 @@ import tempfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 SUITE = "native-freezer-reference-v1"
-ART_SHA = "48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806"
-ACTIVE_ARTS = {
-    "neutral": ART_SHA,
+ART_SHA = "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6"
+RETAINED_ARTS = {
+    "neutral": "48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806",
     "effect": "046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957",
     "energy": "73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638",
 }
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen"
-CANVAS_WIDTH, CANVAS_HEIGHT, MAX_VIEW_SCALE, VIEW_MARGIN = 347, 381, 0.78, 6
-ENERGY_CROP = (187 / 3, 371 / 3, 216 / 3, 559 / 3)
-EFFECT_CROP = (331 / 3, 324 / 3, 720 / 3, 564 / 3)
-ENERGY_CLIP_TOP = {0: 192, 8000: 140, 16000: 89}
+CANVAS_WIDTH, CANVAS_HEIGHT, MAX_VIEW_SCALE, VIEW_MARGIN = 281, 313, 0.78, 6
+ENERGY_CROP = (59, 88, 71, 140)
+EFFECT_CROP = (102, 92, 177, 125)
+ENERGY_CLIP_TOP = {0: 136, 8000: 114, 16000: 92}
 CASES = {
     "pickup_from_hotbar", "right_click_places_one_input", "output_rejects_insertion",
     "return_carried_stack", "full_inventory_preserves_reserved",
@@ -121,9 +121,8 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
             or proof.get("status") != "passed_bounded_smoke"
             or proof.get("executed_source_sha") != source_sha
             or proof.get("screen_class") != SCREEN_CLASS
-            or proof.get("source_art_sha256") != ACTIVE_ARTS["neutral"]
-            or proof.get("effect_art_sha256") != ACTIVE_ARTS["effect"]
-            or proof.get("energy_art_sha256") != ACTIVE_ARTS["energy"]
+            or proof.get("source_art_sha256") != ART_SHA
+            or "effect_art_sha256" in proof or "energy_art_sha256" in proof
             or type(proof.get("canvas_width")) is not int or proof["canvas_width"] != CANVAS_WIDTH
             or type(proof.get("canvas_height")) is not int or proof["canvas_height"] != CANVAS_HEIGHT
             or type(proof.get("visible_machine_slots")) is not int or proof["visible_machine_slots"] != 2
@@ -134,7 +133,7 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
             or proof.get("presentation_mode") != "normal-dynamic"
             or proof.get("dev_selectors_absent") is not True
             or proof.get("frost_art_static") is not False
-            or proof.get("effect_visibility_rule") != "server_phase_greater_than_zero_single_effect_texture"
+            or proof.get("effect_visibility_rule") != "server_phase_greater_than_zero_v5c_chamber_pulse"
             or proof.get("phase_source") != "server_menu_phase_natural_recipe"
             or proof.get("phase4_native_observed") is not False
             or proof.get("native_visual_acceptance") is not False):
@@ -217,7 +216,7 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
                     f"expected {expected_energy} FE from the 1440 FE recipe, got {capture['energy']} FE"
                 )
             natural_energy = capture["energy"]
-            natural_clip_top = 192 - math.floor(103 * min(16000, max(0, natural_energy)) / 16000 + 0.5)
+            natural_clip_top = 136 - (44 * min(16000, max(0, natural_energy))) // 16000
             if capture.get("energy_capacity") != 16000 or capture.get("energy_clip_top") != natural_clip_top:
                 raise SmokeFailure("Natural frost frame energy scissor differs from synchronized FE")
             seen_phases.add(phase)
@@ -243,11 +242,11 @@ def validate_proof(proof: dict, main: dict, nonce: str, source_sha: str, game: P
     if {c.get("phase") for c in frost_captures} != {0, 1, 2, 3}:
         raise SmokeFailure("Natural frost capture set is incomplete")
     active_hashes = {effect_hashes[f"frost-phase-{phase}.png"] for phase in (1, 2, 3)}
-    if len(active_hashes) != 1:
-        raise SmokeFailure("Active frost layer is not stable across its server phases")
     zero_hash = effect_hashes["frost-phase-0.png"]
-    if next(iter(active_hashes)) == zero_hash:
-        raise SmokeFailure("Server phase transition did not reveal the frost layer")
+    # The selected chamber pulse can vary between frames; every synchronized
+    # active phase must still visibly differ from the same idle chamber crop.
+    if zero_hash in active_hashes:
+        raise SmokeFailure("An active server phase did not reveal the frost effect")
     if any(effect_hashes[capture["name"]] != zero_hash for capture in captures):
         raise SmokeFailure("Idle/completed Freezer effect did not return to phase zero")
     if f"IEDCTR_FREEZER_REFERENCE PASSED nonce={nonce}" not in logs:
@@ -275,9 +274,10 @@ def main() -> int:
                                 capture_output=True, text=True).stdout.strip()
     if not re.fullmatch(r"[a-f0-9]{40}", source_sha):
         parser.error("Missing exact source SHA")
-    art_root = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/thermal_vertical/freezer"
-    for name, expected in ACTIVE_ARTS.items():
-        path = art_root / (name + ".png")
+    art_root = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui"
+    retained = {"thermal_vertical/freezer/" + name + ".png": digest for name, digest in RETAINED_ARTS.items()}
+    for name, expected in {**retained, "gui11_v5c/05.png": ART_SHA}.items():
+        path = art_root / name
         if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             parser.error(f"Active Thermal Freezer {name} art changed")
     missing = [name for name in ("java", "Xvfb", "xvfb-run", "xauth") if not shutil.which(name)]

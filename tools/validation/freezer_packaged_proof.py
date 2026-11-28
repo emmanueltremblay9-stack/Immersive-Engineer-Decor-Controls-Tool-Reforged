@@ -13,7 +13,7 @@ HARNESS = 'iedctr_freezer_validation'
 PREFIX = 'com.oblixorprime.engineersdecorreforged.'
 CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.ThermalVerticalScreen',
     'utility.FreezerReferenceGeometry', 'utility.ThermalVerticalGeometry', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity', 'client.validation.NativeFreezerReferenceValidation', 'client.validation.NativeClientMiningValidation')]
-TEXTURES = {'textures/gui/thermal_vertical/freezer/neutral.png': '48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806', 'textures/gui/thermal_vertical/freezer/effect.png': '046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957', 'textures/gui/thermal_vertical/freezer/energy.png': '73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638'}
+TEXTURES = {'textures/gui/gui11_v5c/05.png': '29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6', 'textures/gui/thermal_vertical/freezer/neutral.png': '48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806', 'textures/gui/thermal_vertical/freezer/effect.png': '046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957', 'textures/gui/thermal_vertical/freezer/energy.png': '73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638'}
 SELECTORS = sorted(["iedctr.clientGameplay", "iedctr.freezerReferenceOnly", "iedctr.freezerPackagedNative"])
 
 

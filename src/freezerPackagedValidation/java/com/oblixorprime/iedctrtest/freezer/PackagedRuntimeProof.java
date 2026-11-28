@@ -75,8 +75,8 @@ public final class PackagedRuntimeProof {
                 origin.addProperty("sha256", resourceHash); origins.add(origin);
             }
             var textures = new JsonArray();
-            String[] paths = {"thermal_vertical/freezer/neutral.png", "thermal_vertical/freezer/effect.png", "thermal_vertical/freezer/energy.png"};
-            String[] hashes = {"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806", "046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957", "73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638"};
+            String[] paths = {"thermal_vertical/freezer/neutral.png", "thermal_vertical/freezer/effect.png", "thermal_vertical/freezer/energy.png", "gui11_v5c/05.png"};
+            String[] hashes = {"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806", "046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957", "73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638", "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6"};
             for(int i=0;i<paths.length;i++) {
                 var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+paths[i]);
                 var active = mc.getResourceManager().getResource(texture).orElseThrow();

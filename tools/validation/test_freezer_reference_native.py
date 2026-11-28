@@ -8,7 +8,7 @@ import tempfile
 import unittest
 import zlib
 
-from freezer_reference_native import (ACTIVE_ARTS, CANVAS_HEIGHT, CANVAS_WIDTH, CAPTURES, CASES,
+from freezer_reference_native import (ART_SHA, CANVAS_HEIGHT, CANVAS_WIDTH, CAPTURES, CASES,
     EFFECT_CROP, ENERGY_CROP, SCREEN_CLASS, SUITE, _crop_dimensions, _expected_scale,
     load_run_proofs, validate_proof)
 from client_mixin_smoke import SmokeFailure
@@ -34,12 +34,11 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
         self.main = {"suite": SUITE, "nonce": self.nonce, "status": "passed", "actual_integrated_world": True}
         self.proof = {"suite": SUITE, "nonce": self.nonce, "status": "passed_bounded_smoke",
             "executed_source_sha": self.sha, "screen_class": SCREEN_CLASS,
-            "source_art_sha256": ACTIVE_ARTS["neutral"], "effect_art_sha256": ACTIVE_ARTS["effect"],
-            "energy_art_sha256": ACTIVE_ARTS["energy"], "canvas_width": CANVAS_WIDTH,
+            "source_art_sha256": ART_SHA, "canvas_width": CANVAS_WIDTH,
             "canvas_height": CANVAS_HEIGHT, "visible_machine_slots": 2, "visible_slot_count": 38,
             "reserved_menu_index": 1, "menu_slot_count": 39, "actual_integrated_world": True,
             "presentation_mode": "normal-dynamic", "dev_selectors_absent": True, "frost_art_static": False,
-            "effect_visibility_rule": "server_phase_greater_than_zero_single_effect_texture",
+            "effect_visibility_rule": "server_phase_greater_than_zero_v5c_chamber_pulse",
             "phase_source": "server_menu_phase_natural_recipe", "phase4_native_observed": False,
             "native_visual_acceptance": False, "selected_language": "en_us", "cases": sorted(CASES),
             "captures": [], "frost_captures": []}
@@ -76,7 +75,7 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
         scale = _expected_scale(width, height)
         self.proof["captures"] = []
         for i, (name, energy) in enumerate(CAPTURES.items()):
-            clip = 192 - round(103 * energy / 16000)
+            clip = 136 - (44 * energy) // 16000
             capture = {"name": name, "energy": energy, "energy_capacity": 16000,
                 "energy_clip_top": clip, "menu_id": 1 if i < 3 else 2, "screen_class": SCREEN_CLASS,
                 "view_scale": scale, "phase": 0, "progress_ticks": 0}
@@ -89,7 +88,7 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
             energy = 0 if phase == 0 else 1440 - 8 * ticks
             capture = {"name": f"frost-phase-{phase}.png", "phase": phase, "progress_ticks": ticks,
                 "energy": energy, "energy_capacity": 16000,
-                "energy_clip_top": 192 - round(103 * energy / 16000),
+                "energy_clip_top": 136 - (44 * energy) // 16000,
                 "menu_id": 1 if phase == 0 else 2, "screen_class": SCREEN_CLASS,
                 "view_scale": scale, "rendered_frames": 3, "capture_event": "ScreenEvent.Render.Post"}
             self._write_frame(capture, width, height, 10 + phase, energy_token=energy // 100,
@@ -179,15 +178,15 @@ class NativeFreezerEvidenceChecks(unittest.TestCase):
                        {"logs": self.logs + "\njava.lang.NoSuchMethodError"}):
             with self.subTest(values=values), self.assertRaises(SmokeFailure): self.validate(**values)
 
-    def test_small_window_uses_347_by_381_fit_and_exact_crop_dimensions(self):
+    def test_small_window_uses_281_by_313_fit_and_exact_crop_dimensions(self):
         self.rebuild(1280, 260)
-        self.assertAlmostEqual(_expected_scale(1280, 260), 248 / 381, places=6)
+        self.assertAlmostEqual(_expected_scale(1280, 260), 0.78, places=6)
         self.assertIs(self.proof, self.validate(height=260))
 
-    def test_small_window_rejects_old_square_fit(self):
+    def test_small_window_rejects_old_thermal_fit(self):
         self.rebuild(1280, 260)
         proof = copy.deepcopy(self.proof)
-        proof["captures"][0]["view_scale"] = 248 / 314
+        proof["captures"][0]["view_scale"] = 248 / 381
         with self.assertRaises(SmokeFailure): self.validate(proof=proof, height=260)
 
 

@@ -16,11 +16,12 @@ class RenderSyncTest(unittest.TestCase):
 
     def test_capture_crop_and_proof_use_real_canvas_dynamic_layers(self):
         source = SOURCE.read_text()
-        self.assertIn("ENERGY_LEFT", source)
-        self.assertIn("EFFECT_LEFT", source)
-        self.assertIn("ThermalVerticalGeometry.energyClipTop(89, 192", source)
-        self.assertIn('proof.addProperty("canvas_width", ThermalVerticalGeometry.CANVAS_WIDTH)', source)
-        self.assertIn('proof.addProperty("canvas_height", ThermalVerticalGeometry.CANVAS_HEIGHT)', source)
+        self.assertIn("getResource(Gui11V5CArtwork.texture(FREEZER))", source)
+        self.assertIn("Gui11V5CRuntimeGeometry.energy(FREEZER)", source)
+        self.assertIn('Gui11V5CRuntimeGeometry.effectBounds(FREEZER, "cold-chamber")', source)
+        self.assertIn("Gui11V5CArtwork.energyFillPixels(FREEZER, menu.energyStored(), menu.energyCapacity())", source)
+        self.assertIn('proof.addProperty("canvas_width", ThermalVerticalGeometry.canvasWidth(FREEZER))', source)
+        self.assertIn('proof.addProperty("canvas_height", ThermalVerticalGeometry.canvasHeight(FREEZER))', source)
 
     def test_v5c_energy_fill_uses_measured_glass_without_zero_state_overlay(self):
         root = Path(__file__).resolve().parents[2]

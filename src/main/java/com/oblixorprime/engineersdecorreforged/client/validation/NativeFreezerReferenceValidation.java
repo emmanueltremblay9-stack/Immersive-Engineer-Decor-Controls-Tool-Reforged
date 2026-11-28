@@ -11,6 +11,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
+import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
@@ -45,20 +47,10 @@ import org.lwjgl.glfw.GLFW;
 @EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID, value = Dist.CLIENT)
 public final class NativeFreezerReferenceValidation {
    private static final String SUITE = "native-freezer-reference-v1";
-   private static final String NEUTRAL_SHA256 = "48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806";
-   private static final String EFFECT_SHA256 = "046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957";
-   private static final String ENERGY_SHA256 = "73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638";
-   private static final double RASTER_PER_CANVAS_PIXEL = 3.0D;
-   // Verified alpha bounds of the exact 1041x1143 Freezer energy/effect layers,
-   // projected onto the 347x381 ThermalVerticalScreen canvas.
-   private static final double ENERGY_LEFT = 187.0D / RASTER_PER_CANVAS_PIXEL;
-   private static final double ENERGY_TOP = 371.0D / RASTER_PER_CANVAS_PIXEL;
-   private static final double ENERGY_RIGHT = 216.0D / RASTER_PER_CANVAS_PIXEL;
-   private static final double ENERGY_BOTTOM = 559.0D / RASTER_PER_CANVAS_PIXEL;
-   private static final double EFFECT_LEFT = 331.0D / RASTER_PER_CANVAS_PIXEL;
-   private static final double EFFECT_TOP = 324.0D / RASTER_PER_CANVAS_PIXEL;
-   private static final double EFFECT_RIGHT = 720.0D / RASTER_PER_CANVAS_PIXEL;
-   private static final double EFFECT_BOTTOM = 564.0D / RASTER_PER_CANVAS_PIXEL;
+   private static final String ACTIVE_ART_SHA256 = "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6";
+   private static final MachineKind FREEZER = MachineKind.SMALL_FREEZER;
+   private static final Gui11V5CRuntimeGeometry.Rect ENERGY = Gui11V5CRuntimeGeometry.energy(FREEZER);
+   private static final Gui11V5CRuntimeGeometry.Rect CHAMBER = Gui11V5CRuntimeGeometry.effectBounds(FREEZER, "cold-chamber");
    private static final BlockPos POS = new BlockPos(0, 80, 0);
    private static final Component RESERVED_NAME = Component.literal("Freezer reserved recovery fixture");
    private enum Stage {
@@ -588,14 +580,14 @@ public final class NativeFreezerReferenceValidation {
          // cannot make a frozen gauge/effect pass merely because the full frame differs.
          Path energyFile = folder.resolve(label + "-energy.png");
          CropResult energyCrop = captureCanvasCrop(mc, frame, energyFile,
-            ENERGY_LEFT, ENERGY_TOP, ENERGY_RIGHT, ENERGY_BOTTOM);
+            ENERGY.x(), ENERGY.y(), ENERGY.x() + ENERGY.width(), ENERGY.y() + ENERGY.height());
          capture.addProperty("energy_crop_name", energyFile.getFileName().toString());
          capture.addProperty("energy_crop_sha256", energyCrop.sha256());
          capture.addProperty("energy_crop_width", energyCrop.width());
          capture.addProperty("energy_crop_height", energyCrop.height());
          Path effectFile = folder.resolve(label + "-effect.png");
          CropResult effectCrop = captureCanvasCrop(mc, frame, effectFile,
-            EFFECT_LEFT, EFFECT_TOP, EFFECT_RIGHT, EFFECT_BOTTOM);
+            CHAMBER.x(), CHAMBER.y(), CHAMBER.x() + CHAMBER.width(), CHAMBER.y() + CHAMBER.height());
          capture.addProperty("effect_crop_name", effectFile.getFileName().toString());
          capture.addProperty("effect_crop_sha256", effectCrop.sha256());
          capture.addProperty("effect_crop_width", effectCrop.width());
@@ -605,7 +597,8 @@ public final class NativeFreezerReferenceValidation {
       capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file))));
       capture.addProperty("energy", menu.energyStored());
       capture.addProperty("energy_capacity", menu.energyCapacity());
-      capture.addProperty("energy_clip_top", ThermalVerticalGeometry.energyClipTop(89, 192, menu.energyStored(), menu.energyCapacity()));
+      capture.addProperty("energy_clip_top", ENERGY.y() + ENERGY.height() - 4
+         - Gui11V5CArtwork.energyFillPixels(FREEZER, menu.energyStored(), menu.energyCapacity()));
       capture.addProperty("menu_id", menu.containerId);
       capture.addProperty("screen_class", mc.screen.getClass().getName());
       capture.addProperty("view_scale", ((ThermalVerticalScreen)mc.screen).validationViewTransform().scale());
@@ -627,18 +620,23 @@ public final class NativeFreezerReferenceValidation {
       proof.addProperty("executed_source_sha", System.getProperty("iedctr.executedSourceSha"));
       proof.addProperty("actual_integrated_world", true);
       proof.addProperty("screen_class", ThermalVerticalScreen.class.getName());
-      proof.addProperty("source_art_sha256", NEUTRAL_SHA256);
-      proof.addProperty("effect_art_sha256", EFFECT_SHA256);
-      proof.addProperty("energy_art_sha256", ENERGY_SHA256);
-      proof.addProperty("canvas_width", ThermalVerticalGeometry.CANVAS_WIDTH);
-      proof.addProperty("canvas_height", ThermalVerticalGeometry.CANVAS_HEIGHT);
+      var art = mc.getResourceManager().getResource(Gui11V5CArtwork.texture(FREEZER)).orElseThrow();
+      String artHash;
+      try (var input = art.open()) {
+         artHash = HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(input.readAllBytes()));
+      }
+      require(artHash.equals(ACTIVE_ART_SHA256) && art.sourcePackId().equals("mod/" + EngineersDecorReforged.MOD_ID),
+         "Wrong active Freezer V5C faceplate");
+      proof.addProperty("source_art_sha256", artHash);
+      proof.addProperty("canvas_width", ThermalVerticalGeometry.canvasWidth(FREEZER));
+      proof.addProperty("canvas_height", ThermalVerticalGeometry.canvasHeight(FREEZER));
       proof.addProperty("visible_machine_slots", 2);
       proof.addProperty("visible_slot_count", ThermalVerticalGeometry.VISIBLE_SLOTS);
       proof.addProperty("reserved_menu_index", 1);
       proof.addProperty("frost_art_static", false);
       proof.addProperty("presentation_mode", "normal-dynamic");
       proof.addProperty("dev_selectors_absent", true);
-      proof.addProperty("effect_visibility_rule", "server_phase_greater_than_zero_single_effect_texture");
+      proof.addProperty("effect_visibility_rule", "server_phase_greater_than_zero_v5c_chamber_pulse");
       proof.addProperty("phase_source", "server_menu_phase_natural_recipe");
       proof.addProperty("phase4_native_observed", false);
       proof.addProperty("menu_slot_count", current(mc).slots.size());
