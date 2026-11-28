@@ -53,8 +53,8 @@ jobs:
           mkdir -p build/gui-candidate-identity
           git rev-parse HEAD > build/gui-candidate-identity/source.txt
           sha256sum "$jar" > build/gui-candidate-identity/jar.sha256
-      - name: Open seven actual candidate containers including all three Factory Study V3 screens
-        run: python tools/validation/gui_album_three.py --expected-jar-sha256 '${{ steps.jar.outputs.sha }}' --language fr_fr --width 1280 --height 720
+      - name: Capture seventeen active V5C screens and verify native interactions on the exact JAR
+        run: python tools/validation/gui_album_three.py --expected-jar-sha256 '${{ steps.jar.outputs.sha }}' --language fr_fr --width 1280 --height 720 --all-v5c
       - name: Retain exact candidate and native evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -62,7 +62,10 @@ jobs:
           name: missing-gui-native-${{ github.event.pull_request.head.sha || github.sha }}
           path: |
             build/gui-candidate-identity/
-            build/gui-album-three-native-*/
+            build/gui-album-three-native-*/*.log
+            build/gui-album-three-native-*/packaged-runtime-classpath.json
+            build/gui-album-three-native-*/run/gui-album-three-proof.json
+            build/gui-album-three-native-*/run/*.png
             build/libs/*.jar
           if-no-files-found: error
           retention-days: 14

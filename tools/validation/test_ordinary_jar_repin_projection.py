@@ -23,6 +23,7 @@ class OrdinaryJarRepinProjectionTests(unittest.TestCase):
     def test_only_nine_observed_jar_hash_literals_change(self):
         record = projection._ordinary_jar_repin_record()
         latest = projection._ordinary_jar_followup_repin_record()
+        v5c = projection._ordinary_jar_v5c_repin_record()
         self.assertEqual(record["base_commit"], self.BASE)
         self.assertEqual(set(record["files"]), set(self.PATHS))
         self.assertEqual(record["artifact"], {
@@ -34,6 +35,12 @@ class OrdinaryJarRepinProjectionTests(unittest.TestCase):
         self.assertEqual(latest["artifact"]["previous_sha256"], self.NEW)
         self.assertEqual(latest["artifact"]["build_run_id"], 46095637365)
         self.assertEqual(set(latest["files"]), set(self.PATHS))
+        self.assertEqual(v5c["base_commit"], "372ad8d434977423182515a3bff2fbb2d7ae8f24")
+        self.assertEqual(v5c["artifact"]["source_sha"], v5c["base_commit"])
+        self.assertEqual(v5c["artifact"]["sha256"], "78f7ff78bb81f04bc8b4e5ea55193b774f060dc72227f1222c4a7660ad3e26ab")
+        self.assertEqual(v5c["artifact"]["previous_sha256"], latest["artifact"]["sha256"])
+        self.assertEqual(v5c["artifact"]["size_bytes"], 122050890)
+        self.assertEqual(set(v5c["files"]), set(self.PATHS))
         self.assertEqual(sum(self.PATHS.values()), 9)
         for path, count in self.PATHS.items():
             with self.subTest(path=path):
@@ -41,11 +48,22 @@ class OrdinaryJarRepinProjectionTests(unittest.TestCase):
                     ["git", "show", self.BASE + ":" + path], cwd=projection.ROOT
                 )
                 current = (projection.ROOT / path).read_bytes()
+                v5c_layer = v5c["files"][path]
+                self.assertEqual(v5c_layer["replacement_count"], count)
+                self.assertEqual(v5c_layer["previous_source_commit"], v5c["base_commit"])
+                previous_candidate = subprocess.check_output(
+                    ["git", "show", v5c["base_commit"] + ":" + path], cwd=projection.ROOT
+                )
+                self.assertEqual(projection._reverse_layer(path, current, v5c_layer), previous_candidate)
+                self.assertEqual(current, previous_candidate.replace(
+                    v5c["artifact"]["previous_sha256"].encode(), v5c["artifact"]["sha256"].encode()
+                ))
+                self.assertEqual(projection.expected_current_sha256(path), v5c_layer["new_sha256"])
                 latest_layer = latest["files"][path]
                 self.assertEqual(latest_layer["previous_source_commit"], latest["base_commit"])
                 self.assertEqual(latest_layer["replacement_count"], count)
-                self.assertEqual(current.count(latest["artifact"]["sha256"].encode()), count)
-                prior_current = projection._reverse_layer(path, current, latest_layer)
+                self.assertEqual(previous_candidate.count(latest["artifact"]["sha256"].encode()), count)
+                prior_current = projection._reverse_layer(path, previous_candidate, latest_layer)
                 self.assertEqual(projection.sha256(prior_current), latest_layer["old_sha256"])
                 self.assertEqual(prior_current.count(self.NEW.encode()), count)
                 layer = record["files"][path]
@@ -56,14 +74,13 @@ class OrdinaryJarRepinProjectionTests(unittest.TestCase):
                 self.assertEqual(projection.sha256(prior_current), layer["new_sha256"])
                 self.assertEqual(projection.sha256(parent), layer["old_sha256"])
                 self.assertEqual(projection._reverse_layer(path, prior_current, layer), parent)
-                self.assertEqual(projection.expected_current_sha256(path), latest_layer["new_sha256"])
                 self.assertEqual(
                     projection.project_current_candidate(path, current, strict=True),
                     projection.project_current_candidate(path, parent),
                 )
 
     def test_wrong_digest_or_any_other_gate_edit_is_rejected(self):
-        latest_sha = projection._ordinary_jar_followup_repin_record()["artifact"]["sha256"].encode()
+        latest_sha = projection._ordinary_jar_v5c_repin_record()["artifact"]["sha256"].encode()
         for path in self.PATHS:
             current = (projection.ROOT / path).read_bytes()
             for mutated in (current.replace(latest_sha, b"0" * 64, 1),

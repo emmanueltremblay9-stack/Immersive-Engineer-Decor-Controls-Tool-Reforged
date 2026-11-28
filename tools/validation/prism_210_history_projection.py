@@ -30,6 +30,8 @@ ORDINARY_JAR_REPIN_RECORD = Path(__file__).with_name("prism_210_ordinary_jar_rep
 ORDINARY_JAR_REPIN_RECORD_SHA256 = "2d4f192fda610d20c805869a86745f7dcb625a24e366b3d2d987d7b3c70aff0e"
 ORDINARY_JAR_FOLLOWUP_REPIN_RECORD = Path(__file__).with_name("prism_210_ordinary_jar_followup_repin_projection.json")
 ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_SHA256 = "5447c5ac95323a4d4c9f3511ad76da2b63be3377db25ac0b1297691930870cdd"
+ORDINARY_JAR_V5C_REPIN_RECORD = Path(__file__).with_name("prism_210_ordinary_jar_v5c_repin_projection.json")
+ORDINARY_JAR_V5C_REPIN_RECORD_SHA256 = "4c6c0534e087e98137d2c964d9e62e2adcdf159b2cf59db02e5c4f57e3c8adf2"
 SOLAR_GUI11_R3_RECORD = Path(__file__).with_name("prism_210_solar_gui11_r3_projection.json")
 SOLAR_GUI11_R3_RECORD_SHA256 = "8cfc9a97852d0462dab0cf776fc05611fdb77db26376f9096ea14e72839e5b57"
 GUI11_V5C_RECORD = Path(__file__).with_name("prism_210_gui11_v5c_projection.json")
@@ -46,6 +48,7 @@ FREEZER_QA_FOLLOWUP_RECORD_BYTES = FREEZER_QA_FOLLOWUP_RECORD.read_bytes()
 ELECTRICAL_CONTROLS_RECORD_BYTES = ELECTRICAL_CONTROLS_RECORD.read_bytes()
 ORDINARY_JAR_REPIN_RECORD_BYTES = ORDINARY_JAR_REPIN_RECORD.read_bytes()
 ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_BYTES = ORDINARY_JAR_FOLLOWUP_REPIN_RECORD.read_bytes()
+ORDINARY_JAR_V5C_REPIN_RECORD_BYTES = ORDINARY_JAR_V5C_REPIN_RECORD.read_bytes()
 SOLAR_GUI11_R3_RECORD_BYTES = SOLAR_GUI11_R3_RECORD.read_bytes()
 GUI11_V5C_RECORD_BYTES = GUI11_V5C_RECORD.read_bytes()
 
@@ -160,6 +163,23 @@ def _ordinary_jar_followup_repin_record():
     return data
 
 
+def _ordinary_jar_v5c_repin_record():
+    if sha256(ORDINARY_JAR_V5C_REPIN_RECORD_BYTES) != ORDINARY_JAR_V5C_REPIN_RECORD_SHA256:
+        raise AssertionError("#210 ordinary JAR V5C repin projection record changed")
+    data = json.loads(ORDINARY_JAR_V5C_REPIN_RECORD_BYTES)
+    if (data.get("schema") != "iedctr-prism-ordinary-jar-v5c-repin-v1"
+            or data.get("base_commit") != "372ad8d434977423182515a3bff2fbb2d7ae8f24"):
+        raise AssertionError("#210 ordinary JAR V5C repin projection baseline changed")
+    return data
+
+
+def project_before_ordinary_jar_v5c_repin(path: str, source: bytes) -> bytes:
+    layer = _ordinary_jar_v5c_repin_record()["files"].get(path)
+    if layer is not None and sha256(source) == layer["new_sha256"]:
+        return _reverse_layer(path, source, layer)
+    return source
+
+
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -209,6 +229,7 @@ def project_before_solar_gui11_r3(path: str, source: bytes) -> bytes:
 
 def project_before_gui11_v5c(path: str, source: bytes, *, strict: bool = False) -> bytes:
     """Remove only the exact V5-Corrigee GUI11 integration top layer."""
+    source = project_before_ordinary_jar_v5c_repin(path, source)
     layer = _gui11_v5c_record()["files"].get(path)
     if layer is None:
         return source
@@ -372,6 +393,9 @@ def project_file_from_root(path: str, *, strict: bool = True) -> bytes:
 
 def expected_current_sha256(path: str) -> str | None:
     """Return the pinned final candidate blob identity for an allowed path."""
+    v5c_repin = _ordinary_jar_v5c_repin_record()["files"].get(path)
+    if v5c_repin is not None:
+        return v5c_repin["new_sha256"]
     gui11_v5c = _gui11_v5c_record()["files"].get(path)
     if gui11_v5c is not None:
         return gui11_v5c["new_sha256"]
