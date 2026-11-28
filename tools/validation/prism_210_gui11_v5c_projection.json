@@ -760,7 +760,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometry.java": {
       "old_sha256": "2e83d6736309f1cd5b3ed136b0ec17a157d810b1b2b5e505f0a1a157a2e604ec",
-      "new_sha256": "aa64d4c0601b7aa758b53ad28ee1ca844cacdf0d44bcc25657f2b1253fe6eb38",
+      "new_sha256": "bbb58ec3c113f69180efec1baa4535280bd849689db4b690031deeb4a81ded00",
       "hunks": [
         {
           "start": 6,
@@ -782,15 +782,21 @@
         },
         {
           "start": 58,
-          "end": 66,
+          "end": 63,
           "previous": "      anchors.add(centeredAnchor(0, 166, 451, 140, 140));\n      anchors.add(centeredAnchor(1, 838, 451, 140, 140));\n      for (int row = 0; row < INVENTORY_SOURCE_ROW_Y.size(); row++) {\n         for (int column = 0; column < INVENTORY_SOURCE_X.size(); column++) {\n            anchors.add(centeredAnchor(2 + row * 9 + column,\n               INVENTORY_SOURCE_X.get(column), INVENTORY_SOURCE_ROW_Y.get(row),\n               INVENTORY_SOURCE_WIDTH, INVENTORY_SOURCE_HEIGHT));\n         }\n      }\n      for (int column = 0; column < 9; column++) {\n         anchors.add(centeredAnchor(29 + column, HOTBAR_SOURCE_X.get(column), 1148, 76, 76));\n",
-          "current": "      for (int index = 0; index < MENU_SLOT_COUNT; index++) {\n         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.FLUID_BARREL, index);\n         if (point == null) throw new IllegalStateException(\"Missing Fluid Barrel GUI11 slot \" + index);\n         int sourceX = (int)Math.round(point.x() * (double)SOURCE_WIDTH / CANVAS_WIDTH);\n         int sourceY = (int)Math.round(point.y() * (double)SOURCE_HEIGHT / CANVAS_HEIGHT);\n         int sourceItemWidth = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_WIDTH / CANVAS_WIDTH));\n         int sourceItemHeight = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_HEIGHT / CANVAS_HEIGHT));\n         anchors.add(new SlotAnchor(index, sourceX, sourceY, sourceItemWidth, sourceItemHeight, point.x(), point.y()));\n"
+          "current": "      for (int index = 0; index < MENU_SLOT_COUNT; index++) {\n         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.FLUID_BARREL, index);\n         if (point == null) throw new IllegalStateException(\"Missing Fluid Barrel GUI11 slot \" + index);\n         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.FLUID_BARREL, point);\n         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));\n"
+        },
+        {
+          "start": 67,
+          "end": 67,
+          "previous": "   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {\n      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) * CANVAS_WIDTH / SOURCE_WIDTH - ITEM_SIZE / 2.0D);\n      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) * CANVAS_HEIGHT / SOURCE_HEIGHT - ITEM_SIZE / 2.0D);\n      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);\n   }\n",
+          "current": ""
         }
       ]
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceState.java": {
       "old_sha256": "7636a3a0c528229e7f9834cfa19c67a01b59ae016cfdf80d9ac7a9d538ee46a1",
-      "new_sha256": "de0208d1f53b9da767160265bade91d0a3e9e7fa6e7913ff67e138fd88ed88cf",
+      "new_sha256": "013cf2b42d705a611f1c2eec153903d8891c90de3d26ddfc2c00b84f7353e896",
       "hunks": [
         {
           "start": 2,
@@ -802,7 +808,7 @@
           "start": 4,
           "end": 7,
           "previous": "   // Conservative rectangle wholly inside the measured dark aperture, including chamfers.\n   // Coordinates are on the exact 1:3 canvas: source [510,633) x [345,579).\n   public static final int TANK_X = 170, TANK_Y = 115, TANK_WIDTH = 41, TANK_HEIGHT = 78;\n",
-          "current": "   // Pixel-reviewed safe interior of the source PNG's beveled glass (1182x1330\n   // source to 292x329 logical). The narrower rectangle stays inside the chamfers.\n   public static final int TANK_X = 134, TANK_Y = 80, TANK_WIDTH = 26, TANK_HEIGHT = 52;\n"
+          "current": "   // Pixel-reviewed safe interior of the source PNG's beveled glass (1182x1330\n   // source to 292x329 logical). The narrower rectangle stays inside the chamfers.\n   public static final int TANK_X = 134, TANK_Y = 80, TANK_WIDTH = 26, TANK_HEIGHT = 50;\n"
         }
       ]
     },
@@ -844,7 +850,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryPlacerV2ReferenceGeometry.java": {
       "old_sha256": "dc791e44a372314b083fec82b91d55669fd6fccbc54fd43a07b73caae3af3ecd",
-      "new_sha256": "0c89b820e2aca130ba5ade7f6f889f447a238698de823bb781a23132ccdaafd3",
+      "new_sha256": "025b68c63e6b6ae85d0e175d0ae4d1b2fb98205b2b557723fd33a92300f7047d",
       "hunks": [
         {
           "start": 11,
@@ -866,33 +872,63 @@
         },
         {
           "start": 61,
-          "end": 65,
+          "end": 66,
           "previous": "      // Measured dark interiors, excluding frame highlights and clipped corners.\n      int[] machineX = {122, 218, 313, 409, 504, 599};\n      int[] machineY = {222, 331, 440};\n      for (int row = 0; row < 3; row++) {\n         for (int column = 0; column < 6; column++) {\n            anchors.add(centeredAnchor(row * 6 + column, machineX[column], machineY[row], 56, 56));\n         }\n      }\n      int[] playerX = {156, 257, 358, 458, 559, 660, 760, 861, 961};\n      int[] playerY = {681, 786, 892};\n      for (int row = 0; row < 3; row++) {\n         for (int column = 0; column < 9; column++) {\n            anchors.add(centeredAnchor(18 + row * 9 + column, playerX[column], playerY[row], 80, 72));\n         }\n      }\n      int[] hotbarX = {167, 266, 365, 465, 564, 663, 763, 862, 961};\n      for (int column = 0; column < 9; column++) {\n         anchors.add(centeredAnchor(45 + column, hotbarX[column], 1040, 76, 72));\n",
-          "current": "      for (int index = 0; index < MENU_SLOT_COUNT; index++) {\n         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.FACTORY_PLACER, index);\n         if (point == null) throw new IllegalStateException(\"Missing Placer GUI11 slot \" + index);\n         anchors.add(new SlotAnchor(index, point.x() * 3, point.y() * 3, ITEM_SIZE * 3, ITEM_SIZE * 3, point.x(), point.y()));\n"
+          "current": "      for (int index = 0; index < MENU_SLOT_COUNT; index++) {\n         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.FACTORY_PLACER, index);\n         if (point == null) throw new IllegalStateException(\"Missing Placer GUI11 slot \" + index);\n         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.FACTORY_PLACER, point);\n         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));\n"
         },
         {
-          "start": 126,
-          "end": 129,
+          "start": 70,
+          "end": 70,
+          "previous": "   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {\n      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);\n      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);\n      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);\n   }\n",
+          "current": ""
+        },
+        {
+          "start": 122,
+          "end": 125,
           "previous": "      return switch (control) {\n         case ROW_TOP -> new Rect(260, 61, 80, 18);\n         case ROW_MIDDLE -> new Rect(260, 89, 80, 18);\n         case ROW_BOTTOM -> new Rect(260, 118, 80, 18);\n         case MANUAL_TRIGGER -> new Rect(246, 157, 11, 9);\n         case INVERSION -> new Rect(280, 160, 32, 9);\n         case TRIGGER_MODE -> new Rect(332, 160, 30, 9);\n",
           "current": "      String key = switch (control) {\n         case ROW_TOP -> \"row0\"; case ROW_MIDDLE -> \"row1\"; case ROW_BOTTOM -> \"row2\";\n         case MANUAL_TRIGGER -> \"manual\"; case INVERSION -> \"redstone\"; case TRIGGER_MODE -> \"cycle\";\n"
         },
         {
-          "start": 130,
-          "end": 132,
+          "start": 126,
+          "end": 128,
           "previous": "",
           "current": "      var rect = Gui11V5CRuntimeGeometry.control(MachineKind.FACTORY_PLACER, key);\n      return new Rect(rect.x(), rect.y(), rect.width(), rect.height());\n"
         },
         {
-          "start": 144,
-          "end": 146,
+          "start": 140,
+          "end": 142,
           "previous": "      return new Rect(266, new int[] {67, 95, 124}[row], 10, 4);\n",
           "current": "      Rect control = controlRect(new Control[] {Control.ROW_TOP, Control.ROW_MIDDLE, Control.ROW_BOTTOM}[row]);\n      return new Rect(control.x() + 4, control.y() + 4, Math.max(1, control.width() - 8), 2);\n"
         },
         {
-          "start": 147,
-          "end": 154,
+          "start": 143,
+          "end": 150,
           "previous": "   public static final Rect SIGNAL_INDICATOR = new Rect(249, 160, 5, 3);\n   public static final Rect INVERSION_INDICATOR = new Rect(282, 171, 28, 2);\n   public static final Rect TRIGGER_INDICATOR = new Rect(334, 171, 26, 2);\n",
           "current": "   public static final Rect SIGNAL_INDICATOR = mappedControl(\"manual\");\n   public static final Rect INVERSION_INDICATOR = mappedControl(\"redstone\");\n   public static final Rect TRIGGER_INDICATOR = mappedControl(\"cycle\");\n   private static Rect mappedControl(String key) {\n      var rect = Gui11V5CRuntimeGeometry.control(MachineKind.FACTORY_PLACER, key);\n      return new Rect(rect.x() + 3, rect.y() + 3, Math.max(1, rect.width() - 6), Math.max(1, rect.height() - 6));\n   }\n"
+        },
+        {
+          "start": 166,
+          "end": 167,
+          "previous": "         return (double)this.sourceX / 3.0D;\n",
+          "current": "         return (double)this.sourceX * CANVAS_WIDTH / SOURCE_WIDTH;\n"
+        },
+        {
+          "start": 170,
+          "end": 171,
+          "previous": "         return (double)this.sourceY / 3.0D;\n",
+          "current": "         return (double)this.sourceY * CANVAS_HEIGHT / SOURCE_HEIGHT;\n"
+        },
+        {
+          "start": 174,
+          "end": 175,
+          "previous": "         return (double)(this.sourceX + this.sourceWidth) / 3.0D;\n",
+          "current": "         return (double)(this.sourceX + this.sourceWidth) * CANVAS_WIDTH / SOURCE_WIDTH;\n"
+        },
+        {
+          "start": 178,
+          "end": 179,
+          "previous": "         return (double)(this.sourceY + this.sourceHeight) / 3.0D;\n",
+          "current": "         return (double)(this.sourceY + this.sourceHeight) * CANVAS_HEIGHT / SOURCE_HEIGHT;\n"
         }
       ]
     },
@@ -1066,7 +1102,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/TreeCutterV3ReferenceGeometry.java": {
       "old_sha256": "364dd1cbd3869e0811a2f79c643813e3700ec758fd540132443a39a623704325",
-      "new_sha256": "f49364ddc38eeb9f761181a1122729df1f2290521f0b79db84bfe0e101095e87",
+      "new_sha256": "2430473d28c7f7c180255b5c1b5baa6ec8a9afd9591c9d1b762948f84d8bb3b7",
       "hunks": [
         {
           "start": 6,
@@ -1088,9 +1124,51 @@
         },
         {
           "start": 59,
-          "end": 67,
+          "end": 64,
           "previous": "      // Conservative interiors from the hash-verified retained raster kit manifest.\n      anchors.add(centeredAnchor(0, 895, 279, 119, 115));\n      int[] left = {228, 310, 392, 475, 558, 641, 724, 807, 889};\n      int[] right = {297, 379, 462, 545, 627, 710, 793, 875, 953};\n      int[] top = {555, 631, 708, 813};\n      int[] bottom = {618, 693, 768, 873};\n      for (int row = 0; row < 4; row++) {\n         for (int column = 0; column < 9; column++) {\n            anchors.add(centeredAnchor(1 + row * 9 + column, left[column], top[row],\n               right[column] - left[column], bottom[row] - top[row]));\n         }\n",
-          "current": "      for (int index = 0; index < MENU_SLOT_COUNT; index++) {\n         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.SMALL_TREE_CUTTER, index);\n         if (point == null) throw new IllegalStateException(\"Missing Tree Cutter GUI11 slot \" + index);\n         int sourceX = (int)Math.round(point.x() * (double)SOURCE_WIDTH / CANVAS_WIDTH);\n         int sourceY = (int)Math.round(point.y() * (double)SOURCE_HEIGHT / CANVAS_HEIGHT);\n         int sourceItemWidth = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_WIDTH / CANVAS_WIDTH));\n         int sourceItemHeight = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_HEIGHT / CANVAS_HEIGHT));\n         anchors.add(new SlotAnchor(index, sourceX, sourceY, sourceItemWidth, sourceItemHeight, point.x(), point.y()));\n"
+          "current": "      for (int index = 0; index < MENU_SLOT_COUNT; index++) {\n         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.SMALL_TREE_CUTTER, index);\n         if (point == null) throw new IllegalStateException(\"Missing Tree Cutter GUI11 slot \" + index);\n         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.SMALL_TREE_CUTTER, point);\n         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));\n"
+        },
+        {
+          "start": 68,
+          "end": 68,
+          "previous": "   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {\n      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);\n      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);\n      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);\n   }\n",
+          "current": ""
+        },
+        {
+          "start": 83,
+          "end": 83,
+          "previous": "   public static final Rect ENERGY = new Rect(280, 57, 62, 6);\n",
+          "current": ""
+        },
+        {
+          "start": 85,
+          "end": 85,
+          "previous": "   public static int energyFillWidth(int stored, int capacity) {\n      if (stored <= 0 || capacity <= 0) return 0;\n      return (int)Math.min(ENERGY.width(), (long)stored * ENERGY.width() / capacity);\n   }\n",
+          "current": ""
+        },
+        {
+          "start": 100,
+          "end": 101,
+          "previous": "         return (double)this.sourceX / 3.0D;\n",
+          "current": "         return (double)this.sourceX * CANVAS_WIDTH / SOURCE_WIDTH;\n"
+        },
+        {
+          "start": 104,
+          "end": 105,
+          "previous": "         return (double)this.sourceY / 3.0D;\n",
+          "current": "         return (double)this.sourceY * CANVAS_HEIGHT / SOURCE_HEIGHT;\n"
+        },
+        {
+          "start": 108,
+          "end": 109,
+          "previous": "         return (double)(this.sourceX + this.sourceWidth) / 3.0D;\n",
+          "current": "         return (double)(this.sourceX + this.sourceWidth) * CANVAS_WIDTH / SOURCE_WIDTH;\n"
+        },
+        {
+          "start": 112,
+          "end": 113,
+          "previous": "         return (double)(this.sourceY + this.sourceHeight) / 3.0D;\n",
+          "current": "         return (double)(this.sourceY + this.sourceHeight) * CANVAS_HEIGHT / SOURCE_HEIGHT;\n"
         }
       ]
     },
@@ -1151,6 +1229,126 @@
           "end": 28,
           "previous": "      area(item, new FactoryStudyGeometry.ViewTransform(0.5F, 0, 0), 1, 2, 8, 8);\n",
           "current": "      area(item, view(0.5F, 0, 0), 1, 2, 8, 8);\n   }\n\n   private static FactoryStudyGeometry.ViewTransform view(float scale, float x, float y) {\n      var kind = MachineKind.SMALL_LAB_FURNACE;\n      return new FactoryStudyGeometry.ViewTransform(scale, x, y,\n         FactoryStudyGeometry.canvasWidth(kind), FactoryStudyGeometry.canvasHeight(kind));\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceChecks.java": {
+      "old_sha256": "6c0ea7c2683973a37d148d857858d7f9c54dca7fb5cf70df3513218c2afae679",
+      "new_sha256": "6747659ecd4b44e32fbe4288ffe5d663079b7140cf07506fed084e676839d70d",
+      "hunks": [
+        {
+          "start": 26,
+          "end": 30,
+          "previous": "      check(BarrelReferenceGeometry.SOURCE_WIDTH == 1137 && BarrelReferenceGeometry.SOURCE_HEIGHT == 1383, \"retained source dimensions\");\n      check(BarrelReferenceGeometry.SOURCE_WIDTH == 3 * BarrelReferenceGeometry.CANVAS_WIDTH\n         && BarrelReferenceGeometry.SOURCE_HEIGHT == 3 * BarrelReferenceGeometry.CANVAS_HEIGHT, \"exact uniform 1:3 canvas\");\n",
+          "current": "      check(BarrelReferenceGeometry.SOURCE_WIDTH == 1182 && BarrelReferenceGeometry.SOURCE_HEIGHT == 1330, \"selected source dimensions\");\n      check(BarrelReferenceGeometry.CANVAS_WIDTH == 292 && BarrelReferenceGeometry.CANVAS_HEIGHT == 329, \"selected logical canvas\");\n      check(BarrelReferenceState.TANK_X == 134 && BarrelReferenceState.TANK_Y == 80\n         && BarrelReferenceState.TANK_WIDTH == 26 && BarrelReferenceState.TANK_HEIGHT == 50, \"fill stays inside the measured glass\");\n"
+        },
+        {
+          "start": 51,
+          "end": 52,
+          "previous": "         check(v.screenX(379) <= viewport[0]+0.0001 && v.screenY(461) <= viewport[1]+0.0001, \"uniform fit\");\n",
+          "current": "         check(v.screenX(292) <= viewport[0]+0.0001 && v.screenY(329) <= viewport[1]+0.0001, \"uniform fit\");\n"
+        },
+        {
+          "start": 67,
+          "end": 69,
+          "previous": "      for (float[] profile : new float[][]{{1,0.5F,0.5F,0,0,380,462},\n         {0.5F,2.25F,-3.75F,2,-4,190,231}, {0.25F,-0.25F,0.25F,-1,0,96,116}}) {\n",
+          "current": "      for (float[] profile : new float[][]{{1,0.5F,0.5F,0,0,293,330},\n         {0.5F,2.25F,-3.75F,2,-4,147,165}, {0.25F,-0.25F,0.25F,-1,0,74,83}}) {\n"
+        },
+        {
+          "start": 74,
+          "end": 77,
+          "previous": "      // GUI pixels, not framebuffer pixels or the unscaled internal 379x461 canvas.\n      // Even viewports center this odd-sized canvas on half-pixels at unit scale.\n      for (int[] profile : new int[][]{{1280,720,1,450,129,380,462}, {1280,260,1,538,6,204,248},\n         {1920,1080,1,770,309,380,462}, {1920,1080,2,290,39,380,462},\n         {1920,1080,3,176,6,288,348}, {1921,1081,3,177,6,287,349}}) {\n",
+          "current": "      // GUI pixels, not framebuffer pixels or the unscaled internal 292x329 canvas.\n      // An odd logical height produces fractional vertical origins at some profiles.\n      for (int[] profile : new int[][]{{1280,720,1,494,195,292,330}, {1280,260,1,529,6,222,248}, {1920,1080,1,814,375,292,330}, {1920,1080,2,334,105,292,330}, {1920,1080,3,174,15,292,330}, {1921,1081,3,174,16,293,329}}) {\n"
+        },
+        {
+          "start": 85,
+          "end": 86,
+          "previous": "      for(int[] profile:new int[][]{{1280,720,1,621,245,40,77},{1280,260,1,630,68,21,41},\n         {1920,1080,1,941,425,40,77},{1920,1080,2,922,310,80,154},\n         {1920,1080,3,918,279,90,174},{1921,1081,3,918,282,90,174}}) {\n",
+          "current": "      for(int[] profile:new int[][]{{1280,720,1,628,276,26,49}, {1280,260,1,631,67,19,36}, {1920,1080,1,948,456,26,49}, {1920,1080,2,936,372,52,98}, {1920,1080,3,924,288,78,147}, {1921,1081,3,927,288,75,150}}) {\n"
+        },
+        {
+          "start": 88,
+          "end": 90,
+          "previous": "         int x0=(int)Math.ceil(v.screenX(170))*scale,y0=(int)Math.ceil(v.screenY(115))*scale;\n         int x1=(int)Math.floor(v.screenX(211))*scale,y1=(int)Math.floor(v.screenY(193))*scale;\n",
+          "current": "         int x0=(int)Math.ceil(v.screenX(BarrelReferenceState.TANK_X))*scale,y0=(int)Math.ceil(v.screenY(BarrelReferenceState.TANK_Y))*scale;\n         int x1=(int)Math.floor(v.screenX(BarrelReferenceState.TANK_X+BarrelReferenceState.TANK_WIDTH))*scale,y1=(int)Math.floor(v.screenY(BarrelReferenceState.TANK_Y+BarrelReferenceState.TANK_HEIGHT))*scale;\n"
+        },
+        {
+          "start": 95,
+          "end": 99,
+          "previous": "      check(BarrelReferenceState.fillHeight(8000,16000)==39,\"half\");\n      check(BarrelReferenceState.fillHeight(16000,16000)==78,\"full\");\n      check(BarrelReferenceState.fillHeight(Integer.MAX_VALUE,16000)==78,\"overflow safe\");\n      check(BarrelReferenceState.fillHeight(Integer.MAX_VALUE,Integer.MAX_VALUE)==78,\"large capacity\");\n",
+          "current": "      check(BarrelReferenceState.fillHeight(8000,16000)==25,\"half\");\n      check(BarrelReferenceState.fillHeight(16000,16000)==50,\"full\");\n      check(BarrelReferenceState.fillHeight(Integer.MAX_VALUE,16000)==50,\"overflow safe\");\n      check(BarrelReferenceState.fillHeight(Integer.MAX_VALUE,Integer.MAX_VALUE)==50,\"large capacity\");\n"
+        },
+        {
+          "start": 102,
+          "end": 103,
+          "previous": "         check(fill>=previous && fill<=78,\"monotonic bounded fill\"); previous=fill;\n",
+          "current": "         check(fill>=previous && fill<=50,\"monotonic bounded fill\"); previous=fill;\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometryTest.java": {
+      "old_sha256": "f9d7ec35e6fb0d93771645105b44bef95eda53066d8bb78b01fe9a1fdffa5a4b",
+      "new_sha256": "b77f0d090b10c555964207c0c0f78c576a564d309144ccd7ad7e4a4721d624a0",
+      "hunks": [
+        {
+          "start": 2,
+          "end": 2,
+          "previous": "import java.nio.ByteBuffer;\nimport java.security.MessageDigest;\nimport java.util.HexFormat;\n",
+          "current": ""
+        },
+        {
+          "start": 6,
+          "end": 19,
+          "previous": "   @Test public void retainedReferenceGeometryAndState() { BarrelReferenceChecks.main(new String[0]); }\n   @Test public void actualRetainedPngMatchesGeometry() throws Exception {\n      try (var input = getClass().getResourceAsStream(\"/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png\")) {\n         assertNotNull(input);\n         byte[] png = input.readAllBytes();\n         assertEquals(BarrelReferenceGeometry.SOURCE_SHA256,\n            HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(png)));\n         var header = ByteBuffer.wrap(png);\n         assertEquals(1137, header.getInt(16));\n         assertEquals(1383, header.getInt(20));\n         assertEquals(BarrelReferenceGeometry.SOURCE_WIDTH, header.getInt(16));\n         assertEquals(BarrelReferenceGeometry.SOURCE_HEIGHT, header.getInt(20));\n         assertEquals(3 * BarrelReferenceGeometry.CANVAS_WIDTH, header.getInt(16));\n         assertEquals(3 * BarrelReferenceGeometry.CANVAS_HEIGHT, header.getInt(20));\n",
+          "current": "   @Test public void selectedReferenceGeometryAndState() { BarrelReferenceChecks.main(new String[0]); }\n\n   @Test public void activePngMatchesMeasuredGeometryAndRetainsTheHistoricalPng() throws Exception {\n      Gui11V5CArtworkChecks.panel(\"barrel_reference_v5/background.png\",\n         \"db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c\", 1137, 1383);\n      var image = Gui11V5CArtworkChecks.panel(\"gui11_v5c/15.png\",\n         \"eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388\", 1182, 1330);\n      assertEquals(BarrelReferenceGeometry.SOURCE_WIDTH, image.getWidth());\n      assertEquals(BarrelReferenceGeometry.SOURCE_HEIGHT, image.getHeight());\n      assertEquals(292, BarrelReferenceGeometry.CANVAS_WIDTH);\n      assertEquals(329, BarrelReferenceGeometry.CANVAS_HEIGHT);\n      for (var a : BarrelReferenceGeometry.SLOT_ANCHORS) {\n         Gui11V5CArtworkChecks.darkInterior(image, 292, 329, a.x()+6, a.y()+6, 4, 4);\n"
+        },
+        {
+          "start": 20,
+          "end": 22,
+          "previous": "",
+          "current": "      Gui11V5CArtworkChecks.darkInterior(image, 292, 329, BarrelReferenceState.TANK_X, BarrelReferenceState.TANK_Y,\n         BarrelReferenceState.TANK_WIDTH, BarrelReferenceState.TANK_HEIGHT);\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/FactoryPlacerV2ReferenceChecks.java": {
+      "old_sha256": "4c90813ae5d9fbfa2ed90f6329f659e5800a7998de42e6c2488963304f5119e3",
+      "new_sha256": "7e5ca0331a5b30e070df1a2082e14095cda2aad3077d73ce6dd5468ebda35077",
+      "hunks": [
+        {
+          "start": 10,
+          "end": 14,
+          "previous": "      check(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH == 1199 && FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT == 1312, \"retained source dimensions\");\n      check(FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH == 400\n         && FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT == 438, \"outward rounded logical canvas\");\n      check(Math.abs(FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE - 1.0D / 3.0D) < 0.0000001, \"uniform source scale\");\n",
+          "current": "      check(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH == 1254 && FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT == 1254, \"retained source dimensions\");\n      check(FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH == 323\n         && FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT == 323, \"outward rounded logical canvas\");\n      check(Math.abs(FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE - 323.0D / 1254.0D) < 0.0000001, \"uniform source scale\");\n"
+        },
+        {
+          "start": 39,
+          "end": 40,
+          "previous": "         check(v.screenX(400) <= viewport[0]+0.0001 && v.screenY(438) <= viewport[1]+0.0001, \"uniform fit\");\n",
+          "current": "         check(v.screenX(323) <= viewport[0]+0.0001 && v.screenY(323) <= viewport[1]+0.0001, \"uniform fit\");\n"
+        },
+        {
+          "start": 41,
+          "end": 43,
+          "previous": "         check(v.guiLeft()+v.guiWidth() >= v.screenX(400)\n            && v.guiTop()+v.guiHeight() >= v.screenY(438), \"external bounds enclose bottom/right\");\n",
+          "current": "         check(v.guiLeft()+v.guiWidth() >= v.screenX(323)\n            && v.guiTop()+v.guiHeight() >= v.screenY(323), \"external bounds enclose bottom/right\");\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/FactoryPlacerV2ReferenceGeometryTest.java": {
+      "old_sha256": "aee8b5b433e8ceb5de6a15f4518618ea098e3faa15f6e7227a21864dd698097d",
+      "new_sha256": "c9568a7ccb505c6214e6f714fd2ef4f6e84cfb8aaee294bfbb6d7bccf85241a4",
+      "hunks": [
+        {
+          "start": 2,
+          "end": 2,
+          "previous": "import java.nio.ByteBuffer;\nimport java.security.MessageDigest;\nimport java.util.HexFormat;\n",
+          "current": ""
+        },
+        {
+          "start": 6,
+          "end": 19,
+          "previous": "   @Test public void retainedReferenceGeometryAndState() { FactoryPlacerV2ReferenceChecks.main(new String[0]); }\n   @Test public void actualRetainedPngMatchesGeometry() throws Exception {\n      try (var input = getClass().getResourceAsStream(\"/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png\")) {\n         assertNotNull(input);\n         byte[] png = input.readAllBytes();\n         assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_SHA256,\n            HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(png)));\n         var header = ByteBuffer.wrap(png);\n         assertEquals(1199, header.getInt(16));\n         assertEquals(1312, header.getInt(20));\n         assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH, header.getInt(16));\n         assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT, header.getInt(20));\n",
+          "current": "   @Test public void selectedReferenceGeometryAndState() { FactoryPlacerV2ReferenceChecks.main(new String[0]); }\n\n   @Test public void activePngMatchesMeasuredGeometryAndRetainsTheHistoricalPng() throws Exception {\n      Gui11V5CArtworkChecks.panel(\"factory_placer_v2_reference/background.png\",\n         \"bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d\", 1199, 1312);\n      var image = Gui11V5CArtworkChecks.panel(\"gui11_v5c/04.png\",\n         \"d7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c\", 1254, 1254);\n      assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH, image.getWidth());\n      assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT, image.getHeight());\n      assertEquals(323, FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH);\n      assertEquals(323, FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT);\n      for (var a : FactoryPlacerV2ReferenceGeometry.SLOT_ANCHORS) {\n         Gui11V5CArtworkChecks.darkInterior(image, 323, 323, a.x()+6, a.y()+6, 4, 4);\n"
         }
       ]
     },
@@ -1223,6 +1421,96 @@
           "end": 195,
           "previous": "      assertFalse(FactoryStudyGeometry.flameMask().isEmpty());\n      assertFalse(FactoryStudyGeometry.progressMask().isEmpty());\n      for (var r : FactoryStudyGeometry.flameMask()) {\n         inside(FactoryStudyGeometry.flame(), r);\n         clearOfItems(MachineKind.SMALL_LAB_FURNACE, r);\n      }\n      for (var r : FactoryStudyGeometry.progressMask()) {\n         inside(FactoryStudyGeometry.progress(), r);\n         clearOfItems(MachineKind.SMALL_LAB_FURNACE, r);\n",
           "current": "      var lab = MachineKind.SMALL_LAB_FURNACE;\n      assertEquals(2, Gui11V5CRuntimeGeometry.effects(lab).size());\n      for (var effect : Gui11V5CRuntimeGeometry.effects(lab)) {\n         var bounds = effect.bounds();\n         var rect = new FactoryStudyGeometry.Rect(bounds.x(), bounds.y(), bounds.width(), bounds.height());\n         var expected = switch (effect.key()) {\n            case \"lab-flame\" -> FactoryStudyGeometry.flame();\n            case \"transfer-arrow-glint\" -> FactoryStudyGeometry.progress();\n            default -> throw new AssertionError(\"Unexpected active Lab layer: \" + effect.key());\n         };\n         inside(expected, rect);\n         clearOfItems(lab, rect);\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/ThermalVerticalGeometryTest.java": {
+      "old_sha256": "ce4bff402ce64876abd9d54fd2dbdfafd567fa130b8b05b19e1ea16136ff5ec7",
+      "new_sha256": "cee1138445b0847bc8f32c26b9cb67b1479dbeeb16e5cc680734869be3d65294",
+      "hunks": [
+        {
+          "start": 2,
+          "end": 3,
+          "previous": "",
+          "current": "import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;\n"
+        },
+        {
+          "start": 37,
+          "end": 65,
+          "previous": "   @Test public void freezerOutputAndThermalViewportUseTheCorrectedUniformTransform() {\n      var output=ThermalVerticalGeometry.slot(2,MachineKind.SMALL_FREEZER);\n      assertEquals(206,output.y());\n      var view=FreezerReferenceGeometry.fitCanvas(960,570,347,381,0.78F);\n      assertEquals(0.78F,view.scale(),0.0001F);\n      double screenX=view.originX()+view.scale()*(output.x()+8);\n      double screenY=view.originY()+view.scale()*(output.y()+8);\n      assertEquals(output.x()+8,view.localX(screenX),0.0001D);\n      assertEquals(output.y()+8,view.localY(screenY),0.0001D);\n",
+          "current": "   @Test public void measuredThermalOutputAndFitMatchBothActivePanels() throws Exception {\n      verifyActivePanel(MachineKind.SMALL_FREEZER, \"05\", \"29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6\", 281, 313, 133, 146);\n      verifyActivePanel(MachineKind.SMALL_MINERAL_SMELTER, \"06\", \"3b278f9065c945a697e6e0316f4c4e9b96815e7372eca7410979a5220c9c5f20\", 279, 312, 132, 145);\n   }\n\n   private static void verifyActivePanel(MachineKind kind, String panel, String sha256,\n                                         int width, int height, int outputX, int outputY) throws Exception {\n      var image=Gui11V5CArtworkChecks.panel(\"gui11_v5c/\"+panel+\".png\",sha256,1187,1325);\n      assertEquals(width,ThermalVerticalGeometry.canvasWidth(kind));\n      assertEquals(height,ThermalVerticalGeometry.canvasHeight(kind));\n      var output=ThermalVerticalGeometry.slot(2,kind);\n      assertEquals(outputX,output.x());\n      assertEquals(outputY,output.y());\n      for(int i=0;i<39;i++) {\n         if(i==1) continue;\n         var slot=ThermalVerticalGeometry.slot(i,kind);\n         Gui11V5CArtworkChecks.darkInterior(image,width,height,slot.x()+6,slot.y()+6,4,4);\n      }\n      for(int[] viewport : new int[][] {{960,570}, {320,260}}) {\n         var view=FreezerReferenceGeometry.fitCanvas(viewport[0],viewport[1],width,height,0.78F);\n         assertTrue(view.originX()>=0 && view.originY()>=0);\n         assertTrue(view.screenX(width)<=viewport[0]+0.0001 && view.screenY(height)<=viewport[1]+0.0001);\n         assertEquals(output.x()+8,view.localX(view.screenX(output.x()+8)),0.0001D);\n         assertEquals(output.y()+8,view.localY(view.screenY(output.y()+8)),0.0001D);\n      }\n      assertEquals(0,Gui11V5CArtwork.energyFillPixels(kind,0,16000));\n      assertEquals(22,Gui11V5CArtwork.energyFillPixels(kind,8000,16000));\n      assertEquals(44,Gui11V5CArtwork.energyFillPixels(kind,16000,16000));\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/TreeCutterV3ReferenceChecks.java": {
+      "old_sha256": "00cc2be3e2dbaab8636903ee22b3bccce5f384879beabb786089e3c40aa150fd",
+      "new_sha256": "9f177bb3823deea41d17e27168700ed3a70d13e1fade59276e78619736044015",
+      "hunks": [
+        {
+          "start": 29,
+          "end": 30,
+          "previous": "      require(output.sourceX() == 895 && output.sourceY() == 279 && output.sourceWidth() == 119 && output.sourceHeight() == 115,\n",
+          "current": "      require(output.x() == 221 && output.y() == 91,\n"
+        },
+        {
+          "start": 36,
+          "end": 37,
+          "previous": "            && view.screenX(418) <= frame[0] + 0.0001 && view.screenY(418) <= frame[1] + 0.0001, \"Canvas escaped viewport\");\n",
+          "current": "            && view.screenX(283) <= frame[0] + 0.0001 && view.screenY(294) <= frame[1] + 0.0001, \"Canvas escaped viewport\");\n"
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "previous": "         require(view.guiLeft()+view.guiWidth() >= view.screenX(418)\n            && view.guiTop()+view.guiHeight() >= view.screenY(418), \"Public extent excludes edge\");\n",
+          "current": "         require(view.guiLeft()+view.guiWidth() >= view.screenX(283)\n            && view.guiTop()+view.guiHeight() >= view.screenY(294), \"Public extent excludes edge\");\n"
+        },
+        {
+          "start": 48,
+          "end": 56,
+          "previous": "      var energy = TreeCutterV3ReferenceGeometry.ENERGY;\n      require(energy.x()*3 >= 838 && energy.y()*3 >= 170\n         && (energy.x()+energy.width())*3 <= 1027 && (energy.y()+energy.height())*3 <= 189, \"FE paints outside source mask\");\n      require(TreeCutterV3ReferenceGeometry.energyFillWidth(0,32000)==0, \"Empty FE\");\n      require(TreeCutterV3ReferenceGeometry.energyFillWidth(16000,32000)==31, \"Half FE\");\n      require(TreeCutterV3ReferenceGeometry.energyFillWidth(Integer.MAX_VALUE,32000)==62, \"FE overflow clamp\");\n      require(TreeCutterV3ReferenceGeometry.energyFillWidth(1,0)==0, \"Zero capacity\");\n",
+          "current": "      require(Gui11V5CRuntimeGeometry.energy(MachineKind.SMALL_TREE_CUTTER) == null, \"Selected Tree Cutter has no FE glass\");\n      var sheen = Gui11V5CRuntimeGeometry.effectBounds(MachineKind.SMALL_TREE_CUTTER, \"blade_metal_sheen\");\n      require(sheen != null && sheen.x() == 118 && sheen.y() == 85\n         && sheen.width() == 32 && sheen.height() == 34, \"Sheen stays on the V5C blade\");\n      for (var a : TreeCutterV3ReferenceGeometry.SLOT_ANCHORS) {\n         require(a.hoverRight() <= sheen.x() || sheen.x()+sheen.width() <= a.hoverLeft()\n            || a.hoverBottom() <= sheen.y() || sheen.y()+sheen.height() <= a.hoverTop(), \"Blade paint must not overlap a slot\");\n      }\n"
+        },
+        {
+          "start": 57,
+          "end": 58,
+          "previous": "      System.out.println(\"Tree Cutter V3: 37 anchors, half-open hitboxes, transforms and FE safety passed\");\n",
+          "current": "      System.out.println(\"Tree Cutter V3: 37 anchors, half-open hitboxes, transforms and blade bounds passed\");\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/TreeCutterV3ReferenceGeometryTest.java": {
+      "old_sha256": "0c020e51a308a7d91085c38b89f0f7b00cedaa9c209c67203a339ac9294b591c",
+      "new_sha256": "7019a36f0d7788d28377992fc62befae52dce2ddc0805ee5f280e0b064282e65",
+      "hunks": [
+        {
+          "start": 2,
+          "end": 2,
+          "previous": "import java.nio.ByteBuffer;\nimport java.security.MessageDigest;\nimport java.util.HexFormat;\n",
+          "current": ""
+        },
+        {
+          "start": 6,
+          "end": 19,
+          "previous": "   @Test public void retainedReferenceGeometryAndState() { TreeCutterV3ReferenceChecks.main(new String[0]); }\n   @Test public void actualRetainedPngMatchesGeometry() throws Exception {\n      try (var input = getClass().getResourceAsStream(\"/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png\")) {\n         assertNotNull(input);\n         byte[] png = input.readAllBytes();\n         assertEquals(TreeCutterV3ReferenceGeometry.SOURCE_SHA256,\n            HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(png)));\n         var header = ByteBuffer.wrap(png);\n         assertEquals(1254, header.getInt(16));\n         assertEquals(1254, header.getInt(20));\n         assertEquals(TreeCutterV3ReferenceGeometry.SOURCE_WIDTH, header.getInt(16));\n         assertEquals(TreeCutterV3ReferenceGeometry.SOURCE_HEIGHT, header.getInt(20));\n",
+          "current": "   @Test public void selectedReferenceGeometryAndState() { TreeCutterV3ReferenceChecks.main(new String[0]); }\n\n   @Test public void activePngMatchesMeasuredGeometryAndRetainsTheHistoricalPng() throws Exception {\n      Gui11V5CArtworkChecks.panel(\"tree_cutter_v3_reference/background.png\",\n         \"307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4\", 1254, 1254);\n      var image = Gui11V5CArtworkChecks.panel(\"gui11_v5c/10.png\",\n         \"c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef\", 1230, 1278);\n      assertEquals(TreeCutterV3ReferenceGeometry.SOURCE_WIDTH, image.getWidth());\n      assertEquals(TreeCutterV3ReferenceGeometry.SOURCE_HEIGHT, image.getHeight());\n      assertEquals(283, TreeCutterV3ReferenceGeometry.CANVAS_WIDTH);\n      assertEquals(294, TreeCutterV3ReferenceGeometry.CANVAS_HEIGHT);\n      for (var a : TreeCutterV3ReferenceGeometry.SLOT_ANCHORS) {\n         Gui11V5CArtworkChecks.darkInterior(image, 283, 294, a.x()+6, a.y()+6, 4, 4);\n"
+        }
+      ]
+    },
+    "tools/validation/check_barrel_reference.sh": {
+      "old_sha256": "dc49c51cf1ecfca905c86e4e377674afa7c04b262d7779349d1174baadc3520d",
+      "new_sha256": "29d9610418ce63dd8c90a575db1ead9749daf7da7f58b500c51a9b21b70bc4e7",
+      "hunks": [
+        {
+          "start": 6,
+          "end": 7,
+          "previous": "java -m jdk.compiler/com.sun.tools.javac.Main -d \"$build\" \"$root/BarrelReferenceGeometry.java\" \"$root/BarrelReferenceState.java\" src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceChecks.java\n",
+          "current": "java -m jdk.compiler/com.sun.tools.javac.Main -d \"$build\" \"$root/MachineKind.java\" \"$root/Gui11V5CRuntimeGeometry.java\" \"$root/BarrelReferenceGeometry.java\" \"$root/BarrelReferenceState.java\" src/test/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceChecks.java\n"
+        },
+        {
+          "start": 9,
+          "end": 10,
+          "previous": "",
+          "current": "printf '%s  %s\\n' eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388 src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/15.png | sha256sum -c -\n"
         }
       ]
     },

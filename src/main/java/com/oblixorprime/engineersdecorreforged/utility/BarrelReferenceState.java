@@ -4,7 +4,7 @@ package com.oblixorprime.engineersdecorreforged.utility;
 public final class BarrelReferenceState {
    // Pixel-reviewed safe interior of the source PNG's beveled glass (1182x1330
    // source to 292x329 logical). The narrower rectangle stays inside the chamfers.
-   public static final int TANK_X = 134, TANK_Y = 80, TANK_WIDTH = 26, TANK_HEIGHT = 52;
+   public static final int TANK_X = 134, TANK_Y = 80, TANK_WIDTH = 26, TANK_HEIGHT = 50;
    private BarrelReferenceState() {}
    public static int fillHeight(int amount, int capacity) {
       if (amount <= 0 || capacity <= 0) return 0;

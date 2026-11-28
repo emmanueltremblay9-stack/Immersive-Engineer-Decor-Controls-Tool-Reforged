@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
+import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.Test;
@@ -34,14 +35,33 @@ public class ThermalVerticalGeometryTest {
       assertEquals(89,ThermalVerticalGeometry.energyClipTop(89,192,100,100));
    }
 
-   @Test public void freezerOutputAndThermalViewportUseTheCorrectedUniformTransform() {
-      var output=ThermalVerticalGeometry.slot(2,MachineKind.SMALL_FREEZER);
-      assertEquals(206,output.y());
-      var view=FreezerReferenceGeometry.fitCanvas(960,570,347,381,0.78F);
-      assertEquals(0.78F,view.scale(),0.0001F);
-      double screenX=view.originX()+view.scale()*(output.x()+8);
-      double screenY=view.originY()+view.scale()*(output.y()+8);
-      assertEquals(output.x()+8,view.localX(screenX),0.0001D);
-      assertEquals(output.y()+8,view.localY(screenY),0.0001D);
+   @Test public void measuredThermalOutputAndFitMatchBothActivePanels() throws Exception {
+      verifyActivePanel(MachineKind.SMALL_FREEZER, "05", "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6", 281, 313, 133, 146);
+      verifyActivePanel(MachineKind.SMALL_MINERAL_SMELTER, "06", "3b278f9065c945a697e6e0316f4c4e9b96815e7372eca7410979a5220c9c5f20", 279, 312, 132, 145);
+   }
+
+   private static void verifyActivePanel(MachineKind kind, String panel, String sha256,
+                                         int width, int height, int outputX, int outputY) throws Exception {
+      var image=Gui11V5CArtworkChecks.panel("gui11_v5c/"+panel+".png",sha256,1187,1325);
+      assertEquals(width,ThermalVerticalGeometry.canvasWidth(kind));
+      assertEquals(height,ThermalVerticalGeometry.canvasHeight(kind));
+      var output=ThermalVerticalGeometry.slot(2,kind);
+      assertEquals(outputX,output.x());
+      assertEquals(outputY,output.y());
+      for(int i=0;i<39;i++) {
+         if(i==1) continue;
+         var slot=ThermalVerticalGeometry.slot(i,kind);
+         Gui11V5CArtworkChecks.darkInterior(image,width,height,slot.x()+6,slot.y()+6,4,4);
+      }
+      for(int[] viewport : new int[][] {{960,570}, {320,260}}) {
+         var view=FreezerReferenceGeometry.fitCanvas(viewport[0],viewport[1],width,height,0.78F);
+         assertTrue(view.originX()>=0 && view.originY()>=0);
+         assertTrue(view.screenX(width)<=viewport[0]+0.0001 && view.screenY(height)<=viewport[1]+0.0001);
+         assertEquals(output.x()+8,view.localX(view.screenX(output.x()+8)),0.0001D);
+         assertEquals(output.y()+8,view.localY(view.screenY(output.y()+8)),0.0001D);
+      }
+      assertEquals(0,Gui11V5CArtwork.energyFillPixels(kind,0,16000));
+      assertEquals(22,Gui11V5CArtwork.energyFillPixels(kind,8000,16000));
+      assertEquals(44,Gui11V5CArtwork.energyFillPixels(kind,16000,16000));
    }
 }

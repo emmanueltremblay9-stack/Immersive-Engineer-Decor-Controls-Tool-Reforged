@@ -11,6 +11,18 @@ public final class Gui11V5CRuntimeGeometry {
    public record Rect(int x, int y, int width, int height) {
       public boolean contains(double px, double py) { return px >= x && px < x + width && py >= y && py < y + height; }
    }
+   /** Source pixels enclosing the 16px item and its one-pixel hover margin.
+    * Round the edges independently so converting back never shrinks the target.
+    */
+   static Rect sourceItemBounds(MachineKind kind, Point item) {
+      double xScale = (double) sourceWidth(kind) / width(kind);
+      double yScale = (double) sourceHeight(kind) / height(kind);
+      int left = (int) Math.floor((item.x() - 1) * xScale);
+      int top = (int) Math.floor((item.y() - 1) * yScale);
+      int right = (int) Math.ceil((item.x() + 17) * xScale);
+      int bottom = (int) Math.ceil((item.y() + 17) * yScale);
+      return new Rect(left, top, right - left, bottom - top);
+   }
    public static boolean supports(MachineKind kind) { return switch (kind) {
       case FACTORY_HOPPER -> true;
       case FACTORY_DROPPER -> true;

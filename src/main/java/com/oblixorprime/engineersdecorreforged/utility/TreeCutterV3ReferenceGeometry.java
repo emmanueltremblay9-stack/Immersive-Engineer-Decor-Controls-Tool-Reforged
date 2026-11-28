@@ -60,20 +60,12 @@ public final class TreeCutterV3ReferenceGeometry {
       for (int index = 0; index < MENU_SLOT_COUNT; index++) {
          Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.SMALL_TREE_CUTTER, index);
          if (point == null) throw new IllegalStateException("Missing Tree Cutter GUI11 slot " + index);
-         int sourceX = (int)Math.round(point.x() * (double)SOURCE_WIDTH / CANVAS_WIDTH);
-         int sourceY = (int)Math.round(point.y() * (double)SOURCE_HEIGHT / CANVAS_HEIGHT);
-         int sourceItemWidth = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_WIDTH / CANVAS_WIDTH));
-         int sourceItemHeight = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_HEIGHT / CANVAS_HEIGHT));
-         anchors.add(new SlotAnchor(index, sourceX, sourceY, sourceItemWidth, sourceItemHeight, point.x(), point.y()));
+         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.SMALL_TREE_CUTTER, point);
+         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));
       }
       return List.copyOf(anchors);
    }
 
-   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {
-      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);
-      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);
-      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);
-   }
 
    private static SlotAnchor[] indexAnchors() {
       SlotAnchor[] byIndex = new SlotAnchor[MENU_SLOT_COUNT];
@@ -89,13 +81,8 @@ public final class TreeCutterV3ReferenceGeometry {
    }
 
    /** Dynamic energy paint is confined to the manifest's safe dark interior. */
-   public static final Rect ENERGY = new Rect(280, 57, 62, 6);
    public static final Rect HEADER = new Rect(84, 7, 224, 17);
 
-   public static int energyFillWidth(int stored, int capacity) {
-      if (stored <= 0 || capacity <= 0) return 0;
-      return (int)Math.min(ENERGY.width(), (long)stored * ENERGY.width() / capacity);
-   }
 
    public record Rect(int x, int y, int width, int height) {
       public boolean contains(double localX, double localY) {
@@ -111,19 +98,19 @@ public final class TreeCutterV3ReferenceGeometry {
     */
    public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {
       public double interiorLeft() {
-         return (double)this.sourceX / 3.0D;
+         return (double)this.sourceX * CANVAS_WIDTH / SOURCE_WIDTH;
       }
 
       public double interiorTop() {
-         return (double)this.sourceY / 3.0D;
+         return (double)this.sourceY * CANVAS_HEIGHT / SOURCE_HEIGHT;
       }
 
       public double interiorRight() {
-         return (double)(this.sourceX + this.sourceWidth) / 3.0D;
+         return (double)(this.sourceX + this.sourceWidth) * CANVAS_WIDTH / SOURCE_WIDTH;
       }
 
       public double interiorBottom() {
-         return (double)(this.sourceY + this.sourceHeight) / 3.0D;
+         return (double)(this.sourceY + this.sourceHeight) * CANVAS_HEIGHT / SOURCE_HEIGHT;
       }
 
       public double hoverLeft() {

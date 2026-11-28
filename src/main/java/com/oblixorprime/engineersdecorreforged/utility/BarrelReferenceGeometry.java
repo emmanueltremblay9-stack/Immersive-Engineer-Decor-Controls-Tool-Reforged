@@ -59,20 +59,12 @@ public final class BarrelReferenceGeometry {
       for (int index = 0; index < MENU_SLOT_COUNT; index++) {
          Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.FLUID_BARREL, index);
          if (point == null) throw new IllegalStateException("Missing Fluid Barrel GUI11 slot " + index);
-         int sourceX = (int)Math.round(point.x() * (double)SOURCE_WIDTH / CANVAS_WIDTH);
-         int sourceY = (int)Math.round(point.y() * (double)SOURCE_HEIGHT / CANVAS_HEIGHT);
-         int sourceItemWidth = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_WIDTH / CANVAS_WIDTH));
-         int sourceItemHeight = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_HEIGHT / CANVAS_HEIGHT));
-         anchors.add(new SlotAnchor(index, sourceX, sourceY, sourceItemWidth, sourceItemHeight, point.x(), point.y()));
+         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.FLUID_BARREL, point);
+         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));
       }
       return List.copyOf(anchors);
    }
 
-   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {
-      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) * CANVAS_WIDTH / SOURCE_WIDTH - ITEM_SIZE / 2.0D);
-      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) * CANVAS_HEIGHT / SOURCE_HEIGHT - ITEM_SIZE / 2.0D);
-      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);
-   }
 
    private static SlotAnchor[] indexAnchors() {
       SlotAnchor[] byIndex = new SlotAnchor[MENU_SLOT_COUNT];

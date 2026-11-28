@@ -1,24 +1,22 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
-import java.nio.ByteBuffer;
-import java.security.MessageDigest;
-import java.util.HexFormat;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public final class FactoryPlacerV2ReferenceGeometryTest {
-   @Test public void retainedReferenceGeometryAndState() { FactoryPlacerV2ReferenceChecks.main(new String[0]); }
-   @Test public void actualRetainedPngMatchesGeometry() throws Exception {
-      try (var input = getClass().getResourceAsStream("/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png")) {
-         assertNotNull(input);
-         byte[] png = input.readAllBytes();
-         assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_SHA256,
-            HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(png)));
-         var header = ByteBuffer.wrap(png);
-         assertEquals(1199, header.getInt(16));
-         assertEquals(1312, header.getInt(20));
-         assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH, header.getInt(16));
-         assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT, header.getInt(20));
+   @Test public void selectedReferenceGeometryAndState() { FactoryPlacerV2ReferenceChecks.main(new String[0]); }
+
+   @Test public void activePngMatchesMeasuredGeometryAndRetainsTheHistoricalPng() throws Exception {
+      Gui11V5CArtworkChecks.panel("factory_placer_v2_reference/background.png",
+         "bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d", 1199, 1312);
+      var image = Gui11V5CArtworkChecks.panel("gui11_v5c/04.png",
+         "d7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c", 1254, 1254);
+      assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH, image.getWidth());
+      assertEquals(FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT, image.getHeight());
+      assertEquals(323, FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH);
+      assertEquals(323, FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT);
+      for (var a : FactoryPlacerV2ReferenceGeometry.SLOT_ANCHORS) {
+         Gui11V5CArtworkChecks.darkInterior(image, 323, 323, a.x()+6, a.y()+6, 4, 4);
       }
    }
 }

@@ -27,14 +27,14 @@ public final class TreeCutterV3ReferenceChecks {
          }
       }
       var output = TreeCutterV3ReferenceGeometry.anchor(0);
-      require(output.sourceX() == 895 && output.sourceY() == 279 && output.sourceWidth() == 119 && output.sourceHeight() == 115,
+      require(output.x() == 221 && output.y() == 91,
          "Output must use the sole retained aperture");
       int[][] frames = {{1280,720},{640,360},{426,240},{346,260},{320,180},{1920,1080},{1,1},{10,5}};
       for (var frame : frames) {
          var view = TreeCutterV3ReferenceGeometry.fit(frame[0], frame[1]);
          require(view.scale() > 0 && view.scale() <= 1, "Invalid fit");
          require(view.screenX(0) >= 0 && view.screenY(0) >= 0
-            && view.screenX(418) <= frame[0] + 0.0001 && view.screenY(418) <= frame[1] + 0.0001, "Canvas escaped viewport");
+            && view.screenX(283) <= frame[0] + 0.0001 && view.screenY(294) <= frame[1] + 0.0001, "Canvas escaped viewport");
          for (var a : TreeCutterV3ReferenceGeometry.SLOT_ANCHORS) {
             close(a.x()+8, view.localX(view.screenX(a.x()+8)));
             close(a.y()+8, view.localY(view.screenY(a.y()+8)));
@@ -43,17 +43,18 @@ public final class TreeCutterV3ReferenceChecks {
          require(view.renderPointerX(view.screenX(-0.1)) == -1, "Negative pointer rounded inside");
          require(view.renderPointerY(view.screenY(-0.1)) == -1, "Negative pointer rounded inside");
          require(view.guiLeft() <= view.screenX(0) && view.guiTop() <= view.screenY(0), "Public origin excludes edge");
-         require(view.guiLeft()+view.guiWidth() >= view.screenX(418)
-            && view.guiTop()+view.guiHeight() >= view.screenY(418), "Public extent excludes edge");
+         require(view.guiLeft()+view.guiWidth() >= view.screenX(283)
+            && view.guiTop()+view.guiHeight() >= view.screenY(294), "Public extent excludes edge");
       }
-      var energy = TreeCutterV3ReferenceGeometry.ENERGY;
-      require(energy.x()*3 >= 838 && energy.y()*3 >= 170
-         && (energy.x()+energy.width())*3 <= 1027 && (energy.y()+energy.height())*3 <= 189, "FE paints outside source mask");
-      require(TreeCutterV3ReferenceGeometry.energyFillWidth(0,32000)==0, "Empty FE");
-      require(TreeCutterV3ReferenceGeometry.energyFillWidth(16000,32000)==31, "Half FE");
-      require(TreeCutterV3ReferenceGeometry.energyFillWidth(Integer.MAX_VALUE,32000)==62, "FE overflow clamp");
-      require(TreeCutterV3ReferenceGeometry.energyFillWidth(1,0)==0, "Zero capacity");
+      require(Gui11V5CRuntimeGeometry.energy(MachineKind.SMALL_TREE_CUTTER) == null, "Selected Tree Cutter has no FE glass");
+      var sheen = Gui11V5CRuntimeGeometry.effectBounds(MachineKind.SMALL_TREE_CUTTER, "blade_metal_sheen");
+      require(sheen != null && sheen.x() == 118 && sheen.y() == 85
+         && sheen.width() == 32 && sheen.height() == 34, "Sheen stays on the V5C blade");
+      for (var a : TreeCutterV3ReferenceGeometry.SLOT_ANCHORS) {
+         require(a.hoverRight() <= sheen.x() || sheen.x()+sheen.width() <= a.hoverLeft()
+            || a.hoverBottom() <= sheen.y() || sheen.y()+sheen.height() <= a.hoverTop(), "Blade paint must not overlap a slot");
+      }
       require(TreeCutterV3ReferenceGeometry.tooltipWidth(260)==240, "Bounded tooltip");
-      System.out.println("Tree Cutter V3: 37 anchors, half-open hitboxes, transforms and FE safety passed");
+      System.out.println("Tree Cutter V3: 37 anchors, half-open hitboxes, transforms and blade bounds passed");
    }
 }
