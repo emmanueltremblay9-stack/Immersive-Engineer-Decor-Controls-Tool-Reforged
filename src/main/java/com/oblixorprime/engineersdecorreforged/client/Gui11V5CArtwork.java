@@ -9,6 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 /** Client compositor for the owner-selected GUI11-R3 V5-Corrigee runtime panels. */
 public final class Gui11V5CArtwork {
    private static final String MOD = "immersive_engineer_decor_controls_tool_reforged";
+   private static final ResourceLocation MILK_LAYER = ResourceLocation.fromNamespaceAndPath(
+      MOD, "textures/gui/milking_redesign_v1/milk.png");
    private Gui11V5CArtwork() {}
 
    public static ResourceLocation texture(MachineKind kind) {
@@ -108,10 +110,14 @@ public final class Gui11V5CArtwork {
       };
    }
 
-   /** Synchronized fluid shown through the two new artwork-only glass windows. */
+   /** Synchronized fluid shown inside the glass opening of each panel. */
    private static void drawFluidState(GuiGraphics graphics, MachineMenu menu, int originX, int originY) {
       int amount = menu.fluidAmount();
       if (amount <= 0 || menu.fluidCapacity() <= 0) return;
+      if (menu.kind() == MachineKind.SMALL_MILKING_MACHINE) {
+         drawMilk(graphics, originX + 130, originY + 64, amount, menu.fluidCapacity());
+         return;
+      }
       Gui11V5CRuntimeGeometry.Rect glass = Gui11V5CRuntimeGeometry.fluidDisplay(menu.kind());
       if (glass == null) return;
       int fill = (int)((long)Math.min(amount, menu.fluidCapacity()) * glass.height() / menu.fluidCapacity());
@@ -123,6 +129,24 @@ public final class Gui11V5CArtwork {
          int offset = Math.min(3, Math.min(row - top, glass.y() + glass.height() - 1 - row));
          graphics.fill(originX + glass.x() + offset, originY + row,
             originX + glass.x() + glass.width() - offset, originY + row + 1, color);
+      }
+   }
+
+   private static void drawMilk(GuiGraphics graphics, int x, int y, int amount, int capacity) {
+      // Fit the existing milk sprite inside the beveled opening in V5C panel 12.
+      int height = 52;
+      int width = 29;
+      int fill = RedesignedMachineArtwork.fillPixels(amount, capacity, height);
+      if (fill == 0) return;
+      for (int band = 0; band < 3; band++) {
+         int start = band == 0 ? 0 : band == 1 ? 2 : height - 2;
+         int end = band == 0 ? 2 : band == 1 ? height - 2 : height;
+         int top = Math.max(start, height - fill);
+         if (top >= end) continue;
+         int inset = band == 1 ? 0 : 2;
+         graphics.enableScissor(x + inset, y + top, x + width - inset, y + end);
+         graphics.blit(MILK_LAYER, x, y, width, height, 479F, 228F, 296, 802, 1254, 1254);
+         graphics.disableScissor();
       }
    }
 }
