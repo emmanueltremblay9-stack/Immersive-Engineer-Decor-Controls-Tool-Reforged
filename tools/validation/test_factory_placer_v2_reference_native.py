@@ -48,6 +48,14 @@ class NativePlacerProofTest(unittest.TestCase):
         for y in range(math.ceil(sy(0)),math.floor(sy(CANVAS_SIZE))):
             yy=min(sh-1,max(0,math.floor((y+.5-sy(0))/factor)))
             background[(y*width+x0)*4:(y*width+x1)*4]=b''.join(art[(yy*sw+x)*4:(yy*sw+x+1)*4] for x in source_x)
+        # Row samples represent the opaque framebuffer, with the near-opaque art
+        # composited over the fixture's dark world background.
+        for l,t,r,b in INDICATORS[:3]:
+            x,y=math.floor(sx((l+r)/2)),math.floor(sy((t+b)/2))
+            offset=(y*width+x)*4
+            red,green,blue,alpha=background[offset:offset+4]
+            background[offset:offset+4]=bytes((*((c*alpha+30*(255-alpha)+127)//255
+                                                for c in (red,green,blue)),255))
         for name,(logic,selected) in CAPTURES.items():
             pixels=bytearray(background)
             def paint(rect,color):
