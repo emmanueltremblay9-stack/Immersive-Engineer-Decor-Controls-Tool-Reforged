@@ -28,6 +28,8 @@ ELECTRICAL_CONTROLS_RECORD = Path(__file__).with_name("prism_210_electrical_cont
 ELECTRICAL_CONTROLS_RECORD_SHA256 = "d9c5f924307e814e3cc772782c145fcd9e104f8741df305bf93395d3c5967f98"
 ORDINARY_JAR_REPIN_RECORD = Path(__file__).with_name("prism_210_ordinary_jar_repin_projection.json")
 ORDINARY_JAR_REPIN_RECORD_SHA256 = "2d4f192fda610d20c805869a86745f7dcb625a24e366b3d2d987d7b3c70aff0e"
+SOLAR_GUI11_R3_RECORD = Path(__file__).with_name("prism_210_solar_gui11_r3_projection.json")
+SOLAR_GUI11_R3_RECORD_SHA256 = "4e2e2a421cec340535654a1e1e6689bf894a6e727251fbbee226070002b5c20a"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 HEAD_COMMIT = "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
 RECORD_BYTES = RECORD.read_bytes()
@@ -39,6 +41,7 @@ FREEZER_ENERGY_SCISSOR_RECORD_BYTES = FREEZER_ENERGY_SCISSOR_RECORD.read_bytes()
 FREEZER_QA_FOLLOWUP_RECORD_BYTES = FREEZER_QA_FOLLOWUP_RECORD.read_bytes()
 ELECTRICAL_CONTROLS_RECORD_BYTES = ELECTRICAL_CONTROLS_RECORD.read_bytes()
 ORDINARY_JAR_REPIN_RECORD_BYTES = ORDINARY_JAR_REPIN_RECORD.read_bytes()
+SOLAR_GUI11_R3_RECORD_BYTES = SOLAR_GUI11_R3_RECORD.read_bytes()
 
 
 def _record():
@@ -144,6 +147,16 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def _solar_gui11_r3_record():
+    if sha256(SOLAR_GUI11_R3_RECORD_BYTES) != SOLAR_GUI11_R3_RECORD_SHA256:
+        raise AssertionError("#210 Solar GUI11 r3 projection record changed")
+    data = json.loads(SOLAR_GUI11_R3_RECORD_BYTES)
+    if (data.get("schema") != "iedctr-prism-solar-gui11-r3-projection-v1"
+            or data.get("base_commit") != "05439f5aa9a5423d45721a4240b60284c237164f"):
+        raise AssertionError("#210 Solar GUI11 r3 projection baseline changed")
+    return data
+
+
 def _reverse_layer(path: str, source: bytes, layer: dict) -> bytes:
     if sha256(source) != layer["new_sha256"]:
         raise AssertionError("#210 projection candidate bytes changed: " + path)
@@ -159,6 +172,14 @@ def _reverse_layer(path: str, source: bytes, layer: dict) -> bytes:
     return historical
 
 
+def project_before_solar_gui11_r3(path: str, source: bytes) -> bytes:
+    """Recover the exact pre-r3 implementation for historical Solar V2 checks."""
+    layer = _solar_gui11_r3_record()["files"].get(path)
+    if layer is not None and sha256(source) == layer["new_sha256"]:
+        return _reverse_layer(path, source, layer)
+    return source
+
+
 def project_current_candidate(path: str, source: bytes, *, strict: bool = False) -> bytes:
     """Project an exact recorded candidate state back to its #210 base.
 
@@ -166,6 +187,7 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
     be checked by its own fail-closed validator. Call with strict=True in tests
     that specifically validate this candidate's recorded state.
     """
+    source = project_before_solar_gui11_r3(path, source)
     repin = _ordinary_jar_repin_record()["files"].get(path)
     repin_reversed = False
     if repin is not None:
@@ -288,6 +310,9 @@ def project_file_from_root(path: str, *, strict: bool = True) -> bytes:
 
 def expected_current_sha256(path: str) -> str | None:
     """Return the pinned final candidate blob identity for an allowed path."""
+    solar_gui11 = _solar_gui11_r3_record()["files"].get(path)
+    if solar_gui11 is not None:
+        return solar_gui11["new_sha256"]
     repin = _ordinary_jar_repin_record()["files"].get(path)
     if repin is not None:
         return repin["new_sha256"]

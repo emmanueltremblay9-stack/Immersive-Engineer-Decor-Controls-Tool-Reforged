@@ -6,14 +6,19 @@ import json
 import re
 import struct
 from tree_integration_preservation import assert_menu_tail_preserved, assert_solar_baseline_preserved
+from prism_210_history_projection import project_before_solar_gui11_r3
 
 r = Path(__file__).resolve().parents[2]
 j = r / 'src/main/java/com/oblixorprime/engineersdecorreforged'
-s = (j / 'client/SolarV2ReferenceScreen.java').read_text()
-m = (j / 'menu/MachineMenu.java').read_text()
+def v2_source(path):
+    file = j / path
+    return project_before_solar_gui11_r3(file.relative_to(r).as_posix(), file.read_bytes()).decode()
+
+s = v2_source('client/SolarV2ReferenceScreen.java')
+m = v2_source('menu/MachineMenu.java')
 c = (j / 'client/ClientModEvents.java').read_text()
-g = (j / 'utility/SolarV2ReferenceGeometry.java').read_text()
-state = (j / 'utility/SolarV2ReferenceState.java').read_text()
+g = v2_source('utility/SolarV2ReferenceGeometry.java')
+state = v2_source('utility/SolarV2ReferenceState.java')
 d = r / 'docs/testing/solar-v2-reference'
 
 for event in ('mouseClicked', 'mouseReleased', 'mouseDragged', 'mouseScrolled', 'mouseMoved'):

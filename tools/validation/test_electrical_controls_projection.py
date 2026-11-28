@@ -32,10 +32,13 @@ class ElectricalControlsProjectionTests(unittest.TestCase):
                     ["git", "show", self.BASE + ":" + path], cwd=projection.ROOT
                 )
                 self.assertEqual(layer["previous_source_commit"], self.BASE)
-                self.assertEqual(projection.sha256(current), layer["new_sha256"])
+                # GUI11-r3 is an exact later layer on Solar sources; reverse only
+                # that recorded layer before comparing the electrical history.
+                electrical_current = projection.project_before_solar_gui11_r3(path, current)
+                self.assertEqual(projection.sha256(electrical_current), layer["new_sha256"])
                 self.assertEqual(projection.sha256(parent), layer["old_sha256"])
-                self.assertEqual(projection._reverse_layer(path, current, layer), parent)
-                self.assertEqual(projection.expected_current_sha256(path), layer["new_sha256"])
+                self.assertEqual(projection._reverse_layer(path, electrical_current, layer), parent)
+                self.assertEqual(projection.sha256(current), projection.expected_current_sha256(path))
                 self.assertEqual(
                     projection.project_current_candidate(path, current, strict=True),
                     projection.project_current_candidate(path, parent),

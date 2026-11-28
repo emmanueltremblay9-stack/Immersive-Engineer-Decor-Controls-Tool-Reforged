@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.menu;
 
 import com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.SolarGui11Geometry;
 import com.oblixorprime.engineersdecorreforged.utility.SolarV2ReferenceGeometry;
 
 import com.oblixorprime.engineersdecorreforged.ModMenus;
@@ -112,8 +113,11 @@ public class MachineMenu extends AbstractContainerMenu {
    // V5 is the normal client presentation; explicit false retains the diagnostic legacy path.
    public static final String DEV_BARREL_REFERENCE_PROPERTY = "iedctr.dev.barrelV5Reference";
    public static final String DEV_SOLAR_V2_REFERENCE_PROPERTY = "iedctr.dev.solarV2Reference";
+   public static final String DEV_SOLAR_GUI11_R3_PROPERTY = "iedctr.dev.solarGui11R3";
    private final boolean solarV2ReferencePresentation;
+   private final boolean solarGui11R3Presentation;
    public boolean solarV2ReferencePresentation() { return solarV2ReferencePresentation; }
+   public boolean solarGui11R3Presentation() { return solarGui11R3Presentation; }
    private final boolean barrelReferencePresentation;
    public boolean barrelReferencePresentation() { return barrelReferencePresentation; }
    private final Player menuPlayer;
@@ -156,6 +160,7 @@ public class MachineMenu extends AbstractContainerMenu {
       super((MenuType)resolveMenuType(kind), id);
       this.solarV2ReferencePresentation = solarV2ReferenceRequested
          && kind == MachineKind.SMALL_SOLAR_PANEL && inventory.player.level().isClientSide;
+      this.solarGui11R3Presentation = this.solarV2ReferencePresentation && Boolean.getBoolean(DEV_SOLAR_GUI11_R3_PROPERTY);
       this.barrelReferencePresentation = barrelReferenceRequested
          && kind == MachineKind.FLUID_BARREL && inventory.player.level().isClientSide;
       this.factoryPlacerV2ReferencePresentation = factoryPlacerV2ReferenceRequested
@@ -215,7 +220,10 @@ public class MachineMenu extends AbstractContainerMenu {
             var anchor = TreeCutterV3ReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
          }
-         if (solarV2ReferencePresentation) {
+         if (solarGui11R3Presentation) {
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), SolarGui11Geometry.slotX(0),
+               SolarGui11Geometry.slotY(0), slot.role(), slot.output());
+         } else if (solarV2ReferencePresentation) {
             var anchor = SolarV2ReferenceGeometry.anchor(slot.containerIndex());
             presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
          }
@@ -248,7 +256,10 @@ public class MachineMenu extends AbstractContainerMenu {
                var anchor = TreeCutterV3ReferenceGeometry.anchor(1 + row * 9 + column);
                x = anchor.x(); y = anchor.y();
             }
-            if (solarV2ReferencePresentation) {
+            if (solarGui11R3Presentation) {
+               int index = 1 + row * 9 + column;
+               x = SolarGui11Geometry.slotX(index); y = SolarGui11Geometry.slotY(index);
+            } else if (solarV2ReferencePresentation) {
                var anchor = SolarV2ReferenceGeometry.anchor(1 + row * 9 + column);
                x = anchor.x(); y = anchor.y();
             }
@@ -281,7 +292,10 @@ public class MachineMenu extends AbstractContainerMenu {
             var anchor = TreeCutterV3ReferenceGeometry.anchor(28 + column);
             x = anchor.x(); y = anchor.y();
          }
-         if (solarV2ReferencePresentation) {
+         if (solarGui11R3Presentation) {
+            int index = 28 + column;
+            x = SolarGui11Geometry.slotX(index); y = SolarGui11Geometry.slotY(index);
+         } else if (solarV2ReferencePresentation) {
             var anchor = SolarV2ReferenceGeometry.anchor(28 + column);
             x = anchor.x(); y = anchor.y();
          }

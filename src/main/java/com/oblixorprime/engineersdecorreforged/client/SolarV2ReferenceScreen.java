@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.client;
 
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.utility.SolarGui11Geometry;
 import com.oblixorprime.engineersdecorreforged.utility.SolarV2ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.SolarV2ReferenceState;
 import net.minecraft.client.gui.GuiGraphics;
@@ -9,11 +10,14 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-/** Default client retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */
+/** Solar panel screen with client-only art and geometry. Vanilla owns items and transfers. */
 public final class SolarV2ReferenceScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.";
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
       "immersive_engineer_decor_controls_tool_reforged", "textures/gui/solar_v2_reference/background.png");
+   private static final ResourceLocation GUI11_FACEPLATE = ResourceLocation.fromNamespaceAndPath(
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/solar_gui11_r3/background.png");
+   private final boolean gui11;
    private SolarV2ReferenceGeometry.ViewTransform view = SolarV2ReferenceGeometry.fit(418, 418);
    private boolean renderingCanvas;
    private double renderLocalMouseX, renderLocalMouseY;
@@ -21,19 +25,25 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
    public SolarV2ReferenceScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
       if (!menu.solarV2ReferencePresentation()) throw new IllegalArgumentException("Solar V2 requires the client presentation");
-      imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;
-      imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;
+      gui11 = menu.solarGui11R3Presentation();
+      if (gui11) {
+         imageWidth = (int)Math.ceil(SolarGui11Geometry.CANVAS_WIDTH);
+         imageHeight = (int)Math.ceil(SolarGui11Geometry.CANVAS_HEIGHT);
+      } else {
+         imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;
+         imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;
+      }
    }
 
    @Override
    protected void init() {
       super.init();
       leftPos = 0; topPos = 0;
-      view = SolarV2ReferenceGeometry.fit(width, height);
+      view = gui11 ? SolarGui11Geometry.fit(width, height) : SolarV2ReferenceGeometry.fit(width, height);
    }
 
    // NeoForge exposes these bounds to JEI and other screen-space consumers.
-   // Internal fields stay on the 418px logical canvas for vanilla slot input/rendering.
+   // Internal fields stay in logical canvas coordinates for vanilla slots.
    @Override
    public int getGuiLeft() { return view.guiLeft(); }
 
@@ -41,10 +51,14 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
    public int getGuiTop() { return view.guiTop(); }
 
    @Override
-   public int getXSize() { return view.guiWidth(); }
+   public int getXSize() {
+      return gui11 ? (int)Math.ceil(view.screenX(SolarGui11Geometry.CANVAS_WIDTH)) - view.guiLeft() : view.guiWidth();
+   }
 
    @Override
-   public int getYSize() { return view.guiHeight(); }
+   public int getYSize() {
+      return gui11 ? (int)Math.ceil(view.screenY(SolarGui11Geometry.CANVAS_HEIGHT)) - view.guiTop() : view.guiHeight();
+   }
 
    @Override
    public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
@@ -66,7 +80,11 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
          graphics.pose().popPose();
       }
       renderTooltip(graphics, mouseX, mouseY);
-      if (hoveredSlot == null && SolarV2ReferenceState.containsMeter(view.localX(mouseX), view.localY(mouseY))) {
+      double localX = view.localX(mouseX);
+      double localY = view.localY(mouseY);
+      boolean meterHovered = gui11 ? SolarGui11Geometry.containsMeter(localX, localY)
+         : SolarV2ReferenceState.containsMeter(localX, localY);
+      if (hoveredSlot == null && meterHovered) {
          Component energyTooltip = Component.translatable(PREFIX + "energy_tooltip",
             menu.energyStored(), menu.energyCapacity(), menu.energyDisplayGranularity());
          int wrapWidth = Math.max(1, Math.min(240, width - 16));
@@ -81,6 +99,10 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
 
    @Override
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
+      if (gui11) {
+         renderGui11(graphics);
+         return;
+      }
       graphics.blit(FACEPLATE, 0, 0, imageWidth, imageHeight, 0, 0,
          SolarV2ReferenceGeometry.SOURCE_WIDTH, SolarV2ReferenceGeometry.SOURCE_HEIGHT,
          SolarV2ReferenceGeometry.SOURCE_WIDTH, SolarV2ReferenceGeometry.SOURCE_HEIGHT);
@@ -122,7 +144,7 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
          mouseY = renderLocalMouseY;
       }
       if (!super.isHovering(x, y, width, height, mouseX, mouseY)) return false;
-      if (width == 16 && height == 16) {
+      if (!gui11 && width == 16 && height == 16) {
          for (var anchor : SolarV2ReferenceGeometry.SLOT_ANCHORS) {
             if (anchor.x() == x && anchor.y() == y) {
                // Clip only vanilla's extra hover padding to the measured interior;
@@ -159,6 +181,27 @@ public final class SolarV2ReferenceScreen extends AbstractContainerScreen<Machin
    @Override
    public void mouseMoved(double mouseX, double mouseY) {
       super.mouseMoved(view.localX(mouseX), view.localY(mouseY));
+   }
+
+   private void renderGui11(GuiGraphics graphics) {
+      int sourceWidth = SolarGui11Geometry.SOURCE_WIDTH;
+      int sourceHeight = SolarGui11Geometry.SOURCE_HEIGHT;
+      float scale = SolarGui11Geometry.NATIVE_TO_LOGICAL;
+      graphics.pose().pushPose();
+      try {
+         graphics.pose().scale(scale, scale, 1.0F);
+         graphics.blit(GUI11_FACEPLATE, 0, 0, sourceWidth, sourceHeight, 0, 0,
+            sourceWidth, sourceHeight, sourceWidth, sourceHeight);
+         int fill = SolarV2ReferenceState.fillWidth(menu.energyStored(), menu.energyCapacity(), SolarGui11Geometry.METER_WIDTH);
+         if (fill > 0) {
+            int x = SolarGui11Geometry.METER_X;
+            int y = SolarGui11Geometry.METER_Y;
+            // The fill rectangle stays inside the measured glass, keeping the painted trim intact.
+            graphics.fill(x, y, x + fill, y + SolarGui11Geometry.METER_HEIGHT, 0xB0F2A432);
+         }
+      } finally {
+         graphics.pose().popPose();
+      }
    }
 
    /** Read-only hooks for native capture and event verification. */

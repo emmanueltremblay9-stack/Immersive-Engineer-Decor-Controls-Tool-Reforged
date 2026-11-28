@@ -10,8 +10,12 @@ public final class SolarV2ReferenceState {
    private SolarV2ReferenceState() {}
 
    public static int fillWidth(int amount, int capacity) {
+      return fillWidth(amount, capacity, METER_WIDTH);
+   }
+
+   public static int fillWidth(int amount, int capacity, int meterWidth) {
       if (amount <= 0 || capacity <= 0) return 0;
-      return (int)(Math.min((long)amount, capacity) * METER_WIDTH / capacity);
+      return (int)(Math.min((long)amount, capacity) * meterWidth / capacity);
    }
 
    public static boolean containsMeter(double x, double y) {

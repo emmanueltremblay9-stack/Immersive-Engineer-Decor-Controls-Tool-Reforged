@@ -39,6 +39,10 @@ public final class SolarV2ReferenceGeometry {
     * to leave one usable pixel. The scale has no arbitrary lower clamp.
     */
    public static ViewTransform fit(int viewportWidth, int viewportHeight) {
+      return fit(viewportWidth, viewportHeight, CANVAS_WIDTH, CANVAS_HEIGHT);
+   }
+
+   static ViewTransform fit(int viewportWidth, int viewportHeight, double canvasWidth, double canvasHeight) {
       if (viewportWidth <= 0 || viewportHeight <= 0) {
          throw new IllegalArgumentException("Viewport dimensions must be positive");
       }
@@ -46,12 +50,12 @@ public final class SolarV2ReferenceGeometry {
       double margin = Math.min(VIEWPORT_MARGIN, (shortEdge - 1.0D) / 2.0D);
       double availableWidth = viewportWidth - 2.0D * margin;
       double availableHeight = viewportHeight - 2.0D * margin;
-      float scale = (float)Math.min(1.0D, Math.min(availableWidth / CANVAS_WIDTH, availableHeight / CANVAS_HEIGHT));
-      if ((double)scale * CANVAS_WIDTH > availableWidth || (double)scale * CANVAS_HEIGHT > availableHeight) {
+      float scale = (float)Math.min(1.0D, Math.min(availableWidth / canvasWidth, availableHeight / canvasHeight));
+      if ((double)scale * canvasWidth > availableWidth || (double)scale * canvasHeight > availableHeight) {
          scale = Math.nextDown(scale);
       }
-      float originX = (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2.0D);
-      float originY = (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2.0D);
+      float originX = (float)((viewportWidth - canvasWidth * scale) / 2.0D);
+      float originY = (float)((viewportHeight - canvasHeight * scale) / 2.0D);
       return new ViewTransform(scale, originX, originY);
    }
 

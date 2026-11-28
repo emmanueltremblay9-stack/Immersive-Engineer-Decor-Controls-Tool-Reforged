@@ -1,0 +1,216 @@
+{
+  "schema": "iedctr-prism-solar-gui11-r3-projection-v1",
+  "base_commit": "05439f5aa9a5423d45721a4240b60284c237164f",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+      "old_sha256": "7f95f7f812c18e85882e64dcf99546143bd98a1a36faebb2abc2a9a0d67b9d58",
+      "new_sha256": "d68e1cffdd86efcecc2427f3b96109fe3577a615a53a70848b38e5e3ddfc47b3",
+      "hunks": [
+        {
+          "start": 3,
+          "end": 4,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.SolarGui11Geometry;\n",
+          "previous": ""
+        },
+        {
+          "start": 115,
+          "end": 116,
+          "current": "   public static final String DEV_SOLAR_GUI11_R3_PROPERTY = \"iedctr.dev.solarGui11R3\";\n",
+          "previous": ""
+        },
+        {
+          "start": 117,
+          "end": 118,
+          "current": "   private final boolean solarGui11R3Presentation;\n",
+          "previous": ""
+        },
+        {
+          "start": 119,
+          "end": 120,
+          "current": "   public boolean solarGui11R3Presentation() { return solarGui11R3Presentation; }\n",
+          "previous": ""
+        },
+        {
+          "start": 162,
+          "end": 163,
+          "current": "      this.solarGui11R3Presentation = this.solarV2ReferencePresentation && Boolean.getBoolean(DEV_SOLAR_GUI11_R3_PROPERTY);\n",
+          "previous": ""
+        },
+        {
+          "start": 222,
+          "end": 226,
+          "current": "         if (solarGui11R3Presentation) {\n            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), SolarGui11Geometry.slotX(0),\n               SolarGui11Geometry.slotY(0), slot.role(), slot.output());\n         } else if (solarV2ReferencePresentation) {\n",
+          "previous": "         if (solarV2ReferencePresentation) {\n"
+        },
+        {
+          "start": 258,
+          "end": 262,
+          "current": "            if (solarGui11R3Presentation) {\n               int index = 1 + row * 9 + column;\n               x = SolarGui11Geometry.slotX(index); y = SolarGui11Geometry.slotY(index);\n            } else if (solarV2ReferencePresentation) {\n",
+          "previous": "            if (solarV2ReferencePresentation) {\n"
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "current": "         if (solarGui11R3Presentation) {\n            int index = 28 + column;\n            x = SolarGui11Geometry.slotX(index); y = SolarGui11Geometry.slotY(index);\n         } else if (solarV2ReferencePresentation) {\n",
+          "previous": "         if (solarV2ReferencePresentation) {\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/SolarV2ReferenceGeometry.java": {
+      "old_sha256": "36c5664002552b267b7ed90cb7092416c9e9125487355990998b298ba0ed9591",
+      "new_sha256": "e4d8593fbe5ba8a25a1e164c1d3591d6bb39204cbf0b2ba3442c3883af325848",
+      "hunks": [
+        {
+          "start": 41,
+          "end": 45,
+          "current": "      return fit(viewportWidth, viewportHeight, CANVAS_WIDTH, CANVAS_HEIGHT);\n   }\n\n   static ViewTransform fit(int viewportWidth, int viewportHeight, double canvasWidth, double canvasHeight) {\n",
+          "previous": ""
+        },
+        {
+          "start": 52,
+          "end": 54,
+          "current": "      float scale = (float)Math.min(1.0D, Math.min(availableWidth / canvasWidth, availableHeight / canvasHeight));\n      if ((double)scale * canvasWidth > availableWidth || (double)scale * canvasHeight > availableHeight) {\n",
+          "previous": "      float scale = (float)Math.min(1.0D, Math.min(availableWidth / CANVAS_WIDTH, availableHeight / CANVAS_HEIGHT));\n      if ((double)scale * CANVAS_WIDTH > availableWidth || (double)scale * CANVAS_HEIGHT > availableHeight) {\n"
+        },
+        {
+          "start": 56,
+          "end": 58,
+          "current": "      float originX = (float)((viewportWidth - canvasWidth * scale) / 2.0D);\n      float originY = (float)((viewportHeight - canvasHeight * scale) / 2.0D);\n",
+          "previous": "      float originX = (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2.0D);\n      float originY = (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2.0D);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/SolarV2ReferenceState.java": {
+      "old_sha256": "96983faf96f19442950e470a78b7797a244ed915e0c2c073e59586ebbbfb11a6",
+      "new_sha256": "ebf8d3cf857ae752c26c6be4e726d0731334014328ac020f4941507e2bd95866",
+      "hunks": [
+        {
+          "start": 12,
+          "end": 16,
+          "current": "      return fillWidth(amount, capacity, METER_WIDTH);\n   }\n\n   public static int fillWidth(int amount, int capacity, int meterWidth) {\n",
+          "previous": ""
+        },
+        {
+          "start": 17,
+          "end": 18,
+          "current": "      return (int)(Math.min((long)amount, capacity) * meterWidth / capacity);\n",
+          "previous": "      return (int)(Math.min((long)amount, capacity) * METER_WIDTH / capacity);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/SolarV2ReferenceScreen.java": {
+      "old_sha256": "3a543f5befb867a5a1ab20d872acf6f11ce96920bdc501de5b170e8fbaea1968",
+      "new_sha256": "6cddae9b20da396bb51bda6ea637eac997346decbee71ba4ba6707b08b9f15b8",
+      "hunks": [
+        {
+          "start": 3,
+          "end": 4,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.SolarGui11Geometry;\n",
+          "previous": ""
+        },
+        {
+          "start": 12,
+          "end": 13,
+          "current": "/** Solar panel screen with client-only art and geometry. Vanilla owns items and transfers. */\n",
+          "previous": "/** Default client retained V2 art. Vanilla owns items, overlays, carried stacks and packets. */\n"
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "current": "   private static final ResourceLocation GUI11_FACEPLATE = ResourceLocation.fromNamespaceAndPath(\n      \"immersive_engineer_decor_controls_tool_reforged\", \"textures/gui/solar_gui11_r3/background.png\");\n   private final boolean gui11;\n",
+          "previous": ""
+        },
+        {
+          "start": 27,
+          "end": 35,
+          "current": "      gui11 = menu.solarGui11R3Presentation();\n      if (gui11) {\n         imageWidth = (int)Math.ceil(SolarGui11Geometry.CANVAS_WIDTH);\n         imageHeight = (int)Math.ceil(SolarGui11Geometry.CANVAS_HEIGHT);\n      } else {\n         imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;\n         imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;\n      }\n",
+          "previous": "      imageWidth = SolarV2ReferenceGeometry.CANVAS_WIDTH;\n      imageHeight = SolarV2ReferenceGeometry.CANVAS_HEIGHT;\n"
+        },
+        {
+          "start": 41,
+          "end": 42,
+          "current": "      view = gui11 ? SolarGui11Geometry.fit(width, height) : SolarV2ReferenceGeometry.fit(width, height);\n",
+          "previous": "      view = SolarV2ReferenceGeometry.fit(width, height);\n"
+        },
+        {
+          "start": 45,
+          "end": 46,
+          "current": "   // Internal fields stay in logical canvas coordinates for vanilla slots.\n",
+          "previous": "   // Internal fields stay on the 418px logical canvas for vanilla slot input/rendering.\n"
+        },
+        {
+          "start": 53,
+          "end": 56,
+          "current": "   public int getXSize() {\n      return gui11 ? (int)Math.ceil(view.screenX(SolarGui11Geometry.CANVAS_WIDTH)) - view.guiLeft() : view.guiWidth();\n   }\n",
+          "previous": "   public int getXSize() { return view.guiWidth(); }\n"
+        },
+        {
+          "start": 58,
+          "end": 61,
+          "current": "   public int getYSize() {\n      return gui11 ? (int)Math.ceil(view.screenY(SolarGui11Geometry.CANVAS_HEIGHT)) - view.guiTop() : view.guiHeight();\n   }\n",
+          "previous": "   public int getYSize() { return view.guiHeight(); }\n"
+        },
+        {
+          "start": 82,
+          "end": 87,
+          "current": "      double localX = view.localX(mouseX);\n      double localY = view.localY(mouseY);\n      boolean meterHovered = gui11 ? SolarGui11Geometry.containsMeter(localX, localY)\n         : SolarV2ReferenceState.containsMeter(localX, localY);\n      if (hoveredSlot == null && meterHovered) {\n",
+          "previous": "      if (hoveredSlot == null && SolarV2ReferenceState.containsMeter(view.localX(mouseX), view.localY(mouseY))) {\n"
+        },
+        {
+          "start": 101,
+          "end": 105,
+          "current": "      if (gui11) {\n         renderGui11(graphics);\n         return;\n      }\n",
+          "previous": ""
+        },
+        {
+          "start": 146,
+          "end": 147,
+          "current": "      if (!gui11 && width == 16 && height == 16) {\n",
+          "previous": "      if (width == 16 && height == 16) {\n"
+        },
+        {
+          "start": 185,
+          "end": 206,
+          "current": "   private void renderGui11(GuiGraphics graphics) {\n      int sourceWidth = SolarGui11Geometry.SOURCE_WIDTH;\n      int sourceHeight = SolarGui11Geometry.SOURCE_HEIGHT;\n      float scale = SolarGui11Geometry.NATIVE_TO_LOGICAL;\n      graphics.pose().pushPose();\n      try {\n         graphics.pose().scale(scale, scale, 1.0F);\n         graphics.blit(GUI11_FACEPLATE, 0, 0, sourceWidth, sourceHeight, 0, 0,\n            sourceWidth, sourceHeight, sourceWidth, sourceHeight);\n         int fill = SolarV2ReferenceState.fillWidth(menu.energyStored(), menu.energyCapacity(), SolarGui11Geometry.METER_WIDTH);\n         if (fill > 0) {\n            int x = SolarGui11Geometry.METER_X;\n            int y = SolarGui11Geometry.METER_Y;\n            // The fill rectangle stays inside the measured glass, keeping the painted trim intact.\n            graphics.fill(x, y, x + fill, y + SolarGui11Geometry.METER_HEIGHT, 0xB0F2A432);\n         }\n      } finally {\n         graphics.pose().popPose();\n      }\n   }\n\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/check_solar_v2_reference_wiring.py": {
+      "old_sha256": "39a77d3603011fd45acc861f90c9093f0bd13f586a3540436543afbb1349562a",
+      "new_sha256": "bc062e8a4cc1936fd97cad692735bb0b7d298c004924d48bd7d3b6a86c9d37e9",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "current": "from prism_210_history_projection import project_before_solar_gui11_r3\n",
+          "previous": ""
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "current": "def v2_source(path):\n    file = j / path\n    return project_before_solar_gui11_r3(file.relative_to(r).as_posix(), file.read_bytes()).decode()\n\ns = v2_source('client/SolarV2ReferenceScreen.java')\nm = v2_source('menu/MachineMenu.java')\n",
+          "previous": "s = (j / 'client/SolarV2ReferenceScreen.java').read_text()\nm = (j / 'menu/MachineMenu.java').read_text()\n"
+        },
+        {
+          "start": 19,
+          "end": 21,
+          "current": "g = v2_source('utility/SolarV2ReferenceGeometry.java')\nstate = v2_source('utility/SolarV2ReferenceState.java')\n",
+          "previous": "g = (j / 'utility/SolarV2ReferenceGeometry.java').read_text()\nstate = (j / 'utility/SolarV2ReferenceState.java').read_text()\n"
+        }
+      ]
+    },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/utility/SolarGui11GeometryTest.java": {
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "5b7f26f3dafef90a0146f453745ee68d2abfc55d7612188ebf1b4c9adf6bae24",
+      "hunks": [
+        {
+          "start": 0,
+          "end": 87,
+          "current": "package com.oblixorprime.engineersdecorreforged.utility;\n\nimport java.io.InputStream;\nimport java.nio.ByteBuffer;\nimport java.security.MessageDigest;\nimport java.util.HashSet;\nimport java.util.HexFormat;\nimport org.junit.Test;\n\nimport static org.junit.Assert.*;\n\n/** Guards the opt-in GUI11 presentation without changing Solar V2 defaults or machine rules. */\npublic final class SolarGui11GeometryTest {\n   private static final String RESOURCE =\n      \"/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_gui11_r3/background.png\";\n   private static final String RESOURCE_SHA256 =\n      \"40630bd8360abb4c21170db2fca6d098359319225c5050b7c8783d8a50b01385\";\n\n   @Test public void allThirtySevenMenuItemsHaveUniqueWholeFootprintsOnCanvas() {\n      int visibleMachineSlots = MachineLayout.forKind(MachineKind.SMALL_SOLAR_PANEL).machineSlots().size();\n      assertEquals(1, visibleMachineSlots);\n      assertEquals(37, visibleMachineSlots + 36);\n      var positions = new HashSet<String>();\n      for (int index = 0; index < visibleMachineSlots + 36; index++) {\n         int x = SolarGui11Geometry.slotX(index);\n         int y = SolarGui11Geometry.slotY(index);\n         assertTrue(\"negative x for slot \" + index, x >= 0);\n         assertTrue(\"negative y for slot \" + index, y >= 0);\n         assertTrue(\"slot exceeds canvas width: \" + index, x + 16 <= Math.ceil(SolarGui11Geometry.CANVAS_WIDTH));\n         assertTrue(\"slot exceeds canvas height: \" + index, y + 16 <= Math.ceil(SolarGui11Geometry.CANVAS_HEIGHT));\n         assertTrue(\"duplicate item origin at slot \" + index, positions.add(x + \",\" + y));\n      }\n      // Cell, 27 player inventory slots and 9 hotbar slots retain vanilla menu order.\n      assertEquals(224, SolarGui11Geometry.slotX(0));\n      assertEquals(76, SolarGui11Geometry.slotY(0));\n      assertEquals(57, SolarGui11Geometry.slotX(1));\n      assertEquals(159, SolarGui11Geometry.slotY(1));\n      assertEquals(57, SolarGui11Geometry.slotX(28));\n      assertEquals(238, SolarGui11Geometry.slotY(28));\n   }\n\n   @Test public void uniformFitAndEnergyHitTargetUseTheSameMeasuredCanvas() {\n      for (int[] viewport : new int[][] {{1280, 720}, {320, 260}, {192, 180}}) {\n         var view = SolarGui11Geometry.fit(viewport[0], viewport[1]);\n         assertTrue(view.scale() > 0.0F && view.scale() <= 1.0F);\n         assertTrue(view.screenX(SolarGui11Geometry.CANVAS_WIDTH) <= viewport[0] + 0.001D);\n         assertTrue(view.screenY(SolarGui11Geometry.CANVAS_HEIGHT) <= viewport[1] + 0.001D);\n         assertEquals(1.0D, view.localX(view.screenX(1.0D)), 0.0001D);\n         assertEquals(1.0D, view.localY(view.screenY(1.0D)), 0.0001D);\n      }\n      double left = SolarGui11Geometry.METER_X * SolarGui11Geometry.NATIVE_TO_LOGICAL;\n      double top = SolarGui11Geometry.METER_Y * SolarGui11Geometry.NATIVE_TO_LOGICAL;\n      double rightInside = (SolarGui11Geometry.METER_X + SolarGui11Geometry.METER_WIDTH - 0.5D)\n         * SolarGui11Geometry.NATIVE_TO_LOGICAL;\n      double rightOutside = (SolarGui11Geometry.METER_X + SolarGui11Geometry.METER_WIDTH + 0.5D)\n         * SolarGui11Geometry.NATIVE_TO_LOGICAL;\n      double bottomInside = (SolarGui11Geometry.METER_Y + SolarGui11Geometry.METER_HEIGHT - 0.5D)\n         * SolarGui11Geometry.NATIVE_TO_LOGICAL;\n      double bottomOutside = (SolarGui11Geometry.METER_Y + SolarGui11Geometry.METER_HEIGHT + 0.5D)\n         * SolarGui11Geometry.NATIVE_TO_LOGICAL;\n      assertTrue(SolarGui11Geometry.containsMeter(left, top));\n      assertTrue(SolarGui11Geometry.containsMeter(rightInside, bottomInside));\n      assertFalse(SolarGui11Geometry.containsMeter(rightOutside, top));\n      assertFalse(SolarGui11Geometry.containsMeter(left, bottomOutside));\n   }\n\n   @Test public void liveEnergyFillIsEmptyPartialAndFullWithoutInventingCapacity() {\n      int width = SolarGui11Geometry.METER_WIDTH;\n      assertEquals(0, SolarV2ReferenceState.fillWidth(0, 16000, width));\n      assertEquals(0, SolarV2ReferenceState.fillWidth(-1, 16000, width));\n      assertEquals(0, SolarV2ReferenceState.fillWidth(100, 0, width));\n      assertEquals(width / 2, SolarV2ReferenceState.fillWidth(8000, 16000, width));\n      assertEquals(width, SolarV2ReferenceState.fillWidth(16000, 16000, width));\n      assertEquals(width, SolarV2ReferenceState.fillWidth(20000, 16000, width));\n   }\n\n   @Test public void packagedGui11R3ImageHasThePinnedIdentityAndMeasuredDimensions() throws Exception {\n      try (InputStream input = getClass().getResourceAsStream(RESOURCE)) {\n         assertNotNull(\"GUI11 R3 background is packaged\", input);\n         byte[] png = input.readAllBytes();\n         assertEquals(RESOURCE_SHA256, HexFormat.of().formatHex(MessageDigest.getInstance(\"SHA-256\").digest(png)));\n         ByteBuffer header = ByteBuffer.wrap(png);\n         assertEquals(SolarGui11Geometry.SOURCE_WIDTH, header.getInt(16));\n         assertEquals(SolarGui11Geometry.SOURCE_HEIGHT, header.getInt(20));\n      }\n   }\n}\n",
+          "previous": ""
+        }
+      ]
+    }
+  }
+}
