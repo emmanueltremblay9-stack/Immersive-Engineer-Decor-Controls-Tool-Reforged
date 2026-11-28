@@ -23,8 +23,7 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
    private static final String NS = "immersive_engineer_decor_controls_tool_reforged";
    public static final String FREEZER_RECOVERY_HELP_KEY = "gui." + NS + ".freezer_reference.recover_help";
    private static final float MAX_VIEW_SCALE = 0.78F;
-   private FreezerReferenceGeometry.ViewTransform view = FreezerReferenceGeometry.fitCanvas(
-      ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 347, 381, MAX_VIEW_SCALE);
+   private FreezerReferenceGeometry.ViewTransform view;
    private boolean renderingCanvas;
    private double localMouseX;
    private double localMouseY;
@@ -34,8 +33,9 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
       super(menu, inventory, title);
       if (menu.kind() != MachineKind.SMALL_FREEZER && menu.kind() != MachineKind.SMALL_MINERAL_SMELTER)
          throw new IllegalArgumentException("Thermal vertical screen is for Freezer/Smelter only");
-      imageWidth = ThermalVerticalGeometry.CANVAS_WIDTH;
-      imageHeight = ThermalVerticalGeometry.CANVAS_HEIGHT;
+      imageWidth = ThermalVerticalGeometry.canvasWidth(menu.kind());
+      imageHeight = ThermalVerticalGeometry.canvasHeight(menu.kind());
+      view = FreezerReferenceGeometry.fitCanvas(imageWidth, imageHeight, imageWidth, imageHeight, MAX_VIEW_SCALE);
    }
 
    private boolean freezer() { return menu.kind() == MachineKind.SMALL_FREEZER; }

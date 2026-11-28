@@ -49,6 +49,24 @@
           "previous": "                              if path in port[\"files\"] else candidate)\n"
         }
       ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java": {
+      "old_sha256": "d32bd6c10c78ce6a915122a8521a35ae940c076c2368d32db77f3493e70628c1",
+      "new_sha256": "d241ebd82bc9cadce8191683ced204e20720fac8322617bfffe807ce03e9c43f",
+      "hunks": [
+        {
+          "start": 25,
+          "end": 26,
+          "current": "   private FreezerReferenceGeometry.ViewTransform view;\n",
+          "previous": "   private FreezerReferenceGeometry.ViewTransform view = FreezerReferenceGeometry.fitCanvas(\n      ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 347, 381, MAX_VIEW_SCALE);\n"
+        },
+        {
+          "start": 35,
+          "end": 38,
+          "current": "      imageWidth = ThermalVerticalGeometry.canvasWidth(menu.kind());\n      imageHeight = ThermalVerticalGeometry.canvasHeight(menu.kind());\n      view = FreezerReferenceGeometry.fitCanvas(imageWidth, imageHeight, imageWidth, imageHeight, MAX_VIEW_SCALE);\n",
+          "previous": "      imageWidth = ThermalVerticalGeometry.CANVAS_WIDTH;\n      imageHeight = ThermalVerticalGeometry.CANVAS_HEIGHT;\n"
+        }
+      ]
     }
   }
 }
