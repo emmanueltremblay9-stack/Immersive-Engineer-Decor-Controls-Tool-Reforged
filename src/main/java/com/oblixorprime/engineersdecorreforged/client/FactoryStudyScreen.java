@@ -32,7 +32,7 @@ public final class FactoryStudyScreen extends AbstractContainerScreen<MachineMen
    private final MachineKind kind;
    private final ResourceLocation faceplate;
    private final EnumMap<Control, StudyControl> controls = new EnumMap<>(Control.class);
-   private FactoryStudyGeometry.ViewTransform view = FactoryStudyGeometry.fit(316, 312);
+   private FactoryStudyGeometry.ViewTransform view = FactoryStudyGeometry.fit(MachineKind.FACTORY_HOPPER, 316, 312);
    private boolean renderingCanvas;
    private double localPointerX, localPointerY;
    private StudyControl controlGesture;
@@ -42,15 +42,15 @@ public final class FactoryStudyScreen extends AbstractContainerScreen<MachineMen
       if (!menu.factoryStudyPresentation()) throw new IllegalArgumentException("Factory Study requires a supported client presentation");
       kind = menu.kind();
       faceplate = ResourceLocation.fromNamespaceAndPath(MOD, FactoryStudyGeometry.texturePath(kind));
-      imageWidth = FactoryStudyGeometry.CANVAS_WIDTH;
-      imageHeight = FactoryStudyGeometry.CANVAS_HEIGHT;
+      imageWidth = FactoryStudyGeometry.canvasWidth(kind);
+      imageHeight = FactoryStudyGeometry.canvasHeight(kind);
    }
 
    @Override protected void init() {
       super.init();
       leftPos = 0;
       topPos = 0;
-      view = FactoryStudyGeometry.fit(width, height);
+      view = FactoryStudyGeometry.fit(kind, width, height);
       controls.clear();
       controlGesture = null;
       for (Control control : FactoryStudyGeometry.controls(kind)) {
@@ -109,10 +109,9 @@ public final class FactoryStudyScreen extends AbstractContainerScreen<MachineMen
    @Override protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
       graphics.pose().pushPose();
       try {
-         graphics.pose().scale(FactoryStudyGeometry.SOURCE_SCALE, FactoryStudyGeometry.SOURCE_SCALE, 1.0F);
-         graphics.blit(faceplate, 0, 0, 0, 0,
-            FactoryStudyGeometry.SOURCE_WIDTH, FactoryStudyGeometry.SOURCE_HEIGHT,
-            FactoryStudyGeometry.SOURCE_WIDTH, FactoryStudyGeometry.SOURCE_HEIGHT);
+         graphics.blit(faceplate, 0, 0, imageWidth, imageHeight, 0, 0,
+            FactoryStudyGeometry.sourceWidth(kind), FactoryStudyGeometry.sourceHeight(kind),
+            FactoryStudyGeometry.sourceWidth(kind), FactoryStudyGeometry.sourceHeight(kind));
       } finally {
          graphics.pose().popPose();
       }
@@ -136,26 +135,8 @@ public final class FactoryStudyScreen extends AbstractContainerScreen<MachineMen
    }
 
    private void renderLabState(GuiGraphics graphics) {
-      List<Rect> flame = FactoryStudyGeometry.flameMask();
-      int minY = flame.stream().mapToInt(Rect::y).min().orElse(0);
-      int bottom = flame.stream().mapToInt(Rect::bottom).max().orElse(0);
-      int lit = menu.field(4) == 0 ? 0 : FactoryStudyState.fractionPixels(menu.field(0), menu.field(1), bottom - minY);
-      for (Rect pixel : flame) {
-         int top = Math.max(pixel.y(), bottom - lit);
-         if (top < pixel.bottom()) graphics.fill(pixel.x(), top, pixel.right(), pixel.bottom(), 0xFFEAA34E);
-      }
-      List<Rect> progress = FactoryStudyGeometry.progressMask();
-      int left = progress.stream().mapToInt(Rect::x).min().orElse(0);
-      int right = progress.stream().mapToInt(Rect::right).max().orElse(0);
-      int filled = FactoryStudyState.fractionPixels(menu.field(2), menu.field(3), right - left);
-      for (Rect pixel : progress) {
-         int end = Math.min(pixel.right(), left + filled);
-         if (pixel.x() < end) graphics.fill(pixel.x(), pixel.y(), end, pixel.bottom(), FactoryStudyState.ACTIVE);
-      }
-      Rect energy = FactoryStudyGeometry.energy();
-      int energyHeight = FactoryStudyState.fractionPixels(menu.energyStored(), menu.energyCapacity(), energy.height());
-      if (energyHeight > 0) graphics.fill(energy.x(), energy.bottom() - energyHeight,
-         energy.right(), energy.bottom(), 0xFFD9AC55);
+      Gui11V5CArtwork.drawEnergy(graphics, menu);
+      Gui11V5CArtwork.drawEffects(graphics, menu, false);
    }
 
    private void renderControlState(GuiGraphics graphics, Control control) {

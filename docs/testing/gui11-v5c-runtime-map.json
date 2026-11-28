@@ -1,0 +1,4439 @@
+{
+  "schema": "iedctr.gui11-v5c.runtime-map.v1",
+  "source_branch": "Master-Generalist-GUI-Architect-Designer-DEV/iedctr/gui11-r3-sources",
+  "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+  "source_zip_sha256": [
+    "687cdb1cecee1c55fd20e7e4dcc264fe7063f7d9a3af71fabd826cd7e59198c4",
+    "62267a04a322efed7c3d5698ab4dcd7951baf6c00d7c86b81da7e865327c51af",
+    "b69dcd56b9dc402e01be6e0c076ad09c3c27124c70e4370a10a57f50e7fcc9b1"
+  ],
+  "surfaces": {
+    "01": {
+      "kind": "FACTORY_HOPPER",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        321,
+        321
+      ],
+      "native_to_logical": 0.2558139534883721,
+      "sha256": "83d993acb4cfc23e4ebbd8309881fa8f5f2730ef5f4d5369ef9302455ddd24ef",
+      "alpha_bbox": [
+        0,
+        0,
+        1207,
+        1188
+      ],
+      "menu_slots": [
+        [
+          44,
+          67
+        ],
+        [
+          67,
+          67
+        ],
+        [
+          89,
+          67
+        ],
+        [
+          111,
+          67
+        ],
+        [
+          133,
+          67
+        ],
+        [
+          155,
+          67
+        ],
+        [
+          44,
+          91
+        ],
+        [
+          67,
+          91
+        ],
+        [
+          89,
+          91
+        ],
+        [
+          111,
+          91
+        ],
+        [
+          133,
+          91
+        ],
+        [
+          155,
+          91
+        ],
+        [
+          44,
+          115
+        ],
+        [
+          67,
+          115
+        ],
+        [
+          89,
+          115
+        ],
+        [
+          111,
+          115
+        ],
+        [
+          133,
+          115
+        ],
+        [
+          155,
+          115
+        ],
+        [
+          55,
+          173
+        ],
+        [
+          80,
+          173
+        ],
+        [
+          104,
+          173
+        ],
+        [
+          128,
+          173
+        ],
+        [
+          153,
+          173
+        ],
+        [
+          177,
+          173
+        ],
+        [
+          201,
+          173
+        ],
+        [
+          225,
+          173
+        ],
+        [
+          250,
+          173
+        ],
+        [
+          55,
+          198
+        ],
+        [
+          80,
+          198
+        ],
+        [
+          104,
+          198
+        ],
+        [
+          128,
+          198
+        ],
+        [
+          153,
+          198
+        ],
+        [
+          177,
+          198
+        ],
+        [
+          201,
+          198
+        ],
+        [
+          225,
+          198
+        ],
+        [
+          250,
+          198
+        ],
+        [
+          55,
+          223
+        ],
+        [
+          80,
+          223
+        ],
+        [
+          104,
+          223
+        ],
+        [
+          128,
+          223
+        ],
+        [
+          153,
+          223
+        ],
+        [
+          177,
+          223
+        ],
+        [
+          201,
+          223
+        ],
+        [
+          225,
+          223
+        ],
+        [
+          250,
+          223
+        ],
+        [
+          55,
+          259
+        ],
+        [
+          80,
+          259
+        ],
+        [
+          104,
+          259
+        ],
+        [
+          128,
+          259
+        ],
+        [
+          153,
+          259
+        ],
+        [
+          177,
+          259
+        ],
+        [
+          201,
+          259
+        ],
+        [
+          225,
+          259
+        ],
+        [
+          250,
+          259
+        ]
+      ],
+      "controls": [
+        {
+          "key": "range",
+          "rect": [
+            212,
+            52,
+            68,
+            9
+          ],
+          "action": "parameter",
+          "observedActionId": 1
+        },
+        {
+          "key": "period",
+          "rect": [
+            212,
+            75,
+            68,
+            9
+          ],
+          "action": "parameter",
+          "observedActionId": 4
+        },
+        {
+          "key": "count",
+          "rect": [
+            212,
+            97,
+            68,
+            9
+          ],
+          "action": "parameter",
+          "observedActionId": 2
+        },
+        {
+          "key": "manual",
+          "rect": [
+            186,
+            115,
+            28,
+            27
+          ],
+          "action": "manual",
+          "observedActionId": 5
+        },
+        {
+          "key": "redstone",
+          "rect": [
+            223,
+            114,
+            27,
+            27
+          ],
+          "action": "cycle",
+          "observedActionId": 3
+        },
+        {
+          "key": "cycle",
+          "rect": [
+            258,
+            115,
+            26,
+            27
+          ],
+          "action": "toggle",
+          "observedActionId": 3
+        }
+      ],
+      "fe": null,
+      "effects": [
+        {
+          "key": "manual-press",
+          "kind": "press",
+          "maxOpacity": 1,
+          "bounds": {
+            "x": 753.0,
+            "y": 473.0,
+            "w": 57.0,
+            "h": 57.0
+          },
+          "controlKey": "manual",
+          "color": "#db4636"
+        },
+        {
+          "key": "feedback-redstone",
+          "kind": "feedback",
+          "maxOpacity": 0.075,
+          "bounds": {
+            "x": 883,
+            "y": 474,
+            "w": 78,
+            "h": 52
+          },
+          "controlKey": "redstone",
+          "color": "#e9d5b7"
+        },
+        {
+          "key": "feedback-cycle",
+          "kind": "feedback",
+          "maxOpacity": 0.075,
+          "bounds": {
+            "x": 1019,
+            "y": 475,
+            "w": 79,
+            "h": 51
+          },
+          "controlKey": "cycle",
+          "color": "#e9d5b7",
+          "valueKey": "cycle",
+          "matchValue": true
+        },
+        {
+          "key": "range-indicator",
+          "kind": "feedback",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 829,
+            "y": 207,
+            "w": 262,
+            "h": 31
+          },
+          "controlKey": "range",
+          "color": "#a8bfaa"
+        },
+        {
+          "key": "period-indicator",
+          "kind": "feedback",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 829,
+            "y": 295,
+            "w": 262,
+            "h": 31
+          },
+          "controlKey": "period",
+          "color": "#b3c3c1"
+        },
+        {
+          "key": "count-indicator",
+          "kind": "feedback",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 829,
+            "y": 383,
+            "w": 262,
+            "h": 30
+          },
+          "controlKey": "count",
+          "color": "#d0b585"
+        },
+        {
+          "key": "copper-manual-response",
+          "kind": "impulse",
+          "maxOpacity": 0.06,
+          "bounds": {
+            "x": 710,
+            "y": 464,
+            "w": 16,
+            "h": 75
+          },
+          "controlKey": "manual",
+          "color": "#e1a361",
+          "durationSeconds": 0.6
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "02": {
+      "kind": "FACTORY_DROPPER",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        305,
+        305
+      ],
+      "native_to_logical": 0.2430939226519337,
+      "sha256": "b952405bfc920a27de03aa22577dd7e71a7d14624315c720e256a535a080839e",
+      "alpha_bbox": [
+        0,
+        0,
+        1208,
+        1254
+      ],
+      "menu_slots": [
+        [
+          40,
+          64
+        ],
+        [
+          62,
+          64
+        ],
+        [
+          85,
+          64
+        ],
+        [
+          107,
+          64
+        ],
+        [
+          129,
+          64
+        ],
+        [
+          151,
+          64
+        ],
+        [
+          40,
+          87
+        ],
+        [
+          62,
+          87
+        ],
+        [
+          85,
+          87
+        ],
+        [
+          107,
+          87
+        ],
+        [
+          129,
+          87
+        ],
+        [
+          151,
+          87
+        ],
+        [
+          42,
+          120
+        ],
+        [
+          86,
+          120
+        ],
+        [
+          130,
+          120
+        ],
+        [
+          51,
+          169
+        ],
+        [
+          75,
+          169
+        ],
+        [
+          98,
+          169
+        ],
+        [
+          121,
+          169
+        ],
+        [
+          144,
+          169
+        ],
+        [
+          168,
+          169
+        ],
+        [
+          191,
+          169
+        ],
+        [
+          214,
+          169
+        ],
+        [
+          238,
+          169
+        ],
+        [
+          51,
+          193
+        ],
+        [
+          75,
+          193
+        ],
+        [
+          98,
+          193
+        ],
+        [
+          121,
+          193
+        ],
+        [
+          144,
+          193
+        ],
+        [
+          168,
+          193
+        ],
+        [
+          191,
+          193
+        ],
+        [
+          214,
+          193
+        ],
+        [
+          238,
+          193
+        ],
+        [
+          51,
+          218
+        ],
+        [
+          75,
+          218
+        ],
+        [
+          98,
+          218
+        ],
+        [
+          121,
+          218
+        ],
+        [
+          144,
+          218
+        ],
+        [
+          168,
+          218
+        ],
+        [
+          191,
+          218
+        ],
+        [
+          214,
+          218
+        ],
+        [
+          238,
+          218
+        ],
+        [
+          52,
+          251
+        ],
+        [
+          75,
+          251
+        ],
+        [
+          99,
+          251
+        ],
+        [
+          122,
+          251
+        ],
+        [
+          144,
+          251
+        ],
+        [
+          168,
+          251
+        ],
+        [
+          191,
+          251
+        ],
+        [
+          214,
+          251
+        ],
+        [
+          237,
+          251
+        ]
+      ],
+      "controls": [
+        {
+          "key": "velocity",
+          "rect": [
+            183,
+            48,
+            11,
+            59
+          ],
+          "action": "parameter",
+          "observedActionId": 10
+        },
+        {
+          "key": "direction",
+          "rect": [
+            214,
+            50,
+            35,
+            27
+          ],
+          "action": "direction",
+          "observedActionId": 11
+        },
+        {
+          "key": "count",
+          "rect": [
+            209,
+            85,
+            55,
+            7
+          ],
+          "action": "parameter",
+          "observedActionId": 12
+        },
+        {
+          "key": "period",
+          "rect": [
+            209,
+            100,
+            55,
+            7
+          ],
+          "action": "parameter",
+          "observedActionId": 13
+        },
+        {
+          "key": "manual",
+          "rect": [
+            169,
+            115,
+            25,
+            25
+          ],
+          "action": "manual",
+          "observedActionId": 15
+        },
+        {
+          "key": "filter",
+          "rect": [
+            198,
+            115,
+            23,
+            25
+          ],
+          "action": "toggle",
+          "observedActionId": 14
+        },
+        {
+          "key": "redstone",
+          "rect": [
+            225,
+            115,
+            23,
+            25
+          ],
+          "action": "cycle",
+          "observedActionId": 14
+        },
+        {
+          "key": "cycle",
+          "rect": [
+            252,
+            115,
+            23,
+            25
+          ],
+          "action": "toggle",
+          "observedActionId": 14
+        }
+      ],
+      "fe": null,
+      "effects": [
+        {
+          "key": "manual-press",
+          "kind": "press",
+          "maxOpacity": 1,
+          "bounds": {
+            "x": 715,
+            "y": 496,
+            "w": 58,
+            "h": 58
+          },
+          "controlKey": "manual",
+          "color": "#db4636"
+        },
+        {
+          "key": "feedback-filter",
+          "kind": "feedback",
+          "maxOpacity": 0.075,
+          "bounds": {
+            "x": 827,
+            "y": 498,
+            "w": 70,
+            "h": 55
+          },
+          "controlKey": "filter",
+          "color": "#e9d5b7",
+          "valueKey": "filter",
+          "matchValue": true
+        },
+        {
+          "key": "feedback-redstone",
+          "kind": "feedback",
+          "maxOpacity": 0.075,
+          "bounds": {
+            "x": 938,
+            "y": 498,
+            "w": 70,
+            "h": 55
+          },
+          "controlKey": "redstone",
+          "color": "#e9d5b7"
+        },
+        {
+          "key": "feedback-cycle",
+          "kind": "feedback",
+          "maxOpacity": 0.075,
+          "bounds": {
+            "x": 1048,
+            "y": 498,
+            "w": 70,
+            "h": 55
+          },
+          "controlKey": "cycle",
+          "color": "#e9d5b7",
+          "valueKey": "cycle",
+          "matchValue": true
+        },
+        {
+          "key": "velocity-indicator",
+          "kind": "feedback",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 754,
+            "y": 199,
+            "w": 40,
+            "h": 235
+          },
+          "controlKey": "velocity",
+          "color": "#b3c3c1"
+        },
+        {
+          "key": "count-indicator",
+          "kind": "feedback",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 861,
+            "y": 350,
+            "w": 223,
+            "h": 24
+          },
+          "controlKey": "count",
+          "color": "#d0b585"
+        },
+        {
+          "key": "period-indicator",
+          "kind": "feedback",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 861,
+            "y": 415,
+            "w": 223,
+            "h": 25
+          },
+          "controlKey": "period",
+          "color": "#b3c3c1"
+        },
+        {
+          "key": "filter-gate-face",
+          "kind": "feedback",
+          "maxOpacity": 0.11,
+          "bounds": {
+            "x": 840,
+            "y": 507,
+            "w": 46,
+            "h": 38
+          },
+          "controlKey": "filter",
+          "color": "#a6c5ad",
+          "valueKey": "filter",
+          "matchValue": true
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "03": {
+      "kind": "SMALL_LAB_FURNACE",
+      "native_size": [
+        1312,
+        1199
+      ],
+      "logical_size": [
+        289,
+        264
+      ],
+      "native_to_logical": 0.22,
+      "sha256": "d42e232cf8d21093f34155a879194ce72f06a40451177f3208dadfc0dbd96509",
+      "alpha_bbox": [
+        0,
+        1,
+        1234,
+        1175
+      ],
+      "menu_slots": [
+        [
+          53,
+          53
+        ],
+        [
+          53,
+          94
+        ],
+        [
+          154,
+          55
+        ],
+        [
+          78,
+          53
+        ],
+        [
+          104,
+          52
+        ],
+        [
+          78,
+          94
+        ],
+        [
+          104,
+          94
+        ],
+        [
+          177,
+          55
+        ],
+        [
+          200,
+          55
+        ],
+        [
+          166,
+          93
+        ],
+        [
+          190,
+          93
+        ],
+        [
+          48,
+          140
+        ],
+        [
+          70,
+          140
+        ],
+        [
+          92,
+          140
+        ],
+        [
+          114,
+          140
+        ],
+        [
+          136,
+          140
+        ],
+        [
+          159,
+          140
+        ],
+        [
+          181,
+          140
+        ],
+        [
+          203,
+          140
+        ],
+        [
+          225,
+          140
+        ],
+        [
+          48,
+          162
+        ],
+        [
+          70,
+          162
+        ],
+        [
+          92,
+          162
+        ],
+        [
+          114,
+          162
+        ],
+        [
+          136,
+          162
+        ],
+        [
+          159,
+          162
+        ],
+        [
+          181,
+          162
+        ],
+        [
+          203,
+          162
+        ],
+        [
+          225,
+          162
+        ],
+        [
+          48,
+          185
+        ],
+        [
+          70,
+          185
+        ],
+        [
+          92,
+          185
+        ],
+        [
+          114,
+          185
+        ],
+        [
+          136,
+          185
+        ],
+        [
+          159,
+          185
+        ],
+        [
+          181,
+          185
+        ],
+        [
+          203,
+          185
+        ],
+        [
+          225,
+          185
+        ],
+        [
+          47,
+          216
+        ],
+        [
+          70,
+          216
+        ],
+        [
+          92,
+          216
+        ],
+        [
+          114,
+          216
+        ],
+        [
+          136,
+          216
+        ],
+        [
+          159,
+          216
+        ],
+        [
+          181,
+          216
+        ],
+        [
+          203,
+          216
+        ],
+        [
+          226,
+          216
+        ]
+      ],
+      "controls": [],
+      "fe": {
+        "rect": [
+          230.5,
+          53.31,
+          12.0,
+          52.0
+        ],
+        "orientation": "vertical",
+        "component": [
+          52,
+          12
+        ],
+        "glass": [
+          44,
+          6
+        ]
+      },
+      "effects": [
+        {
+          "key": "lab-flame",
+          "kind": "pulse",
+          "maxOpacity": 0.14,
+          "bounds": {
+            "x": 480,
+            "y": 337,
+            "w": 70,
+            "h": 64
+          },
+          "controlKey": null,
+          "color": "#e7a164"
+        },
+        {
+          "key": "transfer-arrow-glint",
+          "kind": "pulse",
+          "maxOpacity": 0.065,
+          "bounds": {
+            "x": 593,
+            "y": 310,
+            "w": 80,
+            "h": 75
+          },
+          "controlKey": null,
+          "color": "#d9e2e4"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "04": {
+      "kind": "FACTORY_PLACER",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        323,
+        323
+      ],
+      "native_to_logical": 0.2573099415204678,
+      "sha256": "d7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c",
+      "alpha_bbox": [
+        0,
+        0,
+        1209,
+        1236
+      ],
+      "menu_slots": [
+        [
+          45,
+          66
+        ],
+        [
+          67,
+          66
+        ],
+        [
+          90,
+          66
+        ],
+        [
+          112,
+          66
+        ],
+        [
+          134,
+          66
+        ],
+        [
+          157,
+          66
+        ],
+        [
+          45,
+          91
+        ],
+        [
+          67,
+          91
+        ],
+        [
+          90,
+          91
+        ],
+        [
+          112,
+          91
+        ],
+        [
+          134,
+          91
+        ],
+        [
+          157,
+          91
+        ],
+        [
+          45,
+          116
+        ],
+        [
+          67,
+          116
+        ],
+        [
+          90,
+          116
+        ],
+        [
+          112,
+          116
+        ],
+        [
+          134,
+          116
+        ],
+        [
+          157,
+          116
+        ],
+        [
+          53,
+          176
+        ],
+        [
+          79,
+          176
+        ],
+        [
+          103,
+          176
+        ],
+        [
+          129,
+          176
+        ],
+        [
+          153,
+          176
+        ],
+        [
+          178,
+          176
+        ],
+        [
+          203,
+          176
+        ],
+        [
+          228,
+          176
+        ],
+        [
+          254,
+          176
+        ],
+        [
+          53,
+          202
+        ],
+        [
+          79,
+          202
+        ],
+        [
+          103,
+          202
+        ],
+        [
+          129,
+          202
+        ],
+        [
+          153,
+          202
+        ],
+        [
+          178,
+          202
+        ],
+        [
+          203,
+          202
+        ],
+        [
+          229,
+          202
+        ],
+        [
+          254,
+          202
+        ],
+        [
+          53,
+          229
+        ],
+        [
+          79,
+          229
+        ],
+        [
+          103,
+          229
+        ],
+        [
+          129,
+          229
+        ],
+        [
+          153,
+          229
+        ],
+        [
+          178,
+          229
+        ],
+        [
+          203,
+          229
+        ],
+        [
+          229,
+          229
+        ],
+        [
+          254,
+          229
+        ],
+        [
+          54,
+          267
+        ],
+        [
+          79,
+          267
+        ],
+        [
+          104,
+          267
+        ],
+        [
+          129,
+          267
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          178,
+          267
+        ],
+        [
+          203,
+          267
+        ],
+        [
+          227,
+          267
+        ],
+        [
+          252,
+          267
+        ]
+      ],
+      "controls": [
+        {
+          "key": "manual",
+          "rect": [
+            183,
+            117,
+            28,
+            27
+          ],
+          "action": "manual",
+          "observedActionId": 21
+        },
+        {
+          "key": "redstone",
+          "rect": [
+            218,
+            117,
+            29,
+            27
+          ],
+          "action": "cycle",
+          "observedActionId": 20
+        },
+        {
+          "key": "cycle",
+          "rect": [
+            253,
+            117,
+            29,
+            27
+          ],
+          "action": "toggle",
+          "observedActionId": 20
+        },
+        {
+          "key": "row0",
+          "rect": [
+            189,
+            51,
+            91,
+            20
+          ],
+          "action": "set",
+          "observedActionId": 22
+        },
+        {
+          "key": "row1",
+          "rect": [
+            189,
+            74,
+            91,
+            20
+          ],
+          "action": "set",
+          "observedActionId": 22
+        },
+        {
+          "key": "row2",
+          "rect": [
+            189,
+            96,
+            91,
+            20
+          ],
+          "action": "set",
+          "observedActionId": 22
+        }
+      ],
+      "fe": null,
+      "effects": [
+        {
+          "key": "manual-press",
+          "kind": "press",
+          "maxOpacity": 1,
+          "bounds": {
+            "x": 740,
+            "y": 476.5,
+            "w": 58,
+            "h": 58
+          },
+          "controlKey": "manual",
+          "color": "#db4636"
+        },
+        {
+          "key": "feedback-redstone",
+          "kind": "feedback",
+          "maxOpacity": 0.075,
+          "bounds": {
+            "x": 864,
+            "y": 478,
+            "w": 79,
+            "h": 52
+          },
+          "controlKey": "redstone",
+          "color": "#e9d5b7"
+        },
+        {
+          "key": "feedback-cycle",
+          "kind": "feedback",
+          "maxOpacity": 0.075,
+          "bounds": {
+            "x": 999,
+            "y": 478,
+            "w": 82,
+            "h": 52
+          },
+          "controlKey": "cycle",
+          "color": "#e9d5b7",
+          "valueKey": "cycle",
+          "matchValue": true
+        },
+        {
+          "key": "row0-relief",
+          "kind": "feedback",
+          "maxOpacity": 0.08,
+          "bounds": {
+            "x": 856,
+            "y": 215,
+            "w": 99,
+            "h": 47
+          },
+          "controlKey": "row0",
+          "color": "#a8bfaa",
+          "valueKey": "stockRow",
+          "matchValue": 0
+        },
+        {
+          "key": "row1-relief",
+          "kind": "feedback",
+          "maxOpacity": 0.08,
+          "bounds": {
+            "x": 856,
+            "y": 302,
+            "w": 99,
+            "h": 47
+          },
+          "controlKey": "row1",
+          "color": "#a8bfaa",
+          "valueKey": "stockRow",
+          "matchValue": 1
+        },
+        {
+          "key": "row2-relief",
+          "kind": "feedback",
+          "maxOpacity": 0.08,
+          "bounds": {
+            "x": 856,
+            "y": 389,
+            "w": 99,
+            "h": 47
+          },
+          "controlKey": "row2",
+          "color": "#a8bfaa",
+          "valueKey": "stockRow",
+          "matchValue": 2
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "05": {
+      "kind": "SMALL_FREEZER",
+      "native_size": [
+        1187,
+        1325
+      ],
+      "logical_size": [
+        281,
+        313
+      ],
+      "native_to_logical": 0.23655913978494625,
+      "sha256": "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6",
+      "alpha_bbox": [
+        44,
+        0,
+        1141,
+        1325
+      ],
+      "menu_slots": [
+        [
+          133,
+          54
+        ],
+        null,
+        [
+          133,
+          146
+        ],
+        [
+          44,
+          182
+        ],
+        [
+          66,
+          182
+        ],
+        [
+          89,
+          182
+        ],
+        [
+          111,
+          182
+        ],
+        [
+          133,
+          182
+        ],
+        [
+          155,
+          182
+        ],
+        [
+          177,
+          182
+        ],
+        [
+          199,
+          182
+        ],
+        [
+          222,
+          182
+        ],
+        [
+          44,
+          205
+        ],
+        [
+          66,
+          205
+        ],
+        [
+          89,
+          205
+        ],
+        [
+          111,
+          205
+        ],
+        [
+          133,
+          205
+        ],
+        [
+          155,
+          205
+        ],
+        [
+          177,
+          205
+        ],
+        [
+          199,
+          205
+        ],
+        [
+          222,
+          205
+        ],
+        [
+          44,
+          229
+        ],
+        [
+          66,
+          229
+        ],
+        [
+          89,
+          229
+        ],
+        [
+          111,
+          229
+        ],
+        [
+          133,
+          229
+        ],
+        [
+          155,
+          229
+        ],
+        [
+          177,
+          229
+        ],
+        [
+          199,
+          229
+        ],
+        [
+          222,
+          229
+        ],
+        [
+          44,
+          262
+        ],
+        [
+          66,
+          262
+        ],
+        [
+          89,
+          262
+        ],
+        [
+          111,
+          262
+        ],
+        [
+          133,
+          262
+        ],
+        [
+          155,
+          262
+        ],
+        [
+          177,
+          262
+        ],
+        [
+          199,
+          262
+        ],
+        [
+          222,
+          262
+        ]
+      ],
+      "controls": [],
+      "fe": {
+        "rect": [
+          58.581,
+          87.785,
+          12.0,
+          52.0
+        ],
+        "orientation": "vertical",
+        "component": [
+          52,
+          12
+        ],
+        "glass": [
+          44,
+          6
+        ]
+      },
+      "effects": [
+        {
+          "key": "cold-chamber",
+          "kind": "pulse",
+          "maxOpacity": 0.12,
+          "bounds": {
+            "x": 432,
+            "y": 390,
+            "w": 317,
+            "h": 140
+          },
+          "controlKey": null,
+          "color": "#9ed7df"
+        },
+        {
+          "key": "chamber-copper-reflection",
+          "kind": "pulse",
+          "maxOpacity": 0.05,
+          "bounds": {
+            "x": 439,
+            "y": 352,
+            "w": 306,
+            "h": 21
+          },
+          "controlKey": null,
+          "color": "#e6bd91"
+        },
+        {
+          "key": "cold-pipe-reflection",
+          "kind": "pulse",
+          "maxOpacity": 0.065,
+          "bounds": {
+            "x": 332,
+            "y": 365,
+            "w": 39,
+            "h": 104
+          },
+          "controlKey": null,
+          "color": "#a6dce4"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "06": {
+      "kind": "SMALL_MINERAL_SMELTER",
+      "native_size": [
+        1187,
+        1325
+      ],
+      "logical_size": [
+        279,
+        312
+      ],
+      "native_to_logical": 0.23529411764705885,
+      "sha256": "3b278f9065c945a697e6e0316f4c4e9b96815e7372eca7410979a5220c9c5f20",
+      "alpha_bbox": [
+        0,
+        0,
+        1142,
+        1293
+      ],
+      "menu_slots": [
+        [
+          132,
+          53
+        ],
+        null,
+        [
+          132,
+          145
+        ],
+        [
+          44,
+          181
+        ],
+        [
+          66,
+          181
+        ],
+        [
+          88,
+          181
+        ],
+        [
+          110,
+          181
+        ],
+        [
+          132,
+          181
+        ],
+        [
+          155,
+          181
+        ],
+        [
+          177,
+          181
+        ],
+        [
+          199,
+          181
+        ],
+        [
+          221,
+          181
+        ],
+        [
+          44,
+          204
+        ],
+        [
+          66,
+          204
+        ],
+        [
+          88,
+          204
+        ],
+        [
+          110,
+          204
+        ],
+        [
+          132,
+          204
+        ],
+        [
+          155,
+          204
+        ],
+        [
+          177,
+          204
+        ],
+        [
+          199,
+          204
+        ],
+        [
+          221,
+          204
+        ],
+        [
+          44,
+          227
+        ],
+        [
+          66,
+          227
+        ],
+        [
+          88,
+          227
+        ],
+        [
+          110,
+          227
+        ],
+        [
+          132,
+          227
+        ],
+        [
+          155,
+          227
+        ],
+        [
+          177,
+          227
+        ],
+        [
+          199,
+          227
+        ],
+        [
+          221,
+          227
+        ],
+        [
+          44,
+          261
+        ],
+        [
+          66,
+          261
+        ],
+        [
+          88,
+          261
+        ],
+        [
+          110,
+          261
+        ],
+        [
+          132,
+          261
+        ],
+        [
+          155,
+          261
+        ],
+        [
+          177,
+          261
+        ],
+        [
+          199,
+          261
+        ],
+        [
+          221,
+          261
+        ]
+      ],
+      "controls": [],
+      "fe": {
+        "rect": [
+          58.235,
+          87.176,
+          12.0,
+          52.0
+        ],
+        "orientation": "vertical",
+        "component": [
+          52,
+          12
+        ],
+        "glass": [
+          44,
+          6
+        ]
+      },
+      "effects": [
+        {
+          "key": "heat-chamber",
+          "kind": "pulse",
+          "maxOpacity": 0.15,
+          "bounds": {
+            "x": 432,
+            "y": 390,
+            "w": 317,
+            "h": 140
+          },
+          "controlKey": null,
+          "color": "#efa05f"
+        },
+        {
+          "key": "chamber-copper-reflection",
+          "kind": "pulse",
+          "maxOpacity": 0.05,
+          "bounds": {
+            "x": 439,
+            "y": 352,
+            "w": 306,
+            "h": 21
+          },
+          "controlKey": null,
+          "color": "#e6bd91"
+        },
+        {
+          "key": "warm-pipe-reflection",
+          "kind": "pulse",
+          "maxOpacity": 0.06,
+          "bounds": {
+            "x": 341,
+            "y": 368,
+            "w": 36,
+            "h": 130
+          },
+          "controlKey": null,
+          "color": "#e8a565"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "07": {
+      "kind": "SMALL_ELECTRICAL_FURNACE",
+      "native_size": [
+        1268,
+        1241
+      ],
+      "logical_size": [
+        291,
+        284
+      ],
+      "native_to_logical": 0.22916666666666666,
+      "sha256": "cd0c7562e718f7acaac2ff862753cc4b7856b503cf61bc43ed50e6c0ba0d7cb0",
+      "alpha_bbox": [
+        48,
+        0,
+        1225,
+        1207
+      ],
+      "menu_slots": [
+        [
+          50,
+          64
+        ],
+        [
+          51,
+          101
+        ],
+        [
+          163,
+          64
+        ],
+        [
+          81,
+          64
+        ],
+        [
+          112,
+          64
+        ],
+        [
+          194,
+          64
+        ],
+        [
+          225,
+          64
+        ],
+        [
+          49,
+          156
+        ],
+        [
+          72,
+          156
+        ],
+        [
+          94,
+          156
+        ],
+        [
+          116,
+          156
+        ],
+        [
+          138,
+          156
+        ],
+        [
+          161,
+          156
+        ],
+        [
+          183,
+          156
+        ],
+        [
+          205,
+          156
+        ],
+        [
+          227,
+          156
+        ],
+        [
+          49,
+          179
+        ],
+        [
+          72,
+          179
+        ],
+        [
+          94,
+          179
+        ],
+        [
+          116,
+          179
+        ],
+        [
+          138,
+          179
+        ],
+        [
+          161,
+          179
+        ],
+        [
+          183,
+          179
+        ],
+        [
+          205,
+          179
+        ],
+        [
+          227,
+          179
+        ],
+        [
+          49,
+          202
+        ],
+        [
+          72,
+          202
+        ],
+        [
+          94,
+          202
+        ],
+        [
+          116,
+          202
+        ],
+        [
+          138,
+          202
+        ],
+        [
+          161,
+          202
+        ],
+        [
+          183,
+          202
+        ],
+        [
+          205,
+          202
+        ],
+        [
+          227,
+          202
+        ],
+        [
+          49,
+          235
+        ],
+        [
+          72,
+          235
+        ],
+        [
+          94,
+          235
+        ],
+        [
+          116,
+          235
+        ],
+        [
+          138,
+          235
+        ],
+        [
+          160,
+          235
+        ],
+        [
+          183,
+          235
+        ],
+        [
+          205,
+          235
+        ],
+        [
+          227,
+          235
+        ]
+      ],
+      "controls": [
+        {
+          "key": "rotary",
+          "rect": [
+            214,
+            98,
+            25,
+            25
+          ],
+          "action": "rotary",
+          "observedActionId": 32
+        }
+      ],
+      "fe": {
+        "rect": [
+          124.562,
+          103.885,
+          52.0,
+          12.0
+        ],
+        "orientation": "horizontal",
+        "component": [
+          52,
+          12
+        ],
+        "glass": [
+          44,
+          6
+        ]
+      },
+      "effects": [
+        {
+          "key": "heat-wave-relief",
+          "kind": "pulse",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 409,
+            "y": 443,
+            "w": 75,
+            "h": 81
+          },
+          "controlKey": null,
+          "color": "#e4ad79"
+        },
+        {
+          "key": "active-copper-reflection",
+          "kind": "pulse",
+          "maxOpacity": 0.055,
+          "bounds": {
+            "x": 600,
+            "y": 590,
+            "w": 72,
+            "h": 53
+          },
+          "controlKey": null,
+          "color": "#d99c58"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "08": {
+      "kind": "SMALL_WASTE_INCINERATOR",
+      "native_size": [
+        1216,
+        1294
+      ],
+      "logical_size": [
+        272,
+        289
+      ],
+      "native_to_logical": 0.2233502538071066,
+      "sha256": "15e88fe3a7a757734629e39a2cc2201e317c6663452f20673d0837f88db66d0f",
+      "alpha_bbox": [
+        0,
+        0,
+        1216,
+        1278
+      ],
+      "menu_slots": [
+        [
+          46,
+          60
+        ],
+        [
+          70,
+          60
+        ],
+        [
+          94,
+          60
+        ],
+        [
+          119,
+          60
+        ],
+        [
+          143,
+          60
+        ],
+        [
+          167,
+          60
+        ],
+        [
+          191,
+          60
+        ],
+        [
+          215,
+          60
+        ],
+        [
+          84,
+          100
+        ],
+        [
+          108,
+          100
+        ],
+        [
+          133,
+          100
+        ],
+        [
+          157,
+          100
+        ],
+        [
+          181,
+          100
+        ],
+        [
+          206,
+          100
+        ],
+        [
+          230,
+          100
+        ],
+        [
+          42,
+          105
+        ],
+        [
+          39,
+          159
+        ],
+        [
+          62,
+          159
+        ],
+        [
+          85,
+          159
+        ],
+        [
+          107,
+          159
+        ],
+        [
+          130,
+          159
+        ],
+        [
+          152,
+          159
+        ],
+        [
+          175,
+          159
+        ],
+        [
+          197,
+          159
+        ],
+        [
+          220,
+          159
+        ],
+        [
+          39,
+          183
+        ],
+        [
+          62,
+          183
+        ],
+        [
+          85,
+          183
+        ],
+        [
+          107,
+          183
+        ],
+        [
+          130,
+          183
+        ],
+        [
+          152,
+          183
+        ],
+        [
+          175,
+          183
+        ],
+        [
+          197,
+          183
+        ],
+        [
+          220,
+          183
+        ],
+        [
+          39,
+          207
+        ],
+        [
+          62,
+          207
+        ],
+        [
+          85,
+          207
+        ],
+        [
+          107,
+          207
+        ],
+        [
+          130,
+          207
+        ],
+        [
+          152,
+          207
+        ],
+        [
+          175,
+          207
+        ],
+        [
+          197,
+          207
+        ],
+        [
+          220,
+          207
+        ],
+        [
+          41,
+          242
+        ],
+        [
+          64,
+          242
+        ],
+        [
+          86,
+          242
+        ],
+        [
+          108,
+          242
+        ],
+        [
+          130,
+          242
+        ],
+        [
+          152,
+          242
+        ],
+        [
+          175,
+          242
+        ],
+        [
+          197,
+          242
+        ],
+        [
+          219,
+          242
+        ]
+      ],
+      "controls": [],
+      "fe": null,
+      "effects": [
+        {
+          "key": "burn-flame-relief",
+          "kind": "pulse",
+          "maxOpacity": 0.16,
+          "bounds": {
+            "x": 195,
+            "y": 377,
+            "w": 58,
+            "h": 64
+          },
+          "controlKey": null,
+          "color": "#e9a063"
+        },
+        {
+          "key": "burn-well-warmth",
+          "kind": "pulse",
+          "maxOpacity": 0.085,
+          "bounds": {
+            "x": 190,
+            "y": 527,
+            "w": 65,
+            "h": 12
+          },
+          "controlKey": null,
+          "color": "#dc8a4f"
+        },
+        {
+          "key": "queue-arrow-glint",
+          "kind": "pulse",
+          "maxOpacity": 0.045,
+          "bounds": {
+            "x": 491,
+            "y": 213,
+            "w": 103,
+            "h": 24
+          },
+          "controlKey": null,
+          "color": "#d9e2e4"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "09": {
+      "kind": "SMALL_BLOCK_BREAKER",
+      "native_size": [
+        1236,
+        1272
+      ],
+      "logical_size": [
+        272,
+        280
+      ],
+      "native_to_logical": 0.22,
+      "sha256": "41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7",
+      "alpha_bbox": [
+        0,
+        0,
+        1204,
+        1257
+      ],
+      "menu_slots": [
+        [
+          213,
+          98
+        ],
+        [
+          39,
+          157
+        ],
+        [
+          62,
+          157
+        ],
+        [
+          84,
+          157
+        ],
+        [
+          106,
+          157
+        ],
+        [
+          128,
+          157
+        ],
+        [
+          150,
+          157
+        ],
+        [
+          172,
+          157
+        ],
+        [
+          195,
+          157
+        ],
+        [
+          217,
+          157
+        ],
+        [
+          39,
+          180
+        ],
+        [
+          62,
+          180
+        ],
+        [
+          84,
+          180
+        ],
+        [
+          106,
+          180
+        ],
+        [
+          128,
+          180
+        ],
+        [
+          150,
+          180
+        ],
+        [
+          172,
+          180
+        ],
+        [
+          195,
+          180
+        ],
+        [
+          217,
+          180
+        ],
+        [
+          39,
+          203
+        ],
+        [
+          62,
+          203
+        ],
+        [
+          84,
+          203
+        ],
+        [
+          106,
+          203
+        ],
+        [
+          128,
+          203
+        ],
+        [
+          150,
+          203
+        ],
+        [
+          172,
+          203
+        ],
+        [
+          195,
+          203
+        ],
+        [
+          217,
+          203
+        ],
+        [
+          39,
+          237
+        ],
+        [
+          62,
+          237
+        ],
+        [
+          84,
+          237
+        ],
+        [
+          106,
+          237
+        ],
+        [
+          128,
+          237
+        ],
+        [
+          150,
+          237
+        ],
+        [
+          173,
+          237
+        ],
+        [
+          195,
+          237
+        ],
+        [
+          217,
+          237
+        ]
+      ],
+      "controls": [],
+      "fe": {
+        "rect": [
+          193.38,
+          46.25,
+          52.0,
+          12.0
+        ],
+        "orientation": "horizontal",
+        "component": [
+          52,
+          12
+        ],
+        "glass": [
+          44,
+          6
+        ]
+      },
+      "effects": [
+        {
+          "key": "piston-shaft-glint",
+          "kind": "pulse",
+          "maxOpacity": 0.085,
+          "bounds": {
+            "x": 559,
+            "y": 303,
+            "w": 66,
+            "h": 42
+          },
+          "controlKey": null,
+          "color": "#d9e2e4"
+        },
+        {
+          "key": "copper-tube-glint",
+          "kind": "pulse",
+          "maxOpacity": 0.055,
+          "bounds": {
+            "x": 704,
+            "y": 238,
+            "w": 27,
+            "h": 119
+          },
+          "controlKey": null,
+          "color": "#e1a168"
+        },
+        {
+          "key": "conveyor-reflection",
+          "kind": "pulse",
+          "maxOpacity": 0.045,
+          "bounds": {
+            "x": 456,
+            "y": 610,
+            "w": 411,
+            "h": 25
+          },
+          "controlKey": null,
+          "color": "#d9e2e4"
+        },
+        {
+          "key": "target-preview-response",
+          "kind": "pulse",
+          "maxOpacity": 0.055,
+          "bounds": {
+            "x": 165,
+            "y": 274,
+            "w": 225,
+            "h": 111
+          },
+          "controlKey": null,
+          "color": "#d9e2e4"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "10": {
+      "kind": "SMALL_TREE_CUTTER",
+      "native_size": [
+        1230,
+        1278
+      ],
+      "logical_size": [
+        283,
+        294
+      ],
+      "native_to_logical": 0.23036649214659685,
+      "sha256": "c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef",
+      "alpha_bbox": [
+        0,
+        1,
+        1216,
+        1254
+      ],
+      "menu_slots": [
+        [
+          221,
+          91
+        ],
+        [
+          45,
+          160
+        ],
+        [
+          68,
+          160
+        ],
+        [
+          90,
+          160
+        ],
+        [
+          112,
+          160
+        ],
+        [
+          134,
+          160
+        ],
+        [
+          156,
+          160
+        ],
+        [
+          178,
+          160
+        ],
+        [
+          200,
+          160
+        ],
+        [
+          223,
+          160
+        ],
+        [
+          45,
+          183
+        ],
+        [
+          68,
+          183
+        ],
+        [
+          90,
+          183
+        ],
+        [
+          112,
+          183
+        ],
+        [
+          134,
+          183
+        ],
+        [
+          156,
+          183
+        ],
+        [
+          178,
+          183
+        ],
+        [
+          200,
+          183
+        ],
+        [
+          223,
+          183
+        ],
+        [
+          45,
+          206
+        ],
+        [
+          68,
+          206
+        ],
+        [
+          90,
+          206
+        ],
+        [
+          112,
+          206
+        ],
+        [
+          134,
+          206
+        ],
+        [
+          156,
+          206
+        ],
+        [
+          178,
+          206
+        ],
+        [
+          200,
+          206
+        ],
+        [
+          223,
+          206
+        ],
+        [
+          45,
+          242
+        ],
+        [
+          67,
+          242
+        ],
+        [
+          90,
+          242
+        ],
+        [
+          112,
+          242
+        ],
+        [
+          134,
+          242
+        ],
+        [
+          156,
+          242
+        ],
+        [
+          179,
+          242
+        ],
+        [
+          201,
+          242
+        ],
+        [
+          223,
+          242
+        ]
+      ],
+      "controls": [],
+      "fe": null,
+      "effects": [
+        {
+          "key": "blade_metal_sheen",
+          "kind": "sweep",
+          "maxOpacity": 0.1,
+          "bounds": {
+            "x": 512,
+            "y": 369,
+            "w": 138,
+            "h": 146
+          },
+          "controlKey": null,
+          "color": "#E2E9E9"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "12": {
+      "kind": "SMALL_MILKING_MACHINE",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        283,
+        283
+      ],
+      "native_to_logical": 0.22564102564102564,
+      "sha256": "82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa",
+      "alpha_bbox": [
+        44,
+        3,
+        1218,
+        1241
+      ],
+      "menu_slots": [
+        [
+          70,
+          109
+        ],
+        [
+          197,
+          109
+        ],
+        [
+          45,
+          154
+        ],
+        [
+          67,
+          154
+        ],
+        [
+          90,
+          154
+        ],
+        [
+          112,
+          154
+        ],
+        [
+          134,
+          154
+        ],
+        [
+          156,
+          154
+        ],
+        [
+          178,
+          154
+        ],
+        [
+          200,
+          154
+        ],
+        [
+          222,
+          154
+        ],
+        [
+          45,
+          177
+        ],
+        [
+          67,
+          177
+        ],
+        [
+          90,
+          177
+        ],
+        [
+          112,
+          177
+        ],
+        [
+          134,
+          177
+        ],
+        [
+          156,
+          177
+        ],
+        [
+          178,
+          177
+        ],
+        [
+          200,
+          177
+        ],
+        [
+          222,
+          177
+        ],
+        [
+          45,
+          200
+        ],
+        [
+          67,
+          200
+        ],
+        [
+          90,
+          200
+        ],
+        [
+          112,
+          200
+        ],
+        [
+          134,
+          200
+        ],
+        [
+          156,
+          200
+        ],
+        [
+          178,
+          200
+        ],
+        [
+          200,
+          200
+        ],
+        [
+          222,
+          200
+        ],
+        [
+          45,
+          236
+        ],
+        [
+          67,
+          236
+        ],
+        [
+          90,
+          236
+        ],
+        [
+          112,
+          236
+        ],
+        [
+          134,
+          236
+        ],
+        [
+          156,
+          236
+        ],
+        [
+          178,
+          236
+        ],
+        [
+          200,
+          236
+        ],
+        [
+          222,
+          236
+        ]
+      ],
+      "controls": [],
+      "fe": null,
+      "effects": [
+        {
+          "key": "original_display_luminance",
+          "kind": "pulse",
+          "maxOpacity": 0.035,
+          "bounds": {
+            "x": 183,
+            "y": 239,
+            "w": 251,
+            "h": 174
+          },
+          "controlKey": null,
+          "color": "#d9e2e4"
+        }
+      ],
+      "frame_hint_slot": null
+    },
+    "13": {
+      "kind": "SMALL_FLUID_FUNNEL",
+      "native_size": [
+        1294,
+        1216
+      ],
+      "logical_size": [
+        308,
+        289
+      ],
+      "native_to_logical": 0.23783783783783782,
+      "sha256": "13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6",
+      "alpha_bbox": [
+        0,
+        0,
+        1213,
+        1203
+      ],
+      "menu_slots": [
+        [
+          63,
+          75
+        ],
+        [
+          230,
+          75
+        ],
+        [
+          58,
+          155
+        ],
+        [
+          80,
+          155
+        ],
+        [
+          102,
+          155
+        ],
+        [
+          124,
+          155
+        ],
+        [
+          146,
+          155
+        ],
+        [
+          169,
+          155
+        ],
+        [
+          191,
+          155
+        ],
+        [
+          213,
+          155
+        ],
+        [
+          235,
+          155
+        ],
+        [
+          58,
+          178
+        ],
+        [
+          80,
+          178
+        ],
+        [
+          102,
+          178
+        ],
+        [
+          124,
+          178
+        ],
+        [
+          146,
+          178
+        ],
+        [
+          169,
+          178
+        ],
+        [
+          191,
+          178
+        ],
+        [
+          213,
+          178
+        ],
+        [
+          235,
+          178
+        ],
+        [
+          58,
+          201
+        ],
+        [
+          80,
+          201
+        ],
+        [
+          102,
+          201
+        ],
+        [
+          124,
+          201
+        ],
+        [
+          146,
+          201
+        ],
+        [
+          169,
+          201
+        ],
+        [
+          191,
+          201
+        ],
+        [
+          213,
+          201
+        ],
+        [
+          235,
+          201
+        ],
+        [
+          58,
+          237
+        ],
+        [
+          80,
+          237
+        ],
+        [
+          102,
+          237
+        ],
+        [
+          124,
+          237
+        ],
+        [
+          146,
+          237
+        ],
+        [
+          169,
+          237
+        ],
+        [
+          191,
+          237
+        ],
+        [
+          213,
+          237
+        ],
+        [
+          235,
+          237
+        ]
+      ],
+      "controls": [],
+      "fe": null,
+      "effects": [],
+      "frame_hint_slot": null
+    },
+    "14": {
+      "kind": "PASSIVE_FLUID_ACCUMULATOR",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        303,
+        303
+      ],
+      "native_to_logical": 0.24175824175824176,
+      "sha256": "07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df",
+      "alpha_bbox": [
+        65,
+        10,
+        1242,
+        1222
+      ],
+      "menu_slots": [
+        [
+          66,
+          109
+        ],
+        [
+          222,
+          109
+        ],
+        [
+          55,
+          167
+        ],
+        [
+          77,
+          167
+        ],
+        [
+          100,
+          167
+        ],
+        [
+          122,
+          167
+        ],
+        [
+          144,
+          167
+        ],
+        [
+          166,
+          167
+        ],
+        [
+          188,
+          167
+        ],
+        [
+          211,
+          167
+        ],
+        [
+          233,
+          167
+        ],
+        [
+          55,
+          191
+        ],
+        [
+          78,
+          191
+        ],
+        [
+          100,
+          191
+        ],
+        [
+          122,
+          191
+        ],
+        [
+          144,
+          191
+        ],
+        [
+          166,
+          191
+        ],
+        [
+          188,
+          191
+        ],
+        [
+          211,
+          191
+        ],
+        [
+          233,
+          191
+        ],
+        [
+          55,
+          214
+        ],
+        [
+          78,
+          214
+        ],
+        [
+          100,
+          214
+        ],
+        [
+          122,
+          214
+        ],
+        [
+          144,
+          214
+        ],
+        [
+          166,
+          214
+        ],
+        [
+          188,
+          214
+        ],
+        [
+          211,
+          214
+        ],
+        [
+          233,
+          214
+        ],
+        [
+          54,
+          250
+        ],
+        [
+          77,
+          250
+        ],
+        [
+          99,
+          250
+        ],
+        [
+          121,
+          250
+        ],
+        [
+          144,
+          250
+        ],
+        [
+          166,
+          250
+        ],
+        [
+          189,
+          250
+        ],
+        [
+          211,
+          250
+        ],
+        [
+          234,
+          250
+        ]
+      ],
+      "controls": [],
+      "fe": null,
+      "effects": [],
+      "frame_hint_slot": null
+    },
+    "15": {
+      "kind": "FLUID_BARREL",
+      "native_size": [
+        1182,
+        1330
+      ],
+      "logical_size": [
+        292,
+        329
+      ],
+      "native_to_logical": 0.24719101123595505,
+      "sha256": "eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388",
+      "alpha_bbox": [
+        53,
+        0,
+        1135,
+        1284
+      ],
+      "menu_slots": [
+        [
+          68,
+          107
+        ],
+        [
+          212,
+          107
+        ],
+        [
+          50,
+          191
+        ],
+        [
+          73,
+          191
+        ],
+        [
+          95,
+          191
+        ],
+        [
+          117,
+          191
+        ],
+        [
+          139,
+          191
+        ],
+        [
+          161,
+          191
+        ],
+        [
+          183,
+          191
+        ],
+        [
+          206,
+          191
+        ],
+        [
+          228,
+          191
+        ],
+        [
+          50,
+          214
+        ],
+        [
+          73,
+          214
+        ],
+        [
+          95,
+          214
+        ],
+        [
+          117,
+          214
+        ],
+        [
+          139,
+          214
+        ],
+        [
+          161,
+          214
+        ],
+        [
+          183,
+          214
+        ],
+        [
+          206,
+          214
+        ],
+        [
+          228,
+          214
+        ],
+        [
+          50,
+          237
+        ],
+        [
+          73,
+          237
+        ],
+        [
+          95,
+          237
+        ],
+        [
+          117,
+          237
+        ],
+        [
+          139,
+          237
+        ],
+        [
+          161,
+          237
+        ],
+        [
+          183,
+          237
+        ],
+        [
+          206,
+          237
+        ],
+        [
+          228,
+          237
+        ],
+        [
+          50,
+          272
+        ],
+        [
+          73,
+          272
+        ],
+        [
+          95,
+          272
+        ],
+        [
+          117,
+          272
+        ],
+        [
+          139,
+          272
+        ],
+        [
+          161,
+          272
+        ],
+        [
+          183,
+          272
+        ],
+        [
+          206,
+          272
+        ],
+        [
+          228,
+          272
+        ]
+      ],
+      "controls": [],
+      "fe": null,
+      "effects": [],
+      "frame_hint_slot": null
+    },
+    "16": {
+      "kind": "METAL_CRAFTING_TABLE",
+      "native_size": [
+        1129,
+        1393
+      ],
+      "logical_size": [
+        285,
+        352
+      ],
+      "native_to_logical": 0.25287356321839083,
+      "sha256": "e553fb9e64705b682ed28df51822d08b4135b39ddcfead05458afe8c5a69d55d",
+      "alpha_bbox": [
+        0,
+        0,
+        1129,
+        1381
+      ],
+      "menu_slots": [
+        [
+          52,
+          89
+        ],
+        [
+          218,
+          89
+        ],
+        [
+          111,
+          65
+        ],
+        [
+          135,
+          65
+        ],
+        [
+          158,
+          65
+        ],
+        [
+          111,
+          89
+        ],
+        [
+          135,
+          89
+        ],
+        [
+          158,
+          88
+        ],
+        [
+          111,
+          112
+        ],
+        [
+          135,
+          112
+        ],
+        [
+          158,
+          112
+        ],
+        [
+          46,
+          165
+        ],
+        [
+          69,
+          165
+        ],
+        [
+          91,
+          165
+        ],
+        [
+          114,
+          165
+        ],
+        [
+          136,
+          165
+        ],
+        [
+          159,
+          165
+        ],
+        [
+          181,
+          165
+        ],
+        [
+          204,
+          165
+        ],
+        [
+          226,
+          165
+        ],
+        [
+          46,
+          188
+        ],
+        [
+          69,
+          188
+        ],
+        [
+          91,
+          188
+        ],
+        [
+          114,
+          188
+        ],
+        [
+          136,
+          188
+        ],
+        [
+          159,
+          188
+        ],
+        [
+          181,
+          188
+        ],
+        [
+          204,
+          188
+        ],
+        [
+          226,
+          188
+        ],
+        [
+          47,
+          227
+        ],
+        [
+          70,
+          227
+        ],
+        [
+          92,
+          227
+        ],
+        [
+          114,
+          227
+        ],
+        [
+          136,
+          227
+        ],
+        [
+          159,
+          227
+        ],
+        [
+          181,
+          227
+        ],
+        [
+          203,
+          227
+        ],
+        [
+          226,
+          227
+        ],
+        [
+          47,
+          249
+        ],
+        [
+          70,
+          249
+        ],
+        [
+          92,
+          249
+        ],
+        [
+          114,
+          249
+        ],
+        [
+          136,
+          249
+        ],
+        [
+          159,
+          249
+        ],
+        [
+          181,
+          249
+        ],
+        [
+          203,
+          249
+        ],
+        [
+          226,
+          249
+        ],
+        [
+          47,
+          271
+        ],
+        [
+          70,
+          271
+        ],
+        [
+          92,
+          271
+        ],
+        [
+          114,
+          271
+        ],
+        [
+          136,
+          271
+        ],
+        [
+          159,
+          271
+        ],
+        [
+          181,
+          271
+        ],
+        [
+          203,
+          271
+        ],
+        [
+          226,
+          271
+        ],
+        [
+          44,
+          305
+        ],
+        [
+          67,
+          305
+        ],
+        [
+          90,
+          305
+        ],
+        [
+          113,
+          305
+        ],
+        [
+          136,
+          305
+        ],
+        [
+          158,
+          305
+        ],
+        [
+          181,
+          305
+        ],
+        [
+          204,
+          305
+        ],
+        [
+          226,
+          305
+        ]
+      ],
+      "controls": [],
+      "fe": null,
+      "effects": [],
+      "frame_hint_slot": null
+    },
+    "17": {
+      "kind": "LABELED_CRATE",
+      "native_size": [
+        1294,
+        1216
+      ],
+      "logical_size": [
+        380,
+        357
+      ],
+      "native_to_logical": 0.29333333333333333,
+      "sha256": "ef68ac45b4eba048730ec5fab6934e758e0653e041b9ceaa1fd4c3010b9b78e4",
+      "alpha_bbox": [
+        0,
+        25,
+        1256,
+        1136
+      ],
+      "menu_slots": [
+        [
+          69,
+          74
+        ],
+        [
+          91,
+          74
+        ],
+        [
+          113,
+          74
+        ],
+        [
+          135,
+          74
+        ],
+        [
+          158,
+          74
+        ],
+        [
+          180,
+          74
+        ],
+        [
+          202,
+          74
+        ],
+        [
+          224,
+          74
+        ],
+        [
+          247,
+          74
+        ],
+        [
+          69,
+          95
+        ],
+        [
+          91,
+          95
+        ],
+        [
+          113,
+          95
+        ],
+        [
+          135,
+          95
+        ],
+        [
+          158,
+          95
+        ],
+        [
+          180,
+          95
+        ],
+        [
+          202,
+          95
+        ],
+        [
+          225,
+          95
+        ],
+        [
+          247,
+          96
+        ],
+        [
+          69,
+          117
+        ],
+        [
+          91,
+          117
+        ],
+        [
+          113,
+          117
+        ],
+        [
+          135,
+          117
+        ],
+        [
+          158,
+          117
+        ],
+        [
+          180,
+          117
+        ],
+        [
+          202,
+          117
+        ],
+        [
+          225,
+          117
+        ],
+        [
+          247,
+          117
+        ],
+        [
+          69,
+          139
+        ],
+        [
+          91,
+          139
+        ],
+        [
+          113,
+          139
+        ],
+        [
+          135,
+          139
+        ],
+        [
+          158,
+          139
+        ],
+        [
+          180,
+          139
+        ],
+        [
+          202,
+          139
+        ],
+        [
+          225,
+          139
+        ],
+        [
+          247,
+          139
+        ],
+        [
+          69,
+          162
+        ],
+        [
+          91,
+          162
+        ],
+        [
+          113,
+          162
+        ],
+        [
+          135,
+          162
+        ],
+        [
+          158,
+          162
+        ],
+        [
+          180,
+          162
+        ],
+        [
+          202,
+          162
+        ],
+        [
+          225,
+          162
+        ],
+        [
+          247,
+          162
+        ],
+        [
+          69,
+          184
+        ],
+        [
+          91,
+          184
+        ],
+        [
+          113,
+          184
+        ],
+        [
+          135,
+          184
+        ],
+        [
+          158,
+          184
+        ],
+        [
+          180,
+          184
+        ],
+        [
+          202,
+          184
+        ],
+        [
+          225,
+          184
+        ],
+        [
+          247,
+          184
+        ],
+        null,
+        [
+          87,
+          225
+        ],
+        [
+          111,
+          225
+        ],
+        [
+          135,
+          225
+        ],
+        [
+          158,
+          225
+        ],
+        [
+          182,
+          225
+        ],
+        [
+          206,
+          225
+        ],
+        [
+          229,
+          225
+        ],
+        [
+          253,
+          225
+        ],
+        [
+          277,
+          225
+        ],
+        [
+          87,
+          247
+        ],
+        [
+          111,
+          247
+        ],
+        [
+          135,
+          247
+        ],
+        [
+          158,
+          247
+        ],
+        [
+          182,
+          247
+        ],
+        [
+          206,
+          247
+        ],
+        [
+          230,
+          247
+        ],
+        [
+          253,
+          247
+        ],
+        [
+          277,
+          247
+        ],
+        [
+          87,
+          269
+        ],
+        [
+          111,
+          269
+        ],
+        [
+          135,
+          269
+        ],
+        [
+          158,
+          269
+        ],
+        [
+          182,
+          269
+        ],
+        [
+          206,
+          269
+        ],
+        [
+          230,
+          269
+        ],
+        [
+          254,
+          269
+        ],
+        [
+          277,
+          269
+        ],
+        [
+          87,
+          298
+        ],
+        [
+          111,
+          298
+        ],
+        [
+          135,
+          298
+        ],
+        [
+          158,
+          298
+        ],
+        [
+          182,
+          298
+        ],
+        [
+          206,
+          298
+        ],
+        [
+          230,
+          298
+        ],
+        [
+          254,
+          298
+        ],
+        [
+          278,
+          298
+        ]
+      ],
+      "controls": [
+        {
+          "key": "preview",
+          "rect": [
+            276,
+            113,
+            48,
+            36
+          ],
+          "action": "inspect",
+          "observedActionId": null
+        }
+      ],
+      "fe": null,
+      "effects": [
+        {
+          "key": "preview_focus",
+          "kind": "feedback",
+          "maxOpacity": 0.045,
+          "bounds": {
+            "x": 953,
+            "y": 401,
+            "w": 137,
+            "h": 88
+          },
+          "controlKey": "preview",
+          "color": "#d9e2e4"
+        }
+      ],
+      "frame_hint_slot": [
+        291,
+        123
+      ]
+    },
+    "18": {
+      "kind": null,
+      "native_size": [
+        1672,
+        941
+      ],
+      "logical_size": [
+        368,
+        207
+      ],
+      "native_to_logical": 0.21999999999999997,
+      "sha256": "55da612229475c5d82a54c240c8204fff549eb1bdc1948568a580c1498b6e337",
+      "alpha_bbox": [
+        113,
+        1,
+        1560,
+        928
+      ],
+      "menu_slots": [],
+      "controls": [
+        {
+          "key": "confirm",
+          "rect": [
+            77,
+            146,
+            103,
+            32
+          ],
+          "action": "confirm",
+          "observedActionId": null
+        },
+        {
+          "key": "cancel",
+          "rect": [
+            188,
+            146,
+            104,
+            32
+          ],
+          "action": "cancel",
+          "observedActionId": null
+        }
+      ],
+      "fe": null,
+      "effects": [
+        {
+          "key": "confirm_hover",
+          "kind": "feedback",
+          "maxOpacity": 0.055,
+          "bounds": {
+            "x": 372,
+            "y": 688,
+            "w": 419,
+            "h": 103
+          },
+          "controlKey": "confirm",
+          "color": "#F4E8D5"
+        },
+        {
+          "key": "confirm_pressed",
+          "kind": "press",
+          "maxOpacity": 1,
+          "bounds": {
+            "x": 372,
+            "y": 688,
+            "w": 419,
+            "h": 103
+          },
+          "controlKey": "confirm",
+          "color": "#171A1D"
+        },
+        {
+          "key": "cancel_hover",
+          "kind": "feedback",
+          "maxOpacity": 0.055,
+          "bounds": {
+            "x": 879,
+            "y": 688,
+            "w": 425,
+            "h": 103
+          },
+          "controlKey": "cancel",
+          "color": "#F4E8D5"
+        },
+        {
+          "key": "cancel_pressed",
+          "kind": "press",
+          "maxOpacity": 1,
+          "bounds": {
+            "x": 879,
+            "y": 688,
+            "w": 425,
+            "h": 103
+          },
+          "controlKey": "cancel",
+          "color": "#171A1D"
+        }
+      ],
+      "frame_hint_slot": null
+    }
+  }
+}

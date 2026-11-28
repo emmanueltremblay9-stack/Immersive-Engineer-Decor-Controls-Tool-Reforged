@@ -34,7 +34,8 @@ class ElectricalControlsProjectionTests(unittest.TestCase):
                 self.assertEqual(layer["previous_source_commit"], self.BASE)
                 # GUI11-r3 is an exact later layer on Solar sources; reverse only
                 # that recorded layer before comparing the electrical history.
-                electrical_current = projection.project_before_solar_gui11_r3(path, current)
+                v5c_parent = projection.project_before_gui11_v5c(path, current, strict=True)
+                electrical_current = projection.project_before_solar_gui11_r3(path, v5c_parent)
                 self.assertEqual(projection.sha256(electrical_current), layer["new_sha256"])
                 self.assertEqual(projection.sha256(parent), layer["old_sha256"])
                 self.assertEqual(projection._reverse_layer(path, electrical_current, layer), parent)
@@ -48,11 +49,14 @@ class ElectricalControlsProjectionTests(unittest.TestCase):
     def test_changes_inside_or_outside_recorded_hunks_are_rejected(self):
         for path, layer in projection._electrical_controls_record()["files"].items():
             current = (projection.ROOT / path).read_bytes()
+            v5c_parent = projection.project_before_gui11_v5c(path, current, strict=True)
+            electrical_current = projection.project_before_solar_gui11_r3(path, v5c_parent)
             hunk_text = next(h["current"] for h in layer["hunks"] if h["current"])
-            changed_hunk = current.replace(hunk_text.encode(), (hunk_text + " ").encode(), 1)
-            for mutated in (current + b"unrecorded\n", changed_hunk):
-                with self.subTest(path=path), self.assertRaisesRegex(AssertionError, "Unrecognized #210"):
-                    projection.project_current_candidate(path, mutated, strict=True)
+            changed_hunk = electrical_current.replace(hunk_text.encode(), (hunk_text + " ").encode(), 1)
+            self.assertNotEqual(changed_hunk, electrical_current, path)
+            for mutated in (electrical_current + b"unrecorded\n", changed_hunk):
+                with self.subTest(path=path), self.assertRaisesRegex(AssertionError, "candidate bytes changed"):
+                    projection._reverse_layer(path, mutated, layer)
 
     def test_receipt_mutation_is_rejected_and_unrelated_paths_stay_unrecognized(self):
         with patch.object(projection, "ELECTRICAL_CONTROLS_RECORD_BYTES",

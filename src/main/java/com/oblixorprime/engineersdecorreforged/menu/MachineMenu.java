@@ -10,6 +10,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
@@ -131,6 +132,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private final ContainerData milkingData;
    private final boolean smelterV05Projection;
    private final boolean thermalVerticalPresentation;
+   private final boolean gui11V5CPresentation;
    private final ContainerLevelAccess menuAccess;
    private final Block expectedMenuBlock;
    private final boolean hasServerMenuAccess;
@@ -170,6 +172,7 @@ public class MachineMenu extends AbstractContainerMenu {
       checkContainerSize(container, kind == MachineKind.METAL_CRAFTING_TABLE ? 29 : 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
+      this.gui11V5CPresentation = Gui11V5CRuntimeGeometry.supports(kind) && inventory.player.level().isClientSide;
       this.thermalVerticalPresentation = inventory.player.level().isClientSide
          && (kind == MachineKind.SMALL_FREEZER || kind == MachineKind.SMALL_MINERAL_SMELTER);
       this.menuPlayer = inventory.player;
@@ -198,7 +201,11 @@ public class MachineMenu extends AbstractContainerMenu {
 
       for (MachineLayout.MachineSlot slot : this.layout.machineSlots()) {
          MachineLayout.MachineSlot presentationSlot = slot;
-         if (this.thermalVerticalPresentation && slot.containerIndex() != 1) {
+         Gui11V5CRuntimeGeometry.Point gui11Point = this.gui11V5CPresentation
+            ? Gui11V5CRuntimeGeometry.machineSlot(kind, this.slots.size(), slot.containerIndex()) : null;
+         if (gui11Point != null) {
+            presentationSlot = new MachineLayout.MachineSlot(slot.containerIndex(), gui11Point.x(), gui11Point.y(), slot.role(), slot.output());
+         } else if (this.thermalVerticalPresentation && slot.containerIndex() != 1) {
             var anchor = ThermalVerticalGeometry.slot(slot.containerIndex(), kind);
             presentationSlot = new MachineLayout.MachineSlot(
                slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());
@@ -235,7 +242,11 @@ public class MachineMenu extends AbstractContainerMenu {
             int x = kind == MachineKind.SMALL_MINERAL_SMELTER
                ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerSlotX(column);
             int y = this.layout.playerSlotY(row);
-            if (this.thermalVerticalPresentation) {
+            Gui11V5CRuntimeGeometry.Point gui11Point = this.gui11V5CPresentation
+               ? Gui11V5CRuntimeGeometry.playerSlot(kind, this.slots.size()) : null;
+            if (gui11Point != null) {
+               x = gui11Point.x(); y = gui11Point.y();
+            } else if (this.thermalVerticalPresentation) {
                var anchor = ThermalVerticalGeometry.slot(3 + row * 9 + column, kind);
                x = anchor.x(); y = anchor.y();
             } else if (this.freezerReferencePresentation) {
@@ -271,7 +282,11 @@ public class MachineMenu extends AbstractContainerMenu {
          int x = kind == MachineKind.SMALL_MINERAL_SMELTER
             ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarSlotX(column);
          int y = this.layout.hotbarY();
-         if (this.thermalVerticalPresentation) {
+         Gui11V5CRuntimeGeometry.Point gui11Point = this.gui11V5CPresentation
+            ? Gui11V5CRuntimeGeometry.playerSlot(kind, this.slots.size()) : null;
+         if (gui11Point != null) {
+            x = gui11Point.x(); y = gui11Point.y();
+         } else if (this.thermalVerticalPresentation) {
             var anchor = ThermalVerticalGeometry.slot(30 + column, kind);
             x = anchor.x(); y = anchor.y();
          } else if (this.freezerReferencePresentation) {
@@ -329,6 +344,7 @@ public class MachineMenu extends AbstractContainerMenu {
    public boolean thermalVerticalPresentation() {
       return this.thermalVerticalPresentation;
    }
+   public boolean gui11V5CPresentation() { return this.gui11V5CPresentation; }
    public boolean treeCutterV3ReferencePresentation() { return this.treeCutterV3ReferencePresentation; }
 
    public boolean factoryPlacerV2ReferencePresentation() { return this.factoryPlacerV2ReferencePresentation; }

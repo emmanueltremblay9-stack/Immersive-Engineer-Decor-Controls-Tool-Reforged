@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 V3_SCREEN = ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryStudyScreen.java'
 V3_GEOMETRY = ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometry.java'
 V3_EVENTS = ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java'
+V5C_GEOMETRY = ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java'
 
 def assert_v3_tooltip_routing(screen, geometry, events):
     required_screen = (
@@ -45,6 +46,27 @@ class FactoryTooltipTests(unittest.TestCase):
         result = run_probe(SCREEN.read_text().replace('kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER', 'true'))
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('Other tooltips unchanged', result.stderr)
+
+    def test_v5c_tooltip_route_uses_menu_state_and_geometry(self):
+        screen = SCREEN.read_text()
+        geometry = V5C_GEOMETRY.read_text()
+        start = screen.index('   private void renderMachineTooltip(')
+        end = screen.index('   private Component solarPanelEnergyTooltip(', start)
+        route = screen[start:end]
+        self.assertTrue(route.startswith('   private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {\n'
+                                          '      if (((MachineMenu)this.menu).gui11V5CPresentation()) {'))
+        for token in ('Gui11V5CRuntimeGeometry.energy(this.menu.kind())',
+                      'Gui11V5CRuntimeGeometry.fluidDisplay(this.menu.kind())',
+                      'this.menu.energyStored(), this.menu.energyCapacity()',
+                      'this.menu.smallFluidFunnelFluidCode()',
+                      'this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE',
+                      'this.menu.field(4)', 'this.menu.field(7)',
+                      'if (hasVisibleTooltipText(tooltip)) graphics.renderTooltip',
+                      '         return;'):
+            self.assertIn(token, route)
+        self.assertIn('case "07" -> switch (key)', geometry)
+        self.assertIn('case "13" -> new Rect(110, 103, 88, 20)', geometry)
+        self.assertIn('case "14" -> new Rect(137, 65, 29, 52)', geometry)
 
     def test_current_v3_control_tooltips_follow_hit_test_and_live_state(self):
         screen = V3_SCREEN.read_text()

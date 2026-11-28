@@ -15,7 +15,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 public final class BarrelReferenceScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.";
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
-      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/barrel_reference_v5/background.png");
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/gui11_v5c/15.png");
    private BarrelReferenceGeometry.ViewTransform view = BarrelReferenceGeometry.fit(379, 461);
    private boolean renderingCanvas;
    private double renderLocalMouseX, renderLocalMouseY;
@@ -81,9 +81,7 @@ public final class BarrelReferenceScreen extends AbstractContainerScreen<Machine
 
    @Override
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-      graphics.blit(FACEPLATE, 0, 0, imageWidth, imageHeight, 0, 0,
-         BarrelReferenceGeometry.SOURCE_WIDTH, BarrelReferenceGeometry.SOURCE_HEIGHT,
-         BarrelReferenceGeometry.SOURCE_WIDTH, BarrelReferenceGeometry.SOURCE_HEIGHT);
+      Gui11V5CArtwork.draw(graphics, menu);
       int fill = BarrelReferenceState.fillHeight(menu.fluidAmount(), menu.fluidCapacity());
       if (fill > 0 && menu.storedFluid() != Fluids.EMPTY) {
          // The existing renderer resolves the current native atlas/tint each frame and

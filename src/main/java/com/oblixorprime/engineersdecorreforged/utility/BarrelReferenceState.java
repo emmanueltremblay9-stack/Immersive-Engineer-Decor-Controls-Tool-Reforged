@@ -1,10 +1,10 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
-/** Read-only presentation arithmetic. No tank capacity, transfers or persistence changes. */
+/** Read-only fluid overlay inside the dark glass of GUI11-R3 V5-Corrigee #15. */
 public final class BarrelReferenceState {
-   // Conservative rectangle wholly inside the measured dark aperture, including chamfers.
-   // Coordinates are on the exact 1:3 canvas: source [510,633) x [345,579).
-   public static final int TANK_X = 170, TANK_Y = 115, TANK_WIDTH = 41, TANK_HEIGHT = 78;
+   // Pixel-reviewed safe interior of the source PNG's beveled glass (1182x1330
+   // source to 292x329 logical). The narrower rectangle stays inside the chamfers.
+   public static final int TANK_X = 134, TANK_Y = 80, TANK_WIDTH = 26, TANK_HEIGHT = 52;
    private BarrelReferenceState() {}
    public static int fillHeight(int amount, int capacity) {
       if (amount <= 0 || capacity <= 0) return 0;

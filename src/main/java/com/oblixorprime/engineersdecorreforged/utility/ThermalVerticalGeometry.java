@@ -3,35 +3,33 @@ package com.oblixorprime.engineersdecorreforged.utility;
 import java.util.HashSet;
 import java.util.Set;
 
-/** Machine-specific presentation anchors measured from the normalized thermal artwork. */
+/** Runtime coordinates for the selected GUI11-R3 V5-Corrigee thermal panels. */
 public final class ThermalVerticalGeometry {
-   public static final int CANVAS_WIDTH = 347;
-   public static final int CANVAS_HEIGHT = 381;
+   /** Freezer dimensions retained for older validation metadata; use canvasWidth/Height(kind) for either machine. */
+   public static final int CANVAS_WIDTH = Gui11V5CRuntimeGeometry.width(MachineKind.SMALL_FREEZER);
+   public static final int CANVAS_HEIGHT = Gui11V5CRuntimeGeometry.height(MachineKind.SMALL_FREEZER);
    public static final int ITEM_SIZE = 16;
    public static final int VISIBLE_SLOTS = 38;
-   private static final int[] F_INV_X={53,81,110,139,168,197,226,254,283};
-   private static final int[] F_INV_Y={247,272,299};
-   private static final int[] F_HOT_X={55,84,112,140,168,195,223,252,280};
-   private static final int[] S_INV_X={55,83,110,137,164,191,218,245,272};
-   private static final int[] S_INV_Y={246,273,299};
-   private static final int[] S_HOT_X={56,83,110,137,164,191,217,244,272};
 
    private ThermalVerticalGeometry() { }
    public record Point(int x,int y) {
-      public Point { if(x<0||y<0||x+ITEM_SIZE>CANVAS_WIDTH||y+ITEM_SIZE>CANVAS_HEIGHT) throw new IllegalArgumentException("Thermal slot outside canvas"); }
+      public Point { if(x<0||y<0) throw new IllegalArgumentException("Thermal slot outside canvas"); }
+   }
+   public static int canvasWidth(MachineKind kind) {
+      requireThermal(kind);
+      return Gui11V5CRuntimeGeometry.width(kind);
+   }
+   public static int canvasHeight(MachineKind kind) {
+      requireThermal(kind);
+      return Gui11V5CRuntimeGeometry.height(kind);
    }
    public static Point slot(int menuIndex, MachineKind kind) {
-      boolean freezer=kind==MachineKind.SMALL_FREEZER;
-      if(!freezer&&kind!=MachineKind.SMALL_MINERAL_SMELTER) throw new IllegalArgumentException("Not a thermal machine: "+kind);
-      if(menuIndex==0) return freezer?new Point(167,67):new Point(164,66);
-      if(menuIndex==2) return freezer?new Point(167,206):new Point(164,205);
-      if(menuIndex==1||menuIndex<3||menuIndex>38) throw new IllegalArgumentException("No visible thermal slot "+menuIndex);
-      if(menuIndex<30) {
-         int i=menuIndex-3,row=i/9,col=i%9;
-         return new Point(freezer?F_INV_X[col]:S_INV_X[col],freezer?F_INV_Y[row]:S_INV_Y[row]);
-      }
-      int col=menuIndex-30;
-      return new Point(freezer?F_HOT_X[col]:S_HOT_X[col],freezer?335:337);
+      requireThermal(kind);
+      Point point = Gui11V5CRuntimeGeometry.slot(kind, menuIndex);
+      if (point == null || menuIndex == 1) throw new IllegalArgumentException("No visible thermal slot "+menuIndex);
+      if (point.x() + ITEM_SIZE > canvasWidth(kind) || point.y() + ITEM_SIZE > canvasHeight(kind))
+         throw new IllegalStateException("Thermal slot outside canvas: " + menuIndex);
+      return point;
    }
    public static boolean contains(int menuIndex, MachineKind kind, double x,double y) {
       Point p=slot(menuIndex,kind); return x>=p.x&&x<p.x+ITEM_SIZE&&y>=p.y&&y<p.y+ITEM_SIZE;
@@ -49,5 +47,9 @@ public final class ThermalVerticalGeometry {
       for(int i:new int[]{0,2}) { Point p=slot(i,kind); if(!seen.add(p.x+":"+p.y)) throw new IllegalStateException("Duplicate thermal slot"); }
       for(int i=3;i<=38;i++) { Point p=slot(i,kind); if(!seen.add(p.x+":"+p.y)) throw new IllegalStateException("Duplicate thermal slot"); }
       if(seen.size()!=VISIBLE_SLOTS) throw new IllegalStateException("Expected exactly 38 visible thermal slots");
+   }
+   private static void requireThermal(MachineKind kind) {
+      if (kind != MachineKind.SMALL_FREEZER && kind != MachineKind.SMALL_MINERAL_SMELTER)
+         throw new IllegalArgumentException("Not a thermal machine: " + kind);
    }
 }

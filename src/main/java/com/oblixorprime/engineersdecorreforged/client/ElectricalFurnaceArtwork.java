@@ -20,6 +20,11 @@ final class ElectricalFurnaceArtwork {
    // painted grip pixel without the old "neutral" patch's residual upright silhouette.
    // The outer brass bezel, four fixed detent marks and mounting plate stay stationary.
    private static final int[][] ROTOR = rotorRuns();
+   private static final int GUI11_SOURCE_WIDTH = 1268;
+   private static final int GUI11_SOURCE_HEIGHT = 1241;
+   private static final int GUI11_PIVOT_X = 988;
+   private static final int GUI11_PIVOT_Y = 482;
+   private static final int[][] GUI11_ROTOR = rotorRuns(56);
 
    private ElectricalFurnaceArtwork() {}
 
@@ -53,10 +58,34 @@ final class ElectricalFurnaceArtwork {
       }
    }
 
+   /** Rotates the GUI11-R3 dial around the measured cap center without changing hit routing. */
+   static void renderGui11V5C(GuiGraphics graphics, ResourceLocation texture, int x, int y,
+                              int canvasWidth, int canvasHeight, int speed) {
+      graphics.pose().pushPose();
+      try {
+         graphics.pose().translate(x, y, 0);
+         graphics.pose().scale(canvasWidth / (float)GUI11_SOURCE_WIDTH,
+            canvasHeight / (float)GUI11_SOURCE_HEIGHT, 1.0F);
+         graphics.pose().translate(GUI11_PIVOT_X, GUI11_PIVOT_Y, 0);
+         graphics.pose().mulPose(Axis.ZP.rotationDegrees(gui11DialAngleDegrees(speed)));
+         for (int[] strip : GUI11_ROTOR) {
+            graphics.blit(texture, strip[0], strip[1],
+               (float)(GUI11_PIVOT_X + strip[0]), (float)(GUI11_PIVOT_Y + strip[1]),
+               strip[2], strip[3], GUI11_SOURCE_WIDTH, GUI11_SOURCE_HEIGHT);
+         }
+      } finally {
+         graphics.pose().popPose();
+      }
+   }
+
    private static int[][] rotorRuns() {
+      return rotorRuns(38);
+   }
+
+   private static int[][] rotorRuns(int radius) {
       ArrayList<int[]> runs = new ArrayList<>();
-      for (int y = -38; y < 38; y++) {
-         int halfWidth = (int)Math.floor(Math.sqrt(38 * 38 - (y + 0.5) * (y + 0.5)));
+      for (int y = -radius; y < radius; y++) {
+         int halfWidth = (int)Math.floor(Math.sqrt(radius * radius - (y + 0.5) * (y + 0.5)));
          int[] previous = runs.isEmpty() ? null : runs.getLast();
          if (previous != null && previous[2] == halfWidth * 2) previous[3]++;
          else runs.add(new int[]{-halfWidth, y, halfWidth * 2, 1});
@@ -73,6 +102,19 @@ final class ElectricalFurnaceArtwork {
    static int dialAngleDegrees(int speed) {
       // Original grip points up. Clockwise detents: OFF/down, I/left, II/up, III/right.
       return (180 + 90 * Math.max(0, Math.min(3, speed))) % 360;
+   }
+
+   static int gui11DialAngleDegrees(int speed) {
+      // The GUI11 artwork's unrotated cap points left (mode I). Clockwise states are OFF/down, I/left, II/up, III/right.
+      return (270 + 90 * Math.max(0, Math.min(3, speed))) % 360;
+   }
+
+   static boolean gui11HeatWaveVisible(int residualHeat, int actualDraw) {
+      return residualHeat > 0 || actualDraw > 0;
+   }
+
+   static boolean gui11CopperReflectionVisible(int actualDraw) {
+      return actualDraw > 0;
    }
 
    static boolean containsDial(double x, double y) {

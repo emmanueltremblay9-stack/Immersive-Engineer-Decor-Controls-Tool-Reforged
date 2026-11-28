@@ -18,8 +18,12 @@ def check_textless_milking_labels(screen):
     labels = screen.split('protected void renderLabels(', 1)[1].split('private void drawSmallFreezerTexture(', 1)[0]
     labels = re.sub(r'/\*.*?\*/|//[^\n]*', '', labels, flags=re.S)
     body = labels.split('{', 1)[1]
-    match = re.match(r'\s*MachineLayout\s+layout\s*=\s*\(\(MachineMenu\)this\.menu\)\.layout\(\);\s*'
-                     r'if\s*\(\(\(MachineMenu\)this\.menu\)\.kind\(\)\s*==\s*'
+    current_route = re.match(r'\s*MachineLayout\s+layout\s*=\s*\(\(MachineMenu\)this\.menu\)\.layout\(\);\s*'
+                             r'if\s*\(\(\(MachineMenu\)this\.menu\)\.gui11V5CPresentation\(\)\)\s*return;\s*', body)
+    if current_route is None:
+        raise SmokeFailure('GUI11 runtime must suppress permanent text or masks on the selected artwork')
+    body = body[current_route.end():]
+    match = re.match(r'\s*if\s*\(\(\(MachineMenu\)this\.menu\)\.kind\(\)\s*==\s*'
                      r'MachineKind\.SMALL_MILKING_MACHINE\)\s*\{([^{}]*)\}', body)
     if match is None or match.group(1).strip() != 'return;':
         raise SmokeFailure('Milking labels must return without drawing permanent text or masks')

@@ -1,49 +1,54 @@
-"""Active V3 slot/outline/pointer geometry source checks (not native captures)."""
+"""V5-Corrigee slot/outline source checks (native captures are validated separately)."""
+import json
 import re
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 GEOMETRY = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometry.java"
+RUNTIME = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java"
 MENU = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java"
 SCREEN = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/FactoryStudyScreen.java"
 EVENTS = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/ClientModEvents.java"
-KIND = "MachineKind.FACTORY_HOPPER"
+MATRIX = ROOT / "docs/testing/gui11-v5c-runtime-map.json"
 
 
-def hopper_anchors(geometry_source):
-    body = geometry_source.split("FACTORY_HOPPER_ANCHORS = List.of(", 1)[1].split("\n   );", 1)[0]
-    rows = [tuple(map(int, row)) for row in re.findall(
-        r"new SlotAnchor\((\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\)", body)]
-    if len(rows) != 54:
-        raise AssertionError(f"Expected 54 active Hopper anchors, got {len(rows)}")
-    return rows
+def hopper_anchors(runtime_source):
+    match = re.search(r'case "01" -> java\.util\.Arrays\.asList\((.*?)\);', runtime_source, re.S)
+    if not match:
+        raise AssertionError("Missing V5-Corrigee Hopper runtime anchor array")
+    return [tuple(map(int, pair)) for pair in re.findall(r"new Point\((\d+),\s*(\d+)\)", match.group(1))]
 
 
-def assert_v3_alignment(geometry_source, menu_source, screen_source, events_source):
-    anchors = hopper_anchors(geometry_source)
-    if [row[0] for row in anchors] != list(range(54)):
-        raise AssertionError("Hopper slot IDs must remain contiguous 0..53")
-    if len({(row[5], row[6]) for row in anchors}) != 54:
-        raise AssertionError("Hopper anchors must be unique")
-    machine = menu_source.split("if (factoryStudyPresentation)", 1)[1].split("\n      }", 1)[0]
-    if "FactoryStudyGeometry.anchor(kind, this.slots.size())" not in machine:
-        raise AssertionError("Machine slot hitboxes no longer use the measured artwork anchors")
+def assert_v3_alignment(geometry_source, menu_source, screen_source, events_source, runtime_source=None, map_source=None):
+    """Keep the historical import name while validating the currently selected V5-Corrigee map."""
+    runtime_source = runtime_source if runtime_source is not None else RUNTIME.read_text(encoding="utf-8")
+    map_source = map_source if map_source is not None else MATRIX.read_text(encoding="utf-8")
+    actual = hopper_anchors(runtime_source)
+    contract = json.loads(map_source)["surfaces"]["01"]["menu_slots"]
+    if actual != [tuple(point) for point in contract]:
+        raise AssertionError("V5-Corrigee Hopper runtime anchors differ from the measured contract")
+    if len(actual) != 54 or len(set(actual)) != 54:
+        raise AssertionError("Hopper needs 54 unique runtime anchors")
+    if "mapped.add(mappedAnchor(kind, i, point))" not in geometry_source:
+        raise AssertionError("Vanilla item hitboxes no longer scale from V5-Corrigee canvas coordinates")
+    if "FactoryStudyGeometry.anchor(kind, this.slots.size())" not in menu_source:
+        raise AssertionError("Machine hitboxes no longer use the V5-Corrigee anchor map")
     if "FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + row * 9 + column)" not in menu_source:
-        raise AssertionError("Player inventory slot hitboxes no longer use V3 anchors")
+        raise AssertionError("Player inventory hitboxes no longer use the V5-Corrigee anchor map")
     if "FactoryStudyGeometry.anchor(kind, this.visibleMachineSlots + 27 + column)" not in menu_source:
-        raise AssertionError("Hotbar hitboxes no longer use V3 anchors")
+        raise AssertionError("Hotbar hitboxes no longer use the V5-Corrigee anchor map")
     if "FactoryStudyGeometry.anchor(kind, cursor)" not in screen_source:
-        raise AssertionError("V3 outline no longer resolves from the same slot anchors")
+        raise AssertionError("Selection outline no longer resolves from the same slot anchors")
     if "graphics.renderOutline(slot.x() - 1, slot.y() - 1, 18, 18" not in screen_source:
-        raise AssertionError("Selection outline must preserve the one-pixel border around the actual 16x16 slot")
-    if "FactoryStudyGeometry.fit(width, height)" not in screen_source:
-        raise AssertionError("V3 screen fit transform missing")
+        raise AssertionError("Selection outline must keep its one-pixel border around the 16x16 hitbox")
+    if "FactoryStudyGeometry.fit(kind, width, height)" not in screen_source:
+        raise AssertionError("V5-Corrigee canvas fit transform missing")
     if "view.renderPointerX(mouseX)" not in screen_source or "view.renderPointerY(mouseY)" not in screen_source:
-        raise AssertionError("Mouse pointer is not transformed with the GUI hitboxes")
+        raise AssertionError("Mouse pointer is not transformed with the V5-Corrigee GUI hitboxes")
     if "FactoryStudyScreen::new" not in events_source:
-        raise AssertionError("V3 screen is not registered as the active GUI")
-    return anchors
+        raise AssertionError("Factory Study screen is not registered as active GUI")
+    return actual
 
 
 class HopperSelectionAlignment(unittest.TestCase):
@@ -52,20 +57,21 @@ class HopperSelectionAlignment(unittest.TestCase):
         self.menu = MENU.read_text(encoding="utf-8")
         self.screen = SCREEN.read_text(encoding="utf-8")
         self.events = EVENTS.read_text(encoding="utf-8")
+        self.runtime = RUNTIME.read_text(encoding="utf-8")
+        self.contract = json.loads(MATRIX.read_text(encoding="utf-8"))["surfaces"]["01"]["menu_slots"]
 
-    def test_all_54_machine_inventory_and_hotbar_hitboxes_share_v3_art_anchors(self):
-        anchors = assert_v3_alignment(self.geometry, self.menu, self.screen, self.events)
+    def test_all_54_machine_inventory_and_hotbar_hitboxes_share_v5c_art_anchors(self):
+        anchors = assert_v3_alignment(self.geometry, self.menu, self.screen, self.events, self.runtime)
         self.assertEqual(len(anchors[:18]), 18)
         self.assertEqual(len(anchors[18:45]), 27)
         self.assertEqual(len(anchors[45:]), 9)
-        # The three machine rows are measured in the artwork coordinate plane,
-        # and each full row has distinct 16x16 logical hitboxes.
-        self.assertEqual([anchors[i][6] for i in (0, 6, 12)], [68, 93, 118])
-        self.assertEqual([anchors[i][5] for i in (0, 1, 2, 3, 4, 5)], [34, 57, 81, 105, 128, 152])
+        self.assertEqual([anchors[i][1] for i in (0, 6, 12)], [67, 91, 115])
+        self.assertEqual([anchors[i][0] for i in range(6)], [44, 67, 89, 111, 133, 155])
+        self.assertEqual(anchors, [tuple(p) for p in self.contract])
 
-    def test_old_machine_screen_pitch_is_not_the_active_v3_contract(self):
+    def test_old_machine_screen_pitch_is_not_the_active_v5c_contract(self):
         self.assertNotIn("drawFactoryHopperWidgets", self.screen)
-        self.assertIn("FACTORY_HOPPER_ANCHORS", self.geometry)
+        self.assertIn('case "01" -> java.util.Arrays.asList', self.runtime)
         self.assertIn("FactoryStudyScreen::new", self.events)
 
     def test_selection_or_pointer_transform_mutation_is_rejected(self):
@@ -74,11 +80,16 @@ class HopperSelectionAlignment(unittest.TestCase):
             self.screen.replace("view.renderPointerX(mouseX)", "mouseX", 1),
             self.menu.replace("FactoryStudyGeometry.anchor(kind, this.slots.size())", "new MachineLayout.MachineSlot(0,0,0,\"bad\")", 1),
         ]
-        for mutated in mutations:
-            with self.subTest(mutated=mutated[:50]), self.assertRaises(AssertionError):
-                assert_v3_alignment(self.geometry, self.menu, mutated if mutated != mutations[2] else self.screen,
-                                    self.events) if mutated != mutations[2] else assert_v3_alignment(
-                                        self.geometry, mutated, self.screen, self.events)
+        for index, mutated in enumerate(mutations):
+            with self.subTest(index=index), self.assertRaises(AssertionError):
+                assert_v3_alignment(self.geometry, mutated if index == 2 else self.menu,
+                                    mutated if index != 2 else self.screen, self.events,
+                                    self.runtime, MATRIX.read_text(encoding="utf-8"))
+
+    def test_contract_or_runtime_anchor_drift_is_rejected(self):
+        changed = self.runtime.replace("new Point(44, 67)", "new Point(43, 67)", 1)
+        with self.assertRaises(AssertionError):
+            assert_v3_alignment(self.geometry, self.menu, self.screen, self.events, changed)
 
 
 if __name__ == "__main__":

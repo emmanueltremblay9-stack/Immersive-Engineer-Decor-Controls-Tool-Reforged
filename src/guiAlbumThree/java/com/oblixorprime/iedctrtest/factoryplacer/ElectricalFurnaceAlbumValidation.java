@@ -23,9 +23,9 @@ import org.lwjgl.glfw.GLFW;
 /** Separate-harness interaction evidence: no direct screen clicks or production action calls. */
 final class ElectricalFurnaceAlbumValidation {
     static final String INPUT_METHOD = "synthetic XTest pointer and Electrical Furnace button events through GLFW; server-opened menus; no human input";
-    // Independent acceptance coordinates from the retained 1199x1312 artwork,
-    // not imported from the production rendering or input implementation.
-    private static final int DIAL_X=184, DIAL_Y=88, BORDER_X=208, BORDER_Y=88;
+    // Independent acceptance coordinates from the selected GUI11-R3 V5-Corrigee
+    // canvas map, not imported from the production click handler.
+    private static final int DIAL_X=226, DIAL_Y=110, BORDER_X=213, BORDER_Y=110;
     private static final String[] NAMES={"empty-off","left-one","left-two","left-three","left-wrap",
         "right-wrap","rapid-left-three","middle-inert","border-inert","reopened","half-energy","full-energy"};
     private static final int[] SPEEDS={0,1,2,3,0,3,2,2,2,2,2,2};

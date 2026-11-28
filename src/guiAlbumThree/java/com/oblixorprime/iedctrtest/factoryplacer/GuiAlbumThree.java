@@ -122,7 +122,7 @@ public final class GuiAlbumThree {
                             && activeMenu.kind().registryName().equals(EXPECTED_KINDS[index])
                             && activeMenu.visibleMachineSlots()==EXPECTED_MACHINE_SLOTS[index]
                             && activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index],
-                            "Factory Study V3 menu slot layout mismatch for "+NAMES[index]);
+                            "Factory Study V5-Corrigee menu slot layout mismatch for "+NAMES[index]);
                     }
                     if(index==0 && ((MachineMenu)mc.player.containerMenu).field(6)!=selectionRow*6){waiting(mc,"client selection not synchronized");return;}
                     if(index==0 && selectionRenderFrames<3){waiting(mc,"selection render frames missing");return;}
@@ -153,12 +153,12 @@ public final class GuiAlbumThree {
                     obs.addProperty("gui_scale",mc.getWindow().getGuiScale());
                     long occupied=mc.player.containerMenu.slots.stream().filter(slot->slot.hasItem()).count();
                     if(EXPECTED_MACHINE_SLOTS[index]>0)
-                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],"Factory Study V3 occupied-stack fixture changed during capture");
+                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],"Factory Study V5-Corrigee occupied-stack fixture changed during capture");
                     obs.addProperty("visible_nonempty_slots",occupied);
                     if(activeMenu!=null){
                         long occupiedMachine=activeMenu.slots.subList(0,activeMenu.visibleMachineSlots()).stream().filter(slot->slot.hasItem()).count();
                         if(EXPECTED_MACHINE_SLOTS[index]>0)
-                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],"Factory Study V3 machine-stack fixture changed during capture");
+                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],"Factory Study V5-Corrigee machine-stack fixture changed during capture");
                         obs.addProperty("visible_machine_slots",activeMenu.visibleMachineSlots());
                         obs.addProperty("total_menu_slots",activeMenu.slots.size());
                         obs.addProperty("visible_nonempty_machine_slots",occupiedMachine);
@@ -182,7 +182,7 @@ public final class GuiAlbumThree {
                     if(index==0){
                         int selected=((MachineMenu)mc.player.containerMenu).field(6);
                         var slot=mc.player.containerMenu.slots.get(selected);
-                        require(slot.x==34 && slot.y==68+selectionRow*25,"Unexpected Factory Study V3 Hopper slot geometry");
+                        require(slot.x==44 && slot.y==67+selectionRow*24,"Unexpected Factory Study V5-Corrigee Hopper slot geometry");
                         obs.addProperty("selection_render_frames",selectionRenderFrames);
                         obs.addProperty("server_selection",selectionRow*6);obs.addProperty("client_selection",selected);
                         obs.addProperty("ring_x",slot.x-1);obs.addProperty("ring_y",slot.y-1);
@@ -336,7 +336,7 @@ public final class GuiAlbumThree {
     private static void finish(Minecraft mc,Throwable error){
         complete=true;
         if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}
-        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v3");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.add("wait_diagnostics",waitDiagnostics);proof.add("terminal_state",diagnostic(mc));proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",true);proof.addProperty("human_input",false);proof.addProperty("input_method",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty("synthetic_button_events",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add("electrical_controls",electricalValidation.proof());if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
+        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v5c");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.add("wait_diagnostics",waitDiagnostics);proof.add("terminal_state",diagnostic(mc));proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",true);proof.addProperty("human_input",false);proof.addProperty("input_method",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty("synthetic_button_events",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add("electrical_controls",electricalValidation.proof());if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
         catch(Exception e){EngineersDecorReforged.LOGGER.error("Album proof error",e);}
         if(error==null)EngineersDecorReforged.LOGGER.info("IEDCTR_GUI_ALBUM_THREE OBSERVED nonce={}",nonce);else EngineersDecorReforged.LOGGER.error("IEDCTR_GUI_ALBUM_THREE FAILED "+stage,error);mc.stop();
     }

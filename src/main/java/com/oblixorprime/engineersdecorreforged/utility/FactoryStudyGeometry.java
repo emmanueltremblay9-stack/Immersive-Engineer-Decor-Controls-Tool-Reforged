@@ -3,17 +3,18 @@ package com.oblixorprime.engineersdecorreforged.utility;
 import java.util.List;
 
 /**
- * Exact client geometry for the three owner-approved Factory Study V3 images.
- * All item anchors were measured against the unchanged PNG bytes. The source is
- * uniformly scaled by 1/4; rounded canvas bounds never stretch its proportions.
- * This class has no client imports and changes no inventory or machine semantics.
+ * Exact client geometry for the owner-selected GUI11-R3 V5-Corrigee Factory Study
+ * panels. Logical item anchors come from that panel's runtime map; matching source
+ * coordinates account for each panel's actual raster-to-canvas ratio. This class
+ * changes no inventory or machine semantics.
  */
 public final class FactoryStudyGeometry {
-   public static final int SOURCE_WIDTH = 1261;
-   public static final int SOURCE_HEIGHT = 1247;
-   public static final int CANVAS_WIDTH = 316;
-   public static final int CANVAS_HEIGHT = 312;
-   public static final float SOURCE_SCALE = 0.25F;
+   /** Legacy V3 raster dimensions retained for old reference helpers only. */
+   @Deprecated public static final int SOURCE_WIDTH = 1261;
+   @Deprecated public static final int SOURCE_HEIGHT = 1247;
+   @Deprecated public static final int CANVAS_WIDTH = 316;
+   @Deprecated public static final int CANVAS_HEIGHT = 312;
+   @Deprecated public static final float SOURCE_SCALE = 0.25F;
    public static final int ITEM_SIZE = 16;
    public static final int VIEWPORT_MARGIN = 6;
    private FactoryStudyGeometry() {}
@@ -34,14 +35,19 @@ public final class FactoryStudyGeometry {
 
    public static String texturePath(MachineKind kind) {
       if (!supports(kind)) throw new IllegalArgumentException("Unsupported study GUI: " + kind);
-      return "textures/gui/factory_study_v3/" + kind.registryName() + ".png";
+      return Gui11V5CRuntimeGeometry.texturePath(kind);
    }
+
+   public static int canvasWidth(MachineKind kind) { return Gui11V5CRuntimeGeometry.width(kind); }
+   public static int canvasHeight(MachineKind kind) { return Gui11V5CRuntimeGeometry.height(kind); }
+   public static int sourceWidth(MachineKind kind) { return Gui11V5CRuntimeGeometry.sourceWidth(kind); }
+   public static int sourceHeight(MachineKind kind) { return Gui11V5CRuntimeGeometry.sourceHeight(kind); }
 
    public static String sourceSha256(MachineKind kind) {
       return switch (kind) {
-         case FACTORY_HOPPER -> "d3f087682be5cb6c8403f054565d66a457b4130ec461ed6a9e753eba3602f3a6";
-         case FACTORY_DROPPER -> "c01d510bd06639a112a4fc34cfe8fe7233b987de81dcfc826a9b54bd090d50a6";
-         case SMALL_LAB_FURNACE -> "b86251e58b95ca8f5a7d94a0893d042f26b419ba2224be7a6004cea0a6583cb4";
+         case FACTORY_HOPPER -> "83d993acb4cfc23e4ebbd8309881fa8f5f2730ef5f4d5369ef9302455ddd24ef";
+         case FACTORY_DROPPER -> "b952405bfc920a27de03aa22577dd7e71a7d14624315c720e256a535a080839e";
+         case SMALL_LAB_FURNACE -> "d42e232cf8d21093f34155a879194ce72f06a40451177f3208dadfc0dbd96509";
          default -> throw new IllegalArgumentException("Unsupported study GUI: " + kind);
       };
    }
@@ -208,6 +214,15 @@ public final class FactoryStudyGeometry {
    );
 
    public static List<SlotAnchor> anchors(MachineKind kind) {
+      if (Gui11V5CRuntimeGeometry.supports(kind) && supports(kind)) {
+         List<SlotAnchor> mapped = new java.util.ArrayList<>();
+         List<Gui11V5CRuntimeGeometry.Point> points = Gui11V5CRuntimeGeometry.slots(kind);
+         for (int i = 0; i < points.size(); i++) {
+            var point = points.get(i);
+            if (point != null) mapped.add(mappedAnchor(kind, i, point));
+         }
+         return List.copyOf(mapped);
+      }
       return switch (kind) {
          case FACTORY_HOPPER -> FACTORY_HOPPER_ANCHORS;
          case FACTORY_DROPPER -> FACTORY_DROPPER_ANCHORS;
@@ -217,14 +232,31 @@ public final class FactoryStudyGeometry {
    }
 
    public static SlotAnchor anchor(MachineKind kind, int menuIndex) {
+      if (supports(kind)) {
+         var point = Gui11V5CRuntimeGeometry.slot(kind, menuIndex);
+         if (point == null) throw new IllegalArgumentException("No visible anchor for menu index " + menuIndex);
+         return mappedAnchor(kind, menuIndex, point);
+      }
       var anchors = anchors(kind);
       if (menuIndex < 0 || menuIndex >= anchors.size()) throw new IllegalArgumentException("Invalid menu index " + menuIndex);
       return anchors.get(menuIndex);
    }
 
+   private static SlotAnchor mappedAnchor(MachineKind kind, int menuIndex, Gui11V5CRuntimeGeometry.Point point) {
+      int sourceWidth = sourceWidth(kind);
+      int sourceHeight = sourceHeight(kind);
+      int canvasWidth = canvasWidth(kind);
+      int canvasHeight = canvasHeight(kind);
+      int sourceX = (int)Math.round((double)point.x() * sourceWidth / canvasWidth);
+      int sourceY = (int)Math.round((double)point.y() * sourceHeight / canvasHeight);
+      int sourceItemWidth = Math.max(1, (int)Math.round((double)ITEM_SIZE * sourceWidth / canvasWidth));
+      int sourceItemHeight = Math.max(1, (int)Math.round((double)ITEM_SIZE * sourceHeight / canvasHeight));
+      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceItemWidth, sourceItemHeight, point.x(), point.y());
+   }
+
    public static Rect header(MachineKind kind) {
       if (!supports(kind)) throw new IllegalArgumentException("Unsupported study GUI: " + kind);
-      return new Rect(90, 8, 132, 24);
+      return new Rect(Math.max(12, (canvasWidth(kind) - 180) / 2), 7, Math.min(180, canvasWidth(kind) - 24), 30);
    }
 
    public enum Control { RANGE, PERIOD, COUNT, MANUAL, REDSTONE, TRIGGER, VELOCITY, DIRECTION, FILTER_GATE }
@@ -241,6 +273,16 @@ public final class FactoryStudyGeometry {
    }
 
    public static Rect controlBounds(MachineKind kind, Control control) {
+      if (supports(kind)) {
+         String key = switch (control) {
+            case RANGE -> "range"; case PERIOD -> "period"; case COUNT -> "count";
+            case MANUAL -> "manual"; case REDSTONE -> "redstone"; case TRIGGER -> "cycle";
+            case VELOCITY -> "velocity"; case DIRECTION -> "direction"; case FILTER_GATE -> "filter";
+         };
+         var rect = Gui11V5CRuntimeGeometry.control(kind, key);
+         if (rect == null) throw new IllegalArgumentException("Control is not present: " + control);
+         return new Rect(rect.x(), rect.y(), rect.width(), rect.height());
+      }
       if (kind == MachineKind.FACTORY_HOPPER) return switch (control) {
          case RANGE -> new Rect(180, 44, 112, 24);
          case PERIOD -> new Rect(180, 69, 112, 22);
@@ -265,6 +307,12 @@ public final class FactoryStudyGeometry {
    }
 
    public static Rect track(MachineKind kind, Control control) {
+      if (supports(kind)) {
+         Rect bounds = controlBounds(kind, control);
+         int inset = Math.min(4, Math.max(1, Math.min(bounds.width(), bounds.height()) / 4));
+         return new Rect(bounds.x() + inset, bounds.y() + inset,
+            Math.max(1, bounds.width() - inset * 2), Math.max(1, bounds.height() - inset * 2));
+      }
       if (kind == MachineKind.FACTORY_HOPPER) return switch (control) {
          case RANGE -> new Rect(214, 52, 70, 9);
          case PERIOD -> new Rect(214, 75, 70, 10);
@@ -293,17 +341,21 @@ public final class FactoryStudyGeometry {
       return null;
    }
 
-   public static Rect energy() { return new Rect(267, 57, 6, 72); }
-   public static Rect energyBounds() { return new Rect(258, 46, 29, 97); }
-   public static Rect progress() { return new Rect(142, 80, 20, 20); }
-   public static Rect flame() { return new Rect(111, 86, 17, 18); }
+   public static Rect energy() {
+      var component = Gui11V5CRuntimeGeometry.energy(MachineKind.SMALL_LAB_FURNACE);
+      return new Rect(component.x() + 3, component.y() + 4,
+         Math.max(1, component.width() - 6), Math.max(1, component.height() - 8));
+   }
+   public static Rect energyBounds() { var r = Gui11V5CRuntimeGeometry.energy(MachineKind.SMALL_LAB_FURNACE); return new Rect(r.x() - 5, r.y() - 4, r.width() + 10, r.height() + 8); }
+   public static Rect progress() { return new Rect(130, 68, 18, 16); }
+   public static Rect flame() { return new Rect(106, 74, 15, 14); }
 
    public static Rect filterIndicator(int index, int statusIndex) {
       if (index < 0 || index > 2 || statusIndex < 0 || statusIndex > 2)
          throw new IllegalArgumentException("Filter and status indices must be 0..2");
-      int x = new int[] {57, 107, 157}[index];
-      int y = new int[] {134, 139, 144}[statusIndex];
-      return new Rect(x, y, 8, 2);
+      var slot = Gui11V5CRuntimeGeometry.slot(MachineKind.FACTORY_DROPPER, 12 + index);
+      int y = slot.y() + 10 + statusIndex;
+      return new Rect(slot.x() + 3, y, 8, 1);
    }
 
    public record Rect(int x, int y, int width, int height) {
@@ -337,18 +389,23 @@ public final class FactoryStudyGeometry {
    }
 
    public static ViewTransform fit(int viewportWidth, int viewportHeight) {
+      return fit(MachineKind.FACTORY_HOPPER, viewportWidth, viewportHeight);
+   }
+
+   public static ViewTransform fit(MachineKind kind, int viewportWidth, int viewportHeight) {
       if (viewportWidth <= 0 || viewportHeight <= 0) throw new IllegalArgumentException("Positive viewport required");
+      int canvasWidth = canvasWidth(kind), canvasHeight = canvasHeight(kind);
       double margin = Math.min(VIEWPORT_MARGIN, (Math.min(viewportWidth, viewportHeight) - 1.0D) / 2.0D);
       double availableWidth = viewportWidth - 2 * margin, availableHeight = viewportHeight - 2 * margin;
-      float scale = (float)Math.min(1.0D, Math.min(availableWidth / CANVAS_WIDTH, availableHeight / CANVAS_HEIGHT));
-      if ((double)scale * CANVAS_WIDTH > availableWidth || (double)scale * CANVAS_HEIGHT > availableHeight)
+      float scale = (float)Math.min(1.0D, Math.min(availableWidth / canvasWidth, availableHeight / canvasHeight));
+      if ((double)scale * canvasWidth > availableWidth || (double)scale * canvasHeight > availableHeight)
          scale = Math.nextDown(scale);
-      return new ViewTransform(scale, (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2),
-         (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2));
+      return new ViewTransform(scale, (float)((viewportWidth - (double)canvasWidth * scale) / 2),
+         (float)((viewportHeight - (double)canvasHeight * scale) / 2), canvasWidth, canvasHeight);
    }
 
    /** One transform shared by every render, absolute input and drag-delta path. */
-   public record ViewTransform(float scale, float originX, float originY) {
+   public record ViewTransform(float scale, float originX, float originY, int canvasWidth, int canvasHeight) {
       public ViewTransform {
          if (!Float.isFinite(scale) || scale <= 0 || scale > 1
             || !Float.isFinite(originX) || !Float.isFinite(originY)) throw new IllegalArgumentException("Invalid transform");
@@ -363,8 +420,8 @@ public final class FactoryStudyGeometry {
       public int renderPointerY(double y) { return (int)Math.floor(localY(y)); }
       public int guiLeft() { return (int)Math.floor(screenX(0)); }
       public int guiTop() { return (int)Math.floor(screenY(0)); }
-      public int guiWidth() { return (int)Math.ceil(screenX(CANVAS_WIDTH)) - guiLeft(); }
-      public int guiHeight() { return (int)Math.ceil(screenY(CANVAS_HEIGHT)) - guiTop(); }
+      public int guiWidth() { return (int)Math.ceil(screenX(canvasWidth)) - guiLeft(); }
+      public int guiHeight() { return (int)Math.ceil(screenY(canvasHeight)) - guiTop(); }
    }
 
    public static List<Rect> flameMask() { return List.of(

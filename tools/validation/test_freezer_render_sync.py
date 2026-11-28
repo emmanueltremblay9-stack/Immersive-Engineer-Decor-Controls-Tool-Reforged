@@ -22,15 +22,23 @@ class RenderSyncTest(unittest.TestCase):
         self.assertIn('proof.addProperty("canvas_width", ThermalVerticalGeometry.CANVAS_WIDTH)', source)
         self.assertIn('proof.addProperty("canvas_height", ThermalVerticalGeometry.CANVAS_HEIGHT)', source)
 
-    def test_energy_clip_projects_scissor_to_screen_space(self):
-        screen = (Path(__file__).resolve().parents[2] /
-                  'src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java').read_text()
-        geometry = (Path(__file__).resolve().parents[2] /
-                    'src/main/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometry.java').read_text()
-        self.assertIn('view.screenBounds(x0, top, x1, y1)', screen)
-        self.assertIn('enableScissor(scissor.left(), scissor.top(), scissor.right(), scissor.bottom())', screen)
-        self.assertIn('Math.floor(this.screenX(left))', geometry)
-        self.assertIn('Math.ceil(this.screenY(bottom))', geometry)
+    def test_v5c_energy_fill_uses_measured_glass_without_zero_state_overlay(self):
+        root = Path(__file__).resolve().parents[2]
+        artwork = (root / 'src/main/java/com/oblixorprime/engineersdecorreforged/client/Gui11V5CArtwork.java').read_text()
+        geometry = (root / 'src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java').read_text()
+        screen = (root / 'src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java').read_text()
+        energy = artwork.split('public static void drawEnergy(GuiGraphics graphics, MachineMenu menu, int originX, int originY)', 1)[1].split('public static int energyFillPixels', 1)[0]
+        fill = artwork.split('public static int energyFillPixels', 1)[1].split('/**', 1)[0]
+        self.assertIn('Gui11V5CArtwork.draw(graphics, menu)', screen)
+        self.assertIn('Gui11V5CRuntimeGeometry.energy(menu.kind())', energy)
+        self.assertIn('menu.energyCapacity() <= 0 || menu.energyStored() <= 0) return', energy)
+        self.assertIn('int insetX = vertical ? 3 : 4;', energy)
+        self.assertIn('int insetY = vertical ? 4 : 3;', energy)
+        self.assertIn('y + height - filled', energy)  # vertical track fills bottom-up
+        self.assertIn('x + filled', energy)  # horizontal track fills left-to-right
+        self.assertIn('Math.min(stored, capacity)', fill)
+        self.assertIn('case "05"', geometry)
+        self.assertIn('case "06"', geometry)
 
     def test_capture_is_post_render_not_client_tick(self):
         source = SOURCE.read_text()

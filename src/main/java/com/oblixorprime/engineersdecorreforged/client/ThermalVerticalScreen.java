@@ -1,11 +1,10 @@
 package com.oblixorprime.engineersdecorreforged.client;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
-import java.util.List;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -23,14 +22,6 @@ import org.lwjgl.glfw.GLFW;
 public final class ThermalVerticalScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String NS = "immersive_engineer_decor_controls_tool_reforged";
    public static final String FREEZER_RECOVERY_HELP_KEY = "gui." + NS + ".freezer_reference.recover_help";
-   private static final ResourceLocation FREEZER_BASE = texture("thermal_vertical/freezer/neutral.png");
-   private static final ResourceLocation FREEZER_EFFECT = texture("thermal_vertical/freezer/effect.png");
-   private static final ResourceLocation FREEZER_ENERGY = texture("thermal_vertical/freezer/energy.png");
-   private static final ResourceLocation SMELTER_BASE = texture("thermal_vertical/smelter/neutral.png");
-   private static final ResourceLocation SMELTER_EFFECT = texture("thermal_vertical/smelter/effect.png");
-   private static final ResourceLocation SMELTER_ENERGY = texture("thermal_vertical/smelter/energy.png");
-   private static final int RENDER_WIDTH = 1041;
-   private static final int RENDER_HEIGHT = 1143;
    private static final float MAX_VIEW_SCALE = 0.78F;
    private FreezerReferenceGeometry.ViewTransform view = FreezerReferenceGeometry.fitCanvas(
       ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 347, 381, MAX_VIEW_SCALE);
@@ -38,10 +29,6 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
    private double localMouseX;
    private double localMouseY;
    private Button recoveryButton;
-
-   private static ResourceLocation texture(String path) {
-      return ResourceLocation.fromNamespaceAndPath(NS, "textures/gui/" + path);
-   }
 
    public ThermalVerticalScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
@@ -87,7 +74,7 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
       if (freezer()) {
          recoveryButton = addRenderableWidget(Button.builder(
             Component.literal("↶"), b -> recoverLegacy())
-            .bounds(238, 199, 16, 16).build());
+            .bounds(183, 19, 16, 16).build());
          updateRecovery();
       }
    }
@@ -133,10 +120,10 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
          // Keep the localized instruction inside narrow Prism windows without
          // changing its wording or the recovery control's hitbox.
          graphics.renderTooltip(font, font.split(recoveryHelp, Math.max(80, Math.min(240, width - 16))), mouseX, mouseY);
-      } else if (hoveredSlot == null && localOver(mouseX, mouseY, 55, 88, 25, 105)) {
+      } else if (hoveredSlot == null && energyContains(mouseX, mouseY)) {
          graphics.renderTooltip(font, Component.literal(menu.energyStored() + " / " + menu.energyCapacity() + " FE"),
             mouseX, mouseY);
-      } else if (hoveredSlot == null && localOver(mouseX, mouseY, 105, 107, 136, 81)) {
+      } else if (hoveredSlot == null && chamberContains(mouseX, mouseY)) {
          Component status = freezer()
             ? Component.literal("Cold stage " + menu.freezerPhase() + " / 4")
             : Component.literal("Heat phase " + menu.field(MachineMenu.SMS_UI_PHASE)
@@ -150,34 +137,20 @@ public final class ThermalVerticalScreen extends AbstractContainerScreen<Machine
       return px >= x && px < x + w && py >= y && py < y + h;
    }
 
-   @Override
-   protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-      ResourceLocation base = freezer() ? FREEZER_BASE : SMELTER_BASE;
-      graphics.blit(base, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);
-      if (freezer()) {
-         if (ThermalVerticalGeometry.effectVisible(menu.kind(), menu.freezerPhase(), 0))
-            graphics.blit(FREEZER_EFFECT, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);
-         drawEnergy(graphics, FREEZER_ENERGY, 56, 89, 77, 192);
-      } else {
-         if (ThermalVerticalGeometry.effectVisible(menu.kind(), menu.field(MachineMenu.SMS_UI_PHASE), menu.field(MachineMenu.SMS_UI_FLAGS)))
-            graphics.blit(SMELTER_EFFECT, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);
-         drawEnergy(graphics, SMELTER_ENERGY, 58, 88, 79, 193);
-      }
+   private boolean energyContains(double mouseX, double mouseY) {
+      Gui11V5CRuntimeGeometry.Rect energy = Gui11V5CRuntimeGeometry.energy(menu.kind());
+      return energy != null && energy.contains(view.localX(mouseX), view.localY(mouseY));
    }
 
-   private void drawEnergy(GuiGraphics graphics, ResourceLocation layer, int x0, int y0, int x1, int y1) {
-      int top = ThermalVerticalGeometry.energyClipTop(y0, y1, menu.energyStored(), menu.energyCapacity());
-      if (top >= y1) return;
-      // GuiGraphics.enableScissor uses GUI-scaled screen coordinates and does
-      // not follow the pose-stack transform used to draw this canvas. Project
-      // the logical meter bounds through the same view transform first.
-      var scissor = view.screenBounds(x0, top, x1, y1);
-      graphics.enableScissor(scissor.left(), scissor.top(), scissor.right(), scissor.bottom());
-      try {
-         graphics.blit(layer, 0, 0, imageWidth, imageHeight, 0, 0, RENDER_WIDTH, RENDER_HEIGHT, RENDER_WIDTH, RENDER_HEIGHT);
-      } finally {
-         graphics.disableScissor();
-      }
+   private boolean chamberContains(double mouseX, double mouseY) {
+      String key = freezer() ? "cold-chamber" : "heat-chamber";
+      Gui11V5CRuntimeGeometry.Rect chamber = Gui11V5CRuntimeGeometry.effectBounds(menu.kind(), key);
+      return chamber != null && chamber.contains(view.localX(mouseX), view.localY(mouseY));
+   }
+
+   @Override
+   protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
+      Gui11V5CArtwork.draw(graphics, menu);
    }
 
    @Override

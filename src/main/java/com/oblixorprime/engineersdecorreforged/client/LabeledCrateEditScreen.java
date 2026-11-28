@@ -20,13 +20,17 @@ public final class LabeledCrateEditScreen extends Screen {
    private EditBox firstLine;
    private EditBox secondLine;
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
-      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/label_editor_reference_v1/background.png");
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/gui11_v5c/18.png");
+   private static final int PANEL_WIDTH = 368;
+   private static final int PANEL_HEIGHT = 207;
+   private static final int SOURCE_WIDTH = 1672;
+   private static final int SOURCE_HEIGHT = 941;
    private int panelLeft, panelTop, panelWidth, panelHeight;
+   private float panelScale;
 
-   private int sourceX(int x) { return panelLeft + Math.round(x * panelWidth / 1536.0F); }
-   private int sourceY(int y) { return panelTop + Math.round(y * panelHeight / 1024.0F); }
-   private int sourceWidth(int w) { return Math.max(1, Math.round(w * panelWidth / 1536.0F)); }
-   private int sourceHeight(int h) { return Math.max(1, Math.round(h * panelHeight / 1024.0F)); }
+   private int panelX(float x) { return panelLeft + Math.round(x * panelScale); }
+   private int panelY(float y) { return panelTop + Math.round(y * panelScale); }
+   private int panelDimension(float value) { return Math.max(1, Math.round(value * panelScale)); }
 
    /** Native Button input/focus/narration, with the retained artwork as its visual face. */
    private static final class PlaqueButton extends Button {
@@ -53,17 +57,17 @@ public final class LabeledCrateEditScreen extends Screen {
       // Screen reinitialization (for example a resize) must retain unsaved label text.
       String line0 = this.firstLine == null ? this.initialLines[0] : this.firstLine.getValue();
       String line1 = this.secondLine == null ? this.initialLines[1] : this.secondLine.getValue();
-      float scale = Math.min(0.25F, Math.min(Math.max(1, this.width - 12) / 1536.0F,
-         Math.max(1, this.height - 12) / 1024.0F));
-      panelWidth = Math.max(1, (int)(1536 * scale));
-      panelHeight = Math.max(1, (int)(1024 * scale));
+      panelScale = Math.min(1.0F, Math.min(Math.max(1, this.width - 24) / (float)PANEL_WIDTH,
+         Math.max(1, this.height - 24) / (float)PANEL_HEIGHT));
+      panelWidth = Math.max(1, Math.round(PANEL_WIDTH * panelScale));
+      panelHeight = Math.max(1, Math.round(PANEL_HEIGHT * panelScale));
       panelLeft = (this.width - panelWidth) / 2;
       panelTop = (this.height - panelHeight) / 2;
-      int boxWidth = sourceWidth(1120);
-      int left = sourceX(208);
-      this.firstLine = new EditBox(this.font, left, sourceY(438) - 4, boxWidth, 12,
+      int boxWidth = panelDimension(239.8F);
+      int left = panelX(64.24F);
+      this.firstLine = new EditBox(this.font, left, panelY(75.68F), boxWidth, Math.max(12, panelDimension(17.38F)),
          Component.translatable("screen.immersive_engineer_decor_controls_tool_reforged.labeled_crate_label.line1"));
-      this.secondLine = new EditBox(this.font, left, sourceY(607) - 4, boxWidth, 12,
+      this.secondLine = new EditBox(this.font, left, panelY(111.76F), boxWidth, Math.max(12, panelDimension(17.6F)),
          Component.translatable("screen.immersive_engineer_decor_controls_tool_reforged.labeled_crate_label.line2"));
       this.firstLine.setBordered(false);
       this.secondLine.setBordered(false);
@@ -73,9 +77,9 @@ public final class LabeledCrateEditScreen extends Screen {
       this.secondLine.setValue(line1);
       this.addRenderableWidget(this.firstLine);
       this.addRenderableWidget(this.secondLine);
-      this.addRenderableWidget(new PlaqueButton(sourceX(320), sourceY(760), sourceWidth(405), sourceHeight(85),
+      this.addRenderableWidget(new PlaqueButton(panelX(76.56F), panelY(146.3F), panelDimension(102.74F), panelDimension(31.68F),
          Component.translatable("gui.done"), button -> this.saveAndClose()));
-      this.addRenderableWidget(new PlaqueButton(sourceX(810), sourceY(760), sourceWidth(405), sourceHeight(85),
+      this.addRenderableWidget(new PlaqueButton(panelX(188.32F), panelY(146.3F), panelDimension(103.62F), panelDimension(31.68F),
          Component.translatable("gui.cancel"), button -> this.onClose()));
       this.setInitialFocus(this.firstLine);
    }
@@ -84,13 +88,16 @@ public final class LabeledCrateEditScreen extends Screen {
    public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
       // One background pass, then retained faceplate, then native widgets and foreground labels.
       super.renderBackground(graphics, mouseX, mouseY, partialTick);
-      graphics.blit(FACEPLATE, panelLeft, panelTop, panelWidth, panelHeight, 0, 0, 1536, 1024, 1536, 1024);
+      graphics.blit(FACEPLATE, panelLeft, panelTop, panelWidth, panelHeight, 0, 0,
+         SOURCE_WIDTH, SOURCE_HEIGHT, SOURCE_WIDTH, SOURCE_HEIGHT);
    }
 
    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
       super.render(graphics, mouseX, mouseY, partialTick);
-      graphics.drawCenteredString(this.font, this.title, this.width / 2, sourceY(134) - 4, 16777215);
-      if (mouseY >= sourceY(270) && mouseY < sourceY(340) && mouseX >= sourceX(208) && mouseX < sourceX(1328)) {
+      graphics.drawCenteredString(this.font, this.title, panelX(PANEL_WIDTH / 2.0F), panelY(24), 16777215);
+      if (mouseX >= panelX(64.24F) && mouseX < panelX(64.24F + 239.8F)
+         && ((mouseY >= panelY(75.68F) && mouseY < panelY(75.68F + 17.38F))
+            || (mouseY >= panelY(111.76F) && mouseY < panelY(111.76F + 17.6F)))) {
          graphics.renderTooltip(this.font,
             Component.translatable("screen.immersive_engineer_decor_controls_tool_reforged.labeled_crate_label.hint"), mouseX, mouseY);
       }

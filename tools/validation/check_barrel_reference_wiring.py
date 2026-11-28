@@ -6,6 +6,7 @@ import json
 import struct
 import re
 from tree_integration_preservation import assert_menu_tail_preserved
+from prism_210_history_projection import project_before_gui11_v5c
 r=Path(__file__).resolve().parents[2]
 j=r/'src/main/java/com/oblixorprime/engineersdecorreforged'
 s=(j/'client/BarrelReferenceScreen.java').read_text()
@@ -35,7 +36,12 @@ assert 'new MachineScreen.FluidBarrelScreen(menu, inventory, title)' in c
 assert_menu_tail_preserved(m)
 print('PASS: event routing, legacy fallback, client-only V5 default, unchanged transfer/data/validation code')
 
-g=(j/'utility/BarrelReferenceGeometry.java').read_text()
+# This checker guards the earlier, independently qualified Barrel V5 surface.
+# Project only the exact GUI11 V5-Corrigee geometry layer before consuming its
+# historical source-raster constants; current candidate geometry is checked by
+# the GUI18 runtime matrix and native run.
+g_path='src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometry.java'
+g=project_before_gui11_v5c(g_path,(r/g_path).read_bytes(),strict=True).decode()
 source_width=int(re.search(r'SOURCE_WIDTH = (\d+)',g)[1])
 source_height=int(re.search(r'SOURCE_HEIGHT = (\d+)',g)[1])
 art=r/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png'

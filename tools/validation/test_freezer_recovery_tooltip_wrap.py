@@ -29,7 +29,7 @@ class FreezerRecoveryTooltipTest(unittest.TestCase):
 
     def test_recovery_button_remains_inside_thermal_canvas(self):
         source = SCREEN.read_text()
-        self.assertIn(".bounds(238, 199, 16, 16)", source)
+        self.assertIn(".bounds(183, 19, 16, 16)", source)
         self.assertIn("ThermalVerticalGeometry.CANVAS_WIDTH", source)
         self.assertIn("ThermalVerticalGeometry.CANVAS_HEIGHT", source)
 

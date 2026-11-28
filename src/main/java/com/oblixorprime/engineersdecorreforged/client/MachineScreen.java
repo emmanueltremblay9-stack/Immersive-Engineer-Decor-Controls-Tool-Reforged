@@ -10,6 +10,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFreezerArtworkMasks;
 import com.oblixorprime.engineersdecorreforged.utility.MilkingState;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -49,8 +50,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    protected MachineScreen(MachineMenu menu, Inventory inventory, Component title, MachineScreen.Profile profile) {
       super(menu, inventory, title);
       this.profile = profile;
-      this.imageWidth = menu.layout().imageWidth();
-      this.imageHeight = menu.layout().imageHeight();
+      this.imageWidth = menu.gui11V5CPresentation() ? Gui11V5CRuntimeGeometry.width(menu.kind()) : menu.layout().imageWidth();
+      this.imageHeight = menu.gui11V5CPresentation() ? Gui11V5CRuntimeGeometry.height(menu.kind()) : menu.layout().imageHeight();
       this.titleLabelX = 8;
       this.titleLabelY = 6;
       this.inventoryLabelX = menu.layout().playerInventoryX();
@@ -108,6 +109,14 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       int x = this.leftPos;
       int y = this.topPos;
+      if (((MachineMenu)this.menu).gui11V5CPresentation()) {
+         Gui11V5CArtwork.draw(graphics, (MachineMenu)this.menu, x, y);
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_ELECTRICAL_FURNACE) {
+            ElectricalFurnaceArtwork.renderGui11V5C(graphics, Gui11V5CArtwork.texture(this.menu.kind()),
+               x, y, this.imageWidth, this.imageHeight, this.menu.field(4));
+         }
+         return;
+      }
       if (layout.style() == MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
          GuiTextureBlit geometry = layout.artworkBlit();
@@ -176,8 +185,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+      Gui11V5CRuntimeGeometry.Rect v5cDial = ((MachineMenu)this.menu).gui11V5CPresentation()
+         ? Gui11V5CRuntimeGeometry.control(this.menu.kind(), "rotary") : null;
       if (this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE
-         && ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos)) {
+         && (v5cDial != null
+            ? this.isHovering(v5cDial.x(), v5cDial.y(), v5cDial.width(), v5cDial.height(), mouseX, mouseY)
+            : ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos))) {
          int step = ElectricalFurnaceArtwork.clickStep(button);
          if (step == 0) return false;
          this.sendAction(ElectricalFurnaceControl.CYCLE_SPEED_ACTION, step);
@@ -190,6 +203,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
       MachineLayout layout = ((MachineMenu)this.menu).layout();
+      if (((MachineMenu)this.menu).gui11V5CPresentation()) return;
       if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
          // Keep the supplied artwork text-free. Machine information is available
          // through bounded, localized hover tooltips; vanilla slot counts remain.
@@ -568,6 +582,15 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void renderOriginalHoverOverlay(GuiGraphics graphics, int mouseX, int mouseY) {
       if (((MachineMenu)this.menu).layout().style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
+         if (((MachineMenu)this.menu).gui11V5CPresentation()) {
+            int slotListIndex = this.hoveredSlot == null ? -1 : this.menu.slots.indexOf(this.hoveredSlot);
+            if (slotListIndex >= 0 && slotListIndex < ((MachineMenu)this.menu).visibleMachineSlots()
+               && this.hoveredSlot.isActive()) {
+               this.drawHoverOutline(graphics, this.leftPos + this.hoveredSlot.x - 1,
+                  this.topPos + this.hoveredSlot.y - 1, 18, 18, -1917873);
+            }
+            return;
+         }
          MachineLayout.MachineSlot slot = this.hoveredMachineSlot(mouseX, mouseY);
          if (slot != null) {
             this.drawHoverOutline(graphics, this.leftPos + slot.x() - 1, this.topPos + slot.y() - 1, 18, 18, -1917873);
@@ -1413,6 +1436,45 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+      if (((MachineMenu)this.menu).gui11V5CPresentation()) {
+         Gui11V5CRuntimeGeometry.Rect energy = Gui11V5CRuntimeGeometry.energy(this.menu.kind());
+         double localX = mouseX - this.leftPos, localY = mouseY - this.topPos;
+         Gui11V5CRuntimeGeometry.Rect fluid = Gui11V5CRuntimeGeometry.fluidDisplay(this.menu.kind());
+         if (energy != null && energy.contains(localX, localY) && this.hoveredSlot == null) {
+            graphics.renderTooltip(this.font,
+               Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.machine.energy_tooltip",
+                  this.menu.energyStored(), this.menu.energyCapacity()), mouseX, mouseY);
+         } else if (this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE && this.hoveredSlot == null) {
+            Gui11V5CRuntimeGeometry.Rect dial = Gui11V5CRuntimeGeometry.control(this.menu.kind(), "rotary");
+            if (dial != null && dial.contains(localX, localY)) {
+               String mode = switch (Mth.clamp(this.menu.field(4), 0, 3)) {
+                  case 1 -> "I"; case 2 -> "II"; case 3 -> "III"; default -> "OFF";
+               };
+               String prefix = "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.";
+               graphics.renderTooltip(this.font, Component.translatable(prefix + "speed").copy().append("\n")
+                  .append(Component.translatable(prefix + "rotation", mode)).append("\n")
+                  .append(Component.translatable(prefix + "actual_draw", Math.max(0, this.menu.field(7))))
+                  .append("\n").append(Component.translatable(prefix + "residual_heat", Math.max(0, this.menu.field(0)))), mouseX, mouseY);
+            }
+         } else if (fluid != null && fluid.contains(localX, localY) && this.hoveredSlot == null) {
+            Component amount = this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL
+               ? Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.tank.tooltip",
+                  this.smallFluidFunnelFluidName(this.menu.smallFluidFunnelFluidCode()),
+                  this.menu.fluidAmount(), this.menu.fluidCapacity())
+               : Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.tank.tooltip",
+                  this.menu.fluidAmount(), this.menu.fluidCapacity());
+            graphics.renderTooltip(this.font, amount, mouseX, mouseY);
+         }
+         if (this.hoveredSlot != null && !this.hoveredSlot.hasItem()) {
+            int menuSlot = this.menu.slots.indexOf(this.hoveredSlot);
+            if (menuSlot >= 0 && menuSlot < this.menu.visibleMachineSlots()) {
+               Component tooltip = this.slotTooltip(new MachineLayout.MachineSlot(
+                  this.hoveredSlot.index, this.hoveredSlot.x, this.hoveredSlot.y, "", false));
+               if (hasVisibleTooltipText(tooltip)) graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);
+            }
+         }
+         return;
+      }
         Component funnelTooltip = this.smallFluidFunnelTooltip(mouseX, mouseY);
         if (funnelTooltip != null) {
             this.renderFluidArtworkTooltip(graphics, funnelTooltip, mouseX, mouseY);

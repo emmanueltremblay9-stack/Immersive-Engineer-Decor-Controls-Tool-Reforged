@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Capture seven ordinary GUIs and exercise Electrical Furnace controls in a real client."""
+"""Capture seven ordinary GUIs and exercise the GUI11 V5-Corrigee Electrical dial in a real client."""
 import argparse
 import hashlib
 import json
@@ -34,8 +34,8 @@ SCREENS = [
     'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen',
     'com.oblixorprime.engineersdecorreforged.client.FactoryStudyScreen',
 ]
-V3_LAYOUTS = {0: (18, 54), 5: (15, 51), 6: (11, 47)}
-V3_OCCUPIED_SLOTS = {0: (18, 54), 5: (15, 51), 6: (5, 41)}
+V5C_LAYOUTS = {0: (18, 54), 5: (15, 51), 6: (11, 47)}
+V5C_OCCUPIED_SLOTS = {0: (18, 54), 5: (15, 51), 6: (5, 41)}
 ELECTRICAL_INPUT = 'synthetic XTest pointer and Electrical Furnace button events through GLFW; server-opened menus; no human input'
 ELECTRICAL_CASES = ['empty-off','left-one','left-two','left-three','left-wrap','right-wrap',
                     'rapid-left-three','middle-inert','border-inert','reopened','half-energy','full-energy']
@@ -43,19 +43,21 @@ ELECTRICAL_SPEEDS = [0,1,2,3,0,3,2,2,2,2,2,2]
 ELECTRICAL_ENERGY = [0,0,0,0,0,0,0,0,0,0,16000,32000]
 ELECTRICAL_CLICKS = [0,1,1,1,1,1,3,1,1,0,0,0]
 ELECTRICAL_BUTTONS = [0,1,1,1,1,3,1,2,1,0,0,0]
+ELECTRICAL_DIAL_X, ELECTRICAL_DIAL_Y = 226, 110
+ELECTRICAL_BORDER_X, ELECTRICAL_BORDER_Y = 213, 110
 
 
-def v3_outline(width, height, gui_scale, row):
-    """Project the shared 316x312 Factory Study transform into screenshot pixels."""
+def v5c_hopper_outline(width, height, gui_scale, row):
+    """Project the V5-Corrigee 321x321 canvas and its measured Hopper slots."""
     logical_width = math.ceil(width / gui_scale)
     logical_height = math.ceil(height / gui_scale)
     margin = min(6.0, (min(logical_width, logical_height) - 1.0) / 2.0)
-    view_scale = min(1.0, (logical_width - 2 * margin) / 316.0,
-                     (logical_height - 2 * margin) / 312.0)
-    origin_x = (logical_width - 316.0 * view_scale) / 2.0
-    origin_y = (logical_height - 312.0 * view_scale) / 2.0
-    x = origin_x + 33.0 * view_scale
-    y = origin_y + (67.0 + 25.0 * row) * view_scale
+    view_scale = min(1.0, (logical_width - 2 * margin) / 321.0,
+                     (logical_height - 2 * margin) / 321.0)
+    origin_x = (logical_width - 321.0 * view_scale) / 2.0
+    origin_y = (logical_height - 321.0 * view_scale) / 2.0
+    x = origin_x + 43.0 * view_scale
+    y = origin_y + (66.0 + 24.0 * row) * view_scale
     left = round(x * gui_scale)
     top = round(y * gui_scale)
     right = round((x + 18.0 * view_scale) * gui_scale) - 1
@@ -69,7 +71,7 @@ def validate_selection_pixels(selections,game,width,height,scale):
     A top/bottom corner-marker delta proves a rendered marker reaches the expected row;
     it is not an exact-color aesthetic approval or exhaustive 18-slot test.
     """
-    require(type(scale) is int and scale in (1,2) and width>=316*scale and height>=312*scale,
+    require(type(scale) is int and scale in (1,2) and width>=321*scale and height>=321*scale,
             'Selection panel outside viewport')
     images=[]
     for record in selections:
@@ -78,7 +80,7 @@ def validate_selection_pixels(selections,game,width,height,scale):
         images.append(pixels)
     for row in range(3):
         active=images[row];inactive=images[(row+1)%3];other_inactive=images[(row+2)%3]
-        left,top,right,bottom=v3_outline(width,height,scale,row)
+        left,top,right,bottom=v5c_hopper_outline(width,height,scale,row)
         border={(x,top) for x in range(left,right+1)} | {(x,bottom) for x in range(left,right+1)}
         border|={(left,y) for y in range(top,bottom+1)} | {(right,y) for y in range(top,bottom+1)}
         changed=0
@@ -86,11 +88,11 @@ def validate_selection_pixels(selections,game,width,height,scale):
             offset=(y*width+x)*4
             if (active[offset:offset+3]!=inactive[offset:offset+3]
                 and inactive[offset:offset+3]==other_inactive[offset:offset+3]): changed+=1
-        require(changed>=16*scale*scale,'Factory Study V3 Hopper outline missing/misaligned at row '+str(row))
+        require(changed>=16*scale*scale,'Factory Study V5-Corrigee Hopper outline missing/misaligned at row '+str(row))
 
 
 def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
-    for key,value in dict(suite='gui-album-three-v3',status='observed',nonce=nonce,
+    for key,value in dict(suite='gui-album-three-v5c',status='observed',nonce=nonce,
                          executed_source_sha=sha,visual_acceptance=False,physical_os_input=True,human_input=False,
                          input_method=ELECTRICAL_INPUT,synthetic_button_events=20).items():
         require(type(proof.get(key)) is type(value) and proof[key]==value,'Proof differs: '+key)
@@ -104,13 +106,13 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
         require(row.get('server_menu_acknowledged') is True,'Missing server menu acknowledgement')
         require(row.get('gui_scale') == gui_scale,'Wrong native GUI scale')
         require(type(row.get('visible_nonempty_slots')) is int and row['visible_nonempty_slots'] > 0,'Empty visual evidence')
-        if index in V3_LAYOUTS:
-            machine_slots,total_slots=V3_LAYOUTS[index]
-            require(row.get('visible_machine_slots')==machine_slots,'Wrong V3 machine slot count')
-            require(row.get('total_menu_slots')==total_slots,'Wrong V3 total menu slot count')
-            machine_occupied,total_occupied=V3_OCCUPIED_SLOTS[index]
-            require(row.get('visible_nonempty_machine_slots')==machine_occupied,'Wrong V3 occupied machine stack count')
-            require(row.get('visible_nonempty_slots')==total_occupied,'V3 GUI occupied-stack count differs')
+        if index in V5C_LAYOUTS:
+            machine_slots,total_slots=V5C_LAYOUTS[index]
+            require(row.get('visible_machine_slots')==machine_slots,'Wrong V5-Corrigee machine slot count')
+            require(row.get('total_menu_slots')==total_slots,'Wrong V5-Corrigee total menu slot count')
+            machine_occupied,total_occupied=V5C_OCCUPIED_SLOTS[index]
+            require(row.get('visible_nonempty_machine_slots')==machine_occupied,'Wrong V5-Corrigee occupied machine stack count')
+            require(row.get('visible_nonempty_slots')==total_occupied,'V5-Corrigee GUI occupied-stack count differs')
         require(re.fullmatch('[0-9a-f]{64}',row.get('screen_class_sha256','')),'Screen provenance missing')
         require(row.get('capture')==CASES[index]+'.png','Unexpected capture name')
         png(game/row['capture'],width,height,row.get('capture_sha256'))
@@ -122,7 +124,7 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
         require(all(c.get(k)==cases[0].get(k) for k in ('screen','case','screen_class_sha256')),'Selection screen provenance differs')
         require(c.get('server_selection')==row*6 and c.get('client_selection')==row*6,
                 'Hopper selection server/client mismatch')
-        require(c.get('ring_x')==33 and c.get('ring_y')==67+25*row,'Hopper ring/slot alignment differs')
+        require(c.get('ring_x')==43 and c.get('ring_y')==66+24*row,'Hopper ring/slot alignment differs')
         require(c.get('selection_source')=='server-seeded ContainerData; not user selection','Selection origin differs')
         require(c.get('server_menu_acknowledged') is True and c.get('gui_scale')==gui_scale,'Selection menu/scale mismatch')
         require(c.get('visible_nonempty_slots')==54,'Hopper inventory not full')
@@ -151,7 +153,8 @@ def validate_electrical_controls(proof,base_case,game,width,height,scale):
         expected=dict(expected_speed=ELECTRICAL_SPEEDS[i],client_speed=ELECTRICAL_SPEEDS[i],
                       expected_energy=ELECTRICAL_ENERGY[i],client_energy=ELECTRICAL_ENERGY[i],client_capacity=32000,
                       native_presses=ELECTRICAL_CLICKS[i],x11_button=ELECTRICAL_BUTTONS[i],
-                      click_x=208 if i==8 else 184,click_y=88,gui_scale=scale)
+                      click_x=ELECTRICAL_BORDER_X if i==8 else ELECTRICAL_DIAL_X,
+                      click_y=ELECTRICAL_DIAL_Y,gui_scale=scale)
         for key,value in expected.items():
             require(type(row.get(key)) is int and row[key]==value,'Electrical observation differs: '+row['case']+'/'+key)
         require(row.get('screen')==base_case.get('screen')==SCREENS[2],'Electrical screen differs from packaged screen')
@@ -176,7 +179,7 @@ def validate_electrical_controls(proof,base_case,game,width,height,scale):
         require(event.get('case')==ELECTRICAL_CASES[i],'Electrical callbacks reordered or absent')
         require(type(event.get('glfw_button')) is int and event['glfw_button']=={1:0,2:2,3:1}[ELECTRICAL_BUTTONS[i]],
                 'Electrical callback button differs')
-        for axis,value in [('x',208 if i==8 else 184),('y',88)]:
+        for axis,value in [('x',ELECTRICAL_BORDER_X if i==8 else ELECTRICAL_DIAL_X),('y',ELECTRICAL_DIAL_Y)]:
             actual=event.get(axis)
             require(type(actual) in (int,float) and math.isfinite(actual) and abs(actual-value)<=1,
                     'Electrical callback misses independent acceptance point')
@@ -190,17 +193,17 @@ def validate_electrical_controls(proof,base_case,game,width,height,scale):
 
 
 def electrical_panel_origin(width,height,scale):
-    require(type(scale) is int and scale in (1,2) and width>=228*scale and height>=250*scale,
+    require(type(scale) is int and scale in (1,2) and width>=291*scale and height>=284*scale,
             'Electrical panel outside viewport')
-    return ((math.ceil(width/scale)-228)//2)*scale,((math.ceil(height/scale)-250)//2)*scale
+    return ((math.ceil(width/scale)-291)//2)*scale,((math.ceil(height/scale)-284)//2)*scale
 
 
 def validate_electrical_pixels(records,game,width,height,scale):
-    """Independent native pixel checks: actual grip rotation and segmented FE fill.
+    """Independent native pixel checks: actual grip rotation and FE fill.
 
     Geometric acceptance comes from the retained artwork, not renderer helpers.
-    These reject a moving lamp with a static grip, an always-full meter, the old
-    opaque rectangle, reversed fill, and frame/divider overpainting. They do not
+    These reject a moving lamp with a static grip, an always-full meter, opaque
+    rectangle fill, reversed fill, and frame overpainting. They do not
     replace visual acceptance by the owner.
     """
     left,top=electrical_panel_origin(width,height,scale)
@@ -212,9 +215,9 @@ def validate_electrical_pixels(records,game,width,height,scale):
     def rgb(image,x,y):
         offset=((top+y)*width+left+x)*4
         return image[offset:offset+3]
-    # The former detent lamp lies outside this central grip box. A lamp-only
-    # implementation cannot satisfy even one of these orientation comparisons.
-    core=[(x,y) for y in range(82*scale,94*scale) for x in range(178*scale,190*scale)]
+    # Probe the mapped GUI11 rotary cap, excluding the detached detent markings.
+    # A lamp-only implementation cannot satisfy these four grip comparisons.
+    core=[(x,y) for y in range(102*scale,119*scale) for x in range(218*scale,236*scale)]
     for a in range(4):
         for b in range(a+1,4):
             changed=sum(rgb(images[a],x,y)!=rgb(images[b],x,y) for x,y in core)
@@ -223,34 +226,18 @@ def validate_electrical_pixels(records,game,width,height,scale):
         require(all(rgb(images[earlier],x,y)==rgb(images[later],x,y) for x,y in core),
                 'Electrical repeated/reopened detent does not preserve the same grip orientation')
 
-    # Interior probes are inset from the sculpted corner pixels and dividers.
-    # Source-to-framebuffer projection uses the full source raster dimensions.
-    segments=[(493,527),(532,564),(569,600),(606,638),(643,673),(678,708),(714,744),(750,780)]
-    def source_pixels(x1,y1,x2,y2):
-        points=[]
-        for y in range(83*scale,95*scale):
-            sy=(y+.5)*1312/(250*scale)
-            if not y1<=sy<y2:continue
-            for x in range(90*scale,152*scale):
-                sx=(x+.5)*1199/(228*scale)
-                if x1<=sx<x2:points.append((x,y))
-        require(points,'No native pixels in independent meter probe')
-        return points
+    # The measured GUI11 energy well has a 44x6 logical glass interior at x=129..173,
+    # y=107..113. Half charge fills its left half; the frame remains unchanged.
+    glass=[(x,y) for y in range(108*scale,113*scale) for x in range(130*scale,173*scale)]
     empty,half,full=images[9],images[10],images[11]
-    for number,(start,end) in enumerate(segments):
-        points=source_pixels(start+4,456,end-4,477)
-        changed=sum(rgb(empty,x,y)!=rgb(full,x,y) for x,y in points)
-        require(changed>=.9*len(points),'Electrical full FE segment not filled: '+str(number))
-        expected=full if number<4 else empty
-        require(all(rgb(half,x,y)==rgb(expected,x,y) for x,y in points),
-                'Electrical half FE is not the left half of the meter')
-        require(sum(sum(rgb(full,x,y))-sum(rgb(empty,x,y)) for x,y in points)>15*len(points),
-                'Electrical full FE segment is not brighter than empty')
-    preserved=source_pixels(478,440,793,446)+source_pixels(478,488,793,493)
-    for (_,end),(start,_) in zip(segments,segments[1:]):
-        preserved+=source_pixels(end+.3,454,start-.3,479)
-    require(all(rgb(empty,x,y)==rgb(half,x,y)==rgb(full,x,y) for x,y in preserved),
-            'Electrical FE overpainted the metal frame or segment dividers')
+    for x,y in glass:
+        logical_x=x//scale
+        expected=full if logical_x < 151 else empty
+        require(rgb(half,x,y)==rgb(expected,x,y),'Electrical half FE does not fill the left half of the glass')
+    changed=sum(rgb(empty,x,y)!=rgb(full,x,y) for x,y in glass)
+    require(changed>=.9*len(glass),'Electrical full FE glass is not filled')
+    require(sum(sum(rgb(full,x,y))-sum(rgb(empty,x,y)) for x,y in glass)>15*len(glass),
+            'Electrical full FE is not brighter than empty')
 
 
 def bind_built_jar(project, expected_hash, env):

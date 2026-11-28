@@ -1,14 +1,15 @@
 {
-  "schema": "iedctr.gui18.runtime-matrix.v1",
+  "schema": "iedctr.gui18-runtime-matrix.v2",
   "authority": {
     "source_branch": "Master-Generalist-GUI-Architect-Designer-DEV/iedctr/gui11-r3-sources",
+    "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
     "source_zip_sha256": [
       "687cdb1cecee1c55fd20e7e4dcc264fe7063f7d9a3af71fabd826cd7e59198c4",
       "62267a04a322efed7c3d5698ab4dcd7951baf6c00d7c86b81da7e865327c51af",
       "b69dcd56b9dc402e01be6e0c076ad09c3c27124c70e4370a10a57f50e7fcc9b1"
     ],
-    "source_package_acceptance": "GUI11 selected for reintegration; the wider package adaptation is not owner-reviewed; V5 artwork is explicitly excluded.",
-    "runtime_policy": "Keep the existing selected runtime artwork for 01-10 and 12-18. Only GUI11 R3 is introduced as an opt-in runtime faceplate. The source ZIPs are reference material, not runtime resources."
+    "source_package_acceptance": "The owner-selected corrected GUI11-R3 V5-Corrigee 5.0.1 artwork is the integration target for #210. This is distinct from the rejected initial V5 proposal. Only the 17 named runtime PNGs are copied; the ZIPs, viewer, private source files and contracts remain outside this repository.",
+    "runtime_policy": "V5-Corrigee replaces the faceplate for GUI 01-10 and 12-18. GUI 11 keeps Solar V2 as its default; Solar GUI11 R3 remains separately opt-in and is not counted as native-qualified by V2 evidence. Existing menu indices, actions and machine rules are retained. K/X and conduits are excluded."
   },
   "surfaces": [
     {
@@ -18,9 +19,25 @@
       "route": "ModMenus.FACTORY_HOPPER",
       "screen": "FactoryStudyScreen",
       "assets": [
+        "gui11_v5c/01.png"
+      ],
+      "proof": "missing-gui-native: exact-JAR open, 54 slot geometry and physical click route; Build GameTests cover indices.",
+      "prior_assets": [
         "factory_study_v3/factory_hopper.png"
       ],
-      "proof": "missing-gui-native: exact-JAR open, 54 slot geometry and physical click route; Build GameTests cover indices."
+      "source_sha256": "83d993acb4cfc23e4ebbd8309881fa8f5f2730ef5f4d5369ef9302455ddd24ef",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        321,
+        321
+      ],
+      "menu_positions": 54,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "state_note": "Existing Factory Study server action IDs and menu order retained; source-mapped inventory/controls and synchronized effects. Native exact-head proof pending."
     },
     {
       "id": "02",
@@ -29,9 +46,25 @@
       "route": "ModMenus.FACTORY_DROPPER",
       "screen": "FactoryStudyScreen",
       "assets": [
+        "gui11_v5c/02.png"
+      ],
+      "proof": "missing-gui-native: exact-JAR open, 51 position layout and command controls; Build/GameTests cover menu routes.",
+      "prior_assets": [
         "factory_study_v3/factory_dropper.png"
       ],
-      "proof": "missing-gui-native: exact-JAR open, 51 position layout and command controls; Build/GameTests cover menu routes."
+      "source_sha256": "b952405bfc920a27de03aa22577dd7e71a7d14624315c720e256a535a080839e",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        305,
+        305
+      ],
+      "menu_positions": 51,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "state_note": "Existing Factory Study server action IDs and menu order retained; source-mapped inventory/controls and synchronized effects. Native exact-head proof pending."
     },
     {
       "id": "03",
@@ -40,9 +73,25 @@
       "route": "ModMenus.SMALL_LAB_FURNACE",
       "screen": "FactoryStudyScreen",
       "assets": [
+        "gui11_v5c/03.png"
+      ],
+      "proof": "missing-gui-native: exact-JAR open and 47-position layout; Build/GameTests preserve the existing fuel contract.",
+      "prior_assets": [
         "factory_study_v3/small_lab_furnace.png"
       ],
-      "proof": "missing-gui-native: exact-JAR open and 47-position layout; Build/GameTests preserve the existing fuel contract."
+      "source_sha256": "d42e232cf8d21093f34155a879194ce72f06a40451177f3208dadfc0dbd96509",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1312,
+        1199
+      ],
+      "logical_size": [
+        289,
+        264
+      ],
+      "menu_positions": 47,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "state_note": "Existing Factory Study server action IDs and menu order retained; source-mapped inventory/controls and synchronized effects. Native exact-head proof pending."
     },
     {
       "id": "04",
@@ -51,9 +100,24 @@
       "route": "ModMenus.FACTORY_PLACER",
       "screen": "FactoryPlacerV2ReferenceScreen (client default; legacy fallback retained)",
       "assets": [
+        "gui11_v5c/04.png"
+      ],
+      "proof": "factory-placer packaged native matrix: 8 profiles.",
+      "prior_assets": [
         "factory_placer_v2_reference/background.png"
       ],
-      "proof": "factory-placer packaged native matrix: 8 profiles."
+      "source_sha256": "d7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        323,
+        323
+      ],
+      "menu_positions": 54,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "05",
@@ -62,11 +126,27 @@
       "route": "ModMenus.SMALL_FREEZER",
       "screen": "ThermalVerticalScreen",
       "assets": [
+        "gui11_v5c/05.png"
+      ],
+      "proof": "freezer ordinary-JAR dynamic, recovery-tooltip and reference native workflows; reserved menu index is tested separately from the 2 visible machine slots.",
+      "prior_assets": [
         "thermal_vertical/freezer/neutral.png",
         "thermal_vertical/freezer/effect.png",
         "thermal_vertical/freezer/energy.png"
       ],
-      "proof": "freezer ordinary-JAR dynamic, recovery-tooltip and reference native workflows; reserved menu index is tested separately from the 2 visible machine slots."
+      "source_sha256": "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1187,
+        1325
+      ],
+      "logical_size": [
+        281,
+        313
+      ],
+      "menu_positions": 39,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "menu_note": "39 live menu positions include the reserved legacy index 1; it remains inactive and unrendered; 38 live item slots."
     },
     {
       "id": "06",
@@ -75,11 +155,27 @@
       "route": "ModMenus.SMALL_MINERAL_SMELTER",
       "screen": "ThermalVerticalScreen",
       "assets": [
+        "gui11_v5c/06.png"
+      ],
+      "proof": "smelter packaged client workflow; its prior run stopped at a stale JAR identity gate, corrected pins are in this PR head and require rerun.",
+      "prior_assets": [
         "thermal_vertical/smelter/neutral.png",
         "thermal_vertical/smelter/effect.png",
         "thermal_vertical/smelter/energy.png"
       ],
-      "proof": "smelter packaged client workflow; its prior run stopped at a stale JAR identity gate, corrected pins are in this PR head and require rerun."
+      "source_sha256": "3b278f9065c945a697e6e0316f4c4e9b96815e7372eca7410979a5220c9c5f20",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1187,
+        1325
+      ],
+      "logical_size": [
+        279,
+        312
+      ],
+      "menu_positions": 39,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "menu_note": "39 map positions include the reserved legacy index 1; live menu omits it, so the 2 machine slots + 36 player slots use the explicit map offset."
     },
     {
       "id": "07",
@@ -88,9 +184,25 @@
       "route": "ModMenus.SMALL_ELECTRICAL_FURNACE",
       "screen": "MachineScreen.SmallElectricalFurnaceScreen",
       "assets": [
+        "gui11_v5c/07.png"
+      ],
+      "proof": "missing-GUI exact-JAR native capture and corrected-machine GUI run; dial/FE are rendered from synchronized menu state.",
+      "prior_assets": [
         "retained_furnaces/electrical.png"
       ],
-      "proof": "missing-GUI exact-JAR native capture and corrected-machine GUI run; dial/FE are rendered from synchronized menu state."
+      "source_sha256": "cd0c7562e718f7acaac2ff862753cc4b7856b503cf61bc43ed50e6c0ba0d7cb0",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1268,
+        1241
+      ],
+      "logical_size": [
+        291,
+        284
+      ],
+      "menu_positions": 43,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "state_note": "Existing OFF/I/II/III server action retained; dial artwork maps field 4, energy meter field capacity/store, and tooltips distinguish selected mode, actual draw field 7, residual heat field 0. Native proof pending."
     },
     {
       "id": "08",
@@ -99,9 +211,24 @@
       "route": "ModMenus.SMALL_WASTE_INCINERATOR",
       "screen": "MachineScreen.SmallWasteIncineratorScreen",
       "assets": [
+        "gui11_v5c/08.png"
+      ],
+      "proof": "missing-GUI exact-JAR native capture and corrected-machine GUI run; 16 queue slots are covered by layout/GameTests.",
+      "prior_assets": [
         "retained_furnaces/incinerator.png"
       ],
-      "proof": "missing-GUI exact-JAR native capture and corrected-machine GUI run; 16 queue slots are covered by layout/GameTests."
+      "source_sha256": "15e88fe3a7a757734629e39a2cc2201e317c6663452f20673d0837f88db66d0f",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1216,
+        1294
+      ],
+      "logical_size": [
+        272,
+        289
+      ],
+      "menu_positions": 52,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "09",
@@ -110,10 +237,25 @@
       "route": "ModMenus.SMALL_BLOCK_BREAKER",
       "screen": "MachineScreen.SmallBlockBreakerScreen",
       "assets": [
+        "gui11_v5c/09.png"
+      ],
+      "proof": "block-breaker packaged native workflow; output and power state are validated against the ordinary JAR.",
+      "prior_assets": [
         "block_breaker_rp_v3/background.png",
         "block_breaker_rp_v3/power_neutral.png"
       ],
-      "proof": "block-breaker packaged native workflow; output and power state are validated against the ordinary JAR."
+      "source_sha256": "41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1236,
+        1272
+      ],
+      "logical_size": [
+        272,
+        280
+      ],
+      "menu_positions": 37,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "10",
@@ -122,9 +264,25 @@
       "route": "ModMenus.SMALL_TREE_CUTTER",
       "screen": "TreeCutterV3ReferenceScreen",
       "assets": [
+        "gui11_v5c/10.png"
+      ],
+      "proof": "Tree Cutter V3 packaged native workflow; deferred gameplay remains out of scope.",
+      "prior_assets": [
         "tree_cutter_v3_reference/background.png"
       ],
-      "proof": "Tree Cutter V3 packaged native workflow; deferred gameplay remains out of scope."
+      "source_sha256": "c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1230,
+        1278
+      ],
+      "logical_size": [
+        283,
+        294
+      ],
+      "menu_positions": 37,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "state_note": "No new Power control or FE claim; retained machine-specific client states only."
     },
     {
       "id": "11",
@@ -136,7 +294,8 @@
         "solar_v2_reference/background.png",
         "solar_gui11_r3/background.png"
       ],
-      "proof": "Solar V2 ordinary-JAR native workflow passed. GUI11 R3 has pinned PNG, static geometry and registration tests, but no dedicated R3 client capture yet; V2 proof is not counted as R3 proof."
+      "proof": "Solar V2 ordinary-JAR native workflow passed. GUI11 R3 has pinned PNG, static geometry and registration tests, but no dedicated R3 client capture yet; V2 proof is not counted as R3 proof.",
+      "runtime_status": "Solar V2 default; GUI11 R3 opt-in remains separately gated"
     },
     {
       "id": "12",
@@ -145,10 +304,25 @@
       "route": "ModMenus.SMALL_MILKING_MACHINE",
       "screen": "MachineScreen.SmallMilkingMachineScreen",
       "assets": [
+        "gui11_v5c/12.png"
+      ],
+      "proof": "native milking page/recovery and corrected-machine GUI tests; milk fill is synchronized, optional flawed glass layer is intentionally not drawn.",
+      "prior_assets": [
         "milking_redesign_v1/background.png",
         "milking_redesign_v1/milk.png"
       ],
-      "proof": "native milking page/recovery and corrected-machine GUI tests; milk fill is synchronized, optional flawed glass layer is intentionally not drawn."
+      "source_sha256": "82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        283,
+        283
+      ],
+      "menu_positions": 38,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "13",
@@ -157,9 +331,24 @@
       "route": "ModMenus.SMALL_FLUID_FUNNEL",
       "screen": "MachineScreen.SmallFluidFunnelScreen",
       "assets": [
+        "gui11_v5c/13.png"
+      ],
+      "proof": "funnel-and-accumulator ordinary-JAR native workflow and fluid-state GameTests.",
+      "prior_assets": [
         "small_fluid_funnel_v1/background.png"
       ],
-      "proof": "funnel-and-accumulator ordinary-JAR native workflow and fluid-state GameTests."
+      "source_sha256": "13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1294,
+        1216
+      ],
+      "logical_size": [
+        308,
+        289
+      ],
+      "menu_positions": 38,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "14",
@@ -168,9 +357,24 @@
       "route": "ModMenus.PASSIVE_FLUID_ACCUMULATOR",
       "screen": "MachineScreen.PassiveFluidAccumulatorScreen",
       "assets": [
+        "gui11_v5c/14.png"
+      ],
+      "proof": "funnel-and-accumulator ordinary-JAR native workflow and fluid-state GameTests.",
+      "prior_assets": [
         "passive_fluid_accumulator_v1/background.png"
       ],
-      "proof": "funnel-and-accumulator ordinary-JAR native workflow and fluid-state GameTests."
+      "source_sha256": "07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "logical_size": [
+        303,
+        303
+      ],
+      "menu_positions": 38,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "15",
@@ -179,9 +383,24 @@
       "route": "ModMenus.FLUID_BARREL",
       "screen": "BarrelReferenceScreen (default V5; explicit false retains legacy)",
       "assets": [
+        "gui11_v5c/15.png"
+      ],
+      "proof": "default/reload, supplemental packaged, legacy diagnostics and native fluid matrix.",
+      "prior_assets": [
         "barrel_reference_v5/background.png"
       ],
-      "proof": "default/reload, supplemental packaged, legacy diagnostics and native fluid matrix."
+      "source_sha256": "eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1182,
+        1330
+      ],
+      "logical_size": [
+        292,
+        329
+      ],
+      "menu_positions": 38,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "16",
@@ -190,9 +409,24 @@
       "route": "ModMenus.METAL_CRAFTING_TABLE",
       "screen": "MachineScreen.MetalCraftingTableScreen",
       "assets": [
+        "gui11_v5c/16.png"
+      ],
+      "proof": "missing-GUI exact-JAR native capture; click/tooltip and table storage indices are covered by Build validation.",
+      "prior_assets": [
         "metal_crafting_v3.png"
       ],
-      "proof": "missing-GUI exact-JAR native capture; click/tooltip and table storage indices are covered by Build validation."
+      "source_sha256": "e553fb9e64705b682ed28df51822d08b4135b39ddcfead05458afe8c5a69d55d",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1129,
+        1393
+      ],
+      "logical_size": [
+        285,
+        352
+      ],
+      "menu_positions": 65,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     },
     {
       "id": "17",
@@ -201,9 +435,25 @@
       "route": "ModMenus.LABELED_CRATE",
       "screen": "LabeledCrateScreen",
       "assets": [
+        "gui11_v5c/17.png"
+      ],
+      "proof": "missing-GUI native capture, crate-label resize and corrected-machine GUI workflows. Runtime menu has 91 positions including a dedicated frame slot (54 storage + frame + 36 player); source scene count 90 excludes that separate frame position.",
+      "prior_assets": [
         "crate_reference_v1/background.png"
       ],
-      "proof": "missing-GUI native capture, crate-label resize and corrected-machine GUI workflows. Runtime menu has 91 positions including a dedicated frame slot (54 storage + frame + 36 player); source scene count 90 excludes that separate frame position."
+      "source_sha256": "ef68ac45b4eba048730ec5fab6934e758e0653e041b9ceaa1fd4c3010b9b78e4",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1294,
+        1216
+      ],
+      "logical_size": [
+        380,
+        357
+      ],
+      "menu_positions": 91,
+      "runtime_status": "wired in candidate source; exact-head client validation pending",
+      "menu_note": "91 live menu positions include dedicated frame slot 54; the source scene count of 90 covers storage and player inventory only."
     },
     {
       "id": "18",
@@ -212,139 +462,166 @@
       "route": "LabeledCrateLabelClientBridge opener",
       "screen": "LabeledCrateEditScreen",
       "assets": [
+        "gui11_v5c/18.png"
+      ],
+      "proof": "crate-label native keyboard/resize workflow; this is a Screen, not a container menu.",
+      "prior_assets": [
         "label_editor_reference_v1/background.png"
       ],
-      "proof": "crate-label native keyboard/resize workflow; this is a Screen, not a container menu."
+      "source_sha256": "55da612229475c5d82a54c240c8204fff549eb1bdc1948568a580c1498b6e337",
+      "source_version": "5.0.1 GUI11-R3 V5-Corrigee",
+      "native_size": [
+        1672,
+        941
+      ],
+      "logical_size": [
+        368,
+        207
+      ],
+      "menu_positions": 0,
+      "runtime_status": "wired in candidate source; exact-head client validation pending"
     }
   ],
   "runtime_asset_manifest": {
-    "barrel_reference_v5/background.png": {
-      "sha256": "db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c",
-      "width": 1137,
-      "height": 1383
-    },
-    "block_breaker_rp_v3/background.png": {
-      "sha256": "0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879",
+    "gui11_v5c/01.png": {
+      "sha256": "83d993acb4cfc23e4ebbd8309881fa8f5f2730ef5f4d5369ef9302455ddd24ef",
       "width": 1254,
-      "height": 1254
+      "height": 1254,
+      "color_type": 6,
+      "source_map_sha256": "83d993acb4cfc23e4ebbd8309881fa8f5f2730ef5f4d5369ef9302455ddd24ef"
     },
-    "block_breaker_rp_v3/power_neutral.png": {
-      "sha256": "23ff15c60420b8951117f748d0b6122e174c915f87e91466930af80fbdc12123",
+    "gui11_v5c/02.png": {
+      "sha256": "b952405bfc920a27de03aa22577dd7e71a7d14624315c720e256a535a080839e",
       "width": 1254,
-      "height": 1254
+      "height": 1254,
+      "color_type": 6,
+      "source_map_sha256": "b952405bfc920a27de03aa22577dd7e71a7d14624315c720e256a535a080839e"
     },
-    "crate_reference_v1/background.png": {
-      "sha256": "fbd91d759dcc40a4733b7a5749fd356577c6d92bb2e42dbf0fc60d73e14cc8a3",
-      "width": 1122,
-      "height": 1402
-    },
-    "factory_placer_v2_reference/background.png": {
-      "sha256": "bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d",
-      "width": 1199,
-      "height": 1312
-    },
-    "factory_study_v3/factory_dropper.png": {
-      "sha256": "c01d510bd06639a112a4fc34cfe8fe7233b987de81dcfc826a9b54bd090d50a6",
-      "width": 1261,
-      "height": 1247
-    },
-    "factory_study_v3/factory_hopper.png": {
-      "sha256": "d3f087682be5cb6c8403f054565d66a457b4130ec461ed6a9e753eba3602f3a6",
-      "width": 1261,
-      "height": 1247
-    },
-    "factory_study_v3/small_lab_furnace.png": {
-      "sha256": "b86251e58b95ca8f5a7d94a0893d042f26b419ba2224be7a6004cea0a6583cb4",
-      "width": 1261,
-      "height": 1247
-    },
-    "label_editor_reference_v1/background.png": {
-      "sha256": "9cc07fbf4fcc99025dbe17d03f48242475df84ad129297dabb011acae0a6cf8e",
-      "width": 1536,
-      "height": 1024
-    },
-    "metal_crafting_v3.png": {
-      "sha256": "834b521e6316e9d648e07167b3faec79f5cf453d6f5ab39e133e32e78215d812",
-      "width": 1142,
-      "height": 1378
-    },
-    "milking_redesign_v1/background.png": {
-      "sha256": "1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411",
-      "width": 1254,
-      "height": 1254
-    },
-    "milking_redesign_v1/milk.png": {
-      "sha256": "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5",
-      "width": 1254,
-      "height": 1254
-    },
-    "passive_fluid_accumulator_v1/background.png": {
-      "sha256": "f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db",
-      "width": 1254,
-      "height": 1254
-    },
-    "retained_furnaces/electrical.png": {
-      "sha256": "263f98bec7a5f8ef37549fa4412a0bbc3e0de2097701b54f76e2a5c25452cd34",
-      "width": 1199,
-      "height": 1312
-    },
-    "retained_furnaces/incinerator.png": {
-      "sha256": "c4ac3021daf91edf8e167d2e44939f8c3c1094342d353d7be1b3ac1bc5703c49",
-      "width": 1254,
-      "height": 1254
-    },
-    "small_fluid_funnel_v1/background.png": {
-      "sha256": "75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e",
-      "width": 1254,
-      "height": 1254
-    },
-    "solar_gui11_r3/background.png": {
-      "sha256": "40630bd8360abb4c21170db2fca6d098359319225c5050b7c8783d8a50b01385",
+    "gui11_v5c/03.png": {
+      "sha256": "d42e232cf8d21093f34155a879194ce72f06a40451177f3208dadfc0dbd96509",
       "width": 1312,
-      "height": 1199
+      "height": 1199,
+      "color_type": 6,
+      "source_map_sha256": "d42e232cf8d21093f34155a879194ce72f06a40451177f3208dadfc0dbd96509"
+    },
+    "gui11_v5c/04.png": {
+      "sha256": "d7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "source_map_sha256": "d7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c"
+    },
+    "gui11_v5c/05.png": {
+      "sha256": "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6",
+      "width": 1187,
+      "height": 1325,
+      "color_type": 6,
+      "source_map_sha256": "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6"
+    },
+    "gui11_v5c/06.png": {
+      "sha256": "3b278f9065c945a697e6e0316f4c4e9b96815e7372eca7410979a5220c9c5f20",
+      "width": 1187,
+      "height": 1325,
+      "color_type": 6,
+      "source_map_sha256": "3b278f9065c945a697e6e0316f4c4e9b96815e7372eca7410979a5220c9c5f20"
+    },
+    "gui11_v5c/07.png": {
+      "sha256": "cd0c7562e718f7acaac2ff862753cc4b7856b503cf61bc43ed50e6c0ba0d7cb0",
+      "width": 1268,
+      "height": 1241,
+      "color_type": 6,
+      "source_map_sha256": "cd0c7562e718f7acaac2ff862753cc4b7856b503cf61bc43ed50e6c0ba0d7cb0"
+    },
+    "gui11_v5c/08.png": {
+      "sha256": "15e88fe3a7a757734629e39a2cc2201e317c6663452f20673d0837f88db66d0f",
+      "width": 1216,
+      "height": 1294,
+      "color_type": 6,
+      "source_map_sha256": "15e88fe3a7a757734629e39a2cc2201e317c6663452f20673d0837f88db66d0f"
+    },
+    "gui11_v5c/09.png": {
+      "sha256": "41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7",
+      "width": 1236,
+      "height": 1272,
+      "color_type": 6,
+      "source_map_sha256": "41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7"
+    },
+    "gui11_v5c/10.png": {
+      "sha256": "c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef",
+      "width": 1230,
+      "height": 1278,
+      "color_type": 6,
+      "source_map_sha256": "c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef"
     },
     "solar_v2_reference/background.png": {
       "sha256": "c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa",
       "width": 1254,
-      "height": 1254
+      "height": 1254,
+      "color_type": 6
     },
-    "thermal_vertical/freezer/effect.png": {
-      "sha256": "046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957",
-      "width": 1041,
-      "height": 1143
+    "solar_gui11_r3/background.png": {
+      "sha256": "40630bd8360abb4c21170db2fca6d098359319225c5050b7c8783d8a50b01385",
+      "width": 1312,
+      "height": 1199,
+      "color_type": 6
     },
-    "thermal_vertical/freezer/energy.png": {
-      "sha256": "73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638",
-      "width": 1041,
-      "height": 1143
-    },
-    "thermal_vertical/freezer/neutral.png": {
-      "sha256": "48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806",
-      "width": 1041,
-      "height": 1143
-    },
-    "thermal_vertical/smelter/effect.png": {
-      "sha256": "1489c7a0e4dcd666cbe0995a424969d677be7459fd5123703c52dbf0957a94e5",
-      "width": 1041,
-      "height": 1143
-    },
-    "thermal_vertical/smelter/energy.png": {
-      "sha256": "a45c63638fce49f90b9e396bdb318556c59e71ac4a56cdbc3a6864d2a91551ea",
-      "width": 1041,
-      "height": 1143
-    },
-    "thermal_vertical/smelter/neutral.png": {
-      "sha256": "bd51e1a8e9c1fa684f57a4636787c263a0e686e6f7ac5b9336ecd466768e738d",
-      "width": 1041,
-      "height": 1143
-    },
-    "tree_cutter_v3_reference/background.png": {
-      "sha256": "307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4",
+    "gui11_v5c/12.png": {
+      "sha256": "82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa",
       "width": 1254,
-      "height": 1254
+      "height": 1254,
+      "color_type": 6,
+      "source_map_sha256": "82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa"
+    },
+    "gui11_v5c/13.png": {
+      "sha256": "13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6",
+      "width": 1294,
+      "height": 1216,
+      "color_type": 6,
+      "source_map_sha256": "13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6"
+    },
+    "gui11_v5c/14.png": {
+      "sha256": "07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "source_map_sha256": "07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df"
+    },
+    "gui11_v5c/15.png": {
+      "sha256": "eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388",
+      "width": 1182,
+      "height": 1330,
+      "color_type": 6,
+      "source_map_sha256": "eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388"
+    },
+    "gui11_v5c/16.png": {
+      "sha256": "e553fb9e64705b682ed28df51822d08b4135b39ddcfead05458afe8c5a69d55d",
+      "width": 1129,
+      "height": 1393,
+      "color_type": 6,
+      "source_map_sha256": "e553fb9e64705b682ed28df51822d08b4135b39ddcfead05458afe8c5a69d55d"
+    },
+    "gui11_v5c/17.png": {
+      "sha256": "ef68ac45b4eba048730ec5fab6934e758e0653e041b9ceaa1fd4c3010b9b78e4",
+      "width": 1294,
+      "height": 1216,
+      "color_type": 6,
+      "source_map_sha256": "ef68ac45b4eba048730ec5fab6934e758e0653e041b9ceaa1fd4c3010b9b78e4"
+    },
+    "gui11_v5c/18.png": {
+      "sha256": "55da612229475c5d82a54c240c8204fff549eb1bdc1948568a580c1498b6e337",
+      "width": 1672,
+      "height": 941,
+      "color_type": 6,
+      "source_map_sha256": "55da612229475c5d82a54c240c8204fff549eb1bdc1948568a580c1498b6e337"
     }
   },
-  "evidence": {
+  "candidate_evidence": {
+    "base_head": "2aa82b630ee4c5abd465daecb6d718bf731b36da",
+    "candidate_head": null,
+    "status": "static mapping and build validation pending; no native results are attributed to this candidate yet",
+    "exact_head_client_runs": {}
+  },
+  "prior_candidate_evidence_not_attributed_to_this_candidate": {
     "source_head": "0c9299718701e9374b102617631f3b319d224bf3",
     "ordinary_jar_sha256": "b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e",
     "build_run": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/46095637365",

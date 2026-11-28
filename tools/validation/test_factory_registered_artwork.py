@@ -16,10 +16,11 @@ REGISTRATION = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/cli
 R04 = ROOT / "docs/qualification/factory-steel-v2/protected-regions-r04.json"
 R04_SHA256 = "cd1bac05da8d8055cb9d6c2ccaf570a12d1226fa240122559f3b05890bbf17b1"
 V3_SOURCE_HEAD = "ea47ffbd"
+V5C_MAP = ROOT / "docs/testing/gui11-v5c-runtime-map.json"
 
 
 class RegisteredArtworkTests(unittest.TestCase):
-    def test_v3_runtime_artwork_matches_the_exact_provenance_bytes(self):
+    def test_v3_source_artwork_is_preserved_and_v5c_runtime_artwork_is_selected(self):
         record = json.loads(PROVENANCE.read_text(encoding="utf-8"))
         self.assertEqual(record["record_id"], "factory-study-v3-pr206")
         self.assertEqual(record["integration"]["screen_class"],
@@ -29,6 +30,11 @@ class RegisteredArtworkTests(unittest.TestCase):
         java_geometry = GEOMETRY.read_text(encoding="utf-8")
         screen = SCREEN.read_text(encoding="utf-8")
         registration = REGISTRATION.read_text(encoding="utf-8")
+        v5c = json.loads(V5C_MAP.read_text(encoding="utf-8"))
+        runtime_geometry = (ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java").read_text()
+        runtime_geometry = runtime_geometry + GEOMETRY.read_text()
+        v5c_rows = {key: value for key, value in v5c["surfaces"].items() if key in {"01", "02", "03"}}
+        self.assertEqual({"01", "02", "03"}, set(v5c_rows))
         for row in record["assets"]:
             path = ROOT / row["runtime_path"]
             data = path.read_bytes()
@@ -40,8 +46,17 @@ class RegisteredArtworkTests(unittest.TestCase):
             alpha = bytes(pixels[3::4])
             self.assertGreater(sum(value > 0 for value in alpha), 100_000, row["machine"])
             self.assertGreater(sum(value == 0 for value in alpha), 10_000, row["machine"])
-            self.assertIn(row["sha256"], java_geometry)
+            # V3 bytes remain provenance history; default runtime is the newer
+            # owner-selected GUI11 V5-Corrigee panel for these three routes.
+            self.assertNotIn(row["sha256"], runtime_geometry)
             self.assertIn("FactoryStudyScreen::new", registration)
+        for screen_id, row in v5c_rows.items():
+            path = ROOT / "src/main/resources/assets" / MOD / "textures/gui/gui11_v5c" / f"{screen_id}.png"
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), row["sha256"])
+            self.assertIn(row["sha256"], runtime_geometry)
+        self.assertIn("return Gui11V5CRuntimeGeometry.texturePath(kind)", java_geometry)
+        self.assertIn("Gui11V5CArtwork.drawEnergy(graphics, menu)", screen)
+        self.assertIn("Gui11V5CArtwork.drawEffects(graphics, menu, false)", screen)
         self.assertIn("font.split(tooltip, FactoryStudyGeometry.tooltipWidth(width))", screen)
         self.assertIn("graphics.renderOutline(slot.x() - 1, slot.y() - 1, 18, 18", screen)
 

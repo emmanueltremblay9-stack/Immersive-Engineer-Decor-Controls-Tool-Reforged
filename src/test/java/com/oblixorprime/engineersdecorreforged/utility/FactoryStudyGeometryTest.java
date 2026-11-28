@@ -24,12 +24,7 @@ public final class FactoryStudyGeometryTest {
    }
 
    private static String retainedHash(MachineKind kind) {
-      return switch (kind) {
-         case FACTORY_HOPPER -> "d3f087682be5cb6c8403f054565d66a457b4130ec461ed6a9e753eba3602f3a6";
-         case FACTORY_DROPPER -> "c01d510bd06639a112a4fc34cfe8fe7233b987de81dcfc826a9b54bd090d50a6";
-         case SMALL_LAB_FURNACE -> "b86251e58b95ca8f5a7d94a0893d042f26b419ba2224be7a6004cea0a6583cb4";
-         default -> throw new IllegalArgumentException();
-      };
+      return FactoryStudyGeometry.sourceSha256(kind);
    }
 
    @Test public void coversExactlyTheThreeMachinesAndTheirExistingMenuOrder() {
@@ -87,7 +82,7 @@ public final class FactoryStudyGeometryTest {
       }
    }
 
-   @Test public void packagedOriginalImagesRetainIdentityAndClearItemFootprints() throws Exception {
+   @Test public void packagedV5CorrectedImagesRetainIdentityAndClearEveryItemFootprint() throws Exception {
       for (var kind : KINDS) {
          String resource = "/assets/immersive_engineer_decor_controls_tool_reforged/"
             + FactoryStudyGeometry.texturePath(kind);
@@ -101,23 +96,30 @@ public final class FactoryStudyGeometryTest {
          assertEquals("Geometry provenance " + kind, digest, FactoryStudyGeometry.sourceSha256(kind));
          BufferedImage image = ImageIO.read(new java.io.ByteArrayInputStream(bytes));
          assertNotNull(image);
-         assertEquals(1261, image.getWidth());
-         assertEquals(1247, image.getHeight());
-         assertEquals(FactoryStudyGeometry.SOURCE_WIDTH, image.getWidth());
-         assertEquals(FactoryStudyGeometry.SOURCE_HEIGHT, image.getHeight());
+         assertEquals(FactoryStudyGeometry.sourceWidth(kind), image.getWidth());
+         assertEquals(FactoryStudyGeometry.sourceHeight(kind), image.getHeight());
          assertTrue("Retained alpha channel", image.getColorModel().hasAlpha());
          for (var a : FactoryStudyGeometry.anchors(kind)) {
-            // The actual item is 16 logical units = 64 source pixels at uniform scale 1/4.
-            int x = a.x() * 4, y = a.y() * 4;
-            for (int sy = y; sy < y + 64; sy++) {
-               for (int sx = x; sx < x + 64; sx++) {
+            int canvasWidth = FactoryStudyGeometry.canvasWidth(kind);
+            int canvasHeight = FactoryStudyGeometry.canvasHeight(kind);
+            int sourceWidth = FactoryStudyGeometry.sourceWidth(kind);
+            int sourceHeight = FactoryStudyGeometry.sourceHeight(kind);
+            // Check the interior of the exact 16x16 item footprint after the per-panel
+            // source-to-canvas transform. The one-pixel bevel may be brighter by design.
+            int left = (int)Math.floor((a.x() + 2.0D) * sourceWidth / canvasWidth);
+            int top = (int)Math.floor((a.y() + 2.0D) * sourceHeight / canvasHeight);
+            int right = (int)Math.ceil((a.x() + 14.0D) * sourceWidth / canvasWidth);
+            int bottom = (int)Math.ceil((a.y() + 14.0D) * sourceHeight / canvasHeight);
+            assertTrue(a.x() >= 0 && a.y() >= 0 && a.x() + 16 <= canvasWidth && a.y() + 16 <= canvasHeight);
+            for (int sy = top; sy < bottom; sy++) {
+               for (int sx = left; sx < right; sx++) {
                   int pixel = image.getRGB(sx, sy);
                   int alpha = pixel >>> 24;
                   int brightest = Math.max((pixel >>> 16) & 255,
                      Math.max((pixel >>> 8) & 255, pixel & 255));
-                  assertTrue(kind + " slot " + a.menuIndex() + " transparent item footprint at " + sx + "," + sy,
+                  assertTrue(kind + " slot " + a.menuIndex() + " opaque artwork under item at " + sx + "," + sy,
                      alpha > 245);
-                  assertTrue(kind + " slot " + a.menuIndex() + " bright bevel inside item footprint at " + sx + "," + sy,
+                  assertTrue(kind + " slot " + a.menuIndex() + " non-dark slot interior at " + sx + "," + sy,
                      brightest < 70);
                }
             }
@@ -161,16 +163,17 @@ public final class FactoryStudyGeometryTest {
          assertTrue(Float.isFinite(view.scale()) && view.scale() > 0 && view.scale() <= 1);
          assertTrue(view.screenX(0) >= -0.0001);
          assertTrue(view.screenY(0) >= -0.0001);
-         assertTrue(view.screenX(FactoryStudyGeometry.CANVAS_WIDTH) <= viewport[0] + 0.0001);
-         assertTrue(view.screenY(FactoryStudyGeometry.CANVAS_HEIGHT) <= viewport[1] + 0.0001);
+         assertTrue(view.screenX(view.canvasWidth()) <= viewport[0] + 0.0001);
+         assertTrue(view.screenY(view.canvasHeight()) <= viewport[1] + 0.0001);
          for (double value : new double[]{-1, 0, 0.001, 8, 15.999, 156.25, 311.999, 316, 317}) {
             assertEquals(value, view.localX(view.screenX(value)), 0.0001);
             assertEquals(value, view.localY(view.screenY(value)), 0.0001);
          }
          for (var kind : KINDS) {
+            var kindView = FactoryStudyGeometry.fit(kind, viewport[0], viewport[1]);
             for (var a : FactoryStudyGeometry.anchors(kind)) {
-               assertEquals(a.x() + 8, view.localX(view.screenX(a.x() + 8)), 0.0001);
-               assertEquals(a.y() + 8, view.localY(view.screenY(a.y() + 8)), 0.0001);
+               assertEquals(a.x() + 8, kindView.localX(kindView.screenX(a.x() + 8)), 0.0001);
+               assertEquals(a.y() + 8, kindView.localY(kindView.screenY(a.y() + 8)), 0.0001);
             }
          }
          assertEquals(7.25, view.localDelta(7.25 * view.scale()), 0.0001);

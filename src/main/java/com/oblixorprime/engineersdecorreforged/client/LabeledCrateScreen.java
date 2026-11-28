@@ -20,7 +20,7 @@ import net.minecraft.world.entity.player.Inventory;
 /** Retained Crate V1 art. Vanilla owns items, overlays, carried stacks and packets. */
 public final class LabeledCrateScreen extends AbstractContainerScreen<LabeledCrateMenu> {
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
-      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/crate_reference_v1/background.png");
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/gui11_v5c/17.png");
    private CrateReferenceGeometry.ViewTransform view = CrateReferenceGeometry.fit(374, 467);
    private boolean renderingCanvas;
    private double renderLocalMouseX, renderLocalMouseY;

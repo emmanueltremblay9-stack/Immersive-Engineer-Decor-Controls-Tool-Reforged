@@ -1,5 +1,6 @@
 """Separate raw-candidate contracts from the historical-only thermal projection."""
 from pathlib import Path
+import json
 import unittest
 
 from thermal_single_stage_projection import (
@@ -79,10 +80,13 @@ class ThermalCandidateContractTests(unittest.TestCase):
         self.assertIn("menu.slots.size() != menu.visibleMachineSlots() + 36", native)
         self.assertEqual(3 + 27 + 9, 39)
         self.assertIn("public static final int VISIBLE_SLOTS = 38;", geometry)
-        self.assertIn("if(menuIndex==1||menuIndex<3||menuIndex>38)", geometry)
-        self.assertIn("if(menuIndex==0) return freezer?new Point(167,67):new Point(164,66);", geometry)
-        self.assertIn("if(menuIndex==2) return freezer?new Point(167,206):new Point(164,205);", geometry)
-        self.assertIn("if(menuIndex==1||menuIndex<3||menuIndex>38)", geometry)
+        self.assertIn("Gui11V5CRuntimeGeometry.slot(kind, menuIndex)", geometry)
+        self.assertIn("if (point == null || menuIndex == 1)", geometry)
+        self.assertIn("for(int i:new int[]{0,2})", geometry)
+        self.assertIn("for(int i=3;i<=38;i++)", geometry)
+        freezer_contract = json.loads((ROOT / "docs/testing/gui11-v5c-runtime-map.json").read_text())["surfaces"]["05"]["menu_slots"]
+        self.assertEqual(len(freezer_contract), 39)
+        self.assertIsNone(freezer_contract[1], "reserved menu index must remain nonvisual")
         self.assertIn("return !MachineMenu.this.freezerReferencePresentation\n                  && !MachineMenu.this.thermalVerticalPresentation;", menu)
         self.assertIn("recoveryButton.visible = menu.getSlot(1).hasItem();", screen)
         self.assertIn("slotClicked(menu.getSlot(1), 1, 0, ClickType.QUICK_MOVE);", screen)

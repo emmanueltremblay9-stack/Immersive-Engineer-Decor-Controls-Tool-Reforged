@@ -120,12 +120,23 @@ public class TooltipProbe {
 def run_probe(source):
     start = source.index("   private void renderMachineTooltip(")
     end = source.index("   private Component solarPanelEnergyTooltip(", start)
+    method = source[start:end]
+    # These tests exercise the retained non-V5C dispatcher. The GUI11 branch is
+    # covered by the candidate-specific routing guard and has its own geometry.
+    branch_start = method.index("      if (((MachineMenu)this.menu).gui11V5CPresentation()) {")
+    opening = method.index("{", branch_start)
+    depth, branch_end = 1, opening + 1
+    while depth:
+        if method[branch_end] == "{": depth += 1
+        elif method[branch_end] == "}": depth -= 1
+        branch_end += 1
+    method = method[:branch_start] + method[branch_end:]
     with tempfile.TemporaryDirectory(prefix="accumulator-tooltip-") as directory:
         target = Path(directory)
         java = target / "TooltipProbe.java"
         helper_start = source.index("   static int milkingTooltipWidth(")
         helper_end = source.index("\n   }", helper_start) + len("\n   }")
-        java.write_text(FIXTURE.replace("    /* METHOD */", source[start:end] + source[helper_start:helper_end]))
+        java.write_text(FIXTURE.replace("    /* METHOD */", method + source[helper_start:helper_end]))
         compile_result = subprocess.run(
             ["java", "-m", "jdk.compiler/com.sun.tools.javac.Main", "-source", "21", "-target", "21",
              "-d", str(target), str(java)], capture_output=True, text=True)

@@ -5,20 +5,20 @@ import java.util.List;
 
 /**
  * Dependency-free geometry for the retained-reference Crate presentation.
- * Source coordinates describe the unmodified 1122-by-1402 V1 reference, not the
- * legacy Crate texture. This class changes no inventory or machine semantics.
+ * Source coordinates describe the owner-selected GUI11-R3 V5-Corrigee crate
+ * panel, not the legacy Crate texture. This class changes no inventory or machine semantics.
  */
 public final class CrateReferenceGeometry {
-   public static final int SOURCE_WIDTH = 1122;
-   public static final int SOURCE_HEIGHT = 1402;
-   public static final int CANVAS_WIDTH = 374;
-   public static final int CANVAS_HEIGHT = 467;
+   public static final int SOURCE_WIDTH = Gui11V5CRuntimeGeometry.sourceWidth(MachineKind.LABELED_CRATE);
+   public static final int SOURCE_HEIGHT = Gui11V5CRuntimeGeometry.sourceHeight(MachineKind.LABELED_CRATE);
+   public static final int CANVAS_WIDTH = Gui11V5CRuntimeGeometry.width(MachineKind.LABELED_CRATE);
+   public static final int CANVAS_HEIGHT = Gui11V5CRuntimeGeometry.height(MachineKind.LABELED_CRATE);
    public static final int VIEWPORT_MARGIN = 6;
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 91;
    public static final int VISIBLE_SLOT_COUNT = 91;
-   public static final String SOURCE_SHA256 = "fbd91d759dcc40a4733b7a5749fd356577c6d92bb2e42dbf0fc60d73e14cc8a3";
-   public static final String SOURCE_FILENAME = "labeled-crate-v1-static-exact.official-render.png";
+   public static final String SOURCE_SHA256 = "ef68ac45b4eba048730ec5fab6934e758e0653e041b9ceaa1fd4c3010b9b78e4";
+   public static final String SOURCE_FILENAME = "17-V5-Corrigee.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();
 
@@ -57,27 +57,21 @@ public final class CrateReferenceGeometry {
 
    /** Blank title plaque interior in the retained source, not an inventory hitbox. */
    public static boolean containsTitlePlaque(double localX, double localY) {
-      double sourceX = localX * SOURCE_WIDTH / CANVAS_WIDTH;
-      double sourceY = localY * SOURCE_HEIGHT / CANVAS_HEIGHT;
-      return sourceX >= 210 && sourceX < 910 && sourceY >= 32 && sourceY < 98;
+      return localX >= 70 && localX < 310 && localY >= 8 && localY < 40;
    }
 
    private static List<SlotAnchor> createAnchors() {
       List<SlotAnchor> anchors = new ArrayList<>(VISIBLE_SLOT_COUNT);
-      // Conservative interiors measured on the retained 1122x1402 source.
-      for (int row = 0; row < 6; row++) {
-         for (int column = 0; column < 9; column++) {
-            anchors.add(centeredAnchor(row * 9 + column, 101 + column * 81, 248 + row * 87, 61, 65));
-         }
-      }
-      anchors.add(centeredAnchor(54, 911, 412, 112, 108));
-      for (int row = 0; row < 3; row++) {
-         for (int column = 0; column < 9; column++) {
-            anchors.add(centeredAnchor(55 + row * 9 + column, 147 + column * 94, 901 + row * 85, 72, 63));
-         }
-      }
-      for (int column = 0; column < 9; column++) {
-         anchors.add(centeredAnchor(82 + column, 150 + column * 94, 1213, 71, 65));
+      for (int index = 0; index < MENU_SLOT_COUNT; index++) {
+         Gui11V5CRuntimeGeometry.Point point = index == 54
+            ? Gui11V5CRuntimeGeometry.frameHint()
+            : Gui11V5CRuntimeGeometry.slot(MachineKind.LABELED_CRATE, index);
+         if (point == null) throw new IllegalStateException("Missing GUI11 crate anchor " + index);
+         int sx = (int)Math.round(point.x() * (double)SOURCE_WIDTH / CANVAS_WIDTH);
+         int sy = (int)Math.round(point.y() * (double)SOURCE_HEIGHT / CANVAS_HEIGHT);
+         int sw = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_WIDTH / CANVAS_WIDTH));
+         int sh = Math.max(1, (int)Math.round(ITEM_SIZE * (double)SOURCE_HEIGHT / CANVAS_HEIGHT));
+         anchors.add(new SlotAnchor(index, sx, sy, sw, sh, point.x(), point.y()));
       }
       return List.copyOf(anchors);
    }

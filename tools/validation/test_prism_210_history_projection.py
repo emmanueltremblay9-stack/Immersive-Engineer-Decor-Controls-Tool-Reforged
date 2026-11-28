@@ -7,8 +7,9 @@ from prism_210_history_projection import (
     BASE_COMMIT, HEAD_COMMIT, RECORD, ROOT, FREEZER_NATIVE_PORT_RECORD, FREEZER_RECOVERY_TOOLTIP_RECORD,
     FREEZER_RECOVERY_KEY_RECORD, FREEZER_ENERGY_SCISSOR_RECORD, FREEZER_QA_FOLLOWUP_RECORD,
     LATE_VALIDATION_RECORD, _freezer_qa_followup_record, _electrical_controls_record,
+    GUI11_V5C_RECORD, _gui11_v5c_record,
     _ordinary_jar_repin_record, _ordinary_jar_followup_repin_record,
-    _reverse_layer, expected_current_sha256,
+    _reverse_layer, expected_current_sha256, project_before_gui11_v5c,
     project_current_candidate, sha256,
 )
 
@@ -16,6 +17,7 @@ from prism_210_history_projection import (
 def reverse_electrical_controls(path, source):
     # The layered JAR repins change only proof pins; strip their exact bytes in
     # reverse chronological order before checking older electrical/Freezer records.
+    source = project_before_gui11_v5c(path, source)
     followup_repin = _ordinary_jar_followup_repin_record()["files"].get(path)
     source = _reverse_layer(path, source, followup_repin) if followup_repin is not None else source
     repin = _ordinary_jar_repin_record()["files"].get(path)
@@ -37,6 +39,20 @@ def reverse_energy_scissor(path, source, record):
 
 
 class Prism210HistoryProjectionTests(unittest.TestCase):
+    def test_gui11_v5c_changes_are_exact_and_reversible_to_the_pinned_pr210_head(self):
+        v5c = _gui11_v5c_record()
+        self.assertEqual(v5c["base_commit"], "2aa82b630ee4c5abd465daecb6d718bf731b36da")
+        self.assertGreaterEqual(len(v5c["files"]), 20)
+        for path, layer in v5c["files"].items():
+            candidate = (ROOT / path).read_bytes()
+            with self.subTest(path=path):
+                self.assertEqual(sha256(candidate), layer["new_sha256"])
+                self.assertEqual(expected_current_sha256(path), layer["new_sha256"])
+                historical = project_before_gui11_v5c(path, candidate, strict=True)
+                self.assertEqual(sha256(historical), layer["old_sha256"])
+                with self.assertRaisesRegex(AssertionError, "Unrecognized #210 candidate bytes"):
+                    project_before_gui11_v5c(path, candidate + b"outside recorded GUI11 hunk\n", strict=True)
+
     def test_candidate_commit_range_and_every_reversible_layer_are_exact(self):
         data = json.loads(RECORD.read_bytes())
         self.assertEqual(data["base_commit"], BASE_COMMIT)
