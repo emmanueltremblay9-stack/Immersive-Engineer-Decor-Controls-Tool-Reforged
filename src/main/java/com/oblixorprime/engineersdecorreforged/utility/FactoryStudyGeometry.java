@@ -247,11 +247,15 @@ public final class FactoryStudyGeometry {
       int sourceHeight = sourceHeight(kind);
       int canvasWidth = canvasWidth(kind);
       int canvasHeight = canvasHeight(kind);
-      int sourceX = (int)Math.round((double)point.x() * sourceWidth / canvasWidth);
-      int sourceY = (int)Math.round((double)point.y() * sourceHeight / canvasHeight);
-      int sourceItemWidth = Math.max(1, (int)Math.round((double)ITEM_SIZE * sourceWidth / canvasWidth));
-      int sourceItemHeight = Math.max(1, (int)Math.round((double)ITEM_SIZE * sourceHeight / canvasHeight));
-      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceItemWidth, sourceItemHeight, point.x(), point.y());
+      double scaleX = (double)canvasWidth / sourceWidth;
+      double scaleY = (double)canvasHeight / sourceHeight;
+      // The mapped item is at least 1.5 logical pixels inside its 20x20 source well.
+      // Keep the one-pixel hover margin within that well, rounding inwards in texture pixels.
+      int left = (int)Math.ceil((point.x() - 1) / scaleX);
+      int top = (int)Math.ceil((point.y() - 1) / scaleY);
+      int right = (int)Math.floor((point.x() + ITEM_SIZE + 1) / scaleX);
+      int bottom = (int)Math.floor((point.y() + ITEM_SIZE + 1) / scaleY);
+      return new SlotAnchor(menuIndex, left, top, right - left, bottom - top, point.x(), point.y(), scaleX, scaleY);
    }
 
    public static Rect header(MachineKind kind) {
@@ -353,9 +357,10 @@ public final class FactoryStudyGeometry {
    public static Rect filterIndicator(int index, int statusIndex) {
       if (index < 0 || index > 2 || statusIndex < 0 || statusIndex > 2)
          throw new IllegalArgumentException("Filter and status indices must be 0..2");
-      var slot = Gui11V5CRuntimeGeometry.slot(MachineKind.FACTORY_DROPPER, 12 + index);
-      int y = slot.y() + 10 + statusIndex;
-      return new Rect(slot.x() + 3, y, 8, 1);
+      // Three indicator wells sit to the right of each filter slot in V5-Corrigee.
+      int x = switch (index) { case 0 -> 63; case 1 -> 107; default -> 152; };
+      int y = switch (statusIndex) { case 0 -> 122; case 1 -> 128; default -> 133; };
+      return new Rect(x, y, 6, 2);
    }
 
    public record Rect(int x, int y, int width, int height) {
@@ -369,11 +374,15 @@ public final class FactoryStudyGeometry {
       }
    }
 
-   public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {
-      public double interiorLeft() { return sourceX * 0.25D; }
-      public double interiorTop() { return sourceY * 0.25D; }
-      public double interiorRight() { return (sourceX + sourceWidth) * 0.25D; }
-      public double interiorBottom() { return (sourceY + sourceHeight) * 0.25D; }
+   public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight,
+                            int x, int y, double scaleX, double scaleY) {
+      public SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {
+         this(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y, 0.25D, 0.25D);
+      }
+      public double interiorLeft() { return sourceX * scaleX; }
+      public double interiorTop() { return sourceY * scaleY; }
+      public double interiorRight() { return (sourceX + sourceWidth) * scaleX; }
+      public double interiorBottom() { return (sourceY + sourceHeight) * scaleY; }
       public double hoverLeft() { return Math.max(x - 1.0D, interiorLeft()); }
       public double hoverTop() { return Math.max(y - 1.0D, interiorTop()); }
       public double hoverRight() { return Math.min(x + ITEM_SIZE + 1.0D, interiorRight()); }

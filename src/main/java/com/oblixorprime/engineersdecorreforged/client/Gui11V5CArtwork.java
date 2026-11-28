@@ -61,8 +61,7 @@ public final class Gui11V5CArtwork {
       Gui11V5CRuntimeGeometry.Rect component = Gui11V5CRuntimeGeometry.energy(kind);
       if (component == null || stored <= 0 || capacity <= 0) return 0;
       boolean vertical = component.height() > component.width();
-      int inset = vertical ? 4 : 3;
-      int length = (vertical ? component.height() : component.width()) - inset * 2;
+      int length = (vertical ? component.height() : component.width()) - 8; // four pixels at each end
       return (int)((long)Math.min(stored, capacity) * length / capacity);
    }
 

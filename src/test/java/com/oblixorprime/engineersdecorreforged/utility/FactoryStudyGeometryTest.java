@@ -58,8 +58,8 @@ public final class FactoryStudyGeometryTest {
             String tag = kind + " slot " + a.menuIndex();
             assertTrue(tag, a.sourceX() >= 0 && a.sourceY() >= 0);
             assertTrue(tag, a.sourceWidth() > 0 && a.sourceHeight() > 0);
-            assertTrue(tag, a.sourceX() + a.sourceWidth() <= FactoryStudyGeometry.SOURCE_WIDTH);
-            assertTrue(tag, a.sourceY() + a.sourceHeight() <= FactoryStudyGeometry.SOURCE_HEIGHT);
+            assertTrue(tag, a.sourceX() + a.sourceWidth() <= FactoryStudyGeometry.sourceWidth(kind));
+            assertTrue(tag, a.sourceY() + a.sourceHeight() <= FactoryStudyGeometry.sourceHeight(kind));
             assertTrue(tag, a.x() >= a.interiorLeft());
             assertTrue(tag, a.y() >= a.interiorTop());
             assertTrue(tag, a.x() + 16 <= a.interiorRight());
@@ -181,15 +181,18 @@ public final class FactoryStudyGeometryTest {
    }
 
    @Test public void liveFillMasksAndFilterLampsCannotPaintOverAnItem() {
-      assertFalse(FactoryStudyGeometry.flameMask().isEmpty());
-      assertFalse(FactoryStudyGeometry.progressMask().isEmpty());
-      for (var r : FactoryStudyGeometry.flameMask()) {
-         inside(FactoryStudyGeometry.flame(), r);
-         clearOfItems(MachineKind.SMALL_LAB_FURNACE, r);
-      }
-      for (var r : FactoryStudyGeometry.progressMask()) {
-         inside(FactoryStudyGeometry.progress(), r);
-         clearOfItems(MachineKind.SMALL_LAB_FURNACE, r);
+      var lab = MachineKind.SMALL_LAB_FURNACE;
+      assertEquals(2, Gui11V5CRuntimeGeometry.effects(lab).size());
+      for (var effect : Gui11V5CRuntimeGeometry.effects(lab)) {
+         var bounds = effect.bounds();
+         var rect = new FactoryStudyGeometry.Rect(bounds.x(), bounds.y(), bounds.width(), bounds.height());
+         var expected = switch (effect.key()) {
+            case "lab-flame" -> FactoryStudyGeometry.flame();
+            case "transfer-arrow-glint" -> FactoryStudyGeometry.progress();
+            default -> throw new AssertionError("Unexpected active Lab layer: " + effect.key());
+         };
+         inside(expected, rect);
+         clearOfItems(lab, rect);
       }
       inside(FactoryStudyGeometry.energyBounds(), FactoryStudyGeometry.energy());
       clearOfItems(MachineKind.SMALL_LAB_FURNACE, FactoryStudyGeometry.energy());

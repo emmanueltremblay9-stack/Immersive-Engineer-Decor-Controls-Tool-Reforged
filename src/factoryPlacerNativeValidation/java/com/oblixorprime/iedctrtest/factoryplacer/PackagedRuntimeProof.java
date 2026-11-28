@@ -8,6 +8,8 @@ import com.oblixorprime.engineersdecorreforged.client.MachineScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
@@ -72,7 +74,7 @@ public final class PackagedRuntimeProof {
                 origin.addProperty("sha256", resourceHash); origins.add(origin);
             }
             var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,
-                "textures/gui/factory_placer_v2_reference/background.png");
+                Gui11V5CRuntimeGeometry.texturePath(MachineKind.FACTORY_PLACER));
             var active = mc.getResourceManager().getResource(texture).orElseThrow();
             require(active.sourcePackId().equals("mod/" + EngineersDecorReforged.MOD_ID), "Artwork overridden by another resource pack");
             String activeHash;

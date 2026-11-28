@@ -302,6 +302,24 @@
         }
       ]
     },
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/PackagedRuntimeProof.java": {
+      "old_sha256": "0d60a1a0ebb60f22dcabd6322a79d83f7fff1c0e3b3f43b515daeffe2d0a5b57",
+      "new_sha256": "75d7e7d195d57e661f272f22ac08554dec687f97df80d703122a248f623b1e9e",
+      "hunks": [
+        {
+          "start": 10,
+          "end": 12,
+          "previous": "",
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;\nimport com.oblixorprime.engineersdecorreforged.utility.MachineKind;\n"
+        },
+        {
+          "start": 76,
+          "end": 77,
+          "previous": "                \"textures/gui/factory_placer_v2_reference/background.png\");\n",
+          "current": "                Gui11V5CRuntimeGeometry.texturePath(MachineKind.FACTORY_PLACER));\n"
+        }
+      ]
+    },
     "src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/ElectricalFurnaceAlbumValidation.java": {
       "old_sha256": "47bdb20096eb5f69051779ea8e43a7d07df312dfdc6a32e0d246fe66de9a3918",
       "new_sha256": "79e21f90ebad488c4d7beb9dddf442de0617c3d330495b2156ae9699db22b135",
@@ -874,7 +892,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometry.java": {
       "old_sha256": "624a5e73a57cc3c99d3bf5f711ce156cac02a20596dbbdfaec8dad33f3f3de80",
-      "new_sha256": "a911f7b6ebd6f0683f0f963db57a8c4febff0dbc5256587561ab41fb89bc77f0",
+      "new_sha256": "3780e922103f5dc84da2cb433a2b18c66067397cab362f478f1870a9051625d3",
       "hunks": [
         {
           "start": 5,
@@ -920,73 +938,79 @@
         },
         {
           "start": 244,
-          "end": 256,
+          "end": 260,
           "previous": "",
-          "current": "   private static SlotAnchor mappedAnchor(MachineKind kind, int menuIndex, Gui11V5CRuntimeGeometry.Point point) {\n      int sourceWidth = sourceWidth(kind);\n      int sourceHeight = sourceHeight(kind);\n      int canvasWidth = canvasWidth(kind);\n      int canvasHeight = canvasHeight(kind);\n      int sourceX = (int)Math.round((double)point.x() * sourceWidth / canvasWidth);\n      int sourceY = (int)Math.round((double)point.y() * sourceHeight / canvasHeight);\n      int sourceItemWidth = Math.max(1, (int)Math.round((double)ITEM_SIZE * sourceWidth / canvasWidth));\n      int sourceItemHeight = Math.max(1, (int)Math.round((double)ITEM_SIZE * sourceHeight / canvasHeight));\n      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceItemWidth, sourceItemHeight, point.x(), point.y());\n   }\n\n"
+          "current": "   private static SlotAnchor mappedAnchor(MachineKind kind, int menuIndex, Gui11V5CRuntimeGeometry.Point point) {\n      int sourceWidth = sourceWidth(kind);\n      int sourceHeight = sourceHeight(kind);\n      int canvasWidth = canvasWidth(kind);\n      int canvasHeight = canvasHeight(kind);\n      double scaleX = (double)canvasWidth / sourceWidth;\n      double scaleY = (double)canvasHeight / sourceHeight;\n      // The mapped item is at least 1.5 logical pixels inside its 20x20 source well.\n      // Keep the one-pixel hover margin within that well, rounding inwards in texture pixels.\n      int left = (int)Math.ceil((point.x() - 1) / scaleX);\n      int top = (int)Math.ceil((point.y() - 1) / scaleY);\n      int right = (int)Math.floor((point.x() + ITEM_SIZE + 1) / scaleX);\n      int bottom = (int)Math.floor((point.y() + ITEM_SIZE + 1) / scaleY);\n      return new SlotAnchor(menuIndex, left, top, right - left, bottom - top, point.x(), point.y(), scaleX, scaleY);\n   }\n\n"
         },
         {
-          "start": 258,
-          "end": 259,
+          "start": 262,
+          "end": 263,
           "previous": "      return new Rect(90, 8, 132, 24);\n",
           "current": "      return new Rect(Math.max(12, (canvasWidth(kind) - 180) / 2), 7, Math.min(180, canvasWidth(kind) - 24), 30);\n"
         },
         {
-          "start": 275,
-          "end": 285,
+          "start": 279,
+          "end": 289,
           "previous": "",
           "current": "      if (supports(kind)) {\n         String key = switch (control) {\n            case RANGE -> \"range\"; case PERIOD -> \"period\"; case COUNT -> \"count\";\n            case MANUAL -> \"manual\"; case REDSTONE -> \"redstone\"; case TRIGGER -> \"cycle\";\n            case VELOCITY -> \"velocity\"; case DIRECTION -> \"direction\"; case FILTER_GATE -> \"filter\";\n         };\n         var rect = Gui11V5CRuntimeGeometry.control(kind, key);\n         if (rect == null) throw new IllegalArgumentException(\"Control is not present: \" + control);\n         return new Rect(rect.x(), rect.y(), rect.width(), rect.height());\n      }\n"
         },
         {
-          "start": 309,
-          "end": 315,
+          "start": 313,
+          "end": 319,
           "previous": "",
           "current": "      if (supports(kind)) {\n         Rect bounds = controlBounds(kind, control);\n         int inset = Math.min(4, Math.max(1, Math.min(bounds.width(), bounds.height()) / 4));\n         return new Rect(bounds.x() + inset, bounds.y() + inset,\n            Math.max(1, bounds.width() - inset * 2), Math.max(1, bounds.height() - inset * 2));\n      }\n"
         },
         {
-          "start": 343,
-          "end": 351,
+          "start": 347,
+          "end": 355,
           "previous": "   public static Rect energy() { return new Rect(267, 57, 6, 72); }\n   public static Rect energyBounds() { return new Rect(258, 46, 29, 97); }\n   public static Rect progress() { return new Rect(142, 80, 20, 20); }\n   public static Rect flame() { return new Rect(111, 86, 17, 18); }\n",
           "current": "   public static Rect energy() {\n      var component = Gui11V5CRuntimeGeometry.energy(MachineKind.SMALL_LAB_FURNACE);\n      return new Rect(component.x() + 3, component.y() + 4,\n         Math.max(1, component.width() - 6), Math.max(1, component.height() - 8));\n   }\n   public static Rect energyBounds() { var r = Gui11V5CRuntimeGeometry.energy(MachineKind.SMALL_LAB_FURNACE); return new Rect(r.x() - 5, r.y() - 4, r.width() + 10, r.height() + 8); }\n   public static Rect progress() { return new Rect(130, 68, 18, 16); }\n   public static Rect flame() { return new Rect(106, 74, 15, 14); }\n"
         },
         {
-          "start": 355,
-          "end": 358,
+          "start": 359,
+          "end": 363,
           "previous": "      int x = new int[] {57, 107, 157}[index];\n      int y = new int[] {134, 139, 144}[statusIndex];\n      return new Rect(x, y, 8, 2);\n",
-          "current": "      var slot = Gui11V5CRuntimeGeometry.slot(MachineKind.FACTORY_DROPPER, 12 + index);\n      int y = slot.y() + 10 + statusIndex;\n      return new Rect(slot.x() + 3, y, 8, 1);\n"
+          "current": "      // Three indicator wells sit to the right of each filter slot in V5-Corrigee.\n      int x = switch (index) { case 0 -> 63; case 1 -> 107; default -> 152; };\n      int y = switch (statusIndex) { case 0 -> 122; case 1 -> 128; default -> 133; };\n      return new Rect(x, y, 6, 2);\n"
         },
         {
-          "start": 391,
-          "end": 395,
+          "start": 376,
+          "end": 385,
+          "previous": "   public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {\n      public double interiorLeft() { return sourceX * 0.25D; }\n      public double interiorTop() { return sourceY * 0.25D; }\n      public double interiorRight() { return (sourceX + sourceWidth) * 0.25D; }\n      public double interiorBottom() { return (sourceY + sourceHeight) * 0.25D; }\n",
+          "current": "   public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight,\n                            int x, int y, double scaleX, double scaleY) {\n      public SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {\n         this(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y, 0.25D, 0.25D);\n      }\n      public double interiorLeft() { return sourceX * scaleX; }\n      public double interiorTop() { return sourceY * scaleY; }\n      public double interiorRight() { return (sourceX + sourceWidth) * scaleX; }\n      public double interiorBottom() { return (sourceY + sourceHeight) * scaleY; }\n"
+        },
+        {
+          "start": 400,
+          "end": 404,
           "previous": "",
           "current": "      return fit(MachineKind.FACTORY_HOPPER, viewportWidth, viewportHeight);\n   }\n\n   public static ViewTransform fit(MachineKind kind, int viewportWidth, int viewportHeight) {\n"
         },
         {
-          "start": 396,
-          "end": 397,
+          "start": 405,
+          "end": 406,
           "previous": "",
           "current": "      int canvasWidth = canvasWidth(kind), canvasHeight = canvasHeight(kind);\n"
         },
         {
-          "start": 399,
-          "end": 401,
+          "start": 408,
+          "end": 410,
           "previous": "      float scale = (float)Math.min(1.0D, Math.min(availableWidth / CANVAS_WIDTH, availableHeight / CANVAS_HEIGHT));\n      if ((double)scale * CANVAS_WIDTH > availableWidth || (double)scale * CANVAS_HEIGHT > availableHeight)\n",
           "current": "      float scale = (float)Math.min(1.0D, Math.min(availableWidth / canvasWidth, availableHeight / canvasHeight));\n      if ((double)scale * canvasWidth > availableWidth || (double)scale * canvasHeight > availableHeight)\n"
         },
         {
-          "start": 402,
-          "end": 404,
+          "start": 411,
+          "end": 413,
           "previous": "      return new ViewTransform(scale, (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2),\n         (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2));\n",
           "current": "      return new ViewTransform(scale, (float)((viewportWidth - (double)canvasWidth * scale) / 2),\n         (float)((viewportHeight - (double)canvasHeight * scale) / 2), canvasWidth, canvasHeight);\n"
         },
         {
-          "start": 407,
-          "end": 408,
+          "start": 416,
+          "end": 417,
           "previous": "   public record ViewTransform(float scale, float originX, float originY) {\n",
           "current": "   public record ViewTransform(float scale, float originX, float originY, int canvasWidth, int canvasHeight) {\n"
         },
         {
-          "start": 422,
-          "end": 424,
+          "start": 431,
+          "end": 433,
           "previous": "      public int guiWidth() { return (int)Math.ceil(screenX(CANVAS_WIDTH)) - guiLeft(); }\n      public int guiHeight() { return (int)Math.ceil(screenY(CANVAS_HEIGHT)) - guiTop(); }\n",
           "current": "      public int guiWidth() { return (int)Math.ceil(screenX(canvasWidth)) - guiLeft(); }\n      public int guiHeight() { return (int)Math.ceil(screenY(canvasHeight)) - guiTop(); }\n"
         }
@@ -1126,13 +1150,19 @@
     },
     "src/test/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometryTest.java": {
       "old_sha256": "fd3ecb34512d098b5bbfa071f00a4780227885e618cd8a42f6a8625330de2cea",
-      "new_sha256": "f96b7951987fa3852706c35de6ad0656c0530b66068aa440b2cfa54e3b79cacd",
+      "new_sha256": "75f24fdcab99c98a268359f885d4bac3d1160f7e1e70e81ac8d05fe9de845340",
       "hunks": [
         {
           "start": 26,
           "end": 27,
           "previous": "      return switch (kind) {\n         case FACTORY_HOPPER -> \"d3f087682be5cb6c8403f054565d66a457b4130ec461ed6a9e753eba3602f3a6\";\n         case FACTORY_DROPPER -> \"c01d510bd06639a112a4fc34cfe8fe7233b987de81dcfc826a9b54bd090d50a6\";\n         case SMALL_LAB_FURNACE -> \"b86251e58b95ca8f5a7d94a0893d042f26b419ba2224be7a6004cea0a6583cb4\";\n         default -> throw new IllegalArgumentException();\n      };\n",
           "current": "      return FactoryStudyGeometry.sourceSha256(kind);\n"
+        },
+        {
+          "start": 60,
+          "end": 62,
+          "previous": "            assertTrue(tag, a.sourceX() + a.sourceWidth() <= FactoryStudyGeometry.SOURCE_WIDTH);\n            assertTrue(tag, a.sourceY() + a.sourceHeight() <= FactoryStudyGeometry.SOURCE_HEIGHT);\n",
+          "current": "            assertTrue(tag, a.sourceX() + a.sourceWidth() <= FactoryStudyGeometry.sourceWidth(kind));\n            assertTrue(tag, a.sourceY() + a.sourceHeight() <= FactoryStudyGeometry.sourceHeight(kind));\n"
         },
         {
           "start": 84,
@@ -1181,6 +1211,12 @@
           "end": 176,
           "previous": "               assertEquals(a.x() + 8, view.localX(view.screenX(a.x() + 8)), 0.0001);\n               assertEquals(a.y() + 8, view.localY(view.screenY(a.y() + 8)), 0.0001);\n",
           "current": "               assertEquals(a.x() + 8, kindView.localX(kindView.screenX(a.x() + 8)), 0.0001);\n               assertEquals(a.y() + 8, kindView.localY(kindView.screenY(a.y() + 8)), 0.0001);\n"
+        },
+        {
+          "start": 183,
+          "end": 195,
+          "previous": "      assertFalse(FactoryStudyGeometry.flameMask().isEmpty());\n      assertFalse(FactoryStudyGeometry.progressMask().isEmpty());\n      for (var r : FactoryStudyGeometry.flameMask()) {\n         inside(FactoryStudyGeometry.flame(), r);\n         clearOfItems(MachineKind.SMALL_LAB_FURNACE, r);\n      }\n      for (var r : FactoryStudyGeometry.progressMask()) {\n         inside(FactoryStudyGeometry.progress(), r);\n         clearOfItems(MachineKind.SMALL_LAB_FURNACE, r);\n",
+          "current": "      var lab = MachineKind.SMALL_LAB_FURNACE;\n      assertEquals(2, Gui11V5CRuntimeGeometry.effects(lab).size());\n      for (var effect : Gui11V5CRuntimeGeometry.effects(lab)) {\n         var bounds = effect.bounds();\n         var rect = new FactoryStudyGeometry.Rect(bounds.x(), bounds.y(), bounds.width(), bounds.height());\n         var expected = switch (effect.key()) {\n            case \"lab-flame\" -> FactoryStudyGeometry.flame();\n            case \"transfer-arrow-glint\" -> FactoryStudyGeometry.progress();\n            default -> throw new AssertionError(\"Unexpected active Lab layer: \" + effect.key());\n         };\n         inside(expected, rect);\n         clearOfItems(lab, rect);\n"
         }
       ]
     },
