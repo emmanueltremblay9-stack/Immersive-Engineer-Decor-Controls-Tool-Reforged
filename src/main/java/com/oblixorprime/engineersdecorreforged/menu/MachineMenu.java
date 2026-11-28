@@ -172,7 +172,8 @@ public class MachineMenu extends AbstractContainerMenu {
       checkContainerSize(container, kind == MachineKind.METAL_CRAFTING_TABLE ? 29 : 27);
       checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
-      this.gui11V5CPresentation = Gui11V5CRuntimeGeometry.supports(kind) && inventory.player.level().isClientSide;
+      this.gui11V5CPresentation = Gui11V5CRuntimeGeometry.supports(kind) && inventory.player.level().isClientSide
+         && (kind != MachineKind.FLUID_BARREL || this.barrelReferencePresentation);
       this.thermalVerticalPresentation = inventory.player.level().isClientSide
          && (kind == MachineKind.SMALL_FREEZER || kind == MachineKind.SMALL_MINERAL_SMELTER);
       this.menuPlayer = inventory.player;

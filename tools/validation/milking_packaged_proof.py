@@ -91,6 +91,8 @@ def validate_proof(proof, nonce, source_sha, game, logs, exit_code, timed_out,
     require(type(exit_code) is int and type(timed_out) is bool,
             'Malformed native process result')
     validate_runtime(proof, report, archive_path=archive_path)
+    if proof.get('status') == 'failed':
+        require(False, 'Milking fixture failed: ' + str(proof.get('error', 'no recorded exception')))
     after = proof.get('packaged_runtime_after')
     require(type(after) is dict and after == proof.get('packaged_runtime'), 'Runtime changed during native qualification')
     validate_runtime(dict(packaged_runtime=after), report, archive_path=archive_path)

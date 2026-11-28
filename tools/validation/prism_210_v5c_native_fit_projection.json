@@ -85,6 +85,18 @@
           "previous": "        self.assertIn(\".bounds(183, 19, 16, 16)\", source)\n        self.assertIn(\"ThermalVerticalGeometry.CANVAS_WIDTH\", source)\n        self.assertIn(\"ThermalVerticalGeometry.CANVAS_HEIGHT\", source)\n"
         }
       ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+      "old_sha256": "15516161db471643a8b741dcee76b91e57e9071fda5ebe74fa6ecda124710f8e",
+      "new_sha256": "29d75726e3692015d406043cd380d8e9ce336aa3143c9b1bfe25ea9d60449fee",
+      "hunks": [
+        {
+          "start": 174,
+          "end": 176,
+          "current": "      this.gui11V5CPresentation = Gui11V5CRuntimeGeometry.supports(kind) && inventory.player.level().isClientSide\n         && (kind != MachineKind.FLUID_BARREL || this.barrelReferencePresentation);\n",
+          "previous": "      this.gui11V5CPresentation = Gui11V5CRuntimeGeometry.supports(kind) && inventory.player.level().isClientSide;\n"
+        }
+      ]
     }
   }
 }

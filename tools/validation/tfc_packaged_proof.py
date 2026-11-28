@@ -124,6 +124,8 @@ def _composed(kind,proof,nonce,source_sha,game,logs,exit_code,timed_out,width,he
     from tfc_milking_recovery_native import validate_proof as recovery
     from mooshroom_milking_native import validate_proof as mooshroom
     validate_runtime(proof, report, archive_path=archive_path)
+    if proof.get('status') == 'failed':
+        require(False, 'TFC fixture failed: ' + str(proof.get('error', 'no recorded exception')))
     after=proof.get('packaged_runtime_after')
     require(type(after) is dict and after==proof.get('packaged_runtime'),'Compatibility runtime changed')
     validate_dependencies(after, dependency_archives=dependency_archives)
