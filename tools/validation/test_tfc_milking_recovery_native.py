@@ -25,15 +25,15 @@ class NativeRecoveryEvidenceTest(unittest.TestCase):
                 amount=amount,client_amount=amount,uses=uses,produced_tick=produced,calendar_tick=calendar,remaining_ticks=r,client_remaining_ticks=r,
                 total_ticks=400,client_total_ticks=400,ready=r==0,server_state='READY' if not r else 'RECOVERING',client_state='READY' if not r else 'RECOVERING')
         for i,(phase,args) in enumerate(zip(PHASES,[(0,0,0,500),(1000,1,520,540),(1000,1,520,620),(2000,2,920,940)])):
-            s=snap(*args);s.update({k:v for k,v in g.items() if not k.startswith(('tank_','presentation_'))});s.update(menu_id=1,server_menu_id=1,screen_class=SCREEN_CLASS,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+27)*2,
-                portrait_y=(g['presentation_gui_top']+34)*2,portrait_width=94,portrait_height=82)
+            s=snap(*args);s.update({k:v for k,v in g.items() if not k.startswith(('tank_','presentation_'))});s.update(menu_id=1,server_menu_id=1,screen_class=SCREEN_CLASS,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+41)*2,
+                portrait_y=(g['presentation_gui_top']+54)*2,portrait_width=114,portrait_height=78)
             pixels=bytes(range(256))*(1280*720*4//256)
             pixels=bytes([i])+pixels[1:]
-            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],94,82)
-            for name,data,key in [(s['name'],png(1280,720,pixels),'sha256'),(s['portrait_name'],png(94,82,crop),'portrait_sha256')]:
+            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],114,78)
+            for name,data,key in [(s['name'],png(1280,720,pixels),'sha256'),(s['portrait_name'],png(114,78,crop),'portrait_sha256')]:
                 (folder/name).write_bytes(data);s[key]=hashlib.sha256(data).hexdigest()
             if phase=='recovering-tooltip':
-                hx=g['presentation_gui_left']+180;hy=g['presentation_gui_top']+63
+                hx=g['presentation_gui_left']+200;hy=g['presentation_gui_top']+83
                 s.update(tooltip_hovered=True,hover_x=hx,hover_y=hy,native_input=dict(glfw_focused=True,glfw_visible=True,
                     glfw_cursor_mode=212993,glfw_cursor_x=hx*2,glfw_cursor_y=hy*2,minecraft_cursor_x=hx*2,minecraft_cursor_y=hy*2,
                     window_width=1280,window_height=720,settled_hover_ticks=8))

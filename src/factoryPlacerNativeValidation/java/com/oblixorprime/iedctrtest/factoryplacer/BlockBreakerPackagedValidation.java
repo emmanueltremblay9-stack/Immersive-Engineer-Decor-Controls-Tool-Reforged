@@ -56,7 +56,7 @@ public final class BlockBreakerPackagedValidation {
     private static final BlockPos POS = new BlockPos(0, 80, 0);
     private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.";
     private static final String TITLE = "block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker";
-    private static final int[][] POINTS = {{128,14},{200,55},{200,75},{40,110},{40,75},{115,100},{128,140}};
+    private static final int[][] POINTS = {{136,20},{220,52},{219,72},{68,135},{60,73},{130,106},{129,137}};
     private static final String[] NAMES = {"title","energy","fluid","power","target","scene","work"};
     private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, WORK, PICKED, RETURNED }
     private static Stage stage = Stage.BOOT;
@@ -260,8 +260,8 @@ public final class BlockBreakerPackagedValidation {
         x11.getFunction("XFlush").invokeInt(new Object[]{display});
     }
     private static void setHover(Minecraft mc, MachineScreen screen) {
-        pointerX = (screen.width-((MachineMenu)mc.player.containerMenu).layout().imageWidth())/2 + POINTS[hoverIndex][0];
-        pointerY = (screen.height-((MachineMenu)mc.player.containerMenu).layout().imageHeight())/2 + POINTS[hoverIndex][1];
+        pointerX = screen.getGuiLeft() + POINTS[hoverIndex][0];
+        pointerY = screen.getGuiTop() + POINTS[hoverIndex][1];
         tooltipFrames = 0; observed = null; move(mc,screen);
     }
     private static void move(Minecraft mc, MachineScreen screen) {

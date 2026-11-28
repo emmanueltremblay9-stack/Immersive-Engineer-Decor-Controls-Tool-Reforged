@@ -207,6 +207,23 @@ public final class Gui11V5CRuntimeGeometry {
       case "07" -> switch (key) {
          case "rotary" -> new Rect(214, 98, 25, 25);
          default -> null; };
+      case "09" -> switch (key) {
+         case "title" -> new Rect(74, 9, 124, 22);
+         case "energy" -> new Rect(193, 46, 52, 12);
+         case "fluid" -> new Rect(194, 67, 48, 11);
+         case "power" -> new Rect(56, 127, 26, 16);
+         case "output" -> new Rect(201, 86, 40, 39);
+         case "target" -> new Rect(34, 58, 54, 29);
+         case "scene" -> new Rect(108, 80, 43, 42);
+         case "work" -> new Rect(83, 130, 123, 14);
+         default -> null; };
+      case "12" -> switch (key) {
+         case "title" -> new Rect(81, 8, 122, 25);
+         case "portrait" -> new Rect(41, 54, 57, 39);
+         case "milk" -> new Rect(130, 64, 29, 52);
+         case "recovery" -> new Rect(180, 76, 64, 16);
+         case "power" -> new Rect(180, 54, 64, 16);
+         default -> null; };
       case "17" -> switch (key) {
          case "preview" -> new Rect(276, 113, 48, 36);
          default -> null; };

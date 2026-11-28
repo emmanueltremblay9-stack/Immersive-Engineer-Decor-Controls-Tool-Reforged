@@ -418,11 +418,17 @@
     },
     "tools/validation/milking_packaged_proof.py": {
       "old_sha256": "688a7f327d587650103ca41ab7063bd53b0eec396c167cd7abdc7754819fd2a2",
-      "new_sha256": "e4c8129a89b79bac752be7b5dd80a98431798a4cb11e6d1dae909f7cffbf3116",
+      "new_sha256": "a48facbdd47ed31b03f3f5cba79e5ab4f95861edaf80a4c92eecf7d3b7d05b8d",
       "hunks": [
         {
-          "start": 93,
-          "end": 95,
+          "start": 15,
+          "end": 16,
+          "current": "    'textures/gui/gui11_v5c/12.png': '82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa',\n",
+          "previous": ""
+        },
+        {
+          "start": 94,
+          "end": 96,
           "current": "    if proof.get('status') == 'failed':\n        require(False, 'Milking fixture failed: ' + str(proof.get('error', 'no recorded exception')))\n",
           "previous": ""
         }
@@ -430,11 +436,17 @@
     },
     "tools/validation/tfc_packaged_proof.py": {
       "old_sha256": "dbf6f0d80fa12af510c93f6dc4cd9dc95048c31ebaf3a3ad7c0c98a9adc863ea",
-      "new_sha256": "240338282d1f9710602a1120d62190089ed75382e7ce412cf1c885d77103b801",
+      "new_sha256": "447042867d5f974fb25bf634bc173d1d35df571af4349a9864c0cbbc1cfe72c8",
       "hunks": [
         {
-          "start": 126,
-          "end": 128,
+          "start": 15,
+          "end": 16,
+          "current": "    'textures/gui/gui11_v5c/12.png': '82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa',\n",
+          "previous": ""
+        },
+        {
+          "start": 127,
+          "end": 129,
           "current": "    if proof.get('status') == 'failed':\n        require(False, 'TFC fixture failed: ' + str(proof.get('error', 'no recorded exception')))\n",
           "previous": ""
         }
@@ -701,6 +713,810 @@
           "end": 103,
           "current": "    if proof.get('status') == 'failed':\n        require(False, 'Barrel legacy fixture failed: ' + str(proof.get('error', 'no recorded exception')))\n",
           "previous": ""
+        }
+      ]
+    },
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/BlockBreakerPackagedValidation.java": {
+      "old_sha256": "21bf8de9cd1c381f00b8008c1303dcdfb0168be6d27a38e96a7b1f457b50ce8e",
+      "new_sha256": "220abbd48cfb44585090b0815cead440f2007159eb1e3bc5f960d5fcc25bd8db",
+      "hunks": [
+        {
+          "start": 58,
+          "end": 59,
+          "current": "    private static final int[][] POINTS = {{136,20},{220,52},{219,72},{68,135},{60,73},{130,106},{129,137}};\n",
+          "previous": "    private static final int[][] POINTS = {{128,14},{200,55},{200,75},{40,110},{40,75},{115,100},{128,140}};\n"
+        },
+        {
+          "start": 262,
+          "end": 264,
+          "current": "        pointerX = screen.getGuiLeft() + POINTS[hoverIndex][0];\n        pointerY = screen.getGuiTop() + POINTS[hoverIndex][1];\n",
+          "previous": "        pointerX = (screen.width-((MachineMenu)mc.player.containerMenu).layout().imageWidth())/2 + POINTS[hoverIndex][0];\n        pointerY = (screen.height-((MachineMenu)mc.player.containerMenu).layout().imageHeight())/2 + POINTS[hoverIndex][1];\n"
+        }
+      ]
+    },
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/BlockBreakerRuntimeProof.java": {
+      "old_sha256": "848cf129c79450da7b7a236ddec8afd27b7e7e970ffa31021c74a84bc3cb6b14",
+      "new_sha256": "85bec960d2b6e7243cea8877aecb6033f457feebcef4e86195cab0575bf5d5ec",
+      "hunks": [
+        {
+          "start": 15,
+          "end": 17,
+          "current": "import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;\nimport com.oblixorprime.engineersdecorreforged.utility.MachineKind;\n",
+          "previous": ""
+        },
+        {
+          "start": 67,
+          "end": 68,
+          "current": "            var texture = Gui11V5CArtwork.texture(MachineKind.SMALL_BLOCK_BREAKER);\n",
+          "previous": "            var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\n                \"textures/gui/block_breaker_rp_v3/background.png\");\n"
+        },
+        {
+          "start": 73,
+          "end": 74,
+          "current": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7\"),\n",
+          "previous": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879\"),\n"
+        }
+      ]
+    },
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/TreeCutterPackagedValidation.java": {
+      "old_sha256": "09cef526faecf7934e1f7fcd448f57b9dd34b6628a9418353ce5b72bf62e9d77",
+      "new_sha256": "6df0d4f798a3c878f59f796a1226c178eb9652aa38d0dce247e1ddca9be648dd",
+      "hunks": [
+        {
+          "start": 275,
+          "end": 276,
+          "current": "        int width=(int)Math.floor(v.screenX(TreeCutterV3ReferenceGeometry.CANVAS_WIDTH)*scale)-x,height=(int)Math.floor(v.screenY(TreeCutterV3ReferenceGeometry.CANVAS_HEIGHT)*scale)-y;\n",
+          "previous": "        int width=(int)Math.floor(v.screenX(418)*scale)-x,height=(int)Math.floor(v.screenY(418)*scale)-y;\n"
+        }
+      ]
+    },
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/TreeCutterRuntimeProof.java": {
+      "old_sha256": "7cb6c5b9d0c7947c659a9183e0f9077df0f99246ac39a04a08ac3c4ffa6598a7",
+      "new_sha256": "446826fb89cbe0b2fa49f3cea8f3448aa570c62fe6d92d48cda06f7e7b98c374",
+      "hunks": [
+        {
+          "start": 15,
+          "end": 17,
+          "current": "import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;\nimport com.oblixorprime.engineersdecorreforged.utility.MachineKind;\n",
+          "previous": "import net.minecraft.resources.ResourceLocation;\n"
+        },
+        {
+          "start": 66,
+          "end": 67,
+          "current": "            var texture = Gui11V5CArtwork.texture(MachineKind.SMALL_TREE_CUTTER);\n",
+          "previous": "            var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\n                \"textures/gui/tree_cutter_v3_reference/background.png\");\n"
+        },
+        {
+          "start": 72,
+          "end": 73,
+          "current": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef\"),\n",
+          "previous": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4\"),\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
+      "old_sha256": "9308243fcb7f1163483e11ff2334df38623ffce9fadbac210c644a4ab1b95183",
+      "new_sha256": "4942c0fca59da024d1dcc6f58820ded326f5f0e6d6e1674e291c64207994be00",
+      "hunks": [
+        {
+          "start": 113,
+          "end": 119,
+          "current": "         if (this.menu.kind() == MachineKind.SMALL_MILKING_MACHINE && this.selectedMilkingAnimal() instanceof LivingEntity living) {\n            var portrait = Gui11V5CRuntimeGeometry.control(this.menu.kind(), \"portrait\");\n            InventoryScreen.renderEntityInInventoryFollowsMouse(graphics,\n               x + portrait.x(), y + portrait.y(), x + portrait.x() + portrait.width(), y + portrait.y() + portrait.height(),\n               19, 0.0F, x + portrait.x() + portrait.width() / 2.0F, y + portrait.y() + portrait.height() / 2.0F, living);\n         }\n",
+          "previous": ""
+        },
+        {
+          "start": 548,
+          "end": 558,
+          "current": "   private boolean v5ControlHovered(String key, int mouseX, int mouseY) {\n      var region = Gui11V5CRuntimeGeometry.control(this.menu.kind(), key);\n      return region != null && region.contains(mouseX - this.leftPos, mouseY - this.topPos);\n   }\n\n   private boolean blockBreakerRegionHovered(String key, int x, int y, int w, int h, int mouseX, int mouseY) {\n      return this.menu.gui11V5CPresentation() ? v5ControlHovered(key, mouseX, mouseY)\n         : this.isHovering(x, y, w, h, mouseX, mouseY);\n   }\n\n",
+          "previous": ""
+        },
+        {
+          "start": 561,
+          "end": 562,
+          "current": "      if (blockBreakerRegionHovered(\"title\", 42, 6, 172, 18, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(42, 6, 172, 18, mouseX, mouseY))\n"
+        },
+        {
+          "start": 572,
+          "end": 573,
+          "current": "      if (blockBreakerRegionHovered(\"energy\", 191, 49, 46, 12, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(191, 49, 46, 12, mouseX, mouseY))\n"
+        },
+        {
+          "start": 575,
+          "end": 576,
+          "current": "      if (blockBreakerRegionHovered(\"fluid\", 191, 71, 46, 12, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(191, 71, 46, 12, mouseX, mouseY))\n"
+        },
+        {
+          "start": 577,
+          "end": 578,
+          "current": "      if (blockBreakerRegionHovered(\"power\", 34, 106, 22, 23, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(34, 106, 22, 23, mouseX, mouseY))\n"
+        },
+        {
+          "start": 581,
+          "end": 582,
+          "current": "      if (blockBreakerRegionHovered(\"output\", 193, 88, 41, 47, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(193, 88, 41, 47, mouseX, mouseY))\n"
+        },
+        {
+          "start": 584,
+          "end": 585,
+          "current": "      if (blockBreakerRegionHovered(\"target\", 26, 51, 39, 45, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(26, 51, 39, 45, mouseX, mouseY))\n"
+        },
+        {
+          "start": 588,
+          "end": 589,
+          "current": "      if (blockBreakerRegionHovered(\"scene\", 100, 85, 40, 41, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(100, 85, 40, 41, mouseX, mouseY))\n"
+        },
+        {
+          "start": 590,
+          "end": 591,
+          "current": "      if (blockBreakerRegionHovered(\"work\", 65, 132, 132, 18, mouseX, mouseY))\n",
+          "previous": "      if (this.isHovering(65, 132, 132, 18, mouseX, mouseY))\n"
+        },
+        {
+          "start": 1161,
+          "end": 1173,
+          "current": "   private Component v5MilkingTooltip(int mouseX, int mouseY) {\n      if (v5ControlHovered(\"milk\", mouseX, mouseY)) {\n         return smallMilkingText(\"tooltip.tank\",\n            formatSmallMilkingMachineAmount(this.menu.fluidAmount(), this.menu.fluidCapacity(), this.smallMilkingLocale()));\n      }\n      if (v5ControlHovered(\"title\", mouseX, mouseY) || v5ControlHovered(\"portrait\", mouseX, mouseY))\n         return this.milkingIdentityTooltip();\n      if (v5ControlHovered(\"recovery\", mouseX, mouseY)) return this.milkingRecoveryTooltip();\n      if (v5ControlHovered(\"power\", mouseX, mouseY)) return smallMilkingText(\"tooltip.energy_unavailable\");\n      return null;\n   }\n\n",
+          "previous": ""
+        },
+        {
+          "start": 1467,
+          "end": 1478,
+          "current": "         if (this.hoveredSlot == null) {\n            Component mapped = switch (this.menu.kind()) {\n               case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);\n               case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);\n               default -> null;\n            };\n            if (mapped != null) {\n               graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);\n               return;\n            }\n         }\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeMilkingQualificationValidation.java": {
+      "old_sha256": "fe499c78d3c1bc70e8410f8b0b0896d499e7993144156329b31fadc7115d7e7f",
+      "new_sha256": "a17964353416165ee3948c55879168b55b401bbb0e5c92992569689266ce2918",
+      "hunks": [
+        {
+          "start": 146,
+          "end": 149,
+          "current": "      verifyArt(mc,\"milking_redesign_v1/background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"gui11_v5c/12\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n      verifyArt(mc,\"milking_redesign_v1/milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n",
+          "previous": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n"
+        },
+        {
+          "start": 156,
+          "end": 157,
+          "current": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/\"+name+\".png\");\n",
+          "previous": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/milking_redesign_v1/\"+name+\".png\");\n"
+        },
+        {
+          "start": 180,
+          "end": 183,
+          "current": "   private static Gui11V5CRuntimeGeometry.Point anchor(int index){\n      return Gui11V5CRuntimeGeometry.slot(MachineKind.SMALL_MILKING_MACHINE,index);\n   }\n",
+          "previous": "   private static MilkingRedesignLayout.Rect anchor(int index){return index==0?MilkingRedesignLayout.INPUT_SLOT:index==1?MilkingRedesignLayout.OUTPUT_SLOT:index<29?MilkingRedesignLayout.playerSlot((index-2)%9,(index-2)/9):MilkingRedesignLayout.hotbarSlot(index-29);}\n"
+        },
+        {
+          "start": 194,
+          "end": 196,
+          "current": "      require(screen.getXSize()==283 && screen.getYSize()==283,\"Wrong Milking canvas\");\n      require(screen.getGuiLeft()==(screen.width-283)/2 && screen.getGuiTop()==(screen.height-283)/2,\"Public integer origin differs\");\n",
+          "previous": "      require(screen.getXSize()==228 && screen.getYSize()==228,\"Wrong Milking canvas\");\n      require(screen.getGuiLeft()==(screen.width-228)/2 && screen.getGuiTop()==(screen.height-228)/2,\"Public integer origin differs\");\n"
+        },
+        {
+          "start": 236,
+          "end": 238,
+          "current": "      int x0=(int)((screen.getGuiLeft()+130)*scale),y0=(int)((screen.getGuiTop()+64)*scale);\n      int width=(int)(29*scale),height=(int)(52*scale);\n",
+          "previous": "      int x0=(int)((screen.getGuiLeft()+104)*scale),y0=(int)((screen.getGuiTop()+49)*scale);\n      int width=(int)(22*scale),height=(int)(51*scale);\n"
+        },
+        {
+          "start": 282,
+          "end": 283,
+          "current": "         p.addProperty(\"source_background_sha256\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n",
+          "previous": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java": {
+      "old_sha256": "4c66c4fc14438e0cdb0ca3509503cc184d24200008a751a54b8ba0c130c7dd8a",
+      "new_sha256": "1a1190e31ca1e683fb7b4ab47ec05a87127c92957791ae0d72ca37c62654f5a2",
+      "hunks": [
+        {
+          "start": 209,
+          "end": 226,
+          "current": "      case \"09\" -> switch (key) {\n         case \"title\" -> new Rect(74, 9, 124, 22);\n         case \"energy\" -> new Rect(193, 46, 52, 12);\n         case \"fluid\" -> new Rect(194, 67, 48, 11);\n         case \"power\" -> new Rect(56, 127, 26, 16);\n         case \"output\" -> new Rect(201, 86, 40, 39);\n         case \"target\" -> new Rect(34, 58, 54, 29);\n         case \"scene\" -> new Rect(108, 80, 43, 42);\n         case \"work\" -> new Rect(83, 130, 123, 14);\n         default -> null; };\n      case \"12\" -> switch (key) {\n         case \"title\" -> new Rect(81, 8, 122, 25);\n         case \"portrait\" -> new Rect(41, 54, 57, 39);\n         case \"milk\" -> new Rect(130, 64, 29, 52);\n         case \"recovery\" -> new Rect(180, 76, 64, 16);\n         case \"power\" -> new Rect(180, 54, 64, 16);\n         default -> null; };\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/milkingPackagedValidation/java/com/oblixorprime/iedctrtest/milking/NativeMilkingPackagedValidation.java": {
+      "old_sha256": "c65845a94c11576f688c2841ce05c5bacf6ce38590da8d0f9092ba709b93d58d",
+      "new_sha256": "ef4762b690d0b802a9ee05901ed587bb30c6743efa08f50529f87639defb4f52",
+      "hunks": [
+        {
+          "start": 148,
+          "end": 151,
+          "current": "      verifyArt(mc,\"milking_redesign_v1/background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"gui11_v5c/12\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n      verifyArt(mc,\"milking_redesign_v1/milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n",
+          "previous": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n"
+        },
+        {
+          "start": 158,
+          "end": 159,
+          "current": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/\"+name+\".png\");\n",
+          "previous": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/milking_redesign_v1/\"+name+\".png\");\n"
+        },
+        {
+          "start": 182,
+          "end": 185,
+          "current": "   private static Gui11V5CRuntimeGeometry.Point anchor(int index){\n      return Gui11V5CRuntimeGeometry.slot(MachineKind.SMALL_MILKING_MACHINE,index);\n   }\n",
+          "previous": "   private static MilkingRedesignLayout.Rect anchor(int index){return index==0?MilkingRedesignLayout.INPUT_SLOT:index==1?MilkingRedesignLayout.OUTPUT_SLOT:index<29?MilkingRedesignLayout.playerSlot((index-2)%9,(index-2)/9):MilkingRedesignLayout.hotbarSlot(index-29);}\n"
+        },
+        {
+          "start": 196,
+          "end": 198,
+          "current": "      require(screen.getXSize()==283 && screen.getYSize()==283,\"Wrong Milking canvas\");\n      require(screen.getGuiLeft()==(screen.width-283)/2 && screen.getGuiTop()==(screen.height-283)/2,\"Public integer origin differs\");\n",
+          "previous": "      require(screen.getXSize()==228 && screen.getYSize()==228,\"Wrong Milking canvas\");\n      require(screen.getGuiLeft()==(screen.width-228)/2 && screen.getGuiTop()==(screen.height-228)/2,\"Public integer origin differs\");\n"
+        },
+        {
+          "start": 238,
+          "end": 240,
+          "current": "      int x0=(int)((screen.getGuiLeft()+130)*scale),y0=(int)((screen.getGuiTop()+64)*scale);\n      int width=(int)(29*scale),height=(int)(52*scale);\n",
+          "previous": "      int x0=(int)((screen.getGuiLeft()+104)*scale),y0=(int)((screen.getGuiTop()+49)*scale);\n      int width=(int)(22*scale),height=(int)(51*scale);\n"
+        },
+        {
+          "start": 285,
+          "end": 286,
+          "current": "         p.addProperty(\"source_background_sha256\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n",
+          "previous": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/milkingPackagedValidation/java/com/oblixorprime/iedctrtest/milking/PackagedRuntimeProof.java": {
+      "old_sha256": "66d485f5a289f789273db60c9963a1378547f849b5ab46f4c506d8f70d78bf04",
+      "new_sha256": "106395209f5163ca9e143dd84299d7b35d23c7c18b36dff36b68bdb5f83c4a0d",
+      "hunks": [
+        {
+          "start": 75,
+          "end": 77,
+          "current": "            String[] paths = {\"milking_redesign_v1/background.png\",\"milking_redesign_v1/milk.png\",\"gui11_v5c/12.png\"};\n            String[] hashes = {\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\"};\n",
+          "previous": "            String[] paths = {\"milking_redesign_v1/background.png\",\"milking_redesign_v1/milk.png\"};\n            String[] hashes = {\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\"};\n"
+        }
+      ]
+    },
+    "src/tfcGameTest/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeMooshroomMilkingValidation.java": {
+      "old_sha256": "66b19a1afb863b5b720d6d4884b8dfdcd49a807bbd5650b1c4aa0f5b85c55224",
+      "new_sha256": "3696ff2b2754a68a0a841722e21805b414a6da4c363774b7ad4f01d25be3a9ab",
+      "hunks": [
+        {
+          "start": 176,
+          "end": 179,
+          "current": "      verifyArt(mc,\"milking_redesign_v1/background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"gui11_v5c/12\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n      verifyArt(mc,\"milking_redesign_v1/milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n",
+          "previous": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n"
+        },
+        {
+          "start": 186,
+          "end": 187,
+          "current": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/\"+name+\".png\");\n",
+          "previous": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/milking_redesign_v1/\"+name+\".png\");\n"
+        },
+        {
+          "start": 244,
+          "end": 246,
+          "current": "      double x=screen.getGuiLeft()+(tooltip?68:-40)+(ticks%2);\n      double y=screen.getGuiTop()+73;\n",
+          "previous": "      double x=screen.getGuiLeft()+(tooltip?50:-40)+(ticks%2);\n      double y=screen.getGuiTop()+45;\n"
+        },
+        {
+          "start": 268,
+          "end": 269,
+          "current": "         && x>=screen.getGuiLeft()+41 && x<screen.getGuiLeft()+98 && y>=screen.getGuiTop()+54 && y<screen.getGuiTop()+93;\n",
+          "previous": "         && x>=screen.getGuiLeft()+27 && x<screen.getGuiLeft()+74 && y>=screen.getGuiTop()+34 && y<screen.getGuiTop()+75;\n"
+        },
+        {
+          "start": 276,
+          "end": 277,
+          "current": "         && y>=screen.getGuiTop()+73 && y<screen.getGuiTop()+74;\n",
+          "previous": "         && y>=screen.getGuiTop()+45 && y<screen.getGuiTop()+46;\n"
+        },
+        {
+          "start": 291,
+          "end": 294,
+          "current": "         o.addProperty(\"target_gui_x_min\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?68:-40));\n         o.addProperty(\"target_gui_x_max_exclusive\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?70:-38));\n         o.addProperty(\"target_gui_y\",screen.getGuiTop()+73);\n",
+          "previous": "         o.addProperty(\"target_gui_x_min\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?50:-40));\n         o.addProperty(\"target_gui_x_max_exclusive\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?52:-38));\n         o.addProperty(\"target_gui_y\",screen.getGuiTop()+45);\n"
+        },
+        {
+          "start": 299,
+          "end": 300,
+          "current": "      require(screen.getXSize()==283 && screen.getYSize()==283 && menu.slots.size()==38,\"Wrong canvas/menu\");\n",
+          "previous": "      require(screen.getXSize()==228 && screen.getYSize()==228 && menu.slots.size()==38,\"Wrong canvas/menu\");\n"
+        },
+        {
+          "start": 311,
+          "end": 312,
+          "current": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+41)*scale,y=(screen.getGuiTop()+54)*scale,w=57*scale,h=39*scale;\n",
+          "previous": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+27)*scale,y=(screen.getGuiTop()+34)*scale,w=47*scale,h=41*scale;\n"
+        },
+        {
+          "start": 336,
+          "end": 337,
+          "current": "         p.addProperty(\"source_background_sha256\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n",
+          "previous": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcGameTest/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeTfcMilkingRecoveryValidation.java": {
+      "old_sha256": "4df7415e74aafa78fab70ad83044a9a00198cf506a955310abcbdd6f565ab986",
+      "new_sha256": "13583c34436fccffa220b3f54b0d267556442b7670917e4e0e410fcfedb29324",
+      "hunks": [
+        {
+          "start": 165,
+          "end": 168,
+          "current": "      verifyArt(mc,\"milking_redesign_v1/background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"gui11_v5c/12\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n      verifyArt(mc,\"milking_redesign_v1/milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n",
+          "previous": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n"
+        },
+        {
+          "start": 175,
+          "end": 176,
+          "current": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/\"+name+\".png\");\n",
+          "previous": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/milking_redesign_v1/\"+name+\".png\");\n"
+        },
+        {
+          "start": 231,
+          "end": 233,
+          "current": "      double x=tooltip?screen.getGuiLeft()+200+(ticks%2):screen.width-2;\n      double y=tooltip?screen.getGuiTop()+83:screen.height-2;\n",
+          "previous": "      double x=tooltip?screen.getGuiLeft()+180+(ticks%2):screen.width-2;\n      double y=tooltip?screen.getGuiTop()+63:screen.height-2;\n"
+        },
+        {
+          "start": 259,
+          "end": 260,
+          "current": "         && x>=screen.getGuiLeft()+180 && x<screen.getGuiLeft()+244 && y>=screen.getGuiTop()+76 && y<screen.getGuiTop()+92;\n",
+          "previous": "         && x>=screen.getGuiLeft()+160 && x<screen.getGuiLeft()+207 && y>=screen.getGuiTop()+56 && y<screen.getGuiTop()+73;\n"
+        },
+        {
+          "start": 273,
+          "end": 274,
+          "current": "      require(screen.getXSize()==283 && screen.getYSize()==283 && menu.slots.size()==38,\"Wrong canvas/menu\");\n",
+          "previous": "      require(screen.getXSize()==228 && screen.getYSize()==228 && menu.slots.size()==38,\"Wrong canvas/menu\");\n"
+        },
+        {
+          "start": 283,
+          "end": 284,
+          "current": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+41)*scale,y=(screen.getGuiTop()+54)*scale,w=57*scale,h=39*scale;\n",
+          "previous": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+27)*scale,y=(screen.getGuiTop()+34)*scale,w=47*scale,h=41*scale;\n"
+        },
+        {
+          "start": 309,
+          "end": 310,
+          "current": "         p.addProperty(\"source_background_sha256\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n",
+          "previous": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcPackagedValidation/java/com/oblixorprime/iedctrtest/tfc/NativeMooshroomMilkingValidation.java": {
+      "old_sha256": "0f476009832fbfa951ddfe8d68daa9e915664ac8792259950a69e7f75f3cbe65",
+      "new_sha256": "2fd66b7621645952eebbf99137589637b64a6541cb104519a349280b6006ce3c",
+      "hunks": [
+        {
+          "start": 178,
+          "end": 181,
+          "current": "      verifyArt(mc,\"milking_redesign_v1/background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"gui11_v5c/12\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n      verifyArt(mc,\"milking_redesign_v1/milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n",
+          "previous": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n"
+        },
+        {
+          "start": 188,
+          "end": 189,
+          "current": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/\"+name+\".png\");\n",
+          "previous": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/milking_redesign_v1/\"+name+\".png\");\n"
+        },
+        {
+          "start": 246,
+          "end": 248,
+          "current": "      double x=screen.getGuiLeft()+(tooltip?68:-40)+(ticks%2);\n      double y=screen.getGuiTop()+73;\n",
+          "previous": "      double x=screen.getGuiLeft()+(tooltip?50:-40)+(ticks%2);\n      double y=screen.getGuiTop()+45;\n"
+        },
+        {
+          "start": 270,
+          "end": 271,
+          "current": "         && x>=screen.getGuiLeft()+41 && x<screen.getGuiLeft()+98 && y>=screen.getGuiTop()+54 && y<screen.getGuiTop()+93;\n",
+          "previous": "         && x>=screen.getGuiLeft()+27 && x<screen.getGuiLeft()+74 && y>=screen.getGuiTop()+34 && y<screen.getGuiTop()+75;\n"
+        },
+        {
+          "start": 278,
+          "end": 279,
+          "current": "         && y>=screen.getGuiTop()+73 && y<screen.getGuiTop()+74;\n",
+          "previous": "         && y>=screen.getGuiTop()+45 && y<screen.getGuiTop()+46;\n"
+        },
+        {
+          "start": 293,
+          "end": 296,
+          "current": "         o.addProperty(\"target_gui_x_min\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?68:-40));\n         o.addProperty(\"target_gui_x_max_exclusive\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?70:-38));\n         o.addProperty(\"target_gui_y\",screen.getGuiTop()+73);\n",
+          "previous": "         o.addProperty(\"target_gui_x_min\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?50:-40));\n         o.addProperty(\"target_gui_x_max_exclusive\",screen.getGuiLeft()+(stage==Stage.TOOLTIP?52:-38));\n         o.addProperty(\"target_gui_y\",screen.getGuiTop()+45);\n"
+        },
+        {
+          "start": 301,
+          "end": 302,
+          "current": "      require(screen.getXSize()==283 && screen.getYSize()==283 && menu.slots.size()==38,\"Wrong canvas/menu\");\n",
+          "previous": "      require(screen.getXSize()==228 && screen.getYSize()==228 && menu.slots.size()==38,\"Wrong canvas/menu\");\n"
+        },
+        {
+          "start": 313,
+          "end": 314,
+          "current": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+41)*scale,y=(screen.getGuiTop()+54)*scale,w=57*scale,h=39*scale;\n",
+          "previous": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+27)*scale,y=(screen.getGuiTop()+34)*scale,w=47*scale,h=41*scale;\n"
+        },
+        {
+          "start": 339,
+          "end": 340,
+          "current": "         p.addProperty(\"source_background_sha256\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n",
+          "previous": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcPackagedValidation/java/com/oblixorprime/iedctrtest/tfc/NativeTfcMilkingRecoveryValidation.java": {
+      "old_sha256": "f38c04675d9b6f0cdeb5697a2239425c32f17cb300267f0837b6bcabd2d59c4e",
+      "new_sha256": "90ece8a446ecbe561d983042b49e18f07e4a1750c08cbdecd829f43450cecc12",
+      "hunks": [
+        {
+          "start": 167,
+          "end": 170,
+          "current": "      verifyArt(mc,\"milking_redesign_v1/background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"gui11_v5c/12\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n      verifyArt(mc,\"milking_redesign_v1/milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n",
+          "previous": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n      verifyArt(mc,\"milk\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\");\n"
+        },
+        {
+          "start": 177,
+          "end": 178,
+          "current": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/\"+name+\".png\");\n",
+          "previous": "      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,\"textures/gui/milking_redesign_v1/\"+name+\".png\");\n"
+        },
+        {
+          "start": 233,
+          "end": 235,
+          "current": "      double x=tooltip?screen.getGuiLeft()+200+(ticks%2):screen.width-2;\n      double y=tooltip?screen.getGuiTop()+83:screen.height-2;\n",
+          "previous": "      double x=tooltip?screen.getGuiLeft()+180+(ticks%2):screen.width-2;\n      double y=tooltip?screen.getGuiTop()+63:screen.height-2;\n"
+        },
+        {
+          "start": 261,
+          "end": 262,
+          "current": "         && x>=screen.getGuiLeft()+180 && x<screen.getGuiLeft()+244 && y>=screen.getGuiTop()+76 && y<screen.getGuiTop()+92;\n",
+          "previous": "         && x>=screen.getGuiLeft()+160 && x<screen.getGuiLeft()+207 && y>=screen.getGuiTop()+56 && y<screen.getGuiTop()+73;\n"
+        },
+        {
+          "start": 275,
+          "end": 276,
+          "current": "      require(screen.getXSize()==283 && screen.getYSize()==283 && menu.slots.size()==38,\"Wrong canvas/menu\");\n",
+          "previous": "      require(screen.getXSize()==228 && screen.getYSize()==228 && menu.slots.size()==38,\"Wrong canvas/menu\");\n"
+        },
+        {
+          "start": 285,
+          "end": 286,
+          "current": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+41)*scale,y=(screen.getGuiTop()+54)*scale,w=57*scale,h=39*scale;\n",
+          "previous": "      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+27)*scale,y=(screen.getGuiTop()+34)*scale,w=47*scale,h=41*scale;\n"
+        },
+        {
+          "start": 312,
+          "end": 313,
+          "current": "         p.addProperty(\"source_background_sha256\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\");\n",
+          "previous": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcPackagedValidation/java/com/oblixorprime/iedctrtest/tfc/PackagedRuntimeProof.java": {
+      "old_sha256": "791808c8b809d04fe53106b5d1bc6b285708d4a80806f73becfabc780dac7128",
+      "new_sha256": "e4fec53b72109f30506b9107eb981f307e90093c42e83b235869aeeba4e7c10d",
+      "hunks": [
+        {
+          "start": 76,
+          "end": 78,
+          "current": "            String[] paths = {\"milking_redesign_v1/background.png\",\"milking_redesign_v1/milk.png\",\"gui11_v5c/12.png\"};\n            String[] hashes = {\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\",\"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\"};\n",
+          "previous": "            String[] paths = {\"milking_redesign_v1/background.png\",\"milking_redesign_v1/milk.png\"};\n            String[] hashes = {\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\"};\n"
+        }
+      ]
+    },
+    "tools/validation/block_breaker_packaged_native.py": {
+      "old_sha256": "885383634b6c521144ff33447370e9dc066fd1b7c9484a5b9a987125c591020c",
+      "new_sha256": "6f5c453300315a194e4000ff04cfe5c404c006a59e5671e99117fd60985c76a5",
+      "hunks": [
+        {
+          "start": 16,
+          "end": 17,
+          "current": "ART_SHA = '41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7'\n",
+          "previous": "ART_SHA = '0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879'\n"
+        },
+        {
+          "start": 87,
+          "end": 90,
+          "current": "    require(hashlib.sha256(art.read_bytes()).hexdigest()=='0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879','Historical V3 source changed')\n    require(hashlib.sha256((art.parent.parent/'gui11_v5c/09.png').read_bytes()).hexdigest()==ART_SHA,\n            'Active V5C source changed')\n",
+          "previous": "    require(hashlib.sha256(art.read_bytes()).hexdigest()==ART_SHA,'Retained v3 changed')\n"
+        }
+      ]
+    },
+    "tools/validation/check_milking_qualification.py": {
+      "old_sha256": "a166df57e4a50409b7db2095e02a049a8986f8a0f39627d7b18cf88297000a11",
+      "new_sha256": "f81bd968673866e4bdfd66baf3149b00a6735eb9951a09685d9c1403a2374f4c",
+      "hunks": [
+        {
+          "start": 81,
+          "end": 82,
+          "current": "    if not all(s in native for s in ['screen.getGuiLeft()+130','screen.getGuiTop()+64','screen.mouseClicked(x,y,0)',\n",
+          "previous": "    if not all(s in native for s in ['screen.getGuiLeft()+104','screen.getGuiTop()+49','screen.mouseClicked(x,y,0)',\n"
+        }
+      ]
+    },
+    "tools/validation/milking_qualification_native.py": {
+      "old_sha256": "08a0f751daa8e96108b6bd10a662c85bf1e08ab76a6ee28333514ba6bddbe473",
+      "new_sha256": "69e9c86132f5ddfa34fe83ef1e9a62c686a6d0d0958a3148aa5f5e0d4fe5d956",
+      "hunks": [
+        {
+          "start": 24,
+          "end": 27,
+          "current": "BACKGROUND_SHA = \"82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa\"\nPANEL = 283\nTANK = 130, 64, 29, 52\n",
+          "previous": "BACKGROUND_SHA = \"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\"\n"
+        },
+        {
+          "start": 61,
+          "end": 63,
+          "current": "    left, top = int((gw - PANEL) / 2), int((gh - PANEL) / 2)\n    tx, ty, tw, th = TANK\n",
+          "previous": "    left, top = (gw - 228) // 2, (gh - 228) // 2\n"
+        },
+        {
+          "start": 67,
+          "end": 70,
+          "current": "                presentation_gui_width=PANEL, presentation_gui_height=PANEL,\n                tank_x=(left + tx) * scale, tank_y=(top + ty) * scale,\n                tank_width=tw * scale, tank_height=th * scale)\n",
+          "previous": "                presentation_gui_width=228, presentation_gui_height=228,\n                tank_x=(left + 104) * scale, tank_y=(top + 49) * scale,\n                tank_width=22 * scale, tank_height=51 * scale)\n"
+        },
+        {
+          "start": 73,
+          "end": 78,
+          "current": "    require(type(index) is int and 0 <= index < 38, \"Invalid menu slot\")\n    if index < 2:\n        return (70, 109) if index == 0 else (197, 109)\n    col, row = (index - 2) % 9, (index - 2) // 9\n    return (45, 67, 90, 112, 134, 156, 178, 200, 222)[col], (154, 177, 200, 236)[row]\n",
+          "previous": "    if index == 0:\n        return 49, 94\n    if index == 1:\n        return 163, 94\n    require(type(index) is int and 2 <= index < 38, \"Invalid menu slot\")\n    return 26 + ((index - 2) % 9) * 20, 132 + ((index - 2) // 9) * 20 if index < 29 else 195\n"
+        },
+        {
+          "start": 190,
+          "end": 201,
+          "current": "    exterior = bytearray()\n    left_edge, right_edge = max(0, left), min(w, left + PANEL * scale)\n    tx, ty = g['tank_x'], g['tank_y']\n    require(left_edge <= tx < tx + cw <= right_edge and 0 <= ty < ty + ch <= h,\n            \"Tank lies outside the visible panel\")\n    for row in range(max(0, top), min(h, top + PANEL * scale)):\n        ranges = [(left_edge, right_edge)]\n        if ty <= row < ty + ch:\n            ranges = [(left_edge, tx), (tx + cw, right_edge)]\n        for start, end in ranges:\n            exterior.extend(pixels[(row * w + start) * 4:(row * w + end) * 4])\n",
+          "previous": "    exterior=bytearray()\n    for ly in range(228*scale):\n        ranges = [(0,228*scale)]\n        if 49*scale <= ly < 100*scale:\n            ranges = [(0,104*scale),(126*scale,228*scale)]\n        for start,end in ranges:\n            exterior.extend(pixels[((top+ly)*w+left+start)*4:((top+ly)*w+left+end)*4])\n"
+        },
+        {
+          "start": 220,
+          "end": 226,
+          "current": "    for y in range(geometry['tank_height']):\n        if y < margin or y >= geometry['tank_height'] - margin:\n            row = y * stride\n            for x in (0, stride - margin * 4):\n                band = slice(row + x, row + x + margin * 4)\n                require(empty[band] == full[band], \"Milk changed a beveled corner\")\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/mooshroom_milking_native.py": {
+      "old_sha256": "a40ffec9edbe146cd8718533b5eebe160936ebc7ee2f5099f65da406739617a6",
+      "new_sha256": "c8303073450f70c0235c32b3845832211a8da88abc863fd5d5e9573d7407b1b6",
+      "hunks": [
+        {
+          "start": 57,
+          "end": 58,
+          "current": "    def hitbox(px,py):return left+41<=px<left+98 and top+54<=py<top+93\n",
+          "previous": "    def hitbox(px,py):return left+27<=px<left+74 and top+34<=py<top+75\n"
+        },
+        {
+          "start": 67,
+          "end": 68,
+          "current": "    target_x=left+(68 if expected else -40);target_y=top+73\n",
+          "previous": "    target_x=left+(50 if expected else -40);target_y=top+45\n"
+        },
+        {
+          "start": 119,
+          "end": 122,
+          "current": "        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+41)*gui_scale,\n                portrait_y=(geometry['presentation_gui_top']+54)*gui_scale,portrait_width=57*gui_scale,\n                portrait_height=39*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)\n",
+          "previous": "        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+27)*gui_scale,\n                portrait_y=(geometry['presentation_gui_top']+34)*gui_scale,portrait_width=47*gui_scale,\n                portrait_height=41*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)\n"
+        }
+      ]
+    },
+    "tools/validation/test_milking_qualification_native.py": {
+      "old_sha256": "01324eee9f7a701a3d48f0704c39f117e8e4bb5ab901e31ad121d3ad38ba1cf7",
+      "new_sha256": "7fe2beda18de773a42ab25fce1612411ead64cc1c6369ed25971bece506ae1a1",
+      "hunks": [
+        {
+          "start": 56,
+          "end": 57,
+          "current": "                fill=(52*amount//4000)*self.scale\n",
+          "previous": "                fill=(51*amount//4000)*self.scale\n"
+        },
+        {
+          "start": 58,
+          "end": 61,
+          "current": "                    inset = 2 * self.scale if y < 2 * self.scale or y >= th - 2 * self.scale else 0\n                    edge = b'\\x20\\x30\\x40\\xff' * inset\n                    row = edge + b'\\xe1\\xda\\xb8\\xff' * (tw - 2 * inset) + edge\n",
+          "previous": "                    row=b'\\xe1\\xda\\xb8\\xff'*tw\n"
+        },
+        {
+          "start": 96,
+          "end": 99,
+          "current": "        cases=[(1280,720,1,(498,218,628,282,29,52)),(1280,260,1,(498,-11,628,53,29,52)),\n               (1920,1080,1,(818,398,948,462,29,52)),(1920,1080,2,(338,128,936,384,58,104)),\n               (1920,1080,3,(178,38,924,306,87,156)),(1281,261,1,(499,-11,629,53,29,52))]\n",
+          "previous": "        cases=[(1280,720,1,(526,246,630,295,22,51)),(1280,260,1,(526,16,630,65,22,51)),\n               (1920,1080,1,(846,426,950,475,22,51)),(1920,1080,2,(366,156,940,410,44,102)),\n               (1920,1080,3,(206,66,930,345,66,153)),(1281,261,1,(526,16,630,65,22,51))]\n"
+        },
+        {
+          "start": 105,
+          "end": 106,
+          "current": "                         [(70,109),(197,109),(45,154),(222,154),(45,177),(222,200),(45,236),(222,236)])\n",
+          "previous": "                         [(49,94),(163,94),(26,132),(186,132),(26,152),(186,172),(26,195),(186,195)])\n"
+        },
+        {
+          "start": 317,
+          "end": 318,
+          "current": "        _,_,milk=decode_png(root/'milk.png');_,_,background=decode_png(root.parent/'gui11_v5c/12.png')\n",
+          "previous": "        _,_,milk=decode_png(root/'milk.png');_,_,background=decode_png(root/'background.png')\n"
+        },
+        {
+          "start": 321,
+          "end": 322,
+          "current": "            w,h=29*scale,52*scale;empty=bytearray();full=bytearray()\n",
+          "previous": "            w,h=22*scale,51*scale;empty=bytearray();full=bytearray()\n"
+        },
+        {
+          "start": 325,
+          "end": 326,
+          "current": "                    bx=int((130+(x+.5)/scale)*1254/283);by=int((64+(y+.5)/scale)*1254/283)\n",
+          "previous": "                    bx=int((104+(x+.5)/scale)*1254/228);by=int((49+(y+.5)/scale)*1254/228)\n"
+        },
+        {
+          "start": 329,
+          "end": 332,
+          "current": "                    corner = (y < 2 * scale or y >= h - 2 * scale) and (x < 2 * scale or x >= w - 2 * scale)\n                    mixed = bytes((src[c]*src[3]+dst[c]*(255-src[3])+127)//255 for c in range(3))+b'\\xff'\n                    full.extend(dst if corner else mixed)\n",
+          "previous": "                    full.extend(bytes((src[c]*src[3]+dst[c]*(255-src[3])+127)//255 for c in range(3))+b'\\xff')\n"
+        },
+        {
+          "start": 346,
+          "end": 347,
+          "current": "            for x,y in ((114,6),(114,16),(114,115),(198,73),(198,81)):\n",
+          "previous": "            for x,y in ((114,6),(114,16),(114,115),(150,73),(150,81)):\n"
+        },
+        {
+          "start": 359,
+          "end": 360,
+          "current": "            i=((self.g['presentation_gui_top']+89)*w+self.g['presentation_gui_left']+160)*4;p[i]^=1;return p\n",
+          "previous": "            i=((self.g['presentation_gui_top']+89)*w+self.g['presentation_gui_left']+150)*4;p[i]^=1;return p\n"
+        }
+      ]
+    },
+    "tools/validation/test_mooshroom_milking_native.py": {
+      "old_sha256": "dfd56c7986ed2ee1d6fbde00d2300c8ff1778e4670c744b8314698f1e1e14fd3",
+      "new_sha256": "ba663e7088b7e7d41040a06347496bf0572b22e4230b7d1999b90dd227c15182",
+      "hunks": [
+        {
+          "start": 26,
+          "end": 28,
+          "current": "                client_state_code=0 if baby else 1,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+41)*2,\n                portrait_y=(g['presentation_gui_top']+54)*2,portrait_width=114,portrait_height=78,menu_id=entity,server_menu_id=entity,screen_class=SCREEN_CLASS,**geometry)\n",
+          "previous": "                client_state_code=0 if baby else 1,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+27)*2,\n                portrait_y=(g['presentation_gui_top']+34)*2,portrait_width=94,portrait_height=82,menu_id=entity,server_menu_id=entity,screen_class=SCREEN_CLASS,**geometry)\n"
+        },
+        {
+          "start": 30,
+          "end": 31,
+          "current": "            hx=g['presentation_gui_left']+(68 if hover else -40);hy=g['presentation_gui_top']+73\n",
+          "previous": "            hx=g['presentation_gui_left']+(50 if hover else -40);hy=g['presentation_gui_top']+45\n"
+        },
+        {
+          "start": 37,
+          "end": 39,
+          "current": "            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],114,78)\n            for name,data,key in [(s['name'],png(1280,720,bytes(pixels)),'sha256'),(s['portrait_name'],png(114,78,crop),'portrait_sha256')]:\n",
+          "previous": "            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],94,82)\n            for name,data,key in [(s['name'],png(1280,720,bytes(pixels)),'sha256'),(s['portrait_name'],png(94,82,crop),'portrait_sha256')]:\n"
+        }
+      ]
+    },
+    "tools/validation/test_tfc_milking_recovery_native.py": {
+      "old_sha256": "14543e5d5ea3b2a194dae0ac561dc2c208d24dfcef2a22f72b64008654201242",
+      "new_sha256": "393113edfa5009b274e5bcf575c48e0aa19491ad9bea2c11996f72ede1077908",
+      "hunks": [
+        {
+          "start": 27,
+          "end": 29,
+          "current": "            s=snap(*args);s.update({k:v for k,v in g.items() if not k.startswith(('tank_','presentation_'))});s.update(menu_id=1,server_menu_id=1,screen_class=SCREEN_CLASS,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+41)*2,\n                portrait_y=(g['presentation_gui_top']+54)*2,portrait_width=114,portrait_height=78)\n",
+          "previous": "            s=snap(*args);s.update({k:v for k,v in g.items() if not k.startswith(('tank_','presentation_'))});s.update(menu_id=1,server_menu_id=1,screen_class=SCREEN_CLASS,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+27)*2,\n                portrait_y=(g['presentation_gui_top']+34)*2,portrait_width=94,portrait_height=82)\n"
+        },
+        {
+          "start": 31,
+          "end": 33,
+          "current": "            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],114,78)\n            for name,data,key in [(s['name'],png(1280,720,pixels),'sha256'),(s['portrait_name'],png(114,78,crop),'portrait_sha256')]:\n",
+          "previous": "            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],94,82)\n            for name,data,key in [(s['name'],png(1280,720,pixels),'sha256'),(s['portrait_name'],png(94,82,crop),'portrait_sha256')]:\n"
+        },
+        {
+          "start": 35,
+          "end": 36,
+          "current": "                hx=g['presentation_gui_left']+200;hy=g['presentation_gui_top']+83\n",
+          "previous": "                hx=g['presentation_gui_left']+180;hy=g['presentation_gui_top']+63\n"
+        }
+      ]
+    },
+    "tools/validation/test_tree_cutter_v3_native.py": {
+      "old_sha256": "7a5acc20494a592cc64bf8383e05afb10a11fe23d46f7dad3d6b19449c237a19",
+      "new_sha256": "e6423c3e22c83a3a68f33a29cfc035f38dc4440eeed309b4203ba291dd30bcfd",
+      "hunks": [
+        {
+          "start": 35,
+          "end": 38,
+          "current": "            art=source_pixels(ART_PATH)\n            source_width, source_height = SOURCE\n            fx, fy = (s * v * canvas / size for canvas, size in zip(CANVAS, SOURCE))\n",
+          "previous": "            art=source_pixels(ART_PATH);factor=s*v*f32(1/3)\n"
+        },
+        {
+          "start": 40,
+          "end": 41,
+          "current": "                sy=min(source_height-1,max(0,math.floor((cy+y+.5-oy*s)/fy)))\n",
+          "previous": "                sy=min(1253,max(0,math.floor((cy+y+.5-oy*s)/factor)))\n"
+        },
+        {
+          "start": 43,
+          "end": 45,
+          "current": "                    sx=min(source_width-1,max(0,math.floor((cx+x+.5-ox*s)/fx)))\n                    row+=art[(sy*source_width+sx)*4:(sy*source_width+sx+1)*4]\n",
+          "previous": "                    sx=min(1253,max(0,math.floor((cx+x+.5-ox*s)/factor)))\n                    row+=art[(sy*1254+sx)*4:(sy*1254+sx+1)*4]\n"
+        }
+      ]
+    },
+    "tools/validation/tfc_milking_recovery_native.py": {
+      "old_sha256": "94989f0628ce0a16121fa9b86f525effef251d8f75f0e1570a12ebc9a022fd95",
+      "new_sha256": "8cc1807878af9d6af837bf89ee3849b62147e201be6efa050d0ce7272913ee8e",
+      "hunks": [
+        {
+          "start": 82,
+          "end": 85,
+          "current": "        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+41)*gui_scale,\n                portrait_y=(geometry['presentation_gui_top']+54)*gui_scale,portrait_width=57*gui_scale,\n                portrait_height=39*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)\n",
+          "previous": "        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+27)*gui_scale,\n                portrait_y=(geometry['presentation_gui_top']+34)*gui_scale,portrait_width=47*gui_scale,\n                portrait_height=41*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)\n"
+        },
+        {
+          "start": 103,
+          "end": 104,
+          "current": "        return left+180<=px<left+244 and top+76<=py<top+92\n",
+          "previous": "        return left+160<=px<left+207 and top+56<=py<top+73\n"
+        }
+      ]
+    },
+    "tools/validation/tree_cutter_v3_native.py": {
+      "old_sha256": "88e0bbda84ec2a4090c358d5577b8762f6d9cc24e225139580f51287f94a1ec6",
+      "new_sha256": "9619f4de764aad54258480e4015e1f1ef1c4140365833534e18e56d8cf763bba",
+      "hunks": [
+        {
+          "start": 18,
+          "end": 22,
+          "current": "ART_SHA = 'c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef'\nCANVAS = 283, 294\nSOURCE = 1230, 1278\nART_PATH = Path(__file__).resolve().parents[2] / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/10.png'\n",
+          "previous": "ART_SHA = '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4'\nART_PATH = Path(__file__).resolve().parents[2] / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png'\n"
+        },
+        {
+          "start": 23,
+          "end": 26,
+          "current": "SLOT_X = (45, 68, 90, 112, 134, 156, 178, 200, 223)\nHOTBAR_X = (45, 67, 90, 112, 134, 156, 179, 201, 223)\nSLOTS = ((221, 91),) + tuple((x, y) for y in (160, 183, 206) for x in SLOT_X) + tuple((x, 242) for x in HOTBAR_X)\n",
+          "previous": ""
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "current": "    cw, ch = CANVAS\n    view = f32(min(1, (gw - 12) / cw, (gh - 12) / ch))\n    if view * cw > gw - 12 or view * ch > gh - 12:\n        bits = struct.unpack('I', struct.pack('f', view))[0]\n        view = struct.unpack('f', struct.pack('I', bits - 1))[0]\n    ox, oy = f32((gw - cw * view) / 2), f32((gh - ch * view) / 2)\n    x, y = math.ceil(ox * scale), math.ceil(oy * scale)\n    return x, y, math.floor((ox + cw * view) * scale) - x, math.floor((oy + ch * view) * scale) - y, ox, oy, view\n",
+          "previous": "    available=min(gw,gh)-12\n    view=f32(min(1,available/418))\n    if view*418 > available:\n        bits=struct.unpack('I',struct.pack('f',view))[0]\n        view=struct.unpack('f',struct.pack('I',bits-1))[0]\n    ox,oy=f32((gw-418*view)/2),f32((gh-418*view)/2)\n    x,y=math.ceil(ox*scale),math.ceil(oy*scale)\n    return x,y,math.floor((ox+418*view)*scale)-x,math.floor((oy+418*view)*scale)-y,ox,oy,view\n"
+        },
+        {
+          "start": 56,
+          "end": 57,
+          "current": "    require(hashlib.sha256(path.read_bytes()).hexdigest()==ART_SHA,'Active V5C source hash differs')\n",
+          "previous": "    require(hashlib.sha256(path.read_bytes()).hexdigest()==ART_SHA,'Retained source hash differs')\n"
+        },
+        {
+          "start": 60,
+          "end": 61,
+          "current": "    require((w,h)==SOURCE,'Retained dimensions differ')\n",
+          "previous": "    require((w,h)==(1254,1254),'Retained dimensions differ')\n"
+        },
+        {
+          "start": 69,
+          "end": 71,
+          "current": "    source_width, source_height = SOURCE\n    dw, dh = CANVAS\n",
+          "previous": "    factor=scale*view*f32(1/3)\n"
+        },
+        {
+          "start": 72,
+          "end": 82,
+          "current": "    # Broad source-bound coverage outside every item/hover zone and the animated blade.\n    for cy in range(5,ch-5,3):\n        for cx in range(5,cw-5,3):\n            lx = ((cx + x + .5) / scale - ox) / view\n            ly = ((cy + y + .5) / scale - oy) / view\n            if any(ax - 1 <= lx < ax + 17 and ay - 1 <= ly < ay + 17 for ax, ay in SLOTS):\n                continue\n            if 118 <= lx < 150 and 85 <= ly < 119:  # The animated blade sheen.\n                continue\n            sx, sy = lx * source_width / dw, ly * source_height / dh\n",
+          "previous": "    # Broad source-bound coverage outside every item/hover zone and the dynamic energy bar.\n    for cy in range(5,ch-5,7):\n        for cx in range(5,cw-5,7):\n            sx=(cx+x+.5-ox*scale)/factor;sy=(cy+y+.5-oy*scale)/factor\n            if 220<sx<970 and 545<sy<885:continue\n            if 880<sx<1025 and 265<sy<405:continue\n            if 830<sx<1040 and 160<sy<205:continue\n"
+        },
+        {
+          "start": 89,
+          "end": 92,
+          "current": "            candidates=[source[(yy*source_width+xx)*4:(yy*source_width+xx+1)*4]\n                        for yy in range(max(0,iy-1),min(source_height,iy+2))\n                        for xx in range(max(0,ix-1),min(source_width,ix+2))]\n",
+          "previous": "            candidates=[source[(yy*1254+xx)*4:(yy*1254+xx+1)*4]\n                        for yy in range(max(0,iy-1),min(1254,iy+2))\n                        for xx in range(max(0,ix-1),min(1254,ix+2))]\n"
+        },
+        {
+          "start": 162,
+          "end": 167,
+          "current": "    art = project/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/10.png'\n    source_pixels(art)\n    historical = art.parent.parent / 'tree_cutter_v3_reference/background.png'\n    require(hashlib.sha256(historical.read_bytes()).hexdigest() == '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4',\n            'Historical Tree Cutter reference changed')\n",
+          "previous": "    art = project/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png'\n    require(hashlib.sha256(art.read_bytes()).hexdigest()==ART_SHA,'Retained v3 changed')\n"
         }
       ]
     }

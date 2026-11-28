@@ -165,8 +165,9 @@ public final class NativeTfcMilkingRecoveryValidation {
       tfcVersion=net.neoforged.fml.ModList.get().getModContainerById("tfc").orElseThrow().getModInfo().getVersion().toString();
       require(tfcVersion.equals("4.2.12"),"Wrong native TFC runtime version");
       verifyViewport(mc);
-      verifyArt(mc,"background","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
-      verifyArt(mc,"milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
+      verifyArt(mc,"milking_redesign_v1/background","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
+      verifyArt(mc,"gui11_v5c/12","82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa");
+      verifyArt(mc,"milking_redesign_v1/milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
       String name="iedctr-tfc-milking-recovery-"+nonce;
       mc.options.pauseOnLostFocus=false;
       enter(Stage.WORLD);
@@ -174,7 +175,7 @@ public final class NativeTfcMilkingRecoveryValidation {
          new WorldOptions(0L,false,false),registries->registries.registryOrThrow(Registries.WORLD_PRESET).getHolderOrThrow(WorldPresets.FLAT).value().createWorldDimensions(),new TitleScreen());
    }
    private static void verifyArt(Minecraft mc,String name,String expected)throws Exception{
-      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/milking_redesign_v1/"+name+".png");
+      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+name+".png");
       try(var input=mc.getResourceManager().getResourceOrThrow(id).open()){
          require(HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(input.readAllBytes())).equals(expected),"Active resource artwork differs: "+name);
       }
@@ -230,8 +231,8 @@ public final class NativeTfcMilkingRecoveryValidation {
       }
       // Alternate within the same hitbox so an earlier ignored warp is retried
       // as a real native movement rather than a no-op to an unchanged position.
-      double x=tooltip?screen.getGuiLeft()+180+(ticks%2):screen.width-2;
-      double y=tooltip?screen.getGuiTop()+63:screen.height-2;
+      double x=tooltip?screen.getGuiLeft()+200+(ticks%2):screen.width-2;
+      double y=tooltip?screen.getGuiTop()+83:screen.height-2;
       int[] wx={0},wy={0};GLFW.glfwGetWindowPos(window,wx,wy);
       int px=wx[0]+(int)Math.round(x*mc.getWindow().getScreenWidth()/screen.width);
       int py=wy[0]+(int)Math.round(y*mc.getWindow().getScreenHeight()/screen.height);
@@ -258,7 +259,7 @@ public final class NativeTfcMilkingRecoveryValidation {
       double y=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
       return GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE
          && GLFW.glfwGetInputMode(mc.getWindow().getWindow(),GLFW.GLFW_CURSOR)==GLFW.GLFW_CURSOR_NORMAL
-         && x>=screen.getGuiLeft()+160 && x<screen.getGuiLeft()+207 && y>=screen.getGuiTop()+56 && y<screen.getGuiTop()+73;
+         && x>=screen.getGuiLeft()+180 && x<screen.getGuiLeft()+244 && y>=screen.getGuiTop()+76 && y<screen.getGuiTop()+92;
    }
    private static JsonObject inputDiagnostic(Minecraft mc){
       long window=mc.getWindow().getWindow();double[] x={0},y={0};GLFW.glfwGetCursorPos(window,x,y);
@@ -272,7 +273,7 @@ public final class NativeTfcMilkingRecoveryValidation {
    }
    private static void capture(Minecraft mc,MachineMenu menu,JsonObject state,String phase,boolean tooltip)throws Exception{
       verifyViewport(mc);require(mc.getOverlay()==null,"Loading overlay");var screen=(MachineScreen)mc.screen;
-      require(screen.getXSize()==228 && screen.getYSize()==228 && menu.slots.size()==38,"Wrong canvas/menu");
+      require(screen.getXSize()==283 && screen.getYSize()==283 && menu.slots.size()==38,"Wrong canvas/menu");
       var o=state.deepCopy();addViewport(o,mc);o.addProperty("phase",phase);o.addProperty("name",phase+".png");
       o.addProperty("menu_id",menu.containerId);o.addProperty("server_menu_id",serverMenuId);
       o.addProperty("screen_class",screen.getClass().getName());o.addProperty("tooltip_hovered",tooltip);
@@ -282,7 +283,7 @@ public final class NativeTfcMilkingRecoveryValidation {
       o.add("native_input",inputDiagnostic(mc));
       o.addProperty("hover_x",hoverX);o.addProperty("hover_y",hoverY);o.addProperty("settled_observations",stableObservations);
       require(menu.slots.stream().allMatch(s->s.getItem().isEmpty()) && menu.getCarried().isEmpty(),"Fixture inventory changed");
-      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+27)*scale,y=(screen.getGuiTop()+34)*scale,w=47*scale,h=41*scale;
+      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+41)*scale,y=(screen.getGuiTop()+54)*scale,w=57*scale,h=39*scale;
       Path folder=directory.resolve("tfc-milking-recovery-screenshots");Files.createDirectories(folder);
       Path file=folder.resolve(phase+".png"),portrait=folder.resolve(phase+"-portrait.png");require(!Files.exists(file) && !Files.exists(portrait),"Stale capture");
       try(var frame=Screenshot.takeScreenshot(mc.getMainRenderTarget());var crop=new NativeImage(w,h,false)){
@@ -309,7 +310,7 @@ public final class NativeTfcMilkingRecoveryValidation {
          var p=new JsonObject();p.add("packaged_runtime",runtimeBefore);p.add("packaged_runtime_after",runtimeAfter);p.addProperty("suite",SUITE);p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
          p.addProperty("nonce",nonce);p.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));
          p.addProperty("requested_language",System.getProperty("iedctr.requestedLanguage",""));p.addProperty("selected_language",mc.getLanguageManager().getSelected());
-         p.addProperty("source_background_sha256","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
+         p.addProperty("source_background_sha256","82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa");
          p.addProperty("source_milk_sha256","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
          p.addProperty("input_method","XTest native motion; observed Minecraft cursor and unchanged server transitions");
          p.addProperty("native_motion_events",nativeMotionEvents);

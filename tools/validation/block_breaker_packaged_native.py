@@ -14,7 +14,7 @@ import tempfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from factory_placer_v2_reference_native import png
 
-ART_SHA = '0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879'
+ART_SHA = '41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7'
 NAMES = ['normal','title','energy','fluid','power','target','scene','work','worked','returned']
 
 
@@ -85,7 +85,9 @@ def main():
     sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
     require(re.fullmatch('[a-f0-9]{40}',sha), 'Invalid source SHA')
     art = project/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/block_breaker_rp_v3/background.png'
-    require(hashlib.sha256(art.read_bytes()).hexdigest()==ART_SHA,'Retained v3 changed')
+    require(hashlib.sha256(art.read_bytes()).hexdigest()=='0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879','Historical V3 source changed')
+    require(hashlib.sha256((art.parent.parent/'gui11_v5c/09.png').read_bytes()).hexdigest()==ART_SHA,
+            'Active V5C source changed')
     (project/'build').mkdir(exist_ok=True)
     evidence = Path(tempfile.mkdtemp(prefix='block-breaker-native-',dir=project/'build'))
     game=evidence/'run';game.mkdir();nonce=secrets.token_hex(16)

@@ -13,6 +13,8 @@ import java.util.HexFormat;
 import java.util.zip.ZipFile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;
+import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import net.neoforged.fml.ModList;
 
 /** Fails closed if production code or the active artwork comes from source output or another pack. */
@@ -63,14 +65,13 @@ public final class BlockBreakerRuntimeProof {
                 origin.addProperty("resource_uri", resourceUri); origin.addProperty("code_source_uri", codeSource);
                 origin.addProperty("sha256", resourceHash); origins.add(origin);
             }
-            var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,
-                "textures/gui/block_breaker_rp_v3/background.png");
+            var texture = Gui11V5CArtwork.texture(MachineKind.SMALL_BLOCK_BREAKER);
             var active = mc.getResourceManager().getResource(texture).orElseThrow();
             require(active.sourcePackId().equals("mod/" + EngineersDecorReforged.MOD_ID), "Artwork overridden by another resource pack");
             String activeHash;
             try (var input = active.open(); var archived = zip.getInputStream(zip.getEntry("assets/" + texture.getNamespace() + "/" + texture.getPath()))) {
                 activeHash = hash(input.readAllBytes());
-                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879"),
+                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("41fb58bfad16e66d71ec0f00b51489ff798bff736df58e514a0f580a781223d7"),
                     "Active artwork bytes differ from normal JAR/source reference");
             }
             var powerTexture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,

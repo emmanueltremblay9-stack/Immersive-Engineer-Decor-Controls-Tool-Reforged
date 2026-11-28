@@ -24,19 +24,19 @@ class MooshroomEvidenceTest(unittest.TestCase):
             s=dict(source='minecraft:mooshroom',variant=variant,server_source='NONE' if baby else 'VANILLA',client_source='NONE' if baby else 'VANILLA',
                 server_uuid=uid,client_uuid=uid,server_entity_id=entity,client_entity_id=entity,server_name='Native '+variant+' Mooshroom',client_name='Native '+variant+' Mooshroom',
                 amount=0 if baby else 1000,client_amount=0 if baby else 1000,remaining_ticks=0,client_remaining_ticks=0,total_ticks=0,client_total_ticks=0,
-                client_state_code=0 if baby else 1,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+27)*2,
-                portrait_y=(g['presentation_gui_top']+34)*2,portrait_width=94,portrait_height=82,menu_id=entity,server_menu_id=entity,screen_class=SCREEN_CLASS,**geometry)
+                client_state_code=0 if baby else 1,phase=phase,name=phase+'.png',portrait_name=phase+'-portrait.png',portrait_x=(g['presentation_gui_left']+41)*2,
+                portrait_y=(g['presentation_gui_top']+54)*2,portrait_width=114,portrait_height=78,menu_id=entity,server_menu_id=entity,screen_class=SCREEN_CLASS,**geometry)
             s.update(server_selected_entity_id=entity,client_selected_entity_id=entity,server_selected_uuid=uid,client_selected_uuid=uid)
             if baby:s.update(baby_rejected=True,server_selected_entity_id=0,client_selected_entity_id=0,server_selected_uuid=None,client_selected_uuid=None)
-            hx=g['presentation_gui_left']+(50 if hover else -40);hy=g['presentation_gui_top']+45
+            hx=g['presentation_gui_left']+(68 if hover else -40);hy=g['presentation_gui_top']+73
             s.update(tooltip_hovered=hover,hover_x=hx,hover_y=hy,native_input=dict(glfw_focused=True,glfw_visible=True,
                 input_backend='XTEST',xtest_motion_count=32,window_origin_x=0,window_origin_y=0,requested_global_x=hx*2,requested_global_y=hy*2,
                 glfw_cursor_mode=212993,glfw_cursor_x=hx*2,glfw_cursor_y=hy*2,minecraft_cursor_x=hx*2,minecraft_cursor_y=hy*2,
                 window_width=1280,window_height=720,settled_hover_ticks=8,target_gui_x_min=hx,target_gui_x_max_exclusive=hx+2,target_gui_y=hy))
             pixels=bytearray(bytes(range(256))*(1280*720*4//256));pixels[0]=i
             pixels[(s['portrait_y']*1280+s['portrait_x'])*4]=entity
-            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],94,82)
-            for name,data,key in [(s['name'],png(1280,720,bytes(pixels)),'sha256'),(s['portrait_name'],png(94,82,crop),'portrait_sha256')]:
+            crop=crop_pixels(pixels,1280,s['portrait_x'],s['portrait_y'],114,78)
+            for name,data,key in [(s['name'],png(1280,720,bytes(pixels)),'sha256'),(s['portrait_name'],png(114,78,crop),'portrait_sha256')]:
                 (folder/name).write_bytes(data);s[key]=hashlib.sha256(data).hexdigest()
             self.p['captures'].append(s)
         for v in ('RED','BROWN'):

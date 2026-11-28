@@ -111,6 +111,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       int y = this.topPos;
       if (((MachineMenu)this.menu).gui11V5CPresentation()) {
          Gui11V5CArtwork.draw(graphics, (MachineMenu)this.menu, x, y);
+         if (this.menu.kind() == MachineKind.SMALL_MILKING_MACHINE && this.selectedMilkingAnimal() instanceof LivingEntity living) {
+            var portrait = Gui11V5CRuntimeGeometry.control(this.menu.kind(), "portrait");
+            InventoryScreen.renderEntityInInventoryFollowsMouse(graphics,
+               x + portrait.x(), y + portrait.y(), x + portrait.x() + portrait.width(), y + portrait.y() + portrait.height(),
+               19, 0.0F, x + portrait.x() + portrait.width() / 2.0F, y + portrait.y() + portrait.height() / 2.0F, living);
+         }
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_ELECTRICAL_FURNACE) {
             ElectricalFurnaceArtwork.renderGui11V5C(graphics, Gui11V5CArtwork.texture(this.menu.kind()),
                x, y, this.imageWidth, this.imageHeight, this.menu.field(4));
@@ -540,10 +546,20 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       return Component.translatable(BLOCK_BREAKER_GUI_PREFIX + key, arguments);
    }
 
+   private boolean v5ControlHovered(String key, int mouseX, int mouseY) {
+      var region = Gui11V5CRuntimeGeometry.control(this.menu.kind(), key);
+      return region != null && region.contains(mouseX - this.leftPos, mouseY - this.topPos);
+   }
+
+   private boolean blockBreakerRegionHovered(String key, int x, int y, int w, int h, int mouseX, int mouseY) {
+      return this.menu.gui11V5CPresentation() ? v5ControlHovered(key, mouseX, mouseY)
+         : this.isHovering(x, y, w, h, mouseX, mouseY);
+   }
+
    private Component blockBreakerTooltip(int mouseX, int mouseY) {
       MachineMenu menu = (MachineMenu)this.menu;
       if (menu.kind() != MachineKind.SMALL_BLOCK_BREAKER) return null;
-      if (this.isHovering(42, 6, 172, 18, mouseX, mouseY))
+      if (blockBreakerRegionHovered("title", 42, 6, 172, 18, mouseX, mouseY))
          return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker");
       String targetName = menu.blockBreakerTargetName();
       boolean hasTarget = blockBreakerHasTarget(targetName);
@@ -554,25 +570,25 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          : blockBreakerText(hardnessKey);
       int cost = blockBreakerEstimatedCost(hardness, hasTarget,
          !menu.blockBreakerTargetStack().isEmpty(), menu.blockBreakerEnergyCostPerBlock());
-      if (this.isHovering(191, 49, 46, 12, mouseX, mouseY))
+      if (blockBreakerRegionHovered("energy", 191, 49, 46, 12, mouseX, mouseY))
          return blockBreakerText("tooltip.energy", menu.energyStored(), menu.energyCapacity()).copy()
             .append("\n").append(blockBreakerText("tooltip.input"));
-      if (this.isHovering(191, 71, 46, 12, mouseX, mouseY))
+      if (blockBreakerRegionHovered("fluid", 191, 71, 46, 12, mouseX, mouseY))
          return blockBreakerText("tooltip.fluid_unavailable");
-      if (this.isHovering(34, 106, 22, 23, mouseX, mouseY))
+      if (blockBreakerRegionHovered("power", 34, 106, 22, 23, mouseX, mouseY))
          return blockBreakerText("tooltip.power_unavailable").copy().append("\n")
             .append(blockBreakerText("redstone.signal", blockBreakerText(menu.blockBreakerRedstonePowered() ? "signal.high" : "signal.low")))
             .append("\n").append(blockBreakerText("tooltip.redstone"));
-      if (this.isHovering(193, 88, 41, 47, mouseX, mouseY))
+      if (blockBreakerRegionHovered("output", 193, 88, 41, 47, mouseX, mouseY))
          return blockBreakerText("tooltip.rear_output").copy().append("\n")
             .append(blockBreakerText("tooltip.legacy_pending", menu.blockBreakerPendingItems()));
-      if (this.isHovering(26, 51, 39, 45, mouseX, mouseY))
+      if (blockBreakerRegionHovered("target", 26, 51, 39, 45, mouseX, mouseY))
          return blockBreakerText("tooltip.target", hasTarget ? targetName : blockBreakerText("target.none").getString()).copy().append("\n")
             .append(blockBreakerText("tooltip.hardness", hardnessText))
             .append("\n").append(blockBreakerText("tooltip.front_face"));
-      if (this.isHovering(100, 85, 40, 41, mouseX, mouseY))
+      if (blockBreakerRegionHovered("scene", 100, 85, 40, 41, mouseX, mouseY))
          return blockBreakerText("tooltip.static_scene");
-      if (this.isHovering(65, 132, 132, 18, mouseX, mouseY))
+      if (blockBreakerRegionHovered("work", 65, 132, 132, 18, mouseX, mouseY))
          return blockBreakerText("tooltip.work_details", Math.max(0, menu.field(1)), Math.max(0, menu.field(3)),
             cost >= 0 ? blockBreakerText("cost.per_block", cost) : blockBreakerText("cost.unavailable"),
             blockBreakerText(blockBreakerStatusLabelKey(menu.blockBreakerStatus())),
@@ -1143,6 +1159,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       return Mth.ceil(this.font.width(fitted) * 0.72F);
    }
 
+   private Component v5MilkingTooltip(int mouseX, int mouseY) {
+      if (v5ControlHovered("milk", mouseX, mouseY)) {
+         return smallMilkingText("tooltip.tank",
+            formatSmallMilkingMachineAmount(this.menu.fluidAmount(), this.menu.fluidCapacity(), this.smallMilkingLocale()));
+      }
+      if (v5ControlHovered("title", mouseX, mouseY) || v5ControlHovered("portrait", mouseX, mouseY))
+         return this.milkingIdentityTooltip();
+      if (v5ControlHovered("recovery", mouseX, mouseY)) return this.milkingRecoveryTooltip();
+      if (v5ControlHovered("power", mouseX, mouseY)) return smallMilkingText("tooltip.energy_unavailable");
+      return null;
+   }
+
    private Component smallMilkingMachineTooltip(int mouseX, int mouseY) {
       if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_MILKING_MACHINE) return null;
       if (this.isHovering(102, 47, 26, 55, mouseX, mouseY)
@@ -1437,6 +1465,17 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
       if (((MachineMenu)this.menu).gui11V5CPresentation()) {
+         if (this.hoveredSlot == null) {
+            Component mapped = switch (this.menu.kind()) {
+               case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);
+               case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);
+               default -> null;
+            };
+            if (mapped != null) {
+               graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);
+               return;
+            }
+         }
          Gui11V5CRuntimeGeometry.Rect energy = Gui11V5CRuntimeGeometry.energy(this.menu.kind());
          double localX = mouseX - this.leftPos, localY = mouseY - this.topPos;
          Gui11V5CRuntimeGeometry.Rect fluid = Gui11V5CRuntimeGeometry.fluidDisplay(this.menu.kind());
