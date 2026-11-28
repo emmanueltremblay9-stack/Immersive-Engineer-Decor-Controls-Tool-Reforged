@@ -820,7 +820,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
       "old_sha256": "9308243fcb7f1163483e11ff2334df38623ffce9fadbac210c644a4ab1b95183",
-      "new_sha256": "4942c0fca59da024d1dcc6f58820ded326f5f0e6d6e1674e291c64207994be00",
+      "new_sha256": "ff1af9c6e58fca1a0dc100c027ad102bdd2cfa6f3285f9141d4efe8033f5e317",
       "hunks": [
         {
           "start": 113,
@@ -884,15 +884,21 @@
         },
         {
           "start": 1161,
-          "end": 1173,
-          "current": "   private Component v5MilkingTooltip(int mouseX, int mouseY) {\n      if (v5ControlHovered(\"milk\", mouseX, mouseY)) {\n         return smallMilkingText(\"tooltip.tank\",\n            formatSmallMilkingMachineAmount(this.menu.fluidAmount(), this.menu.fluidCapacity(), this.smallMilkingLocale()));\n      }\n      if (v5ControlHovered(\"title\", mouseX, mouseY) || v5ControlHovered(\"portrait\", mouseX, mouseY))\n         return this.milkingIdentityTooltip();\n      if (v5ControlHovered(\"recovery\", mouseX, mouseY)) return this.milkingRecoveryTooltip();\n      if (v5ControlHovered(\"power\", mouseX, mouseY)) return smallMilkingText(\"tooltip.energy_unavailable\");\n      return null;\n   }\n\n",
+          "end": 1184,
+          "current": "   private Component v5FluidStructureTooltip(int mouseX, int mouseY) {\n      boolean funnel = this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL;\n      if (v5ControlHovered(\"title\", mouseX, mouseY))\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.\"\n            + (funnel ? \"small_fluid_funnel\" : \"passive_fluid_accumulator\"));\n      if (v5ControlHovered(\"structure\", mouseX, mouseY))\n         return Component.translatable(\"gui.immersive_engineer_decor_controls_tool_reforged.\"\n            + (funnel ? \"small_fluid_funnel.output\" : \"passive_fluid_accumulator.collection.tooltip\"));\n      return null;\n   }\n\n   private Component v5MilkingTooltip(int mouseX, int mouseY) {\n      if (v5ControlHovered(\"milk\", mouseX, mouseY)) {\n         return smallMilkingText(\"tooltip.tank\",\n            formatSmallMilkingMachineAmount(this.menu.fluidAmount(), this.menu.fluidCapacity(), this.smallMilkingLocale()));\n      }\n      if (v5ControlHovered(\"title\", mouseX, mouseY) || v5ControlHovered(\"portrait\", mouseX, mouseY))\n         return this.milkingIdentityTooltip();\n      if (v5ControlHovered(\"recovery\", mouseX, mouseY)) return this.milkingRecoveryTooltip();\n      if (v5ControlHovered(\"power\", mouseX, mouseY)) return smallMilkingText(\"tooltip.energy_unavailable\");\n      return null;\n   }\n\n",
           "previous": ""
         },
         {
-          "start": 1467,
-          "end": 1478,
-          "current": "         if (this.hoveredSlot == null) {\n            Component mapped = switch (this.menu.kind()) {\n               case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);\n               case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);\n               default -> null;\n            };\n            if (mapped != null) {\n               graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);\n               return;\n            }\n         }\n",
+          "start": 1478,
+          "end": 1497,
+          "current": "         if (this.hoveredSlot == null) {\n            Component mapped = switch (this.menu.kind()) {\n               case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);\n               case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);\n               case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> this.v5FluidStructureTooltip(mouseX, mouseY);\n               default -> null;\n            };\n            if (mapped != null) {\n               if (this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR && v5ControlHovered(\"structure\", mouseX, mouseY)) {\n                  graphics.renderTooltip(this.font, this.font.split(mapped, Math.max(1, Math.min(240, this.width - 24))),\n                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);\n               } else if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {\n                  this.renderFluidArtworkTooltip(graphics, mapped, mouseX, mouseY);\n               } else {\n                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);\n               }\n               return;\n            }\n         }\n",
           "previous": ""
+        },
+        {
+          "start": 1523,
+          "end": 1524,
+          "current": "            this.renderFluidArtworkTooltip(graphics, amount, mouseX, mouseY);\n",
+          "previous": "            graphics.renderTooltip(this.font, amount, mouseX, mouseY);\n"
         }
       ]
     },
@@ -940,12 +946,12 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java": {
       "old_sha256": "4c66c4fc14438e0cdb0ca3509503cc184d24200008a751a54b8ba0c130c7dd8a",
-      "new_sha256": "1a1190e31ca1e683fb7b4ab47ec05a87127c92957791ae0d72ca37c62654f5a2",
+      "new_sha256": "a1d777c5d7a040b2119831669a11a90f743f51c1b0f60ed5130d3ada41afbf13",
       "hunks": [
         {
           "start": 209,
-          "end": 226,
-          "current": "      case \"09\" -> switch (key) {\n         case \"title\" -> new Rect(74, 9, 124, 22);\n         case \"energy\" -> new Rect(193, 46, 52, 12);\n         case \"fluid\" -> new Rect(194, 67, 48, 11);\n         case \"power\" -> new Rect(56, 127, 26, 16);\n         case \"output\" -> new Rect(201, 86, 40, 39);\n         case \"target\" -> new Rect(34, 58, 54, 29);\n         case \"scene\" -> new Rect(108, 80, 43, 42);\n         case \"work\" -> new Rect(83, 130, 123, 14);\n         default -> null; };\n      case \"12\" -> switch (key) {\n         case \"title\" -> new Rect(81, 8, 122, 25);\n         case \"portrait\" -> new Rect(41, 54, 57, 39);\n         case \"milk\" -> new Rect(130, 64, 29, 52);\n         case \"recovery\" -> new Rect(180, 76, 64, 16);\n         case \"power\" -> new Rect(180, 54, 64, 16);\n         default -> null; };\n",
+          "end": 234,
+          "current": "      case \"09\" -> switch (key) {\n         case \"title\" -> new Rect(74, 9, 124, 22);\n         case \"energy\" -> new Rect(193, 46, 52, 12);\n         case \"fluid\" -> new Rect(194, 67, 48, 11);\n         case \"power\" -> new Rect(56, 127, 26, 16);\n         case \"output\" -> new Rect(201, 86, 40, 39);\n         case \"target\" -> new Rect(34, 58, 54, 29);\n         case \"scene\" -> new Rect(108, 80, 43, 42);\n         case \"work\" -> new Rect(83, 130, 123, 14);\n         default -> null; };\n      case \"12\" -> switch (key) {\n         case \"title\" -> new Rect(81, 8, 122, 25);\n         case \"portrait\" -> new Rect(41, 54, 57, 39);\n         case \"milk\" -> new Rect(130, 64, 29, 52);\n         case \"recovery\" -> new Rect(180, 76, 64, 16);\n         case \"power\" -> new Rect(180, 54, 64, 16);\n         default -> null; };\n      case \"13\" -> switch (key) {\n         case \"title\" -> new Rect(85, 10, 138, 22);\n         case \"structure\" -> new Rect(141, 127, 27, 11);\n         default -> null; };\n      case \"14\" -> switch (key) {\n         case \"title\" -> new Rect(84, 9, 135, 22);\n         case \"structure\" -> new Rect(135, 39, 33, 13);\n         default -> null; };\n",
           "previous": ""
         }
       ]
@@ -1595,6 +1601,198 @@
           "end": 97,
           "current": "         screen.menu.v5c = true;\n         contains(screen.at(74, 9), TITLE, \"V5C nameplate identity\");\n         contains(screen.at(197, 30), TITLE, \"V5C nameplate identity\");\n         absent(screen.at(73, 20), \"V5C outside nameplate\");\n         absent(screen.at(198, 20), \"V5C outside nameplate\");\n         contains(screen.at(220, 52), \"tooltip.input\", \"V5C FE input retained\");\n         contains(screen.at(219, 72), \"tooltip.fluid_unavailable\", \"V5C fluid caveat retained\");\n         contains(screen.at(68, 135), \"signal.high\", \"V5C redstone signal retained\");\n         contains(screen.at(210, 110), \"tooltip.legacy_pending[3]\", \"V5C output state retained\");\n         contains(screen.at(60, 73), \"tooltip.target[Stone]\", \"V5C target identity retained\");\n         contains(screen.at(130, 106), \"tooltip.static_scene\", \"V5C static artwork caveat retained\");\n         contains(screen.at(129, 137), \"cost.per_block[400]\", \"V5C work cost retained\");\n",
           "previous": ""
+        }
+      ]
+    },
+    "src/fluidGestureNativeValidation/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFluidGestureValidation.java": {
+      "old_sha256": "9e9c75c8da6f80cb094a3d453d23f7795e8fcd9ef26458fe2ca4d1f28d63cc86",
+      "new_sha256": "959f29c352ec797c2177e703783a895164874437a6343c71e11c5bfd375a13d3",
+      "hunks": [
+        {
+          "start": 44,
+          "end": 45,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;\n",
+          "previous": "import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;\n"
+        },
+        {
+          "start": 227,
+          "end": 231,
+          "current": "      int slot = switch (hoverIndex) {\n         case 2, 5 -> 0;\n         case 3 -> 1;\n         default -> -1;\n",
+          "previous": "      var r=switch(hoverIndex) {\n         case 0->FluidMachineRedesignLayout.HEADER;\n         case 1->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_TANK:FluidMachineRedesignLayout.ACCUMULATOR_TANK;\n         case 2,5->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_INPUT:FluidMachineRedesignLayout.ACCUMULATOR_INPUT;\n         case 3->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_OUTPUT:FluidMachineRedesignLayout.ACCUMULATOR_OUTPUT;\n         default->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_OUTLET:FluidMachineRedesignLayout.ACCUMULATOR_COLLECTION;\n"
+        },
+        {
+          "start": 232,
+          "end": 246,
+          "current": "      if (slot >= 0) {\n         targetX = screen.getGuiLeft() + menu.getSlot(slot).x + 8;\n         targetY = screen.getGuiTop() + menu.getSlot(slot).y + 8;\n      } else {\n         var region = switch (hoverIndex) {\n            case 0 -> Gui11V5CRuntimeGeometry.control(menu.kind(), \"title\");\n            case 1 -> Gui11V5CRuntimeGeometry.fluidDisplay(menu.kind());\n            default -> Gui11V5CRuntimeGeometry.control(menu.kind(), \"structure\");\n         };\n         targetX = screen.getGuiLeft() + region.x() + region.width() / 2;\n         targetY = screen.getGuiTop() + region.y() + region.height() / 2;\n      }\n      tooltipStart = tooltipFrames;\n      move(Minecraft.getInstance(), screen);\n",
+          "previous": "      targetX=screen.getGuiLeft()+r.x()+r.width()/2;targetY=screen.getGuiTop()+r.y()+r.height()/2;tooltipStart=tooltipFrames;move(Minecraft.getInstance(),screen);\n"
+        }
+      ]
+    },
+    "src/fluidPackagedValidation/java/com/oblixorprime/iedctrtest/fluid/NativeFluidGestureValidation.java": {
+      "old_sha256": "62ef5ec6c2f268c91dd37a813bd7b887c2f6846021220308d0a3a86bac21a7ce",
+      "new_sha256": "9462d02efca91c28a5ed18a22207c510142be8a9e6801486c8ef112788bcd558",
+      "hunks": [
+        {
+          "start": 45,
+          "end": 46,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;\n",
+          "previous": "import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;\n"
+        },
+        {
+          "start": 255,
+          "end": 256,
+          "current": "               targetX=screen.getGuiLeft()+8;targetY=Math.max(5,screen.getGuiTop()+8);\n",
+          "previous": "               targetX=screen.getGuiLeft()+8;targetY=screen.getGuiTop()+8;\n"
+        },
+        {
+          "start": 384,
+          "end": 388,
+          "current": "      int slot = switch (hoverIndex) {\n         case 2, 5 -> 0;\n         case 3 -> 1;\n         default -> -1;\n",
+          "previous": "      var r=switch(hoverIndex) {\n         case 0->FluidMachineRedesignLayout.HEADER;\n         case 1->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_TANK:FluidMachineRedesignLayout.ACCUMULATOR_TANK;\n         case 2,5->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_INPUT:FluidMachineRedesignLayout.ACCUMULATOR_INPUT;\n         case 3->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_OUTPUT:FluidMachineRedesignLayout.ACCUMULATOR_OUTPUT;\n         default->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_OUTLET:FluidMachineRedesignLayout.ACCUMULATOR_COLLECTION;\n"
+        },
+        {
+          "start": 389,
+          "end": 403,
+          "current": "      if (slot >= 0) {\n         targetX = screen.getGuiLeft() + menu.getSlot(slot).x + 8;\n         targetY = screen.getGuiTop() + menu.getSlot(slot).y + 8;\n      } else {\n         var region = switch (hoverIndex) {\n            case 0 -> Gui11V5CRuntimeGeometry.control(menu.kind(), \"title\");\n            case 1 -> Gui11V5CRuntimeGeometry.fluidDisplay(menu.kind());\n            default -> Gui11V5CRuntimeGeometry.control(menu.kind(), \"structure\");\n         };\n         targetX = screen.getGuiLeft() + region.x() + region.width() / 2;\n         targetY = screen.getGuiTop() + region.y() + region.height() / 2;\n      }\n      tooltipStart = tooltipFrames;\n      move(Minecraft.getInstance(), screen);\n",
+          "previous": "      targetX=screen.getGuiLeft()+r.x()+r.width()/2;targetY=screen.getGuiTop()+r.y()+r.height()/2;tooltipStart=tooltipFrames;move(Minecraft.getInstance(),screen);\n"
+        }
+      ]
+    },
+    "src/fluidPackagedValidation/java/com/oblixorprime/iedctrtest/fluid/PackagedRuntimeProof.java": {
+      "old_sha256": "fc82b3724db68ffbcffb8feb5561fbff9b5ef2fc1a42b6eb2253549cda53196e",
+      "new_sha256": "87526e0ee1b4a9d48d9345d9d163b5dbfe8466641cb85f417f4eb027ead87349",
+      "hunks": [
+        {
+          "start": 73,
+          "end": 75,
+          "current": "            String[] paths = {\"small_fluid_funnel_v1/background.png\",\"passive_fluid_accumulator_v1/background.png\",\"gui11_v5c/13.png\",\"gui11_v5c/14.png\"};\n            String[] hashes = {\"75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e\",\"f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db\",\"13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6\",\"07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df\"};\n",
+          "previous": "            String[] paths = {\"small_fluid_funnel_v1/background.png\",\"passive_fluid_accumulator_v1/background.png\"};\n            String[] hashes = {\"75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e\",\"f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db\"};\n"
+        }
+      ]
+    },
+    "tools/validation/fluid_gestures_native.py": {
+      "old_sha256": "6a5e7915a1cf8c25612eacef1e56a5e421a1458d70a72e36960b5b71ea07f77b",
+      "new_sha256": "925ced24bc296683fc3cb38d017edfe825934b8d882143781b9c7e0faf77fe52",
+      "hunks": [
+        {
+          "start": 30,
+          "end": 53,
+          "current": "\n# Positions are independently read from the digested V5C contract, not the client proof.\n_PANEL_CONTRACT = Path(__file__).resolve().parents[2] / 'docs/testing/gui11-v5c-runtime-map.json'\n_PANELS = tuple(json.loads(_PANEL_CONTRACT.read_bytes())['surfaces'][key] for key in ('13', '14'))\n_HOVER_POINTS = (((154, 21), (154, 113), (154, 132)),\n                 ((151, 20), (151, 91), (151, 45)))\n\n\ndef panel_origin(index, width, height):\n    panel_width, panel_height = _PANELS[index]['logical_size']\n    return int((width - panel_width) / 2), int((height - panel_height) / 2)\n\n\ndef slot_local(index, slot):\n    x, y = _PANELS[index]['menu_slots'][slot]\n    return x + 8, y + 8\n\n\ndef hover_local(index, role):\n    if role in (2, 3, 5):\n        return slot_local(index, int(role == 3))\n    return _HOVER_POINTS[index][(0, 1, 4).index(role)]\n\n",
+          "previous": ""
+        },
+        {
+          "start": 111,
+          "end": 114,
+          "current": "            x, y = slot_local(i, slot)\n            left, top = panel_origin(i, gui_width, gui_height)\n            require((row.get('target_x'),row.get('target_y')) == (left + x, top + y), 'Wrong gesture coordinates')\n",
+          "previous": "            if slot < 2: x,y = (40 if slot == 0 else 200), (70 if i == 0 else 100)\n            elif slot < 29: x,y = [44,63,82,101,120,139,158,177,196][(slot-2)%9], [138,156,175][(slot-2)//9]\n            else: x,y = [44,63,82,101,120,139,158,177,196][slot-29],206\n            require((row.get('target_x'),row.get('target_y')) == ((gui_width-256)//2+x+8,(gui_height-256)//2+y+8), 'Wrong gesture coordinates')\n"
+        },
+        {
+          "start": 126,
+          "end": 129,
+          "current": "            x, y = hover_local(i, j)\n            left, top = panel_origin(i, gui_width, gui_height)\n            require((row.get('target_x'),row.get('target_y')) == (left + x, top + y), 'Wrong hover coordinates')\n",
+          "previous": "            local = [(128,14),(128,102) if i==0 else (128,79),(48,78) if i==0 else (48,108),\n                     (208,78) if i==0 else (208,108),(126,123) if i==0 else (128,35),(48,78) if i==0 else (48,108)][j]\n            require((row.get('target_x'),row.get('target_y')) == ((gui_width-256)//2+local[0],(gui_height-256)//2+local[1]), 'Wrong hover coordinates')\n"
+        }
+      ]
+    },
+    "tools/validation/fluid_packaged_proof.py": {
+      "old_sha256": "c150f70ba56b3b38aad66fddb0d87c248bf89c9025b88c9918c1deb3956c25ff",
+      "new_sha256": "82d5b1aef5ad6565f07684bc0250e19778fc91c2f5b064529a408c8d526e90f2",
+      "hunks": [
+        {
+          "start": 6,
+          "end": 7,
+          "current": "from fluid_gestures_native import require, strict_equal, panel_origin\n",
+          "previous": "from fluid_gestures_native import require, strict_equal\n"
+        },
+        {
+          "start": 17,
+          "end": 19,
+          "current": "    'textures/gui/gui11_v5c/13.png': '13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6',\n    'textures/gui/gui11_v5c/14.png': '07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df',\n",
+          "previous": ""
+        },
+        {
+          "start": 101,
+          "end": 102,
+          "current": "    require(type(textures) is list and len(textures) == len(TEXTURES) and all(type(r) is dict for r in textures)\n",
+          "previous": "    require(type(textures) is list and len(textures) == 2 and all(type(r) is dict for r in textures)\n"
+        },
+        {
+          "start": 154,
+          "end": 156,
+          "current": "            left, top = panel_origin(i, gw, gh)\n            require((row.get('target_x'), row.get('target_y')) == (left + 8, max(5, top + 8)),\n",
+          "previous": "            require((row.get('target_x'), row.get('target_y')) == ((gw-256)//2+8, (gh-256)//2+8),\n"
+        }
+      ]
+    },
+    "tools/validation/test_fluid_gestures_native.py": {
+      "old_sha256": "f0dfd7903b6306403749ce35d5dad3609cc902d082738309647820267cec9643",
+      "new_sha256": "ef6d835c8912c907aefe49ea7837a554d73fa02772f1769de093cc99ecbdfec7",
+      "hunks": [
+        {
+          "start": 10,
+          "end": 11,
+          "current": "from fluid_gestures_native import ACTIONS, ROLES, STATES, SUITE, XVFB_BIND, SmokeFailure, validate_evidence, validate_proof, panel_origin, slot_local, hover_local\n",
+          "previous": "from fluid_gestures_native import ACTIONS, ROLES, STATES, SUITE, XVFB_BIND, SmokeFailure, validate_evidence, validate_proof\n"
+        },
+        {
+          "start": 27,
+          "end": 28,
+          "current": "        left, top = panel_origin(i, 1280, 720)\n",
+          "previous": ""
+        },
+        {
+          "start": 29,
+          "end": 31,
+          "current": "            return dict(machine=machine,name=machine+'-'+name+'.png',sha256='c'*64,width=1280,height=720,gui_scale=1,gui_width=1280,gui_height=720,window_width=1280,window_height=720,raw_mouse_x=float(x+left),raw_mouse_y=float(y+top),\n                        target_x=x+left,target_y=y+top,actual_x=float(x+left),actual_y=float(y+top),xtest_motion_count=1,menu_id=i+1,\n",
+          "previous": "            return dict(machine=machine,name=machine+'-'+name+'.png',sha256='c'*64,width=1280,height=720,gui_scale=1,gui_width=1280,gui_height=720,window_width=1280,window_height=720,raw_mouse_x=x+512.0,raw_mouse_y=y+232.0,\n                        target_x=x+512,target_y=y+232,actual_x=x+512.0,actual_y=y+232.0,xtest_motion_count=1,menu_id=i+1,\n"
+        },
+        {
+          "start": 33,
+          "end": 34,
+          "current": "            x,y=hover_local(i,j)\n",
+          "previous": "            x,y=[(128,14),(128,102) if i==0 else (128,79),(48,78) if i==0 else (48,108),\n                 (208,78) if i==0 else (208,108),(126,123) if i==0 else (128,35),(48,78) if i==0 else (48,108)][j]\n"
+        },
+        {
+          "start": 37,
+          "end": 38,
+          "current": "            x,y=slot_local(i,slot)\n",
+          "previous": "            x,y=(48 if slot==0 else 208,78 if i==0 else 108) if slot<2 else (52,146) if slot==2 else (204,214)\n"
+        },
+        {
+          "start": 61,
+          "end": 66,
+          "current": "                    index = int(row['machine'] == 'accumulator')\n                    old_x, old_y = panel_origin(index, 1280, 720)\n                    new_x, new_y = panel_origin(index, gw, gh)\n                    row['target_x'] += new_x - old_x; row['actual_x'] = float(row['target_x'])\n                    row['target_y'] += new_y - old_y; row['actual_y'] = float(row['target_y'])\n",
+          "previous": "                    row['target_x']+=(gw-256)//2-512;row['actual_x']=float(row['target_x'])\n                    row['target_y']+=(gh-256)//2-232;row['actual_y']=float(row['target_y'])\n"
+        }
+      ]
+    },
+    "tools/validation/test_fluid_packaged_proof.py": {
+      "old_sha256": "fc54d0781690ff8ac40dd752cfd27a8b4c5cee21b04956d4c92c911f326f593c",
+      "new_sha256": "f8cac4134347a470d1a68a17733b4fb7022d5e8eaba64fd7947bd46cef2c410b",
+      "hunks": [
+        {
+          "start": 6,
+          "end": 7,
+          "current": "from fluid_gestures_native import SmokeFailure, panel_origin\n",
+          "previous": "from fluid_gestures_native import SmokeFailure\n"
+        },
+        {
+          "start": 40,
+          "end": 41,
+          "current": "            left, top = panel_origin(i, 1280, 720)\n",
+          "previous": ""
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "current": "                    recipe_toast_absent=True, target_x=left+8, target_y=top+8, actual_x=float(left+8), actual_y=float(top+8),\n                    raw_mouse_x=float(left+8), raw_mouse_y=float(top+8))\n",
+          "previous": "                    recipe_toast_absent=True, target_x=520, target_y=240, actual_x=520.0, actual_y=240.0,\n                    raw_mouse_x=520.0, raw_mouse_y=240.0)\n"
+        },
+        {
+          "start": 176,
+          "end": 178,
+          "current": "                left, top = panel_origin(int(row['machine'] == 'accumulator'), gw, gh)\n                x, y = left + 8, max(5, top + 8)\n",
+          "previous": "                x, y = (gw-256)//2+8, (gh-256)//2+8\n"
         }
       ]
     }

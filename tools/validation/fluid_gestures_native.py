@@ -29,6 +29,29 @@ STATES = [[0,0,0,0,1,0,0],[1,0,0,0,0,0,0],[0,0,0,0,1,0,0],[0,0,1,0,0,0,0],
           [1,0,0,0,0,0,0],[0,0,1,0,0,0,0],[0,1,0,0,0,0,0],[0,0,0,0,0,1,0],[0,0,0,1,0,0,0],[0,0,0,0,0,1,0],[0,0,0,0,0,1,0],[0,0,0,1,0,0,0]]
 ROLES = ['header','tank','empty_input','empty_output','structure','occupied_input']
 
+# Positions are independently read from the digested V5C contract, not the client proof.
+_PANEL_CONTRACT = Path(__file__).resolve().parents[2] / 'docs/testing/gui11-v5c-runtime-map.json'
+_PANELS = tuple(json.loads(_PANEL_CONTRACT.read_bytes())['surfaces'][key] for key in ('13', '14'))
+_HOVER_POINTS = (((154, 21), (154, 113), (154, 132)),
+                 ((151, 20), (151, 91), (151, 45)))
+
+
+def panel_origin(index, width, height):
+    panel_width, panel_height = _PANELS[index]['logical_size']
+    return int((width - panel_width) / 2), int((height - panel_height) / 2)
+
+
+def slot_local(index, slot):
+    x, y = _PANELS[index]['menu_slots'][slot]
+    return x + 8, y + 8
+
+
+def hover_local(index, role):
+    if role in (2, 3, 5):
+        return slot_local(index, int(role == 3))
+    return _HOVER_POINTS[index][(0, 1, 4).index(role)]
+
+
 def require(ok, message):
     if not ok: raise SmokeFailure(message)
 
@@ -86,10 +109,9 @@ def validate_evidence(proof, nonce, source_sha, width, height, language, gui_sca
             elif j in (1,2,5,10): require(slot == 0, 'Wrong input slot')
             elif j == 7: require(slot == 1, 'Wrong output slot')
             else: require(slot >= 2, 'Shift insertion is not from player inventory')
-            if slot < 2: x,y = (40 if slot == 0 else 200), (70 if i == 0 else 100)
-            elif slot < 29: x,y = [44,63,82,101,120,139,158,177,196][(slot-2)%9], [138,156,175][(slot-2)//9]
-            else: x,y = [44,63,82,101,120,139,158,177,196][slot-29],206
-            require((row.get('target_x'),row.get('target_y')) == ((gui_width-256)//2+x+8,(gui_height-256)//2+y+8), 'Wrong gesture coordinates')
+            x, y = slot_local(i, slot)
+            left, top = panel_origin(i, gui_width, gui_height)
+            require((row.get('target_x'),row.get('target_y')) == (left + x, top + y), 'Wrong gesture coordinates')
         require(type(contract.get('menu_id')) is int and contract['menu_id'] == menu_id, 'Cross-menu slot contract')
         require(menu_id not in menu_ids, 'Machine menu identities were reused')
         menu_ids.add(menu_id)
@@ -102,9 +124,9 @@ def validate_evidence(proof, nonce, source_sha, width, height, language, gui_sca
             require(row.get('tooltip_event_class') == 'RenderTooltipEvent.Color+ScreenEvent.Render.Post', 'Missing tooltip rendering path identity')
             require(type(row.get('tooltip_render_events')) is int and row['tooltip_render_events'] > 0, 'Missing rendered tooltip event')
             require(row.get('name') == machine+'-hover-'+str(j)+'.png', 'Wrong hover capture')
-            local = [(128,14),(128,102) if i==0 else (128,79),(48,78) if i==0 else (48,108),
-                     (208,78) if i==0 else (208,108),(126,123) if i==0 else (128,35),(48,78) if i==0 else (48,108)][j]
-            require((row.get('target_x'),row.get('target_y')) == ((gui_width-256)//2+local[0],(gui_height-256)//2+local[1]), 'Wrong hover coordinates')
+            x, y = hover_local(i, j)
+            left, top = panel_origin(i, gui_width, gui_height)
+            require((row.get('target_x'),row.get('target_y')) == (left + x, top + y), 'Wrong hover coordinates')
     for row in h+g:
         expected_screen = 'SmallFluidFunnelScreen' if row['machine']=='funnel' else 'PassiveFluidAccumulatorScreen'
         require(row.get('screen_class') == 'com.oblixorprime.engineersdecorreforged.client.MachineScreen$'+expected_screen, 'Wrong registered screen')

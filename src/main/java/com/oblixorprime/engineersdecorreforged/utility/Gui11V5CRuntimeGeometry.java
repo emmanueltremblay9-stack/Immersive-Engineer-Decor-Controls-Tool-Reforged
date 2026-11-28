@@ -224,6 +224,14 @@ public final class Gui11V5CRuntimeGeometry {
          case "recovery" -> new Rect(180, 76, 64, 16);
          case "power" -> new Rect(180, 54, 64, 16);
          default -> null; };
+      case "13" -> switch (key) {
+         case "title" -> new Rect(85, 10, 138, 22);
+         case "structure" -> new Rect(141, 127, 27, 11);
+         default -> null; };
+      case "14" -> switch (key) {
+         case "title" -> new Rect(84, 9, 135, 22);
+         case "structure" -> new Rect(135, 39, 33, 13);
+         default -> null; };
       case "17" -> switch (key) {
          case "preview" -> new Rect(276, 113, 48, 36);
          default -> null; };

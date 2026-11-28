@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 import zipfile
-from fluid_gestures_native import SmokeFailure
+from fluid_gestures_native import SmokeFailure, panel_origin
 from fluid_packaged_proof import CLASSES, HARNESS, MOD, TEXTURES, validate_packaged
 from test_fluid_gestures_native import valid
 
@@ -38,12 +38,13 @@ class PackagedProofTests(unittest.TestCase):
             self.proof['native_openings'].append(dict(machine=machine, menu_id=i+1, hit_block='0,80,0',
                 method='XTEST_RMB_BLOCK_HIT', native_right_press_observed=True, native_right_release_observed=True))
             capacity = 3000 if i == 0 else 4000
+            left, top = panel_origin(i, 1280, 720)
             for j, kind in enumerate(('empty', 'half', 'full')):
                 row = copy.deepcopy(self.proof['hovers'][6*i])
                 amount = (0, capacity//2, capacity)[j]
                 row.update(name=f'{machine}-tank-{kind}.png', amount=amount, capacity=capacity, setup_seed=True,
-                    recipe_toast_absent=True, target_x=520, target_y=240, actual_x=520.0, actual_y=240.0,
-                    raw_mouse_x=520.0, raw_mouse_y=240.0)
+                    recipe_toast_absent=True, target_x=left+8, target_y=top+8, actual_x=float(left+8), actual_y=float(top+8),
+                    raw_mouse_x=float(left+8), raw_mouse_y=float(top+8))
                 state = dict(state=[0,0,1,0,0,0,amount], total=1, menu_id=i+1)
                 row.update(client=state, server=copy.deepcopy(state))
                 self.proof['tank_captures'].append(row)
@@ -173,7 +174,8 @@ class PackagedProofTests(unittest.TestCase):
                 row.update(gui_width=gw, gui_height=gh)
                 row['tooltip_geometry'].update(gui_width=gw, gui_height=gh)
             for row in proof['tank_captures']:
-                x, y = (gw-256)//2+8, (gh-256)//2+8
+                left, top = panel_origin(int(row['machine'] == 'accumulator'), gw, gh)
+                x, y = left + 8, max(5, top + 8)
                 row.update(width=width, height=height, gui_width=gw, gui_height=gh, gui_scale=scale,
                     window_width=width, window_height=height, target_x=x, target_y=y,
                     actual_x=float(x), actual_y=float(y), raw_mouse_x=x*width/gw, raw_mouse_y=y*height/gh)

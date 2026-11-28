@@ -42,7 +42,7 @@ import com.sun.jna.NativeLibrary;
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 import com.oblixorprime.engineersdecorreforged.client.MachineScreen;
-import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
@@ -225,14 +225,25 @@ public final class NativeFluidGestureValidation {
       });enter(Stage.SETUP);
    }
    private static void hoverTarget(MachineScreen screen,MachineMenu menu) {
-      var r=switch(hoverIndex) {
-         case 0->FluidMachineRedesignLayout.HEADER;
-         case 1->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_TANK:FluidMachineRedesignLayout.ACCUMULATOR_TANK;
-         case 2,5->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_INPUT:FluidMachineRedesignLayout.ACCUMULATOR_INPUT;
-         case 3->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_OUTPUT:FluidMachineRedesignLayout.ACCUMULATOR_OUTPUT;
-         default->machineIndex==0?FluidMachineRedesignLayout.FUNNEL_OUTLET:FluidMachineRedesignLayout.ACCUMULATOR_COLLECTION;
+      int slot = switch (hoverIndex) {
+         case 2, 5 -> 0;
+         case 3 -> 1;
+         default -> -1;
       };
-      targetX=screen.getGuiLeft()+r.x()+r.width()/2;targetY=screen.getGuiTop()+r.y()+r.height()/2;tooltipStart=tooltipFrames;move(Minecraft.getInstance(),screen);
+      if (slot >= 0) {
+         targetX = screen.getGuiLeft() + menu.getSlot(slot).x + 8;
+         targetY = screen.getGuiTop() + menu.getSlot(slot).y + 8;
+      } else {
+         var region = switch (hoverIndex) {
+            case 0 -> Gui11V5CRuntimeGeometry.control(menu.kind(), "title");
+            case 1 -> Gui11V5CRuntimeGeometry.fluidDisplay(menu.kind());
+            default -> Gui11V5CRuntimeGeometry.control(menu.kind(), "structure");
+         };
+         targetX = screen.getGuiLeft() + region.x() + region.width() / 2;
+         targetY = screen.getGuiTop() + region.y() + region.height() / 2;
+      }
+      tooltipStart = tooltipFrames;
+      move(Minecraft.getInstance(), screen);
    }
    private static void startAction(MachineScreen screen,MachineMenu menu) {
       observedPress=false;observedShift=false;

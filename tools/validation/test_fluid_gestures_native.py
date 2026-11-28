@@ -8,7 +8,7 @@ import tempfile
 import hashlib
 import struct
 import zlib
-from fluid_gestures_native import ACTIONS, ROLES, STATES, SUITE, XVFB_BIND, SmokeFailure, validate_evidence, validate_proof
+from fluid_gestures_native import ACTIONS, ROLES, STATES, SUITE, XVFB_BIND, SmokeFailure, validate_evidence, validate_proof, panel_origin, slot_local, hover_local
 
 NONCE='a'*32
 SHA='b'*40
@@ -25,17 +25,17 @@ def valid():
             client_accepts_empty_bucket=True,client_output_rejects_insertion=True))
         seed=dict(state=[0,0,1,0,0,0,1000],total=1,menu_id=i+1)
         p['process_seeds'].append(dict(client=seed,server=copy.deepcopy(seed)))
+        left, top = panel_origin(i, 1280, 720)
         def row(name,x,y):
-            return dict(machine=machine,name=machine+'-'+name+'.png',sha256='c'*64,width=1280,height=720,gui_scale=1,gui_width=1280,gui_height=720,window_width=1280,window_height=720,raw_mouse_x=x+512.0,raw_mouse_y=y+232.0,
-                        target_x=x+512,target_y=y+232,actual_x=x+512.0,actual_y=y+232.0,xtest_motion_count=1,menu_id=i+1,
+            return dict(machine=machine,name=machine+'-'+name+'.png',sha256='c'*64,width=1280,height=720,gui_scale=1,gui_width=1280,gui_height=720,window_width=1280,window_height=720,raw_mouse_x=float(x+left),raw_mouse_y=float(y+top),
+                        target_x=x+left,target_y=y+top,actual_x=float(x+left),actual_y=float(y+top),xtest_motion_count=1,menu_id=i+1,
                         screen_class='com.oblixorprime.engineersdecorreforged.client.MachineScreen$'+('SmallFluidFunnelScreen' if i==0 else 'PassiveFluidAccumulatorScreen'))
         for j,role in enumerate(ROLES):
-            x,y=[(128,14),(128,102) if i==0 else (128,79),(48,78) if i==0 else (48,108),
-                 (208,78) if i==0 else (208,108),(126,123) if i==0 else (128,35),(48,78) if i==0 else (48,108)][j]
+            x,y=hover_local(i,j)
             r=row('hover-'+str(j),x,y);r.update(role=role,tooltip_render_events=5,tooltip_event_class="RenderTooltipEvent.Color+ScreenEvent.Render.Post");state=dict(state=[1,0,0,0,0,0,0] if j==5 else [0,0,1,0,0,0,0],total=1,menu_id=i+1);r.update(client=state,server=copy.deepcopy(state));p['hovers'].append(r)
         for j,action in enumerate(ACTIONS):
             slot=[2,0,0,2,2,0,37,1,2,2,0,2][j]
-            x,y=(48 if slot==0 else 208,78 if i==0 else 108) if slot<2 else (52,146) if slot==2 else (204,214)
+            x,y=slot_local(i,slot)
             r=row(action,x,y)
             state=dict(state=copy.deepcopy(STATES[j]),total=1,menu_id=i+1)
             r.update(native_press_observed=True,native_release_observed=True,native_shift_observed=j in (4,5,6),action=action,menu_slot=slot,client=state,server=copy.deepcopy(state),released=True,
@@ -59,8 +59,11 @@ class ProofTests(unittest.TestCase):
                 p=valid();gw=(width+scale-1)//scale;gh=(height+scale-1)//scale
                 for row in p['hovers']+p['gestures']:
                     row.update(width=width,height=height,gui_scale=scale,gui_width=gw,gui_height=gh,window_width=width,window_height=height)
-                    row['target_x']+=(gw-256)//2-512;row['actual_x']=float(row['target_x'])
-                    row['target_y']+=(gh-256)//2-232;row['actual_y']=float(row['target_y'])
+                    index = int(row['machine'] == 'accumulator')
+                    old_x, old_y = panel_origin(index, 1280, 720)
+                    new_x, new_y = panel_origin(index, gw, gh)
+                    row['target_x'] += new_x - old_x; row['actual_x'] = float(row['target_x'])
+                    row['target_y'] += new_y - old_y; row['actual_y'] = float(row['target_y'])
                     row['raw_mouse_x']=row['actual_x']*width/gw;row['raw_mouse_y']=row['actual_y']*height/gh
                 validate_evidence(p,NONCE,SHA,width,height,'en_us',scale)
                 for field,value in [('gui_scale',1),('gui_width',width),('gui_height',height),('actual_x',width/2),('window_width',width+1),('raw_mouse_x',0)]:

@@ -1159,6 +1159,17 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       return Mth.ceil(this.font.width(fitted) * 0.72F);
    }
 
+   private Component v5FluidStructureTooltip(int mouseX, int mouseY) {
+      boolean funnel = this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL;
+      if (v5ControlHovered("title", mouseX, mouseY))
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged."
+            + (funnel ? "small_fluid_funnel" : "passive_fluid_accumulator"));
+      if (v5ControlHovered("structure", mouseX, mouseY))
+         return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged."
+            + (funnel ? "small_fluid_funnel.output" : "passive_fluid_accumulator.collection.tooltip"));
+      return null;
+   }
+
    private Component v5MilkingTooltip(int mouseX, int mouseY) {
       if (v5ControlHovered("milk", mouseX, mouseY)) {
          return smallMilkingText("tooltip.tank",
@@ -1469,10 +1480,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             Component mapped = switch (this.menu.kind()) {
                case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);
                case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);
+               case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> this.v5FluidStructureTooltip(mouseX, mouseY);
                default -> null;
             };
             if (mapped != null) {
-               graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);
+               if (this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR && v5ControlHovered("structure", mouseX, mouseY)) {
+                  graphics.renderTooltip(this.font, this.font.split(mapped, Math.max(1, Math.min(240, this.width - 24))),
+                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);
+               } else if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+                  this.renderFluidArtworkTooltip(graphics, mapped, mouseX, mouseY);
+               } else {
+                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);
+               }
                return;
             }
          }
@@ -1502,7 +1521,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
                   this.menu.fluidAmount(), this.menu.fluidCapacity())
                : Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.tank.tooltip",
                   this.menu.fluidAmount(), this.menu.fluidCapacity());
-            graphics.renderTooltip(this.font, amount, mouseX, mouseY);
+            this.renderFluidArtworkTooltip(graphics, amount, mouseX, mouseY);
          }
          if (this.hoveredSlot != null && !this.hoveredSlot.hasItem()) {
             int menuSlot = this.menu.slots.indexOf(this.hoveredSlot);

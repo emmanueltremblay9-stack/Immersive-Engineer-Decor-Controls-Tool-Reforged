@@ -4,7 +4,7 @@ import hashlib
 import math
 import re
 import zipfile
-from fluid_gestures_native import require, strict_equal
+from fluid_gestures_native import require, strict_equal, panel_origin
 from factory_placer_delivery_evidence import uri_identity
 
 MOD = 'immersive_engineer_decor_controls_tool_reforged'
@@ -15,6 +15,8 @@ CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.MachineScreen',
     'menu.MachineMenu', 'utility.FluidMachineRedesignLayout', 'utility.MachineBlockEntity',
     'client.RetainedFluidMachineArtwork', 'client.FluidTooltipPositioner')]
 TEXTURES = {
+    'textures/gui/gui11_v5c/13.png': '13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6',
+    'textures/gui/gui11_v5c/14.png': '07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df',
     'textures/gui/small_fluid_funnel_v1/background.png': '75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e',
     'textures/gui/passive_fluid_accumulator_v1/background.png': 'f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db',
 }
@@ -97,7 +99,7 @@ def validate_packaged(proof, report, width, height, scale):
     origins, textures = runtime.get('class_origins'), runtime.get('active_textures')
     require(type(origins) is list and all(type(r) is dict for r in origins)
             and [r.get('class') for r in origins] == CLASSES, 'Incomplete class provenance')
-    require(type(textures) is list and len(textures) == 2 and all(type(r) is dict for r in textures)
+    require(type(textures) is list and len(textures) == len(TEXTURES) and all(type(r) is dict for r in textures)
             and {r.get('path') for r in textures} == set(TEXTURES), 'Incomplete active artwork provenance')
     with zipfile.ZipFile(jar) as archive:
         names = archive.namelist()
@@ -150,7 +152,8 @@ def validate_packaged(proof, report, width, height, scale):
                     and re.fullmatch('[a-f0-9]{64}', row['sha256']), 'Wrong tank screen/digest')
             require(type(row.get('xtest_motion_count')) is int and row['xtest_motion_count'] > 0,
                     'Missing native tank delivery')
-            require((row.get('target_x'), row.get('target_y')) == ((gw-256)//2+8, (gh-256)//2+8),
+            left, top = panel_origin(i, gw, gh)
+            require((row.get('target_x'), row.get('target_y')) == (left + 8, max(5, top + 8)),
                     'Wrong tank capture pointer')
             for axis, logical, physical in [('x', gw, width), ('y', gh, height)]:
                 raw, actual, target = row.get('raw_mouse_'+axis), row.get('actual_'+axis), row.get('target_'+axis)

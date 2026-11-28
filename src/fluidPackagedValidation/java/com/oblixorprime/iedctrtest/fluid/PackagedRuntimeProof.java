@@ -71,8 +71,8 @@ public final class PackagedRuntimeProof {
                 origin.addProperty("sha256", resourceHash); origins.add(origin);
             }
             var textures = new JsonArray();
-            String[] paths = {"small_fluid_funnel_v1/background.png","passive_fluid_accumulator_v1/background.png"};
-            String[] hashes = {"75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e","f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db"};
+            String[] paths = {"small_fluid_funnel_v1/background.png","passive_fluid_accumulator_v1/background.png","gui11_v5c/13.png","gui11_v5c/14.png"};
+            String[] hashes = {"75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e","f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db","13ba734a206dcbf01d6aeb2a36371d2bb7455bb22f98bf911f4bf83c46cc41c6","07428f1a44953c887b6f94fa3f379bb4c6da08a7099817f65e8927aff928d9df"};
             for(int i=0;i<paths.length;i++) {
                 var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+paths[i]);
                 var active = mc.getResourceManager().getResource(texture).orElseThrow();
