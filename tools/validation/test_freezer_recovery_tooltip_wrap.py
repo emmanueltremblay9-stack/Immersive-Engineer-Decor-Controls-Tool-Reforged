@@ -1,6 +1,7 @@
 """Current Freezer recovery tooltip source/localization gates; native workflow checks placement."""
 from pathlib import Path
 import json
+import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -29,9 +30,17 @@ class FreezerRecoveryTooltipTest(unittest.TestCase):
 
     def test_recovery_button_remains_inside_thermal_canvas(self):
         source = SCREEN.read_text()
-        self.assertIn(".bounds(183, 19, 16, 16)", source)
-        self.assertIn("ThermalVerticalGeometry.CANVAS_WIDTH", source)
-        self.assertIn("ThermalVerticalGeometry.CANVAS_HEIGHT", source)
+        self.assertIn("imageWidth = ThermalVerticalGeometry.canvasWidth(menu.kind())", source)
+        self.assertIn("imageHeight = ThermalVerticalGeometry.canvasHeight(menu.kind())", source)
+        self.assertIn("fitCanvas(width, height, imageWidth, imageHeight, MAX_VIEW_SCALE)", source)
+        bounds = re.search(r"\.bounds\((\d+), (\d+), (\d+), (\d+)\)\.build\(\)", source)
+        self.assertIsNotNone(bounds)
+        x, y, width, height = map(int, bounds.groups())
+        self.assertEqual((x, y, width, height), (183, 19, 16, 16))
+        reference = json.loads((ROOT / "docs/testing/gui11-v5c-runtime-map.json").read_text())
+        canvas_width, canvas_height = reference["surfaces"]["05"]["logical_size"]
+        self.assertLessEqual(x + width, canvas_width)
+        self.assertLessEqual(y + height, canvas_height)
 
     def test_recovery_instruction_is_wrapped_to_a_narrow_viewport(self):
         source = SCREEN.read_text()

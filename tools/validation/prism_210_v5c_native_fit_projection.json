@@ -67,6 +67,24 @@
           "previous": "      imageWidth = ThermalVerticalGeometry.CANVAS_WIDTH;\n      imageHeight = ThermalVerticalGeometry.CANVAS_HEIGHT;\n"
         }
       ]
+    },
+    "tools/validation/test_freezer_recovery_tooltip_wrap.py": {
+      "old_sha256": "7b34516a61d3e9e8ffeaad478d91ae0c41d93f8b97bfc93679226cbaa4a29d0b",
+      "new_sha256": "6b0e7dd94b2a2b77557ea05826b57aeac0873a3186967c9b23add0f1c8b236b1",
+      "hunks": [
+        {
+          "start": 3,
+          "end": 4,
+          "current": "import re\n",
+          "previous": ""
+        },
+        {
+          "start": 32,
+          "end": 43,
+          "current": "        self.assertIn(\"imageWidth = ThermalVerticalGeometry.canvasWidth(menu.kind())\", source)\n        self.assertIn(\"imageHeight = ThermalVerticalGeometry.canvasHeight(menu.kind())\", source)\n        self.assertIn(\"fitCanvas(width, height, imageWidth, imageHeight, MAX_VIEW_SCALE)\", source)\n        bounds = re.search(r\"\\.bounds\\((\\d+), (\\d+), (\\d+), (\\d+)\\)\\.build\\(\\)\", source)\n        self.assertIsNotNone(bounds)\n        x, y, width, height = map(int, bounds.groups())\n        self.assertEqual((x, y, width, height), (183, 19, 16, 16))\n        reference = json.loads((ROOT / \"docs/testing/gui11-v5c-runtime-map.json\").read_text())\n        canvas_width, canvas_height = reference[\"surfaces\"][\"05\"][\"logical_size\"]\n        self.assertLessEqual(x + width, canvas_width)\n        self.assertLessEqual(y + height, canvas_height)\n",
+          "previous": "        self.assertIn(\".bounds(183, 19, 16, 16)\", source)\n        self.assertIn(\"ThermalVerticalGeometry.CANVAS_WIDTH\", source)\n        self.assertIn(\"ThermalVerticalGeometry.CANVAS_HEIGHT\", source)\n"
+        }
+      ]
     }
   }
 }
