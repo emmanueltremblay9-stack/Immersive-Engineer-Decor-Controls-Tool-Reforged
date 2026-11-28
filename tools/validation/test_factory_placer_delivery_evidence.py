@@ -238,7 +238,7 @@ class PackagedIdentityTest(unittest.TestCase):
         classes = ['com.oblixorprime.engineersdecorreforged.' + name for name in classes]
         # Explicitly fake class bytes test provenance matching, not Java execution.
         self.entries = {name.replace('.', '/') + '.class': ('fake class ' + name).encode() for name in classes}
-        self.entries[delivery.ART_ENTRY] = DEFAULT_SOURCE.read_bytes()
+        self.entries[delivery.ART_ENTRY] = (DEFAULT_SOURCE.parent.parent / "factory_placer_v2_reference/background.png").read_bytes()
         self.entries[delivery.V5C_ART_ENTRY] = (Path(__file__).resolve().parents[2] / "src/main/resources" / delivery.V5C_ART_ENTRY).read_bytes()
         with zipfile.ZipFile(self.jar, 'w') as archive:
             for name, data in self.entries.items(): archive.writestr(name, data)

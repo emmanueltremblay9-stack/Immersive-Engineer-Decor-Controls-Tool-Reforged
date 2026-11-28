@@ -21,7 +21,7 @@ class NativePlacerProofTest(unittest.TestCase):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
         self.game=Path(self.tmp.name)/'run';self.folder=self.game/'factory-placer-v2-reference-screenshots';self.folder.mkdir(parents=True)
         self.nonce='a'*32;self.sha='b'*40;self.logs=f'IEDCTR_FACTORY_PLACER_V2_REFERENCE PASSED nonce={self.nonce}'
-        self.proof=dict(suite=SUITE,nonce=self.nonce,executed_source_sha=self.sha,status='passed_bounded_smoke',source_art_sha256=ART_SHA,
+        self.proof=dict(suite=SUITE,nonce=self.nonce,executed_source_sha=self.sha,status='passed_bounded_smoke',source_art_sha256=ACTIVE_ART_SHA,
             actual_integrated_world=True,native_visual_acceptance=False,selected_language='en_us',menu_slot_count=54,
             machine_saved_slot_count=27,machine_visible_slot_count=18,slot_routes=list(range(54)),cases=sorted(CASES),
             route_pickup_server_acks=54,route_return_server_acks=54,initial_item_total=46,final_item_total=46,
@@ -42,10 +42,10 @@ class NativePlacerProofTest(unittest.TestCase):
         # This is validator test data, not evidence of a native game run.
         sw,sh,art=load_source()
         background=bytearray(bytes((30,30,30,255))*width*height)
-        factor=view_scale*f32(1/3)*scale
-        x0,x1=math.ceil(sx(0)),math.floor(sx(f32(sw*f32(1/3))))
+        factor=view_scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*scale
+        x0,x1=math.ceil(sx(0)),math.floor(sx(CANVAS_SIZE))
         source_x=[min(sw-1,max(0,math.floor((x+.5-sx(0))/factor))) for x in range(x0,x1)]
-        for y in range(math.ceil(sy(0)),math.floor(sy(f32(sh*f32(1/3))))):
+        for y in range(math.ceil(sy(0)),math.floor(sy(CANVAS_SIZE))):
             yy=min(sh-1,max(0,math.floor((y+.5-sy(0))/factor)))
             background[(y*width+x0)*4:(y*width+x1)*4]=b''.join(art[(yy*sw+x)*4:(yy*sw+x+1)*4] for x in source_x)
         for name,(logic,selected) in CAPTURES.items():
@@ -62,8 +62,8 @@ class NativePlacerProofTest(unittest.TestCase):
                         pixels[(py*width+px)*4:(py*width+px+1)*4]=ROW_ACTIVE
             paint(INDICATORS[3],bytes((104,25,21,255)))
             paint(INDICATORS[selected//6],ROW_ACTIVE)
-            for i,x in enumerate((282,293,304)):paint((x,171,x+6,173),ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE)
-            for i,x in enumerate((334,350)):paint((x,171,x+10,173),ACTIVE if i==bool(logic&2) else INACTIVE)
+            for i,x in enumerate(INVERSION_X):paint((x,120,x+6,141),ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE)
+            for i,x in enumerate(TRIGGER_X):paint((x,120,x+10,141),ACTIVE if i==bool(logic&2) else INACTIVE)
             data=png_rows(width,height,[pixels[y*width*4:(y+1)*width*4] for y in range(height)])
             cn=name[:-4]+'-controls.png';crop=png_rows(tw,th,[pixels[(y*width+tx)*4:(y*width+tx+tw)*4] for y in range(ty,ty+th)])
             (self.folder/name).write_bytes(data);(self.folder/cn).write_bytes(crop)
@@ -144,7 +144,11 @@ class NativePlacerProofTest(unittest.TestCase):
         with self.assertRaisesRegex(SmokeFailure,'Inversion pixels'):self.validate(p)
 
     def test_exterior_mutation_with_recomputed_hash(self):
-        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px);sx,sy=transform(w,h,self.scale);x,y=math.ceil(sx(40)),math.ceil(sy(40));pixels[(y*w+x)*4]^=1
+        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px)
+        sw,sh,src=load_source()
+        x,y=next((x,y) for x,y,tx,ty in source_samples(w,h,self.scale)
+                 if all(src[(iy*sw+ix)*4+3]==255 for iy in range(ty-1,ty+2) for ix in range(tx-1,tx+2)))
+        i=(y*w+x)*4;pixels[i:i+4]=bytes((255,0,255,255))
         data=png_rows(w,h,[pixels[y*w*4:(y+1)*w*4] for y in range(h)]);path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest();c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
         with self.assertRaises(SmokeFailure):self.validate(p)
 
@@ -266,7 +270,7 @@ class NativePlacerProofTest(unittest.TestCase):
         # Replace every slot1 capture's outline samples with retained source,
         # retaining a slot0 outline. Crop/hash/ring metadata remain consistent.
         sw,sh,art=load_source();sx,sy=transform(self.width,self.height,self.scale)
-        _,vs,_=expected_geometry(self.width,self.height,self.scale);factor=vs*f32(1/3)*self.scale
+        _,vs,_=expected_geometry(self.width,self.height,self.scale);factor=vs*f32(CANVAS_SIZE/SOURCE_EXTENT)*self.scale
         for c in p['captures']:
             if c['selected_slot']!=1:continue
             path=self.folder/c['name'];w,h,pixels=decode_png(path);pixels=bytearray(pixels)

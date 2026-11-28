@@ -568,7 +568,7 @@
     },
     "tools/validation/factory_placer_delivery_evidence.py": {
       "old_sha256": "3b075b249be64a2f2a730f11e1d33ee2794e928b7c1059df9e2699d058047dab",
-      "new_sha256": "b83b20840c082c75cbd9b0fa89c505233d940b9500768b94b0b836f5b50b2e91",
+      "new_sha256": "44700d180af7aea6d02e233318c761635e68e49985432d3db77baa593cb6e1f4",
       "hunks": [
         {
           "start": 25,
@@ -577,26 +577,38 @@
           "previous": ""
         },
         {
-          "start": 267,
-          "end": 269,
+          "start": 257,
+          "end": 258,
+          "current": "                   source_path=Path(project) / ('src/main/resources/' + V5C_ART_ENTRY))\n",
+          "previous": "                   source_path=Path(project) / ('src/main/resources/' + ART_ENTRY))\n"
+        },
+        {
+          "start": 260,
+          "end": 262,
+          "current": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,\n                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))\n",
+          "previous": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)\n"
+        },
+        {
+          "start": 268,
+          "end": 270,
           "current": "def validate_packaged_runtime(identity, jar, classpath_report, *, active_art=(ART_ENTRY, ART_SHA)):\n    active_entry, active_digest = active_art\n",
           "previous": "def validate_packaged_runtime(identity, jar, classpath_report):\n"
         },
         {
-          "start": 289,
-          "end": 291,
+          "start": 290,
+          "end": 292,
           "current": "    require(identity.get('active_texture_sha256') == active_digest\n            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork hash or pack differs')\n",
           "previous": "    require(identity.get('active_texture_sha256') == ART_SHA\n            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork pack differs')\n"
         },
         {
-          "start": 305,
-          "end": 308,
+          "start": 306,
+          "end": 309,
           "current": "        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Retained normal JAR artwork differs')\n        require(active_entry in names and hashlib.sha256(archive.read(active_entry)).hexdigest() == active_digest,\n                'Active normal JAR artwork differs')\n",
           "previous": "        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Normal JAR artwork differs')\n"
         },
         {
-          "start": 338,
-          "end": 340,
+          "start": 339,
+          "end": 341,
           "current": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,\n                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))\n",
           "previous": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)\n"
         }
@@ -604,13 +616,13 @@
     },
     "tools/validation/test_factory_placer_delivery_evidence.py": {
       "old_sha256": "61ad107a318445bc0f0c263cf3e3492a0a37c32747b1a5d94811afd804993ff4",
-      "new_sha256": "962cd32f7792bd8805d02a4b1cdad726f760c08e4b0530fb1d3f2fa7ccdd3031",
+      "new_sha256": "97cf0ad949a8d4e7e91e1da23b8ca4517da30c57b2d9c4763a12262a1aeb0c07",
       "hunks": [
         {
-          "start": 241,
+          "start": 240,
           "end": 242,
-          "current": "        self.entries[delivery.V5C_ART_ENTRY] = (Path(__file__).resolve().parents[2] / \"src/main/resources\" / delivery.V5C_ART_ENTRY).read_bytes()\n",
-          "previous": ""
+          "current": "        self.entries[delivery.ART_ENTRY] = (DEFAULT_SOURCE.parent.parent / \"factory_placer_v2_reference/background.png\").read_bytes()\n        self.entries[delivery.V5C_ART_ENTRY] = (Path(__file__).resolve().parents[2] / \"src/main/resources\" / delivery.V5C_ART_ENTRY).read_bytes()\n",
+          "previous": "        self.entries[delivery.ART_ENTRY] = DEFAULT_SOURCE.read_bytes()\n"
         },
         {
           "start": 310,
@@ -1793,6 +1805,222 @@
           "end": 178,
           "current": "                left, top = panel_origin(int(row['machine'] == 'accumulator'), gw, gh)\n                x, y = left + 8, max(5, top + 8)\n",
           "previous": "                x, y = (gw-256)//2+8, (gh-256)//2+8\n"
+        }
+      ]
+    },
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/NativeFactoryPlacerV2ReferenceValidation.java": {
+      "old_sha256": "78a4e78bb0965d200909d3a08e27e3709217be97492a4cd1146165aba0dc61ea",
+      "new_sha256": "be796bce985646245e63501b8a6353fba25940f389c464efa2521260abab4be6",
+      "hunks": [
+        {
+          "start": 62,
+          "end": 63,
+          "current": "   private static final Rect CONTROL_CROP = new Rect(181, 49, 103, 96);\n",
+          "previous": "   private static final Rect CONTROL_CROP = new Rect(240, 55, 125, 120);\n"
+        },
+        {
+          "start": 661,
+          "end": 663,
+          "current": "         double artWidth = FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH;\n         double artHeight = FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT;\n",
+          "previous": "         double artWidth = FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;\n         double artHeight = FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;\n"
+        },
+        {
+          "start": 683,
+          "end": 688,
+          "current": "         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR, 28))\n         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR, 26));\n   }\n   private static Rect indicatorBounds(Rect origin, int paintedWidth) {\n      return new Rect(origin.x(), origin.y(), paintedWidth, origin.height());\n",
+          "previous": "         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR)\n         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR);\n"
+        },
+        {
+          "start": 692,
+          "end": 693,
+          "current": "         \"textures/gui/gui11_v5c/04.png\");\n",
+          "previous": "         \"textures/gui/factory_placer_v2_reference/background.png\");\n"
+        },
+        {
+          "start": 697,
+          "end": 698,
+          "current": "            \"Active V5C Factory Placer source dimensions differ\");\n",
+          "previous": "            \"Retained Factory Placer source dimensions differ\");\n"
+        }
+      ]
+    },
+    "tools/validation/factory_placer_v2_reference_native.py": {
+      "old_sha256": "f22a0716c38f485b8b0595df722ce19d6913fa7cf3b4cbf91785605699b6aff8",
+      "new_sha256": "76dd814a3aaae24489d14fb66a39ec6938aeef2c417125f59bd1a7e5215efd5e",
+      "hunks": [
+        {
+          "start": 22,
+          "end": 25,
+          "current": "ACTIVE_ART_SHA = 'd7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c'\nCANVAS_SIZE = 323\nSOURCE_EXTENT = 1254\n",
+          "previous": ""
+        },
+        {
+          "start": 57,
+          "end": 58,
+          "current": "    require(proof.get('status')=='passed_bounded_smoke','Native fixture did not pass'+detail)\n",
+          "previous": ""
+        },
+        {
+          "start": 61,
+          "end": 62,
+          "current": "        and proof.get('source_art_sha256')==ACTIVE_ART_SHA and proof.get('actual_integrated_world') is True\n",
+          "previous": "        and proof.get('source_art_sha256')==ART_SHA and proof.get('actual_integrated_world') is True\n"
+        },
+        {
+          "start": 64,
+          "end": 64,
+          "current": "",
+          "previous": "    require(proof.get('status')=='passed_bounded_smoke','Native fixture did not pass'+detail)\n"
+        },
+        {
+          "start": 147,
+          "end": 152,
+          "current": "    scale=f32(min(1,(gw-12)/CANVAS_SIZE,(gh-12)/CANVAS_SIZE))\n    if scale*CANVAS_SIZE>gw-12 or scale*CANVAS_SIZE>gh-12:scale=struct.unpack('>f',struct.pack('>I',struct.unpack('>I',struct.pack('>f',scale))[0]-1))[0]\n    ox,oy=f32((gw-CANVAS_SIZE*scale)/2),f32((gh-CANVAS_SIZE*scale)/2)\n    x0,y0=math.ceil((ox+181*scale)*gui_scale),math.ceil((oy+49*scale)*gui_scale)\n    x1,y1=math.floor((ox+284*scale)*gui_scale),math.floor((oy+145*scale)*gui_scale)\n",
+          "previous": "    scale=f32(min(1,(gw-12)/400,(gh-12)/438))\n    if scale*400>gw-12 or scale*438>gh-12:scale=struct.unpack('>f',struct.pack('>I',struct.unpack('>I',struct.pack('>f',scale))[0]-1))[0]\n    ox,oy=f32((gw-400*scale)/2),f32((gh-438*scale)/2)\n    x0,y0=math.ceil((ox+240*scale)*gui_scale),math.ceil((oy+55*scale)*gui_scale)\n    x1,y1=math.floor((ox+365*scale)*gui_scale),math.floor((oy+175*scale)*gui_scale)\n"
+        },
+        {
+          "start": 157,
+          "end": 158,
+          "current": "    ox,oy=f32((v['gui_width']-CANVAS_SIZE*s)/2),f32((v['gui_height']-CANVAS_SIZE*s)/2)\n",
+          "previous": "    ox,oy=f32((v['gui_width']-400*s)/2),f32((v['gui_height']-438*s)/2)\n"
+        },
+        {
+          "start": 165,
+          "end": 166,
+          "current": "                presentation_gui_width=math.ceil(sx(CANVAS_SIZE)/gui_scale)-left,presentation_gui_height=math.ceil(sy(CANVAS_SIZE)/gui_scale)-top)\n",
+          "previous": "                presentation_gui_width=math.ceil(sx(400)/gui_scale)-left,presentation_gui_height=math.ceil(sy(438)/gui_scale)-top)\n"
+        },
+        {
+          "start": 168,
+          "end": 180,
+          "current": "SLOT_ORIGINS = (\n    (45, 66), (67, 66), (90, 66), (112, 66), (134, 66), (157, 66), (45, 91), (67, 91), (90, 91),\n    (112, 91), (134, 91), (157, 91), (45, 116), (67, 116), (90, 116), (112, 116), (134, 116), (157, 116),\n    (53, 176), (79, 176), (103, 176), (129, 176), (153, 176), (178, 176), (203, 176), (228, 176), (254, 176),\n    (53, 202), (79, 202), (103, 202), (129, 202), (153, 202), (178, 202), (203, 202), (229, 202), (254, 202),\n    (53, 229), (79, 229), (103, 229), (129, 229), (153, 229), (178, 229), (203, 229), (229, 229), (254, 229),\n    (54, 267), (79, 267), (104, 267), (129, 267), (153, 267), (178, 267), (203, 267), (227, 267), (252, 267),\n)\nINDICATORS = [(193, 55, 276, 57), (193, 78, 276, 80), (193, 100, 276, 102),\n              (186, 120, 208, 141), (221, 120, 249, 141), (256, 120, 282, 141)]\nINVERSION_X = (221, 232, 243)\nTRIGGER_X = (256, 272)\n",
+          "previous": "SLOT_ORIGINS=[]\nfor xs,ys,sw,sh in [([122,218,313,409,504,599],[222,331,440],56,56),\n                   ([156,257,358,458,559,660,760,861,961],[681,786,892],80,72),\n                   ([167,266,365,465,564,663,763,862,961],[1040],76,72)]:\n    SLOT_ORIGINS.extend((math.floor((x+sw/2)/3-8+.5),math.floor((y+sh/2)/3-8+.5)) for y in ys for x in xs)\nINDICATORS=[(266,67,276,71),(266,95,276,99),(266,124,276,128),(249,160,254,163),(282,171,310,173),(334,171,360,173)]\n\n"
+        },
+        {
+          "start": 196,
+          "end": 197,
+          "current": "    factor=view_scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale\n",
+          "previous": "    factor=view_scale*f32(1/3)*gui_scale\n"
+        },
+        {
+          "start": 200,
+          "end": 202,
+          "current": "    left,right=math.ceil(sx(0)),math.floor(sx(CANVAS_SIZE))\n    for y in range(math.ceil(sy(0)),math.floor(sy(CANVAS_SIZE))):\n",
+          "previous": "    left,right=math.ceil(sx(0)),math.floor(sx(f32(1199*f32(1/3))))\n    for y in range(math.ceil(sy(0)),math.floor(sy(f32(1312*f32(1/3))))):\n"
+        },
+        {
+          "start": 236,
+          "end": 237,
+          "current": "        factor=view_scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale\n",
+          "previous": "        factor=view_scale*f32(1/3)*gui_scale\n"
+        },
+        {
+          "start": 252,
+          "end": 253,
+          "current": "                factor=scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale\n",
+          "previous": "                factor=scale*f32(1/3)*gui_scale\n"
+        },
+        {
+          "start": 259,
+          "end": 263,
+          "current": "        for i,x in enumerate(INVERSION_X):\n            require(sample(name,(x,120,x+6,141))==(ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE),'Inversion pixels differ from observed state')\n        for i,x in enumerate(TRIGGER_X):\n            require(sample(name,(x,120,x+10,141))==(ACTIVE if i==bool(logic&2) else INACTIVE),'Trigger pixels differ from observed state')\n",
+          "previous": "        for i,x in enumerate((282,293,304)):\n            require(sample(name,(x,171,x+6,173))==(ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE),'Inversion pixels differ from observed state')\n        for i,x in enumerate((334,350)):\n            require(sample(name,(x,171,x+10,173))==(ACTIVE if i==bool(logic&2) else INACTIVE),'Trigger pixels differ from observed state')\n"
+        },
+        {
+          "start": 281,
+          "end": 282,
+          "current": "    \"\"\"Four center samples using the half-open, top-left raster convention.\"\"\"\n",
+          "previous": "    \"\"\"Four safely interior samples from the documented framebuffer strips.\"\"\"\n"
+        },
+        {
+          "start": 284,
+          "end": 286,
+          "current": "        xs=range(math.ceil(left-.5),math.ceil(right-.5))\n        ys=range(math.ceil(top-.5),math.ceil(bottom-.5))\n",
+          "previous": "        xs=range(math.ceil(left+.01-.5),math.floor(right-.01-.5)+1)\n        ys=range(math.ceil(top+.01-.5),math.floor(bottom-.01-.5)+1)\n"
+        },
+        {
+          "start": 299,
+          "end": 300,
+          "current": "DEFAULT_SOURCE = Path(__file__).resolve().parents[2]/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/04.png'\n",
+          "previous": "DEFAULT_SOURCE = Path(__file__).resolve().parents[2]/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png'\n"
+        },
+        {
+          "start": 309,
+          "end": 310,
+          "current": "    require(hashlib.sha256(path.read_bytes()).hexdigest()==ACTIVE_ART_SHA,'Active source artwork hash differs')\n",
+          "previous": "    require(hashlib.sha256(path.read_bytes()).hexdigest()==ART_SHA,'Retained source artwork hash differs')\n"
+        },
+        {
+          "start": 311,
+          "end": 312,
+          "current": "    require(source[:2]==(SOURCE_EXTENT,SOURCE_EXTENT),'Retained source artwork dimensions differ')\n",
+          "previous": "    require(source[:2]==(1199,1312),'Retained source artwork dimensions differ')\n"
+        },
+        {
+          "start": 317,
+          "end": 318,
+          "current": "    \"\"\"Broad two-framebuffer-pixel grid, excluding only drawn overlays/items.\n",
+          "previous": "    \"\"\"Broad eight-framebuffer-pixel grid, excluding only drawn overlays/items.\n"
+        },
+        {
+          "start": 325,
+          "end": 326,
+          "current": "    factor=scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale\n",
+          "previous": "    factor=scale*f32(1/3)*gui_scale\n"
+        },
+        {
+          "start": 328,
+          "end": 330,
+          "current": "    for y in range(math.ceil(sy(0))+2,math.floor(sy(CANVAS_SIZE))-2,2):\n        for x in range(math.ceil(sx(0))+2,math.floor(sx(CANVAS_SIZE))-2,2):\n",
+          "previous": "    for y in range(math.ceil(sy(0))+2,math.floor(sy(f32(1312*f32(1/3))))-2,8):\n        for x in range(math.ceil(sx(0))+2,math.floor(sx(f32(1199*f32(1/3))))-2,8):\n"
+        },
+        {
+          "start": 430,
+          "end": 431,
+          "current": "    load_source(art.parent.parent / \"gui11_v5c/04.png\")\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_factory_placer_v2_reference_native.py": {
+      "old_sha256": "256d5650a14ba2732c8cfc5493174229602a7589c743b810cc12305599f84964",
+      "new_sha256": "0bbbfca366eb555b2479a61cb9a32bb3725801cab17358b7707aeecce4d6d4b9",
+      "hunks": [
+        {
+          "start": 23,
+          "end": 24,
+          "current": "        self.proof=dict(suite=SUITE,nonce=self.nonce,executed_source_sha=self.sha,status='passed_bounded_smoke',source_art_sha256=ACTIVE_ART_SHA,\n",
+          "previous": "        self.proof=dict(suite=SUITE,nonce=self.nonce,executed_source_sha=self.sha,status='passed_bounded_smoke',source_art_sha256=ART_SHA,\n"
+        },
+        {
+          "start": 44,
+          "end": 46,
+          "current": "        factor=view_scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*scale\n        x0,x1=math.ceil(sx(0)),math.floor(sx(CANVAS_SIZE))\n",
+          "previous": "        factor=view_scale*f32(1/3)*scale\n        x0,x1=math.ceil(sx(0)),math.floor(sx(f32(sw*f32(1/3))))\n"
+        },
+        {
+          "start": 47,
+          "end": 48,
+          "current": "        for y in range(math.ceil(sy(0)),math.floor(sy(CANVAS_SIZE))):\n",
+          "previous": "        for y in range(math.ceil(sy(0)),math.floor(sy(f32(sh*f32(1/3))))):\n"
+        },
+        {
+          "start": 64,
+          "end": 66,
+          "current": "            for i,x in enumerate(INVERSION_X):paint((x,120,x+6,141),ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE)\n            for i,x in enumerate(TRIGGER_X):paint((x,120,x+10,141),ACTIVE if i==bool(logic&2) else INACTIVE)\n",
+          "previous": "            for i,x in enumerate((282,293,304)):paint((x,171,x+6,173),ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE)\n            for i,x in enumerate((334,350)):paint((x,171,x+10,173),ACTIVE if i==bool(logic&2) else INACTIVE)\n"
+        },
+        {
+          "start": 146,
+          "end": 151,
+          "current": "        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px)\n        sw,sh,src=load_source()\n        x,y=next((x,y) for x,y,tx,ty in source_samples(w,h,self.scale)\n                 if all(src[(iy*sw+ix)*4+3]==255 for iy in range(ty-1,ty+2) for ix in range(tx-1,tx+2)))\n        i=(y*w+x)*4;pixels[i:i+4]=bytes((255,0,255,255))\n",
+          "previous": "        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px);sx,sy=transform(w,h,self.scale);x,y=math.ceil(sx(40)),math.ceil(sy(40));pixels[(y*w+x)*4]^=1\n"
+        },
+        {
+          "start": 272,
+          "end": 273,
+          "current": "        _,vs,_=expected_geometry(self.width,self.height,self.scale);factor=vs*f32(CANVAS_SIZE/SOURCE_EXTENT)*self.scale\n",
+          "previous": "        _,vs,_=expected_geometry(self.width,self.height,self.scale);factor=vs*f32(1/3)*self.scale\n"
         }
       ]
     }

@@ -60,7 +60,7 @@ import org.lwjgl.glfw.GLFW;
 public final class NativeFactoryPlacerV2ReferenceValidation {
    private static final String SUITE = "native-factory-placer-v2-reference-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0), TARGET = POS.south();
-   private static final Rect CONTROL_CROP = new Rect(240, 55, 125, 120);
+   private static final Rect CONTROL_CROP = new Rect(181, 49, 103, 96);
    private enum Stage { BOOT, WORLD, SETUP, SLOT_READY, PICKED, RETURNED, NORMAL, CONTROL,
       MANUAL_LIT, MANUAL_DARK, PLACE_READY, PLACE_WAIT, PLACED_CAPTURE, CLOSE, WORLD_CAPTURE,
       REOPEN, RELOAD_WAIT, RELOAD_CAPTURE, ADVANCED_SETUP, ADVANCED, TOOLTIPS, SELECTIONS, DONE }
@@ -659,8 +659,8 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
          // framebuffer color comes from the test world behind the GUI and may
          // correctly change when this fixture places a block.
          byte[] alpha = sourceAlpha(mc);
-         double artWidth = FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;
-         double artHeight = FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;
+         double artWidth = FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH;
+         double artHeight = FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT;
          double sourceFactor = (double)v.scale() * (double)FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE * scale;
          for (int y = (int)Math.ceil(v.screenY(0) * scale); y < (int)Math.floor(v.screenY(artHeight) * scale); y++)
             for (int x = (int)Math.ceil(v.screenX(0) * scale); x < (int)Math.floor(v.screenX(artWidth) * scale); x++) {
@@ -681,18 +681,21 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
       for (var a : FactoryPlacerV2ReferenceGeometry.SLOT_ANCHORS) if (inRect(x, y, v, scale, new Rect(a.x() - 1, a.y() - 1, 18, 18))) return true;
       for (int row = 0; row < 3; row++) if (inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.rowIndicator(row))) return true;
       return inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.SIGNAL_INDICATOR)
-         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR)
-         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR);
+         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR, 28))
+         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR, 26));
+   }
+   private static Rect indicatorBounds(Rect origin, int paintedWidth) {
+      return new Rect(origin.x(), origin.y(), paintedWidth, origin.height());
    }
    private static byte[] sourceAlpha(Minecraft mc) throws Exception {
       if (sourceAlpha != null) return sourceAlpha;
       var location = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,
-         "textures/gui/factory_placer_v2_reference/background.png");
+         "textures/gui/gui11_v5c/04.png");
       var resource = mc.getResourceManager().getResource(location).orElseThrow();
       try (var input = resource.open(); var image = NativeImage.read(input)) {
          require(image.getWidth() == FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH
             && image.getHeight() == FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT,
-            "Retained Factory Placer source dimensions differ");
+            "Active V5C Factory Placer source dimensions differ");
          sourceAlpha = new byte[image.getWidth() * image.getHeight()];
          for (int y = 0; y < image.getHeight(); y++) for (int x = 0; x < image.getWidth(); x++)
             sourceAlpha[y * image.getWidth() + x] = (byte)(image.getPixelRGBA(x, y) >>> 24);

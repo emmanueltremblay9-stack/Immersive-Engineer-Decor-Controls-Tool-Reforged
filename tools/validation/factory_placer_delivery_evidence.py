@@ -255,10 +255,11 @@ def validate_delivery_proof(proof, nonce, source_sha, game, logs, exit_code, tim
                             width, height, language, gui_scale, project, jar, classpath_report):
     validate_proof(proof, nonce, source_sha, game, logs, exit_code, timed_out,
                    width, height, language, gui_scale,
-                   source_path=Path(project) / ('src/main/resources/' + ART_ENTRY))
+                   source_path=Path(project) / ('src/main/resources/' + V5C_ART_ENTRY))
     require(proof.get('qualification_suite') == QUALIFICATION_SUITE, 'Packaged delivery suite identity missing')
     require(proof.get('v2_property_absent') is True, 'Full qualification must use normal V2 without the development property')
-    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)
+    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,
+                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))
     validate_gestures(proof)
     validate_tooltips(proof, game, project, width, height, language, gui_scale)
     validate_selections(proof, game, width, height, gui_scale)
