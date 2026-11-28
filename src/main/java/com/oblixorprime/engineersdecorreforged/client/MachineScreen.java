@@ -1531,7 +1531,13 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             if (menuSlot >= 0 && menuSlot < this.menu.visibleMachineSlots()) {
                Component tooltip = this.slotTooltip(new MachineLayout.MachineSlot(
                   this.hoveredSlot.index, this.hoveredSlot.x, this.hoveredSlot.y, "", false));
-               if (hasVisibleTooltipText(tooltip)) graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);
+               if (hasVisibleTooltipText(tooltip)) {
+                  if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+                     this.renderFluidArtworkTooltip(graphics, tooltip, mouseX, mouseY);
+                  } else {
+                     graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);
+                  }
+               }
             }
          }
          return;

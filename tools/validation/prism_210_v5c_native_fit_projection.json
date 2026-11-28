@@ -838,7 +838,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
       "old_sha256": "9308243fcb7f1163483e11ff2334df38623ffce9fadbac210c644a4ab1b95183",
-      "new_sha256": "60c12f00c1fcb0a4c6bd217091015d5df5b1578da6955d64b7cb2d1b10aaba0f",
+      "new_sha256": "2c05e1bf5138022bed3db772c35e47ec015988900ce4ee04d0345e0969122b63",
       "hunks": [
         {
           "start": 113,
@@ -917,6 +917,12 @@
           "end": 1527,
           "current": "            this.renderFluidArtworkTooltip(graphics, amount, mouseX, mouseY);\n",
           "previous": "            graphics.renderTooltip(this.font, amount, mouseX, mouseY);\n"
+        },
+        {
+          "start": 1533,
+          "end": 1540,
+          "current": "               if (hasVisibleTooltipText(tooltip)) {\n                  if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {\n                     this.renderFluidArtworkTooltip(graphics, tooltip, mouseX, mouseY);\n                  } else {\n                     graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);\n                  }\n               }\n",
+          "previous": "               if (hasVisibleTooltipText(tooltip)) graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);\n"
         }
       ]
     },
