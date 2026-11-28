@@ -730,7 +730,7 @@
     },
     "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/BlockBreakerPackagedValidation.java": {
       "old_sha256": "21bf8de9cd1c381f00b8008c1303dcdfb0168be6d27a38e96a7b1f457b50ce8e",
-      "new_sha256": "c13a2e583771537fcc898c019eaffd95ab52db69bce5f64a0630725c8ad4a3bf",
+      "new_sha256": "52b6053fe32c2ccae3c89901a3c1def007000f79d7c85a9332eb08e90f1ce019",
       "hunks": [
         {
           "start": 58,
@@ -745,26 +745,32 @@
           "previous": "    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, WORK, PICKED, RETURNED }\n"
         },
         {
-          "start": 150,
-          "end": 157,
+          "start": 139,
+          "end": 141,
+          "current": "                require(observed.get(\"in_bounds\").getAsBoolean(), \"Tooltip clipped at \" + NAMES[hoverIndex]\n                    + \" in \" + screen.width + \"x\" + screen.height + \": \" + observed);\n",
+          "previous": "                require(observed.get(\"in_bounds\").getAsBoolean(), \"Tooltip clipped\");\n"
+        },
+        {
+          "start": 151,
+          "end": 158,
           "current": "                capture(mc, \"worked\", null); aimAtSlot(screen, menu, 0); enter(Stage.PICK_MOVE); return;\n            }\n            if (stage == Stage.PICK_MOVE || stage == Stage.RETURN_MOVE) {\n                if (!atPointer(mc, screen)) { move(mc, screen); return; }\n                if (ticks < 8) return;\n                nativeClick(1);\n                enter(stage == Stage.PICK_MOVE ? Stage.PICKED : Stage.RETURNED); return;\n",
           "previous": "                capture(mc, \"worked\", null); clickSlot(screen, menu, 0); enter(Stage.PICKED); return;\n"
         },
         {
-          "start": 163,
-          "end": 164,
+          "start": 164,
+          "end": 165,
           "current": "                aimAtSlot(screen, menu, returnMenuSlot); enter(Stage.RETURN_MOVE); return;\n",
           "previous": "                clickSlot(screen, menu, returnMenuSlot); enter(Stage.RETURNED); return;\n"
         },
         {
-          "start": 257,
-          "end": 262,
+          "start": 258,
+          "end": 263,
           "current": "    private static void aimAtSlot(MachineScreen screen, MachineMenu menu, int slotIndex) {\n        var slot = menu.getSlot(slotIndex);\n        pointerX = screen.getGuiLeft() + slot.x + 8;\n        pointerY = screen.getGuiTop() + slot.y + 8;\n        move(Minecraft.getInstance(), screen);\n",
           "previous": "    private static void clickSlot(MachineScreen screen, MachineMenu menu, int slotIndex) {\n        var slot = menu.getSlot(slotIndex); double x = (screen.width-menu.layout().imageWidth())/2 + slot.x + 8;\n        double y = (screen.height-menu.layout().imageHeight())/2 + slot.y + 8;\n        pointerX=(int)x;pointerY=(int)y;move(Minecraft.getInstance(),screen);nativeClick(1);\n"
         },
         {
-          "start": 269,
-          "end": 271,
+          "start": 270,
+          "end": 272,
           "current": "        pointerX = screen.getGuiLeft() + POINTS[hoverIndex][0];\n        pointerY = screen.getGuiTop() + POINTS[hoverIndex][1];\n",
           "previous": "        pointerX = (screen.width-((MachineMenu)mc.player.containerMenu).layout().imageWidth())/2 + POINTS[hoverIndex][0];\n        pointerY = (screen.height-((MachineMenu)mc.player.containerMenu).layout().imageHeight())/2 + POINTS[hoverIndex][1];\n"
         }
@@ -832,7 +838,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
       "old_sha256": "9308243fcb7f1163483e11ff2334df38623ffce9fadbac210c644a4ab1b95183",
-      "new_sha256": "ff1af9c6e58fca1a0dc100c027ad102bdd2cfa6f3285f9141d4efe8033f5e317",
+      "new_sha256": "60c12f00c1fcb0a4c6bd217091015d5df5b1578da6955d64b7cb2d1b10aaba0f",
       "hunks": [
         {
           "start": 113,
@@ -902,13 +908,13 @@
         },
         {
           "start": 1478,
-          "end": 1497,
-          "current": "         if (this.hoveredSlot == null) {\n            Component mapped = switch (this.menu.kind()) {\n               case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);\n               case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);\n               case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> this.v5FluidStructureTooltip(mouseX, mouseY);\n               default -> null;\n            };\n            if (mapped != null) {\n               if (this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR && v5ControlHovered(\"structure\", mouseX, mouseY)) {\n                  graphics.renderTooltip(this.font, this.font.split(mapped, Math.max(1, Math.min(240, this.width - 24))),\n                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);\n               } else if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {\n                  this.renderFluidArtworkTooltip(graphics, mapped, mouseX, mouseY);\n               } else {\n                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);\n               }\n               return;\n            }\n         }\n",
+          "end": 1500,
+          "current": "         if (this.hoveredSlot == null) {\n            Component mapped = switch (this.menu.kind()) {\n               case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);\n               case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);\n               case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> this.v5FluidStructureTooltip(mouseX, mouseY);\n               default -> null;\n            };\n            if (mapped != null) {\n               if (this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR && v5ControlHovered(\"structure\", mouseX, mouseY)) {\n                  graphics.renderTooltip(this.font, this.font.split(mapped, Math.max(1, Math.min(240, this.width - 24))),\n                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);\n               } else if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {\n                  this.renderFluidArtworkTooltip(graphics, mapped, mouseX, mouseY);\n               } else if (this.menu.kind() == MachineKind.SMALL_BLOCK_BREAKER) {\n                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)),\n                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);\n               } else {\n                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);\n               }\n               return;\n            }\n         }\n",
           "previous": ""
         },
         {
-          "start": 1523,
-          "end": 1524,
+          "start": 1526,
+          "end": 1527,
           "current": "            this.renderFluidArtworkTooltip(graphics, amount, mouseX, mouseY);\n",
           "previous": "            graphics.renderTooltip(this.font, amount, mouseX, mouseY);\n"
         }

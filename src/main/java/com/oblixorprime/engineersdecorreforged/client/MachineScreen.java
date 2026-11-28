@@ -1489,6 +1489,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
                      FluidTooltipPositioner.INSTANCE, mouseX, mouseY);
                } else if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
                   this.renderFluidArtworkTooltip(graphics, mapped, mouseX, mouseY);
+               } else if (this.menu.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)),
+                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);
                } else {
                   graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);
                }

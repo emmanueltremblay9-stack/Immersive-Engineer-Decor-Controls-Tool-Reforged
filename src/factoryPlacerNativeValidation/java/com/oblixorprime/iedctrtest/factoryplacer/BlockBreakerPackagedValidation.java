@@ -137,7 +137,8 @@ public final class BlockBreakerPackagedValidation {
                     default -> Component.translatable(PREFIX + "cost.per_block", 240).getString();
                 };
                 require(actual.contains(expected), "Actual native translated tooltip differs: " + actual + " / " + expected);
-                require(observed.get("in_bounds").getAsBoolean(), "Tooltip clipped");
+                require(observed.get("in_bounds").getAsBoolean(), "Tooltip clipped at " + NAMES[hoverIndex]
+                    + " in " + screen.width + "x" + screen.height + ": " + observed);
                 capture(mc, NAMES[hoverIndex], observed);
                 if (++hoverIndex < POINTS.length) { ticks = 0; setHover(mc, screen); return; }
                 pending = mc.getSingleplayerServer().submit(() -> {
