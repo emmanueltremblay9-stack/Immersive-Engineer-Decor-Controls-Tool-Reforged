@@ -1,4 +1,5 @@
 import hashlib
+import math
 import struct
 from client_mixin_smoke import SmokeFailure
 
@@ -20,11 +21,13 @@ def validate_tooltip(proof,game,nonce,sha,language):
     if (proof.get('translation_key')!='gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help'
             or proof.get('hovered_control')!='freezer_recovery_button'
             or any(type(proof.get(k)) is not int or proof[k] != v for k,v in
-                (('button_canvas_x',238),('button_canvas_y',199),('button_canvas_width',16),('button_canvas_height',16)))
+                (('button_canvas_x',183),('button_canvas_y',19),('button_canvas_width',16),('button_canvas_height',16)))
             or type(proof.get('pointer_canvas_x')) not in (int,float)
             or type(proof.get('pointer_canvas_y')) not in (int,float)
-            or abs(proof.get('pointer_canvas_x',-100)-246)>1
-            or abs(proof.get('pointer_canvas_y',-100)-207)>1):
+            or not math.isfinite(proof['pointer_canvas_x'])
+            or not math.isfinite(proof['pointer_canvas_y'])
+            or abs(proof['pointer_canvas_x'] - 191) > 1
+            or abs(proof['pointer_canvas_y'] - 27) > 1):
         raise SmokeFailure('Tooltip was not opened from the localized Thermal Freezer recovery button')
     if hashlib.sha256((game/'freezer-recovery-tooltip.png').read_bytes()).hexdigest()!=proof.get('capture_sha256'):
         raise SmokeFailure('Freezer recovery tooltip screenshot mismatch')

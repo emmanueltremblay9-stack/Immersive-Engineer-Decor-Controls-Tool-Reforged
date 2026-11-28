@@ -307,6 +307,402 @@
           "previous": "        self.assertIn(\"ENERGY_LEFT\", source)\n        self.assertIn(\"EFFECT_LEFT\", source)\n        self.assertIn(\"ThermalVerticalGeometry.energyClipTop(89, 192\", source)\n        self.assertIn('proof.addProperty(\"canvas_width\", ThermalVerticalGeometry.CANVAS_WIDTH)', source)\n        self.assertIn('proof.addProperty(\"canvas_height\", ThermalVerticalGeometry.CANVAS_HEIGHT)', source)\n"
         }
       ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeBarrelReferenceValidation.java": {
+      "old_sha256": "dbdfde41783d8c9d2b8e04805f445a9457ca297d9d68ef600b848ffddc23f01b",
+      "new_sha256": "a3bc64741b6ec279c7f45791d2723933a1d40cd1a3c7e8d34359613da511427b",
+      "hunks": [
+        {
+          "start": 9,
+          "end": 13,
+          "current": "import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_HEIGHT;\nimport static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_WIDTH;\nimport static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_X;\nimport static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_Y;\n",
+          "previous": ""
+        },
+        {
+          "start": 336,
+          "end": 338,
+          "current": "         int x0=(int)(Math.ceil(v.screenX(TANK_X))*guiScale),y0=(int)(Math.ceil(v.screenY(TANK_Y))*guiScale);\n         int x1=(int)(Math.floor(v.screenX(TANK_X + TANK_WIDTH))*guiScale),y1=(int)(Math.floor(v.screenY(TANK_Y + TANK_HEIGHT))*guiScale);\n",
+          "previous": "         int x0=(int)(Math.ceil(v.screenX(170))*guiScale),y0=(int)(Math.ceil(v.screenY(115))*guiScale);\n         int x1=(int)(Math.floor(v.screenX(211))*guiScale),y1=(int)(Math.floor(v.screenY(193))*guiScale);\n"
+        },
+        {
+          "start": 350,
+          "end": 354,
+          "current": "         for(int y=(int)Math.ceil(v.screenY(TANK_Y - 9)*guiScale);y<(int)Math.floor(v.screenY(TANK_Y + TANK_HEIGHT + 8)*guiScale);y++)\n            for(int x=(int)Math.ceil(v.screenX(TANK_X - 10)*guiScale);x<(int)Math.floor(v.screenX(TANK_X + TANK_WIDTH + 9)*guiScale);x++) {\n               if(x>=Math.floor(v.screenX(TANK_X)*guiScale)-2 && x<=Math.ceil(v.screenX(TANK_X + TANK_WIDTH)*guiScale)+2\n                  && y>=Math.floor(v.screenY(TANK_Y)*guiScale)-2 && y<=Math.ceil(v.screenY(TANK_Y + TANK_HEIGHT)*guiScale)+2)continue;\n",
+          "previous": "         for(int y=(int)Math.ceil(v.screenY(106)*guiScale);y<(int)Math.floor(v.screenY(201)*guiScale);y++)\n            for(int x=(int)Math.ceil(v.screenX(160)*guiScale);x<(int)Math.floor(v.screenX(220)*guiScale);x++) {\n               if(x>=Math.floor(v.screenX(170)*guiScale)-2 && x<=Math.ceil(v.screenX(211)*guiScale)+2\n                  && y>=Math.floor(v.screenY(115)*guiScale)-2 && y<=Math.ceil(v.screenY(193)*guiScale)+2)continue;\n"
+        }
+      ]
+    },
+    "src/barrelV5PackagedValidation/java/com/oblixorprime/iedctrtest/barrelv5/PackagedRuntimeProof.java": {
+      "old_sha256": "b8b0b7e3cd397b64c56a75734e2e3c91cfb15094cdc874e304034d90e2da6412",
+      "new_sha256": "ee99ea42007240464b684ca5f5b734d18d1308d2b619f57d825bfa680f9994cc",
+      "hunks": [
+        {
+          "start": 79,
+          "end": 81,
+          "current": "            String[] paths = {\"barrel_reference_v5/background.png\", \"gui11_v5c/15.png\"};\n            String[] hashes = {\"db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c\", \"eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388\"};\n",
+          "previous": "            String[] paths = {\"barrel_reference_v5/background.png\"};\n            String[] hashes = {\"db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c\"};\n"
+        }
+      ]
+    },
+    "tools/validation/barrel_v5_packaged_proof.py": {
+      "old_sha256": "491bc72b61109750108137ee9fb391d1f93203c19610b1d0722c1feba79faea4",
+      "new_sha256": "aaa2cd6bdc495f55054a12e073ddbbdfaa2806e60648c2b62b415fc5c6a11fd6",
+      "hunks": [
+        {
+          "start": 11,
+          "end": 12,
+          "current": "from barrel_reference_native import ART_SHA, CANVAS_WIDTH, CANVAS_HEIGHT, TANK_X, TANK_Y, TANK_WIDTH, TANK_HEIGHT\n",
+          "previous": ""
+        },
+        {
+          "start": 21,
+          "end": 22,
+          "current": "    'textures/gui/gui11_v5c/15.png': ART_SHA,\n",
+          "previous": ""
+        },
+        {
+          "start": 102,
+          "end": 104,
+          "current": "    scale = f32(min(1, available_width/CANVAS_WIDTH, available_height/CANVAS_HEIGHT))\n    if scale*CANVAS_WIDTH > available_width or scale*CANVAS_HEIGHT > available_height:\n",
+          "previous": "    scale = f32(min(1, available_width/379, available_height/461))\n    if scale*379 > available_width or scale*461 > available_height:\n"
+        },
+        {
+          "start": 106,
+          "end": 107,
+          "current": "    return scale, f32((width-CANVAS_WIDTH*scale)/2), f32((height-CANVAS_HEIGHT*scale)/2)\n",
+          "previous": "    return scale, f32((width-379*scale)/2), f32((height-461*scale)/2)\n"
+        },
+        {
+          "start": 111,
+          "end": 112,
+          "current": "    return scale, ox, oy, math.floor(ox), math.floor(oy), math.ceil(ox+CANVAS_WIDTH*scale)-math.floor(ox), math.ceil(oy+CANVAS_HEIGHT*scale)-math.floor(oy)\n",
+          "previous": "    return scale, ox, oy, math.floor(ox), math.floor(oy), math.ceil(ox+379*scale)-math.floor(ox), math.ceil(oy+461*scale)-math.floor(oy)\n"
+        },
+        {
+          "start": 116,
+          "end": 119,
+          "current": "    top = TANK_Y + (TANK_HEIGHT // 2 if index == 1 else 0)\n    x, y = math.ceil(ox+(TANK_X+3)*scale), math.ceil(oy+(top+2)*scale)\n    return dict(x=x, y=y, width=math.floor(ox+(TANK_X+TANK_WIDTH-3)*scale)-x, height=math.floor(oy+(TANK_Y+TANK_HEIGHT-2)*scale)-y)\n",
+          "previous": "    top = (115,154,115)[index]\n    x, y = math.ceil(ox+173*scale), math.ceil(oy+(top+2)*scale)\n    return dict(x=x, y=y, width=math.floor(ox+208*scale)-x, height=math.floor(oy+191*scale)-y)\n"
+        },
+        {
+          "start": 122,
+          "end": 126,
+          "current": "    # Two bucket slots, three inventory rows, and one hotbar row from the approved faceplate.\n    return [(68, 107), (212, 107)] + [\n        (x, y) for y in (191, 214, 237, 272) for x in (50, 73, 95, 117, 139, 161, 183, 206, 228)\n    ]\n",
+          "previous": "    source = [(166,451,140,140),(838,451,140,140)]\n    source += [(x,y,76,72) for y in (802,904,1006) for x in (132,232,332,432,532,632,732,832,932)]\n    source += [(x,1148,76,76) for x in (148,244,340,436,532,628,724,820,916)]\n    return [(math.floor((x+w/2)/3-8+.5),math.floor((y+h/2)/3-8+.5)) for x,y,w,h in source]\n"
+        },
+        {
+          "start": 142,
+          "end": 144,
+          "current": "    if proof.get('status') == 'failed':\n        require(False, 'Barrel V5C fixture failed: ' + str(proof.get('error', 'no recorded exception')))\n",
+          "previous": ""
+        },
+        {
+          "start": 194,
+          "end": 195,
+          "current": "            tank_x=ox+TANK_X*scale, tank_y=oy+TANK_Y*scale, tank_width=TANK_WIDTH*scale, tank_height=TANK_HEIGHT*scale).items(): number(g,key,value)\n",
+          "previous": "            tank_x=ox+170*scale, tank_y=oy+115*scale, tank_width=41*scale, tank_height=78*scale).items(): number(g,key,value)\n"
+        },
+        {
+          "start": 201,
+          "end": 202,
+          "current": "        for axis, value in (('x', math.floor(ox+(TANK_X + TANK_WIDTH // 2 if index == 3 else 8)*scale+.5)), ('y', math.floor(oy+(TANK_Y + TANK_HEIGHT // 2 if index == 3 else 8)*scale+.5))):\n",
+          "previous": "        for axis, value in (('x', math.floor(ox+(190 if index == 3 else 8)*scale+.5)), ('y', math.floor(oy+(150 if index == 3 else 8)*scale+.5))):\n"
+        },
+        {
+          "start": 277,
+          "end": 280,
+          "current": "                    for py in range(math.ceil(oy+(TANK_Y+2)*scale),\n                                    math.floor(oy+(TANK_Y+TANK_HEIGHT//2-2)*scale))\n                    for px in range(math.ceil(ox+(TANK_X+3)*scale),math.floor(ox+(TANK_X+TANK_WIDTH-3)*scale))),\n",
+          "previous": "                    for py in range(math.ceil(oy+117*scale),math.floor(oy+152*scale))\n                    for px in range(math.ceil(ox+173*scale),math.floor(ox+208*scale))),\n"
+        }
+      ]
+    },
+    "tools/validation/milking_packaged_proof.py": {
+      "old_sha256": "688a7f327d587650103ca41ab7063bd53b0eec396c167cd7abdc7754819fd2a2",
+      "new_sha256": "e4c8129a89b79bac752be7b5dd80a98431798a4cb11e6d1dae909f7cffbf3116",
+      "hunks": [
+        {
+          "start": 93,
+          "end": 95,
+          "current": "    if proof.get('status') == 'failed':\n        require(False, 'Milking fixture failed: ' + str(proof.get('error', 'no recorded exception')))\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/tfc_packaged_proof.py": {
+      "old_sha256": "dbf6f0d80fa12af510c93f6dc4cd9dc95048c31ebaf3a3ad7c0c98a9adc863ea",
+      "new_sha256": "240338282d1f9710602a1120d62190089ed75382e7ce412cf1c885d77103b801",
+      "hunks": [
+        {
+          "start": 126,
+          "end": 128,
+          "current": "    if proof.get('status') == 'failed':\n        require(False, 'TFC fixture failed: ' + str(proof.get('error', 'no recorded exception')))\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/barrel_reference_native.py": {
+      "old_sha256": "f1953e3d2a4ba02eee497a0c99be70da21e3064f5cc4f3fd72e202e70e37cbb5",
+      "new_sha256": "010b31987a08849fab1418aa6247d8a58f67b7141ca418ede8f8cce7347c5fec",
+      "hunks": [
+        {
+          "start": 20,
+          "end": 23,
+          "current": "ART_SHA = \"eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388\"\nCANVAS_WIDTH, CANVAS_HEIGHT = 292, 329\nTANK_X, TANK_Y, TANK_WIDTH, TANK_HEIGHT = 134, 80, 26, 50\n",
+          "previous": "ART_SHA = \"db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c\"\n"
+        },
+        {
+          "start": 51,
+          "end": 53,
+          "current": "    scale = f32(min(1, (gw - 12) / CANVAS_WIDTH, (gh - 12) / CANVAS_HEIGHT))\n    if scale * CANVAS_WIDTH > gw - 12 or scale * CANVAS_HEIGHT > gh - 12:\n",
+          "previous": "    scale = f32(min(1, (gw - 12) / 379, (gh - 12) / 461))\n    if scale * 379 > gw - 12 or scale * 461 > gh - 12:\n"
+        },
+        {
+          "start": 55,
+          "end": 56,
+          "current": "    ox, oy = f32((gw - CANVAS_WIDTH * scale) / 2), f32((gh - CANVAS_HEIGHT * scale) / 2)\n",
+          "previous": "    ox, oy = f32((gw - 379 * scale) / 2), f32((gh - 461 * scale) / 2)\n"
+        },
+        {
+          "start": 57,
+          "end": 59,
+          "current": "    x0, y0 = math.ceil(ox + TANK_X * scale) * gui_scale, math.ceil(oy + TANK_Y * scale) * gui_scale\n    x1, y1 = math.floor(ox + (TANK_X + TANK_WIDTH) * scale) * gui_scale, math.floor(oy + (TANK_Y + TANK_HEIGHT) * scale) * gui_scale\n",
+          "previous": "    x0, y0 = math.ceil(ox + 170 * scale) * gui_scale, math.ceil(oy + 115 * scale) * gui_scale\n    x1, y1 = math.floor(ox + 211 * scale) * gui_scale, math.floor(oy + 193 * scale) * gui_scale\n"
+        },
+        {
+          "start": 65,
+          "end": 66,
+          "current": "    ox, oy = f32((viewport[\"gui_width\"] - CANVAS_WIDTH * scale) / 2), f32((viewport[\"gui_height\"] - CANVAS_HEIGHT * scale) / 2)\n",
+          "previous": "    ox, oy = f32((viewport[\"gui_width\"] - 379 * scale) / 2), f32((viewport[\"gui_height\"] - 461 * scale) / 2)\n"
+        },
+        {
+          "start": 68,
+          "end": 70,
+          "current": "                presentation_gui_width=math.ceil(ox + CANVAS_WIDTH * scale) - left,\n                presentation_gui_height=math.ceil(oy + CANVAS_HEIGHT * scale) - top)\n",
+          "previous": "                presentation_gui_width=math.ceil(ox + 379 * scale) - left,\n                presentation_gui_height=math.ceil(oy + 461 * scale) - top)\n"
+        },
+        {
+          "start": 284,
+          "end": 285,
+          "current": "    ox=f32((viewport['gui_width']-CANVAS_WIDTH*scale)/2);oy=f32((viewport['gui_height']-CANVAS_HEIGHT*scale)/2)\n",
+          "previous": "    ox=f32((viewport['gui_width']-379*scale)/2);oy=f32((viewport['gui_height']-461*scale)/2)\n"
+        },
+        {
+          "start": 287,
+          "end": 288,
+          "current": "    left,top,right,bottom=math.floor(sx(TANK_X))-2,math.floor(sy(TANK_Y))-2,math.ceil(sx(TANK_X + TANK_WIDTH))+2,math.ceil(sy(TANK_Y + TANK_HEIGHT))+2\n",
+          "previous": "    left,top,right,bottom=math.floor(sx(170))-2,math.floor(sy(115))-2,math.ceil(sx(211))+2,math.ceil(sy(193))+2\n"
+        },
+        {
+          "start": 289,
+          "end": 291,
+          "current": "    for y in range(math.ceil(sy(TANK_Y - 9)),math.floor(sy(TANK_Y + TANK_HEIGHT + 8))):\n        for x in range(math.ceil(sx(TANK_X - 10)),math.floor(sx(TANK_X + TANK_WIDTH + 9))):\n",
+          "previous": "    for y in range(math.ceil(sy(106)),math.floor(sy(201))):\n        for x in range(math.ceil(sx(160)),math.floor(sx(220))):\n"
+        },
+        {
+          "start": 322,
+          "end": 323,
+          "current": "    art = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/15.png\"\n",
+          "previous": "    art = project / \"src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png\"\n"
+        },
+        {
+          "start": 324,
+          "end": 325,
+          "current": "        parser.error(\"Barrel V5-Corrigee faceplate changed\")\n",
+          "previous": "        parser.error(\"Retained Barrel V5 art changed\")\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_recovery_tooltip_proof.py": {
+      "old_sha256": "5d0c74c75265889cc4be62a6d918b9cb42258d4384929877b30f3819ad93d9f3",
+      "new_sha256": "923209e23df87201cc44386702d53b869bb79e05882f262ecb699fa55440920c",
+      "hunks": [
+        {
+          "start": 1,
+          "end": 2,
+          "current": "import math\n",
+          "previous": ""
+        },
+        {
+          "start": 23,
+          "end": 24,
+          "current": "                (('button_canvas_x',183),('button_canvas_y',19),('button_canvas_width',16),('button_canvas_height',16)))\n",
+          "previous": "                (('button_canvas_x',238),('button_canvas_y',199),('button_canvas_width',16),('button_canvas_height',16)))\n"
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "current": "            or not math.isfinite(proof['pointer_canvas_x'])\n            or not math.isfinite(proof['pointer_canvas_y'])\n            or abs(proof['pointer_canvas_x'] - 191) > 1\n            or abs(proof['pointer_canvas_y'] - 27) > 1):\n",
+          "previous": "            or abs(proof.get('pointer_canvas_x',-100)-246)>1\n            or abs(proof.get('pointer_canvas_y',-100)-207)>1):\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_recovery_tooltip_proof.py": {
+      "old_sha256": "f0b51b474d335281963ac46f191877619ee64dec49ec4cc83f85ab128feb3918",
+      "new_sha256": "3af13157c311c1b0de8e070ee073f9a880aab2aad0b77948b4d937d0a5c25af6",
+      "hunks": [
+        {
+          "start": 14,
+          "end": 15,
+          "current": "        self.p=dict(nonce='n',source_sha='s',language='fr_fr',frames=3,lines=[EXPECTED['fr_fr']],expected_text=EXPECTED['fr_fr'],styles=['{}'],x=8,y=8,tooltip_width=200,tooltip_height=8,viewport_width=320,viewport_height=260,in_bounds=True,capture_sha256=hashlib.sha256(data).hexdigest(),translation_key='gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help',hovered_control='freezer_recovery_button',button_canvas_x=183,button_canvas_y=19,button_canvas_width=16,button_canvas_height=16,pointer_canvas_x=191,pointer_canvas_y=27)\n",
+          "previous": "        self.p=dict(nonce='n',source_sha='s',language='fr_fr',frames=3,lines=[EXPECTED['fr_fr']],expected_text=EXPECTED['fr_fr'],styles=['{}'],x=8,y=8,tooltip_width=200,tooltip_height=8,viewport_width=320,viewport_height=260,in_bounds=True,capture_sha256=hashlib.sha256(data).hexdigest(),translation_key='gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help',hovered_control='freezer_recovery_button',button_canvas_x=238,button_canvas_y=199,button_canvas_width=16,button_canvas_height=16,pointer_canvas_x=246,pointer_canvas_y=207)\n"
+        },
+        {
+          "start": 17,
+          "end": 18,
+          "current": "        for key,value in [('frames',0),('nonce','stale'),('styles',[]),('lines',['missing']),('tooltip_width',241),('x',-2),('in_bounds',False),('capture_sha256','bad'),('viewport_width',640),('expected_text',''),('tooltip_height',True),('translation_key','wrong'),('hovered_control','slot'),('button_canvas_x',True),('pointer_canvas_x',0),('pointer_canvas_x',float('nan')),('pointer_canvas_y',float('inf'))]:\n",
+          "previous": "        for key,value in [('frames',0),('nonce','stale'),('styles',[]),('lines',['missing']),('tooltip_width',241),('x',-2),('in_bounds',False),('capture_sha256','bad'),('viewport_width',640),('expected_text',''),('tooltip_height',True),('translation_key','wrong'),('hovered_control','slot'),('button_canvas_x',True),('pointer_canvas_x',0)]:\n"
+        }
+      ]
+    },
+    "tools/validation/factory_placer_delivery_evidence.py": {
+      "old_sha256": "3b075b249be64a2f2a730f11e1d33ee2794e928b7c1059df9e2699d058047dab",
+      "new_sha256": "b83b20840c082c75cbd9b0fa89c505233d940b9500768b94b0b836f5b50b2e91",
+      "hunks": [
+        {
+          "start": 25,
+          "end": 27,
+          "current": "V5C_ART_ENTRY = f'assets/{MOD_ID}/textures/gui/gui11_v5c/04.png'\nV5C_ART_SHA = 'd7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c'\n",
+          "previous": ""
+        },
+        {
+          "start": 267,
+          "end": 269,
+          "current": "def validate_packaged_runtime(identity, jar, classpath_report, *, active_art=(ART_ENTRY, ART_SHA)):\n    active_entry, active_digest = active_art\n",
+          "previous": "def validate_packaged_runtime(identity, jar, classpath_report):\n"
+        },
+        {
+          "start": 289,
+          "end": 291,
+          "current": "    require(identity.get('active_texture_sha256') == active_digest\n            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork hash or pack differs')\n",
+          "previous": "    require(identity.get('active_texture_sha256') == ART_SHA\n            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork pack differs')\n"
+        },
+        {
+          "start": 305,
+          "end": 308,
+          "current": "        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Retained normal JAR artwork differs')\n        require(active_entry in names and hashlib.sha256(archive.read(active_entry)).hexdigest() == active_digest,\n                'Active normal JAR artwork differs')\n",
+          "previous": "        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Normal JAR artwork differs')\n"
+        },
+        {
+          "start": 338,
+          "end": 340,
+          "current": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,\n                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))\n",
+          "previous": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)\n"
+        }
+      ]
+    },
+    "tools/validation/test_factory_placer_delivery_evidence.py": {
+      "old_sha256": "61ad107a318445bc0f0c263cf3e3492a0a37c32747b1a5d94811afd804993ff4",
+      "new_sha256": "962cd32f7792bd8805d02a4b1cdad726f760c08e4b0530fb1d3f2fa7ccdd3031",
+      "hunks": [
+        {
+          "start": 241,
+          "end": 242,
+          "current": "        self.entries[delivery.V5C_ART_ENTRY] = (Path(__file__).resolve().parents[2] / \"src/main/resources\" / delivery.V5C_ART_ENTRY).read_bytes()\n",
+          "previous": ""
+        },
+        {
+          "start": 310,
+          "end": 312,
+          "current": "            width=1280,height=720,selected_language='en_us',\n            packaged_runtime=dict(self.identity, active_texture_sha256=delivery.V5C_ART_SHA),\n",
+          "previous": "            width=1280,height=720,selected_language='en_us',packaged_runtime=self.identity,\n"
+        },
+        {
+          "start": 321,
+          "end": 327,
+          "current": "\n    def test_default_rejects_the_retained_legacy_faceplate(self):\n        proof = self.default_proof()\n        proof['packaged_runtime']['active_texture_sha256'] = ART_SHA\n        with self.assertRaisesRegex(SmokeFailure, 'Active artwork hash or pack differs'):\n            self.validate_default(proof)\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_barrel_reference_native.py": {
+      "old_sha256": "21ae04a7833ec438fd17063cfea810e169d150dcb2068b22b0cd0bd6b9be5535",
+      "new_sha256": "69d00a4988eb23a5b57a8c174821efe9d223b09ee1b1b28f395f470664664985",
+      "hunks": [
+        {
+          "start": 94,
+          "end": 100,
+          "current": "        profiles = [(1280, 720, 1, 1280, 720, 1.0, (628, 276, 26, 49)),\n                    (1280, 260, 1, 1280, 260, 0.7537993788719177, (631, 67, 19, 36)),\n                    (1920, 1080, 1, 1920, 1080, 1.0, (948, 456, 26, 49)),\n                    (1920, 1080, 2, 960, 540, 1.0, (936, 372, 52, 98)),\n                    (1920, 1080, 3, 640, 360, 1.0, (924, 288, 78, 147)),\n                    (1921, 1081, 3, 641, 361, 1.0, (927, 288, 75, 150))]\n",
+          "previous": "        profiles=[(1280,720,1,1280,720,1.0,(621,245,40,77)),\n                  (1280,260,1,1280,260,0.537960946559906,(630,68,21,41)),\n                  (1920,1080,1,1920,1080,1.0,(941,425,40,77)),\n                  (1920,1080,2,960,540,1.0,(922,310,80,154)),\n                  (1920,1080,3,640,360,0.7548806667327881,(918,279,90,174)),\n                  (1921,1081,3,641,361,0.7570498585700989,(918,282,90,174))]\n"
+        },
+        {
+          "start": 147,
+          "end": 150,
+          "current": "        for w,h,scale,bounds in [(1280,720,1,(494,195,292,330)),(1280,260,1,(529,6,222,248)),\n                                  (1920,1080,1,(814,375,292,330)),(1920,1080,2,(334,105,292,330)),\n                                  (1920,1080,3,(174,15,292,330)),(1921,1081,3,(174,16,293,329))]:\n",
+          "previous": "        for w,h,scale,bounds in [(1280,720,1,(450,129,380,462)),(1280,260,1,(538,6,204,248)),\n                                  (1920,1080,1,(770,309,380,462)),(1920,1080,2,(290,39,380,462)),\n                                  (1920,1080,3,(176,6,288,348)),(1921,1081,3,(177,6,287,349))]:\n"
+        },
+        {
+          "start": 212,
+          "end": 213,
+          "current": "        rows[269][621*4]^=1\n",
+          "previous": "        rows[236][611*4]^=1\n"
+        }
+      ]
+    },
+    "tools/validation/test_barrel_v5_packaged_proof.py": {
+      "old_sha256": "8cbe5940c48a1c8ebb1a805d3f993fbd8010b50abdfd4c350d2ba409bffbb31a",
+      "new_sha256": "4fc29e988f1f9baad8d036c241a360800d4025c53ee52d27b6cace7e46caebdc",
+      "hunks": [
+        {
+          "start": 119,
+          "end": 120,
+          "current": "        x,y=math.floor(ox+(147 if i==3 else 8)*scale+.5),math.floor(oy+(105 if i==3 else 8)*scale+.5)\n",
+          "previous": "        x,y=math.floor(ox+(190 if i==3 else 8)*scale+.5),math.floor(oy+(150 if i==3 else 8)*scale+.5)\n"
+        },
+        {
+          "start": 124,
+          "end": 125,
+          "current": "            tank_x=ox+134*scale,tank_y=oy+80*scale,tank_width=26*scale,tank_height=50*scale,\n",
+          "previous": "            tank_x=ox+170*scale,tank_y=oy+115*scale,tank_width=41*scale,tank_height=78*scale,\n"
+        },
+        {
+          "start": 308,
+          "end": 309,
+          "current": "            x=math.ceil(ox+138*scale);y=math.ceil(oy+85*scale)\n",
+          "previous": "            x=math.ceil(ox+174*scale);y=math.ceil(oy+120*scale)\n"
+        }
+      ]
+    },
+    "tools/validation/test_barrel_placer_routing.py": {
+      "old_sha256": "313044d786e26c9e0769a192c3c17c4be145301cffc2edcf2b62d2d6e44776f5",
+      "new_sha256": "0d05b464e9d0b6ac187f43759778aebc55c6b136dbcee261d0317b3a7f295218",
+      "hunks": [
+        {
+          "start": 27,
+          "end": 29,
+          "current": "        assignments = '\\n'.join(re.findall(r'this\\.(?:freezerReferencePresentation|barrelReferencePresentation|factoryPlacerV2ReferencePresentation|solarV2ReferencePresentation|treeCutterV3ReferencePresentation|gui11V5CPresentation) = .*?;', source, re.S))\n        self.assertEqual(6, len(assignments.split(';')) - 1)\n",
+          "previous": "        assignments = '\\n'.join(re.findall(r'this\\.(?:freezerReferencePresentation|barrelReferencePresentation|factoryPlacerV2ReferencePresentation|solarV2ReferencePresentation|treeCutterV3ReferencePresentation) = .*?;', source, re.S))\n        self.assertEqual(5, assignments.count('this.'))\n"
+        },
+        {
+          "start": 38,
+          "end": 41,
+          "current": " static class Gui11V5CRuntimeGeometry {\n   static boolean supports(MachineKind kind) { return kind != MachineKind.SMALL_SOLAR_PANEL; }\n }\n",
+          "previous": ""
+        },
+        {
+          "start": 45,
+          "end": 46,
+          "current": " boolean freezerReferencePresentation, barrelReferencePresentation, factoryPlacerV2ReferencePresentation, solarV2ReferencePresentation, treeCutterV3ReferencePresentation, gui11V5CPresentation;\n",
+          "previous": " boolean freezerReferencePresentation, barrelReferencePresentation, factoryPlacerV2ReferencePresentation, solarV2ReferencePresentation, treeCutterV3ReferencePresentation;\n"
+        },
+        {
+          "start": 73,
+          "end": 76,
+          "current": "         boolean v5c = side && (kind == MachineKind.FLUID_BARREL ? barrel : kind != MachineKind.SMALL_SOLAR_PANEL);\n         if (actual.gui11V5CPresentation != v5c)\n           throw new AssertionError(\"V5C geometry and artwork disagree with selected screen: \" + kind + \" \" + property + \" \" + side);\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/barrel_packaged_proof.py": {
+      "old_sha256": "285c611465b6a2587b6b0f5867f3c5eb3d61ae16df870366a5cb3beb8de8553a",
+      "new_sha256": "15e65fbc66e4f116586be5e15e3197d4024bb9e0b18ab8f9364a710532b7f1a2",
+      "hunks": [
+        {
+          "start": 101,
+          "end": 103,
+          "current": "    if proof.get('status') == 'failed':\n        require(False, 'Barrel legacy fixture failed: ' + str(proof.get('error', 'no recorded exception')))\n",
+          "previous": ""
+        }
+      ]
     }
   }
 }
