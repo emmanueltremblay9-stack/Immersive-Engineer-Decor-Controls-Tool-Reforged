@@ -562,7 +562,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
       "old_sha256": "a9f6b294ec0f5d5bb8a22420da3f192c9b5b9a748a9d6373aae32dea9fa27585",
-      "new_sha256": "5260f1b6c42931c6de53c4cf66818be9c964438fb940950bddfe152631396032",
+      "new_sha256": "9308243fcb7f1163483e11ff2334df38623ffce9fadbac210c644a4ab1b95183",
       "hunks": [
         {
           "start": 12,
@@ -592,7 +592,7 @@
           "start": 190,
           "end": 193,
           "previous": "         && ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos)) {\n",
-          "current": "         && (v5cDial != null\n            ? this.isHovering(v5cDial.x(), v5cDial.y(), v5cDial.width(), v5cDial.height(), mouseX, mouseY)\n            : ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos))) {\n"
+          "current": "         && (v5cDial != null\n            ? v5cDial.contains(mouseX - this.leftPos, mouseY - this.topPos)\n            : ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos))) {\n"
         },
         {
           "start": 205,

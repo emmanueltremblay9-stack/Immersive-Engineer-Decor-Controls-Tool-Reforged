@@ -48,6 +48,10 @@ public final class Gui11V5CElectricalArtworkTest {
    @Test public void rotaryHitBoxIsCenteredOnTheSourceArtPivot() {
       var dial = Gui11V5CRuntimeGeometry.control(MachineKind.SMALL_ELECTRICAL_FURNACE, "rotary");
       assertNotNull(dial);
+      double middleY = dial.y() + dial.height() / 2.0;
+      assertFalse("One pixel outside the dial is inert", dial.contains(dial.x() - 1, middleY));
+      assertTrue("The first pixel in the dial is active", dial.contains(dial.x(), middleY));
+      assertFalse("The far edge is exclusive", dial.contains(dial.x() + dial.width(), middleY));
       double pivotX = 988.0 * Gui11V5CRuntimeGeometry.width(MachineKind.SMALL_ELECTRICAL_FURNACE)
          / Gui11V5CRuntimeGeometry.sourceWidth(MachineKind.SMALL_ELECTRICAL_FURNACE);
       double pivotY = 482.0 * Gui11V5CRuntimeGeometry.height(MachineKind.SMALL_ELECTRICAL_FURNACE)

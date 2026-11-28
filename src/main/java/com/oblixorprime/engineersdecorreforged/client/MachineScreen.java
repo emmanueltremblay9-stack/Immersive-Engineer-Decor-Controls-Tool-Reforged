@@ -189,7 +189,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          ? Gui11V5CRuntimeGeometry.control(this.menu.kind(), "rotary") : null;
       if (this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE
          && (v5cDial != null
-            ? this.isHovering(v5cDial.x(), v5cDial.y(), v5cDial.width(), v5cDial.height(), mouseX, mouseY)
+            ? v5cDial.contains(mouseX - this.leftPos, mouseY - this.topPos)
             : ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos))) {
          int step = ElectricalFurnaceArtwork.clickStep(button);
          if (step == 0) return false;
