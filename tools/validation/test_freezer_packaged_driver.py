@@ -1,9 +1,11 @@
 """Source contracts only; these tests do not execute Minecraft."""
 from pathlib import Path
+import json
+import tempfile
 import unittest
 import tomllib
 from client_mixin_smoke import SmokeFailure
-from freezer_packaged_native import require_client_success
+from freezer_packaged_native import gameplay_result_diagnostic, require_client_success, require_gameplay_result
 ROOT = Path(__file__).resolve().parents[2]
 
 class DriverTests(unittest.TestCase):
@@ -19,13 +21,44 @@ class DriverTests(unittest.TestCase):
         self.assertFalse((ROOT/'src/main/resources/META-INF/neoforge.mods.toml').exists() and 'iedctr_freezer_validation' in (ROOT/'src/main/resources/META-INF/neoforge.mods.toml').read_text())
 
     def test_client_failure_precedes_evidence_reads(self):
-        require_client_success(0,False,Path('/missing/log'))
-        for code,expired in [(1,False),(0,True),(None,True),(False,False)]:
-            with self.subTest(code=code,expired=expired),self.assertRaisesRegex(SmokeFailure,'Freezer packaged client failed'):
-                require_client_success(code,expired,Path('/missing/log'))
+        with tempfile.TemporaryDirectory() as directory:
+            game=Path(directory)
+            require_client_success(0,False,Path('/missing/log'),game,'')
+            for code,expired in [(1,False),(0,True),(None,True),(False,False)]:
+                with self.subTest(code=code,expired=expired),self.assertRaisesRegex(SmokeFailure,'Freezer packaged client failed'):
+                    require_client_success(code,expired,Path('/missing/log'),game,'')
         source=(ROOT/'tools/validation/freezer_packaged_native.py').read_text()
-        self.assertLess(source.index('        require_client_success(code, expired, log)'),source.index('        proof = json.loads'))
+        self.assertLess(source.index('        require_client_success(code, expired, log, game, logs)'),source.index('        proof = json.loads'))
+        self.assertLess(source.index('        require_gameplay_result(game, logs)'),source.index('        proof = json.loads'))
         self.assertLess(source.index('        if FATAL_PATTERN.search(logs)'),source.index('        proof = json.loads'))
+
+    def test_gameplay_failure_stage_is_reported_before_missing_success_proof(self):
+        with tempfile.TemporaryDirectory() as directory:
+            game=Path(directory)
+            logs='IEDCTR_CLIENT_GAMEPLAY FAILED at OPEN_FREEZER\n'
+            diagnostic=gameplay_result_diagnostic(game,logs)
+            self.assertEqual(diagnostic,
+                'client-gameplay-result.json missing; client reported failure at stage OPEN_FREEZER')
+            with self.assertRaisesRegex(SmokeFailure,'stage OPEN_FREEZER'):
+                require_gameplay_result(game,logs)
+            with self.assertRaisesRegex(SmokeFailure,'stage OPEN_FREEZER'):
+                require_client_success(1,False,Path('/missing/log'),game,logs)
+
+    def test_gameplay_json_reports_actual_failed_phase_and_error(self):
+        with tempfile.TemporaryDirectory() as directory:
+            game=Path(directory)
+            (game/'client-gameplay-result.json').write_text(json.dumps(
+                {'status':'failed','phase':'WAIT_FOR_MENU','error':'server menu acknowledgement timed out'}))
+            diagnostic=gameplay_result_diagnostic(game,'')
+            self.assertEqual(diagnostic,
+                "client gameplay status='failed' at stage WAIT_FOR_MENU: server menu acknowledgement timed out")
+
+    def test_missing_gameplay_json_without_stage_has_explicit_cause(self):
+        with tempfile.TemporaryDirectory() as directory:
+            game=Path(directory)
+            diagnostic=gameplay_result_diagnostic(game,'Minecraft client closed without terminal gameplay marker')
+            self.assertEqual(diagnostic,
+                'client-gameplay-result.json missing and no terminal gameplay stage was logged')
 
     def test_isolation_and_optin(self):
         gradle=(ROOT/'gradle/freezer-packaged-validation.gradle').read_text()
@@ -66,7 +99,8 @@ class DriverTests(unittest.TestCase):
 
     def test_no_stale_static_chamber_scope(self):
         source=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeClientMiningValidation.java').read_text()
-        self.assertIn('chamber frost from server phases; static decorative rim',source)
-        self.assertNotIn('inventory/energy smoke; static frost;',source)
+        self.assertIn('ThermalVerticalScreen Freezer smoke',source)
+        self.assertIn('39 menu entries with reserved index 1 hidden, two visible machine slots',source)
+        self.assertNotIn('static decorative rim',source)
 
 if __name__=='__main__': unittest.main()

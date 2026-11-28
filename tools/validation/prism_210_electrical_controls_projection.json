@@ -1,0 +1,335 @@
+{
+  "schema": "iedctr-prism-electrical-controls-v1",
+  "base_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+  "scope": "Electrical Furnace rotary-control and segmented FE presentation; inverse source views only, never runtime evidence.",
+  "files": {
+    "src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "44872fe9010f9241dbbdefa12f63d60eb9c3210a4fe837c496a4b5c36c745536",
+      "new_sha256": "d91f8df6d64f834459ebcbc41bdb9a9533c657df6ec82088134fbe3886375289",
+      "hunks": [
+        {
+          "start": 37,
+          "end": 38,
+          "current": "/** Test-only native album and bounded Electrical Furnace interaction evidence; no human visual acceptance. */\n",
+          "previous": "/** Test-only album capture, server-opened containers. No human input or gameplay qualification claimed. */\n"
+        },
+        {
+          "start": 58,
+          "end": 59,
+          "current": "    private enum Stage {BOOT,WORLD,OPEN,WAIT,ELECTRICAL,CLOSE}\n",
+          "previous": "    private enum Stage {BOOT,WORLD,OPEN,WAIT,CLOSE}\n"
+        },
+        {
+          "start": 78,
+          "end": 79,
+          "current": "    private static ElectricalFurnaceAlbumValidation electricalValidation;\n",
+          "previous": ""
+        },
+        {
+          "start": 202,
+          "end": 206,
+          "current": "                    if(index==2){\n                        electricalValidation=new ElectricalFurnaceAlbumValidation(directory,playerId,machines[2],x11,xtest,display);\n                        enter(Stage.ELECTRICAL);return;\n                    }\n",
+          "previous": ""
+        },
+        {
+          "start": 207,
+          "end": 210,
+          "current": "                }\n                case ELECTRICAL -> {\n                    if(electricalValidation.tick(mc)){mc.screen.onClose();enter(Stage.CLOSE);}\n",
+          "previous": ""
+        },
+        {
+          "start": 217,
+          "end": 220,
+          "current": "        if(Boolean.getBoolean(\"iedctr.guiAlbumThree\")&&!complete&&stage==Stage.ELECTRICAL){\n            electricalValidation.rendered(event);return;\n        }\n",
+          "previous": ""
+        },
+        {
+          "start": 225,
+          "end": 230,
+          "current": "    }\n    @SubscribeEvent public static void mousePressed(ScreenEvent.MouseButtonPressed.Post event){\n        if(Boolean.getBoolean(\"iedctr.guiAlbumThree\")&&!complete&&stage==Stage.ELECTRICAL){\n            try{electricalValidation.mousePressed(event);}catch(Throwable error){finish(Minecraft.getInstance(),error);}\n        }\n",
+          "previous": ""
+        },
+        {
+          "start": 338,
+          "end": 339,
+          "current": "        try{if(directory!=null){var proof=new JsonObject();proof.addProperty(\"suite\",\"gui-album-three-v3\");proof.addProperty(\"status\",error==null?\"observed\":\"failed\");proof.addProperty(\"nonce\",nonce);proof.addProperty(\"executed_source_sha\",System.getProperty(\"iedctr.executedSourceSha\"));proof.add(\"packaged_runtime\",packaged);proof.add(\"cases\",cases);proof.add(\"hopper_selections\",selections);proof.add(\"wait_diagnostics\",waitDiagnostics);proof.add(\"terminal_state\",diagnostic(mc));proof.addProperty(\"visual_acceptance\",false);proof.addProperty(\"physical_os_input\",true);proof.addProperty(\"human_input\",false);proof.addProperty(\"input_method\",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty(\"synthetic_button_events\",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add(\"electrical_controls\",electricalValidation.proof());if(error!=null)proof.addProperty(\"error\",error.toString());Files.writeString(directory.resolve(\"gui-album-three-proof.json\"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+\"\\n\");}}\n",
+          "previous": "        try{if(directory!=null){var proof=new JsonObject();proof.addProperty(\"suite\",\"gui-album-three-v2\");proof.addProperty(\"status\",error==null?\"observed\":\"failed\");proof.addProperty(\"nonce\",nonce);proof.addProperty(\"executed_source_sha\",System.getProperty(\"iedctr.executedSourceSha\"));proof.add(\"packaged_runtime\",packaged);proof.add(\"cases\",cases);proof.add(\"hopper_selections\",selections);proof.add(\"wait_diagnostics\",waitDiagnostics);proof.add(\"terminal_state\",diagnostic(mc));proof.addProperty(\"visual_acceptance\",false);proof.addProperty(\"physical_os_input\",true);proof.addProperty(\"human_input\",false);proof.addProperty(\"input_method\",\"synthetic XTest pointer positioning only; no clicks\");proof.addProperty(\"synthetic_button_events\",0);if(error!=null)proof.addProperty(\"error\",error.toString());Files.writeString(directory.resolve(\"gui-album-three-proof.json\"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+\"\\n\");}}\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "861bc495100bb1ea5057d1f55191f9bac78904a3b9e1095bfa1c1b766d6973d5",
+      "new_sha256": "a9f6b294ec0f5d5bb8a22420da3f192c9b5b9a748a9d6373aae32dea9fa27585",
+      "hunks": [
+        {
+          "start": 6,
+          "end": 7,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;\n",
+          "previous": ""
+        },
+        {
+          "start": 33,
+          "end": 33,
+          "current": "",
+          "previous": "   private static final ResourceLocation ELECTRICAL_DIAL_NEUTRAL = ResourceLocation.fromNamespaceAndPath(\n      \"immersive_engineer_decor_controls_tool_reforged\", \"textures/gui/retained_furnaces/electrical_dial_neutral.png\");\n"
+        },
+        {
+          "start": 178,
+          "end": 185,
+          "current": "      if (this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE\n         && ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos)) {\n         int step = ElectricalFurnaceArtwork.clickStep(button);\n         if (step == 0) return false;\n         this.sendAction(ElectricalFurnaceControl.CYCLE_SPEED_ACTION, step);\n         return true;\n      }\n",
+          "previous": ""
+        },
+        {
+          "start": 835,
+          "end": 835,
+          "current": "",
+          "previous": "      int energy = Mth.clamp((int)(55L * ((MachineMenu)this.menu).field(1)\n         / Math.max(1, ((MachineMenu)this.menu).field(5))), 0, 55);\n      graphics.fill(x+94, y+86, x+149, y+92, 0xFF252525);\n      graphics.fill(x+94, y+86, x+94+energy, y+92, 0xFFECA42C);\n"
+        },
+        {
+          "start": 836,
+          "end": 838,
+          "current": "      ElectricalFurnaceArtwork.render(graphics, texture, x, y, this.imageWidth, this.imageHeight,\n         this.menu.field(1), this.menu.field(5), this.menu.field(4));\n",
+          "previous": "      int speed = Mth.clamp(((MachineMenu)this.menu).field(4), 0, 3);\n      // Replace only the dial's painted spindle with the original ring face, then mark the live detent.\n      graphics.blit(ELECTRICAL_DIAL_NEUTRAL, x+171, y+74, 23, 23, 0F, 0F, 120, 120, 120, 120);\n      int[] detent = electricalDialOffset(speed);\n      int markerX=x+182+detent[0], markerY=y+87+detent[1];\n      graphics.fill(markerX+1,markerY,markerX+3,markerY+4,0xFF5B3A1C);\n      graphics.fill(markerX,markerY+1,markerX+4,markerY+3,0xFFFFD180);\n"
+        },
+        {
+          "start": 1255,
+          "end": 1255,
+          "current": "",
+          "previous": "         case SMALL_ELECTRICAL_FURNACE -> this.handleElectricalFurnaceClick(mouseX, mouseY);\n"
+        },
+        {
+          "start": 1414,
+          "end": 1414,
+          "current": "",
+          "previous": "   private boolean handleElectricalFurnaceClick(double mouseX, double mouseY) {\n      if (!this.isHovering(168, 74, 33, 29, mouseX, mouseY)) return false;\n      double dx = mouseX-this.leftPos-184;\n      double dy = mouseY-this.topPos-88;\n      int speed = Math.abs(dx)>Math.abs(dy) ? (dx<0 ? 1:3) : (dy<0 ? 2:0);\n      this.sendAction(30,speed);\n      return true;\n   }\n\n"
+        },
+        {
+          "start": 1461,
+          "end": 1463,
+          "current": "         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER\n            || kind == MachineKind.SMALL_ELECTRICAL_FURNACE) {\n",
+          "previous": "         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER) {\n"
+        },
+        {
+          "start": 1488,
+          "end": 1488,
+          "current": "",
+          "previous": "   }\n\n   static int[] electricalDialOffset(int speed) {\n      return switch (Mth.clamp(speed,0,3)) {\n         case 1 -> new int[]{-9,0};\n         case 2 -> new int[]{0,-9};\n         case 3 -> new int[]{9,0};\n         default -> new int[]{0,9};\n      };\n"
+        },
+        {
+          "start": 1729,
+          "end": 1745,
+          "current": "      String prefix = \"block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.\";\n      if (this.isHovering(90,82,64,15,mouseX,mouseY)) {\n         int capacity = Math.max(0, this.menu.field(5));\n         return Component.translatable(prefix + \"energy\").copy().append(\"\\n\")\n            .append(Component.literal(Mth.clamp(this.menu.field(1), 0, capacity) + \" / \" + capacity + \" FE\"));\n      }\n      if (ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos)) {\n         String mode = switch (Mth.clamp(this.menu.field(4), 0, 3)) {\n            case 1 -> \"I\";\n            case 2 -> \"II\";\n            case 3 -> \"III\";\n            default -> \"OFF\";\n         };\n         return Component.translatable(prefix + \"speed\").copy().append(\"\\n\")\n            .append(Component.translatable(prefix + \"rotation\", mode));\n      }\n",
+          "previous": ""
+        },
+        {
+          "start": 1748,
+          "end": 1749,
+          "current": "      return part == null ? null : Component.translatable(prefix + part);\n",
+          "previous": "      else if (this.isHovering(90,82,64,15,mouseX,mouseY)) part=\"energy\";\n      else if (this.isHovering(168,74,33,29,mouseX,mouseY)) part=\"speed\";\n      return part == null ? null : Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.\"+part);\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/gametest/MachineGuiGameTests.java": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "2057fc0dbb8cf4748fad02e1637234cf2a0416af2d535221e7b65fea52d66aa8",
+      "new_sha256": "0f2ea223c53da58e5b79fa98bc934a3edca28318692754d09b8d681b1a9f456f",
+      "hunks": [
+        {
+          "start": 17,
+          "end": 18,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;\n",
+          "previous": ""
+        },
+        {
+          "start": 1888,
+          "end": 1889,
+          "current": "      attachTestMenu(helper, player, electricalMenu, TEST_POS);\n",
+          "previous": ""
+        },
+        {
+          "start": 1891,
+          "end": 1996,
+          "current": "      helper.succeed();\n   }\n\n   @GameTest(template = \"empty\", timeoutTicks = 80)\n   public static void electrical_speed_cycles_every_server_request_in_both_directions(GameTestHelper helper) {\n      Player player = helper.makeMockPlayer(GameType.SURVIVAL);\n      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);\n      MachineMenu menu = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 90, player.getInventory(), machine, machine.dataAccessForTests());\n      attachTestMenu(helper, player, menu, TEST_POS);\n      machine.energyStorage(null).receiveEnergy(8000, false);\n      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, 0, 0);\n      // Consecutive requests deliberately have no tick or client acknowledgement between them.\n      for (int expected : new int[]{1, 2, 3, 0, 1, 2}) {\n         menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n         helper.assertValueEqual(expected, menu.field(4), \"every forward click must advance the current server detent\");\n      }\n      for (int expected : new int[]{1, 0, 3, 2}) {\n         menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, -1, 0);\n         helper.assertValueEqual(expected, menu.field(4), \"reverse clicks must wrap from OFF to HIGH\");\n      }\n      helper.assertValueEqual(8000, menu.field(1), \"turning the control itself must not consume FE\");\n      helper.assertValueEqual(32000, menu.field(5), \"the speed control must preserve energy capacity\");\n      helper.succeed();\n   }\n\n   @GameTest(template = \"empty\", timeoutTicks = 80)\n   public static void electrical_speed_rejects_unbounded_steps_and_unrelated_actions(GameTestHelper helper) {\n      Player player = helper.makeMockPlayer(GameType.SURVIVAL);\n      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);\n      MachineMenu menu = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 91, player.getInventory(), machine, machine.dataAccessForTests());\n      attachTestMenu(helper, player, menu, TEST_POS);\n      for (int direction : new int[]{Integer.MIN_VALUE, -2, 0, 2, Integer.MAX_VALUE}) {\n         menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, direction, 0);\n         helper.assertValueEqual(1, menu.field(4), \"invalid relative steps must not alter the speed\");\n      }\n      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 1);\n      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, -1, -1);\n      for (int action : new int[]{1, 16, 31, 33, Integer.MAX_VALUE}) menu.handleAction(player, action, 1, 0);\n      helper.assertValueEqual(1, menu.field(4), \"reserved payloads and unrelated actions must remain inert\");\n      // Existing absolute requests retain their historic clamp behavior.\n      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, -99, 0);\n      helper.assertValueEqual(0, menu.field(4), \"legacy absolute mode clamps below OFF\");\n      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, 99, 0);\n      helper.assertValueEqual(3, menu.field(4), \"legacy absolute mode clamps above HIGH\");\n      MachineBlockEntity hopper = placeMachineAt(helper, TEST_POS.offset(3, 0, 0), ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER);\n      MachineMenu hopperMenu = new MachineMenu(MachineKind.FACTORY_HOPPER, 92, player.getInventory(), hopper, hopper.dataAccessForTests());\n      attachTestMenu(helper, player, hopperMenu, TEST_POS.offset(3, 0, 0));\n      int hopperRange = hopperMenu.field(0);\n      hopperMenu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      helper.assertValueEqual(hopperRange, hopperMenu.field(0), \"electrical rotation must be rejected by another machine menu\");\n      helper.assertValueEqual(3, menu.field(4), \"a different active machine cannot change the electrical speed\");\n      helper.succeed();\n   }\n\n   @GameTest(template = \"empty\", timeoutTicks = 80)\n   public static void electrical_speed_requires_an_active_nearby_non_spectator_menu(GameTestHelper helper) {\n      Player player = helper.makeMockPlayer(GameType.SURVIVAL);\n      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);\n      MachineMenu menu = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 93, player.getInventory(), machine, machine.dataAccessForTests());\n      attachTestMenu(helper, player, menu, TEST_POS);\n      menu.handleAction(null, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      player.containerMenu = player.inventoryMenu;\n      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      helper.assertValueEqual(1, menu.field(4), \"closed/stale menu requests must be inert\");\n      attachTestMenu(helper, player, menu, TEST_POS);\n      player.setPos(machine.getBlockPos().getX() + 32.0, machine.getBlockPos().getY(), machine.getBlockPos().getZ());\n      helper.assertTrue(!menu.stillValid(player), \"distance rejection fixture must be outside the menu radius\");\n      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      menu.handleAction(player, ElectricalFurnaceControl.SET_SPEED_ACTION, 3, 0);\n      helper.assertValueEqual(1, menu.field(4), \"distant players must not alter either speed action\");\n\n      var spectator = new net.neoforged.neoforge.common.util.FakePlayer(helper.getLevel(),\n         new com.mojang.authlib.GameProfile(java.util.UUID.randomUUID(), \"ElectricalDialTest\"));\n      spectator.gameMode.changeGameModeForPlayer(GameType.SPECTATOR);\n      attachTestMenu(helper, spectator, menu, TEST_POS);\n      helper.assertTrue(spectator.isSpectator(), \"spectator rejection fixture must be a spectator\");\n      menu.handleAction(spectator, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      helper.assertValueEqual(1, menu.field(4), \"spectators must not turn the control\");\n      attachTestMenu(helper, player, menu, TEST_POS);\n      machine.setRemoved();\n      menu.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      helper.assertValueEqual(1, menu.field(4), \"a removed block entity must reject the control\");\n      helper.succeed();\n   }\n\n   @GameTest(template = \"empty\", timeoutTicks = 80)\n   public static void electrical_speed_survives_menu_reopen_and_saved_state(GameTestHelper helper) {\n      Player player = helper.makeMockPlayer(GameType.SURVIVAL);\n      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE);\n      MachineMenu first = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 94, player.getInventory(), machine, machine.dataAccessForTests());\n      attachTestMenu(helper, player, first, TEST_POS);\n      first.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());\n      first.removed(player);\n      player.containerMenu = player.inventoryMenu;\n      MachineMenu reopened = new MachineMenu(MachineKind.SMALL_ELECTRICAL_FURNACE, 95, player.getInventory(), machine, machine.dataAccessForTests());\n      attachTestMenu(helper, player, reopened, TEST_POS);\n      helper.assertValueEqual(2, reopened.field(4), \"reopened menus must expose the selected server detent\");\n      first.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      helper.assertValueEqual(2, reopened.field(4), \"the old menu must stay invalid after opening a new one\");\n      reopened.handleAction(player, ElectricalFurnaceControl.CYCLE_SPEED_ACTION, 1, 0);\n      helper.assertValueEqual(3, reopened.field(4), \"a reopened menu must continue from the persisted selection\");\n      MachineBlockEntity loaded = new MachineBlockEntity(machine.getBlockPos(), machine.getBlockState());\n      loaded.loadWithComponents(saved, helper.getLevel().registryAccess());\n      helper.assertValueEqual(2, loaded.dataAccessForTests().get(4), \"save/load must restore the selected detent\");\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "f7525cc75f6ec5db270c39f5014bf70276a955648d14efccb0885184cee1c67a",
+      "new_sha256": "7f95f7f812c18e85882e64dcf99546143bd98a1a36faebb2abc2a9a0d67b9d58",
+      "hunks": [
+        {
+          "start": 11,
+          "end": 12,
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;\n",
+          "previous": ""
+        },
+        {
+          "start": 519,
+          "end": 528,
+          "current": "         if (this.kind == MachineKind.SMALL_ELECTRICAL_FURNACE) {\n            if (player == null || player.level().isClientSide || player.containerMenu != this\n               || player.isSpectator() || !this.stillValid(player) || machine.isRemoved()\n               || machine.getLevel() != player.level() || machine.kind() != this.kind\n               || !ElectricalFurnaceControl.accepts(action, valueA, valueB)) return;\n            machine.handleGuiAction(player, action, valueA, valueB);\n            this.broadcastChanges();\n            return;\n         }\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "579de3f88e298153ddd50dd9965ecb6541816a5a47c3058dbc02fdf72910d5b1",
+      "new_sha256": "2bf8b72b67a1d861023d3443d963dd1f5fec7285c576c335584e974e7130418f",
+      "hunks": [
+        {
+          "start": 1478,
+          "end": 1479,
+          "current": "            case ElectricalFurnaceControl.SET_SPEED_ACTION:\n",
+          "previous": "            case 30:\n"
+        },
+        {
+          "start": 1482,
+          "end": 1490,
+          "current": "               break;\n            case ElectricalFurnaceControl.CYCLE_SPEED_ACTION:\n               if (kind != MachineKind.SMALL_ELECTRICAL_FURNACE\n                  || !ElectricalFurnaceControl.validCycleRequest(valueA, valueB)) return;\n               // Resolve every click against the latest server detent, including\n               // multiple requests arriving before a client sync round trip.\n               this.electricalSpeed = ElectricalFurnaceControl.cycleSpeed(this.electricalSpeed, valueA);\n               break;\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/en_us.json": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "9b15d7ab9af9a8beedfb9afae60e47a180c10aa1f1c256be810f82db8c64de61",
+      "new_sha256": "5ee0f85d897b37a8fd2cf24edc9a3c4c42e0453a0039b42b366584554adf7832",
+      "hunks": [
+        {
+          "start": 208,
+          "end": 209,
+          "current": "  \"block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.rotation\": \"Mode: %s\\nLeft click: next detent\\nRight click: previous detent\",\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_ca.json": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "6d4d638b67ea0b441a1e4c976d23f70d471b97a25a57e2fba8a0b941510163ba",
+      "new_sha256": "2cba7a4599a1eb344ec8b28d7e4140c9c5b040bb20352ed6ab5ff9633dcfd1ca",
+      "hunks": [
+        {
+          "start": 202,
+          "end": 203,
+          "current": "  \"block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.rotation\": \"Mode : %s\\nClic gauche : cran suivant\\nClic droit : cran précédent\",\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/lang/fr_fr.json": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "5dbcacd04a6682f57f23a3043d7188ac7ab646ee5ad20c3c990ede9682f67cbb",
+      "new_sha256": "ad898f7418cf0c970ab1b2515c7c3b7b7855eb3034a703a19b06ae93d904beaf",
+      "hunks": [
+        {
+          "start": 208,
+          "end": 209,
+          "current": "  \"block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.rotation\": \"Mode : %s\\nClic gauche : cran suivant\\nClic droit : cran précédent\",\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/gui_album_three.py": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "eb356333de82cf8e92b26b5b2e68cf141208e6f24a54b9df50dab14f15437f75",
+      "new_sha256": "ce55f75bb051396318eec676ff828829c029a50b76edcbaacc67e6f5495b0005",
+      "hunks": [
+        {
+          "start": 1,
+          "end": 2,
+          "current": "\"\"\"Capture seven ordinary GUIs and exercise Electrical Furnace controls in a real client.\"\"\"\n",
+          "previous": "\"\"\"Capture seven ordinary machine GUIs in a real client; no gameplay acceptance verdict.\"\"\"\n"
+        },
+        {
+          "start": 38,
+          "end": 45,
+          "current": "ELECTRICAL_INPUT = 'synthetic XTest pointer and Electrical Furnace button events through GLFW; server-opened menus; no human input'\nELECTRICAL_CASES = ['empty-off','left-one','left-two','left-three','left-wrap','right-wrap',\n                    'rapid-left-three','middle-inert','border-inert','reopened','half-energy','full-energy']\nELECTRICAL_SPEEDS = [0,1,2,3,0,3,2,2,2,2,2,2]\nELECTRICAL_ENERGY = [0,0,0,0,0,0,0,0,0,0,16000,32000]\nELECTRICAL_CLICKS = [0,1,1,1,1,1,3,1,1,0,0,0]\nELECTRICAL_BUTTONS = [0,1,1,1,1,3,1,2,1,0,0,0]\n",
+          "previous": ""
+        },
+        {
+          "start": 92,
+          "end": 93,
+          "current": "    for key,value in dict(suite='gui-album-three-v3',status='observed',nonce=nonce,\n",
+          "previous": "    for key,value in dict(suite='gui-album-three-v2',status='observed',nonce=nonce,\n"
+        },
+        {
+          "start": 94,
+          "end": 95,
+          "current": "                         input_method=ELECTRICAL_INPUT,synthetic_button_events=20).items():\n",
+          "previous": "                         input_method=\"synthetic XTest pointer positioning only; no clicks\",synthetic_button_events=0).items():\n"
+        },
+        {
+          "start": 136,
+          "end": 253,
+          "current": "    validate_electrical_controls(proof.get('electrical_controls',{}),cases[2],game,width,height,gui_scale)\n\n\ndef validate_electrical_controls(proof,base_case,game,width,height,scale):\n    for key,value in dict(suite='electrical-furnace-native-controls-v1',complete=True,\n                         input_method=ELECTRICAL_INPUT,native_presses_sent=10,native_presses_observed=10,\n                         synthetic_button_events=20,fixture_energy_capacity=32000,\n                         fixture_has_recipe=False,visual_acceptance=False).items():\n        require(type(proof.get(key)) is type(value) and proof[key]==value,'Electrical proof differs: '+key)\n    initial=proof.get('initial_menu_id')\n    require(type(initial) is int and initial>0,'Electrical initial menu missing')\n    records=proof.get('observations',[])\n    require([r.get('case') for r in records]==ELECTRICAL_CASES,'Electrical native scenarios missing')\n    for i,row in enumerate(records):\n        expected=dict(expected_speed=ELECTRICAL_SPEEDS[i],client_speed=ELECTRICAL_SPEEDS[i],\n                      expected_energy=ELECTRICAL_ENERGY[i],client_energy=ELECTRICAL_ENERGY[i],client_capacity=32000,\n                      native_presses=ELECTRICAL_CLICKS[i],x11_button=ELECTRICAL_BUTTONS[i],\n                      click_x=208 if i==8 else 184,click_y=88,gui_scale=scale)\n        for key,value in expected.items():\n            require(type(row.get(key)) is int and row[key]==value,'Electrical observation differs: '+row['case']+'/'+key)\n        require(row.get('screen')==base_case.get('screen')==SCREENS[2],'Electrical screen differs from packaged screen')\n        require(type(row.get('render_frames')) is int and row['render_frames']>=3,'Electrical state not rendered stably')\n        menu_id=row.get('menu_id')\n        require(type(menu_id) is int and (menu_id==initial if i<9 else menu_id>initial),'Electrical reopen identity differs')\n        require(row.get('input_source')==('XTest via GLFW' if ELECTRICAL_CLICKS[i] else\n                'server fixture or programmatic reopen; no button input'),'Electrical input origin differs')\n        server=row.get('server',{})\n        for key,value in dict(matching_menu=True,menu_id=menu_id,speed=ELECTRICAL_SPEEDS[i],\n                             machine_speed=ELECTRICAL_SPEEDS[i],energy=ELECTRICAL_ENERGY[i],capacity=32000,\n                             cursor_empty=True,machine_empty=True).items():\n            require(type(server.get(key)) is type(value) and server[key]==value,'Electrical server acknowledgement differs: '+key)\n        name='electrical-'+ELECTRICAL_CASES[i]+'.png'\n        require(row.get('capture')==name,'Unexpected electrical screenshot name')\n        png(game/name,width,height,row.get('capture_sha256'))\n    require(len({r['menu_id'] for r in records[9:]})==1,'Electrical menu changed after reopen')\n    events=proof.get('input_events',[])\n    expected_events=[(i,n) for i,count in enumerate(ELECTRICAL_CLICKS) for n in range(count)]\n    require(len(events)==len(expected_events),'Native Electrical callback count differs')\n    for event,(i,_) in zip(events,expected_events):\n        require(event.get('case')==ELECTRICAL_CASES[i],'Electrical callbacks reordered or absent')\n        require(type(event.get('glfw_button')) is int and event['glfw_button']=={1:0,2:2,3:1}[ELECTRICAL_BUTTONS[i]],\n                'Electrical callback button differs')\n        for axis,value in [('x',208 if i==8 else 184),('y',88)]:\n            actual=event.get(axis)\n            require(type(actual) in (int,float) and math.isfinite(actual) and abs(actual-value)<=1,\n                    'Electrical callback misses independent acceptance point')\n        require(type(event.get('handled')) is bool and (event['handled'] or i>=7),'Electrical dial did not handle click')\n        # In particular, all three rapid callbacks see the same pre-acknowledgement\n        # speed. The final server speed must still count all three increments.\n        require(type(event.get('client_speed_during_callback')) is int\n                and event['client_speed_during_callback']==ELECTRICAL_SPEEDS[i-1],\n                'Electrical click used unexpected client state or burst was not queued together')\n    validate_electrical_pixels(records,game,width,height,scale)\n\n\ndef electrical_panel_origin(width,height,scale):\n    require(type(scale) is int and scale in (1,2) and width>=228*scale and height>=250*scale,\n            'Electrical panel outside viewport')\n    return ((math.ceil(width/scale)-228)//2)*scale,((math.ceil(height/scale)-250)//2)*scale\n\n\ndef validate_electrical_pixels(records,game,width,height,scale):\n    \"\"\"Independent native pixel checks: actual grip rotation and segmented FE fill.\n\n    Geometric acceptance comes from the retained artwork, not renderer helpers.\n    These reject a moving lamp with a static grip, an always-full meter, the old\n    opaque rectangle, reversed fill, and frame/divider overpainting. They do not\n    replace visual acceptance by the owner.\n    \"\"\"\n    left,top=electrical_panel_origin(width,height,scale)\n    images=[]\n    for row in records:\n        w,h,pixels=decode_png(game/row['capture'])\n        require((w,h)==(width,height),'Electrical screenshot viewport differs')\n        images.append(pixels)\n    def rgb(image,x,y):\n        offset=((top+y)*width+left+x)*4\n        return image[offset:offset+3]\n    # The former detent lamp lies outside this central grip box. A lamp-only\n    # implementation cannot satisfy even one of these orientation comparisons.\n    core=[(x,y) for y in range(82*scale,94*scale) for x in range(178*scale,190*scale)]\n    for a in range(4):\n        for b in range(a+1,4):\n            changed=sum(rgb(images[a],x,y)!=rgb(images[b],x,y) for x,y in core)\n            require(changed>=8*scale*scale,'Electrical grip does not visibly rotate between '+str(a)+' and '+str(b))\n    for earlier,later in [(0,4),(3,5),(2,6),(2,7),(2,8),(2,9),(2,10),(2,11)]:\n        require(all(rgb(images[earlier],x,y)==rgb(images[later],x,y) for x,y in core),\n                'Electrical repeated/reopened detent does not preserve the same grip orientation')\n\n    # Interior probes are inset from the sculpted corner pixels and dividers.\n    # Source-to-framebuffer projection uses the full source raster dimensions.\n    segments=[(493,527),(532,564),(569,600),(606,638),(643,673),(678,708),(714,744),(750,780)]\n    def source_pixels(x1,y1,x2,y2):\n        points=[]\n        for y in range(83*scale,95*scale):\n            sy=(y+.5)*1312/(250*scale)\n            if not y1<=sy<y2:continue\n            for x in range(90*scale,152*scale):\n                sx=(x+.5)*1199/(228*scale)\n                if x1<=sx<x2:points.append((x,y))\n        require(points,'No native pixels in independent meter probe')\n        return points\n    empty,half,full=images[9],images[10],images[11]\n    for number,(start,end) in enumerate(segments):\n        points=source_pixels(start+4,456,end-4,477)\n        changed=sum(rgb(empty,x,y)!=rgb(full,x,y) for x,y in points)\n        require(changed>=.9*len(points),'Electrical full FE segment not filled: '+str(number))\n        expected=full if number<4 else empty\n        require(all(rgb(half,x,y)==rgb(expected,x,y) for x,y in points),\n                'Electrical half FE is not the left half of the meter')\n        require(sum(sum(rgb(full,x,y))-sum(rgb(empty,x,y)) for x,y in points)>15*len(points),\n                'Electrical full FE segment is not brighter than empty')\n    preserved=source_pixels(478,440,793,446)+source_pixels(478,488,793,493)\n    for (_,end),(start,_) in zip(segments,segments[1:]):\n        preserved+=source_pixels(end+.3,454,start-.3,479)\n    require(all(rgb(empty,x,y)==rgb(half,x,y)==rgb(full,x,y) for x,y in preserved),\n            'Electrical FE overpainted the metal frame or segment dividers')\n",
+          "previous": ""
+        },
+        {
+          "start": 353,
+          "end": 354,
+          "current": "        print('OBSERVED seven native screens, three Hopper rows, native Electrical Furnace dial clicks/reopen and FE 0/16000/32000. Screenshots still require independent visual review; this is bounded interaction evidence, not full gameplay acceptance.')\n",
+          "previous": "        print('OBSERVED seven native machine screens, including Hopper/Dropper/Lab Furnace V3 and three Hopper selection rows; screenshots still require independent review. Not gameplay acceptance.')\n"
+        }
+      ]
+    },
+    "tools/validation/test_gui_album_three.py": {
+      "previous_source_commit": "366ecf2c9d7e74afcc6398b80cfa84896b74e819",
+      "old_sha256": "54fc478561cd539b1455389f0af940d57104cd092bc0a6d4347b0464da6f62fc",
+      "new_sha256": "f82932340db07f0be0cb6f74ee2d652db702d178bd62afc66a44dc1939e49151",
+      "hunks": [
+        {
+          "start": 4,
+          "end": 7,
+          "current": "from gui_album_three import (validate, validate_selection_pixels, validate_electrical_pixels,\n    electrical_panel_origin, v3_outline, CASES, SCREENS, V3_LAYOUTS, V3_OCCUPIED_SLOTS, SmokeFailure,\n    ELECTRICAL_INPUT, ELECTRICAL_CASES, ELECTRICAL_SPEEDS, ELECTRICAL_ENERGY, ELECTRICAL_CLICKS, ELECTRICAL_BUTTONS)\n",
+          "previous": "from gui_album_three import validate, validate_selection_pixels, v3_outline, CASES, SCREENS, V3_LAYOUTS, V3_OCCUPIED_SLOTS, SmokeFailure\n"
+        },
+        {
+          "start": 8,
+          "end": 30,
+          "current": "\n\ndef electrical_proof():\n    records=[];events=[]\n    for i,name in enumerate(ELECTRICAL_CASES):\n        menu_id=3 if i<9 else 4\n        records.append(dict(case=name,expected_speed=ELECTRICAL_SPEEDS[i],client_speed=ELECTRICAL_SPEEDS[i],\n            expected_energy=ELECTRICAL_ENERGY[i],client_energy=ELECTRICAL_ENERGY[i],client_capacity=32000,\n            native_presses=ELECTRICAL_CLICKS[i],x11_button=ELECTRICAL_BUTTONS[i],click_x=208 if i==8 else 184,\n            click_y=88,gui_scale=2,screen=SCREENS[2],render_frames=3,menu_id=menu_id,\n            input_source='XTest via GLFW' if ELECTRICAL_CLICKS[i] else 'server fixture or programmatic reopen; no button input',\n            server=dict(matching_menu=True,menu_id=menu_id,speed=ELECTRICAL_SPEEDS[i],machine_speed=ELECTRICAL_SPEEDS[i],\n                        energy=ELECTRICAL_ENERGY[i],capacity=32000,cursor_empty=True,machine_empty=True),\n            capture='electrical-'+name+'.png',capture_sha256='e'*64))\n        for _ in range(ELECTRICAL_CLICKS[i]):\n            events.append(dict(case=name,glfw_button={1:0,2:2,3:1}[ELECTRICAL_BUTTONS[i]],\n                x=208 if i==8 else 184,y=88,handled=i<7,client_speed_during_callback=ELECTRICAL_SPEEDS[i-1]))\n    return dict(suite='electrical-furnace-native-controls-v1',complete=True,input_method=ELECTRICAL_INPUT,\n        native_presses_sent=10,native_presses_observed=10,synthetic_button_events=20,fixture_energy_capacity=32000,\n        fixture_has_recipe=False,visual_acceptance=False,initial_menu_id=3,observations=records,input_events=events)\n\n\n",
+          "previous": ""
+        },
+        {
+          "start": 33,
+          "end": 35,
+          "current": "        self.proof=dict(suite='gui-album-three-v3',status='observed',nonce='b'*32,executed_source_sha='c'*40,visual_acceptance=False,physical_os_input=True,human_input=False,\n            input_method=ELECTRICAL_INPUT,synthetic_button_events=20,electrical_controls=electrical_proof(),\n",
+          "previous": "        self.proof=dict(suite='gui-album-three-v2',status='observed',nonce='b'*32,executed_source_sha='c'*40,visual_acceptance=False,physical_os_input=True,human_input=False,\n            input_method=\"synthetic XTest pointer positioning only; no clicks\",synthetic_button_events=0,\n"
+        },
+        {
+          "start": 51,
+          "end": 52,
+          "current": "        with patch('gui_album_three.png') as png, patch('gui_album_three.validate_selection_pixels'), patch('gui_album_three.validate_electrical_pixels'):\n",
+          "previous": "        with patch('gui_album_three.png') as png, patch('gui_album_three.validate_selection_pixels'):\n"
+        },
+        {
+          "start": 53,
+          "end": 54,
+          "current": "            self.assertEqual(png.call_count,22)\n",
+          "previous": "            self.assertEqual(png.call_count,10)\n"
+        },
+        {
+          "start": 168,
+          "end": 169,
+          "current": "    def test_reject_inaccurate_button_counts_or_ambiguous_input_provenance(self):\n",
+          "previous": "    def test_reject_album_clicks_or_ambiguous_input_provenance(self):\n"
+        },
+        {
+          "start": 170,
+          "end": 171,
+          "current": "                          ('synthetic_button_events',False),('synthetic_button_events',0),('input_method','XTest clicks')]:\n",
+          "previous": "                          ('synthetic_button_events',False),('input_method','XTest clicks')]:\n"
+        },
+        {
+          "start": 190,
+          "end": 271,
+          "current": "\n    def test_reject_electrical_missing_callbacks_or_server_evidence(self):\n        for key,value in [('complete',False),('native_presses_sent',9),('native_presses_observed',9),\n                          ('synthetic_button_events',10),('fixture_energy_capacity',16000),('fixture_has_recipe',True)]:\n            p=copy.deepcopy(self.proof);p['electrical_controls'][key]=value\n            with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)\n        for key in ('observations','input_events'):\n            p=copy.deepcopy(self.proof);p['electrical_controls'][key].pop()\n            with self.subTest(key=key),self.assertRaises(SmokeFailure):self.check(p)\n        p=copy.deepcopy(self.proof);p['electrical_controls']['observations'][2]['server']['speed']=1\n        with self.assertRaises(SmokeFailure):self.check(p)\n\n    def test_reject_electrical_lost_rapid_click_and_fake_reopen(self):\n        for index,key,value in [(6,'client_speed',0),(6,'expected_speed',0),(9,'menu_id',3),\n                                (10,'client_energy',32000),(11,'render_frames',0),(8,'click_x',184)]:\n            p=copy.deepcopy(self.proof);p['electrical_controls']['observations'][index][key]=value\n            with self.subTest(index=index,key=key),self.assertRaises(SmokeFailure):self.check(p)\n        p=copy.deepcopy(self.proof)\n        p['electrical_controls']['input_events'][6]['client_speed_during_callback']=0\n        with self.assertRaises(SmokeFailure):self.check(p)\n        p=copy.deepcopy(self.proof);p['electrical_controls']['input_events'][3]['x']=192\n        with self.assertRaises(SmokeFailure):self.check(p)\n\n    def test_electrical_harness_requires_native_callbacks_without_direct_action_shortcuts(self):\n        root=Path(__file__).resolve().parents[2]\n        source=(root/'src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/ElectricalFurnaceAlbumValidation.java').read_text()\n        self.assertIn('XTestFakeButtonEvent',source)\n        self.assertIn('ScreenEvent.MouseButtonPressed.Post event',source)\n        self.assertIn('client_speed_during_callback',source)\n        self.assertIn('recordingInput=true',source)\n        self.assertIn('for(int i=0;i<CLICKS[step];i++)',source)\n        self.assertEqual(source.count('dataAccessForTests().set(4,'),1)\n        for shortcut in ('handleGuiAction(', 'handleAction(', 'sendToServer(', '.mouseClicked(', 'mouseHandler.set', 'glfwSetCursorPos'):\n            self.assertNotIn(shortcut,source)\n\n\nclass ElectricalPixelTests(unittest.TestCase):\n    width,height,scale=640,520,2\n\n    def images(self,defect=None):\n        width,height,scale=self.width,self.height,self.scale\n        left,top=electrical_panel_origin(width,height,scale)\n        segments=[(493,527),(532,564),(569,600),(606,638),(643,673),(678,708),(714,744),(750,780)]\n        outputs=[]\n        for index,speed in enumerate(ELECTRICAL_SPEEDS):\n            data=bytearray(b'\\x18\\x18\\x18\\xff'*(width*height))\n            def paint(x,y,color):\n                offset=((top+y)*width+left+x)*4;data[offset:offset+3]=bytes(color)\n            # Asymmetric rotating grip, independently synthesized to challenge the guard.\n            orientation=0 if defect=='lamp-only' else speed\n            for dy in range(-5*scale,5*scale):\n                for dx in range(-scale,scale):\n                    x,y=dx,dy\n                    for _ in range(orientation):x,y=-y-1,x\n                    paint(184*scale+x,88*scale+y,(225,170,90) if dy<0 else (80,65,40))\n            cells=0 if index<10 else 4 if index==10 else 8\n            if defect=='always-full':cells=8\n            for y in range(83*scale,95*scale):\n                sy=(y+.5)*1312/(250*scale)\n                for x in range(90*scale,152*scale):\n                    sx=(x+.5)*1199/(228*scale)\n                    for cell,(start,end) in enumerate(segments):\n                        filled=cell<cells\n                        if defect=='reverse-half' and index==10:filled=cell>=4\n                        if filled and start<=sx<end and 450<=sy<483:paint(x,y,(225,155,35))\n                    if defect=='opaque-rectangle' and index>=10 and 493<=sx<780 and 450<=sy<483:\n                        paint(x,y,(225,155,35))\n            outputs.append((width,height,bytes(data)))\n        return outputs\n\n    def check(self,images):\n        records=[dict(capture='electrical-'+name+'.png') for name in ELECTRICAL_CASES]\n        with patch('gui_album_three.decode_png',side_effect=images):\n            validate_electrical_pixels(records,Path('/tmp'),self.width,self.height,self.scale)\n\n    def test_accepts_rotating_grip_and_segmented_empty_half_full(self):\n        self.check(self.images())\n\n    def test_rejects_lamp_only_static_grip_and_meter_regressions(self):\n        for defect in ('lamp-only','always-full','reverse-half','opaque-rectangle'):\n            with self.subTest(defect=defect),self.assertRaises(SmokeFailure):self.check(self.images(defect))\n",
+          "previous": ""
+        }
+      ]
+    }
+  }
+}

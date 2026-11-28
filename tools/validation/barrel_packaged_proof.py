@@ -99,6 +99,8 @@ def validate_evidence(proof, nonce, source_sha, width, height, language, fluid):
             'Wrong run/source identity')
     require(fluid in FLUID_IDS and width == 1280 and (language, height) in (('en_us', 720), ('fr_fr', 260)),
             'Unsupported Barrel profile')
+    if proof.get('status') == 'failed':
+        require(False, 'Barrel legacy fixture failed: ' + str(proof.get('error', 'no recorded exception')))
     require(proof.get('selected_fluid') == fluid and proof.get('selected_language') == language
             and proof.get('status') == 'passed_bounded_native' and 'error' not in proof
             and proof.get('actual_integrated_world') is True and proof.get('input_backend') == 'XTEST'

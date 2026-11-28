@@ -8,7 +8,15 @@ class DriverTests(unittest.TestCase):
     def test_fixture_preserves_every_original_gate(self):
         old=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java').read_text()
         new=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/NativeSmelterGuiValidation.java').read_text()
-        self.assertEqual(new.replace('package com.oblixorprime.iedctrtest.smelter;', 'package com.oblixorprime.engineersdecorreforged.client.validation;'),old)
+        new=new.replace('package com.oblixorprime.iedctrtest.smelter;', 'package com.oblixorprime.engineersdecorreforged.client.validation;')
+        actual_fit='var fit = ((ThermalVerticalScreen) mc.screen).validationViewTransform();'
+        self.assertEqual(new.count(actual_fit),1,'Packaged fixture must fit the actual ThermalVertical canvas')
+        self.assertEqual(old.count(actual_fit),1,'Build validation fixture must fit the actual ThermalVertical canvas')
+        self.assertEqual(new,old,'Packaged and build fixtures must preserve the same GUI and proof gates')
+        self.assertIn('"panel_width", ThermalVerticalGeometry.canvasWidth(menu.kind())', new)
+        self.assertIn('"panel_height", ThermalVerticalGeometry.canvasHeight(menu.kind())', new)
+        self.assertNotIn('ThermalVerticalGeometry.CANVAS_WIDTH', new)
+        self.assertNotIn('ThermalVerticalGeometry.CANVAS_HEIGHT', new)
     def test_support_is_server_prepared_before_original_fixture(self):
         text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
         self.assertIn('new BlockPos(x, 80, z), Blocks.STONE.defaultBlockState()',text)
@@ -16,6 +24,15 @@ class DriverTests(unittest.TestCase):
         self.assertLess(text.index('supportReady.join()'),text.index('NativeSmelterGuiValidation.begin'))
         self.assertIn('smelter-failure-diagnostic.json',text)
         self.assertIn('.get(3, TimeUnit.SECONDS)',text)
+    def test_smelter_fixture_uses_rear_public_fluid_capability_and_rejects_wrong_faces(self):
+        source=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/NativeSmelterGuiValidation.java').read_text()
+        self.assertIn('.setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH)',source)
+        self.assertIn('Capabilities.FluidHandler.BLOCK, POS, Direction.SOUTH',source)
+        self.assertIn('rear.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 2500',source)
+        for face in ('UP','NORTH','EAST','WEST'):
+            self.assertIn('Capabilities.FluidHandler.BLOCK, POS, Direction.'+face,source)
+        self.assertIn('bottom.fill(new FluidStack(Fluids.LAVA, 2500), FluidAction.EXECUTE) == 0',source)
+        self.assertNotIn('machine.fluidHandler(Direction.UP)',source)
     def test_failed_isolation_never_stops_user_client(self):
         text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
         catch=text.split('} catch (Throwable error) {',1)[1]

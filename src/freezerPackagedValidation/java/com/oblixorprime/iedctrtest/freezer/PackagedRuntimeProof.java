@@ -3,9 +3,9 @@ package com.oblixorprime.iedctrtest.freezer;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
-import com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen;
+import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
-import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceLiveState;
+import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
@@ -47,8 +47,10 @@ public final class PackagedRuntimeProof {
             require(zip.stream().map(e -> e.getName()).distinct().count() == zip.size(), "Duplicate entries in normal JAR");
             require(zip.stream().noneMatch(e -> e.getName().startsWith("com/oblixorprime/iedctrtest/")
                 || e.getName().contains("PackagedRuntimeProof")), "Harness leaked into normal JAR");
-            for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, FreezerReferenceScreen.class,
-                    FreezerReferenceGeometry.class, FreezerReferenceLiveState.class, MachineMenu.class, MachineLayout.class, MachineBlockEntity.class, Class.forName("com.oblixorprime.engineersdecorreforged.client.validation.NativeFreezerReferenceValidation"), Class.forName("com.oblixorprime.engineersdecorreforged.client.validation.NativeClientMiningValidation")}) {
+            for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, ThermalVerticalScreen.class,
+                    FreezerReferenceGeometry.class, ThermalVerticalGeometry.class, MachineMenu.class, MachineLayout.class,
+                    MachineBlockEntity.class, Class.forName("com.oblixorprime.engineersdecorreforged.client.validation.NativeFreezerReferenceValidation"),
+                    Class.forName("com.oblixorprime.engineersdecorreforged.client.validation.NativeClientMiningValidation")}) {
                 String entry = type.getName().replace('.', '/') + ".class";
                 var url = type.getResource('/' + entry);
                 var source = type.getProtectionDomain().getCodeSource();
@@ -73,8 +75,8 @@ public final class PackagedRuntimeProof {
                 origin.addProperty("sha256", resourceHash); origins.add(origin);
             }
             var textures = new JsonArray();
-            String[] paths = {"freezer_reference_v5/background.png", "freezer_reference_v5/freezer_v5_chamber_clean_base.png", "freezer_reference_v5/freezer_v5_chamber_mask_alpha.png", "freezer_reference_v5/freezer_v5_frost_overlay_phase0.png", "freezer_reference_v5/freezer_v5_frost_overlay_phase1.png", "freezer_reference_v5/freezer_v5_frost_overlay_phase2.png", "freezer_reference_v5/freezer_v5_frost_overlay_phase3.png", "freezer_reference_v5/freezer_v5_frost_overlay_phase4.png"};
-            String[] hashes = {"68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46", "c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c", "625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0", "eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664", "5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b", "ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898", "3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49", "b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0"};
+            String[] paths = {"thermal_vertical/freezer/neutral.png", "thermal_vertical/freezer/effect.png", "thermal_vertical/freezer/energy.png", "gui11_v5c/05.png"};
+            String[] hashes = {"48d9d8a9eea6ffb477453bc7b84516b9f03be20132bff3b873d4d7b66e68b806", "046988bf2783a5396c43c6cbe949a32b3088a4c6cc9f59be0347fdd9611af957", "73403246b8e9389955a9cb5ff23ce8f478cbdb06af633c0feda7445dac355638", "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6"};
             for(int i=0;i<paths.length;i++) {
                 var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+paths[i]);
                 var active = mc.getResourceManager().getResource(texture).orElseThrow();
@@ -95,7 +97,8 @@ public final class PackagedRuntimeProof {
             // Historical opt-in production validation classes may exist. This flag only excludes the separate harness namespace.
             proof.addProperty("fixture_free_jar", false);
             proof.addProperty("separate_provenance_harness", true);
-            proof.addProperty("fixture_scope", "Separate com/oblixorprime/iedctrtest harness excluded; historical bundled Freezer/world fixture explicitly enabled; no physical OS input claim"); proof.addProperty("separate_harness_module", true);
+            proof.addProperty("fixture_scope", "Separate com/oblixorprime/iedctrtest harness excluded; real ThermalVerticalScreen Freezer fixture explicitly enabled; no physical OS input claim"); proof.addProperty("separate_harness_module", true);
+            proof.addProperty("active_screen_class", ThermalVerticalScreen.class.getName());
             proof.add("active_textures",textures);proof.addProperty("production_selectors_absent",false);
             var selectors = new JsonArray(); for (String key : allowed.stream().sorted().toList()) selectors.add(key);
             proof.add("production_selectors",selectors); proof.addProperty("presentation_mode", "normal-dynamic"); proof.addProperty("dev_selectors_absent", true);

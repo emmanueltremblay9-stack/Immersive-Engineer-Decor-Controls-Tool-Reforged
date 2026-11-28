@@ -9,6 +9,8 @@ public final class BreakerTextProbe {
    private static final class MachineMenu {
       MachineKind kind = MachineKind.SMALL_BLOCK_BREAKER;
       MachineKind kind() { return kind; }
+      boolean v5c;
+      boolean gui11V5CPresentation() { return v5c; }
       String blockBreakerTargetName() { return "Stone"; }
       float blockBreakerHardness() { return 1.5F; }
       Stack blockBreakerTargetStack() { return new Stack(); }
@@ -62,6 +64,7 @@ public final class BreakerTextProbe {
       // Production region dispatch, with the model's padded edges and translated origins.
       for (int[] origin : new int[][] {{0, 0}, {512, 220}, {-20, -30}}) {
          screen.leftPos = origin[0]; screen.topPos = origin[1];
+         screen.menu.v5c = false;
          for (int[] point : new int[][] {{41, 5}, {214, 5}, {41, 24}, {214, 24}, {128, 14}}) {
             contains(screen.at(point[0], point[1]), TITLE, "Nameplate identity");
          }
@@ -80,6 +83,18 @@ public final class BreakerTextProbe {
          contains(screen.at(128, 140), "tooltip.work_details[12, 40", "Work progress retained");
          contains(screen.at(128, 140), "cost.per_block[400]", "Cost retained");
          contains(screen.at(128, 140), "state.working", "Work status retained");
+         screen.menu.v5c = true;
+         contains(screen.at(74, 9), TITLE, "V5C nameplate identity");
+         contains(screen.at(197, 30), TITLE, "V5C nameplate identity");
+         absent(screen.at(73, 20), "V5C outside nameplate");
+         absent(screen.at(198, 20), "V5C outside nameplate");
+         contains(screen.at(220, 52), "tooltip.input", "V5C FE input retained");
+         contains(screen.at(219, 72), "tooltip.fluid_unavailable", "V5C fluid caveat retained");
+         contains(screen.at(68, 135), "signal.high", "V5C redstone signal retained");
+         contains(screen.at(210, 110), "tooltip.legacy_pending[3]", "V5C output state retained");
+         contains(screen.at(60, 73), "tooltip.target[Stone]", "V5C target identity retained");
+         contains(screen.at(130, 106), "tooltip.static_scene", "V5C static artwork caveat retained");
+         contains(screen.at(129, 137), "cost.per_block[400]", "V5C work cost retained");
          screen.menu.kind = MachineKind.OTHER;
          absent(screen.at(128, 14), "Other machine title");
          absent(screen.at(200, 55), "Other machine FE");

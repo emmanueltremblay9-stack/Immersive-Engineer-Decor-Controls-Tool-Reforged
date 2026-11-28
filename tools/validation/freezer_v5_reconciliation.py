@@ -1,9 +1,12 @@
+from missing_gui_integration import project_history as gui_history, current_hash as gui_hash
 from hopper_fidelity_integration import current_hash as hopper_current_hash
 from solar_cell_integration import project_history as solar_cell_history, current_hash as solar_cell_current_hash
 """Exact additive Freezer V5 reconciliation. Historical main pins are not rewritten."""
 import hashlib
 import json
 from factory_tooltip_integration import current_hash as factory_current_hash
+from thermal_single_stage_projection import project_historical_if_candidate
+from prism_210_history_projection import expected_current_sha256
 
 LAYER = 'freezer_v5_reconciliation'
 RECORD_SHA256 = 'b4c91dcd9553c8d1af5af02846299c6dda5505622d9ed0caa956ea1e597c980b'
@@ -41,7 +44,8 @@ def assert_freezer_v5_reconciliation(root, manifest):
     assert hashlib.sha256(json.dumps(diagnostic, sort_keys=True, separators=(',', ':')).encode()).hexdigest() == DIAGNOSTIC_RECORD_SHA256, 'Legacy diagnostic record changed'
     for path, hashes in FILES.items():
         assert record['files'][path] == hashes, path
-        data = solar_cell_history(path, (root / path).read_bytes())
+        raw = (root / path).read_bytes()
+        data = solar_cell_history(path, gui_history(path, project_historical_if_candidate(path, raw)))
         if path == ACTIVATION_PATH:
             assert hashlib.sha256(data).hexdigest() == DIAGNOSTIC_SHA256, path
             text = data.decode()
@@ -54,8 +58,19 @@ def assert_freezer_v5_reconciliation(root, manifest):
         assert hashlib.sha256(data).hexdigest() == hashes['integrated_sha256'], path
 
 
-def current_hash(path, historical_hash):
+def historical_digest(path, prior_digest):
+    """Return the exact layered digest before the local #210-only projection."""
     if path not in FILES:
-        return hopper_current_hash(path, factory_current_hash(path, historical_hash))
-    assert historical_hash == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
-    return solar_cell_current_hash(path, DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256'])
+        current = hopper_current_hash(path, factory_current_hash(path, prior_digest))
+        integrated = current if path in {"src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java",
+                    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java"} else gui_hash(path, current)
+        return integrated
+    assert prior_digest == FILES[path]['main_sha256'], 'Unexpected Freezer V5 baseline: ' + path
+    integrated = gui_hash(path, solar_cell_current_hash(path, DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else FILES[path]['integrated_sha256']))
+    return integrated
+
+
+def current_hash(path, historical_hash):
+    """Resolve the pinned current candidate without changing historical identities."""
+    layered = historical_digest(path, historical_hash)
+    return expected_current_sha256(path) or layered

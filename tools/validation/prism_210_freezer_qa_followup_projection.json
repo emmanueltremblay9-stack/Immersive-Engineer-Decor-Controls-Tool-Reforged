@@ -1,0 +1,330 @@
+{
+  "schema": "iedctr-prism-freezer-qa-followup-v1",
+  "base_commit": "a5723c09d735bf5500586737c8a04ae97ff63e60",
+  "files": {
+    ".github/workflows/milking-packaged-native.yml": {
+      "old_sha256": "b6d00c91973cb70e2e625a005e80474736b0c131170e2c201ba2b54c0dbdbda5",
+      "new_sha256": "bd2875ed5d3c40f4dbdd96322ab7d7c71ed0b50460e177d04b56b84dd20424ee",
+      "hunks": [
+        {
+          "start": 63,
+          "end": 64,
+          "current": "          python tools/validation/milking_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log\n",
+          "previous": "          python tools/validation/milking_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5 --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log\n"
+        },
+        {
+          "start": 74,
+          "end": 75,
+          "current": "          echo 'Ordinary candidate JAR hash must match c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
+          "previous": "          echo 'Ordinary candidate JAR hash must match 3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n"
+        }
+      ]
+    },
+    ".github/workflows/smelter-packaged-native.yml": {
+      "old_sha256": "3f4b2542e354ccc06c0282ffb49f5e1f52488a1d2d26d107042829f0d1e47bc3",
+      "new_sha256": "d790cfdba69583f4084dcf17f1333f322ad1b3f758488fcacfc1b89836108d2f",
+      "hunks": [
+        {
+          "start": 62,
+          "end": 63,
+          "current": "          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log\n",
+          "previous": "          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5 --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log\n"
+        },
+        {
+          "start": 73,
+          "end": 74,
+          "current": "          echo 'Ordinary candidate JAR hash must match c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
+          "previous": "          echo 'Ordinary candidate JAR hash must match 3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n"
+        }
+      ]
+    },
+    ".github/workflows/tfc-packaged-native.yml": {
+      "old_sha256": "6a43a4a2b475a0c1c6bea5adfb5ea9a68ba8a65ef5eb8063f2c9282d14ddf3be",
+      "new_sha256": "d9e6899d04d5efb9e5d560c538f01f8ddb6f632b75aee9dde00ac0ae5e8f6d0c",
+      "hunks": [
+        {
+          "start": 71,
+          "end": 72,
+          "current": "          echo 'Ordinary candidate JAR hash must match c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
+          "previous": "          echo 'Ordinary candidate JAR hash must match 3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n"
+        }
+      ]
+    },
+    "gradle/tfc-packaged-validation.gradle": {
+      "old_sha256": "c9d76165af27cf2ae0432e904cabf8351870f6349204254b1455f4189284e1e1",
+      "new_sha256": "067bfb7cd305de34ec8fdb73541ff7281dd33fbd13e394f35948c25aa4dc136c",
+      "hunks": [
+        {
+          "start": 62,
+          "end": 63,
+          "current": "            if (sha256(jarFile) != 'c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe') {\n",
+          "previous": "            if (sha256(jarFile) != '3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5') {\n"
+        }
+      ]
+    },
+    "src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java": {
+      "old_sha256": "37a813387c41a62a5a6e7b258159dff95b809bf6d5b5c3db98a704faa9bc5b6c",
+      "new_sha256": "44872fe9010f9241dbbdefa12f63d60eb9c3210a4fe837c496a4b5c36c745536",
+      "hunks": [
+        {
+          "start": 52,
+          "end": 57,
+          "current": "    // Slot positions and occupied stacks are distinct facts: the Lab Furnace\n    // menu has 47 positions, while this fixture presents 5 machine stacks plus\n    // the 36 player inventory stacks (41 total).\n    private static final int[] EXPECTED_OCCUPIED_SLOTS={54,0,0,0,0,51,41};\n    private static final int[] EXPECTED_OCCUPIED_MACHINE_SLOTS={18,0,0,0,0,15,5};\n",
+          "previous": ""
+        },
+        {
+          "start": 140,
+          "end": 143,
+          "current": "                                if(menu.slots.stream().filter(slot->slot.hasItem()).count()!=EXPECTED_OCCUPIED_SLOTS[caseIndex])return false;\n                                long occupiedMachine=menu.slots.subList(0,menu.visibleMachineSlots()).stream().filter(slot->slot.hasItem()).count();\n                                if(occupiedMachine!=EXPECTED_OCCUPIED_MACHINE_SLOTS[caseIndex])return false;\n",
+          "previous": "                                if(menu.slots.stream().filter(slot->slot.hasItem()).count()!=EXPECTED_TOTAL_SLOTS[caseIndex])return false;\n"
+        },
+        {
+          "start": 154,
+          "end": 155,
+          "current": "                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],\"Factory Study V3 occupied-stack fixture changed during capture\");\n",
+          "previous": "                        require(occupied==EXPECTED_TOTAL_SLOTS[index],\"Factory Study V3 inventory changed during capture\");\n"
+        },
+        {
+          "start": 157,
+          "end": 160,
+          "current": "                        long occupiedMachine=activeMenu.slots.subList(0,activeMenu.visibleMachineSlots()).stream().filter(slot->slot.hasItem()).count();\n                        if(EXPECTED_MACHINE_SLOTS[index]>0)\n                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],\"Factory Study V3 machine-stack fixture changed during capture\");\n",
+          "previous": ""
+        },
+        {
+          "start": 162,
+          "end": 163,
+          "current": "                        obs.addProperty(\"visible_nonempty_machine_slots\",occupiedMachine);\n",
+          "previous": ""
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java": {
+      "old_sha256": "bcd05d032796b4aba5a3b7dd5c42e7546f9b24e5d6734d2a08887ee815e185aa",
+      "new_sha256": "8d692d0171f6e9490a213ba23ea67e2bd0b1f7b61150a1ff096cf27ad3794aca",
+      "hunks": [
+        {
+          "start": 83,
+          "end": 84,
+          "current": "   private static int renderingEnergy;\n",
+          "previous": ""
+        },
+        {
+          "start": 356,
+          "end": 357,
+          "current": "      renderingEnergy = menu.energyStored();\n",
+          "previous": ""
+        },
+        {
+          "start": 366,
+          "end": 367,
+          "current": "         || menu.freezerProgressTicks() != renderingProgress || menu.energyStored() != renderingEnergy) {\n",
+          "previous": "         || menu.freezerProgressTicks() != renderingProgress) {\n"
+        },
+        {
+          "start": 375,
+          "end": 380,
+          "current": "      // Energy and progress are synchronized through separate ContainerData\n      // entries. Capture only after both values describe the same server tick.\n      int expectedEnergy = phase == 0 ? 0\n         : 1440 - renderingProgress * (1440 / MachineBlockEntity.FREEZER_PROCESS_TICKS);\n      if (renderingEnergy != expectedEnergy) { frostStableFrames = 0; return; }\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/freezer_packaged_native.py": {
+      "old_sha256": "07de867eda5c15421a97e63421aad3241590b5fc6e65d6aedacb0cc4cb13bd55",
+      "new_sha256": "bf0ea2a9acd3cf7ee0238146056934bf4a6b146ed5ea59a0e6eb627c46acb0f8",
+      "hunks": [
+        {
+          "start": 28,
+          "end": 49,
+          "current": "def gameplay_result_diagnostic(game: Path, logs: str) -> str | None:\n    \"\"\"Prefer the client gameplay failure stage over a later missing success proof.\"\"\"\n    path = game / \"client-gameplay-result.json\"\n    if not path.is_file():\n        stages = re.findall(r\"IEDCTR_CLIENT_GAMEPLAY FAILED at ([A-Z_]+)\", logs)\n        if stages:\n            return f\"client-gameplay-result.json missing; client reported failure at stage {stages[-1]}\"\n        return \"client-gameplay-result.json missing and no terminal gameplay stage was logged\"\n    try:\n        result = json.loads(path.read_text(encoding=\"utf-8\"))\n    except (OSError, json.JSONDecodeError) as error:\n        return f\"client-gameplay-result.json is unreadable: {error}\"\n    if result.get(\"status\") != \"passed\":\n        stage = result.get(\"phase\", \"unknown\")\n        error = result.get(\"error\", \"no client error recorded\")\n        return f\"client gameplay status={result.get('status')!r} at stage {stage}: {error}\"\n    return None\n\n\ndef require_client_success(code, expired, log, game: Path, logs: str):\n    \"\"\"Report process/stage failure before attempting to read success-only evidence.\"\"\"\n",
+          "previous": "def require_client_success(code, expired, log):\n    \"\"\"Report the process failure before attempting to read absent evidence.\"\"\"\n"
+        },
+        {
+          "start": 50,
+          "end": 61,
+          "current": "        diagnostic = gameplay_result_diagnostic(game, logs)\n        detail = f\"; {diagnostic}\" if diagnostic else \"\"\n        raise SmokeFailure(\n            f\"Freezer packaged client failed (exit={code}, timeout={expired}){detail}; inspect {log}\"\n        )\n\n\ndef require_gameplay_result(game: Path, logs: str):\n    diagnostic = gameplay_result_diagnostic(game, logs)\n    if diagnostic:\n        raise SmokeFailure(diagnostic)\n",
+          "previous": "        raise SmokeFailure(f\"Freezer packaged client failed (exit={code}, timeout={expired}); inspect {log}\")\n"
+        },
+        {
+          "start": 151,
+          "end": 151,
+          "current": "",
+          "previous": "        require_client_success(code, expired, log)\n"
+        },
+        {
+          "start": 156,
+          "end": 158,
+          "current": "        require_client_success(code, expired, log, game, logs)\n        require_gameplay_result(game, logs)\n",
+          "previous": ""
+        },
+        {
+          "start": 160,
+          "end": 165,
+          "current": "        proof_path = game / \"client-freezer-reference-result.json\"\n        if not proof_path.is_file():\n            raise SmokeFailure(\"Freezer reference success proof missing after client gameplay passed; inspect \" + str(log))\n        proof = json.loads(proof_path.read_text(encoding=\"utf-8\"))\n        main_proof = json.loads((game / \"client-gameplay-result.json\").read_text(encoding=\"utf-8\"))\n",
+          "previous": "        proof = json.loads((game / \"client-freezer-reference-result.json\").read_text())\n        main_proof = json.loads((game / \"client-gameplay-result.json\").read_text())\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_reference_native.py": {
+      "old_sha256": "dcc33cd5e22f2a78aee0040cabde49dcfdc657a41b1e7b49e00d4c61e421fa9f",
+      "new_sha256": "a13e0f7827bae75c2604d03cd924969d802f3d3cef7311721a8735af56ed059c",
+      "hunks": [
+        {
+          "start": 205,
+          "end": 218,
+          "current": "            if capture.get(\"width\") != width or capture.get(\"height\") != height:\n                raise SmokeFailure(\n                    f\"Natural frost frame dimensions differ at phase={phase}, progress={ticks}: \"\n                    f\"expected {width}x{height}, got {capture.get('width')}x{capture.get('height')}\"\n                )\n            if type(capture.get(\"energy\")) is not int:\n                raise SmokeFailure(f\"Natural frost FE is not an integer at phase={phase}, progress={ticks}\")\n            expected_energy = 0 if phase == 0 else 1440 - 8 * ticks\n            if capture[\"energy\"] != expected_energy:\n                raise SmokeFailure(\n                    f\"Natural frost FE mismatch at phase={phase}, progress={ticks}: \"\n                    f\"expected {expected_energy} FE from the 1440 FE recipe, got {capture['energy']} FE\"\n                )\n",
+          "previous": "            if (capture.get(\"width\") != width or capture.get(\"height\") != height\n                    or type(capture.get(\"energy\")) is not int\n                    or (phase > 0 and capture.get(\"energy\") != 1440 - 8 * ticks)\n                    or (phase == 0 and capture.get(\"energy\") != 0)):\n                raise SmokeFailure(\"Natural frost capture dimensions/real FE differ\")\n"
+        }
+      ]
+    },
+    "tools/validation/gui_album_three.py": {
+      "old_sha256": "81e3dd83e1de541cc849b7f7754e5b96301200bb082ab43478bb7522e29f257b",
+      "new_sha256": "eb356333de82cf8e92b26b5b2e68cf141208e6f24a54b9df50dab14f15437f75",
+      "hunks": [
+        {
+          "start": 37,
+          "end": 38,
+          "current": "V3_OCCUPIED_SLOTS = {0: (18, 54), 5: (15, 51), 6: (5, 41)}\n",
+          "previous": ""
+        },
+        {
+          "start": 103,
+          "end": 106,
+          "current": "            machine_occupied,total_occupied=V3_OCCUPIED_SLOTS[index]\n            require(row.get('visible_nonempty_machine_slots')==machine_occupied,'Wrong V3 occupied machine stack count')\n            require(row.get('visible_nonempty_slots')==total_occupied,'V3 GUI occupied-stack count differs')\n",
+          "previous": "            require(row.get('visible_nonempty_slots')==total_slots,'V3 GUI does not show every expected slot item')\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_packaged_driver.py": {
+      "old_sha256": "1d8f7edef8675541c02e10c1975a208cdadb808b93be44b3055dfa3cb1701929",
+      "new_sha256": "895c72afbc827379341cf506e2e0221605d10b84f73f8de85cdd33fbcc21ce3e",
+      "hunks": [
+        {
+          "start": 2,
+          "end": 4,
+          "current": "import json\nimport tempfile\n",
+          "previous": ""
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "current": "from freezer_packaged_native import gameplay_result_diagnostic, require_client_success, require_gameplay_result\n",
+          "previous": "from freezer_packaged_native import require_client_success\n"
+        },
+        {
+          "start": 23,
+          "end": 29,
+          "current": "        with tempfile.TemporaryDirectory() as directory:\n            game=Path(directory)\n            require_client_success(0,False,Path('/missing/log'),game,'')\n            for code,expired in [(1,False),(0,True),(None,True),(False,False)]:\n                with self.subTest(code=code,expired=expired),self.assertRaisesRegex(SmokeFailure,'Freezer packaged client failed'):\n                    require_client_success(code,expired,Path('/missing/log'),game,'')\n",
+          "previous": "        require_client_success(0,False,Path('/missing/log'))\n        for code,expired in [(1,False),(0,True),(None,True),(False,False)]:\n            with self.subTest(code=code,expired=expired),self.assertRaisesRegex(SmokeFailure,'Freezer packaged client failed'):\n                require_client_success(code,expired,Path('/missing/log'))\n"
+        },
+        {
+          "start": 30,
+          "end": 32,
+          "current": "        self.assertLess(source.index('        require_client_success(code, expired, log, game, logs)'),source.index('        proof = json.loads'))\n        self.assertLess(source.index('        require_gameplay_result(game, logs)'),source.index('        proof = json.loads'))\n",
+          "previous": "        self.assertLess(source.index('        require_client_success(code, expired, log)'),source.index('        proof = json.loads'))\n"
+        },
+        {
+          "start": 33,
+          "end": 61,
+          "current": "\n    def test_gameplay_failure_stage_is_reported_before_missing_success_proof(self):\n        with tempfile.TemporaryDirectory() as directory:\n            game=Path(directory)\n            logs='IEDCTR_CLIENT_GAMEPLAY FAILED at OPEN_FREEZER\\n'\n            diagnostic=gameplay_result_diagnostic(game,logs)\n            self.assertEqual(diagnostic,\n                'client-gameplay-result.json missing; client reported failure at stage OPEN_FREEZER')\n            with self.assertRaisesRegex(SmokeFailure,'stage OPEN_FREEZER'):\n                require_gameplay_result(game,logs)\n            with self.assertRaisesRegex(SmokeFailure,'stage OPEN_FREEZER'):\n                require_client_success(1,False,Path('/missing/log'),game,logs)\n\n    def test_gameplay_json_reports_actual_failed_phase_and_error(self):\n        with tempfile.TemporaryDirectory() as directory:\n            game=Path(directory)\n            (game/'client-gameplay-result.json').write_text(json.dumps(\n                {'status':'failed','phase':'WAIT_FOR_MENU','error':'server menu acknowledgement timed out'}))\n            diagnostic=gameplay_result_diagnostic(game,'')\n            self.assertEqual(diagnostic,\n                \"client gameplay status='failed' at stage WAIT_FOR_MENU: server menu acknowledgement timed out\")\n\n    def test_missing_gameplay_json_without_stage_has_explicit_cause(self):\n        with tempfile.TemporaryDirectory() as directory:\n            game=Path(directory)\n            diagnostic=gameplay_result_diagnostic(game,'Minecraft client closed without terminal gameplay marker')\n            self.assertEqual(diagnostic,\n                'client-gameplay-result.json missing and no terminal gameplay stage was logged')\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_freezer_render_sync.py": {
+      "old_sha256": "668f5006ab4e52a44f19c6454c8f0a1567b8e6cfb907dbca5b64fd358c7b877b",
+      "new_sha256": "2dc3d57d7254b4c306f146f38d8d252c3949cd196aeca8043f99e768a9419362",
+      "hunks": [
+        {
+          "start": 40,
+          "end": 42,
+          "current": "        pre = source[source.index('public static void beforeFrostRender'):source.index('@SubscribeEvent\\n   public static void afterFrostRender')]\n        self.assertIn('renderingEnergy = menu.energyStored()', pre)\n",
+          "previous": ""
+        },
+        {
+          "start": 45,
+          "end": 48,
+          "current": "        self.assertIn('menu.energyStored() != renderingEnergy', post)\n        self.assertIn('1440 - renderingProgress * (1440 / MachineBlockEntity.FREEZER_PROCESS_TICKS)', post)\n        self.assertIn('renderingEnergy != expectedEnergy', post)\n",
+          "previous": ""
+        }
+      ]
+    },
+    "tools/validation/test_gui_album_three.py": {
+      "old_sha256": "fb3cb35d2dda93930e8f7ece6953fc43bc89125a263526a6353e81dbaa32c964",
+      "new_sha256": "54fc478561cd539b1455389f0af940d57104cd092bc0a6d4347b0464da6f62fc",
+      "hunks": [
+        {
+          "start": 4,
+          "end": 5,
+          "current": "from gui_album_three import validate, validate_selection_pixels, v3_outline, CASES, SCREENS, V3_LAYOUTS, V3_OCCUPIED_SLOTS, SmokeFailure\n",
+          "previous": "from gui_album_three import validate, validate_selection_pixels, v3_outline, CASES, SCREENS, V3_LAYOUTS, SmokeFailure\n"
+        },
+        {
+          "start": 16,
+          "end": 19,
+          "current": "        self.proof['cases'][0]['visible_nonempty_machine_slots']=18\n        self.proof['cases'][5].update(visible_nonempty_slots=51,visible_machine_slots=15,total_menu_slots=51,\n                                      visible_nonempty_machine_slots=15)\n",
+          "previous": "        self.proof['cases'][5].update(visible_nonempty_slots=51,visible_machine_slots=15,total_menu_slots=51)\n"
+        },
+        {
+          "start": 20,
+          "end": 22,
+          "current": "        self.proof['cases'][6].update(visible_nonempty_slots=41,visible_machine_slots=11,total_menu_slots=47,\n                                      visible_nonempty_machine_slots=5)\n",
+          "previous": "        self.proof['cases'][6].update(visible_nonempty_slots=47,visible_machine_slots=11,total_menu_slots=47)\n"
+        },
+        {
+          "start": 58,
+          "end": 60,
+          "current": "        for index,key,value in ((0,'visible_machine_slots',17),(5,'total_menu_slots',50),\n                                (6,'visible_nonempty_slots',40),(6,'visible_nonempty_machine_slots',4)):\n",
+          "previous": "        for index,key,value in ((0,'visible_machine_slots',17),(5,'total_menu_slots',50),(6,'visible_nonempty_slots',46)):\n"
+        },
+        {
+          "start": 70,
+          "end": 71,
+          "current": "        self.assertEqual(V3_OCCUPIED_SLOTS,{0:(18,54),5:(15,51),6:(5,41)})\n",
+          "previous": ""
+        },
+        {
+          "start": 76,
+          "end": 78,
+          "current": "                      'activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index]','EXPECTED_OCCUPIED_SLOTS',\n                      'EXPECTED_OCCUPIED_MACHINE_SLOTS','visible_nonempty_machine_slots','FactoryStudyScreen'):\n",
+          "previous": "                      'activeMenu.slots.size()==EXPECTED_TOTAL_SLOTS[index]','FactoryStudyScreen'):\n"
+        }
+      ]
+    },
+    "tools/validation/test_tfc_packaged_driver.py": {
+      "old_sha256": "e4d8c78bca2baa2cfba28f6d2eee2e55efa3a439b5617f0f83aad105e5b806c2",
+      "new_sha256": "4ed9c8d8d07d90b6ae0f1fa5848bb106d16b66cae3f8eef2fb5aa8a3f1fd352a",
+      "hunks": [
+        {
+          "start": 26,
+          "end": 27,
+          "current": "        self.assertIn('c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe',g)\n",
+          "previous": "        self.assertIn('3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5',g)\n"
+        }
+      ]
+    },
+    "tools/validation/tfc_packaged_mooshroom_native.py": {
+      "old_sha256": "6539635d0a0f709ead497aedd865f8dda161da5f72cb19c367e1ceaaaba9ac9a",
+      "new_sha256": "fb9db41270c4524ea45175eeb69889e8dae37b9a95a9b932bed37d98fb3fcf9d",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "current": "EXPECTED_JAR='c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe'\n",
+          "previous": "EXPECTED_JAR='3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5'\n"
+        }
+      ]
+    },
+    "tools/validation/tfc_packaged_recovery_native.py": {
+      "old_sha256": "e33c391d30cf6214215edd3cde653d731f794a2265066d860aa73b99cd22275f",
+      "new_sha256": "d4608776dbf9e94c5baec4435361d88f6eb2f4d1744882754742c44552f6afd7",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "current": "EXPECTED_JAR='c7da0d9e5cfb26d47100483b5a1955a7e7e2784c7225fe0913a2760d9aa2c3fe'\n",
+          "previous": "EXPECTED_JAR='3749568d16ecae74d2fcbc68e84fe86410698da1ce6191ead42efc5c4cf3e3e5'\n"
+        }
+      ]
+    }
+  }
+}

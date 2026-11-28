@@ -56,9 +56,9 @@ public final class BlockBreakerPackagedValidation {
     private static final BlockPos POS = new BlockPos(0, 80, 0);
     private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.";
     private static final String TITLE = "block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker";
-    private static final int[][] POINTS = {{128,14},{200,55},{200,75},{40,110},{40,75},{115,100},{128,140}};
+    private static final int[][] POINTS = {{136,20},{220,52},{219,72},{68,135},{60,73},{130,106},{129,137}};
     private static final String[] NAMES = {"title","energy","fluid","power","target","scene","work"};
-    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, WORK, PICKED, RETURNED }
+    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, WORK, PICK_MOVE, PICKED, RETURN_MOVE, RETURNED }
     private static Stage stage = Stage.BOOT;
     private static boolean complete, tooltipInFrame;
     private static int ticks, hoverIndex, tooltipFrames, pointerX, pointerY;
@@ -137,7 +137,8 @@ public final class BlockBreakerPackagedValidation {
                     default -> Component.translatable(PREFIX + "cost.per_block", 240).getString();
                 };
                 require(actual.contains(expected), "Actual native translated tooltip differs: " + actual + " / " + expected);
-                require(observed.get("in_bounds").getAsBoolean(), "Tooltip clipped");
+                require(observed.get("in_bounds").getAsBoolean(), "Tooltip clipped at " + NAMES[hoverIndex]
+                    + " in " + screen.width + "x" + screen.height + ": " + observed);
                 capture(mc, NAMES[hoverIndex], observed);
                 if (++hoverIndex < POINTS.length) { ticks = 0; setHover(mc, screen); return; }
                 pending = mc.getSingleplayerServer().submit(() -> {
@@ -148,14 +149,20 @@ public final class BlockBreakerPackagedValidation {
             if (stage == Stage.WORK) {
                 if (ticks < 45 || !dirt(menu.getSlot(0).getItem()) || menu.energyStored() != 0 || !matches(mc, p ->
                     workComplete(p))) return;
-                capture(mc, "worked", null); clickSlot(screen, menu, 0); enter(Stage.PICKED); return;
+                capture(mc, "worked", null); aimAtSlot(screen, menu, 0); enter(Stage.PICK_MOVE); return;
+            }
+            if (stage == Stage.PICK_MOVE || stage == Stage.RETURN_MOVE) {
+                if (!atPointer(mc, screen)) { move(mc, screen); return; }
+                if (ticks < 8) return;
+                nativeClick(1);
+                enter(stage == Stage.PICK_MOVE ? Stage.PICKED : Stage.RETURNED); return;
             }
             if (stage == Stage.PICKED) {
                 if (ticks < 8 || !menu.getSlot(0).getItem().isEmpty() || !dirt(menu.getCarried()) || !matches(mc, p ->
                     machine.isEmpty() && dirt(p.containerMenu.getCarried()) && noDropsAndEmptyInventory(p)
                         && !p.containerMenu.getSlot(0).mayPlace(p.containerMenu.getCarried()))) return;
                 pickupAcks++; returnMenuSlot = playerReturnSlot(menu, mc.player.getInventory(), menu.getCarried());
-                clickSlot(screen, menu, returnMenuSlot); enter(Stage.RETURNED); return;
+                aimAtSlot(screen, menu, returnMenuSlot); enter(Stage.RETURN_MOVE); return;
             }
             if (stage == Stage.RETURNED) {
                 if (ticks < 8 || !menu.getSlot(0).getItem().isEmpty() || !menu.getCarried().isEmpty()
@@ -249,10 +256,11 @@ public final class BlockBreakerPackagedValidation {
         }
         throw new IllegalStateException("No empty insertable player-inventory slot");
     }
-    private static void clickSlot(MachineScreen screen, MachineMenu menu, int slotIndex) {
-        var slot = menu.getSlot(slotIndex); double x = (screen.width-menu.layout().imageWidth())/2 + slot.x + 8;
-        double y = (screen.height-menu.layout().imageHeight())/2 + slot.y + 8;
-        pointerX=(int)x;pointerY=(int)y;move(Minecraft.getInstance(),screen);nativeClick(1);
+    private static void aimAtSlot(MachineScreen screen, MachineMenu menu, int slotIndex) {
+        var slot = menu.getSlot(slotIndex);
+        pointerX = screen.getGuiLeft() + slot.x + 8;
+        pointerY = screen.getGuiTop() + slot.y + 8;
+        move(Minecraft.getInstance(), screen);
     }
     private static void nativeClick(int button) {
         require(xtest.getFunction("XTestFakeButtonEvent").invokeInt(new Object[]{display,button,1,new NativeLong(0)}) != 0,"Native button press failed");
@@ -260,8 +268,8 @@ public final class BlockBreakerPackagedValidation {
         x11.getFunction("XFlush").invokeInt(new Object[]{display});
     }
     private static void setHover(Minecraft mc, MachineScreen screen) {
-        pointerX = (screen.width-((MachineMenu)mc.player.containerMenu).layout().imageWidth())/2 + POINTS[hoverIndex][0];
-        pointerY = (screen.height-((MachineMenu)mc.player.containerMenu).layout().imageHeight())/2 + POINTS[hoverIndex][1];
+        pointerX = screen.getGuiLeft() + POINTS[hoverIndex][0];
+        pointerY = screen.getGuiTop() + POINTS[hoverIndex][1];
         tooltipFrames = 0; observed = null; move(mc,screen);
     }
     private static void move(Minecraft mc, MachineScreen screen) {

@@ -1,3 +1,4 @@
+from missing_gui_integration import project_history as gui_history
 """Fail-closed checks for the additive PR164/current-main integration record."""
 import copy
 import hashlib
@@ -30,7 +31,7 @@ class FreezerV5ReconciliationTests(unittest.TestCase):
         for path, hashes in FILES.items():
             from solar_cell_integration import project_history
             expected_historical = DIAGNOSTIC_SHA256 if path == ACTIVATION_PATH else hashes['integrated_sha256']
-            self.assertEqual(expected_historical, hashlib.sha256(project_history(path, self.bytes[path])).hexdigest())
+            self.assertEqual(expected_historical, hashlib.sha256(project_history(path, gui_history(path, self.bytes[path]))).hexdigest())
             self.assertEqual(hashlib.sha256(self.bytes[path]).hexdigest(), current_hash(path, hashes['main_sha256']))
             with self.assertRaises(AssertionError):
                 current_hash(path, '0' * 64)
@@ -93,13 +94,18 @@ class FreezerV5ReconciliationTests(unittest.TestCase):
                         self.check(changed)
 
     def test_menu_tail_requires_exact_freezer_accessor_and_reserved_slot(self):
-        from tree_integration_preservation import assert_menu_tail_preserved, V5_ACCESSOR, V5_RESERVED_SLOT
+        from tree_integration_preservation import (
+            _assert_historical_menu_tail, assert_menu_tail_preserved,
+            MACHINE_MENU, V5_ACCESSOR, V5_RESERVED_SLOT,
+        )
+        from thermal_single_stage_projection import project_historical_if_candidate
         source = (ROOT / 'src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java').read_text()
         assert_menu_tail_preserved(source)
+        historical = gui_history(MACHINE_MENU, project_historical_if_candidate(MACHINE_MENU, source.encode())).decode()
         for fragment in (V5_ACCESSOR, V5_RESERVED_SLOT):
             for replacement in ('', fragment * 2, fragment.replace('freezerReferencePresentation', 'true')):
                 with self.subTest(fragment=fragment, replacement=replacement), self.assertRaises(AssertionError):
-                    assert_menu_tail_preserved(source.replace(fragment, replacement))
+                    _assert_historical_menu_tail(historical.replace(fragment, replacement))
 
 if __name__ == '__main__':
     unittest.main()

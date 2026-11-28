@@ -40,6 +40,16 @@ class RuntimeTests(unittest.TestCase):
     def test_valid_runtime(self):
         self.check()
 
+    def test_runtime_gate_pins_the_registered_thermal_screen_and_its_layers(self):
+        self.assertIn('com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen', CLASSES)
+        self.assertNotIn('com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen', CLASSES)
+        self.assertEqual(set(TEXTURES), {
+            'textures/gui/thermal_vertical/smelter/neutral.png',
+            'textures/gui/thermal_vertical/smelter/effect.png',
+            'textures/gui/thermal_vertical/smelter/energy.png',
+        })
+        self.assertEqual(len(self.proof['packaged_runtime']['active_textures']), 3)
+
 
     def test_selector_absence_is_mandatory(self):
         for field,value in [('production_selectors',None),('production_selectors',['iedctr.dev.smelterV2Reference=true']),('opt_in_selector',None),('opt_in_selector','iedctr.dev.smelterV2Reference=false'),('production_selectors_absent',False)]:

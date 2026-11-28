@@ -1,0 +1,965 @@
+{
+  "schema_version": 1,
+  "scope": "Fourteen existing GUI backgrounds: exterior alpha only; original RGB, dimensions, interior RGBA and coordinates preserved.",
+  "repository": "emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged",
+  "parent_commit": "09c8a0e8ebb231dd399a525d615c9eedc6516dc4",
+  "source_archive_sha256": "36f61dcb839832b85e312ca559b88dafa96d1759c3f8722a108cbcc196e95c3c",
+  "alpha_package_sha256": "aff072307d4f348c40080e55957a481eed42b2727052d953cb68936a1d026294",
+  "gov": {
+    "repository": "emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-GPT",
+    "ref": "1b50dd50a0698c4da3f87aaf99358748d7597a3e",
+    "files": [
+      {
+        "path": "README.md",
+        "version": "0.3.0",
+        "bytes": 4640,
+        "sha256": "85fa1eeb4c49c8598b98d1c4634c408092b2793ddd2c5186fb438b55686ff284",
+        "integrity": "PASS"
+      },
+      {
+        "path": "SOURCE_MANIFEST.json",
+        "version": null,
+        "bytes": 5940,
+        "sha256": "7d5a0876eb081a2e60226992d8b4c2a76b6273f1f596a1c0381bc74eba4a9407",
+        "integrity": "PASS"
+      },
+      {
+        "path": "PROJECT_PROFILE.json",
+        "version": "0.2.0",
+        "bytes": 1436,
+        "sha256": "3f256d3fc60f1789db41ae13c41d1e1a804eece1e7e1951503bb247bae3f32ce",
+        "integrity": "PASS"
+      },
+      {
+        "path": "sources/ROLE_AND_AUTHORITY.md",
+        "version": "0.2.0",
+        "bytes": 3814,
+        "sha256": "66af197bd9d522e12694d4a4f3750fd788e411f8864b395ca0202a7dcdbfb337",
+        "integrity": "PASS"
+      },
+      {
+        "path": "sources/MINECRAFT_GRAPHIC_WORKFLOW.md",
+        "version": "0.1.0",
+        "bytes": 8400,
+        "sha256": "75d7e6ad5b3a19d5224fd2d7616e02f21146f8251c654d901afc7f3aec34da92",
+        "integrity": "PASS"
+      },
+      {
+        "path": "sources/QA_AND_ACCEPTANCE.md",
+        "version": "0.3.0",
+        "bytes": 5845,
+        "sha256": "20249823c6afa3d8e8c335b67b58bae49800e59ab3da8ac4380f4eb622f95a04",
+        "integrity": "PASS"
+      },
+      {
+        "path": "sources/PLATFORM_PROFILES.md",
+        "version": "0.3.0",
+        "bytes": 5850,
+        "sha256": "815a158c6ef7bcf730db79f879194ce0d3e99c126014423d495dca9cc395ae20",
+        "integrity": "PASS"
+      }
+    ]
+  },
+  "excluded": [
+    "Factory Dropper",
+    "Factory Hopper",
+    "Small Lab Furnace",
+    "Small Mineral Smelter"
+  ],
+  "historical_native_evidence": "NOT_TRANSFERRED",
+  "new_minecraft_runtime": "NOT_PERFORMED_LOCALLY",
+  "textures": {
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png": {
+      "name": "Factory Placer",
+      "source_version": "V2",
+      "source_sha256": "ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b",
+      "output_sha256": "bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "rgb_decoded_sha256": "4b9067d9f10f3ef6b31020e4a0e204148aa889146685a900dca89353883dd372",
+      "rgba_decoded_sha256": "bb86c9d32508ba899dffaa4c7aebe463bf6871ced2e80d6b5bd5c862101b8497",
+      "alpha_sha256": "f6c69e6a81b84b4593cda845b7b144fb2b296c995cea0650f1957b5944fecdbf",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1374245,
+      "alpha_changed_pixels": 198843,
+      "alpha_zero_pixels": 125154,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1/background.png": {
+      "name": "Small Milking Machine",
+      "source_version": "V1 raccordée",
+      "source_sha256": "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b",
+      "output_sha256": "1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "440ee28fcb0fde01eb399fefdcd43057962f514ce446b0a89c08eab124003aef",
+      "rgba_decoded_sha256": "2a4a5be701e5feafab939d770db628956411fb210f1c33cd3a427d8bb9023ae3",
+      "alpha_sha256": "81c164e06af69eb191409d9a580ea922c733555deeb44f0516e8bf4b517d0c50",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1405833,
+      "alpha_changed_pixels": 166683,
+      "alpha_zero_pixels": 87709,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/block_breaker_rp_v3/background.png": {
+      "name": "Small Block Breaker",
+      "source_version": "V3 du main",
+      "source_sha256": "2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d",
+      "output_sha256": "0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "f016b391f6c3fedb5761d9c6424f1d79cad21138aa9570ba6cd7f85dfdecc464",
+      "rgba_decoded_sha256": "576988593a5e491d8ff6b297b78663bf1ac4a4caf2689fb69c28902e03375097",
+      "alpha_sha256": "ba83df901a0f34a543310714a1abce0622b5d5de426fdf420557f7b15134b793",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1480827,
+      "alpha_changed_pixels": 91689,
+      "alpha_zero_pixels": 23172,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/background.png": {
+      "name": "Small Water Freezer",
+      "source_version": "V5 live-energy",
+      "source_sha256": "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46",
+      "output_sha256": "e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "88f55f8f3fe01cb1b0948b678fb86d0ebd8bb0d0ca80c5df0011e8f5006194fa",
+      "rgba_decoded_sha256": "d89ce345897559c9b1a4de0ba5a39c320cf05e0d919a508d55cc8a558ae51f9e",
+      "alpha_sha256": "8f8e4b7e00b14b63cd9c2f5c04aa9c4198b41efa05af23489838f8efe5406a2a",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1493447,
+      "alpha_changed_pixels": 79069,
+      "alpha_zero_pixels": 22490,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png": {
+      "name": "Small Solar Panel",
+      "source_version": "V2",
+      "source_sha256": "d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796",
+      "output_sha256": "c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "7b25e697a6d3fbe6d33e9fcff8b281b976b91e49d8c835295756688ed3b54542",
+      "rgba_decoded_sha256": "e8acb4e3c299cf49db275d081d31f5d51c3aea18a24d118fa8f57ec1cfdec3fe",
+      "alpha_sha256": "a722eb39238f3db1083888ea8c111aee1cc06b22d80d84071cd3b1948ac48ea5",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1481485,
+      "alpha_changed_pixels": 91031,
+      "alpha_zero_pixels": 27578,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png": {
+      "name": "Small Tree Cutter",
+      "source_version": "V3",
+      "source_sha256": "bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d",
+      "output_sha256": "307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "9dcbee84e2864bda025de39189dc081f0ef815edf86d528b36d99c3e2fbc316f",
+      "rgba_decoded_sha256": "f53bb5166936a5c41873d4654ed7f5b64763b6bb1bbd6e4f5c1d47d696bceae6",
+      "alpha_sha256": "ec5985b7a7f05db2fcc0bdee1630bc3e593d1de3e9f37be77036447fd4a11fc3",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 953384,
+      "alpha_changed_pixels": 619132,
+      "alpha_zero_pixels": 558795,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/passive_fluid_accumulator_v1/background.png": {
+      "name": "Passive Fluid Accumulator",
+      "source_version": "V1",
+      "source_sha256": "da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872",
+      "output_sha256": "f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "541a42afc28a21ea2c3778ee50820e19af070936cf6d0660800c1949d64e9654",
+      "rgba_decoded_sha256": "a92785f61e4b3e58b510c858fc49635bf403e2531f24db3d29e6a7929bab8106",
+      "alpha_sha256": "7b07cf0c5864cd3fd8e6da1f6d1deeed8cc2427539112b6c675467052c0d045b",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1389673,
+      "alpha_changed_pixels": 182843,
+      "alpha_zero_pixels": 105711,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/small_fluid_funnel_v1/background.png": {
+      "name": "Small Fluid Funnel",
+      "source_version": "V1",
+      "source_sha256": "c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64",
+      "output_sha256": "75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "8013f98aee532ad463386c1f7cae12b18b59816890db44b1490409cf54d8eb64",
+      "rgba_decoded_sha256": "2ee6b61d188c299a7740f8685335d17c69cf774b5bff340f8476f8ac5aa25b99",
+      "alpha_sha256": "ac3a281ac5914a9edb115a675ace9d5bc54cb6c31dec3934764dde8e25332e58",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1388526,
+      "alpha_changed_pixels": 183990,
+      "alpha_zero_pixels": 106232,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png": {
+      "name": "Fluid Barrel",
+      "source_version": "V5",
+      "source_sha256": "df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9",
+      "output_sha256": "db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c",
+      "dimensions": [
+        1137,
+        1383
+      ],
+      "rgb_decoded_sha256": "5445b236fcf3ad32ee43ddf50a08d939828fbccf9620f7aa66b7aa33a62fc3e7",
+      "rgba_decoded_sha256": "ece66f096a4ee1c8d2d9cbf236440c6bd249c9bc106b6f483203a074bb4f959d",
+      "alpha_sha256": "bca58afca45404e524f32d2f01d2e12a7a6504bae60b966a76282006b1dc1a7a",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1431851,
+      "alpha_changed_pixels": 14928,
+      "alpha_zero_pixels": 113086,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/crate_reference_v1/background.png": {
+      "name": "Labeled Crate",
+      "source_version": "V1 #196",
+      "source_sha256": "9658f359d5675b13bc46ba5af12120f2ddcc7ef7f2b1bf563da4234f16132ea2",
+      "output_sha256": "fbd91d759dcc40a4733b7a5749fd356577c6d92bb2e42dbf0fc60d73e14cc8a3",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "rgb_decoded_sha256": "c7f81faf2cad47f59c098aed630d290e0677bb67de779b6ce9ce707b073ffe2f",
+      "rgba_decoded_sha256": "898add8e3835de9d57806f7ab0fc632ad6147bef9669f0253d9051ae387964d3",
+      "alpha_sha256": "ae4c4a9fe6776d322f3e6c3c56d9ec80b42b8d4106cd7d5d91d6c6d4a657643b",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1496240,
+      "alpha_changed_pixels": 76804,
+      "alpha_zero_pixels": 25515,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/label_editor_reference_v1/background.png": {
+      "name": "Éditeur d'étiquettes",
+      "source_version": "V1 #196",
+      "source_sha256": "8329a12b0fd82a767044cec03651bd4672ecca2d4cd6b3b5edbe49ea3f75e7ac",
+      "output_sha256": "9cc07fbf4fcc99025dbe17d03f48242475df84ad129297dabb011acae0a6cf8e",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "rgb_decoded_sha256": "c608bb845825c01df51bb00f35480ea4dc8ae28bf9cfd4e385bdb5c3340d510b",
+      "rgba_decoded_sha256": "6885ee2b536aab760355fc507b4b9845708e468bbe6a6cb45fcb7e3fd2cfd883",
+      "alpha_sha256": "63d6c38e1ec2ca30344d7d3db0f38c1d941652b489e6b1acfae111296e60d801",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1262058,
+      "alpha_changed_pixels": 310806,
+      "alpha_zero_pixels": 228144,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/metal_crafting_v3.png": {
+      "name": "Metal Crafting Table",
+      "source_version": "V3 #196 et 18 cases de rangement",
+      "source_sha256": "3332714591f4691f47c0f555f40638fe3a31bd9d00f0c8f67c5934664a00631c",
+      "output_sha256": "834b521e6316e9d648e07167b3faec79f5cf453d6f5ab39e133e32e78215d812",
+      "dimensions": [
+        1142,
+        1378
+      ],
+      "rgb_decoded_sha256": "051da151c3a6d5ab41591780d97c230dbba4323ba4873b5c32807cb52cb23d15",
+      "rgba_decoded_sha256": "074e9d5960644d4ded4c2c0f4109481b04c82e3083e859f290dbda01dc0dc0af",
+      "alpha_sha256": "8fa10b98a519817bad3cec26440515a712efe33a970ef335dbb424b8b1a28e6b",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1408275,
+      "alpha_changed_pixels": 165401,
+      "alpha_zero_pixels": 86578,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/retained_furnaces/electrical.png": {
+      "name": "Small Electrical Furnace",
+      "source_version": "#196",
+      "source_sha256": "a04ff87a54ae7b52299cb3334219f714e508bb675231333c951db31ffd1e1e12",
+      "output_sha256": "263f98bec7a5f8ef37549fa4412a0bbc3e0de2097701b54f76e2a5c25452cd34",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "rgb_decoded_sha256": "bb9129c605676c7566b71f3e43cff8f6561aec06beb16709124069f518e3765d",
+      "rgba_decoded_sha256": "913e09475c40514049942d6c18edcc66682b9497b3581bce49f530b48f1ab020",
+      "alpha_sha256": "f67c275a120d91ad639229ee741d2801e32bca0354f745e7dddda9f8bd1dd217",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1371119,
+      "alpha_changed_pixels": 201969,
+      "alpha_zero_pixels": 127029,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    },
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/retained_furnaces/incinerator.png": {
+      "name": "Small Waste Incinerator",
+      "source_version": "#196",
+      "source_sha256": "7b5da44b8e7c405a29c69c022e99e3e14b9cd27500e15d56a1d04b38dc783cb4",
+      "output_sha256": "c4ac3021daf91edf8e167d2e44939f8c3c1094342d353d7be1b3ac1bc5703c49",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgb_decoded_sha256": "b3ead6ebc673876f09d693f1a6eae4e0792b6e7c9e5d77bec15f35816a36e489",
+      "rgba_decoded_sha256": "9dedbea602e9780fae606d60d030a8efed2601c76a031b6eaca6fbdfccaa7cca",
+      "alpha_sha256": "51da8d92d30e9639227edc9aecfd7dfedf72ff2056513c9776b8c9e0b656f92e",
+      "rgb_changed_pixels": 0,
+      "protected_rgba_changed_pixels": 0,
+      "protected_pixels": 1414962,
+      "alpha_changed_pixels": 157554,
+      "alpha_zero_pixels": 82960,
+      "canvas_edge_nonzero_alpha_pixels": 0
+    }
+  },
+  "text_files": {
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/BlockBreakerRuntimeProof.java": {
+      "source_sha256": "569a94f9fe866fdd189050fc52811e607f8a45c5ae5b6ab7e86f60cc5743be40",
+      "output_sha256": "848cf129c79450da7b7a236ddec8afd27b7e7e970ffa31021c74a84bc3cb6b14",
+      "hunks": [
+        {
+          "start": 72,
+          "end": 73,
+          "previous": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d\"),\n",
+          "current": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879\"),\n"
+        }
+      ]
+    },
+    "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/TreeCutterRuntimeProof.java": {
+      "source_sha256": "489ff70b6c3327a38fcb690b2eabae3da8233233b29afa3bca80cee7a509ba89",
+      "output_sha256": "7cb6c5b9d0c7947c659a9183e0f9077df0f99246ac39a04a08ac3c4ffa6598a7",
+      "hunks": [
+        {
+          "start": 72,
+          "end": 73,
+          "previous": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d\"),\n",
+          "current": "                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals(\"307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4\"),\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FactoryPlacerV2ReferenceGeometry.java": {
+      "source_sha256": "445808c5ea637640b6ec2108579a22eaa085fdef933214c10b203630707260a8",
+      "output_sha256": "dc791e44a372314b083fec82b91d55669fd6fccbc54fd43a07b73caae3af3ecd",
+      "hunks": [
+        {
+          "start": 21,
+          "end": 22,
+          "previous": "   public static final String SOURCE_SHA256 = \"ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b\";\n",
+          "current": "   public static final String SOURCE_SHA256 = \"bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d\";\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/CrateReferenceGeometry.java": {
+      "source_sha256": "d702597928a3e5219ec2bf9d115d7009ccce63fd91c0c13a21e133766e1ff7a5",
+      "output_sha256": "bcc259f57a30a0820eabc6651afe3a0c09dd8ed7e6523562c8bee130d62c22fd",
+      "hunks": [
+        {
+          "start": 19,
+          "end": 20,
+          "previous": "   public static final String SOURCE_SHA256 = \"9658f359d5675b13bc46ba5af12120f2ddcc7ef7f2b1bf563da4234f16132ea2\";\n",
+          "current": "   public static final String SOURCE_SHA256 = \"fbd91d759dcc40a4733b7a5749fd356577c6d92bb2e42dbf0fc60d73e14cc8a3\";\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/BarrelReferenceGeometry.java": {
+      "source_sha256": "9da080c8f74cee43e97dd0bc04078951fe1c4a171b9d1fcb20bbad17c2d83e7a",
+      "output_sha256": "2e83d6736309f1cd5b3ed136b0ec17a157d810b1b2b5e505f0a1a157a2e604ec",
+      "hunks": [
+        {
+          "start": 19,
+          "end": 20,
+          "previous": "   public static final String SOURCE_SHA256 = \"df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9\";\n",
+          "current": "   public static final String SOURCE_SHA256 = \"db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c\";\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/SolarV2ReferenceGeometry.java": {
+      "source_sha256": "3cfa14ece0ec03fc629394e471631b043a25217ac2fbc140da3ba8e30bbcfd06",
+      "output_sha256": "36c5664002552b267b7ed90cb7092416c9e9125487355990998b298ba0ed9591",
+      "hunks": [
+        {
+          "start": 19,
+          "end": 20,
+          "previous": "   public static final String SOURCE_SHA256 = \"d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796\";\n",
+          "current": "   public static final String SOURCE_SHA256 = \"c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa\";\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/TreeCutterV3ReferenceGeometry.java": {
+      "source_sha256": "71b7b21225e09056a2b70618c535467a95bd6fa3322bd1b6ffe3f49f1b2d5e19",
+      "output_sha256": "364dd1cbd3869e0811a2f79c643813e3700ec758fd540132443a39a623704325",
+      "hunks": [
+        {
+          "start": 21,
+          "end": 22,
+          "previous": "   public static final String SOURCE_SHA256 = \"bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d\";\n",
+          "current": "   public static final String SOURCE_SHA256 = \"307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4\";\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/utility/FreezerReferenceGeometry.java": {
+      "source_sha256": "4a17756bf141018c0f686ab4c89f4b0260d97ff88254b574023c7bc25e3d0778",
+      "output_sha256": "dc532f265cca5f28433872c41dda73ccc470f885c2fffb87377e49af2e35282c",
+      "hunks": [
+        {
+          "start": 20,
+          "end": 21,
+          "previous": "   public static final String SOURCE_SHA256 = \"68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46\";\n",
+          "current": "   public static final String SOURCE_SHA256 = \"e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7\";\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeMilkingQualificationValidation.java": {
+      "source_sha256": "bbf9e0c24cba379788d61bececf0ac3d4d2e35e195a2ec7d31fa5d3f8beb650e",
+      "output_sha256": "fe499c78d3c1bc70e8410f8b0b0896d499e7993144156329b31fadc7115d7e7f",
+      "hunks": [
+        {
+          "start": 146,
+          "end": 147,
+          "previous": "      verifyArt(mc,\"background\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        },
+        {
+          "start": 279,
+          "end": 280,
+          "previous": "         p.addProperty(\"source_background_sha256\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/solarPackagedValidation/java/com/oblixorprime/iedctrtest/solar/PackagedRuntimeProof.java": {
+      "source_sha256": "810c8be17322bf3a865e5e31b5e923f51f20e265aa40290305fbaabf970c16a2",
+      "output_sha256": "171d2031925c2623cd212e7e8851d45c83b2b04add66d8f1a2a03648f701586f",
+      "hunks": [
+        {
+          "start": 79,
+          "end": 80,
+          "previous": "            String[] hashes = {\"d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796\"};\n",
+          "current": "            String[] hashes = {\"c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa\"};\n"
+        }
+      ]
+    },
+    "src/barrelV5PackagedValidation/java/com/oblixorprime/iedctrtest/barrelv5/PackagedRuntimeProof.java": {
+      "source_sha256": "cfb0f06f4fca2cbd3e2d522eb766981e48c26077e76d3378ead65d186e68090e",
+      "output_sha256": "b8b0b7e3cd397b64c56a75734e2e3c91cfb15094cdc874e304034d90e2da6412",
+      "hunks": [
+        {
+          "start": 80,
+          "end": 81,
+          "previous": "            String[] hashes = {\"df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9\"};\n",
+          "current": "            String[] hashes = {\"db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c\"};\n"
+        }
+      ]
+    },
+    "src/milkingPackagedValidation/java/com/oblixorprime/iedctrtest/milking/PackagedRuntimeProof.java": {
+      "source_sha256": "bb18b28e7db668ad7de5ce8002ea63e9b3fc535718cb4c8424bd22f046903fd5",
+      "output_sha256": "66d485f5a289f789273db60c9963a1378547f849b5ab46f4c506d8f70d78bf04",
+      "hunks": [
+        {
+          "start": 76,
+          "end": 77,
+          "previous": "            String[] hashes = {\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\"};\n",
+          "current": "            String[] hashes = {\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\"};\n"
+        }
+      ]
+    },
+    "src/milkingPackagedValidation/java/com/oblixorprime/iedctrtest/milking/NativeMilkingPackagedValidation.java": {
+      "source_sha256": "c2995bb034baa94e712784a6aa9d9f1e9edc28304d5fe9f38af3ce7d48931728",
+      "output_sha256": "c65845a94c11576f688c2841ce05c5bacf6ce38590da8d0f9092ba709b93d58d",
+      "hunks": [
+        {
+          "start": 148,
+          "end": 149,
+          "previous": "      verifyArt(mc,\"background\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        },
+        {
+          "start": 282,
+          "end": 283,
+          "previous": "         p.addProperty(\"source_background_sha256\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcGameTest/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeTfcMilkingRecoveryValidation.java": {
+      "source_sha256": "41d6583c35ca4801155c7faa9b1eb54937ea5404e22f1ddbb21826ec4a03bb7a",
+      "output_sha256": "4df7415e74aafa78fab70ad83044a9a00198cf506a955310abcbdd6f565ab986",
+      "hunks": [
+        {
+          "start": 165,
+          "end": 166,
+          "previous": "      verifyArt(mc,\"background\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        },
+        {
+          "start": 308,
+          "end": 309,
+          "previous": "         p.addProperty(\"source_background_sha256\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcGameTest/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeMooshroomMilkingValidation.java": {
+      "source_sha256": "2b84108ebf28730e7109d4e90b3d7ef681327bb735341028e2c87bf7e67ee3dd",
+      "output_sha256": "66b19a1afb863b5b720d6d4884b8dfdcd49a807bbd5650b1c4aa0f5b85c55224",
+      "hunks": [
+        {
+          "start": 176,
+          "end": 177,
+          "previous": "      verifyArt(mc,\"background\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        },
+        {
+          "start": 335,
+          "end": 336,
+          "previous": "         p.addProperty(\"source_background_sha256\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcPackagedValidation/java/com/oblixorprime/iedctrtest/tfc/PackagedRuntimeProof.java": {
+      "source_sha256": "02372d78f62d45f85318d9b32ed364d04bcfe6b840095ff1395821c22e9b2a72",
+      "output_sha256": "791808c8b809d04fe53106b5d1bc6b285708d4a80806f73becfabc780dac7128",
+      "hunks": [
+        {
+          "start": 77,
+          "end": 78,
+          "previous": "            String[] hashes = {\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\"};\n",
+          "current": "            String[] hashes = {\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\",\"f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5\"};\n"
+        }
+      ]
+    },
+    "src/tfcPackagedValidation/java/com/oblixorprime/iedctrtest/tfc/NativeTfcMilkingRecoveryValidation.java": {
+      "source_sha256": "2a96e130875dde7fbb7b71faf85ce1705576475300b60a158be2309c35721d66",
+      "output_sha256": "f38c04675d9b6f0cdeb5697a2239425c32f17cb300267f0837b6bcabd2d59c4e",
+      "hunks": [
+        {
+          "start": 167,
+          "end": 168,
+          "previous": "      verifyArt(mc,\"background\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        },
+        {
+          "start": 311,
+          "end": 312,
+          "previous": "         p.addProperty(\"source_background_sha256\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/tfcPackagedValidation/java/com/oblixorprime/iedctrtest/tfc/NativeMooshroomMilkingValidation.java": {
+      "source_sha256": "218e75d27086fab3e6f59bd8dadc5d6255ce3f357b4991018c3b0fcf75526db4",
+      "output_sha256": "0f476009832fbfa951ddfe8d68daa9e915664ac8792259950a69e7f75f3cbe65",
+      "hunks": [
+        {
+          "start": 178,
+          "end": 179,
+          "previous": "      verifyArt(mc,\"background\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "      verifyArt(mc,\"background\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        },
+        {
+          "start": 338,
+          "end": 339,
+          "previous": "         p.addProperty(\"source_background_sha256\",\"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\");\n",
+          "current": "         p.addProperty(\"source_background_sha256\",\"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\");\n"
+        }
+      ]
+    },
+    "src/fluidPackagedValidation/java/com/oblixorprime/iedctrtest/fluid/PackagedRuntimeProof.java": {
+      "source_sha256": "49d9fa81a0d10d5666ff478922857ee7f359586dfed82bd1e218367861d26805",
+      "output_sha256": "fc82b3724db68ffbcffb8feb5561fbff9b5ef2fc1a42b6eb2253549cda53196e",
+      "hunks": [
+        {
+          "start": 74,
+          "end": 75,
+          "previous": "            String[] hashes = {\"c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64\",\"da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872\"};\n",
+          "current": "            String[] hashes = {\"75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e\",\"f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db\"};\n"
+        }
+      ]
+    },
+    "src/freezerPackagedValidation/java/com/oblixorprime/iedctrtest/freezer/PackagedRuntimeProof.java": {
+      "source_sha256": "011b0ca67b0d5e231d86621ac989d4536295c9582dfeca67111f2cfe7dee4ffc",
+      "output_sha256": "af7d8f8c4df612be1e3c8241f29ebaca162813ef256af2dedb269e4eb8f5af23",
+      "hunks": [
+        {
+          "start": 76,
+          "end": 77,
+          "previous": "            String[] hashes = {\"68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46\", \"c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c\", \"625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0\", \"eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664\", \"5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b\", \"ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898\", \"3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49\", \"b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0\"};\n",
+          "current": "            String[] hashes = {\"e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7\", \"b1d1e5760c29667d1f7e8dbf453528d97941a7d53dc5f9854784f5caf55af60f\", \"625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0\", \"eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664\", \"5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b\", \"ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898\", \"3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49\", \"b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0\"};\n"
+        }
+      ]
+    },
+    "tools/validation/test_label_editor_reference.py": {
+      "source_sha256": "851d2087a93c2d04f54ea6db1889ed5c602a658e9bde3ae9f6dd65c85176d894",
+      "output_sha256": "56a1eeb62b1d2caeac1023bb8c46eeeb39cf8c40c997e534d7714477b7369108",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "previous": "  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'8329a12b0fd82a767044cec03651bd4672ecca2d4cd6b3b5edbe49ea3f75e7ac')\n",
+          "current": "  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'9cc07fbf4fcc99025dbe17d03f48242475df84ad129297dabb011acae0a6cf8e')\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_reference_native.py": {
+      "source_sha256": "656316633d79e5a32108ab5f9b22c98475d6cd8cdec4e32b58ad82034cda876a",
+      "output_sha256": "c5bfbdc76a1cb16b8ce98220f5fa1d7512c8164832763991f671cdd441874398",
+      "hunks": [
+        {
+          "start": 25,
+          "end": 26,
+          "previous": "ART_SHA = \"68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46\"\n",
+          "current": "ART_SHA = \"e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7\"\n"
+        }
+      ]
+    },
+    "tools/validation/milking_packaged_proof.py": {
+      "source_sha256": "b7368607548e14798e4d7a677bf1c4e0c2344e644967d0d709f061454a057035",
+      "output_sha256": "688a7f327d587650103ca41ab7063bd53b0eec396c167cd7abdc7754819fd2a2",
+      "hunks": [
+        {
+          "start": 15,
+          "end": 16,
+          "previous": "    'textures/gui/milking_redesign_v1/background.png': '871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b',\n",
+          "current": "    'textures/gui/milking_redesign_v1/background.png': '1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411',\n"
+        }
+      ]
+    },
+    "tools/validation/test_crate_reference_source.py": {
+      "source_sha256": "075bc3d3e9e79da5e798a16c5cf576a5c217dcf75dff42df9ad07e3b8bc13f3b",
+      "output_sha256": "fcd0693ac0fc86689951dbab5bcef4ad788c550c85301b257d93c077a145b145",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "previous": "  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'9658f359d5675b13bc46ba5af12120f2ddcc7ef7f2b1bf563da4234f16132ea2')\n",
+          "current": "  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'fbd91d759dcc40a4733b7a5749fd356577c6d92bb2e42dbf0fc60d73e14cc8a3')\n"
+        }
+      ]
+    },
+    "tools/validation/test_block_breaker_text_free.py": {
+      "source_sha256": "8ce6784d14bb37b09371e88a2ec60f211d146dda2505c2816a637f731803daf1",
+      "output_sha256": "93b4c98b5e25cd13d64f35e3b91aec4c3b3484d9565712979f3d105f65a017f8",
+      "hunks": [
+        {
+          "start": 62,
+          "end": 63,
+          "previous": "            \"background.png\": \"2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d\",\n",
+          "current": "            \"background.png\": \"0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879\",\n"
+        }
+      ]
+    },
+    "tools/validation/fluid_packaged_proof.py": {
+      "source_sha256": "4551b5bae784cf3bf72486e44124532908954dc7b112cbd7a4a91a10664b42b8",
+      "output_sha256": "c150f70ba56b3b38aad66fddb0d87c248bf89c9025b88c9918c1deb3956c25ff",
+      "hunks": [
+        {
+          "start": 17,
+          "end": 19,
+          "previous": "    'textures/gui/small_fluid_funnel_v1/background.png': 'c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64',\n    'textures/gui/passive_fluid_accumulator_v1/background.png': 'da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872',\n",
+          "current": "    'textures/gui/small_fluid_funnel_v1/background.png': '75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e',\n    'textures/gui/passive_fluid_accumulator_v1/background.png': 'f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db',\n"
+        }
+      ]
+    },
+    "tools/validation/solar_packaged_proof.py": {
+      "source_sha256": "1144c5d59a0c744368bde0c167774eff9a69461ace018ccccdc98b559f83024f",
+      "output_sha256": "150f67d3d91b8e522da74a66ba987e94dc876959e1efe0ed4418a342f1249bce",
+      "hunks": [
+        {
+          "start": 15,
+          "end": 16,
+          "previous": "    'textures/gui/solar_v2_reference/background.png': 'd702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796',\n",
+          "current": "    'textures/gui/solar_v2_reference/background.png': 'c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa',\n"
+        }
+      ]
+    },
+    "tools/validation/check_solar_v2_reference.sh": {
+      "source_sha256": "bb72e594a09c6e69cb895dfb82de228c2d930d671ca67a115d70f34d1d3f2be5",
+      "output_sha256": "06334fba937990797175cf9d4e62d9b4acce0dac30de470aaf7f66af38bc4819",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "previous": "printf '%s  %s\\n' d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796 src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png | sha256sum -c -\n",
+          "current": "printf '%s  %s\\n' c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png | sha256sum -c -\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_packaged_proof.py": {
+      "source_sha256": "5e0041bd7bb2ee65fb35c987fefae6eaf6bdb9933183d3f625ad723bc5994dfb",
+      "output_sha256": "06ded3c897bbc1e9e1c37d9ba51d8978ff1ff71e8d0b07721d59df56e9da04c7",
+      "hunks": [
+        {
+          "start": 14,
+          "end": 15,
+          "previous": "TEXTURES = {'textures/gui/freezer_reference_v5/background.png': '68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_clean_base.png': 'c5c5050e15adba77d351f4b4bd2f22af95c286849bb933dc4a894997d4bb8a0c', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_mask_alpha.png': '625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase0.png': 'eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase1.png': '5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase2.png': 'ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase3.png': '3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase4.png': 'b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0'}\n",
+          "current": "TEXTURES = {'textures/gui/freezer_reference_v5/background.png': 'e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_clean_base.png': 'b1d1e5760c29667d1f7e8dbf453528d97941a7d53dc5f9854784f5caf55af60f', 'textures/gui/freezer_reference_v5/freezer_v5_chamber_mask_alpha.png': '625c5e313d52be467e8912702325adb13e2e8babb2d51ab5e89ecc8233f1f6e0', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase0.png': 'eae6cf6edbc79b1ed3827d98c9617e78715690260b0e1dd99a1c367bc1ba2664', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase1.png': '5c4a62addce2de30daacfe41b5f12e527ab7d45c5a62a4665f57bfdbb082c14b', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase2.png': 'ddd50c1a598e716e146485c1a8e4c3c9b5862b0810952d5b9ca1798089a89898', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase3.png': '3e7055a20030cf5349c85238a48e7bb8d48e6a8108aa712bad5ff756c33baa49', 'textures/gui/freezer_reference_v5/freezer_v5_frost_overlay_phase4.png': 'b35039c033225dc86b830c05088e7eef06ea44004f7f9ab85a374fe9a23f4fe0'}\n"
+        }
+      ]
+    },
+    "tools/validation/barrel_v5_packaged_proof.py": {
+      "source_sha256": "32c6ab6016542c00ea7eabf0488a0589ac783f711e94412594f21b6d5b608b00",
+      "output_sha256": "491bc72b61109750108137ee9fb391d1f93203c19610b1d0722c1feba79faea4",
+      "hunks": [
+        {
+          "start": 19,
+          "end": 20,
+          "previous": "    'textures/gui/barrel_reference_v5/background.png': 'df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9',\n",
+          "current": "    'textures/gui/barrel_reference_v5/background.png': 'db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c',\n"
+        }
+      ]
+    },
+    "tools/validation/check_barrel_reference_wiring.py": {
+      "source_sha256": "108015af3c2e33c3b7953a50f867b1506a85cee8d6dca0f1f15528402c45fa37",
+      "output_sha256": "8f31230b4b27b5af84925c2ce6b27655d7452b39a13008d88bebfa3ed0aae5dd",
+      "hunks": [
+        {
+          "start": 0,
+          "end": 1,
+          "previous": "",
+          "current": "from gui_exterior_alpha import current_hash as alpha_hash\n"
+        },
+        {
+          "start": 45,
+          "end": 46,
+          "previous": "assert manifest['source_sha256']==hashlib.sha256(art.read_bytes()).hexdigest()\n",
+          "current": "assert alpha_hash(art.relative_to(r).as_posix(), manifest['source_sha256'])==hashlib.sha256(art.read_bytes()).hexdigest()\n"
+        }
+      ]
+    },
+    "tools/validation/tree_cutter_v3_native.py": {
+      "source_sha256": "e21de9b735b1224cbdcb306afa4ad4c2c2273031d5c7266362863231ccecc327",
+      "output_sha256": "88e0bbda84ec2a4090c358d5577b8762f6d9cc24e225139580f51287f94a1ec6",
+      "hunks": [
+        {
+          "start": 18,
+          "end": 19,
+          "previous": "ART_SHA = 'bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d'\n",
+          "current": "ART_SHA = '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4'\n"
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "previous": "",
+          "current": "            # The authorized exterior-alpha pass makes non-opaque source pixels\n            # compose over the live world; they cannot be compared to the PNG's\n            # stored RGBA bytes. The exact packaged-art hash is checked above,\n            # so retain strict native equality only for fully opaque neighborhoods.\n"
+        },
+        {
+          "start": 83,
+          "end": 85,
+          "previous": "",
+          "current": "            if any(candidate[3] != 255 for candidate in candidates):\n                continue\n"
+        }
+      ]
+    },
+    "tools/validation/test_fluid_gui_text_free.py": {
+      "source_sha256": "da3b2a28e8113260510b4b042782bda5b40af07125c0662ea77adbf16a54b1fa",
+      "output_sha256": "362a76b1eb3794ef1e9e3f4f6eb43f260226b2db1b7cb4aca6e2296f7dbec83c",
+      "hunks": [
+        {
+          "start": 83,
+          "end": 85,
+          "previous": "            \"small_fluid_funnel_v1/background.png\": \"c5dcc2ee56fdace5f9bf66456e0a4dca91ce4fddb78887a9a6b60ff914336a64\",\n            \"passive_fluid_accumulator_v1/background.png\": \"da2a83c0f8cc68be5f69ad4f3cc392cc4a600206ae39ac8b81142e421e466872\",\n",
+          "current": "            \"small_fluid_funnel_v1/background.png\": \"75ed5f9c1222012f84260459441529a828c5fae9274d200feac4aefd5c63a04e\",\n            \"passive_fluid_accumulator_v1/background.png\": \"f22c37a9ce0d17905dd7e37e32232b7c2e095d3f558c21e06eed8cad7ed1f0db\",\n"
+        }
+      ]
+    },
+    "tools/validation/block_breaker_packaged_native.py": {
+      "source_sha256": "3aa541dc8c477d21e0ba80bf06e184513fc2731e6eb190b813ad2fdb44117892",
+      "output_sha256": "885383634b6c521144ff33447370e9dc066fd1b7c9484a5b9a987125c591020c",
+      "hunks": [
+        {
+          "start": 16,
+          "end": 17,
+          "previous": "ART_SHA = '2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d'\n",
+          "current": "ART_SHA = '0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879'\n"
+        }
+      ]
+    },
+    "tools/validation/verify_freezer_reference.py": {
+      "source_sha256": "2925ebdf492fc521d7e45b4ffdaee028aa4dc8cfa396d99047cba070d1813c6f",
+      "output_sha256": "09b2a393e90eb10699a3726551f036c6c9b4056a28a7e2df6d25daa2a47f6c2a",
+      "hunks": [
+        {
+          "start": 14,
+          "end": 16,
+          "previous": "EXPECTED_BYTES = '68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46'\nEXPECTED_RGBA = '61377093d58be84df2852af2e020ae1df56c36190f9a4536d5e65c4260de0d0c'\n",
+          "current": "EXPECTED_BYTES = 'e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7'\nEXPECTED_RGBA = 'd89ce345897559c9b1a4de0ba5a39c320cf05e0d919a508d55cc8a558ae51f9e'\n"
+        },
+        {
+          "start": 98,
+          "end": 99,
+          "previous": "    parser.add_argument('--source', type=Path, help='optional independently retained original PNG')\n",
+          "current": "    parser.add_argument('--source', type=Path, help='optional independently retained exterior-alpha PNG')\n"
+        },
+        {
+          "start": 105,
+          "end": 106,
+          "previous": "    assert (meta['width'], meta['height'], meta['mode']) == (1254, 1254, 'RGB')\n",
+          "current": "    assert (meta['width'], meta['height'], meta['mode']) == (1254, 1254, 'RGBA')\n"
+        },
+        {
+          "start": 108,
+          "end": 109,
+          "previous": "    report = {'status': 'PASS_RESOURCE_IDENTITY_NOT_NATIVE_RUNTIME', 'source_filename': 'freezer-mixed-rp-v5-preview.png',\n",
+          "current": "    report = {'status': 'PASS_RESOURCE_IDENTITY_NOT_NATIVE_RUNTIME', 'source_filename': 'freezer-mixed-rp-v5-preview.png', 'runtime_variant': 'exterior-alpha',\n"
+        }
+      ]
+    },
+    "tools/validation/factory_placer_v2_reference_native.py": {
+      "source_sha256": "b6f9cf96df76320b1d51a0fcc70e2b63f9b19674feedf3166b7993468340cebe",
+      "output_sha256": "46490c5181b613211f707b648019b9b5c04696af942ed53501ca8fafbe6b0544",
+      "hunks": [
+        {
+          "start": 21,
+          "end": 22,
+          "previous": "ART_SHA = 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b'\n",
+          "current": "ART_SHA = 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d'\n"
+        },
+        {
+          "start": 313,
+          "end": 314,
+          "previous": "        require(any(actual==art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]\n",
+          "current": "        candidates=[art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]\n"
+        },
+        {
+          "start": 315,
+          "end": 323,
+          "previous": "                    for xx in range(max(0,tx-1),min(sw,tx+2))),\n",
+          "current": "                    for xx in range(max(0,tx-1),min(sw,tx+2))]\n        # Only the approved alpha pass changes these exterior pixels. They\n        # composite over the live world, so compare source RGB only for opaque\n        # texels with fully opaque neighborhoods; the exact texture hash above\n        # still pins the alpha mask.\n        if any(candidate[3] != 255 for candidate in candidates):\n            continue\n        require(actual in candidates,\n"
+        }
+      ]
+    },
+    "tools/validation/solar_v2_reference_native.py": {
+      "source_sha256": "0c7f5bcaaf3fdc057b3195e156191c81c2f3473bbbebb2adb51967dc91611f9f",
+      "output_sha256": "ecd933728bb5ad6d5182ae0468d4667aa67dec1dba65f080f3c64a271260bb2b",
+      "hunks": [
+        {
+          "start": 20,
+          "end": 21,
+          "previous": "ART_SHA = \"d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796\"\n",
+          "current": "ART_SHA = \"c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa\"\n"
+        }
+      ]
+    },
+    "tools/validation/check_barrel_reference.sh": {
+      "source_sha256": "50eb24175a75860716e96228fdc98bd1b9119677211ca6aa9f547d6095adf72c",
+      "output_sha256": "dc49c51cf1ecfca905c86e4e377674afa7c04b262d7779349d1174baadc3520d",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 9,
+          "previous": "printf '%s  %s\\n' df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9 src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png | sha256sum -c -\n",
+          "current": "printf '%s  %s\\n' db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png | sha256sum -c -\n"
+        }
+      ]
+    },
+    "tools/validation/milking_qualification_native.py": {
+      "source_sha256": "85b4e02f207463a0ad327b767a79feb02a685998c16752a1eb440934c26c39f2",
+      "output_sha256": "08a0f751daa8e96108b6bd10a662c85bf1e08ab76a6ee28333514ba6bddbe473",
+      "hunks": [
+        {
+          "start": 24,
+          "end": 25,
+          "previous": "BACKGROUND_SHA = \"871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b\"\n",
+          "current": "BACKGROUND_SHA = \"1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411\"\n"
+        }
+      ]
+    },
+    "tools/validation/tfc_packaged_proof.py": {
+      "source_sha256": "c675013cac541bdc5800a8b9f77908cd358014eab45ad62be53a4e4812032ded",
+      "output_sha256": "dbf6f0d80fa12af510c93f6dc4cd9dc95048c31ebaf3a3ad7c0c98a9adc863ea",
+      "hunks": [
+        {
+          "start": 15,
+          "end": 16,
+          "previous": "    'textures/gui/milking_redesign_v1/background.png': '871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b',\n",
+          "current": "    'textures/gui/milking_redesign_v1/background.png': '1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411',\n"
+        }
+      ]
+    },
+    "tools/validation/barrel_reference_native.py": {
+      "source_sha256": "bf7ccc006e2be862f9f98e6abdd7b89b7c2e8272612b1d0a6c9cb305c3c1eddd",
+      "output_sha256": "f1953e3d2a4ba02eee497a0c99be70da21e3064f5cc4f3fd72e202e70e37cbb5",
+      "hunks": [
+        {
+          "start": 20,
+          "end": 21,
+          "previous": "ART_SHA = \"df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9\"\n",
+          "current": "ART_SHA = \"db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c\"\n"
+        }
+      ]
+    },
+    "tools/validation/test_hopper_steel_artwork.py": {
+      "source_sha256": "230b5001d131f3b5a0b7a2be1538796fd763459171d9048a241620acefcec6ba",
+      "output_sha256": "f5c8c01d0748cbcdd1f2ef872c592da71b54c861c2772aa7a7739d95ae6cd632",
+      "hunks": [
+        {
+          "start": 13,
+          "end": 14,
+          "previous": "            'factory_placer_v2_reference/background.png': 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b',\n",
+          "current": "            'factory_placer_v2_reference/background.png': 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d',\n"
+        }
+      ]
+    },
+    "tools/validation/check_solar_v2_reference_wiring.py": {
+      "source_sha256": "b696918b9ffa77c5aad99441ae82796bb19b8f17426c3a1169b7cccc599e2f6f",
+      "output_sha256": "39a77d3603011fd45acc861f90c9093f0bd13f586a3540436543afbb1349562a",
+      "hunks": [
+        {
+          "start": 0,
+          "end": 1,
+          "previous": "",
+          "current": "from gui_exterior_alpha import current_hash as alpha_hash\n"
+        },
+        {
+          "start": 71,
+          "end": 72,
+          "previous": "assert source_hash == 'd702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796'\n",
+          "current": "assert source_hash == 'c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa'\n"
+        },
+        {
+          "start": 75,
+          "end": 76,
+          "previous": "assert manifest['source_sha256'] == source_hash\n",
+          "current": "assert alpha_hash(art.relative_to(r).as_posix(), manifest['source_sha256']) == source_hash\n"
+        }
+      ]
+    },
+    ".github/workflows/factory-placer-v2-reference.yml": {
+      "source_sha256": "d8a9f012495856caf25b22a020b282e3b7b2a513dba496137aab44e204c2415a",
+      "output_sha256": "2ee78222177c80018cc9a10fa3aec923f43d834d3177ae74d46e70261a89aa3c",
+      "hunks": [
+        {
+          "start": 30,
+          "end": 31,
+          "previous": "          echo 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b  src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png' | sha256sum --check\n",
+          "current": "          echo 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d  src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png' | sha256sum --check\n"
+        }
+      ]
+    }
+  }
+}

@@ -174,8 +174,9 @@ public final class NativeMooshroomMilkingValidation {
       tfcVersion=net.neoforged.fml.ModList.get().getModContainerById("tfc").orElseThrow().getModInfo().getVersion().toString();
       require(tfcVersion.equals("4.2.12"),"Wrong native TFC runtime version");
       verifyViewport(mc);
-      verifyArt(mc,"background","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
-      verifyArt(mc,"milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
+      verifyArt(mc,"milking_redesign_v1/background","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
+      verifyArt(mc,"gui11_v5c/12","82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa");
+      verifyArt(mc,"milking_redesign_v1/milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
       String name="iedctr-mooshroom-milking-"+nonce;
       mc.options.pauseOnLostFocus=false;
       enter(Stage.WORLD);
@@ -183,7 +184,7 @@ public final class NativeMooshroomMilkingValidation {
          new WorldOptions(0L,false,false),registries->registries.registryOrThrow(Registries.WORLD_PRESET).getHolderOrThrow(WorldPresets.FLAT).value().createWorldDimensions(),new TitleScreen());
    }
    private static void verifyArt(Minecraft mc,String name,String expected)throws Exception{
-      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/milking_redesign_v1/"+name+".png");
+      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+name+".png");
       try(var input=mc.getResourceManager().getResourceOrThrow(id).open()){
          require(HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(input.readAllBytes())).equals(expected),"Active resource artwork differs: "+name);
       }
@@ -241,8 +242,8 @@ public final class NativeMooshroomMilkingValidation {
       // as a real native movement rather than a no-op to an unchanged position.
       // Use explicit interior targets, validated against both native and
       // Minecraft coordinates after normal event delivery.
-      double x=screen.getGuiLeft()+(tooltip?50:-40)+(ticks%2);
-      double y=screen.getGuiTop()+45;
+      double x=screen.getGuiLeft()+(tooltip?68:-40)+(ticks%2);
+      double y=screen.getGuiTop()+73;
       // GLFW warps can update its queried position without delivering motion to
       // Minecraft under Xvfb. XTest instead puts native MotionNotify events onto
       // X11's normal input path. Minecraft's callbacks are never invoked here.
@@ -265,7 +266,7 @@ public final class NativeMooshroomMilkingValidation {
       double y=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
       return GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE
          && GLFW.glfwGetInputMode(mc.getWindow().getWindow(),GLFW.GLFW_CURSOR)==GLFW.GLFW_CURSOR_NORMAL
-         && x>=screen.getGuiLeft()+27 && x<screen.getGuiLeft()+74 && y>=screen.getGuiTop()+34 && y<screen.getGuiTop()+75;
+         && x>=screen.getGuiLeft()+41 && x<screen.getGuiLeft()+98 && y>=screen.getGuiTop()+54 && y<screen.getGuiTop()+93;
    }
    private static boolean actualOutsideIdentity(Minecraft mc,MachineScreen screen){
       double x=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth();
@@ -273,7 +274,7 @@ public final class NativeMooshroomMilkingValidation {
       return GLFW.glfwGetWindowAttrib(mc.getWindow().getWindow(),GLFW.GLFW_FOCUSED)==GLFW.GLFW_TRUE
          && GLFW.glfwGetInputMode(mc.getWindow().getWindow(),GLFW.GLFW_CURSOR)==GLFW.GLFW_CURSOR_NORMAL
          && x>=screen.getGuiLeft()-40 && x<screen.getGuiLeft()-38
-         && y>=screen.getGuiTop()+45 && y<screen.getGuiTop()+46;
+         && y>=screen.getGuiTop()+73 && y<screen.getGuiTop()+74;
    }
    private static JsonObject inputDiagnostic(Minecraft mc){
       long window=mc.getWindow().getWindow();double[] x={0},y={0};GLFW.glfwGetCursorPos(window,x,y);
@@ -288,15 +289,15 @@ public final class NativeMooshroomMilkingValidation {
       o.addProperty("minecraft_cursor_x",mc.mouseHandler.xpos());o.addProperty("minecraft_cursor_y",mc.mouseHandler.ypos());
       o.addProperty("window_width",mc.getWindow().getScreenWidth());o.addProperty("window_height",mc.getWindow().getScreenHeight());
       if(mc.screen instanceof MachineScreen screen){
-         o.addProperty("target_gui_x_min",screen.getGuiLeft()+(stage==Stage.TOOLTIP?50:-40));
-         o.addProperty("target_gui_x_max_exclusive",screen.getGuiLeft()+(stage==Stage.TOOLTIP?52:-38));
-         o.addProperty("target_gui_y",screen.getGuiTop()+45);
+         o.addProperty("target_gui_x_min",screen.getGuiLeft()+(stage==Stage.TOOLTIP?68:-40));
+         o.addProperty("target_gui_x_max_exclusive",screen.getGuiLeft()+(stage==Stage.TOOLTIP?70:-38));
+         o.addProperty("target_gui_y",screen.getGuiTop()+73);
       }
       o.addProperty("settled_hover_ticks",hoverTicks);return o;
    }
    private static void capture(Minecraft mc,MachineMenu menu,JsonObject state,String phase,boolean tooltip)throws Exception{
       verifyViewport(mc);require(mc.getOverlay()==null,"Loading overlay");var screen=(MachineScreen)mc.screen;
-      require(screen.getXSize()==228 && screen.getYSize()==228 && menu.slots.size()==38,"Wrong canvas/menu");
+      require(screen.getXSize()==283 && screen.getYSize()==283 && menu.slots.size()==38,"Wrong canvas/menu");
       var o=state.deepCopy();addViewport(o,mc);o.addProperty("phase",phase);o.addProperty("name",phase+".png");
       o.addProperty("menu_id",menu.containerId);o.addProperty("server_menu_id",serverMenuId);
       o.addProperty("screen_class",screen.getClass().getName());o.addProperty("tooltip_hovered",actualIdentityHover(mc,screen));
@@ -308,7 +309,7 @@ public final class NativeMooshroomMilkingValidation {
       o.add("native_input",inputDiagnostic(mc));
       o.addProperty("hover_x",hoverX);o.addProperty("hover_y",hoverY);o.addProperty("settled_observations",stableObservations);
       require(menu.getCarried().isEmpty(),"Unexpected carried stack");
-      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+27)*scale,y=(screen.getGuiTop()+34)*scale,w=47*scale,h=41*scale;
+      int scale=(int)mc.getWindow().getGuiScale(),x=(screen.getGuiLeft()+41)*scale,y=(screen.getGuiTop()+54)*scale,w=57*scale,h=39*scale;
       Path folder=directory.resolve("mooshroom-milking-screenshots");Files.createDirectories(folder);
       Path file=folder.resolve(phase+".png"),portrait=folder.resolve(phase+"-portrait.png");require(!Files.exists(file) && !Files.exists(portrait),"Stale capture");
       try(var frame=Screenshot.takeScreenshot(mc.getMainRenderTarget());var crop=new NativeImage(w,h,false)){
@@ -333,7 +334,7 @@ public final class NativeMooshroomMilkingValidation {
          var p=new JsonObject();p.addProperty("suite",SUITE);p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
          p.addProperty("nonce",nonce);p.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));
          p.addProperty("requested_language",System.getProperty("iedctr.requestedLanguage",""));p.addProperty("selected_language",mc.getLanguageManager().getSelected());
-         p.addProperty("source_background_sha256","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
+         p.addProperty("source_background_sha256","82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa");
          p.addProperty("source_milk_sha256","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
          addViewport(p,mc);p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);p.addProperty("native_visual_acceptance",false);
          p.addProperty("tfc_version",tfcVersion);p.addProperty("native_tick_production",true);

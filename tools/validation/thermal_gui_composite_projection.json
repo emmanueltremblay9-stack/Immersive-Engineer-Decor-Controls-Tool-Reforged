@@ -1,0 +1,404 @@
+{
+  "src/main/java/com/oblixorprime/engineersdecorreforged/menu/MachineMenu.java": {
+    "candidate": "52f9cea8450a1e195a5d44c2fd84950131941161ebcd42565d7aac78a8e3291c",
+    "gui_parent": "ed253400fa0a277e60b3c1ae972a4b390dbcb17a7214d586782d86b9ea3741f9",
+    "hunks": [
+      [
+        12,
+        13,
+        "import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;\n",
+        ""
+      ],
+      [
+        124,
+        125,
+        "   private final boolean thermalVerticalPresentation;\n",
+        ""
+      ],
+      [
+        162,
+        164,
+        "      this.thermalVerticalPresentation = inventory.player.level().isClientSide\n         && (kind == MachineKind.SMALL_FREEZER || kind == MachineKind.SMALL_MINERAL_SMELTER);\n",
+        ""
+      ],
+      [
+        190,
+        195,
+        "         if (this.thermalVerticalPresentation && slot.containerIndex() != 1) {\n            var anchor = ThermalVerticalGeometry.slot(slot.containerIndex());\n            presentationSlot = new MachineLayout.MachineSlot(\n               slot.containerIndex(), anchor.x(), anchor.y(), slot.role(), slot.output());\n         } else if (this.freezerReferencePresentation && slot.containerIndex() != 1) {\n",
+        "         if (this.freezerReferencePresentation && slot.containerIndex() != 1) {\n"
+      ],
+      [
+        221,
+        225,
+        "            if (this.thermalVerticalPresentation) {\n               var anchor = ThermalVerticalGeometry.slot(3 + row * 9 + column);\n               x = anchor.x(); y = anchor.y();\n            } else if (this.freezerReferencePresentation) {\n",
+        "            if (this.freezerReferencePresentation) {\n"
+      ],
+      [
+        251,
+        255,
+        "         if (this.thermalVerticalPresentation) {\n            var anchor = ThermalVerticalGeometry.slot(30 + column);\n            x = anchor.x(); y = anchor.y();\n         } else if (this.freezerReferencePresentation) {\n",
+        "         if (this.freezerReferencePresentation) {\n"
+      ],
+      [
+        299,
+        302,
+        "   }\n   public boolean thermalVerticalPresentation() {\n      return this.thermalVerticalPresentation;\n",
+        ""
+      ],
+      [
+        601,
+        603,
+        "               return !MachineMenu.this.freezerReferencePresentation\n                  && !MachineMenu.this.thermalVerticalPresentation;\n",
+        "               return !MachineMenu.this.freezerReferencePresentation;\n"
+      ],
+      [
+        611,
+        613,
+        "               return !MachineMenu.this.menuPlayer.level().isClientSide\n                  || MachineMenu.this.thermalVerticalPresentation || MachineMenu.this.smelterOutputDrawerOpen;\n",
+        "               return !MachineMenu.this.menuPlayer.level().isClientSide || MachineMenu.this.smelterOutputDrawerOpen;\n"
+      ]
+    ]
+  },
+  "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineBlockEntity.java": {
+    "candidate": "cb3f7acacb0a2da155b6a6d4699833cb09bb89281a155ee71c0c1e8ab4497233",
+    "gui_parent": "3f4d20a63fe8d67d917a518d1f66997e37fe4503f84d5857c7e39696fe22e983",
+    "hunks": [
+      [
+        181,
+        182,
+        "    private static final int FREEZER_BATCH_VERSION = 1;\n",
+        ""
+      ],
+      [
+        217,
+        218,
+        "   private ItemStack freezerBatchInput = ItemStack.EMPTY;\n",
+        ""
+      ],
+      [
+        265,
+        269,
+        "   // One-stage automatic recipes, with a one-time legacy in-flight job migration.\n   private int mineralAutoRecipe = -1; // 0 mineral->magma, 1 magma->lava, 2 top lava->obsidian\n   private int mineralInputLava; // Top-inserted ingredient credit, not generated lava.\n   private boolean mineralLegacyBatch;\n",
+        ""
+      ],
+      [
+        448,
+        481,
+        "   /** Freezer physical input 0 is accessible to automation only from above. */\n   private final IItemHandler freezerTopItems = new IItemHandler() {\n      public int getSlots() { return 1; }\n      public ItemStack getStackInSlot(int slot) { return slot == 0 ? MachineBlockEntity.this.items.get(0).copy() : ItemStack.EMPTY; }\n      public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {\n         return slot == 0 ? MachineBlockEntity.this.itemHandler.insertItem(0, stack, simulate) : stack;\n      }\n      public ItemStack extractItem(int slot, int amount, boolean simulate) { return ItemStack.EMPTY; }\n      public int getSlotLimit(int slot) { return slot == 0 ? MachineBlockEntity.this.itemHandler.getSlotLimit(0) : 0; }\n      public boolean isItemValid(int slot, ItemStack stack) { return slot == 0 && MachineBlockEntity.this.canPlaceItem(0, stack); }\n   };\n   /** Freezer output 2 and returned empty bucket from 0; reserved legacy slot 1 remains hidden. */\n   private final IItemHandler freezerBottomItems = new IItemHandler() {\n      public int getSlots() { return 2; }\n      public ItemStack getStackInSlot(int slot) {\n         return slot == 0 ? MachineBlockEntity.this.items.get(2).copy() :\n            slot == 1 && MachineBlockEntity.this.items.get(0).is(Items.BUCKET)\n               ? MachineBlockEntity.this.items.get(0).copy() : ItemStack.EMPTY;\n      }\n      public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) { return stack; }\n      public ItemStack extractItem(int slot, int amount, boolean simulate) {\n         if (amount <= 0) return ItemStack.EMPTY;\n         if (slot == 0) return MachineBlockEntity.this.itemHandler.extractItem(2, amount, simulate);\n         return slot == 1 && MachineBlockEntity.this.items.get(0).is(Items.BUCKET)\n            ? MachineBlockEntity.this.itemHandler.extractItem(0, amount, simulate) : ItemStack.EMPTY;\n      }\n      public int getSlotLimit(int slot) {\n         return slot == 0 ? MachineBlockEntity.this.itemHandler.getSlotLimit(2)\n            : slot == 1 ? MachineBlockEntity.this.itemHandler.getSlotLimit(0) : 0;\n      }\n      public boolean isItemValid(int slot, ItemStack stack) { return false; }\n   };\n\n",
+        ""
+      ],
+      [
+        607,
+        617,
+        "            if (!input) return 0;\n            int accepted = MachineBlockEntity.this.fluidHandler.fill(resource, action);\n            if (accepted > 0 && action.execute() && !output\n               && MachineBlockEntity.this.kind() == MachineKind.SMALL_MINERAL_SMELTER\n               && resource.is(Fluids.LAVA)) {\n               MachineBlockEntity.this.mineralInputLava = Math.min(MachineBlockEntity.this.fluidAmount,\n                  MachineBlockEntity.this.mineralInputLava + accepted);\n               MachineBlockEntity.this.setChanged();\n            }\n            return accepted;\n",
+        "            return input ? MachineBlockEntity.this.fluidHandler.fill(resource, action) : 0;\n"
+      ],
+      [
+        636,
+        640,
+        "      if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER) return this.fluidAmount;\n      int reserved = Math.max(this.mineralInputLava,\n         this.mineralLegacyBatch && this.mineralCooling ? BUCKET_AMOUNT : 0);\n      return Math.max(0, this.fluidAmount - reserved);\n",
+        "      if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER || !this.mineralCooling) return this.fluidAmount;\n      return Math.max(0, this.fluidAmount - BUCKET_AMOUNT);\n"
+      ],
+      [
+        644,
+        645,
+        "   private final IFluidHandler freezerTopFluid = this.mineralPort(true, false);\n",
+        ""
+      ],
+      [
+        834,
+        839,
+        "      if (this.kind() == MachineKind.SMALL_FREEZER) {\n         if (side == Direction.UP) return this.freezerTopItems;\n         if (side == Direction.DOWN) return this.freezerBottomItems;\n         return side == null ? this.itemHandler : null;\n      }\n",
+        ""
+      ],
+      [
+        897,
+        899,
+        "      if (this.kind() == MachineKind.SMALL_FREEZER)\n         return side == Direction.UP ? this.freezerTopFluid : side == null ? this.fluidHandler : null;\n",
+        ""
+      ],
+      [
+        932,
+        933,
+        "      if ((this.kind() == MachineKind.SMALL_MINERAL_SMELTER || this.kind() == MachineKind.SMALL_FREEZER) && side == null) return null;\n",
+        "      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER && side == null) return null;\n"
+      ],
+      [
+        938,
+        939,
+        "      if (this.kind() == MachineKind.SMALL_FREEZER && side == null) return null;\n",
+        ""
+      ],
+      [
+        1058,
+        1067,
+        "            // Right-click inserts an ingredient; it must not bypass the timed server cycle.\n            if (this.items.get(0).isEmpty() && this.canPlaceItem(0, stack)) {\n               this.items.set(0, new ItemStack(Items.WATER_BUCKET));\n               if (!player.getAbilities().instabuild) {\n                  stack.shrink(1);\n                  if (stack.isEmpty()) player.setItemInHand(hand, ItemStack.EMPTY);\n               }\n               this.stopFreezerProcess();\n               changed = true;\n",
+        "            if (this.energy < 1440) {\n               return false;\n"
+      ],
+      [
+        1068,
+        1068,
+        "",
+        "\n            ItemStack result = new ItemStack(Items.ICE);\n            changed = this.canInsertIntoSlots(result, 2)\n               && this.consumeHeldBucket(stack, player, hand, new ItemStack(Items.BUCKET))\n               && this.insertIntoSlots(result, 2);\n            if (changed) {\n               this.energy -= 1440;\n            }\n\n            this.stopFreezerProcess();\n"
+      ],
+      [
+        1088,
+        1090,
+        "            : kind == MachineKind.SMALL_FREEZER && stack.is(Items.WATER_BUCKET)\n               && this.items.get(0).isEmpty() && this.canPlaceItem(0, stack);\n",
+        "            : kind == MachineKind.SMALL_FREEZER && stack.is(Items.WATER_BUCKET) && this.energy >= 1440 && this.canInsertIntoSlots(new ItemStack(Items.ICE), 2);\n"
+      ],
+      [
+        1182,
+        1185,
+        "        if (this.kind() == MachineKind.SMALL_FREEZER) {\n            return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2, 0} : new int[0];\n        }\n",
+        ""
+      ],
+      [
+        1196,
+        1198,
+        "      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER || this.kind() == MachineKind.SMALL_FREEZER)\n         return side == Direction.UP && slot == 0 && this.canPlaceItem(0, stack);\n",
+        "      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) return side == Direction.UP && slot == 0 && this.canPlaceItem(0, stack);\n"
+      ],
+      [
+        1204,
+        1206,
+        "      if (this.kind() == MachineKind.SMALL_FREEZER)\n         return side == Direction.DOWN && (slot == 2 || slot == 0 && stack.is(Items.BUCKET));\n",
+        "      if (this.kind() == MachineKind.SMALL_FREEZER) return this.canAutomationExtract(slot);\n"
+      ],
+      [
+        1219,
+        1224,
+        "      if (this.kind() == MachineKind.SMALL_FREEZER) {\n         return (slot == 2 || slot == 0 && stack.is(Items.BUCKET))\n            && destination instanceof BlockEntity below && below.getLevel() == this.level\n            && below.getBlockPos().equals(this.worldPosition.below());\n      }\n",
+        "      if (this.kind() == MachineKind.SMALL_FREEZER) return this.canAutomationExtract(slot);\n"
+      ],
+      [
+        1334,
+        1335,
+        "                  yield this.isMineralInput(stack) || stack.is(Items.MAGMA_BLOCK);\n",
+        "                  yield this.isMineralInput(stack);\n"
+      ],
+      [
+        1487,
+        1488,
+        "      // Legacy action is inert; recipes depend exclusively on input.\n",
+        "      if (requested < MINERAL_MODE_LAVA || requested > MINERAL_MODE_OBSIDIAN\n         || expectedRevision != this.mineralModeRevision) return;\n      if (this.mineralBatchActive) {\n         this.mineralQueuedMode = requested;\n      } else {\n         this.mineralMode = requested;\n         this.mineralQueuedMode = -1;\n      }\n      this.mineralModeRevision = (this.mineralModeRevision + 1) % 30000;\n      this.setChanged();\n"
+      ],
+      [
+        1493,
+        1494,
+        "         case 0 -> 1; // Synchronized data only; interactive recipe selection is disabled.\n",
+        "         case 0 -> 3;\n"
+      ],
+      [
+        1495,
+        1498,
+        "         case 2 -> -1;\n         case 3 -> this.mineralLegacyBatch && this.mineralBatchActive ? this.mineralBatchMode : -1;\n         case 4 -> -1;\n",
+        "         case 2 -> this.mineralMode;\n         case 3 -> this.mineralBatchActive ? this.mineralBatchMode : -1;\n         case 4 -> this.mineralQueuedMode;\n"
+      ],
+      [
+        1516,
+        1517,
+        "      if (this.mineralStatus == 0) return 9;\n",
+        "      if (this.mineralStatus == 0) return this.mineralQueuedMode >= 0 ? 10 : 9;\n"
+      ],
+      [
+        1532,
+        1533,
+        "      return false; // The old GUI/network packet cannot select hidden modes.\n",
+        "      if (player == null || player.isSpectator() || this.level == null || this.level.isClientSide\n         || this.kind() != MachineKind.SMALL_MINERAL_SMELTER\n         || !(player.containerMenu instanceof MachineMenu menu)\n         || !menu.isMineralSmelterMenuFor(this) || !menu.stillValid(player)\n         || this.level.getBlockEntity(this.worldPosition) != this\n         || !this.level.getBlockState(this.worldPosition).is(ModBlocks.SMALL_MINERAL_SMELTER.get())\n         || requested < MINERAL_MODE_LAVA || requested > MINERAL_MODE_OBSIDIAN\n         || expectedRevision != this.mineralModeRevision) {\n         return false;\n      }\n      this.selectMineralMode(requested, expectedRevision);\n      return true;\n"
+      ],
+      [
+        2010,
+        2031,
+        "      if (this.kind() == MachineKind.SMALL_FREEZER) {\n         boolean historicalMarker = tag.contains(\"FreezerFluidProcess\", Tag.TAG_BYTE);\n         boolean noBatchVersion = !tag.contains(\"FreezerBatchVersion\");\n         boolean currentBatchVersion = tag.contains(\"FreezerBatchVersion\", Tag.TAG_INT)\n            && tag.getInt(\"FreezerBatchVersion\") == FREEZER_BATCH_VERSION;\n         boolean signedItemBatch = historicalMarker && !this.freezerFluidProcess\n            && (noBatchVersion || currentBatchVersion)\n            && tag.contains(\"FreezerBatchInput\", Tag.TAG_COMPOUND);\n         boolean historicalItemBatch = historicalMarker && !this.freezerFluidProcess\n            && noBatchVersion && !tag.contains(\"FreezerBatchInput\")\n            && this.progress > 0 && this.progress < FREEZER_PROCESS_TICKS\n            && !this.freezerResult(this.items.get(0)).isEmpty();\n         // main@e8b21c91 wrote FreezerFluidProcess=false for item work, but no\n         // item signature. Only that exact legacy shape may recover paid work.\n         // Modern versioned states with an absent signature cannot borrow it.\n         this.freezerBatchInput = signedItemBatch\n            ? ItemStack.parseOptional(registries, tag.getCompound(\"FreezerBatchInput\"))\n            : historicalItemBatch ? this.items.get(0).copyWithCount(1) : ItemStack.EMPTY;\n      } else {\n         this.freezerBatchInput = ItemStack.EMPTY;\n      }\n",
+        ""
+      ],
+      [
+        2103,
+        2117,
+        "      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {\n         int version = tag.getInt(\"MineralAutoVersion\");\n         this.mineralLegacyBatch = version < 1 ? this.mineralBatchActive\n            : tag.getBoolean(\"MineralLegacyBatch\") && this.mineralBatchActive;\n         this.mineralAutoRecipe = version >= 1 && this.mineralBatchActive && !this.mineralLegacyBatch\n            ? Mth.clamp(tag.getInt(\"MineralAutoRecipe\"), -1, 2) : -1;\n         this.mineralInputLava = version >= 1\n            ? Mth.clamp(tag.getInt(\"MineralInputLava\"), 0, this.fluidAmount) : 0;\n         this.mineralQueuedMode = -1; // Never carry a hidden next-recipe preference.\n         if (this.mineralBatchActive && !this.mineralLegacyBatch && this.mineralAutoRecipe < 0) {\n            this.mineralBatchActive = false;\n            this.progress = 0;\n         }\n      }\n",
+        ""
+      ],
+      [
+        2178,
+        2185,
+        "      if (this.kind() == MachineKind.SMALL_FREEZER) {\n         tag.putInt(\"FreezerBatchVersion\", FREEZER_BATCH_VERSION);\n         tag.putBoolean(\"FreezerFluidProcess\", this.freezerFluidProcess);\n         if (!this.freezerBatchInput.isEmpty())\n            tag.put(\"FreezerBatchInput\", this.freezerBatchInput.save(registries));\n         else tag.remove(\"FreezerBatchInput\");\n      }\n",
+        "      if (this.kind() == MachineKind.SMALL_FREEZER) tag.putBoolean(\"FreezerFluidProcess\", this.freezerFluidProcess);\n"
+      ],
+      [
+        2218,
+        2222,
+        "         tag.putInt(\"MineralAutoVersion\", 1);\n         tag.putInt(\"MineralAutoRecipe\", this.mineralAutoRecipe);\n         tag.putInt(\"MineralInputLava\", this.mineralInputLava);\n         tag.putBoolean(\"MineralLegacyBatch\", this.mineralLegacyBatch);\n",
+        ""
+      ],
+      [
+        3031,
+        3035,
+        "   /** One machine, one automatic stage per cycle.\n    * Item mineral -> item magma; item magma -> output lava fluid;\n    * externally pumped top lava -> item obsidian. No hidden mode selects a result.\n    */\n",
+        ""
+      ],
+      [
+        3036,
+        3158,
+        "      if (this.mineralLegacyBatch) {\n         this.tickLegacyMineralSmelter(powered);\n         return;\n      }\n      this.mineralActualFeRate = 0;\n      if (this.level == null) return;\n      if (!this.mineralBatchActive && this.tickCounter % MINERAL_COOL_TICK_PERIOD == 0\n         && this.mineralTemperature > 0) {\n         this.setMineralTemperature(this.mineralTemperature - 1);\n      }\n\n      ItemStack input = this.items.get(0);\n      if (!this.mineralBatchActive) {\n         this.mineralAutoRecipe = this.nextAutomaticMineralStage();\n         if (this.mineralAutoRecipe < 0) {\n            this.mineralStatus = input.isEmpty() ? 3 : 4; // NO_INPUT / INVALID_INPUT\n            return;\n         }\n         this.mineralBatchActive = true;\n         this.mineralCooling = this.mineralAutoRecipe == 2;\n         this.mineralBatchInput = this.mineralCooling ? ItemStack.EMPTY : input.copyWithCount(1);\n         this.progress = 0;\n         this.mineralHeatTickRemainder = 0;\n         if (this.mineralCooling) this.setMineralTemperature(100);\n         this.setChanged();\n      }\n\n      int stage = this.mineralAutoRecipe;\n      boolean inputValid = stage == 2\n         ? input.isEmpty() && \"lava\".equals(this.fluidType)\n            && this.mineralInputLava >= BUCKET_AMOUNT && this.fluidAmount >= BUCKET_AMOUNT\n         : (stage == 0 ? this.isMineralInput(input) : input.is(Items.MAGMA_BLOCK))\n            && ItemStack.isSameItemSameComponents(input, this.mineralBatchInput);\n      if (!inputValid) {\n         this.cancelMineralWork();\n         this.mineralStatus = 4;\n         return;\n      }\n\n      ItemStack result = new ItemStack(stage == 2 ? Items.OBSIDIAN : Items.MAGMA_BLOCK);\n      if (stage != 1 && !this.canInsertIntoSlots(result, 2)) {\n         this.mineralStatus = 6; // OUTPUT_FULL, preserve paid work\n         this.coolAutoMineralWhileBlocked();\n         return;\n      }\n      if (stage == 1 && !this.canAddFluid(\"lava\", MINERAL_LAVA_PER_INPUT,\n         this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER))) {\n         this.mineralStatus = 5; // TANK_FULL, preserve paid work\n         this.coolAutoMineralWhileBlocked();\n         return;\n      }\n      if (powered) {\n         this.mineralStatus = 8; // REDSTONE_PAUSED\n         this.coolAutoMineralWhileBlocked();\n         return;\n      }\n      if (stage == 2) {\n         // Cooling consumes no FE as in the former Obsidian cooling stage.\n         this.mineralStatus = 2;\n         if (this.tickCounter % MINERAL_COOL_TICK_PERIOD != 0) return;\n         this.progress = Math.min(100, this.progress + 1);\n         // Cooling progress is a ceiling, never a heat source after output/redstone pauses.\n         this.setMineralTemperature(Math.min(this.mineralTemperature, Math.max(0, 100 - this.progress)));\n         this.setChanged();\n         if (this.progress >= 100) {\n            // Atomic server-side commit after output and ingredient revalidation.\n            if (!this.canInsertIntoSlots(result, 2)\n               || this.mineralInputLava < BUCKET_AMOUNT || this.fluidAmount < BUCKET_AMOUNT) return;\n            this.fluidAmount -= BUCKET_AMOUNT;\n            this.mineralInputLava -= BUCKET_AMOUNT;\n            if (this.fluidAmount == 0) this.fluidType = \"\";\n            this.insertIntoSlots(result, 2);\n            this.finishMineralBatch();\n         }\n         return;\n      }\n\n      if (this.energy < MINERAL_SMELTER_ENERGY_PER_TICK) {\n         this.mineralStatus = 9; // WAIT_FE, preserve paid work\n         this.coolAutoMineralWhileBlocked();\n         return;\n      }\n      this.energy -= MINERAL_SMELTER_ENERGY_PER_TICK;\n      this.mineralActualFeRate = MINERAL_SMELTER_ENERGY_PER_TICK;\n      this.mineralStatus = 1; // HEATING\n      this.mineralHeatTickRemainder++;\n      if (this.mineralHeatTickRemainder >= MINERAL_HEAT_TICK_PERIOD) {\n         this.mineralHeatTickRemainder = 0;\n         this.progress = Math.min(100, this.progress + 1);\n         this.setMineralTemperature(Math.max(this.mineralTemperature, this.progress));\n      }\n      this.setChanged();\n      int goal = stage == 0 ? 90 : 100;\n      if (this.progress < goal) return;\n\n      if (stage == 0 && this.canInsertIntoSlots(result, 2)) {\n         input.shrink(1);\n         this.insertIntoSlots(result, 2);\n         this.finishMineralBatch();\n      } else if (stage == 1 && this.canAddFluid(\"lava\", MINERAL_LAVA_PER_INPUT,\n         this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER))) {\n         input.shrink(1);\n         this.addFluid(\"lava\", MINERAL_LAVA_PER_INPUT, this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER));\n         // Generated lava has NO input credit: it is a product for the next machine.\n         this.finishMineralBatch();\n      }\n   }\n\n   private void coolAutoMineralWhileBlocked() {\n      if (this.tickCounter % MINERAL_COOL_TICK_PERIOD == 0 && this.mineralTemperature > 0)\n         this.setMineralTemperature(this.mineralTemperature - 1);\n   }\n\n   private int nextAutomaticMineralStage() {\n      ItemStack input = this.items.get(0);\n      return MineralStageRules.select(!input.isEmpty(), this.isMineralInput(input),\n         input.is(Items.MAGMA_BLOCK), \"lava\".equals(this.fluidType),\n         this.mineralInputLava, BUCKET_AMOUNT);\n   }\n\n   /** Legacy selected-mode batch runs ONLY if it was active in an old saved world. */\n   private void tickLegacyMineralSmelter(boolean powered) {\n",
+        ""
+      ],
+      [
+        3287,
+        3290,
+        "      this.mineralAutoRecipe = -1;\n      this.mineralLegacyBatch = false;\n      this.mineralQueuedMode = -1;\n",
+        ""
+      ],
+      [
+        3293,
+        3293,
+        "",
+        "      this.applyQueuedMineralMode();\n"
+      ],
+      [
+        3309,
+        3312,
+        "      this.mineralAutoRecipe = -1;\n      this.mineralLegacyBatch = false;\n      this.mineralQueuedMode = -1;\n",
+        "      this.applyQueuedMineralMode();\n"
+      ],
+      [
+        3336,
+        3338,
+        "      // Confirmed Freezer contract: redstone and insufficient FE stop the paid cycle.\n      // Owner-confirmed: full output resets work, without refunding already-paid FE.\n",
+        ""
+      ],
+      [
+        3340,
+        3380,
+        "         return;\n      }\n      boolean fluidInput = this.freezerFluidInputReady();\n      int slot = this.firstFreezableSlot();\n      if (slot < 0 && !fluidInput) {\n         this.stopFreezerProcess();\n         return;\n      }\n      if (this.progress > 0 && this.freezerFluidProcess != fluidInput) {\n         this.stopFreezerProcess();\n      }\n      if (!fluidInput && this.progress > 0\n         && !ItemStack.isSameItemSameComponents(this.items.get(slot), this.freezerBatchInput)) {\n         this.stopFreezerProcess(); // New ingredient must not inherit work paid for another.\n      }\n      ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult(this.items.get(slot));\n      if (result.isEmpty()) {\n         this.stopFreezerProcess();\n         return;\n      }\n      if (!this.canInsertIntoSlots(result, 2)) {\n         this.stopFreezerProcess();\n         return;\n      }\n      if (this.energy < FREEZER_ENERGY_PER_TICK) {\n         this.stopFreezerProcess();\n         return;\n      }\n      this.freezerFluidProcess = fluidInput;\n      if (!fluidInput && this.progress == 0) this.freezerBatchInput = this.items.get(slot).copyWithCount(1);\n      this.energy -= FREEZER_ENERGY_PER_TICK;\n      this.setChanged();\n      this.progress++;\n      this.setIntProperty(MachineBlocks.PHASE_0_4, Math.min(4, this.progress / 45));\n      if (this.progress < FREEZER_PROCESS_TICKS) return;\n\n      if (fluidInput) {\n         if (this.fluidAmount < BUCKET_AMOUNT || !\"water\".equals(this.fluidType)) return;\n         this.fluidAmount -= BUCKET_AMOUNT;\n         if (this.fluidAmount == 0) this.fluidType = \"\";\n",
+        ""
+      ],
+      [
+        3381,
+        3383,
+        "         ItemStack input = this.items.get(slot);\n         if (!ItemStack.isSameItemSameComponents(input, this.freezerBatchInput)) {\n",
+        "         // Item recipes retain priority; fluid work never consumes or overwrites an occupied input slot.\n         boolean fluidInput = this.freezerFluidInputReady();\n         int slot = this.firstFreezableSlot();\n         if (slot < 0 && !fluidInput) {\n"
+      ],
+      [
+        3384,
+        3389,
+        "            return;\n         }\n         if (input.is(Items.WATER_BUCKET)) {\n            input.shrink(1);\n            this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);\n",
+        ""
+      ],
+      [
+        3390,
+        3391,
+        "            input.shrink(1);\n",
+        "            if (this.progress > 0 && this.freezerFluidProcess != fluidInput) this.stopFreezerProcess();\n            ItemStack result = fluidInput ? new ItemStack(Items.ICE) : this.freezerResult((ItemStack)this.items.get(slot));\n            if (!result.isEmpty() && this.canInsertIntoSlots(result, 2)) {\n               if (this.energy < 8) {\n                  this.stopFreezerProcess();\n               } else {\n                  this.freezerFluidProcess = fluidInput;\n                  this.energy -= 8;\n                  this.setChanged();\n                  this.progress++;\n                  this.setIntProperty(MachineBlocks.PHASE_0_4, Math.min(4, this.progress / 45));\n                  if (this.progress >= FREEZER_PROCESS_TICKS) {\n                     if (fluidInput) {\n                        this.fluidAmount -= BUCKET_AMOUNT;\n                        if (this.fluidAmount == 0) this.fluidType = \"\";\n                     } else {\n                        ItemStack input = (ItemStack)this.items.get(slot);\n                        if (input.is(Items.WATER_BUCKET)) {\n                           input.shrink(1);\n                           this.insertIntoSlots(new ItemStack(Items.BUCKET), slot);\n                        } else {\n                           input.shrink(1);\n                        }\n                     }\n\n                     this.insertIntoSlots(result, 2);\n                     this.stopFreezerProcess();\n                  }\n               }\n            } else {\n               this.stopFreezerProcess();\n            }\n"
+      ],
+      [
+        3393,
+        3395,
+        "      this.insertIntoSlots(result, 2);\n      this.stopFreezerProcess(); // Next unit starts a new independent cycle.\n",
+        ""
+      ],
+      [
+        3398,
+        3400,
+        "      boolean changed = this.progress != 0 || this.freezerFluidProcess\n         || !this.freezerBatchInput.isEmpty() || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;\n",
+        "      boolean changed = this.progress != 0 || this.freezerFluidProcess || this.propertyValue(MachineBlocks.PHASE_0_4) != 0;\n"
+      ],
+      [
+        3402,
+        3403,
+        "      this.freezerBatchInput = ItemStack.EMPTY;\n",
+        ""
+      ],
+      [
+        5056,
+        5068,
+        "      if (kind == MachineKind.SMALL_FREEZER) {\n         if (this.progress == 0) {\n            this.freezerFluidProcess = false;\n            this.freezerBatchInput = ItemStack.EMPTY;\n         } else if (this.freezerFluidProcess) {\n            if (!this.freezerFluidInputReady() || !this.freezerBatchInput.isEmpty()) this.stopFreezerProcess();\n         } else if (this.freezerBatchInput.isEmpty() || this.freezerBatchInput.getCount() != 1\n               || this.firstFreezableSlot() < 0\n               || !ItemStack.isSameItemSameComponents(this.items.get(0), this.freezerBatchInput)) {\n            // Modern missing/mismatched signature is not legacy item progress.\n            this.stopFreezerProcess();\n         }\n",
+        "      if (kind == MachineKind.SMALL_FREEZER && this.freezerFluidProcess\n            && (this.progress == 0 || !this.freezerFluidInputReady())) {\n         this.stopFreezerProcess();\n"
+      ]
+    ]
+  },
+  "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java": {
+    "candidate": "cdf011b77435905ebc05abfc577eff4f5bd0596e0d7f726016ae01ee5bb4ee22",
+    "gui_parent": "32dcc7e1307b977e4e2ce2ff1e3d0e61bc2e1e5c13c6295b079ae6ed0849db2c",
+    "hunks": [
+      [
+        152,
+        152,
+        "",
+        "         if (((MachineMenu)this.menu).kind() == MachineKind.FACTORY_DROPPER) {\n            this.drawRetainedDropper(graphics, texture, x, y);\n            return;\n         }\n"
+      ],
+      [
+        154,
+        155,
+        "            if (kind == MachineKind.SMALL_FREEZER) {\n",
+        "            if (kind == MachineKind.FACTORY_HOPPER) {\n                FactoryHopperSteelArtwork.render(graphics, this.menu, texture, x, y);\n            } else if (kind == MachineKind.SMALL_FREEZER) {\n"
+      ],
+      [
+        738,
+        739,
+        "      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 17, 200, 8, 18, 18);\n",
+        "      graphics.blit(texture, x0 + 10 + slotIndex % 6 * 18, y0 + 8 + slotIndex / 6 * 18, 200, 8, 18, 18);\n"
+      ],
+      [
+        740,
+        741,
+        "      graphics.blit(texture, x0 + rangeMarkers[Mth.clamp(((MachineMenu)this.menu).field(0), 0, 4)] - 2, y0 + 14, 179, 40, 5, 5);\n",
+        "      FactorySteelFrame.thumb(graphics, x0 + rangeMarkers[Mth.clamp(((MachineMenu)this.menu).field(0), 0, 4)] - 2, y0 + 14, 5, 5);\n"
+      ],
+      [
+        742,
+        744,
+        "      graphics.blit(texture, x0 + 132 - 2 + periodX, y0 + 27, 179, 40, 5, 5);\n      graphics.blit(texture, x0 + 133 - 2 + Mth.clamp(((MachineMenu)this.menu).field(1), 1, 32), y0 + 40, 179, 40, 5, 5);\n",
+        "      FactorySteelFrame.thumb(graphics, x0 + 132 - 2 + periodX, y0 + 27, 5, 5);\n      FactorySteelFrame.thumb(graphics, x0 + 133 - 2 + Mth.clamp(((MachineMenu)this.menu).field(1), 1, 32), y0 + 40, 5, 5);\n"
+      ],
+      [
+        759,
+        759,
+        "",
+        "   private void drawRetainedDropper(GuiGraphics graphics,ResourceLocation texture,int x,int y) {\n      ResourceLocation steel=ResourceLocation.fromNamespaceAndPath(\n         \"immersive_engineer_decor_controls_tool_reforged\", \"textures/gui/factory_steel_v2/dropper.png\");\n      // Specialist candidate uses six raster texels per logical pixel, not the older atlas UVs.\n      graphics.blit(steel,x,y,228,250,0F,0F,1368,1500,1368,1500);\n      MachineMenu m=(MachineMenu)this.menu;\n      FactorySteelFrame.slots(graphics,m,x,y);\n      int active=Mth.clamp(m.field(15),0,11);\n      MachineLayout.MachineSlot slot=m.layout().machineSlots().get(active);\n      this.drawHoverOutline(graphics,x+slot.x()-1,y+slot.y()-1,18,18,0xFFFFC34A);\n      // Cover painted default positions; display only synchronized settings.\n      FactorySteelFrame.inset(graphics,x+153,y+32,7,29);\n      int velocity=34+(100-Mth.clamp(m.field(0),0,100))*25/100;\n      FactorySteelFrame.thumb(graphics,x+153,y+velocity-2,7,5);\n      FactorySteelFrame.inset(graphics,x+170,y+33,28,27);\n      graphics.fill(x+183,y+34,x+184,y+59,0xFF687078);\n      graphics.fill(x+171,y+46,x+197,y+47,0xFF687078);\n      int dx=184+Mth.clamp(m.field(1),-100,100)*13/100,dy=46-Mth.clamp(m.field(2),-100,100)*13/100;\n      graphics.fill(x+dx-1,y+dy-1,x+dx+2,y+dy+2,0xFFFFBF5A);\n      for(int n=0;n<2;n++) {\n         int sy=69+n*12;\n         FactorySteelFrame.inset(graphics,x+156,y+sy-3,43,7);\n         graphics.fill(x+160,y+sy,x+197,y+sy+1,0xFF929A9E);\n         int value=n==0 ? (Mth.clamp(m.field(4),1,32)-1)*37/31 : Mth.clamp(m.field(6),0,100)*37/100;\n         FactorySteelFrame.thumb(graphics,x+158+value,y+sy-3,5,7);\n      }\n      int logic=m.field(5);\n      int[] state={(logic&1)!=0?1:0,(logic&32)!=0?2:((logic&2)!=0?1:0),(logic&16)!=0?1:0};\n      for(int n=0;n<3;n++) {\n         int sx=143+n*23;\n         // Fixed function symbols sit above the synchronized rail, never beneath its thumb.\n         FactorySteelFrame.controlSymbol(graphics,x+sx+5,y+90,n);\n         FactorySteelFrame.inset(graphics,x+sx,y+100,18,8);\n         int offset=state[n]*(n==1?6:12);\n         FactorySteelFrame.thumb(graphics,x+sx+1+offset,y+101,5,6);\n         int status=Mth.clamp(m.field(12+n),0,2);\n         int cx=39+n*33;\n         graphics.fill(x+cx-2,y+105,x+cx+2,y+109,new int[]{0xFF555555,0xFFFFC34A,0xFF70C570}[status]);\n      }\n      graphics.fill(x+126,y+96,x+131,y+101,m.field(11)!=0?0xFFFF4545:0xFF712424);\n      // Cadence activity lamp remains next to the cadence control, never quantity.\n      graphics.fill(x+202,y+79,x+206,y+83,m.field(9)>10&&System.currentTimeMillis()%1000L<500L?0xFFFFC34A:0xFF343A3F);\n   }\n"
+      ],
+      [
+        1293,
+        1335,
+        "      int mx = (int)(mouseX - this.leftPos + 0.5);\n      int my = (int)(mouseY - this.topPos + 0.5);\n      if (!this.isHovering(114, 1, 61, 79, mouseX, mouseY)) {\n         return false;\n      }\n\n      if (this.isHovering(130, 10, 12, 25, mouseX, mouseY)) {\n         this.sendAction(10, 100 - Mth.clamp((my - 10) * 100 / 25, 0, 100));\n      } else if (this.isHovering(145, 10, 25, 25, mouseX, mouseY)) {\n         int xDev = Mth.clamp((int)Math.round((mx - 157) * 100.0 / 12.0), -100, 100);\n         int yDev = Mth.clamp(-((int)Math.round((my - 22) * 100.0 / 12.0)), -100, 100);\n         if (Math.abs(xDev) < 9) {\n            xDev = 0;\n         }\n\n         if (Math.abs(yDev) < 9) {\n            yDev = 0;\n         }\n\n         this.sendAction(11, xDev, yDev);\n      } else if (this.isHovering(129, 40, 44, 10, mouseX, mouseY)) {\n         this.sendAction(12, this.sliderValue(mx, 135, 34, 1, 32, ((MachineMenu)this.menu).field(4), 1));\n      } else if (this.isHovering(129, 50, 44, 10, mouseX, mouseY)) {\n         this.sendAction(13, this.sliderValue(mx, 135, 34, 0, 100, ((MachineMenu)this.menu).field(6), 3));\n      } else if (this.isHovering(114, 51, 9, 9, mouseX, mouseY)) {\n         this.sendAction(15, 1);\n      } else if (this.isHovering(162, 66, 7, 9, mouseX, mouseY)) {\n         this.sendAction(14, ((MachineMenu)this.menu).field(5) ^ 16);\n      } else if (this.isHovering(132, 66, 9, 9, mouseX, mouseY)) {\n         this.sendAction(14, ((MachineMenu)this.menu).field(5) ^ 1);\n      } else if (this.isHovering(148, 66, 9, 9, mouseX, mouseY)) {\n         int mask = 34;\n\n         int next = switch (((MachineMenu)this.menu).field(5) & mask) {\n            case 0 -> 32;\n            case 2 -> 0;\n            case 32 -> 2;\n            default -> 2;\n         };\n         this.sendAction(14, ((MachineMenu)this.menu).field(5) & ~mask | next);\n      }\n\n",
+        "      int mx=(int)(mouseX-this.leftPos+0.5), my=(int)(mouseY-this.topPos+0.5);\n      if (this.isHovering(151,31,11,31,mouseX,mouseY)) {\n         this.sendAction(10,100-Mth.clamp((my-34)*100/25,0,100));\n      } else if (this.isHovering(168,31,32,31,mouseX,mouseY)) {\n         int dx=Mth.clamp((mx-184)*100/13,-100,100);\n         int dy=Mth.clamp((46-my)*100/13,-100,100);\n         this.sendAction(11,Math.abs(dx)<9?0:dx,Math.abs(dy)<9?0:dy);\n      } else if (this.isHovering(154,65,47,10,mouseX,mouseY)) {\n         this.sendAction(12,this.sliderValue(mx,160,37,1,32,((MachineMenu)this.menu).field(4),1));\n      } else if (this.isHovering(154,76,47,10,mouseX,mouseY)) {\n         this.sendAction(13,this.sliderValue(mx,160,37,0,100,((MachineMenu)this.menu).field(6),3));\n      } else if (this.isHovering(122,92,13,13,mouseX,mouseY)) {\n         this.sendAction(15,1);\n      } else if (this.isHovering(143,99,18,9,mouseX,mouseY)) {\n         this.sendAction(14,((MachineMenu)this.menu).field(5)^1);\n      } else if (this.isHovering(166,99,18,9,mouseX,mouseY)) {\n         int logic=((MachineMenu)this.menu).field(5), mask=34;\n         int next=switch(logic&mask){case 0 ->32;case 2 ->0;default ->2;};\n         this.sendAction(14,(logic&~mask)|next);\n      } else if (this.isHovering(189,99,18,9,mouseX,mouseY)) {\n         this.sendAction(14,((MachineMenu)this.menu).field(5)^16);\n      } else return false;\n"
+      ],
+      [
+        1686,
+        1705,
+        "      if (this.isHovering(130, 10, 12, 25, mouseX, mouseY)) {\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.velocity\");\n      } else if (this.isHovering(145, 10, 25, 25, mouseX, mouseY)) {\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.direction\");\n      } else if (this.isHovering(129, 40, 44, 10, mouseX, mouseY)) {\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.dropcount\");\n      } else if (this.isHovering(129, 50, 44, 10, mouseX, mouseY)) {\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.period\");\n      } else if (this.isHovering(114, 51, 9, 9, mouseX, mouseY)) {\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.rssignal\");\n      } else if (this.isHovering(132, 66, 9, 9, mouseX, mouseY)) {\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.filtergate\");\n      } else if (this.isHovering(148, 66, 9, 9, mouseX, mouseY)) {\n         return Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.externgate\");\n      } else {\n         return this.isHovering(162, 66, 7, 9, mouseX, mouseY)\n            ? Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.triggermode\")\n            : null;\n      }\n",
+        "      String part=null;\n      if(this.isHovering(151,31,11,31,mouseX,mouseY))part=\"velocity\";\n      else if(this.isHovering(168,31,32,31,mouseX,mouseY))part=\"direction\";\n      else if(this.isHovering(154,65,47,10,mouseX,mouseY))part=\"dropcount\";\n      else if(this.isHovering(154,76,47,10,mouseX,mouseY))part=\"period\";\n      else if(this.isHovering(122,92,13,13,mouseX,mouseY))part=\"rssignal\";\n      else if(this.isHovering(143,99,18,9,mouseX,mouseY))part=\"filtergate\";\n      else if(this.isHovering(166,99,18,9,mouseX,mouseY))part=\"externgate\";\n      else if(this.isHovering(189,99,18,9,mouseX,mouseY))part=\"triggermode\";\n      return part==null?null:Component.translatable(\"block.immersive_engineer_decor_controls_tool_reforged.factory_dropper.tooltips.\"+part);\n"
+      ]
+    ]
+  },
+  "src/main/java/com/oblixorprime/engineersdecorreforged/utility/MachineLayout.java": {
+    "candidate": "25cc7fc7c0e5abb423e959b2ed4eacabb8d110bda56352b3e7025da30b15f55c",
+    "gui_parent": "61a32b15204a138c492105b64dee4623aa063a518327394167688741a241187f",
+    "hunks": [
+      [
+        86,
+        86,
+        "",
+        "      if (RetainedDropperLayout.TEXTURE.equals(this.textureName)) return RetainedDropperLayout.playerX(column);\n"
+      ],
+      [
+        94,
+        94,
+        "",
+        "      if (RetainedDropperLayout.TEXTURE.equals(this.textureName)) return RetainedDropperLayout.playerY(row);\n"
+      ],
+      [
+        102,
+        102,
+        "",
+        "      if (RetainedDropperLayout.TEXTURE.equals(this.textureName)) return RetainedDropperLayout.hotbarX(column);\n"
+      ],
+      [
+        208,
+        223,
+        "      return original(\n         concat(\n            grid(0, 10, 6, 6, 2, \"Input\"),\n            List.of(\n               new MachineLayout.MachineSlot(12, 19, 48, \"Filter\"),\n               new MachineLayout.MachineSlot(13, 55, 48, \"Filter\"),\n               new MachineLayout.MachineSlot(14, 91, 48, \"Filter\")\n            )\n         ),\n         8,\n         86,\n         8,\n         144,\n         \"factory_dropper_gui\"\n      );\n",
+        "      return RetainedDropperLayout.layout();\n"
+      ]
+    ]
+  }
+}

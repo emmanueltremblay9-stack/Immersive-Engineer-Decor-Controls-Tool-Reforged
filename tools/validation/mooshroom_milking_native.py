@@ -55,7 +55,7 @@ def validate_hover(c,geometry,width,height,expected):
     native=c.get('native_input');require(isinstance(native,dict),'Missing native input evidence')
     x=integer(c,'hover_x');y=integer(c,'hover_y')
     left=geometry['presentation_gui_left'];top=geometry['presentation_gui_top']
-    def hitbox(px,py):return left+27<=px<left+74 and top+34<=py<top+75
+    def hitbox(px,py):return left+41<=px<left+98 and top+54<=py<top+93
     exact(c,'tooltip_hovered',expected)
     require(hitbox(x,y)==expected,'Cursor hover disagrees with capture')
     for key,value in dict(glfw_focused=True,glfw_visible=True,glfw_cursor_mode=212993,
@@ -65,7 +65,7 @@ def validate_hover(c,geometry,width,height,expected):
     origin_x=integer(native,'window_origin_x');origin_y=integer(native,'window_origin_y')
     global_x=integer(native,'requested_global_x',0);global_y=integer(native,'requested_global_y',0)
     require(integer(native,'settled_hover_ticks',8)<6000,'Invalid capture input settling')
-    target_x=left+(50 if expected else -40);target_y=top+45
+    target_x=left+(68 if expected else -40);target_y=top+73
     exact(native,'target_gui_x_min',target_x)
     exact(native,'target_gui_x_max_exclusive',target_x+2)
     exact(native,'target_gui_y',target_y)
@@ -117,9 +117,9 @@ def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width=12
         menus[group]=menu
         file=safe_png(folder,c['name'],c.get('sha256'));w,h,pixels=decode_png(file)
         require((w,h)==(width,height),'Wrong screenshot viewport');images[phase]=pixels
-        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+27)*gui_scale,
-                portrait_y=(geometry['presentation_gui_top']+34)*gui_scale,portrait_width=47*gui_scale,
-                portrait_height=41*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)
+        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+41)*gui_scale,
+                portrait_y=(geometry['presentation_gui_top']+54)*gui_scale,portrait_width=57*gui_scale,
+                portrait_height=39*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)
         crop=safe_png(folder,c['portrait_name'],c.get('portrait_sha256'));cw,ch,cp=decode_png(crop)
         require((cw,ch)==(c['portrait_width'],c['portrait_height']),'Wrong portrait dimensions')
         require(cp==crop_pixels(pixels,w,c['portrait_x'],c['portrait_y'],cw,ch),'Portrait is not screenshot crop')

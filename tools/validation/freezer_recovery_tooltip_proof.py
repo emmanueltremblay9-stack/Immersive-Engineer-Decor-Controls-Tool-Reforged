@@ -1,4 +1,5 @@
 import hashlib
+import math
 import struct
 from client_mixin_smoke import SmokeFailure
 
@@ -17,11 +18,24 @@ def validate_tooltip(proof,game,nonce,sha,language):
         raise SmokeFailure('Native Freezer recovery tooltip framebuffer differs')
     if proof.get('nonce')!=nonce or proof.get('source_sha')!=sha or proof.get('language')!=language or proof.get('frames',0)<3:
         raise SmokeFailure('Invalid native Freezer recovery tooltip identity/frames')
+    if (proof.get('translation_key')!='gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help'
+            or proof.get('hovered_control')!='freezer_recovery_button'
+            or any(type(proof.get(k)) is not int or proof[k] != v for k,v in
+                (('button_canvas_x',183),('button_canvas_y',19),('button_canvas_width',16),('button_canvas_height',16)))
+            or type(proof.get('pointer_canvas_x')) not in (int,float)
+            or type(proof.get('pointer_canvas_y')) not in (int,float)
+            or not math.isfinite(proof['pointer_canvas_x'])
+            or not math.isfinite(proof['pointer_canvas_y'])
+            or abs(proof['pointer_canvas_x'] - 191) > 1
+            or abs(proof['pointer_canvas_y'] - 27) > 1):
+        raise SmokeFailure('Tooltip was not opened from the localized Thermal Freezer recovery button')
     if hashlib.sha256((game/'freezer-recovery-tooltip.png').read_bytes()).hexdigest()!=proof.get('capture_sha256'):
         raise SmokeFailure('Freezer recovery tooltip screenshot mismatch')
     if ''.join(''.join(proof.get('lines',[])).split())!=''.join(proof.get('expected_text','').split()) or not proof.get('styles'):
         raise SmokeFailure('Freezer recovery tooltip text/style missing')
     w,h=proof['tooltip_width'],proof['tooltip_height'];x,y=proof['x'],proof['y']
+    if w > min(240, proof['viewport_width'] - 8):
+        raise SmokeFailure('Freezer recovery tooltip exceeds the bounded width for a narrow viewport')
     if not (x-4>=0 and y-4>=0 and x+w+4<=proof['viewport_width'] and y+h+4<=proof['viewport_height']) or proof.get('in_bounds') is not True:
         raise SmokeFailure(f'Native Freezer recovery tooltip clipped: ({x},{y},{w},{h}) in {proof["viewport_width"]}x{proof["viewport_height"]}')
     return True

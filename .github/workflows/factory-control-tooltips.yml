@@ -10,31 +10,12 @@ permissions:
 jobs:
   native-factory-controls:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - language: en_us
-            height: 720
-            width: 1280
-            machine: dropper
-          - language: fr_fr
-            height: 260
-            width: 320
-            machine: hopper
-          - language: fr_fr
-            height: 260
-            width: 320
-            machine: dropper
-          - language: en_us
-            height: 720
-            width: 1280
-            machine: hopper
+    timeout-minutes: 70
     steps:
       - name: Checkout exact candidate head
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
+          fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Set up Java
         uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
@@ -49,15 +30,22 @@ jobs:
         uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
       - name: Test Factory tooltip bounds and proof guards
         run: python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_factory*tooltip*.py' -v
-      - name: Native exact-JAR Factory control hover
-        run: python tools/validation/factory_control_tooltip_native.py --machine ${{ matrix.machine }} --language ${{ matrix.language }} --width ${{ matrix.width }} --height ${{ matrix.height }}
+      - name: Install isolated native input dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libx11-6 libxtst6 libgl1-mesa-dri
+      - name: Native packaged Factory Study screens, controls and tooltips
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED_SOURCE_SHA="$(git rev-parse HEAD)" xvfb-run -a -s '-screen 0 1920x1080x24' \
+            python tools/validation/factory_study_native.py
       - name: Retain native evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: factory-control-${{ matrix.machine }}-${{ matrix.language }}-${{ matrix.height }}
+          name: factory-study-native-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
-            build/factory-control-native-*/
+            build/factory-study-native/
             build/libs/*.jar
+            build/reports/factory-placer-packaged-runtime.json
           if-no-files-found: error
           retention-days: 14

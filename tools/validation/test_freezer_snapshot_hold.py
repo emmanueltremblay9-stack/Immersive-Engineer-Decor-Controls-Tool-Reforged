@@ -49,10 +49,24 @@ public class SnapshotCheck {
  static class Minecraft { Server server=new Server(); ServerPlayer player=server.player; Server getSingleplayerServer(){return server;} }
  static class ServerPlayer { Object containerMenu=new MachineMenu(); UUID getUUID(){return new UUID(0,1);} }
  static class MachineMenu { void broadcastChanges(){} }
+ static class MachineBlocks { static final Object PHASE_0_4=new Object(); }
+ static class BlockPos {}
+ static class BlockState {
+  int phase;
+  boolean hasProperty(Object property){return property==MachineBlocks.PHASE_0_4;}
+  BlockState setValue(Object property,int value){BlockState copy=new BlockState();copy.phase=value;return copy;}
+ }
+ static class Level {
+  MachineBlockEntity entity;
+  Level(MachineBlockEntity entity){this.entity=entity;}
+  void setBlock(BlockPos pos,BlockState state,int flags){entity.state=state;}
+ }
  static class MachineBlockEntity {
   static final int FREEZER_PROCESS_TICKS=180; int progress,energy; boolean fail;
+  BlockState state=new BlockState(); Level level=new Level(this);
   MachineBlockEntity dataAccessForTests(){return this;}
   void set(int field,int value){if(fail)throw new IllegalStateException("setup");if(field==1)progress=value;else if(field==3)energy=value;}
+  BlockState getBlockState(){return state;} Level getLevel(){return level;} BlockPos getBlockPos(){return new BlockPos();}
   void setChanged(){}
   // Deliberately small server model; production guards below pin these semantics.
   void tick(){if(energy<8)progress=0;else{energy-=8;progress++;if(progress>=180)progress=0;}}
@@ -67,6 +81,8 @@ public class SnapshotCheck {
    Minecraft mc=new Minecraft();mc.server.rate.frozen=prior;serverMachine=new MachineBlockEntity();
    scheduleFreezerNearEnd(mc);mc.server.drain();pending.join();
    require(mc.server.rate.frozen,"hold missing");
+   require(serverMachine.progress==178 && serverMachine.energy==8 && serverMachine.state.phase==3,
+      "near-end snapshot must keep progress, energy and server phase coherent");
    // One tick may already have been admitted before setFrozen changed the flag.
    serverMachine.tick();
    for(int i=0;i<600;i++)mc.server.tick();
@@ -106,7 +122,8 @@ public class SnapshotCheck {
         self.assertIn('if (++ticks < 3) return false;', capture)
         self.assertIn('menu.containerId == serverMenuId', capture)
         self.assertIn('menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS', capture)
-        self.assertLess(capture.index('capture(mc'), capture.index('restoreFreezerSnapshot(mc)'))
+        self.assertIn('captureCurrentScreen(mc, menu, SPECS.get(specIndex), "near-end")', capture)
+        self.assertLess(capture.index('captureCurrentScreen('), capture.index('restoreFreezerSnapshot(mc)'))
         self.assertLess(capture.index('restoreFreezerSnapshot(mc)'), capture.index('scheduleState(mc'))
         finish = method((BASE / 'client/validation/NativeClientMiningValidation.java').read_text(), 'private static void finish(')
         self.assertLess(finish.index('restoreFreezerSnapshot(mc)'), finish.index('mc.stop()'))
@@ -117,9 +134,14 @@ public class SnapshotCheck {
         source = (BASE / 'utility/MachineBlockEntity.java').read_text()
         tick = method(source, 'private void tickFreezer(')
         stop = method(source, 'private void stopFreezerProcess(')
-        self.assertIn('if (this.energy < 8)', tick)
-        self.assertIn('this.stopFreezerProcess();', tick.split('if (this.energy < 8)')[1].split('else')[0])
-        self.assertIn('this.energy -= 8;', tick)
+        self.assertIn('private static final int FREEZER_ENERGY_PER_TICK = 8;', source)
+        self.assertIn('if (powered)', tick)
+        redstone_stop = tick.split('if (powered)', 1)[1].split('return;', 1)[0]
+        self.assertIn('this.stopFreezerProcess();', redstone_stop)
+        self.assertIn('if (this.energy < FREEZER_ENERGY_PER_TICK)', tick)
+        energy_stop = tick.split('if (this.energy < FREEZER_ENERGY_PER_TICK)', 1)[1].split('return;', 1)[0]
+        self.assertIn('this.stopFreezerProcess();', energy_stop)
+        self.assertIn('this.energy -= FREEZER_ENERGY_PER_TICK;', tick)
         self.assertIn('this.progress++;', tick)
         self.assertIn('this.progress = 0;', stop)
 

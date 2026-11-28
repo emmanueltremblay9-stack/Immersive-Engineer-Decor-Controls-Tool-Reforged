@@ -7,6 +7,10 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.client.BarrelReferenceScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.*;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_HEIGHT;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_WIDTH;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_X;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_Y;
 import java.nio.file.*;
 import java.security.MessageDigest;
 import java.util.*;
@@ -330,8 +334,8 @@ public final class NativeBarrelReferenceValidation {
          require(mc.getWindow().getWidth()==frame.getWidth() && mc.getWindow().getHeight()==frame.getHeight(),"Framebuffer capture size differs");
          // The renderer rounds its scissor in GUI coordinates before Minecraft
          // multiplies by the window GUI scale. Preserve that order for the crop.
-         int x0=(int)(Math.ceil(v.screenX(170))*guiScale),y0=(int)(Math.ceil(v.screenY(115))*guiScale);
-         int x1=(int)(Math.floor(v.screenX(211))*guiScale),y1=(int)(Math.floor(v.screenY(193))*guiScale);
+         int x0=(int)(Math.ceil(v.screenX(TANK_X))*guiScale),y0=(int)(Math.ceil(v.screenY(TANK_Y))*guiScale);
+         int x1=(int)(Math.floor(v.screenX(TANK_X + TANK_WIDTH))*guiScale),y1=(int)(Math.floor(v.screenY(TANK_Y + TANK_HEIGHT))*guiScale);
          require(x0>=0 && y0>=0 && x1<=frame.getWidth() && y1<=frame.getHeight() && x1>x0 && y1>y0,"Invalid native tank bounds");
          Path cropFile=folder.resolve(label+"-tank.png");
          try(var crop=new NativeImage(x1-x0,y1-y0,false)) {
@@ -344,10 +348,10 @@ public final class NativeBarrelReferenceValidation {
          // Hash a ring around the glass in native pixels, excluding all fluid pixels
          // plus a two-framebuffer-pixel safety band for raster boundary rounding.
          var digest=MessageDigest.getInstance("SHA-256");
-         for(int y=(int)Math.ceil(v.screenY(106)*guiScale);y<(int)Math.floor(v.screenY(201)*guiScale);y++)
-            for(int x=(int)Math.ceil(v.screenX(160)*guiScale);x<(int)Math.floor(v.screenX(220)*guiScale);x++) {
-               if(x>=Math.floor(v.screenX(170)*guiScale)-2 && x<=Math.ceil(v.screenX(211)*guiScale)+2
-                  && y>=Math.floor(v.screenY(115)*guiScale)-2 && y<=Math.ceil(v.screenY(193)*guiScale)+2)continue;
+         for(int y=(int)Math.ceil(v.screenY(TANK_Y - 9)*guiScale);y<(int)Math.floor(v.screenY(TANK_Y + TANK_HEIGHT + 8)*guiScale);y++)
+            for(int x=(int)Math.ceil(v.screenX(TANK_X - 10)*guiScale);x<(int)Math.floor(v.screenX(TANK_X + TANK_WIDTH + 9)*guiScale);x++) {
+               if(x>=Math.floor(v.screenX(TANK_X)*guiScale)-2 && x<=Math.ceil(v.screenX(TANK_X + TANK_WIDTH)*guiScale)+2
+                  && y>=Math.floor(v.screenY(TANK_Y)*guiScale)-2 && y<=Math.ceil(v.screenY(TANK_Y + TANK_HEIGHT)*guiScale)+2)continue;
                int pixel=frame.getPixelRGBA(x,y);for(int b=0;b<4;b++)digest.update((byte)(pixel>>>(8*b)));
             }
          c.addProperty("frame_ring_sha256",HexFormat.of().formatHex(digest.digest()));

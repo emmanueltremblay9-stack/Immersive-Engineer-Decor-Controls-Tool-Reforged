@@ -10,10 +10,11 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ScreenEvent;
-import com.oblixorprime.engineersdecorreforged.client.FreezerReferenceScreen;
+import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
+import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
-import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
-import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceLiveState;
+import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import java.nio.file.Files;
@@ -46,6 +47,10 @@ import org.lwjgl.glfw.GLFW;
 @EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID, value = Dist.CLIENT)
 public final class NativeFreezerReferenceValidation {
    private static final String SUITE = "native-freezer-reference-v1";
+   private static final String ACTIVE_ART_SHA256 = "29ea3ff661c6591a3b89ee97d3a33d8817f437745926eb566338cbb22bcd8dc6";
+   private static final MachineKind FREEZER = MachineKind.SMALL_FREEZER;
+   private static final Gui11V5CRuntimeGeometry.Rect ENERGY = Gui11V5CRuntimeGeometry.energy(FREEZER);
+   private static final Gui11V5CRuntimeGeometry.Rect CHAMBER = Gui11V5CRuntimeGeometry.effectBounds(FREEZER, "cold-chamber");
    private static final BlockPos POS = new BlockPos(0, 80, 0);
    private static final Component RESERVED_NAME = Component.literal("Freezer reserved recovery fixture");
    private enum Stage {
@@ -59,7 +64,7 @@ public final class NativeFreezerReferenceValidation {
    private static JsonObject tooltipObservation;
    private static int tooltipFrames;
    private static boolean tooltipInFrame;
-   private static final String RECOVERY_KEY = "gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help";
+   private static final String RECOVERY_KEY = ThermalVerticalScreen.FREEZER_RECOVERY_HELP_KEY;
    private static int ticks;
    private static int energyIndex;
    private static int stableFrames;
@@ -68,6 +73,7 @@ public final class NativeFreezerReferenceValidation {
    private static MachineMenu renderingMenu;
    private static int renderingPhase;
    private static int renderingProgress;
+   private static int renderingEnergy;
    private static Exception renderFailure;
    private static final boolean[] FROST_SEEN = new boolean[4];
    private static int serverMenuId;
@@ -137,7 +143,7 @@ public final class NativeFreezerReferenceValidation {
       require(++ticks < 360, "Freezer fixture timed out at " + stage);
       if (stage == Stage.SETUP) {
          if (!ready()) return false;
-         if (!(mc.screen instanceof FreezerReferenceScreen) || current(mc) == null) return false;
+         if (!(mc.screen instanceof ThermalVerticalScreen) || current(mc) == null) return false;
          verifyGeometry(mc);
          moveCursorAway(mc);
          enter(Stage.ENERGY);
@@ -157,7 +163,7 @@ public final class NativeFreezerReferenceValidation {
       }
       if (!ready()) return false;
       MachineMenu menu = current(mc);
-      if (menu == null || !(mc.screen instanceof FreezerReferenceScreen screen)) return false;
+      if (menu == null || !(mc.screen instanceof ThermalVerticalScreen screen)) return false;
       switch (stage) {
          case ENERGY -> {
             int expected = new int[]{0, 8000, 16000}[energyIndex];
@@ -232,7 +238,8 @@ public final class NativeFreezerReferenceValidation {
                require(screen.width == 320 && screen.height == 260 && mc.getWindow().getGuiScale() == 1, "Recovery probe requires 320x260 GUI scale 1");
                initNativeInput(mc);
                var view = screen.validationViewTransform();
-               pointerX = view.screenX(157); pointerY = view.screenY(93);
+               pointerX = view.screenX(screen.validationRecoveryButtonX() + screen.validationRecoveryButtonWidth() / 2.0D);
+               pointerY = view.screenY(screen.validationRecoveryButtonY() + screen.validationRecoveryButtonHeight() / 2.0D);
                moveNativePointer(mc, screen);
                enter(Stage.RECOVERY_TOOLTIP);
             } else { clickRecovery(screen); enter(Stage.FULL_RECOVERY); }
@@ -278,7 +285,7 @@ public final class NativeFreezerReferenceValidation {
          case REPEAT_RECOVERY -> {
             if (ticks == 3) {
                require(!screen.validationRecoveryVisible(), "Recovery control must disappear after extraction");
-               clickRecovery(screen); // Same coordinate after disappearance must not duplicate/drop anything.
+               clickRecoveryButtonCenter(screen); // Same coordinate after disappearance must not duplicate/drop anything.
             }
             if (ticks < 8 || !menu.getCarried().isEmpty()
                || !serverMatches(mc, p -> machine.getItem(1).isEmpty() && countDirt(p) == 5 && p.containerMenu.getCarried().isEmpty() && droppedDirt(p) == 0)) return false;
@@ -332,13 +339,14 @@ public final class NativeFreezerReferenceValidation {
       Minecraft mc = Minecraft.getInstance();
       if (directory == null || renderFailure != null || mc.getOverlay() != null
          || (stage != Stage.PROCESS && !(stage == Stage.ENERGY && energyIndex == 0))
-         || !(event.getScreen() instanceof FreezerReferenceScreen) || event.getScreen() != mc.screen
+         || !(event.getScreen() instanceof ThermalVerticalScreen) || event.getScreen() != mc.screen
          || setup != null) return;
       MachineMenu menu = current(mc);
       if (menu == null) return;
       renderingMenu = menu;
       renderingPhase = menu.freezerPhase();
       renderingProgress = menu.freezerProgressTicks();
+      renderingEnergy = menu.energyStored();
    }
 
    @SubscribeEvent
@@ -348,7 +356,7 @@ public final class NativeFreezerReferenceValidation {
       renderingMenu = null; // a Post without its matching Pre cannot count
       if (menu == null || event.getScreen() != mc.screen || mc.getOverlay() != null
          || current(mc) != menu || menu.freezerPhase() != renderingPhase
-         || menu.freezerProgressTicks() != renderingProgress) {
+         || menu.freezerProgressTicks() != renderingProgress || menu.energyStored() != renderingEnergy) {
          frostStableFrames = 0;
          return;
       }
@@ -357,6 +365,11 @@ public final class NativeFreezerReferenceValidation {
          && (stage == Stage.PROCESS ? phase > 0
             : stage == Stage.ENERGY && energyIndex == 0 && phase == 0 && menu.energyStored() == 0);
       if (!eligible) { frostStableFrames = 0; return; }
+      // Energy and progress are synchronized through separate ContainerData
+      // entries. Capture only after both values describe the same server tick.
+      int expectedEnergy = phase == 0 ? 0
+         : 1440 - renderingProgress * (1440 / MachineBlockEntity.FREEZER_PROCESS_TICKS);
+      if (renderingEnergy != expectedEnergy) { frostStableFrames = 0; return; }
       if (phase != previousFrostPhase) { previousFrostPhase = phase; frostStableFrames = 0; }
       if (++frostStableFrames < 3 || FROST_SEEN[phase]) return;
       try {
@@ -422,30 +435,54 @@ public final class NativeFreezerReferenceValidation {
       }
       return count;
    }
-   private static void clickSlot(FreezerReferenceScreen screen, int index, int button) {
-      var anchor = FreezerReferenceGeometry.anchor(index);
-      click(screen, anchor.x() + 8, anchor.y() + 8, button);
+   private static void clickSlot(ThermalVerticalScreen screen, int index, int button) {
+      require(index == 0 || index == 2 || index >= 3 && index <= 38,
+         "Only visible Thermal Freezer slots may be clicked: " + index);
+      var anchor = ThermalVerticalGeometry.slot(index, MachineKind.SMALL_FREEZER);
+         click(screen, anchor.x() + 8, anchor.y() + 8, button);
    }
-   private static void clickRecovery(FreezerReferenceScreen screen) { click(screen, 157, 93, 0); }
-   private static void click(FreezerReferenceScreen screen, double x, double y, int button) {
+   private static void clickRecovery(ThermalVerticalScreen screen) {
+      require(screen.validationRecoveryVisible(), "Reserved-item recovery control is not visible");
+      clickRecoveryButtonCenter(screen);
+   }
+   private static void clickRecoveryButtonCenter(ThermalVerticalScreen screen) {
+      click(screen, screen.validationRecoveryButtonX() + screen.validationRecoveryButtonWidth() / 2.0D,
+         screen.validationRecoveryButtonY() + screen.validationRecoveryButtonHeight() / 2.0D, 0);
+   }
+   private static void click(ThermalVerticalScreen screen, double x, double y, int button) {
       var view = screen.validationViewTransform();
       // Exercise inverse-coordinate routing and vanilla click/release, not menu.clicked.
       screen.mouseClicked(view.screenX(x), view.screenY(y), button);
       screen.mouseReleased(view.screenX(x), view.screenY(y), button);
    }
    private static void verifyGeometry(Minecraft mc) {
-      var screen = (FreezerReferenceScreen)mc.screen;
+      var screen = (ThermalVerticalScreen)mc.screen;
       var menu = current(mc);
-      require(menu != null && menu.freezerReferencePresentation() && menu.slots.size() == 39
-         && menu.visibleMachineSlots() == 3 && !menu.getSlot(1).isActive(), "Actual client must retain all 39 protocol slots and hide only reserved slot 1");
+      require(menu != null && menu.thermalVerticalPresentation() && menu.slots.size() == 39
+         && menu.visibleMachineSlots() == 3 && !menu.getSlot(1).isActive()
+         && menu.getSlot(0).isActive() && menu.getSlot(2).isActive(),
+         "Thermal Freezer must retain 39 protocol slots, expose two machine slots, and hide only reserved index 1");
+      ThermalVerticalGeometry.validate(MachineKind.SMALL_FREEZER);
       var view = screen.validationViewTransform();
-      for (var anchor : FreezerReferenceGeometry.SLOT_ANCHORS) {
-         var slot = menu.getSlot(anchor.menuIndex());
-         int expectedContainerIndex = anchor.menuIndex() < 3 ? anchor.menuIndex()
-            : anchor.menuIndex() < 30 ? anchor.menuIndex() + 6 : anchor.menuIndex() - 30;
-         require(slot.getSlotIndex() == expectedContainerIndex && slot.x == anchor.x() && slot.y == anchor.y(), "Slot mapping changed at " + anchor.menuIndex());
-         require(screen.validationSlotHoveredAt(anchor.menuIndex(), view.screenX(slot.x + 8), view.screenY(slot.y + 8)), "Rendered slot center cannot be hovered");
+      require(!screen.validationSlotHoveredAt(1, view.screenX(238), view.screenY(207)),
+         "Reserved protocol slot 1 must not have a visible hover target");
+      int visible = 0;
+      for (int menuIndex = 0; menuIndex < menu.slots.size(); menuIndex++) {
+         var slot = menu.getSlot(menuIndex);
+         boolean shouldBeVisible = menuIndex != 1;
+         require(slot.isActive() == shouldBeVisible, "Unexpected active state at menu slot " + menuIndex);
+         if (!shouldBeVisible) continue;
+         var anchor = ThermalVerticalGeometry.slot(menuIndex, MachineKind.SMALL_FREEZER);
+         int expectedContainerIndex = menuIndex < 3 ? menuIndex
+            : menuIndex < 30 ? menuIndex + 6 : menuIndex - 30;
+         require(slot.getSlotIndex() == expectedContainerIndex && slot.x == anchor.x() && slot.y == anchor.y(),
+            "Thermal slot mapping changed at menu index " + menuIndex);
+         require(screen.validationSlotHoveredAt(menuIndex, view.screenX(slot.x + 8), view.screenY(slot.y + 8)),
+            "Rendered Thermal slot center cannot be hovered at menu index " + menuIndex);
+         visible++;
       }
+      require(visible == ThermalVerticalGeometry.VISIBLE_SLOTS,
+         "Thermal canvas must expose exactly 38 slots (2 machine + 36 inventory), got " + visible);
    }
    private static void initNativeInput(Minecraft mc) throws Exception {
       String nativeDisplay = System.getenv("DISPLAY");
@@ -458,7 +495,7 @@ public final class NativeFreezerReferenceValidation {
    private static void closeNativeInput() {
       if (display != null) { x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display}); display = null; }
    }
-   private static void moveNativePointer(Minecraft mc, FreezerReferenceScreen screen) {
+   private static void moveNativePointer(Minecraft mc, ThermalVerticalScreen screen) {
       long window = mc.getWindow().getWindow();
       if (GLFW.glfwGetWindowAttrib(window, GLFW.GLFW_FOCUSED) != GLFW.GLFW_TRUE) { GLFW.glfwFocusWindow(window); return; }
       int[] x = {0}, y = {0}; GLFW.glfwGetWindowPos(window, x, y);
@@ -470,10 +507,10 @@ public final class NativeFreezerReferenceValidation {
     @net.neoforged.bus.api.SubscribeEvent public static void beforeTooltipRender(net.neoforged.neoforge.client.event.ScreenEvent.Render.Pre event){tooltipInFrame=false;}
     @net.neoforged.bus.api.SubscribeEvent public static void observeRecoveryTooltip(net.neoforged.neoforge.client.event.RenderTooltipEvent.Color event){
         if(stage!=Stage.RECOVERY_TOOLTIP)return;
-        var mc=Minecraft.getInstance();if(!(mc.screen instanceof FreezerReferenceScreen screen)||screen.getSlotUnderMouse()!=null)return;
+        var mc=Minecraft.getInstance();if(!(mc.screen instanceof ThermalVerticalScreen screen)||screen.getSlotUnderMouse()!=null)return;
         var v=screen.validationViewTransform();
         double mx=mc.mouseHandler.xpos()*screen.width/mc.getWindow().getScreenWidth(),my=mc.mouseHandler.ypos()*screen.height/mc.getWindow().getScreenHeight();
-        if (Math.abs(mx-pointerX)>1 || Math.abs(my-pointerY)>1 || !screen.validationRecoveryVisible()) return;
+        if (Math.abs(mx-pointerX)>1 || Math.abs(my-pointerY)>1 || !screen.validationRecoveryButtonHovered()) return;
         try{
             var record=new JsonObject();var lines=new JsonArray();var styles=new JsonArray();int width=0,height=event.getComponents().size()==1?-2:0;
             for(var component:event.getComponents()){
@@ -486,6 +523,14 @@ public final class NativeFreezerReferenceValidation {
             record.add("lines",lines);record.add("styles",styles);record.addProperty("tooltip_width",width);record.addProperty("tooltip_height",height);
             record.addProperty("x",event.getX());record.addProperty("y",event.getY());record.addProperty("viewport_width",screen.width);record.addProperty("viewport_height",screen.height);
             record.addProperty("in_bounds",event.getX()-4>=0&&event.getY()-4>=0&&event.getX()+width+4<=screen.width&&event.getY()+height+4<=screen.height);
+            record.addProperty("translation_key", RECOVERY_KEY);
+            record.addProperty("hovered_control", "freezer_recovery_button");
+            record.addProperty("button_canvas_x", screen.validationRecoveryButtonX());
+            record.addProperty("button_canvas_y", screen.validationRecoveryButtonY());
+            record.addProperty("button_canvas_width", screen.validationRecoveryButtonWidth());
+            record.addProperty("button_canvas_height", screen.validationRecoveryButtonHeight());
+            record.addProperty("pointer_screen_x", mx); record.addProperty("pointer_screen_y", my);
+            record.addProperty("pointer_canvas_x", v.localX(mx)); record.addProperty("pointer_canvas_y", v.localY(my));
             tooltipObservation=record;tooltipInFrame=true;
         }catch(Throwable error){throw new IllegalStateException("Recovery tooltip observation failed",error);}
     }
@@ -497,6 +542,30 @@ public final class NativeFreezerReferenceValidation {
    private static void moveCursorAway(Minecraft mc) {
       GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getScreenWidth() - 2, mc.getWindow().getScreenHeight() - 2);
    }
+   private record CropResult(int width, int height, String sha256) { }
+
+   private static CropResult captureCanvasCrop(Minecraft mc, NativeImage frame, Path path,
+                                               double left, double top, double right, double bottom) throws Exception {
+      var screen = (ThermalVerticalScreen)mc.screen;
+      var view = screen.validationViewTransform();
+      double pixelX = (double)frame.getWidth() / mc.getWindow().getGuiScaledWidth();
+      double pixelY = (double)frame.getHeight() / mc.getWindow().getGuiScaledHeight();
+      int x0 = (int)Math.floor(view.screenX(left) * pixelX);
+      int y0 = (int)Math.floor(view.screenY(top) * pixelY);
+      int x1 = (int)Math.ceil(view.screenX(right) * pixelX);
+      int y1 = (int)Math.ceil(view.screenY(bottom) * pixelY);
+      require(x0 >= 0 && y0 >= 0 && x1 <= frame.getWidth() && y1 <= frame.getHeight() && x1 > x0 && y1 > y0,
+         "Thermal artwork crop is outside the native framebuffer: " + path.getFileName());
+      require(!Files.exists(path), "Refusing stale Thermal artwork crop: " + path.getFileName());
+      try (var crop = new NativeImage(x1 - x0, y1 - y0, false)) {
+         for (int y = y0; y < y1; y++) for (int x = x0; x < x1; x++)
+            crop.setPixelRGBA(x - x0, y - y0, frame.getPixelRGBA(x, y));
+         crop.writeToFile(path);
+      }
+      return new CropResult(x1 - x0, y1 - y0,
+         HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(path))));
+   }
+
    private static void capture(Minecraft mc, String label, MachineMenu menu) throws Exception {
       Path folder = directory.resolve("freezer-reference-screenshots");
       Files.createDirectories(folder);
@@ -507,53 +576,32 @@ public final class NativeFreezerReferenceValidation {
          frame.writeToFile(file);
          capture.addProperty("width", frame.getWidth());
          capture.addProperty("height", frame.getHeight());
-         // Hash only native meter pixels too: an animated world backdrop must not
-         // make a frozen/static gauge pass merely because full screenshots differ.
-         var view = ((FreezerReferenceScreen)mc.screen).validationViewTransform();
-         var meter = FreezerReferenceLiveState.ENERGY_HIT_REGION;
-         double factor = (double)FreezerReferenceGeometry.CANVAS_WIDTH / FreezerReferenceGeometry.SOURCE_WIDTH;
-         double pixelX = (double)frame.getWidth() / mc.getWindow().getGuiScaledWidth();
-         double pixelY = (double)frame.getHeight() / mc.getWindow().getGuiScaledHeight();
-         int x0 = (int)Math.floor(view.screenX(meter.x() * factor) * pixelX);
-         int y0 = (int)Math.floor(view.screenY(meter.y() * factor) * pixelY);
-         int x1 = (int)Math.ceil(view.screenX(meter.right() * factor) * pixelX);
-         int y1 = (int)Math.ceil(view.screenY(meter.bottom() * factor) * pixelY);
-         Path meterFile = folder.resolve(label + "-meter.png");
-         require(!Files.exists(meterFile), "Refusing to overwrite native meter crop");
-         try (var crop = new NativeImage(x1 - x0, y1 - y0, false)) {
-            for (int y = y0; y < y1; y++) for (int x = x0; x < x1; x++) {
-               crop.setPixelRGBA(x - x0, y - y0, frame.getPixelRGBA(x, y));
-            }
-            crop.writeToFile(meterFile);
-         }
-         capture.addProperty("meter_name", meterFile.getFileName().toString());
-         capture.addProperty("meter_sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(meterFile))));
-         capture.addProperty("meter_width", x1 - x0);
-         capture.addProperty("meter_height", y1 - y0);
-         // Conservative interior glass crop only, excluding animated world and FE.
-         int fx0 = (int)Math.floor(view.screenX(460 * factor) * pixelX);
-         int fy0 = (int)Math.floor(view.screenY(390 * factor) * pixelY);
-         int fx1 = (int)Math.ceil(view.screenX(795 * factor) * pixelX);
-         int fy1 = (int)Math.ceil(view.screenY(555 * factor) * pixelY);
-         Path frostFile = folder.resolve(label + "-frost.png");
-         require(!Files.exists(frostFile), "Refusing stale frost crop");
-         try (var crop = new NativeImage(fx1 - fx0, fy1 - fy0, false)) {
-            for (int y = fy0; y < fy1; y++) for (int x = fx0; x < fx1; x++)
-               crop.setPixelRGBA(x - fx0, y - fy0, frame.getPixelRGBA(x, y));
-            crop.writeToFile(frostFile);
-         }
-         capture.addProperty("frost_name", frostFile.getFileName().toString());
-         capture.addProperty("frost_sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(frostFile))));
-         capture.addProperty("frost_width", fx1 - fx0);
-         capture.addProperty("frost_height", fy1 - fy0);
+         // Hash only exact active artwork bounds, so an animated world backdrop
+         // cannot make a frozen gauge/effect pass merely because the full frame differs.
+         Path energyFile = folder.resolve(label + "-energy.png");
+         CropResult energyCrop = captureCanvasCrop(mc, frame, energyFile,
+            ENERGY.x(), ENERGY.y(), ENERGY.x() + ENERGY.width(), ENERGY.y() + ENERGY.height());
+         capture.addProperty("energy_crop_name", energyFile.getFileName().toString());
+         capture.addProperty("energy_crop_sha256", energyCrop.sha256());
+         capture.addProperty("energy_crop_width", energyCrop.width());
+         capture.addProperty("energy_crop_height", energyCrop.height());
+         Path effectFile = folder.resolve(label + "-effect.png");
+         CropResult effectCrop = captureCanvasCrop(mc, frame, effectFile,
+            CHAMBER.x(), CHAMBER.y(), CHAMBER.x() + CHAMBER.width(), CHAMBER.y() + CHAMBER.height());
+         capture.addProperty("effect_crop_name", effectFile.getFileName().toString());
+         capture.addProperty("effect_crop_sha256", effectCrop.sha256());
+         capture.addProperty("effect_crop_width", effectCrop.width());
+         capture.addProperty("effect_crop_height", effectCrop.height());
       }
       capture.addProperty("name", file.getFileName().toString());
       capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file))));
       capture.addProperty("energy", menu.energyStored());
-      capture.addProperty("lit_cells", FreezerReferenceLiveState.energy(menu.energyStored(), menu.energyCapacity()).litCells());
+      capture.addProperty("energy_capacity", menu.energyCapacity());
+      capture.addProperty("energy_clip_top", ENERGY.y() + ENERGY.height() - 4
+         - Gui11V5CArtwork.energyFillPixels(FREEZER, menu.energyStored(), menu.energyCapacity()));
       capture.addProperty("menu_id", menu.containerId);
       capture.addProperty("screen_class", mc.screen.getClass().getName());
-      capture.addProperty("view_scale", ((FreezerReferenceScreen)mc.screen).validationViewTransform().scale());
+      capture.addProperty("view_scale", ((ThermalVerticalScreen)mc.screen).validationViewTransform().scale());
       capture.addProperty("phase", menu.freezerPhase());
       capture.addProperty("progress_ticks", menu.freezerProgressTicks());
       if (label.startsWith("frost-phase-")) {
@@ -571,11 +619,24 @@ public final class NativeFreezerReferenceValidation {
       proof.addProperty("nonce", nonce);
       proof.addProperty("executed_source_sha", System.getProperty("iedctr.executedSourceSha"));
       proof.addProperty("actual_integrated_world", true);
-      proof.addProperty("source_art_sha256", FreezerReferenceGeometry.SOURCE_SHA256);
+      proof.addProperty("screen_class", ThermalVerticalScreen.class.getName());
+      var art = mc.getResourceManager().getResource(Gui11V5CArtwork.texture(FREEZER)).orElseThrow();
+      String artHash;
+      try (var input = art.open()) {
+         artHash = HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(input.readAllBytes()));
+      }
+      require(artHash.equals(ACTIVE_ART_SHA256) && art.sourcePackId().equals("mod/" + EngineersDecorReforged.MOD_ID),
+         "Wrong active Freezer V5C faceplate");
+      proof.addProperty("source_art_sha256", artHash);
+      proof.addProperty("canvas_width", ThermalVerticalGeometry.canvasWidth(FREEZER));
+      proof.addProperty("canvas_height", ThermalVerticalGeometry.canvasHeight(FREEZER));
+      proof.addProperty("visible_machine_slots", 2);
+      proof.addProperty("visible_slot_count", ThermalVerticalGeometry.VISIBLE_SLOTS);
+      proof.addProperty("reserved_menu_index", 1);
       proof.addProperty("frost_art_static", false);
       proof.addProperty("presentation_mode", "normal-dynamic");
       proof.addProperty("dev_selectors_absent", true);
-      proof.addProperty("decorative_rim_frost_static", true);
+      proof.addProperty("effect_visibility_rule", "server_phase_greater_than_zero_v5c_chamber_pulse");
       proof.addProperty("phase_source", "server_menu_phase_natural_recipe");
       proof.addProperty("phase4_native_observed", false);
       proof.addProperty("menu_slot_count", current(mc).slots.size());

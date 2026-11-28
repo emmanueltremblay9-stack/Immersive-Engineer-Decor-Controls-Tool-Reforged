@@ -1,3 +1,4 @@
+from gui_exterior_alpha import current_hash as alpha_hash
 """Fail-closed source/art contract guardrails. Not a replacement for mapped/native tests."""
 from pathlib import Path
 import hashlib
@@ -5,14 +6,19 @@ import json
 import re
 import struct
 from tree_integration_preservation import assert_menu_tail_preserved, assert_solar_baseline_preserved
+from prism_210_history_projection import project_before_solar_gui11_r3
 
 r = Path(__file__).resolve().parents[2]
 j = r / 'src/main/java/com/oblixorprime/engineersdecorreforged'
-s = (j / 'client/SolarV2ReferenceScreen.java').read_text()
-m = (j / 'menu/MachineMenu.java').read_text()
+def v2_source(path):
+    file = j / path
+    return project_before_solar_gui11_r3(file.relative_to(r).as_posix(), file.read_bytes()).decode()
+
+s = v2_source('client/SolarV2ReferenceScreen.java')
+m = v2_source('menu/MachineMenu.java')
 c = (j / 'client/ClientModEvents.java').read_text()
-g = (j / 'utility/SolarV2ReferenceGeometry.java').read_text()
-state = (j / 'utility/SolarV2ReferenceState.java').read_text()
+g = v2_source('utility/SolarV2ReferenceGeometry.java')
+state = v2_source('utility/SolarV2ReferenceState.java')
 d = r / 'docs/testing/solar-v2-reference'
 
 for event in ('mouseClicked', 'mouseReleased', 'mouseDragged', 'mouseScrolled', 'mouseMoved'):
@@ -68,11 +74,11 @@ print('PASS: independent client-only default client presentation with explicit f
 
 art = r / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/solar_v2_reference/background.png'
 source_hash = hashlib.sha256(art.read_bytes()).hexdigest()
-assert source_hash == 'd702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796'
+assert source_hash == 'c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa'
 assert source_hash in g
 assert struct.unpack('>II', art.read_bytes()[16:24]) == (1254, 1254)
 manifest = json.loads((d / 'geometry-manifest.json').read_text())
-assert manifest['source_sha256'] == source_hash
+assert alpha_hash(art.relative_to(r).as_posix(), manifest['source_sha256']) == source_hash
 assert manifest['source_size'] == [1254, 1254]
 assert manifest['canvas_size'] == [418, 418]
 assert manifest['fe_source_safe_interior'] == [146, 588, 851, 37]

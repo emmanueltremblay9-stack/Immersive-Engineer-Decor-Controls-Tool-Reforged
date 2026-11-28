@@ -35,6 +35,7 @@ import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -59,7 +60,7 @@ import org.lwjgl.glfw.GLFW;
 public final class NativeFactoryPlacerV2ReferenceValidation {
    private static final String SUITE = "native-factory-placer-v2-reference-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0), TARGET = POS.south();
-   private static final Rect CONTROL_CROP = new Rect(240, 55, 125, 120);
+   private static final Rect CONTROL_CROP = new Rect(181, 49, 103, 96);
    private enum Stage { BOOT, WORLD, SETUP, SLOT_READY, PICKED, RETURNED, NORMAL, CONTROL,
       MANUAL_LIT, MANUAL_DARK, PLACE_READY, PLACE_WAIT, PLACED_CAPTURE, CLOSE, WORLD_CAPTURE,
       REOPEN, RELOAD_WAIT, RELOAD_CAPTURE, ADVANCED_SETUP, ADVANCED, TOOLTIPS, SELECTIONS, DONE }
@@ -96,6 +97,7 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
    private static boolean actionSent, shiftDown, tooltipInFrame, occupiedSelection;
    private static NativeLibrary x11, xtest;
    private static Pointer display;
+   private static byte[] sourceAlpha;
    private static JsonObject gesture, observedServer, tooltipObservation, renderedTooltip, selectionServer;
    private static CompletableFuture<JsonObject> snapshotFuture;
    private static final int[] expectedSlots = new int[54];
@@ -490,7 +492,8 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
          for (int edge = 0; edge < strips.size(); edge++) {
             var r = strips.get(edge); double x0 = r.left(), y0 = r.top(), x1 = r.right(), y1 = r.bottom();
             int expected = 0, matched = 0; var missingPixels = new JsonArray();
-            for (int y = (int)Math.ceil(y0 - .5); y < Math.ceil(y1 - .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {
+            // Readback uses PNG top-down Y, opposite to lower-left OpenGL edge ownership.
+            for (int y = (int)Math.floor(y0 + .5); y < Math.floor(y1 + .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {
                expected++; int rgb = frame.getPixelRGBA(x, y) & 0xffffff;
                int argb = com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceState.SELECTED_COLOR;
                int abgr = ((argb & 255) << 16) | (argb & 0xff00) | ((argb >>> 16) & 255);
@@ -653,11 +656,22 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
          c.addProperty("controls_name", cropFile.getFileName().toString()); c.addProperty("controls_sha256", hash(cropFile));
          c.addProperty("controls_x", x0); c.addProperty("controls_y", y0); c.addProperty("controls_width", x1 - x0); c.addProperty("controls_height", y1 - y0);
          var digest = MessageDigest.getInstance("SHA-256");
-         double artWidth = FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;
-         double artHeight = FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;
+         // Exclude transparent/partially transparent artwork pixels: their
+         // framebuffer color comes from the test world behind the GUI and may
+         // correctly change when this fixture places a block.
+         byte[] alpha = sourceAlpha(mc);
+         double artWidth = FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH;
+         double artHeight = FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT;
+         double sourceFactor = (double)v.scale() * (double)FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE * scale;
          for (int y = (int)Math.ceil(v.screenY(0) * scale); y < (int)Math.floor(v.screenY(artHeight) * scale); y++)
             for (int x = (int)Math.ceil(v.screenX(0) * scale); x < (int)Math.floor(v.screenX(artWidth) * scale); x++) {
-               if (excludedPixel(x, y, v, scale)) continue; int pixel = frame.getPixelRGBA(x, y); for (int b = 0; b < 4; b++) digest.update((byte)(pixel >>> (8 * b)));
+               if (excludedPixel(x, y, v, scale)) continue;
+               int sourceX = Math.max(0, Math.min(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH - 1,
+                  (int)Math.floor((x + .5 - v.screenX(0) * scale) / sourceFactor)));
+               int sourceY = Math.max(0, Math.min(FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT - 1,
+                  (int)Math.floor((y + .5 - v.screenY(0) * scale) / sourceFactor)));
+               if ((alpha[sourceY * FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH + sourceX] & 0xff) != 255) continue;
+               int pixel = frame.getPixelRGBA(x, y); for (int b = 0; b < 4; b++) digest.update((byte)(pixel >>> (8 * b)));
             }
          c.addProperty("frame_exterior_sha256", HexFormat.of().formatHex(digest.digest()));
       }
@@ -668,8 +682,26 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
       for (var a : FactoryPlacerV2ReferenceGeometry.SLOT_ANCHORS) if (inRect(x, y, v, scale, new Rect(a.x() - 1, a.y() - 1, 18, 18))) return true;
       for (int row = 0; row < 3; row++) if (inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.rowIndicator(row))) return true;
       return inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.SIGNAL_INDICATOR)
-         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR)
-         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR);
+         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR, 28))
+         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR, 26));
+   }
+   private static Rect indicatorBounds(Rect origin, int paintedWidth) {
+      return new Rect(origin.x(), origin.y(), paintedWidth, origin.height());
+   }
+   private static byte[] sourceAlpha(Minecraft mc) throws Exception {
+      if (sourceAlpha != null) return sourceAlpha;
+      var location = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,
+         "textures/gui/gui11_v5c/04.png");
+      var resource = mc.getResourceManager().getResource(location).orElseThrow();
+      try (var input = resource.open(); var image = NativeImage.read(input)) {
+         require(image.getWidth() == FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH
+            && image.getHeight() == FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT,
+            "Active V5C Factory Placer source dimensions differ");
+         sourceAlpha = new byte[image.getWidth() * image.getHeight()];
+         for (int y = 0; y < image.getHeight(); y++) for (int x = 0; x < image.getWidth(); x++)
+            sourceAlpha[y * image.getWidth() + x] = (byte)(image.getPixelRGBA(x, y) >>> 24);
+      }
+      return sourceAlpha;
    }
    private static boolean inRect(int x, int y, ViewTransform v, double scale, Rect r) {
       return x >= Math.floor(v.screenX(r.x()) * scale) - 2 && x <= Math.ceil(v.screenX(r.x() + r.width()) * scale) + 2

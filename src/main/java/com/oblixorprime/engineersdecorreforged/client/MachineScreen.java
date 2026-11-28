@@ -4,11 +4,13 @@ import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.ElectricalFurnaceControl;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.FluidMachineRedesignLayout;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFreezerArtworkMasks;
 import com.oblixorprime.engineersdecorreforged.utility.MilkingState;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -48,8 +50,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    protected MachineScreen(MachineMenu menu, Inventory inventory, Component title, MachineScreen.Profile profile) {
       super(menu, inventory, title);
       this.profile = profile;
-      this.imageWidth = menu.layout().imageWidth();
-      this.imageHeight = menu.layout().imageHeight();
+      this.imageWidth = menu.gui11V5CPresentation() ? Gui11V5CRuntimeGeometry.width(menu.kind()) : menu.layout().imageWidth();
+      this.imageHeight = menu.gui11V5CPresentation() ? Gui11V5CRuntimeGeometry.height(menu.kind()) : menu.layout().imageHeight();
       this.titleLabelX = 8;
       this.titleLabelY = 6;
       this.inventoryLabelX = menu.layout().playerInventoryX();
@@ -107,6 +109,20 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       int x = this.leftPos;
       int y = this.topPos;
+      if (((MachineMenu)this.menu).gui11V5CPresentation()) {
+         Gui11V5CArtwork.draw(graphics, (MachineMenu)this.menu, x, y);
+         if (this.menu.kind() == MachineKind.SMALL_MILKING_MACHINE && this.selectedMilkingAnimal() instanceof LivingEntity living) {
+            var portrait = Gui11V5CRuntimeGeometry.control(this.menu.kind(), "portrait");
+            InventoryScreen.renderEntityInInventoryFollowsMouse(graphics,
+               x + portrait.x(), y + portrait.y(), x + portrait.x() + portrait.width(), y + portrait.y() + portrait.height(),
+               19, 0.0F, x + portrait.x() + portrait.width() / 2.0F, y + portrait.y() + portrait.height() / 2.0F, living);
+         }
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_ELECTRICAL_FURNACE) {
+            ElectricalFurnaceArtwork.renderGui11V5C(graphics, Gui11V5CArtwork.texture(this.menu.kind()),
+               x, y, this.imageWidth, this.imageHeight, this.menu.field(4));
+         }
+         return;
+      }
       if (layout.style() == MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
          GuiTextureBlit geometry = layout.artworkBlit();
@@ -145,6 +161,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             RetainedFluidMachineArtwork.render(graphics, (MachineMenu)this.menu, x, y);
             return;
          }
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_ELECTRICAL_FURNACE
+            || ((MachineMenu)this.menu).kind() == MachineKind.SMALL_WASTE_INCINERATOR) {
+            this.drawRetainedFurnace(graphics, texture, x, y);
+            return;
+         }
          this.drawOriginalTextureBackdrop(graphics, x, y);
             MachineKind kind = ((MachineMenu)this.menu).kind();
             if (kind == MachineKind.SMALL_FREEZER) {
@@ -170,6 +191,17 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+      Gui11V5CRuntimeGeometry.Rect v5cDial = ((MachineMenu)this.menu).gui11V5CPresentation()
+         ? Gui11V5CRuntimeGeometry.control(this.menu.kind(), "rotary") : null;
+      if (this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE
+         && (v5cDial != null
+            ? v5cDial.contains(mouseX - this.leftPos, mouseY - this.topPos)
+            : ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos))) {
+         int step = ElectricalFurnaceArtwork.clickStep(button);
+         if (step == 0) return false;
+         this.sendAction(ElectricalFurnaceControl.CYCLE_SPEED_ACTION, step);
+         return true;
+      }
       return ((MachineMenu)this.menu).layout().style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE && this.handleOriginalClick(mouseX, mouseY)
          ? true
          : super.mouseClicked(mouseX, mouseY, button);
@@ -177,6 +209,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
       MachineLayout layout = ((MachineMenu)this.menu).layout();
+      if (((MachineMenu)this.menu).gui11V5CPresentation()) return;
       if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
          // Keep the supplied artwork text-free. Machine information is available
          // through bounded, localized hover tooltips; vanilla slot counts remain.
@@ -387,6 +420,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawArtworkLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
+      if (menu.kind() == MachineKind.METAL_CRAFTING_TABLE) return;
       MachineLayout layout = menu.layout();
       String inventoryLabel = Component.translatable("container.inventory").getString();
       int labelWidth = Math.min(64, Math.max(24, Mth.ceil(this.font.width(inventoryLabel) * 0.72F) + 2));
@@ -512,10 +546,20 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       return Component.translatable(BLOCK_BREAKER_GUI_PREFIX + key, arguments);
    }
 
+   private boolean v5ControlHovered(String key, int mouseX, int mouseY) {
+      var region = Gui11V5CRuntimeGeometry.control(this.menu.kind(), key);
+      return region != null && region.contains(mouseX - this.leftPos, mouseY - this.topPos);
+   }
+
+   private boolean blockBreakerRegionHovered(String key, int x, int y, int w, int h, int mouseX, int mouseY) {
+      return this.menu.gui11V5CPresentation() ? v5ControlHovered(key, mouseX, mouseY)
+         : this.isHovering(x, y, w, h, mouseX, mouseY);
+   }
+
    private Component blockBreakerTooltip(int mouseX, int mouseY) {
       MachineMenu menu = (MachineMenu)this.menu;
       if (menu.kind() != MachineKind.SMALL_BLOCK_BREAKER) return null;
-      if (this.isHovering(42, 6, 172, 18, mouseX, mouseY))
+      if (blockBreakerRegionHovered("title", 42, 6, 172, 18, mouseX, mouseY))
          return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker");
       String targetName = menu.blockBreakerTargetName();
       boolean hasTarget = blockBreakerHasTarget(targetName);
@@ -526,25 +570,25 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          : blockBreakerText(hardnessKey);
       int cost = blockBreakerEstimatedCost(hardness, hasTarget,
          !menu.blockBreakerTargetStack().isEmpty(), menu.blockBreakerEnergyCostPerBlock());
-      if (this.isHovering(191, 49, 46, 12, mouseX, mouseY))
+      if (blockBreakerRegionHovered("energy", 191, 49, 46, 12, mouseX, mouseY))
          return blockBreakerText("tooltip.energy", menu.energyStored(), menu.energyCapacity()).copy()
             .append("\n").append(blockBreakerText("tooltip.input"));
-      if (this.isHovering(191, 71, 46, 12, mouseX, mouseY))
+      if (blockBreakerRegionHovered("fluid", 191, 71, 46, 12, mouseX, mouseY))
          return blockBreakerText("tooltip.fluid_unavailable");
-      if (this.isHovering(34, 106, 22, 23, mouseX, mouseY))
+      if (blockBreakerRegionHovered("power", 34, 106, 22, 23, mouseX, mouseY))
          return blockBreakerText("tooltip.power_unavailable").copy().append("\n")
             .append(blockBreakerText("redstone.signal", blockBreakerText(menu.blockBreakerRedstonePowered() ? "signal.high" : "signal.low")))
             .append("\n").append(blockBreakerText("tooltip.redstone"));
-      if (this.isHovering(193, 88, 41, 47, mouseX, mouseY))
+      if (blockBreakerRegionHovered("output", 193, 88, 41, 47, mouseX, mouseY))
          return blockBreakerText("tooltip.rear_output").copy().append("\n")
             .append(blockBreakerText("tooltip.legacy_pending", menu.blockBreakerPendingItems()));
-      if (this.isHovering(26, 51, 39, 45, mouseX, mouseY))
+      if (blockBreakerRegionHovered("target", 26, 51, 39, 45, mouseX, mouseY))
          return blockBreakerText("tooltip.target", hasTarget ? targetName : blockBreakerText("target.none").getString()).copy().append("\n")
             .append(blockBreakerText("tooltip.hardness", hardnessText))
             .append("\n").append(blockBreakerText("tooltip.front_face"));
-      if (this.isHovering(100, 85, 40, 41, mouseX, mouseY))
+      if (blockBreakerRegionHovered("scene", 100, 85, 40, 41, mouseX, mouseY))
          return blockBreakerText("tooltip.static_scene");
-      if (this.isHovering(65, 132, 132, 18, mouseX, mouseY))
+      if (blockBreakerRegionHovered("work", 65, 132, 132, 18, mouseX, mouseY))
          return blockBreakerText("tooltip.work_details", Math.max(0, menu.field(1)), Math.max(0, menu.field(3)),
             cost >= 0 ? blockBreakerText("cost.per_block", cost) : blockBreakerText("cost.unavailable"),
             blockBreakerText(blockBreakerStatusLabelKey(menu.blockBreakerStatus())),
@@ -554,6 +598,15 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void renderOriginalHoverOverlay(GuiGraphics graphics, int mouseX, int mouseY) {
       if (((MachineMenu)this.menu).layout().style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
+         if (((MachineMenu)this.menu).gui11V5CPresentation()) {
+            int slotListIndex = this.hoveredSlot == null ? -1 : this.menu.slots.indexOf(this.hoveredSlot);
+            if (slotListIndex >= 0 && slotListIndex < ((MachineMenu)this.menu).visibleMachineSlots()
+               && this.hoveredSlot.isActive()) {
+               this.drawHoverOutline(graphics, this.leftPos + this.hoveredSlot.x - 1,
+                  this.topPos + this.hoveredSlot.y - 1, 18, 18, -1917873);
+            }
+            return;
+         }
          MachineLayout.MachineSlot slot = this.hoveredMachineSlot(mouseX, mouseY);
          if (slot != null) {
             this.drawHoverOutline(graphics, this.leftPos + slot.x() - 1, this.topPos + slot.y() - 1, 18, 18, -1917873);
@@ -751,6 +804,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
+
    private void drawFactoryDropperWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       int slotIndex = Mth.clamp(((MachineMenu)this.menu).field(15), 0, 11);
       graphics.blit(texture, x0 + 9 + slotIndex % 6 * 18, y0 + 5 + slotIndex / 6 * 17, 180, 45, 18, 18);
@@ -807,6 +861,20 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
 
       graphics.blit(texture, x0 + 79, y0 + 38, 176, 15, 1 + this.progressPixels(17), 15);
+   }
+
+   private void drawRetainedFurnace(GuiGraphics graphics, ResourceLocation texture, int x, int y) {
+      boolean electrical = ((MachineMenu)this.menu).kind() == MachineKind.SMALL_ELECTRICAL_FURNACE;
+      int sw = electrical ? 1199 : 1254;
+      int sh = electrical ? 1312 : 1254;
+      graphics.blit(texture, x, y, this.imageWidth, this.imageHeight, 0F, 0F, sw, sh, sw, sh);
+      if (!electrical) return;
+      // Existing synchronized fields only: heat, energy, progress and four-speed selector.
+      int heat = Mth.clamp(((MachineMenu)this.menu).field(0), 0, 200);
+      graphics.fill(x+71, y+96-heat*14/200, x+78, y+96, 0xFFD87525);
+      graphics.fill(x+108, y+51, x+108+this.progressPixels(13), y+54, 0xFFFFC34A);
+      ElectricalFurnaceArtwork.render(graphics, texture, x, y, this.imageWidth, this.imageHeight,
+         this.menu.field(1), this.menu.field(5), this.menu.field(4));
    }
 
    private void drawElectricalFurnaceWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
@@ -1091,6 +1159,29 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       return Mth.ceil(this.font.width(fitted) * 0.72F);
    }
 
+   private Component v5FluidStructureTooltip(int mouseX, int mouseY) {
+      boolean funnel = this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL;
+      if (v5ControlHovered("title", mouseX, mouseY))
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged."
+            + (funnel ? "small_fluid_funnel" : "passive_fluid_accumulator"));
+      if (v5ControlHovered("structure", mouseX, mouseY))
+         return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged."
+            + (funnel ? "small_fluid_funnel.output" : "passive_fluid_accumulator.collection.tooltip"));
+      return null;
+   }
+
+   private Component v5MilkingTooltip(int mouseX, int mouseY) {
+      if (v5ControlHovered("milk", mouseX, mouseY)) {
+         return smallMilkingText("tooltip.tank",
+            formatSmallMilkingMachineAmount(this.menu.fluidAmount(), this.menu.fluidCapacity(), this.smallMilkingLocale()));
+      }
+      if (v5ControlHovered("title", mouseX, mouseY) || v5ControlHovered("portrait", mouseX, mouseY))
+         return this.milkingIdentityTooltip();
+      if (v5ControlHovered("recovery", mouseX, mouseY)) return this.milkingRecoveryTooltip();
+      if (v5ControlHovered("power", mouseX, mouseY)) return smallMilkingText("tooltip.energy_unavailable");
+      return null;
+   }
+
    private Component smallMilkingMachineTooltip(int mouseX, int mouseY) {
       if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_MILKING_MACHINE) return null;
       if (this.isHovering(102, 47, 26, 55, mouseX, mouseY)
@@ -1224,7 +1315,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case FACTORY_DROPPER -> this.handleFactoryDropperClick(mouseX, mouseY);
          case FACTORY_PLACER -> this.handleFactoryPlacerClick(mouseX, mouseY);
          default -> false;
-         case SMALL_ELECTRICAL_FURNACE -> this.handleElectricalFurnaceClick(mouseX, mouseY);
       };
    }
 
@@ -1384,25 +1474,74 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
-   private boolean handleElectricalFurnaceClick(double mouseX, double mouseY) {
-      if (!this.isHovering(134, 48, 30, 28, mouseX, mouseY)) {
-         return false;
-      }
-
-      if (this.isHovering(144, 64, 6, 10, mouseX, mouseY)) {
-         this.sendAction(30, 0);
-      } else if (this.isHovering(134, 58, 10, 6, mouseX, mouseY)) {
-         this.sendAction(30, 1);
-      } else if (this.isHovering(144, 48, 6, 10, mouseX, mouseY)) {
-         this.sendAction(30, 2);
-      } else if (this.isHovering(150, 58, 10, 6, mouseX, mouseY)) {
-         this.sendAction(30, 3);
-      }
-
-      return true;
-   }
-
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+      if (((MachineMenu)this.menu).gui11V5CPresentation()) {
+         if (this.hoveredSlot == null) {
+            Component mapped = switch (this.menu.kind()) {
+               case SMALL_BLOCK_BREAKER -> this.blockBreakerTooltip(mouseX, mouseY);
+               case SMALL_MILKING_MACHINE -> this.v5MilkingTooltip(mouseX, mouseY);
+               case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> this.v5FluidStructureTooltip(mouseX, mouseY);
+               default -> null;
+            };
+            if (mapped != null) {
+               if (this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR && v5ControlHovered("structure", mouseX, mouseY)) {
+                  graphics.renderTooltip(this.font, this.font.split(mapped, Math.max(1, Math.min(240, this.width - 24))),
+                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);
+               } else if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+                  this.renderFluidArtworkTooltip(graphics, mapped, mouseX, mouseY);
+               } else if (this.menu.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)),
+                     FluidTooltipPositioner.INSTANCE, mouseX, mouseY);
+               } else {
+                  graphics.renderTooltip(this.font, this.font.split(mapped, milkingTooltipWidth(this.width)), mouseX, mouseY);
+               }
+               return;
+            }
+         }
+         Gui11V5CRuntimeGeometry.Rect energy = Gui11V5CRuntimeGeometry.energy(this.menu.kind());
+         double localX = mouseX - this.leftPos, localY = mouseY - this.topPos;
+         Gui11V5CRuntimeGeometry.Rect fluid = Gui11V5CRuntimeGeometry.fluidDisplay(this.menu.kind());
+         if (energy != null && energy.contains(localX, localY) && this.hoveredSlot == null) {
+            graphics.renderTooltip(this.font,
+               Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.machine.energy_tooltip",
+                  this.menu.energyStored(), this.menu.energyCapacity()), mouseX, mouseY);
+         } else if (this.menu.kind() == MachineKind.SMALL_ELECTRICAL_FURNACE && this.hoveredSlot == null) {
+            Gui11V5CRuntimeGeometry.Rect dial = Gui11V5CRuntimeGeometry.control(this.menu.kind(), "rotary");
+            if (dial != null && dial.contains(localX, localY)) {
+               String mode = switch (Mth.clamp(this.menu.field(4), 0, 3)) {
+                  case 1 -> "I"; case 2 -> "II"; case 3 -> "III"; default -> "OFF";
+               };
+               String prefix = "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.";
+               graphics.renderTooltip(this.font, Component.translatable(prefix + "speed").copy().append("\n")
+                  .append(Component.translatable(prefix + "rotation", mode)).append("\n")
+                  .append(Component.translatable(prefix + "actual_draw", Math.max(0, this.menu.field(7))))
+                  .append("\n").append(Component.translatable(prefix + "residual_heat", Math.max(0, this.menu.field(0)))), mouseX, mouseY);
+            }
+         } else if (fluid != null && fluid.contains(localX, localY) && this.hoveredSlot == null) {
+            Component amount = this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL
+               ? Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.tank.tooltip",
+                  this.smallFluidFunnelFluidName(this.menu.smallFluidFunnelFluidCode()),
+                  this.menu.fluidAmount(), this.menu.fluidCapacity())
+               : Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.tank.tooltip",
+                  this.menu.fluidAmount(), this.menu.fluidCapacity());
+            this.renderFluidArtworkTooltip(graphics, amount, mouseX, mouseY);
+         }
+         if (this.hoveredSlot != null && !this.hoveredSlot.hasItem()) {
+            int menuSlot = this.menu.slots.indexOf(this.hoveredSlot);
+            if (menuSlot >= 0 && menuSlot < this.menu.visibleMachineSlots()) {
+               Component tooltip = this.slotTooltip(new MachineLayout.MachineSlot(
+                  this.hoveredSlot.index, this.hoveredSlot.x, this.hoveredSlot.y, "", false));
+               if (hasVisibleTooltipText(tooltip)) {
+                  if (this.menu.kind() == MachineKind.SMALL_FLUID_FUNNEL || this.menu.kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+                     this.renderFluidArtworkTooltip(graphics, tooltip, mouseX, mouseY);
+                  } else {
+                     graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);
+                  }
+               }
+            }
+         }
+         return;
+      }
         Component funnelTooltip = this.smallFluidFunnelTooltip(mouseX, mouseY);
         if (funnelTooltip != null) {
             this.renderFluidArtworkTooltip(graphics, funnelTooltip, mouseX, mouseY);
@@ -1449,7 +1588,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       Component controlTooltip = this.originalControlTooltip(mouseX, mouseY);
       if (controlTooltip != null) {
          MachineKind kind = ((MachineMenu)this.menu).kind();
-         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER) {
+         if (kind == MachineKind.FACTORY_HOPPER || kind == MachineKind.FACTORY_DROPPER
+            || kind == MachineKind.SMALL_ELECTRICAL_FURNACE) {
             // Preserve translated line breaks and styles; bound long control help to the viewport.
             int wrapWidth = Math.max(1, Math.min(240, this.width - 16));
             graphics.renderTooltip(this.font, this.font.split(controlTooltip, wrapWidth), mouseX, mouseY);
@@ -1461,14 +1601,20 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             if (this.isHovering(slot.x(), slot.y(), 16, 16, mouseX, mouseY)) {
                MachineKind kind = ((MachineMenu)this.menu).kind();
                if (kind == MachineKind.SMALL_FLUID_FUNNEL || kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
-                  this.renderFluidArtworkTooltip(graphics, this.slotTooltip(slot), mouseX, mouseY);
+                  Component tooltip = this.slotTooltip(slot);
+                  if (hasVisibleTooltipText(tooltip)) this.renderFluidArtworkTooltip(graphics, tooltip, mouseX, mouseY);
                } else {
-                  graphics.renderTooltip(this.font, this.slotTooltip(slot), mouseX, mouseY);
+                  Component tooltip = this.slotTooltip(slot);
+                  if (hasVisibleTooltipText(tooltip)) graphics.renderTooltip(this.font, tooltip, mouseX, mouseY);
                }
                return;
             }
          }
       }
+   }
+
+   static boolean hasVisibleTooltipText(Component tooltip) {
+      return tooltip != null && !tooltip.getString().isBlank();
    }
 
    private void renderFluidArtworkTooltip(GuiGraphics graphics, Component tooltip, int mouseX, int mouseY) {
@@ -1549,7 +1695,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       return switch (index) {
          case 0 -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.metal_crafting_table.slots.hammer");
          case 10 -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.metal_crafting_table.slots.output");
-         default -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.metal_crafting_table.slots.grid");
+         default -> index >= 11 ? Component.translatable("container.inventory")
+            : Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.metal_crafting_table.slots.grid");
       };
    }
 
@@ -1709,27 +1856,33 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private Component electricalFurnaceTooltip(double mouseX, double mouseY) {
-      if (this.isHovering(62, 54, 14, 15, mouseX, mouseY)) {
-         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.heat");
-      } else if (this.isHovering(78, 28, 22, 18, mouseX, mouseY)) {
-         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.progress");
-      } else if (this.isHovering(89, 52, 35, 17, mouseX, mouseY)) {
-         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.energy");
-      } else {
-         return this.isHovering(134, 48, 30, 28, mouseX, mouseY)
-            ? Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.speed")
-            : null;
+      String prefix = "block.immersive_engineer_decor_controls_tool_reforged.small_electrical_furnace.tooltips.";
+      if (this.isHovering(90,82,64,15,mouseX,mouseY)) {
+         int capacity = Math.max(0, this.menu.field(5));
+         return Component.translatable(prefix + "energy").copy().append("\n")
+            .append(Component.literal(Mth.clamp(this.menu.field(1), 0, capacity) + " / " + capacity + " FE"));
       }
+      if (ElectricalFurnaceArtwork.containsDial(mouseX - this.leftPos, mouseY - this.topPos)) {
+         String mode = switch (Mth.clamp(this.menu.field(4), 0, 3)) {
+            case 1 -> "I";
+            case 2 -> "II";
+            case 3 -> "III";
+            default -> "OFF";
+         };
+         return Component.translatable(prefix + "speed").copy().append("\n")
+            .append(Component.translatable(prefix + "rotation", mode));
+      }
+      String part = null;
+      if (this.isHovering(69,76,14,23,mouseX,mouseY)) part="heat";
+      else if (this.isHovering(106,46,18,14,mouseX,mouseY)) part="progress";
+      return part == null ? null : Component.translatable(prefix + part);
    }
 
    private Component wasteIncineratorTooltip(double mouseX, double mouseY) {
-      if (this.isHovering(10, 49, 31, 27, mouseX, mouseY)) {
+      if (this.isHovering(29,84,29,30,mouseX,mouseY))
          return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_waste_incinerator.tooltips.firebox");
-      } else {
-         return this.isHovering(8, 5, 160, 72, mouseX, mouseY)
-            ? Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_waste_incinerator.tooltips.queue")
-            : null;
-      }
+      return this.isHovering(25,32,211,81,mouseX,mouseY)
+         ? Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_waste_incinerator.tooltips.queue") : null;
    }
 
    private int sliderValue(int mouseX, int originX, int span, int min, int max, int current, int step) {

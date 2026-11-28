@@ -4,26 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Dependency-free geometry for the opt-in retained-reference Barrel experiment.
- * Source coordinates describe the unmodified 1137-by-1383 V5 reference, not the
- * legacy Barrel texture. This class changes no inventory or machine semantics.
+ * Runtime geometry for the selected GUI11-R3 V5-Corrigee Fluid Barrel panel.
+ * This class changes no inventory or machine semantics.
  */
 public final class BarrelReferenceGeometry {
-   public static final int SOURCE_WIDTH = 1137;
-   public static final int SOURCE_HEIGHT = 1383;
-   public static final int CANVAS_WIDTH = 379;
-   public static final int CANVAS_HEIGHT = 461;
+   public static final int SOURCE_WIDTH = Gui11V5CRuntimeGeometry.sourceWidth(MachineKind.FLUID_BARREL);
+   public static final int SOURCE_HEIGHT = Gui11V5CRuntimeGeometry.sourceHeight(MachineKind.FLUID_BARREL);
+   public static final int CANVAS_WIDTH = Gui11V5CRuntimeGeometry.width(MachineKind.FLUID_BARREL);
+   public static final int CANVAS_HEIGHT = Gui11V5CRuntimeGeometry.height(MachineKind.FLUID_BARREL);
    public static final int VIEWPORT_MARGIN = 6;
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 38;
    public static final int VISIBLE_SLOT_COUNT = 38;
-   public static final String SOURCE_SHA256 = "df89575afd98ccee396b38cee34f230ef03f94528d5a4ad5bc3425658ef54ca9";
-   public static final String SOURCE_FILENAME = "fluid-barrel-breaker-tree-family-v5.png";
-   public static final List<Integer> INVENTORY_SOURCE_X = List.of(132, 232, 332, 432, 532, 632, 732, 832, 932);
-   public static final List<Integer> HOTBAR_SOURCE_X = List.of(148, 244, 340, 436, 532, 628, 724, 820, 916);
-   public static final List<Integer> INVENTORY_SOURCE_ROW_Y = List.of(802, 904, 1006);
-   public static final int INVENTORY_SOURCE_WIDTH = 76;
-   public static final int INVENTORY_SOURCE_HEIGHT = 72;
+   public static final String SOURCE_SHA256 = "eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388";
+   public static final String SOURCE_FILENAME = "15-V5-Corrigee.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();
 
@@ -62,26 +56,15 @@ public final class BarrelReferenceGeometry {
 
    private static List<SlotAnchor> createAnchors() {
       List<SlotAnchor> anchors = new ArrayList<>(VISIBLE_SLOT_COUNT);
-      anchors.add(centeredAnchor(0, 166, 451, 140, 140));
-      anchors.add(centeredAnchor(1, 838, 451, 140, 140));
-      for (int row = 0; row < INVENTORY_SOURCE_ROW_Y.size(); row++) {
-         for (int column = 0; column < INVENTORY_SOURCE_X.size(); column++) {
-            anchors.add(centeredAnchor(2 + row * 9 + column,
-               INVENTORY_SOURCE_X.get(column), INVENTORY_SOURCE_ROW_Y.get(row),
-               INVENTORY_SOURCE_WIDTH, INVENTORY_SOURCE_HEIGHT));
-         }
-      }
-      for (int column = 0; column < 9; column++) {
-         anchors.add(centeredAnchor(29 + column, HOTBAR_SOURCE_X.get(column), 1148, 76, 76));
+      for (int index = 0; index < MENU_SLOT_COUNT; index++) {
+         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.FLUID_BARREL, index);
+         if (point == null) throw new IllegalStateException("Missing Fluid Barrel GUI11 slot " + index);
+         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.FLUID_BARREL, point);
+         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));
       }
       return List.copyOf(anchors);
    }
 
-   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {
-      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) * CANVAS_WIDTH / SOURCE_WIDTH - ITEM_SIZE / 2.0D);
-      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) * CANVAS_HEIGHT / SOURCE_HEIGHT - ITEM_SIZE / 2.0D);
-      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);
-   }
 
    private static SlotAnchor[] indexAnchors() {
       SlotAnchor[] byIndex = new SlotAnchor[MENU_SLOT_COUNT];

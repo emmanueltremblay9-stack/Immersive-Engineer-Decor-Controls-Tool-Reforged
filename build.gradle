@@ -589,3 +589,5 @@ apply from: 'gradle/smelter-packaged-validation.gradle'
 apply from: 'gradle/milking-packaged-validation.gradle'
 
 apply from: 'gradle/tfc-packaged-validation.gradle'
+
+apply from: 'gradle/factory-study-packaged-validation.gradle'

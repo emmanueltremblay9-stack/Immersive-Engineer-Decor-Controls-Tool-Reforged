@@ -11,6 +11,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 SCREEN = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/MachineScreen.java"
+GEOMETRY = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java"
 FIXTURE = ROOT / "tools/validation/fixtures/block_breaker/BreakerTextProbe.java.in"
 ART = ROOT / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/block_breaker_rp_v3"
 
@@ -18,9 +19,16 @@ ART = ROOT / "src/main/resources/assets/immersive_engineer_decor_controls_tool_r
 def production_methods(source):
     labels = source[source.index("   private void drawBlockBreakerLabels("):
                     source.index("   static String blockBreakerStatusLabelKey(")]
-    tooltip = source[source.index("   private Component blockBreakerTooltip("):
+    tooltip = source[source.index("   private boolean v5ControlHovered("):
                      source.index("   private void renderOriginalHoverOverlay(")]
-    return labels + tooltip
+    geometry = GEOMETRY.read_text().split('case "09" -> switch (key) {', 1)[1].split('case "12" ->', 1)[0].strip()
+    regions = ("private static final class Gui11V5CRuntimeGeometry {"
+               "record Rect(int x, int y, int w, int h) {"
+               "boolean contains(double px, double py) {return px >= x && px < x+w && py >= y && py < y+h;}}"
+               "static Rect control(MachineKind kind, String key) {"
+               "return switch (kind) { case SMALL_BLOCK_BREAKER -> switch (key) {" + geometry
+               + " default -> null; }; }}")
+    return labels + tooltip + regions
 
 
 def run_probe(source):
@@ -53,14 +61,14 @@ class BlockBreakerTextFreeTests(unittest.TestCase):
 
     def test_removing_title_hover_is_rejected(self):
         source = SCREEN.read_text().replace(
-            "if (this.isHovering(42, 6, 172, 18, mouseX, mouseY))", "if (false)")
+            'if (blockBreakerRegionHovered("title", 42, 6, 172, 18, mouseX, mouseY))', "if (false)")
         result = run_probe(source)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Nameplate identity", result.stderr)
 
     def test_retained_art_is_byte_identical(self):
         for name, digest in {
-            "background.png": "2594e227dd153ffa7b1954d8d5d3069e10d0176c0e8142c7f7d2727f315b0a0d",
+            "background.png": "0228428a221519f0df234d1a21d82c41e5c48229306fc33da395946f41c48879",
             "power_neutral.png": "23ff15c60420b8951117f748d0b6122e174c915f87e91466930af80fbdc12123",
         }.items():
             with self.subTest(name=name):

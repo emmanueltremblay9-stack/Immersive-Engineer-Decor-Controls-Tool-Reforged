@@ -124,7 +124,8 @@ class AdvancedEvidenceTest(unittest.TestCase):
             for slot in range(18):
                 x,y=SLOT_ORIGINS[slot]
                 strips=((x-1,y-1,x+17,y),(x+16,y,x+17,y+16),(x-1,y+16,x+17,y+17),(x-1,y,x,y+16))
-                expected={name:[(px,py) for py in range(math.ceil(sy(t)-.5),math.ceil(sy(b)-.5))
+                expected={name:[(px,py) for py in range(math.floor(sy(t)),math.ceil(sy(b))+1)
+                          if sy(t)<py+.5<=sy(b)
                           for px in range(math.ceil(sx(l)-.5),math.ceil(sx(r)-.5))]
                           for name,(l,t,r,b) in zip(('top','right','bottom','left'),strips)}
                 self.assertEqual(delivery.selection_edges(w,h,scale,slot),expected)
@@ -238,7 +239,8 @@ class PackagedIdentityTest(unittest.TestCase):
         classes = ['com.oblixorprime.engineersdecorreforged.' + name for name in classes]
         # Explicitly fake class bytes test provenance matching, not Java execution.
         self.entries = {name.replace('.', '/') + '.class': ('fake class ' + name).encode() for name in classes}
-        self.entries[delivery.ART_ENTRY] = DEFAULT_SOURCE.read_bytes()
+        self.entries[delivery.ART_ENTRY] = (DEFAULT_SOURCE.parent.parent / "factory_placer_v2_reference/background.png").read_bytes()
+        self.entries[delivery.V5C_ART_ENTRY] = (Path(__file__).resolve().parents[2] / "src/main/resources" / delivery.V5C_ART_ENTRY).read_bytes()
         with zipfile.ZipFile(self.jar, 'w') as archive:
             for name, data in self.entries.items(): archive.writestr(name, data)
         sha = hashlib.sha256(self.jar.read_bytes()).hexdigest()
@@ -307,7 +309,8 @@ class PackagedIdentityTest(unittest.TestCase):
             menu_slot_count=54,machine_saved_slot_count=27,machine_visible_slot_count=18,
             client_v2_presentation=True,server_v2_presentation=False,default_logic=6,default_selected_slot=0,
             pickup_server_acks=1,return_server_acks=1,initial_item_total=1,final_item_total=1,world_drop_count=0,
-            width=1280,height=720,selected_language='en_us',packaged_runtime=self.identity,
+            width=1280,height=720,selected_language='en_us',
+            packaged_runtime=dict(self.identity, active_texture_sha256=delivery.V5C_ART_SHA),
             capture='factory-placer-packaged-default.png',capture_sha256=hashlib.sha256(data).hexdigest())
         return proof
 
@@ -317,6 +320,12 @@ class PackagedIdentityTest(unittest.TestCase):
 
     def test_default_v2_preserves_server_and_machine_defaults(self):
         self.validate_default(self.default_proof())
+
+    def test_default_rejects_the_retained_legacy_faceplate(self):
+        proof = self.default_proof()
+        proof['packaged_runtime']['active_texture_sha256'] = ART_SHA
+        with self.assertRaisesRegex(SmokeFailure, 'Active artwork hash or pack differs'):
+            self.validate_default(proof)
 
     def test_default_cannot_pass_legacy_screen_dev_property_or_changed_server_defaults(self):
         for field,value in dict(screen_class='com.oblixorprime.engineersdecorreforged.client.MachineScreen$FactoryPlacerScreen',

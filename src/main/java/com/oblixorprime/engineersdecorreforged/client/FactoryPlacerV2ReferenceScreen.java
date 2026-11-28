@@ -15,7 +15,7 @@ import net.minecraft.world.entity.player.Inventory;
 public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.factory_placer.v2.";
    private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
-      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/factory_placer_v2_reference/background.png");
+      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/gui11_v5c/04.png");
    private FactoryPlacerV2ReferenceGeometry.ViewTransform view = FactoryPlacerV2ReferenceGeometry.fit(400, 438);
    private boolean renderingCanvas;
    private double renderLocalMouseX, renderLocalMouseY;
@@ -101,16 +101,7 @@ public final class FactoryPlacerV2ReferenceScreen extends AbstractContainerScree
 
    @Override
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-      // The odd source dimensions must not be squeezed into the rounded logical canvas.
-      graphics.pose().pushPose();
-      try {
-         graphics.pose().scale(FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE, FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE, 1.0F);
-         graphics.blit(FACEPLATE, 0, 0, 0, 0,
-            FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH, FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT,
-            FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH, FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT);
-      } finally {
-         graphics.pose().popPose();
-      }
+      Gui11V5CArtwork.draw(graphics, menu);
       var selected = FactoryPlacerV2ReferenceGeometry.anchor(FactoryPlacerV2ReferenceState.selectedSlot(menu.field(2)));
       double guiScale = minecraft.getWindow().getGuiScale();
       if (view.scale() * guiScale >= 1.0D) {

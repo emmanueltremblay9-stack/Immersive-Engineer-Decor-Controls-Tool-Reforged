@@ -17,7 +17,7 @@ public final class SolarV2ReferenceGeometry {
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 37;
    public static final int VISIBLE_SLOT_COUNT = 37;
-   public static final String SOURCE_SHA256 = "d702051b09e09cd7c9ebd7ea874356ba82324db07bcb0657cf8ac66bdf54c796";
+   public static final String SOURCE_SHA256 = "c79e63d9761f8c8f3248e05266244bc88e26282d2fc97607a5fe530a54b23daa";
    public static final String SOURCE_FILENAME = "small-solar-panel-v2.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();
@@ -39,6 +39,10 @@ public final class SolarV2ReferenceGeometry {
     * to leave one usable pixel. The scale has no arbitrary lower clamp.
     */
    public static ViewTransform fit(int viewportWidth, int viewportHeight) {
+      return fit(viewportWidth, viewportHeight, CANVAS_WIDTH, CANVAS_HEIGHT);
+   }
+
+   static ViewTransform fit(int viewportWidth, int viewportHeight, double canvasWidth, double canvasHeight) {
       if (viewportWidth <= 0 || viewportHeight <= 0) {
          throw new IllegalArgumentException("Viewport dimensions must be positive");
       }
@@ -46,12 +50,12 @@ public final class SolarV2ReferenceGeometry {
       double margin = Math.min(VIEWPORT_MARGIN, (shortEdge - 1.0D) / 2.0D);
       double availableWidth = viewportWidth - 2.0D * margin;
       double availableHeight = viewportHeight - 2.0D * margin;
-      float scale = (float)Math.min(1.0D, Math.min(availableWidth / CANVAS_WIDTH, availableHeight / CANVAS_HEIGHT));
-      if ((double)scale * CANVAS_WIDTH > availableWidth || (double)scale * CANVAS_HEIGHT > availableHeight) {
+      float scale = (float)Math.min(1.0D, Math.min(availableWidth / canvasWidth, availableHeight / canvasHeight));
+      if ((double)scale * canvasWidth > availableWidth || (double)scale * canvasHeight > availableHeight) {
          scale = Math.nextDown(scale);
       }
-      float originX = (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2.0D);
-      float originY = (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2.0D);
+      float originX = (float)((viewportWidth - canvasWidth * scale) / 2.0D);
+      float originY = (float)((viewportHeight - canvasHeight * scale) / 2.0D);
       return new ViewTransform(scale, originX, originY);
    }
 

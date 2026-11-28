@@ -22,6 +22,7 @@ public class CrateResizeProbe {
         EditBox(Object font, int x, int y, int width, int height, Component label) {
             this.x=x; this.y=y; this.width=width; this.height=height;
         }
+        void setBordered(boolean bordered) {}
         void setMaxLength(int max) { maxLength=max; }
         void setValue(String text) { value=text.substring(0, Math.min(text.length(), maxLength)); }
         String getValue() { return value; }
@@ -35,6 +36,12 @@ public class CrateResizeProbe {
             Button build() { return new Button(action); }
         }
     }
+    static class PlaqueButton extends Button {
+        PlaqueButton(int x, int y, int w, int h, Component label, Consumer<Button> action) { super(action); }
+    }
+    /* PANEL */
+    int panelLeft, panelTop, panelWidth, panelHeight; float panelScale;
+    /* GEOMETRY */
     int width=400, height=300, saves, closes; Object font=new Object(), focus;
     final String[] initialLines; EditBox firstLine, secondLine;
     final List<Object> widgets = new ArrayList<>();
@@ -54,6 +61,13 @@ public class CrateResizeProbe {
         check(saves==0 && closes==0, "initialization must not save or close");
         check(firstLine.maxLength==MachineBlockEntity.LABEL_MAX_UTF16_UNITS &&
               secondLine.maxLength==MachineBlockEntity.LABEL_MAX_UTF16_UNITS, "max length unchanged");
+        check(panelScale > 0 && panelScale <= 1.0F, "uniform no-upscale panel transform");
+        check(panelWidth==Math.round(368*panelScale) && panelHeight==Math.round(207*panelScale), "panel dimensions match transform");
+        check(panelLeft==(width-panelWidth)/2 && panelTop==(height-panelHeight)/2, "panel remains centered");
+        check(firstLine.x==panelLeft+Math.round(64.24F*panelScale) &&
+              firstLine.y==panelTop+Math.round(75.68F*panelScale) &&
+              firstLine.width==Math.max(1,Math.round(239.8F*panelScale)), "first editor follows retained-panel anchors");
+        check(secondLine.x==firstLine.x && secondLine.y==panelTop+Math.round(111.76F*panelScale), "second editor follows retained-panel anchors");
     }
     public static void main(String[] args) {
         CrateResizeProbe p=new CrateResizeProbe("stored A", "stored B");
@@ -74,6 +88,10 @@ public class CrateResizeProbe {
         other.reinit(640,360); other.expect("other crate", "new stored value");
         CrateResizeProbe reopened=new CrateResizeProbe("stored A", "stored B");
         reopened.reinit(400,300); reopened.expect("stored A", "stored B");
+        ((Button)reopened.widgets.get(3)).action.accept((Button)reopened.widgets.get(3));
+        check(reopened.closes==1 && reopened.saves==0, "Cancel must close without saving");
+        ((Button)other.widgets.get(2)).action.accept((Button)other.widgets.get(2));
+        check(other.saves==1 && other.closes==0, "Done must call save");
         System.out.println("Draft text retained over reinitialization; isolated screens, lengths and no-save verified");
     }
 }
@@ -82,12 +100,27 @@ public class CrateResizeProbe {
 
 def run_probe(source):
     start = source.index('   protected void init() {')
-    end = source.index('\n   public void render(', start)
+    # Isolate the production method by braces, not by the name of a later method.
+    # A renderBackground override may legitimately appear between init and render.
+    opening = source.index('{', start)
+    depth = 1
+    end = opening + 1
+    while depth:
+        if source[end] == '{': depth += 1
+        elif source[end] == '}': depth -= 1
+        end += 1
+    geometry = '\n'.join(re.findall(r'   private int panel(?:X|Y|Dimension)\([^\n]+', source))
+    if len(geometry.splitlines()) != 3:
+        raise AssertionError('Expected the three shared GUI11 panel coordinate helpers')
     entity = ENTITY.read_text(encoding='utf-8')
     constants = '\n'.join(re.findall(r'public static final int LABEL_MAX_(?:LINE_LENGTH|UTF16_UNITS) = [^;]+;', entity))
     if len(constants.splitlines()) != 2:
         raise AssertionError('Expected the two production length constants')
-    java_source = FIXTURE.replace('/* METHOD */', source[start:end]).replace('/* CONSTANTS */', constants)
+    panel_constants = '\n'.join(re.findall(r'   private static final int PANEL_(?:WIDTH|HEIGHT) = [^;]+;', source))
+    if len(panel_constants.splitlines()) != 2:
+        raise AssertionError('Expected production panel source dimensions')
+    java_source = (FIXTURE.replace('/* METHOD */', source[start:end]).replace('/* CONSTANTS */', constants)
+                   .replace('/* GEOMETRY */', geometry).replace('/* PANEL */', panel_constants))
     with tempfile.TemporaryDirectory(prefix='crate-resize-') as directory:
         target = Path(directory)
         java = target / 'CrateResizeProbe.java'

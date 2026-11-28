@@ -12,8 +12,8 @@ import zlib
 
 ROOT = Path(__file__).resolve().parents[2]
 ASSET = ROOT / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/freezer_reference_v5/background.png'
-EXPECTED_BYTES = '68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46'
-EXPECTED_RGBA = '61377093d58be84df2852af2e020ae1df56c36190f9a4536d5e65c4260de0d0c'
+EXPECTED_BYTES = 'e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7'
+EXPECTED_RGBA = 'd89ce345897559c9b1a4de0ba5a39c320cf05e0d919a508d55cc8a558ae51f9e'
 
 
 def sha(data):
@@ -96,17 +96,17 @@ def nearest_panel(rgba, target):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, help='optional independently retained original PNG')
+    parser.add_argument('--source', type=Path, help='optional independently retained exterior-alpha PNG')
     parser.add_argument('--proof-render', type=Path, help='optional EXISTING native toolkit render; never regenerated')
     parser.add_argument('--report', type=Path, default=ROOT / 'build/reports/freezer-reference-resource.json')
     args = parser.parse_args()
     raw, rgba, meta = read_png(ASSET)
     assert sha(raw) == EXPECTED_BYTES, 'runtime PNG differs from retained exact bytes'
     assert sha(rgba) == EXPECTED_RGBA, 'runtime decoded RGBA differs from retained exact pixels'
-    assert (meta['width'], meta['height'], meta['mode']) == (1254, 1254, 'RGB')
+    assert (meta['width'], meta['height'], meta['mode']) == (1254, 1254, 'RGBA')
     assert json.loads(Path(str(ASSET) + '.mcmeta').read_text()) == {'texture': {'blur': False, 'clamp': True}}
     source_rgba = rgba
-    report = {'status': 'PASS_RESOURCE_IDENTITY_NOT_NATIVE_RUNTIME', 'source_filename': 'freezer-mixed-rp-v5-preview.png',
+    report = {'status': 'PASS_RESOURCE_IDENTITY_NOT_NATIVE_RUNTIME', 'source_filename': 'freezer-mixed-rp-v5-preview.png', 'runtime_variant': 'exterior-alpha',
               'runtime_resource': str(ASSET.relative_to(ROOT)), 'bytes': len(raw), 'byte_sha256': sha(raw),
               'rgba_sha256': sha(rgba), 'metadata': meta, 'native_runtime_capture': 'NOT_RUN',
               'sampling': 'CPU point sampling at integer destination pixel centers, direct1254 UVs, nearest/clamp. Not hardware framebuffer/color-pipeline proof.'}

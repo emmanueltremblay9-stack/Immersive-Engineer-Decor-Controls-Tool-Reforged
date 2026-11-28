@@ -8,6 +8,7 @@ import warnings
 import zipfile
 from client_mixin_smoke import SmokeFailure
 from freezer_packaged_proof import CLASSES, HARNESS, MOD, TEXTURES, SELECTORS, validate_runtime
+from freezer_reference_native import SCREEN_CLASS
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -21,7 +22,10 @@ class RuntimeTests(unittest.TestCase):
             for name in CLASSES:
                 archive.writestr(name.replace('.', '/')+'.class', name.encode())
             for name in TEXTURES:
-                archive.write(ROOT/'src/main/resources/assets'/MOD/name, 'assets/'+MOD+'/'+name)
+                old_path = 'src/main/resources/assets/'+MOD+'/'+name
+                artwork = (ROOT / old_path).read_bytes()
+                self.assertEqual(hashlib.sha256(artwork).hexdigest(), TEXTURES[name], name)
+                archive.writestr('assets/'+MOD+'/'+name, artwork)
         digest = hashlib.sha256(jar.read_bytes()).hexdigest()
         root = 'union:/exact-normal-jar/'
         self.report = dict(jar_path=str(jar), jar_sha256=digest, fixture_free_jar=False, separate_provenance_harness=True,
@@ -30,6 +34,7 @@ class RuntimeTests(unittest.TestCase):
         self.proof = dict(packaged_runtime=dict(jar_path=str(jar), jar_sha256=digest,
             fixture_free_jar=False, separate_provenance_harness=True, separate_harness_module=True, production_selectors_absent=False, production_selectors=SELECTORS, presentation_mode="normal-dynamic", dev_selectors_absent=True,
             harness_mod_id=HARNESS, harness_mod_path='/isolated/harness', mod_root_uri=root,
+            active_screen_class=SCREEN_CLASS,
             class_origins=[{'class': n, 'resource_uri': root+n.replace('.', '/')+'.class',
                 'code_source_uri': root, 'sha256': hashlib.sha256(n.encode()).hexdigest()} for n in CLASSES],
             active_textures=[dict(path=n, sha256=h, pack='mod/'+MOD) for n, h in TEXTURES.items()]))

@@ -1,0 +1,648 @@
+{
+  "assets": [
+    {
+      "file": "freezer_vertical_normalized.png",
+      "sha256": "379a147a6f19142fe0941933b9bcddb860a2e1d775780f25267a7c06c584bd80",
+      "source": "freezer.png",
+      "source_sha256": "e1ee85944fe12b066e26a1aaaa7e494068724191ea9f92e71f67a276886afdd3",
+      "source_bbox": [
+        0,
+        0,
+        1149,
+        1343
+      ],
+      "uniform_scale": 0.302,
+      "scaled_art_size": [
+        347,
+        380
+      ],
+      "canvas": [
+        347,
+        381
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "transparent_pixels": 5040,
+      "removed_source_band_y": [
+        1056,
+        1142
+      ]
+    },
+    {
+      "file": "smelter_vertical_normalized.png",
+      "sha256": "c2fa72e68c667358c5c6a1e9b2597d7184e7d14dc2423276f1392047f8da2d85",
+      "source": "small mineral smelter.png",
+      "source_sha256": "0a605ec7bbaab3ad921558df1e658ea286d481ae181d6634d00dfae939ece9be",
+      "source_bbox": [
+        31,
+        0,
+        1141,
+        1261
+      ],
+      "uniform_scale": 0.302,
+      "scaled_art_size": [
+        335,
+        381
+      ],
+      "canvas": [
+        347,
+        381
+      ],
+      "offset": [
+        6,
+        0
+      ],
+      "transparent_pixels": 9824,
+      "removed_source_band_y": null
+    }
+  ],
+  "geometry": {
+    "schema": "iedctr.thermal.vertical.geometry.v1",
+    "units": "logical pixels",
+    "canvas": {
+      "width": 347,
+      "height": 381
+    },
+    "slot_footprint": [
+      16,
+      16
+    ],
+    "source_scale": 0.302,
+    "fit": "uniform, logical max scale 0.78; identical transform for texture, slots, tooltip and click/drag coordinates",
+    "freezer": {
+      "inventory_centers_source": {
+        "x": [
+          201,
+          294,
+          391,
+          487,
+          583,
+          678,
+          774,
+          868,
+          963
+        ],
+        "y": [
+          843,
+          928,
+          1016
+        ]
+      },
+      "hotbar_centers_source": {
+        "x": [
+          207,
+          303,
+          398,
+          490,
+          582,
+          672,
+          765,
+          862,
+          953
+        ],
+        "y": [
+          1221
+        ]
+      },
+      "machine_centers_source": {
+        "input": [
+          580,
+          249
+        ],
+        "output": [
+          580,
+          709
+        ]
+      },
+      "inventory_slots": [
+        [
+          52.702,
+          246.586,
+          16,
+          16
+        ],
+        [
+          80.788,
+          246.586,
+          16,
+          16
+        ],
+        [
+          110.082,
+          246.586,
+          16,
+          16
+        ],
+        [
+          139.074,
+          246.586,
+          16,
+          16
+        ],
+        [
+          168.066,
+          246.586,
+          16,
+          16
+        ],
+        [
+          196.756,
+          246.586,
+          16,
+          16
+        ],
+        [
+          225.748,
+          246.586,
+          16,
+          16
+        ],
+        [
+          254.136,
+          246.586,
+          16,
+          16
+        ],
+        [
+          282.826,
+          246.586,
+          16,
+          16
+        ],
+        [
+          52.702,
+          272.256,
+          16,
+          16
+        ],
+        [
+          80.788,
+          272.256,
+          16,
+          16
+        ],
+        [
+          110.082,
+          272.256,
+          16,
+          16
+        ],
+        [
+          139.074,
+          272.256,
+          16,
+          16
+        ],
+        [
+          168.066,
+          272.256,
+          16,
+          16
+        ],
+        [
+          196.756,
+          272.256,
+          16,
+          16
+        ],
+        [
+          225.748,
+          272.256,
+          16,
+          16
+        ],
+        [
+          254.136,
+          272.256,
+          16,
+          16
+        ],
+        [
+          282.826,
+          272.256,
+          16,
+          16
+        ],
+        [
+          52.702,
+          298.832,
+          16,
+          16
+        ],
+        [
+          80.788,
+          298.832,
+          16,
+          16
+        ],
+        [
+          110.082,
+          298.832,
+          16,
+          16
+        ],
+        [
+          139.074,
+          298.832,
+          16,
+          16
+        ],
+        [
+          168.066,
+          298.832,
+          16,
+          16
+        ],
+        [
+          196.756,
+          298.832,
+          16,
+          16
+        ],
+        [
+          225.748,
+          298.832,
+          16,
+          16
+        ],
+        [
+          254.136,
+          298.832,
+          16,
+          16
+        ],
+        [
+          282.826,
+          298.832,
+          16,
+          16
+        ]
+      ],
+      "hotbar_slots": [
+        [
+          54.514,
+          334.77,
+          16,
+          16
+        ],
+        [
+          83.506,
+          334.77,
+          16,
+          16
+        ],
+        [
+          112.196,
+          334.77,
+          16,
+          16
+        ],
+        [
+          139.98,
+          334.77,
+          16,
+          16
+        ],
+        [
+          167.764,
+          334.77,
+          16,
+          16
+        ],
+        [
+          194.944,
+          334.77,
+          16,
+          16
+        ],
+        [
+          223.03,
+          334.77,
+          16,
+          16
+        ],
+        [
+          252.324,
+          334.77,
+          16,
+          16
+        ],
+        [
+          279.806,
+          334.77,
+          16,
+          16
+        ]
+      ],
+      "machine_slots": {
+        "input": [
+          167.16,
+          67.198,
+          16,
+          16
+        ],
+        "output": [
+          167.16,
+          206.118,
+          16,
+          16
+        ]
+      },
+      "slot_y_reconstruction": "Output center y=709 is above removed source band y=1056..1142; no band subtraction is applied."
+    },
+    "smelter": {
+      "inventory_centers_source": {
+        "x": [
+          220,
+          311,
+          401,
+          491,
+          581,
+          669,
+          761,
+          850,
+          939
+        ],
+        "y": [
+          842,
+          929,
+          1018
+        ]
+      },
+      "hotbar_centers_source": {
+        "x": [
+          223,
+          313,
+          402,
+          491,
+          580,
+          669,
+          757,
+          847,
+          937
+        ],
+        "y": [
+          1143
+        ]
+      },
+      "machine_centers_source": {
+        "input": [
+          580,
+          246
+        ],
+        "output": [
+          580,
+          706
+        ]
+      },
+      "inventory_slots": [
+        [
+          55.078,
+          246.284,
+          16,
+          16
+        ],
+        [
+          82.56,
+          246.284,
+          16,
+          16
+        ],
+        [
+          109.74,
+          246.284,
+          16,
+          16
+        ],
+        [
+          136.92,
+          246.284,
+          16,
+          16
+        ],
+        [
+          164.1,
+          246.284,
+          16,
+          16
+        ],
+        [
+          190.676,
+          246.284,
+          16,
+          16
+        ],
+        [
+          218.46,
+          246.284,
+          16,
+          16
+        ],
+        [
+          245.338,
+          246.284,
+          16,
+          16
+        ],
+        [
+          272.216,
+          246.284,
+          16,
+          16
+        ],
+        [
+          55.078,
+          272.558,
+          16,
+          16
+        ],
+        [
+          82.56,
+          272.558,
+          16,
+          16
+        ],
+        [
+          109.74,
+          272.558,
+          16,
+          16
+        ],
+        [
+          136.92,
+          272.558,
+          16,
+          16
+        ],
+        [
+          164.1,
+          272.558,
+          16,
+          16
+        ],
+        [
+          190.676,
+          272.558,
+          16,
+          16
+        ],
+        [
+          218.46,
+          272.558,
+          16,
+          16
+        ],
+        [
+          245.338,
+          272.558,
+          16,
+          16
+        ],
+        [
+          272.216,
+          272.558,
+          16,
+          16
+        ],
+        [
+          55.078,
+          299.436,
+          16,
+          16
+        ],
+        [
+          82.56,
+          299.436,
+          16,
+          16
+        ],
+        [
+          109.74,
+          299.436,
+          16,
+          16
+        ],
+        [
+          136.92,
+          299.436,
+          16,
+          16
+        ],
+        [
+          164.1,
+          299.436,
+          16,
+          16
+        ],
+        [
+          190.676,
+          299.436,
+          16,
+          16
+        ],
+        [
+          218.46,
+          299.436,
+          16,
+          16
+        ],
+        [
+          245.338,
+          299.436,
+          16,
+          16
+        ],
+        [
+          272.216,
+          299.436,
+          16,
+          16
+        ]
+      ],
+      "hotbar_slots": [
+        [
+          55.984,
+          337.186,
+          16,
+          16
+        ],
+        [
+          83.164,
+          337.186,
+          16,
+          16
+        ],
+        [
+          110.042,
+          337.186,
+          16,
+          16
+        ],
+        [
+          136.92,
+          337.186,
+          16,
+          16
+        ],
+        [
+          163.798,
+          337.186,
+          16,
+          16
+        ],
+        [
+          190.676,
+          337.186,
+          16,
+          16
+        ],
+        [
+          217.252,
+          337.186,
+          16,
+          16
+        ],
+        [
+          244.432,
+          337.186,
+          16,
+          16
+        ],
+        [
+          271.612,
+          337.186,
+          16,
+          16
+        ]
+      ],
+      "machine_slots": {
+        "input": [
+          163.798,
+          66.292,
+          16,
+          16
+        ],
+        "output": [
+          163.798,
+          205.212,
+          16,
+          16
+        ]
+      }
+    },
+    "painted_dynamic_zones": {
+      "freezer": "Frost chamber and illuminated FE cells remain painted in source pixels; not separated/qualified for runtime overlay.",
+      "smelter": "Fire chamber and illuminated FE cells remain painted in source pixels; not separated/qualified for runtime overlay."
+    },
+    "freezer_row_reconstruction": "Removed measured y=1056..1142 band (86 source pixels), compressing artwork below it; resulting 3x9 + 9 slots are preserved as measured. Reconstructed by band deletion, not painted from new generated art.",
+    "qualification": "Anchor coordinates are computed from owner-provided measured pixel centers; 16x16 footprints fit within 347x381 canvas. Backgrounds are candidates; do not integrate until painted effect/gauge regions are neutralized or corresponding runtime draws are disabled.",
+    "render_canvas": {
+      "width": 1041,
+      "height": 1143,
+      "scale_from_source": 0.906,
+      "logical_scale": "3x from 347x381 logical canvas"
+    }
+  }
+}

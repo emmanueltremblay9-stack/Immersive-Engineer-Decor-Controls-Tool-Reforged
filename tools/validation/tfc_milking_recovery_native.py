@@ -80,9 +80,9 @@ def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width=12
         menu=integer(c,'menu_id',1);exact(c,'server_menu_id',menu);menus.add(menu)
         file=safe_png(folder,c['name'],c.get('sha256'));w,h,pixels=decode_png(file)
         require((w,h)==(width,height),'Wrong screenshot viewport');images[phase]=pixels
-        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+27)*gui_scale,
-                portrait_y=(geometry['presentation_gui_top']+34)*gui_scale,portrait_width=47*gui_scale,
-                portrait_height=41*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)
+        for key,value in dict(portrait_x=(geometry['presentation_gui_left']+41)*gui_scale,
+                portrait_y=(geometry['presentation_gui_top']+54)*gui_scale,portrait_width=57*gui_scale,
+                portrait_height=39*gui_scale,portrait_name=phase+'-portrait.png').items():exact(c,key,value)
         crop=safe_png(folder,c['portrait_name'],c.get('portrait_sha256'));cw,ch,cp=decode_png(crop)
         require((cw,ch)==(c['portrait_width'],c['portrait_height']),'Wrong portrait dimensions')
         require(cp==crop_pixels(pixels,w,c['portrait_x'],c['portrait_y'],cw,ch),'Portrait is not screenshot crop')
@@ -101,7 +101,7 @@ def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width=12
         # The fixture deliberately targets this upper recovery region. The
         # alternate lower tooltip region contains the viewport center and must
         # not authenticate a cursor that never moved from vanilla's recenter.
-        return left+160<=px<left+207 and top+56<=py<top+73
+        return left+180<=px<left+244 and top+76<=py<top+92
     require(recovery_hitbox(x,y),'Cursor outside targeted recovery tooltip')
     native=hover.get('native_input');require(isinstance(native,dict),'Missing native input evidence')
     for key,value in dict(glfw_focused=True,glfw_visible=True,glfw_cursor_mode=212993,

@@ -13,7 +13,8 @@ import java.security.MessageDigest;
 import java.util.HexFormat;
 import java.util.zip.ZipFile;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.ResourceLocation;
+import com.oblixorprime.engineersdecorreforged.client.Gui11V5CArtwork;
+import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import net.neoforged.fml.ModList;
 
 /** Fails closed if production code or the active artwork comes from source output or another pack. */
@@ -63,14 +64,13 @@ public final class TreeCutterRuntimeProof {
                 origin.addProperty("resource_uri", resourceUri); origin.addProperty("code_source_uri", codeSource);
                 origin.addProperty("sha256", resourceHash); origins.add(origin);
             }
-            var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,
-                "textures/gui/tree_cutter_v3_reference/background.png");
+            var texture = Gui11V5CArtwork.texture(MachineKind.SMALL_TREE_CUTTER);
             var active = mc.getResourceManager().getResource(texture).orElseThrow();
             require(active.sourcePackId().equals("mod/" + EngineersDecorReforged.MOD_ID), "Artwork overridden by another resource pack");
             String activeHash;
             try (var input = active.open(); var archived = zip.getInputStream(zip.getEntry("assets/" + texture.getNamespace() + "/" + texture.getPath()))) {
                 activeHash = hash(input.readAllBytes());
-                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d"),
+                require(activeHash.equals(hash(archived.readAllBytes())) && activeHash.equals("c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef"),
                     "Active artwork bytes differ from normal JAR/source reference");
             }
             var proof = new JsonObject();

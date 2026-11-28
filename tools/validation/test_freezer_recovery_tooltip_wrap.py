@@ -1,28 +1,53 @@
-"""Execute exact production recovery tooltip body using a recording Font; not native qualification."""
+"""Current Freezer recovery tooltip source/localization gates; native workflow checks placement."""
 from pathlib import Path
-import subprocess,tempfile,unittest
-ROOT=Path(__file__).resolve().parents[2]
-SOURCE=ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/FreezerReferenceScreen.java'
-FIXTURE='''import java.util.*;
-public class Probe {
- static final String PREFIX="freezer_reference.";
- record Component(String key,String fallback){static Component translatableWithFallback(String key,String fallback){return new Component(key,fallback);}}
- static class Font{int size;Component original;List<Component> split(Component text,int size){this.size=size;original=text;return List.of(text);}}
- static class Draw{int calls,x,y;Component text;void renderTooltip(Font f,List<Component> lines,int x,int y){calls++;text=lines.get(0);this.x=x;this.y=y;}void renderTooltip(Font f,Component text,int x,int y){calls++;this.text=text;}}
- Font font=new Font();int width;
- void render(Draw graphics,int mouseX,int mouseY){BODY}
- public static void main(String[]args){for(int w:new int[]{1,24,100,240,320,1280}){Probe p=new Probe();p.width=w;Draw d=new Draw();p.render(d,160,125);
- if(p.font.size!=Math.max(1,Math.min(240,w-16))||p.font.original!=d.text||d.calls!=1||d.x!=160||d.y!=125||!d.text.key().equals("freezer_reference.recover_help")||!d.text.fallback().equals("Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored."))throw new AssertionError("wrap/content/pointer changed");}}
-}'''
+import json
+import re
+import unittest
 
-def body():
- s=SOURCE.read_text();a=s.index('         Component recoveryTooltip =');b=s.index('\n      } else if',a);return s[a:b]
-def run(code):
- with tempfile.TemporaryDirectory() as tmp:
-  p=Path(tmp)/'Probe.java';p.write_text(FIXTURE.replace('BODY',code))
-  subprocess.run(['java','-m','jdk.compiler/com.sun.tools.javac.Main',str(p)],check=True,capture_output=True)
-  return subprocess.run(['java','-cp',tmp,'Probe'],capture_output=True).returncode
-class FreezerRecoveryWrapTest(unittest.TestCase):
- def test_body(self):self.assertEqual(0,run(body()))
- def test_mutations(self):
-  for code in [body().replace('font.split(recoveryTooltip, wrapWidth)','recoveryTooltip'),body().replace('width - 16','width + 16'),body().replace('Math.min(240, width - 16)','Math.max(240, width - 16)')]:self.assertNotEqual(0,run(code))
+ROOT = Path(__file__).resolve().parents[2]
+MOD = "immersive_engineer_decor_controls_tool_reforged"
+SCREEN = ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java"
+KEY = f"gui.{MOD}.freezer_reference.recover_help"
+ENGLISH = "Recover legacy slot 1 to your inventory. Ctrl+Shift+R. Full inventory: items stay stored."
+FRENCH = "Récupérer l’ancien emplacement 1 dans votre inventaire. Ctrl+Maj+R. Inventaire plein : les objets restent stockés."
+
+
+class FreezerRecoveryTooltipTest(unittest.TestCase):
+    def test_real_registered_screen_uses_localized_recovery_key(self):
+        source = SCREEN.read_text()
+        self.assertIn('FREEZER_RECOVERY_HELP_KEY = "gui." + NS + ".freezer_reference.recover_help"', source)
+        self.assertIn("Component.translatableWithFallback(\n            FREEZER_RECOVERY_HELP_KEY,", source)
+        validation = (ROOT / "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java").read_text()
+        self.assertIn("RECOVERY_KEY = ThermalVerticalScreen.FREEZER_RECOVERY_HELP_KEY", validation)
+        self.assertNotIn('RECOVERY_KEY = "gui.', validation)
+        self.assertNotIn('Component.literal("Recover reserved legacy items")', source)
+        self.assertIn("recoveryButton.isHovered()", source)
+
+    def test_english_and_french_localizations_are_exact(self):
+        for language, expected in (("en_us", ENGLISH), ("fr_fr", FRENCH)):
+            path = ROOT / f"src/main/resources/assets/{MOD}/lang/{language}.json"
+            self.assertEqual(json.loads(path.read_text())[KEY], expected)
+
+    def test_recovery_button_remains_inside_thermal_canvas(self):
+        source = SCREEN.read_text()
+        self.assertIn("imageWidth = ThermalVerticalGeometry.canvasWidth(menu.kind())", source)
+        self.assertIn("imageHeight = ThermalVerticalGeometry.canvasHeight(menu.kind())", source)
+        self.assertIn("fitCanvas(width, height, imageWidth, imageHeight, MAX_VIEW_SCALE)", source)
+        bounds = re.search(r"\.bounds\((\d+), (\d+), (\d+), (\d+)\)\.build\(\)", source)
+        self.assertIsNotNone(bounds)
+        x, y, width, height = map(int, bounds.groups())
+        self.assertEqual((x, y, width, height), (183, 19, 16, 16))
+        reference = json.loads((ROOT / "docs/testing/gui11-v5c-runtime-map.json").read_text())
+        canvas_width, canvas_height = reference["surfaces"]["05"]["logical_size"]
+        self.assertLessEqual(x + width, canvas_width)
+        self.assertLessEqual(y + height, canvas_height)
+
+    def test_recovery_instruction_is_wrapped_to_a_narrow_viewport(self):
+        source = SCREEN.read_text()
+        self.assertIn("font.split(recoveryHelp, Math.max(80, Math.min(240, width - 16)))", source)
+        self.assertIn("graphics.renderTooltip(font, font.split(recoveryHelp", source)
+        self.assertNotIn("graphics.renderTooltip(font, Component.translatableWithFallback(", source)
+
+
+if __name__ == "__main__":
+    unittest.main()

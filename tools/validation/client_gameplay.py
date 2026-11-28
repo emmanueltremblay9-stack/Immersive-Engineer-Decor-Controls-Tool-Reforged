@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -170,166 +171,165 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
     return proof
 
 
+SMELTER_V5C_CANVAS = (279, 312)
+
+
+def thermal_vertical_fit(gui_width: int, gui_height: int) -> tuple[float, float, float]:
+    """Independently fit the approved 279×312 Smelter canvas."""
+    panel_width, panel_height = SMELTER_V5C_CANVAS
+    short_edge = min(gui_width, gui_height)
+    margin = min(6.0, (short_edge - 1.0) / 2.0)
+    scale = min(0.78, (gui_width - 2.0 * margin) / panel_width,
+                (gui_height - 2.0 * margin) / panel_height)
+    return scale, (gui_width - panel_width * scale) / 2.0, (gui_height - panel_height * scale) / 2.0
 
 
 def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                directory: Path, window_width: int, window_height: int,
                                language: str, logs: str) -> dict:
-    """Validate live-menu identity/state and exact fresh Minecraft framebuffer captures."""
-    if (proof.get("suite") != "native-smelter-gui-v1" or proof.get("nonce") != nonce
-            or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
-        raise SmokeFailure("Missing matching successful native Smelter GUI proof")
+    """Fail closed for ThermalVerticalScreen, not the superseded manual-mode/drawer GUI."""
+    if (proof.get("suite") != "native-smelter-gui-v2" or proof.get("schema_version") != 2
+            or proof.get("nonce") != nonce or proof.get("status") != "passed"
+            or proof.get("actual_integrated_world") is not True):
+        raise SmokeFailure("Missing exact successful integrated ThermalVertical Smelter proof")
     if (not re.fullmatch(r"[0-9a-f]{40}", executed_sha)
-            or proof.get("executed_source_sha") != executed_sha):
-        raise SmokeFailure("Smelter GUI proof does not identify the exact executed source revision")
-    if (not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha)
+            or not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha)
+            or proof.get("executed_source_sha") != executed_sha
             or proof.get("pull_request_head_sha") != pr_head_sha):
-        raise SmokeFailure("Smelter GUI proof does not identify the checked PR head")
-
-    if proof.get("language") != language or language not in {"en_us", "fr_fr"}:
-        raise SmokeFailure("Smelter GUI proof locale does not match the requested locale")
-    expected_label = {"en_us": "LAVA", "fr_fr": "LAVE"}[language]
-    if proof.get("translated_lava_mode") != expected_label:
-        raise SmokeFailure("Smelter GUI did not load the expected localized mode label")
-
-    expected_identity = "com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen"
-    expected_menu = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
-    if proof.get("screen_identity") != expected_identity:
-        raise SmokeFailure("The real Small Mineral Smelter screen is absent")
-    if proof.get("client_menu_identity") != expected_menu or proof.get("server_menu_identity") != expected_menu:
-        raise SmokeFailure("The real registered Smelter menu is absent on client or server")
-    if proof.get("machine_kind") != "SMALL_MINERAL_SMELTER":
-        raise SmokeFailure("The menu is not bound to the Small Mineral Smelter kind")
-    client_id, server_id = proof.get("client_menu_id"), proof.get("server_menu_id")
-    if (type(client_id) is not int or type(server_id) is not int or client_id < 0 or client_id != server_id
-            or proof.get("server_menu_context_valid") is not True):
-        raise SmokeFailure("Client and server do not share a valid live Smelter menu context")
-    if (proof.get("visible_machine_slots") != 2 or proof.get("total_slots") != 38
-            or proof.get("machine_slot_backing_indices") != [0, 2]
+        raise SmokeFailure("Smelter proof does not bind exact executed and PR HEAD revisions")
+    titles = {"en_us": "Small Mineral Melting Furnace", "fr_fr": "Petit fourneau de fusion de minéraux"}
+    if (language not in titles or proof.get("language") != language
+            or proof.get("selected_language") != language
+            or proof.get("translated_machine_name") != titles[language]):
+        raise SmokeFailure("Minecraft did not load the expected EN/FR Smelter locale")
+    if (proof.get("screen_identity") !=
+            "com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen"
+            or proof.get("client_menu_identity") !=
+            "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+            or proof.get("server_menu_identity") !=
+            "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+            or proof.get("machine_kind") != "SMALL_MINERAL_SMELTER"):
+        raise SmokeFailure("Smelter proof names a legacy screen or wrong registered menu")
+    cid,sid=proof.get("client_menu_id"),proof.get("server_menu_id")
+    if (type(cid) is not int or type(sid) is not int or cid < 0 or cid != sid
+            or proof.get("server_menu_context_valid") is not True
+            or proof.get("visible_machine_slots") != 2 or proof.get("total_slots") != 38
+            or proof.get("machine_slot_backing_indices") != [0,2]
             or proof.get("data_fields") != 17):
-        raise SmokeFailure("Smelter GUI slot backing or v0.5 data projection is incorrect")
-
+        raise SmokeFailure("Smelter live server-client menu and slot backing do not match")
     state = proof.get("live_state")
-    if not isinstance(state, dict):
-        raise SmokeFailure("Smelter GUI lacks live server-projected state")
-    if (state.get("selected_mode") != 0 or state.get("batch_mode") != 0
+    if (not isinstance(state,dict)
+            or any(state.get(k) != -1 for k in ("selected_mode","batch_mode","queued_mode"))
             or type(state.get("batch_progress")) is not int or state["batch_progress"] <= 0
             or type(state.get("thermal")) is not int or state["thermal"] <= 0
             or state.get("input_item") != "minecraft:cobblestone"
             or state.get("output_item") != "minecraft:magma_block" or state.get("output_count") != 2
-            or type(state.get("tank_amount")) is not int or state["tank_amount"] <= 0
-            or type(state.get("tank_capacity")) is not int or state["tank_capacity"] < state["tank_amount"]
+            or state.get("tank_amount") != 2500 or state.get("tank_capacity") != 4000
             or type(state.get("energy")) is not int or state["energy"] <= 0
-            or type(state.get("energy_capacity")) is not int or state["energy_capacity"] < state["energy"]
+            or state.get("energy_capacity") != 16000
             or state.get("fe_rate") != 16 or state.get("status") != 1):
-        raise SmokeFailure("Smelter menu did not synchronize the fixture's non-empty, actively heating state")
-
+        raise SmokeFailure("Smelter real automatic-stage thermal state did not synchronize")
     screen = proof.get("screen")
-    if not isinstance(screen, dict):
-        raise SmokeFailure("Smelter GUI lacks native screen geometry")
+    if not isinstance(screen,dict):
+        raise SmokeFailure("Thermal vertical canvas evidence is missing")
+    gw,gh,scale=screen.get("gui_width"),screen.get("gui_height"),screen.get("view_scale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or screen.get("panel_width") != 234 or screen.get("panel_height") != 270):
-        raise SmokeFailure("Smelter GUI window or logical panel dimensions differ from the requested fixture")
-    gui_width, gui_height, scale = screen.get("gui_width"), screen.get("gui_height"), screen.get("view_scale")
-    if (type(gui_width) is not int or type(gui_height) is not int
-            or gui_width <= 0 or gui_height <= 0
-            or type(scale) not in (int, float) or not 0.1 <= scale <= 1.0):
-        raise SmokeFailure("Smelter GUI scale measurements are invalid")
-    expected_scale = max(0.1, min(1.0, (gui_width - 12.0) / 234.0, (gui_height - 12.0) / 270.0))
-    if abs(scale - expected_scale) > 0.002:
-        raise SmokeFailure("Recorded viewScale differs from the live screen's scale rule")
-    origin_x, origin_y = (gui_width - 234.0 * scale) / 2.0, (gui_height - 270.0 * scale) / 2.0
-    if (origin_x < -0.01 or origin_y < -0.01
-            or origin_x + 234.0 * scale > gui_width + 0.01
-            or origin_y + 270.0 * scale > gui_height + 0.01):
-        raise SmokeFailure("Smelter faceplate does not fit inside the active GUI viewport")
-    if window_height < 300 and scale >= 1.0:
-        raise SmokeFailure("The reduced-height capture did not exercise viewScale")
-
-    if (screen.get("drawer_closed_capture") is not True
-            or screen.get("drawer_open_capture") is not True
-            or screen.get("output_slot_hidden_when_closed") is not True
-            or screen.get("output_slot_visible_when_open") is not True):
-        raise SmokeFailure("The native screen did not verify the real output-drawer interaction")
-
-    phases = ["closed", "opened", "resized_open", "restored_open", "closed_again", "reopened"]
-    states = [False, True, True, True, False, True]
-    labels = proof.get("drawer_accessible_messages")
-    words = ("Ouvrir le tiroir de sortie", "Fermer le tiroir de sortie") if language == "fr_fr" else ("Open item output drawer", "Close item output drawer")
-    expected_labels = [dict(phase=phase, open=state, message=words[int(state)]) for phase,state in zip(phases, states)]
-    if (type(labels) is not list or any(type(row) is not dict or type(row.get("open")) is not bool for row in labels)
-            or labels != expected_labels or proof.get("narration_audio_verified") is not False
-            or proof.get("drawer_input_method") != "programmatic native screen callbacks and resize; not OS input"):
-        raise SmokeFailure("Smelter drawer accessible messages missing or stale")
-
-    captures = proof.get("screenshots")
-    expected_names = {
-        "progress-empty.png", "progress-mid.png", "progress-full.png",
-        "screen-closed.png", "drawer-open.png",
-    }
-    if not isinstance(captures, list) or len(captures) != len(expected_names):
-        raise SmokeFailure("Native Smelter GUI must provide three progress states plus both drawer views")
-    if {item.get("name") for item in captures if isinstance(item, dict)} != expected_names:
-        raise SmokeFailure("Native Smelter GUI capture names are missing, duplicated, or unexpected")
-    image_dir = directory / "smelter-gui-screenshots"
-    if not image_dir.is_dir() or {path.name for path in image_dir.glob("*.png")} != expected_names:
-        raise SmokeFailure("Smelter screenshots are stale or contain unexpected files")
-    png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
-    captures_by_name = {item["name"]: item for item in captures}
-    for capture in captures:
-        name = capture["name"]
-        image = image_dir / name
-        data = image.read_bytes()
-        if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
-            raise SmokeFailure(f"Native Smelter screenshot is absent or invalid: {name}")
-        width, height = struct.unpack(">II", data[16:24])
-        if (width, height) != (window_width, window_height):
-            raise SmokeFailure(f"Native Smelter screenshot has stale or unexpected dimensions: {name}")
-        digest = hashlib.sha256(data).hexdigest()
-        if capture.get("sha256") != digest:
-            raise SmokeFailure(f"Native Smelter screenshot hash does not match its proof: {name}")
-        if (capture.get("width"), capture.get("height")) != (window_width, window_height):
-            raise SmokeFailure(f"Native Smelter screenshot dimensions do not match its proof: {name}")
-    for name, progress in (("progress-empty.png", 0), ("progress-mid.png", 50), ("progress-full.png", 90)):
-        capture = captures_by_name[name]
-        if (capture.get("batch_progress") != progress or capture.get("energy") != 0
-                or capture.get("status") != 3):
-            raise SmokeFailure(f"Native Smelter progress frame does not show its frozen live state: {name}")
-    for name in ("screen-closed.png", "drawer-open.png"):
-        capture = captures_by_name[name]
-        if (type(capture.get("batch_progress")) is not int or capture["batch_progress"] <= 0
-                or type(capture.get("energy")) is not int or capture["energy"] <= 0
-                or capture.get("status") != 1):
-            raise SmokeFailure(f"Native Smelter drawer view did not resume active heating: {name}")
+            or (screen.get("panel_width"), screen.get("panel_height")) != SMELTER_V5C_CANVAS
+            or type(gw) is not int or type(gh) is not int or gw <= 12 or gh <= 12
+            or type(scale) not in (int,float) or not 0 < scale <= 1
+            or screen.get("output_slot_visible") is not True
+            or screen.get("output_slot_insertion_forbidden") is not True
+            or screen.get("legacy_drawer_and_mode_tabs_absent") is not True
+            or screen.get("resize_restored") is not True
+            or any(old in proof for old in (
+                "drawer_accessible_messages","drawer_input_method","translated_lava_mode"))):
+        raise SmokeFailure("Smelter screen failed visible-output or no-obsolete-widgets gate")
+    # Recompute the Smelter fit with the six-pixel margin and 0.78 scale ceiling.
+    expected_scale, ox, oy = thermal_vertical_fit(gw, gh)
+    if (abs(scale-expected_scale)>0.002 or type(screen.get("origin_x")) not in (int,float)
+            or type(screen.get("origin_y")) not in (int,float)
+            or abs(screen["origin_x"]-ox)>0.6 or abs(screen["origin_y"]-oy)>0.6
+            or ox < 0 or oy < 0 or (window_height==260 and scale >= 1)):
+        raise SmokeFailure("Smelter V5C panel is not fitted to the native viewport")
+    transfer=proof.get("output_transfer")
+    if (not isinstance(transfer,dict)
+            or transfer.get("method") != "integrated_server_MachineMenu.quickMoveStack"
+            or transfer.get("source_menu_slot") != 1 or transfer.get("source_container_slot") != 2
+            or any(type(transfer.get(k)) is not int or transfer[k] != v for k,v in (
+                ("moved_magma",2),("output_after",0),("player_magma_after",2)))):
+        raise SmokeFailure("Smelter did not extract and conserve two real Magma Blocks")
+    expectations={"progress-empty.png":(0,0,3,0),
+                  "progress-mid.png":(50,0,3,1),
+                  "progress-full.png":(90,0,3,2),
+                  "screen-active.png":(None,None,1,None),
+                  "output-extracted.png":(None,None,None,None)}
+    captures=proof.get("screenshots")
+    if (not isinstance(captures,list) or len(captures)!=len(expectations)
+            or any(not isinstance(c,dict) for c in captures)
+            or {c.get("name") for c in captures} != set(expectations)
+            or proof.get("screenshot_method") !=
+            "Minecraft Screenshot.takeScreenshot(getMainRenderTarget())"):
+        raise SmokeFailure("Smelter native framebuffer matrix is incomplete or obsolete")
+    folder=directory/"smelter-gui-screenshots"
+    if not folder.is_dir() or {p.name for p in folder.glob("*.png")} != set(expectations):
+        raise SmokeFailure("Smelter PNG files are absent, stale or unexpected")
+    digests={}
+    for c in captures:
+        name=c["name"]
+        data=(folder/name).read_bytes()
+        if (len(data)<1000 or data[:8]!=b"\x89PNG\r\n\x1a\n" or data[12:16]!=b"IHDR"
+                or struct.unpack(">II",data[16:24])!=(window_width,window_height)
+                or (c.get("width"),c.get("height"))!=(window_width,window_height)
+                or c.get("sha256")!=hashlib.sha256(data).hexdigest()):
+            raise SmokeFailure(f"Smelter framebuffer not fresh, intact, or correct sized: {name}")
+        digests[name]=c["sha256"]
+        progress,energy,status,phase=expectations[name]
+        if name.startswith("progress-") and (
+                c.get("batch_progress")!=progress or c.get("energy")!=energy
+                or c.get("status")!=status or c.get("phase")!=phase):
+            raise SmokeFailure(f"Smelter thermal capture does not match its live state: {name}")
+        if name=="screen-active.png" and (type(c.get("batch_progress")) is not int
+                or c["batch_progress"]<=0 or type(c.get("energy")) is not int
+                or c["energy"]<=0 or c.get("status")!=1 or c.get("output_count")!=2):
+            raise SmokeFailure("Smelter active capture lacks real heating and output")
+        if name=="output-extracted.png" and c.get("output_count")!=0:
+            raise SmokeFailure("Smelter post-transfer screenshot predates actual extraction")
+    if len({digests[n] for n in ("progress-empty.png","progress-mid.png","progress-full.png")})!=3:
+        raise SmokeFailure("Three thermal phases must produce distinct native framebuffer pixels")
     if f"IEDCTR_SMELTER_GUI PASSED nonce={nonce}" not in logs:
-        raise SmokeFailure("Missing current-run native Smelter GUI completion marker")
+        raise SmokeFailure("Smelter native successful completion marker is absent")
     return proof
 
 
 def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                          directory: Path, window_width: int, window_height: int,
                                          language: str, logs: str, barrel_fluid: str = "water") -> dict:
-    """Fail closed for seven live MachineScreens; Tree Cutter V3 requires its independent suite."""
+    """Fail closed for seven live menus; Tree Cutter V3 has an independent suite."""
     fluids = {"water": ("minecraft:water", "minecraft:block/water_still"),
               "lava": ("minecraft:lava", "minecraft:block/lava_still"),
               "milk": ("minecraft:milk", "neoforge:block/milk_still")}
     if barrel_fluid not in fluids or proof.get("barrel_fixture_fluid") != fluids[barrel_fluid][0]:
         raise SmokeFailure("Barrel proof does not identify the requested fixture fluid")
     expected_fluid, expected_still = fluids[barrel_fluid]
+    surfaces = json.loads((Path(__file__).resolve().parents[2] /
+                           "docs/testing/gui11-v5c-runtime-map.json").read_text(encoding="utf-8"))["surfaces"]
+    v5c_surfaces = {"small_milking_machine": surfaces["12"], "small_block_breaker": surfaces["09"],
+                    "small_fluid_funnel": surfaces["13"], "passive_fluid_accumulator": surfaces["14"]}
+    freezer_width, freezer_height = surfaces["05"]["logical_size"]
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
-        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228),
-        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, *v5c_surfaces["small_milking_machine"]["logical_size"]),
+        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, *v5c_surfaces["small_block_breaker"]["logical_size"]),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212),
-        "small_freezer": ("SMALL_FREEZER", 3, 209, 235),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256),
+        "small_freezer": ("SMALL_FREEZER", 2, freezer_width, freezer_height),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, *v5c_surfaces["small_fluid_funnel"]["logical_size"]),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, *v5c_surfaces["passive_fluid_accumulator"]["logical_size"]),
     }
     if (proof.get("suite") != "native-corrected-machine-gui-v1" or proof.get("nonce") != nonce
             or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
         raise SmokeFailure("Missing matching successful native corrected-machine GUI proof")
     if (type(proof.get("schema_version")) is not int or proof["schema_version"] != 2
-            or proof.get("coverage_scope") != "seven-machine-screens-excluding-tree-cutter"
+            or proof.get("coverage_scope") != "seven-registered-machine-menus-including-thermal-vertical-freezer-excluding-tree-cutter"
             or proof.get("tree_cutter_qualification") != "independent:tree-cutter-v3-native.yml"
             or "tree_cutter_badge_only_capture" in proof):
         raise SmokeFailure("Corrected-machine GUI proof must explicitly exclude independent Tree Cutter V3 qualification")
@@ -383,33 +383,153 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         raise SmokeFailure("Corrected-machine GUI screenshots are stale or contain unexpected files")
     png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
     captures_by_name = {capture["name"]: capture for capture in captures}
+    freezer_anchors = {index: tuple(point) for index, point in enumerate(surfaces["05"]["menu_slots"])
+                       if point is not None}
+    def validate_thermal_capture(capture: dict, image_size: tuple[int, int], label: str,
+                                 case: dict) -> None:
+        """Validate a real cropped Freezer thermal canvas at its rendered scale."""
+        gui_width, gui_height = case.get("gui_width"), case.get("gui_height")
+        if (type(gui_width) is not int or type(gui_height) is not int
+                or gui_width <= 0 or gui_height <= 0):
+            raise SmokeFailure(f"Thermal Freezer GUI viewport is missing: {label}")
+        margin = min(6.0, (min(gui_width, gui_height) - 1.0) / 2.0)
+        fitted = min(0.78, (gui_width - 2.0 * margin) / freezer_width,
+                     (gui_height - 2.0 * margin) / freezer_height)
+        def f32(value: float) -> float:
+            return struct.unpack("!f", struct.pack("!f", value))[0]
+        expected_scale = f32(fitted)
+        if expected_scale * freezer_width > gui_width or expected_scale * freezer_height > gui_height:
+            bits = struct.unpack("!I", struct.pack("!f", expected_scale))[0]
+            expected_scale = struct.unpack("!f", struct.pack("!I", bits - 1))[0]
+        expected_origin_x = f32((gui_width - freezer_width * expected_scale) / 2.0)
+        expected_origin_y = f32((gui_height - freezer_height * expected_scale) / 2.0)
+        scale = capture.get("view_scale")
+        origin_x, origin_y = capture.get("origin_x"), capture.get("origin_y")
+        framebuffer_width, framebuffer_height = capture.get("framebuffer_width"), capture.get("framebuffer_height")
+        case_scale, case_origin_x, case_origin_y = (case.get("view_scale"), case.get("origin_x"), case.get("origin_y"))
+        if (capture.get("capture_mode") != "native_thermal_canvas_crop"
+                or capture.get("panel_width") != freezer_width or capture.get("panel_height") != freezer_height
+                or capture.get("gui_width") != gui_width or capture.get("gui_height") != gui_height
+                or capture.get("energy_capacity") != 16000
+                or type(case_scale) not in (int, float) or not math.isfinite(case_scale)
+                or type(case_origin_x) not in (int, float) or not math.isfinite(case_origin_x)
+                or type(case_origin_y) not in (int, float) or not math.isfinite(case_origin_y)
+                or type(scale) not in (int, float) or not math.isfinite(scale)
+                or abs(scale - expected_scale) > 1e-6
+                or abs(scale - case_scale) > 1e-6
+                or type(origin_x) not in (int, float) or not math.isfinite(origin_x)
+                or type(origin_y) not in (int, float) or not math.isfinite(origin_y)
+                or abs(origin_x - expected_origin_x) > 1e-4
+                or abs(origin_y - expected_origin_y) > 1e-4
+                or abs(origin_x - case_origin_x) > 1e-4
+                or abs(origin_y - case_origin_y) > 1e-4
+                or type(framebuffer_width) is not int or type(framebuffer_height) is not int
+                or framebuffer_width <= 0 or framebuffer_height <= 0):
+            raise SmokeFailure(f"Thermal Freezer crop does not prove the fitted vertical canvas: {label}")
+        physical_x, physical_y = f32(framebuffer_width / gui_width), f32(framebuffer_height / gui_height)
+        def jround(value: float) -> int:
+            return math.floor(value + 0.5)
+        expected_width = jround(f32(f32(freezer_width * scale) * physical_x))
+        expected_height = jround(f32(f32(freezer_height * scale) * physical_y))
+        expected_crop_x = jround(f32(origin_x * physical_x))
+        expected_crop_y = jround(f32(origin_y * physical_y))
+        if (image_size != (expected_width, expected_height)
+                or capture.get("width") != expected_width or capture.get("height") != expected_height
+                or capture.get("crop_x") != expected_crop_x or capture.get("crop_y") != expected_crop_y
+                or expected_crop_x < 0 or expected_crop_y < 0
+                or expected_crop_x + expected_width > framebuffer_width
+                or expected_crop_y + expected_height > framebuffer_height
+                or capture.get("panel_tooltips_suppressed") is not False):
+            raise SmokeFailure(f"Thermal Freezer native crop bounds/size differ from its rendered canvas: {label}")
+
     for machine, (kind, slots, panel_width, panel_height) in expected.items():
         case = by_id[machine]
+        is_freezer = machine == "small_freezer"
+        v5c = v5c_surfaces.get(machine)
+        if not is_freezer and case.get("presentation") != ("gui11-v5c" if v5c else "legacy"):
+            raise SmokeFailure(f"Wrong active artwork presentation for {machine}")
+        # This runner fixes GUI scale 1. Minecraft centers using integer division toward zero.
+        panel_x, panel_y = (math.trunc((window_width - panel_width) / 2),
+                            math.trunc((window_height - panel_height) / 2))
+        crop_x, crop_y = max(0, panel_x), max(0, panel_y)
+        expected_capture_size = (panel_width, panel_height)
+        if v5c:
+            expected_capture_size = (min(window_width, panel_x + panel_width) - crop_x,
+                                     min(window_height, panel_y + panel_height) - crop_y)
+        expected_total_slots = 39 if is_freezer else slots + 36
+        expected_screen = ("com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen"
+                           if is_freezer else None)
         if (case.get("machine_kind") != kind or case.get("client_menu_identity") != "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
                 or case.get("server_menu_identity") != case.get("client_menu_identity")
                 or case.get("menu_context_matches") is not True
                 or type(case.get("client_menu_id")) is not int
                 or case.get("client_menu_id") != case.get("server_menu_id")
                 or not isinstance(case.get("screen_identity"), str)
-                or "MachineScreen$" not in case["screen_identity"]
-                or case.get("visible_machine_slots") != slots or case.get("total_slots") != slots + 36
+                or (case.get("screen_identity") != expected_screen if is_freezer
+                    else "MachineScreen$" not in case["screen_identity"])
+                or case.get("visible_machine_slots") != slots or case.get("total_slots") != expected_total_slots
                 or case.get("panel_width") != panel_width or case.get("panel_height") != panel_height
-                or case.get("gui_height") != window_height or case.get("geometry_matches_layout") is not True
                 or case.get("captured_states") != (["empty", "mid", "full-hover", "input-occupied", "output-occupied"]
                     if machine == "small_milking_machine" else ["empty", "mid", "full-hover"])):
             raise SmokeFailure(f"Live menu, panel or layout geometry is incorrect for {machine}")
-        slot_proofs = case.get("machine_slots")
-        if not isinstance(slot_proofs, list) or len(slot_proofs) != slots:
-            raise SmokeFailure(f"Live machine-slot hitboxes are missing for {machine}")
-        for slot in slot_proofs:
-            if not isinstance(slot, dict) or type(slot.get("container_index")) is not int:
-                raise SmokeFailure(f"Invalid machine-slot hitbox proof for {machine}")
-            reserved_cold_slot = machine == "small_freezer" and slot["container_index"] == 1
-            if (slot.get("container_index") < 0 or slot.get("x") != slot.get("layout_x")
-                    or slot.get("y") != slot.get("layout_y") or slot.get("active") is not True
-                    or slot.get("center_hit_test") is not True
-                    or (reserved_cold_slot and slot.get("insertion_allowed") is not False)):
-                raise SmokeFailure(f"Live slot click/hover geometry differs from its layout for {machine}")
+        gui_height = case.get("gui_height")
+        if type(gui_height) is not int or gui_height <= 0:
+            raise SmokeFailure(f"Live menu GUI viewport is missing for {machine}")
+        if is_freezer:
+            if (case.get("geometry_matches_thermal_vertical_geometry") is not True
+                    or case.get("visible_screen_slots") != 38
+                    or case.get("protocol_machine_slots") != 3
+                    or case.get("reserved_index_1_hidden") is not True
+                    or case.get("energy_capacity") != 16000
+                    or "machine_slots" in case):
+                raise SmokeFailure("Thermal Freezer case does not prove its 38 active slots and reserved protocol slot")
+        elif (case.get("geometry_matches_layout") is not True or gui_height != window_height
+              or case.get("gui_width") != window_width):
+            raise SmokeFailure(f"Live menu, panel or layout geometry is incorrect for {machine}")
+        if is_freezer:
+            slot_proofs = case.get("menu_slots")
+            if not isinstance(slot_proofs, list) or len(slot_proofs) != 39:
+                raise SmokeFailure("Thermal Freezer proof must retain all 39 protocol menu entries")
+            seen_positions = set()
+            visible_count = 0
+            for menu_index, slot in enumerate(slot_proofs):
+                if not isinstance(slot, dict) or slot.get("menu_index") != menu_index:
+                    raise SmokeFailure("Thermal Freezer menu slot order is missing or changed")
+                expected_container = menu_index if menu_index < 3 else 9 + menu_index - 3 if menu_index < 30 else menu_index - 30
+                if slot.get("container_index") != expected_container:
+                    raise SmokeFailure(f"Thermal Freezer backing index differs at menu entry {menu_index}")
+                if menu_index == 1:
+                    if (slot.get("active") is not False or slot.get("insertion_allowed") is not False
+                            or "layout_x" in slot or "layout_y" in slot):
+                        raise SmokeFailure("Thermal Freezer reserved menu index 1 must remain hidden and reject insertion")
+                    continue
+                anchor = freezer_anchors.get(menu_index)
+                if (anchor is None or slot.get("active") is not True
+                        or (slot.get("x"), slot.get("y")) != anchor
+                        or (slot.get("layout_x"), slot.get("layout_y")) != anchor
+                        or anchor[0] < 0 or anchor[1] < 0
+                        or anchor[0] + 16 > freezer_width or anchor[1] + 16 > freezer_height):
+                    raise SmokeFailure(f"Thermal Freezer visible slot differs from artwork at index {menu_index}")
+                if anchor in seen_positions:
+                    raise SmokeFailure("Thermal Freezer repeats a visible 16x16 slot position")
+                seen_positions.add(anchor)
+                visible_count += 1
+            if visible_count != 38 or len(seen_positions) != 38:
+                raise SmokeFailure("Thermal Freezer must expose exactly 38 distinct 16x16 menu positions")
+        else:
+            slot_proofs = case.get("machine_slots")
+            if not isinstance(slot_proofs, list) or len(slot_proofs) != slots:
+                raise SmokeFailure(f"Live machine-slot hitboxes are missing for {machine}")
+            for index, slot in enumerate(slot_proofs):
+                if not isinstance(slot, dict) or type(slot.get("container_index")) is not int:
+                    raise SmokeFailure(f"Invalid machine-slot hitbox proof for {machine}")
+                if (slot.get("container_index") < 0 or slot.get("x") != slot.get("layout_x")
+                        or slot.get("y") != slot.get("layout_y") or slot.get("active") is not True
+                        or slot.get("center_hit_test") is not True):
+                    raise SmokeFailure(f"Live slot click/hover geometry differs from its layout for {machine}")
+                if v5c and (slot["container_index"] != index
+                            or [slot.get("x"), slot.get("y")] != v5c["menu_slots"][index]):
+                    raise SmokeFailure(f"Live slot differs from the approved V5C artwork for {machine} index {index}")
         expected_meter_capacity = (32000 if machine == "fluid_barrel" else 4000 if machine in {
             "small_milking_machine", "passive_fluid_accumulator"} else 3000 if machine == "small_fluid_funnel" else 0)
         expected_energy_capacity = 64000 if machine == "small_solar_panel" else 16000 if machine == "small_freezer" else 32000 if machine == "small_block_breaker" else 0
@@ -421,20 +541,25 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
                 raise SmokeFailure(f"Native corrected-machine screenshot is absent or invalid: {name}")
             width, height = struct.unpack(">II", data[16:24])
-            expected_capture_size = (panel_width, panel_height)
-            if ((width, height) != expected_capture_size or capture.get("capture_mode") != "gui_panel"):
+            if is_freezer:
+                validate_thermal_capture(capture, (width, height), name, case)
+            elif ((width, height) != expected_capture_size or capture.get("capture_mode") != "gui_panel"):
                 raise SmokeFailure(f"Native screenshot is not a clean panel crop: {name}")
+            if v5c and (capture.get("crop_x"), capture.get("crop_y")) != (crop_x, crop_y):
+                raise SmokeFailure(f"Native V5C panel crop origin differs: {name}")
             if capture.get("panel_cursor_outside") is not True:
                 raise SmokeFailure(f"Native panel crop was not captured with its cursor outside: {name}")
-            if capture.get("panel_tooltips_suppressed") is not True:
+            if not is_freezer and capture.get("panel_tooltips_suppressed") is not True:
                 raise SmokeFailure(f"Native panel crop may contain a clipped pointer tooltip: {name}")
             if capture.get("sha256") != hashlib.sha256(data).hexdigest():
                 raise SmokeFailure(f"Native corrected-machine screenshot hash does not match proof: {name}")
             if (capture.get("width"), capture.get("height"), capture.get("kind"),
                     capture.get("screen_identity"), capture.get("menu_id")) != (
-                    expected_capture_size[0], expected_capture_size[1], kind,
+                    width, height, kind,
                     case.get("screen_identity"), case.get("client_menu_id")):
                 raise SmokeFailure(f"Native corrected-machine screenshot identity differs from proof: {name}")
+            if capture.get("server_menu_id") != case.get("server_menu_id"):
+                raise SmokeFailure(f"Native corrected-machine screenshot lost its server menu identity: {name}")
             if state == "full-hover":
                 tooltip_name = f"{machine}-full-hover-window.png"
                 tooltip = image_dir / tooltip_name
@@ -489,6 +614,9 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         if (not isinstance(hover, dict) or hover.get("slot_hitbox_center_verified") is not True
                 or type(hover.get("slot_index")) is not int):
             raise SmokeFailure(f"Native corrected-machine hover capture lacks hitbox evidence: {machine}")
+        if v5c and (hover.get("slot_index") != 0 or
+                    [hover.get("slot_local_x"), hover.get("slot_local_y")] != v5c["menu_slots"][0]):
+            raise SmokeFailure(f"Native V5C hover targets the wrong first slot for {machine}")
 
         if machine == "small_milking_machine":
             tank_hashes = set()
@@ -496,7 +624,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 tank = captures_by_name[f"{machine}-{state}.png"].get("tank_pixels")
                 if (not isinstance(tank, dict)
                         or any(type(tank.get(key)) is not int or tank[key] != value for key, value in (
-                            ("x", 104), ("y", 49), ("width", 22), ("height", 51)))
+                            ("x", 130 + panel_x - crop_x), ("y", 64 + panel_y - crop_y),
+                            ("width", 29), ("height", 52)))
                         or tank.get("encoding") != "rgba8-row-major"
                         or not isinstance(tank.get("sha256"), str)
                         or re.fullmatch(r"[0-9a-f]{64}", tank["sha256"]) is None):
@@ -522,14 +651,15 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 if (len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR"):
                     raise SmokeFailure(f"Native Milking occupied-slot screenshot is absent or invalid: {name}")
                 dimensions = struct.unpack(">II", data[16:24])
-                if (dimensions != (panel_width, panel_height) or capture.get("state") != state
+                if (dimensions != expected_capture_size or capture.get("state") != state
+                        or (capture.get("crop_x"), capture.get("crop_y")) != (crop_x, crop_y)
                         or capture.get("capture_mode") != "gui_panel"
                         or capture.get("panel_cursor_outside") is not True
                         or capture.get("panel_tooltips_suppressed") is not True
                         or capture.get("sha256") != hashlib.sha256(data).hexdigest()
                         or (capture.get("width"), capture.get("height"), capture.get("kind"),
                             capture.get("screen_identity"), capture.get("menu_id")) != (
-                            panel_width, panel_height, kind, case.get("screen_identity"), case.get("client_menu_id"))
+                            *expected_capture_size, kind, case.get("screen_identity"), case.get("client_menu_id"))
                         or capture.get("fluid_amount") != 0
                         or capture.get("machine_slot_items") != expected_items
                         or any(key in capture for key in ("tooltip_name", "tooltip_capture_mode", "tooltip_sha256", "hover"))):
@@ -572,14 +702,21 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             or near_end_data[12:16] != b"IHDR"):
         raise SmokeFailure("Native Freezer near-end screenshot is absent or invalid")
     near_end_size = struct.unpack(">II", near_end_data[16:24])
-    if (near_end_size != (209, 235) or near_end.get("capture_mode") != "gui_panel"
-            or near_end.get("panel_cursor_outside") is not True
-            or near_end.get("panel_tooltips_suppressed") is not True
+    freezer_case = by_id["small_freezer"]
+    validate_thermal_capture(near_end, near_end_size, "small_freezer-near-end.png", freezer_case)
+    if (near_end.get("panel_cursor_outside") is not True
+            or near_end.get("state") != "near-end"
             or near_end.get("kind") != "SMALL_FREEZER"
+            or near_end.get("screen_identity") != freezer_case.get("screen_identity")
+            or near_end.get("menu_id") != freezer_case.get("client_menu_id")
+            or near_end.get("server_menu_id") != freezer_case.get("server_menu_id")
             or near_end.get("sha256") != hashlib.sha256(near_end_data).hexdigest()
             or (near_end.get("width"), near_end.get("height")) != near_end_size
+            or near_end.get("energy") != 8
             or type(near_end.get("freezer_progress_ticks")) is not int
-            or not 178 <= near_end["freezer_progress_ticks"] < 180):
+            or not 178 <= near_end["freezer_progress_ticks"] < 180
+            or type(near_end.get("freezer_phase")) is not int
+            or near_end["freezer_phase"] != 3):
         raise SmokeFailure("Native Freezer near-end frame does not prove progress immediately before completion")
 
     if f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={nonce}" not in logs:
@@ -745,7 +882,7 @@ gradle.projectsEvaluated {
             if not main_proof_path.is_file():
                 raise SmokeFailure("Native Smelter GUI fixture did not write its isolated-world result")
             main_proof = json.loads(main_proof_path.read_text(encoding="utf-8"))
-            if (main_proof.get("suite") != "native-smelter-gui-v1" or main_proof.get("nonce") != nonce
+            if (main_proof.get("suite") != "native-smelter-gui-v2" or main_proof.get("nonce") != nonce
                     or main_proof.get("status") != "passed" or main_proof.get("actual_integrated_world") is not True):
                 raise SmokeFailure("The isolated native-client fixture did not complete successfully")
             validate_smelter_gui_proof(proof, nonce, executed_source_sha, args.smelter_pr_head_sha,

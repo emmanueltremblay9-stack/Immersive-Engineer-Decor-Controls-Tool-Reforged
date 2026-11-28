@@ -33,14 +33,16 @@ class TreeEvidenceTests(unittest.TestCase):
         x,y,cw,ch,ox,oy,v=geometry(w,h,s)
         key=w,h,s
         if key not in self.CACHE:
-            art=source_pixels(ART_PATH);factor=s*v*f32(1/3)
+            art=source_pixels(ART_PATH)
+            source_width, source_height = SOURCE
+            fx, fy = (s * v * canvas / size for canvas, size in zip(CANVAS, SOURCE))
             rows=[]
             for cy in range(ch):
-                sy=min(1253,max(0,math.floor((cy+y+.5-oy*s)/factor)))
+                sy=min(source_height-1,max(0,math.floor((cy+y+.5-oy*s)/fy)))
                 row=bytearray()
                 for cx in range(cw):
-                    sx=min(1253,max(0,math.floor((cx+x+.5-ox*s)/factor)))
-                    row+=art[(sy*1254+sx)*4:(sy*1254+sx+1)*4]
+                    sx=min(source_width-1,max(0,math.floor((cx+x+.5-ox*s)/fx)))
+                    row+=art[(sy*source_width+sx)*4:(sy*source_width+sx+1)*4]
                 rows.append(row)
             self.CACHE[key]=png_rows(cw,ch,rows)
         data=self.CACHE[key]
@@ -100,6 +102,18 @@ class TreeEvidenceTests(unittest.TestCase):
         data=png_rows(w,h,[bytes((20,20,20,255))*w]*h)
         (self.game/c['file']).write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
         with self.assertRaisesRegex(SmokeFailure,'pixels differ'):self.validate()
+
+    def test_authorized_transparent_exterior_uses_world_pixels(self):
+        c=self.proof['captures'][0];w,h=c['width'],c['height'];path=self.game/c['file']
+        _,_,pixels=decode_png(path);pixels=bytearray(pixels)
+        # At the first broad source sample this source alpha is zero. A native
+        # framebuffer contains the world behind it, not the stored transparent
+        # RGBA value; opaque source samples remain strictly checked.
+        x,y=5,5
+        pixels[(y*w+x)*4:(y*w+x+1)*4]=bytes((24,31,38,255))
+        data=png_rows(w,h,[pixels[row*w*4:(row+1)*w*4] for row in range(h)])
+        path.write_bytes(data);c['sha256']=hashlib.sha256(data).hexdigest()
+        self.validate()
 
     def test_full_frame_rejected_even_with_updated_hash(self):
         c=self.proof['captures'][0]

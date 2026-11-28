@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
-import com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen;
+import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
@@ -49,7 +49,7 @@ public final class PackagedRuntimeProof {
             require(zip.stream().map(e -> e.getName()).distinct().count() == zip.size(), "Duplicate entries in normal JAR");
             require(zip.stream().noneMatch(e -> e.getName().startsWith("com/oblixorprime/iedctrtest/")
                 || e.getName().contains("client/validation/NativeSmelterPackagedValidation")), "Harness leaked into normal JAR");
-            for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, ModBlocks.class, SmallMineralSmelterHybridScreen.class, MachineMenu.class, MachineLayout.class, MachineBlockEntity.class}) {
+            for (Class<?> type : new Class<?>[] {EngineersDecorReforged.class, ModBlocks.class, ThermalVerticalScreen.class, MachineMenu.class, MachineLayout.class, MachineBlockEntity.class}) {
                 String entry = type.getName().replace('.', '/') + ".class";
                 var url = type.getResource('/' + entry);
                 var source = type.getProtectionDomain().getCodeSource();
@@ -74,8 +74,16 @@ public final class PackagedRuntimeProof {
                 origin.addProperty("sha256", resourceHash); origins.add(origin);
             }
             var textures = new JsonArray();
-            String[] paths = {"small_mineral_smelter_hybrid_v05/background.png"};
-            String[] hashes = {"450784a3989897a9241abe6cec891f0432812e55f5a38c84a09b0f2334cda182"};
+            String[] paths = {
+                "thermal_vertical/smelter/neutral.png",
+                "thermal_vertical/smelter/effect.png",
+                "thermal_vertical/smelter/energy.png"
+            };
+            String[] hashes = {
+                "bd51e1a8e9c1fa684f57a4636787c263a0e686e6f7ac5b9336ecd466768e738d",
+                "1489c7a0e4dcd666cbe0995a424969d677be7459fd5123703c52dbf0957a94e5",
+                "a45c63638fce49f90b9e396bdb318556c59e71ac4a56cdbc3a6864d2a91551ea"
+            };
             for(int i=0;i<paths.length;i++) {
                 var texture = ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+paths[i]);
                 var active = mc.getResourceManager().getResource(texture).orElseThrow();

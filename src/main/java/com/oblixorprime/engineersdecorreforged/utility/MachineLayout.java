@@ -84,6 +84,7 @@ public record MachineLayout(
 
    public int playerSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Player inventory column out of range");
+      if (RetainedFurnaceLayout.uses(this.textureName)) return RetainedFurnaceLayout.playerX(this.textureName, column);
       if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotX(column);
       return "block_breaker_rp_v3/background".equals(this.textureName)
          ? BlockBreakerRedesignLayout.playerSlotX(column) : this.playerInventoryX + column * this.playerColumnSpacing;
@@ -91,6 +92,7 @@ public record MachineLayout(
 
    public int playerSlotY(int row) {
       if (row < 0 || row >= 3) throw new IllegalArgumentException("Player inventory row out of range");
+      if (RetainedFurnaceLayout.uses(this.textureName)) return RetainedFurnaceLayout.playerY(this.textureName, row);
       if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotY(row);
       return "block_breaker_rp_v3/background".equals(this.textureName)
          ? BlockBreakerRedesignLayout.rowY(row) : this.playerInventoryY + row * this.playerRowSpacing;
@@ -98,6 +100,7 @@ public record MachineLayout(
 
    public int hotbarSlotX(int column) {
       if (column < 0 || column >= 9) throw new IllegalArgumentException("Hotbar column out of range");
+      if (RetainedFurnaceLayout.uses(this.textureName)) return RetainedFurnaceLayout.hotbarX(this.textureName, column);
       if (FluidMachineRedesignLayout.usesRetainedTexture(this.textureName)) return FluidMachineRedesignLayout.playerSlotX(column);
       return "block_breaker_rp_v3/background".equals(this.textureName)
          ? BlockBreakerRedesignLayout.hotbarX(column) : this.hotbarX + column * this.hotbarColumnSpacing;
@@ -180,19 +183,18 @@ public record MachineLayout(
    }
 
    private static MachineLayout metalCraftingTable() {
-      return base(
-         concat(
-            List.of(new MachineLayout.MachineSlot(0, 22, 35, "Engineer's Hammer"), new MachineLayout.MachineSlot(10, 142, 35, "Crafting output")),
-            grid(1, 62, 17, 3, 3, "Crafting grid")
-         ),
-         List.of(
-            new MachineLayout.Panel("Hammer", 16, 30, 30, 30),
-            new MachineLayout.Panel("Craft", 56, 12, 66, 62),
-            new MachineLayout.Panel("Output", 136, 30, 30, 30)
-         ),
-         MachineLayout.LayoutStyle.CRAFTING,
-         null
-      );
+      // Retained V3 artwork, 1142 x 1378. Existing container indices are unchanged.
+      List<MachineSlot> slots = new ArrayList<>();
+      slots.add(new MachineSlot(0, 37, 67, "Engineer's Hammer"));
+      slots.add(new MachineSlot(10, 175, 65, "Crafting output"));
+      for (int row = 0; row < 3; row++)
+         for (int col = 0; col < 3; col++)
+            slots.add(new MachineSlot(1 + row * 3 + col, 82 + col * 19, 42 + row * 19, "Crafting grid"));
+      for (int row = 0; row < 2; row++)
+         for (int col = 0; col < 9; col++)
+            slots.add(new MachineSlot(11 + row * 9 + col, 38 + col * 17, 122 + row * 17, "Storage"));
+      return new MachineLayout(228, 276, 38, 169, 38, 230, slots, List.of(),
+         LayoutStyle.ARTWORK_TEXTURE, "metal_crafting_v3", 17, 17, 17);
    }
 
    private static MachineLayout hopper() {
@@ -245,50 +247,11 @@ public record MachineLayout(
    }
 
    private static MachineLayout electricalFurnace() {
-      return original(
-         List.of(
-            new MachineLayout.MachineSlot(0, 59, 28, "Input"),
-            new MachineLayout.MachineSlot(1, 16, 52, "Aux"),
-            new MachineLayout.MachineSlot(2, 101, 28, "Output"),
-            new MachineLayout.MachineSlot(3, 34, 28, "Input FIFO"),
-            new MachineLayout.MachineSlot(4, 16, 28, "Input FIFO"),
-            new MachineLayout.MachineSlot(5, 126, 28, "Output FIFO"),
-            new MachineLayout.MachineSlot(6, 144, 28, "Output FIFO")
-         ),
-         8,
-         86,
-         8,
-         144,
-         "small_electrical_furnace_gui"
-      );
+      return RetainedFurnaceLayout.electrical();
    }
 
    private static MachineLayout wasteIncinerator() {
-      return original(
-         List.of(
-            new MachineLayout.MachineSlot(0, 13, 9, "Queue"),
-            new MachineLayout.MachineSlot(1, 37, 12, "Queue"),
-            new MachineLayout.MachineSlot(2, 54, 13, "Queue"),
-            new MachineLayout.MachineSlot(3, 71, 14, "Queue"),
-            new MachineLayout.MachineSlot(4, 88, 15, "Queue"),
-            new MachineLayout.MachineSlot(5, 105, 16, "Queue"),
-            new MachineLayout.MachineSlot(6, 122, 17, "Queue"),
-            new MachineLayout.MachineSlot(7, 139, 18, "Queue"),
-            new MachineLayout.MachineSlot(8, 144, 38, "Queue"),
-            new MachineLayout.MachineSlot(9, 127, 39, "Queue"),
-            new MachineLayout.MachineSlot(10, 110, 40, "Queue"),
-            new MachineLayout.MachineSlot(11, 93, 41, "Queue"),
-            new MachineLayout.MachineSlot(12, 76, 42, "Queue"),
-            new MachineLayout.MachineSlot(13, 59, 43, "Queue"),
-            new MachineLayout.MachineSlot(14, 42, 44, "Queue"),
-            new MachineLayout.MachineSlot(15, 17, 58, "Queue")
-         ),
-         8,
-         86,
-         8,
-         144,
-         "small_waste_incinerator_gui"
-      );
+      return RetainedFurnaceLayout.incinerator();
    }
 
    private static MachineLayout processor(MachineKind kind) {

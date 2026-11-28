@@ -4,23 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Dependency-free geometry for the retained-reference Tree Cutter V3 client presentation.
- * Source coordinates describe the unmodified 1254-by-1254 V3 reference, not the
- * legacy Tree Cutter texture. This class changes no inventory or machine semantics.
+ * Runtime geometry for GUI11-R3 V5-Corrigee #10. This class changes no inventory
+ * or machine semantics.
  */
 public final class TreeCutterV3ReferenceGeometry {
-   public static final int SOURCE_WIDTH = 1254;
-   public static final int SOURCE_HEIGHT = 1254;
-   public static final int CANVAS_WIDTH = 418;
-   public static final int CANVAS_HEIGHT = 418;
-   /** Uniform source scale; both source dimensions divide exactly into the canvas. */
-   public static final float SOURCE_SCALE = 1.0F / 3.0F;
+   public static final int SOURCE_WIDTH = Gui11V5CRuntimeGeometry.sourceWidth(MachineKind.SMALL_TREE_CUTTER);
+   public static final int SOURCE_HEIGHT = Gui11V5CRuntimeGeometry.sourceHeight(MachineKind.SMALL_TREE_CUTTER);
+   public static final int CANVAS_WIDTH = Gui11V5CRuntimeGeometry.width(MachineKind.SMALL_TREE_CUTTER);
+   public static final int CANVAS_HEIGHT = Gui11V5CRuntimeGeometry.height(MachineKind.SMALL_TREE_CUTTER);
+   public static final float SOURCE_SCALE = (float)CANVAS_WIDTH / SOURCE_WIDTH;
    public static final int VIEWPORT_MARGIN = 6;
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 37;
    public static final int VISIBLE_SLOT_COUNT = 37;
-   public static final String SOURCE_SHA256 = "bdab10d19c0da44c113f84f1330513f4ff71e81dfe7d3eab602ce27202c0650d";
-   public static final String SOURCE_FILENAME = "source_validated.png";
+   public static final String SOURCE_SHA256 = "c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef";
+   public static final String SOURCE_FILENAME = "10-V5-Corrigee.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();
 
@@ -59,26 +57,15 @@ public final class TreeCutterV3ReferenceGeometry {
 
    private static List<SlotAnchor> createAnchors() {
       List<SlotAnchor> anchors = new ArrayList<>(VISIBLE_SLOT_COUNT);
-      // Conservative interiors from the hash-verified retained raster kit manifest.
-      anchors.add(centeredAnchor(0, 895, 279, 119, 115));
-      int[] left = {228, 310, 392, 475, 558, 641, 724, 807, 889};
-      int[] right = {297, 379, 462, 545, 627, 710, 793, 875, 953};
-      int[] top = {555, 631, 708, 813};
-      int[] bottom = {618, 693, 768, 873};
-      for (int row = 0; row < 4; row++) {
-         for (int column = 0; column < 9; column++) {
-            anchors.add(centeredAnchor(1 + row * 9 + column, left[column], top[row],
-               right[column] - left[column], bottom[row] - top[row]));
-         }
+      for (int index = 0; index < MENU_SLOT_COUNT; index++) {
+         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.SMALL_TREE_CUTTER, index);
+         if (point == null) throw new IllegalStateException("Missing Tree Cutter GUI11 slot " + index);
+         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.SMALL_TREE_CUTTER, point);
+         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));
       }
       return List.copyOf(anchors);
    }
 
-   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {
-      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);
-      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);
-      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);
-   }
 
    private static SlotAnchor[] indexAnchors() {
       SlotAnchor[] byIndex = new SlotAnchor[MENU_SLOT_COUNT];
@@ -94,13 +81,8 @@ public final class TreeCutterV3ReferenceGeometry {
    }
 
    /** Dynamic energy paint is confined to the manifest's safe dark interior. */
-   public static final Rect ENERGY = new Rect(280, 57, 62, 6);
    public static final Rect HEADER = new Rect(84, 7, 224, 17);
 
-   public static int energyFillWidth(int stored, int capacity) {
-      if (stored <= 0 || capacity <= 0) return 0;
-      return (int)Math.min(ENERGY.width(), (long)stored * ENERGY.width() / capacity);
-   }
 
    public record Rect(int x, int y, int width, int height) {
       public boolean contains(double localX, double localY) {
@@ -116,19 +98,19 @@ public final class TreeCutterV3ReferenceGeometry {
     */
    public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {
       public double interiorLeft() {
-         return (double)this.sourceX / 3.0D;
+         return (double)this.sourceX * CANVAS_WIDTH / SOURCE_WIDTH;
       }
 
       public double interiorTop() {
-         return (double)this.sourceY / 3.0D;
+         return (double)this.sourceY * CANVAS_HEIGHT / SOURCE_HEIGHT;
       }
 
       public double interiorRight() {
-         return (double)(this.sourceX + this.sourceWidth) / 3.0D;
+         return (double)(this.sourceX + this.sourceWidth) * CANVAS_WIDTH / SOURCE_WIDTH;
       }
 
       public double interiorBottom() {
-         return (double)(this.sourceY + this.sourceHeight) / 3.0D;
+         return (double)(this.sourceY + this.sourceHeight) * CANVAS_HEIGHT / SOURCE_HEIGHT;
       }
 
       public double hoverLeft() {

@@ -8,11 +8,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-/** Normal Tree Cutter client presentation using retained V3 art. Vanilla owns items, overlays, carried stacks and packets. */
+/** Normal Tree Cutter client presentation using the selected GUI11-R3 faceplate. */
 public final class TreeCutterV3ReferenceScreen extends AbstractContainerScreen<MachineMenu> {
    private static final String PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.tree_cutter.v3.";
-   private static final ResourceLocation FACEPLATE = ResourceLocation.fromNamespaceAndPath(
-      "immersive_engineer_decor_controls_tool_reforged", "textures/gui/tree_cutter_v3_reference/background.png");
    private TreeCutterV3ReferenceGeometry.ViewTransform view = TreeCutterV3ReferenceGeometry.fit(418, 418);
    private boolean renderingCanvas;
    private double renderLocalMouseX, renderLocalMouseY;
@@ -65,9 +63,7 @@ public final class TreeCutterV3ReferenceScreen extends AbstractContainerScreen<M
          graphics.pose().popPose();
       }
       renderTooltip(graphics, mouseX, mouseY);
-      if (menu.energyCapacity() > 0 && hoveredSlot == null && TreeCutterV3ReferenceGeometry.ENERGY.contains(view.localX(mouseX), view.localY(mouseY))) {
-         renderBoundedTooltip(graphics, Component.translatable(PREFIX + "energy", menu.energyStored(), menu.energyCapacity()), mouseX, mouseY);
-      } else if (hoveredSlot != null && hoveredSlot.index == 0 && !hoveredSlot.hasItem()) {
+      if (hoveredSlot != null && hoveredSlot.index == 0 && !hoveredSlot.hasItem()) {
          renderBoundedTooltip(graphics, Component.translatable(PREFIX + "output"), mouseX, mouseY);
       } else if (hoveredSlot == null && TreeCutterV3ReferenceGeometry.HEADER.contains(view.localX(mouseX), view.localY(mouseY))) {
          renderBoundedTooltip(graphics, title, mouseX, mouseY);
@@ -82,19 +78,7 @@ public final class TreeCutterV3ReferenceScreen extends AbstractContainerScreen<M
 
    @Override
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-      // Draw the exact source uniformly; never resample or patch the retained artwork.
-      graphics.pose().pushPose();
-      try {
-         graphics.pose().scale(TreeCutterV3ReferenceGeometry.SOURCE_SCALE, TreeCutterV3ReferenceGeometry.SOURCE_SCALE, 1.0F);
-         graphics.blit(FACEPLATE, 0, 0, 0, 0,
-            TreeCutterV3ReferenceGeometry.SOURCE_WIDTH, TreeCutterV3ReferenceGeometry.SOURCE_HEIGHT,
-            TreeCutterV3ReferenceGeometry.SOURCE_WIDTH, TreeCutterV3ReferenceGeometry.SOURCE_HEIGHT);
-      } finally {
-         graphics.pose().popPose();
-      }
-      var energy = TreeCutterV3ReferenceGeometry.ENERGY;
-      int filled = TreeCutterV3ReferenceGeometry.energyFillWidth(menu.energyStored(), menu.energyCapacity());
-      if (filled > 0) graphics.fill(energy.x(), energy.y(), energy.x() + filled, energy.y() + energy.height(), 0xFFE5B539);
+      Gui11V5CArtwork.draw(graphics, menu);
    }
 
    @Override

@@ -13,7 +13,8 @@ PREFIX = 'com.oblixorprime.engineersdecorreforged.'
 CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.MachineScreen',
     'client.MachineScreen$SmallMilkingMachineScreen', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity','compat.TfcMilkingCompat','compat.TfcMilkingAdapter')]
 TEXTURES = {
-    'textures/gui/milking_redesign_v1/background.png': '871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b',
+    'textures/gui/gui11_v5c/12.png': '82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa',
+    'textures/gui/milking_redesign_v1/background.png': '1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411',
     'textures/gui/milking_redesign_v1/milk.png': 'f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5',
 }
 
@@ -124,6 +125,8 @@ def _composed(kind,proof,nonce,source_sha,game,logs,exit_code,timed_out,width,he
     from tfc_milking_recovery_native import validate_proof as recovery
     from mooshroom_milking_native import validate_proof as mooshroom
     validate_runtime(proof, report, archive_path=archive_path)
+    if proof.get('status') == 'failed':
+        require(False, 'TFC fixture failed: ' + str(proof.get('error', 'no recorded exception')))
     after=proof.get('packaged_runtime_after')
     require(type(after) is dict and after==proof.get('packaged_runtime'),'Compatibility runtime changed')
     validate_dependencies(after, dependency_archives=dependency_archives)

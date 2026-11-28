@@ -22,7 +22,9 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 SUITE = "native-milking-qualification-v1"
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.MachineScreen$SmallMilkingMachineScreen"
-BACKGROUND_SHA = "871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b"
+BACKGROUND_SHA = "82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa"
+PANEL = 283
+TANK = 130, 64, 29, 52
 MILK_SHA = "f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5"
 PROFILES = {
     "en-1280x720-scale1": (1280, 720, 1, "en_us"),
@@ -57,23 +59,23 @@ def expected_geometry(width: int, height: int, scale: int) -> dict:
     # requires separate rasterization evidence and is deliberately not accepted.
     require(width % scale == height % scale == 0, "Viewport must be divisible by GUI scale")
     gw, gh = width // scale, height // scale
-    left, top = (gw - 228) // 2, (gh - 228) // 2
+    left, top = int((gw - PANEL) / 2), int((gh - PANEL) / 2)
+    tx, ty, tw, th = TANK
     return dict(requested_width=width, requested_height=height, requested_gui_scale=scale,
                 actual_gui_scale=scale, gui_width=gw, gui_height=gh,
                 framebuffer_width=width, framebuffer_height=height,
                 presentation_gui_left=left, presentation_gui_top=top,
-                presentation_gui_width=228, presentation_gui_height=228,
-                tank_x=(left + 104) * scale, tank_y=(top + 49) * scale,
-                tank_width=22 * scale, tank_height=51 * scale)
+                presentation_gui_width=PANEL, presentation_gui_height=PANEL,
+                tank_x=(left + tx) * scale, tank_y=(top + ty) * scale,
+                tank_width=tw * scale, tank_height=th * scale)
 
 
 def slot_position(index: int) -> tuple[int, int]:
-    if index == 0:
-        return 49, 94
-    if index == 1:
-        return 163, 94
-    require(type(index) is int and 2 <= index < 38, "Invalid menu slot")
-    return 26 + ((index - 2) % 9) * 20, 132 + ((index - 2) // 9) * 20 if index < 29 else 195
+    require(type(index) is int and 0 <= index < 38, "Invalid menu slot")
+    if index < 2:
+        return (70, 109) if index == 0 else (197, 109)
+    col, row = (index - 2) % 9, (index - 2) // 9
+    return (45, 67, 90, 112, 134, 156, 178, 200, 222)[col], (154, 177, 200, 236)[row]
 
 
 def validate_routes(proof: dict, geometry: dict) -> None:
@@ -186,13 +188,17 @@ def image_evidence(frame: Path, crop: Path, geometry: dict) -> tuple[bytes, byte
     # Full opaque artwork panel, not just a small ring. No hover exclusion is
     # needed: fixture disables tooltips and moves the cursor outside the panel.
     # Only the live tank varies. Machine labels/readouts are tooltip-only.
-    exterior=bytearray()
-    for ly in range(228*scale):
-        ranges = [(0,228*scale)]
-        if 49*scale <= ly < 100*scale:
-            ranges = [(0,104*scale),(126*scale,228*scale)]
-        for start,end in ranges:
-            exterior.extend(pixels[((top+ly)*w+left+start)*4:((top+ly)*w+left+end)*4])
+    exterior = bytearray()
+    left_edge, right_edge = max(0, left), min(w, left + PANEL * scale)
+    tx, ty = g['tank_x'], g['tank_y']
+    require(left_edge <= tx < tx + cw <= right_edge and 0 <= ty < ty + ch <= h,
+            "Tank lies outside the visible panel")
+    for row in range(max(0, top), min(h, top + PANEL * scale)):
+        ranges = [(left_edge, right_edge)]
+        if ty <= row < ty + ch:
+            ranges = [(left_edge, tx), (tx + cw, right_edge)]
+        for start, end in ranges:
+            exterior.extend(pixels[(row * w + start) * 4:(row * w + end) * 4])
     return tank, bytes(exterior)
 
 
@@ -212,6 +218,12 @@ def validate_pixels(tanks: dict[str, bytes], exterior: dict[str, bytes], geometr
         a=empty[y*stride:(y+1)*stride]; b=full[y*stride:(y+1)*stride]
         changes=sum(a[i:i+4] != b[i:i+4] for i in range(0,stride,4))
         require(changes >= geometry['tank_width']//2, "Full milk has insufficient decoded interior row coverage")
+    for y in range(geometry['tank_height']):
+        if y < margin or y >= geometry['tank_height'] - margin:
+            row = y * stride
+            for x in (0, stride - margin * 4):
+                band = slice(row + x, row + x + margin * 4)
+                require(empty[band] == full[band], "Milk changed a beveled corner")
     require(len(set(tanks.values())) == 3, "Decoded tank states must be distinct")
 
 

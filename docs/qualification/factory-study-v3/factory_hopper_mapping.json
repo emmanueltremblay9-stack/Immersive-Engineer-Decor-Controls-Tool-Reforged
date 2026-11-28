@@ -1,0 +1,2009 @@
+{
+  "schema_version": 1,
+  "id": "factory_hopper",
+  "status": "IMPLEMENTED_GEOMETRY_VERIFIED_IN_NATIVE_EN_AND_FR_COLD_START_PROFILES",
+  "source": {
+    "filename": "Industrial Factory Hopper Interface(2).png",
+    "sha256": "d3f087682be5cb6c8403f054565d66a457b4130ec461ed6a9e753eba3602f3a6",
+    "size_bytes": 2869551,
+    "width": 1261,
+    "height": 1247,
+    "mode": "RGBA",
+    "runtime_resource": "assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_study_v3/factory_hopper.png"
+  },
+  "canvas": {
+    "source_pixels_per_logical_unit": 4,
+    "background_logical_size": [
+      315.25,
+      311.75
+    ],
+    "layout_bounds": [
+      0,
+      0,
+      316,
+      312
+    ],
+    "uniform_scale": true,
+    "notes": "Draw original source with exact 0.25 uniform scale; layout bounds ceil to316x312. Slot anchors are integer logical pixels."
+  },
+  "alpha": {
+    "zero": 73436,
+    "partial": 1498865,
+    "opaque": 166,
+    "visible_bbox": [
+      0,
+      0,
+      1261,
+      1247
+    ],
+    "border_nonzero_counts": {
+      "top": 693,
+      "bottom": 509,
+      "left": 372,
+      "right": 332
+    },
+    "interpretation": "Most interior alpha252–253 means0.8–1.2% translucency, not opaque. Some partial outer edge pixels reach canvas border. No RGB white exterior is baked; true alpha0 corners."
+  },
+  "slot_count": 54,
+  "expected_slot_count": 54,
+  "machine_slot_count": 18,
+  "slots": [
+    {
+      "slot_id": 0,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        130,
+        265,
+        73,
+        75
+      ],
+      "source_dark_component_area": 5244,
+      "logical_item_rect": [
+        34,
+        68,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        136,
+        272,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        6,
+        7,
+        3,
+        4
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 1,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        225,
+        265,
+        72,
+        76
+      ],
+      "source_dark_component_area": 5234,
+      "logical_item_rect": [
+        57,
+        68,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        228,
+        272,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        3,
+        7,
+        5,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 2,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        320,
+        265,
+        73,
+        76
+      ],
+      "source_dark_component_area": 5244,
+      "logical_item_rect": [
+        81,
+        68,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        324,
+        272,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        4,
+        7,
+        5,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 3,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        415,
+        265,
+        73,
+        76
+      ],
+      "source_dark_component_area": 5301,
+      "logical_item_rect": [
+        105,
+        68,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        420,
+        272,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        5,
+        7,
+        4,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 4,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        510,
+        265,
+        72,
+        75
+      ],
+      "source_dark_component_area": 5302,
+      "logical_item_rect": [
+        128,
+        68,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        512,
+        272,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        2,
+        7,
+        6,
+        4
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 5,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        605,
+        265,
+        72,
+        75
+      ],
+      "source_dark_component_area": 5307,
+      "logical_item_rect": [
+        152,
+        68,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        608,
+        272,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        3,
+        7,
+        5,
+        4
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 6,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        130,
+        365,
+        73,
+        76
+      ],
+      "source_dark_component_area": 5282,
+      "logical_item_rect": [
+        34,
+        93,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        136,
+        372,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        6,
+        7,
+        3,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 7,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        225,
+        365,
+        72,
+        76
+      ],
+      "source_dark_component_area": 5290,
+      "logical_item_rect": [
+        57,
+        93,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        228,
+        372,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        3,
+        7,
+        5,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 8,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        320,
+        365,
+        73,
+        76
+      ],
+      "source_dark_component_area": 5268,
+      "logical_item_rect": [
+        81,
+        93,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        324,
+        372,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        4,
+        7,
+        5,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 9,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        415,
+        365,
+        72,
+        75
+      ],
+      "source_dark_component_area": 5339,
+      "logical_item_rect": [
+        105,
+        93,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        420,
+        372,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        5,
+        7,
+        3,
+        4
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 10,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        510,
+        365,
+        72,
+        75
+      ],
+      "source_dark_component_area": 5326,
+      "logical_item_rect": [
+        128,
+        93,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        512,
+        372,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        2,
+        7,
+        6,
+        4
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 11,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        604,
+        365,
+        73,
+        76
+      ],
+      "source_dark_component_area": 5337,
+      "logical_item_rect": [
+        152,
+        93,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        608,
+        372,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        4,
+        7,
+        5,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 12,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        130,
+        465,
+        73,
+        77
+      ],
+      "source_dark_component_area": 5319,
+      "logical_item_rect": [
+        34,
+        118,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        136,
+        472,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        6,
+        7,
+        3,
+        6
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 13,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        225,
+        465,
+        73,
+        77
+      ],
+      "source_dark_component_area": 5310,
+      "logical_item_rect": [
+        57,
+        118,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        228,
+        472,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        3,
+        7,
+        6,
+        6
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 14,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        320,
+        465,
+        73,
+        76
+      ],
+      "source_dark_component_area": 5308,
+      "logical_item_rect": [
+        81,
+        118,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        324,
+        472,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        4,
+        7,
+        5,
+        5
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 15,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        415,
+        465,
+        73,
+        77
+      ],
+      "source_dark_component_area": 5376,
+      "logical_item_rect": [
+        105,
+        118,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        420,
+        472,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        5,
+        7,
+        4,
+        6
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 16,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        510,
+        466,
+        72,
+        76
+      ],
+      "source_dark_component_area": 5374,
+      "logical_item_rect": [
+        128,
+        118,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        512,
+        472,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        2,
+        6,
+        6,
+        6
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 17,
+      "group": "machine",
+      "source_dark_component_bbox": [
+        605,
+        465,
+        72,
+        77
+      ],
+      "source_dark_component_area": 5382,
+      "logical_item_rect": [
+        152,
+        118,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        608,
+        472,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        3,
+        7,
+        5,
+        6
+      ],
+      "player_inventory_index": null
+    },
+    {
+      "slot_id": 18,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        173,
+        713,
+        83,
+        80
+      ],
+      "source_dark_component_area": 6595,
+      "logical_item_rect": [
+        46,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        184,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        11,
+        7,
+        8,
+        9
+      ],
+      "player_inventory_index": 9
+    },
+    {
+      "slot_id": 19,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        278,
+        713,
+        83,
+        80
+      ],
+      "source_dark_component_area": 6526,
+      "logical_item_rect": [
+        72,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        288,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        10,
+        7,
+        9,
+        9
+      ],
+      "player_inventory_index": 10
+    },
+    {
+      "slot_id": 20,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        383,
+        713,
+        83,
+        80
+      ],
+      "source_dark_component_area": 6452,
+      "logical_item_rect": [
+        98,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        392,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        7,
+        10,
+        9
+      ],
+      "player_inventory_index": 11
+    },
+    {
+      "slot_id": 21,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        487,
+        712,
+        83,
+        81
+      ],
+      "source_dark_component_area": 6461,
+      "logical_item_rect": [
+        124,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        496,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        8,
+        10,
+        9
+      ],
+      "player_inventory_index": 12
+    },
+    {
+      "slot_id": 22,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        592,
+        712,
+        83,
+        81
+      ],
+      "source_dark_component_area": 6520,
+      "logical_item_rect": [
+        150,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        600,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        8,
+        11,
+        9
+      ],
+      "player_inventory_index": 13
+    },
+    {
+      "slot_id": 23,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        697,
+        712,
+        81,
+        81
+      ],
+      "source_dark_component_area": 6444,
+      "logical_item_rect": [
+        176,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        704,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        7,
+        8,
+        10,
+        9
+      ],
+      "player_inventory_index": 14
+    },
+    {
+      "slot_id": 24,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        800,
+        712,
+        82,
+        81
+      ],
+      "source_dark_component_area": 6442,
+      "logical_item_rect": [
+        202,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        808,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        8,
+        10,
+        9
+      ],
+      "player_inventory_index": 15
+    },
+    {
+      "slot_id": 25,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        904,
+        713,
+        82,
+        80
+      ],
+      "source_dark_component_area": 6373,
+      "logical_item_rect": [
+        228,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        912,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        7,
+        10,
+        9
+      ],
+      "player_inventory_index": 16
+    },
+    {
+      "slot_id": 26,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        1008,
+        713,
+        83,
+        80
+      ],
+      "source_dark_component_area": 6490,
+      "logical_item_rect": [
+        254,
+        180,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        1016,
+        720,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        7,
+        11,
+        9
+      ],
+      "player_inventory_index": 17
+    },
+    {
+      "slot_id": 27,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        173,
+        815,
+        84,
+        80
+      ],
+      "source_dark_component_area": 6498,
+      "logical_item_rect": [
+        46,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        184,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        11,
+        9,
+        9,
+        7
+      ],
+      "player_inventory_index": 18
+    },
+    {
+      "slot_id": 28,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        279,
+        815,
+        82,
+        80
+      ],
+      "source_dark_component_area": 6446,
+      "logical_item_rect": [
+        72,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        288,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        9,
+        9,
+        7
+      ],
+      "player_inventory_index": 19
+    },
+    {
+      "slot_id": 29,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        383,
+        815,
+        83,
+        80
+      ],
+      "source_dark_component_area": 6409,
+      "logical_item_rect": [
+        98,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        392,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        9,
+        10,
+        7
+      ],
+      "player_inventory_index": 20
+    },
+    {
+      "slot_id": 30,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        487,
+        813,
+        83,
+        82
+      ],
+      "source_dark_component_area": 6431,
+      "logical_item_rect": [
+        124,
+        205,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        496,
+        820,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        7,
+        10,
+        11
+      ],
+      "player_inventory_index": 21
+    },
+    {
+      "slot_id": 31,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        592,
+        815,
+        84,
+        80
+      ],
+      "source_dark_component_area": 6453,
+      "logical_item_rect": [
+        150,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        600,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        9,
+        12,
+        7
+      ],
+      "player_inventory_index": 22
+    },
+    {
+      "slot_id": 32,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        696,
+        815,
+        82,
+        80
+      ],
+      "source_dark_component_area": 6376,
+      "logical_item_rect": [
+        176,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        704,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        9,
+        10,
+        7
+      ],
+      "player_inventory_index": 23
+    },
+    {
+      "slot_id": 33,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        800,
+        815,
+        82,
+        80
+      ],
+      "source_dark_component_area": 6372,
+      "logical_item_rect": [
+        202,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        808,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        9,
+        10,
+        7
+      ],
+      "player_inventory_index": 24
+    },
+    {
+      "slot_id": 34,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        904,
+        815,
+        82,
+        80
+      ],
+      "source_dark_component_area": 6309,
+      "logical_item_rect": [
+        228,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        912,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        9,
+        10,
+        7
+      ],
+      "player_inventory_index": 25
+    },
+    {
+      "slot_id": 35,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        1008,
+        815,
+        83,
+        80
+      ],
+      "source_dark_component_area": 6393,
+      "logical_item_rect": [
+        254,
+        206,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        1016,
+        824,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        9,
+        11,
+        7
+      ],
+      "player_inventory_index": 26
+    },
+    {
+      "slot_id": 36,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        173,
+        918,
+        84,
+        79
+      ],
+      "source_dark_component_area": 6432,
+      "logical_item_rect": [
+        46,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        184,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        11,
+        6,
+        9,
+        9
+      ],
+      "player_inventory_index": 27
+    },
+    {
+      "slot_id": 37,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        279,
+        918,
+        82,
+        79
+      ],
+      "source_dark_component_area": 6421,
+      "logical_item_rect": [
+        72,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        288,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        6,
+        9,
+        9
+      ],
+      "player_inventory_index": 28
+    },
+    {
+      "slot_id": 38,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        383,
+        918,
+        83,
+        79
+      ],
+      "source_dark_component_area": 6338,
+      "logical_item_rect": [
+        98,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        392,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        6,
+        10,
+        9
+      ],
+      "player_inventory_index": 29
+    },
+    {
+      "slot_id": 39,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        488,
+        918,
+        82,
+        79
+      ],
+      "source_dark_component_area": 6364,
+      "logical_item_rect": [
+        124,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        496,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        6,
+        10,
+        9
+      ],
+      "player_inventory_index": 30
+    },
+    {
+      "slot_id": 40,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        592,
+        918,
+        83,
+        79
+      ],
+      "source_dark_component_area": 6400,
+      "logical_item_rect": [
+        150,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        600,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        6,
+        11,
+        9
+      ],
+      "player_inventory_index": 31
+    },
+    {
+      "slot_id": 41,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        697,
+        918,
+        81,
+        79
+      ],
+      "source_dark_component_area": 6332,
+      "logical_item_rect": [
+        176,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        704,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        7,
+        6,
+        10,
+        9
+      ],
+      "player_inventory_index": 32
+    },
+    {
+      "slot_id": 42,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        800,
+        918,
+        82,
+        79
+      ],
+      "source_dark_component_area": 6345,
+      "logical_item_rect": [
+        202,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        808,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        6,
+        10,
+        9
+      ],
+      "player_inventory_index": 33
+    },
+    {
+      "slot_id": 43,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        904,
+        918,
+        82,
+        79
+      ],
+      "source_dark_component_area": 6256,
+      "logical_item_rect": [
+        228,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        912,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        6,
+        10,
+        9
+      ],
+      "player_inventory_index": 34
+    },
+    {
+      "slot_id": 44,
+      "group": "player_inventory",
+      "source_dark_component_bbox": [
+        1008,
+        917,
+        83,
+        80
+      ],
+      "source_dark_component_area": 6350,
+      "logical_item_rect": [
+        254,
+        231,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        1016,
+        924,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        7,
+        11,
+        9
+      ],
+      "player_inventory_index": 35
+    },
+    {
+      "slot_id": 45,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        170,
+        1065,
+        82,
+        81
+      ],
+      "source_dark_component_area": 6372,
+      "logical_item_rect": [
+        45,
+        268,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        180,
+        1072,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        10,
+        7,
+        8,
+        10
+      ],
+      "player_inventory_index": 0
+    },
+    {
+      "slot_id": 46,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        275,
+        1067,
+        83,
+        79
+      ],
+      "source_dark_component_area": 6320,
+      "logical_item_rect": [
+        71,
+        269,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        284,
+        1076,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        9,
+        9,
+        10,
+        6
+      ],
+      "player_inventory_index": 1
+    },
+    {
+      "slot_id": 47,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        381,
+        1067,
+        83,
+        79
+      ],
+      "source_dark_component_area": 6377,
+      "logical_item_rect": [
+        98,
+        269,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        392,
+        1076,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        11,
+        9,
+        8,
+        6
+      ],
+      "player_inventory_index": 2
+    },
+    {
+      "slot_id": 48,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        486,
+        1067,
+        84,
+        79
+      ],
+      "source_dark_component_area": 6375,
+      "logical_item_rect": [
+        124,
+        269,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        496,
+        1076,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        10,
+        9,
+        10,
+        6
+      ],
+      "player_inventory_index": 3
+    },
+    {
+      "slot_id": 49,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        592,
+        1067,
+        83,
+        79
+      ],
+      "source_dark_component_area": 6368,
+      "logical_item_rect": [
+        150,
+        269,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        600,
+        1076,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        9,
+        11,
+        6
+      ],
+      "player_inventory_index": 4
+    },
+    {
+      "slot_id": 50,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        697,
+        1067,
+        83,
+        79
+      ],
+      "source_dark_component_area": 6306,
+      "logical_item_rect": [
+        177,
+        269,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        708,
+        1076,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        11,
+        9,
+        8,
+        6
+      ],
+      "player_inventory_index": 5
+    },
+    {
+      "slot_id": 51,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        802,
+        1067,
+        84,
+        79
+      ],
+      "source_dark_component_area": 6376,
+      "logical_item_rect": [
+        203,
+        269,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        812,
+        1076,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        10,
+        9,
+        10,
+        6
+      ],
+      "player_inventory_index": 6
+    },
+    {
+      "slot_id": 52,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        908,
+        1067,
+        82,
+        79
+      ],
+      "source_dark_component_area": 6374,
+      "logical_item_rect": [
+        229,
+        269,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        916,
+        1076,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        9,
+        10,
+        6
+      ],
+      "player_inventory_index": 7
+    },
+    {
+      "slot_id": 53,
+      "group": "hotbar",
+      "source_dark_component_bbox": [
+        1012,
+        1066,
+        81,
+        79
+      ],
+      "source_dark_component_area": 6221,
+      "logical_item_rect": [
+        255,
+        268,
+        16,
+        16
+      ],
+      "source_item_footprint": [
+        1020,
+        1072,
+        64,
+        64
+      ],
+      "footprint_safe_pixels": 4096,
+      "footprint_pixel_criterion": "every RGB channel <70 and alpha >245",
+      "dark_bbox_margins": [
+        8,
+        6,
+        9,
+        9
+      ],
+      "player_inventory_index": 8
+    }
+  ],
+  "controls": [
+    {
+      "id": "RANGE",
+      "type": "horizontal_slider",
+      "source_housing_rect": [
+        720,
+        174,
+        448,
+        99
+      ],
+      "source_hit_rect": [
+        720,
+        174,
+        448,
+        99
+      ],
+      "source_track_rect": [
+        855,
+        207,
+        283,
+        40
+      ],
+      "logical_hit_rect": [
+        180.0,
+        43.5,
+        112.0,
+        24.75
+      ],
+      "logical_track_rect": [
+        213.75,
+        51.75,
+        70.75,
+        10.0
+      ],
+      "coordinate_confidence": "Measured source-art bounds; active track excludes bevel; state/value authority remains server menu."
+    },
+    {
+      "id": "PERIOD",
+      "type": "horizontal_slider",
+      "source_housing_rect": [
+        720,
+        275,
+        448,
+        91
+      ],
+      "source_hit_rect": [
+        720,
+        275,
+        448,
+        91
+      ],
+      "source_track_rect": [
+        855,
+        300,
+        283,
+        40
+      ],
+      "logical_hit_rect": [
+        180.0,
+        68.75,
+        112.0,
+        22.75
+      ],
+      "logical_track_rect": [
+        213.75,
+        75.0,
+        70.75,
+        10.0
+      ],
+      "coordinate_confidence": "Measured source-art bounds; active track excludes bevel; state/value authority remains server menu."
+    },
+    {
+      "id": "COUNT",
+      "type": "horizontal_slider",
+      "source_housing_rect": [
+        720,
+        369,
+        448,
+        91
+      ],
+      "source_hit_rect": [
+        720,
+        369,
+        448,
+        91
+      ],
+      "source_track_rect": [
+        855,
+        393,
+        283,
+        40
+      ],
+      "logical_hit_rect": [
+        180.0,
+        92.25,
+        112.0,
+        22.75
+      ],
+      "logical_track_rect": [
+        213.75,
+        98.25,
+        70.75,
+        10.0
+      ],
+      "coordinate_confidence": "Measured source-art bounds; active track excludes bevel; state/value authority remains server menu."
+    },
+    {
+      "id": "MANUAL",
+      "type": "momentary_button",
+      "source_housing_rect": [
+        745,
+        469,
+        118,
+        113
+      ],
+      "source_hit_rect": [
+        745,
+        469,
+        118,
+        113
+      ],
+      "source_track_rect": [
+        774,
+        499,
+        58,
+        56
+      ],
+      "logical_hit_rect": [
+        186.25,
+        117.25,
+        29.5,
+        28.25
+      ],
+      "logical_track_rect": [
+        193.5,
+        124.75,
+        14.5,
+        14.0
+      ],
+      "coordinate_confidence": "Measured source-art bounds; active track excludes bevel; state/value authority remains server menu."
+    },
+    {
+      "id": "REDSTONE",
+      "type": "cycle_button",
+      "source_housing_rect": [
+        896,
+        469,
+        116,
+        113
+      ],
+      "source_hit_rect": [
+        896,
+        469,
+        116,
+        113
+      ],
+      "source_track_rect": [
+        916,
+        500,
+        77,
+        50
+      ],
+      "logical_hit_rect": [
+        224.0,
+        117.25,
+        29.0,
+        28.25
+      ],
+      "logical_track_rect": [
+        229.0,
+        125.0,
+        19.25,
+        12.5
+      ],
+      "coordinate_confidence": "Measured source-art bounds; active track excludes bevel; state/value authority remains server menu."
+    },
+    {
+      "id": "TRIGGER",
+      "type": "cycle_button",
+      "source_housing_rect": [
+        1044,
+        469,
+        114,
+        113
+      ],
+      "source_hit_rect": [
+        1044,
+        469,
+        114,
+        113
+      ],
+      "source_track_rect": [
+        1064,
+        500,
+        69,
+        50
+      ],
+      "logical_hit_rect": [
+        261.0,
+        117.25,
+        28.5,
+        28.25
+      ],
+      "logical_track_rect": [
+        266.0,
+        125.0,
+        17.25,
+        12.5
+      ],
+      "coordinate_confidence": "Measured source-art bounds; active track excludes bevel; state/value authority remains server menu."
+    }
+  ],
+  "indicators": [],
+  "validation": {
+    "detected_count_matches": true,
+    "all_source_footprints_64x64_dark": true,
+    "all_logical_items_16x16": true,
+    "item_footprints_nonoverlap": true,
+    "native_runtime_test": "NOT_PERFORMED",
+    "independent_visual_acceptance": "NOT_PERFORMED",
+    "artwork_edited": false
+  },
+  "visual_notes": [
+    "Slot count verified visually and by connected dark-component detection.",
+    "There are no baked item stacks, labels, numbers or slider thumbs.",
+    "Hopper/Dropper three amber traverse slits are decorative baked accents; do not describe them as authoritative status.",
+    "All source image bytes were read only. No source re-encoding, alpha normalization or texture edit was performed."
+  ],
+  "native_validation_record": "validation.json"
+}

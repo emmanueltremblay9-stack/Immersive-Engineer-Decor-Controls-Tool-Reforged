@@ -18,7 +18,7 @@ public final class FreezerReferenceGeometry {
    public static final int MENU_SLOT_COUNT = 39;
    public static final int VISIBLE_SLOT_COUNT = 38;
    public static final int RESERVED_MENU_INDEX = 1;
-   public static final String SOURCE_SHA256 = "68c1dc11e7d0e920addebca18100892861a70c5d68db5547b8014235acee3d46";
+   public static final String SOURCE_SHA256 = "e4ca92a83451ca167d1e76c86b72ef17514799a59f0cf7d8565ae2a504a446c7";
    public static final String SOURCE_FILENAME = "freezer-mixed-rp-v5-preview.png";
    public static final List<Integer> INVENTORY_SOURCE_X = List.of(164, 270, 376, 482, 588, 694, 800, 906, 1012);
    public static final List<Integer> INVENTORY_SOURCE_ROW_Y = List.of(758, 854, 952, 1082);
@@ -44,20 +44,34 @@ public final class FreezerReferenceGeometry {
     * to leave one usable pixel. The scale has no arbitrary lower clamp.
     */
    public static ViewTransform fit(int viewportWidth, int viewportHeight) {
+      return fitCanvas(viewportWidth, viewportHeight, CANVAS_WIDTH, CANVAS_HEIGHT);
+   }
+
+   /** Uniformly fit an arbitrary presentation canvas while preserving the same margin policy. */
+   public static ViewTransform fitCanvas(int viewportWidth, int viewportHeight, int canvasWidth, int canvasHeight) {
+      return fitCanvas(viewportWidth, viewportHeight, canvasWidth, canvasHeight, 1.0F);
+   }
+
+   /** Uniform fit with a caller supplied logical-size ceiling for large artwork panels. */
+   public static ViewTransform fitCanvas(int viewportWidth, int viewportHeight, int canvasWidth, int canvasHeight, float maxScale) {
       if (viewportWidth <= 0 || viewportHeight <= 0) {
          throw new IllegalArgumentException("Viewport dimensions must be positive");
       }
+      if (canvasWidth <= 0 || canvasHeight <= 0) throw new IllegalArgumentException("Canvas dimensions must be positive");
+      if (!(maxScale > 0.0F) || Float.isNaN(maxScale)) throw new IllegalArgumentException("Maximum scale must be positive");
       double shortEdge = Math.min(viewportWidth, viewportHeight);
       double margin = Math.min(VIEWPORT_MARGIN, (shortEdge - 1.0D) / 2.0D);
-      double available = shortEdge - 2.0D * margin;
-      float scale = (float)Math.min(1.0D, available / CANVAS_WIDTH);
+      double scale = Math.min((viewportWidth - 2.0D * margin) / canvasWidth,
+         (viewportHeight - 2.0D * margin) / canvasHeight);
+      scale = Math.min(Math.min(1.0D, maxScale), scale);
+      float fittedScale = (float)scale;
       // Do not let float rounding make a tiny fitted canvas exceed its viewport.
-      if ((double)scale * CANVAS_WIDTH > available) {
-         scale = Math.nextDown(scale);
+      if ((double)fittedScale * canvasWidth > viewportWidth || (double)fittedScale * canvasHeight > viewportHeight) {
+         fittedScale = Math.nextDown(fittedScale);
       }
-      float originX = (float)((viewportWidth - (double)CANVAS_WIDTH * scale) / 2.0D);
-      float originY = (float)((viewportHeight - (double)CANVAS_HEIGHT * scale) / 2.0D);
-      return new ViewTransform(scale, originX, originY);
+      float originX = (float)((viewportWidth - (double)canvasWidth * fittedScale) / 2.0D);
+      float originY = (float)((viewportHeight - (double)canvasHeight * fittedScale) / 2.0D);
+      return new ViewTransform(fittedScale, originX, originY);
    }
 
    private static List<SlotAnchor> createAnchors() {
@@ -158,6 +172,20 @@ public final class FreezerReferenceGeometry {
          return this.originY + localY * this.scale;
       }
 
+      /**
+       * Convert a canvas-local rectangle to the GUI-scaled screen coordinates
+       * expected by GuiGraphics.enableScissor. Unlike draw coordinates, the
+       * scissor stack is not transformed by the active pose stack.
+       */
+      public ScissorBounds screenBounds(double left, double top, double right, double bottom) {
+         if (!Double.isFinite(left) || !Double.isFinite(top) || !Double.isFinite(right)
+            || !Double.isFinite(bottom) || right <= left || bottom <= top) {
+            throw new IllegalArgumentException("Scissor rectangle must be finite and non-empty");
+         }
+         return new ScissorBounds((int)Math.floor(this.screenX(left)), (int)Math.floor(this.screenY(top)),
+            (int)Math.ceil(this.screenX(right)), (int)Math.ceil(this.screenY(bottom)));
+      }
+
       public double localDelta(double screenDelta) {
          return screenDelta / this.scale;
       }
@@ -174,6 +202,12 @@ public final class FreezerReferenceGeometry {
       /** Floor rather than truncate: a pointer just outside the top edge stays outside. */
       public int renderPointerY(double screenY) {
          return (int)Math.floor(this.localY(screenY));
+      }
+   }
+
+   public record ScissorBounds(int left, int top, int right, int bottom) {
+      public ScissorBounds {
+         if (right <= left || bottom <= top) throw new IllegalArgumentException("Scissor bounds must be non-empty");
       }
    }
 }

@@ -54,9 +54,11 @@ class MilkingEvidenceTest(unittest.TestCase):
             for label,amount in CAPTURES.items():
                 g=self.g;w=self.width;h=self.height;tw=g['tank_width'];th=g['tank_height']
                 frame=bytearray(b'\x20\x30\x40\xff'*(w*h));tank=bytearray(b'\x20\x30\x40\xff'*(tw*th))
-                fill=(51*amount//4000)*self.scale
+                fill=(52*amount//4000)*self.scale
                 for y in range(th-fill,th):
-                    row=b'\xe1\xda\xb8\xff'*tw
+                    inset = 2 * self.scale if y < 2 * self.scale or y >= th - 2 * self.scale else 0
+                    edge = b'\x20\x30\x40\xff' * inset
+                    row = edge + b'\xe1\xda\xb8\xff' * (tw - 2 * inset) + edge
                     tank[y*tw*4:(y+1)*tw*4]=row
                     start=((g['tank_y']+y)*w+g['tank_x'])*4;frame[start:start+tw*4]=row
                 tn=label[:-4]+'-tank.png';files[label]=png(w,h,frame);files[tn]=png(tw,th,tank)
@@ -92,16 +94,16 @@ class MilkingEvidenceTest(unittest.TestCase):
             with self.subTest(profile=profile):self.profile(profile);self.validate()
 
     def test_independent_fixed_geometry(self):
-        cases=[(1280,720,1,(526,246,630,295,22,51)),(1280,260,1,(526,16,630,65,22,51)),
-               (1920,1080,1,(846,426,950,475,22,51)),(1920,1080,2,(366,156,940,410,44,102)),
-               (1920,1080,3,(206,66,930,345,66,153)),(1281,261,1,(526,16,630,65,22,51))]
+        cases=[(1280,720,1,(498,218,628,282,29,52)),(1280,260,1,(498,-11,628,53,29,52)),
+               (1920,1080,1,(818,398,948,462,29,52)),(1920,1080,2,(338,128,936,384,58,104)),
+               (1920,1080,3,(178,38,924,306,87,156)),(1281,261,1,(499,-11,629,53,29,52))]
         for w,h,s,expected in cases:
             g=expected_geometry(w,h,s)
             self.assertEqual(tuple(g[k] for k in ('presentation_gui_left','presentation_gui_top','tank_x','tank_y','tank_width','tank_height')),expected)
 
     def test_slot_mapping_fixed(self):
         self.assertEqual([slot_position(i) for i in (0,1,2,10,11,28,29,37)],
-                         [(49,94),(163,94),(26,132),(186,132),(26,152),(186,172),(26,195),(186,195)])
+                         [(70,109),(197,109),(45,154),(222,154),(45,177),(222,200),(45,236),(222,236)])
 
     def test_reject_unsupported_geometry(self):
         for w,h,s in [(1280,260,2),(1921,1081,3),(319,240,1),(320,239,1),(1280,720,True),(1280.,720,1),(1280,720,4)]:
@@ -313,19 +315,21 @@ class MilkingEvidenceTest(unittest.TestCase):
     def test_pinned_source_translucent_edges_and_interior_coverage(self):
         # Source-derived sampling regression, NOT a native/GPU rasterization claim.
         root=Path(__file__).resolve().parents[2]/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/milking_redesign_v1'
-        _,_,milk=decode_png(root/'milk.png');_,_,background=decode_png(root/'background.png')
+        _,_,milk=decode_png(root/'milk.png');_,_,background=decode_png(root.parent/'gui11_v5c/12.png')
         alphas=milk[3::4]
         self.assertTrue(any(0<a<=1 for a in alphas))
         for scale in (1,2,3):
-            w,h=22*scale,51*scale;empty=bytearray();full=bytearray()
+            w,h=29*scale,52*scale;empty=bytearray();full=bytearray()
             for y in range(h):
                 for x in range(w):
                     sx=int(479+(x+.5)*296/w);sy=int(228+(y+.5)*802/h)
-                    bx=int((104+(x+.5)/scale)*1254/228);by=int((49+(y+.5)/scale)*1254/228)
+                    bx=int((130+(x+.5)/scale)*1254/283);by=int((64+(y+.5)/scale)*1254/283)
                     src=milk[(sy*1254+sx)*4:(sy*1254+sx+1)*4]
                     dst=background[(by*1254+bx)*4:(by*1254+bx+1)*4]
                     empty.extend(dst)
-                    full.extend(bytes((src[c]*src[3]+dst[c]*(255-src[3])+127)//255 for c in range(3))+b'\xff')
+                    corner = (y < 2 * scale or y >= h - 2 * scale) and (x < 2 * scale or x >= w - 2 * scale)
+                    mixed = bytes((src[c]*src[3]+dst[c]*(255-src[3])+127)//255 for c in range(3))+b'\xff'
+                    full.extend(dst if corner else mixed)
             split=26*scale*w*4;half=empty[:split]+full[split:]
             g=expected_geometry(1920,1080,scale)
             validate_pixels({'empty.png':bytes(empty),'half.png':bytes(half),'full.png':bytes(full)},
@@ -340,7 +344,7 @@ class MilkingEvidenceTest(unittest.TestCase):
     def test_former_machine_text_regions_are_not_exempt_at_any_scale(self):
         # All former name, UUID, status, amount and capacity bands now remain art.
         for profile in ('en-1280x720-scale1','en-1920x1080-scale2','en-1920x1080-scale3'):
-            for x,y in ((114,6),(114,16),(114,115),(150,73),(150,81)):
+            for x,y in ((114,6),(114,16),(114,115),(198,73),(198,81)):
                 with self.subTest(profile=profile,x=x,y=y):
                     self.profile(profile)
                     def pixel(p,w,h):
@@ -353,7 +357,7 @@ class MilkingEvidenceTest(unittest.TestCase):
 
     def test_outside_label_margin_not_exempt(self):
         def pixel(p,w,h):
-            i=((self.g['presentation_gui_top']+89)*w+self.g['presentation_gui_left']+150)*4;p[i]^=1;return p
+            i=((self.g['presentation_gui_top']+89)*w+self.g['presentation_gui_left']+160)*4;p[i]^=1;return p
         self.alter_image(2,pixel)
         with self.assertRaisesRegex(SmokeFailure,'exterior artwork'):self.validate()
 

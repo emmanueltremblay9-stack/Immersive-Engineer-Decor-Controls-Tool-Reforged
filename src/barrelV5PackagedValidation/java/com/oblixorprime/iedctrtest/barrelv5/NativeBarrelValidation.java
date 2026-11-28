@@ -44,6 +44,11 @@ import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 import com.oblixorprime.engineersdecorreforged.client.BarrelReferenceScreen;
 import com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceGeometry;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_HEIGHT;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_WIDTH;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_X;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.TANK_Y;
+import static com.oblixorprime.engineersdecorreforged.utility.BarrelReferenceState.fillHeight;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.common.NeoForgeMod;
@@ -124,8 +129,8 @@ public final class NativeBarrelValidation {
          require(view.equals(BarrelReferenceGeometry.fit(screen.width,screen.height)),"Wrong live transform");
          g.addProperty("view_scale",view.scale());g.addProperty("view_origin_x",view.originX());g.addProperty("view_origin_y",view.originY());
          g.addProperty("image_width",screen.getXSize());g.addProperty("image_height",screen.getYSize());
-         g.addProperty("tank_x",view.screenX(170));g.addProperty("tank_y",view.screenY(115));
-         g.addProperty("tank_width",41*view.scale());g.addProperty("tank_height",78*view.scale());
+         g.addProperty("tank_x",view.screenX(TANK_X));g.addProperty("tank_y",view.screenY(TANK_Y));
+         g.addProperty("tank_width",TANK_WIDTH*view.scale());g.addProperty("tank_height",TANK_HEIGHT*view.scale());
          require(screen.getGuiLeft()>=0&&screen.getGuiTop()>=0&&screen.getGuiLeft()+screen.getXSize()<=screen.width&&screen.getGuiTop()+screen.getYSize()<=screen.height,"V5 frame clipped");
          var bounds=new JsonArray();
          for(var anchor:BarrelReferenceGeometry.SLOT_ANCHORS){
@@ -284,7 +289,7 @@ public final class NativeBarrelValidation {
       });
    }
    private static void setCaptureTarget(BarrelReferenceScreen screen){
-      targetX=(int)Math.round(screen.validationViewTransform().screenX(captureIndex==3?190:8));targetY=(int)Math.round(screen.validationViewTransform().screenY(captureIndex==3?150:8));move(Minecraft.getInstance(),screen);
+      targetX=(int)Math.round(screen.validationViewTransform().screenX(captureIndex==3?TANK_X + TANK_WIDTH / 2:8));targetY=(int)Math.round(screen.validationViewTransform().screenY(captureIndex==3?TANK_Y + TANK_HEIGHT / 2:8));move(Minecraft.getInstance(),screen);
    }
    private static void startGesture(BarrelReferenceScreen screen){
       observedPress=false;targetX=(int)Math.round(screen.validationViewTransform().screenX(screen.getMenu().getSlot(2).x+8));targetY=(int)Math.round(screen.validationViewTransform().screenY(screen.getMenu().getSlot(2).y+8));
@@ -352,11 +357,11 @@ public final class NativeBarrelValidation {
    }
    /** Samples the native tank interior from the same full framebuffer that is written as PNG. */
    private static JsonObject barrelFluidPixels(Minecraft mc,BarrelReferenceScreen screen,NativeImage image)throws Exception{
-      var menu=screen.getMenu();int fill=(int)Math.max(0,Math.min(78,(long)menu.fluidAmount()*78/menu.fluidCapacity()));
-      int top=fill==0?115:193-fill;
+      var menu=screen.getMenu();int fill=fillHeight(menu.fluidAmount(),menu.fluidCapacity());
+      int top=fill==0?TANK_Y:TANK_Y + TANK_HEIGHT - fill;
       var view=screen.validationViewTransform();
-      int x=(int)Math.ceil(view.screenX(173)),y=(int)Math.ceil(view.screenY(top+2));
-      int right=(int)Math.floor(view.screenX(208)),bottom=(int)Math.floor(view.screenY(191));
+      int x=(int)Math.ceil(view.screenX(TANK_X + 3)),y=(int)Math.ceil(view.screenY(top+2));
+      int right=(int)Math.floor(view.screenX(TANK_X + TANK_WIDTH - 3)),bottom=(int)Math.floor(view.screenY(TANK_Y + TANK_HEIGHT - 2));
       require(x>=0&&y>=0&&right<=image.getWidth()&&bottom<=image.getHeight()&&right>x&&bottom>y,"Barrel sample exceeds framebuffer");
       var colors=new java.util.HashSet<Integer>();
       for(int py=y;py<bottom;py++)for(int px=x;px<right;px++)colors.add(image.getPixelRGBA(px,py));

@@ -1,0 +1,90 @@
+{
+  "schema": "iedctr-prism-freezer-recovery-key-stage-v1",
+  "base_commit": "d6ed3f6bf31190c8da5205ae9430354f78f6da29",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/ThermalVerticalScreen.java": {
+      "old_sha256": "c81800015e554b510b7f49ca6acb65e0af4fe3c577a07187e17920c3576ac1ae",
+      "new_sha256": "ed075bc81813346f1af7fc57c3ed672366df12489f8388f0d2f956f3067602d4",
+      "hunks": [
+        {
+          "start": 24,
+          "end": 25,
+          "current": "   public static final String FREEZER_RECOVERY_HELP_KEY = \"gui.\" + NS + \".freezer_reference.recover_help\";\n",
+          "previous": ""
+        },
+        {
+          "start": 130,
+          "end": 131,
+          "current": "            FREEZER_RECOVERY_HELP_KEY,\n",
+          "previous": "            NS + \".freezer_reference.recover_help\",\n"
+        }
+      ]
+    },
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java": {
+      "old_sha256": "908406853e9a636f94e449aa528d1b095e2637aef1dde965c429dc24fb7ef7df",
+      "new_sha256": "bcd05d032796b4aba5a3b7dd5c42e7546f9b24e5d6734d2a08887ee815e185aa",
+      "hunks": [
+        {
+          "start": 74,
+          "end": 75,
+          "current": "   private static final String RECOVERY_KEY = ThermalVerticalScreen.FREEZER_RECOVERY_HELP_KEY;\n",
+          "previous": "   private static final String RECOVERY_KEY = \"gui.immersive_engineer_decor_controls_tool_reforged.freezer_reference.recover_help\";\n"
+        }
+      ]
+    },
+    "tools/validation/freezer_reference_native.py": {
+      "old_sha256": "86a643c6e0fa11c37decd01a5d5e541240954642650290ce4edc808f0cd10cfb",
+      "new_sha256": "dcc33cd5e22f2a78aee0040cabde49dcfdc657a41b1e7b49e00d4c61e421fa9f",
+      "hunks": [
+        {
+          "start": 77,
+          "end": 105,
+          "current": "\n\ndef load_run_proofs(game: Path) -> tuple[dict, dict]:\n    \"\"\"Read gameplay status before requiring the success-only Freezer proof.\"\"\"\n    main_path = game / \"client-gameplay-result.json\"\n    if not main_path.is_file():\n        raise SmokeFailure(\"Native client gameplay result is missing; cannot identify failed stage\")\n    try:\n        main = json.loads(main_path.read_text())\n    except (OSError, json.JSONDecodeError) as error:\n        raise SmokeFailure(f\"Native client gameplay result is unreadable: {error}\") from error\n    if not isinstance(main, dict):\n        raise SmokeFailure(\"Native client gameplay result is not a JSON object\")\n    if main.get(\"status\") != \"passed\":\n        phase = main.get(\"phase\") or \"UNKNOWN\"\n        detail = main.get(\"error\") or \"no failure detail recorded\"\n        raise SmokeFailure(f\"Native client gameplay failed at {phase}: {detail}\")\n\n    proof_path = game / \"client-freezer-reference-result.json\"\n    if not proof_path.is_file():\n        raise SmokeFailure(\"Freezer success proof is missing after gameplay status passed\")\n    try:\n        proof = json.loads(proof_path.read_text())\n    except (OSError, json.JSONDecodeError) as error:\n        raise SmokeFailure(f\"Freezer success proof is unreadable after gameplay status passed: {error}\") from error\n    if not isinstance(proof, dict):\n        raise SmokeFailure(\"Freezer success proof is not a JSON object\")\n    return main, proof\n",
+          "previous": ""
+        },
+        {
+          "start": 316,
+          "end": 317,
+          "current": "        main_proof, proof = load_run_proofs(game)\n",
+          "previous": "        proof = json.loads((game / \"client-freezer-reference-result.json\").read_text())\n        main_proof = json.loads((game / \"client-gameplay-result.json\").read_text())\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_recovery_tooltip_wrap.py": {
+      "old_sha256": "71717380d5eddb189f15ddebf1609ab3860f7e697a6089f2f5d3aa0cdf38c26e",
+      "new_sha256": "15b4d3309d18d2bae1d859e93bda74aa9e8ecde692eade87b3c422fdefd6b965",
+      "hunks": [
+        {
+          "start": 16,
+          "end": 21,
+          "current": "        self.assertIn('FREEZER_RECOVERY_HELP_KEY = \"gui.\" + NS + \".freezer_reference.recover_help\"', source)\n        self.assertIn(\"Component.translatableWithFallback(\\n            FREEZER_RECOVERY_HELP_KEY,\", source)\n        validation = (ROOT / \"src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeFreezerReferenceValidation.java\").read_text()\n        self.assertIn(\"RECOVERY_KEY = ThermalVerticalScreen.FREEZER_RECOVERY_HELP_KEY\", validation)\n        self.assertNotIn('RECOVERY_KEY = \"gui.', validation)\n",
+          "previous": "        self.assertIn(\"Component.translatableWithFallback(\", source)\n        self.assertIn('NS + \".freezer_reference.recover_help\"', source)\n"
+        }
+      ]
+    },
+    "tools/validation/test_freezer_reference_native.py": {
+      "old_sha256": "797a86d5a7a5f724bdd8dfd8611a1f4742f4673f34a36fc34f1e196c217d007a",
+      "new_sha256": "75ab558c937b032609423b3bb3913dff3f0ab075bd5d1931ad9cc6b6a0d159fd",
+      "hunks": [
+        {
+          "start": 3,
+          "end": 4,
+          "current": "import json\n",
+          "previous": ""
+        },
+        {
+          "start": 11,
+          "end": 13,
+          "current": "    EFFECT_CROP, ENERGY_CROP, SCREEN_CLASS, SUITE, _crop_dimensions, _expected_scale,\n    load_run_proofs, validate_proof)\n",
+          "previous": "    EFFECT_CROP, ENERGY_CROP, SCREEN_CLASS, SUITE, _crop_dimensions, _expected_scale, validate_proof)\n"
+        },
+        {
+          "start": 46,
+          "end": 57,
+          "current": "\n    def test_gameplay_failure_stage_precedes_missing_success_proof(self):\n        game = Path(self.temp.name) / \"failed-run\"\n        game.mkdir()\n        (game / \"client-gameplay-result.json\").write_text(json.dumps({\n            \"status\": \"failed\", \"phase\": \"FREEZER_REFERENCE\",\n            \"error\": \"Reserved-item recovery control is not visible\"\n        }))\n        with self.assertRaisesRegex(SmokeFailure,\n                \"FREEZER_REFERENCE: Reserved-item recovery control is not visible\"):\n            load_run_proofs(game)\n",
+          "previous": ""
+        }
+      ]
+    }
+  }
+}

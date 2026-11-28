@@ -25,8 +25,8 @@ class RoutingTests(unittest.TestCase):
         source = MENU.read_text()
         factory = re.search(r'public static MachineMenu client\(.*?\n   }', source, re.S)[0]
         args = re.search(r'\),\s*(kind == MachineKind.SMALL_FREEZER.*?);', factory, re.S)[1][:-1]
-        assignments = '\n'.join(re.findall(r'this\.(?:freezerReferencePresentation|barrelReferencePresentation|factoryPlacerV2ReferencePresentation|solarV2ReferencePresentation|treeCutterV3ReferencePresentation) = .*?;', source, re.S))
-        self.assertEqual(5, assignments.count('this.'))
+        assignments = '\n'.join(re.findall(r'this\.(?:freezerReferencePresentation|barrelReferencePresentation|factoryPlacerV2ReferencePresentation|solarV2ReferencePresentation|treeCutterV3ReferencePresentation|gui11V5CPresentation) = .*?;', source, re.S))
+        self.assertEqual(6, len(assignments.split(';')) - 1)
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'SelectionProbe.java'
             path.write_text('''
@@ -36,11 +36,14 @@ public class SelectionProbe {
  static final String DEV_FREEZER_LIVE_ENERGY_PROPERTY = "freezer.energy.test";
  static final String DEV_BARREL_REFERENCE_PROPERTY = "barrel.test";
  static final String DEV_SOLAR_V2_REFERENCE_PROPERTY = "solar.test";
+ static class Gui11V5CRuntimeGeometry {
+   static boolean supports(MachineKind kind) { return kind != MachineKind.SMALL_SOLAR_PANEL; }
+ }
  static boolean client;
  static class Level { boolean isClientSide = client; }
  static class Player { Level level() { return new Level(); } }
  static class Inventory { Player player = new Player(); }
- boolean freezerReferencePresentation, barrelReferencePresentation, factoryPlacerV2ReferencePresentation, solarV2ReferencePresentation, treeCutterV3ReferencePresentation;
+ boolean freezerReferencePresentation, barrelReferencePresentation, factoryPlacerV2ReferencePresentation, solarV2ReferencePresentation, treeCutterV3ReferencePresentation, gui11V5CPresentation;
  SelectionProbe(MachineKind kind, Inventory inventory, boolean freezerReferenceRequested, boolean barrelReferenceRequested,
                 boolean factoryPlacerV2ReferenceRequested, boolean solarV2ReferenceRequested) {
  ''' + assignments + '''
@@ -68,6 +71,9 @@ public class SelectionProbe {
          boolean frozen = side && kind == MachineKind.SMALL_FREEZER && (freezer.equals("true") || !energy.equals("false"));
          if(actual.freezerReferencePresentation != frozen) throw new AssertionError("Freezer selection");
          boolean barrel = side && kind == MachineKind.FLUID_BARREL && !property.equals("false");
+         boolean v5c = side && (kind == MachineKind.FLUID_BARREL ? barrel : kind != MachineKind.SMALL_SOLAR_PANEL);
+         if (actual.gui11V5CPresentation != v5c)
+           throw new AssertionError("V5C geometry and artwork disagree with selected screen: " + kind + " " + property + " " + side);
          boolean placer = side && kind == MachineKind.FACTORY_PLACER;
          boolean tree = side && kind == MachineKind.SMALL_TREE_CUTTER;
          if(actual.barrelReferencePresentation != barrel || actual.factoryPlacerV2ReferencePresentation != placer || actual.solarV2ReferencePresentation != (side && kind == MachineKind.SMALL_SOLAR_PANEL && !solar.equals("false")))

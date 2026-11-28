@@ -144,8 +144,9 @@ public final class NativeMilkingQualificationValidation {
       if(Files.exists(directory.resolve("saves"))) try(var entries=Files.list(directory.resolve("saves"))) { require(entries.findAny().isEmpty(),"Existing saves forbidden"); }
       isolatedDirectoryValidated=true;
       verifyViewport(mc);
-      verifyArt(mc,"background","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
-      verifyArt(mc,"milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
+      verifyArt(mc,"milking_redesign_v1/background","1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411");
+      verifyArt(mc,"gui11_v5c/12","82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa");
+      verifyArt(mc,"milking_redesign_v1/milk","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");
       String name="iedctr-milking-qualification-"+nonce;
       mc.options.pauseOnLostFocus=false;
       enter(Stage.WORLD);
@@ -153,7 +154,7 @@ public final class NativeMilkingQualificationValidation {
          new WorldOptions(0L,false,false),registries->registries.registryOrThrow(Registries.WORLD_PRESET).getHolderOrThrow(WorldPresets.FLAT).value().createWorldDimensions(),new TitleScreen());
    }
    private static void verifyArt(Minecraft mc,String name,String expected)throws Exception{
-      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/milking_redesign_v1/"+name+".png");
+      var id=ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,"textures/gui/"+name+".png");
       try(var input=mc.getResourceManager().getResourceOrThrow(id).open()){
          require(HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(input.readAllBytes())).equals(expected),"Active resource artwork differs: "+name);
       }
@@ -177,7 +178,9 @@ public final class NativeMilkingQualificationValidation {
    private static int destination(){return slotIndex==1?2:slotIndex;}
    private static boolean matches(ItemStack stack,Item item){return stack.is(item) && stack.getCount()==1;}
    private static int total(ServerPlayer p){int n=p.containerMenu.getCarried().getCount();for(var slot:p.containerMenu.slots)n+=slot.getItem().getCount();return n;}
-   private static MilkingRedesignLayout.Rect anchor(int index){return index==0?MilkingRedesignLayout.INPUT_SLOT:index==1?MilkingRedesignLayout.OUTPUT_SLOT:index<29?MilkingRedesignLayout.playerSlot((index-2)%9,(index-2)/9):MilkingRedesignLayout.hotbarSlot(index-29);}
+   private static Gui11V5CRuntimeGeometry.Point anchor(int index){
+      return Gui11V5CRuntimeGeometry.slot(MachineKind.SMALL_MILKING_MACHINE,index);
+   }
    private static boolean clickIntervalElapsed(){return lastClickNanos==0 || System.nanoTime()-lastClickNanos>=MIN_CLICK_INTERVAL_NANOS;}
    private static void click(MachineScreen screen,int index){
       long now=System.nanoTime();
@@ -189,8 +192,8 @@ public final class NativeMilkingQualificationValidation {
    private static void verifyGeometry(MachineScreen screen,MachineMenu menu){
       verifyViewport(Minecraft.getInstance());
       require(menu.kind()==MachineKind.SMALL_MILKING_MACHINE && menu.slots.size()==38 && menu.visibleMachineSlots()==2,"Wrong native Milking menu");
-      require(screen.getXSize()==228 && screen.getYSize()==228,"Wrong Milking canvas");
-      require(screen.getGuiLeft()==(screen.width-228)/2 && screen.getGuiTop()==(screen.height-228)/2,"Public integer origin differs");
+      require(screen.getXSize()==283 && screen.getYSize()==283,"Wrong Milking canvas");
+      require(screen.getGuiLeft()==(screen.width-283)/2 && screen.getGuiTop()==(screen.height-283)/2,"Public integer origin differs");
       for(int i=0;i<38;i++){var a=anchor(i);var slot=menu.getSlot(i);int inventoryIndex=i<2?i:i<29?i+7:i-29;require(slot.x==a.x() && slot.y==a.y() && slot.getSlotIndex()==inventoryIndex,"Slot mapping differs at "+i);}
       require(!menu.getSlot(1).mayPlace(new ItemStack(Items.MILK_BUCKET)),"Output must reject insertion");
    }
@@ -231,8 +234,8 @@ public final class NativeMilkingQualificationValidation {
       c.addProperty("presentation_gui_width",screen.getXSize());c.addProperty("presentation_gui_height",screen.getYSize());
       double scale=mc.getWindow().getGuiScale();
       // Use actual public integer screen origin, not a floating-point centered canvas.
-      int x0=(int)((screen.getGuiLeft()+104)*scale),y0=(int)((screen.getGuiTop()+49)*scale);
-      int width=(int)(22*scale),height=(int)(51*scale);
+      int x0=(int)((screen.getGuiLeft()+130)*scale),y0=(int)((screen.getGuiTop()+64)*scale);
+      int width=(int)(29*scale),height=(int)(52*scale);
       try(var frame=Screenshot.takeScreenshot(mc.getMainRenderTarget())){
          require(frame.getWidth()==mc.getWindow().getWidth() && frame.getHeight()==mc.getWindow().getHeight(),"Framebuffer differs");
          require(x0>=0 && y0>=0 && x0+width<=frame.getWidth() && y0+height<=frame.getHeight(),"Tank outside framebuffer");
@@ -277,7 +280,7 @@ public final class NativeMilkingQualificationValidation {
          var p=new JsonObject();p.addProperty("suite",SUITE);p.addProperty("status",error==null?"passed_bounded_smoke":"failed");
          p.addProperty("nonce",nonce);p.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));
          p.addProperty("requested_language",System.getProperty("iedctr.requestedLanguage",""));p.addProperty("selected_language",mc.getLanguageManager().getSelected());
-         p.addProperty("source_background_sha256","871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b");
+         p.addProperty("source_background_sha256","82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa");
          p.addProperty("source_milk_sha256","f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5");p.addProperty("glass_overlay_enabled",false);
          addViewport(p,mc);p.addProperty("actual_integrated_world",mc.getSingleplayerServer()!=null);
          p.addProperty("native_visual_acceptance",false);p.addProperty("menu_slot_count",38);p.addProperty("screen_class",MachineScreen.SmallMilkingMachineScreen.class.getName());

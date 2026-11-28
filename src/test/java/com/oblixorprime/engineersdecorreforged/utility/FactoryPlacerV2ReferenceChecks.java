@@ -8,10 +8,10 @@ public final class FactoryPlacerV2ReferenceChecks {
       if (!value) throw new AssertionError(message);
    }
    public static void main(String[] args) {
-      check(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH == 1199 && FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT == 1312, "retained source dimensions");
-      check(FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH == 400
-         && FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT == 438, "outward rounded logical canvas");
-      check(Math.abs(FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE - 1.0D / 3.0D) < 0.0000001, "uniform source scale");
+      check(FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH == 1254 && FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT == 1254, "retained source dimensions");
+      check(FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH == 323
+         && FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT == 323, "outward rounded logical canvas");
+      check(Math.abs(FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE - 323.0D / 1254.0D) < 0.0000001, "uniform source scale");
       var indices = new HashSet<Integer>();
       check(FactoryPlacerV2ReferenceGeometry.SLOT_ANCHORS.size() == 54, "54 slots");
       for (var a : FactoryPlacerV2ReferenceGeometry.SLOT_ANCHORS) {
@@ -37,10 +37,10 @@ public final class FactoryPlacerV2ReferenceChecks {
       for (int[] viewport : new int[][]{{1920,1080},{960,540},{640,360},{1280,260},{480,270},{320,240},{300,600},{1,1},{1,1000},{1000,1}}) {
          var v = FactoryPlacerV2ReferenceGeometry.fit(viewport[0], viewport[1]);
          check(v.originX() >= -0.0001 && v.originY() >= -0.0001, "positive origins");
-         check(v.screenX(400) <= viewport[0]+0.0001 && v.screenY(438) <= viewport[1]+0.0001, "uniform fit");
+         check(v.screenX(323) <= viewport[0]+0.0001 && v.screenY(323) <= viewport[1]+0.0001, "uniform fit");
          check(v.guiLeft() <= v.screenX(0) && v.guiTop() <= v.screenY(0), "external bounds enclose top/left");
-         check(v.guiLeft()+v.guiWidth() >= v.screenX(400)
-            && v.guiTop()+v.guiHeight() >= v.screenY(438), "external bounds enclose bottom/right");
+         check(v.guiLeft()+v.guiWidth() >= v.screenX(323)
+            && v.guiTop()+v.guiHeight() >= v.screenY(323), "external bounds enclose bottom/right");
          check(v.guiWidth()>0 && v.guiHeight()>0, "positive external extent");
          for (var a : FactoryPlacerV2ReferenceGeometry.SLOT_ANCHORS) {
             check(Math.abs(v.localX(v.screenX(a.x()+8))-(a.x()+8))<0.0001, "pointer x roundtrip");

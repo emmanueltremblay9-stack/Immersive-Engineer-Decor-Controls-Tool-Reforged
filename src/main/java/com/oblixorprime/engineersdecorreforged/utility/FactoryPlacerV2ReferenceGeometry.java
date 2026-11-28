@@ -9,18 +9,18 @@ import java.util.List;
  * legacy Placer texture. This class changes no inventory or machine semantics.
  */
 public final class FactoryPlacerV2ReferenceGeometry {
-   public static final int SOURCE_WIDTH = 1199;
-   public static final int SOURCE_HEIGHT = 1312;
-   public static final int CANVAS_WIDTH = 400;
-   public static final int CANVAS_HEIGHT = 438;
+   public static final int SOURCE_WIDTH = Gui11V5CRuntimeGeometry.sourceWidth(MachineKind.FACTORY_PLACER);
+   public static final int SOURCE_HEIGHT = Gui11V5CRuntimeGeometry.sourceHeight(MachineKind.FACTORY_PLACER);
+   public static final int CANVAS_WIDTH = Gui11V5CRuntimeGeometry.width(MachineKind.FACTORY_PLACER);
+   public static final int CANVAS_HEIGHT = Gui11V5CRuntimeGeometry.height(MachineKind.FACTORY_PLACER);
    /** Uniform source scale; canvas dimensions round outward, never stretch the art. */
-   public static final float SOURCE_SCALE = 1.0F / 3.0F;
+   public static final float SOURCE_SCALE = (float)CANVAS_WIDTH / SOURCE_WIDTH;
    public static final int VIEWPORT_MARGIN = 6;
    public static final int ITEM_SIZE = 16;
    public static final int MENU_SLOT_COUNT = 54;
    public static final int VISIBLE_SLOT_COUNT = 54;
-   public static final String SOURCE_SHA256 = "ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b";
-   public static final String SOURCE_FILENAME = "factory-placer-grey-steel-v2-concept.png";
+   public static final String SOURCE_SHA256 = "d7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c";
+   public static final String SOURCE_FILENAME = "04-V5-Corrigee.png";
    public static final List<SlotAnchor> SLOT_ANCHORS = createAnchors();
    private static final SlotAnchor[] ANCHORS_BY_MENU_INDEX = indexAnchors();
 
@@ -59,33 +59,15 @@ public final class FactoryPlacerV2ReferenceGeometry {
 
    private static List<SlotAnchor> createAnchors() {
       List<SlotAnchor> anchors = new ArrayList<>(VISIBLE_SLOT_COUNT);
-      // Measured dark interiors, excluding frame highlights and clipped corners.
-      int[] machineX = {122, 218, 313, 409, 504, 599};
-      int[] machineY = {222, 331, 440};
-      for (int row = 0; row < 3; row++) {
-         for (int column = 0; column < 6; column++) {
-            anchors.add(centeredAnchor(row * 6 + column, machineX[column], machineY[row], 56, 56));
-         }
-      }
-      int[] playerX = {156, 257, 358, 458, 559, 660, 760, 861, 961};
-      int[] playerY = {681, 786, 892};
-      for (int row = 0; row < 3; row++) {
-         for (int column = 0; column < 9; column++) {
-            anchors.add(centeredAnchor(18 + row * 9 + column, playerX[column], playerY[row], 80, 72));
-         }
-      }
-      int[] hotbarX = {167, 266, 365, 465, 564, 663, 763, 862, 961};
-      for (int column = 0; column < 9; column++) {
-         anchors.add(centeredAnchor(45 + column, hotbarX[column], 1040, 76, 72));
+      for (int index = 0; index < MENU_SLOT_COUNT; index++) {
+         Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(MachineKind.FACTORY_PLACER, index);
+         if (point == null) throw new IllegalStateException("Missing Placer GUI11 slot " + index);
+         var source = Gui11V5CRuntimeGeometry.sourceItemBounds(MachineKind.FACTORY_PLACER, point);
+         anchors.add(new SlotAnchor(index, source.x(), source.y(), source.width(), source.height(), point.x(), point.y()));
       }
       return List.copyOf(anchors);
    }
 
-   private static SlotAnchor centeredAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight) {
-      int x = (int)Math.round((sourceX + sourceWidth / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);
-      int y = (int)Math.round((sourceY + sourceHeight / 2.0D) / 3.0D - ITEM_SIZE / 2.0D);
-      return new SlotAnchor(menuIndex, sourceX, sourceY, sourceWidth, sourceHeight, x, y);
-   }
 
    private static SlotAnchor[] indexAnchors() {
       SlotAnchor[] byIndex = new SlotAnchor[MENU_SLOT_COUNT];
@@ -138,14 +120,12 @@ public final class FactoryPlacerV2ReferenceGeometry {
    public enum Control { ROW_TOP, ROW_MIDDLE, ROW_BOTTOM, MANUAL_TRIGGER, INVERSION, TRIGGER_MODE }
 
    public static Rect controlRect(Control control) {
-      return switch (control) {
-         case ROW_TOP -> new Rect(260, 61, 80, 18);
-         case ROW_MIDDLE -> new Rect(260, 89, 80, 18);
-         case ROW_BOTTOM -> new Rect(260, 118, 80, 18);
-         case MANUAL_TRIGGER -> new Rect(246, 157, 11, 9);
-         case INVERSION -> new Rect(280, 160, 32, 9);
-         case TRIGGER_MODE -> new Rect(332, 160, 30, 9);
+      String key = switch (control) {
+         case ROW_TOP -> "row0"; case ROW_MIDDLE -> "row1"; case ROW_BOTTOM -> "row2";
+         case MANUAL_TRIGGER -> "manual"; case INVERSION -> "redstone"; case TRIGGER_MODE -> "cycle";
       };
+      var rect = Gui11V5CRuntimeGeometry.control(MachineKind.FACTORY_PLACER, key);
+      return new Rect(rect.x(), rect.y(), rect.width(), rect.height());
    }
 
    public static Control controlAt(double localX, double localY) {
@@ -158,11 +138,16 @@ public final class FactoryPlacerV2ReferenceGeometry {
    /** All status paint is inside these measured flat/dark source interiors. */
    public static Rect rowIndicator(int row) {
       if (row < 0 || row > 2) throw new IllegalArgumentException("Row must be 0..2");
-      return new Rect(266, new int[] {67, 95, 124}[row], 10, 4);
+      Rect control = controlRect(new Control[] {Control.ROW_TOP, Control.ROW_MIDDLE, Control.ROW_BOTTOM}[row]);
+      return new Rect(control.x() + 4, control.y() + 4, Math.max(1, control.width() - 8), 2);
    }
-   public static final Rect SIGNAL_INDICATOR = new Rect(249, 160, 5, 3);
-   public static final Rect INVERSION_INDICATOR = new Rect(282, 171, 28, 2);
-   public static final Rect TRIGGER_INDICATOR = new Rect(334, 171, 26, 2);
+   public static final Rect SIGNAL_INDICATOR = mappedControl("manual");
+   public static final Rect INVERSION_INDICATOR = mappedControl("redstone");
+   public static final Rect TRIGGER_INDICATOR = mappedControl("cycle");
+   private static Rect mappedControl(String key) {
+      var rect = Gui11V5CRuntimeGeometry.control(MachineKind.FACTORY_PLACER, key);
+      return new Rect(rect.x() + 3, rect.y() + 3, Math.max(1, rect.width() - 6), Math.max(1, rect.height() - 6));
+   }
    public static final Rect HEADER = new Rect(90, 10, 220, 18);
 
    public record Rect(int x, int y, int width, int height) {
@@ -179,19 +164,19 @@ public final class FactoryPlacerV2ReferenceGeometry {
     */
    public record SlotAnchor(int menuIndex, int sourceX, int sourceY, int sourceWidth, int sourceHeight, int x, int y) {
       public double interiorLeft() {
-         return (double)this.sourceX / 3.0D;
+         return (double)this.sourceX * CANVAS_WIDTH / SOURCE_WIDTH;
       }
 
       public double interiorTop() {
-         return (double)this.sourceY / 3.0D;
+         return (double)this.sourceY * CANVAS_HEIGHT / SOURCE_HEIGHT;
       }
 
       public double interiorRight() {
-         return (double)(this.sourceX + this.sourceWidth) / 3.0D;
+         return (double)(this.sourceX + this.sourceWidth) * CANVAS_WIDTH / SOURCE_WIDTH;
       }
 
       public double interiorBottom() {
-         return (double)(this.sourceY + this.sourceHeight) / 3.0D;
+         return (double)(this.sourceY + this.sourceHeight) * CANVAS_HEIGHT / SOURCE_HEIGHT;
       }
 
       public double hoverLeft() {

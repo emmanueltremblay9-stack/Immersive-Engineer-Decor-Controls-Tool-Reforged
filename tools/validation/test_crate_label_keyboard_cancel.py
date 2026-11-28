@@ -40,7 +40,8 @@ public class Check extends Base {
 '''.replace('METHOD',method)
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp);(p/'Check.java').write_text(java)
-            subprocess.run(['javac',str(p/'Check.java')],check=True,capture_output=True)
+            compiler=['java','-m','jdk.compiler/com.sun.tools.javac.Main','-source','21','-target','21','-d',tmp,str(p/'Check.java')]
+            subprocess.run(compiler,check=True,capture_output=True)
             result=subprocess.run(['java','-cp',tmp,'Check'],capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stderr)
             for old, new in [('this.getFocused() instanceof Button', 'false'),
@@ -48,7 +49,7 @@ public class Check extends Base {
                 mutated = java.replace(old, new)
                 self.assertNotEqual(mutated, java)
                 (p/'Check.java').write_text(mutated)
-                subprocess.run(['javac',str(p/'Check.java')],check=True,capture_output=True)
+                subprocess.run(compiler,check=True,capture_output=True)
                 result=subprocess.run(['java','-cp',tmp,'Check'],capture_output=True,text=True)
                 self.assertNotEqual(result.returncode,0,'Mutation escaped: '+old)
 if __name__=='__main__':unittest.main()

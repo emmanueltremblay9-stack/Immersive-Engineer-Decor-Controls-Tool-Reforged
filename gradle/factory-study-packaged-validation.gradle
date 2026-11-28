@@ -1,0 +1,12 @@
+// Opt-in validation of the exact normal JAR; no fixture enters the production mod.
+if (providers.gradleProperty('include_factory_placer_native_validation').map { it.toBoolean() }.getOrElse(false)) {
+    def harness = sourceSets.factoryPlacerNativeValidation
+    neoForge.runs.create('factoryStudyPackagedClient') {
+        client()
+        sourceSet = harness
+        loadedMods = [neoForge.mods.getByName('iedctr_factory_placer_validation')]
+        disableIdeRun()
+        taskBefore(tasks.named('verifyFactoryPlacerPackagedRuntime'))
+        systemProperty 'iedctr.factoryStudyNative', 'true'
+    }
+}

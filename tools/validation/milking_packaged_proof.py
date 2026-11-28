@@ -13,7 +13,8 @@ PREFIX = 'com.oblixorprime.engineersdecorreforged.'
 CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.MachineScreen',
     'client.MachineScreen$SmallMilkingMachineScreen', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity')]
 TEXTURES = {
-    'textures/gui/milking_redesign_v1/background.png': '871f7c4512227153a4c49591c5facdbc95b1443114cc3206659d6dd524d1326b',
+    'textures/gui/gui11_v5c/12.png': '82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa',
+    'textures/gui/milking_redesign_v1/background.png': '1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411',
     'textures/gui/milking_redesign_v1/milk.png': 'f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5',
 }
 
@@ -91,6 +92,8 @@ def validate_proof(proof, nonce, source_sha, game, logs, exit_code, timed_out,
     require(type(exit_code) is int and type(timed_out) is bool,
             'Malformed native process result')
     validate_runtime(proof, report, archive_path=archive_path)
+    if proof.get('status') == 'failed':
+        require(False, 'Milking fixture failed: ' + str(proof.get('error', 'no recorded exception')))
     after = proof.get('packaged_runtime_after')
     require(type(after) is dict and after == proof.get('packaged_runtime'), 'Runtime changed during native qualification')
     validate_runtime(dict(packaged_runtime=after), report, archive_path=archive_path)

@@ -19,7 +19,10 @@ from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 
 SUITE = 'native-factory-placer-v2-reference-v1'
-ART_SHA = 'ff079488dd0d1c7434597a6915231d88b81732472bb23ccc8a61235eca27ec2b'
+ART_SHA = 'bc0f0426f308435585e66f39c6a34c08b38173a3f7927ac0fadafe9d161eb99d'
+ACTIVE_ART_SHA = 'd7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c'
+CANVAS_SIZE = 323
+SOURCE_EXTENT = 1254
 SCREEN_CLASS = 'com.oblixorprime.engineersdecorreforged.client.FactoryPlacerV2ReferenceScreen'
 CAPTURES = {'normal.png':(0,0),'row-middle.png':(0,6),'row-bottom.png':(0,12),
             'inverted.png':(1,0),'continuous.png':(2,0),'placed.png':(0,1),
@@ -52,13 +55,13 @@ def validate_proof(proof,nonce,source_sha,game,logs,exit_code,timed_out,width,he
     require(not timed_out and type(exit_code) is int and exit_code==0 and not FATAL_PATTERN.search(logs),'Native client did not finish cleanly'+detail)
     require(not list(game.glob('crash-reports/*')) and not list(game.parent.rglob('hs_err_pid*.log')),'Native client wrote a crash report')
     viewport,scale,crop=expected_geometry(width,height,gui_scale)
+    require(proof.get('status')=='passed_bounded_smoke','Native fixture did not pass'+detail)
     validate_viewport(proof,viewport)
     require(proof.get('suite')==SUITE and proof.get('nonce')==nonce
         and proof.get('executed_source_sha')==source_sha and re.fullmatch(r'[a-f0-9]{40}',source_sha)
-        and proof.get('source_art_sha256')==ART_SHA and proof.get('actual_integrated_world') is True
+        and proof.get('source_art_sha256')==ACTIVE_ART_SHA and proof.get('actual_integrated_world') is True
         and proof.get('native_visual_acceptance') is False and language in ('en_us','fr_fr','fr_ca')
         and proof.get('selected_language')==language,'Proof identity, locale or bounded scope differs')
-    require(proof.get('status')=='passed_bounded_smoke','Native fixture did not pass'+detail)
     require('error' not in proof,'Passing native proof must not contain a fixture error')
     for key,value in {'menu_slot_count':54,'machine_saved_slot_count':27,'machine_visible_slot_count':18,
                       'route_pickup_server_acks':54,'route_return_server_acks':54}.items():
@@ -142,17 +145,17 @@ def expected_geometry(width,height,gui_scale):
             and width<=8192 and height<=8192,'Requested viewport cannot support the explicit GUI scale')
     gw,gh=math.ceil(width/gui_scale),math.ceil(height/gui_scale)
     viewport=dict(requested_gui_scale=gui_scale,actual_gui_scale=gui_scale,gui_width=gw,gui_height=gh,framebuffer_width=width,framebuffer_height=height)
-    scale=f32(min(1,(gw-12)/400,(gh-12)/438))
-    if scale*400>gw-12 or scale*438>gh-12:scale=struct.unpack('>f',struct.pack('>I',struct.unpack('>I',struct.pack('>f',scale))[0]-1))[0]
-    ox,oy=f32((gw-400*scale)/2),f32((gh-438*scale)/2)
-    x0,y0=math.ceil((ox+240*scale)*gui_scale),math.ceil((oy+55*scale)*gui_scale)
-    x1,y1=math.floor((ox+365*scale)*gui_scale),math.floor((oy+175*scale)*gui_scale)
+    scale=f32(min(1,(gw-12)/CANVAS_SIZE,(gh-12)/CANVAS_SIZE))
+    if scale*CANVAS_SIZE>gw-12 or scale*CANVAS_SIZE>gh-12:scale=struct.unpack('>f',struct.pack('>I',struct.unpack('>I',struct.pack('>f',scale))[0]-1))[0]
+    ox,oy=f32((gw-CANVAS_SIZE*scale)/2),f32((gh-CANVAS_SIZE*scale)/2)
+    x0,y0=math.ceil((ox+181*scale)*gui_scale),math.ceil((oy+49*scale)*gui_scale)
+    x1,y1=math.floor((ox+284*scale)*gui_scale),math.floor((oy+145*scale)*gui_scale)
     return viewport,scale,(x0,y0,x1-x0,y1-y0)
 
 
 def transform(width,height,gui_scale):
     v,s,_=expected_geometry(width,height,gui_scale)
-    ox,oy=f32((v['gui_width']-400*s)/2),f32((v['gui_height']-438*s)/2)
+    ox,oy=f32((v['gui_width']-CANVAS_SIZE*s)/2),f32((v['gui_height']-CANVAS_SIZE*s)/2)
     return lambda x:(ox+x*s)*gui_scale,lambda y:(oy+y*s)*gui_scale
 
 
@@ -160,36 +163,72 @@ def expected_presentation_bounds(width,height,gui_scale):
     sx,sy=transform(width,height,gui_scale)
     left,top=math.floor(sx(0)/gui_scale),math.floor(sy(0)/gui_scale)
     return dict(presentation_gui_left=left,presentation_gui_top=top,
-                presentation_gui_width=math.ceil(sx(400)/gui_scale)-left,presentation_gui_height=math.ceil(sy(438)/gui_scale)-top)
+                presentation_gui_width=math.ceil(sx(CANVAS_SIZE)/gui_scale)-left,presentation_gui_height=math.ceil(sy(CANVAS_SIZE)/gui_scale)-top)
 
 
-SLOT_ORIGINS=[]
-for xs,ys,sw,sh in [([122,218,313,409,504,599],[222,331,440],56,56),
-                   ([156,257,358,458,559,660,760,861,961],[681,786,892],80,72),
-                   ([167,266,365,465,564,663,763,862,961],[1040],76,72)]:
-    SLOT_ORIGINS.extend((math.floor((x+sw/2)/3-8+.5),math.floor((y+sh/2)/3-8+.5)) for y in ys for x in xs)
-INDICATORS=[(266,67,276,71),(266,95,276,99),(266,124,276,128),(249,160,254,163),(282,171,310,173),(334,171,360,173)]
-
+SLOT_ORIGINS = (
+    (45, 66), (67, 66), (90, 66), (112, 66), (134, 66), (157, 66), (45, 91), (67, 91), (90, 91),
+    (112, 91), (134, 91), (157, 91), (45, 116), (67, 116), (90, 116), (112, 116), (134, 116), (157, 116),
+    (53, 176), (79, 176), (103, 176), (129, 176), (153, 176), (178, 176), (203, 176), (228, 176), (254, 176),
+    (53, 202), (79, 202), (103, 202), (129, 202), (153, 202), (178, 202), (203, 202), (229, 202), (254, 202),
+    (53, 229), (79, 229), (103, 229), (129, 229), (153, 229), (178, 229), (203, 229), (229, 229), (254, 229),
+    (54, 267), (79, 267), (104, 267), (129, 267), (153, 267), (178, 267), (203, 267), (227, 267), (252, 267),
+)
+INDICATORS = [(193, 55, 276, 57), (193, 78, 276, 80), (193, 100, 276, 102),
+              (186, 120, 208, 141), (221, 120, 249, 141), (256, 120, 282, 141)]
+INVERSION_X = (221, 232, 243)
+TRIGGER_X = (256, 272)
 
 def image_evidence(path,crop_path,width,height,gui_scale):
+    """Hash unchanged opaque artwork outside controls and item footprints.
+
+    The artwork has a transparent exterior. In an integrated test world, placing
+    the machine changes the scene visible through those pixels; hashing the full
+    canvas therefore treats an expected world change as a GUI regression.
+    """
     w,h,pixels=decode_png(path);cw,ch,crop=decode_png(crop_path)
     _,_,(tx,ty,tw,th)=expected_geometry(width,height,gui_scale)
     require((w,h,cw,ch)==(width,height,tw,th),'Decoded PNG dimensions differ')
     actual=b''.join(pixels[(y*w+tx)*4:(y*w+tx+tw)*4] for y in range(ty,ty+th))
     require(actual==crop,'Controls crop is not the native screenshot region')
     sx,sy=transform(width,height,gui_scale)
+    sw,sh,art=load_source()
+    _,view_scale,_=expected_geometry(width,height,gui_scale)
+    factor=view_scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale
     rects=INDICATORS+[(x-1,y-1,x+17,y+17) for x,y in SLOT_ORIGINS]
     rects=[(math.floor(sx(l))-2,math.floor(sy(t))-2,math.ceil(sx(r))+2,math.ceil(sy(b))+2) for l,t,r,b in rects]
     digest=hashlib.sha256()
-    left,right=math.ceil(sx(0)),math.floor(sx(f32(1199*f32(1/3))))
-    for y in range(math.ceil(sy(0)),math.floor(sy(f32(1312*f32(1/3))))):
+    left,right=math.ceil(sx(0)),math.floor(sx(CANVAS_SIZE))
+    for y in range(math.ceil(sy(0)),math.floor(sy(CANVAS_SIZE))):
+        source_y=min(sh-1,max(0,math.floor((y+.5-sy(0))/factor)))
         cursor=left
         for l,r in sorted((l,r) for l,t,r,b in rects if t<=y<=b):
-            if l>cursor:digest.update(pixels[(y*w+cursor)*4:(y*w+min(l,right))*4])
+            if l>cursor:
+                for x in range(cursor,min(l,right)):
+                    source_x=min(sw-1,max(0,math.floor((x+.5-sx(0))/factor)))
+                    if art[(source_y*sw+source_x)*4+3] == 255:
+                        digest.update(pixels[(y*w+x)*4:(y*w+x+1)*4])
             cursor=max(cursor,r+1)
             if cursor>=right:break
-        if cursor<right:digest.update(pixels[(y*w+cursor)*4:(y*w+right)*4])
+        if cursor<right:
+            for x in range(cursor,right):
+                source_x=min(sw-1,max(0,math.floor((x+.5-sx(0))/factor)))
+                if art[(source_y*sw+source_x)*4+3] == 255:
+                    digest.update(pixels[(y*w+x)*4:(y*w+x+1)*4])
     return digest.hexdigest()
+
+
+def opaque_composite_matches(observed, source):
+    """Bound an opaque framebuffer sample blended over the darkened world."""
+    alpha=source[3]
+    if observed[3]!=255 or alpha<253:
+        return False
+    for drawn,foreground in zip(observed[:3],source[:3],strict=True):
+        minimum=(foreground*alpha+127)//255
+        maximum=(foreground*alpha+255*(255-alpha)+127)//255
+        if not minimum<=drawn<=maximum:
+            return False
+    return True
 
 
 def validate_control_pixels(images,width,height,gui_scale,source):
@@ -208,7 +247,7 @@ def validate_control_pixels(images,width,height,gui_scale,source):
             require(images[name][(y*width+x)*4:(y*width+x+1)*4]==ROW_ACTIVE,'Selected-slot outline pixels differ from observed cursor')
         sw,sh,art=source
         _,view_scale,_=expected_geometry(width,height,gui_scale)
-        factor=view_scale*f32(1/3)*gui_scale
+        factor=view_scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale
         for slot in range(18):
             if slot==selected:continue
             for x,y in outline_samples(width,height,gui_scale,slot):
@@ -224,17 +263,17 @@ def validate_control_pixels(images,width,height,gui_scale,source):
             if i!=selected//6:
                 l,t,r,b=rect;x,y=math.floor(sx((l+r)/2)),math.floor(sy((t+b)/2))
                 _,scale,_=expected_geometry(width,height,gui_scale)
-                factor=scale*f32(1/3)*gui_scale
+                factor=scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale
                 tx,ty=math.floor((x+.5-sx(0))/factor),math.floor((y+.5-sy(0))/factor)
                 sw,sh,art=source
-                require(any(sample(name,rect)==art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]
+                require(any(opaque_composite_matches(sample(name,rect),art[(yy*sw+xx)*4:(yy*sw+xx+1)*4])
                             for yy in range(max(0,ty-1),min(sh,ty+2))
                             for xx in range(max(0,tx-1),min(sw,tx+2))),
                         'Unselected row indicator differs from retained source')
-        for i,x in enumerate((282,293,304)):
-            require(sample(name,(x,171,x+6,173))==(ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE),'Inversion pixels differ from observed state')
-        for i,x in enumerate((334,350)):
-            require(sample(name,(x,171,x+10,173))==(ACTIVE if i==bool(logic&2) else INACTIVE),'Trigger pixels differ from observed state')
+        for i,x in enumerate(INVERSION_X):
+            require(sample(name,(x,120,x+6,141))==(ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE),'Inversion pixels differ from observed state')
+        for i,x in enumerate(TRIGGER_X):
+            require(sample(name,(x,120,x+10,141))==(ACTIVE if i==bool(logic&2) else INACTIVE),'Trigger pixels differ from observed state')
 
 def selection_rects(width,height,gui_scale,slot):
     """Independent framebuffer contract for the production selection overlay.
@@ -252,12 +291,18 @@ def selection_rects(width,height,gui_scale,slot):
                  ((x-1,y-1,x+17,y),(x+16,y,x+17,y+16),(x-1,y+16,x+17,y+17),(x-1,y,x,y+16)))
 
 
+def rasterized_edge(left,top,right,bottom):
+    # OpenGL edge ownership is lower-left. PNG coordinates invert only Y,
+    # so a pixel center exactly on a horizontal edge belongs to the lower row.
+    return (range(math.ceil(left-.5),math.ceil(right-.5)),
+            range(math.floor(top+.5),math.floor(bottom+.5)))
+
+
 def outline_samples(width,height,gui_scale,slot):
-    """Four safely interior samples from the documented framebuffer strips."""
+    """One center sample from each of the four native edge strips."""
     samples=[]
-    for left,top,right,bottom in selection_rects(width,height,gui_scale,slot):
-        xs=range(math.ceil(left+.01-.5),math.floor(right-.01-.5)+1)
-        ys=range(math.ceil(top+.01-.5),math.floor(bottom-.01-.5)+1)
+    for rect in selection_rects(width,height,gui_scale,slot):
+        xs,ys=rasterized_edge(*rect)
         if xs and ys:samples.append((xs[len(xs)//2],ys[len(ys)//2]))
     return samples
 
@@ -271,7 +316,7 @@ CONTROL_ROUTES=[{'control':name,'logic':logic,'selected_slot':slot,'server_confi
  +[('INVERSION',1,0),('INVERSION',4,0),('INVERSION',0,0)]*2+[('TRIGGER_MODE',2,0),('TRIGGER_MODE',0,0)]*2)]
 
 
-DEFAULT_SOURCE = Path(__file__).resolve().parents[2]/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png'
+DEFAULT_SOURCE = Path(__file__).resolve().parents[2]/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/04.png'
 
 
 _SOURCE_CACHE=None
@@ -281,15 +326,15 @@ def load_source(source_path=None):
     global _SOURCE_CACHE
     path=DEFAULT_SOURCE if source_path is None else Path(source_path)
     require(path.is_file() and not path.is_symlink(),'Missing retained source artwork')
-    require(hashlib.sha256(path.read_bytes()).hexdigest()==ART_SHA,'Retained source artwork hash differs')
+    require(hashlib.sha256(path.read_bytes()).hexdigest()==ACTIVE_ART_SHA,'Active source artwork hash differs')
     source=_SOURCE_CACHE if _SOURCE_CACHE is not None else decode_png(path)
-    require(source[:2]==(1199,1312),'Retained source artwork dimensions differ')
+    require(source[:2]==(SOURCE_EXTENT,SOURCE_EXTENT),'Retained source artwork dimensions differ')
     _SOURCE_CACHE=source
     return source
 
 
 def source_samples(width,height,gui_scale):
-    """Broad eight-framebuffer-pixel grid, excluding only drawn overlays/items.
+    """Broad two-framebuffer-pixel grid, excluding only drawn overlays/items.
 
     Pixel centers map through the inverse uniform source transform. A one-texel
     neighborhood accounts for single-precision GPU matrix/interpolation rounding
@@ -297,11 +342,11 @@ def source_samples(width,height,gui_scale):
     """
     sx,sy=transform(width,height,gui_scale)
     _,scale,_=expected_geometry(width,height,gui_scale)
-    factor=scale*f32(1/3)*gui_scale
+    factor=scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale
     rects=INDICATORS+[(x-1,y-1,x+17,y+17) for x,y in SLOT_ORIGINS]
     rects=[(math.floor(sx(l))-2,math.floor(sy(t))-2,math.ceil(sx(r))+2,math.ceil(sy(b))+2) for l,t,r,b in rects]
-    for y in range(math.ceil(sy(0))+2,math.floor(sy(f32(1312*f32(1/3))))-2,8):
-        for x in range(math.ceil(sx(0))+2,math.floor(sx(f32(1199*f32(1/3))))-2,8):
+    for y in range(math.ceil(sy(0))+2,math.floor(sy(CANVAS_SIZE))-2,2):
+        for x in range(math.ceil(sx(0))+2,math.floor(sx(CANVAS_SIZE))-2,2):
             if not any(l<=x<=r and t<=y<=b for l,t,r,b in rects):
                 yield x,y,math.floor((x+.5-sx(0))/factor),math.floor((y+.5-sy(0))/factor)
 
@@ -311,9 +356,16 @@ def validate_source_pixels(pixels,width,height,gui_scale,source):
     count=0
     for x,y,tx,ty in source_samples(width,height,gui_scale):
         actual=pixels[(y*width+x)*4:(y*width+x+1)*4]
-        require(any(actual==art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]
+        candidates=[art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]
                     for yy in range(max(0,ty-1),min(sh,ty+2))
-                    for xx in range(max(0,tx-1),min(sw,tx+2))),
+                    for xx in range(max(0,tx-1),min(sw,tx+2))]
+        # Only the approved alpha pass changes these exterior pixels. They
+        # composite over the live world, so compare source RGB only for opaque
+        # texels with fully opaque neighborhoods; the exact texture hash above
+        # still pins the alpha mask.
+        if any(candidate[3] != 255 for candidate in candidates):
+            continue
+        require(actual in candidates,
                 f'Native exterior pixel differs from retained source at ({x},{y})')
         count+=1
     require(count>=100,'Insufficient retained-source pixel samples')
@@ -395,6 +447,7 @@ def main() -> int:
     art = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png"
     if hashlib.sha256(art.read_bytes()).hexdigest() != ART_SHA:
         parser.error("Retained Factory Placer V2 art changed")
+    load_source(art.parent.parent / "gui11_v5c/04.png")
     missing = [name for name in ("java", "Xvfb", "xvfb-run", "xauth") if not shutil.which(name)]
     if missing:
         parser.error("Missing native prerequisites: " + ", ".join(missing))

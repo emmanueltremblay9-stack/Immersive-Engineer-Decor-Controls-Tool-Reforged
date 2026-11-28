@@ -11,7 +11,7 @@ from urllib.parse import urlsplit
 
 from factory_placer_v2_reference_native import (
     ART_SHA, ROW_ACTIVE, SLOT_ORIGINS, decode_png, expected_geometry,
-    png, require, selection_rects, strict_equal, transform, validate_proof, validate_viewport,
+    png, rasterized_edge, require, selection_rects, strict_equal, transform, validate_proof, validate_viewport,
 )
 from client_mixin_smoke import FATAL_PATTERN
 
@@ -23,6 +23,8 @@ GESTURES = ('drag_left_split', 'drag_right_split', 'shift_click', 'double_click_
 MOD_ID = 'immersive_engineer_decor_controls_tool_reforged'
 HARNESS_ID = 'iedctr_factory_placer_validation'
 ART_ENTRY = f'assets/{MOD_ID}/textures/gui/factory_placer_v2_reference/background.png'
+V5C_ART_ENTRY = f'assets/{MOD_ID}/textures/gui/gui11_v5c/04.png'
+V5C_ART_SHA = 'd7bce151b9baad808b69954ffa574b174534a3cefceff8aed76bb65060d8700c'
 
 
 def integer(value, minimum=0):
@@ -182,10 +184,11 @@ def validate_tooltips(proof, game, project, width, height, language, gui_scale):
 
 
 def selection_edges(width, height, scale, selected):
-    return {name: [(px, py) for py in range(math.ceil(top - .5), math.ceil(bottom - .5))
-                   for px in range(math.ceil(left - .5), math.ceil(right - .5))]
-            for name, (left, top, right, bottom) in zip(('top', 'right', 'bottom', 'left'),
-                selection_rects(width, height, scale, selected))}
+    edges = {}
+    for name, rect in zip(('top', 'right', 'bottom', 'left'), selection_rects(width, height, scale, selected), strict=True):
+        xs, ys = rasterized_edge(*rect)
+        edges[name] = [(x, y) for y in ys for x in xs]
+    return edges
 
 
 def validate_selections(proof, game, width, height, gui_scale):
@@ -253,17 +256,19 @@ def validate_delivery_proof(proof, nonce, source_sha, game, logs, exit_code, tim
                             width, height, language, gui_scale, project, jar, classpath_report):
     validate_proof(proof, nonce, source_sha, game, logs, exit_code, timed_out,
                    width, height, language, gui_scale,
-                   source_path=Path(project) / ('src/main/resources/' + ART_ENTRY))
+                   source_path=Path(project) / ('src/main/resources/' + V5C_ART_ENTRY))
     require(proof.get('qualification_suite') == QUALIFICATION_SUITE, 'Packaged delivery suite identity missing')
     require(proof.get('v2_property_absent') is True, 'Full qualification must use normal V2 without the development property')
-    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)
+    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,
+                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))
     validate_gestures(proof)
     validate_tooltips(proof, game, project, width, height, language, gui_scale)
     validate_selections(proof, game, width, height, gui_scale)
     return proof
 
 
-def validate_packaged_runtime(identity, jar, classpath_report):
+def validate_packaged_runtime(identity, jar, classpath_report, *, active_art=(ART_ENTRY, ART_SHA)):
+    active_entry, active_digest = active_art
     jar = Path(jar)
     require(jar.is_file() and not jar.is_symlink() and jar.suffix == '.jar', 'Missing normal runtime JAR')
     jar = jar.resolve()
@@ -284,8 +289,8 @@ def validate_packaged_runtime(identity, jar, classpath_report):
     require(identity.get('separate_harness_module') is True and identity.get('harness_mod_id') == HARNESS_ID
             and type(identity.get('harness_mod_path')) is str and identity['harness_mod_path'] != str(jar),
             'Harness module is not separate')
-    require(identity.get('active_texture_sha256') == ART_SHA
-            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork pack differs')
+    require(identity.get('active_texture_sha256') == active_digest
+            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork hash or pack differs')
     root = identity.get('mod_root_uri')
     require(type(root) is str and root and root.startswith(('union:', 'jar:', 'file:')),
             'Missing authoritative runtime mod root')
@@ -300,7 +305,9 @@ def validate_packaged_runtime(identity, jar, classpath_report):
         require(len(names) == len(set(names)) and not any(name.startswith('com/oblixorprime/iedctrtest/')
                     or 'NativeFactoryPlacerV2ReferenceValidation' in name for name in names),
                 'Normal JAR contains duplicate entries or native fixture')
-        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Normal JAR artwork differs')
+        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Retained normal JAR artwork differs')
+        require(active_entry in names and hashlib.sha256(archive.read(active_entry)).hexdigest() == active_digest,
+                'Active normal JAR artwork differs')
         for name, origin in zip(classes, origins):
             entry = name.replace('.', '/') + '.class'
             require(type(origin) is dict and origin.get('class') == name
@@ -331,7 +338,8 @@ def validate_default_proof(proof, nonce, source_sha, game, logs, exit_code, time
         require(strict_equal(proof.get(key), value), f'Packaged default behavior differs: {key}')
     require(not list(Path(game).glob('crash-reports/*')) and not list(Path(game).parent.rglob('hs_err_pid*.log')),
             'Packaged default runtime wrote a crash report')
-    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)
+    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,
+                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))
     require(proof.get('capture') == 'factory-placer-packaged-default.png', 'Default capture name differs')
     png(Path(game) / proof['capture'], width, height, proof.get('capture_sha256'))
     require(f'IEDCTR_FACTORY_PLACER_PACKAGED_DEFAULT PASSED nonce={nonce}' in logs,

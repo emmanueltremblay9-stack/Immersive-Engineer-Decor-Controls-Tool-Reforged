@@ -31,7 +31,18 @@ public class FreezerDynamicFrostAssetsTest {
             boolean hinge = (x >= 378 && x < 442 && y >= 432 && y < 467)
                || (x >= 811 && x < 864 && y >= 431 && y < 467);
             if (coverage == 0 || hinge) {
-               assertEquals("outside chamber/hinge changed " + x + "," + y, canonical.getRGB(x, y), clean.getRGB(x, y));
+               int actualPixel = canonical.getRGB(x, y), cleanPixel = clean.getRGB(x, y);
+               if (hinge) {
+                  assertEquals("hinge changed " + x + "," + y, cleanPixel, actualPixel);
+               } else {
+                  // PR196 intentionally changes exterior alpha. The unchanged RGB and
+                  // nonincreasing alpha are checked here; protected interior RGBA
+                  // is independently pinned by the exterior-alpha manifest suite.
+                  assertEquals("outside chamber RGB changed " + x + "," + y,
+                     cleanPixel & 0x00FFFFFF, actualPixel & 0x00FFFFFF);
+                  assertTrue("outside chamber alpha increased " + x + "," + y,
+                     (actualPixel >>> 24) <= (cleanPixel >>> 24));
+               }
                assertEquals("frost outside chamber/hinge", 0, alpha);
             }
          }
