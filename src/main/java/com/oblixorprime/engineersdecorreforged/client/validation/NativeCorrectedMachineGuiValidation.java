@@ -8,6 +8,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.client.MachineScreen;
 import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.utility.Gui11V5CRuntimeGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
@@ -245,7 +246,7 @@ final class NativeCorrectedMachineGuiValidation {
                var target = ThermalVerticalGeometry.slot(0, spec.kind());
                targetX = target.x(); targetY = target.y();
             } else {
-               MachineLayout.MachineSlot target = menu.layout().machineSlots().get(0);
+               var target = expectedMachineAnchor(menu, 0);
                targetX = target.x(); targetY = target.y();
             }
             JsonObject hover = new JsonObject();
@@ -261,8 +262,8 @@ final class NativeCorrectedMachineGuiValidation {
                centerX = view.screenX(targetX + 8); centerY = view.screenY(targetY + 8);
                hoverVerified = thermal.validationSlotHoveredAt(0, centerX, centerY);
             } else if (mc.screen instanceof MachineScreen screen) {
-               centerX = (mc.getWindow().getGuiScaledWidth() - menu.layout().imageWidth()) / 2.0 + targetX + 8;
-               centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + targetY + 8;
+               centerX = screen.getGuiLeft() + targetX + 8;
+               centerY = screen.getGuiTop() + targetY + 8;
                hoverVerified = screen.isMachineSlotHoveredAt(0, centerX, centerY);
             } else {
                throw new IllegalStateException("Expected GUI class disappeared before hover: " + describeClientMenu(mc, spec));
@@ -748,34 +749,46 @@ final class NativeCorrectedMachineGuiValidation {
       return result;
    }
 
+   private static Gui11V5CRuntimeGeometry.Point expectedMachineAnchor(MachineMenu menu, int index) {
+      var slot = menu.layout().machineSlots().get(index);
+      if (menu.gui11V5CPresentation()) {
+         return Gui11V5CRuntimeGeometry.machineSlot(menu.kind(), index, slot.containerIndex());
+      }
+      return new Gui11V5CRuntimeGeometry.Point(slot.x(), slot.y());
+   }
+
    private static void verifyMenuGeometry(MachineScreen screen, MachineMenu menu, Spec spec) {
       MachineLayout layout = menu.layout();
+      boolean v5c = menu.gui11V5CPresentation();
+      String variant = v5c ? "gui11-v5c" : "legacy";
+      int panelWidth = v5c ? Gui11V5CRuntimeGeometry.width(spec.kind()) : layout.imageWidth();
+      int panelHeight = v5c ? Gui11V5CRuntimeGeometry.height(spec.kind()) : layout.imageHeight();
       require(screen.getClass().getName().contains("MachineScreen$"), "Fixture did not open the registered MachineScreen");
-      require(menu.visibleMachineSlots() == layout.machineSlots().size(), "Visible machine slot count differs from layout");
-      for (int i = 0; i < layout.machineSlots().size(); i++) {
-         MachineLayout.MachineSlot expected = layout.machineSlots().get(i);
+      require(screen.getXSize() == panelWidth && screen.getYSize() == panelHeight,
+         "Live panel dimensions differ from " + variant + " artwork for " + spec.id());
+      int machineSlots = layout.machineSlots().size();
+      require(menu.visibleMachineSlots() == machineSlots, "Visible machine slot count differs from layout");
+      for (int i = 0; i < menu.slots.size(); i++) {
          var actual = menu.getSlot(i);
-         require(actual.getSlotIndex() == expected.containerIndex() && actual.x == expected.x() && actual.y == expected.y(),
-            "Live slot geometry differs from artwork layout for " + spec.id() + " index " + i);
-         require(actual.x >= 0 && actual.y >= 0 && actual.x + 16 <= layout.imageWidth()
-            && actual.y + 16 <= layout.imageHeight(), "Machine slot hitbox falls outside its panel: " + spec.id());
-      }
-      int base = layout.machineSlots().size();
-      for (int row = 0; row < 3; row++) {
-         for (int column = 0; column < 9; column++) {
-            var actual = menu.getSlot(base + row * 9 + column);
-            require(actual.x == layout.playerSlotX(column) && actual.y == layout.playerSlotY(row),
-               "Live player inventory lattice differs from layout for " + spec.id());
+         Gui11V5CRuntimeGeometry.Point expected;
+         int backingIndex;
+         if (i < machineSlots) {
+            expected = expectedMachineAnchor(menu, i);
+            backingIndex = layout.machineSlots().get(i).containerIndex();
+         } else {
+            int playerIndex = i - machineSlots;
+            int column = playerIndex % 9;
+            backingIndex = playerIndex < 27 ? playerIndex + 9 : playerIndex - 27;
+            expected = v5c ? Gui11V5CRuntimeGeometry.playerSlot(spec.kind(), i)
+               : playerIndex < 27
+                  ? new Gui11V5CRuntimeGeometry.Point(layout.playerSlotX(column), layout.playerSlotY(playerIndex / 9))
+                  : new Gui11V5CRuntimeGeometry.Point(layout.hotbarSlotX(column), layout.hotbarY());
          }
-      }
-      for (int column = 0; column < 9; column++) {
-         var actual = menu.getSlot(base + 27 + column);
-         require(actual.x == layout.hotbarSlotX(column) && actual.y == layout.hotbarY(),
-            "Live hotbar lattice differs from layout for " + spec.id());
-      }
-      if (spec.kind() == MachineKind.SMALL_FREEZER) {
-         require(!menu.getSlot(1).mayPlace(new ItemStack(Items.STONE)),
-            "Reserved Freezer Cold slot must reject insertion");
+         require(expected != null && actual.getSlotIndex() == backingIndex && actual.isActive()
+            && actual.x == expected.x() && actual.y == expected.y(),
+            "Live slot geometry differs from " + variant + " artwork layout for " + spec.id() + " index " + i);
+         require(actual.x >= 0 && actual.y >= 0 && actual.x + 16 <= panelWidth && actual.y + 16 <= panelHeight,
+            "Slot hitbox falls outside its panel: " + spec.id() + " index " + i);
       }
    }
 
@@ -792,10 +805,10 @@ final class NativeCorrectedMachineGuiValidation {
          guiX = view.screenX(target.x() + 8);
          guiY = view.screenY(target.y() + 8);
       } else {
-         MachineLayout layout = menu.layout();
-         MachineLayout.MachineSlot target = layout.machineSlots().get(0);
-         guiX = (guiWidth - layout.imageWidth()) / 2.0 + target.x() + 8;
-         guiY = (guiHeight - layout.imageHeight()) / 2.0 + target.y() + 8;
+         var screen = (MachineScreen)mc.screen;
+         var target = expectedMachineAnchor(menu, 0);
+         guiX = screen.getGuiLeft() + target.x() + 8;
+         guiY = screen.getGuiTop() + target.y() + 8;
       }
       double x = guiX * scaleX;
       double y = guiY * scaleY;
@@ -808,7 +821,7 @@ final class NativeCorrectedMachineGuiValidation {
    }
 
    private static JsonObject capture(Minecraft mc, MachineScreen screen, MachineMenu menu, Spec spec, String state) throws Exception {
-      MachineLayout layout = menu.layout();
+      boolean v5c = menu.gui11V5CPresentation();
       int guiWidth = mc.getWindow().getGuiScaledWidth();
       int guiHeight = mc.getWindow().getGuiScaledHeight();
       var cursorX = BufferUtils.createDoubleBuffer(1);
@@ -821,16 +834,19 @@ final class NativeCorrectedMachineGuiValidation {
          "Panel crop cursor is still over the machine GUI");
       double scaleX = mc.getWindow().getWidth() / (double)guiWidth;
       double scaleY = mc.getWindow().getHeight() / (double)guiHeight;
-      int cropX = (int)Math.round((guiWidth - layout.imageWidth()) / 2.0 * scaleX);
-      int cropY = (int)Math.round((guiHeight - layout.imageHeight()) / 2.0 * scaleY);
+      int panelX = (int)Math.round(screen.getGuiLeft() * scaleX);
+      int panelY = (int)Math.round(screen.getGuiTop() * scaleY);
       if (spec.kind() == MachineKind.FLUID_BARREL) {
-         // The screen uses integer division for leftPos/topPos. Rounding a half-pixel
-         // origin would shift this odd-width panel and put glass inside the fluid ROI.
-         cropX = barrelCaptureOrigin(guiWidth, layout.imageWidth(), scaleX);
-         cropY = barrelCaptureOrigin(guiHeight, layout.imageHeight(), scaleY);
+         require(!v5c && panelX == barrelCaptureOrigin(guiWidth, screen.getXSize(), scaleX)
+            && panelY == barrelCaptureOrigin(guiHeight, screen.getYSize(), scaleY), "Legacy Barrel pixel origin differs");
       }
-      int cropWidth = (int)Math.round(layout.imageWidth() * scaleX);
-      int cropHeight = (int)Math.round(layout.imageHeight() * scaleY);
+      int panelRight = panelX + (int)Math.round(screen.getXSize() * scaleX);
+      int panelBottom = panelY + (int)Math.round(screen.getYSize() * scaleY);
+      // The V5C canvas can exceed the compact framebuffer. Capture exactly its visible intersection.
+      int cropX = v5c ? Math.max(0, panelX) : panelX;
+      int cropY = v5c ? Math.max(0, panelY) : panelY;
+      int cropWidth = (v5c ? Math.min(mc.getWindow().getWidth(), panelRight) : panelRight) - cropX;
+      int cropHeight = (v5c ? Math.min(mc.getWindow().getHeight(), panelBottom) : panelBottom) - cropY;
       String name = spec.id() + "-" + state + ".png";
       Files.createDirectories(screenshots);
       Path output = screenshots.resolve(name);
@@ -847,7 +863,7 @@ final class NativeCorrectedMachineGuiValidation {
                }
             }
             if (spec.kind() == MachineKind.SMALL_MILKING_MACHINE) {
-               tankPixels = milkingTankPixels(crop, scaleX, scaleY);
+               tankPixels = milkingTankPixels(crop, v5c, scaleX, scaleY, cropX - panelX, cropY - panelY);
             }
             if (spec.kind() == MachineKind.FLUID_BARREL) {
                barrelFluidPixels = barrelFluidPixels(mc, menu, crop, scaleX, scaleY);
@@ -859,6 +875,10 @@ final class NativeCorrectedMachineGuiValidation {
       capture.addProperty("name", name);
       capture.addProperty("state", state);
       capture.addProperty("capture_mode", "gui_panel");
+      if (v5c) {
+         capture.addProperty("crop_x", cropX);
+         capture.addProperty("crop_y", cropY);
+      }
       capture.addProperty("panel_cursor_outside", screen.isPanelPointerOutsideAt(cursorGuiX, cursorGuiY));
       capture.addProperty("panel_cursor_gui_x", cursorGuiX);
       capture.addProperty("panel_cursor_gui_y", cursorGuiY);
@@ -1006,12 +1026,15 @@ final class NativeCorrectedMachineGuiValidation {
    }
 
    /** Hash framebuffer pixels, not the fluid data or the amount label outside the tank. */
-   private static JsonObject milkingTankPixels(NativeImage image, double scaleX, double scaleY) throws Exception {
-      int x = (int)Math.round(104 * scaleX);
-      int y = (int)Math.round(49 * scaleY);
-      int width = (int)Math.round(126 * scaleX) - x;
-      int height = (int)Math.round(100 * scaleY) - y;
-      require(width > 0 && height > 0 && x + width <= image.getWidth() && y + height <= image.getHeight(),
+   private static JsonObject milkingTankPixels(NativeImage image, boolean v5c, double scaleX, double scaleY,
+                                                       int clippedX, int clippedY) throws Exception {
+      // Same V5C glass-only region as the independent packaged Milking test.
+      int x = (int)Math.round((v5c ? 130 : 104) * scaleX) - clippedX;
+      int y = (int)Math.round((v5c ? 64 : 49) * scaleY) - clippedY;
+      int width = (int)Math.round((v5c ? 159 : 126) * scaleX) - clippedX - x;
+      int height = (int)Math.round((v5c ? 116 : 100) * scaleY) - clippedY - y;
+      require(x >= 0 && y >= 0 && width > 0 && height > 0
+         && x + width <= image.getWidth() && y + height <= image.getHeight(),
          "Milking tank pixel region exceeds its native capture");
       MessageDigest digest = MessageDigest.getInstance("SHA-256");
       for (int py = y; py < y + height; py++) {
@@ -1075,8 +1098,9 @@ final class NativeCorrectedMachineGuiValidation {
          && menu.getClass().getName().equals(serverMenuIdentity));
       result.addProperty("visible_machine_slots", menu.visibleMachineSlots());
       result.addProperty("total_slots", menu.slots.size());
-      result.addProperty("panel_width", menu.layout().imageWidth());
-      result.addProperty("panel_height", menu.layout().imageHeight());
+      result.addProperty("presentation", menu.gui11V5CPresentation() ? "gui11-v5c" : "legacy");
+      result.addProperty("panel_width", screen.getXSize());
+      result.addProperty("panel_height", screen.getYSize());
       result.addProperty("gui_width", mc.getWindow().getGuiScaledWidth());
       result.addProperty("gui_height", mc.getWindow().getGuiScaledHeight());
       result.addProperty("geometry_matches_layout", true);
@@ -1094,7 +1118,7 @@ final class NativeCorrectedMachineGuiValidation {
       result.add("captured_states", stateNames);
       JsonArray slots = new JsonArray();
       for (int index = 0; index < menu.visibleMachineSlots(); index++) {
-         MachineLayout.MachineSlot layoutSlot = menu.layout().machineSlots().get(index);
+         var layoutSlot = expectedMachineAnchor(menu, index);
          var liveSlot = menu.getSlot(index);
          JsonObject slot = new JsonObject();
          slot.addProperty("container_index", liveSlot.getSlotIndex());
@@ -1103,9 +1127,9 @@ final class NativeCorrectedMachineGuiValidation {
          slot.addProperty("layout_x", layoutSlot.x());
          slot.addProperty("layout_y", layoutSlot.y());
          slot.addProperty("active", liveSlot.isActive());
-       slot.addProperty("insertion_allowed", liveSlot.mayPlace(new ItemStack(Items.STONE)));
-         double centerX = (mc.getWindow().getGuiScaledWidth() - menu.layout().imageWidth()) / 2.0 + liveSlot.x + 8;
-         double centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + liveSlot.y + 8;
+         slot.addProperty("insertion_allowed", liveSlot.mayPlace(new ItemStack(Items.STONE)));
+         double centerX = screen.getGuiLeft() + layoutSlot.x() + 8;
+         double centerY = screen.getGuiTop() + layoutSlot.y() + 8;
          slot.addProperty("center_hit_test", screen.isMachineSlotHoveredAt(index, centerX, centerY));
          slots.add(slot);
       }

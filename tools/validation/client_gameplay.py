@@ -311,14 +311,18 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if barrel_fluid not in fluids or proof.get("barrel_fixture_fluid") != fluids[barrel_fluid][0]:
         raise SmokeFailure("Barrel proof does not identify the requested fixture fluid")
     expected_fluid, expected_still = fluids[barrel_fluid]
+    surfaces = json.loads((Path(__file__).resolve().parents[2] /
+                           "docs/testing/gui11-v5c-runtime-map.json").read_text(encoding="utf-8"))["surfaces"]
+    v5c_surfaces = {"small_milking_machine": surfaces["12"], "small_block_breaker": surfaces["09"],
+                    "small_fluid_funnel": surfaces["13"], "passive_fluid_accumulator": surfaces["14"]}
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
-        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228),
-        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, *v5c_surfaces["small_milking_machine"]["logical_size"]),
+        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, *v5c_surfaces["small_block_breaker"]["logical_size"]),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212),
         "small_freezer": ("SMALL_FREEZER", 2, 347, 381),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, *v5c_surfaces["small_fluid_funnel"]["logical_size"]),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, *v5c_surfaces["passive_fluid_accumulator"]["logical_size"]),
     }
     if (proof.get("suite") != "native-corrected-machine-gui-v1" or proof.get("nonce") != nonce
             or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
@@ -445,6 +449,17 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     for machine, (kind, slots, panel_width, panel_height) in expected.items():
         case = by_id[machine]
         is_freezer = machine == "small_freezer"
+        v5c = v5c_surfaces.get(machine)
+        if not is_freezer and case.get("presentation") != ("gui11-v5c" if v5c else "legacy"):
+            raise SmokeFailure(f"Wrong active artwork presentation for {machine}")
+        # This runner fixes GUI scale 1. Minecraft centers using integer division toward zero.
+        panel_x, panel_y = (math.trunc((window_width - panel_width) / 2),
+                            math.trunc((window_height - panel_height) / 2))
+        crop_x, crop_y = max(0, panel_x), max(0, panel_y)
+        expected_capture_size = (panel_width, panel_height)
+        if v5c:
+            expected_capture_size = (min(window_width, panel_x + panel_width) - crop_x,
+                                     min(window_height, panel_y + panel_height) - crop_y)
         expected_total_slots = 39 if is_freezer else slots + 36
         expected_screen = ("com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen"
                            if is_freezer else None)
@@ -472,7 +487,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                     or case.get("energy_capacity") != 16000
                     or "machine_slots" in case):
                 raise SmokeFailure("Thermal Freezer case does not prove its 38 active slots and reserved protocol slot")
-        elif case.get("geometry_matches_layout") is not True or gui_height != window_height:
+        elif (case.get("geometry_matches_layout") is not True or gui_height != window_height
+              or case.get("gui_width") != window_width):
             raise SmokeFailure(f"Live menu, panel or layout geometry is incorrect for {machine}")
         if is_freezer:
             slot_proofs = case.get("menu_slots")
@@ -508,13 +524,16 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             slot_proofs = case.get("machine_slots")
             if not isinstance(slot_proofs, list) or len(slot_proofs) != slots:
                 raise SmokeFailure(f"Live machine-slot hitboxes are missing for {machine}")
-            for slot in slot_proofs:
+            for index, slot in enumerate(slot_proofs):
                 if not isinstance(slot, dict) or type(slot.get("container_index")) is not int:
                     raise SmokeFailure(f"Invalid machine-slot hitbox proof for {machine}")
                 if (slot.get("container_index") < 0 or slot.get("x") != slot.get("layout_x")
                         or slot.get("y") != slot.get("layout_y") or slot.get("active") is not True
                         or slot.get("center_hit_test") is not True):
                     raise SmokeFailure(f"Live slot click/hover geometry differs from its layout for {machine}")
+                if v5c and (slot["container_index"] != index
+                            or [slot.get("x"), slot.get("y")] != v5c["menu_slots"][index]):
+                    raise SmokeFailure(f"Live slot differs from the approved V5C artwork for {machine} index {index}")
         expected_meter_capacity = (32000 if machine == "fluid_barrel" else 4000 if machine in {
             "small_milking_machine", "passive_fluid_accumulator"} else 3000 if machine == "small_fluid_funnel" else 0)
         expected_energy_capacity = 64000 if machine == "small_solar_panel" else 16000 if machine == "small_freezer" else 32000 if machine == "small_block_breaker" else 0
@@ -526,11 +545,12 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
                 raise SmokeFailure(f"Native corrected-machine screenshot is absent or invalid: {name}")
             width, height = struct.unpack(">II", data[16:24])
-            expected_capture_size = (panel_width, panel_height)
             if is_freezer:
                 validate_thermal_capture(capture, (width, height), name, case)
             elif ((width, height) != expected_capture_size or capture.get("capture_mode") != "gui_panel"):
                 raise SmokeFailure(f"Native screenshot is not a clean panel crop: {name}")
+            if v5c and (capture.get("crop_x"), capture.get("crop_y")) != (crop_x, crop_y):
+                raise SmokeFailure(f"Native V5C panel crop origin differs: {name}")
             if capture.get("panel_cursor_outside") is not True:
                 raise SmokeFailure(f"Native panel crop was not captured with its cursor outside: {name}")
             if not is_freezer and capture.get("panel_tooltips_suppressed") is not True:
@@ -598,6 +618,9 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         if (not isinstance(hover, dict) or hover.get("slot_hitbox_center_verified") is not True
                 or type(hover.get("slot_index")) is not int):
             raise SmokeFailure(f"Native corrected-machine hover capture lacks hitbox evidence: {machine}")
+        if v5c and (hover.get("slot_index") != 0 or
+                    [hover.get("slot_local_x"), hover.get("slot_local_y")] != v5c["menu_slots"][0]):
+            raise SmokeFailure(f"Native V5C hover targets the wrong first slot for {machine}")
 
         if machine == "small_milking_machine":
             tank_hashes = set()
@@ -605,7 +628,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 tank = captures_by_name[f"{machine}-{state}.png"].get("tank_pixels")
                 if (not isinstance(tank, dict)
                         or any(type(tank.get(key)) is not int or tank[key] != value for key, value in (
-                            ("x", 104), ("y", 49), ("width", 22), ("height", 51)))
+                            ("x", 130 + panel_x - crop_x), ("y", 64 + panel_y - crop_y),
+                            ("width", 29), ("height", 52)))
                         or tank.get("encoding") != "rgba8-row-major"
                         or not isinstance(tank.get("sha256"), str)
                         or re.fullmatch(r"[0-9a-f]{64}", tank["sha256"]) is None):
@@ -631,14 +655,15 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 if (len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR"):
                     raise SmokeFailure(f"Native Milking occupied-slot screenshot is absent or invalid: {name}")
                 dimensions = struct.unpack(">II", data[16:24])
-                if (dimensions != (panel_width, panel_height) or capture.get("state") != state
+                if (dimensions != expected_capture_size or capture.get("state") != state
+                        or (capture.get("crop_x"), capture.get("crop_y")) != (crop_x, crop_y)
                         or capture.get("capture_mode") != "gui_panel"
                         or capture.get("panel_cursor_outside") is not True
                         or capture.get("panel_tooltips_suppressed") is not True
                         or capture.get("sha256") != hashlib.sha256(data).hexdigest()
                         or (capture.get("width"), capture.get("height"), capture.get("kind"),
                             capture.get("screen_identity"), capture.get("menu_id")) != (
-                            panel_width, panel_height, kind, case.get("screen_identity"), case.get("client_menu_id"))
+                            *expected_capture_size, kind, case.get("screen_identity"), case.get("client_menu_id"))
                         or capture.get("fluid_amount") != 0
                         or capture.get("machine_slot_items") != expected_items
                         or any(key in capture for key in ("tooltip_name", "tooltip_capture_mode", "tooltip_sha256", "hover"))):

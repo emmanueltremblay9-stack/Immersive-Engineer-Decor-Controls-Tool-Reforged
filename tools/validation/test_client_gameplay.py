@@ -328,12 +328,19 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
 class CorrectedMachineGuiProofTests(unittest.TestCase):
     MACHINES = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226, 32000, 0),
-        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 228, 228, 4000, 0),
-        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 256, 256, 0, 32000),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 283, 283, 4000, 0),
+        "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 272, 280, 0, 32000),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
         "small_freezer": ("SMALL_FREEZER", 2, 347, 381, 0, 16000),
-        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 256, 256, 3000, 0),
-        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 256, 256, 4000, 0),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 308, 289, 3000, 0),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 303, 303, 4000, 0),
+    }
+
+    V5C_ANCHORS = {
+        "small_milking_machine": [(70, 109), (197, 109)],
+        "small_block_breaker": [(213, 98)],
+        "small_fluid_funnel": [(63, 75), (230, 75)],
+        "passive_fluid_accumulator": [(66, 109), (222, 109)],
     }
 
     def setUp(self):
@@ -363,14 +370,20 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         }
         for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
             is_freezer = machine == "small_freezer"
+            anchors = self.V5C_ANCHORS.get(machine)
+            panel_x = (1280 - panel_width) // 2
+            panel_y = math.trunc((self.window_height - panel_height) / 2)
+            crop_y = max(0, panel_y)
+            crop_height = min(self.window_height, panel_y + panel_height) - crop_y
             screen_identity = ("com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen" if is_freezer else
                                f"com.oblixorprime.engineersdecorreforged.client.MachineScreen${machine.title().replace('_', '')}Screen")
             menu_identity = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
             slots = []
             for index in range(slot_count):
                 insertion_allowed = not (machine == "small_freezer" and index == 1)
-                slots.append({"container_index": index, "x": 20 + index * 18, "y": 30,
-                              "layout_x": 20 + index * 18, "layout_y": 30,
+                x, y = anchors[index] if anchors else (20 + index * 18, 30)
+                slots.append({"container_index": index, "x": x, "y": y,
+                              "layout_x": x, "layout_y": y,
                               "active": True, "center_hit_test": True,
                               "insertion_allowed": insertion_allowed})
             case = {
@@ -397,10 +410,10 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 freezer_x = (53, 81, 110, 139, 168, 197, 226, 254, 283)
                 freezer_y = (247, 272, 299)
                 hotbar_x = (55, 84, 112, 140, 168, 195, 223, 252, 280)
-                anchors = {0: (167, 67), 2: (167, 206)}
-                anchors.update({3 + row * 9 + col: (x, y) for row, y in enumerate(freezer_y)
+                freezer_anchors = {0: (167, 67), 2: (167, 206)}
+                freezer_anchors.update({3 + row * 9 + col: (x, y) for row, y in enumerate(freezer_y)
                                 for col, x in enumerate(freezer_x)})
-                anchors.update({30 + col: (x, 335) for col, x in enumerate(hotbar_x)})
+                freezer_anchors.update({30 + col: (x, 335) for col, x in enumerate(hotbar_x)})
                 menu_slots = []
                 for index in range(39):
                     backing = index if index < 3 else 9 + index - 3 if index < 30 else index - 30
@@ -409,12 +422,13 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                                            "x": -2000, "y": -2000, "active": False,
                                            "insertion_allowed": False})
                     else:
-                        x, y = anchors[index]
+                        x, y = freezer_anchors[index]
                         menu_slots.append({"menu_index": index, "container_index": backing,
                                            "x": x, "y": y, "layout_x": x, "layout_y": y,
                                            "active": True, "insertion_allowed": True})
                 case["menu_slots"] = menu_slots
             else:
+                case["presentation"] = "gui11-v5c" if anchors else "legacy"
                 case["machine_slots"] = slots
             self.proof["cases"].append(case)
             states = ("empty", "mid", "full-hover")
@@ -435,6 +449,8 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                 capture["panel_tooltips_suppressed"] = False if is_freezer else True
                 if is_freezer:
                     capture.update(self._thermal_crop_fields())
+                if anchors:
+                    capture.update(crop_x=panel_x, crop_y=crop_y)
                 if machine == "fluid_barrel":
                     top = 73 if state == "mid" else 38
                     capture["barrel_fluid_pixels"] = {
@@ -448,7 +464,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                             still_texture="minecraft:block/water_still", tint_argb="ff3f76e4")
                 if machine == "small_milking_machine":
                     capture["tank_pixels"] = {
-                        "x": 104, "y": 49, "width": 22, "height": 51,
+                        "x": 130, "y": 64 + panel_y - crop_y, "width": 29, "height": 52,
                         "encoding": "rgba8-row-major",
                         # Synthetic metadata exercises the gate; not a native render claim.
                         "sha256": hashlib.sha256(state.encode()).hexdigest(),
@@ -458,9 +474,11 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                         {"container_index": 1, "item_id": "minecraft:air", "count": 0, "empty": True},
                     ]
                 capture_width = capture["width"] if is_freezer else panel_width
-                capture_height = capture["height"] if is_freezer else panel_height
+                capture_height = capture["height"] if is_freezer else crop_height if anchors else panel_height
                 if state == "full-hover":
                     capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
+                    if anchors:
+                        capture["hover"].update(slot_local_x=anchors[0][0], slot_local_y=anchors[0][1])
                 image = self.image_dir / name
                 image.write_bytes(self._png(capture_width, capture_height))
                 capture["width"] = capture_width
@@ -495,9 +513,10 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                                "machine_slot_items": machine_slot_items,
                                "capture_mode": "gui_panel", "panel_cursor_outside": True,
                                "panel_tooltips_suppressed": True,
-                               "width": panel_width, "height": panel_height}
+                               "width": panel_width, "height": crop_height,
+                               "crop_x": panel_x, "crop_y": crop_y}
                     image = self.image_dir / name
-                    image.write_bytes(self._png(panel_width, panel_height))
+                    image.write_bytes(self._png(panel_width, crop_height))
                     capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
                     self.proof["screenshots"].append(capture)
                 self.proof["cases"][-1]["slot_item_transfers"] = {
@@ -628,6 +647,27 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         bad_slot = copy.deepcopy(self.proof)
         bad_slot["cases"][1]["machine_slots"][0]["x"] += 1
         with self.assertRaises(SmokeFailure): self.check(bad_slot)
+
+    def test_rejects_relocated_milking_slot_even_with_agreeing_layout_metadata(self):
+        proof = copy.deepcopy(self.proof)
+        milking = next(case for case in proof["cases"] if case["machine_id"] == "small_milking_machine")
+        slot = milking["machine_slots"][0]
+        slot["x"] += 1
+        slot["layout_x"] += 1
+        with self.assertRaisesRegex(SmokeFailure, "approved V5C artwork for small_milking_machine index 0"):
+            self.check(proof)
+        milking["presentation"] = "legacy"
+        with self.assertRaisesRegex(SmokeFailure, "Wrong active artwork presentation"):
+            self.check(proof)
+
+    def test_rejects_milking_crop_or_hover_from_the_old_presentation(self):
+        for field, value in (("crop_y", 1), ("hover", {"slot_index": 0, "slot_hitbox_center_verified": True,
+                                                       "slot_local_x": 51, "slot_local_y": 91})):
+            proof = copy.deepcopy(self.proof)
+            capture = next(c for c in proof["screenshots"] if c["name"] == "small_milking_machine-full-hover.png")
+            capture[field] = value
+            with self.subTest(field=field), self.assertRaises(SmokeFailure):
+                self.check(proof)
 
     def test_rejects_panel_capture_with_cursor_over_the_gui(self):
         proof = copy.deepcopy(self.proof)
