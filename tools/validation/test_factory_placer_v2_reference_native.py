@@ -245,6 +245,14 @@ class NativePlacerProofTest(unittest.TestCase):
         c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
         with self.assertRaisesRegex(SmokeFailure,'Settled signal indicator pixels'):self.validate(p)
 
+    def test_source_row_alpha_is_composited_in_opaque_native_capture(self):
+        from factory_placer_v2_reference_native import opaque_composite_matches
+        source=bytes((98,93,93,253))
+        self.assertTrue(opaque_composite_matches(bytes((98,93,93,255)),source))
+        self.assertFalse(opaque_composite_matches(bytes((104,93,93,255)),source))
+        self.assertFalse(opaque_composite_matches(source,source))
+        self.assertFalse(opaque_composite_matches(bytes((98,93,93,255)),bytes((98,93,93,128))))
+
     def test_stable_gray_unselected_rows_rejected(self):
         p=copy.deepcopy(self.proof)
         for c in p['captures']:

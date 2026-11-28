@@ -218,6 +218,19 @@ def image_evidence(path,crop_path,width,height,gui_scale):
     return digest.hexdigest()
 
 
+def opaque_composite_matches(observed, source):
+    """Bound an opaque framebuffer sample blended over the darkened world."""
+    alpha=source[3]
+    if observed[3]!=255 or alpha<253:
+        return False
+    for drawn,foreground in zip(observed[:3],source[:3],strict=True):
+        minimum=(foreground*alpha+127)//255
+        maximum=(foreground*alpha+255*(255-alpha)+127)//255
+        if not minimum<=drawn<=maximum:
+            return False
+    return True
+
+
 def validate_control_pixels(images,width,height,gui_scale,source):
     sx,sy=transform(width,height,gui_scale)
     def sample(name,rect):
@@ -253,7 +266,7 @@ def validate_control_pixels(images,width,height,gui_scale,source):
                 factor=scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale
                 tx,ty=math.floor((x+.5-sx(0))/factor),math.floor((y+.5-sy(0))/factor)
                 sw,sh,art=source
-                require(any(sample(name,rect)==art[(yy*sw+xx)*4:(yy*sw+xx+1)*4]
+                require(any(opaque_composite_matches(sample(name,rect),art[(yy*sw+xx)*4:(yy*sw+xx+1)*4])
                             for yy in range(max(0,ty-1),min(sh,ty+2))
                             for xx in range(max(0,tx-1),min(sw,tx+2))),
                         'Unselected row indicator differs from retained source')
