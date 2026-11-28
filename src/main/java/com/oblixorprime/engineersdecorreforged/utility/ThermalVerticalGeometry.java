@@ -25,11 +25,11 @@ public final class ThermalVerticalGeometry {
    }
    public static Point slot(int menuIndex, MachineKind kind) {
       requireThermal(kind);
-      Point point = Gui11V5CRuntimeGeometry.slot(kind, menuIndex);
+      Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(kind, menuIndex);
       if (point == null || menuIndex == 1) throw new IllegalArgumentException("No visible thermal slot "+menuIndex);
       if (point.x() + ITEM_SIZE > canvasWidth(kind) || point.y() + ITEM_SIZE > canvasHeight(kind))
          throw new IllegalStateException("Thermal slot outside canvas: " + menuIndex);
-      return point;
+      return new Point(point.x(), point.y());
    }
    public static boolean contains(int menuIndex, MachineKind kind, double x,double y) {
       Point p=slot(menuIndex,kind); return x>=p.x&&x<p.x+ITEM_SIZE&&y>=p.y&&y<p.y+ITEM_SIZE;

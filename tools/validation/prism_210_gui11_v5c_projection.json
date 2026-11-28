@@ -994,7 +994,7 @@
     },
     "src/main/java/com/oblixorprime/engineersdecorreforged/utility/ThermalVerticalGeometry.java": {
       "old_sha256": "1e4bf69a17f2360800aee1584b8b714177749640a50423dc593841b61c87c607",
-      "new_sha256": "59508aff01c6524f782403cce502b7a040435fc191ce1f3218d06a8823c1e62d",
+      "new_sha256": "a20e63fd37cb61f5b694a847393f361e5a1136c91d9f3033e5c8d86bdd25f694",
       "hunks": [
         {
           "start": 5,
@@ -1024,7 +1024,7 @@
           "start": 26,
           "end": 32,
           "previous": "      boolean freezer=kind==MachineKind.SMALL_FREEZER;\n      if(!freezer&&kind!=MachineKind.SMALL_MINERAL_SMELTER) throw new IllegalArgumentException(\"Not a thermal machine: \"+kind);\n      if(menuIndex==0) return freezer?new Point(167,67):new Point(164,66);\n      if(menuIndex==2) return freezer?new Point(167,206):new Point(164,205);\n      if(menuIndex==1||menuIndex<3||menuIndex>38) throw new IllegalArgumentException(\"No visible thermal slot \"+menuIndex);\n      if(menuIndex<30) {\n         int i=menuIndex-3,row=i/9,col=i%9;\n         return new Point(freezer?F_INV_X[col]:S_INV_X[col],freezer?F_INV_Y[row]:S_INV_Y[row]);\n      }\n      int col=menuIndex-30;\n      return new Point(freezer?F_HOT_X[col]:S_HOT_X[col],freezer?335:337);\n",
-          "current": "      requireThermal(kind);\n      Point point = Gui11V5CRuntimeGeometry.slot(kind, menuIndex);\n      if (point == null || menuIndex == 1) throw new IllegalArgumentException(\"No visible thermal slot \"+menuIndex);\n      if (point.x() + ITEM_SIZE > canvasWidth(kind) || point.y() + ITEM_SIZE > canvasHeight(kind))\n         throw new IllegalStateException(\"Thermal slot outside canvas: \" + menuIndex);\n      return point;\n"
+          "current": "      requireThermal(kind);\n      Gui11V5CRuntimeGeometry.Point point = Gui11V5CRuntimeGeometry.slot(kind, menuIndex);\n      if (point == null || menuIndex == 1) throw new IllegalArgumentException(\"No visible thermal slot \"+menuIndex);\n      if (point.x() + ITEM_SIZE > canvasWidth(kind) || point.y() + ITEM_SIZE > canvasHeight(kind))\n         throw new IllegalStateException(\"Thermal slot outside canvas: \" + menuIndex);\n      return new Point(point.x(), point.y());\n"
         },
         {
           "start": 50,
