@@ -10,7 +10,7 @@ DRIVER = ROOT / 'src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrt
 
 def selector():
     text = DRIVER.read_text()
-    return text[text.index('    private static int playerReturnSlot('):text.index('    private static void clickSlot(')]
+    return text[text.index('    private static int playerReturnSlot('):text.index('    private static void aimAtSlot(')]
 
 
 PROBE = '''import java.util.List;
@@ -78,8 +78,11 @@ class PlayerReturnTests(unittest.TestCase):
         source=DRIVER.read_text()
         picked=source[source.index('if (stage == Stage.PICKED)'):source.index('if (stage == Stage.RETURNED)')]
         self.assertIn('returnMenuSlot = playerReturnSlot(menu, mc.player.getInventory(), menu.getCarried())',picked)
-        self.assertIn('clickSlot(screen, menu, returnMenuSlot)',picked)
-        self.assertNotIn('clickSlot(screen, menu, 0)',picked)
+        self.assertIn('aimAtSlot(screen, menu, returnMenuSlot); enter(Stage.RETURN_MOVE)',picked)
+        self.assertNotIn('aimAtSlot(screen, menu, 0)',picked)
+        click=source[source.index('if (stage == Stage.PICK_MOVE || stage == Stage.RETURN_MOVE)'):source.index('if (stage == Stage.PICKED)')]
+        self.assertLess(click.index('atPointer(mc, screen)'),click.index('nativeClick(1)'))
+        self.assertIn('Stage.PICKED : Stage.RETURNED',click)
 
 
 if __name__=='__main__':unittest.main()
