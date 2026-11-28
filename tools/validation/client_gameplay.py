@@ -315,12 +315,13 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                            "docs/testing/gui11-v5c-runtime-map.json").read_text(encoding="utf-8"))["surfaces"]
     v5c_surfaces = {"small_milking_machine": surfaces["12"], "small_block_breaker": surfaces["09"],
                     "small_fluid_funnel": surfaces["13"], "passive_fluid_accumulator": surfaces["14"]}
+    freezer_width, freezer_height = surfaces["05"]["logical_size"]
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
         "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, *v5c_surfaces["small_milking_machine"]["logical_size"]),
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, *v5c_surfaces["small_block_breaker"]["logical_size"]),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212),
-        "small_freezer": ("SMALL_FREEZER", 2, 347, 381),
+        "small_freezer": ("SMALL_FREEZER", 2, freezer_width, freezer_height),
         "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, *v5c_surfaces["small_fluid_funnel"]["logical_size"]),
         "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, *v5c_surfaces["passive_fluid_accumulator"]["logical_size"]),
     }
@@ -382,37 +383,32 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         raise SmokeFailure("Corrected-machine GUI screenshots are stale or contain unexpected files")
     png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
     captures_by_name = {capture["name"]: capture for capture in captures}
-    freezer_anchors = {
-        0: (167, 67),
-        2: (167, 206),
-        **{3 + row * 9 + col: (x, y) for row, y in enumerate((247, 272, 299))
-           for col, x in enumerate((53, 81, 110, 139, 168, 197, 226, 254, 283))},
-        **{30 + col: (x, 335) for col, x in enumerate((55, 84, 112, 140, 168, 195, 223, 252, 280))},
-    }
+    freezer_anchors = {index: tuple(point) for index, point in enumerate(surfaces["05"]["menu_slots"])
+                       if point is not None}
     def validate_thermal_capture(capture: dict, image_size: tuple[int, int], label: str,
                                  case: dict) -> None:
-        """Validate a real cropped 347x381 thermal canvas at its rendered scale."""
+        """Validate a real cropped Freezer thermal canvas at its rendered scale."""
         gui_width, gui_height = case.get("gui_width"), case.get("gui_height")
         if (type(gui_width) is not int or type(gui_height) is not int
                 or gui_width <= 0 or gui_height <= 0):
             raise SmokeFailure(f"Thermal Freezer GUI viewport is missing: {label}")
         margin = min(6.0, (min(gui_width, gui_height) - 1.0) / 2.0)
-        fitted = min(0.78, (gui_width - 2.0 * margin) / 347.0,
-                     (gui_height - 2.0 * margin) / 381.0)
+        fitted = min(0.78, (gui_width - 2.0 * margin) / freezer_width,
+                     (gui_height - 2.0 * margin) / freezer_height)
         def f32(value: float) -> float:
             return struct.unpack("!f", struct.pack("!f", value))[0]
         expected_scale = f32(fitted)
-        if expected_scale * 347.0 > gui_width or expected_scale * 381.0 > gui_height:
+        if expected_scale * freezer_width > gui_width or expected_scale * freezer_height > gui_height:
             bits = struct.unpack("!I", struct.pack("!f", expected_scale))[0]
             expected_scale = struct.unpack("!f", struct.pack("!I", bits - 1))[0]
-        expected_origin_x = f32((gui_width - 347.0 * expected_scale) / 2.0)
-        expected_origin_y = f32((gui_height - 381.0 * expected_scale) / 2.0)
+        expected_origin_x = f32((gui_width - freezer_width * expected_scale) / 2.0)
+        expected_origin_y = f32((gui_height - freezer_height * expected_scale) / 2.0)
         scale = capture.get("view_scale")
         origin_x, origin_y = capture.get("origin_x"), capture.get("origin_y")
         framebuffer_width, framebuffer_height = capture.get("framebuffer_width"), capture.get("framebuffer_height")
         case_scale, case_origin_x, case_origin_y = (case.get("view_scale"), case.get("origin_x"), case.get("origin_y"))
         if (capture.get("capture_mode") != "native_thermal_canvas_crop"
-                or capture.get("panel_width") != 347 or capture.get("panel_height") != 381
+                or capture.get("panel_width") != freezer_width or capture.get("panel_height") != freezer_height
                 or capture.get("gui_width") != gui_width or capture.get("gui_height") != gui_height
                 or capture.get("energy_capacity") != 16000
                 or type(case_scale) not in (int, float) or not math.isfinite(case_scale)
@@ -433,8 +429,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         physical_x, physical_y = f32(framebuffer_width / gui_width), f32(framebuffer_height / gui_height)
         def jround(value: float) -> int:
             return math.floor(value + 0.5)
-        expected_width = jround(f32(f32(347.0 * scale) * physical_x))
-        expected_height = jround(f32(f32(381.0 * scale) * physical_y))
+        expected_width = jround(f32(f32(freezer_width * scale) * physical_x))
+        expected_height = jround(f32(f32(freezer_height * scale) * physical_y))
         expected_crop_x = jround(f32(origin_x * physical_x))
         expected_crop_y = jround(f32(origin_y * physical_y))
         if (image_size != (expected_width, expected_height)
@@ -512,7 +508,7 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                         or (slot.get("x"), slot.get("y")) != anchor
                         or (slot.get("layout_x"), slot.get("layout_y")) != anchor
                         or anchor[0] < 0 or anchor[1] < 0
-                        or anchor[0] + 16 > 347 or anchor[1] + 16 > 381):
+                        or anchor[0] + 16 > freezer_width or anchor[1] + 16 > freezer_height):
                     raise SmokeFailure(f"Thermal Freezer visible slot differs from artwork at index {menu_index}")
                 if anchor in seen_positions:
                     raise SmokeFailure("Thermal Freezer repeats a visible 16x16 slot position")

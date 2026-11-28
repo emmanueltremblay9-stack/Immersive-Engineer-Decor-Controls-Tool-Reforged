@@ -331,7 +331,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 283, 283, 4000, 0),
         "small_block_breaker": ("SMALL_BLOCK_BREAKER", 1, 272, 280, 0, 32000),
         "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
-        "small_freezer": ("SMALL_FREEZER", 2, 347, 381, 0, 16000),
+        "small_freezer": ("SMALL_FREEZER", 2, 281, 313, 0, 16000),
         "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 308, 289, 3000, 0),
         "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 303, 303, 4000, 0),
     }
@@ -407,13 +407,13 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                             geometry_matches_thermal_vertical_geometry=True,
                             view_scale=thermal_view["view_scale"],
                             origin_x=thermal_view["origin_x"], origin_y=thermal_view["origin_y"])
-                freezer_x = (53, 81, 110, 139, 168, 197, 226, 254, 283)
-                freezer_y = (247, 272, 299)
-                hotbar_x = (55, 84, 112, 140, 168, 195, 223, 252, 280)
-                freezer_anchors = {0: (167, 67), 2: (167, 206)}
+                freezer_x = (44, 66, 89, 111, 133, 155, 177, 199, 222)
+                freezer_y = (182, 205, 229)
+                hotbar_x = freezer_x
+                freezer_anchors = {0: (133, 54), 2: (133, 146)}
                 freezer_anchors.update({3 + row * 9 + col: (x, y) for row, y in enumerate(freezer_y)
                                 for col, x in enumerate(freezer_x)})
-                freezer_anchors.update({30 + col: (x, 335) for col, x in enumerate(hotbar_x)})
+                freezer_anchors.update({30 + col: (x, 262) for col, x in enumerate(hotbar_x)})
                 menu_slots = []
                 for index in range(39):
                     backing = index if index < 3 else 9 + index - 3 if index < 30 else index - 30
@@ -558,13 +558,13 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
             return struct.unpack("!f", struct.pack("!f", value))[0]
         gui_width, gui_height = 1280, self.window_height
         margin = min(6.0, (min(gui_width, gui_height) - 1.0) / 2.0)
-        scale = f32(min(0.78, (gui_width - 2 * margin) / 347.0,
-                        (gui_height - 2 * margin) / 381.0))
-        origin_x = f32((gui_width - 347.0 * scale) / 2.0)
-        origin_y = f32((gui_height - 381.0 * scale) / 2.0)
-        width = math.floor(f32(f32(347.0 * scale) * 1.0) + 0.5)
-        height = math.floor(f32(f32(381.0 * scale) * 1.0) + 0.5)
-        return {"panel_width": 347, "panel_height": 381,
+        scale = f32(min(0.78, (gui_width - 2 * margin) / 281.0,
+                        (gui_height - 2 * margin) / 313.0))
+        origin_x = f32((gui_width - 281.0 * scale) / 2.0)
+        origin_y = f32((gui_height - 313.0 * scale) / 2.0)
+        width = math.floor(f32(f32(281.0 * scale) * 1.0) + 0.5)
+        height = math.floor(f32(f32(313.0 * scale) * 1.0) + 0.5)
+        return {"panel_width": 281, "panel_height": 313,
                 "framebuffer_width": self.window_width, "framebuffer_height": self.window_height,
                 "crop_x": math.floor(origin_x + 0.5), "crop_y": math.floor(origin_y + 0.5),
                 "view_scale": scale, "origin_x": origin_x, "origin_y": origin_y,
