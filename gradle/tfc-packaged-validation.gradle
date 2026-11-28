@@ -60,7 +60,7 @@ if (tfcPackagedValidation) {
         doLast {
             def jarFile = tfcRuntimeJar.get().canonicalFile
             def sha256 = { file -> java.security.MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
-            if (sha256(jarFile) != 'f20a7fe91c1a5657dfa1515b43893cf0545336aab49b355633a427ebe5c9596e') {
+            if (sha256(jarFile) != '128746e6a29ac28c373a6a7efae84f9823ec6ee487f38165a1c7a94d874e6ec3') {
                 throw new GradleException('Supplied runtime JAR differs from the normal JAR built from this exact source checkout')
             }
             def classpath = harness.runtimeClasspath.files.collect { it.canonicalFile }
