@@ -6,15 +6,18 @@ import unittest
 from prism_210_history_projection import (
     BASE_COMMIT, HEAD_COMMIT, RECORD, ROOT, FREEZER_NATIVE_PORT_RECORD, FREEZER_RECOVERY_TOOLTIP_RECORD,
     FREEZER_RECOVERY_KEY_RECORD, FREEZER_ENERGY_SCISSOR_RECORD, FREEZER_QA_FOLLOWUP_RECORD,
-    LATE_VALIDATION_RECORD, _freezer_qa_followup_record, _electrical_controls_record, _ordinary_jar_repin_record,
+    LATE_VALIDATION_RECORD, _freezer_qa_followup_record, _electrical_controls_record,
+    _ordinary_jar_repin_record, _ordinary_jar_followup_repin_record,
     _reverse_layer, expected_current_sha256,
     project_current_candidate, sha256,
 )
 
 
 def reverse_electrical_controls(path, source):
-    # The later JAR repin changes only proof pins; strip its exact bytes before
-    # checking the older electrical and Freezer records.
+    # The layered JAR repins change only proof pins; strip their exact bytes in
+    # reverse chronological order before checking older electrical/Freezer records.
+    followup_repin = _ordinary_jar_followup_repin_record()["files"].get(path)
+    source = _reverse_layer(path, source, followup_repin) if followup_repin is not None else source
     repin = _ordinary_jar_repin_record()["files"].get(path)
     source = _reverse_layer(path, source, repin) if repin is not None else source
     layer = _electrical_controls_record()["files"].get(path)

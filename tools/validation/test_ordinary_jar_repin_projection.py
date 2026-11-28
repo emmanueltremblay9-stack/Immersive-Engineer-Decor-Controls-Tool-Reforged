@@ -22,12 +22,18 @@ class OrdinaryJarRepinProjectionTests(unittest.TestCase):
 
     def test_only_nine_observed_jar_hash_literals_change(self):
         record = projection._ordinary_jar_repin_record()
+        latest = projection._ordinary_jar_followup_repin_record()
         self.assertEqual(record["base_commit"], self.BASE)
         self.assertEqual(set(record["files"]), set(self.PATHS))
         self.assertEqual(record["artifact"], {
             "source_sha": self.BASE, "sha256": self.NEW, "size_bytes": 86514465,
             "previous_sha256": self.OLD, "run_id": 45901991310, "artifact_id": 15155764054,
         })
+        self.assertEqual(latest["base_commit"], "0c9299718701e9374b102617631f3b319d224bf3")
+        self.assertEqual(latest["artifact"]["sha256"], "b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e")
+        self.assertEqual(latest["artifact"]["previous_sha256"], self.NEW)
+        self.assertEqual(latest["artifact"]["build_run_id"], 46095637365)
+        self.assertEqual(set(latest["files"]), set(self.PATHS))
         self.assertEqual(sum(self.PATHS.values()), 9)
         for path, count in self.PATHS.items():
             with self.subTest(path=path):
@@ -35,25 +41,32 @@ class OrdinaryJarRepinProjectionTests(unittest.TestCase):
                     ["git", "show", self.BASE + ":" + path], cwd=projection.ROOT
                 )
                 current = (projection.ROOT / path).read_bytes()
+                latest_layer = latest["files"][path]
+                self.assertEqual(latest_layer["previous_source_commit"], latest["base_commit"])
+                self.assertEqual(latest_layer["replacement_count"], count)
+                self.assertEqual(current.count(latest["artifact"]["sha256"].encode()), count)
+                prior_current = projection._reverse_layer(path, current, latest_layer)
+                self.assertEqual(projection.sha256(prior_current), latest_layer["old_sha256"])
+                self.assertEqual(prior_current.count(self.NEW.encode()), count)
                 layer = record["files"][path]
                 self.assertEqual(layer["previous_source_commit"], self.BASE)
                 self.assertEqual(layer["replacement_count"], count)
                 self.assertEqual(parent.count(self.OLD.encode()), count)
-                self.assertEqual(current.count(self.NEW.encode()), count)
-                self.assertEqual(current, parent.replace(self.OLD.encode(), self.NEW.encode()))
-                self.assertEqual(projection.sha256(current), layer["new_sha256"])
+                self.assertEqual(prior_current, parent.replace(self.OLD.encode(), self.NEW.encode()))
+                self.assertEqual(projection.sha256(prior_current), layer["new_sha256"])
                 self.assertEqual(projection.sha256(parent), layer["old_sha256"])
-                self.assertEqual(projection._reverse_layer(path, current, layer), parent)
-                self.assertEqual(projection.expected_current_sha256(path), layer["new_sha256"])
+                self.assertEqual(projection._reverse_layer(path, prior_current, layer), parent)
+                self.assertEqual(projection.expected_current_sha256(path), latest_layer["new_sha256"])
                 self.assertEqual(
                     projection.project_current_candidate(path, current, strict=True),
                     projection.project_current_candidate(path, parent),
                 )
 
     def test_wrong_digest_or_any_other_gate_edit_is_rejected(self):
+        latest_sha = projection._ordinary_jar_followup_repin_record()["artifact"]["sha256"].encode()
         for path in self.PATHS:
             current = (projection.ROOT / path).read_bytes()
-            for mutated in (current.replace(self.NEW.encode(), b"0" * 64, 1),
+            for mutated in (current.replace(latest_sha, b"0" * 64, 1),
                             current + b"unreviewed gate change\n"):
                 with self.subTest(path=path), self.assertRaisesRegex(AssertionError, "Unrecognized #210"):
                     projection.project_current_candidate(path, mutated, strict=True)

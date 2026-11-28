@@ -28,6 +28,8 @@ ELECTRICAL_CONTROLS_RECORD = Path(__file__).with_name("prism_210_electrical_cont
 ELECTRICAL_CONTROLS_RECORD_SHA256 = "d9c5f924307e814e3cc772782c145fcd9e104f8741df305bf93395d3c5967f98"
 ORDINARY_JAR_REPIN_RECORD = Path(__file__).with_name("prism_210_ordinary_jar_repin_projection.json")
 ORDINARY_JAR_REPIN_RECORD_SHA256 = "2d4f192fda610d20c805869a86745f7dcb625a24e366b3d2d987d7b3c70aff0e"
+ORDINARY_JAR_FOLLOWUP_REPIN_RECORD = Path(__file__).with_name("prism_210_ordinary_jar_followup_repin_projection.json")
+ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_SHA256 = "5447c5ac95323a4d4c9f3511ad76da2b63be3377db25ac0b1297691930870cdd"
 SOLAR_GUI11_R3_RECORD = Path(__file__).with_name("prism_210_solar_gui11_r3_projection.json")
 SOLAR_GUI11_R3_RECORD_SHA256 = "8cfc9a97852d0462dab0cf776fc05611fdb77db26376f9096ea14e72839e5b57"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
@@ -41,6 +43,7 @@ FREEZER_ENERGY_SCISSOR_RECORD_BYTES = FREEZER_ENERGY_SCISSOR_RECORD.read_bytes()
 FREEZER_QA_FOLLOWUP_RECORD_BYTES = FREEZER_QA_FOLLOWUP_RECORD.read_bytes()
 ELECTRICAL_CONTROLS_RECORD_BYTES = ELECTRICAL_CONTROLS_RECORD.read_bytes()
 ORDINARY_JAR_REPIN_RECORD_BYTES = ORDINARY_JAR_REPIN_RECORD.read_bytes()
+ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_BYTES = ORDINARY_JAR_FOLLOWUP_REPIN_RECORD.read_bytes()
 SOLAR_GUI11_R3_RECORD_BYTES = SOLAR_GUI11_R3_RECORD.read_bytes()
 
 
@@ -143,6 +146,17 @@ def _ordinary_jar_repin_record():
     return data
 
 
+def _ordinary_jar_followup_repin_record():
+    if sha256(ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_BYTES) != ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_SHA256:
+        raise AssertionError("#210 ordinary JAR follow-up repin projection record changed")
+    data = json.loads(ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_BYTES)
+    if data.get("schema") != "iedctr-prism-ordinary-jar-followup-repin-v1":
+        raise AssertionError("#210 ordinary JAR follow-up repin projection schema changed")
+    if data.get("base_commit") != "0c9299718701e9374b102617631f3b319d224bf3":
+        raise AssertionError("#210 ordinary JAR follow-up repin projection base changed")
+    return data
+
+
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -188,6 +202,17 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
     that specifically validate this candidate's recorded state.
     """
     source = project_before_solar_gui11_r3(path, source)
+    followup_repin = _ordinary_jar_followup_repin_record()["files"].get(path)
+    followup_repin_reversed = False
+    if followup_repin is not None:
+        if sha256(source) == followup_repin["new_sha256"]:
+            source = _reverse_layer(path, source, followup_repin)
+            followup_repin_reversed = True
+        elif sha256(source) == followup_repin["old_sha256"]:
+            followup_repin_reversed = True
+        # Older exact states pass through this layer and are checked by the
+        # historical repin/projection layers below. These paths are shared with
+        # the prior repin, which rejects any unrecorded bytes in strict mode.
     repin = _ordinary_jar_repin_record()["files"].get(path)
     repin_reversed = False
     if repin is not None:
@@ -263,7 +288,7 @@ def project_current_candidate(path: str, source: bytes, *, strict: bool = False)
             if strict:
                 raise AssertionError("Unrecognized #210 late validation bytes: " + path)
         if strict:
-            if not repin_reversed and not electrical_reversed and not followup_reversed and not scissor_reversed and not port_reversed and not recovery_tooltip_reversed and not recovery_key_reversed:
+            if not followup_repin_reversed and not repin_reversed and not electrical_reversed and not followup_reversed and not scissor_reversed and not port_reversed and not recovery_tooltip_reversed and not recovery_key_reversed:
                 raise AssertionError("Path is outside the #210 projection allowlist: " + path)
         return source
     digest = sha256(source)
@@ -313,6 +338,9 @@ def expected_current_sha256(path: str) -> str | None:
     solar_gui11 = _solar_gui11_r3_record()["files"].get(path)
     if solar_gui11 is not None:
         return solar_gui11["new_sha256"]
+    followup_repin = _ordinary_jar_followup_repin_record()["files"].get(path)
+    if followup_repin is not None:
+        return followup_repin["new_sha256"]
     repin = _ordinary_jar_repin_record()["files"].get(path)
     if repin is not None:
         return repin["new_sha256"]
