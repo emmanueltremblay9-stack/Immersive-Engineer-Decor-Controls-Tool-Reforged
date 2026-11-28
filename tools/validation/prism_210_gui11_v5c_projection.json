@@ -334,35 +334,41 @@
     },
     "src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java": {
       "old_sha256": "d91f8df6d64f834459ebcbc41bdb9a9533c657df6ec82088134fbe3886375289",
-      "new_sha256": "f4a9680477ffbb774194641854ca2c22450f21e9b106a4ff8a6e9812fda1e1af",
+      "new_sha256": "b7651b1231fba4deef635814267c5aedc666f95ccb17d1f68dfaed7568609755",
       "hunks": [
         {
-          "start": 124,
-          "end": 125,
+          "start": 112,
+          "end": 117,
+          "previous": "                    require(mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth()<containerScreen.getGuiLeft()\n                        && mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight()<containerScreen.getGuiTop(),\n",
+          "current": "                    double pointerX=mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth();\n                    double pointerY=mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight();\n                    int left=containerScreen.getGuiLeft(), top=containerScreen.getGuiTop();\n                    require(pointerX<left || pointerX>=left+containerScreen.getXSize()\n                        || pointerY<top || pointerY>=top+containerScreen.getYSize(),\n"
+        },
+        {
+          "start": 127,
+          "end": 128,
           "previous": "                            \"Factory Study V3 menu slot layout mismatch for \"+NAMES[index]);\n",
           "current": "                            \"Factory Study V5-Corrigee menu slot layout mismatch for \"+NAMES[index]);\n"
         },
         {
-          "start": 155,
-          "end": 156,
+          "start": 158,
+          "end": 159,
           "previous": "                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],\"Factory Study V3 occupied-stack fixture changed during capture\");\n",
           "current": "                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],\"Factory Study V5-Corrigee occupied-stack fixture changed during capture\");\n"
         },
         {
-          "start": 160,
-          "end": 161,
+          "start": 163,
+          "end": 164,
           "previous": "                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],\"Factory Study V3 machine-stack fixture changed during capture\");\n",
           "current": "                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],\"Factory Study V5-Corrigee machine-stack fixture changed during capture\");\n"
         },
         {
-          "start": 184,
-          "end": 185,
+          "start": 187,
+          "end": 188,
           "previous": "                        require(slot.x==34 && slot.y==68+selectionRow*25,\"Unexpected Factory Study V3 Hopper slot geometry\");\n",
           "current": "                        require(slot.x==44 && slot.y==67+selectionRow*24,\"Unexpected Factory Study V5-Corrigee Hopper slot geometry\");\n"
         },
         {
-          "start": 338,
-          "end": 339,
+          "start": 341,
+          "end": 342,
           "previous": "        try{if(directory!=null){var proof=new JsonObject();proof.addProperty(\"suite\",\"gui-album-three-v3\");proof.addProperty(\"status\",error==null?\"observed\":\"failed\");proof.addProperty(\"nonce\",nonce);proof.addProperty(\"executed_source_sha\",System.getProperty(\"iedctr.executedSourceSha\"));proof.add(\"packaged_runtime\",packaged);proof.add(\"cases\",cases);proof.add(\"hopper_selections\",selections);proof.add(\"wait_diagnostics\",waitDiagnostics);proof.add(\"terminal_state\",diagnostic(mc));proof.addProperty(\"visual_acceptance\",false);proof.addProperty(\"physical_os_input\",true);proof.addProperty(\"human_input\",false);proof.addProperty(\"input_method\",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty(\"synthetic_button_events\",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add(\"electrical_controls\",electricalValidation.proof());if(error!=null)proof.addProperty(\"error\",error.toString());Files.writeString(directory.resolve(\"gui-album-three-proof.json\"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+\"\\n\");}}\n",
           "current": "        try{if(directory!=null){var proof=new JsonObject();proof.addProperty(\"suite\",\"gui-album-three-v5c\");proof.addProperty(\"status\",error==null?\"observed\":\"failed\");proof.addProperty(\"nonce\",nonce);proof.addProperty(\"executed_source_sha\",System.getProperty(\"iedctr.executedSourceSha\"));proof.add(\"packaged_runtime\",packaged);proof.add(\"cases\",cases);proof.add(\"hopper_selections\",selections);proof.add(\"wait_diagnostics\",waitDiagnostics);proof.add(\"terminal_state\",diagnostic(mc));proof.addProperty(\"visual_acceptance\",false);proof.addProperty(\"physical_os_input\",true);proof.addProperty(\"human_input\",false);proof.addProperty(\"input_method\",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty(\"synthetic_button_events\",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add(\"electrical_controls\",electricalValidation.proof());if(error!=null)proof.addProperty(\"error\",error.toString());Files.writeString(directory.resolve(\"gui-album-three-proof.json\"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+\"\\n\");}}\n"
         }

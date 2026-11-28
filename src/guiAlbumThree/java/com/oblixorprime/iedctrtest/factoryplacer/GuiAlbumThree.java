@@ -110,8 +110,11 @@ public final class GuiAlbumThree {
                     if(!pointerReady(mc)){selectionRenderFrames=0;return;}
                     require(index==4 || mc.player.containerMenu instanceof MachineMenu,"Unexpected menu while positioning pointer");
                     var containerScreen=(AbstractContainerScreen<?>)mc.screen;
-                    require(mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth()<containerScreen.getGuiLeft()
-                        && mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight()<containerScreen.getGuiTop(),
+                    double pointerX=mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth();
+                    double pointerY=mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight();
+                    int left=containerScreen.getGuiLeft(), top=containerScreen.getGuiTop();
+                    require(pointerX<left || pointerX>=left+containerScreen.getXSize()
+                        || pointerY<top || pointerY>=top+containerScreen.getYSize(),
                         "Pointer target must remain outside panel");
                     if(ticks<(index==0?650:35)){waiting(mc,"render warmup");return;}
                     require(mc.screen.getClass().getName().equals(SCREEN_CLASSES[index]),"Wrong machine screen");

@@ -41,7 +41,8 @@ public final class Gui11V5CElectricalArtworkTest {
       assertNotNull(meter);
       assertTrue(meter.contains(meter.x() + 4, meter.y() + 3));
       assertTrue(meter.contains(meter.x() + 4 + 44 - 1, meter.y() + 3 + 5));
-      assertFalse(meter.contains(meter.x() + 4 + 44, meter.y() + 3));
+      int full = Gui11V5CArtwork.energyFillPixels(MachineKind.SMALL_ELECTRICAL_FURNACE, 32000, 32000);
+      assertEquals("Full fill leaves the four-pixel right bezel intact", 4, meter.width() - 4 - full);
    }
 
    @Test public void rotaryHitBoxIsCenteredOnTheSourceArtPivot() {
