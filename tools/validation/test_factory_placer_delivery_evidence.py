@@ -124,7 +124,8 @@ class AdvancedEvidenceTest(unittest.TestCase):
             for slot in range(18):
                 x,y=SLOT_ORIGINS[slot]
                 strips=((x-1,y-1,x+17,y),(x+16,y,x+17,y+16),(x-1,y+16,x+17,y+17),(x-1,y,x,y+16))
-                expected={name:[(px,py) for py in range(math.ceil(sy(t)-.5),math.ceil(sy(b)-.5))
+                expected={name:[(px,py) for py in range(math.floor(sy(t)),math.ceil(sy(b))+1)
+                          if sy(t)<py+.5<=sy(b)
                           for px in range(math.ceil(sx(l)-.5),math.ceil(sx(r)-.5))]
                           for name,(l,t,r,b) in zip(('top','right','bottom','left'),strips)}
                 self.assertEqual(delivery.selection_edges(w,h,scale,slot),expected)

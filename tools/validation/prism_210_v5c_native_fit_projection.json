@@ -568,8 +568,14 @@
     },
     "tools/validation/factory_placer_delivery_evidence.py": {
       "old_sha256": "3b075b249be64a2f2a730f11e1d33ee2794e928b7c1059df9e2699d058047dab",
-      "new_sha256": "44700d180af7aea6d02e233318c761635e68e49985432d3db77baa593cb6e1f4",
+      "new_sha256": "af0605a1c777729e9644c590ea6b81c0a1b3b57604d2f29fa880e52e4733ecff",
       "hunks": [
+        {
+          "start": 13,
+          "end": 14,
+          "current": "    png, rasterized_edge, require, selection_rects, strict_equal, transform, validate_proof, validate_viewport,\n",
+          "previous": "    png, require, selection_rects, strict_equal, transform, validate_proof, validate_viewport,\n"
+        },
         {
           "start": 25,
           "end": 27,
@@ -577,38 +583,44 @@
           "previous": ""
         },
         {
-          "start": 257,
-          "end": 258,
+          "start": 186,
+          "end": 191,
+          "current": "    edges = {}\n    for name, rect in zip(('top', 'right', 'bottom', 'left'), selection_rects(width, height, scale, selected), strict=True):\n        xs, ys = rasterized_edge(*rect)\n        edges[name] = [(x, y) for y in ys for x in xs]\n    return edges\n",
+          "previous": "    return {name: [(px, py) for py in range(math.ceil(top - .5), math.ceil(bottom - .5))\n                   for px in range(math.ceil(left - .5), math.ceil(right - .5))]\n            for name, (left, top, right, bottom) in zip(('top', 'right', 'bottom', 'left'),\n                selection_rects(width, height, scale, selected))}\n"
+        },
+        {
+          "start": 258,
+          "end": 259,
           "current": "                   source_path=Path(project) / ('src/main/resources/' + V5C_ART_ENTRY))\n",
           "previous": "                   source_path=Path(project) / ('src/main/resources/' + ART_ENTRY))\n"
         },
         {
-          "start": 260,
-          "end": 262,
+          "start": 261,
+          "end": 263,
           "current": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,\n                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))\n",
           "previous": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)\n"
         },
         {
-          "start": 268,
-          "end": 270,
+          "start": 269,
+          "end": 271,
           "current": "def validate_packaged_runtime(identity, jar, classpath_report, *, active_art=(ART_ENTRY, ART_SHA)):\n    active_entry, active_digest = active_art\n",
           "previous": "def validate_packaged_runtime(identity, jar, classpath_report):\n"
         },
         {
-          "start": 290,
-          "end": 292,
+          "start": 291,
+          "end": 293,
           "current": "    require(identity.get('active_texture_sha256') == active_digest\n            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork hash or pack differs')\n",
           "previous": "    require(identity.get('active_texture_sha256') == ART_SHA\n            and identity.get('active_texture_pack') == 'mod/' + MOD_ID, 'Active artwork pack differs')\n"
         },
         {
-          "start": 306,
-          "end": 309,
+          "start": 307,
+          "end": 310,
           "current": "        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Retained normal JAR artwork differs')\n        require(active_entry in names and hashlib.sha256(archive.read(active_entry)).hexdigest() == active_digest,\n                'Active normal JAR artwork differs')\n",
           "previous": "        require(hashlib.sha256(archive.read(ART_ENTRY)).hexdigest() == ART_SHA, 'Normal JAR artwork differs')\n"
         },
         {
-          "start": 339,
-          "end": 341,
+          "start": 340,
+          "end": 342,
           "current": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report,\n                              active_art=(V5C_ART_ENTRY, V5C_ART_SHA))\n",
           "previous": "    validate_packaged_runtime(proof.get('packaged_runtime'), jar, classpath_report)\n"
         }
@@ -616,23 +628,29 @@
     },
     "tools/validation/test_factory_placer_delivery_evidence.py": {
       "old_sha256": "61ad107a318445bc0f0c263cf3e3492a0a37c32747b1a5d94811afd804993ff4",
-      "new_sha256": "97cf0ad949a8d4e7e91e1da23b8ca4517da30c57b2d9c4763a12262a1aeb0c07",
+      "new_sha256": "e021960da09d637c9df8b4f1155afd91624be5c4c1a740b506ce12a7a3a1aec3",
       "hunks": [
         {
-          "start": 240,
-          "end": 242,
+          "start": 126,
+          "end": 128,
+          "current": "                expected={name:[(px,py) for py in range(math.floor(sy(t)),math.ceil(sy(b))+1)\n                          if sy(t)<py+.5<=sy(b)\n",
+          "previous": "                expected={name:[(px,py) for py in range(math.ceil(sy(t)-.5),math.ceil(sy(b)-.5))\n"
+        },
+        {
+          "start": 241,
+          "end": 243,
           "current": "        self.entries[delivery.ART_ENTRY] = (DEFAULT_SOURCE.parent.parent / \"factory_placer_v2_reference/background.png\").read_bytes()\n        self.entries[delivery.V5C_ART_ENTRY] = (Path(__file__).resolve().parents[2] / \"src/main/resources\" / delivery.V5C_ART_ENTRY).read_bytes()\n",
           "previous": "        self.entries[delivery.ART_ENTRY] = DEFAULT_SOURCE.read_bytes()\n"
         },
         {
-          "start": 310,
-          "end": 312,
+          "start": 311,
+          "end": 313,
           "current": "            width=1280,height=720,selected_language='en_us',\n            packaged_runtime=dict(self.identity, active_texture_sha256=delivery.V5C_ART_SHA),\n",
           "previous": "            width=1280,height=720,selected_language='en_us',packaged_runtime=self.identity,\n"
         },
         {
-          "start": 321,
-          "end": 327,
+          "start": 322,
+          "end": 328,
           "current": "\n    def test_default_rejects_the_retained_legacy_faceplate(self):\n        proof = self.default_proof()\n        proof['packaged_runtime']['active_texture_sha256'] = ART_SHA\n        with self.assertRaisesRegex(SmokeFailure, 'Active artwork hash or pack differs'):\n            self.validate_default(proof)\n",
           "previous": ""
         }
@@ -1822,7 +1840,7 @@
     },
     "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/NativeFactoryPlacerV2ReferenceValidation.java": {
       "old_sha256": "78a4e78bb0965d200909d3a08e27e3709217be97492a4cd1146165aba0dc61ea",
-      "new_sha256": "be796bce985646245e63501b8a6353fba25940f389c464efa2521260abab4be6",
+      "new_sha256": "b1389efa1eda5f85334caad382b52f8f923ab94a7eaf17b53d0cb5cf1961f7a7",
       "hunks": [
         {
           "start": 62,
@@ -1831,26 +1849,32 @@
           "previous": "   private static final Rect CONTROL_CROP = new Rect(240, 55, 125, 120);\n"
         },
         {
-          "start": 661,
-          "end": 663,
+          "start": 494,
+          "end": 496,
+          "current": "            // Readback uses PNG top-down Y, opposite to lower-left OpenGL edge ownership.\n            for (int y = (int)Math.floor(y0 + .5); y < Math.floor(y1 + .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {\n",
+          "previous": "            for (int y = (int)Math.ceil(y0 - .5); y < Math.ceil(y1 - .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {\n"
+        },
+        {
+          "start": 662,
+          "end": 664,
           "current": "         double artWidth = FactoryPlacerV2ReferenceGeometry.CANVAS_WIDTH;\n         double artHeight = FactoryPlacerV2ReferenceGeometry.CANVAS_HEIGHT;\n",
           "previous": "         double artWidth = FactoryPlacerV2ReferenceGeometry.SOURCE_WIDTH * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;\n         double artHeight = FactoryPlacerV2ReferenceGeometry.SOURCE_HEIGHT * FactoryPlacerV2ReferenceGeometry.SOURCE_SCALE;\n"
         },
         {
-          "start": 683,
-          "end": 688,
+          "start": 684,
+          "end": 689,
           "current": "         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR, 28))\n         || inRect(x, y, v, scale, indicatorBounds(FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR, 26));\n   }\n   private static Rect indicatorBounds(Rect origin, int paintedWidth) {\n      return new Rect(origin.x(), origin.y(), paintedWidth, origin.height());\n",
           "previous": "         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.INVERSION_INDICATOR)\n         || inRect(x, y, v, scale, FactoryPlacerV2ReferenceGeometry.TRIGGER_INDICATOR);\n"
         },
         {
-          "start": 692,
-          "end": 693,
+          "start": 693,
+          "end": 694,
           "current": "         \"textures/gui/gui11_v5c/04.png\");\n",
           "previous": "         \"textures/gui/factory_placer_v2_reference/background.png\");\n"
         },
         {
-          "start": 697,
-          "end": 698,
+          "start": 698,
+          "end": 699,
           "current": "            \"Active V5C Factory Placer source dimensions differ\");\n",
           "previous": "            \"Retained Factory Placer source dimensions differ\");\n"
         }
@@ -1858,7 +1882,7 @@
     },
     "tools/validation/factory_placer_v2_reference_native.py": {
       "old_sha256": "f22a0716c38f485b8b0595df722ce19d6913fa7cf3b4cbf91785605699b6aff8",
-      "new_sha256": "6e98b4ba830a14c016eeb913717d2e2bff8c1e58263f40a7d90182de799256a0",
+      "new_sha256": "036f60f03ed9cd76b0639fa3c4be8a0570cdb75e0f14a05be240fabb45f3cf2a",
       "hunks": [
         {
           "start": 22,
@@ -1951,56 +1975,62 @@
           "previous": "        for i,x in enumerate((282,293,304)):\n            require(sample(name,(x,171,x+6,173))==(ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE),'Inversion pixels differ from observed state')\n        for i,x in enumerate((334,350)):\n            require(sample(name,(x,171,x+10,173))==(ACTIVE if i==bool(logic&2) else INACTIVE),'Trigger pixels differ from observed state')\n"
         },
         {
-          "start": 294,
-          "end": 295,
-          "current": "    \"\"\"Four center samples using the half-open, top-left raster convention.\"\"\"\n",
+          "start": 293,
+          "end": 300,
+          "current": "def rasterized_edge(left,top,right,bottom):\n    # OpenGL edge ownership is lower-left. PNG coordinates invert only Y,\n    # so a pixel center exactly on a horizontal edge belongs to the lower row.\n    return (range(math.ceil(left-.5),math.ceil(right-.5)),\n            range(math.floor(top+.5),math.floor(bottom+.5)))\n\n\n",
+          "previous": ""
+        },
+        {
+          "start": 301,
+          "end": 302,
+          "current": "    \"\"\"One center sample from each of the four native edge strips.\"\"\"\n",
           "previous": "    \"\"\"Four safely interior samples from the documented framebuffer strips.\"\"\"\n"
         },
         {
-          "start": 297,
-          "end": 299,
-          "current": "        xs=range(math.ceil(left-.5),math.ceil(right-.5))\n        ys=range(math.ceil(top-.5),math.ceil(bottom-.5))\n",
-          "previous": "        xs=range(math.ceil(left+.01-.5),math.floor(right-.01-.5)+1)\n        ys=range(math.ceil(top+.01-.5),math.floor(bottom-.01-.5)+1)\n"
+          "start": 303,
+          "end": 305,
+          "current": "    for rect in selection_rects(width,height,gui_scale,slot):\n        xs,ys=rasterized_edge(*rect)\n",
+          "previous": "    for left,top,right,bottom in selection_rects(width,height,gui_scale,slot):\n        xs=range(math.ceil(left+.01-.5),math.floor(right-.01-.5)+1)\n        ys=range(math.ceil(top+.01-.5),math.floor(bottom-.01-.5)+1)\n"
         },
         {
-          "start": 312,
-          "end": 313,
+          "start": 318,
+          "end": 319,
           "current": "DEFAULT_SOURCE = Path(__file__).resolve().parents[2]/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/04.png'\n",
           "previous": "DEFAULT_SOURCE = Path(__file__).resolve().parents[2]/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/factory_placer_v2_reference/background.png'\n"
         },
         {
-          "start": 322,
-          "end": 323,
+          "start": 328,
+          "end": 329,
           "current": "    require(hashlib.sha256(path.read_bytes()).hexdigest()==ACTIVE_ART_SHA,'Active source artwork hash differs')\n",
           "previous": "    require(hashlib.sha256(path.read_bytes()).hexdigest()==ART_SHA,'Retained source artwork hash differs')\n"
         },
         {
-          "start": 324,
-          "end": 325,
+          "start": 330,
+          "end": 331,
           "current": "    require(source[:2]==(SOURCE_EXTENT,SOURCE_EXTENT),'Retained source artwork dimensions differ')\n",
           "previous": "    require(source[:2]==(1199,1312),'Retained source artwork dimensions differ')\n"
         },
         {
-          "start": 330,
-          "end": 331,
+          "start": 336,
+          "end": 337,
           "current": "    \"\"\"Broad two-framebuffer-pixel grid, excluding only drawn overlays/items.\n",
           "previous": "    \"\"\"Broad eight-framebuffer-pixel grid, excluding only drawn overlays/items.\n"
         },
         {
-          "start": 338,
-          "end": 339,
+          "start": 344,
+          "end": 345,
           "current": "    factor=scale*f32(CANVAS_SIZE/SOURCE_EXTENT)*gui_scale\n",
           "previous": "    factor=scale*f32(1/3)*gui_scale\n"
         },
         {
-          "start": 341,
-          "end": 343,
+          "start": 347,
+          "end": 349,
           "current": "    for y in range(math.ceil(sy(0))+2,math.floor(sy(CANVAS_SIZE))-2,2):\n        for x in range(math.ceil(sx(0))+2,math.floor(sx(CANVAS_SIZE))-2,2):\n",
           "previous": "    for y in range(math.ceil(sy(0))+2,math.floor(sy(f32(1312*f32(1/3))))-2,8):\n        for x in range(math.ceil(sx(0))+2,math.floor(sx(f32(1199*f32(1/3))))-2,8):\n"
         },
         {
-          "start": 443,
-          "end": 444,
+          "start": 449,
+          "end": 450,
           "current": "    load_source(art.parent.parent / \"gui11_v5c/04.png\")\n",
           "previous": ""
         }
@@ -2008,7 +2038,7 @@
     },
     "tools/validation/test_factory_placer_v2_reference_native.py": {
       "old_sha256": "256d5650a14ba2732c8cfc5493174229602a7589c743b810cc12305599f84964",
-      "new_sha256": "a7473c18933bd886c1a31e3d1e5e14dab7705870877075c91fe83a4e678dcf6c",
+      "new_sha256": "b1ed19e8f2b5ae990b10deb5e14af7a7c5003e514d3ac8fdfce9a287655154f8",
       "hunks": [
         {
           "start": 23,
@@ -2035,26 +2065,38 @@
           "previous": ""
         },
         {
-          "start": 72,
-          "end": 74,
+          "start": 66,
+          "end": 70,
+          "current": "            for rect in selection_rects(width,height,scale,selected):\n                xs,ys=rasterized_edge(*rect)\n                for py in ys:\n                    for px in xs:\n",
+          "previous": "            for l,t,r,b in selection_rects(width,height,scale,selected):\n                for py in range(math.ceil(t-.5),math.ceil(b-.5)):\n                    for px in range(math.ceil(l-.5),math.ceil(r-.5)):\n"
+        },
+        {
+          "start": 73,
+          "end": 75,
           "current": "            for i,x in enumerate(INVERSION_X):paint((x,120,x+6,141),ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE)\n            for i,x in enumerate(TRIGGER_X):paint((x,120,x+10,141),ACTIVE if i==bool(logic&2) else INACTIVE)\n",
           "previous": "            for i,x in enumerate((282,293,304)):paint((x,171,x+6,173),ACTIVE if i==(2 if logic&4 else logic&1) else INACTIVE)\n            for i,x in enumerate((334,350)):paint((x,171,x+10,173),ACTIVE if i==bool(logic&2) else INACTIVE)\n"
         },
         {
-          "start": 154,
-          "end": 159,
+          "start": 155,
+          "end": 160,
           "current": "        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px)\n        sw,sh,src=load_source()\n        x,y=next((x,y) for x,y,tx,ty in source_samples(w,h,self.scale)\n                 if all(src[(iy*sw+ix)*4+3]==255 for iy in range(ty-1,ty+2) for ix in range(tx-1,tx+2)))\n        i=(y*w+x)*4;pixels[i:i+4]=bytes((255,0,255,255))\n",
           "previous": "        p=copy.deepcopy(self.proof);c=p['captures'][0];path=self.folder/c['name'];w,h,px=decode_png(path);pixels=bytearray(px);sx,sy=transform(w,h,self.scale);x,y=math.ceil(sx(40)),math.ceil(sy(40));pixels[(y*w+x)*4]^=1\n"
         },
         {
-          "start": 255,
-          "end": 263,
+          "start": 256,
+          "end": 264,
           "current": "    def test_source_row_alpha_is_composited_in_opaque_native_capture(self):\n        from factory_placer_v2_reference_native import opaque_composite_matches\n        source=bytes((98,93,93,253))\n        self.assertTrue(opaque_composite_matches(bytes((98,93,93,255)),source))\n        self.assertFalse(opaque_composite_matches(bytes((104,93,93,255)),source))\n        self.assertFalse(opaque_composite_matches(source,source))\n        self.assertFalse(opaque_composite_matches(bytes((98,93,93,255)),bytes((98,93,93,128))))\n\n",
           "previous": ""
         },
         {
-          "start": 288,
-          "end": 289,
+          "start": 279,
+          "end": 283,
+          "current": "    def test_odd_canvas_half_pixel_edges_flip_only_vertical_ownership(self):\n        self.assertEqual(outline_samples(1280,720,1,0),[(531,264),(539,273),(531,281),(522,273)])\n        self.assertEqual([list(axis) for axis in rasterized_edge(5,8,6,9)],[[5],[8]])\n\n",
+          "previous": ""
+        },
+        {
+          "start": 293,
+          "end": 294,
           "current": "        _,vs,_=expected_geometry(self.width,self.height,self.scale);factor=vs*f32(CANVAS_SIZE/SOURCE_EXTENT)*self.scale\n",
           "previous": "        _,vs,_=expected_geometry(self.width,self.height,self.scale);factor=vs*f32(1/3)*self.scale\n"
         }

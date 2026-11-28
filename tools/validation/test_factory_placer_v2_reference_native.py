@@ -64,9 +64,10 @@ class NativePlacerProofTest(unittest.TestCase):
                     for x in range(math.floor(sx(l)),math.ceil(sx(r))):pixels[(y*width+x)*4:(y*width+x+1)*4]=color
             x,y=SLOT_ORIGINS[selected]
             # Rasterize exact border coverage at pixel centers, not expanded edges.
-            for l,t,r,b in selection_rects(width,height,scale,selected):
-                for py in range(math.ceil(t-.5),math.ceil(b-.5)):
-                    for px in range(math.ceil(l-.5),math.ceil(r-.5)):
+            for rect in selection_rects(width,height,scale,selected):
+                xs,ys=rasterized_edge(*rect)
+                for py in ys:
+                    for px in xs:
                         pixels[(py*width+px)*4:(py*width+px+1)*4]=ROW_ACTIVE
             paint(INDICATORS[3],bytes((104,25,21,255)))
             paint(INDICATORS[selected//6],ROW_ACTIVE)
@@ -275,6 +276,10 @@ class NativePlacerProofTest(unittest.TestCase):
             (self.folder/c['controls_name']).write_bytes(crop);c['controls_sha256']=hashlib.sha256(crop).hexdigest()
             c['frame_exterior_sha256']=image_evidence(path,self.folder/c['controls_name'],w,h,self.scale)
         with self.assertRaisesRegex(SmokeFailure,'Unselected row indicator differs from retained source'):self.validate(p)
+
+    def test_odd_canvas_half_pixel_edges_flip_only_vertical_ownership(self):
+        self.assertEqual(outline_samples(1280,720,1,0),[(531,264),(539,273),(531,281),(522,273)])
+        self.assertEqual([list(axis) for axis in rasterized_edge(5,8,6,9)],[[5],[8]])
 
     def test_outline_samples_exist_for_all_captured_slots_in_five_profiles(self):
         for w,h,s in [(1280,720,1),(1280,260,1),(1920,1080,1),(1920,1080,2),(1920,1080,3)]:

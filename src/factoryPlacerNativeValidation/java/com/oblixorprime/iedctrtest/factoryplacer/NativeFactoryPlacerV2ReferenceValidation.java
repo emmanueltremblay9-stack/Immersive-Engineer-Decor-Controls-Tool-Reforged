@@ -492,7 +492,8 @@ public final class NativeFactoryPlacerV2ReferenceValidation {
          for (int edge = 0; edge < strips.size(); edge++) {
             var r = strips.get(edge); double x0 = r.left(), y0 = r.top(), x1 = r.right(), y1 = r.bottom();
             int expected = 0, matched = 0; var missingPixels = new JsonArray();
-            for (int y = (int)Math.ceil(y0 - .5); y < Math.ceil(y1 - .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {
+            // Readback uses PNG top-down Y, opposite to lower-left OpenGL edge ownership.
+            for (int y = (int)Math.floor(y0 + .5); y < Math.floor(y1 + .5); y++) for (int x = (int)Math.ceil(x0 - .5); x < Math.ceil(x1 - .5); x++) {
                expected++; int rgb = frame.getPixelRGBA(x, y) & 0xffffff;
                int argb = com.oblixorprime.engineersdecorreforged.utility.FactoryPlacerV2ReferenceState.SELECTED_COLOR;
                int abgr = ((argb & 255) << 16) | (argb & 0xff00) | ((argb >>> 16) & 255);

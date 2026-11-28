@@ -291,12 +291,18 @@ def selection_rects(width,height,gui_scale,slot):
                  ((x-1,y-1,x+17,y),(x+16,y,x+17,y+16),(x-1,y+16,x+17,y+17),(x-1,y,x,y+16)))
 
 
+def rasterized_edge(left,top,right,bottom):
+    # OpenGL edge ownership is lower-left. PNG coordinates invert only Y,
+    # so a pixel center exactly on a horizontal edge belongs to the lower row.
+    return (range(math.ceil(left-.5),math.ceil(right-.5)),
+            range(math.floor(top+.5),math.floor(bottom+.5)))
+
+
 def outline_samples(width,height,gui_scale,slot):
-    """Four center samples using the half-open, top-left raster convention."""
+    """One center sample from each of the four native edge strips."""
     samples=[]
-    for left,top,right,bottom in selection_rects(width,height,gui_scale,slot):
-        xs=range(math.ceil(left-.5),math.ceil(right-.5))
-        ys=range(math.ceil(top-.5),math.ceil(bottom-.5))
+    for rect in selection_rects(width,height,gui_scale,slot):
+        xs,ys=rasterized_edge(*rect)
         if xs and ys:samples.append((xs[len(xs)//2],ys[len(ys)//2]))
     return samples
 

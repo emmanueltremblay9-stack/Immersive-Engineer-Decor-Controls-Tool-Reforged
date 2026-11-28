@@ -11,7 +11,7 @@ from urllib.parse import urlsplit
 
 from factory_placer_v2_reference_native import (
     ART_SHA, ROW_ACTIVE, SLOT_ORIGINS, decode_png, expected_geometry,
-    png, require, selection_rects, strict_equal, transform, validate_proof, validate_viewport,
+    png, rasterized_edge, require, selection_rects, strict_equal, transform, validate_proof, validate_viewport,
 )
 from client_mixin_smoke import FATAL_PATTERN
 
@@ -184,10 +184,11 @@ def validate_tooltips(proof, game, project, width, height, language, gui_scale):
 
 
 def selection_edges(width, height, scale, selected):
-    return {name: [(px, py) for py in range(math.ceil(top - .5), math.ceil(bottom - .5))
-                   for px in range(math.ceil(left - .5), math.ceil(right - .5))]
-            for name, (left, top, right, bottom) in zip(('top', 'right', 'bottom', 'left'),
-                selection_rects(width, height, scale, selected))}
+    edges = {}
+    for name, rect in zip(('top', 'right', 'bottom', 'left'), selection_rects(width, height, scale, selected), strict=True):
+        xs, ys = rasterized_edge(*rect)
+        edges[name] = [(x, y) for y in ys for x in xs]
+    return edges
 
 
 def validate_selections(proof, game, width, height, gui_scale):
