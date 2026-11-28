@@ -153,7 +153,7 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             },
             "window_width": self.window_width, "window_height": self.window_height,
             "screen": {
-                "gui_width": width, "gui_height": height, "panel_width": 347, "panel_height": 381,
+                "gui_width": width, "gui_height": height, "panel_width": 279, "panel_height": 312,
                 "view_scale": scale, "origin_x": origin_x, "origin_y": origin_y,
                 "output_slot_visible": True, "output_slot_insertion_forbidden": True,
                 "legacy_drawer_and_mode_tabs_absent": True, "resize_restored": True,
@@ -205,12 +205,19 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
         # profiles run with GUI scale 1, so logical and framebuffer sizes agree.
         scale, x, y = thermal_vertical_fit(1280, 720)
         self.assertAlmostEqual(scale, 0.78)
-        self.assertAlmostEqual(x, 504.67)
-        self.assertAlmostEqual(y, 211.41)
+        self.assertAlmostEqual(x, 531.19)
+        self.assertAlmostEqual(y, 238.32)
         scale, x, y = thermal_vertical_fit(1280, 260)
-        self.assertAlmostEqual(scale, 0.6509186351706037)
-        self.assertAlmostEqual(x, 527.0656167979002)
-        self.assertAlmostEqual(y, 6.0)
+        self.assertAlmostEqual(scale, 0.78)
+        self.assertAlmostEqual(x, 531.19)
+        self.assertAlmostEqual(y, 8.32)
+
+    def test_rejects_legacy_and_freezer_canvases_for_v5c_smelter(self):
+        for dimensions in ((347, 381), (281, 313)):
+            proof = copy.deepcopy(self.proof)
+            proof["screen"]["panel_width"], proof["screen"]["panel_height"] = dimensions
+            with self.subTest(dimensions=dimensions), self.assertRaises(SmokeFailure):
+                self.check(proof)
 
     def test_rejects_obsolete_drawer_and_mode_tabs(self):
         for field in ("drawer_accessible_messages", "drawer_input_method", "translated_lava_mode"):

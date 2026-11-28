@@ -1,0 +1,54 @@
+{
+  "schema": "iedctr-prism-v5c-native-fit-v1",
+  "base_commit": "6043e80fd9d8ce98a063f05b0e670a7a92479f51",
+  "files": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java": {
+      "old_sha256": "16cf7b90d37852098df682e025163d79df63728b4800594053ff51fb992bce55",
+      "new_sha256": "a662b1845371fb7f3d12f2ee1d04273cce9b2dc1a527713b01c2d63c0517b2be",
+      "hunks": [
+        {
+          "start": 8,
+          "end": 8,
+          "current": "",
+          "previous": "import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;\n"
+        },
+        {
+          "start": 354,
+          "end": 356,
+          "current": "      require(mc.screen instanceof ThermalVerticalScreen, \"Smelter screen closed before the proof was recorded\");\n      var fit = ((ThermalVerticalScreen) mc.screen).validationViewTransform();\n",
+          "previous": "      var fit = FreezerReferenceGeometry.fitCanvas(mc.screen.width, mc.screen.height,\n         ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);\n"
+        },
+        {
+          "start": 387,
+          "end": 389,
+          "current": "      screen.addProperty(\"panel_width\", ThermalVerticalGeometry.canvasWidth(menu.kind()));\n      screen.addProperty(\"panel_height\", ThermalVerticalGeometry.canvasHeight(menu.kind()));\n",
+          "previous": "      screen.addProperty(\"panel_width\", ThermalVerticalGeometry.CANVAS_WIDTH);\n      screen.addProperty(\"panel_height\", ThermalVerticalGeometry.CANVAS_HEIGHT);\n"
+        }
+      ]
+    },
+    "tools/validation/test_prism_210_history_projection.py": {
+      "old_sha256": "c3393a139f7db25eadbcf459a1f475bab7a15c7648fadc44dd42656138d82c65",
+      "new_sha256": "e89d0985267603db8b01bcb6145d964d792bb30ec32655c1d1f25a37e04d69fa",
+      "hunks": [
+        {
+          "start": 11,
+          "end": 12,
+          "current": "    _reverse_layer, expected_current_sha256, project_before_gui11_v5c, project_before_v5c_native_fit,\n",
+          "previous": "    _reverse_layer, expected_current_sha256, project_before_gui11_v5c,\n"
+        },
+        {
+          "start": 48,
+          "end": 51,
+          "current": "                self.assertEqual(expected_current_sha256(path), sha256(candidate))\n                prior_candidate = project_before_v5c_native_fit(path, candidate)\n                self.assertEqual(sha256(prior_candidate), layer[\"new_sha256\"])\n",
+          "previous": "                self.assertEqual(sha256(candidate), layer[\"new_sha256\"])\n                self.assertEqual(expected_current_sha256(path), layer[\"new_sha256\"])\n"
+        },
+        {
+          "start": 106,
+          "end": 107,
+          "current": "                              if path in port[\"files\"] else project_before_v5c_native_fit(path, candidate))\n",
+          "previous": "                              if path in port[\"files\"] else candidate)\n"
+        }
+      ]
+    }
+  }
+}

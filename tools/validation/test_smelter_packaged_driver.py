@@ -9,11 +9,14 @@ class DriverTests(unittest.TestCase):
         old=(ROOT/'src/main/java/com/oblixorprime/engineersdecorreforged/client/validation/NativeSmelterGuiValidation.java').read_text()
         new=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/NativeSmelterGuiValidation.java').read_text()
         new=new.replace('package com.oblixorprime.iedctrtest.smelter;', 'package com.oblixorprime.engineersdecorreforged.client.validation;')
-        actual_fit='''var fit = FreezerReferenceGeometry.fitCanvas(mc.screen.width, mc.screen.height,
-         ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);'''
+        actual_fit='var fit = ((ThermalVerticalScreen) mc.screen).validationViewTransform();'
         self.assertEqual(new.count(actual_fit),1,'Packaged fixture must fit the actual ThermalVertical canvas')
         self.assertEqual(old.count(actual_fit),1,'Build validation fixture must fit the actual ThermalVertical canvas')
         self.assertEqual(new,old,'Packaged and build fixtures must preserve the same GUI and proof gates')
+        self.assertIn('"panel_width", ThermalVerticalGeometry.canvasWidth(menu.kind())', new)
+        self.assertIn('"panel_height", ThermalVerticalGeometry.canvasHeight(menu.kind())', new)
+        self.assertNotIn('ThermalVerticalGeometry.CANVAS_WIDTH', new)
+        self.assertNotIn('ThermalVerticalGeometry.CANVAS_HEIGHT', new)
     def test_support_is_server_prepared_before_original_fixture(self):
         text=(ROOT/'src/smelterPackagedValidation/java/com/oblixorprime/iedctrtest/smelter/SmelterPackagedDriver.java').read_text()
         self.assertIn('new BlockPos(x, 80, z), Blocks.STONE.defaultBlockState()',text)

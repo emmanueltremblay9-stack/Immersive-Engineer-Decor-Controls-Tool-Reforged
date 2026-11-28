@@ -388,7 +388,11 @@ public final class FactoryStudyPackagedValidation {
         var s=screen(mc);var m=menu(mc);var v=s.validationViewTransform();int count=FactoryStudyGeometry.machineSlotCount(kind);
         require(m.factoryStudyPresentation()&&m.slots.size()==count+36&&m.visibleMachineSlots()==count,"Menu topology differs");
         require(s.validationControlCount()==(kind==MachineKind.FACTORY_HOPPER?6:kind==MachineKind.FACTORY_DROPPER?8:0),"Control count differs");
-        require(v.originX()>=5.9&&v.originY()>=5.9&&v.screenX(316)<=s.width-5.9&&v.screenY(312)<=s.height-5.9,"Canvas exceeds viewport margin");
+        int panelWidth = FactoryStudyGeometry.canvasWidth(kind);
+        int panelHeight = FactoryStudyGeometry.canvasHeight(kind);
+        require(v.originX() >= 5.9 && v.originY() >= 5.9
+            && v.screenX(panelWidth) <= s.width - 5.9 && v.screenY(panelHeight) <= s.height - 5.9,
+            "Canvas exceeds viewport margin: " + kind + " " + panelWidth + "x" + panelHeight);
         for(var a:FactoryStudyGeometry.anchors(kind)){
             var slot=m.getSlot(a.menuIndex());require(slot.x==a.x()&&slot.y==a.y(),"Anchor differs");
             int backing=a.menuIndex()<count?a.menuIndex():a.menuIndex()<count+27?a.menuIndex()-count+9:a.menuIndex()-count-27;

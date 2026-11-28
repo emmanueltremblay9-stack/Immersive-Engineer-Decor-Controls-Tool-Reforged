@@ -36,6 +36,8 @@ SOLAR_GUI11_R3_RECORD = Path(__file__).with_name("prism_210_solar_gui11_r3_proje
 SOLAR_GUI11_R3_RECORD_SHA256 = "8cfc9a97852d0462dab0cf776fc05611fdb77db26376f9096ea14e72839e5b57"
 GUI11_V5C_RECORD = Path(__file__).with_name("prism_210_gui11_v5c_projection.json")
 GUI11_V5C_RECORD_SHA256 = "743a1d0d4f6540abef585c1ebbe441239329be9171d5a9a962dd911ffebf788e"
+V5C_NATIVE_FIT_RECORD = Path(__file__).with_name("prism_210_v5c_native_fit_projection.json")
+V5C_NATIVE_FIT_RECORD_SHA256 = "52e3cfb73be2e4ee42904e8b7fdcdfeb842ca5ccf0a9cf271de80399b6a8aef8"
 BASE_COMMIT = "d7dce0724698a069855d2284c758e8761edd17b6"
 HEAD_COMMIT = "276cd7c0a13e7bfacc58921611c605fb0f2411d2"
 RECORD_BYTES = RECORD.read_bytes()
@@ -51,6 +53,7 @@ ORDINARY_JAR_FOLLOWUP_REPIN_RECORD_BYTES = ORDINARY_JAR_FOLLOWUP_REPIN_RECORD.re
 ORDINARY_JAR_V5C_REPIN_RECORD_BYTES = ORDINARY_JAR_V5C_REPIN_RECORD.read_bytes()
 SOLAR_GUI11_R3_RECORD_BYTES = SOLAR_GUI11_R3_RECORD.read_bytes()
 GUI11_V5C_RECORD_BYTES = GUI11_V5C_RECORD.read_bytes()
+V5C_NATIVE_FIT_RECORD_BYTES = V5C_NATIVE_FIT_RECORD.read_bytes()
 
 
 def _record():
@@ -227,8 +230,26 @@ def project_before_solar_gui11_r3(path: str, source: bytes) -> bytes:
     return source
 
 
+def _v5c_native_fit_record():
+    if sha256(V5C_NATIVE_FIT_RECORD_BYTES) != V5C_NATIVE_FIT_RECORD_SHA256:
+        raise AssertionError("#210 V5C native fit projection record changed")
+    data = json.loads(V5C_NATIVE_FIT_RECORD_BYTES)
+    if (data.get("schema") != "iedctr-prism-v5c-native-fit-v1"
+            or data.get("base_commit") != "6043e80fd9d8ce98a063f05b0e670a7a92479f51"):
+        raise AssertionError("#210 V5C native fit projection base changed")
+    return data
+
+
+def project_before_v5c_native_fit(path: str, source: bytes) -> bytes:
+    layer = _v5c_native_fit_record()["files"].get(path)
+    if layer is not None and sha256(source) == layer["new_sha256"]:
+        return _reverse_layer(path, source, layer)
+    return source
+
+
 def project_before_gui11_v5c(path: str, source: bytes, *, strict: bool = False) -> bytes:
     """Remove only the exact V5-Corrigee GUI11 integration top layer."""
+    source = project_before_v5c_native_fit(path, source)
     source = project_before_ordinary_jar_v5c_repin(path, source)
     layer = _gui11_v5c_record()["files"].get(path)
     if layer is None:
@@ -393,6 +414,9 @@ def project_file_from_root(path: str, *, strict: bool = True) -> bytes:
 
 def expected_current_sha256(path: str) -> str | None:
     """Return the pinned final candidate blob identity for an allowed path."""
+    native_fit = _v5c_native_fit_record()["files"].get(path)
+    if native_fit is not None:
+        return native_fit["new_sha256"]
     v5c_repin = _ordinary_jar_v5c_repin_record()["files"].get(path)
     if v5c_repin is not None:
         return v5c_repin["new_sha256"]

@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.client.ThermalVerticalScreen;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
-import com.oblixorprime.engineersdecorreforged.utility.FreezerReferenceGeometry;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.ThermalVerticalGeometry;
@@ -353,8 +352,8 @@ final class NativeSmelterGuiValidation {
       require(language.equals(selected), "Minecraft did not load requested Smelter locale");
       String title = Component.translatable(TITLE_KEY).getString();
       require(!title.equals(TITLE_KEY) && !title.isBlank(), "Smelter localized title is unavailable");
-      var fit = FreezerReferenceGeometry.fitCanvas(mc.screen.width, mc.screen.height,
-         ThermalVerticalGeometry.CANVAS_WIDTH, ThermalVerticalGeometry.CANVAS_HEIGHT, 0.78F);
+      require(mc.screen instanceof ThermalVerticalScreen, "Smelter screen closed before the proof was recorded");
+      var fit = ((ThermalVerticalScreen) mc.screen).validationViewTransform();
       JsonObject proof = new JsonObject();
       proof.addProperty("suite", SUITE);
       proof.addProperty("schema_version", 2);
@@ -386,8 +385,8 @@ final class NativeSmelterGuiValidation {
       JsonObject screen = new JsonObject();
       screen.addProperty("gui_width", mc.getWindow().getGuiScaledWidth());
       screen.addProperty("gui_height", mc.getWindow().getGuiScaledHeight());
-      screen.addProperty("panel_width", ThermalVerticalGeometry.CANVAS_WIDTH);
-      screen.addProperty("panel_height", ThermalVerticalGeometry.CANVAS_HEIGHT);
+      screen.addProperty("panel_width", ThermalVerticalGeometry.canvasWidth(menu.kind()));
+      screen.addProperty("panel_height", ThermalVerticalGeometry.canvasHeight(menu.kind()));
       screen.addProperty("view_scale", fit.scale());
       screen.addProperty("origin_x", fit.originX());
       screen.addProperty("origin_y", fit.originY());

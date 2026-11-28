@@ -9,7 +9,7 @@ from prism_210_history_projection import (
     LATE_VALIDATION_RECORD, _freezer_qa_followup_record, _electrical_controls_record,
     GUI11_V5C_RECORD, _gui11_v5c_record,
     _ordinary_jar_repin_record, _ordinary_jar_followup_repin_record,
-    _reverse_layer, expected_current_sha256, project_before_gui11_v5c,
+    _reverse_layer, expected_current_sha256, project_before_gui11_v5c, project_before_v5c_native_fit,
     project_current_candidate, sha256,
 )
 
@@ -46,8 +46,9 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
         for path, layer in v5c["files"].items():
             candidate = (ROOT / path).read_bytes()
             with self.subTest(path=path):
-                self.assertEqual(sha256(candidate), layer["new_sha256"])
-                self.assertEqual(expected_current_sha256(path), layer["new_sha256"])
+                self.assertEqual(expected_current_sha256(path), sha256(candidate))
+                prior_candidate = project_before_v5c_native_fit(path, candidate)
+                self.assertEqual(sha256(prior_candidate), layer["new_sha256"])
                 historical = project_before_gui11_v5c(path, candidate, strict=True)
                 self.assertEqual(sha256(historical), layer["old_sha256"])
                 with self.assertRaisesRegex(AssertionError, "Unrecognized #210 candidate bytes"):
@@ -103,7 +104,7 @@ class Prism210HistoryProjectionTests(unittest.TestCase):
         for path in (smelter, thermal, v2):
             candidate = (ROOT / path).read_bytes()
             late_candidate = (subprocess.check_output(["git", "show", port["base_commit"] + ":" + path], cwd=ROOT)
-                              if path in port["files"] else candidate)
+                              if path in port["files"] else project_before_v5c_native_fit(path, candidate))
             self.assertEqual(sha256(late_candidate), late["files"][path]["new_sha256"], path)
             if path in port["files"]:
                 candidate_before_recovery = reverse_energy_scissor(path, candidate, scissor)
