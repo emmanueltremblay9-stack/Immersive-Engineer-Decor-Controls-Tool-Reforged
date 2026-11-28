@@ -117,12 +117,12 @@ def valid_evidence(fluid='water', language='en_us', height=720):
             fluid_id='minecraft:empty' if i==0 else FLUID_IDS[fluid], total_items=1,
             player_buckets=1-carried, player_slot_2_buckets=1-carried, carried_buckets=carried,
             machine_input_empty=True, machine_output_empty=True)
-        x,y=math.floor(ox+(190 if i==3 else 8)*scale+.5),math.floor(oy+(150 if i==3 else 8)*scale+.5)
+        x,y=math.floor(ox+(147 if i==3 else 8)*scale+.5),math.floor(oy+(105 if i==3 else 8)*scale+.5)
         geometry=dict(outer_frame_id=100+i, render_id=50+i, screen_id=2, menu_id=1, state_name=state,
             pointer_x=float(x), pointer_y=float(y), gui_width=width, gui_height=height,
             gui_left=left, gui_top=top, image_width=iw, image_height=ih,
             view_scale=scale, view_origin_x=ox, view_origin_y=oy,
-            tank_x=ox+170*scale,tank_y=oy+115*scale,tank_width=41*scale,tank_height=78*scale,
+            tank_x=ox+134*scale,tank_y=oy+80*scale,tank_width=26*scale,tank_height=50*scale,
             hover_probe_method='read-only screen hook; not physical edge gestures',
             slot_hover_bounds=[dict(menu_slot=j,x=a,y=b,center_hover=True,four_outside_edges_rejected=True)
                                for j,(a,b) in enumerate(slot_anchors())])
@@ -306,7 +306,7 @@ class FullProofTests(RuntimeTests):
             original=path.read_bytes();original_hash=row['sha256']
             width,height,raw=decode_png(path);pixels=bytearray(raw)
             scale,ox,oy=transform(width,height)
-            x=math.ceil(ox+174*scale);y=math.ceil(oy+120*scale)
+            x=math.ceil(ox+138*scale);y=math.ceil(oy+85*scale)
             pixels[4*(y*width+x):4*(y*width+x)+4]=bytes.fromhex('1050b0ff')
             write_png(path,width,height,pixels);row['sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
             with self.subTest(i=i),self.assertRaises(SmokeFailure):self.full_check()

@@ -9,6 +9,7 @@ from fluid_gestures_native import require, strict_equal
 from factory_placer_delivery_evidence import uri_identity
 from factory_placer_v2_reference_native import png, decode_png
 from client_mixin_smoke import FATAL_PATTERN
+from barrel_reference_native import ART_SHA, CANVAS_WIDTH, CANVAS_HEIGHT, TANK_X, TANK_Y, TANK_WIDTH, TANK_HEIGHT
 
 MOD = 'immersive_engineer_decor_controls_tool_reforged'
 HARNESS = 'iedctr_barrel_v5_validation'
@@ -18,6 +19,7 @@ CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.BarrelReferenceS
     'client.FluidBarrelSpriteRenderer')]
 TEXTURES = {
     'textures/gui/barrel_reference_v5/background.png': 'db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c',
+    'textures/gui/gui11_v5c/15.png': ART_SHA,
 }
 
 
@@ -98,30 +100,30 @@ def f32(value):
 
 def transform(width, height):
     available_width, available_height = width-12, height-12
-    scale = f32(min(1, available_width/379, available_height/461))
-    if scale*379 > available_width or scale*461 > available_height:
+    scale = f32(min(1, available_width/CANVAS_WIDTH, available_height/CANVAS_HEIGHT))
+    if scale*CANVAS_WIDTH > available_width or scale*CANVAS_HEIGHT > available_height:
         bits = struct.unpack('!I', struct.pack('!f', scale))[0]
         scale = struct.unpack('!f', struct.pack('!I', bits-1))[0]
-    return scale, f32((width-379*scale)/2), f32((height-461*scale)/2)
+    return scale, f32((width-CANVAS_WIDTH*scale)/2), f32((height-CANVAS_HEIGHT*scale)/2)
 
 
 def screen_geometry(width, height):
     scale, ox, oy = transform(width, height)
-    return scale, ox, oy, math.floor(ox), math.floor(oy), math.ceil(ox+379*scale)-math.floor(ox), math.ceil(oy+461*scale)-math.floor(oy)
+    return scale, ox, oy, math.floor(ox), math.floor(oy), math.ceil(ox+CANVAS_WIDTH*scale)-math.floor(ox), math.ceil(oy+CANVAS_HEIGHT*scale)-math.floor(oy)
 
 
 def sample_geometry(width, height, index):
     scale, ox, oy = transform(width, height)
-    top = (115,154,115)[index]
-    x, y = math.ceil(ox+173*scale), math.ceil(oy+(top+2)*scale)
-    return dict(x=x, y=y, width=math.floor(ox+208*scale)-x, height=math.floor(oy+191*scale)-y)
+    top = TANK_Y + (TANK_HEIGHT // 2 if index == 1 else 0)
+    x, y = math.ceil(ox+(TANK_X+3)*scale), math.ceil(oy+(top+2)*scale)
+    return dict(x=x, y=y, width=math.floor(ox+(TANK_X+TANK_WIDTH-3)*scale)-x, height=math.floor(oy+(TANK_Y+TANK_HEIGHT-2)*scale)-y)
 
 
 def slot_anchors():
-    source = [(166,451,140,140),(838,451,140,140)]
-    source += [(x,y,76,72) for y in (802,904,1006) for x in (132,232,332,432,532,632,732,832,932)]
-    source += [(x,1148,76,76) for x in (148,244,340,436,532,628,724,820,916)]
-    return [(math.floor((x+w/2)/3-8+.5),math.floor((y+h/2)/3-8+.5)) for x,y,w,h in source]
+    # Two bucket slots, three inventory rows, and one hotbar row from the approved faceplate.
+    return [(68, 107), (212, 107)] + [
+        (x, y) for y in (191, 214, 237, 272) for x in (50, 73, 95, 117, 139, 161, 183, 206, 228)
+    ]
 
 
 def number(obj, key, expected):
@@ -190,14 +192,14 @@ def validate_evidence(proof, nonce, source_sha, width, height, language, fluid):
         for key, value in dict(outer_frame_id=outer, render_id=render, screen_id=sid, menu_id=menu_id,
             gui_width=width, gui_height=height, gui_left=left, gui_top=top, image_width=image_width, image_height=image_height).items(): integer(g, key, value)
         for key, value in dict(view_scale=scale, view_origin_x=ox, view_origin_y=oy,
-            tank_x=ox+170*scale, tank_y=oy+115*scale, tank_width=41*scale, tank_height=78*scale).items(): number(g,key,value)
+            tank_x=ox+TANK_X*scale, tank_y=oy+TANK_Y*scale, tank_width=TANK_WIDTH*scale, tank_height=TANK_HEIGHT*scale).items(): number(g,key,value)
         bounds = g.get('slot_hover_bounds')
         require(type(bounds) is list and len(bounds)==38 and g.get('hover_probe_method') == 'read-only screen hook; not physical edge gestures', 'Missing or overstated hover probes')
         for slot, (b, (x,y)) in enumerate(zip(bounds,slot_anchors())):
             require(type(b) is dict and b.get('center_hover') is True and b.get('four_outside_edges_rejected') is True, 'Hover bounds failed')
             for key,value in dict(menu_slot=slot,x=x,y=y).items(): integer(b,key,value)
         require(g.get('state_name') == state, 'Stale geometry state')
-        for axis, value in (('x', math.floor(ox+(190 if index == 3 else 8)*scale+.5)), ('y', math.floor(oy+(150 if index == 3 else 8)*scale+.5))):
+        for axis, value in (('x', math.floor(ox+(TANK_X + TANK_WIDTH // 2 if index == 3 else 8)*scale+.5)), ('y', math.floor(oy+(TANK_Y + TANK_HEIGHT // 2 if index == 3 else 8)*scale+.5))):
             integer(row, 'target_'+axis, value)
             pointer = g.get('pointer_'+axis)
             require(type(pointer) in (int, float) and math.isfinite(pointer) and abs(pointer-value) < 1,
@@ -273,8 +275,9 @@ def validate_proof(proof, nonce, source_sha, game, logs, exit_code, timed_out, w
             if index == 1:
                 scale,ox,oy=transform(width,height)
                 require(all(pixels[4*(py*width+px):4*(py*width+px)+4] == empty_pixels[4*(py*width+px):4*(py*width+px)+4]
-                    for py in range(math.ceil(oy+117*scale),math.floor(oy+152*scale))
-                    for px in range(math.ceil(ox+173*scale),math.floor(ox+208*scale))),
+                    for py in range(math.ceil(oy+(TANK_Y+2)*scale),
+                                    math.floor(oy+(TANK_Y+TANK_HEIGHT//2-2)*scale))
+                    for px in range(math.ceil(ox+(TANK_X+3)*scale),math.floor(ox+(TANK_X+TANK_WIDTH-3)*scale))),
                     'Half-full tank upper region differs from captured empty artwork')
     require(f'IEDCTR_BARREL_V5_PACKAGED PASSED nonce={nonce} source={source_sha}' in logs, 'Missing current-run completion marker')
     return proof

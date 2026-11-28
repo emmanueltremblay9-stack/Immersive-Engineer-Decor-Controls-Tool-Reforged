@@ -18,7 +18,9 @@ import zlib
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 
 SUITE = "native-barrel-reference-v2"
-ART_SHA = "db926e05f68a75e5fd84a6b67e2d7d6ad875d90de52122a3a584759d55c47c6c"
+ART_SHA = "eb22fd2eba33a68ebb462ca8dbe6bc2fab41720c26a1ca49436af06b2a490388"
+CANVAS_WIDTH, CANVAS_HEIGHT = 292, 329
+TANK_X, TANK_Y, TANK_WIDTH, TANK_HEIGHT = 134, 80, 26, 50
 SCREEN_CLASS = "com.oblixorprime.engineersdecorreforged.client.BarrelReferenceScreen"
 CASES = {"all_38_pickup_return_server_confirmed", "native_empty_water_lava_milk_half_full",
          "resource_reload_preserves_server_client_state", "post_reload_all_38_pickup_return_server_confirmed",
@@ -47,25 +49,25 @@ def expected_geometry(width: int, height: int, gui_scale: int) -> tuple[dict, fl
     # Match Java's float fit/origin rounding, including its nextDown guard.
     def f32(value: float) -> float:
         return struct.unpack(">f", struct.pack(">f", value))[0]
-    scale = f32(min(1, (gw - 12) / 379, (gh - 12) / 461))
-    if scale * 379 > gw - 12 or scale * 461 > gh - 12:
+    scale = f32(min(1, (gw - 12) / CANVAS_WIDTH, (gh - 12) / CANVAS_HEIGHT))
+    if scale * CANVAS_WIDTH > gw - 12 or scale * CANVAS_HEIGHT > gh - 12:
         bits = struct.unpack(">I", struct.pack(">f", scale))[0]
         scale = struct.unpack(">f", struct.pack(">I", bits - 1))[0]
-    ox, oy = f32((gw - 379 * scale) / 2), f32((gh - 461 * scale) / 2)
+    ox, oy = f32((gw - CANVAS_WIDTH * scale) / 2), f32((gh - CANVAS_HEIGHT * scale) / 2)
     # GuiGraphics scales the integer GUI scissor, not its pre-rounded bounds.
-    x0, y0 = math.ceil(ox + 170 * scale) * gui_scale, math.ceil(oy + 115 * scale) * gui_scale
-    x1, y1 = math.floor(ox + 211 * scale) * gui_scale, math.floor(oy + 193 * scale) * gui_scale
+    x0, y0 = math.ceil(ox + TANK_X * scale) * gui_scale, math.ceil(oy + TANK_Y * scale) * gui_scale
+    x1, y1 = math.floor(ox + (TANK_X + TANK_WIDTH) * scale) * gui_scale, math.floor(oy + (TANK_Y + TANK_HEIGHT) * scale) * gui_scale
     return viewport, scale, (x0, y0, x1 - x0, y1 - y0)
 
 
 def expected_presentation_bounds(width: int, height: int, gui_scale: int) -> dict:
     viewport, scale, _ = expected_geometry(width, height, gui_scale)
     def f32(value): return struct.unpack(">f", struct.pack(">f", value))[0]
-    ox, oy = f32((viewport["gui_width"] - 379 * scale) / 2), f32((viewport["gui_height"] - 461 * scale) / 2)
+    ox, oy = f32((viewport["gui_width"] - CANVAS_WIDTH * scale) / 2), f32((viewport["gui_height"] - CANVAS_HEIGHT * scale) / 2)
     left, top = math.floor(ox), math.floor(oy)
     return dict(presentation_gui_left=left, presentation_gui_top=top,
-                presentation_gui_width=math.ceil(ox + 379 * scale) - left,
-                presentation_gui_height=math.ceil(oy + 461 * scale) - top)
+                presentation_gui_width=math.ceil(ox + CANVAS_WIDTH * scale) - left,
+                presentation_gui_height=math.ceil(oy + CANVAS_HEIGHT * scale) - top)
 
 
 def validate_reload(proof: dict) -> dict:
@@ -280,13 +282,13 @@ def image_evidence(path: Path, crop_path: Path, width: int, height: int, gui_sca
     actual=b''.join(pixels[(y*w+tx)*4:(y*w+tx+tw)*4] for y in range(ty,ty+th))
     if actual!=crop:raise SmokeFailure("Tank crop is not the native screenshot region")
     def f32(value):return struct.unpack('>f',struct.pack('>f',value))[0]
-    ox=f32((viewport['gui_width']-379*scale)/2);oy=f32((viewport['gui_height']-461*scale)/2)
+    ox=f32((viewport['gui_width']-CANVAS_WIDTH*scale)/2);oy=f32((viewport['gui_height']-CANVAS_HEIGHT*scale)/2)
     sx=lambda x:(ox+x*scale)*gui_scale
     sy=lambda y:(oy+y*scale)*gui_scale
-    left,top,right,bottom=math.floor(sx(170))-2,math.floor(sy(115))-2,math.ceil(sx(211))+2,math.ceil(sy(193))+2
+    left,top,right,bottom=math.floor(sx(TANK_X))-2,math.floor(sy(TANK_Y))-2,math.ceil(sx(TANK_X + TANK_WIDTH))+2,math.ceil(sy(TANK_Y + TANK_HEIGHT))+2
     digest=hashlib.sha256()
-    for y in range(math.ceil(sy(106)),math.floor(sy(201))):
-        for x in range(math.ceil(sx(160)),math.floor(sx(220))):
+    for y in range(math.ceil(sy(TANK_Y - 9)),math.floor(sy(TANK_Y + TANK_HEIGHT + 8))):
+        for x in range(math.ceil(sx(TANK_X - 10)),math.floor(sx(TANK_X + TANK_WIDTH + 9))):
             if not (left<=x<=right and top<=y<=bottom):
                 digest.update(pixels[(y*w+x)*4:(y*w+x+1)*4])
     return digest.hexdigest()
@@ -318,9 +320,9 @@ def main() -> int:
                                 capture_output=True, text=True).stdout.strip()
     if not re.fullmatch(r"[a-f0-9]{40}", source_sha):
         parser.error("Missing exact source SHA")
-    art = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/barrel_reference_v5/background.png"
+    art = project / "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/15.png"
     if hashlib.sha256(art.read_bytes()).hexdigest() != ART_SHA:
-        parser.error("Retained Barrel V5 art changed")
+        parser.error("Barrel V5-Corrigee faceplate changed")
     missing = [name for name in ("java", "Xvfb", "xvfb-run", "xauth") if not shutil.which(name)]
     if missing:
         parser.error("Missing native prerequisites: " + ", ".join(missing))

@@ -92,12 +92,12 @@ class NativeBarrelProofTest(unittest.TestCase):
     def test_expected_framebuffer_geometry(self):
         # Fixed independent coordinates catch pre-rounding, double-vs-float and
         # framebuffer/scaled-width ratio errors. Odd sizes must use ceil GUI sizes.
-        profiles=[(1280,720,1,1280,720,1.0,(621,245,40,77)),
-                  (1280,260,1,1280,260,0.537960946559906,(630,68,21,41)),
-                  (1920,1080,1,1920,1080,1.0,(941,425,40,77)),
-                  (1920,1080,2,960,540,1.0,(922,310,80,154)),
-                  (1920,1080,3,640,360,0.7548806667327881,(918,279,90,174)),
-                  (1921,1081,3,641,361,0.7570498585700989,(918,282,90,174))]
+        profiles = [(1280, 720, 1, 1280, 720, 1.0, (628, 276, 26, 49)),
+                    (1280, 260, 1, 1280, 260, 0.7537993788719177, (631, 67, 19, 36)),
+                    (1920, 1080, 1, 1920, 1080, 1.0, (948, 456, 26, 49)),
+                    (1920, 1080, 2, 960, 540, 1.0, (936, 372, 52, 98)),
+                    (1920, 1080, 3, 640, 360, 1.0, (924, 288, 78, 147)),
+                    (1921, 1081, 3, 641, 361, 1.0, (927, 288, 75, 150))]
         for w,h,s,gw,gh,expected_scale,expected_crop in profiles:
             with self.subTest(width=w,height=h,gui_scale=s):
                 viewport,scale,crop=expected_geometry(w,h,s)
@@ -145,9 +145,9 @@ class NativeBarrelProofTest(unittest.TestCase):
         p['captures'][0]['tank_width']=90;p['captures'][0]['tank_height']=174
         with self.assertRaises(SmokeFailure):self.validate(p)
     def test_public_bounds_fixed_profiles(self):
-        for w,h,scale,bounds in [(1280,720,1,(450,129,380,462)),(1280,260,1,(538,6,204,248)),
-                                  (1920,1080,1,(770,309,380,462)),(1920,1080,2,(290,39,380,462)),
-                                  (1920,1080,3,(176,6,288,348)),(1921,1081,3,(177,6,287,349))]:
+        for w,h,scale,bounds in [(1280,720,1,(494,195,292,330)),(1280,260,1,(529,6,222,248)),
+                                  (1920,1080,1,(814,375,292,330)),(1920,1080,2,(334,105,292,330)),
+                                  (1920,1080,3,(174,15,292,330)),(1921,1081,3,(174,16,293,329))]:
             with self.subTest(width=w,height=h,scale=scale):
                 self.assertEqual(tuple(expected_presentation_bounds(w,h,scale).values()),bounds)
     def test_public_bounds_fail_closed(self):
@@ -210,7 +210,7 @@ class NativeBarrelProofTest(unittest.TestCase):
         p=copy.deepcopy(self.proof);capture=p['captures'][7];path=self.folder/capture['name']
         w,h,pixels=decode_png(path);rows=[bytearray(pixels[y*w*4:(y+1)*w*4]) for y in range(h)]
         # At scale1/1280x720 this is inside the audited artwork ring, outside tank.
-        rows[236][611*4]^=1
+        rows[269][621*4]^=1
         data=png_rows(w,h,rows);path.write_bytes(data);capture['sha256']=hashlib.sha256(data).hexdigest()
         capture['frame_ring_sha256']=image_evidence(path,self.folder/capture['tank_name'],w,h,1)
         with self.assertRaisesRegex(SmokeFailure,'surrounding artwork'):self.validate(p)
