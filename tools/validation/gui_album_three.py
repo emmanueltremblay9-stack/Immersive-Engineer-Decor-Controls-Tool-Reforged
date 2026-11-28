@@ -139,6 +139,72 @@ def validate(proof,nonce,sha,jar,jar_sha,game,width,height,gui_scale=2):
     validate_electrical_controls(proof.get('electrical_controls',{}),cases[2],game,width,height,gui_scale)
 
 
+REMAINING = [
+    ('04','factory_placer','FactoryPlacerV2ReferenceScreen',18),
+    ('05','small_freezer','ThermalVerticalScreen',3),
+    ('06','small_mineral_smelter','ThermalVerticalScreen',2),
+    ('09','small_block_breaker','MachineScreen$SmallBlockBreakerScreen',1),
+    ('10','small_tree_cutter','TreeCutterV3ReferenceScreen',1),
+    ('12','small_milking_machine','MachineScreen$SmallMilkingMachineScreen',2),
+    ('13','small_fluid_funnel','MachineScreen$SmallFluidFunnelScreen',2),
+    ('14','passive_fluid_accumulator','MachineScreen$PassiveFluidAccumulatorScreen',2),
+    ('15','fluid_barrel','BarrelReferenceScreen',2),
+    ('18','labeled-crate-label-editor','LabeledCrateEditScreen',0),
+]
+CLIENT_PREFIX = 'com.oblixorprime.engineersdecorreforged.client.'
+
+
+def validate_remaining(proof, project, game, width, height, gui_scale):
+    source = json.loads((project/'docs/testing/gui11-v5c-runtime-map.json').read_text())['surfaces']
+    rows = proof.get('remaining_cases',[])
+    require([r.get('id') for r in rows] == [c[0] for c in REMAINING], 'Required remaining panels absent or out of order')
+    for row,(panel,name,screen,machine_slots) in zip(rows,REMAINING):
+        reference=source[panel]
+        require(row.get('case')==name and row.get('screen')==CLIENT_PREFIX+screen,'Wrong screen for '+panel)
+        require(re.fullmatch('[0-9a-f]{64}',row.get('screen_class_sha256','')),'Missing screen provenance for '+panel)
+        require(row.get('texture_sha256')==reference['sha256'],'Wrong active PNG for '+panel)
+        require(re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+Z',row.get('observed_utc','')),
+                'Undated capture for '+panel)
+        require(row.get('capture')==name+'.png','Wrong screenshot name for '+panel)
+        png(game/row['capture'],width,height,row.get('capture_sha256'))
+        if panel=='18':
+            require(row.get('opening')=='registered label client bridge'
+                    and row.get('typed_label')=='V5C CONFIRMED' and row.get('server_confirmed') is True,
+                    'Missing editor confirmation in the integrated server')
+            continue
+        require(row.get('server_menu_acknowledged') is True and row.get('gui_scale')==gui_scale
+                and row.get('machine_slots')==machine_slots,'Unexpected menu or scale for '+panel)
+        slots=row.get('slots',[])
+        require([s.get('index') for s in slots]==list(range(machine_slots+36)),'Unexpected inventory span for '+panel)
+        expected=reference['menu_slots']
+        if panel=='06':  # Smelter omits the historical reserved slot from the actual menu.
+            expected=[p for p in expected if p is not None]
+        require(len(expected)==len(slots),'Artwork/menu count mismatch for '+panel)
+        for slot,point in zip(slots,expected):
+            if point is None:
+                require(panel=='05' and slot.get('index')==1 and slot.get('active') is False,
+                        'Wrong state for the reserved Freezer slot')
+            else:
+                require(slot.get('active') is True and [slot.get('x'),slot.get('y')]==point,
+                        'Slot %s is not active at its approved coordinate for %s' % (slot.get('index'),panel))
+        require(all(type(row.get(key)) is int and row[key]>=0 for key in ('panel_left','panel_top')) and
+                0 < row.get('panel_width',0) <= (width+gui_scale-1)//gui_scale and
+                0 < row.get('panel_height',0) <= (height+gui_scale-1)//gui_scale,
+                'Panel extent outside viewport for '+panel)
+    tree=rows[4]
+    require(tree['slots'][0].get('inventory_index')==0 and tree['slots'][0].get('count')==4
+            and tree['slots'][1].get('inventory_index')==9 and tree['slots'][1].get('count')==0,
+            'Unexpected Tree Cutter output/player fixture')
+    require(tree.get('native_inventory')==[
+        dict(step='TREE_MISS',output_count=4,carried_count=0,player_count=0,server_acknowledged=True),
+        dict(step='TREE_PICKUP',output_count=0,carried_count=4,player_count=0,server_acknowledged=True),
+        dict(step='TREE_PLACE',output_count=0,carried_count=0,player_count=4,server_acknowledged=True),
+    ], 'Tree Cutter physical hitbox/pickup/placement proof incomplete')
+    hover=tree.get('output_hover_capture',{})
+    require(hover.get('capture')=='small_tree_cutter-output-hover.png','Missing native output hover photo')
+    png(game/hover['capture'],width,height,hover.get('capture_sha256'))
+
+
 def validate_electrical_controls(proof,base_case,game,width,height,scale):
     for key,value in dict(suite='electrical-furnace-native-controls-v1',complete=True,
                          input_method=ELECTRICAL_INPUT,native_presses_sent=10,native_presses_observed=10,
@@ -253,6 +319,7 @@ def bind_built_jar(project, expected_hash, env):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--expected-jar-sha256',required=True)
+    parser.add_argument('--all-v5c', action='store_true', help='Require the ten additional V5C screen observations')
     parser.add_argument('--language', choices=['en_us','fr_fr'], default='en_us')
     parser.add_argument('--width', type=int, default=1280)
     parser.add_argument('--gui-scale', type=int, choices=[1,2], default=2)
@@ -282,6 +349,7 @@ def main():
  rootProject.extensions.getByName('neoForge').runs.named('crateLabelPackagedClient') {
   systemProperty 'iedctr.crateLabelPackagedNative', 'false'
   systemProperty 'iedctr.guiAlbumThree', 'true'
+  systemProperty 'iedctr.gui11RemainingAlbum', System.getenv('IEDCTR_GUI11_REMAINING_ALBUM')
   gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
   systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
   systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
@@ -307,7 +375,7 @@ marker.write_text(nonce+'\n'+os.environ['DISPLAY'])
 os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
 """)
     env=dict(os.environ,IEDCTR_GAMEPLAY_DIR=str(game),IEDCTR_GAMEPLAY_NONCE=nonce,IEDCTR_EXECUTED_SOURCE_SHA=sha,
-             IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')
+             IEDCTR_GUI11_REMAINING_ALBUM=str(args.all_v5c).lower(),IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')
     base=['bash',str(project/'gradlew'),'--no-daemon','--stacktrace']
     print('GUI album capture evidence: '+str(evidence),flush=True)
     try:
@@ -335,6 +403,9 @@ os.execvpe(sys.argv[1],sys.argv[1:],os.environ)
                 and 'IEDCTR_GUI_ALBUM_THREE OBSERVED nonce='+nonce in logs,'Native exit/log gate failed')
         proof=json.loads((game/'gui-album-three-proof.json').read_text())
         validate(proof,nonce,sha,jar,jar_sha,game,args.width,args.height,args.gui_scale)
+        if args.all_v5c:
+            validate_remaining(proof,project,game,args.width,args.height,args.gui_scale)
+            print('OBSERVED ten additional V5C panels, including physical Tree Cutter clicks and label confirmation.',flush=True)
         final_sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
         require(clean() and final_sha == sha and hashlib.sha256(jar.read_bytes()).hexdigest()==jar_sha,
                 'Source/JAR changed during run')

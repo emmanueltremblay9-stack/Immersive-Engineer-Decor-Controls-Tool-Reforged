@@ -334,43 +334,61 @@
     },
     "src/guiAlbumThree/java/com/oblixorprime/iedctrtest/factoryplacer/GuiAlbumThree.java": {
       "old_sha256": "d91f8df6d64f834459ebcbc41bdb9a9533c657df6ec82088134fbe3886375289",
-      "new_sha256": "b7651b1231fba4deef635814267c5aedc666f95ccb17d1f68dfaed7568609755",
+      "new_sha256": "5ab6f01db886e57ac5658b4581510df796f76903e73ba3ae5ee64764c87e777f",
       "hunks": [
         {
-          "start": 112,
-          "end": 117,
+          "start": 58,
+          "end": 59,
+          "previous": "    private enum Stage {BOOT,WORLD,OPEN,WAIT,ELECTRICAL,CLOSE}\n",
+          "current": "    private enum Stage {BOOT,WORLD,OPEN,WAIT,ELECTRICAL,CLOSE,REMAINING}\n"
+        },
+        {
+          "start": 79,
+          "end": 80,
+          "previous": "",
+          "current": "    private static Gui11RemainingAlbum remainingAlbum;\n"
+        },
+        {
+          "start": 113,
+          "end": 118,
           "previous": "                    require(mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth()<containerScreen.getGuiLeft()\n                        && mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight()<containerScreen.getGuiTop(),\n",
           "current": "                    double pointerX=mc.mouseHandler.xpos()*mc.screen.width/mc.getWindow().getScreenWidth();\n                    double pointerY=mc.mouseHandler.ypos()*mc.screen.height/mc.getWindow().getScreenHeight();\n                    int left=containerScreen.getGuiLeft(), top=containerScreen.getGuiTop();\n                    require(pointerX<left || pointerX>=left+containerScreen.getXSize()\n                        || pointerY<top || pointerY>=top+containerScreen.getYSize(),\n"
         },
         {
-          "start": 127,
-          "end": 128,
+          "start": 128,
+          "end": 129,
           "previous": "                            \"Factory Study V3 menu slot layout mismatch for \"+NAMES[index]);\n",
           "current": "                            \"Factory Study V5-Corrigee menu slot layout mismatch for \"+NAMES[index]);\n"
         },
         {
-          "start": 158,
-          "end": 159,
+          "start": 159,
+          "end": 160,
           "previous": "                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],\"Factory Study V3 occupied-stack fixture changed during capture\");\n",
           "current": "                        require(occupied==EXPECTED_OCCUPIED_SLOTS[index],\"Factory Study V5-Corrigee occupied-stack fixture changed during capture\");\n"
         },
         {
-          "start": 163,
-          "end": 164,
+          "start": 164,
+          "end": 165,
           "previous": "                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],\"Factory Study V3 machine-stack fixture changed during capture\");\n",
           "current": "                            require(occupiedMachine==EXPECTED_OCCUPIED_MACHINE_SLOTS[index],\"Factory Study V5-Corrigee machine-stack fixture changed during capture\");\n"
         },
         {
-          "start": 187,
-          "end": 188,
+          "start": 188,
+          "end": 189,
           "previous": "                        require(slot.x==34 && slot.y==68+selectionRow*25,\"Unexpected Factory Study V3 Hopper slot geometry\");\n",
           "current": "                        require(slot.x==44 && slot.y==67+selectionRow*24,\"Unexpected Factory Study V5-Corrigee Hopper slot geometry\");\n"
         },
         {
-          "start": 341,
-          "end": 342,
+          "start": 215,
+          "end": 227,
+          "previous": "                case CLOSE -> {if(mc.screen!=null||ticks<20)return;index++;if(index==NAMES.length)finish(mc,null);else enter(Stage.OPEN);}\n",
+          "current": "                case CLOSE -> {\n                    if(mc.screen!=null||ticks<20)return;\n                    index++;\n                    if(index<NAMES.length)enter(Stage.OPEN);\n                    else if(Boolean.getBoolean(\"iedctr.gui11RemainingAlbum\")){\n                        remainingAlbum=new Gui11RemainingAlbum(directory,playerId,x11,xtest,display);\n                        enter(Stage.REMAINING);\n                    }else finish(mc,null);\n                }\n                case REMAINING -> {\n                    if(remainingAlbum.tick(mc))finish(mc,null);\n                }\n"
+        },
+        {
+          "start": 353,
+          "end": 354,
           "previous": "        try{if(directory!=null){var proof=new JsonObject();proof.addProperty(\"suite\",\"gui-album-three-v3\");proof.addProperty(\"status\",error==null?\"observed\":\"failed\");proof.addProperty(\"nonce\",nonce);proof.addProperty(\"executed_source_sha\",System.getProperty(\"iedctr.executedSourceSha\"));proof.add(\"packaged_runtime\",packaged);proof.add(\"cases\",cases);proof.add(\"hopper_selections\",selections);proof.add(\"wait_diagnostics\",waitDiagnostics);proof.add(\"terminal_state\",diagnostic(mc));proof.addProperty(\"visual_acceptance\",false);proof.addProperty(\"physical_os_input\",true);proof.addProperty(\"human_input\",false);proof.addProperty(\"input_method\",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty(\"synthetic_button_events\",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add(\"electrical_controls\",electricalValidation.proof());if(error!=null)proof.addProperty(\"error\",error.toString());Files.writeString(directory.resolve(\"gui-album-three-proof.json\"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+\"\\n\");}}\n",
-          "current": "        try{if(directory!=null){var proof=new JsonObject();proof.addProperty(\"suite\",\"gui-album-three-v5c\");proof.addProperty(\"status\",error==null?\"observed\":\"failed\");proof.addProperty(\"nonce\",nonce);proof.addProperty(\"executed_source_sha\",System.getProperty(\"iedctr.executedSourceSha\"));proof.add(\"packaged_runtime\",packaged);proof.add(\"cases\",cases);proof.add(\"hopper_selections\",selections);proof.add(\"wait_diagnostics\",waitDiagnostics);proof.add(\"terminal_state\",diagnostic(mc));proof.addProperty(\"visual_acceptance\",false);proof.addProperty(\"physical_os_input\",true);proof.addProperty(\"human_input\",false);proof.addProperty(\"input_method\",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty(\"synthetic_button_events\",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add(\"electrical_controls\",electricalValidation.proof());if(error!=null)proof.addProperty(\"error\",error.toString());Files.writeString(directory.resolve(\"gui-album-three-proof.json\"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+\"\\n\");}}\n"
+          "current": "        try{if(directory!=null){var proof=new JsonObject();proof.addProperty(\"suite\",\"gui-album-three-v5c\");proof.addProperty(\"status\",error==null?\"observed\":\"failed\");proof.addProperty(\"nonce\",nonce);proof.addProperty(\"executed_source_sha\",System.getProperty(\"iedctr.executedSourceSha\"));proof.add(\"packaged_runtime\",packaged);proof.add(\"cases\",cases);if(remainingAlbum!=null)proof.add(\"remaining_cases\",remainingAlbum.cases);proof.add(\"hopper_selections\",selections);proof.add(\"wait_diagnostics\",waitDiagnostics);proof.add(\"terminal_state\",diagnostic(mc));proof.addProperty(\"visual_acceptance\",false);proof.addProperty(\"physical_os_input\",true);proof.addProperty(\"human_input\",false);proof.addProperty(\"input_method\",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty(\"synthetic_button_events\",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add(\"electrical_controls\",electricalValidation.proof());if(error!=null)proof.addProperty(\"error\",error.toString());Files.writeString(directory.resolve(\"gui-album-three-proof.json\"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+\"\\n\");}}\n"
         }
       ]
     },
@@ -1546,7 +1564,7 @@
     },
     "tools/validation/gui_album_three.py": {
       "old_sha256": "ce55f75bb051396318eec676ff828829c029a50b76edcbaacc67e6f5495b0005",
-      "new_sha256": "49a44d4feabaae52784187bbbd215d2b322684e583e248f9a05433599e1786a0",
+      "new_sha256": "f373beb01376c759b56e286b7039492b74c4f5fedfd26af97117226c63dea0da",
       "hunks": [
         {
           "start": 1,
@@ -1615,58 +1633,88 @@
           "current": "        require(c.get('ring_x')==43 and c.get('ring_y')==66+24*row,'Hopper ring/slot alignment differs')\n"
         },
         {
-          "start": 155,
-          "end": 157,
+          "start": 139,
+          "end": 205,
+          "previous": "",
+          "current": "\n\nREMAINING = [\n    ('04','factory_placer','FactoryPlacerV2ReferenceScreen',18),\n    ('05','small_freezer','ThermalVerticalScreen',3),\n    ('06','small_mineral_smelter','ThermalVerticalScreen',2),\n    ('09','small_block_breaker','MachineScreen$SmallBlockBreakerScreen',1),\n    ('10','small_tree_cutter','TreeCutterV3ReferenceScreen',1),\n    ('12','small_milking_machine','MachineScreen$SmallMilkingMachineScreen',2),\n    ('13','small_fluid_funnel','MachineScreen$SmallFluidFunnelScreen',2),\n    ('14','passive_fluid_accumulator','MachineScreen$PassiveFluidAccumulatorScreen',2),\n    ('15','fluid_barrel','BarrelReferenceScreen',2),\n    ('18','labeled-crate-label-editor','LabeledCrateEditScreen',0),\n]\nCLIENT_PREFIX = 'com.oblixorprime.engineersdecorreforged.client.'\n\n\ndef validate_remaining(proof, project, game, width, height, gui_scale):\n    source = json.loads((project/'docs/testing/gui11-v5c-runtime-map.json').read_text())['surfaces']\n    rows = proof.get('remaining_cases',[])\n    require([r.get('id') for r in rows] == [c[0] for c in REMAINING], 'Required remaining panels absent or out of order')\n    for row,(panel,name,screen,machine_slots) in zip(rows,REMAINING):\n        reference=source[panel]\n        require(row.get('case')==name and row.get('screen')==CLIENT_PREFIX+screen,'Wrong screen for '+panel)\n        require(re.fullmatch('[0-9a-f]{64}',row.get('screen_class_sha256','')),'Missing screen provenance for '+panel)\n        require(row.get('texture_sha256')==reference['sha256'],'Wrong active PNG for '+panel)\n        require(re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d+Z',row.get('observed_utc','')),\n                'Undated capture for '+panel)\n        require(row.get('capture')==name+'.png','Wrong screenshot name for '+panel)\n        png(game/row['capture'],width,height,row.get('capture_sha256'))\n        if panel=='18':\n            require(row.get('opening')=='registered label client bridge'\n                    and row.get('typed_label')=='V5C CONFIRMED' and row.get('server_confirmed') is True,\n                    'Missing editor confirmation in the integrated server')\n            continue\n        require(row.get('server_menu_acknowledged') is True and row.get('gui_scale')==gui_scale\n                and row.get('machine_slots')==machine_slots,'Unexpected menu or scale for '+panel)\n        slots=row.get('slots',[])\n        require([s.get('index') for s in slots]==list(range(machine_slots+36)),'Unexpected inventory span for '+panel)\n        expected=reference['menu_slots']\n        if panel=='06':  # Smelter omits the historical reserved slot from the actual menu.\n            expected=[p for p in expected if p is not None]\n        require(len(expected)==len(slots),'Artwork/menu count mismatch for '+panel)\n        for slot,point in zip(slots,expected):\n            if point is None:\n                require(panel=='05' and slot.get('index')==1 and slot.get('active') is False,\n                        'Wrong state for the reserved Freezer slot')\n            else:\n                require(slot.get('active') is True and [slot.get('x'),slot.get('y')]==point,\n                        'Slot %s is not active at its approved coordinate for %s' % (slot.get('index'),panel))\n        require(all(type(row.get(key)) is int and row[key]>=0 for key in ('panel_left','panel_top')) and\n                0 < row.get('panel_width',0) <= (width+gui_scale-1)//gui_scale and\n                0 < row.get('panel_height',0) <= (height+gui_scale-1)//gui_scale,\n                'Panel extent outside viewport for '+panel)\n    tree=rows[4]\n    require(tree['slots'][0].get('inventory_index')==0 and tree['slots'][0].get('count')==4\n            and tree['slots'][1].get('inventory_index')==9 and tree['slots'][1].get('count')==0,\n            'Unexpected Tree Cutter output/player fixture')\n    require(tree.get('native_inventory')==[\n        dict(step='TREE_MISS',output_count=4,carried_count=0,player_count=0,server_acknowledged=True),\n        dict(step='TREE_PICKUP',output_count=0,carried_count=4,player_count=0,server_acknowledged=True),\n        dict(step='TREE_PLACE',output_count=0,carried_count=0,player_count=4,server_acknowledged=True),\n    ], 'Tree Cutter physical hitbox/pickup/placement proof incomplete')\n    hover=tree.get('output_hover_capture',{})\n    require(hover.get('capture')=='small_tree_cutter-output-hover.png','Missing native output hover photo')\n    png(game/hover['capture'],width,height,hover.get('capture_sha256'))\n"
+        },
+        {
+          "start": 221,
+          "end": 223,
           "previous": "                      click_x=208 if i==8 else 184,click_y=88,gui_scale=scale)\n",
           "current": "                      click_x=ELECTRICAL_BORDER_X if i==8 else ELECTRICAL_DIAL_X,\n                      click_y=ELECTRICAL_DIAL_Y,gui_scale=scale)\n"
         },
         {
-          "start": 181,
-          "end": 182,
+          "start": 247,
+          "end": 248,
           "previous": "        for axis,value in [('x',208 if i==8 else 184),('y',88)]:\n",
           "current": "        for axis,value in [('x',ELECTRICAL_BORDER_X if i==8 else ELECTRICAL_DIAL_X),('y',ELECTRICAL_DIAL_Y)]:\n"
         },
         {
-          "start": 195,
-          "end": 196,
+          "start": 261,
+          "end": 262,
           "previous": "    require(type(scale) is int and scale in (1,2) and width>=228*scale and height>=250*scale,\n",
           "current": "    require(type(scale) is int and scale in (1,2) and width>=291*scale and height>=284*scale,\n"
         },
         {
-          "start": 197,
-          "end": 198,
+          "start": 263,
+          "end": 264,
           "previous": "    return ((math.ceil(width/scale)-228)//2)*scale,((math.ceil(height/scale)-250)//2)*scale\n",
           "current": "    return ((math.ceil(width/scale)-291)//2)*scale,((math.ceil(height/scale)-284)//2)*scale\n"
         },
         {
-          "start": 201,
-          "end": 202,
+          "start": 267,
+          "end": 268,
           "previous": "    \"\"\"Independent native pixel checks: actual grip rotation and segmented FE fill.\n",
           "current": "    \"\"\"Independent native pixel checks: actual grip rotation and FE fill.\n"
         },
         {
-          "start": 204,
-          "end": 206,
+          "start": 270,
+          "end": 272,
           "previous": "    These reject a moving lamp with a static grip, an always-full meter, the old\n    opaque rectangle, reversed fill, and frame/divider overpainting. They do not\n",
           "current": "    These reject a moving lamp with a static grip, an always-full meter, opaque\n    rectangle fill, reversed fill, and frame overpainting. They do not\n"
         },
         {
-          "start": 217,
-          "end": 220,
+          "start": 283,
+          "end": 286,
           "previous": "    # The former detent lamp lies outside this central grip box. A lamp-only\n    # implementation cannot satisfy even one of these orientation comparisons.\n    core=[(x,y) for y in range(82*scale,94*scale) for x in range(178*scale,190*scale)]\n",
           "current": "    # Probe the mapped GUI11 rotary cap, excluding the detached detent markings.\n    # A lamp-only implementation cannot satisfy these four grip comparisons.\n    core=[(x,y) for y in range(102*scale,119*scale) for x in range(218*scale,236*scale)]\n"
         },
         {
-          "start": 228,
-          "end": 231,
+          "start": 294,
+          "end": 297,
           "previous": "    # Interior probes are inset from the sculpted corner pixels and dividers.\n    # Source-to-framebuffer projection uses the full source raster dimensions.\n    segments=[(493,527),(532,564),(569,600),(606,638),(643,673),(678,708),(714,744),(750,780)]\n    def source_pixels(x1,y1,x2,y2):\n        points=[]\n        for y in range(83*scale,95*scale):\n            sy=(y+.5)*1312/(250*scale)\n            if not y1<=sy<y2:continue\n            for x in range(90*scale,152*scale):\n                sx=(x+.5)*1199/(228*scale)\n                if x1<=sx<x2:points.append((x,y))\n        require(points,'No native pixels in independent meter probe')\n        return points\n",
           "current": "    # The measured GUI11 energy well has a 44x6 logical glass interior at x=129..173,\n    # y=107..113. Half charge fills its left half; the frame remains unchanged.\n    glass=[(x,y) for y in range(108*scale,113*scale) for x in range(130*scale,173*scale)]\n"
         },
         {
-          "start": 232,
-          "end": 240,
+          "start": 298,
+          "end": 306,
           "previous": "    for number,(start,end) in enumerate(segments):\n        points=source_pixels(start+4,456,end-4,477)\n        changed=sum(rgb(empty,x,y)!=rgb(full,x,y) for x,y in points)\n        require(changed>=.9*len(points),'Electrical full FE segment not filled: '+str(number))\n        expected=full if number<4 else empty\n        require(all(rgb(half,x,y)==rgb(expected,x,y) for x,y in points),\n                'Electrical half FE is not the left half of the meter')\n        require(sum(sum(rgb(full,x,y))-sum(rgb(empty,x,y)) for x,y in points)>15*len(points),\n                'Electrical full FE segment is not brighter than empty')\n    preserved=source_pixels(478,440,793,446)+source_pixels(478,488,793,493)\n    for (_,end),(start,_) in zip(segments,segments[1:]):\n        preserved+=source_pixels(end+.3,454,start-.3,479)\n    require(all(rgb(empty,x,y)==rgb(half,x,y)==rgb(full,x,y) for x,y in preserved),\n            'Electrical FE overpainted the metal frame or segment dividers')\n",
           "current": "    for x,y in glass:\n        logical_x=x//scale\n        expected=full if logical_x < 151 else empty\n        require(rgb(half,x,y)==rgb(expected,x,y),'Electrical half FE does not fill the left half of the glass')\n    changed=sum(rgb(empty,x,y)!=rgb(full,x,y) for x,y in glass)\n    require(changed>=.9*len(glass),'Electrical full FE glass is not filled')\n    require(sum(sum(rgb(full,x,y))-sum(rgb(empty,x,y)) for x,y in glass)>15*len(glass),\n            'Electrical full FE is not brighter than empty')\n"
+        },
+        {
+          "start": 321,
+          "end": 322,
+          "previous": "",
+          "current": "    parser.add_argument('--all-v5c', action='store_true', help='Require the ten additional V5C screen observations')\n"
+        },
+        {
+          "start": 351,
+          "end": 352,
+          "previous": "",
+          "current": "  systemProperty 'iedctr.gui11RemainingAlbum', System.getenv('IEDCTR_GUI11_REMAINING_ALBUM')\n"
+        },
+        {
+          "start": 377,
+          "end": 378,
+          "previous": "             IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')\n",
+          "current": "             IEDCTR_GUI11_REMAINING_ALBUM=str(args.all_v5c).lower(),IEDCTR_SCREEN_WIDTH=str(args.width),IEDCTR_SCREEN_HEIGHT=str(args.height),LIBGL_ALWAYS_SOFTWARE='1',ALSOFT_DRIVERS='null')\n"
+        },
+        {
+          "start": 405,
+          "end": 408,
+          "previous": "",
+          "current": "        if args.all_v5c:\n            validate_remaining(proof,project,game,args.width,args.height,args.gui_scale)\n            print('OBSERVED ten additional V5C panels, including physical Tree Cutter clicks and label confirmation.',flush=True)\n"
         }
       ]
     },

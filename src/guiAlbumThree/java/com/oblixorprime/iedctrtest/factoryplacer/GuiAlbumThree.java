@@ -56,7 +56,7 @@ public final class GuiAlbumThree {
     private static final int[] EXPECTED_OCCUPIED_SLOTS={54,0,0,0,0,51,41};
     private static final int[] EXPECTED_OCCUPIED_MACHINE_SLOTS={18,0,0,0,0,15,5};
     private static final String[] EXPECTED_KINDS={"factory_hopper","","","","","factory_dropper","small_lab_furnace"};
-    private enum Stage {BOOT,WORLD,OPEN,WAIT,ELECTRICAL,CLOSE}
+    private enum Stage {BOOT,WORLD,OPEN,WAIT,ELECTRICAL,CLOSE,REMAINING}
     private static Stage stage=Stage.BOOT;
     private static boolean complete;
     private static final int POINTER_TARGET=8, POINTER_PRIME=12;
@@ -77,6 +77,7 @@ public final class GuiAlbumThree {
     private static CompletableFuture<?> pending;
     private static CompletableFuture<Boolean> inspection;
     private static ElectricalFurnaceAlbumValidation electricalValidation;
+    private static Gui11RemainingAlbum remainingAlbum;
     @SubscribeEvent public static void tick(ClientTickEvent.Post event) {
         if(!Boolean.getBoolean("iedctr.guiAlbumThree")||complete)return;
         var mc=Minecraft.getInstance();
@@ -212,7 +213,18 @@ public final class GuiAlbumThree {
                 case ELECTRICAL -> {
                     if(electricalValidation.tick(mc)){mc.screen.onClose();enter(Stage.CLOSE);}
                 }
-                case CLOSE -> {if(mc.screen!=null||ticks<20)return;index++;if(index==NAMES.length)finish(mc,null);else enter(Stage.OPEN);}
+                case CLOSE -> {
+                    if(mc.screen!=null||ticks<20)return;
+                    index++;
+                    if(index<NAMES.length)enter(Stage.OPEN);
+                    else if(Boolean.getBoolean("iedctr.gui11RemainingAlbum")){
+                        remainingAlbum=new Gui11RemainingAlbum(directory,playerId,x11,xtest,display);
+                        enter(Stage.REMAINING);
+                    }else finish(mc,null);
+                }
+                case REMAINING -> {
+                    if(remainingAlbum.tick(mc))finish(mc,null);
+                }
                 default -> throw new IllegalStateException("Unexpected "+stage);
             }
         }catch(Throwable error){finish(mc,error);}
@@ -339,7 +351,7 @@ public final class GuiAlbumThree {
     private static void finish(Minecraft mc,Throwable error){
         complete=true;
         if(display!=null){x11.getFunction("XCloseDisplay").invokeInt(new Object[]{display});display=null;}
-        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v5c");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);proof.add("hopper_selections",selections);proof.add("wait_diagnostics",waitDiagnostics);proof.add("terminal_state",diagnostic(mc));proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",true);proof.addProperty("human_input",false);proof.addProperty("input_method",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty("synthetic_button_events",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add("electrical_controls",electricalValidation.proof());if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
+        try{if(directory!=null){var proof=new JsonObject();proof.addProperty("suite","gui-album-three-v5c");proof.addProperty("status",error==null?"observed":"failed");proof.addProperty("nonce",nonce);proof.addProperty("executed_source_sha",System.getProperty("iedctr.executedSourceSha"));proof.add("packaged_runtime",packaged);proof.add("cases",cases);if(remainingAlbum!=null)proof.add("remaining_cases",remainingAlbum.cases);proof.add("hopper_selections",selections);proof.add("wait_diagnostics",waitDiagnostics);proof.add("terminal_state",diagnostic(mc));proof.addProperty("visual_acceptance",false);proof.addProperty("physical_os_input",true);proof.addProperty("human_input",false);proof.addProperty("input_method",ElectricalFurnaceAlbumValidation.INPUT_METHOD);proof.addProperty("synthetic_button_events",electricalValidation==null?0:electricalValidation.syntheticButtonEvents());if(electricalValidation!=null)proof.add("electrical_controls",electricalValidation.proof());if(error!=null)proof.addProperty("error",error.toString());Files.writeString(directory.resolve("gui-album-three-proof.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}}
         catch(Exception e){EngineersDecorReforged.LOGGER.error("Album proof error",e);}
         if(error==null)EngineersDecorReforged.LOGGER.info("IEDCTR_GUI_ALBUM_THREE OBSERVED nonce={}",nonce);else EngineersDecorReforged.LOGGER.error("IEDCTR_GUI_ALBUM_THREE FAILED "+stage,error);mc.stop();
     }
