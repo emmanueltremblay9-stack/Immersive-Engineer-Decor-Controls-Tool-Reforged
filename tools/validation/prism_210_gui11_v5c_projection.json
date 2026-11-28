@@ -1100,6 +1100,30 @@
         }
       ]
     },
+    "src/test/java/com/oblixorprime/engineersdecorreforged/compat/jei/FactoryStudyJeiHandlerTest.java": {
+      "old_sha256": "6a74b7813fee6c0aecc3e8bc8742046591114c4992e0cc2b51598b3fcc7b3303",
+      "new_sha256": "f16a3614089baaac6b94c6265295f2b9dca4a8ccf3bc4cc9b7416e848c099394",
+      "hunks": [
+        {
+          "start": 3,
+          "end": 4,
+          "previous": "",
+          "current": "import com.oblixorprime.engineersdecorreforged.utility.MachineKind;\n"
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "previous": "      area(item, new FactoryStudyGeometry.ViewTransform(1.0F, 10, 20), 12, 24, 16, 16);\n      area(item, new FactoryStudyGeometry.ViewTransform(0.5F, 10.25F, 20.75F), 11, 22, 9, 9);\n      area(item, new FactoryStudyGeometry.ViewTransform(0.25F, 10.125F, 20.375F), 10, 21, 5, 5);\n",
+          "current": "      area(item, view(1.0F, 10, 20), 12, 24, 16, 16);\n      area(item, view(0.5F, 10.25F, 20.75F), 11, 22, 9, 9);\n      area(item, view(0.25F, 10.125F, 20.375F), 10, 21, 5, 5);\n"
+        },
+        {
+          "start": 21,
+          "end": 28,
+          "previous": "      area(item, new FactoryStudyGeometry.ViewTransform(0.5F, 0, 0), 1, 2, 8, 8);\n",
+          "current": "      area(item, view(0.5F, 0, 0), 1, 2, 8, 8);\n   }\n\n   private static FactoryStudyGeometry.ViewTransform view(float scale, float x, float y) {\n      var kind = MachineKind.SMALL_LAB_FURNACE;\n      return new FactoryStudyGeometry.ViewTransform(scale, x, y,\n         FactoryStudyGeometry.canvasWidth(kind), FactoryStudyGeometry.canvasHeight(kind));\n"
+        }
+      ]
+    },
     "src/test/java/com/oblixorprime/engineersdecorreforged/utility/FactoryStudyGeometryTest.java": {
       "old_sha256": "fd3ecb34512d098b5bbfa071f00a4780227885e618cd8a42f6a8625330de2cea",
       "new_sha256": "f96b7951987fa3852706c35de6ad0656c0530b66068aa440b2cfa54e3b79cacd",

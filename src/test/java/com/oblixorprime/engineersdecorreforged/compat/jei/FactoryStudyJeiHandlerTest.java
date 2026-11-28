@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.compat.jei;
 
 import com.oblixorprime.engineersdecorreforged.utility.FactoryStudyGeometry;
+import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import org.junit.Assume;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,11 +15,17 @@ public final class FactoryStudyJeiHandlerTest {
          Assume.assumeNoException("Optional JEI runtime is disabled", absentOptionalRuntime);
       }
       var item = new FactoryStudyGeometry.Rect(2, 4, 16, 16);
-      area(item, new FactoryStudyGeometry.ViewTransform(1.0F, 10, 20), 12, 24, 16, 16);
-      area(item, new FactoryStudyGeometry.ViewTransform(0.5F, 10.25F, 20.75F), 11, 22, 9, 9);
-      area(item, new FactoryStudyGeometry.ViewTransform(0.25F, 10.125F, 20.375F), 10, 21, 5, 5);
+      area(item, view(1.0F, 10, 20), 12, 24, 16, 16);
+      area(item, view(0.5F, 10.25F, 20.75F), 11, 22, 9, 9);
+      area(item, view(0.25F, 10.125F, 20.375F), 10, 21, 5, 5);
       // A partly fractional native area must retain every pixel touched by the logical item.
-      area(item, new FactoryStudyGeometry.ViewTransform(0.5F, 0, 0), 1, 2, 8, 8);
+      area(item, view(0.5F, 0, 0), 1, 2, 8, 8);
+   }
+
+   private static FactoryStudyGeometry.ViewTransform view(float scale, float x, float y) {
+      var kind = MachineKind.SMALL_LAB_FURNACE;
+      return new FactoryStudyGeometry.ViewTransform(scale, x, y,
+         FactoryStudyGeometry.canvasWidth(kind), FactoryStudyGeometry.canvasHeight(kind));
    }
 
    private static void area(FactoryStudyGeometry.Rect item, FactoryStudyGeometry.ViewTransform view,
