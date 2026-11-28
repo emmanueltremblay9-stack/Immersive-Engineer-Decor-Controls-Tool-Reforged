@@ -718,7 +718,7 @@
     },
     "src/factoryPlacerNativeValidation/java/com/oblixorprime/iedctrtest/factoryplacer/BlockBreakerPackagedValidation.java": {
       "old_sha256": "21bf8de9cd1c381f00b8008c1303dcdfb0168be6d27a38e96a7b1f457b50ce8e",
-      "new_sha256": "220abbd48cfb44585090b0815cead440f2007159eb1e3bc5f960d5fcc25bd8db",
+      "new_sha256": "c13a2e583771537fcc898c019eaffd95ab52db69bce5f64a0630725c8ad4a3bf",
       "hunks": [
         {
           "start": 58,
@@ -727,8 +727,32 @@
           "previous": "    private static final int[][] POINTS = {{128,14},{200,55},{200,75},{40,110},{40,75},{115,100},{128,140}};\n"
         },
         {
-          "start": 262,
-          "end": 264,
+          "start": 60,
+          "end": 61,
+          "current": "    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, WORK, PICK_MOVE, PICKED, RETURN_MOVE, RETURNED }\n",
+          "previous": "    private enum Stage { BOOT, WORLD, INTERACT, OPEN, CLEAN, HOVER, WORK, PICKED, RETURNED }\n"
+        },
+        {
+          "start": 150,
+          "end": 157,
+          "current": "                capture(mc, \"worked\", null); aimAtSlot(screen, menu, 0); enter(Stage.PICK_MOVE); return;\n            }\n            if (stage == Stage.PICK_MOVE || stage == Stage.RETURN_MOVE) {\n                if (!atPointer(mc, screen)) { move(mc, screen); return; }\n                if (ticks < 8) return;\n                nativeClick(1);\n                enter(stage == Stage.PICK_MOVE ? Stage.PICKED : Stage.RETURNED); return;\n",
+          "previous": "                capture(mc, \"worked\", null); clickSlot(screen, menu, 0); enter(Stage.PICKED); return;\n"
+        },
+        {
+          "start": 163,
+          "end": 164,
+          "current": "                aimAtSlot(screen, menu, returnMenuSlot); enter(Stage.RETURN_MOVE); return;\n",
+          "previous": "                clickSlot(screen, menu, returnMenuSlot); enter(Stage.RETURNED); return;\n"
+        },
+        {
+          "start": 257,
+          "end": 262,
+          "current": "    private static void aimAtSlot(MachineScreen screen, MachineMenu menu, int slotIndex) {\n        var slot = menu.getSlot(slotIndex);\n        pointerX = screen.getGuiLeft() + slot.x + 8;\n        pointerY = screen.getGuiTop() + slot.y + 8;\n        move(Minecraft.getInstance(), screen);\n",
+          "previous": "    private static void clickSlot(MachineScreen screen, MachineMenu menu, int slotIndex) {\n        var slot = menu.getSlot(slotIndex); double x = (screen.width-menu.layout().imageWidth())/2 + slot.x + 8;\n        double y = (screen.height-menu.layout().imageHeight())/2 + slot.y + 8;\n        pointerX=(int)x;pointerY=(int)y;move(Minecraft.getInstance(),screen);nativeClick(1);\n"
+        },
+        {
+          "start": 269,
+          "end": 271,
           "current": "        pointerX = screen.getGuiLeft() + POINTS[hoverIndex][0];\n        pointerY = screen.getGuiTop() + POINTS[hoverIndex][1];\n",
           "previous": "        pointerX = (screen.width-((MachineMenu)mc.player.containerMenu).layout().imageWidth())/2 + POINTS[hoverIndex][0];\n        pointerY = (screen.height-((MachineMenu)mc.player.containerMenu).layout().imageHeight())/2 + POINTS[hoverIndex][1];\n"
         }
@@ -1517,6 +1541,60 @@
           "end": 167,
           "current": "    art = project/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/10.png'\n    source_pixels(art)\n    historical = art.parent.parent / 'tree_cutter_v3_reference/background.png'\n    require(hashlib.sha256(historical.read_bytes()).hexdigest() == '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4',\n            'Historical Tree Cutter reference changed')\n",
           "previous": "    art = project/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png'\n    require(hashlib.sha256(art.read_bytes()).hexdigest()==ART_SHA,'Retained v3 changed')\n"
+        }
+      ]
+    },
+    "tools/validation/test_block_breaker_text_free.py": {
+      "old_sha256": "93b4c98b5e25cd13d64f35e3b91aec4c3b3484d9565712979f3d105f65a017f8",
+      "new_sha256": "6b9e29d7b5672b0b64ccba3f2cf65d835f3df4433d42b7d4933ff4687fb182e1",
+      "hunks": [
+        {
+          "start": 13,
+          "end": 14,
+          "current": "GEOMETRY = ROOT / \"src/main/java/com/oblixorprime/engineersdecorreforged/utility/Gui11V5CRuntimeGeometry.java\"\n",
+          "previous": ""
+        },
+        {
+          "start": 21,
+          "end": 22,
+          "current": "    tooltip = source[source.index(\"   private boolean v5ControlHovered(\"):\n",
+          "previous": "    tooltip = source[source.index(\"   private Component blockBreakerTooltip(\"):\n"
+        },
+        {
+          "start": 23,
+          "end": 31,
+          "current": "    geometry = GEOMETRY.read_text().split('case \"09\" -> switch (key) {', 1)[1].split('case \"12\" ->', 1)[0].strip()\n    regions = (\"private static final class Gui11V5CRuntimeGeometry {\"\n               \"record Rect(int x, int y, int w, int h) {\"\n               \"boolean contains(double px, double py) {return px >= x && px < x+w && py >= y && py < y+h;}}\"\n               \"static Rect control(MachineKind kind, String key) {\"\n               \"return switch (kind) { case SMALL_BLOCK_BREAKER -> switch (key) {\" + geometry\n               + \" default -> null; }; }}\")\n    return labels + tooltip + regions\n",
+          "previous": "    return labels + tooltip\n"
+        },
+        {
+          "start": 63,
+          "end": 64,
+          "current": "            'if (blockBreakerRegionHovered(\"title\", 42, 6, 172, 18, mouseX, mouseY))', \"if (false)\")\n",
+          "previous": "            \"if (this.isHovering(42, 6, 172, 18, mouseX, mouseY))\", \"if (false)\")\n"
+        }
+      ]
+    },
+    "tools/validation/fixtures/block_breaker/BreakerTextProbe.java.in": {
+      "old_sha256": "09a6e1333a44ec2d07bb54d87253f08f169dfac759162f6a5ce90451c89b40db",
+      "new_sha256": "5f801d48891f71fbce3d132336674ef845ee420e509b7192cca7c282923d17ef",
+      "hunks": [
+        {
+          "start": 11,
+          "end": 13,
+          "current": "      boolean v5c;\n      boolean gui11V5CPresentation() { return v5c; }\n",
+          "previous": ""
+        },
+        {
+          "start": 66,
+          "end": 67,
+          "current": "         screen.menu.v5c = false;\n",
+          "previous": ""
+        },
+        {
+          "start": 85,
+          "end": 97,
+          "current": "         screen.menu.v5c = true;\n         contains(screen.at(74, 9), TITLE, \"V5C nameplate identity\");\n         contains(screen.at(197, 30), TITLE, \"V5C nameplate identity\");\n         absent(screen.at(73, 20), \"V5C outside nameplate\");\n         absent(screen.at(198, 20), \"V5C outside nameplate\");\n         contains(screen.at(220, 52), \"tooltip.input\", \"V5C FE input retained\");\n         contains(screen.at(219, 72), \"tooltip.fluid_unavailable\", \"V5C fluid caveat retained\");\n         contains(screen.at(68, 135), \"signal.high\", \"V5C redstone signal retained\");\n         contains(screen.at(210, 110), \"tooltip.legacy_pending[3]\", \"V5C output state retained\");\n         contains(screen.at(60, 73), \"tooltip.target[Stone]\", \"V5C target identity retained\");\n         contains(screen.at(130, 106), \"tooltip.static_scene\", \"V5C static artwork caveat retained\");\n         contains(screen.at(129, 137), \"cost.per_block[400]\", \"V5C work cost retained\");\n",
+          "previous": ""
         }
       ]
     }
