@@ -2,29 +2,29 @@
   "schema": "iedctr-prism-ordinary-jar-v5c-repin-v1",
   "base_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
   "artifact": {
-    "source_sha": "e5b95dff4678213603da973f50bd7b593c84a341",
-    "sha256": "a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb",
+    "source_sha": "8b2bbf668cbd4174183d1caabb4622cd113b2d41",
+    "sha256": "cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221",
     "previous_sha256": "b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e",
-    "size_bytes": 122053426,
+    "size_bytes": 122054150,
     "evidence": "Verified local Java 21 ordinary JAR SHA-256 before the qualification pin-only change."
   },
   "files": {
     ".github/workflows/milking-packaged-native.yml": {
       "previous_source_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
       "old_sha256": "68bf6e614ec5793b14eb02fa2878431bf564b03fd95ec710e7e8c4da56570d43",
-      "new_sha256": "180f56a595314f486339b22cc34e4768867b9409921490d691c2156bc34bd8ce",
+      "new_sha256": "04c0076b95c9042115f4559d0b70b5ee0633278d62919925c152c40ef2824803",
       "replacement_count": 2,
       "hunks": [
         {
           "start": 63,
           "end": 64,
-          "current": "          python tools/validation/milking_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log\n",
+          "current": "          python tools/validation/milking_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221 --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log\n",
           "previous": "          python tools/validation/milking_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e --prepare-timeout 900 --timeout 900 2>&1 | tee build/milking-qualification/native-runner.log\n"
         },
         {
           "start": 74,
           "end": 75,
-          "current": "          echo 'Ordinary candidate JAR hash must match a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
+          "current": "          echo 'Ordinary candidate JAR hash must match cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
           "previous": "          echo 'Ordinary candidate JAR hash must match b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n"
         }
       ]
@@ -32,19 +32,19 @@
     ".github/workflows/smelter-packaged-native.yml": {
       "previous_source_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
       "old_sha256": "5215a32ab06839a24833f3610ccb3486bb32f2cf30d202014fce60b1504a8009",
-      "new_sha256": "706014fde62dae35f4cbf228d3c120ab365f7c55f1048c63faa984e50dc1dab6",
+      "new_sha256": "61a3efa0c687bfd5597afca1f258d961d3720d5f7b96fea3eeee5d247a04d670",
       "replacement_count": 2,
       "hunks": [
         {
           "start": 62,
           "end": 63,
-          "current": "          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log\n",
+          "current": "          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221 --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log\n",
           "previous": "          python tools/validation/smelter_packaged_native.py --profile '${{ matrix.profile }}' --expected-jar-sha256 b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e --prepare-timeout 900 --timeout 900 2>&1 | tee build/smelter-qualification/native-runner.log\n"
         },
         {
           "start": 73,
           "end": 74,
-          "current": "          echo 'Ordinary candidate JAR hash must match a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
+          "current": "          echo 'Ordinary candidate JAR hash must match cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
           "previous": "          echo 'Ordinary candidate JAR hash must match b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n"
         }
       ]
@@ -52,13 +52,13 @@
     ".github/workflows/tfc-packaged-native.yml": {
       "previous_source_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
       "old_sha256": "c3526d8d5bbf96ef2c6fd9ef8ab953a7f3f9dd3fad39b321c22a5cd5ebb4f3b2",
-      "new_sha256": "1176d10b60141283a6083d501701b37f79e191aa7301f8d41864b481af638eb8",
+      "new_sha256": "ea268788f5f0bec6fc0f8bef501ee4647b6f9714dd7148475047aae79d633673",
       "replacement_count": 1,
       "hunks": [
         {
           "start": 71,
           "end": 72,
-          "current": "          echo 'Ordinary candidate JAR hash must match a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
+          "current": "          echo 'Ordinary candidate JAR hash must match cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n",
           "previous": "          echo 'Ordinary candidate JAR hash must match b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e; separate harness and before/after production origins required.' >> \"$GITHUB_STEP_SUMMARY\"\n"
         }
       ]
@@ -66,13 +66,13 @@
     "gradle/tfc-packaged-validation.gradle": {
       "previous_source_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
       "old_sha256": "5673b1e1f1c7540249fece64ec4cd08a6905f3ff6e88fca8b430eb3e95fe35c1",
-      "new_sha256": "40e84e0cbdce5fed3cd3111db95d180d72036081960b2851fc3a7548ea9c54e7",
+      "new_sha256": "ced18d4f0063f7175331bd17826a5be7e42567d1686afc76dda4133d036368fb",
       "replacement_count": 1,
       "hunks": [
         {
           "start": 62,
           "end": 63,
-          "current": "            if (sha256(jarFile) != 'a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb') {\n",
+          "current": "            if (sha256(jarFile) != 'cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221') {\n",
           "previous": "            if (sha256(jarFile) != 'b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e') {\n"
         }
       ]
@@ -80,13 +80,13 @@
     "tools/validation/tfc_packaged_recovery_native.py": {
       "previous_source_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
       "old_sha256": "f7214a278f5a8e7a72876ed898a33eecf99ca5936de06e186e014ee7827fb279",
-      "new_sha256": "897d76f39f8dc633e94b1681c97ad775a69c138be40873ff5ea5b523da8f7e1a",
+      "new_sha256": "30f96d841c7df0d1de56c06a45342eebe4c0dc46ba4a71de3dae403dc2cc94a8",
       "replacement_count": 1,
       "hunks": [
         {
           "start": 8,
           "end": 9,
-          "current": "EXPECTED_JAR='a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb'\n",
+          "current": "EXPECTED_JAR='cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221'\n",
           "previous": "EXPECTED_JAR='b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e'\n"
         }
       ]
@@ -94,13 +94,13 @@
     "tools/validation/tfc_packaged_mooshroom_native.py": {
       "previous_source_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
       "old_sha256": "05e641d3da85dd75ae8b6926c74c15a17dab195067a551004f07266af2c1a772",
-      "new_sha256": "c21a3397413ae6d6f2b7f19061e9594779f21d1ea52612ad2785c570300aceb5",
+      "new_sha256": "93e98a1b3b282e88a1f23f3fcb4b75d7824d2bb3844db9b530a9bbd2f3ebd6f6",
       "replacement_count": 1,
       "hunks": [
         {
           "start": 8,
           "end": 9,
-          "current": "EXPECTED_JAR='a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb'\n",
+          "current": "EXPECTED_JAR='cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221'\n",
           "previous": "EXPECTED_JAR='b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e'\n"
         }
       ]
@@ -108,13 +108,13 @@
     "tools/validation/test_tfc_packaged_driver.py": {
       "previous_source_commit": "372ad8d434977423182515a3bff2fbb2d7ae8f24",
       "old_sha256": "bda5b0a5d74841e400bd7b2b61e05017794ea001e062f21c48f2bfb5c455269e",
-      "new_sha256": "b199ad7b2d7595da3143fa21b43a101b4d1281c5c0963354ba461fe7fbb95ac4",
+      "new_sha256": "fdda0b0d5e1937c7e4103a36b05e8d7150c0455d1aa68ea6cdbd7fe9d9d0a8af",
       "replacement_count": 1,
       "hunks": [
         {
           "start": 26,
           "end": 27,
-          "current": "        self.assertIn('a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb',g)\n",
+          "current": "        self.assertIn('cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221',g)\n",
           "previous": "        self.assertIn('b7131f56ccc56b291421da9a0f462a36b03b478599aeeff9e0e60c373c59c01e',g)\n"
         }
       ]

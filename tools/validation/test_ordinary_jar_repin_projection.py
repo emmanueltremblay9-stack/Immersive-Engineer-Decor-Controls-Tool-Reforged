@@ -36,10 +36,10 @@ class OrdinaryJarRepinProjectionTests(unittest.TestCase):
         self.assertEqual(latest["artifact"]["build_run_id"], 46095637365)
         self.assertEqual(set(latest["files"]), set(self.PATHS))
         self.assertEqual(v5c["base_commit"], "372ad8d434977423182515a3bff2fbb2d7ae8f24")
-        self.assertEqual(v5c["artifact"]["source_sha"], "e5b95dff4678213603da973f50bd7b593c84a341")
-        self.assertEqual(v5c["artifact"]["sha256"], "a2a81ee82733c7c672d2a11b99b909203393f953c75f8a23442a7b5fe796facb")
+        self.assertEqual(v5c["artifact"]["source_sha"], "8b2bbf668cbd4174183d1caabb4622cd113b2d41")
+        self.assertEqual(v5c["artifact"]["sha256"], "cb8a3b76ca7e11698265f599df84606a84372c4bf39aad71cbe0808f18a52221")
         self.assertEqual(v5c["artifact"]["previous_sha256"], latest["artifact"]["sha256"])
-        self.assertEqual(v5c["artifact"]["size_bytes"], 122053426)
+        self.assertEqual(v5c["artifact"]["size_bytes"], 122054150)
         self.assertEqual(set(v5c["files"]), set(self.PATHS))
         self.assertEqual(sum(self.PATHS.values()), 9)
         for path, count in self.PATHS.items():
