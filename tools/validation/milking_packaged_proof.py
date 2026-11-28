@@ -13,6 +13,7 @@ PREFIX = 'com.oblixorprime.engineersdecorreforged.'
 CLASSES = [PREFIX+x for x in ('EngineersDecorReforged', 'client.MachineScreen',
     'client.MachineScreen$SmallMilkingMachineScreen', 'menu.MachineMenu', 'utility.MachineLayout', 'utility.MachineBlockEntity')]
 TEXTURES = {
+    'textures/gui/gui11_v5c/12.png': '82e56adfc0307552596cf64a6e50e15b1449f50546819c64d93839ae2c18fffa',
     'textures/gui/milking_redesign_v1/background.png': '1405a002a4cf0ece130e1a77befa8c947891e4c6d6b96d104b7177646d060411',
     'textures/gui/milking_redesign_v1/milk.png': 'f6f0507deb081a2a83b6bb455abc6237ac2b41f4ab21d43c833e356fb2d9bbe5',
 }

@@ -79,7 +79,7 @@ def check_preservation(root=ROOT):
     if '"milking_redesign_v1/glass"' in body:raise SmokeFailure('Glass is intentionally disabled')
     native=(j/'client/validation/NativeMilkingQualificationValidation.java').read_text()
     if 'menu.storedFluid()' in native:raise SmokeFailure('Milking menu does not synchronize fluid identity')
-    if not all(s in native for s in ['screen.getGuiLeft()+104','screen.getGuiTop()+49','screen.mouseClicked(x,y,0)',
+    if not all(s in native for s in ['screen.getGuiLeft()+130','screen.getGuiTop()+64','screen.mouseClicked(x,y,0)',
                                      'screen.mouseReleased(x,y,0)','FluidAction.EXECUTE','NeoForgeMod.MILK.value()']):
         raise SmokeFailure('Fixture bypasses required live screen/server paths')
     if not all(s in native for s in ['if(!isolatedDirectoryValidated)', 'iedctr.solarV2ReferenceNative',
