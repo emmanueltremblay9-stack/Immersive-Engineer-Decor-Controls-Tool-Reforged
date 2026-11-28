@@ -273,7 +273,7 @@ public final class TreeCutterPackagedValidation {
         var v=screen.validationViewTransform();double scale=mc.getWindow().getGuiScale();
         // Crop strictly INSIDE the GUI rectangle. Never write a full framebuffer/world/HUD to disk.
         int x=(int)Math.ceil(v.screenX(0)*scale),y=(int)Math.ceil(v.screenY(0)*scale);
-        int width=(int)Math.floor(v.screenX(418)*scale)-x,height=(int)Math.floor(v.screenY(418)*scale)-y;
+        int width=(int)Math.floor(v.screenX(TreeCutterV3ReferenceGeometry.CANVAS_WIDTH)*scale)-x,height=(int)Math.floor(v.screenY(TreeCutterV3ReferenceGeometry.CANVAS_HEIGHT)*scale)-y;
         Path file=directory.resolve("tree-"+name+".png");require(!Files.exists(file),"Stale capture");
         try(var full=Screenshot.takeScreenshot(mc.getMainRenderTarget());var crop=new NativeImage(width,height,false)){
             for(int row=0;row<height;row++)for(int col=0;col<width;col++)crop.setPixelRGBA(col,row,full.getPixelRGBA(x+col,y+row));

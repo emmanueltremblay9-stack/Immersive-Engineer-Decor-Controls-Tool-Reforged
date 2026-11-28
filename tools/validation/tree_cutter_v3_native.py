@@ -16,9 +16,14 @@ import tempfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from factory_placer_v2_reference_native import decode_png
 
-ART_SHA = '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4'
-ART_PATH = Path(__file__).resolve().parents[2] / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png'
+ART_SHA = 'c81ada9ba030d42eda8dac4eafba5b305ecb83cffed2ab7c77025aa34bb7b3ef'
+CANVAS = 283, 294
+SOURCE = 1230, 1278
+ART_PATH = Path(__file__).resolve().parents[2] / 'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/10.png'
 NAMES = ['normal','transferred','reopened','reloaded']
+SLOT_X = (45, 68, 90, 112, 134, 156, 178, 200, 223)
+HOTBAR_X = (45, 67, 90, 112, 134, 156, 179, 201, 223)
+SLOTS = ((221, 91),) + tuple((x, y) for y in (160, 183, 206) for x in SLOT_X) + tuple((x, 242) for x in HOTBAR_X)
 SCREEN = 'com.oblixorprime.engineersdecorreforged.client.TreeCutterV3ReferenceScreen'
 
 
@@ -35,25 +40,25 @@ def geometry(width,height,scale):
     require(all(type(v) is int for v in [width,height,scale]) and scale in (1,2,3)
             and width//scale >= 320 and height//scale >= 240,'Invalid actual viewport/scale')
     gw,gh=math.ceil(width/scale),math.ceil(height/scale)
-    available=min(gw,gh)-12
-    view=f32(min(1,available/418))
-    if view*418 > available:
-        bits=struct.unpack('I',struct.pack('f',view))[0]
-        view=struct.unpack('f',struct.pack('I',bits-1))[0]
-    ox,oy=f32((gw-418*view)/2),f32((gh-418*view)/2)
-    x,y=math.ceil(ox*scale),math.ceil(oy*scale)
-    return x,y,math.floor((ox+418*view)*scale)-x,math.floor((oy+418*view)*scale)-y,ox,oy,view
+    cw, ch = CANVAS
+    view = f32(min(1, (gw - 12) / cw, (gh - 12) / ch))
+    if view * cw > gw - 12 or view * ch > gh - 12:
+        bits = struct.unpack('I', struct.pack('f', view))[0]
+        view = struct.unpack('f', struct.pack('I', bits - 1))[0]
+    ox, oy = f32((gw - cw * view) / 2), f32((gh - ch * view) / 2)
+    x, y = math.ceil(ox * scale), math.ceil(oy * scale)
+    return x, y, math.floor((ox + cw * view) * scale) - x, math.floor((oy + ch * view) * scale) - y, ox, oy, view
 
 
 _SOURCE_CACHE = {}
 
 def source_pixels(path):
     require(path.is_file() and not path.is_symlink(),'Missing retained source')
-    require(hashlib.sha256(path.read_bytes()).hexdigest()==ART_SHA,'Retained source hash differs')
+    require(hashlib.sha256(path.read_bytes()).hexdigest()==ART_SHA,'Active V5C source hash differs')
     if ART_SHA in _SOURCE_CACHE:
         return _SOURCE_CACHE[ART_SHA]
     w,h,pixels=decode_png(path)
-    require((w,h)==(1254,1254),'Retained dimensions differ')
+    require((w,h)==SOURCE,'Retained dimensions differ')
     _SOURCE_CACHE[ART_SHA]=pixels
     return pixels
 
@@ -62,15 +67,19 @@ def validate_pixels(path,width,height,scale,source):
     x,y,cw,ch,ox,oy,view=geometry(width,height,scale)
     w,h,pixels=decode_png(path)
     require((w,h)==(cw,ch),'Capture is not a strict GUI-only crop')
-    factor=scale*view*f32(1/3)
+    source_width, source_height = SOURCE
+    dw, dh = CANVAS
     samples=0;colors=set()
-    # Broad source-bound coverage outside every item/hover zone and the dynamic energy bar.
-    for cy in range(5,ch-5,7):
-        for cx in range(5,cw-5,7):
-            sx=(cx+x+.5-ox*scale)/factor;sy=(cy+y+.5-oy*scale)/factor
-            if 220<sx<970 and 545<sy<885:continue
-            if 880<sx<1025 and 265<sy<405:continue
-            if 830<sx<1040 and 160<sy<205:continue
+    # Broad source-bound coverage outside every item/hover zone and the animated blade.
+    for cy in range(5,ch-5,3):
+        for cx in range(5,cw-5,3):
+            lx = ((cx + x + .5) / scale - ox) / view
+            ly = ((cy + y + .5) / scale - oy) / view
+            if any(ax - 1 <= lx < ax + 17 and ay - 1 <= ly < ay + 17 for ax, ay in SLOTS):
+                continue
+            if 118 <= lx < 150 and 85 <= ly < 119:  # The animated blade sheen.
+                continue
+            sx, sy = lx * source_width / dw, ly * source_height / dh
             px=pixels[(cy*w+cx)*4:(cy*w+cx+1)*4]
             ix,iy=math.floor(sx),math.floor(sy)
             # One source texel tolerance for float rasterization at reduced GUI scales.
@@ -78,9 +87,9 @@ def validate_pixels(path,width,height,scale,source):
             # compose over the live world; they cannot be compared to the PNG's
             # stored RGBA bytes. The exact packaged-art hash is checked above,
             # so retain strict native equality only for fully opaque neighborhoods.
-            candidates=[source[(yy*1254+xx)*4:(yy*1254+xx+1)*4]
-                        for yy in range(max(0,iy-1),min(1254,iy+2))
-                        for xx in range(max(0,ix-1),min(1254,ix+2))]
+            candidates=[source[(yy*source_width+xx)*4:(yy*source_width+xx+1)*4]
+                        for yy in range(max(0,iy-1),min(source_height,iy+2))
+                        for xx in range(max(0,ix-1),min(source_width,ix+2))]
             if any(candidate[3] != 255 for candidate in candidates):
                 continue
             require(px in candidates,'Native GUI pixels differ from retained source')
@@ -151,8 +160,11 @@ def main():
     require(clean(), 'Requires clean committed exact-source checkout')
     sha = subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip()
     require(re.fullmatch('[a-f0-9]{40}',sha), 'Invalid source SHA')
-    art = project/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/tree_cutter_v3_reference/background.png'
-    require(hashlib.sha256(art.read_bytes()).hexdigest()==ART_SHA,'Retained v3 changed')
+    art = project/'src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/gui11_v5c/10.png'
+    source_pixels(art)
+    historical = art.parent.parent / 'tree_cutter_v3_reference/background.png'
+    require(hashlib.sha256(historical.read_bytes()).hexdigest() == '307b00efa8b982d10b4ba2ea03329687f88abf6605f13b4c7dba96350b9d23b4',
+            'Historical Tree Cutter reference changed')
     (project/'build').mkdir(exist_ok=True)
     evidence = Path(tempfile.mkdtemp(prefix='tree-cutter-native-',dir=project/'build'))
     game=evidence/'run';game.mkdir();nonce=secrets.token_hex(16)
