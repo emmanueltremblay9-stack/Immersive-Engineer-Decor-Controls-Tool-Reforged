@@ -11,6 +11,9 @@ public final class SolarGui11Geometry {
    public static final int METER_Y = 499;
    public static final int METER_WIDTH = 185;
    public static final int METER_HEIGHT = 24;
+   // The GUI transform uses a float scale. Accept its subpixel rounding at
+   // the inclusive edges while keeping the rendered right/bottom edge exclusive.
+   private static final double HIT_TEST_EPSILON = 0.00001D;
 
    // Vanilla menu order: Cell, three rows of inventory, then hotbar.
    // Use the nearest integer to each 16-by-16 item's measured origin.
@@ -33,9 +36,12 @@ public final class SolarGui11Geometry {
    }
 
    public static boolean containsMeter(double x, double y) {
-      double nativeX = x / NATIVE_TO_LOGICAL;
-      double nativeY = y / NATIVE_TO_LOGICAL;
-      return nativeX >= METER_X && nativeX < METER_X + METER_WIDTH
-         && nativeY >= METER_Y && nativeY < METER_Y + METER_HEIGHT;
+      double scale = NATIVE_TO_LOGICAL;
+      double left = METER_X * scale;
+      double top = METER_Y * scale;
+      double right = (METER_X + METER_WIDTH) * scale;
+      double bottom = (METER_Y + METER_HEIGHT) * scale;
+      return x >= left - HIT_TEST_EPSILON && x < right - HIT_TEST_EPSILON
+         && y >= top - HIT_TEST_EPSILON && y < bottom - HIT_TEST_EPSILON;
    }
 }

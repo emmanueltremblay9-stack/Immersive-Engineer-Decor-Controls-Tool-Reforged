@@ -58,10 +58,16 @@ public final class SolarGui11GeometryTest {
          * SolarGui11Geometry.NATIVE_TO_LOGICAL;
       double bottomOutside = (SolarGui11Geometry.METER_Y + SolarGui11Geometry.METER_HEIGHT + 0.5D)
          * SolarGui11Geometry.NATIVE_TO_LOGICAL;
+      double rightEdge = (SolarGui11Geometry.METER_X + SolarGui11Geometry.METER_WIDTH)
+         * SolarGui11Geometry.NATIVE_TO_LOGICAL;
+      double bottomEdge = (SolarGui11Geometry.METER_Y + SolarGui11Geometry.METER_HEIGHT)
+         * SolarGui11Geometry.NATIVE_TO_LOGICAL;
       assertTrue(SolarGui11Geometry.containsMeter(left, top));
       assertTrue(SolarGui11Geometry.containsMeter(rightInside, bottomInside));
       assertFalse(SolarGui11Geometry.containsMeter(rightOutside, top));
       assertFalse(SolarGui11Geometry.containsMeter(left, bottomOutside));
+      assertFalse(SolarGui11Geometry.containsMeter(rightEdge, top));
+      assertFalse(SolarGui11Geometry.containsMeter(left, bottomEdge));
    }
 
    @Test public void liveEnergyFillIsEmptyPartialAndFullWithoutInventingCapacity() {
