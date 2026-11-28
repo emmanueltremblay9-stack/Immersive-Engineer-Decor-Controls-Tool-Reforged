@@ -75,6 +75,7 @@ final class Gui11RemainingAlbum {
 
     boolean tick(Minecraft mc) throws Exception {
         require(++ticks < 600, "V5C remaining album timeout at panel " + index + "/" + stage);
+        require(mc.player.isAlive(),"Player died in the qualification fixture at panel "+index+"/"+stage);
         if (pending != null) {
             if (!pending.isDone()) return false;
             pending.join();
@@ -91,8 +92,13 @@ final class Gui11RemainingAlbum {
                 BlockPos pos = position();
                 pending = mc.getSingleplayerServer().submit(() -> {
                     var p = player(mc);
-                    p.serverLevel().setBlock(pos.below(), Blocks.STONE.defaultBlockState(), 3);
+                    for (int x=-1;x<=1;x++) {
+                        for (int z=0;z<=3;z++) {
+                            p.serverLevel().setBlock(pos.offset(x,-1,z), Blocks.STONE.defaultBlockState(), 3);
+                        }
+                    }
                     p.serverLevel().setBlock(pos, panel.block.defaultBlockState(), 3);
+                    p.fallDistance=0;
                     p.connection.teleport(pos.getX()+.5,80,pos.getZ()+2.5,180,0);
                     var machine = machine(mc, pos);
                     if (panel.kind == MachineKind.SMALL_TREE_CUTTER) {
